@@ -1884,10 +1884,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:07:01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 7 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 145–152; printed 509–516",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected local Arabic UAE Grade8 Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "fe95d9dddc1a2ea6dc32a2bf8e52569e0af567c6d0fc6a9430fe8c3b8b59fb4c",
       "CanonicalBodySha256": "0cb81b78c81eb99d7be1a2d4185b0bf7fa34c34c772697756b931d6f22414354",
@@ -1895,7 +1895,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-scoped geometry; exact publisher-item parity unknown; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1906,6 +1906,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Congruence and Transformations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Congruence and Transformations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التطابق والتحويلات",
+          "Explanation": "التطابق يعني أن الشكلين لهما القياسات نفسها للأضلاع والزوايا المتناظرة، ويمكن مطابقة أحدهما على الآخر بواسطة تحويلات جامدة مثل الإزاحة أو الانعكاس أو الدوران أو تركيب منها. نحلل صورة شكل على شبكة: إزاحة (3،−2) تغيّر مواقع الرؤوس ولا تغيّر ضلعًا طوله 5 وحدات، والانعكاس حول محور الصادات يقلب اتجاه الرسم مع حفظ المسافات، والدوران 180° حول الأصل يرسل (س،ص) إلى (−س،−ص). إذا تغير طول ضلع من 5 إلى 10 من غير تغير مقياس وحدة الرسم فالصورتان غير متطابقتين، ولو تشابه شكلهما. يتتبع الطالب الرؤوس المناظرة ويحدد التحويلات الملائمة لمطابقة مثلثين أو شكلين مركبين ويتحقق من أن الترتيب والقياسات متوافقة. الرسوم والأشكال المركبة تحتاج تفسيرًا بصريًا تحت إشراف المعلم.",
+          "KeyConceptsAndRules": "التحويل الجامد يحافظ على المسافة بين أي نقطتين وعلى قياس الزاوية، وبالتالي على المحيط والمساحة. الإزاحة (أ،ب) ترسل (س،ص) إلى (س+أ،ص+ب)، والانعكاس حول محور س إلى (س،−ص)، وحول محور ص إلى (−س،ص)، والدوران 180° حول الأصل إلى (−س،−ص). تركيب تحويلين جامدين يبقى تحويلًا يحفظ الطول، ولا يلزم أن يكون اتجاه الشكل النهائي محفوظًا إذا احتوى التركيب انعكاسًا. الشكلان المتطابقان بالمعنى الهندسي قد يقعان في موضعين مختلفين، لكن لهما أطوال أضلاع وزوايا متناظرة متساوية. التمدد بمعامل قياس 2 لا يحفظ الأطوال، فلا يثبت تطابقًا، والتمدد بمعامل 1 لا يغيّر القياسات.",
+          "WorkedExamples": "مثال1: مثلث رؤوسه (0،0)،(3،0)،(0،4) وصورته بإزاحة (2،−1) تصبح (2،−1)،(5،−1)،(2،3)؛ أطواله 3 و4 و5 في الصورتين. مثال2: النقطة (−3،2) بعد انعكاس حول محور الصادات تصبح (3،2)؛ المسافة من المحور متساوية. مثال3: دوران المثلث ذي الأضلاع 6،8،10 بزاوية 90° لا يغيّر الأضلاع، فالصورتان متطابقتان. مثال4: مستطيل 3×5 وآخر 6×10 ليسا متطابقين وإن كانا متشابهين بمعامل 2. مثال5: إذا كانت الزاوية المناظرة للأولى 47° فإن قياسها في الشكل المطابق يظل 47°. مثال6: سلسلة انعكاس حول س ثم إزاحة (2،1) للنقطة (4،−3) تنتج (6،4).",
+          "StepByStepSolutions": "أحدد الأشكال الأصلية وصورها والرؤوس المتناظرة. أقارن أطوال الأضلاع وقياسات الزوايا أو أبحث عن تحويل جامد صريح. إذا كانت الصورة على شبكة، أطبق القاعدة على جميع الرؤوس لا على رأس واحد، ثم أوصل الرؤوس مع حفظ ترتيبها. إذا كانت هناك سلسلة تحويلات أطبقها بترتيبها المعلن؛ فانعكاس ثم إزاحة ليس دائمًا مثل إزاحة ثم انعكاس. أتحقق بقياس طول ضلعين وزاوية على الأقل، ثم أعتمد تطابق الشكل كاملًا عند ثبوت تحويل جامد صحيح. إذا تغيّر طول ضلع واحد بسبب تكبير لا أدّعي التطابق، بل أبحث في إمكانية التشابه.",
+          "CommonMistakes": "التشابه ليس هو التطابق: يمكن لشكلين أن يتشابها مع اختلاف الحجم. لا يكفي أن يبدو الرسم متساويًا من دون معرفة تدريج المحاور أو القياسات. الانعكاس يغيّر اتجاه ترتيب الرؤوس لكنه لا يغيّر طول الأضلاع، لذلك لا يعني الانعكاس فقدان التطابق. تطبيق تحويل مختلف لكل رأس دون توحيد القاعدة يفسد الشكل. إن كان أحد الأشكال تمددًا بمعامل لا يساوي 1 فلا نعتبره صورة متطابقة حتى لو كانت الزوايا متساوية.",
+          "QuickSummary": "التحويلات الجامدة تحفظ الطول والزاوية والمساحة؛ وإذا نقلنا شكلًا إلى آخر بسلسلة منها فهما متطابقان. Cool-down أصلي: اكتب صور نقاط المثلث (0،0)،(3،0)،(0،4) بعد إزاحة (−2،5) وبيّن تساوي أضلاعه. هل مستطيل 4×6 متطابق مع 8×12؟ فسر. ما الذي يتغير عند انعكاس الشكل وما الذي يبقى؟ الرسم وتسلسل التحويلات للمعلم."
         }
       ]
     },

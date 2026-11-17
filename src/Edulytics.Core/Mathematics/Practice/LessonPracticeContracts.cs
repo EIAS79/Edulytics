@@ -10596,6 +10596,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U06L04_PDF123_130_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L01, original Arabic Student PDF 145–152.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS", "geometry.coordinate_plane.plotting", "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
+            ["geometry.coordinate_plane.plotting", "geometry.reflection_symmetry", "geometry.coordinate_plane.signed"],
+            "UAE_G8_AR_U07L01_LOCAL_PDF145_152_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
