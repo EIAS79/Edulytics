@@ -10712,6 +10712,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U09L01_LOCAL_PDF49_58",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U09L02; selected Student Book PDF61-68.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT", "statistics.bivariate.linear_model", "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
+            ["statistics.linear_model.fit_select", "statistics.linear_model.predict", "statistics.linear_model.residual", "statistics.bivariate.correlation"],
+            "UAE_G8_AR_U09L02_LOCAL_PDF61_68",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
