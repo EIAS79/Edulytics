@@ -1755,10 +1755,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:06:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 6 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 97–104; printed 461–468",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Selected Arabic Grade8 General Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "446eea4a4d765f50d4516658414df751501db5c22cdecc718b9afd62b40a467f",
       "CanonicalBodySha256": "cdd20180de7d43a65d175d6ba703f20dbc696cefeed09ff593cf36cec8d6415a",
@@ -1766,7 +1766,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-aligned transformations; teacher to review coordinate diagrams; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1777,6 +1777,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Reflections, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Reflections: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الانعكاس",
+          "Explanation": "الانعكاس قلب شكل حول خط يسمى محور الانعكاس بحيث تكون كل نقطة وصورتها على عمود من هذا المحور وعلى مسافتين متساويتين منه وفي جهتين متقابلتين. حول محور السينات (س،ص)→(س،−ص)، وحول محور الصادات (س،ص)→(−س،ص). مثلاً أ(−3،4) تنعكس حول محور السينات إلى أ′(−3،−4) وحول محور الصادات إلى أ″(3،4). يحفظ الانعكاس الأطوال والزوايا لكنه يعكس ترتيب الاتجاه بالنسبة للشكل الأصلي. للنقطة الواقعة على محور الانعكاس تبقى صورتها هي النقطة نفسها. في زخارف الفراشات والأشكال المتماثلة يرسم الطالب النصف الآخر بمقارنة مسافة كل نقطة عن خط التماثل.",
+          "KeyConceptsAndRules": "انعكاس حول س: رₓ(س،ص)=(س،−ص). انعكاس حول ص: رᵧ(س،ص)=(−س،ص). الانعكاس يحفظ المسافات والقياسات، وكل نقطة على محور الانعكاس ثابتة. الانعكاس مرتين حول المحور نفسه يعيد الشكل الأصلي. إذا انعكست نقطة حول كلا محوري السينات والصادات على التوالي، تكون النتيجة (−س،−ص)، وهي مساوية لدوران 180° حول الأصل. لا تكفي معرفة لون الشكل لتحديد محوره، بل يجب تحديد الخط ومواقع النقاط بالنسبة له.",
+          "WorkedExamples": "مثال1: (−3،4) حول محور س تصبح (−3،−4)، وحول محور ص تصبح (3،4). مثال2: (2،−5) حول ص تصبح (−2،−5). مثال3: المثلث (1،1)،(4،1)،(1،3) حول محور س يصبح (1،−1)،(4،−1)،(1،−3). مثال4: (0،7) عند انعكاس حول ص تبقى (0،7). مثال5: إذا كان البعد عن محور السينات 6 وحدات، فالنقطة وصورتها تفصل بينهما مسافة 12 وحدة على العمود المرسوم.",
+          "StepByStepSolutions": "أحدد محور الانعكاس، وأقرأ إحداثيات الرؤوس بدقة. إذا المحور هو س، أثبت س وأبدل إشارة ص؛ وإذا هو ص، أثبت ص وأبدل إشارة س. أرسم النقاط الجديدة مع اختبار تساوي البعدين العموديين عن المحور. أوصل الرؤوس بترتيب يوضح الشكل المعكوس، ثم أتحقق من أن الأطوال لم تتغير رغم انعكاس الاتجاه. لنقاط تقع على المحور أكتب أنها ثابتة. إذا انعكست صورة مرتين حول المحور نفسه أقارن النتيجة بالأصل.",
+          "CommonMistakes": "ليس الانعكاس إزاحة؛ شكل الصورة ينقلب حول خط، ولا تنقل جميع النقاط في اتجاه واحد بالضرورة. قد يغير الطالب إشارتي س وص عند انعكاس حول محور واحد؛ الصحيح تبديل إشارة إحداثي واحد فقط. النقاط الواقعة على المحور لا تتغير. انعكاس حول محور الصادات لا يعني تغيير ص، بل تغيير س. التحقق يجب أن يكون بقياس المسافة العمودية للمحور وليس المسافة من نقطة أخرى في الرسم.",
+          "QuickSummary": "الانعكاس حول س يغيّر إشارة ص فقط، وحول ص يغيّر إشارة س فقط، مع ثبات الأطوال وانقلاب الاتجاه. Cool-down أصلي: انعكس النقطة (−5،2) حول كل محور على حدة. انعكس مثلثًا رؤوسه (0،1)،(2،3)،(4،1) حول س. لماذا لا تتحرك (3،0) عند انعكاسها حول س؟ الرسم يراجعه المعلم."
         }
       ]
     },

@@ -10572,6 +10572,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U06L01_PDF89_96_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U06 L02; source PDF 97–104.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS", "geometry.reflection_symmetry", "REFLECT_POINT_ACROSS_X_Y_AXES",
+            ["geometry.reflection_symmetry", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.plotting"],
+            "UAE_G8_AR_U06L02_PDF97_104_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
