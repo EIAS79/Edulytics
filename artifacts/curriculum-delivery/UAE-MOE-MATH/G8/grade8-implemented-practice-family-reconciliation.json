@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE-MOE-MATH:G8:GENERAL",
+  "lessonCount": 76,
+  "modifiedContracts": 54,
+  "previousUnsupportedRoutes": 92,
+  "distinctUnsupportedRoutes": 44,
+  "lessonsRequiringSourceAppropriateImplementedSubset": 12,
+  "sourcePublisherExerciseParity": "UNKNOWN",
+  "completeObjectiveGenerationCoverage": "NOT_CERTIFIED",
+  "existingSourcePreserved": true,
+  "firstPartyExactEngineCompatibilityPendingCI": true,
+  "details": [
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS",
+      "retiredNonRoutable": [
+        "functions.exponential.negative_exponents"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.powers10.evaluate",
+        "supporting.powers10.divide",
+        "supporting.powers10.missing_exponent"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS",
+      "retiredNonRoutable": [
+        "number.rational.signed_number_line",
+        "fractions.compare.unlike_denominators",
+        "decimals.compare"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u05.l09.compare_mixed_signed_rationals",
+        "fractions.compare.unlike.common_denominator",
+        "uae.g4.u10.l08.decimal_compare"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM",
+      "retiredNonRoutable": [
+        "functions.rules.linear"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.modeling.linear_relationship.select_equation",
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM",
+      "retiredNonRoutable": [
+        "functions.rules.linear"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.linear.standard_form.slope_intercept",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS",
+      "retiredNonRoutable": [
+        "functions.rules.linear"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.linear.standard_form.slope_intercept",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING",
+      "retiredNonRoutable": [
+        "algebra.linear.systems.two_by_two.solve",
+        "algebra.linear.graph_connections"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.linear.systems.solution_count.classify"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS",
+      "retiredNonRoutable": [
+        "functions.multiple_representations",
+        "functions.input_output_tables"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.modeling.linear_relationship.select_equation"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS",
+      "retiredNonRoutable": [
+        "functions.relations.definition",
+        "functions.domain_range.graph"
+      ],
+      "remainingExactQuestionFamilies": [
+        "functions.table.lookup.invert"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.rules.linear",
+        "functions.domain_range.context"
+      ],
+      "remainingExactQuestionFamilies": [
+        "functions.relations.unique_output.classify",
+        "functions.notation.evaluate_context"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.linear_graphs",
+        "functions.rules.linear"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "algebra.linear.standard_form.slope_intercept"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.graph.key_features",
+        "functions.multiple_representations",
+        "functions.average_rate_of_change",
+        "functions.compare.intersection_and_rate"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g7.u02.l12.compare_same_axes_rates",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.model.linear_data",
+        "functions.rules.linear",
+        "functions.input_output_tables",
+        "functions.graph.model_and_interpret"
+      ],
+      "remainingExactQuestionFamilies": [
+        "algebra.modeling.linear_relationship.select_equation",
+        "uae.g6.u08.l02.linear_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.linear_graphs",
+        "functions.graph.key_features",
+        "functions.quadratic.context"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS",
+      "retiredNonRoutable": [
+        "functions.quadratic.context"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.functions.polynomial_value",
+        "functions.quadratic.output_roots.solve",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS",
+      "retiredNonRoutable": [
+        "functions.graph.key_features",
+        "functions.graph.model_and_interpret",
+        "functions.piecewise.interpret",
+        "functions.domain_range.graph"
+      ],
+      "remainingExactQuestionFamilies": [
+        "functions.domain_range.context_bounds",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES",
+      "retiredNonRoutable": [
+        "geometry.angles.relationships"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.algebra.equations.mixed"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF",
+      "retiredNonRoutable": [
+        "geometry.angles.relationships"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.algebra.equations.mixed"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES",
+      "retiredNonRoutable": [
+        "geometry.angles.relationships"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.algebra.equations.mixed"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES",
+      "retiredNonRoutable": [
+        "geometry.polygons"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.polygons.missing_interior_angle",
+        "geometry.angles.supplementary"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM",
+      "retiredNonRoutable": [
+        "number.exponents.positive_integer"
+      ],
+      "remainingExactQuestionFamilies": [
+        "trigonometry.right_triangle.find_side_exact",
+        "supporting.geometry.triangle_area"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.axis_distance"
+      ],
+      "remainingExactQuestionFamilies": [
+        "trigonometry.right_triangle.find_side_exact",
+        "supporting.algebra.equations.mixed"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.axis_distance",
+        "geometry.coordinate_plane.signed"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+        "trigonometry.right_triangle.find_side_exact"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.plotting",
+        "geometry.coordinate_plane.signed",
+        "geometry.coordinate_plane.axis_distance"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u05.l11.plot_from_signed_moves",
+        "uae.g6.u05.l12.find_horizontal_endpoint",
+        "uae.g6.u05.l12.find_vertical_endpoint"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS",
+      "retiredNonRoutable": [
+        "geometry.reflection_symmetry",
+        "geometry.coordinate_plane.signed",
+        "geometry.coordinate_plane.plotting"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u05.l10.reflect_across_x",
+        "uae.g6.u05.l10.reflect_across_y",
+        "uae.g6.u05.l11.reflect_both_axes"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.plotting",
+        "geometry.coordinate_plane.signed",
+        "geometry.reflection_symmetry"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u05.l11.reflect_both_axes"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.plotting"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l02.scale_factor"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.plotting",
+        "geometry.reflection_symmetry",
+        "geometry.coordinate_plane.signed"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u05.l10.reflect_across_x",
+        "uae.g6.u05.l10.reflect_across_y",
+        "uae.g6.u05.l11.reflect_both_axes"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE",
+      "retiredNonRoutable": [
+        "geometry.angles.relationships",
+        "geometry.polygons.sides_vertices"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g5.u07.l08.source_triangle_side_and_angle_types"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT",
+      "retiredNonRoutable": [
+        "trigonometry.right_triangle.ratio"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l04.hidden_corresponding_distance"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES",
+      "retiredNonRoutable": [
+        "trigonometry.right_triangle.ratio"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "usccss.g7.u02.l10.graphs_origin_slope"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES",
+      "retiredNonRoutable": [
+        "geometry.area.scaled_figures"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g7.u01.l06.scaled_area_square_factor",
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l10.change_scale_length_and_area"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS",
+      "retiredNonRoutable": [
+        "supporting.geometry.area_volume"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+        "usccss.g7.u07.prism_volume_base_height"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES",
+      "retiredNonRoutable": [
+        "supporting.geometry.area_volume"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g7.u09.l02.cone_volume_pi_coefficient",
+        "uae.g7.u09.l01.cylinder_volume_pi_coefficient"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES",
+      "retiredNonRoutable": [
+        "supporting.geometry.area_volume"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+        "geometry.similarity.scale_factor"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES",
+      "retiredNonRoutable": [
+        "geometry.angles.relationships"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS",
+      "retiredNonRoutable": [
+        "statistics.bivariate.correlation"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.statistics.scatter_correlation",
+        "statistics.correlation.direction"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT",
+      "retiredNonRoutable": [
+        "statistics.bivariate.correlation"
+      ],
+      "remainingExactQuestionFamilies": [
+        "statistics.linear_model.fit_select",
+        "statistics.linear_model.predict",
+        "statistics.linear_model.residual"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES",
+      "retiredNonRoutable": [
+        "statistics.categorical.relative_frequency"
+      ],
+      "remainingExactQuestionFamilies": [
+        "statistics.two_way.marginal_count",
+        "statistics.two_way.conditional_relative",
+        "supporting.statistics.table_total"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY",
+      "retiredNonRoutable": [
+        "statistics.standard_deviation"
+      ],
+      "remainingExactQuestionFamilies": [
+        "statistics.center_spread.mad",
+        "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
+        "statistics.center_spread.range"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS",
+      "retiredNonRoutable": [
+        "statistics.compare_distributions",
+        "statistics.outliers"
+      ],
+      "remainingExactQuestionFamilies": [
+        "statistics.distribution_shape.classify",
+        "usccss.g6.u08.l16.box_plot_source_quartiles"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES",
+      "retiredNonRoutable": [
+        "geometry.foundations.point_line_ray",
+        "geometry.points_lines_rays"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g4.u12.l01.segments_from_points"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.axis_distance"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g4.u12.l01.segments_from_points",
+        "usccss.g6.u07.l06.absolute_distance_values"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS",
+      "retiredNonRoutable": [
+        "geometry.coordinate_plane.axis_distance",
+        "number.integers.absolute_distance"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS",
+      "retiredNonRoutable": [
+        "supporting.geometry.properties",
+        "geometry.problem_solving.justification"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g4.u12.l01.segments_from_points"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS",
+      "retiredNonRoutable": [
+        "geometry.polygons"
+      ],
+      "remainingExactQuestionFamilies": [
+        "geometry.polygons.missing_interior_angle",
+        "geometry.angles.supplementary"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS",
+      "retiredNonRoutable": [
+        "geometry.quadrilaterals.attributes",
+        "geometry.quadrilaterals.classification"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS",
+      "retiredNonRoutable": [
+        "geometry.quadrilaterals.attributes",
+        "geometry.quadrilaterals.classification"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES",
+      "retiredNonRoutable": [
+        "geometry.quadrilaterals.attributes",
+        "geometry.quadrilaterals.classification",
+        "geometry.coordinate_plane.axis_distance"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES",
+      "retiredNonRoutable": [
+        "geometry.quadrilaterals.attributes",
+        "geometry.quadrilaterals.classification"
+      ],
+      "remainingExactQuestionFamilies": [
+        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES",
+      "retiredNonRoutable": [
+        "geometry.quadrilaterals.attributes",
+        "geometry.quadrilaterals.classification"
+      ],
+      "remainingExactQuestionFamilies": [
+        "uae.g6.u09.l06.trapezoid_area"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY",
+      "retiredNonRoutable": [
+        "algebra.inequality.solution_sets"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.sets.union_count"
+      ],
+      "sourceType": "EXISTING_MATH_PREREQUISITE_SUBSET_ONLY"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS",
+      "retiredNonRoutable": [
+        "algebra.inequality.solution_sets"
+      ],
+      "remainingExactQuestionFamilies": [
+        "probability.theoretical.complement"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS",
+      "retiredNonRoutable": [
+        "algebra.inequality.solution_sets"
+      ],
+      "remainingExactQuestionFamilies": [
+        "probability.theoretical.complement"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS",
+      "retiredNonRoutable": [
+        "algebra.inequality.solution_sets"
+      ],
+      "remainingExactQuestionFamilies": [
+        "supporting.statistics.table_total"
+      ],
+      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+    }
+  ]
+}

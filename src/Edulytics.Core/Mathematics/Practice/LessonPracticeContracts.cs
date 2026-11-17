@@ -10272,7 +10272,7 @@ public static class LessonPracticeContractRegistry
         // Reuse supported numerical families; teacher reviews open justification.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS", "functions.exponential.negative_exponents", "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
-            ["functions.exponential.negative_exponents", "supporting.powers10.evaluate", "supporting.powers10.divide", "supporting.powers10.missing_exponent"],
+            ["supporting.powers10.evaluate", "supporting.powers10.divide", "supporting.powers10.missing_exponent"],
             "UAE_G8_AR_U01L05_PDF76_83",
             "READY_VERIFIED", Version);
 
@@ -10312,9 +10312,9 @@ public static class LessonPracticeContractRegistry
         // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS", "number.rational.signed_number_line", "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
-            ["number.rational.signed_number_line", "fractions.compare.unlike_denominators", "decimals.compare"],
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals", "fractions.compare.unlike.common_denominator", "uae.g4.u10.l08.decimal_compare"],
             "UAE_G8_AR_U01L10_PDF122_129",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["number.rational.signed_number_line", "number.rational.signed_comparison_order", "fractions.compare.unlike_denominators", "decimals.compare"] };
 
         // UAE Grade 8 General Arabic U02:L01, owner-selected Student Book PDF 144–151.
         // Reuse numeric equation families only; written equivalence and visual
@@ -10384,7 +10384,7 @@ public static class LessonPracticeContractRegistry
         // need teacher review. No runtime/CI claims until Stage D.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM", "algebra.modeling.linear_relationship", "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
-            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule", "functions.rules.linear"],
+            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule"],
             "UAE_G8_GENERAL_AR_U03L03_PDF222_231",
             "READY_VERIFIED", Version);
 
@@ -10393,7 +10393,7 @@ public static class LessonPracticeContractRegistry
         // need teacher review. No runtime/CI claims until Stage D.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM", "algebra.modeling.linear_relationship", "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
-            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.y_intercept_from_rule", "functions.rules.linear", "geometry.coordinate.evaluate_linear_rule"],
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.y_intercept_from_rule", "geometry.coordinate.evaluate_linear_rule"],
             "UAE_G8_GENERAL_AR_U03L04_PDF232_239",
             "READY_VERIFIED", Version);
 
@@ -10411,7 +10411,7 @@ public static class LessonPracticeContractRegistry
         // reasoning subject to human review. No CI/runtime verification yet.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS", "algebra.modeling.linear_relationship", "undefined",
-            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule", "functions.rules.linear"],
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule"],
             "UAE_G8_GENERAL_AR_U03L06_PDF254_261",
             "READY_VERIFIED", Version);
 
@@ -10420,7 +10420,7 @@ public static class LessonPracticeContractRegistry
         // reasoning subject to human review. No CI/runtime verification yet.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING", "algebra.linear.systems.classification", "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
-            ["algebra.linear.systems.solution_count.classify", "algebra.linear.systems.two_by_two.solve", "algebra.linear.graph_connections"],
+            ["algebra.linear.systems.solution_count.classify"],
             "UAE_G8_GENERAL_AR_U03L07_PDF266_275",
             "READY_VERIFIED", Version);
 
@@ -10438,7 +10438,7 @@ public static class LessonPracticeContractRegistry
         // equivalence and conceptual explanation teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS", "functions.multiple_representations", "REPRESENT_LINEAR_RELATION_TABLE_GRAPH_EQUATION_WORDS",
-            ["functions.multiple_representations", "functions.input_output_tables", "algebra.modeling.linear_relationship.select_equation"],
+            ["algebra.modeling.linear_relationship.select_equation"],
             "UAE_G8_GENERAL_U04L01_PDF300_309",
             "READY_VERIFIED", Version);
 
@@ -10447,7 +10447,7 @@ public static class LessonPracticeContractRegistry
         // equivalence and conceptual explanation teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS", "functions.relations.definition", "RELATION_ORDERED_PAIRS_DOMAIN_RANGE_MAPPING_GRAPH",
-            ["functions.relations.definition", "functions.domain_range.graph", "functions.table.lookup.invert"],
+            ["functions.table.lookup.invert"],
             "UAE_G8_GENERAL_U04L02_PDF310_317",
             "READY_VERIFIED", Version);
 
@@ -10456,7 +10456,7 @@ public static class LessonPracticeContractRegistry
         // equivalence and conceptual explanation teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS", "functions.relations.unique_output.classify", "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
-            ["functions.relations.unique_output.classify", "functions.notation.evaluate_context", "functions.rules.linear", "functions.domain_range.context"],
+            ["functions.relations.unique_output.classify", "functions.notation.evaluate_context"],
             "UAE_G8_GENERAL_U04L03_PDF320_327",
             "READY_VERIFIED", Version);
 
@@ -10464,7 +10464,7 @@ public static class LessonPracticeContractRegistry
         // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS", "functions.rules.linear", "LINEAR_FUNCTION_RULE_TABLE_GRAPH",
-            ["functions.linear_graphs", "functions.rules.linear", "geometry.coordinate.evaluate_linear_rule", "algebra.linear.standard_form.slope_intercept"],
+            ["geometry.coordinate.evaluate_linear_rule", "algebra.linear.standard_form.slope_intercept"],
             "UAE_G8_GENERAL_AR_U04L04_PDF328_337_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10472,23 +10472,23 @@ public static class LessonPracticeContractRegistry
         // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS", "functions.compare.intersection_and_rate", "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
-            ["functions.graph.key_features", "functions.multiple_representations", "functions.average_rate_of_change", "functions.compare.intersection_and_rate"],
+            ["usccss.g7.u02.l12.compare_same_axes_rates", "uae.g6.u08.l03.linear_vs_square"],
             "UAE_G8_GENERAL_AR_U04L05_PDF342_351_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["functions.compare.intersection_and_rate", "proportions.equivalent_ratios", "functions.linear_graphs"] };
 
         // UAE Grade 8 General Unit04 L06, original Arabic Student Book PDF 352-359.
         // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS", "functions.model.linear_data", "BUILD_LINEAR_FUNCTION_FROM_TABLE_GRAPH_CONTEXT",
-            ["functions.model.linear_data", "functions.rules.linear", "functions.input_output_tables", "functions.graph.model_and_interpret"],
+            ["algebra.modeling.linear_relationship.select_equation", "uae.g6.u08.l02.linear_rule", "geometry.coordinate.evaluate_linear_rule"],
             "UAE_G8_GENERAL_AR_U04L06_PDF352_359_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["functions.model.linear_data", "algebra.relationships.two_unknowns", "functions.sequence_rules", "geometry.coordinate.straight_line"] };
 
         // UAE Grade8 General Arabic Unit04 Lesson07, Student Book PDF 360-367.
         // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS", "functions.graph.key_features", "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
-            ["functions.linear_graphs", "uae.g6.u08.l03.linear_vs_square", "functions.graph.key_features", "functions.quadratic.context"],
+            ["uae.g6.u08.l03.linear_vs_square"],
             "UAE_G8_GENERAL_AR_U04L07_PDF360_367_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10496,7 +10496,7 @@ public static class LessonPracticeContractRegistry
         // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS", "functions.quadratic.context", "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
-            ["functions.quadratic.context", "supporting.functions.polynomial_value", "functions.quadratic.output_roots.solve", "uae.g6.u08.l03.linear_vs_square"],
+            ["supporting.functions.polynomial_value", "functions.quadratic.output_roots.solve", "uae.g6.u08.l03.linear_vs_square"],
             "UAE_G8_GENERAL_AR_U04L08_PDF368_375_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10504,15 +10504,15 @@ public static class LessonPracticeContractRegistry
         // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS", "functions.graph.model_and_interpret", "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
-            ["functions.graph.key_features", "functions.graph.model_and_interpret", "functions.piecewise.interpret", "functions.domain_range.graph"],
+            ["functions.domain_range.context_bounds", "uae.g6.u08.l03.linear_vs_square"],
             "UAE_G8_GENERAL_AR_U04L09_PDF380_387_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["functions.graph.model_and_interpret", "supporting.functions.core", "functions.linear_graphs"] };
 
         // UAE Grade8 General U05 L01; selected local Student Book PDF 7–14.
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES", "geometry.angles.relationships", "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
-            ["geometry.angles.relationships", "supporting.algebra.equations.mixed"],
+            ["supporting.algebra.equations.mixed"],
             "UAE_G8_U05L01_PDF7_14_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10520,7 +10520,7 @@ public static class LessonPracticeContractRegistry
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF", "geometry.angles.relationships", "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
-            ["geometry.angles.relationships", "supporting.algebra.equations.mixed"],
+            ["supporting.algebra.equations.mixed"],
             "UAE_G8_U05L02_PDF15_22_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10528,7 +10528,7 @@ public static class LessonPracticeContractRegistry
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES", "geometry.angles.relationships", "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
-            ["geometry.angles.relationships", "supporting.algebra.equations.mixed"],
+            ["supporting.algebra.equations.mixed"],
             "UAE_G8_U05L03_PDF25_32_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10536,7 +10536,7 @@ public static class LessonPracticeContractRegistry
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES", "geometry.polygons", "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
-            ["geometry.polygons", "geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            ["geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
             "UAE_G8_U05L04_PDF33_40_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10544,7 +10544,7 @@ public static class LessonPracticeContractRegistry
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.find_side_exact", "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
-            ["trigonometry.right_triangle.find_side_exact", "number.exponents.positive_integer", "supporting.geometry.triangle_area"],
+            ["trigonometry.right_triangle.find_side_exact", "supporting.geometry.triangle_area"],
             "UAE_G8_U05L05_PDF47_54_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10552,7 +10552,7 @@ public static class LessonPracticeContractRegistry
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.find_side_exact", "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
-            ["trigonometry.right_triangle.find_side_exact", "geometry.coordinate_plane.axis_distance", "supporting.algebra.equations.mixed"],
+            ["trigonometry.right_triangle.find_side_exact", "supporting.algebra.equations.mixed"],
             "UAE_G8_U05L06_PDF59_66_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10560,7 +10560,7 @@ public static class LessonPracticeContractRegistry
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "geometry.coordinate_plane.axis_distance", "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
-            ["geometry.coordinate_plane.axis_distance", "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "trigonometry.right_triangle.find_side_exact", "geometry.coordinate_plane.signed"],
+            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "trigonometry.right_triangle.find_side_exact"],
             "UAE_G8_U05L07_PDF67_74_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10568,31 +10568,31 @@ public static class LessonPracticeContractRegistry
         // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS", "geometry.coordinate_plane.plotting", "TRANSLATE_SHAPE_VECTOR_COORDINATE",
-            ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.axis_distance"],
+            ["uae.g6.u05.l11.plot_from_signed_moves", "uae.g6.u05.l12.find_horizontal_endpoint", "uae.g6.u05.l12.find_vertical_endpoint"],
             "UAE_G8_AR_U06L01_PDF89_96_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.axis_distance"] };
 
         // UAE G8 General U06 L02; source PDF 97–104.
         // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS", "geometry.reflection_symmetry", "REFLECT_POINT_ACROSS_X_Y_AXES",
-            ["geometry.reflection_symmetry", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.plotting"],
+            ["uae.g6.u05.l10.reflect_across_x", "uae.g6.u05.l10.reflect_across_y", "uae.g6.u05.l11.reflect_both_axes"],
             "UAE_G8_AR_U06L02_PDF97_104_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.reflection_symmetry", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.plotting"] };
 
         // UAE G8 General U06 L03; source PDF 111–118.
         // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS", "geometry.coordinate_plane.plotting", "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
-            ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed", "geometry.reflection_symmetry"],
+            ["uae.g6.u05.l11.reflect_both_axes"],
             "UAE_G8_AR_U06L03_PDF111_118_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting"] };
 
         // UAE G8 General U06 L04; source PDF 123–130.
         // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS", "geometry.similarity.scale_factor", "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
-            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "geometry.coordinate_plane.plotting"],
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor"],
             "UAE_G8_AR_U06L04_PDF123_130_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10600,15 +10600,15 @@ public static class LessonPracticeContractRegistry
         // Reuse numeric geometry families; diagrams/correspondence require human scoring.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS", "geometry.coordinate_plane.plotting", "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
-            ["geometry.coordinate_plane.plotting", "geometry.reflection_symmetry", "geometry.coordinate_plane.signed"],
+            ["uae.g6.u05.l10.reflect_across_x", "uae.g6.u05.l10.reflect_across_y", "uae.g6.u05.l11.reflect_both_axes"],
             "UAE_G8_AR_U07L01_LOCAL_PDF145_152_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed"] };
 
         // UAE Grade8 General U07L02, original Arabic Student PDF 157–164.
         // Reuse numeric geometry families; diagrams/correspondence require human scoring.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE", "geometry.triangles.classification", "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
-            ["geometry.angles.relationships", "usccss.g5.u07.l08.source_triangle_side_and_angle_types", "geometry.polygons.sides_vertices"],
+            ["usccss.g5.u07.l08.source_triangle_side_and_angle_types"],
             "UAE_G8_AR_U07L02_LOCAL_PDF157_164_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10632,7 +10632,7 @@ public static class LessonPracticeContractRegistry
         // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT", "geometry.similarity.scale_factor", "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
-            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.hidden_corresponding_distance", "trigonometry.right_triangle.ratio"],
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.hidden_corresponding_distance"],
             "UAE_G8_AR_U07L05_PDF187_194_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10640,7 +10640,7 @@ public static class LessonPracticeContractRegistry
         // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES", "geometry.coordinate.gradient_between_points", "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
-            ["geometry.coordinate.gradient_between_points", "usccss.g7.u02.l10.graphs_origin_slope", "trigonometry.right_triangle.ratio"],
+            ["geometry.coordinate.gradient_between_points", "usccss.g7.u02.l10.graphs_origin_slope"],
             "UAE_G8_AR_U07L06_PDF195_202_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10648,7 +10648,7 @@ public static class LessonPracticeContractRegistry
         // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES", "geometry.area.scaled_figures", "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
-            ["geometry.area.scaled_figures", "usccss.g7.u01.l06.scaled_area_square_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l10.change_scale_length_and_area"],
+            ["usccss.g7.u01.l06.scaled_area_square_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l10.change_scale_length_and_area"],
             "UAE_G8_AR_U07L07_PDF203_210_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10656,7 +10656,7 @@ public static class LessonPracticeContractRegistry
         // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS", "geometry.volume", "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
-            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient", "usccss.g7.u07.prism_volume_base_height", "supporting.geometry.area_volume"],
+            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient", "usccss.g7.u07.prism_volume_base_height"],
             "UAE_G8_AR_U08L01_PDF7_14_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10664,7 +10664,7 @@ public static class LessonPracticeContractRegistry
         // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES", "geometry.volume", "CONE_VOLUME_ONE_THIRD_CYLINDER",
-            ["uae.g7.u09.l02.cone_volume_pi_coefficient", "uae.g7.u09.l01.cylinder_volume_pi_coefficient", "supporting.geometry.area_volume"],
+            ["uae.g7.u09.l02.cone_volume_pi_coefficient", "uae.g7.u09.l01.cylinder_volume_pi_coefficient"],
             "UAE_G8_AR_U08L02_PDF15_22_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10672,7 +10672,7 @@ public static class LessonPracticeContractRegistry
         // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES", "geometry.volume", "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
-            ["uae.g7.u09.l03.sphere_volume_pi_coefficient", "supporting.geometry.area_volume", "geometry.similarity.scale_factor"],
+            ["uae.g7.u09.l03.sphere_volume_pi_coefficient", "geometry.similarity.scale_factor"],
             "UAE_G8_AR_U08L03_PDF24_31_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10690,7 +10690,7 @@ public static class LessonPracticeContractRegistry
         // physical-modeling answers are teacher-reviewed until Stage D.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES", "supporting.geometry.area_volume", "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
-            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient", "geometry.angles.relationships"],
+            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient"],
             "UAE_G8_GENERAL_AR_U08L05_LOCAL_PDF50_57",
             "READY_VERIFIED", Version);
 
@@ -10708,7 +10708,7 @@ public static class LessonPracticeContractRegistry
         // interpretation require teacher review. No CI/runtime claim.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS", "supporting.statistics.scatter_correlation", "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
-            ["supporting.statistics.scatter_correlation", "statistics.bivariate.correlation", "statistics.correlation.direction"],
+            ["supporting.statistics.scatter_correlation", "statistics.correlation.direction"],
             "UAE_G8_AR_U09L01_LOCAL_PDF49_58",
             "READY_VERIFIED", Version);
 
@@ -10717,7 +10717,7 @@ public static class LessonPracticeContractRegistry
         // interpretation require teacher review. No CI/runtime claim.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT", "statistics.bivariate.linear_model", "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
-            ["statistics.linear_model.fit_select", "statistics.linear_model.predict", "statistics.linear_model.residual", "statistics.bivariate.correlation"],
+            ["statistics.linear_model.fit_select", "statistics.linear_model.predict", "statistics.linear_model.residual"],
             "UAE_G8_AR_U09L02_LOCAL_PDF61_68",
             "READY_VERIFIED", Version);
 
@@ -10726,7 +10726,7 @@ public static class LessonPracticeContractRegistry
         // interpretation require teacher review. No CI/runtime claim.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES", "statistics.categorical.two_way", "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
-            ["statistics.two_way.marginal_count", "statistics.categorical.relative_frequency", "statistics.two_way.conditional_relative", "supporting.statistics.table_total"],
+            ["statistics.two_way.marginal_count", "statistics.two_way.conditional_relative", "supporting.statistics.table_total"],
             "UAE_G8_AR_U09L03_LOCAL_PDF73_80",
             "READY_VERIFIED", Version);
 
@@ -10744,7 +10744,7 @@ public static class LessonPracticeContractRegistry
         // and explanations are teacher-reviewed; no runtime/CI claims.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY", "statistics.center_spread.mad", "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
-            ["statistics.center_spread.mad", "statistics.standard_deviation", "usccss.g6.u08.l11.mean_absolute_deviation_amounts", "statistics.center_spread.range"],
+            ["statistics.center_spread.mad", "usccss.g6.u08.l11.mean_absolute_deviation_amounts", "statistics.center_spread.range"],
             "UAE_G8_AR_U09L05_LOCAL_PDF93_100",
             "READY_VERIFIED", Version);
 
@@ -10753,7 +10753,7 @@ public static class LessonPracticeContractRegistry
         // and explanations are teacher-reviewed; no runtime/CI claims.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS", "statistics.distribution_shape", "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
-            ["statistics.distribution_shape.classify", "statistics.compare_distributions", "statistics.outliers", "usccss.g6.u08.l16.box_plot_source_quartiles"],
+            ["statistics.distribution_shape.classify", "usccss.g6.u08.l16.box_plot_source_quartiles"],
             "UAE_G8_AR_U09L06_LOCAL_PDF101_108",
             "READY_VERIFIED", Version);
 
@@ -10761,7 +10761,7 @@ public static class LessonPracticeContractRegistry
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES", "geometry.foundations.point_line_ray", "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
-            ["geometry.foundations.point_line_ray", "geometry.points_lines_rays", "uae.g4.u12.l01.segments_from_points"],
+            ["uae.g4.u12.l01.segments_from_points"],
             "UAE_G8_AR_U10L01_PDF121_128_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10769,7 +10769,7 @@ public static class LessonPracticeContractRegistry
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE", "geometry.measure.linear", "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
-            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values", "geometry.coordinate_plane.axis_distance"],
+            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values"],
             "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10777,7 +10777,7 @@ public static class LessonPracticeContractRegistry
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS", "geometry.coordinate.distance_midpoint", "CARTESIAN_DISTANCE_AND_MIDPOINT",
-            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "geometry.coordinate_plane.axis_distance", "number.integers.absolute_distance"],
+            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances"],
             "UAE_G8_AR_U10L03_PDF141_148_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10785,7 +10785,7 @@ public static class LessonPracticeContractRegistry
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS", "geometry.segment.proof", "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
-            ["uae.g4.u12.l01.segments_from_points", "supporting.geometry.properties", "geometry.problem_solving.justification"],
+            ["uae.g4.u12.l01.segments_from_points"],
             "UAE_G8_AR_U10L04_PDF154_161_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10794,37 +10794,37 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS", "geometry.polygons.missing_interior_angle",
             "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
-            ["geometry.polygons", "geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            ["geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
             "UAE_G8_AR_U11L01_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
             "STAGE_D_PENDING_VERIFICATION", Version);
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
             "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
-            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification"],
+            ["usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
             "UAE_G8_AR_U11L02_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
-            "STAGE_D_PENDING_VERIFICATION", Version);
+            "STAGE_D_PENDING_VERIFICATION", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
             "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
-            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification"],
+            ["usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
             "UAE_G8_AR_U11L03_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
-            "STAGE_D_PENDING_VERIFICATION", Version);
+            "STAGE_D_PENDING_VERIFICATION", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
 
         // UAE Grade8 General Arabic U11L04, source Student Book PDF 203-209.
         // Numeric families reused; source-based original proofs and geometry
         // diagrams are reserved for teacher assessment.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES", "geometry.quadrilaterals.attributes", "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
-            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification", "geometry.coordinate_plane.axis_distance"],
+            ["usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
             "UAE_G8_AR_U11L04_LOCAL_PDF203_209",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
 
         // UAE Grade8 General Arabic U11L05, source Student Book PDF 210-218.
         // Numeric families reused; source-based original proofs and geometry
         // diagrams are reserved for teacher assessment.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES", "geometry.quadrilaterals.attributes", "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
-            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification", "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"],
+            ["usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"],
             "UAE_G8_AR_U11L05_LOCAL_PDF210_218",
             "READY_VERIFIED", Version);
 
@@ -10833,7 +10833,7 @@ public static class LessonPracticeContractRegistry
         // diagrams are reserved for teacher assessment.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES", "geometry.quadrilaterals.attributes", "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
-            ["geometry.quadrilaterals.attributes", "uae.g6.u09.l06.trapezoid_area", "geometry.quadrilaterals.classification"],
+            ["uae.g6.u09.l06.trapezoid_area"],
             "UAE_G8_AR_U11L06_LOCAL_PDF219_228",
             "READY_VERIFIED", Version);
 
@@ -10843,9 +10843,9 @@ public static class LessonPracticeContractRegistry
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY", "algebra.inequality.solution_sets", "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
-            ["algebra.inequality.solution_sets"],
+            ["supporting.sets.union_count"],
             "UAE_G8_GENERAL_AR_U12L01_LOCAL_PDF240_250_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["algebra.inequality.solution_sets", "supporting.sets.core"] };
 
         // UAE G8 General Unit12 Lesson2; source selected Student Book PDF253-262.
         // Existing solution-set/membership family only supports simple
@@ -10853,7 +10853,7 @@ public static class LessonPracticeContractRegistry
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS", "algebra.inequality.solution_sets", "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
-            ["algebra.inequality.solution_sets", "probability.theoretical.complement"],
+            ["probability.theoretical.complement"],
             "UAE_G8_GENERAL_AR_U12L02_LOCAL_PDF253_262_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10863,7 +10863,7 @@ public static class LessonPracticeContractRegistry
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS", "algebra.inequality.solution_sets", "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
-            ["algebra.inequality.solution_sets", "probability.theoretical.complement"],
+            ["probability.theoretical.complement"],
             "UAE_G8_GENERAL_AR_U12L03_LOCAL_PDF264_273_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10873,7 +10873,7 @@ public static class LessonPracticeContractRegistry
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS", "algebra.inequality.solution_sets", "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
-            ["algebra.inequality.solution_sets", "supporting.statistics.table_total"],
+            ["supporting.statistics.table_total"],
             "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
