@@ -10620,6 +10620,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L03_LOCAL_PDF171_178_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L04; selected Arabic Student Book PDF 179–186.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS", "geometry.similarity.scale_factor", "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.angle_and_distance_scaling", "usccss.g6.u02.l05.scaled_ratio_missing_term"],
+            "UAE_G8_AR_U07L04_PDF179_186_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

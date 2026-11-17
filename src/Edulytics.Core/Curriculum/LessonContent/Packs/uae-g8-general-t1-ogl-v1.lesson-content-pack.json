@@ -2013,10 +2013,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:07:04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 7 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 179–186; printed 543–550",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Grade8 General Term2 student book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "a8d5d71567ab52ee236ffdcd72b85b2944b886e874a0822c7ff9598abb8b2734",
       "CanonicalBodySha256": "298ad29d1385a14733069d0694dfaa26b5907739b3fe5bfe6538610ccffa4a49",
@@ -2024,7 +2024,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic source-scoped similarity model; exact publisher item parity UNKNOWN; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2035,6 +2035,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Properties of Similar Polygons, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Properties of Similar Polygons: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "خصائص المضلعات المتشابهة",
+          "Explanation": "للمضلعين المتشابهين زاوية مناظرة مساوية لكل زاوية في الآخر، وأطوال الأضلاع المتناظرة بنسبة ثابتة تسمى معامل التشابه. إذا كان مستطيل صغير أبعاده 3×6 وآخر كبير 6×12 فالنسب 6/3=12/6=2، وبالتالي هما متشابهان مع معامل 2 من الصغير إلى الكبير. أما مستطيل 3×6 ومستطيل 6×10 فزاويتهما كلها قائمة، ولكن نسب الطول 6/3=2 والعرض 10/6 لا تساوي 2، فليسا متشابهين. قد توضح الرسوم شكلين مائلين أو مدورين؛ عند ذلك يجب مطابقة الرؤوس حسب العلامات لا بحسب المكان على الصفحة. إذا كانت أضلاع مضلعين متشابهين بنسبة 2/3 وكانت قطعة في الأول 15 سم، فالقطعة المناظرة في الثاني 10 سم وفق اتجاه النسبة المختار.",
+          "KeyConceptsAndRules": "إذا كان المضلع أ ب ج د مشابهًا للمضلع هـ و ز ح بهذا الترتيب، ف∠أ=∠هـ، ∠ب=∠و ...، وتكون هـو/أب = وز/بج = زح/جد = حهـ/دأ =ك موجب ثابت. لحساب طول صورة س من طول أصل ل: س=ك ل. إذا كان ك=3/2، وضلع الأصل 8 سم، فإن النظير 12 سم. يمكن تكوين تناسب ثم الضرب التبادلي؛ مثلاً 6/4 = س/10 ⇒ 4س=60 ⇒ س=15. لا يكفي تساوي الزوايا وحده لإثبات التشابه في مضلعات عامة، بل يجب فحص النسب، كما لا يُثبت تناسب ضلعين فقط تشابه مضلع كبير دون سائر الشروط.",
+          "WorkedExamples": "مثال1: مستطيل 3×6 ومستطيل 6×12، معامل التشابه 2. مثال2: مضلع أصله ذو ضلع 8 وصورته ك=1.5، طول ضلع الصورة 12. مثال3: 6/4 = س/10 ⇒ س=15. مثال4: مثلث صغير أطواله 5،7،9 وصورته مشابهة بمعامل 2؛ أطوالها 10،14،18. مثال5: رباعي زواياه 80°،100°،95°،85°، وصورته مشابهة، فالزوايا نظائرها قياسها نفسه. مثال6: مستطيل 3×6 وآخر 6×10 ليسا متشابهين رغم تساوي الزوايا.",
+          "StepByStepSolutions": "أنشئ جدولاً للرؤوس والأضلاع المناظرة مع مراعاة الدوران أو الانعكاس. أسجل قياسين متقابلين وأحسب ك=طول الصورة/طول الأصل. أتحقق من أن النسبة نفسها تنطبق على أضلاع أخرى وأن الزوايا المتناظرة متساوية. لطول مجهول أكتب التناسب الصحيح بالاتجاه نفسه على الطرفين، ثم أضرب تبادلياً أو أضرب في ك مباشرة. أتحقق من أن الحل موجب ومن أن الشكل الأكبر يقابله معامل أكبر من واحد عند القراءة من الأصغر إلى الأكبر. أنظر إلى الرسم ثانية لتجنب نسبة ضلع إلى غير نظيره.",
+          "CommonMistakes": "لا يكفي تطابق الزوايا الأربع لمستطيلين للحكم بتشابههما، فقد تختلف نسبة الطول إلى العرض. اختيار ضلعين غير متناظرين ينتج معامل قياس خاطئاً. لا تقلب ك عند الانتقال من الأصلي إلى الصورة، ثم تستعمله مع اتجاه معاكس في خطوة أخرى. إذا كان الشكلان متماثلي الشكل لكن غير متساويي الحجم فهما متشابهان لا متطابقان. عند الضرب التبادلي يجب الحفاظ على مكان الطول المجهول؛ وإلا فقد يصبح 15 بدل 10.",
+          "QuickSummary": "المضلعات المتشابهة لها زوايا متناظرة متساوية ونِسب أضلاع متناظرة ثابتة؛ نستخدم ك لحساب طول مفقود. Cool-down أصلي: (1) مستطيل 4×10 شبيه بآخر عرضه 6: ما الطول؟ (2) هل 3×5 يشبه 6×10؟ (3) إذا 5/8=س/24 فأوجد س. (4) اشرح لماذا لا تكفي الزوايا وحدها في رباعيين. الرسم والمقابلات يراجعها المعلم."
         }
       ]
     },
