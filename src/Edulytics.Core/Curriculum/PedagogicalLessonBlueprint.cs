@@ -383,7 +383,7 @@ public static class PedagogicalLessonBlueprintContract
         document.LogicalLevel == 8 &&
         string.Equals(document.Pathway, "General", StringComparison.Ordinal) &&
         string.Equals(document.SourceLicense,
-            "First-party lesson authoring; no third-party textbook republication license asserted.",
+            "First-party lesson authoring; no third-party textbook republication license asserted",
             StringComparison.Ordinal) &&
         string.Equals(document.RequiredDigitalAttribution,
             "No publisher prose or artwork embedded. Provenance recorded privately.",
