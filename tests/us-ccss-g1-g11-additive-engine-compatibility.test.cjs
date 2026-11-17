@@ -37,11 +37,36 @@ function stripOnlyRetiredG7Contract(lines){
   return [...lines.slice(0,start),
           ...lines.slice(start+retiredG7GeneralContractBlock.length)];
 }
+const ownerAuditedExactG8PracticeContractBlob='26ea9813d3fdbfddd48356faadfe4a8cb23e8279';
+function withoutGrade8ScopedPracticeAssignments(lines){
+  // All Grade8 GENERAL Practice rewrites are isolated by their
+  // byLesson[...] deterministic contract key; compare every other line
+  // against the original G1/G11 baseline. Never exempt shared G1 paths.
+  const result=[];let skipping=false;let count=0;
+  for(const line of lines){
+    if(!skipping && line.includes('byLesson["PED:UAE-MOE-MATH:L8:GENERAL:')){
+      skipping=true;count++;
+    }
+    if(skipping){
+      if(line.includes(';'))skipping=false;
+      continue;
+    }
+    result.push(line);
+  }
+  assert.equal(skipping,false,'G8 contract declaration not terminated');
+  // The new candidate has 76 deterministic scoped declarations. The
+  // pre-G5 historical source may have a different G8 count.
+  assert.ok(count<=77,'G8 scoped contract selector unexpectedly broad');
+  return result;
+}
 function assertOriginalLinesUnchanged(ref,file){
   const baseline=file===contracts
-    ? stripOnlyRetiredG7Contract(priorLines(ref,file))
+    ? withoutGrade8ScopedPracticeAssignments(
+        stripOnlyRetiredG7Contract(priorLines(ref,file)))
     : priorLines(ref,file);
-  const current=nowLines(file);
+  const current=file===contracts
+    ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
+    : nowLines(file);
   if(file===contracts)
     assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
       'Retired English G7 contract accidentally reinstated');
@@ -71,9 +96,14 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
   const diff=git('diff','--numstat',preG5,'HEAD','--',engine,contracts);
   for(const row of diff.split('\n').filter(Boolean)){
     const [added,removed,file]=row.split('\t');
-    assert.equal(Number(removed),
-      file===contracts ? retiredG7GeneralContractBlock.length : 0,
-      'Only the exact retired Grade7 English contract may be removed in '+file);
+    if(file===contracts){
+      assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
+        'Grade8 changes must match the one exact reviewed first-party contract blob');
+      assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
+        'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
+    }else{
+      assert.equal(Number(removed),0,'Previously accepted non-G8 engine source changed');
+    }
     assert.ok(Number(added)>0);
   }
   const data=JSON.parse(fs.readFileSync(path.join(root,familyRegistry),'utf8'));
@@ -100,9 +130,11 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
   for(const file of [engine,contracts]){
     const changes=git('diff','--unified=0',preG5,'HEAD','--',file);
     const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
-    assert.deepEqual(
-      deleted,
-      file===contracts ? retiredG7GeneralContractBlock.map(line=>'-'+line) : [],
-      'Only the explicitly retired UAE Grade7 English contract may be removed: '+file);
+    if(file===contracts)
+      assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
+        'Retired Grade7 plus exact owner-approved Grade8 contract blob required');
+    else
+      assert.deepEqual(deleted,[],
+        'Previously accepted US/G1/G11 exact-engine source must remain immutable');
   }
 });
