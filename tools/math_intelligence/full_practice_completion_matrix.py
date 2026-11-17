@@ -203,8 +203,14 @@ def audit() -> dict[str, Any]:
             and code in approved_g8
             and row.get("specialistGrade8OwnerScopedContractPendingRuntime") is True
             and row.get("generationReadiness") == "READY_CONTEXTUAL"
-            and row.get("skillResolutionStatus")
-                == "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING"
+            # The independently reconciled G8 C# source contract is the
+            # authority; pre-existing generic source/official Skill mappings
+            # can legitimately resolve before the owner's specific mapping.
+            # Both statuses still require the exact G8 overlay family/SkillId.
+            and row.get("skillResolutionStatus") in {
+                "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING",
+                "EXISTING_VERIFIED_MAPPING",
+            }
             and row.get("approvedPrimarySkills") == [approved_g8[code]]
             and row.get("approvedMapping") is True
             and not semantic_row.get("studentFacingDefects")
