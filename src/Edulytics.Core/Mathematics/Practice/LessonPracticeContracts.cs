@@ -10739,6 +10739,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U09L04_LOCAL_PDF85_92",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic U09L05; Student Book local PDF93-100.
+        // Reuse verified arithmetic summary families; student-drawn charts
+        // and explanations are teacher-reviewed; no runtime/CI claims.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY", "statistics.center_spread.mad", "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
+            ["statistics.center_spread.mad", "statistics.standard_deviation", "usccss.g6.u08.l11.mean_absolute_deviation_amounts", "statistics.center_spread.range"],
+            "UAE_G8_AR_U09L05_LOCAL_PDF93_100",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
