@@ -10836,6 +10836,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U12L02_LOCAL_PDF253_262_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Unit12 Lesson3; source selected Student Book PDF264-273.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS", "algebra.inequality.solution_sets", "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
+            ["algebra.inequality.solution_sets", "probability.theoretical.complement"],
+            "UAE_G8_GENERAL_AR_U12L03_LOCAL_PDF264_273_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
