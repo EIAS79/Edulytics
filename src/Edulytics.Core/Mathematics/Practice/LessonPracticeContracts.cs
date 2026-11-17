@@ -10789,6 +10789,27 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U10L04_PDF154_161_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Unit11 Lessons 1-3: first-party Arabic source-specific
+        // polygon and parallelogram tasks. Open proofs remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS", "geometry.polygons.missing_interior_angle",
+            "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+            ["geometry.polygons", "geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            "UAE_G8_AR_U11L01_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "STAGE_D_PENDING_VERIFICATION", Version);
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
+            "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
+            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification"],
+            "UAE_G8_AR_U11L02_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "STAGE_D_PENDING_VERIFICATION", Version);
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
+            "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
+            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification"],
+            "UAE_G8_AR_U11L03_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "STAGE_D_PENDING_VERIFICATION", Version);
+
         // UAE Grade8 General Arabic U11L04, source Student Book PDF 203-209.
         // Numeric families reused; source-based original proofs and geometry
         // diagrams are reserved for teacher assessment.

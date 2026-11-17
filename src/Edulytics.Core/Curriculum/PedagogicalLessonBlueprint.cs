@@ -376,6 +376,25 @@ public static class PedagogicalLessonBlueprintContract
         document.Lessons.All(x => x.LessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal));
 
+    private static bool IsUaeG8OriginalFirstPartyWithReferenceOnlySource(
+        PedagogicalLessonBlueprintDocument document) =>
+        document.SchemaVersion == 1 &&
+        document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+        document.LogicalLevel == 8 &&
+        string.Equals(document.Pathway, "General", StringComparison.Ordinal) &&
+        string.Equals(document.SourceLicense,
+            "First-party lesson authoring; no third-party textbook republication license asserted.",
+            StringComparison.Ordinal) &&
+        string.Equals(document.RequiredDigitalAttribution,
+            "No publisher prose or artwork embedded. Provenance recorded privately.",
+            StringComparison.Ordinal) &&
+        string.Equals(document.SourceRightsNote,
+            "Local student books are references for scope/skills; do not reproduce third-party illustrations or protected text. Owner academic approval is not a reuse license.",
+            StringComparison.Ordinal) &&
+        document.Lessons is { Count: 76 } &&
+        document.Lessons.All(x => x.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal));
+
     public static void Validate(
         PedagogicalLessonBlueprintDocument document)
     {
@@ -427,7 +446,8 @@ public static class PedagogicalLessonBlueprintContract
         // reference without licensing copied text/art. Do not falsely
         // declare the publisher's book CC/PD or accept this exception for
         // unrelated courses, arbitrary G7 files, or copied illustrations.
-        if (!IsUaeG7OriginalFirstPartyWithReferenceOnlySource(document))
+        if (!IsUaeG7OriginalFirstPartyWithReferenceOnlySource(document) &&
+            !IsUaeG8OriginalFirstPartyWithReferenceOnlySource(document))
         {
             PedagogicalSourceLicensePolicy.Validate(document.SourceLicense);
         }

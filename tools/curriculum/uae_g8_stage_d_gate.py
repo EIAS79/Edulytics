@@ -69,6 +69,26 @@ def main(phase):
         check("grade_and_target_scope", bp.get("LogicalLevel") == 8 and
               bp.get("Pathway") == "General" and manifest.get("Pathway") == "General" and
               pack.get("TargetCurriculumPeriod") == "2026-2027")
+        invalid_rich = []
+        for file in rich_files:
+            try:
+                d = read(file)
+                for l in d.get("Lessons", []):
+                    e = l.get("WorkedExamples", [])
+                    problems = []
+                    if len(l.get("ExplanationParagraphs", [])) < 2: problems.append("explanations")
+                    if len(l.get("KeyConcepts", [])) < 3: problems.append("concepts")
+                    if len(e) < 3: problems.append("worked_examples")
+                    if any(len(item.get("Steps", [])) < 3 for item in e): problems.append("example_steps")
+                    if len(l.get("CommonMistakes", [])) < 2: problems.append("common_mistakes")
+                    if len(l.get("SummaryPoints", [])) < 3: problems.append("summaries")
+                    if problems:
+                        invalid_rich.append({"lesson": l.get("LessonCode"), "missing": problems})
+            except (OSError, ValueError, KeyError, TypeError) as exc:
+                invalid_rich.append({"path": str(file.relative_to(ROOT)), "error": str(exc)})
+        check("all_76_richv2_documents_meet_runtime_content_contract",
+              len(invalid_rich) == 0, {"invalid_count": len(invalid_rich),
+                                       "first_invalid": invalid_rich[:15]})
         check("handoff_source_exists", HANDOFF.is_file())
     else:
         index = read(G8 / "source-index-76-arabic-reconciliation.json")
