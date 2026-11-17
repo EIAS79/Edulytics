@@ -2873,10 +2873,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:11:01",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 11 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF173–181, printed 785–793",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected UAE Arabic Student Book Term3 2019–2020",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "abdf13d5171ac128f8d750d4f7f73d4ac2bbee3e727faa57d8bc2da2c3982db0",
       "CanonicalBodySha256": "3fdb3dcd2b528adad93ec19817a2639b5846b8f9800a08b5e0b6833569b01dbc",
@@ -2884,7 +2884,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original first-party Arabic geometry matched to local student book; exact question item parity UNKNOWN; runtime NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2895,6 +2895,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Angles of Polygons, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Angles of Polygons: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "زوايا المضلعات",
+          "Explanation": "يمكن تقسيم مضلع بسيط محدب ذي ن أضلاع إلى ن−2 مثلثات من رأس واحد، لذلك مجموع زواياه الداخلية = (ن−2)×180 درجة. مجموع الزوايا الخارجية باتجاه واحد حول مضلع محدب يساوي 360 درجة. في المضلع المنتظم تكون الزوايا الداخلية متساوية، وقيمة كل زاوية داخلية = ((ن−2)×180)/ن، وكل زاوية خارجية = 360/ن. مثلاً لمضلع خماسي يكون مجموع الداخلية 540 درجة، فإذا كان منتظمًا فكل زاوية108 درجات والخارجية72. ونوضح في رسم أصلي تجزئة الشكل إلى مثلثات بدلاً من استخدام صورة الناشر.",
+          "KeyConceptsAndRules": "مجموع الداخلية ن-ضلع = (ن−2)×180° عندما ن عدد صحيح≥3. لمضلع منتظم، كل داخلية=((ن−2)×180)/ن، وكل خارجية=360/ن، والداخلية والخارجية المتجاورتان متكاملتان 180°. يمكن استنتاج عدد الأضلاع من مجموع الداخلية س عبر ن=س/180+2 إذا أعطيت قيمة ملائمة، أو من الخارجية المنتظمة ع عبر ن=360/ع شرط أن ينتج عدد صحيح لا يقل عن3. لا يلزم أن تكون كل زوايا المضلع غير المنتظم متساوية. في المضلع المقعر قد تتجاوز زاوية داخلية 180، ومع ذلك تستمر صيغة المجموع للمضلع البسيط.",
+          "WorkedExamples": "مثال1: مضلع خماسي مجموع زواياه الداخلية (5−2)×180=540°. مثال2: مضلع منتظم ذو8 أضلاع لكل زاوية خارجية45° وداخلية135°. مثال3: مضلع مجموع زواياه الداخلية900°: (ن−2)×180=900 ⇒ ن=7. مثال4: مضلع رباعي له زوايا90،120،80،س؛ س=360−290=70°. مثال5: إذا كانت الزاوية الخارجية لمضلع منتظم30° فإن ن=360/30=12 ضلعًا. مثال6: يمكن تقسيم سداسي إلى4 مثلثات، فيكون المجموع720°.",
+          "StepByStepSolutions": "أحدد إن كان المطلوب مجموع الزوايا أم زاوية في مضلع منتظم، وأعد عدد الأضلاع ن. أستخدم (ن−2)×180° لمجموع الداخلية، ثم أقسم على ن فقط إذا كان المضلع منتظمًا. للخارجية أستعمل مجموع360° و360/ن في المنتظم، وأربط الزاوية المتجاورة داخلياً وخارجياً بمجموع180°. إذا كان المطلوب عدد الأضلاع أعكس العلاقة وأتحقق من أن الناتج عدد صحيح≥3. في مضلع غير منتظم أجمع المعطيات وأطرح من المجموع لتحديد المجهول ولا أفترض تساوي الأجزاء.",
+          "CommonMistakes": "الخطأ استعمال ن×180 بدل (ن−2)×180 في المجموع. لا يجوز قسمة المجموع على ن لإيجاد كل زاوية إلا عند التصريح بأن المضلع منتظم. لا تخلط بين مجموع الزوايا الخارجية الثابت360 ومجموع الداخلية المتغير. عندما تستنتج ن من الخارجية يجب أن يكون ن صحيحًا. قد تكون للمضلع المقعر زاوية كبيرة لكن حساب المجموع لا يتغير إذا كان مضلعًا بسيطًا.",
+          "QuickSummary": "مجموع داخلية مضلع ن أضلاع=(ن−2)180، ومجموع الخارجية=360. إذا كان منتظمًا فكل زاوية داخلية وخارجية تساوي نصيبها المتساوي. Cool-down أصلي: احسب مجموع داخلية سباعي، وزاوية خارجية لمضلع منتظم تساعي، واستنتج ن لمضلع مجموعه1080°؛ تراجع الرسوم وتبريرات عدد المثلثات."
         }
       ]
     },
