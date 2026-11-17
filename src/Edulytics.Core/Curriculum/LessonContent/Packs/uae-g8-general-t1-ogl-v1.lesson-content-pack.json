@@ -2314,10 +2314,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:08:04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 8 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 38–45; printed 617–624",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Student Book Grade08 Unit08",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "ce74cabb39a0b35f4629ba3bc9bba1839893395afaeafceaabc76fe91318b3ca",
       "CanonicalBodySha256": "845d0411137aea96cfaa54e518c01b1c9326513cecceef7f93f9b4d21dd9ab5c",
@@ -2325,7 +2325,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "First-party Arabic skill-equivalent lesson; source item exact parity UNKNOWN; runtime / CI not performed",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2336,6 +2336,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Surface Area of Cylinders, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Surface Area of Cylinders: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مساحة سطح الأسطوانة",
+          "Explanation": "مساحة سطح الأسطوانة الدائرية القائمة المغلقة تساوي مساحة قاعدتين دائريتين زائد المساحة الجانبية التي تتكون عند فردها مستطيلاً. إذا كان نصف القطر نق والارتفاع ع، فإن مساحة القاعدة πنق²، ومحيطها 2πنق، والمساحة الجانبية = 2πنق×ع. إذن مساحة السطح الكلية = 2πنق²+2πنق ع. الأسطوانة المفتوحة من أعلى أو أسفل لا نحسب لها سوى الأوجه الموجودة فعلًا؛ فلا نجمع قاعدتين إذا كانت العبوة بلا غطاء. في نموذج أولي من تأليف Edulytics نربط علبة اسطوانية بملصق يلف جانبها ونحسب مساحة الملصق وحده، ثم مساحة الصفيح اللازم لصنع العلبة المغلقة.",
+          "KeyConceptsAndRules": "المساحة الجانبية للأسطوانة القائمة ج=2πنق ع، والمساحة الكلية س=2πنق²+2πنق ع=2πنق(نق+ع). وحدتها مربعة، على خلاف الحجم الذي يقاس بوحدات مكعبة. عند إعطاء القطر ق، فإن نق=ق/2؛ في أسطوانة قطرها 10 سم وارتفاعها 4 سم نحصل نق=5 سم وج=40π سم² وس=90π سم². إذا كان أحد الغطاءين غير موجود فإن المساحة المطلوبة 2πنق ع+πنق². وعند طلب الملصق الجانبي نحسب ج فقط. يشترط أن نق>0 وع>0 في نموذج أسطوانة حقيقية، ونحافظ على π حتى الخطوة الأخيرة إذا طُلب تقريب.",
+          "WorkedExamples": "مثال1: أسطوانة نصف قطرها 3 سم وارتفاعها 7 سم: جانبيتها 2π×3×7=42π سم²، وكلية السطح = 42π+2π×9=60π سم². مثال2: أسطوانة نصف قطرها 4 سم وارتفاعها 6 سم: المساحة الكلية = 2π×16+2π×4×6=80π سم². مثال3: علبة بقطر 10 سم وارتفاع 4 سم ومفتوحة من الأعلى: المساحة الخارجية لقاع واحد والجانب=25π+40π=65π سم². مثال4: إذا كانت مساحة الملصق الجانبي 36π سم² ونصف القطر 3 سم فإن 2π×3×ع=36π، ومنه ع=6 سم.",
+          "StepByStepSolutions": "1) أقرأ الرسم وأحدد القطر أو نصف القطر والارتفاع العمودي، وأوحد الوحدات. 2) إذا أعطي القطر أقسمه على 2. 3) أختبر إن كان المطلوب المساحة الجانبية فقط أم سطح أسطوانة كاملة أو مفتوحة. 4) أحسب محيط القاعدة 2πنق وأضربه في ع لإيجاد المساحة الجانبية. 5) أضيف مساحة قاعدة واحدة أو قاعدتين بحسب الحالة؛ الأسطوانة المغلقة لها قاعدتان. 6) أكتب الناتج بسم² أو م²، ثم أستعمل تقريب π المطلوب عند الحاجة. 7) أتحقق بمنطق شبكة الأسطوانة: مستطيل ودوائر، ولا أستخدم قانون الحجم πنق²ع بدل قانون السطح.",
+          "CommonMistakes": "الخطأ الأكثر تكرارًا استعمال حجم الأسطوانة بدلاً من المساحة؛ فالحجم πنق²ع بوحدات مكعبة بينما المساحة الكلية 2πنق²+2πنقع بوحدات مربعة. لا تجعل قطر الأسطوانة نصف قطرها دون قسمة على اثنين. لا تعد الارتفاع جزءًا من مساحة الدائرتين، ولا تنس القاعدة الثانية في الجسم المغلق. عند الملصق لا تجمع القاعدتين لأنهما لا يحملان الملصق. لا تحسب أحد الوجهين إذا كانت العلبة مفتوحة إلا بحسب المطلوب. مع التقريب لا تحذف π في وسط العملية وتتسبب في خطأ تراكمي.",
+          "QuickSummary": "مساحة جانب الأسطوانة = 2πنقع؛ سطح الأسطوانة المغلقة = 2πنق²+2πنقع. أميز الجانب من السطح الكلي، وأحوّل القطر إلى نصف القطر وأفسر الأوجه الموجودة فعلًا. Cool-down أصلي: (1) أسطوانة نصف قطرها 2 سم وارتفاعها 9 سم: احسب الجانبية والكلية. (2) أسطوانة قطرها 8 سم بلا غطاء وارتفاعها 5 سم: ما مساحة مادتها؟ (3) فسّر لماذا لا تكفي πنق²ع لحساب مساحة الملصق. يراجع المعلم شكل الشبكة والتفسير."
         }
       ]
     },
