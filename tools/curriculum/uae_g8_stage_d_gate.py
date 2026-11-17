@@ -60,7 +60,7 @@ def main(phase):
             cps = [read(x) for x in checkpoints]
             check("all_checkpoints_ready_in_source_order",
                   all(c.get("status") == "READY_FOR_STAGE_D" and
-                      c.get("ordinal") == i and c.get("lessonCode") == codes[i - 1]
+                      c.get("ordinal", c.get("lessonOrdinal")) == i and c.get("lessonCode") == codes[i - 1]
                       for i, c in enumerate(cps, start=1)))
         check("abc_status_does_not_claim_ci", progress.get("closedABCCount") == 76 and
               progress.get("testsRun") == "NOT_RUN" and
