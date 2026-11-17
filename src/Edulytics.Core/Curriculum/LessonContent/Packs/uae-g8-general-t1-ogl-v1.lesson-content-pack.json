@@ -2099,10 +2099,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:07:06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 7 / Lesson 6",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 195–202; printed 559–566",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Grade8 General Term2 student book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "e7d8f713a52daaee88c9baa2881989202138e00267fa1a36c810e0f8a89c3736",
       "CanonicalBodySha256": "6e65be80200b5ed13f11973e14f987c7fac2a0e958c8c153654facf2b2e52bd0",
@@ -2110,7 +2110,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic source-scoped similarity model; exact publisher item parity UNKNOWN; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2121,6 +2121,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Slopes and Similar Triangles, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Slopes and Similar Triangles: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المثلثات القائمة والمتشابهة",
+          "Explanation": "عندما نختار نقطتين على مستقيم غير رأسي ونرسم خطًا أفقيًا وخطًا رأسيًا بينهما، يتكون مثلث قائم يمثل الارتفاع (فرق الصادات) والامتداد (فرق السينات). إذا اخترنا نقطتين أخريين على المستقيم نفسه، تتشارك المثلثات القائمة زاوية حادة مرتبطة باتجاه المستقيم، ولذلك تتشابه بزاويتين AA. يترتب أن نسبة الارتفاع إلى الامتداد ثابتة وتساوي ميل المستقيم م=(ص₂−ص₁)/(س₂−س₁). على مستقيم يمر بالنقاط (0،0)،(2،3)،(4،6) يكون الميل 3/2 في مثلث صغير أو كبير: 3/2=6/4. إذا انخفض الخط أثناء الانتقال نحو اليمين يكون الميل سالبًا؛ يستخدم طول الارتفاع في مثلث التشابه موجبًا لكن يضاف السالب للتغير الموجه في حساب الميل. الخط الرأسي له امتداد صفري وميل غير معرف.",
+          "KeyConceptsAndRules": "في مستقيم غير رأسي، أي مثلثين قائمين تشكلا من أجزاء الأفق والرأس على المستقيم نفسه يتشابهان إذا تشاركا الزاوية الحادة الموافق للخط؛ نسبة أطوال القائمتين الرأسية والأفقية ثابتة في القيمة المطلقة. الميل الموجه م=Δص/Δس وقد يكون موجبًا أو سالبًا أو صفراً؛ حساب التشابه يستخدم أطوالاً موجبة، بينما علامة الميل تُحددها اتجاهات التغير. مثال Δص=6 وΔس=4 ⇒ م=3/2، ومثلث ثان Δص=9 وΔس=6 يعطي م=3/2. إذا كانت Δس=0 فلا ميل معرف ولا نقسم على صفر. إذا أردنا استنتاج ارتفاع عبر خط ثابت الميل يمكن استخدام م×الامتداد بشرط ترتيب المحاور والوحدات.",
+          "WorkedExamples": "مثال1: بين (0،0)،(2،3) الميل 3/2؛ وبين (0،0)،(4،6) الميل 6/4=3/2، والمثلثان متشابهان بنسبة 2. مثال2: من (1،8) إلى (5،2)، الميل (2−8)/(5−1)=−6/4=−3/2؛ طول القائمتين 6 و4 ونسبة الأطوال 3/2 لكن الميل سالب. مثال3: خط ثابت الميل 2/5، امتداده الأفقي 15 م؛ التغير الرأسي 6 م. مثال4: مثلث قائم ضلعاه 4 و6 وآخر 8 و12 يتشابهان؛ نسبة الارتفاع إلى الامتداد متساوية. مثال5: بين (3،1) و(3،7) فرق س=0، فالميل غير معرف. مثال6: عند م=−2 وزيادة س 3 وحدات، التغير الرأسي −6 وحدات.",
+          "StepByStepSolutions": "أقرأ نقطتين على المستقيم وأرسم قائمتي المثلث الأفقي والرأسي. أحسب فرق س وفرق ص باتجاه ثابت، وأحدد ما إذا كان المستقيم صاعدًا أم هابطًا عند التحرك يمينًا. أستخدم تشابه المثلثات الناتجة عند نقطتين أخريين لإثبات ثبات نسبة الارتفاع إلى الامتداد. أكتب الميل م=Δص/Δس مع الإشارة، وأختصر الكسر. أتحقق من اختيار زوج آخر من النقاط وأن النسبة لم تتغير. إذا كانت النقطتان رأسيتين فوق بعضهما فلا أحاول القسمة على صفر، بل أذكر أن الميل غير معرّف.",
+          "CommonMistakes": "الارتفاع والامتداد طولان موجبان في شكل المثلث لكن الميل الموجه قد يكون سالبًا؛ لا تخلط النسبة الموجبة للتشابه مع علامة اتجاه المستقيم. لا تستخدم وتر المثلث في مقام قانون الميل؛ المقام هو الامتداد الأفقي. إذا عكست ترتيب طرح ص دون عكس ترتيب طرح س تتغير إشارة الميل خطأ. وقد يعتبر الطالب ميل المستقيم الرأسي صفراً؛ الصحيح أنه غير معرف. تشابه مثلثين قائمين لا يثبت أنهما على مستقيم واحد ما لم تتساوى الزاوية الحادة أو نسبة القائمتين.",
+          "QuickSummary": "المثلثات القائمة المنشأة على مستقيم واحد غير رأسي متشابهة، ونسبة الارتفاع إلى الامتداد ثابتة وتساوي مقدار الميل، مع حفظ إشارة الاتجاه. Cool-down أصلي: احسب ميل خط يمر (0،0)،(3،6) وأثبت تناسبه مع مثلث امتداده 6 وارتفاعه 12. احسب الميل بين (−1،5) و(3،−1). متى يكون الميل غير معرف؟ رسم المثلثات والمطابقة للمعلم."
         }
       ]
     },

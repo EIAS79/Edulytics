@@ -10636,6 +10636,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L05_PDF187_194_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L06; selected Arabic Student Book PDF 195–202.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES", "geometry.coordinate.gradient_between_points", "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
+            ["geometry.coordinate.gradient_between_points", "usccss.g7.u02.l10.graphs_origin_slope", "trigonometry.right_triangle.ratio"],
+            "UAE_G8_AR_U07L06_PDF195_202_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
