@@ -171,6 +171,15 @@ def run():
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError,
             subprocess.CalledProcessError) as exc:
         errors.append(f"Grade7 62-English-to-78-Arabic scoped retirement invalid: {exc}")
+    # Owner-approved Grade8 General 77 old/English to 76 first-party Arabic.
+    # Scope and both Git blobs are pinned by an independent verifier.
+    g8_retirement = None
+    try:
+        from verify_uae_g8_owner_academic_content_delta import verify as verify_g8
+        g8_retirement = verify_g8(ROOT)
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError,
+            subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade8 exact 77-to-76 owner first-party replacement invalid: {exc}")
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -275,7 +284,8 @@ def run():
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
                 (path == g1_blueprint and len(g1_owner_content) == 102) or
                 (path == g2_blueprint and len(g2_owner_content) == 99) or
-                (path == uae_g5_blueprint and len(uae_g5_owner_content) == 127)
+                (path == uae_g5_blueprint and len(uae_g5_owner_content) == 127) or
+                (g8_retirement and path == g8_retirement["blueprintPath"])
             ):
                 errors.append(f"changed original lesson blueprint: {path}")
         verified_blueprints += 1
@@ -376,7 +386,7 @@ def run():
             g4_replacement_authorized = True
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError) as exc:
         errors.append(f"UAE Grade4 narrowly-scoped owner replacement audit failed: {exc}")
-    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set()) - (g6_legacy_keys if g6_authorized else set()) - (g7_retirement['oldIdentityKeys'] if g7_retirement else set())
+    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set()) - (g6_legacy_keys if g6_authorized else set()) - (g7_retirement['oldIdentityKeys'] if g7_retirement else set()) - (g8_retirement["retiredLegacyKeys"] if g8_retirement else set())
     if unexpected_missing:
         errors.append(f"missing original lesson identities outside accepted Grade4 replacement: {sorted(unexpected_missing)[:5]}")
 
@@ -504,14 +514,14 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | uae_g5_owner_content | (g4_changed if g4_replacement_authorized else set())
+    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | uae_g5_owner_content | (g4_changed if g4_replacement_authorized else set()) | (g8_retirement["changedKeys"] if g8_retirement else set())
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
                            if key not in approved and key not in g4_owner_authored
                            and (not g4_replacement_authorized or key not in g4_changed)
                            and key not in g5_owner_content and key not in g6_first_party
-                           and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and key not in uae_g5_owner_content and baseline[key] != candidate[key]]
+                           and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and key not in uae_g5_owner_content and (not g8_retirement or key not in g8_retirement["changedKeys"]) and baseline[key] != candidate[key]]
     if unexpected_metadata:
         errors.append(f"unapproved lesson metadata changes: {unexpected_metadata[:6]}")
     print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} g6FirstPartyTechnicalOnly={len(g6_first_party)} g1OwnerAcademicApprovedUnknownSourceParity={len(g1_owner_content)} g2OwnerAcademicApprovedUnknownSourceParity={len(g2_owner_content)} g3OwnerAcademicApprovedUnknownSourceParity={len(g3_owner_content)} uaeG5OwnerAcademicApprovedUnknownSourceParity={len(uae_g5_owner_content)} release=NO_GO_SOURCE_PARITY_NOT_CERTIFIED")
