@@ -1325,10 +1325,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:04:08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 4 / Lesson 8",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 368–375; printed 335–342",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic student book 2025–2026, owner-selected local edition",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "197b83ff18b8e41a553dc02daaf8085b49f8779b024f183e2ea4019dfcb85f43",
       "CanonicalBodySha256": "25d05fc4ee77890e456ddc5c2720fab03c26228205fd36a473845b28809f5b9f",
@@ -1336,7 +1336,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic lesson aligned to source objectives and topics; exact source item parity unknown; tests, runtime, CI not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1347,6 +1347,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Quadratic Functions, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Quadratic Functions: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الدوال التربيعية",
+          "Explanation": "الدالة التربيعية كثيرة حدود درجتها الثانية وتكتب د(س)=أ س²+ب س+ج مع أ≠0، ويأخذ رسمها البياني شكل قطع مكافئ. في الدالة د(س)=س² نحصل عند س=−2،−1،0،1،2 على 4،1،0،1،4؛ ولهذا يكون الرسم متماثلًا حول محور الصادات، ورأسه (0،0) وفتحه لأعلى. في هـ(س)=−س²+4 تتجه الفتحة لأسفل، والرأس (0،4)، وتقطع محور السينات في (−2،0) و(2،0). في الدوال التي على صورة أ س²+ج يكون الرأس عند (0،ج)، ومحور تماثلها س=0، ويحدد إشارة أ اتجاه الفتحة. لا يجوز افتراض أن كل دالة تربيعية رأسها عند س=0 إذا ظهر حد خطي ب س؛ فهذه خاصية لصور محددة.",
+          "KeyConceptsAndRules": "في د(س)=أ س²+ب س+ج مع أ≠0، تقابل كل قيمة س مخرجًا واحدًا، ومنحنى القطع المكافئ مفتوح للأعلى عندما أ>0 وللأسفل عندما أ<0. في النوع أ س²+ج يكون محور التماثل س=0 والرأس (0،ج). للدالة د(س)=س² يكون المدى ص≥0 على المجال الحقيقي، ولدالة −س²+4 يكون المدى ص≤4. إذا أردنا حل −س²+4=0 في الأعداد الحقيقية فنحصل س²=4 ومنه س=±2. لا نعالج س² كأنه 2س؛ تعويض س=−3 في س² يعطي 9 وليس −9. تغير المخرجات في فترات متساوية ليس ثابتًا عامة، بخلاف الدالة الخطية.",
+          "WorkedExamples": "مثال1: د(س)=س²: د(−2)=4 ود(0)=0 ود(2)=4، والرأس (0،0). مثال2: هـ(س)=−س²+4: هـ(−2)=0، هـ(0)=4، هـ(2)=0، والمقطعان السينيان ±2. مثال3: ك(س)=3س²−2؛ ك(−1)=1 وك(2)=10، والرأس في الصيغة البسيطة (0،−2). مثال4: ص=0.2س²: عند س=5 الناتج 5، وعند س=10 الناتج 20، فلا يتضاعف الناتج بالضرورة بتضاعف المدخل. مثال5: د(س)=−2س²+8 تتقاطع مع محور س عند س=±2. مثال6: إذا كانت مساحة مربع طوله س سم، الدالة أ(س)=س² سم² ويكون المجال الواقعي س≥0.",
+          "StepByStepSolutions": "أحدد أ،ب،ج وأتأكد أن أ لا يساوي صفراً كي تكون الدالة تربيعية. أختار عدة مدخلات سالبة وموجبة بما فيها 0 وأحسب مربع المدخل قبل ضربه في أ. أرسم النقاط على المحاور بمقياس مناسب، وأوصلها بمنحنى ناعم يبين القطع المكافئ لا بمستقيم. إذا كانت الصيغة أ س²+ج، أقرأ الرأس (0،ج) واتجاه الفتحة من إشارة أ. أحدد جذور الدالة بحل أ س²+ج=0 إذا طُلب ووجدت حلولاً حقيقية، وأتحقق بالتعويض. عند تطبيق المساحة أو الارتفاع أحدد قيود المجال والوحدات.",
+          "CommonMistakes": "القيمة (−3)² هي 9 لا −9، لكن −3² تساوي −9 لوجود السالب خارج التربيع. لا نرسم الدالة التربيعية بمستقيم يربط نقطتين فحسب؛ شكلها قطع مكافئ. إذا كان أ س²+ب س+ج مع ب غير صفري لا أدعي أن الرأس (0،ج). الصفر ضمن المجال قد يكون مخرجًا موجبًا أو سالبًا بحسب ج. لا أختار ± في الناتج للدالة س² عند التعويض؛ الرمز ± يظهر عند حل معادلة س²=عدد موجب وليس عند حساب س².",
+          "QuickSummary": "أقيم د(س)=أ س²+ب س+ج وأتعرف على القطع المكافئ واتجاه الفتحة، وفي صورة أ س²+ج أستخرج الرأس ومحور التماثل. Cool-down أصلي: (1) جد د(−3) إذا د(س)=س²−2. (2) صِف اتجاه ورأس هـ(س)=−2س²+8. (3) ما صفرا هـ(س)؟ (4) لماذا د(س)=س² غير خطية؟ تمثيل المنحنى وتفسير المجال يراجعه المعلم."
         }
       ]
     },

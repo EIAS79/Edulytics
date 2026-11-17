@@ -10492,6 +10492,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U04L07_PDF360_367_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic Unit04 Lesson08, Student Book PDF 368-375.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS", "functions.quadratic.context", "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
+            ["functions.quadratic.context", "supporting.functions.polynomial_value", "functions.quadratic.output_roots.solve", "uae.g6.u08.l03.linear_vs_square"],
+            "UAE_G8_GENERAL_AR_U04L08_PDF368_375_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
