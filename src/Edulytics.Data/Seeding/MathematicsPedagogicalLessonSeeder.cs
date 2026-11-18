@@ -1661,8 +1661,17 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Where(x => versionIds.Contains(x.FrameworkVersionId))
             .ToArrayAsync(ct);
 
+        // Grade 8 Advanced was removed from the offered/seeded curriculum,
+        // but historical school adoptions and learner data may still reference
+        // its legacy rows. Ordinary startup maintenance must never unlink or
+        // cascade-delete those records. The owner-directed retirement is a
+        // separate, explicitly scoped production transaction.
+        const string retiredGrade8AdvancedPrefix =
+            "PED:UAE-MOE-MATH:L8:ADVANCED:";
         var stale = allExisting
-            .Where(x => !expectedIds.Contains(x.Id))
+            .Where(x => !expectedIds.Contains(x.Id) &&
+                !x.Code.StartsWith(retiredGrade8AdvancedPrefix,
+                    StringComparison.Ordinal))
             .ToArray();
 
         if (stale.Length == 0)
