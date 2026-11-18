@@ -11,6 +11,8 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
     private const string Prefix = "PED:UAE-MOE-MATH:L8:GENERAL:";
 
     [Theory]
+    [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
+    [InlineData("uae.g8.u05.l03.triangle_angle_measure")]
     [InlineData("uae.g8.u05.l02.proof_reason_classify")]
     [InlineData("uae.g8.u06.l03.rotation_origin_coordinate")]
     [InlineData("uae.g8.u11.l06.trapezoid_midsegment")]
@@ -49,6 +51,8 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
     }
 
     [Theory]
+    [InlineData("05:01:LINES", "uae.g8.u05.l01.transversal_angle_measure")]
+    [InlineData("05:03:ANGLES-OF-TRIANGLES", "uae.g8.u05.l03.triangle_angle_measure")]
     [InlineData("05:02:GEOMETRIC-PROOF", "uae.g8.u05.l02.proof_reason_classify")]
     [InlineData("06:03:ROTATIONS", "uae.g8.u06.l03.rotation_origin_coordinate")]
     [InlineData("11:06:TRAPEZOIDS-AND-KITES", "uae.g8.u11.l06.trapezoid_midsegment")]
@@ -128,6 +132,45 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
                 3 => p["outside"], 4 => p["r1"] + p["r5"], _ => p["r1"]
             };
             Assert.Equal(expected.ToString(CultureInfo.InvariantCulture), q.CorrectAnswer);
+        }
+    }
+
+    [Theory]
+    [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
+    [InlineData("uae.g8.u05.l03.triangle_angle_measure")]
+    public void AngleQuestionsMatchTheirGeometricSourceAndRejectTamperedModes(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var all = Enumerable.Range(1, 80).SelectMany(seed =>
+            engine.Generate("g8-angle-semantic-regression", family, [family],
+                ExactSkillQuestionDifficulty.Standard, 3, 25000 + seed, []))
+            .ToArray();
+        Assert.Equal([0, 1, 2], all.Select(x => x.Parameters["mode"])
+            .Distinct().OrderBy(x => x).ToArray());
+        foreach (var question in all)
+        {
+            var p = question.Parameters;
+            var expected = family.EndsWith("transversal_angle_measure", StringComparison.Ordinal)
+                ? (p["mode"] == 2 ? 180 - p["given"] : p["given"])
+                : p["mode"] switch
+                {
+                    0 => 180 - p["a"] - p["b"],
+                    1 => p["a"] + p["b"],
+                    _ => p["b"]
+                };
+            Assert.Equal(expected.ToString(CultureInfo.InvariantCulture),
+                question.CorrectAnswer);
+            Assert.Contains(
+                family.Contains("transversal", StringComparison.Ordinal)
+                    ? "مستقيمان متوازيان" : "مثلث",
+                question.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family, p, question.CorrectAnswer));
+            var invalid = new Dictionary<string, int>(p) { ["mode"] = 4 };
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, invalid, question.CorrectAnswer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, p, (expected + 1).ToString(CultureInfo.InvariantCulture)));
         }
     }
 

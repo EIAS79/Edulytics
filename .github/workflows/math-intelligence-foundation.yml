@@ -237,6 +237,13 @@ jobs:
             --configuration Release \
             --no-restore \
             --filter "FullyQualifiedName~MathematicsIntelligence"
+      - name: Archive actual Grade 8 General Arabic learner Practice samples (not academic signoff)
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: uae-g8-general-sampled-practice-${{ github.sha }}
+          path: artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-actual-learner-samples.json
+          if-no-files-found: warn
       - name: Run lesson objective/content alignment certification
         env:
           EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION: "1"
