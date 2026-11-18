@@ -10225,10 +10225,12 @@ public static class LessonPracticeContractRegistry
         // and open classification require teacher review, not false auto-grade.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS", "decimals.place_value",
-            "RATIONAL_TERMINATING_DECIMAL_EQUIVALENCE",
+            "RATIONAL_TERMINATING_AND_REPEATING_DECIMAL_EQUIVALENCE",
             ["uae.g4.u10.l04.decimal_to_hundredths",
              "uae.g5.u07.l03.simplify_fraction",
-             "uae.g5.u07.l08.reducible_fraction_to_decimal"],
+             "uae.g5.u07.l08.reducible_fraction_to_decimal",
+             "uae.g6.u05.l08.classify_fraction_decimal",
+             "uae.g6.u05.l08.fraction_exact_decimal"],
             "UAE_G8_GENERAL_AR_2025_2026_U01L01_PP7_14",
             "READY_VERIFIED", Version)
         { SkillIds = ["decimals.place_value", "fractions.equivalent"] };
