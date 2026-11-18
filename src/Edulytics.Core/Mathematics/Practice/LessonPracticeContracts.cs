@@ -10528,7 +10528,7 @@ public static class LessonPracticeContractRegistry
 
         // UAE Grade8 General U05 L02; selected local Student Book PDF 15–22.
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF"] = new LessonPracticeContract(
+        byLesson["uae.g8.u05.l02.proof_reason_classify"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF", "geometry.angles.relationships", "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
             ["supporting.algebra.equations.mixed"],
             "UAE_G8_U05L02_PDF15_22_TEACHER_REVIEW",
@@ -10592,7 +10592,7 @@ public static class LessonPracticeContractRegistry
 
         // UAE G8 General U06 L03; source PDF 111–118.
         // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS"] = new LessonPracticeContract(
+        byLesson["uae.g8.u06.l03.rotation_origin_coordinate"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS", "geometry.coordinate_plane.plotting", "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
             ["uae.g6.u05.l11.reflect_both_axes"],
             "UAE_G8_AR_U06L03_PDF111_118_TEACHER_REVIEW",
@@ -10845,7 +10845,7 @@ public static class LessonPracticeContractRegistry
         // UAE Grade8 General Arabic U11L06, source Student Book PDF 219-228.
         // Numeric families reused; source-based original proofs and geometry
         // diagrams are reserved for teacher assessment.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES"] = new LessonPracticeContract(
+        byLesson["uae.g8.u11.l06.trapezoid_midsegment", "uae.g8.u11.l06.kite_diagonal_area"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES", "geometry.quadrilaterals.attributes", "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
             ["uae.g6.u09.l06.trapezoid_area"],
             "UAE_G8_AR_U11L06_LOCAL_PDF219_228",
@@ -10855,7 +10855,7 @@ public static class LessonPracticeContractRegistry
         // Existing solution-set/membership family only supports simple
         // numerical membership; exact Venn operations and written reasoning
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
+        byLesson["uae.g8.u12.l01.membership_finite_roster", "uae.g8.u12.l01.empty_finite_infinite_classify"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY", "algebra.inequality.solution_sets", "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
             ["supporting.sets.union_count"],
             "UAE_G8_GENERAL_AR_U12L01_LOCAL_PDF240_250_TEACHER_REVIEW",
@@ -10865,7 +10865,7 @@ public static class LessonPracticeContractRegistry
         // Existing solution-set/membership family only supports simple
         // numerical membership; exact Venn operations and written reasoning
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS"] = new LessonPracticeContract(
+        byLesson["uae.g8.u12.l02.subset_classify", "uae.g8.u12.l02.union_cardinality", "uae.g8.u12.l02.intersection_cardinality", "uae.g8.u12.l02.difference_cardinality"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS", "algebra.inequality.solution_sets", "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
             ["probability.theoretical.complement"],
             "UAE_G8_GENERAL_AR_U12L02_LOCAL_PDF253_262_TEACHER_REVIEW",
@@ -10875,7 +10875,7 @@ public static class LessonPracticeContractRegistry
         // Existing solution-set/membership family only supports simple
         // numerical membership; exact Venn operations and written reasoning
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
-        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS"] = new LessonPracticeContract(
+        byLesson["uae.g8.u12.l03.three_set_venn_region_count"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS", "algebra.inequality.solution_sets", "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
             ["probability.theoretical.complement"],
             "UAE_G8_GENERAL_AR_U12L03_LOCAL_PDF264_273_TEACHER_REVIEW",
