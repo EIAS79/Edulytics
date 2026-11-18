@@ -130,4 +130,31 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
             Assert.Equal(expected.ToString(CultureInfo.InvariantCulture), q.CorrectAnswer);
         }
     }
+
+    [Fact]
+    public void ExclusiveTrapezoidNeverUsesEqualParallelBasesAndRejectsTampering()
+    {
+        const string family = "uae.g8.u11.l06.trapezoid_midsegment";
+        var engine = new ExactSkillContractQuestionEngine();
+        foreach (var seed in Enumerable.Range(1, 120))
+        {
+            var questions = engine.Generate("g8-exclusive-trapezoid",
+                family, [family], ExactSkillQuestionDifficulty.Standard,
+                3, 19000 + seed, []);
+            foreach (var question in questions)
+            {
+                var a = question.Parameters["base1"];
+                var b = question.Parameters["base2"];
+                Assert.NotEqual(a, b);
+                Assert.Equal(((a + b) / 2).ToString(CultureInfo.InvariantCulture),
+                    question.CorrectAnswer);
+                var impossible = new Dictionary<string, int>(question.Parameters)
+                {
+                    ["base2"] = a
+                };
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family, impossible, question.CorrectAnswer));
+            }
+        }
+    }
 }
