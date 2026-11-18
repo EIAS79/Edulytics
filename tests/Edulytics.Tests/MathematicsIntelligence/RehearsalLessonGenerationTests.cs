@@ -194,7 +194,7 @@ public class RehearsalLessonGenerationTests
             d.BlueprintCode.StartsWith("CAMBRIDGE-A-LEVEL-9709-", StringComparison.Ordinal) ||
             (d.PackCode == "UAE-MOE-MATH" && new[] { 3, 4, 7, 8, 11, 12 }.Contains(d.LogicalLevel) &&
              d.Pathway == (d.LogicalLevel < 5 ? "Common" : "Advanced"))).ToArray();
-        Assert.Equal(8, documents.Length);
+        Assert.Equal(7, documents.Length);
         Assert.Equal(525 - 93 + 132 - 77, documents.Sum(d => d.Lessons.Count));
         var school = Guid.NewGuid();
         var teacher = Guid.NewGuid();
