@@ -39,7 +39,7 @@ function stripOnlyRetiredG7Contract(lines){
 }
 // PR #640: owner-directed G8 U12L04 post-release P1 review fix only.
 // Exact new contract blob is pinned; all non-G8 G1/G11 lines remain compared to historical sources.
-const ownerAuditedExactG8PracticeContractBlob='122c12899179e4c0d8dfa6031a03825c27ca4c17';
+const ownerAuditedExactG8PracticeContractBlob='70f23d8822cfbbe83600b767bfdf0103d6b48d7a';
 function withoutGrade8ScopedPracticeAssignments(lines){
   // All Grade8 GENERAL Practice rewrites are isolated by their
   // byLesson[...] deterministic contract key; compare every other line
