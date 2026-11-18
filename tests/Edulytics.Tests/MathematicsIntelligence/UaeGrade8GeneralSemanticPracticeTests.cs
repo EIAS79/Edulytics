@@ -10,6 +10,31 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
 {
     private const string Prefix = "PED:UAE-MOE-MATH:L8:GENERAL:";
 
+    [Fact]
+    public void Grade8ComposedPracticeReachesEveryAllowedFamilyAcrossSeededAttempts()
+    {
+        const string code = Prefix + "01:01:RATIONAL-NUMBERS";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(code, out var contract));
+        Assert.NotNull(contract);
+        var observed = new HashSet<string>(StringComparer.Ordinal);
+        var engine = new Stage18SkillContractPracticeEngine();
+        for (var seed = 1; seed <= contract!.AllowedQuestionFamilies.Count * 6; seed++)
+        {
+            var items = engine.GenerateComposed(
+                Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
+                contract.ToLegacyStage18Contract(),
+                StudentPrivatePracticeDifficulty.MyLevel, 3, seed, [],
+                Guid.NewGuid());
+            Assert.Equal(3, items.Count);
+            foreach (var item in items)
+                observed.Add(Assert.IsType<string>(item.GenerationFamily));
+        }
+        Assert.All(contract.AllowedQuestionFamilies,
+            family => Assert.Contains(family, observed));
+        Assert.Contains("uae.g6.u05.l08.classify_fraction_decimal", observed);
+        Assert.Contains("uae.g6.u05.l08.fraction_exact_decimal", observed);
+    }
+
     [Theory]
     [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
     [InlineData("uae.g8.u05.l03.triangle_angle_measure")]
