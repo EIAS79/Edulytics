@@ -85,6 +85,14 @@ test('U01L09 estimation excludes unrelated quadratic-equation solving',()=>{
  assert.ok(a.allowedFamilies.includes('uae.g6.u06.l02.perfect_square'));
  assert.match(a.teacherReviewRequired,/non-perfect square and cube roots/);
 });
+test('U04L07 classifies linear-versus-nonlinear models rather than solving unrelated quadratic roots',()=>{
+ const a=audit.lessons.find(x=>x.lessonCode.includes(':04:07:LINEAR-AND-NONLINEAR-FUNCTIONS'));
+ assert.ok(a);
+ assert.equal(a.semanticAuditStatus,'PENDING_SEMANTIC_REVIEW');
+ assert.ok(a.allowedFamilies.includes('uae.g6.u08.l03.linear_vs_square'));
+ assert.ok(!a.allowedFamilies.includes('functions.quadratic.output_roots.solve'));
+ assert.match(a.teacherReviewRequired,/Not full-lesson signoff/);
+});
 test('the six formerly mismapped G8 lessons have no unrelated arithmetic, chance or reflection Practice',()=>{
  const forbidden=[
   ['05:01:LINES','supporting.algebra.equations.mixed'],
