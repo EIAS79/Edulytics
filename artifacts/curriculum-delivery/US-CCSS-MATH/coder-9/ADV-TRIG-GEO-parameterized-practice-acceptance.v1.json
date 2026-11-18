@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "kind": "CODER9_PARAMETERIZED_PRACTICE_ACCEPTANCE_SPEC_NOT_EXECUTABLE_RUNTIME",
+  "courseId": "US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO",
+  "courseCode": "ADV-TRIG-GEO",
+  "curriculum": "US-CCSS-MATH",
+  "version": "CCSSM-2010",
+  "pathway": "Fourth Courses",
+  "issue": 587,
+  "meta": {
+    "status": "PROPOSED_INTEGRATION_OWNER_CONTRACT_ONLY",
+    "approved": false,
+    "liveGeneratorRegistered": false,
+    "exactCourseRoutingVerified": false,
+    "questionDiversityRequirement": "At least 3 distinct valid parameter sets per canonical lesson per authenticated session, randomized under tested constraints; prevent immediate duplicates, include domains and units.",
+    "unsafeExpressionPolicy": "No eval or dynamic code execution on untrusted learner text. Parse a bounded expression grammar, use a typed equivalence prover or safe normalized mathematical representation; enforce timeouts, finite values, domain restrictions, and answer format.",
+    "feedbackPolicy": "Return structured reason codes for WRONG_VALUE, WRONG_BRANCH, MISSING_SOLUTIONS, OUT_OF_DOMAIN, MALFORMED, UNIT_MISMATCH, and REQUIRES_HUMAN_RUBRIC; never disclose another tenant's results.",
+    "persistencePolicy": "Only authenticated, authorized, gradable submissions can create idempotent attempts. Reject tenant/school/course mismatch before evaluating or writing. Proof tasks require rubric/human evaluation.",
+    "notEvidenceOf": "No claim of shared generator implementation, parser/normalizer correctness, authenticated school path, or database persistence."
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+      "family": "trig.unit_circle_reflection_exact",
+      "parameterDomain": {
+        "theta": "rational multiples of pi in [-2pi,2pi]",
+        "transform": [
+          "pi-theta",
+          "pi+theta",
+          "2pi-theta"
+        ],
+        "function": [
+          "sin",
+          "cos",
+          "tan"
+        ],
+        "angleMode": [
+          "radians"
+        ],
+        "denominatorPrecondition": "tan output only where |cos(angle)| > finite epsilon and exact symbolic cosine is nonzero",
+        "questionCountMinimum": 3
+      },
+      "cases": [
+        {
+          "id": "l01-reflection-cos",
+          "function": "cos",
+          "thetaPiNumerator": 1,
+          "thetaPiDenominator": 6,
+          "transform": "pi-theta",
+          "valueExact": "-sqrt(3)/2",
+          "valueNumeric": -0.8660254037844386,
+          "answerVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4",
+            "-sqrt(27)/6",
+            "-3/sqrt(12)"
+          ],
+          "incorrect": [
+            "sqrt(3)/2"
+          ],
+          "acceptedExactVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4",
+            "-sqrt(27)/6",
+            "-3/sqrt(12)"
+          ],
+          "rejectedDecimalSubmissions": [
+            "-0.8660254037844386",
+            "-0.866",
+            "-8.660254037844386e-1"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
+          ]
+        },
+        {
+          "id": "l01-rotation-sin",
+          "function": "sin",
+          "thetaPiNumerator": 1,
+          "thetaPiDenominator": 3,
+          "transform": "pi+theta",
+          "valueExact": "-sqrt(3)/2",
+          "valueNumeric": -0.8660254037844386,
+          "answerVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4",
+            "-sqrt(27)/6",
+            "-3/sqrt(12)"
+          ],
+          "incorrect": [
+            "sqrt(3)/2"
+          ],
+          "acceptedExactVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4",
+            "-sqrt(27)/6",
+            "-3/sqrt(12)"
+          ],
+          "rejectedDecimalSubmissions": [
+            "-0.8660254037844386",
+            "-0.866"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
+          ]
+        },
+        {
+          "id": "l01-fullturn-cos",
+          "function": "cos",
+          "thetaPiNumerator": 1,
+          "thetaPiDenominator": 4,
+          "transform": "2pi-theta",
+          "valueExact": "sqrt(2)/2",
+          "valueNumeric": 0.7071067811865476,
+          "answerVariants": [
+            "sqrt(2)/2",
+            "1/sqrt(2)",
+            "sqrt(8)/4",
+            "sqrt(18)/6",
+            "2/sqrt(8)"
+          ],
+          "incorrect": [
+            "-sqrt(2)/2"
+          ],
+          "acceptedExactVariants": [
+            "sqrt(2)/2",
+            "1/sqrt(2)",
+            "sqrt(8)/4",
+            "sqrt(18)/6",
+            "2/sqrt(8)"
+          ],
+          "rejectedDecimalSubmissions": [
+            "0.7071067811865476",
+            "0.707"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
+          ]
+        },
+        {
+          "id": "l01-tangent-pole",
+          "function": "tan",
+          "thetaPiNumerator": 1,
+          "thetaPiDenominator": 2,
+          "transform": "2pi-theta",
+          "expectedStatus": "OUT_OF_DOMAIN",
+          "reason": "tan(3pi/2) undefined; cos(3pi/2)=0; reject expression rather than inventing a score",
+          "answerVariants": [],
+          "acceptedExactVariants": [],
+          "rejectedNumericSubmissions": [
+            "0",
+            "1",
+            "undefined=0"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "tan(",
+            "banana",
+            "Infinity"
+          ]
+        }
+      ],
+      "normalization": [
+        "EXACT_SYMBOLIC_ONLY_ALLOWLIST for L01; no decimal tolerance or exponential notation",
+        "Canonical exact radicals, approved finite symbolic aliases only; explicitly reject malformed and untrusted input",
+        "No conversion of tan poles into scored 0/1; OUT_OF_DOMAIN without automated human proof points"
+      ],
+      "humanReview": [
+        "prove parity using circle reflection and domain",
+        "prove a full-turn identity for arbitrary theta"
+      ],
+      "answerPolicy": {
+        "mode": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalApproximationAllowed": false,
+        "acceptance": "Canonical exact radical and approved, finite symbolic aliases only",
+        "noExpressionEvaluation": true,
+        "note": "valueNumeric is an independent oracle, NEVER a permitted student decimal answer. #600's tolerance verifier is incompatible until an approved scoped exact-only guard is wired under an exclusive file lease. Unsupported equivalent algebra requires academic/normalizer review."
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+      "family": "trig.principal_inverse",
+      "parameterDomain": {
+        "function": [
+          "arcsin",
+          "arccos",
+          "arctan"
+        ],
+        "arguments": "exact trig values and finite decimals",
+        "rangePolicy": {
+          "arcsin": "[-pi/2,pi/2]",
+          "arccos": "[0,pi]",
+          "arctan": "(-pi/2,pi/2)"
+        },
+        "degrees": "Only when explicitly requested; normalize at input boundary"
+      },
+      "cases": [
+        {
+          "id": "l02-arcsin-composition",
+          "function": "arcsin",
+          "argumentKind": "sin-angle",
+          "anglePiNumerator": 5,
+          "anglePiDenominator": 6,
+          "valueExact": "pi/6",
+          "valueNumeric": 0.5235987755982988,
+          "answerVariants": [
+            "pi/6",
+            "0.5235987755982988 rad"
+          ],
+          "incorrect": [
+            "5pi/6"
+          ],
+          "negativeSubmissions": [
+            "30 degrees (requires explicit degree-mode acceptance or correctly converted radians)",
+            "5pi/6 (outside arcsin principal branch)"
+          ]
+        },
+        {
+          "id": "l02-negative-arcsin",
+          "function": "arcsin",
+          "argumentKind": "numeric",
+          "argument": -0.8660254037844386,
+          "valueExact": "-pi/3",
+          "valueNumeric": -1.0471975511965976,
+          "answerVariants": [
+            "-pi/3"
+          ],
+          "incorrect": [
+            "4pi/3"
+          ]
+        },
+        {
+          "id": "l02-arccos-negative",
+          "function": "arccos",
+          "argumentKind": "numeric",
+          "argument": -0.5,
+          "valueExact": "2pi/3",
+          "valueNumeric": 2.0943951023931953,
+          "answerVariants": [
+            "2pi/3"
+          ],
+          "incorrect": [
+            "-2pi/3"
+          ]
+        },
+        {
+          "id": "l02-arctan-positive",
+          "function": "arctan",
+          "argumentKind": "numeric",
+          "argument": 1,
+          "valueExact": "pi/4",
+          "valueNumeric": 0.7853981633974483,
+          "answerVariants": [
+            "pi/4"
+          ],
+          "incorrect": [
+            "5pi/4"
+          ]
+        },
+        {
+          "id": "l02-arcsin-outside",
+          "function": "arcsin",
+          "argumentKind": "numeric",
+          "argument": 1.2,
+          "expectedStatus": "OUT_OF_DOMAIN"
+        },
+        {
+          "id": "l02-arccos-outside",
+          "function": "arccos",
+          "argumentKind": "numeric",
+          "argument": -1.2,
+          "expectedStatus": "OUT_OF_DOMAIN"
+        },
+        {
+          "id": "l02-arctan-boundary",
+          "function": "arctan",
+          "argumentKind": "range-check",
+          "candidateAngleExact": "pi/2",
+          "expectedStatus": "WRONG_BRANCH",
+          "reason": "arctan real outputs strictly inside (-pi/2,pi/2)"
+        }
+      ],
+      "normalization": [
+        "radians vs degrees explicitly declared",
+        "arctan not equal coterminal angle outside branch",
+        "arcsin and arccos real domain [-1,1]"
+      ],
+      "humanReview": [
+        "graph monotonic interval and explain inverse uniqueness",
+        "resolve two-clue quadrant/radius location or contradiction"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+      "family": "trig.model_all_time_solutions",
+      "parameterDomain": {
+        "model": "offset + amplitude*sin(2pi*time/period)",
+        "offset": "real finite",
+        "amplitude": "positive real",
+        "period": "positive real in seconds",
+        "domain": "specified finite interval with inclusivity",
+        "target": "real finite; may lie outside [offset-amplitude,offset+amplitude]"
+      },
+      "cases": [
+        {
+          "id": "l03-two-roots-twelve",
+          "offset": 10,
+          "amplitude": 4,
+          "period": 12,
+          "target": 12,
+          "interval": [
+            0,
+            12
+          ],
+          "closedStart": true,
+          "closedEnd": false,
+          "expectedSeconds": [
+            1,
+            5
+          ],
+          "incorrectSeconds": [
+            [
+              1
+            ],
+            [
+              1,
+              5,
+              13
+            ]
+          ],
+          "tolerance": 1e-9
+        },
+        {
+          "id": "l03-two-roots-eight",
+          "offset": 14,
+          "amplitude": 6,
+          "period": 8,
+          "target": 17,
+          "interval": [
+            0,
+            8
+          ],
+          "closedStart": true,
+          "closedEnd": false,
+          "expectedSeconds": [
+            0.6666666666666666,
+            3.3333333333333335
+          ],
+          "incorrectSeconds": [
+            [
+              0.6666666666666666
+            ],
+            [
+              0.6666666666666666,
+              3.3333333333333335,
+              8.666666666666666
+            ]
+          ],
+          "tolerance": 1e-9
+        },
+        {
+          "id": "l03-zero-boundary",
+          "offset": 8,
+          "amplitude": 3,
+          "period": 10,
+          "target": 8,
+          "interval": [
+            0,
+            10
+          ],
+          "closedStart": true,
+          "closedEnd": false,
+          "expectedSeconds": [
+            0,
+            5
+          ],
+          "incorrectSeconds": [
+            [
+              0,
+              5,
+              10
+            ]
+          ],
+          "tolerance": 1e-9
+        },
+        {
+          "id": "l03-extremum-single",
+          "offset": 10,
+          "amplitude": 4,
+          "period": 12,
+          "target": 6,
+          "interval": [
+            0,
+            12
+          ],
+          "closedStart": true,
+          "closedEnd": false,
+          "expectedSeconds": [
+            9
+          ],
+          "incorrectSeconds": [
+            [
+              3,
+              9
+            ]
+          ],
+          "tolerance": 1e-9
+        },
+        {
+          "id": "l03-no-real-solution",
+          "offset": 10,
+          "amplitude": 4,
+          "period": 12,
+          "target": 15,
+          "interval": [
+            0,
+            12
+          ],
+          "closedStart": true,
+          "closedEnd": false,
+          "expectedSeconds": [],
+          "incorrectSeconds": [
+            [
+              1
+            ]
+          ],
+          "tolerance": 1e-9
+        }
+      ],
+      "normalization": [
+        "unordered complete root sets",
+        "seconds units",
+        "deduplicate boundary roots",
+        "interval inclusive/exclusive endpoints",
+        "reject angles when times required",
+        "reject missing root, duplicates, and extraneous periodic roots"
+      ],
+      "humanReview": [
+        "show inverse reference-angle and cycle analysis",
+        "graph or technology verification of original function",
+        "interpret physical time and range"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+      "family": "solid_geometry.cavalieri_sphere_volume",
+      "parameterDomain": {
+        "radius": "strictly positive finite length",
+        "units": [
+          "cm",
+          "m"
+        ],
+        "crossSection": "A_hemisphere(z) = pi*(r^2-z^2), z in [0,r]",
+        "comparison": "A_cylinder_minus_cone(z) = pi*r^2-pi*z^2"
+      },
+      "cases": [
+        {
+          "id": "l04-radius-one",
+          "radius": 1,
+          "unit": "cm",
+          "volumeExact": "4pi/3",
+          "volumeNumeric": 4.1887902047863905,
+          "comparisonHeights": [
+            0,
+            0.25,
+            0.5,
+            1
+          ]
+        },
+        {
+          "id": "l04-radius-three",
+          "radius": 3,
+          "unit": "cm",
+          "volumeExact": "36pi",
+          "volumeNumeric": 113.09733552923255,
+          "comparisonHeights": [
+            0,
+            0.25,
+            1,
+            2.5,
+            3
+          ]
+        },
+        {
+          "id": "l04-radius-fractional",
+          "radius": 2.5,
+          "unit": "m",
+          "volumeExact": "125pi/6",
+          "volumeNumeric": 65.44984694978736,
+          "comparisonHeights": [
+            0,
+            0.5,
+            1.25,
+            2.5
+          ]
+        },
+        {
+          "id": "l04-zero-radius",
+          "radius": 0,
+          "unit": "cm",
+          "expectedStatus": "OUT_OF_DOMAIN",
+          "reason": "nondegenerate sphere radius must be strictly positive"
+        },
+        {
+          "id": "l04-negative-radius",
+          "radius": -2,
+          "unit": "cm",
+          "expectedStatus": "OUT_OF_DOMAIN",
+          "reason": "negative physical radius invalid"
+        }
+      ],
+      "normalization": [
+        "symbolic pi vs permitted decimal tolerance",
+        "reject square units when cubic units required",
+        "nonnegative finite volume",
+        "cross-section for all z, not only sampled heights"
+      ],
+      "humanReview": [
+        "prove equal slice areas at every height",
+        "distinguish right and oblique cylinder equal-volume proof",
+        "rubric for sphere comparison vs cone and cylinder"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+      "family": "coordinates.focal_distance_conics",
+      "parameterDomain": {
+        "foci": "two distinct finite points on horizontal or vertical axis",
+        "ellipse": "distance sum 2a > focal separation 2c",
+        "hyperbola": "absolute distance difference 2a < focal separation 2c; require 0<a<c",
+        "translation": "centers (h,k) finite"
+      },
+      "cases": [
+        {
+          "id": "l05-horizontal-ellipse",
+          "kind": "ellipse",
+          "axis": "horizontal",
+          "center": [
+            0,
+            0
+          ],
+          "c": 3,
+          "a": 5,
+          "bSquared": 16,
+          "canonical": "x^2/25+y^2/16=1",
+          "testPoint": [
+            5,
+            0
+          ],
+          "focalCondition": "sum",
+          "expectedValue": 10
+        },
+        {
+          "id": "l05-vertical-ellipse",
+          "kind": "ellipse",
+          "axis": "vertical",
+          "center": [
+            0,
+            0
+          ],
+          "c": 3,
+          "a": 5,
+          "bSquared": 16,
+          "canonical": "x^2/16+y^2/25=1",
+          "testPoint": [
+            0,
+            5
+          ],
+          "focalCondition": "sum",
+          "expectedValue": 10
+        },
+        {
+          "id": "l05-translated-ellipse",
+          "kind": "ellipse",
+          "axis": "horizontal",
+          "center": [
+            2,
+            -1
+          ],
+          "c": 3,
+          "a": 5,
+          "bSquared": 16,
+          "canonical": "(x-2)^2/25+(y+1)^2/16=1",
+          "testPoint": [
+            7,
+            -1
+          ],
+          "focalCondition": "sum",
+          "expectedValue": 10
+        },
+        {
+          "id": "l05-horizontal-hyperbola",
+          "kind": "hyperbola",
+          "axis": "horizontal",
+          "center": [
+            0,
+            0
+          ],
+          "c": 5,
+          "a": 3,
+          "bSquared": 16,
+          "canonical": "x^2/9-y^2/16=1",
+          "testPoint": [
+            3,
+            0
+          ],
+          "focalCondition": "absoluteDifference",
+          "expectedValue": 6
+        },
+        {
+          "id": "l05-vertical-hyperbola",
+          "kind": "hyperbola",
+          "axis": "vertical",
+          "center": [
+            0,
+            0
+          ],
+          "c": 5,
+          "a": 3,
+          "bSquared": 16,
+          "canonical": "y^2/9-x^2/16=1",
+          "testPoint": [
+            0,
+            -3
+          ],
+          "focalCondition": "absoluteDifference",
+          "expectedValue": 6
+        },
+        {
+          "id": "l05-ellipse-degenerate",
+          "kind": "ellipse",
+          "axis": "horizontal",
+          "center": [
+            0,
+            0
+          ],
+          "c": 3,
+          "a": 3,
+          "bSquared": 0,
+          "expectedStatus": "OUT_OF_DOMAIN"
+        },
+        {
+          "id": "l05-hyperbola-degenerate",
+          "kind": "hyperbola",
+          "axis": "horizontal",
+          "center": [
+            0,
+            0
+          ],
+          "c": 3,
+          "a": 3,
+          "bSquared": 0,
+          "expectedStatus": "OUT_OF_DOMAIN"
+        }
+      ],
+      "normalization": [
+        "symbolic equation equivalence by safe polynomial normalization and domain conditions",
+        "accept multiplied and rearranged algebraic equivalents",
+        "reject sign-switch hyperbola to ellipse",
+        "classify horizontal/vertical axes and translated centers",
+        "foci validation against original distances; squaring may introduce extraneous roots"
+      ],
+      "humanReview": [
+        "derive from sum/difference of focal distances and justify both branches",
+        "vertical and translated ellipse explanation",
+        "hyperbola is first-party CCSS extension beyond MVP 6.10H"
+      ]
+    }
+  ]
+}

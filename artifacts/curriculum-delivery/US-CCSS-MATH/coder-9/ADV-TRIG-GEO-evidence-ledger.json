@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "kind": "CODER_9_COURSE_DELIVERY_EVIDENCE",
+  "createdAtUtc": "2026-10-28",
+  "branch": "us-ccss/supervisor3/coder9-adv-trig-geo",
+  "baseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
+  "curriculum": "US-CCSS-MATH",
+  "standardsEdition": "CCSSM-2010",
+  "courseId": "US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO",
+  "courseCode": "ADV-TRIG-GEO",
+  "pathway": "Fourth Courses",
+  "sourceFamily": "Mathematics Vision Project",
+  "rightsRecorded": "CC BY 4.0; individual source illustrations require independent rights audit",
+  "materialization": "NOT_VERIFIED",
+  "persistedContent": "NOT_CHECKED",
+  "nodeTestCommand": "node --test tools/curriculum/coder-9/UsCcssHsADVTRIGGEO5LESSONS.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOPracticeFixtures.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+  "nodeTestRun": "PASS_20_OF_20_EXIT_0_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+  "dotnetTests": "PASS_17_OF_17_EXIT_0_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_WITH_SDK_10_0_301",
+  "authenticatedTenantTests": "NOT_RUN",
+  "renderDeployment": "NOT_VERIFIED",
+  "ownerUat": "NOT_VERIFIED",
+  "academicApproval": "NOT_VERIFIED",
+  "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
+  "practiceMapping": "No course-exact row in shared lesson-skill-mappings.v1.json at baseline",
+  "adoptionIssue": "https://github.com/EIAS79/Edulytics/issues/453",
+  "sourceComparison": "LOCKED_PDF_SHA_VERIFIED_AND_RELEVANT_STUDENT_TEACHER_TEXT_REVIEWED_ALL_FIVE; FIGURE_LAYOUT_SOURCE_EQUIVALENCE_AND_INDEPENDENT_ACADEMIC_SIGNOFF_PENDING",
+  "shaPolicy": "sourceSha256 and canonicalBodySha256 fields retained as baseline provenance; owner must verify whether edited body requires a distinct content version and protected predecessor/materialization",
+  "knownRisks": [
+    "L03 publisher task solves equations with identities but direct real-world modeling equivalence is not independently established",
+    "L05 source 6.10H emphasizes ellipses; hyperbola coverage independently authored to the formal CCSS A.3, academic source parity pending",
+    "L04 blueprint spelling Cavelieri preserved, source spelling Cavalieri",
+    "no shared Practice map/generator/normalizer/verifier/persistence changed"
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+      "shortId": "L01",
+      "title": "Maintaining Your Identity",
+      "formalTargets": [
+        "CCSS:HSF-TF.A.3",
+        "CCSS:HSF-TF.A.4"
+      ],
+      "sourceTask": "MVP-MATH3:M07:T05",
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod7tn718.pdf",
+      "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "contentCommit": "6b33b53f49e43b0f07a31eeac2f8a149adb73524",
+      "repairScope": "unit-circle special angle identities, parity and periodicity",
+      "sourceConcern": "CONTAMINATED_SOURCE_FRAGMENTS_REPAIRED",
+      "contentStatus": "IMPLEMENTED_ON_ISOLATED_BRANCH",
+      "sourceTaskParity": "PENDING_FULL_SOURCE_AND_EFFECTIVE_RUNTIME_COMPARISON",
+      "practiceFamilies": [],
+      "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
+      "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+      "authenticatedPractice": "NOT_RUN",
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        50,
+        53
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Right triangle cofunction identity and unit circle transformations added at f4c44db"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+      "shortId": "L02",
+      "title": "The Amazing Inverse Trig Function Race",
+      "formalTargets": [
+        "CCSS:HSF-TF.B.6"
+      ],
+      "sourceTask": "MVP-MATH3:M07:T08H",
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod7seh718.pdf",
+      "sourceSha256": "4f807b20b5cbf0f7d71a06e090fd376d6bc8109f1011eca59bcce5980580bad1",
+      "contentCommit": "fd5b037dcf7e7cb7762e45dd44d2605a92ef56f9",
+      "repairScope": "restricted inverses, principal values, multiple solutions",
+      "sourceConcern": "CONTAMINATED_SOURCE_FRAGMENTS_REPAIRED",
+      "contentStatus": "IMPLEMENTED_ON_ISOLATED_BRANCH",
+      "sourceTaskParity": "PENDING_FULL_SOURCE_AND_EFFECTIVE_RUNTIME_COMPARISON",
+      "practiceFamilies": [],
+      "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
+      "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+      "authenticatedPractice": "NOT_RUN",
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        54,
+        59
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Two-clue inverse trig source context and contradictory-location rejection added at f4c44db"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+      "shortId": "L03",
+      "title": "Hidden Identities",
+      "formalTargets": [
+        "CCSS:HSF-TF.B.7"
+      ],
+      "sourceTask": "MVP-MATH3:M07:T06",
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod7tn718.pdf",
+      "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "contentCommit": "4f386e5e0d872c6df6e4042da36dcd29cac57218",
+      "repairScope": "identity-based trig equation, reference angles, independent periodic model",
+      "sourceConcern": "SOURCE_ALIGNMENT_REVIEW_REQUIRED",
+      "contentStatus": "IMPLEMENTED_ON_ISOLATED_BRANCH",
+      "sourceTaskParity": "PENDING_FULL_SOURCE_AND_EFFECTIVE_RUNTIME_COMPARISON",
+      "practiceFamilies": [],
+      "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
+      "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+      "authenticatedPractice": "NOT_RUN",
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        59,
+        62
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Compressed-period four-root trig case and three-strategy comparison added at f4c44db"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+      "shortId": "L04",
+      "title": "Cavelieri to the Rescue",
+      "formalTargets": [
+        "CCSS:HSG-GMD.A.2"
+      ],
+      "sourceTask": "MVP-GEO:M05:T12",
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m2_mod7_tn_52017f.pdf",
+      "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+      "contentCommit": "36262a8fff556820c516e09316f852cdb74bf6d7",
+      "repairScope": "Cavalieri cross-section comparison and sphere volume proof",
+      "sourceConcern": "SOURCE_TITLE_SPELLING_REVIEW_REQUIRED",
+      "contentStatus": "IMPLEMENTED_ON_ISOLATED_BRANCH",
+      "sourceTaskParity": "PENDING_FULL_SOURCE_AND_EFFECTIVE_RUNTIME_COMPARISON",
+      "practiceFamilies": [],
+      "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
+      "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+      "authenticatedPractice": "NOT_RUN",
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        105,
+        111
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Same-area sheared cylinders and equal-area triangles added at f4c44db; sphere proof retained"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+      "shortId": "L05",
+      "title": "Operating on a Shoestring",
+      "formalTargets": [
+        "CCSS:HSG-GPE.A.3"
+      ],
+      "sourceTask": "MVP-GEO:M06:T10H",
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/g1_mod6h_tn_82017f.pdf",
+      "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+      "contentCommit": "46b0e681466a6337efb2aa2b768180ddd53ce567",
+      "repairScope": "ellipse sum and hyperbola difference focal-distance derivations",
+      "sourceConcern": "ELLIPSE_SOURCE_HYPERBOLA_FIRST_PARTY_EXTENSION",
+      "contentStatus": "IMPLEMENTED_ON_ISOLATED_BRANCH",
+      "sourceTaskParity": "PENDING_FULL_SOURCE_AND_EFFECTIVE_RUNTIME_COMPARISON",
+      "practiceFamilies": [],
+      "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
+      "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+      "authenticatedPractice": "NOT_RUN",
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        81,
+        88
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Fixed/foci separation, vertical and translated ellipse examples added at 49691781"
+    }
+  ],
+  "nextRequiredOwnerActions": [
+    "Supervisor 3: independently review all five repaired lessons and external source-task comparisons, decide L03 B.7 modeling sufficiency and L05 hyperbola attribution.",
+    "Global integration owner: issue #453 HS course/pathway selection, exact five-lesson skill contracts and generator/normalizer/verifier, safe content version and seed predecessor, all shared regressions.",
+    "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
+    "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
+  ],
+  "updatedAtUtc": "2026-10-30T13:42:53.864Z",
+  "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
+  "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
+  "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
+  "predecessorTransitionPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json",
+  "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-source-target-practice-review.md",
+  "proposedPracticeFixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json",
+  "dotnetCommand": "dotnet test <absolute repo>/tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --filter FullyQualifiedName~Phase29CanonicalContentPackPipelineTests --verbosity minimal --no-restore",
+  "dotnetSdkNote": "Repo global.json demands SDK 10.0.200; isolated external SDK-selection temp folder used installed 10.0.301 without modifying repository. Focused .NET tests passed, but not a protected required workflow.",
+  "sequentialACCheckpoint": {
+    "protocol": "SUP3_ORDER_CODER9_ADV_TRIG_GEO_ABC_20261030",
+    "checkpointRecordedAtUtc": "2026-10-30T06:50:41.522Z",
+    "lessonStartedAtUtc": "NOT_RECORDED_BEFORE_THIS_CHECKPOINT",
+    "lessonEndedAtUtc": null,
+    "lastFullyClosedABC": null,
+    "currentLessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "transitionToNextLessonAllowed": false,
+    "headObservedBefore": "c7d3ba2d1c274e1749dd0b5f62206d630b0b3b3f",
+    "lessonStatus": "BLOCKED_BY_INTEGRATION_AND_ACADEMIC_SOURCE_REVIEW",
+    "stageA": {
+      "A_CLOSED": false,
+      "status": "SOURCE_BINARY_MATCH_AND_PREVIOUS_DIRECT_TASK_REVIEW_REUSED; INDEPENDENT_PARITY_PENDING",
+      "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod7tn718.pdf",
+      "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "shaVerifiedDirectlyOnOurCSOnUtcDate": "2026-10-30",
+      "teacherStudentPagesFromExistingVerifiedSourceNotes": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "goalsAndFormalTargets": "REVIEWED_FIRST_PARTY_HSF_TF_A3_A4",
+      "representationsAndSourceActivity": "ACCESSIBLE_ORIGINAL_COORDINATE_PROOF_PRESENT; PUBLISHER_DIAGRAM_TASK_INDEPENDENT_PARITY_PENDING",
+      "checkForUnderstanding": "NOT_INDEPENDENTLY_CERTIFIED",
+      "cooldown": "NOT_IDENTIFIED_AS_ACCESSIBLE_LOCKED_SOURCE_REQUIREMENT; NOT_CLAIMED_PUBLISHER_PARITY",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-academic-review-decision-matrix-2026-10-29.md"
+    },
+    "stageB": {
+      "B_CLOSED": false,
+      "status": "PREVIOUS_FIRST_PARTY_MATHEMATICAL_REPAIR_IMPLEMENTED; HUMAN_ACADEMIC_APPROVAL_PENDING",
+      "coursePackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-trig-geo-phase29-v1.lesson-content-pack.json",
+      "inspectedPackBlobSha": "52071af1272563fa66770050d2ffdedbb854ed9a",
+      "coveredTopics": [
+        "special-angle unit-circle coordinates",
+        "cofunctions",
+        "parity and periodicity",
+        "defined tangent domain",
+        "angle signs and equivalences",
+        "diagram-free reflection proof"
+      ],
+      "contentChangedAtThisCheckpoint": false,
+      "approvedContentPredecessor": "NOT_VERIFIED",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json"
+    },
+    "stageC": {
+      "C_PREPARED": true,
+      "C_CLOSED": false,
+      "status": "BLOCKED_BY_INTEGRATION",
+      "candidateFixture": "trig.unit_circle_reflection_exact",
+      "fixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json",
+      "expectedChecks": [
+        "exact symbolic and equivalent numeric",
+        "wrong sign",
+        "malformed expression",
+        "excluded tangent poles",
+        "reasoned proof assessed with human rubric"
+      ],
+      "selectedStudentGenerator": false,
+      "actualAuthenticatedLessonPractice": "NOT_RUN",
+      "productionRoutingVerified": false,
+      "actualPersistedFeedback": "NOT_RUN",
+      "integrationPr": 600,
+      "issues": [
+        587,
+        453
+      ],
+      "owner": "Supervisor 3 / Shared Integration Owner"
+    },
+    "ABC_READY_FOR_D": false,
+    "D_VERIFIED": false,
+    "checksAtThisCheckpoint": "TEST_NOT_RUN_NO_EXECUTION_CODE_CHANGE",
+    "priorNodeResult": "PASS_20_20_ONLY_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_NOT_CURRENT_SHA",
+    "priorDotnetResult": "PASS_17_17_ONLY_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_NOT_CURRENT_SHA",
+    "blockers": [
+      {
+        "type": "SOURCE_ACADEMIC",
+        "owner": "Supervisor 3 / authorized independent academic reviewer",
+        "detail": "Accept or request corrections for L01 source task representations and effective learner parity; approve content predecessor/version, no self-certification"
+      },
+      {
+        "type": "INTEGRATION",
+        "owner": "PR #600 shared integration owner",
+        "detail": "Exact LessonCode mapping and selected/routable generator, verifier, normalizer, persisted feedback, adopted Fourth Courses school route and two-school negative isolation"
+      }
+    ],
+    "sourceFilesIndexOnly": [
+      {
+        "filename": "sec3mod7tn718.pdf",
+        "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+        "lessons": [
+          "L01",
+          "L03"
+        ]
+      },
+      {
+        "filename": "sec3mod7seh718.pdf",
+        "sourceSha256": "4f807b20b5cbf0f7d71a06e090fd376d6bc8109f1011eca59bcce5980580bad1",
+        "lessons": [
+          "L02"
+        ]
+      },
+      {
+        "filename": "m2_mod7_tn_52017f.pdf",
+        "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+        "lessons": [
+          "L04"
+        ]
+      },
+      {
+        "filename": "g1_mod6h_tn_82017f.pdf",
+        "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+        "lessons": [
+          "L05"
+        ]
+      }
+    ],
+    "sourceIndexPreparationOnly": true
+  },
+  "soloAbcExecution": {
+    "protocol": "SUP3_CODER9_SOLO_FULL_ABC_20261030",
+    "observedStartHead": "c20b5e96234d1140b01525eaa4d0e76b14daf65a",
+    "sessionStartedAtUtc": "2026-10-30T12:07:08.126Z",
+    "currentCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "lastProcessed": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+    "completedABC": 0,
+    "returnQueue": [
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "priority": 1,
+        "remaining": "Source figure/rendered parity academic decision PENDING; owner-approved append-only content lineage PENDING; shared exact-only learner routing under C9 exclusive lease NOT_GRANTED; no C closure.",
+        "academicDecision": "PENDING_NAMED_REVIEWER",
+        "academicOwner": "Independent source/academic reviewer",
+        "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
+        "requestedLeasePaths": [
+          "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+        ],
+        "note": "File path examples only, review current layout and active writer before granting lease",
+        "versionDecision": "PENDING",
+        "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "testNew": "NOT_RUN"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "priority": 2,
+        "remaining": "Academic parity/version approval, review of selected principal-value Practice normalizer and central course adoption mapping.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicOwner": "Independent source/academic reviewer",
+        "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
+        "requestedLeasePaths": [
+          "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+        ],
+        "note": "File path examples only, review current layout and active writer before granting lease"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "priority": 2,
+        "remaining": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
+        "requestedLeasePaths": [
+          "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+        ],
+        "note": "File path examples only, review current layout and active writer before granting lease"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "priority": 2,
+        "remaining": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
+        "requestedLeasePaths": [
+          "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+        ],
+        "note": "File path examples only, review current layout and active writer before granting lease"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "priority": 2,
+        "remaining": "Academic approval and append-only content predecessor missing; student selected Practice/route/adoption pending",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicOwner": "Independent source/academic reviewer",
+        "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
+        "requestedLeasePaths": [
+          "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+        ],
+        "note": "File path examples only, review current layout and active writer before granting lease"
+      }
+    ],
+    "perLesson": [
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "actualContentCommit": "c20b5e96234d1140b01525eaa4d0e76b14daf65a",
+        "sourceTaskComparison": "Original MVP 7.5 pp. 50-53 tasks 1-5 vs first-party unit-circle/reflections, graph-table investigation and quotient proof; actual concrete repairs at c20b5e9.",
+        "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-source-task-acceptance-packet-20261030.md",
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod7tn718.pdf",
+        "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+        "lastFocusedTest": "PASS_6_OF_6_AT_c20b5e96234d1140b01525eaa4d0e76b14daf65a",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "versionPredecessor": "PENDING_OWNER_APPROVED_SUCCESSOR",
+        "runtimePractice": "INTEGRATION_PENDING_NOT_ROUTABLE",
+        "missingOwner": "Supervisor 3 for independent academic/version decision and file-specific shared registry lease if required; Coder 9 owns subsequent isolated code",
+        "returnReason": "Independent source parity/academic signoff, authorized body transition, shared selected Practice mapping and school pathway adoption; future Stage D only.",
+        "contentCommit": "c20b5e96234d1140b01525eaa4d0e76b14daf65a",
+        "contentTestSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "operationCheckpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+        "lessonClosureTimeUtc": null,
+        "tests": {
+          "focusedCommand": "node --test tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+          "executedOn": "Our-CS disposable sparse local clone",
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "result": "PASS_10_OF_10_EXIT_0",
+          "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        },
+        "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalApproximationAllowed": false,
+        "courseOwnedPolicyCommitSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+        "sourceScopeReview": "SUP3_READ_SOURCE_CONTENT_ACADEMIC_RENDERED_ACCEPTANCE_PENDING",
+        "currentAddedTests": "NOT_RUN",
+        "referenceNodeTest": {
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "pass": 10,
+          "fail": 0
+        }
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "stageA": "SOURCE_TASK_COMPARISON_DONE_INDEPENDENT_ACCEPTANCE_PENDING",
+        "stageB": "FIRST_PARTY_SOURCE_GAP_REPAIRED_ACADEMIC_VERSION_PENDING",
+        "stageC": "COURSE_SPECIFIC_EXACT_CONTRACT_PREPARED_SELECTED_RUNTIME_NOT_VERIFIED",
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod7seh718.pdf",
+        "sourceSha256": "4f807b20b5cbf0f7d71a06e090fd376d6bc8109f1011eca59bcce5980580bad1",
+        "sourcePagesReadDirectly": [
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ],
+        "sourceTaskComparison": "Publisher 7.8H requires >=3 stake game rounds with unique/multiple/contradictory outcomes, grid recording, sin(q)=0.75 multi-root graph, graph-domain restriction and all three inverse graphs. Prior pack had one sample; added three original rounds, exact/approx repeated roots and accessible ordered-table/inverse graph inquiry.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Independent reviewer: assess textual Cartesian/polar substitution and learner graph affordances against game cards/maps; confirm checked source representation.",
+        "practiceFixturesPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-parameterized-practice-acceptance.v1.json",
+        "practiceFixtureCount": 7,
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "contentDelta": "Appended only to existing stepByStepSolutions; other content fields, lesson ID, source/canonical hashes and version preserved",
+        "stageD": "NOT_STARTED",
+        "testResultAtCommit": "TEST_NOT_RUN_YET",
+        "returnReason": "Academic parity/version approval, review of selected principal-value Practice normalizer and central course adoption mapping.",
+        "missingOwner": "Coder 9 for course-local code; Supervisor 3 for independent academic/version decision and temporary shared file lease if needed",
+        "contentEditedAtUtc": "2026-10-30T12:07:09.328Z",
+        "contentCommit": "375ef7c784766766e344966ff71c4c353708ac90",
+        "contentTestSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "operationCheckpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+        "lessonClosureTimeUtc": null,
+        "tests": {
+          "focusedCommand": "node --test tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+          "executedOn": "Our-CS disposable sparse local clone",
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "result": "PASS_10_OF_10_EXIT_0",
+          "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        }
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 7.6 original equations sin(-theta), cos(theta)*tan(theta), and sin(2theta) with three strategies, all solutions [0,2pi]; former content emphasized model and compressed-period case but omitted a complete comparison of original identities.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Academic reviewer required to decide B.7 modeling/technology coverage and distinguish source equations from Edulytiks-authored beacon context.",
+        "directSourcePages": [
+          59,
+          60,
+          61,
+          62
+        ],
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod7tn718.pdf",
+        "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+        "stageA": "SOURCE_TASK_COMPARED_AND_MISSING_EDULYTIKS_ORIGINAL_ACTIVITY_REPAIRED_NO_ACADEMIC_SIGNOFF",
+        "stageB": "MATH_FIX_AUTHORED_WITH_OLD_METADATA_RETAINED_VERSION_TRANSITION_UNAPPROVED",
+        "stageC": "28_TOTAL_EXISTING_CONTRACT_FIXTURES_PRESERVED_COURSE_SPECIFIC_ORACLE_ADDED_NOT_SELECTED_OR_ROUTABLE",
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "TEST_NOT_RUN_AT_THIS_SHA",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 (course-only); request Supervisor 3 file lease before touching any shared registry / auth / materializer",
+        "returnReason": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "operationStartedAtUtc": "2026-10-30T12:08:59.279Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+        "contentCommit": "eef659a9b62db9a46d126b5115690846773f08ce",
+        "contentTestSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "operationCheckpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+        "lessonClosureTimeUtc": null,
+        "tests": {
+          "focusedCommand": "node --test tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+          "executedOn": "Our-CS disposable sparse local clone",
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "result": "PASS_10_OF_10_EXIT_0",
+          "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        }
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 7.12 emphasizes prediction/equal horizontal lengths for skewed triangles, shifted parallelogram slices, coins, right/oblique pyramids and cones; existing course examples omitted original parallelogram and oblique apex similarity derivation.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Academic/blueprint reviewer must decide source spelling Cavalieri vs canonical Cavelieri, and accept accessible visual/GeoGebra substitutes.",
+        "directSourcePages": [
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111
+        ],
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_m2_mod7_tn_52017f.pdf",
+        "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+        "stageA": "SOURCE_TASK_COMPARED_AND_MISSING_EDULYTIKS_ORIGINAL_ACTIVITY_REPAIRED_NO_ACADEMIC_SIGNOFF",
+        "stageB": "MATH_FIX_AUTHORED_WITH_OLD_METADATA_RETAINED_VERSION_TRANSITION_UNAPPROVED",
+        "stageC": "28_TOTAL_EXISTING_CONTRACT_FIXTURES_PRESERVED_COURSE_SPECIFIC_ORACLE_ADDED_NOT_SELECTED_OR_ROUTABLE",
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "TEST_NOT_RUN_AT_THIS_SHA",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 (course-only); request Supervisor 3 file lease before touching any shared registry / auth / materializer",
+        "returnReason": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "operationStartedAtUtc": "2026-10-30T12:09:11.012Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "contentCommit": "872b74b391004500d4bd19d74976f633179ef772",
+        "contentTestSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "operationCheckpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+        "lessonClosureTimeUtc": null,
+        "tests": {
+          "focusedCommand": "node --test tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+          "executedOn": "Our-CS disposable sparse local clone",
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "result": "PASS_10_OF_10_EXIT_0",
+          "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        }
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 6.10H starts with three 10/12/14 inch CLOSED loops with 4-inch tack spacing. Existing lesson covered a different 16-inch loop; added exact original physical setup and correct focal-distance arithmetic.",
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_g1_mod6h_tn_82017f.pdf",
+        "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+        "sourcePagesReadDirectly": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88
+        ],
+        "stageA": "DIRECT_SOURCE_COMPARE_AND_FIRST_PARTY_MATH_REPAIR_DONE_ACADEMIC_REVIEW_PENDING",
+        "stageB": "SOURCE_LOOP_GEOMETRY_REPAIRED_VERSION_APPROVAL_PENDING",
+        "stageC": "PROPOSED_COURSE_CONIC_FIXTURES_PRESERVED_NOT_STUDENT_ROUTABLE",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Determine whether ellipse physical/accessible inquiry and separate first-party hyperbola extension meet authorized source and standard criteria",
+        "practiceFixtures": 7,
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "NOT_RUN_AT_COMMIT",
+        "integrationOwner": "Coder 9 course-local implementation only; Supervisor 3 must allocate temporary exclusive lease if shared routing change required",
+        "returnReason": "Academic approval and append-only content predecessor missing; student selected Practice/route/adoption pending",
+        "operationStartedAtUtc": "2026-10-30T12:10:33.953Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "RETURN_QUEUE_L01_L05",
+        "contentCommit": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "contentTestSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+        "operationCheckpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+        "lessonClosureTimeUtc": null,
+        "tests": {
+          "focusedCommand": "node --test tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+          "executedOn": "Our-CS disposable sparse local clone",
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "result": "PASS_10_OF_10_EXIT_0",
+          "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        }
+      }
+    ],
+    "stageD": "NOT_STARTED",
+    "sharedOwnershipRule": "Course-only writers on #586; shared files untouched; request Supervisor 3 file lease before central registry edits.",
+    "sourceAccess": "Existing verified original local PDFs on Our-CS read for L02-L05; L01 previous source review reused; no external book search.",
+    "testedShaNote": "Independent source/math tests will execute once on frozen last content commit, not claimed in advance.",
+    "updatedAtUtc": "2026-10-30T12:10:33.953Z",
+    "counts": {
+      "TOTAL": 5,
+      "AUTHORED": 5,
+      "A_CLOSED": 0,
+      "B_CLOSED": 0,
+      "C_PREPARED": 5,
+      "C_CLOSED": 0,
+      "ABC_READY_FOR_D": 0,
+      "D_VERIFIED": 0,
+      "BLOCKED": 5
+    },
+    "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "returnQueuePending": 5,
+    "lastCheckAtUtc": "2026-10-30T12:12:41.710Z",
+    "checkpointFinishedAtUtc": "2026-10-30T12:12:41.710Z",
+    "testRunAtSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+    "testResult": "PASS_10_OF_10_NODE_FOCUSED_ONLY",
+    "contentHeadAtTest": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+    "requiredFollowUp": "Independent academic source parity + approved content predecessor; obtain exclusive shared file ownership before course-exact selected Practice mapping; retain safety gates and returnQueue; Stage D only when all five A/B/C cleared."
+  },
+  "unitFirstV3": {
+    "directive": "SUP3_CODER9_L01_ACADEMIC_VERSION_V4_20261030",
+    "officialUnitTotal": 5,
+    "unitCode": "U01",
+    "previouslyClosed": 0,
+    "newlyClosed": 0,
+    "lastVerifiedClosedLesson": null,
+    "lastClosureSha": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "unitStatus": "UNIT_BLOCKED",
+    "unitReadyForD": false,
+    "blockedLessonCodes": [
+      "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01"
+    ],
+    "nextUnit": null,
+    "resumeCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "candidateOnlyCommitSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+    "candidateBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
+    "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+    "historicalCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+    "academicOwnerDecision": "PENDING_INDEPENDENT_NAMED_REVIEWER",
+    "versionOwnerDecision": "PENDING_AUTHORIZED_APPEND_ONLY_SUCCESSOR",
+    "practiceStudentRoute": "PENDING_DENY",
+    "sharedCentralFileLease": "NOT_GRANTED_WAIT_CODER8_THEN_CODER7",
+    "protectedParityGuard": "FAILING_ORIGINAL_BODY_COMPARISON_NO_CODER9_AUTHORIZED_SUCCESSOR",
+    "newUnitFirstTests": "NOT_RUN",
+    "priorFocusedNodeTests": {
+      "sha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+      "result": "10_PASS_0_FAIL"
+    },
+    "sourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-source-task-acceptance-packet-20261030.md",
+    "candidateSuccessorEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-append-only-successor-candidate-20261030.json",
+    "candidateCourseOwnedCode": "src/Edulytics.Core/Mathematics/Practice/UsCcssHsAdvTrigGeoU01L01PracticeCandidate.cs",
+    "candidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests.cs",
+    "lastReviewCheckpointUtc": "2026-10-30T13:42:53.864Z",
+    "nextRequiredAction": "Supervisor3: named visual/source academic approval, content version owner signed append-only predecessor/successor, Coder8+Coder7 lease releases then grant exact file-exclusive C9 slot. Until then stay L01.",
+    "directiveHistory": [
+      "SUP3_CODER9_UNIT_FIRST_V3_20261030",
+      "SUP3_CODER9_L01_ACADEMIC_VERSION_V4_20261030"
+    ],
+    "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+    "courseOnlyAnswerPolicyResolved": true,
+    "sharedVerifierPolicyConflict": "BLOCKED",
+    "academicSourceScopeDecision": "SUP3_SCOPE_REVIEW_DONE_ACADEMIC_VISUAL_DECISION_PENDING",
+    "studentSelectedPractice": "NOT_ROUTED"
+  }
+}
