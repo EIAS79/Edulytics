@@ -231,7 +231,6 @@ public static class MathematicsCurriculumPackRegistry
                 new(7,"Grade 7","Cycle 2","General",true),
                 new(7,"Grade 7","Cycle 2","Advanced",true),
                 new(8,"Grade 8","Cycle 2","General",true),
-                new(8,"Grade 8","Cycle 2","Advanced",true),
                 new(9,"Grade 9","Secondary","General",true),
                 new(9,"Grade 9","Secondary","Advanced",true),
                 new(10,"Grade 10","Secondary","General",true),
