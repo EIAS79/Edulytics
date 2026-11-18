@@ -227,9 +227,19 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // Before G7 cutover: 5,090 unrelated includes 62 old English G7.
         // After G7 62-to-78, 5,106 unrelated; after G8 77-to-76,
         // 5,105 unrelated. Preserve only these exact observed cohorts.
-        var unrelatedBaseline = g7Count == 78
+        var g8AdvancedCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
+        var historicUnrelatedBaseline = g7Count == 78
             ? g8GeneralCount == 76 ? 5105 : g8GeneralCount == 77 ? 5106 : -1
             : g7Count == 0 && g8GeneralCount == 77 ? 5090 : -1;
+        // The retired Grade8 Advanced cohort is exactly 77 records.
+        // Both the historical full inventory and the retired clean inventory
+        // have exact pinned totals; reject partial/ad-hoc deletions.
+        var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
+            historicUnrelatedBaseline >= 0
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount)
+            : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
             allCount != unrelatedBaseline + g6Count ||
@@ -351,8 +361,15 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var g8GeneralCount = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(
                 "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
-        var g7UnrelatedBaseline = g8GeneralCount == 77 ? 5156 :
+        var g8AdvancedCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
+        var historicG7Unrelated = g8GeneralCount == 77 ? 5156 :
             g8GeneralCount == 76 ? 5155 : -1;
+        var g7UnrelatedBaseline =
+            (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
+                ? historicG7Unrelated - (77 - g8AdvancedCount)
+                : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
         var g5Count = await _db.CurriculumPedagogicalLessons
