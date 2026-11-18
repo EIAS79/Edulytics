@@ -1,0 +1,3259 @@
+{
+  "schemaVersion": 1,
+  "auditKind": "76-lesson runtime sampled prompt and target-mechanic assessment (not complete source-page item parity)",
+  "grade": 8,
+  "pathway": "GENERAL",
+  "academicLanguage": "ar",
+  "targetYear": "2026-2027",
+  "sourceEditionConflict": "2019-2020 index 12/76 versus 2025-2026 index 8/56",
+  "method": "Generated 192 composed student Practice questions per lesson for 76 lessons using 64 seeds; compared all 182 distinct lesson-to-family mappings to actual Arabic lesson goal summaries and representative prompts; checked exact verifier on all generated correct answers and invalid responses. This is a scoped runtime-semantic screen, not original-book item-by-item signoff.",
+  "summary": {
+    "lessonsSampled": 76,
+    "generatedQuestions": 14592,
+    "totalConfiguredFamilyAssignments": 182,
+    "allAssignmentsSampled": true,
+    "lessonsWithObservedNonArabicPrompts": 56,
+    "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 16,
+    "releaseBlockedLessons": 58,
+    "partialReviewPendingLessons": 18,
+    "fullySourceCertifiedLessons": 0,
+    "correctAnswersAcceptedByExactVerifier": 14592,
+    "invalidTextRejectedByExactVerifier": 14592,
+    "independentMathematicalVerifierEvidence": "NOT_TESTED_BY_THIS_HARNESS",
+    "originalStudentBookElementParity": "NOT_CERTIFIED"
+  },
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
+      "arabicTitle": "الأعداد النسبية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 40–47; printed pages 7–14",
+      "targetMechanic": "RATIONAL_TERMINATING_AND_REPEATING_DECIMAL_EQUIVALENCE",
+      "richV2ObjectiveExcerpt": "العدد النسبي يمكن كتابته أ/ب حيث أ وب صحيحان وب≠0، فتندرج فيه الأعداد الصحيحة والكسور والعشريات المنتهية والدورية. 3/8 = 0.375 عشري منتهٍ، و2/3 = 0.666... عشري دوري. التوسع غير المنتهي غير الدوري ليس عددًا نسبيًا. لاستخراج كسر من عشري دوري اضرب قيمة س في قوة 10 بطول الدورة ثم اطرح س لإزالة التكرار.",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 5,
+      "observedFamilyCount": 5,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g5.u07.l03.simplify_fraction",
+          "prompt": "اكتب الكسر 8/18 في أبسط صورة (بسط/مقام).",
+          "correctAnswer": "4/9",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g5.u07.l08.reducible_fraction_to_decimal",
+          "prompt": "بسّط الكسر 3/6 إذا لزم ثم اكتبه في صورة عدد عشري منتهٍ.",
+          "correctAnswer": "0.50",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l08.classify_fraction_decimal",
+          "prompt": "هل التمثيل العشري للكسر -11/5 منتهٍ أم دوري؟ اكتب منتهٍ أو دوري.",
+          "correctAnswer": "منتهٍ",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l08.fraction_exact_decimal",
+          "prompt": "اكتب الكسر -35/12 كعدد عشري دقيق. إن تكررت أرقام فاكتب الدورة بين قوسين؛ مثال ١/٣ = 0.(3).",
+          "correctAnswer": "-2.91(6)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g4.u10.l04.decimal_to_hundredths",
+          "prompt": "كم جزءًا من مئة في العدد ٠٫37؟",
+          "correctAnswer": "37",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "العشري الدوري أضيف إلى العقود، ولم يثبت استقلال نشاط الكتاب وعناصر التصنيف الأخرى.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS",
+      "arabicTitle": "القوى والأسس",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 48–55; printed pages 15–22",
+      "targetMechanic": "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION",
+      "richV2ObjectiveExcerpt": "الأساس هو العامل الذي يتكرر ضربه، والأس الموجب هو عدد مرات ذلك التكرار. لا تعني القوة ضرب الأساس في الأس؛ مثل 4^3=64 وليس 12. أقواس العدد السالب جزء من المسألة: (-2)^4 موجب، أما -2^4 فسالب. والقوة الزوجية للعدد السالب موجب، والفردية سالب. أحسب القوى للكسور والأعداد العشرية كما للأعداد الصحيحة. في (3/4)^2 أرفع البسط والمقام فيكون 9/16، وأراعي ترتيب العمليات.",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 6,
+      "observedFamilyCount": 6,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u06.l02.fraction_power",
+          "prompt": "احسب (2/7)^2 واكتب الناتج كسرًا في أبسط صورة.",
+          "correctAnswer": "4/49",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.ten_power",
+          "prompt": "احسب 10^1 بدقة واكتب عددًا صحيحًا.",
+          "correctAnswer": "10",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.power_addition",
+          "prompt": "أوجد قيمة التعبير 5^2 + 17. احسب القوة أولًا.",
+          "correctAnswer": "42",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.repeated_to_power",
+          "prompt": "اكتب حاصل الضرب 12 × 12 بصورة أسية b^e.",
+          "correctAnswer": "12^2",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.integer_power",
+          "prompt": "احسب القوة 5^5؛ اكتب الناتج عددًا صحيحًا.",
+          "correctAnswer": "3125",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.decimal_power",
+          "prompt": "احسب 1.98^2 بدقة دون تقريب.",
+          "correctAnswer": "3.9204",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الأمثلة الآلية تغطي بعض عمليات القوى؛ اختبار جميع الأشكال والحالات الحدودية يحتاج دليلًا منفصلًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS",
+      "arabicTitle": "ضرب أحاديات الحد وقسمتها",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 56–63; printed 23–30",
+      "targetMechanic": "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
+      "richV2ObjectiveExcerpt": "الدرس يربط ضرب أحاديات الحد وقسمتها بقوانين القوى. عند ضرب قوتين لهما الأساس نفسه نجمع الأسس: أ^م × أ^ن = أ^(م+ن). مثال: س^3 × س^4 = س^7 لأن عوامل س السبعة تتجمع. وعند القسمة على قوة لها الأساس نفسه نطرح الأسس: أ^م ÷ أ^ن = أ^(م−ن) بشرط أ≠0؛ مثل س^8 ÷ س^3 = س^5. نضرب المعاملات العددية على حدة ثم نطبق قاعدة الأسس على كل متغير، فتكون (3س^2 ص^3)(−4س^5 ص)=−12س^7 ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.algebra.expand",
+          "prompt": "Expand 4(x -7).",
+          "correctAnswer": "4x-28",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.multiply",
+          "prompt": "Calculate 141 × 10^1.",
+          "correctAnswer": "1410",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "prompt": "Calculate 2300 ÷ 10^2.",
+          "correctAnswer": "23",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.simplify",
+          "prompt": "Simplify 5x -6x +6.",
+          "correctAnswer": "-1x+6",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.algebra.expand",
+          "samplePrompt": "Expand 4(x -7)."
+        },
+        {
+          "family": "supporting.powers10.multiply",
+          "samplePrompt": "Calculate 141 × 10^1."
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "samplePrompt": "Calculate 2300 ÷ 10^2."
+        },
+        {
+          "family": "supporting.algebra.simplify",
+          "samplePrompt": "Simplify 5x -6x +6."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "تدريبات تبسيط/توسيع تعبير خطي وحساب قوى 10 لا تطلب ضرب أو قسمة أحاديات الحد.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS",
+      "arabicTitle": "القوى الأسية لأحاديات الحد",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 64–71; unit-linked PDF 72–75; printed 31–38 plus unit investigation",
+      "targetMechanic": "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
+      "richV2ObjectiveExcerpt": "يركز الدرس على رفع قوة إلى قوة ورفع حاصل ضرب أو قسمة إلى قوة. إذا كان ن وم موجبين صحيحين فإن (أ^م)^ن = أ^(م×ن) لأن هناك ن مجموعات تتضمن كل مجموعة م من عوامل أ. مثل (س^3)^4 = س^12. وقوة حاصل الضرب: (أب)^ن = أ^ن ب^ن، مثال (3س^2)^3 = 27س^6. وقوة حاصل القسمة: (أ/ب)^ن=أ^ن/ب^ن مع ب≠0. في سياق هندسي إذا كان طول ضلع مكعب 2س^2 مترًا، فالحجم (2س^2)^3=8س^6 متر مكعب. ير",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.algebra.simplify",
+          "prompt": "Simplify 2x -6x +7.",
+          "correctAnswer": "-4x+7",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g6.u06.l02.integer_power",
+          "prompt": "احسب القوة 2^6؛ اكتب الناتج عددًا صحيحًا.",
+          "correctAnswer": "64",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u06.l02.fraction_power",
+          "prompt": "احسب (1/5)^3 واكتب الناتج كسرًا في أبسط صورة.",
+          "correctAnswer": "1/125",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "prompt": "Expand 5(x -7).",
+          "correctAnswer": "5x-35",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.algebra.simplify",
+          "samplePrompt": "Simplify 2x -6x +7."
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "samplePrompt": "Expand 5(x -7)."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "توسيع تعبير خطي وتقييم قوة عددية لا يختبران قواعد رفع أحاديات الحد إلى قوى.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS",
+      "arabicTitle": "الأسس السالبة",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 76–83; printed 43–50",
+      "targetMechanic": "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
+      "richV2ObjectiveExcerpt": "الأس السالب لا يجعل الناتج سالبًا تلقائيًا؛ بل يدل على المقلوب. أ^(-ن)=1/أ^ن بشرط أ ≠ 0 ون صحيح موجب. مثل 2^(-3)=1/8، و(-2)^(-3)=−1/8. والأس الصفري أ^0=1 عندما أ≠0. يمكن اكتشاف المعنى عبر جدول قوى العدد 10: 10^2=100، 10^1=10، 10^0=1، 10^-1=0.1، 10^-2=0.01، مع القسمة على 10 في كل انتقال. يهدف الدرس إلى كتابة القوى ذات الأس السالب بصورة لا تحتوي أسسًا سالبة وا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.powers10.evaluate",
+          "prompt": "Evaluate 10^4.",
+          "correctAnswer": "10000",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "prompt": "Calculate 1410 ÷ 10^1.",
+          "correctAnswer": "141",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.missing_exponent",
+          "prompt": "26 × 10^n = 260. Find n.",
+          "correctAnswer": "1",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.powers10.evaluate",
+          "samplePrompt": "Evaluate 10^4."
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "samplePrompt": "Calculate 1410 ÷ 10^1."
+        },
+        {
+          "family": "supporting.powers10.missing_exponent",
+          "samplePrompt": "26 × 10^n = 260. Find n."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "الأمثلة المولدة تتناول 10 بأسس موجبة أو الأس المجهول دون تطبيق الأس السالب المطلوب.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION",
+      "arabicTitle": "الترميز العلمي",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 84–91; printed 51–58",
+      "targetMechanic": "SCIENTIFIC_NOTATION_NORMALIZED_DECIMAL_AND_TEN_POWER",
+      "richV2ObjectiveExcerpt": "الترميز العلمي طريقة دقيقة لكتابة أعداد كبيرة جدًا أو صغيرة جدًا في صورة أ×10^ن، بحيث 1≤|أ|<10 ون عدد صحيح؛ ولا يُكتب الصفر بهذه الصيغة إلا باتفاق منفصل. يحرك الأس الموجب الفاصلة العشرية نحو اليمين عند العودة للصيغة القياسية، والأس السالب نحو اليسار. مثل 5.34×10^4=53400، و3.27×10^-3=0.00327. لتحويل 4250000 إلى الترميز العلمي ننقل الفاصلة إلى 4.25 ونعد ست مرا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "prompt": "50000 = 5 × 10^n. Find n.",
+          "correctAnswer": "4",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.evaluate",
+          "prompt": "Evaluate 10^1.",
+          "correctAnswer": "10",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.missing_exponent",
+          "prompt": "26 × 10^n = 260. Find n.",
+          "correctAnswer": "1",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "samplePrompt": "50000 = 5 × 10^n. Find n."
+        },
+        {
+          "family": "supporting.powers10.evaluate",
+          "samplePrompt": "Evaluate 10^1."
+        },
+        {
+          "family": "supporting.powers10.missing_exponent",
+          "samplePrompt": "26 × 10^n = 260. Find n."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "حساب أس 10 لا يكفي لقياس كتابة العدد بالصيغة العلمية المعيارية.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:07:COMPUTING-WITH-SCIENTIFIC-NOTATION",
+      "arabicTitle": "الحساب باستخدام الترميز العلمي",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 92–99; printed 59–66; subsequent unit exploration",
+      "targetMechanic": "SCIENTIFIC_NOTATION_MULTIPLY_DIVIDE_ADD_SUBTRACT",
+      "richV2ObjectiveExcerpt": "أتعلم إجراء العمليات الأربع على أعداد مكتوبة بالترميز العلمي مع الحفاظ على القيمة والمجال. عند الضرب أضرب المعاملات وأجمع أسس قوى العشرة، ثم أعيد التطبيع حتى يكون مقدار المعامل بين 1 و10. عند القسمة أقسم المعاملات مع عدم انعدام المقسوم عليه وأطرح الأسس. أما الجمع والطرح فلا أجمع الأسس؛ أوحّد قوة العشرة أولًا ثم أجمع أو أطرح المعاملات. نموذج: (3.2×10^4)(2×10^",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.powers10.multiply",
+          "prompt": "Calculate 77 × 10^3.",
+          "correctAnswer": "77000",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "prompt": "Calculate 1410 ÷ 10^1.",
+          "correctAnswer": "141",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.expressions.mixed",
+          "prompt": "Evaluate -2x -6 when x=1.",
+          "correctAnswer": "-8",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "prompt": "100000 = 1 × 10^n. Find n.",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.powers10.multiply",
+          "samplePrompt": "Calculate 77 × 10^3."
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "samplePrompt": "Calculate 1410 ÷ 10^1."
+        },
+        {
+          "family": "supporting.algebra.expressions.mixed",
+          "samplePrompt": "Evaluate -2x -6 when x=1."
+        },
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "samplePrompt": "100000 = 1 × 10^n. Find n."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الضرب أو القسمة في قوة عشرة لا يحقق وحده جميع عمليات الجمع/الطرح في الترميز العلمي.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS",
+      "arabicTitle": "الجذور",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
+      "targetMechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
+      "richV2ObjectiveExcerpt": "الجذر التربيعي الرئيسي لعدد غير سالب هو العدد غير السالب الذي مربعه يساوي ذلك العدد. مثل √64=8، وليس ±8؛ لكن المعادلة س^2=64 لها حلان س=8 أو س=-8. إذا وضعنا سالبًا خارج الجذر فإن -√25=-5، وإذا كان تحت جذر تربيعي لعدد سالب مثل √(-16) فلا توجد قيمة حقيقية. الجذر التكعيبي لأي عدد حقيقي هو العدد الذي مكعبه يساويه؛ مثل ∛(-27)=-3، و∛125=5. يطبق الطالب ذلك على مساح",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u06.l02.perfect_square",
+          "prompt": "هل العدد 64 مربع كامل؟ اكتب نعم أو لا.",
+          "correctAnswer": "نعم",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "usccss.g6.u01.l17.original_square_cube_values",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.2: with32 unit cubes, what is the largest possible whole-number EDGE of one complete cube? Situation B: Original practice5 rectangular prism A dimensions3in×2in×1in. Find full outside surface area.",
+          "correctAnswer": "31",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g6.u06.l04.cube_volume",
+          "prompt": "طول ضلع مكعب س=1/5 متر، احسب قيمة س³ ككسر في أبسط صورة.",
+          "correctAnswer": "1/125",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g6.u01.l17.original_square_cube_values",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "أحد المسارات يطلب حساب حجم مكعب، لا إيجاد الجذر التربيعي أو التكعيبي.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS",
+      "arabicTitle": "تقدير الجذور",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 114–121; printed 81–88",
+      "targetMechanic": "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
+      "richV2ObjectiveExcerpt": "الهدف تقدير الجذر التربيعي أو التكعيبي لعدد ليس مربعًا أو مكعبًا كاملًا، وتحديد موضع تقديره على خط الأعداد. نستخدم عددين مربعين كاملين يحيطان بالعدد: 81<83<100، إذن 9<√83<10، والتقدير العددي نحو 9.11. ولتقدير ∛320 نجد 6^3=216 و7^3=343، فينتج 6<∛320<7، والتقدير حوالي 6.84. يمكن زيادة الدقة بمقارنة مربعات قيم عشرية أو استخدام آلة حاسبة للتحقق، لكن لا أدعي أن ا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g6.u01.l17.original_square_cube_values",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.4: a square edge10 centimeters, find its area. Situation B: Original17.2 extension: cube edge4 units contains how many unit cubes?",
+          "correctAnswer": "264",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g6.u06.l02.perfect_square",
+          "prompt": "هل العدد 5 مربع كامل؟ اكتب نعم أو لا.",
+          "correctAnswer": "لا",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g6.u01.l17.original_square_cube_values",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "الأسئلة تختبر المربع الكامل وحسابات عددية، وليس تقدير جذر غير كامل.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS",
+      "arabicTitle": "مقارنة الأعداد الحقيقية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 122–129; unit support PDF130–139; printed 89–96 and unit assessment/projects",
+      "targetMechanic": "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
+      "richV2ObjectiveExcerpt": "الأعداد الحقيقية تتكون من الأعداد النسبية وغير النسبية. العدد النسبي يكتب أ/ب حيث أ وب صحيحان وب لا يساوي صفرًا، فيكون التمثيل العشري منتهيًا أو دوريًا. العدد غير النسبي لا يكتب كسرًا من عددين صحيحين، وله تمثيل عشري غير منتهٍ وغير دوري مثل √2 وπ. عند مقارنة أعداد حقيقية مختلفة الشكل أو ترتيبها أحولها إلى تمثيلات عشرية مناسبة، وأراعي الإشارة ودرجة الدقة. مثال",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u05.l09.compare_mixed_signed_rationals",
+          "prompt": "قارن -45/16 و2.1، واكتب < أو > أو =.",
+          "correctAnswer": "<",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "fractions.compare.unlike.common_denominator",
+          "prompt": "Compare 1/4 and 7/10. Enter <, >, or =.",
+          "correctAnswer": "<",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g4.u10.l08.decimal_compare",
+          "prompt": "قارن 0.35 و0.13: اكتب ٠ إذا الأول أصغر، و١ إذا تساويا، و٢ إذا الأول أكبر.",
+          "correctAnswer": "2",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "fractions.compare.unlike.common_denominator",
+          "samplePrompt": "Compare 1/4 and 7/10. Enter <, >, or =."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مقارنة الكسور والأعداد العشرية لا تثبت مقارنة الجذور غير النسبية وتصنيف الأعداد الحقيقية.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS",
+      "arabicTitle": "حل المعادلات باستخدام المعاملات النسبية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 144–151, printed 111–118",
+      "targetMechanic": "ONE_STEP_RATIONAL_COEFFICIENT_LINEAR_EQUATION",
+      "richV2ObjectiveExcerpt": "المعادلة ذات المعامل النسبي يمكن حلها بعملية عكسية تحفظ طرفي المساواة. عندما يكون (3/4)س=18، نضرب الطرفين في مقلوب 3/4 وهو 4/3؛ الناتج س=24. وعندما يكون -0.6ص=3.6 فإن ص=-6. إذا كان المعامل كسراً سالباً، نأخذ مقلوبه مع حفظ إشارته؛ لا نزيل السالب من تلقاء أنفسنا. يتحقق الطالب بالتعويض في المعادلة الأصلية ويبين سبب تساوي الطرفين. تربط أنشطة أصلية المهارة بالنسب",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u05.rational_linear_equation",
+          "prompt": "Solve (1/4)x = -4/4. Give x in simplest form.",
+          "correctAnswer": "-4",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.number.signed_rational_divide",
+          "prompt": "Calculate (1/5) ÷ (-1/4). Give the rational number in simplest form.",
+          "correctAnswer": "-4/5",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "prompt": "Solve 2x +3 = 13.",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u05.rational_linear_equation",
+          "samplePrompt": "Solve (1/4)x = -4/4. Give x in simplest form."
+        },
+        {
+          "family": "usccss.number.signed_rational_divide",
+          "samplePrompt": "Calculate (1/5) ÷ (-1/4). Give the rational number in simplest form."
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "samplePrompt": "Solve 2x +3 = 13."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "حل بعض المعادلات ذات معاملات نسبية وتدريبات قسمة مستقلة لا يثبت كل سياق الدرس.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS",
+      "arabicTitle": "حل المعادلات المكوّنة من خطوتين",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 154–161, printed 121–128",
+      "targetMechanic": "TWO_STEP_LINEAR_AX_PLUS_B_EQUALS_C",
+      "richV2ObjectiveExcerpt": "لحل معادلة مثل 2س+3=7، نلغي الجمع أولاً بطرح 3 من الطرفين، ثم نلغي الضرب بقسمة الطرفين على 2، فنحصل س=2. قد يكون الحد المتضمن المتغير سالباً أو كسرياً، ونستعمل عكس الجمع أو الطرح قبل عكس الضرب أو القسمة. نموذج كفتي ميزان أصلي يبين ضرورة إجراء العملية نفسها على الجانبين. الهدف أن يشرح الطالب لماذا يحافظ كل انتقال جبري على تكافؤ المعادلة، وأن يفحص الحل بالتعوي",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 2x − 4 = 4.",
+          "correctAnswer": "4",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "prompt": "Solve 5x -5 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "prompt": "Expand 3(x -5).",
+          "correctAnswer": "3x-15",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 2x − 4 = 4."
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "samplePrompt": "Solve 5x -5 = 5."
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "samplePrompt": "Expand 3(x -5)."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تدريبات حل معادلة من خطوتين مناسبة جزئيًا؛ توسيع قوس منفرد لا يثبت حل المعادلة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS",
+      "arabicTitle": "كتابة المعادلات المكوّنة من خطوتين",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 162–169; printed 129–136",
+      "targetMechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
+      "richV2ObjectiveExcerpt": "تبدأ كتابة معادلة من خطوتين بتعريف المجهول وتحديد العلاقة بين الكميات. عبارة «ثلاثة أمثال عدد ناقص ثمانية يساوي سالب ثلاثة وعشرين» تصبح 3ن−8=−23؛ لا تصبح 3(ن−8)=-23 لأن الأقواس تغير المعنى. إذا كان الاشتراك الثابت 400 درهم ويضاف 15 درهمًا عن كل شهر، وبلغ الإجمالي 700 درهم، فإن التكلفة 400+15ش=700، وبالتالي ش=20 شهرًا. هذا يربط نص الحياة اليومية بالرموز، ثم ي",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u02.l08.classify_equations",
+          "prompt": "A cube has side length 5 units. Calculate its total surface area using A=6s^2. Show units and explain whether the full side-length relationship is proportional. Answer exactly. Teacher review required for tables and reasoning.",
+          "correctAnswer": "150",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "prompt": "Solve 5x -5 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 4x − 3 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u02.l08.classify_equations",
+          "samplePrompt": "A cube has side length 5 units. Calculate its total surface area using A=6s^2. Show units and explain whether the full side-length relationship is proportional. Answer exactly. Teacher review required for tables and reas"
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "samplePrompt": "Solve 5x -5 = 5."
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 4x − 3 = 5."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "سؤال مساحة سطح مكعب وحل المعادلة الجاهزة لا يختبران صياغة معادلة من موقف.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE",
+      "arabicTitle": "حل المعادلات التي تحتوي على متغيرات في كل طرف",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 178–185; printed 145–152",
+      "targetMechanic": "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
+      "richV2ObjectiveExcerpt": "يمكن أن تظهر س في طرفي المساواة؛ نطرح من الطرفين الحد المتغير نفسه حتى يصبح المتغير في طرف واحد. مثال: 8+4س=5س؛ بطرح 4س من كل طرف نحصل 8=س. مثال آخر 6ن−1=4ن−5؛ نطرح 4ن ثم نضيف 1 فتحصل 2ن=−4، أي ن=−2. تحقق بتعويض ن=−2: الطرف الأيسر −13، والأيمن −13. لا تتطلب المعادلة نقل الأرقام وتغيير علاماتها اعتباطًا، بل الحفاظ على مساواة الطرفين بعملية واحدة. يطبق الدرس ع",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "prompt": "Solve 3x -8 = 16.",
+          "correctAnswer": "8",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 3x − 7 = -1.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.simplify",
+          "prompt": "Simplify -2x -5x +3.",
+          "correctAnswer": "-7x+3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "samplePrompt": "Solve 3x -8 = 16."
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 3x − 7 = -1."
+        },
+        {
+          "family": "supporting.algebra.simplify",
+          "samplePrompt": "Simplify -2x -5x +3."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "المسارات تحل معادلات ذات متغير في طرف واحد، ولا تحقق مهارة متغير في كل طرف.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS",
+      "arabicTitle": "حل المعادلات المكوّنة من عدة خطوات",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 186–193; printed 153–160",
+      "targetMechanic": "MULTI_STEP_DISTRIBUTIVE_LINEAR_EQUATIONS_AND_SOLUTION_COUNT",
+      "richV2ObjectiveExcerpt": "المعادلة متعددة الخطوات قد تتضمن أقواسًا وحدودًا متشابهة ومتغيرات في الطرفين. أبدأ باستخدام خاصية التوزيع ثم أجمع الحدود المتشابهة وأحل بمعكوسات الجمع والضرب. مثال: 15(20+د)=420 ⇒ 300+15د=420 ⇒ 15د=120 ⇒ د=8. إذا كانت 6(س−3)+10=2(3س−4)، يصبح الطرفان 6س−8، فتتحقق المعادلة لكل س (هوية). وإذا كانت 8(4−2س)=4(3−5س)+4س، يصبح 32−16س=12−16س وهو تناقض، فلا حل. الأنشط",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.algebra.simplify",
+          "prompt": "Simplify 2x -6x +7.",
+          "correctAnswer": "-4x+7",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "prompt": "Solve 5x -5 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 4x − 3 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "prompt": "Expand 5(x -7).",
+          "correctAnswer": "5x-35",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.algebra.simplify",
+          "samplePrompt": "Simplify 2x -6x +7."
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "samplePrompt": "Solve 5x -5 = 5."
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 4x − 3 = 5."
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "samplePrompt": "Expand 5(x -7)."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "توجد مهارات توسعة وتبسيط ومعادلات بسيطة؛ حالات الحل المتعدد/الصفري لم تثبت.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE",
+      "arabicTitle": "معدل التغير الثابت",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 204–211; printed 171–178",
+      "targetMechanic": "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
+      "richV2ObjectiveExcerpt": "معدل التغير الثابت يصف مقدار تغير المخرجات عند تغير المدخلات بمقدار واحد. يحسب من جدول أو رسم بياني بالعلاقة (ص₂−ص₁)/(س₂−س₁) عندما س₂≠س₁. إذا انخفض رصيد من 170 إلى 140 درهمًا خلال ثلاثة أسابيع، فإن التغير =−30/3=−10 دراهم في الأسبوع، ويعبر السالب عن تناقص الرصيد. أما إنتاج 5 و10 و15 قطعة عند الزمن 2 و4 و6 دقائق فيعطي معدل 2.5 قطعة/دقيقة. لا يصبح كل معدل ثابت",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "ratio.unit_rate.equivalent_ratio",
+          "prompt": "30 items in 5 minutes has the same unit rate as ? items in 10 minutes. Find the missing number.",
+          "correctAnswer": "60",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g6.u03.l07.unit_rate_equivalence",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Car55miles per hour travels110miles in2hours. 1=yes,0=no. Situation B: If two pairs represent equivalent ratios, their unit rates must match for the same quantity order and units. 1=yes,0=no.",
+          "correctAnswer": "4",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "prompt": "A shop sells shirts for $8 each with no fixed fee. Find the total price in dollars of 1 shirts. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "correctAnswer": "8",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "ratio.unit_rate.direct",
+          "prompt": "12 items are produced in 6 minutes. How many items are produced per 1 minute?",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "ratio.unit_rate.equivalent_ratio",
+          "samplePrompt": "30 items in 5 minutes has the same unit rate as ? items in 10 minutes. Find the missing number."
+        },
+        {
+          "family": "usccss.g6.u03.l07.unit_rate_equivalence",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "samplePrompt": "A shop sells shirts for $8 each with no fixed fee. Find the total price in dollars of 1 shirts. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review."
+        },
+        {
+          "family": "ratio.unit_rate.direct",
+          "samplePrompt": "12 items are produced in 6 minutes. How many items are produced per 1 minute?"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "معدل الوحدة يدعم مفهوم معدل التغير، لكن الجداول/الرسوم تحتاج تحققًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:02:SLOPE",
+      "arabicTitle": "الميل",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 214–221; printed 181–188",
+      "targetMechanic": "SLOPE_FROM_POINTS_TABLE_AND_GRAPH",
+      "richV2ObjectiveExcerpt": "ميل المستقيم يحدد انحداره واتجاهه: الميل = التغير الرأسي ÷ التغير الأفقي، أي م=(ص₂−ص₁)/(س₂−س₁) إذا س₂ لا يساوي س₁. يستخرج الميل من رسم بقراءة الارتفاع والامتداد أو من جدول قيم أو من زوج نقطتين. إن صعد الخط عند التحرك يمينًا فالميل موجب؛ وإن هبط فسالب؛ والمستقيم الأفقي ميله صفر، والعمودي ميله غير معرّف. يهدف الدرس إلى وصف الانحدار باستخدام نموذج أصلي لمنحدر ط",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "prompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -4x + 8, find y when x = -4.",
+          "correctAnswer": "24",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "prompt": "Rewrite 6x+3y=-21 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "correctAnswer": "-2,-7",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -4x + 8, find y when x = -4."
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "samplePrompt": "Rewrite 6x+3y=-21 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "يوجد تحديد صيغة الميل وبعض حسابات الدالة، وليست كل الأسئلة مخصصة لحساب الميل.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM",
+      "arabicTitle": "المعادلات بصيغة y = mx",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
+      "targetMechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
+      "richV2ObjectiveExcerpt": "تمثل العلاقة ص=م س تناسبًا طرديًا عندما تكون م ثابتًا ويكون التمثيل البياني خطًا مستقيمًا يمر بنقطة الأصل (0،0). العدد م هو معدل التغير أو ثابت التناسب، ويمكن إيجاده من ص/س لنقطة لا تساوي فيها س صفرًا. إذا تدفع حافلة 12 درهمًا لكل ساعة تشغيل، فإن التكلفة ص=12س عند س ساعات؛ لهذا (0،0)،(2،24)،(5،60) تنتمي إلى الخط نفسه. في جدول تناسب طردي تختلف قيم س لكن النسب",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
+          "correctAnswer": "y=8x+16",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "prompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "correctAnswer": "-12",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "سؤال تكلفة تتضمن رسمًا ثابتًا لا يمثل العلاقة التناسبية ص=م س المطلوبة.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM",
+      "arabicTitle": "صيغة الميل والمقطع",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 232–239; printed 199–206",
+      "targetMechanic": "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
+      "richV2ObjectiveExcerpt": "كل علاقة خطية غير رأسية يمكن كتابتها في صورة ص=م س+ب، حيث م ميل المستقيم و ب مقطعه من محور ص أي قيمة ص عندما س=0. للمستقيم الذي يقطع محور ص عند (0،4) ويمر بالنقطة (2،10)، نجد م=(10−4)/2=3، فالمعادلة ص=3س+4. عند ص=−2س+5 يكون الميل -2 والمقطع الرأسي 5، ويبدأ الرسم عند (0،5) ثم يهبط مقدار 2 عند زيادة س بمقدار 1. تحافظ المعادلة على علاقة ما بين التكلفة الثابتة ل",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "prompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "correctAnswer": "1,0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "prompt": "For the straight line y = -4x + 10, find the y-intercept.",
+          "correctAnswer": "10",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "correctAnswer": "-12",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "samplePrompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
+        },
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "samplePrompt": "For the straight line y = -4x + 10, find the y-intercept."
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تظهر مسائل صيغة الميل والمقطع وقراءة المقطع، لكن معظم المسارات إنجليزية.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS",
+      "arabicTitle": "تمثيل خط مستقيم بيانيًا باستخدام التقاطعات",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 242–249; printed 209–216",
+      "targetMechanic": "GRAPH_LINEAR_EQUATION_USING_X_AND_Y_INTERCEPTS",
+      "richV2ObjectiveExcerpt": "لرسم مستقيم من معادلته بإيجاد التقاطعات مع المحورين، نجعل ص=0 فنوجد المقطع السيني (س،0)، ثم نجعل س=0 فنوجد المقطع الصادي (0،ص). على سبيل المثال في 2س+3ص=12، عند ص=0 يكون 2س=12، ومنه (6،0)، وعند س=0 يكون 3ص=12، ومنه (0،4). نرسم النقطتين ونمد الخط المستقيم عبرهما بمقياس واضح. إذا كان المستقيم يمر بالأصل فقد يكون المقطعان هما النقطة نفسها، وعندئذ نختار نقطة أخر",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "prompt": "For the straight line y = x − 1, find the y-intercept.",
+          "correctAnswer": "-1",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "prompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "correctAnswer": "-4,7",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "correctAnswer": "-12",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "samplePrompt": "For the straight line y = x − 1, find the y-intercept."
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "samplePrompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المقطع الصادي يظهر، لكن المقطع السيني ورسم المستقيم من المقطعين غير مختبرين بصورة كافية.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS",
+      "arabicTitle": "كتابة المعادلات الخطية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 254–261; printed 221–228",
+      "targetMechanic": "WRITE_LINEAR_EQUATION_FROM_POINTS_SLOPE_OR_GRAPH",
+      "richV2ObjectiveExcerpt": "أكتب معادلة خط مستقيم عندما أعرف ميله ونقطة عليه، أو نقطتين مختلفتين، أو جدولًا يوضح تغيرًا ثابتًا. صيغة النقطة والميل هي ص−ص₁=م(س−س₁)، وصيغة الميل والمقطع هي ص=م س+ب. إذا مر الخط بالنقطتين (1،5)،(3،11)، فالميل=(11−5)/(3−1)=3؛ وبالتعويض في ص=3س+ب عند (1،5) نجد ب=2، فالصيغة ص=3س+2. إذا عرفت نقطة (-2،3) وميلًا 4، أكتب ص−3=4(س+2) ⇒ ص=4س+11. يمكن استخراج المعادل",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = x − 1, find y when x = -6.",
+          "correctAnswer": "-7",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "prompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "correctAnswer": "-4,7",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = x − 1, find y when x = -6."
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "samplePrompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تحويل الصيغة الخطية لا يغطي الكتابة من الرسم أو النقطتين.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING",
+      "arabicTitle": "حل أنظمة المعادلات باستخدام التمثيل البياني",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 266–275; printed 233–242",
+      "targetMechanic": "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
+      "richV2ObjectiveExcerpt": "نظام المعادلتين الخطيّتين يحل بإيجاد الزوج المرتب (س،ص) الذي يحقق المعادلتين في الوقت نفسه. بيانيًا يكون الحل نقطة تقاطع المستقيمين. مثل ص=2س+1 وص=−س+7؛ بحساب التلاقي 2س+1=−س+7 نجد س=2 وص=5؛ نرسم الخطين ونتحقق من (2،5). إذا كان الخطان متوازيين مختلفين فلا حل، وإذا انطبقا على بعضهما فهناك عدد غير منتهٍ من الحلول. نستخدم شبكة إحداثية أصلية لتمثيل كلفتين أو عدد",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.linear.systems.solution_count.classify",
+          "prompt": "How many solutions does the system x+y=1, 2x+2y=3 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher.",
+          "correctAnswer": "none",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.linear.systems.solution_count.classify",
+          "samplePrompt": "How many solutions does the system x+y=1, 2x+2y=3 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تصنيف عدد حلول النظام لا يختبر إيجاد نقطة التقاطع عبر الرسم.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY",
+      "arabicTitle": "حل أنظمة المعادلات جبريًا",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 276–283; printed 243–250",
+      "targetMechanic": "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
+      "richV2ObjectiveExcerpt": "يمكن إيجاد الزوج الذي يحقق معادلتين من الدرجة الأولى بالتعويض أو بالحذف، ثم التحقق من الناتج في المعادلتين. بالتعويض إذا كانت ص=س+2 وص=3س−4، نساوي التعبيرين فنحصل س+2=3س−4، أي س=3 ثم ص=5. وبالحذف، في النظام 2س+ص=7 و3س−ص=8، نجمع المعادلتين فنجد 5س=15 وبالتالي س=3 وص=1. من المعاني الواقعية نوعا تذاكر أو سلع، حيث س عدد أحدهما وص عدد الآخر، ويشترط أن يلائم الحل ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.linear.systems.two_by_two.integer_coefficients",
+          "prompt": "Solve the system 1x+1y=2 and 1x-1y=2. Enter the exact ordered pair x,y. Representing the constraints and explaining a graphical or algebraic solution remains teacher-reviewed.",
+          "correctAnswer": "2,0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.systems.solution_count.classify",
+          "prompt": "How many solutions does the system x+y=10, x-y=-4 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher.",
+          "correctAnswer": "one",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 4x − 3 = 5.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.linear.systems.two_by_two.integer_coefficients",
+          "samplePrompt": "Solve the system 1x+1y=2 and 1x-1y=2. Enter the exact ordered pair x,y. Representing the constraints and explaining a graphical or algebraic solution remains teacher-reviewed."
+        },
+        {
+          "family": "algebra.linear.systems.solution_count.classify",
+          "samplePrompt": "How many solutions does the system x+y=10, x-y=-4 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher."
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 4x − 3 = 5."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "حل نظام 2×2 مناسب جزئيًا؛ أسئلة معادلة مفردة لا تثبت الحل الجبري لنظام.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS",
+      "arabicTitle": "تمثيل العلاقات",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF300–309, printed 267–276",
+      "targetMechanic": "REPRESENT_LINEAR_RELATION_TABLE_GRAPH_EQUATION_WORDS",
+      "richV2ObjectiveExcerpt": "تمثيل العلاقة لا يقتصر على جدول أو رسم. لو ينجز عامل 6 صناديق في كل ساعة بمعدل ثابت وكان العدد الابتدائي صفرًا، نكتب ص=6س؛ صفوف الجدول للساعات 1 و2 و3 و4 تعطينا 6 و12 و18 و24 صندوقًا. كل صف يمثل زوجًا مرتبًا (س،ص) ويمكن رسم هذه النقاط ثم وصفها بالكلمات. ينبه الكتاب إلى تحويل وصف علاقة خطية إلى أكثر من شكل، مثل مسافة تقطع يوميًا أو تكلفة ثابتة للوحدة، مع استن",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
+          "correctAnswer": "y=8x+16",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "اختيار معادلة سياقية يمثل جانبًا من العلاقة فقط.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS",
+      "arabicTitle": "العلاقات",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF310–317, printed 277–284",
+      "targetMechanic": "RELATION_ORDERED_PAIRS_DOMAIN_RANGE_MAPPING_GRAPH",
+      "richV2ObjectiveExcerpt": "العلاقة هي مجموعة أزواج مرتبة (س،ص) تربط كل مدخل بمخرج أو أكثر. مجال العلاقة مجموعة جميع القيم الأولى في الأزواج، والمدى مجموعة القيم الثانية المختلفة، ولا نكتب المكرر أكثر من مرة عند تعداد المجموعة. مثلاً العلاقة {(2،6)،(−4،−8)،(−3،6)،(0،−4)} مجالها {−4،−3،0،2} ومداها {−8،−4،6}. يمكن عرض نفس البيانات بجدول أو مخطط أسهم من قيم س إلى قيم ص، أو رسم نقاط على ال",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "functions.table.lookup.invert",
+          "prompt": "Table: x=[1,2,3,4,5]; f(x)=[31,37,32,37,33]. Evaluate f(3) using the table. Enter the integer output.",
+          "correctAnswer": "32",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "functions.table.lookup.invert",
+          "samplePrompt": "Table: x=[1,2,3,4,5]; f(x)=[31,37,32,37,33]. Evaluate f(3) using the table. Enter the integer output."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "قراءة قيمة الدالة من جدول لا تختبر مجال العلاقة ومداها وطرق تمثيلها.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS",
+      "arabicTitle": "الدوال",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF320–327, printed 287–294",
+      "targetMechanic": "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
+      "richV2ObjectiveExcerpt": "الدالة علاقة تجعل كل قيمة مدخلة س مرتبطة بقيمة مخرجة ص واحدة فقط. يمكن أن يكون لمدخلين مختلفين المخرج نفسه، لكن لا يصح أن يكون المدخل نفسه مرتبطًا بمخرجين مختلفين. مثلاً الأزواج {(1،4)،(2،4)،(3،7)} تمثل دالة؛ أما {(1،4)،(1،6)،(2،8)} فليست دالة. يرمز د(س) إلى مخرج الدالة عند إدخال س، وليس ضرب د في س. إذا كانت د(س)=2س+1، فإن د(−3)=−5. الجدول والمخطط والتمثيل ا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "functions.notation.evaluate_context",
+          "prompt": "A named function H gives a quantity in metres after t hours and obeys H(t)=12+5t. Evaluate H(0). Enter the integer output only. Explain with the teacher what the input and output mean in context.",
+          "correctAnswer": "12",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "functions.relations.unique_output.classify",
+          "prompt": "Is the relation (-3,7), (-1,10), (-3,-5) a function of its first coordinate? Enter yes or no. Explain graph features with the teacher.",
+          "correctAnswer": "no",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "functions.notation.evaluate_context",
+          "samplePrompt": "A named function H gives a quantity in metres after t hours and obeys H(t)=12+5t. Evaluate H(0). Enter the integer output only. Explain with the teacher what the input and output mean in context."
+        },
+        {
+          "family": "functions.relations.unique_output.classify",
+          "samplePrompt": "Is the relation (-3,7), (-1,10), (-3,-5) a function of its first coordinate? Enter yes or no. Explain graph features with the teacher."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تمييز الدالة وحساب قيمتها مناسب جزئيًا؛ التمثيل والاختبار البياني يحتاجان مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS",
+      "arabicTitle": "الدوال الخطية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 328–337; printed 295–304",
+      "targetMechanic": "LINEAR_FUNCTION_RULE_TABLE_GRAPH",
+      "richV2ObjectiveExcerpt": "الدالة الخطية علاقة يكون تمثيلها البياني خطًا مستقيمًا غير رأسي، ويمكن كتابتها في صيغة د(س)=م س+ب. العدد م هو معدل التغير الثابت، وب هو قيمة الدالة عند س=0. مثلاً د(س)=5−2س لها ميل −2 ومقطع رأسي 5، ومن جدول س=0،1،2،3 نحصل على د(س)=5،3،1،−1. وعند التعويض س=−1 نحصل على د(−1)=7. أما د(س)=4س فتمثل تناسباً طردياً يمر بالأصل. الفرق الأساسي بين الدالة الخطية ودالة ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "prompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "correctAnswer": "1,0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -4x + 8, find y when x = -4.",
+          "correctAnswer": "24",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "samplePrompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -4x + 8, find y when x = -4."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تعويض قاعدة خطية وتغيير الصيغة مناسبان جزئيًا؛ تمثيل الرسم يحتاج فحصًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS",
+      "arabicTitle": "مقارنة خصائص الدوال",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 342–351; printed 309–318",
+      "targetMechanic": "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
+      "richV2ObjectiveExcerpt": "لمقارنة دالتين خطيتين قد تعرض إحداهما بجدول والأخرى برسم أو بمعادلة. نقارن الميل م، وهو التغير في الناتج لكل زيادة وحدة في المدخل، ونقارن المقطع الرأسي ب أي قيمة الدالة عندما س=0. مثلاً د(س)=5س و هـ(س)=3س+12: الدالة د أسرع زيادة لأن معدلها 5 أكبر من 3، لكن هـ تبدأ بقيمة أعلى. تتساوى الدالتان عندما 5س=3س+12، أي عند س=6 والناتج 30. المقارنة بين رسوم خدمات متغي",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "prompt": "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟",
+          "correctAnswer": "غير خطية",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "usccss.g7.u02.l12.compare_same_axes_rates",
+          "prompt": "Two proportional lines share the same axes and scales. Their constants are A=2.5, B=2.25. Enter the larger constant of proportionality. Submit an exact numeric response. The comparison assumes identical axes and units. Drawn lines and contextual explanations require teacher review.",
+          "correctAnswer": "5/2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u02.l12.compare_same_axes_rates",
+          "samplePrompt": "Two proportional lines share the same axes and scales. Their constants are A=2.5, B=2.25. Enter the larger constant of proportionality. Submit an exact numeric response. The comparison assumes identical axes and units. D"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مقارنة معدل خطي وتمييز خطي/تربيعي جزء من مقارنة الخصائص.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS",
+      "arabicTitle": "تكوين الدوال",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 352–359; printed 319–326",
+      "targetMechanic": "BUILD_LINEAR_FUNCTION_FROM_TABLE_GRAPH_CONTEXT",
+      "richV2ObjectiveExcerpt": "تكوين الدالة يعني بناء قاعدة تربط مدخلات الموقف بمخرجاته باستخدام بيانات أو وصف أو رسم. في نموذج يبدأ برسم ثابت 20 درهماً ويضاف 12 درهماً عن كل درس، نكتب ك(ن)=20+12ن. إذا أعطي جدول بمدخلات 2 و4 و6 ومخرجات 53 و59 و65 فإن فرق النتائج 6 لكل خطوتين في المدخل، فالميل 3؛ وبالتعويض في ك(2)=53 نجد ب=47، فيكون ك(ن)=3ن+47. إذا كانت كلفة 5 ساعات 110 دراهم و7 ساعات 150 ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
+          "correctAnswer": "y=8x+16",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g6.u08.l02.linear_rule",
+          "prompt": "جد قيمة الدالة 18ن+15 عندما ن=12. اكتب الناتج.",
+          "correctAnswer": "231",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "correctAnswer": "-12",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "كتابة قاعدة من موقف وبعض التعويض لا تغطي إنشاء الدالة من كل التمثيلات.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS",
+      "arabicTitle": "الدوال الخطية والدوال غير الخطية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 360–367; printed 327–334",
+      "targetMechanic": "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
+      "richV2ObjectiveExcerpt": "الدالة الخطية تمثل بخط مستقيم عندما نرسم مدخلاتها ومخرجاتها، ويكون معدل تغيرها ثابتًا على فترات س متساوية. أما الدوال غير الخطية فيتغير معدلها عادةً بين الفترات، ويكون تمثيلها البياني غير خط مستقيم. في د(س)=3س+2 تكون فروق المخرجات 3 عندما تزيد س بمقدار 1؛ في هـ(س)=س² تكون المخرجات عند س=0،1،2،3 هي 0،1،4،9، والفروق 1،3،5 فلا يكون المعدل ثابتاً. تعلم هذه المقا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "prompt": "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟",
+          "correctAnswer": "غير خطية",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "prompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "التصنيف الخطي/غير الخطي مدعوم بعائلة عربية؛ بعض المسارات تتناول التناسب بدل الخطية العامة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS",
+      "arabicTitle": "الدوال التربيعية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 368–375; printed 335–342",
+      "targetMechanic": "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
+      "richV2ObjectiveExcerpt": "الدالة التربيعية كثيرة حدود درجتها الثانية وتكتب د(س)=أ س²+ب س+ج مع أ≠0، ويأخذ رسمها البياني شكل قطع مكافئ. في الدالة د(س)=س² نحصل عند س=−2،−1،0،1،2 على 4،1،0،1،4؛ ولهذا يكون الرسم متماثلًا حول محور الصادات، ورأسه (0،0) وفتحه لأعلى. في هـ(س)=−س²+4 تتجه الفتحة لأسفل، والرأس (0،4)، وتقطع محور السينات في (−2،0) و(2،0). في الدوال التي على صورة أ س²+ج يكون الرأس ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.functions.polynomial_value",
+          "prompt": "For p(x)=3x²+0x-7, find p(3).",
+          "correctAnswer": "20",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "functions.quadratic.output_roots.solve",
+          "prompt": "Given f(x)=(x-(-4))(x-(4)), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher.",
+          "correctAnswer": "-4,4",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "prompt": "هل النقاط (١،٣)،(٢،٦)،(٣،٩) التي تقع على مستقيم تمثل دالة خطية أم غير خطية؟",
+          "correctAnswer": "خطية",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.functions.polynomial_value",
+          "samplePrompt": "For p(x)=3x²+0x-7, find p(3)."
+        },
+        {
+          "family": "functions.quadratic.output_roots.solve",
+          "samplePrompt": "Given f(x)=(x-(-4))(x-(4)), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تقييم دالة تربيعية والجذور جزء من الدرس؛ الرأس ومحور التناظر ورسم القطع المكافئ لم تثبت.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS",
+      "arabicTitle": "التمثيلات البيانية النوعية",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 380–387; printed 347–354",
+      "targetMechanic": "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
+      "richV2ObjectiveExcerpt": "يعرض التمثيل البياني النوعي وصفًا لكيف تتغير كمية مع الوقت أو مع مقدار مستقل، حتى إذا لم تكن القيم الدقيقة متاحة. يمثل ميل الرسم للأعلى زيادة الكمية، والخط الأفقي فترة ثبات، والميل للأسفل نقصانها. مثال أصلي: تبدأ كمية ماء في خزان عند صفر، ترتفع تدريجيًا خلال أول دقيقتين، ثم تبقى ثابتة دقيقتين، وبعدها تقل حتى الصفر؛ يجب أن يظهر الرسم ارتفاعًا ثم مستوى أفقيًا ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "prompt": "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟",
+          "correctAnswer": "غير خطية",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "functions.domain_range.context_bounds",
+          "prompt": "A tank starts with 27 litres and drains at 9 litres per hour. V(t)=27-9t is modeled only from t=0 through t=3 hours. Enter the endpoint form exactly as D=0,3;R=0,27. Explain with the teacher why the context restricts both sets.",
+          "correctAnswer": "D=0,3;R=0,27",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "functions.domain_range.context_bounds",
+          "samplePrompt": "A tank starts with 27 litres and drains at 9 litres per hour. V(t)=27-9t is modeled only from t=0 through t=3 hours. Enter the endpoint form exactly as D=0,3;R=0,27. Explain with the teacher why the context restricts bot"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مجال سياقي وتصنيف خطية/غير خطية لا يختبران تفسير ازدياد/تناقص الرسم النوعي.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES",
+      "arabicTitle": "المستقيمات",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 7–14; printed 371–378",
+      "targetMechanic": "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
+      "richV2ObjectiveExcerpt": "المستقيمان المتوازيان في مستوى واحد لا يلتقيان، والمتعامدان يتقاطعان بزاوية قائمة. إذا قطع مستقيم ثالث مستقيمين متوازيين تكوّنت زوايا متناظرة ومتبادلة داخلياً ومتبادلة خارجياً متساوية في القياس، وزوايا داخلية على جهة واحدة من القاطع مجموعها 180 درجة. في التقاطع نفسه الزاويتان المتقابلتان بالرأس متساويتان، والمتجاورتان على خط مستقيم متكاملتان. عند زاوية 65° ت",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l01.transversal_angle_measure",
+          "prompt": "مستقيمان متوازيان يقطعهما قاطع. إذا كان قياس زاوية داخلية 105°، فما قياس الزاوية المتبادلة داخلياً معها بالدرجات؟",
+          "correctAnswer": "105",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF",
+      "arabicTitle": "البرهان الهندسي",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 15–22; printed 379–386",
+      "targetMechanic": "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
+      "richV2ObjectiveExcerpt": "البرهان الهندسي سلسلة عبارات مبررة من معطيات معلومة إلى نتيجة مطلوبة. في برهان العمودين تكتب في العمود الأيمن أو الأول العبارات الرياضية وفي المقابل أسباب كل منها مثل «معطى»، «تعريف الزوايا المتقابلة بالرأس»، «الزوايا المتكاملة مجموعها 180°»، «خاصية الطرح من المساواة»، أو «خاصية التعدي». نستخدم ذلك لإثبات تساوي زاويتين متقابلتين بالرأس: إذا كان المستقيمان يت",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l02.proof_reason_classify",
+          "prompt": "إذا ثبت في البرهان أن أ = ب وأن ب = ج، فما السبب الذي يسمح باستنتاج أ = ج؟ افترض أن قياس ب = 84°. اختر رقم السبب: 1) طرح المقدار نفسه من طرفي مساواتين؛ 2) خاصية التعدي؛ 3) نظرية الزوايا المتقابلة بالرأس.",
+          "correctAnswer": "2",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES",
+      "arabicTitle": "زوايا المثلثات",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 25–32; printed 389–396",
+      "targetMechanic": "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
+      "richV2ObjectiveExcerpt": "في أي مثلث مستوٍ مجموع قياسات الزوايا الداخلية الثلاث يساوي 180 درجة. إذا كانت زاويتان 52° و68° فالزاوية الثالثة 60°. الزاوية الخارجية المجاورة لزاوية داخلية عند رأس المثلث تساوي مجموع قياسي الزاويتين الداخليتين غير المجاورتين لها، كما تكمل الزاوية الداخلية المجاورة لتبلغ 180°. في مثلث زاويتاه البعيدتان عن الخارجية 35° و55° تكون الخارجية 90°. يمكن إثبات قاعد",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l03.triangle_angle_measure",
+          "prompt": "في مثلث قياس زاويتين داخليتين 58° و51°. ما قياس الزاوية الداخلية الثالثة بالدرجات؟",
+          "correctAnswer": "71",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES",
+      "arabicTitle": "المضلعات والزوايا",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 33–40; printed 397–404",
+      "targetMechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "richV2ObjectiveExcerpt": "المضلع شكل مغلق مكون من قطع مستقيمة. يمكن تقسيم مضلع محدب عدد أضلاعه ن إلى ن−2 مثلثات برسم أقطار من رأس واحد، لذلك مجموع قياسات زواياه الداخلية س=(ن−2)×180°. مجموع قياسات زواياه الخارجية عند اختيار زاوية واحدة عند كل رأس وبالاتجاه نفسه في المضلع المحدب يساوي 360°. إذا كان المضلع منتظمًا فتكون زواياه الداخلية متساوية وقياس كل زاوية داخلية (ن−2)×180°/ن، وكل زا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.angles.supplementary",
+          "prompt": "Two angles form a straight line. One angle is 106°. Find the other angle.",
+          "correctAnswer": "74",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "prompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle.",
+          "correctAnswer": "110",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.angles.supplementary",
+          "samplePrompt": "Two angles form a straight line. One angle is 106°. Find the other angle."
+        },
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "samplePrompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "توجد زاوية داخلية ناقصة وزاوية مكملة؛ الزوايا الخارجية ومجموع زوايا المضلع لم تستوف.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM",
+      "arabicTitle": "نظرية فيثاغورس",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 47–54; printed 411–418",
+      "targetMechanic": "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
+      "richV2ObjectiveExcerpt": "في المثلث القائم، مجموع مربعي طولي ضلعي القائمة يساوي مربع طول الوتر: أ²+ب²=ج². الوتر هو الضلع المقابل للزاوية القائمة، وهو الأطول في هذا المثلث. إذا كان ضلعا القائمة 9 سم و12 سم، فالوتر ج=√(81+144)=√225=15 سم. أما إذا عُلم الوتر 13 سم وأحد ضلعي القائمة 5 سم، فإن طول الآخر ب=√(169−25)=12 سم. عكس النظرية يقرر أنه إذا حققت أطوال موجبة أ²+ب²=ج² حيث ج الأكبر، فإ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l05.pythagorean_integer_triple",
+          "prompt": "مثلث قائم الزاوية طول ضلعي قائمته 14 سم و48 سم. أوجد طول الوتر بالسنتيمتر.",
+          "correctAnswer": "50",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM",
+      "arabicTitle": "استخدام نظرية فيثاغورس",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 59–66; printed 423–430",
+      "targetMechanic": "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+      "richV2ObjectiveExcerpt": "نظرية فيثاغورس تحسب مسافة مستقيمة لا تقع على ضلع أفقي أو رأسي عندما يتكون مثلث قائم. إذا عبر قارب 24 متراً أفقياً و7 أمتار عمودياً، فطول المسار القطري √(24²+7²)=√625=25 متراً. وفي نموذج سلم طوله 13 متراً وقاعدته تبعد عن الجدار 5 أمتار، يكون ارتفاع السلم على الجدار √(13²−5²)=12 متراً. نطبق الفكرة أيضًا على قطر مستطيل أبعاده 8 و15 فيكون 17، وعلى قطر صندوق قائم",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l06.pythagorean_context_diagonal",
+          "prompt": "مستطيل طوله 16 سم وعرضه 30 سم. ما طول قطره المباشر بالسنتيمتر؟",
+          "correctAnswer": "34",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE",
+      "arabicTitle": "المسافة على المستوى الإحداثي",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 67–74; printed 431–438",
+      "targetMechanic": "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+      "richV2ObjectiveExcerpt": "المسافة بين النقطتين أ(س₁،ص₁) وب(س₂،ص₂) في المستوى الإحداثي تُحسب بتكوين مثلث قائم ضلعاه الأفقي |س₂−س₁| والرأسي |ص₂−ص₁|، ثم نطبق فيثاغورس لنحصل د=√((س₂−س₁)²+(ص₂−ص₁)²). مثلاً بين أ(2،−1) وب(5،3) يكون الفرق الأفقي 3 والرأسي 4، فالمسافة 5 وحدات. عند النقطتين (−4،2) و(2،−6) الفرق 6 أفقياً و−8 رأسياً، فالمسافة √(36+64)=10 وحدات. المسافة غير سالبة ومتماثلة: د(أ،ب)",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u05.l07.coordinate_plane_distance",
+          "prompt": "على المستوى الإحداثي، ما المسافة بين أ(8، 4) وب(-6، -44) بوحدات الطول؟",
+          "correctAnswer": "50",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS",
+      "arabicTitle": "الإزاحة",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 89–96; printed 453–460",
+      "targetMechanic": "TRANSLATE_SHAPE_VECTOR_COORDINATE",
+      "richV2ObjectiveExcerpt": "الإزاحة تحويل هندسي ينقل كل نقطة بالاتجاه نفسه والمسافة نفسها دون تدوير أو قلب. إذا كانت الإزاحة أربع وحدات يمينًا وثلاث وحدات إلى أسفل، تتحول النقطة (س،ص) إلى (س+4،ص−3). مثال: أ(−2،1) تصبح أ′(2،−2)، وب(3،5) تصبح ب′(7،2). تمتلك الصورة الأطوال وقياسات الزوايا نفسها لأن الإزاحة تحويل تطابق، وترتيب الرؤوس واتجاهها لا يتغيران. يمكن استنتاج متجه الإزاحة من نقطة و",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u05.l11.plot_from_signed_moves",
+          "prompt": "على شبكة إحداثية تحركت من الأصل أفقيًا 2 وحدة (السالب يسارًا)، ثم رأسيًا -0.5 وحدة (السالب أسفل). اكتب الزوج المرتب للنقطة.",
+          "correctAnswer": "(2,-0.5)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l12.find_horizontal_endpoint",
+          "prompt": "من النقطة (3.25,-3.5) تحرك 0.75 وحدة يسارًا على خط أفقي. اكتب قيمة الإحداثي السيني للنقطة الجديدة.",
+          "correctAnswer": "2.5",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l12.find_vertical_endpoint",
+          "prompt": "من النقطة (-2.5,-3) تحرك 2 وحدة إلى أعلى على خط رأسي. اكتب قيمة الإحداثي الصادي للنقطة الجديدة.",
+          "correctAnswer": "-1",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "نقل نقطة باتجاهين مناسب جزئيًا؛ نقل شكل كامل ورسم الصورة يحتاج مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS",
+      "arabicTitle": "الانعكاس",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 97–104; printed 461–468",
+      "targetMechanic": "REFLECT_POINT_ACROSS_X_Y_AXES",
+      "richV2ObjectiveExcerpt": "الانعكاس قلب شكل حول خط يسمى محور الانعكاس بحيث تكون كل نقطة وصورتها على عمود من هذا المحور وعلى مسافتين متساويتين منه وفي جهتين متقابلتين. حول محور السينات (س،ص)→(س،−ص)، وحول محور الصادات (س،ص)→(−س،ص). مثلاً أ(−3،4) تنعكس حول محور السينات إلى أ′(−3،−4) وحول محور الصادات إلى أ″(3،4). يحفظ الانعكاس الأطوال والزوايا لكنه يعكس ترتيب الاتجاه بالنسبة للشكل الأصلي",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u05.l10.reflect_across_x",
+          "prompt": "اكتب صورة النقطة (1,-0.5) عند الانعكاس حول المحور السيني x بالصيغة (س،ص).",
+          "correctAnswer": "(1,0.5)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l10.reflect_across_y",
+          "prompt": "اكتب صورة النقطة (-3.5,4) عند الانعكاس حول المحور الصادي y بالصيغة (س،ص).",
+          "correctAnswer": "(3.5,4)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l11.reflect_both_axes",
+          "prompt": "مثّل النقطة (-2.25,-6) ثم اعكسها حول س، وبعد ذلك حول ص. ما الزوج المرتب النهائي؟",
+          "correctAnswer": "(2.25,6)",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الانعكاس حول المحورين مناسب لنقاط؛ تناظر الأشكال الكاملة يُراجع.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS",
+      "arabicTitle": "الدوران",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 111–118; printed 475–482",
+      "targetMechanic": "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
+      "richV2ObjectiveExcerpt": "الدوران تحويل يحرك كل نقطة حول مركز ثابت بزاوية واتجاه محددين، مع ثبات بعدها عن المركز. عند الدوران عكس عقارب الساعة حول نقطة الأصل 90° تتحول (س،ص) إلى (−ص،س)، وعند 180° تتحول إلى (−س،−ص)، وعند 270° إلى (ص،−س). مثال أ(2،3): بعد 90° تصبح (−3،2)، وبعد 180° تصبح (−2،−3)، وبعد 270° تصبح (3،−2). الدوران باتجاه عقارب الساعة 90° يعادل عكس العقارب 270°. تتحول جميع ر",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u06.l03.rotation_origin_coordinate",
+          "prompt": "دُوّرت النقطة أ(3، -1) عكس اتجاه عقارب الساعة حول الأصل بمقدار 90°. ما الإحداثي الصادي للنقطة الناتجة؟",
+          "correctAnswer": "3",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS",
+      "arabicTitle": "عمليات تغيير الأبعاد/التمدد",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 123–130; printed 487–494",
+      "targetMechanic": "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
+      "richV2ObjectiveExcerpt": "التمدد (تغيير الأبعاد) تحويل يغير حجم الشكل وفق معامل قياس ثابت ك مع الحفاظ على شكل الزوايا وتناسب الأطوال. عندما يكون مركز التمدد هو الأصل، تتحول النقطة (س،ص) إلى (ك س،ك ص). إذا ك=2، تنتقل (−3،4) إلى (−6،8) ويصبح كل طول ضعف الأصل، بينما تكبر المساحة إلى أربعة أمثالها. إذا ك=1/2، تتحول (4،−6) إلى (2،−3) وتصبح الأطوال نصف قيمها. عندما يكون ك أكبر من 1 تكبير، ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "prompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 4.5, 6.0, 7.5 units. Determine the scale factor from the original triangle to the proposed copy. Check ALL three matching sides, not just one. Enter the number of the mathematically correct choice: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = no uniform scale; 5 = 2/3.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 4.5, 6.0, 7.5 units. Determine the scale factor from the original triangle to the proposed copy. Check ALL three m"
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "معدل القياس مناسب جزئيًا؛ مركز التمدد ورسم الصورة يتطلبان توثيقًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS",
+      "arabicTitle": "التطابق والتحويلات",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 145–152; printed 509–516",
+      "targetMechanic": "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
+      "richV2ObjectiveExcerpt": "التطابق يعني أن الشكلين لهما القياسات نفسها للأضلاع والزوايا المتناظرة، ويمكن مطابقة أحدهما على الآخر بواسطة تحويلات جامدة مثل الإزاحة أو الانعكاس أو الدوران أو تركيب منها. نحلل صورة شكل على شبكة: إزاحة (3،−2) تغيّر مواقع الرؤوس ولا تغيّر ضلعًا طوله 5 وحدات، والانعكاس حول محور الصادات يقلب اتجاه الرسم مع حفظ المسافات، والدوران 180° حول الأصل يرسل (س،ص) إلى (",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g6.u05.l10.reflect_across_x",
+          "prompt": "اكتب صورة النقطة (1,-0.5) عند الانعكاس حول المحور السيني x بالصيغة (س،ص).",
+          "correctAnswer": "(1,0.5)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l10.reflect_across_y",
+          "prompt": "اكتب صورة النقطة (-3.5,4) عند الانعكاس حول المحور الصادي y بالصيغة (س،ص).",
+          "correctAnswer": "(3.5,4)",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g6.u05.l11.reflect_both_axes",
+          "prompt": "مثّل النقطة (-2.25,-6) ثم اعكسها حول س، وبعد ذلك حول ص. ما الزوج المرتب النهائي؟",
+          "correctAnswer": "(2.25,6)",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الانعكاس فقط لا يثبت تركيب التحويلات الصلبة بجميع أنواعها.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE",
+      "arabicTitle": "التطابق",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 157–164; printed 521–528",
+      "targetMechanic": "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
+      "richV2ObjectiveExcerpt": "عند كتابة △أ ب ج ≅ △د هـ و فإن ترتيب الحروف يحدد التناظر: أ↔د، ب↔هـ، ج↔و. تتساوى عندئذ الأضلاع أ ب=د هـ، ب ج=هـ و، أ ج=د و، وتتساوى الزوايا المناظرة. يمكن أن يقع مثلثان متطابقان على جانبين مختلفين أو أحدهما مقلوبًا ولا يغيّر ذلك القياس. إذا كان △أ ب ج بأطوال 5 و12 و13، وكان △د هـ و متطابقًا معه بالترتيب نفسه، فالأضلاع المقابلة هي 5 و12 و13 بلا تغيير. يستعمل ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
+          "prompt": "Source side category all three different lengths is Select 1: equilateral; 2: scalene; 3: isosceles-only. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
+          "samplePrompt": "Source side category all three different lengths is Select 1: equilateral; 2: scalene; 3: isosceles-only. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "تحديد نوع مثلث بحسب أضلاعه لا يختبر تطابق مضلعين وأجزائهما المتناظرة.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS",
+      "arabicTitle": "التشابه والتحويلات",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 171–178; printed 535–542",
+      "targetMechanic": "SIMILARITY_DILATION_AND_RIGID_TRANSFORMS",
+      "richV2ObjectiveExcerpt": "التشابه يعني تساوي الزوايا المتناظرة وتناسب الأطوال المناظرة بنسبة واحدة. يمكن الحصول على شكل مشابه باستعمال تمدد بمعامل ك موجب يتبعه إزاحة أو انعكاس أو دوران أو سبقته هذه التحويلات. إذا كان مثلث صغير أطواله 3،4،5، ومثلث كبير أطواله 6،8،10 فإن معامل الانتقال من الصغير إلى الكبير هو 2. الزوايا لا تتغير، لكن الأطوال والمحيط يتضاعفان والمساحة تصبح 4 أضعاف. إذا ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "prompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 1.5, 2.0, 2.5 units. Determine the scale factor from the proposed copy back to the original triangle. Check ALL three matching sides, not just one. Enter the number of the mathematically correct choice: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = no uniform scale; 5 = 2/3.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "prompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (2,1), (10,1), (13,7), (5,7). The claimed scale factor is 2. The proposed copy has oblique angles even though both shapes use straight edges. Are these polygons scaled copies at that factor? Check corresponding distances AND angles, including the diagonal. Enter 1 for yes, or 0 for no.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
+        },
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 1.5, 2.0, 2.5 units. Determine the scale factor from the proposed copy back to the original triangle. Check ALL th"
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "samplePrompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (2,1), (10,1), (13,7), (5,7). The claimed scale factor is 2. The proposed copy has oblique angles even tho"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "معامل التشابه والمسافات المتناظرة مناسب جزئيًا؛ تركيب التمدد والتحويلات يتطلب مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS",
+      "arabicTitle": "خصائص المضلعات المتشابهة",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 179–186; printed 543–550",
+      "targetMechanic": "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
+      "richV2ObjectiveExcerpt": "للمضلعين المتشابهين زاوية مناظرة مساوية لكل زاوية في الآخر، وأطوال الأضلاع المتناظرة بنسبة ثابتة تسمى معامل التشابه. إذا كان مستطيل صغير أبعاده 3×6 وآخر كبير 6×12 فالنسب 6/3=12/6=2، وبالتالي هما متشابهان مع معامل 2 من الصغير إلى الكبير. أما مستطيل 3×6 ومستطيل 6×10 فزاويتهما كلها قائمة، ولكن نسب الطول 6/3=2 والعرض 10/6 لا تساوي 2، فليسا متشابهين. قد توضح الرس",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "prompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (0,0), (8,0), (11,6), (3,6). The claimed scale factor is 2. The proposed copy has oblique angles even though both shapes use straight edges. Are these polygons scaled copies at that factor? Check corresponding distances AND angles, including the diagonal. Enter 1 for yes, or 0 for no.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g6.u02.l05.scaled_ratio_missing_term",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 5 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (5 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: 3 cups pasta,6 ounces tuna,10 ounces soup. Tuna ounces for FIVE batches? Situation B: 18:3 simplifies to ?:1. Find first term.",
+          "correctAnswer": "156",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "samplePrompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (0,0), (8,0), (11,6), (3,6). The claimed scale factor is 2. The proposed copy has oblique angles even thou"
+        },
+        {
+          "family": "usccss.g6.u02.l05.scaled_ratio_missing_term",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 5 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (5 × A's numerical answer) + (B"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "معدل التشابه وقياس ضلع مناسب جزئيًا؛ خصائص المضلعات المتناظرة لم تثبت بالكامل.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT",
+      "arabicTitle": "المثلثات المتشابهة والقياس غير المباشر",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 187–194; printed 551–558",
+      "targetMechanic": "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
+      "richV2ObjectiveExcerpt": "يتشابه مثلثان إذا تطابقت زاويتان مناظرتان فيهما؛ لأن الزاوية الثالثة تتحدد من مجموع زوايا المثلث 180°. عند وجود جسمين قائمي الارتفاع في الوقت نفسه وتحت الأشعة الشمسية نفسها، يتكوّن مثلثان قائمان متشابهان إذا كان اتجاه الظل متطابقًا وعلى سطح أفقي مناسب. إذا كان ارتفاع عمود صغير 2.5 متر وظله 5 أمتار، وظل بناء 8 أمتار، فإن ارتفاع البناء هـ يحقق هـ/8=2.5/5، وبال",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
+          "prompt": "Two scaled W-shaped figures have corresponding visible segments 6 units in the original and 15 units in its copy. The distance between TWO other points need not be a drawn side; it still uses the same scale factor. An unseen distance in the original is 6 units. What is its distance in the copy? Enter the exact integer answer.",
+          "correctAnswer": "15",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
+          "samplePrompt": "Two scaled W-shaped figures have corresponding visible segments 6 units in the original and 15 units in its copy. The distance between TWO other points need not be a drawn side; it still uses the same scale factor. An un"
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "قياس غير مباشر ومعامل مقياس مناسب جزئيًا؛ برهان تشابه المثلثات يحتاج معلمًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES",
+      "arabicTitle": "المثلثات القائمة والمتشابهة",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 195–202; printed 559–566",
+      "targetMechanic": "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
+      "richV2ObjectiveExcerpt": "عندما نختار نقطتين على مستقيم غير رأسي ونرسم خطًا أفقيًا وخطًا رأسيًا بينهما، يتكون مثلث قائم يمثل الارتفاع (فرق الصادات) والامتداد (فرق السينات). إذا اخترنا نقطتين أخريين على المستقيم نفسه، تتشارك المثلثات القائمة زاوية حادة مرتبطة باتجاه المستقيم، ولذلك تتشابه بزاويتين AA. يترتب أن نسبة الارتفاع إلى الامتداد ثابتة وتساوي ميل المستقيم م=(ص₂−ص₁)/(س₂−س₁). على",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "prompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "correctAnswer": "0",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.coordinate.gradient_between_points",
+          "prompt": "Find the gradient of the line through (-4, 3) and (0, -9).",
+          "correctAnswer": "-3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
+        },
+        {
+          "family": "geometry.coordinate.gradient_between_points",
+          "samplePrompt": "Find the gradient of the line through (-4, 3) and (0, -9)."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الميل يمس نسبة التشابه في المثلث القائم لكن لا يثبت معايير تشابهه.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES",
+      "arabicTitle": "مساحة الأشكال المتشابهة ومحيطها",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 203–210; printed 567–574",
+      "targetMechanic": "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
+      "richV2ObjectiveExcerpt": "إذا كانت الأشكال متشابهة بمعامل قياس أطوال ك بين الأصل والصورة، فإن كل طول متناظر يضرب في ك، ومحيط الصورة يساوي محيط الأصل مضروبًا في ك، بينما مساحة الصورة تساوي مساحة الأصل مضروبة في ك². إذا ضاعفنا ضلع مربع من 3 إلى 6 سم، تضاعف محيطه من 12 إلى 24 سم فقط، لكن المساحة تغيرت من 9 إلى 36 سم² أي أربعة أمثالها. في مستطيل 3×6 وآخر 6×12، معامل الطول 2، المحيط 18→36",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u01.l06.scaled_area_square_factor",
+          "prompt": "An original shape is a triangle of area 6 square units. Draw a uniformly scaled copy at length scale factor k=1. By what AREA factor (not length factor) has the original area changed? Enter an exact whole number or reduced fraction such as 9/25. Scaling lengths by k scales the area by k squared.",
+          "correctAnswer": "1",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g7.u01.l10.change_scale_length_and_area",
+          "prompt": "A triangular plot has real base 120 m and height 90 m. A drawing uses 1 cm to 50 m. What is the base in drawing centimetres? Enter an exact integer or fraction in the specified units. Measure and justify any original construction with your teacher.",
+          "correctAnswer": "12/5",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u01.l06.scaled_area_square_factor",
+          "samplePrompt": "An original shape is a triangle of area 6 square units. Draw a uniformly scaled copy at length scale factor k=1. By what AREA factor (not length factor) has the original area changed? Enter an exact whole number or reduc"
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
+        },
+        {
+          "family": "usccss.g7.u01.l10.change_scale_length_and_area",
+          "samplePrompt": "A triangular plot has real base 120 m and height 90 m. A drawing uses 1 cm to 50 m. What is the base in drawing centimetres? Enter an exact integer or fraction in the specified units. Measure and justify any original con"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "عامل المساحة والطول مرتبطان بالدرس؛ المحيط في جميع حالات المصدر غير مثبت.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS",
+      "arabicTitle": "حجم الأسطوانة",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 7–14; printed 587–594",
+      "targetMechanic": "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
+      "richV2ObjectiveExcerpt": "تتكون الأسطوانة الدائرية القائمة من قاعدتين دائريتين متوازيتين لهما نصف قطر واحد وارتفاع عمودي بين القاعدتين. حجمها هو مساحة القاعدة مضروبة في الارتفاع، أي ح=π نق² ع. إذا نق=3 سم والارتفاع 10 سم، فالحجم 90π سم³، ويساوي نحو 282.74 سم³ عند التقريب إلى منزلتين باستعمال قيمة π الأدق. إذا أُعطي القطر 8 سم، فيجب قسمة القطر على 2 للحصول على نق=4 سم قبل التربيع. يمك",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g7.u07.prism_volume_base_height",
+          "prompt": "A right prism has base area 23 square units and height 7 units. Find its volume.",
+          "correctAnswer": "161",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+          "prompt": "أسطوانة نصف قطرها 3 سم وارتفاعها 10 سم. حجمها kπ سم³. أوجد معامل π، أي العدد k.",
+          "correctAnswer": "90",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g7.u07.prism_volume_base_height",
+          "samplePrompt": "A right prism has base area 23 square units and height 7 units. Find its volume."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "حجم أسطوانة صحيح جزئيًا؛ حجم منشور سؤال تمهيدي وليس قياسًا مباشرًا للأسطوانة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES",
+      "arabicTitle": "حجم المخروط",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
+      "targetMechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
+      "richV2ObjectiveExcerpt": "المخروط الدائري القائم ذو قاعدة دائرية ورأس واحد، وارتفاعه ع يقاس عمودياً من الرأس إلى مركز القاعدة. يساوي حجمه ثلث حجم أسطوانة لها القاعدة نفسها والارتفاع نفسه: ح=(1/3)π نق² ع. إذا كان نصف قطر القاعدة 3 سم والارتفاع 6 سم، فح=18π سم³. يمكن مقارنة مخاريط متساوية القاعدة والارتفاع مع أسطوانة لاستقصاء نسبة الثلث، لكن هذا الاستقصاء لا يجيز استخدام طول المولد الم",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+          "prompt": "أسطوانة نصف قطرها 6 سم وارتفاعها 6 سم. حجمها kπ سم³. أوجد معامل π، أي العدد k.",
+          "correctAnswer": "216",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g7.u09.l02.cone_volume_pi_coefficient",
+          "prompt": "مخروط دائري قائم نصف قطر قاعدته 3 سم وارتفاعه العمودي 18 سم. حجمه kπ سم³. أوجد k.",
+          "correctAnswer": "54",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "مسار إضافي يطرح حجم الأسطوانة بينما هدف الدرس حجم المخروط؛ هذا تدريب داعم لا إثبات إتقان المخروط.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 53,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES",
+      "arabicTitle": "حجم الكرة",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 24–31; printed 603–610",
+      "targetMechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
+      "richV2ObjectiveExcerpt": "الكرة جسم ثلاثي الأبعاد جميع نقاط سطحه تبعد المسافة نفسها عن مركزه، وتسمى تلك المسافة نصف القطر نق. قانون حجم الكرة ح=(4/3)π نق³. إذا نق=3 سم فإن الحجم (4/3)π×27=36π سم³. إذا أعطي القطر 10 سم، فنق=5 سم، فيكون الحجم (500/3)π سم³ تقريباً 523.6 سم³. حجم نصف الكرة هو نصف حجم الكرة الكاملة، أي (2/3)π نق³. عندما يتضاعف نصف قطر كرة، يتضاعف الحجم ثماني مرات بسبب تكع",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+          "prompt": "كرة نصف قطرها 9 سم. حجمها الدقيق kπ سم³. أوجد k.",
+          "correctAnswer": "972",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "سؤال معامل تشابه الأضلاع لا يقيس حجم الكرة.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 54,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:04:SURFACE-AREA-OF-CYLINDERS",
+      "arabicTitle": "مساحة سطح الأسطوانة",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 38–45; printed 617–624",
+      "targetMechanic": "CYLINDER_LATERAL_AND_TOTAL_SURFACE_PI_COEFFICIENT",
+      "richV2ObjectiveExcerpt": "مساحة سطح الأسطوانة الدائرية القائمة المغلقة تساوي مساحة قاعدتين دائريتين زائد المساحة الجانبية التي تتكون عند فردها مستطيلاً. إذا كان نصف القطر نق والارتفاع ع، فإن مساحة القاعدة πنق²، ومحيطها 2πنق، والمساحة الجانبية = 2πنق×ع. إذن مساحة السطح الكلية = 2πنق²+2πنق ع. الأسطوانة المفتوحة من أعلى أو أسفل لا نحسب لها سوى الأوجه الموجودة فعلًا؛ فلا نجمع قاعدتين إذا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+          "prompt": "أسطوانة مغلقة نصف قطر قاعدتها 6 سم وارتفاعها 6 سم. مساحة سطحها الكلية kπ سم². أوجد k.",
+          "correctAnswer": "144",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "prompt": "A circle has radius 4. Its area is kπ. Find k.",
+          "correctAnswer": "16",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.geometry.circle_circumference_pi_coefficient",
+          "prompt": "A circle has radius 9. Its circumference is kπ. Find k.",
+          "correctAnswer": "18",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "samplePrompt": "A circle has radius 4. Its area is kπ. Find k."
+        },
+        {
+          "family": "supporting.geometry.circle_circumference_pi_coefficient",
+          "samplePrompt": "A circle has radius 9. Its circumference is kπ. Find k."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مساحة الأسطوانة صحيحة جزئيًا؛ أسئلة مساحة/محيط دائرة مجردة أسئلة داعمة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES",
+      "arabicTitle": "مساحة سطح المخروط",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 50–57; printed 629–636",
+      "targetMechanic": "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
+      "richV2ObjectiveExcerpt": "المساحة الجانبية لمخروط دائري قائم تنتج عند فرد سطحه المنحني في قطاع دائري؛ وتعتمد على نصف قطر القاعدة نق وطول الراسم ل، لا على الارتفاع العمودي وحده. قانون الجانبية ج=πنق ل، والكلية للمخروط ذي القاعدة المغلقة س=πنق ل+πنق². إذا كانت رأس المخروط على محور القاعدة، فإن ل²=نق²+ع² بالعلاقة الفيثاغورية؛ لذلك عندما نق=6 سم وع=8 سم يكون ل=10 سم. في نشاط أصلي نقدر مس",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "prompt": "A circle has radius 14. Its area is kπ. Find k.",
+          "correctAnswer": "196",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+          "prompt": "مخروط دائري قائم مغلق نصف قطر قاعدته 15 سم وطول راسمه 25 سم. مساحة سطحه الكلية kπ سم². أوجد k.",
+          "correctAnswer": "600",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "samplePrompt": "A circle has radius 14. Its area is kπ. Find k."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مساحة المخروط صحيحة جزئيًا؛ مساحة دائرة مجردة دعم تمهيدي.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS",
+      "arabicTitle": "تغيرات الأبعاد",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 60–67; printed 639–646",
+      "targetMechanic": "SIMILAR_SOLIDS_SCALE_LENGTH_AREA_SQUARE_VOLUME_CUBE",
+      "richV2ObjectiveExcerpt": "إذا تغيرت جميع الأبعاد الخطية لمجسم مشابه بمعامل تكبير أو تصغير موجب ك، فإن أطوال الأضلاع تُضرب في ك، ومساحة سطحه تُضرب في ك²، وحجمه يُضرب في ك³. لذلك مضاعفة طول ضلع مكعب من 4 إلى 8 سم تجعل المساحة 4 أمثال والحجم 8 أمثال. أما تغيير بعد واحد فقط فلا يبرر استعمال ك² وك³، لأن المجسم الناتج قد لا يكون مشابهًا للأول. في نشاط أصلي يقارن الطالب علبة مكعبة وأخرى مضا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g7.u09.l06.scale_area_factor",
+          "prompt": "إذا ضُرب كل بُعد طولي لمجسم في 15، فكم مرة تتضاعف مساحة سطحه؟",
+          "correctAnswer": "225",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g7.u09.l06.scale_volume_factor",
+          "prompt": "إذا ضُرب كل بُعد طولي لمجسم في 5، فكم مرة يتضاعف حجمه؟",
+          "correctAnswer": "125",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "A side of length 4 corresponds to a side of length 8 in a similar shape. Find the scale factor from the first shape to the second.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "samplePrompt": "A side of length 4 corresponds to a side of length 8 in a similar shape. Find the scale factor from the first shape to the second."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تغيير مساحة/حجم المجسم بالنسبة المكعبة والمربعة مدعوم جزئيًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS",
+      "arabicTitle": "مخططات الانتشار",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 49–58; printed 661–670",
+      "targetMechanic": "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
+      "richV2ObjectiveExcerpt": "مخطط الانتشار يتكون من نقاط يمثل كل منها قيمتين كميتين للحدث نفسه، فتكتب النقطة (س،ص) مع تحديد ما يمثله كل محور. إذا ارتفعت ص عادة عندما تزداد س، فالاتجاه موجب؛ وإذا انخفضت ص عند زيادة س فالارتباط سالب؛ وإذا تناثرت النقاط بلا اتجاه ظاهر فقد يكون الارتباط ضعيفًا أو معدومًا. لا يكفي وجود اتجاه لأن نستنتج علاقة سببية. في نشاط أصلي نقارن درجات حرارة خلال خمسة أي",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "statistics.correlation.direction",
+          "prompt": "Points (1,2),(2,4),(3,6),(4,8) lie on a perfect line. Does r indicate a positive or negative linear relationship?",
+          "correctAnswer": "positive",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.statistics.scatter_correlation",
+          "prompt": "A scatter plot of water intake and plant growth contains the points (2, 23), (6, 24), (10, 25). Classify the association as positive, negative, or none.",
+          "correctAnswer": "positive",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "statistics.correlation.direction",
+          "samplePrompt": "Points (1,2),(2,4),(3,6),(4,8) lie on a perfect line. Does r indicate a positive or negative linear relationship?"
+        },
+        {
+          "family": "supporting.statistics.scatter_correlation",
+          "samplePrompt": "A scatter plot of water intake and plant growth contains the points (2, 23), (6, 24), (10, 25). Classify the association as positive, negative, or none."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "اتجاه الارتباط يدعم قراءة الانتشار؛ الرسم وقراءة النقاط مفتوحان للمراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT",
+      "arabicTitle": "المستقيم الأفضل تمثيلًا",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 61–68; printed 673–680",
+      "targetMechanic": "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
+      "richV2ObjectiveExcerpt": "المستقيم الأفضل تمثيلًا يقرب العلاقة بين متغيرين عدديين عندما يتجمع مخطط الانتشار حول اتجاه خطي. لا يلزم أن يمر بكل نقطة؛ الأفضل عادة أن توزع النقاط على جانبيه وأن تكون انحرافات ص عن التوقع صغيرة. إذا كانت بيانات س=1،2،3،4 وص=3،5،7،9، فالمستقيم ص=2س+1 يلائمها تمامًا. في بيانات فعلية قد توجد فروق بين القيم الحقيقية والقيم المتوقعة؛ الفرق الباقي يسمى المتبقي ص",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "statistics.linear_model.fit_select",
+          "prompt": "For points (0,2),(1,4),(2,7),(3,9), which line has smaller sum of squared residuals? A) $y=3x+2; B) $y=2.4x+1.9. Enter A or B. Explain the visual goodness-of-fit with the teacher.",
+          "correctAnswer": "b",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.linear_model.predict",
+          "prompt": "A hand-fit model predicts y=2.4x+1.9. What does it predict at x=$5? Enter the number rounded to one decimal place. State contextual limitations with the teacher.",
+          "correctAnswer": "13.9",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.linear_model.residual",
+          "prompt": "At x=$0, observed y=$2 while predicted y=2.4x+1.9. What is observed minus predicted? Enter the signed residual to one decimal place.",
+          "correctAnswer": "0.1",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "statistics.linear_model.fit_select",
+          "samplePrompt": "For points (0,2),(1,4),(2,7),(3,9), which line has smaller sum of squared residuals? A) $y=3x+2; B) $y=2.4x+1.9. Enter A or B. Explain the visual goodness-of-fit with the teacher."
+        },
+        {
+          "family": "statistics.linear_model.predict",
+          "samplePrompt": "A hand-fit model predicts y=2.4x+1.9. What does it predict at x=$5? Enter the number rounded to one decimal place. State contextual limitations with the teacher."
+        },
+        {
+          "family": "statistics.linear_model.residual",
+          "samplePrompt": "At x=$0, observed y=$2 while predicted y=2.4x+1.9. What is observed minus predicted? Enter the signed residual to one decimal place."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "ملاءمة خط وتنبؤ وباقٍ مدعومة جزئيًا؛ التقدير البصري والتفسير يتطلبان تحققًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES",
+      "arabicTitle": "الجداول ذات المدخلين",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 73–80; printed 685–692",
+      "targetMechanic": "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
+      "richV2ObjectiveExcerpt": "الجدول ذو المدخلين ينظم تكرارات خاصيتين فئويتين في صفوف وأعمدة ويظهر إجمالي كل صف وعمود. إذا شارك 40 طالبًا في استطلاع حول نشاط رياضي وموسيقي، يمكن تصنيف 14 في رياضة فقط، و8 في كليهما، و6 في موسيقى فقط، و12 في لا هذا ولا ذاك؛ هنا من يمارس الرياضة 22، ومن يمارس الموسيقى 14. تقاطع الصف والعمود يعني حالة مشتركة، وليس جمع تكرارين. النسبة النسبية الكلية تقسم على ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "statistics.two_way.marginal_count",
+          "prompt": "In a fictional club survey, Group A has Sports12 and Arts8; Group B has Sports9 and Arts11. How many respondents selected Sports in total?",
+          "correctAnswer": "21",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.two_way.conditional_relative",
+          "prompt": "Fictional two-way data: Group A Sports12/Arts8, Group B Sports9/Arts11. What percent of Group A chose Sports? (row-relative) Enter a percent rounded to two decimal places without the % sign.",
+          "correctAnswer": "60",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.statistics.table_total",
+          "prompt": "A frequency table has counts 5, 2, 8, 6. Find the total frequency.",
+          "correctAnswer": "21",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "statistics.two_way.marginal_count",
+          "samplePrompt": "In a fictional club survey, Group A has Sports12 and Arts8; Group B has Sports9 and Arts11. How many respondents selected Sports in total?"
+        },
+        {
+          "family": "statistics.two_way.conditional_relative",
+          "samplePrompt": "Fictional two-way data: Group A Sports12/Arts8, Group B Sports9/Arts11. What percent of Group A chose Sports? (row-relative) Enter a percent rounded to two decimal places without the % sign."
+        },
+        {
+          "family": "supporting.statistics.table_total",
+          "samplePrompt": "A frequency table has counts 5, 2, 8, 6. Find the total frequency."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "التكرارات الهامشية والنسب الشرطية من جدول ثنائي مناسبة جزئيًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:04:DESCRIPTIVE-STATISTICS",
+      "arabicTitle": "الإحصاء الوصفي",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 85–92; printed 697–704",
+      "targetMechanic": "DESCRIPTIVE_STATISTICS_FIVE_NUMBER_MEAN_MEDIAN_MODE_RANGE",
+      "richV2ObjectiveExcerpt": "الإحصاء الوصفي يساعد على عرض مجموعة بيانات دون أن يغيّرها. المتوسط الحسابي هو مجموع القيم مقسوماً على عددها، والوسيط القيمة الوسطى بعد ترتيب البيانات، والمنوال أكثر قيمة تكرارًا وقد يوجد أكثر من منوال أو لا منوال. المدى هو أكبر قيمة ناقص أصغر قيمة. ويلخص ملخص الأعداد الخمسة الصغرى والربيع الأول والوسيط والربيع الثالث والعظمى، ويمكن رسم مخطط صندوقي منها. لمجم",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "statistics.center_spread.median",
+          "prompt": "Find the median of 1, 10, 12, 13, 16.",
+          "correctAnswer": "12",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "supporting.statistics.quartile",
+          "prompt": "An ordered data summary states the lower quartile is 5. What is Q1?",
+          "correctAnswer": "5",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "prompt": "A data set has minimum 4 and maximum 7. Find its range.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.center_spread.mean",
+          "prompt": "Find the mean of 11, 14, 14, 14, 17.",
+          "correctAnswer": "14",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "statistics.center_spread.median",
+          "samplePrompt": "Find the median of 1, 10, 12, 13, 16."
+        },
+        {
+          "family": "supporting.statistics.quartile",
+          "samplePrompt": "An ordered data summary states the lower quartile is 5. What is Q1?"
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "samplePrompt": "A data set has minimum 4 and maximum 7. Find its range."
+        },
+        {
+          "family": "statistics.center_spread.mean",
+          "samplePrompt": "Find the mean of 11, 14, 14, 14, 17."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المتوسط والوسيط والمدى والربيع جزء من الإحصاء الوصفي.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY",
+      "arabicTitle": "مقاييس التباين",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 93–100; printed 705–712",
+      "targetMechanic": "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
+      "richV2ObjectiveExcerpt": "قد يكون لمجموعتين متوسط واحد وتباين مختلف. يساعد متوسط الانحراف المطلق في قياس متوسط بعد القيم عن المتوسط دون إلغاء فروق السالب والموجب. للمجموعة [2،4،6،8] المتوسط5، والانحرافات المطلقة 3،1،1،3، ومن ثم متوسطها2. أما الانحراف المعياري فيصف بعد القيم عن المتوسط عبر مربعات فروقها؛ لمجموعة المجتمع نفسها يكون التباين5 والانحراف المعياري √5≈2.236. ويجب بيان هل الم",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
+      "actualSampleByFamily": [
+        {
+          "family": "statistics.center_spread.mad",
+          "prompt": "The synthetic data are 27, 31, 35, 39, 43. Calculate the mean absolute deviation (MAD) from the mean. Enter an exact decimal or fraction.",
+          "correctAnswer": "4.8",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Distance28pages from mean32.6 in TENTHS? Situation B: Source Han data max pages?",
+          "correctAnswer": "180",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "prompt": "A data set has minimum 4 and maximum 7. Find its range.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "statistics.center_spread.mad",
+          "samplePrompt": "The synthetic data are 27, 31, 35, 39, 43. Calculate the mean absolute deviation (MAD) from the mean. Enter an exact decimal or fraction."
+        },
+        {
+          "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "samplePrompt": "A data set has minimum 4 and maximum 7. Find its range."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الانحراف المطلق المتوسط والمدى مناسب جزئيًا؛ باقي المقاييس من المصدر تحتاج أدلة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS",
+      "arabicTitle": "تحليل توزيعات البيانات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 101–108; printed 713–720",
+      "targetMechanic": "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
+      "richV2ObjectiveExcerpt": "يوضح شكل توزيع البيانات أين تتجمع القيم، وأين توجد فجوات أو قيم بعيدة، وما إذا كانت الكتل متماثلة حول مركزها أو منحرفة نحو جهة معينة. التوزيع المتماثل تقارب فيه القيم من الجانبين، أما التوزيع الملتوي يمينًا فيملك ذيلًا ممتدًا إلى القيم العالية، والملتوي يسارًا ذيلًا إلى القيم الصغيرة. لمجموعة [2،3،3،4،18] المتوسط6 والوسيط3، والقيمة العالية18 تجعل الذيل الأيم",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g6.u08.l16.box_plot_source_quartiles",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Given100 mice and box interval Q1 to Q3, percentage represented? Situation B: Same homework data. Third quartile Q3?",
+          "correctAnswer": "111",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "statistics.distribution_shape.classify",
+          "prompt": "A synthetic numerical distribution has values 7, 8, 9, 10, 11 with frequencies 2, 2, 2, 2, 2 in the same order. Classify its overall shape as uniform, symmetric bell-shaped, right-skewed, left-skewed, or bimodal. Enter only the classification. Suggesting a real-world context and critiquing a graph remain teacher-reviewed.",
+          "correctAnswer": "uniform",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g6.u08.l16.box_plot_source_quartiles",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
+        },
+        {
+          "family": "statistics.distribution_shape.classify",
+          "samplePrompt": "A synthetic numerical distribution has values 7, 8, 9, 10, 11 with frequencies 2, 2, 2, 2, 2 in the same order. Classify its overall shape as uniform, symmetric bell-shaped, right-skewed, left-skewed, or bimodal. Enter o"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تصنيف شكل التوزيع والربيعات جزء من التحليل؛ الرسم والتفسير يحتاجان مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES",
+      "arabicTitle": "النقاط والمستقيمات والمستويات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 121–128; printed 733–740",
+      "targetMechanic": "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
+      "richV2ObjectiveExcerpt": "النقطة تدل على موقع بلا طول أو مساحة أو حجم، والمستقيم يمتد بلا نهاية في الاتجاهين، والمستوى سطح مستوٍ يمتد في جميع الاتجاهات. ثلاث نقاط أو أكثر تقع على مستقيم واحد هي نقاط على استقامة واحدة؛ ونقاط تقع في مستوى واحد توصف بأنها مشتركة في المستوى. يشكل تقاطع مستقيمين غير متوازيين في مستوى واحد نقطة واحدة، ويكون تقاطع مستويين مختلفين غير متوازيين مستقيمًا. يستخ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g4.u12.l01.segments_from_points",
+          "prompt": "على رسم 6 نقاط مختلفة، كم قطعة مستقيمة مختلفة بين كل زوج من النقاط؟",
+          "correctAnswer": "15",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "عد القطع بين نقاط نشاط جزئي لا يغطي مفاهيم الاستقامية والمستويات.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE",
+      "arabicTitle": "القياس الخطي",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
+      "targetMechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
+      "richV2ObjectiveExcerpt": "القياس الخطي يحدد المسافة بين نقطتي نهاية قطعة مستقيمة باستعمال وحدة متفق عليها مثل مم أو سم أو م. إذا كانت A وB على خط الأعداد عند -3 و5 فالطول AB=|5−(-3)|=8 وحدات بغض النظر عن ترتيب النقطتين. إذا كانت B واقعة بين A وC، فمسلّمة جمع أطوال القطع تقول AB+BC=AC. في رسم أصلي A—B—C قد يكون AB=4 سم وBC=7 سم، فيكون AC=11 سم. عند القياس بالمسطرة أضع نقطة البداية عند",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g6.u07.l06.absolute_distance_values",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Elena donates3.12 from26 earned. Percent? Situation B: Trip target325miles,72% completed. Miles?",
+          "correctAnswer": "258",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "uae.g4.u12.l01.segments_from_points",
+          "prompt": "على رسم 3 نقاط مختلفة، كم قطعة مستقيمة مختلفة بين كل زوج من النقاط؟",
+          "correctAnswer": "3",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g6.u07.l06.absolute_distance_values",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "عد القطع المستقيمة بين نقاط لا يختبر قياس طول قطعة أو جمع الأطوال.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS",
+      "arabicTitle": "المسافة ونقاط المنتصف",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 141–148; printed 753–760",
+      "targetMechanic": "CARTESIAN_DISTANCE_AND_MIDPOINT",
+      "richV2ObjectiveExcerpt": "المسافة بين نقطتين A(س1،ص1) وB(س2،ص2) في مستوى الإحداثيات تنتج من مثلث قائم فرعاه فرق السينات وفرق الصادات، لذلك d=√((س2−س1)²+(ص2−ص1)²). أما نقطة المنتصف م فهي متوسط إحداثيي الطرفين: ((س1+س2)/2،(ص1+ص2)/2). إذا كان A=(-2،3) وB=(4،11)، فالفرق الأفقي6 والرأسي8، والمسافة10، ونقطة المنتصف (1،7). يربط الطالب ذلك بتحديد نقطة التقاء على خريطة شبكية، مع ملاحظة أن قرا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Sparkling orange juice uses4L orange and5L soda. Total liters for one batch? Situation B: Horizontal distance from(-4,3) to(5,3) in units?",
+          "correctAnswer": "27",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "المسافة الأفقية/الرأسية جزئية ولا تختبر نقطة المنتصف في المستوى.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS",
+      "arabicTitle": "إثبات العلاقات بين القطع المستقيمة",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 154–161; printed 766–773",
+      "targetMechanic": "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
+      "richV2ObjectiveExcerpt": "يعتمد إثبات علاقات القطع المستقيمة على تعريفات واضحة وخطوات مبررة. إذا كان B بين A وC فإن AB+BC=AC بمسلّمة جمع القطع. ويكون قطعتان متطابقتين إذا تساوى طولاهما. وتساعد خواص المساواة الانعكاسية (أ=أ)، والتناظرية (إذا أ=ب فب=أ)، والتعدية (إذا أ=ب وب=ج فأ=ج)، وخاصية الجمع والطرح، في تنظيم البرهان. في نموذج أصلي AB=س+2 وBC=2س+1 وAC=18، نكتب (س+2)+(2س+1)=18، فيكون",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g4.u12.l01.segments_from_points",
+          "prompt": "على رسم 6 نقاط مختلفة، كم قطعة مستقيمة مختلفة بين كل زوج من النقاط؟",
+          "correctAnswer": "15",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "عد القطع بين نقاط لا يقيس إثبات علاقات بين القطع المستقيمة.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS",
+      "arabicTitle": "زوايا المضلعات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF173–181, printed 785–793",
+      "targetMechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "richV2ObjectiveExcerpt": "يمكن تقسيم مضلع بسيط محدب ذي ن أضلاع إلى ن−2 مثلثات من رأس واحد، لذلك مجموع زواياه الداخلية = (ن−2)×180 درجة. مجموع الزوايا الخارجية باتجاه واحد حول مضلع محدب يساوي 360 درجة. في المضلع المنتظم تكون الزوايا الداخلية متساوية، وقيمة كل زاوية داخلية = ((ن−2)×180)/ن، وكل زاوية خارجية = 360/ن. مثلاً لمضلع خماسي يكون مجموع الداخلية 540 درجة، فإذا كان منتظمًا فكل زا",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "geometry.angles.supplementary",
+          "prompt": "Two angles form a straight line. One angle is 106°. Find the other angle.",
+          "correctAnswer": "74",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "prompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle.",
+          "correctAnswer": "110",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "geometry.angles.supplementary",
+          "samplePrompt": "Two angles form a straight line. One angle is 106°. Find the other angle."
+        },
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "samplePrompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "حساب زاوية مضلع وزاوية مكملة جزئي؛ باقي قوانين الزوايا تحتاج دليلًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS",
+      "arabicTitle": "متوازي الأضلاع",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF183–191, printed 795–803",
+      "targetMechanic": "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
+      "richV2ObjectiveExcerpt": "متوازي الأضلاع شكل رباعي فيه كل زوج من الأضلاع المتقابلة متوازٍ. ينتج عن ذلك تساوي الأضلاع المتقابلة وتساوي الزوايا المتقابلة، وتكامل كل زاويتين متجاورتين بمجموع180°. كذلك ينصف قطرَا متوازي الأضلاع أحدهما الآخر، أي إذا تقاطعا عند م فأنصاف كل قطر متساوية. إذا كانت إحدى الزوايا68° فالزاوية المقابلة68° والمتجاورتان112°. وفي شكل أضلاعه المتقابلة أطوالها س+5 و3س−",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+          "prompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        },
+        {
+          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+          "samplePrompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        }
+      ],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "تصنيف رباعي بحسب التوازي جزء من الموضوع؛ خواص متوازي الأضلاع لم تثبت.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS",
+      "arabicTitle": "اختبارات متوازي الأضلاع",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF193–201, printed 805–813",
+      "targetMechanic": "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
+      "richV2ObjectiveExcerpt": "لإثبات أن شكلًا رباعيًا متوازي أضلاع نستخدم اختبارات عكسية لخصائص الشكل. من الشروط الكافية: أن يكون كل زوج من الأضلاع المتقابلة متوازيًا، أو كل زوج من الأضلاع المتقابلة متساوي الطول، أو أن يكون زوج واحد من الأضلاع المتقابلة متوازيًا ومتساوي الطول في آن واحد، أو أن ينصف قطرَا الشكل أحدهما الآخر، أو أن يكون كل زوج من الزوايا المتقابلة متساويًا. لا يكفي وجود زو",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+          "prompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        },
+        {
+          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+          "samplePrompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "تحديد عدد أزواج الأضلاع المتوازية لرباعي عشوائي لا يختبر شروط إثبات متوازي الأضلاع.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES",
+      "arabicTitle": "المستطيل",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 203–209; printed 815–821",
+      "targetMechanic": "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
+      "richV2ObjectiveExcerpt": "المستطيل متوازي أضلاع زواياه الأربع قائمة. لذلك يحتفظ بجميع خواص متوازي الأضلاع، وتزيد عليها خاصية تساوي قطريه في الطول. كما ينصف كل قطر الآخر. إذا علمنا أن قطري مستطيل طولهما 3س+5 و5س−7 فإن تساويهما يعطي س=6 وطول القطر23. ويمكن إثبات أن متوازي أضلاع مستطيل إذا كانت زاوية واحدة منه قائمة أو إذا كان قطراه متساويين. يربط الدرس هذه الخواص بمخططات غرف مستطيلة وت",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        },
+        {
+          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+          "prompt": "Every rectangle is a parallelogram Select 1: false; 2: unknown; 3: true. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "3",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        },
+        {
+          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+          "samplePrompt": "Every rectangle is a parallelogram Select 1: false; 2: unknown; 3: true. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "سؤال بناء مربع بأعواد وأوصاف رباعيات عامة لا يقيس خواص المستطيل وأقطاره.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES",
+      "arabicTitle": "المعين والمربع",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 210–218; printed 822–830",
+      "targetMechanic": "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
+      "richV2ObjectiveExcerpt": "المعين متوازي أضلاع أضلاعه الأربعة متساوية. قطراه متعامدان، وكل قطر ينصف زوجًا من زواياه المتقابلة، كما ينصف القطران بعضهما بحكم أنه متوازي أضلاع. أما المربع فهو مستطيل ومعين في آن واحد: له أربع زوايا قائمة وأربع أضلاع متساوية، وقطراه متساويان ومتعامدان وينصفان الزوايا. ليس كل معين مربعًا؛ فقد تكون زواياه غير قائمة وقطراه غير متساويين. يمكن رسم معين قطرَاه12",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+          "prompt": "Original activity toothpicks required to build a square Select 1: 6; 2: 4; 3: 3. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
+          "correctAnswer": "2",
+          "studentPromptArabic": false
+        }
+      ],
+      "englishPromptFamilies": [
+        {
+          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+          "samplePrompt": "Original activity toothpicks required to build a square Select 1: 6; 2: 4; 3: 3. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
+        }
+      ],
+      "semanticDefectConfirmed": true,
+      "semanticDefectFinding": "سؤال بناء مربع بأعواد لا يقيس خواص قطري المعين والمربع.",
+      "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES",
+      "arabicTitle": "شبه المنحرف وشكل الطائرة الورقية",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 219–228; printed 831–840",
+      "targetMechanic": "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
+      "richV2ObjectiveExcerpt": "وفق تعريف الكتاب المحلي شبه المنحرف شكل رباعي فيه زوج واحد فقط من الأضلاع المتقابلة المتوازية، ويسمى الضلعان المتوازيان القاعدتين، والآخران الساقين. إذا كانت الساقان متساويتين فهو شبه منحرف متساوي الساقين؛ زوايا كل قاعدة متساوية وقطراه متساويان. المنصف الواصل بين منتصفي ساقيه يوازي القاعدتين وطوله نصف مجموعهما: م=(ق1+ق2)/2. أما شكل الطائرة الورقية وفق الكتاب",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u11.l06.kite_diagonal_area",
+          "prompt": "طائرة ورقية قطراها المتعامدان 20 سم و8 سم. احسب مساحتها بالسنتيمتر المربع.",
+          "correctAnswer": "80",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u11.l06.trapezoid_midsegment",
+          "prompt": "شبه منحرف قاعدتاه المتوازيتان 12 و44 سم. ما طول القطعة المتوسطة الواصلة بين منتصفي ساقيه، بالسنتيمتر؟",
+          "correctAnswer": "28",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مساحة طائرة ورقية ومتوسط شبه منحرف آليان؛ تصنيف الأشكال والبراهين يحتاج معلمًا.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY",
+      "arabicTitle": "مقدمة في نظرية المجموعات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 240–250; printed 852–862",
+      "targetMechanic": "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
+      "richV2ObjectiveExcerpt": "المجموعة تجمّع محدد العناصر، أي يمكن الحكم على انتماء عنصر إليها بصورة واضحة. نكتب عناصرها بين قوسين معقوفين مثل أ={2،4،6،8}، ونقول 4∈أ بينما 5∉أ. لا تتغير المجموعة بتغيير ترتيب عناصرها أو تكرار العنصر، لأن كل عنصر يحسب مرة واحدة. يمكن كتابة المجموعة بطريقة السرد أو بصفة مميزة، مثلاً أ={2،4،6،8} أو أ={س | س عدد زوجي موجب أصغر من 10}. المجموعة الخالية ∅ لا عن",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u12.l01.empty_finite_infinite_classify",
+          "prompt": "المجموعة أ = {س | س عدد طبيعي موجب وأصغر من 6}. صنّف أ: 0) خالية؛ 1) منتهية غير خالية؛ 2) غير منتهية. أدخل الرقم.",
+          "correctAnswer": "1",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u12.l01.membership_finite_roster",
+          "prompt": "لتكن أ = {2، 4، 6، 8، 10، 12}. هل 4 ∈ أ؟ أدخل 1 إذا كان عنصرًا، و0 إذا لم يكن.",
+          "correctAnswer": "1",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "العضوية والفراغ/المنتهية/غير المنتهية آليًا، مع أنشطة وصفية مفتوحة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS",
+      "arabicTitle": "المجموعات الجزئية والعمليات على المجموعات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 253–262; printed 865–874",
+      "targetMechanic": "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
+      "richV2ObjectiveExcerpt": "المجموعة أ جزء من ب، ونرمز أ⊆ب، إذا كان كل عنصر في أ ينتمي إلى ب؛ وتعد المجموعة الخالية مجموعة جزئية من كل مجموعة. إذا أ={1،3،5} وب={1،2،3،4،5} فإن أ⊆ب. اتحاد مجموعتين أ∪ب يضم جميع العناصر التي في أ أو في ب أو في كلتيهما، بينما تقاطعهما أ∩ب يضم العناصر المشتركة فقط. إذا كانت أ={1،2،3} وب={3،4،5} فإن أ∪ب={1،2،3،4،5} و أ∩ب={3}. عند تحديد المجموعة الشاملة ش، تك",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 4,
+      "observedFamilyCount": 4,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u12.l02.union_cardinality",
+          "prompt": "أ = {1، 2، 3، 6}، ب = {2، 3، 4، 5}. كم عدد العناصر المختلفة في أ∪ب؟",
+          "correctAnswer": "6",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u12.l02.intersection_cardinality",
+          "prompt": "أ = {2، 4}، ب = {4، 5، 6}. كم عدد العناصر في أ∩ب؟",
+          "correctAnswer": "1",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u12.l02.difference_cardinality",
+          "prompt": "أ = {1، 2، 3، 5}، ب = {1، 4}. كم عدد العناصر في أ\\ب (العناصر الموجودة في أ وغير الموجودة في ب)؟",
+          "correctAnswer": "3",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u12.l02.subset_classify",
+          "prompt": "أ = {1، 2، 4، 5، 6}، ب = {2}. هل أ ⊆ ب؟ أدخل 1 إذا كان كل عنصر من أ ينتمي إلى ب، وإلا أدخل 0.",
+          "correctAnswer": "0",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "الاحتواء واتحاد/تقاطع/فرق المجموعات الرقمية، مع تمثيلات حرة تُراجع.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS",
+      "arabicTitle": "استخدام مخططات فن لدراسة العمليات على المجموعات",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 264–273; printed 876–885",
+      "targetMechanic": "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
+      "richV2ObjectiveExcerpt": "مخطط فن يقدم مجموعة شاملة في مستطيل ومجموعات فرعية بدوائر متداخلة. منطقة تداخل دائرتي أ وب هي التقاطع أ∩ب، ومجموع منطقتيهما الاتحاد أ∪ب، والمنطقة خارج أ داخل المستطيل هي متممة أ. إذا أ={1،2،3،5} وب={3،4،5،7} داخل ش={1،2،3،4،5،6،7،8}، فتداخل الدائرتين {3،5}، والمنطقة الخاصة بأ وحدها {1،2}، والخاصة بب وحدها {4،7}، والخارجية {6،8}. في ثلاث مجموعات يفيد التقاطع ",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "uae.g8.u12.l03.three_set_venn_region_count",
+          "prompt": "في مخطط فن بثلاث مجموعات، المناطق المنفصلة: أ فقط=4، ب فقط=3، ج فقط=0، أ وب فقط=5، أ وج فقط=4، ب وج فقط=0، المجموعات الثلاث معًا=2، خارج الدوائر=2. كم عدد عناصر أ∩ب (بما فيها عناصر ج المشتركة)؟",
+          "correctAnswer": "7",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "قراءة مناطق فن الثلاثي آليًا، والرسم والتظليل يتطلبان مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS",
+      "arabicTitle": "استخدام المجموعات لحل المسائل",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 275–284; printed 887–896",
+      "targetMechanic": "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
+      "richV2ObjectiveExcerpt": "نستخدم المجموعات لحل مسائل العد التي قد ينتمي فيها الشخص لأكثر من فئة. إذا كان من أصل 50 مشاركًا يحب 30 القراءة و28 الرياضة و12 كليهما، فإن الاتحاد=30+28−12=46، ومن لا يحب أيًا منهما 50−46=4. و«القراءة فقط»=30−12=18، و«الرياضة فقط»=28−12=16. نبدأ من التقاطع لئلا نحسب الأشخاص مرتين، ثم نكمل المناطق المنفصلة، وأخيرًا المنطقة خارج الدائرتين داخل المجموعة الشامل",
+      "questionCountGenerated": 192,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
+      "actualSampleByFamily": [
+        {
+          "family": "supporting.sets.union_count",
+          "prompt": "في مسألة عن مجموعتين، تحتوي المجموعة أ على 8 عنصرًا، وتحتوي المجموعة ب على 5 عنصرًا، ويوجد 4 عنصرًا ينتمي إلى المجموعتين معًا. كم عدد عناصر اتحاد المجموعتين أ∪ب؟",
+          "correctAnswer": "9",
+          "studentPromptArabic": true
+        }
+      ],
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "coverageFinding": "مسألة عد عناصر اتحاد مجموعتين صحيحة جزئيًا؛ المسائل اللفظية الأوسع تحتاج مراجعة.",
+      "observedRuntimeStatus": "ready",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
+      "sourceItemByItemVerification": "NOT_EVIDENCED",
+      "wholeLessonPedagogicalCertification": false
+    }
+  ]
+}
