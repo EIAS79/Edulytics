@@ -197,7 +197,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
       ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','26ac012a0531f952683fa0103d4e832b074269b9']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','122c12899179e4c0d8dfa6031a03825c27ca4c17']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','70f23d8822cfbbe83600b767bfdf0103d6b48d7a']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
