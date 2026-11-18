@@ -221,10 +221,21 @@ def audit() -> dict[str, Any]:
             "UAE Grade8 General must be exactly 77 old or 76 approved "
             f"Arabic lessons, got {grade8_general_count}"
         )
+    # Grade8 Advanced was owner-retired as an exact 77-lesson cohort.
+    # Historical and retired inventories remain distinct, never arbitrary.
+    grade8_advanced_count = sum(
+        str(row.get("lessonCode") or "").startswith(
+            "PED:UAE-MOE-MATH:L8:ADVANCED:")
+        for row in rows
+    )
+    if grade8_advanced_count not in (0, 77):
+        blockers.append(
+            f"UAE Grade8 Advanced expected retired 0 or historical 77; got {grade8_advanced_count}"
+        )
     expected_catalogue_count = (
         5110 - 93 + grade4_count + grade12_count
         - 59 + grade6_count - 62 + grade7_count
-        - 77 + grade8_general_count
+        - 77 + grade8_general_count - (77 - grade8_advanced_count)
     )
     required_global = {
         "lessonCount": expected_catalogue_count,
