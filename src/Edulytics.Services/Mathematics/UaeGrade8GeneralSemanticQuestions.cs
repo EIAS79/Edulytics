@@ -10,6 +10,8 @@ namespace Edulytics.Services.Mathematics;
 /// </summary>
 internal static class UaeGrade8GeneralSemanticQuestions
 {
+    internal const string TransversalAngles = "uae.g8.u05.l01.transversal_angle_measure";
+    internal const string TriangleAngles = "uae.g8.u05.l03.triangle_angle_measure";
     internal const string ProofReason = "uae.g8.u05.l02.proof_reason_classify";
     internal const string Rotation = "uae.g8.u06.l03.rotation_origin_coordinate";
     internal const string TrapezoidMidsegment = "uae.g8.u11.l06.trapezoid_midsegment";
@@ -26,6 +28,7 @@ internal static class UaeGrade8GeneralSemanticQuestions
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     internal static bool Supports(string? family) => family is
+        TransversalAngles or TriangleAngles or
         ProofReason or Rotation or TrapezoidMidsegment or KiteArea or
         SetMembership or SetClassification or SetSubset or SetUnion or
         SetIntersection or SetDifference or VennRegions;
@@ -43,6 +46,38 @@ internal static class UaeGrade8GeneralSemanticQuestions
         string solution;
         switch (family)
         {
+            case TransversalAngles:
+            {
+                var angle = random.Next(25, 156);
+                var mode = random.Next(0, 3);
+                p["given"] = angle;
+                p["mode"] = mode;
+                prompt = mode switch
+                {
+                    0 => F("مستقيمان متوازيان يقطعهما قاطع. إذا كان قياس زاوية {0}°، فما قياس الزاوية المتناظرة معها بالدرجات؟", angle),
+                    1 => F("مستقيمان متوازيان يقطعهما قاطع. إذا كان قياس زاوية داخلية {0}°، فما قياس الزاوية المتبادلة داخلياً معها بالدرجات؟", angle),
+                    _ => F("مستقيمان متوازيان يقطعهما قاطع. إذا كان قياس إحدى الزاويتين الداخليتين على جهة واحدة من القاطع {0}°، فما قياس الأخرى بالدرجات؟", angle)
+                };
+                solution = "عند ثبوت التوازي تتساوى الزوايا المتناظرة والمتبادلة داخلياً، ومجموع الزاويتين الداخليتين على جهة واحدة من القاطع 180°.";
+                break;
+            }
+            case TriangleAngles:
+            {
+                var a = random.Next(25, 80);
+                var b = random.Next(25, 80);
+                var mode = random.Next(0, 3);
+                p["a"] = a;
+                p["b"] = b;
+                p["mode"] = mode;
+                prompt = mode switch
+                {
+                    0 => F("في مثلث قياس زاويتين داخليتين {0}° و{1}°. ما قياس الزاوية الداخلية الثالثة بالدرجات؟", a, b),
+                    1 => F("في مثلث قياس زاويتين داخليتين غير مجاورتين لزاوية خارجية {0}° و{1}°. ما قياس الزاوية الخارجية بالدرجات؟", a, b),
+                    _ => F("في مثلث زاوية خارجية قياسها {0}°، وإحدى الزاويتين الداخليتين البعيدتين قياسها {1}°. ما قياس الزاوية الداخلية البعيدة الأخرى بالدرجات؟", a + b, a)
+                };
+                solution = "مجموع زوايا المثلث الداخلية 180°، والزاوية الخارجية تساوي مجموع الزاويتين الداخليتين البعيدتين عنها.";
+                break;
+            }
             case ProofReason:
             {
                 var kind = random.Next(1, 4);
@@ -178,6 +213,24 @@ internal static class UaeGrade8GeneralSemanticQuestions
 
         switch (family)
         {
+            case TransversalAngles:
+                if (!ExactKeys(p, "given", "mode") ||
+                    p["given"] is < 25 or > 155 || p["mode"] is < 0 or > 2)
+                    return false;
+                expected = p["mode"] == 2 ? 180 - p["given"] : p["given"];
+                return true;
+            case TriangleAngles:
+                if (!ExactKeys(p, "a", "b", "mode") ||
+                    p["a"] is < 25 or > 79 || p["b"] is < 25 or > 79 ||
+                    p["a"] + p["b"] >= 180 || p["mode"] is < 0 or > 2)
+                    return false;
+                expected = p["mode"] switch
+                {
+                    0 => 180 - p["a"] - p["b"],
+                    1 => p["a"] + p["b"],
+                    _ => p["b"]
+                };
+                return true;
             case ProofReason:
                 if (!ExactKeys(p, "kind", "given") ||
                     p["kind"] is < 1 or > 3 || p["given"] is < 20 or > 154) return false;
