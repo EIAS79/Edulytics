@@ -67,9 +67,9 @@ public sealed class Stage18SkillContractPracticeEngine
             Source = AssessmentItemSource.SystemGenerated,
             ItemType = question.ItemType,
             Difficulty = ResolveItemDifficulty(requestedDifficulty),
-            Prompt = question.Prompt,
+            Prompt = UaeGrade8SetPracticeLocalization.Prompt(contract.LessonCode, question),
             CorrectAnswer = question.CorrectAnswer,
-            Solution = question.Solution,
+            Solution = UaeGrade8SetPracticeLocalization.Solution(contract.LessonCode, question),
             CreatedByUserId = createdByUserId,
             GenerationMethod = Stage18PracticeSkillContracts.GenerationMethod,
             GenerationFamily = question.Family,
@@ -241,9 +241,9 @@ public sealed class Stage18SkillContractPracticeEngine
                 Difficulty = exactDifficulty == ExactSkillQuestionDifficulty.Standard
                     ? AssessmentItemDifficulty.Medium
                     : AssessmentItemDifficulty.Challenging,
-                Prompt = question.Prompt,
+                Prompt = UaeGrade8SetPracticeLocalization.Prompt(contract.LessonCode, question),
                 CorrectAnswer = question.CorrectAnswer,
-                Solution = question.Solution,
+                Solution = UaeGrade8SetPracticeLocalization.Solution(contract.LessonCode, question),
                 CreatedByUserId = createdByUserId,
                 GenerationMethod = Stage18PracticeSkillContracts.GenerationMethod,
                 GenerationFamily = question.Family,
@@ -488,9 +488,9 @@ public sealed class Stage18SkillContractPracticeEngine
                 Difficulty = exactLevel == ExactSkillQuestionDifficulty.Standard
                     ? AssessmentItemDifficulty.Medium
                     : AssessmentItemDifficulty.Challenging,
-                Prompt = acceptedQuestion.Prompt,
+                Prompt = UaeGrade8SetPracticeLocalization.Prompt(contract.LessonCode, acceptedQuestion),
                 CorrectAnswer = acceptedQuestion.CorrectAnswer,
-                Solution = acceptedQuestion.Solution,
+                Solution = UaeGrade8SetPracticeLocalization.Solution(contract.LessonCode, acceptedQuestion),
                 CreatedByUserId = createdByUserId,
                 GenerationMethod = Stage18PracticeSkillContracts.GenerationMethod,
                 GenerationFamily = acceptedQuestion.Family,
