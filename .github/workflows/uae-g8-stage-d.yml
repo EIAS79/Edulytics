@@ -164,7 +164,7 @@ jobs:
           legacy=query("SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\"='PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS'")
           translations=query("SELECT count(*) FROM \"CurriculumLessonContentTranslations\" t JOIN \"CurriculumLessonContents\" c ON c.\"Id\"=t.\"CurriculumLessonContentId\" JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")
           result={"candidateSha":os.environ["GITHUB_SHA"],"phase":"isolated-db","database":"disposable PostgreSQL 18","generalLessons":int(general),"advancedLessons":int(advanced),"publishedGeneralMetadata":int(published),"legacyExtra":int(legacy),"persistedTranslations":int(translations),"productionWritten":False}
-          ok=(result["generalLessons"]==76 and result["advancedLessons"]==77 and result["publishedGeneralMetadata"]==76 and result["legacyExtra"]==0 and result["persistedTranslations"]==0)
+          ok=(result["generalLessons"]==76 and result["advancedLessons"]==0 and result["publishedGeneralMetadata"]==76 and result["legacyExtra"]==0 and result["persistedTranslations"]==0)
           result["status"]="PASS" if ok else "D_BLOCKED"
           pathlib.Path("artifacts/uae-g8-stage-d/grade8-isolated-db.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
           print(json.dumps(result,indent=2))
@@ -247,7 +247,7 @@ jobs:
               exit 1
             fi
             test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")" = 76
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:ADVANCED:%'")" = 77
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:ADVANCED:%'")" = 0
             test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%' AND c.\"ContentVersion\"='supporting-practice-remediation-v2'")" = 0
           done
           python3 - <<'PY'
@@ -256,7 +256,7 @@ jobs:
           out.write_text(json.dumps({'status':'PASS','candidateSha':os.environ['GITHUB_SHA'],
             'database':'disposable PostgreSQL18','originalEnglishFixture':77,
             'ownerApprovedArabicLessons':76,'independentCutoverRuns':2,
-            'grade8AdvancedRetained':77,'productionDatabaseWritten':False},indent=2)+'\n')
+            'grade8AdvancedRetired':True,'productionDatabaseWritten':False},indent=2)+'\n')
           PY
       - if: always()
         uses: actions/upload-artifact@v4
