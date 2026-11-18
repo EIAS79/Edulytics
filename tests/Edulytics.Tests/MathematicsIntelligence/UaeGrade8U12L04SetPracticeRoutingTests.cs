@@ -1,6 +1,8 @@
 using System.Globalization;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
+using Edulytics.Services.Practice;
+using Edulytics.Core.Practice;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -57,5 +59,47 @@ public sealed class UaeGrade8U12L04SetPracticeRoutingTests
                     question.Family, question.Parameters, "not-a-number"));
             });
         }
+    }
+
+    [Fact]
+    public void ActualStudentPracticeAdapterRendersArabicAndPreservesExactGrading()
+    {
+        Assert.True(LessonPracticeContractRegistry.TryResolve(LessonCode, out var contract));
+        Assert.NotNull(contract);
+
+        var adapter = new Stage18SkillContractPracticeEngine();
+        var items = adapter.GenerateComposed(
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            Guid.NewGuid(),
+            contract!.ToLegacyStage18Contract(),
+            StudentPrivatePracticeDifficulty.MyLevel,
+            5,
+            17311,
+            Array.Empty<string>(),
+            Guid.NewGuid());
+
+        Assert.Equal(5, items.Count);
+        Assert.All(items, item =>
+        {
+            Assert.Equal(ExpectedFamily, item.GenerationFamily);
+            Assert.Contains("المجموعة", item.Prompt);
+            Assert.Contains("أ∪ب", item.Prompt);
+            Assert.DoesNotContain("Set A", item.Prompt, StringComparison.Ordinal);
+            Assert.Contains("الشمول والاستبعاد", item.Solution);
+
+            using var document = System.Text.Json.JsonDocument.Parse(item.GenerationParametersJson);
+            var parameters = document.RootElement.GetProperty("parameters");
+            var a = parameters.GetProperty("a").GetInt32();
+            var b = parameters.GetProperty("b").GetInt32();
+            var intersection = parameters.GetProperty("intersection").GetInt32();
+            var expected = (a + b - intersection).ToString(CultureInfo.InvariantCulture);
+            Assert.Equal(expected, item.CorrectAnswer);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                item.GenerationFamily, new Dictionary<string, int>
+                {
+                    ["a"] = a, ["b"] = b, ["intersection"] = intersection
+                }, expected));
+        });
     }
 }
