@@ -10545,24 +10545,24 @@ public static class LessonPracticeContractRegistry
         // UAE Grade8 General U05L05, local Student Book PDF47-54.
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.sin_cos_tan", "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
-            ["trigonometry.right_triangle.find_side_exact", "supporting.geometry.triangle_area"],
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM", "geometry.pythagoras.theorem", "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
+            ["uae.g8.u05.l05.pythagorean_integer_triple"],
             "UAE_G8_U05L05_PDF47_54_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
         // UAE Grade8 General U05L06, local Student Book PDF59-66.
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.sin_cos_tan", "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
-            ["trigonometry.right_triangle.find_side_exact", "supporting.algebra.equations.mixed"],
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM", "geometry.pythagoras.applications", "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+            ["uae.g8.u05.l06.pythagorean_context_diagonal"],
             "UAE_G8_U05L06_PDF59_66_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
         // UAE Grade8 General U05L07, local Student Book PDF67-74.
         // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "geometry.coordinate_plane.axis_distance", "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
-            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "trigonometry.right_triangle.find_side_exact"],
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "geometry.coordinate_plane.distance", "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+            ["uae.g8.u05.l07.coordinate_plane_distance"],
             "UAE_G8_U05L07_PDF67_74_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
