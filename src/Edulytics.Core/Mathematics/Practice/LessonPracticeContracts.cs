@@ -10887,7 +10887,7 @@ public static class LessonPracticeContractRegistry
         // are MANUAL TEACHER REVIEW until a verified set-operator extension.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS", "algebra.inequality.solution_sets", "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
-            ["supporting.statistics.table_total"],
+            ["supporting.sets.union_count"],
             "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
