@@ -4,12 +4,20 @@ using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
 
 /// <summary>
-/// Original, Arabic, scope-limited exact numerical/selection questions for six UAE
-/// G8 General lessons. Full drawings, geometric proofs and explanations are not
-/// automatically graded and remain teacher-reviewed. No publisher questions reused.
+/// First-party Arabic, source-scoped exact Practice for eleven UAE Grade 8 General
+/// lesson subskills. This is not whole-lesson academic certification: diagrams,
+/// open explanations, proofs and non-integral metric answers remain teacher-reviewed.
+/// No publisher question text or figures are reproduced.
 /// </summary>
 internal static class UaeGrade8GeneralSemanticQuestions
 {
+    internal const string PythagoreanTheorem = "uae.g8.u05.l05.pythagorean_integer_triple";
+    internal const string PythagoreanApplications = "uae.g8.u05.l06.pythagorean_context_diagonal";
+    internal const string CoordinateDistance = "uae.g8.u05.l07.coordinate_plane_distance";
+    private static readonly (int A, int B, int C)[] RightTriples =
+        [(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (9, 12, 15)];
+    private static readonly (int X, int Y, int Z, int D)[] SpaceTriples =
+        [(1, 2, 2, 3), (2, 3, 6, 7), (3, 4, 12, 13), (6, 6, 7, 11)];
     internal const string TransversalAngles = "uae.g8.u05.l01.transversal_angle_measure";
     internal const string TriangleAngles = "uae.g8.u05.l03.triangle_angle_measure";
     internal const string ProofReason = "uae.g8.u05.l02.proof_reason_classify";
@@ -28,6 +36,7 @@ internal static class UaeGrade8GeneralSemanticQuestions
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     internal static bool Supports(string? family) => family is
+        PythagoreanTheorem or PythagoreanApplications or CoordinateDistance or
         TransversalAngles or TriangleAngles or
         ProofReason or Rotation or TrapezoidMidsegment or KiteArea or
         SetMembership or SetClassification or SetSubset or SetUnion or
@@ -46,6 +55,61 @@ internal static class UaeGrade8GeneralSemanticQuestions
         string solution;
         switch (family)
         {
+            case PythagoreanTheorem:
+            {
+                var i = random.Next(0, RightTriples.Length);
+                var scale = random.Next(1, 5);
+                var mode = random.Next(0, 3);
+                var altered = mode == 2 ? random.Next(0, 2) : 0;
+                var (aa, bb, cc) = RightTriples[i];
+                var a = aa * scale; var b = bb * scale; var c = cc * scale;
+                p["i"] = i; p["scale"] = scale; p["mode"] = mode; p["altered"] = altered;
+                prompt = mode switch
+                {
+                    0 => F("مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.", a, b),
+                    1 => F("مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر.", c, a),
+                    _ => F("مثلث أطوال أضلاعه {0} سم و{1} سم و{2} سم. هل هو قائم الزاوية حسب عكس نظرية فيثاغورس؟ أدخل 1 لنعم و0 للا.", a, b, c + altered * scale)
+                };
+                solution = "في المثلث القائم مربع الوتر يساوي مجموع مربعي القائمتين. عند معرفة الوتر أطرح مربع القائمة المعلومة، وللتحقق من القائميّة أختبر تساوي المربعات.";
+                break;
+            }
+            case PythagoreanApplications:
+            {
+                var i = random.Next(0, SpaceTriples.Length);
+                var scale = random.Next(1, 5);
+                var mode = random.Next(0, 4);
+                var (aa, bb, cc) = RightTriples[i];
+                var a = aa * scale; var b = bb * scale; var c = cc * scale;
+                var (xx, yy, zz, dd) = SpaceTriples[i];
+                p["i"] = i; p["scale"] = scale; p["mode"] = mode;
+                prompt = mode switch
+                {
+                    0 => F("مستطيل طوله {0} سم وعرضه {1} سم. ما طول قطره المباشر بالسنتيمتر؟", a, b),
+                    1 => F("سُلّم طوله {0} م يستند إلى جدار عمودي، وتبعد قاعدته {1} م عن الجدار. ما ارتفاع نقطة اتصاله بالجدار بالأمتار؟", c, a),
+                    2 => F("صندوق قائم أبعاده {0} سم و{1} سم و{2} سم. أوجد طول قطره الفراغي بالسنتيمتر.", xx * scale, yy * scale, zz * scale),
+                    _ => F("تحرك قارب {0} م شرقًا ثم {1} م شمالًا في اتجاهين متعامدين. كم مترًا تبلغ المسافة المستقيمة بين نقطتي البداية والنهاية؟", a, b)
+                };
+                solution = "أكوّن مثلثًا قائمًا من الاتجاهات المتعامدة وأطبق فيثاغورس. قطر الصندوق الفراغي يساوي جذر مجموع مربعات أبعاده الثلاثة، وطول السلم هو الوتر.";
+                break;
+            }
+            case CoordinateDistance:
+            {
+                var i = random.Next(0, RightTriples.Length);
+                var scale = random.Next(1, 4);
+                var mode = random.Next(0, 4);
+                var x = random.Next(-12, 13);
+                var y = random.Next(-12, 13);
+                var sx = random.Next(0, 2) == 0 ? -1 : 1;
+                var sy = random.Next(0, 2) == 0 ? -1 : 1;
+                var (aa, bb, _) = RightTriples[i];
+                var dx = mode is 0 or 1 ? sx * aa * scale : 0;
+                var dy = mode is 0 or 2 ? sy * bb * scale : 0;
+                p["i"] = i; p["scale"] = scale; p["mode"] = mode;
+                p["x"] = x; p["y"] = y; p["sx"] = sx; p["sy"] = sy;
+                prompt = F("على المستوى الإحداثي، ما المسافة بين أ({0}، {1}) وب({2}، {3}) بوحدات الطول؟", x, y, x + dx, y + dy);
+                solution = "أحسب فرق السينات وفرق الصادات، ثم المسافة د=√((س٢−س١)²+(ص٢−ص١)²). إذا تساوت السينات أو الصادات أستخدم الفرق المطلق، والمسافة بين النقطة ونفسها صفر.";
+                break;
+            }
             case TransversalAngles:
             {
                 var angle = random.Next(25, 156);
@@ -213,6 +277,49 @@ internal static class UaeGrade8GeneralSemanticQuestions
 
         switch (family)
         {
+            case PythagoreanTheorem:
+                if (!ExactKeys(p, "i", "scale", "mode", "altered") ||
+                    p["i"] is < 0 or > 4 || p["scale"] is < 1 or > 4 ||
+                    p["mode"] is < 0 or > 2 || p["altered"] is < 0 or > 1 ||
+                    (p["mode"] != 2 && p["altered"] != 0))
+                    return false;
+                var (ta, tb, tc) = RightTriples[p["i"]];
+                expected = p["mode"] switch
+                {
+                    0 => tc * p["scale"],
+                    1 => tb * p["scale"],
+                    _ => p["altered"] == 0 ? 1 : 0
+                };
+                return true;
+            case PythagoreanApplications:
+                if (!ExactKeys(p, "i", "scale", "mode") ||
+                    p["i"] is < 0 or > 3 || p["scale"] is < 1 or > 4 ||
+                    p["mode"] is < 0 or > 3) return false;
+                var (pa, pb, pc) = RightTriples[p["i"]];
+                var (_, _, _, diagonal) = SpaceTriples[p["i"]];
+                expected = p["mode"] switch
+                {
+                    0 or 3 => pc * p["scale"],
+                    1 => pb * p["scale"],
+                    _ => diagonal * p["scale"]
+                };
+                return true;
+            case CoordinateDistance:
+                if (!ExactKeys(p, "i", "scale", "mode", "x", "y", "sx", "sy") ||
+                    p["i"] is < 0 or > 4 || p["scale"] is < 1 or > 3 ||
+                    p["mode"] is < 0 or > 3 ||
+                    p["x"] is < -12 or > 12 || p["y"] is < -12 or > 12 ||
+                    p["sx"] is not (-1 or 1) || p["sy"] is not (-1 or 1))
+                    return false;
+                var (da, db, dc) = RightTriples[p["i"]];
+                expected = p["mode"] switch
+                {
+                    0 => dc * p["scale"],
+                    1 => da * p["scale"],
+                    2 => db * p["scale"],
+                    _ => 0
+                };
+                return true;
             case TransversalAngles:
                 if (!ExactKeys(p, "given", "mode") ||
                     p["given"] is < 25 or > 155 || p["mode"] is < 0 or > 2)

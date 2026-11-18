@@ -7120,6 +7120,65 @@
         "supporting.statistics.experimental_probability",
         "usccss.g2.u05.l11.largest_card_permutation"
       ]
+    },
+    {
+      "id": "geometry.pythagoras.theorem",
+      "domain": "geometry",
+      "canonicalName": "نظرية فيثاغورس وعكسها في المثلث القائم",
+      "semantics": "Compute the positive exact integer hypotenuse or leg from perpendicular sides and test right-triangle validity using the converse.",
+      "prerequisites": [],
+      "supportedAnswerTypes": [
+        "exact_integer"
+      ],
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g8.u05.l05.pythagorean_integer_triple"
+      ]
+    },
+    {
+      "id": "geometry.pythagoras.applications",
+      "domain": "geometry",
+      "canonicalName": "تطبيق نظرية فيثاغورس في المسارات والأقطار والارتفاعات",
+      "semantics": "Solve right-triangle distance and length in orthogonal boat displacement, rectangular diagonals, ladders and spatial rectangular-prism diagonals.",
+      "prerequisites": [
+        "geometry.pythagoras.theorem"
+      ],
+      "supportedAnswerTypes": [
+        "exact_integer"
+      ],
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g8.u05.l06.pythagorean_context_diagonal"
+      ]
+    },
+    {
+      "id": "geometry.coordinate_plane.distance",
+      "domain": "geometry",
+      "canonicalName": "المسافة بين نقطتين على المستوى الإحداثي",
+      "semantics": "Apply Pythagoras to the signed horizontal and vertical coordinate differences, covering all quadrants, horizontal/vertical segments and coincident points.",
+      "prerequisites": [
+        "geometry.pythagoras.theorem",
+        "geometry.coordinate_plane.signed"
+      ],
+      "supportedAnswerTypes": [
+        "exact_integer"
+      ],
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g8.u05.l07.coordinate_plane_distance"
+      ]
     }
 
   ]

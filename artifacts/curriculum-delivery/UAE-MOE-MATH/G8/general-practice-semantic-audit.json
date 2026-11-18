@@ -11,12 +11,12 @@
   "lessonsCount": 76,
   "summary": {
     "sourceLessons": 76,
-    "lessonScopedAutomatedSubsetRemediationsCommitted": 9,
-    "awaitingSemanticsInspection": 67,
+    "lessonScopedAutomatedSubsetRemediationsCommitted": 12,
+    "awaitingSemanticsInspection": 64,
     "fullPedagogicalCoverageCertified": 0,
     "publisherPageItemParityCertified": 0
   },
-  "method": "Compared the authored Arabic RichV2 objectives with lesson-scoped exact family mechanics. Eight confirmed mismatches are repaired in scoped numeric/reason-selection subsets; the previously fixed U12L04 remains a separately scoped partial teacher-review item. Remaining 67 require per-question learner prompt, independent verifier and teacher-objective inspection. No full-pedagogical coverage or publisher-item parity is certified.",
+  "method": "Reviewed Arabic RichV2 targets against learner-generated prompts, exact family parameters and graders. Eleven scoped source-specific remediations are now authored plus the separately scoped U12L04 pre-existing partial; all twelve are PARTIAL_TEACHER_REVIEW, not whole-lesson signoff. Remaining 64 require individual source/prompt/verifier/RTL review. Generated Grade8 Arabic-language inventory separately proves many shared legacy Practice prompts are English. No complete pedagogical or publisher-item parity certification is claimed.",
   "lessons": [
     {
       "ordinal": 1,
@@ -661,16 +661,15 @@
       "arabicTitle": "نظرية فيثاغورس",
       "mechanic": "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
       "allowedFamilies": [
-        "trigonometry.right_triangle.find_side_exact",
-        "supporting.geometry.triangle_area"
+        "uae.g8.u05.l05.pythagorean_integer_triple"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l05-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 47–54; printed 411–418",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "PYTHAGOREAN_LEG_HYPOTENUSE_AND_CONVERSE_ON_INTEGER_TRIPLES",
+      "teacherReviewRequired": "Exact diagrams, non-integer radical lengths, constructed squares and written converse proofs remain teacher-reviewed.",
       "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
     },
     {
       "ordinal": 38,
@@ -678,16 +677,15 @@
       "arabicTitle": "استخدام نظرية فيثاغورس",
       "mechanic": "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
       "allowedFamilies": [
-        "trigonometry.right_triangle.find_side_exact",
-        "supporting.algebra.equations.mixed"
+        "uae.g8.u05.l06.pythagorean_context_diagonal"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l06-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 59–66; printed 423–430",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "PYTHAGOREAN_RECTANGLE_LADDER_BOAT_SPATIAL_DIAGONAL",
+      "teacherReviewRequired": "Teacher reviews modelling assumptions, drawings, rounding choices and interpretation for non-integer scenarios.",
       "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
     },
     {
       "ordinal": 39,
@@ -695,16 +693,15 @@
       "arabicTitle": "المسافة على المستوى الإحداثي",
       "mechanic": "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
       "allowedFamilies": [
-        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
-        "trigonometry.right_triangle.find_side_exact"
+        "uae.g8.u05.l07.coordinate_plane_distance"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l07-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 67–74; printed 431–438",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "COORDINATE_DISTANCE_GENERAL_AXIS_AND_PYTHAGOREAN_TRIPLES",
+      "teacherReviewRequired": "Irrational exact radical distances, full diagram construction and justification of the distance formula remain teacher-reviewed.",
       "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
     },
     {
       "ordinal": 40,
