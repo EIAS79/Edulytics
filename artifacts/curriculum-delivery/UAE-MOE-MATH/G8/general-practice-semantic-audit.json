@@ -1,0 +1,1346 @@
+{
+  "schemaVersion": 1,
+  "programme": "UAE-MOE-MATH",
+  "grade": "G8",
+  "track": "GENERAL",
+  "academicLanguage": "ar",
+  "curriculumYear": "2026-2027",
+  "sourceVersion": "G8 Arabic student-book index 2025-2026 approved for 2026-2027 as discussed",
+  "issue": "https://github.com/EIAS79/Edulytics/issues/641",
+  "purpose": "Conservative 76-lesson production Practice semantic inventory. This does not certify full lesson source-objective parity.",
+  "lessonsCount": 76,
+  "summary": {
+    "sourceLessons": 76,
+    "lessonScopedAutomatedSubsetRemediationsCommitted": 7,
+    "awaitingSemanticsInspection": 69,
+    "fullPedagogicalCoverageCertified": 0,
+    "publisherPageItemParityCertified": 0
+  },
+  "method": "Compared Arabic authored pack/RichV2 objectives with exact contract families. Six high-risk lesson contracts replaced with source-scoped exact numeric or reason-selection subsets. Remaining 70 require actual question review; mathematical family existence alone does not prove lesson-semantic alignment.. Previous PR #640 U12L04 two-set union remains a separately scoped partial teacher-review item.",
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
+      "arabicTitle": "الأعداد النسبية",
+      "mechanic": "RATIONAL_TERMINATING_DECIMAL_EQUIVALENCE",
+      "allowedFamilies": [
+        "uae.g4.u10.l04.decimal_to_hundredths",
+        "uae.g5.u07.l03.simplify_fraction",
+        "uae.g5.u07.l08.reducible_fraction_to_decimal"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 40–47; printed pages 7–14",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS",
+      "arabicTitle": "القوى والأسس",
+      "mechanic": "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION",
+      "allowedFamilies": [
+        "uae.g6.u06.l02.repeated_to_power",
+        "uae.g6.u06.l02.integer_power",
+        "uae.g6.u06.l02.decimal_power",
+        "uae.g6.u06.l02.fraction_power",
+        "uae.g6.u06.l02.ten_power",
+        "uae.g6.u06.l02.power_addition"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 48–55; printed pages 15–22",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS",
+      "arabicTitle": "ضرب أحاديات الحد وقسمتها",
+      "mechanic": "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
+      "allowedFamilies": [
+        "supporting.algebra.simplify",
+        "supporting.algebra.expand",
+        "supporting.powers10.multiply",
+        "supporting.powers10.divide"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 56–63; printed 23–30",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS",
+      "arabicTitle": "القوى الأسية لأحاديات الحد",
+      "mechanic": "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
+      "allowedFamilies": [
+        "supporting.algebra.expand",
+        "supporting.algebra.simplify",
+        "uae.g6.u06.l02.integer_power",
+        "uae.g6.u06.l02.fraction_power"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 64–71; unit-linked PDF 72–75; printed 31–38 plus unit investigation",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS",
+      "arabicTitle": "الأسس السالبة",
+      "mechanic": "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
+      "allowedFamilies": [
+        "supporting.powers10.evaluate",
+        "supporting.powers10.divide",
+        "supporting.powers10.missing_exponent"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 76–83; printed 43–50",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION",
+      "arabicTitle": "الترميز العلمي",
+      "mechanic": "SCIENTIFIC_NOTATION_NORMALIZED_DECIMAL_AND_TEN_POWER",
+      "allowedFamilies": [
+        "supporting.standard_form.power10_exponent",
+        "supporting.powers10.evaluate",
+        "supporting.powers10.missing_exponent"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 84–91; printed 51–58",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:07:COMPUTING-WITH-SCIENTIFIC-NOTATION",
+      "arabicTitle": "الحساب باستخدام الترميز العلمي",
+      "mechanic": "SCIENTIFIC_NOTATION_MULTIPLY_DIVIDE_ADD_SUBTRACT",
+      "allowedFamilies": [
+        "supporting.standard_form.power10_exponent",
+        "supporting.powers10.multiply",
+        "supporting.powers10.divide",
+        "supporting.algebra.expressions.mixed"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l07-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 92–99; printed 59–66; subsequent unit exploration",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS",
+      "arabicTitle": "الجذور",
+      "mechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
+      "allowedFamilies": [
+        "uae.g6.u06.l02.perfect_square",
+        "usccss.g6.u01.l17.original_square_cube_values",
+        "uae.g6.u06.l04.cube_volume"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l08-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS",
+      "arabicTitle": "تقدير الجذور",
+      "mechanic": "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
+      "allowedFamilies": [
+        "uae.g6.u06.l02.perfect_square",
+        "supporting.algebra.quadratic_larger_root",
+        "usccss.g6.u01.l17.original_square_cube_values"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l09-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 114–121; printed 81–88",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS",
+      "arabicTitle": "مقارنة الأعداد الحقيقية",
+      "mechanic": "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
+      "allowedFamilies": [
+        "uae.g6.u05.l09.compare_mixed_signed_rationals",
+        "fractions.compare.unlike.common_denominator",
+        "uae.g4.u10.l08.decimal_compare"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l10-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 122–129; unit support PDF130–139; printed 89–96 and unit assessment/projects",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS",
+      "arabicTitle": "حل المعادلات باستخدام المعاملات النسبية",
+      "mechanic": "ONE_STEP_RATIONAL_COEFFICIENT_LINEAR_EQUATION",
+      "allowedFamilies": [
+        "usccss.g7.u05.rational_linear_equation",
+        "usccss.number.signed_rational_divide",
+        "supporting.algebra.equations.mixed"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 144–151, printed 111–118",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS",
+      "arabicTitle": "حل المعادلات المكوّنة من خطوتين",
+      "mechanic": "TWO_STEP_LINEAR_AX_PLUS_B_EQUALS_C",
+      "allowedFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "supporting.algebra.equations.mixed",
+        "supporting.algebra.expand"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 154–161, printed 121–128",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS",
+      "arabicTitle": "كتابة المعادلات المكوّنة من خطوتين",
+      "mechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
+      "allowedFamilies": [
+        "usccss.g7.u02.l08.classify_equations",
+        "supporting.algebra.equations.mixed",
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 162–169; printed 129–136",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE",
+      "arabicTitle": "حل المعادلات التي تحتوي على متغيرات في كل طرف",
+      "mechanic": "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
+      "allowedFamilies": [
+        "supporting.algebra.equations.mixed",
+        "algebra.linear.ax_plus_b_equals_c",
+        "supporting.algebra.simplify"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 178–185; printed 145–152",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS",
+      "arabicTitle": "حل المعادلات المكوّنة من عدة خطوات",
+      "mechanic": "MULTI_STEP_DISTRIBUTIVE_LINEAR_EQUATIONS_AND_SOLUTION_COUNT",
+      "allowedFamilies": [
+        "supporting.algebra.expand",
+        "supporting.algebra.simplify",
+        "supporting.algebra.equations.mixed",
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 186–193; printed 153–160",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE",
+      "arabicTitle": "معدل التغير الثابت",
+      "mechanic": "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
+      "allowedFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio",
+        "usccss.g6.u03.l07.unit_rate_equivalence",
+        "usccss.g7.u02.l10.graphs_origin_slope"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 204–211; printed 171–178",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:02:SLOPE",
+      "arabicTitle": "الميل",
+      "mechanic": "SLOPE_FROM_POINTS_TABLE_AND_GRAPH",
+      "allowedFamilies": [
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "geometry.coordinate.evaluate_linear_rule",
+        "algebra.linear.standard_form.slope_intercept"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 214–221; printed 181–188",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM",
+      "arabicTitle": "المعادلات بصيغة y = mx",
+      "mechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
+      "allowedFamilies": [
+        "algebra.modeling.linear_relationship.select_equation",
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM",
+      "arabicTitle": "صيغة الميل والمقطع",
+      "mechanic": "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
+      "allowedFamilies": [
+        "algebra.linear.standard_form.slope_intercept",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 232–239; printed 199–206",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS",
+      "arabicTitle": "تمثيل خط مستقيم بيانيًا باستخدام التقاطعات",
+      "mechanic": "undefined",
+      "allowedFamilies": [
+        "geometry.coordinate.y_intercept_from_rule",
+        "algebra.linear.standard_form.slope_intercept",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 242–249; printed 209–216",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS",
+      "arabicTitle": "كتابة المعادلات الخطية",
+      "mechanic": "undefined",
+      "allowedFamilies": [
+        "algebra.linear.standard_form.slope_intercept",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 254–261; printed 221–228",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING",
+      "arabicTitle": "حل أنظمة المعادلات باستخدام التمثيل البياني",
+      "mechanic": "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
+      "allowedFamilies": [
+        "algebra.linear.systems.solution_count.classify"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l07-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 266–275; printed 233–242",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY",
+      "arabicTitle": "حل أنظمة المعادلات جبريًا",
+      "mechanic": "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
+      "allowedFamilies": [
+        "algebra.linear.systems.two_by_two.integer_coefficients",
+        "algebra.linear.systems.solution_count.classify",
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l08-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 276–283; printed 243–250",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS",
+      "arabicTitle": "تمثيل العلاقات",
+      "mechanic": "REPRESENT_LINEAR_RELATION_TABLE_GRAPH_EQUATION_WORDS",
+      "allowedFamilies": [
+        "algebra.modeling.linear_relationship.select_equation"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF300–309, printed 267–276",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS",
+      "arabicTitle": "العلاقات",
+      "mechanic": "RELATION_ORDERED_PAIRS_DOMAIN_RANGE_MAPPING_GRAPH",
+      "allowedFamilies": [
+        "functions.table.lookup.invert"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF310–317, printed 277–284",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS",
+      "arabicTitle": "الدوال",
+      "mechanic": "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
+      "allowedFamilies": [
+        "functions.relations.unique_output.classify",
+        "functions.notation.evaluate_context"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF320–327, printed 287–294",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS",
+      "arabicTitle": "الدوال الخطية",
+      "mechanic": "LINEAR_FUNCTION_RULE_TABLE_GRAPH",
+      "allowedFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "algebra.linear.standard_form.slope_intercept"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 328–337; printed 295–304",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS",
+      "arabicTitle": "مقارنة خصائص الدوال",
+      "mechanic": "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
+      "allowedFamilies": [
+        "usccss.g7.u02.l12.compare_same_axes_rates",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 342–351; printed 309–318",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS",
+      "arabicTitle": "تكوين الدوال",
+      "mechanic": "BUILD_LINEAR_FUNCTION_FROM_TABLE_GRAPH_CONTEXT",
+      "allowedFamilies": [
+        "algebra.modeling.linear_relationship.select_equation",
+        "uae.g6.u08.l02.linear_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 352–359; printed 319–326",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS",
+      "arabicTitle": "الدوال الخطية والدوال غير الخطية",
+      "mechanic": "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
+      "allowedFamilies": [
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "functions.quadratic.output_roots.solve"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l07-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 360–367; printed 327–334",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS",
+      "arabicTitle": "الدوال التربيعية",
+      "mechanic": "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
+      "allowedFamilies": [
+        "supporting.functions.polynomial_value",
+        "functions.quadratic.output_roots.solve",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l08-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 368–375; printed 335–342",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS",
+      "arabicTitle": "التمثيلات البيانية النوعية",
+      "mechanic": "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
+      "allowedFamilies": [
+        "functions.domain_range.context_bounds",
+        "uae.g6.u08.l03.linear_vs_square"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l09-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 380–387; printed 347–354",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES",
+      "arabicTitle": "المستقيمات",
+      "mechanic": "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
+      "allowedFamilies": [
+        "supporting.algebra.equations.mixed"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 7–14; printed 371–378",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF",
+      "arabicTitle": "البرهان الهندسي",
+      "mechanic": "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
+      "allowedFamilies": [
+        "uae.g8.u05.l02.proof_reason_classify"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 15–22; printed 379–386",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "REASON_SELECTION_ONLY",
+      "teacherReviewRequired": "Full two-column proof, written logical justification and cyclic-reasoning critique",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES",
+      "arabicTitle": "زوايا المثلثات",
+      "mechanic": "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
+      "allowedFamilies": [
+        "supporting.algebra.equations.mixed"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 25–32; printed 389–396",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES",
+      "arabicTitle": "المضلعات والزوايا",
+      "mechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "allowedFamilies": [
+        "geometry.polygons.missing_interior_angle",
+        "geometry.angles.supplementary"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 33–40; printed 397–404",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM",
+      "arabicTitle": "نظرية فيثاغورس",
+      "mechanic": "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
+      "allowedFamilies": [
+        "trigonometry.right_triangle.find_side_exact",
+        "supporting.geometry.triangle_area"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 47–54; printed 411–418",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM",
+      "arabicTitle": "استخدام نظرية فيثاغورس",
+      "mechanic": "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+      "allowedFamilies": [
+        "trigonometry.right_triangle.find_side_exact",
+        "supporting.algebra.equations.mixed"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 59–66; printed 423–430",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE",
+      "arabicTitle": "المسافة على المستوى الإحداثي",
+      "mechanic": "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+      "allowedFamilies": [
+        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+        "trigonometry.right_triangle.find_side_exact"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l07-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 67–74; printed 431–438",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS",
+      "arabicTitle": "الإزاحة",
+      "mechanic": "TRANSLATE_SHAPE_VECTOR_COORDINATE",
+      "allowedFamilies": [
+        "uae.g6.u05.l11.plot_from_signed_moves",
+        "uae.g6.u05.l12.find_horizontal_endpoint",
+        "uae.g6.u05.l12.find_vertical_endpoint"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u06-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 89–96; printed 453–460",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS",
+      "arabicTitle": "الانعكاس",
+      "mechanic": "REFLECT_POINT_ACROSS_X_Y_AXES",
+      "allowedFamilies": [
+        "uae.g6.u05.l10.reflect_across_x",
+        "uae.g6.u05.l10.reflect_across_y",
+        "uae.g6.u05.l11.reflect_both_axes"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u06-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 97–104; printed 461–468",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS",
+      "arabicTitle": "الدوران",
+      "mechanic": "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
+      "allowedFamilies": [
+        "uae.g8.u06.l03.rotation_origin_coordinate"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u06-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 111–118; printed 475–482",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "RIGHT_ANGLE_ROTATION_POINT_COORDINATE_COMPONENT",
+      "teacherReviewRequired": "Construction/plot of transformed shapes, invariants and explanations",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS",
+      "arabicTitle": "عمليات تغيير الأبعاد/التمدد",
+      "mechanic": "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
+      "allowedFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l02.scale_factor"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u06-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 123–130; printed 487–494",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS",
+      "arabicTitle": "التطابق والتحويلات",
+      "mechanic": "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
+      "allowedFamilies": [
+        "uae.g6.u05.l10.reflect_across_x",
+        "uae.g6.u05.l10.reflect_across_y",
+        "uae.g6.u05.l11.reflect_both_axes"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 145–152; printed 509–516",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE",
+      "arabicTitle": "التطابق",
+      "mechanic": "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
+      "allowedFamilies": [
+        "usccss.g5.u07.l08.source_triangle_side_and_angle_types"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 157–164; printed 521–528",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS",
+      "arabicTitle": "التشابه والتحويلات",
+      "mechanic": "SIMILARITY_DILATION_AND_RIGID_TRANSFORMS",
+      "allowedFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l02.scale_factor",
+        "usccss.g7.u01.l04.angle_and_distance_scaling"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 171–178; printed 535–542",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS",
+      "arabicTitle": "خصائص المضلعات المتشابهة",
+      "mechanic": "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
+      "allowedFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l04.angle_and_distance_scaling",
+        "usccss.g6.u02.l05.scaled_ratio_missing_term"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 179–186; printed 543–550",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT",
+      "arabicTitle": "المثلثات المتشابهة والقياس غير المباشر",
+      "mechanic": "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
+      "allowedFamilies": [
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l04.hidden_corresponding_distance"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 187–194; printed 551–558",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES",
+      "arabicTitle": "المثلثات القائمة والمتشابهة",
+      "mechanic": "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
+      "allowedFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "usccss.g7.u02.l10.graphs_origin_slope"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 195–202; printed 559–566",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES",
+      "arabicTitle": "مساحة الأشكال المتشابهة ومحيطها",
+      "mechanic": "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
+      "allowedFamilies": [
+        "usccss.g7.u01.l06.scaled_area_square_factor",
+        "geometry.similarity.scale_factor",
+        "usccss.g7.u01.l10.change_scale_length_and_area"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l07-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 203–210; printed 567–574",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS",
+      "arabicTitle": "حجم الأسطوانة",
+      "mechanic": "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
+      "allowedFamilies": [
+        "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+        "usccss.g7.u07.prism_volume_base_height"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 7–14; printed 587–594",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES",
+      "arabicTitle": "حجم المخروط",
+      "mechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
+      "allowedFamilies": [
+        "uae.g7.u09.l02.cone_volume_pi_coefficient",
+        "uae.g7.u09.l01.cylinder_volume_pi_coefficient"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 53,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES",
+      "arabicTitle": "حجم الكرة",
+      "mechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
+      "allowedFamilies": [
+        "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+        "geometry.similarity.scale_factor"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 24–31; printed 603–610",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 54,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:04:SURFACE-AREA-OF-CYLINDERS",
+      "arabicTitle": "مساحة سطح الأسطوانة",
+      "mechanic": "CYLINDER_LATERAL_AND_TOTAL_SURFACE_PI_COEFFICIENT",
+      "allowedFamilies": [
+        "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient",
+        "supporting.geometry.circle_circumference_pi_coefficient"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 38–45; printed 617–624",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES",
+      "arabicTitle": "مساحة سطح المخروط",
+      "mechanic": "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
+      "allowedFamilies": [
+        "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 50–57; printed 629–636",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS",
+      "arabicTitle": "تغيرات الأبعاد",
+      "mechanic": "SIMILAR_SOLIDS_SCALE_LENGTH_AREA_SQUARE_VOLUME_CUBE",
+      "allowedFamilies": [
+        "uae.g7.u09.l06.scale_area_factor",
+        "uae.g7.u09.l06.scale_volume_factor",
+        "geometry.similarity.scale_factor"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 60–67; printed 639–646",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS",
+      "arabicTitle": "مخططات الانتشار",
+      "mechanic": "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
+      "allowedFamilies": [
+        "supporting.statistics.scatter_correlation",
+        "statistics.correlation.direction"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 49–58; printed 661–670",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT",
+      "arabicTitle": "المستقيم الأفضل تمثيلًا",
+      "mechanic": "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
+      "allowedFamilies": [
+        "statistics.linear_model.fit_select",
+        "statistics.linear_model.predict",
+        "statistics.linear_model.residual"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 61–68; printed 673–680",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES",
+      "arabicTitle": "الجداول ذات المدخلين",
+      "mechanic": "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
+      "allowedFamilies": [
+        "statistics.two_way.marginal_count",
+        "statistics.two_way.conditional_relative",
+        "supporting.statistics.table_total"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 73–80; printed 685–692",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:04:DESCRIPTIVE-STATISTICS",
+      "arabicTitle": "الإحصاء الوصفي",
+      "mechanic": "DESCRIPTIVE_STATISTICS_FIVE_NUMBER_MEAN_MEDIAN_MODE_RANGE",
+      "allowedFamilies": [
+        "statistics.center_spread.mean",
+        "statistics.center_spread.median",
+        "supporting.statistics.quartile",
+        "statistics.center_spread.range"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 85–92; printed 697–704",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY",
+      "arabicTitle": "مقاييس التباين",
+      "mechanic": "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
+      "allowedFamilies": [
+        "statistics.center_spread.mad",
+        "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
+        "statistics.center_spread.range"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 93–100; printed 705–712",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS",
+      "arabicTitle": "تحليل توزيعات البيانات",
+      "mechanic": "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
+      "allowedFamilies": [
+        "statistics.distribution_shape.classify",
+        "usccss.g6.u08.l16.box_plot_source_quartiles"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 101–108; printed 713–720",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES",
+      "arabicTitle": "النقاط والمستقيمات والمستويات",
+      "mechanic": "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
+      "allowedFamilies": [
+        "uae.g4.u12.l01.segments_from_points"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 121–128; printed 733–740",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE",
+      "arabicTitle": "القياس الخطي",
+      "mechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
+      "allowedFamilies": [
+        "uae.g4.u12.l01.segments_from_points",
+        "usccss.g6.u07.l06.absolute_distance_values"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS",
+      "arabicTitle": "المسافة ونقاط المنتصف",
+      "mechanic": "CARTESIAN_DISTANCE_AND_MIDPOINT",
+      "allowedFamilies": [
+        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 141–148; printed 753–760",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS",
+      "arabicTitle": "إثبات العلاقات بين القطع المستقيمة",
+      "mechanic": "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
+      "allowedFamilies": [
+        "uae.g4.u12.l01.segments_from_points"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 154–161; printed 766–773",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS",
+      "arabicTitle": "زوايا المضلعات",
+      "mechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "allowedFamilies": [
+        "geometry.polygons.missing_interior_angle",
+        "geometry.angles.supplementary"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF173–181, printed 785–793",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS",
+      "arabicTitle": "متوازي الأضلاع",
+      "mechanic": "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
+      "allowedFamilies": [
+        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF183–191, printed 795–803",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS",
+      "arabicTitle": "اختبارات متوازي الأضلاع",
+      "mechanic": "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
+      "allowedFamilies": [
+        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF193–201, printed 805–813",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES",
+      "arabicTitle": "المستطيل",
+      "mechanic": "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
+      "allowedFamilies": [
+        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
+        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 203–209; printed 815–821",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES",
+      "arabicTitle": "المعين والمربع",
+      "mechanic": "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
+      "allowedFamilies": [
+        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l05-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 210–218; printed 822–830",
+      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
+      "verifiedAutoGradeSubset": null,
+      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES",
+      "arabicTitle": "شبه المنحرف وشكل الطائرة الورقية",
+      "mechanic": "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
+      "allowedFamilies": [
+        "uae.g8.u11.l06.trapezoid_midsegment",
+        "uae.g8.u11.l06.kite_diagonal_area"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l06-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 219–228; printed 831–840",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "TRAPEZOID_MIDSEGMENT_AND_KITE_AREA",
+      "teacherReviewRequired": "Exclusive trapezoid and kite classification, side/diagonal properties and geometric diagrams",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY",
+      "arabicTitle": "مقدمة في نظرية المجموعات",
+      "mechanic": "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
+      "allowedFamilies": [
+        "uae.g8.u12.l01.membership_finite_roster",
+        "uae.g8.u12.l01.empty_finite_infinite_classify"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u12-l01-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 240–250; printed 852–862",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "FINITE_SET_MEMBERSHIP_AND_SET_TYPE",
+      "teacherReviewRequired": "Roster/rule conversions, infinite-set interpretation and explanatory writing",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS",
+      "arabicTitle": "المجموعات الجزئية والعمليات على المجموعات",
+      "mechanic": "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
+      "allowedFamilies": [
+        "uae.g8.u12.l02.subset_classify",
+        "uae.g8.u12.l02.union_cardinality",
+        "uae.g8.u12.l02.intersection_cardinality",
+        "uae.g8.u12.l02.difference_cardinality"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u12-l02-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 253–262; printed 865–874",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "FINITE_SUBSET_TEST_AND_UNION_INTERSECTION_DIFFERENCE_CARDINALITIES",
+      "teacherReviewRequired": "Set enumeration, universal-set complement and written identity proofs",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS",
+      "arabicTitle": "استخدام مخططات فن لدراسة العمليات على المجموعات",
+      "mechanic": "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
+      "allowedFamilies": [
+        "uae.g8.u12.l03.three_set_venn_region_count"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u12-l03-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 264–273; printed 876–885",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "THREE_SET_VENN_REGION_COUNTS_FROM_DISJOINT_GIVEN_DATA",
+      "teacherReviewRequired": "Drawing/shading regions, region construction and symbolic set identities",
+      "sampledLearnerPromptVerified": false,
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS",
+      "arabicTitle": "استخدام المجموعات لحل المسائل",
+      "mechanic": "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
+      "allowedFamilies": [
+        "supporting.sets.union_count"
+      ],
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u12-l04-ar.rich-lesson-v2.json",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 275–284; printed 887–896",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "FINITE_TWO_SET_INCLUSION_EXCLUSION_CARDINALITY",
+      "teacherReviewRequired": "Three-set inclusion-exclusion, complete Venn diagrams and contextual written explanations",
+      "sampledLearnerPromptVerified": true,
+      "independentExactGraderInCI": "PR640_VERIFIED_ON_PREMERGE_EXACT_HEAD"
+    }
+  ]
+}
