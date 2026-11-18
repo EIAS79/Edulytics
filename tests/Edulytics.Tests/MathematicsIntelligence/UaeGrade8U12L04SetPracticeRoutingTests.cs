@@ -88,7 +88,7 @@ public sealed class UaeGrade8U12L04SetPracticeRoutingTests
             Assert.DoesNotContain("Set A", item.Prompt, StringComparison.Ordinal);
             Assert.Contains("الشمول والاستبعاد", item.Solution);
 
-            using var document = System.Text.Json.JsonDocument.Parse(item.GenerationParametersJson);
+            using var document = System.Text.Json.JsonDocument.Parse(Assert.IsType<string>(item.GenerationParametersJson));
             var parameters = document.RootElement.GetProperty("parameters");
             var a = parameters.GetProperty("a").GetInt32();
             var b = parameters.GetProperty("b").GetInt32();
@@ -96,7 +96,7 @@ public sealed class UaeGrade8U12L04SetPracticeRoutingTests
             var expected = (a + b - intersection).ToString(CultureInfo.InvariantCulture);
             Assert.Equal(expected, item.CorrectAnswer);
             Assert.True(ExactSkillContractQuestionEngine.Verify(
-                item.GenerationFamily, new Dictionary<string, int>
+                Assert.IsType<string>(item.GenerationFamily), new Dictionary<string, int>
                 {
                     ["a"] = a, ["b"] = b, ["intersection"] = intersection
                 }, expected));
