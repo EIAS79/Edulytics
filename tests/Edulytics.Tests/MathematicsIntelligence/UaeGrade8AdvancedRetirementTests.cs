@@ -1,10 +1,30 @@
 using Edulytics.Core.Curriculum;
+using Edulytics.Data.Contexts;
 using Edulytics.Data.Seeding;
+using Microsoft.EntityFrameworkCore;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UaeGrade8AdvancedRetirementTests
 {
+    [Fact]
+    public async Task CleanSeedCreatesZeroAdvancedPedagogicalLessonsAndKeepsAll76General()
+    {
+        await using var db = new EdulyticsDbContext(
+            new DbContextOptionsBuilder<EdulyticsDbContext>()
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .Options);
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        var seeder = new MathematicsPedagogicalLessonSeeder(db);
+        await seeder.SeedAsync();
+        await seeder.SeedAsync();
+
+        Assert.Equal(0, await db.CurriculumPedagogicalLessons.CountAsync(x =>
+            x.Code.StartsWith("PED:UAE-MOE-MATH:L8:ADVANCED:")));
+        Assert.Equal(76, await db.CurriculumPedagogicalLessons.CountAsync(x =>
+            x.Code.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:")));
+    }
+
     [Fact]
     public void Grade8AdvancedIsNotAnOfferedOrSeedableCourseWhileGeneralArabicRemains()
     {
