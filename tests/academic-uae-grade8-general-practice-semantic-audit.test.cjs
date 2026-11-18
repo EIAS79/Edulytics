@@ -118,3 +118,36 @@ test('the six formerly mismapped G8 lessons have no unrelated arithmetic, chance
  assert.match(engine,/internal const string Rotation = "uae\.g8\.u06\.l03\.rotation_origin_coordinate"/);
  assert.match(engine,/internal const string VennRegions = "uae\.g8\.u12\.l03\.three_set_venn_region_count"/);
 });
+
+
+test('all 76 G8 contracts have batch runtime-sampled Arabic and objective evidence without inventing publisher certification',()=>{
+ const runtime=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-runtime-semantic-screen.json');
+ assert.equal(runtime.summary.lessonsSampled,76);
+ assert.equal(runtime.summary.generatedQuestions,14592);
+ assert.equal(runtime.summary.totalConfiguredFamilyAssignments,182);
+ assert.equal(runtime.summary.allAssignmentsSampled,true);
+ assert.equal(runtime.summary.lessonsWithObservedNonArabicPrompts,56);
+ assert.equal(runtime.summary.lessonsWithConfirmedUnrelatedOrOffObjectiveExamples,16);
+ assert.equal(runtime.summary.releaseBlockedLessons,58);
+ assert.equal(runtime.summary.partialReviewPendingLessons,18);
+ assert.equal(runtime.summary.fullySourceCertifiedLessons,0);
+ assert.equal(runtime.summary.originalStudentBookElementParity,'NOT_CERTIFIED');
+ assert.equal(runtime.summary.correctAnswersAcceptedByExactVerifier,14592);
+ assert.equal(runtime.summary.invalidTextRejectedByExactVerifier,14592);
+ assert.equal(runtime.lessons.length,76);
+ for(let i=0;i<76;i++){
+   const a=audit.lessons[i],row=runtime.lessons[i];
+   assert.equal(row.ordinal,i+1);
+   assert.equal(row.lessonCode,a.lessonCode);
+   assert.equal(row.questionCountGenerated,192);
+   assert.equal(row.observedFamilyCount,row.configuredFamilyCount);
+   assert.deepEqual(new Set(row.actualSampleByFamily.map(x=>x.family)),new Set(a.allowedFamilies));
+   assert.equal(row.wholeLessonPedagogicalCertification,false);
+   assert.equal(row.sourceItemByItemVerification,'NOT_EVIDENCED');
+   const nonArabic=row.actualSampleByFamily.filter(x=>!x.studentPromptArabic);
+   assert.equal(nonArabic.length,row.englishPromptFamilies.length);
+   if(nonArabic.length||row.semanticDefectConfirmed)
+      assert.equal(row.sampledContractDecision,'BLOCKED_CONFIRMED_SAMPLED_DEFECT');
+   else assert.equal(row.sampledContractDecision,'PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING');
+ }
+});
