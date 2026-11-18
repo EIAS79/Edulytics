@@ -10,7 +10,7 @@ const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g8-genera
 const contracts=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
 const exact=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
 const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs'),'utf8');
-const fixed=['05:01','05:02','05:03','06:03','11:06','12:01','12:02','12:03'];
+const fixed=['05:01','05:02','05:03','05:05','05:06','05:07','06:03','11:06','12:01','12:02','12:03'];
 const partial=[...fixed,'12:04'];
 test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do not invent broad 100% certification',()=>{
  assert.equal(audit.lessonsCount,76);
@@ -18,8 +18,8 @@ test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do 
  assert.equal(pack.Lessons.length,76);
  assert.equal(audit.summary.fullPedagogicalCoverageCertified,0);
  assert.equal(audit.summary.publisherPageItemParityCertified,0);
- assert.equal(audit.summary.lessonScopedAutomatedSubsetRemediationsCommitted,9);
- assert.equal(audit.summary.awaitingSemanticsInspection,67);
+ assert.equal(audit.summary.lessonScopedAutomatedSubsetRemediationsCommitted,12);
+ assert.equal(audit.summary.awaitingSemanticsInspection,64);
  assert.equal(audit.academicLanguage,'ar');
  const used=new Set();
  for(let i=0;i<76;i++){
@@ -58,6 +58,9 @@ test('the six formerly mismapped G8 lessons have no unrelated arithmetic, chance
  const forbidden=[
   ['05:01:LINES','supporting.algebra.equations.mixed'],
   ['05:03:ANGLES-OF-TRIANGLES','supporting.algebra.equations.mixed'],
+  ['05:05:THE-PYTHAGOREAN-THEOREM','trigonometry.right_triangle.find_side_exact'],
+  ['05:06:USING-THE-PYTHAGOREAN-THEOREM','supporting.algebra.equations.mixed'],
+  ['05:07:DISTANCE-ON-THE-COORDINATE-PLANE','usccss.g6.u07.l14.horizontal_vertical_coordinate_distances'],
   ['05:02:GEOMETRIC-PROOF','supporting.algebra.equations.mixed'],
   ['06:03:ROTATIONS','uae.g6.u05.l11.reflect_both_axes'],
   ['11:06:TRAPEZOIDS-AND-KITES','uae.g6.u09.l06.trapezoid_area'],
