@@ -10,15 +10,15 @@ const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g8-genera
 const contracts=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
 const exact=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
 const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs'),'utf8');
-const fixed=['05:02','06:03','11:06','12:01','12:02','12:03'];
+const fixed=['05:02','06:03','11:06','12:01','12:02','12:03','12:04'];
 test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do not invent broad 100% certification',()=>{
  assert.equal(audit.lessonsCount,76);
  assert.equal(audit.lessons.length,76);
  assert.equal(pack.Lessons.length,76);
  assert.equal(audit.summary.fullPedagogicalCoverageCertified,0);
  assert.equal(audit.summary.publisherPageItemParityCertified,0);
- assert.equal(audit.summary.lessonScopedAutomatedSubsetRemediationsCommitted,6);
- assert.equal(audit.summary.awaitingSemanticsInspection,70);
+ assert.equal(audit.summary.lessonScopedAutomatedSubsetRemediationsCommitted,7);
+ assert.equal(audit.summary.awaitingSemanticsInspection,69);
  assert.equal(audit.academicLanguage,'ar');
  const used=new Set();
  for(let i=0;i<76;i++){
