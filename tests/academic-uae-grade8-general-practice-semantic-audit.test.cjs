@@ -52,6 +52,8 @@ test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do 
   const actual=descriptor.match(/new LessonPracticeContract\(\s*"[^"]+"\s*,\s*"[^"]+"\s*,\s*"([^"]+)"\s*,\s*\[([^\]]*)\]/);
   assert.ok(actual,'registered family array '+code);
   assert.equal(a.mechanic,actual[1]);
+  assert.notEqual(a.mechanic,'undefined','unknown mechanic for '+code);
+  assert.match(a.mechanic,/^[A-Z][A-Z0-9_]+$/,'explicit lesson mechanic for '+code);
   assert.deepEqual(a.allowedFamilies,[...actual[2].matchAll(/"([^"]+)"/g)].map(m=>m[1]));
   assert.ok(a.allowedFamilies.length>0);
   const id=code.split(':').slice(4,6).join(':');
