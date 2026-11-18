@@ -338,14 +338,6 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version),
         new(
-            "PED:UAE-MOE-MATH:L8:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
             "PED:UAE-MOE-MATH:L8:GENERAL:01:06:RATES-AND-UNIT-RATES",
             "ratio.unit_rate",
             "UNIT_RATE",

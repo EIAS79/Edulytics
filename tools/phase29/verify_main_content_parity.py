@@ -180,6 +180,17 @@ def run():
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError,
             subprocess.CalledProcessError) as exc:
         errors.append(f"Grade8 exact 77-to-76 owner first-party replacement invalid: {exc}")
+    # A distinct owner-directed retirement, checked against three exact old
+    # Git blobs and exactly 77 English Grade 8 Advanced identities. Never
+    # conflate this with Grade 8 General's Arabic 76-lesson replacement.
+    g8_advanced = None
+    try:
+        from verify_uae_g8_advanced_retirement import verify as verify_g8_advanced
+        g8_advanced = verify_g8_advanced(ROOT)
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError,
+            subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade8 Advanced 77-lesson retirement invalid: {exc}")
+
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -194,6 +205,13 @@ def run():
                 for pack,code,lesson in identities(load_main(path)):
                     key = (pack,code)
                     if key in baseline: errors.append(f"duplicate retired Grade6 identity {key}")
+                    baseline[key] = lesson
+                continue
+            if g8_advanced and path == g8_advanced["oldContentPath"]:
+                for pack, code, lesson in identities(load_main(path)):
+                    key = (pack, code)
+                    if key in baseline:
+                        errors.append(f"duplicate retired G8 Advanced identity {key}")
                     baseline[key] = lesson
                 continue
             errors.append(f"missing original content pack: {path}")
@@ -243,6 +261,9 @@ def run():
                 verified_blueprints += 1
                 continue
             if g6_authorized and path == g6_old_blueprint:
+                verified_blueprints += 1
+                continue
+            if g8_advanced and path == g8_advanced["oldBlueprintPath"]:
                 verified_blueprints += 1
                 continue
             errors.append(f"missing original lesson blueprint: {path}")
@@ -386,7 +407,7 @@ def run():
             g4_replacement_authorized = True
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError) as exc:
         errors.append(f"UAE Grade4 narrowly-scoped owner replacement audit failed: {exc}")
-    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set()) - (g6_legacy_keys if g6_authorized else set()) - (g7_retirement['oldIdentityKeys'] if g7_retirement else set()) - (g8_retirement["retiredLegacyKeys"] if g8_retirement else set())
+    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set()) - (g6_legacy_keys if g6_authorized else set()) - (g7_retirement['oldIdentityKeys'] if g7_retirement else set()) - (g8_retirement["retiredLegacyKeys"] if g8_retirement else set()) - (g8_advanced["retiredLegacyKeys"] if g8_advanced else set())
     if unexpected_missing:
         errors.append(f"missing original lesson identities outside accepted Grade4 replacement: {sorted(unexpected_missing)[:5]}")
 

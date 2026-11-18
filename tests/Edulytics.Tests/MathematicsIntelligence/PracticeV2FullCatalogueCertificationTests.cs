@@ -11,7 +11,7 @@ public sealed class PracticeV2FullCatalogueCertificationTests
     // 5,110 prior lessons contained 93 G4, 59 G6 and 62 G7 General.
     // Approved replacements: G4 +39, G12 +73, G6 +69, G7 General +16.
     // All 5,307 canonical lessons must remain Practice V2 certified.
-    private const int ExpectedLessonCount = 5306;
+    private const int ExpectedLessonCount = 5229; // owner-retired 77 G8 Advanced
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_PRACTICE_V2_CERTIFICATION";
 

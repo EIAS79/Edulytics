@@ -28,6 +28,26 @@ const retiredG7GeneralContractBlock=[
   '            "READY_VERIFIED",',
   '            Version),'
 ];
+// One additional owner-retired UAE G8 Advanced English unit-rate declaration.
+const retiredG8AdvancedContractBlock=[
+  '        new(',
+  '            "PED:UAE-MOE-MATH:L8:ADVANCED:01:06:RATES-AND-UNIT-RATES",',
+  '            "ratio.unit_rate",',
+  '            "UNIT_RATE",',
+  '            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],',
+  '            "SupportingLesson",',
+  '            "READY_VERIFIED",',
+  '            Version),'
+];
+function stripOnlyRetiredG8AdvancedContract(lines){
+  const start=lines.findIndex((line,i)=>
+    retiredG8AdvancedContractBlock.every((expected,offset)=>
+      lines[i+offset]===expected));
+  assert.ok(start>=0,'Expected retired Grade8 Advanced contract missing from immutable baseline');
+  assert.equal(lines.filter(x=>x===retiredG8AdvancedContractBlock[1]).length,1);
+  return [...lines.slice(0,start),
+          ...lines.slice(start+retiredG8AdvancedContractBlock.length)];
+}
 function stripOnlyRetiredG7Contract(lines){
   const start=lines.findIndex((line,i)=>
     retiredG7GeneralContractBlock.every((expected,offset)=>
@@ -39,7 +59,7 @@ function stripOnlyRetiredG7Contract(lines){
 }
 // PR #640: owner-directed G8 U12L04 post-release P1 review fix only.
 // Exact new contract blob is pinned; all non-G8 G1/G11 lines remain compared to historical sources.
-const ownerAuditedExactG8PracticeContractBlob='122c12899179e4c0d8dfa6031a03825c27ca4c17';
+const ownerAuditedExactG8PracticeContractBlob='41fcd363bb44a13b125bbc336f9f7cf5efeabfe9';
 function withoutGrade8ScopedPracticeAssignments(lines){
   // All Grade8 GENERAL Practice rewrites are isolated by their
   // byLesson[...] deterministic contract key; compare every other line
@@ -64,14 +84,18 @@ function withoutGrade8ScopedPracticeAssignments(lines){
 function assertOriginalLinesUnchanged(ref,file){
   const baseline=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(
-        stripOnlyRetiredG7Contract(priorLines(ref,file)))
+        stripOnlyRetiredG8AdvancedContract(
+          stripOnlyRetiredG7Contract(priorLines(ref,file))))
     : priorLines(ref,file);
   const current=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
     : nowLines(file);
-  if(file===contracts)
+  if(file===contracts) {
     assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
       'Retired English G7 contract accidentally reinstated');
+    assert.ok(!current.includes(retiredG8AdvancedContractBlock[1]),
+      'Retired English G8 Advanced contract accidentally reinstated');
+  }
   let originalIndex=0;
   const added=[];
   for(const line of current){
@@ -100,7 +124,7 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
     const [added,removed,file]=row.split('\t');
     if(file===contracts){
       assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
-        'Grade8 changes must match the one exact reviewed first-party contract blob');
+        'Grade8 General contracts plus owner-retired Advanced block must match the pinned reviewed contract blob');
       assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
         'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
     }else{
@@ -134,7 +158,7 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
     const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
     if(file===contracts)
       assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
-        'Retired Grade7 plus exact owner-approved Grade8 contract blob required');
+        'Retired G7 and G8 Advanced plus exact approved Grade8 General contract blob required');
     else
       assert.deepEqual(deleted,[],
         'Previously accepted US/G1/G11 exact-engine source must remain immutable');

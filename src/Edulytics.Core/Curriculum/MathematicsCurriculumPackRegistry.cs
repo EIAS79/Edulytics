@@ -231,7 +231,6 @@ public static class MathematicsCurriculumPackRegistry
                 new(7,"Grade 7","Cycle 2","General",true),
                 new(7,"Grade 7","Cycle 2","Advanced",true),
                 new(8,"Grade 8","Cycle 2","General",true),
-                new(8,"Grade 8","Cycle 2","Advanced",true),
                 new(9,"Grade 9","Secondary","General",true),
                 new(9,"Grade 9","Secondary","Advanced",true),
                 new(10,"Grade 10","Secondary","General",true),
@@ -350,7 +349,10 @@ public static class MathematicsCurriculumPackRegistry
         var uae = All.Single(x => x.Code == UaeCode);
         if (uae.Levels.Max(x => x.LogicalLevel) != 12 ||
             uae.Levels.Any(x => x.LogicalLevel == 13) ||
-            uae.Levels.Count != 20 ||
+            // Grade 8 Advanced was explicitly retired by the owner.
+            // The other UAE pathway pairs remain mandatory.
+            uae.Levels.Count != 19 ||
+            uae.Levels.Any(x => x.LogicalLevel == 8 && x.Pathway == "Advanced") ||
             Enumerable.Range(1, 4).Any(level =>
                 !uae.Levels.Any(x =>
                     x.LogicalLevel == level &&
@@ -359,12 +361,12 @@ public static class MathematicsCurriculumPackRegistry
                 !uae.Levels.Any(x =>
                     x.LogicalLevel == level &&
                     x.Pathway == "General") ||
-                !uae.Levels.Any(x =>
+                (level != 8 && !uae.Levels.Any(x =>
                     x.LogicalLevel == level &&
-                    x.Pathway == "Advanced")))
+                    x.Pathway == "Advanced"))))
         {
             throw new InvalidOperationException(
-                "UAE level/pathway topology must be Grade 1-4 Common and Grade 5-12 General/Advanced.");
+                "UAE topology must keep Grades 1-4 Common and Grades 5-12 General, Advanced except retired Grade 8.");
         }
 
         var cambridgePack =

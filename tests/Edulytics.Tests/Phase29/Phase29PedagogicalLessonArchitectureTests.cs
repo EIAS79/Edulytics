@@ -384,9 +384,10 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         // Owner-approved G4 retired 10 old official-reference links;
         // owner-approved G6 replaces 59 English reference-linked lessons with
         // 128 independently authored Arabic lessons without invented official
-        // reference nodes. The other grades remain unchanged.
+        // reference nodes. Owner-retired Grade8 Advanced removes another
+        // exact 77 English reference-linked pedagogical lessons.
         Assert.Equal(
-            1373 - 10 - 59 - 62 - 1,
+            1373 - 10 - 59 - 62 - 1 - 77,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>

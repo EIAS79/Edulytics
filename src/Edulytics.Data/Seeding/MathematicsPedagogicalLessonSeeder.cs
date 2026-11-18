@@ -227,9 +227,19 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // Before G7 cutover: 5,090 unrelated includes 62 old English G7.
         // After G7 62-to-78, 5,106 unrelated; after G8 77-to-76,
         // 5,105 unrelated. Preserve only these exact observed cohorts.
-        var unrelatedBaseline = g7Count == 78
+        var g8AdvancedCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
+        var historicUnrelatedBaseline = g7Count == 78
             ? g8GeneralCount == 76 ? 5105 : g8GeneralCount == 77 ? 5106 : -1
             : g7Count == 0 && g8GeneralCount == 77 ? 5090 : -1;
+        // The retired Grade8 Advanced cohort is exactly 77 records.
+        // Both the historical full inventory and the retired clean inventory
+        // have exact pinned totals; reject partial/ad-hoc deletions.
+        var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
+            historicUnrelatedBaseline >= 0
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount)
+            : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
             allCount != unrelatedBaseline + g6Count ||
@@ -351,8 +361,15 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var g8GeneralCount = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(
                 "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
-        var g7UnrelatedBaseline = g8GeneralCount == 77 ? 5156 :
+        var g8AdvancedCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
+        var historicG7Unrelated = g8GeneralCount == 77 ? 5156 :
             g8GeneralCount == 76 ? 5155 : -1;
+        var g7UnrelatedBaseline =
+            (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
+                ? historicG7Unrelated - (77 - g8AdvancedCount)
+                : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
         var g5Count = await _db.CurriculumPedagogicalLessons
@@ -419,7 +436,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
     /// Preserves deterministic 76 pedagogical lesson IDs and all adoptions.
     /// The extra U12L05 and its single metadata row retire inside the SAME
     /// transaction as Arabic title, mapping and JSON metadata reconciliation.
-    /// Never touches Grade8 Advanced, students, or any other curriculum.
+    /// Never edits Grade8 Advanced records, students, or any other curriculum.
+    /// The owner may have separately retired Grade8 Advanced (0), or an
+    /// existing production database may still retain the 77 historic records.
     /// </summary>
     public async Task SeedOnlyApprovedUaeGrade8Async(
         CancellationToken ct = default)
@@ -472,7 +491,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         // Production 2026-11-17 pinned read-only inventory:
         // 5,157 non-G8 General lessons/contents, plus 77 G8 General,
-        // 77 G8 Advanced; all 77 legacy metadata Published, no saved translations.
+        // Previously 77 G8 Advanced (now owner-retired from clean builds);
+        // 77 legacy General metadata Published, no saved translations.
         // This also allows repeat invocation after a complete 76-only release.
         var allCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
         var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
@@ -504,10 +524,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
             existing.Where(x => x.Code != retired).Count() != 76 ||
             !scope.All(x => actualByCode.TryGetValue(x.Code, out var live) &&
                 live.Id == x.Id && live.FrameworkVersionId == x.FrameworkVersionId) ||
-            (!isIsolatedRehearsal && unrelatedBefore != 5157) ||
+            (!isIsolatedRehearsal && unrelatedBefore != (advancedCount == 0 ? 5080 : 5157)) ||
             (isIsolatedRehearsal && unrelatedBefore < 5000) ||
             contentCount != allCount ||
-            advancedCount != 77 || translationCount != 0)
+            (advancedCount != 0 && advancedCount != 77) || translationCount != 0)
             throw new InvalidOperationException(
                 "Grade8 77-to-76 cutover refused: exact production inventory, identity or metadata drift.");
 
@@ -561,7 +581,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 out var expected) || x.Id != expected.Id ||
                 x.Title != expected.Title) ||
             await _db.CurriculumPedagogicalLessons.AnyAsync(x => x.Code == retired, ct) ||
-            stillAdvanced != 77 || afterAll != unrelatedBefore + 76 ||
+            stillAdvanced != advancedCount || afterAll != unrelatedBefore + 76 ||
             afterContent != unrelatedBefore + 76)
             throw new InvalidOperationException(
                 "Grade8 Arabic 76-lesson cutover failed postconditions; transaction rolled back.");
@@ -569,7 +589,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         await transaction.CommitAsync(ct);
         Console.WriteLine(
             "UAE_G8_SCOPED_REPLACE_77_WITH_76_ARABIC_PASS " +
-            "otherCurriculaUntouched=true advanced=77 publishedArabicMetadata=76");
+            $"otherCurriculaUntouched=true advanced={advancedCount} publishedArabicMetadata=76");
     }
 
     private async Task BuildUaeAsync(
@@ -1641,8 +1661,17 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Where(x => versionIds.Contains(x.FrameworkVersionId))
             .ToArrayAsync(ct);
 
+        // Grade 8 Advanced was removed from the offered/seeded curriculum,
+        // but historical school adoptions and learner data may still reference
+        // its legacy rows. Ordinary startup maintenance must never unlink or
+        // cascade-delete those records. The owner-directed retirement is a
+        // separate, explicitly scoped production transaction.
+        const string retiredGrade8AdvancedPrefix =
+            "PED:UAE-MOE-MATH:L8:ADVANCED:";
         var stale = allExisting
-            .Where(x => !expectedIds.Contains(x.Id))
+            .Where(x => !expectedIds.Contains(x.Id) &&
+                !x.Code.StartsWith(retiredGrade8AdvancedPrefix,
+                    StringComparison.Ordinal))
             .ToArray();
 
         if (stale.Length == 0)
