@@ -75,6 +75,9 @@ internal static class UaeGrade8GeneralSemanticQuestions
             {
                 var a = random.Next(3, 25) * 2;
                 var b = random.Next(3, 25) * 2;
+                // The source uses the exclusive trapezoid definition.
+                // Equal bases would describe a parallelogram instead.
+                while (b == a) b = random.Next(3, 25) * 2;
                 p["base1"] = a; p["base2"] = b;
                 prompt = F("شبه منحرف قاعدتاه المتوازيتان {0} و{1} سم. ما طول القطعة المتوسطة الواصلة بين منتصفي ساقيه، بالسنتيمتر؟", a, b);
                 solution = "طول القطعة المتوسطة يساوي نصف مجموع القاعدتين.";
@@ -193,7 +196,8 @@ internal static class UaeGrade8GeneralSemanticQuestions
             case TrapezoidMidsegment:
                 if (!ExactKeys(p, "base1", "base2") ||
                     p["base1"] is < 6 or > 48 || p["base2"] is < 6 or > 48 ||
-                    p["base1"] % 2 != 0 || p["base2"] % 2 != 0) return false;
+                    p["base1"] % 2 != 0 || p["base2"] % 2 != 0 ||
+                    p["base1"] == p["base2"]) return false;
                 expected = (p["base1"] + p["base2"]) / 2;
                 return true;
             case KiteArea:
