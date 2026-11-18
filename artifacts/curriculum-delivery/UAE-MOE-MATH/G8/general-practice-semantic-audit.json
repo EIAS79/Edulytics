@@ -5,7 +5,7 @@
   "track": "GENERAL",
   "academicLanguage": "ar",
   "curriculumYear": "2026-2027",
-  "sourceVersion": "G8 Arabic student-book index 2025-2026 approved for 2026-2027 as discussed",
+  "sourceVersion": "Owner-selected 12 units / 76 numbered lessons: Grade_08/01_Student_Books/03-9-12.pdf index, cover 2019-2020. The 01-1-4.pdf cover 2025-2026 contains a conflicting 8-unit / 56-lesson index. Target year 2026-2027 is not independently certified.",
   "issue": "https://github.com/EIAS79/Edulytics/issues/641",
   "purpose": "Conservative 76-lesson production Practice semantic inventory. This does not certify full lesson source-objective parity.",
   "lessonsCount": 76,
@@ -1339,5 +1339,17 @@
       "sampledLearnerPromptVerified": true,
       "independentExactGraderInCI": "PR640_VERIFIED_ON_PREMERGE_EXACT_HEAD"
     }
-  ]
+  ],
+  "sourceEditionConflict": "SOURCE_VERSION_CONFLICT",
+  "sourceEditionEvidence": {
+    "selectedIndex": "03-9-12.pdf",
+    "selectedIndexCoverYear": "2019-2020",
+    "selectedIndexUnitCount": 12,
+    "selectedIndexNumberedLessonCount": 76,
+    "conflictingIndex": "01-1-4.pdf",
+    "conflictingIndexCoverYear": "2025-2026",
+    "conflictingIndexUnitCount": 8,
+    "conflictingIndexNumberedLessonCount": 56,
+    "targetYearParityCertified": false
+  }
 }
