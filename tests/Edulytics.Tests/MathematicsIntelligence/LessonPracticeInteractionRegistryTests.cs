@@ -76,13 +76,13 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g7.u09.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(7, uaeGrade7.Length);
-        // G8 General semantic repairs add thirteen G8-only exact numeric/choice
+        // G8 General semantic repairs add sixteen G8-only exact numeric/choice
         // families. The prior independently audited 1,691 interactions must
         // remain unchanged; missing or extra G8 families fail closed.
         var uaeGrade8 = LessonPracticeInteractionRegistry.All
             .Where(x => x.FamilyId.StartsWith("uae.g8.", StringComparison.Ordinal))
             .ToArray();
-        Assert.Equal(13, uaeGrade8.Length);
+        Assert.Equal(16, uaeGrade8.Length);
         Assert.All(uaeGrade8, contract =>
         {
             Assert.Equal("exact_integer", contract.AnswerType);

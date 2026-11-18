@@ -13,6 +13,9 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
     [Theory]
     [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
     [InlineData("uae.g8.u05.l03.triangle_angle_measure")]
+    [InlineData("uae.g8.u05.l05.pythagorean_integer_triple")]
+    [InlineData("uae.g8.u05.l06.pythagorean_context_diagonal")]
+    [InlineData("uae.g8.u05.l07.coordinate_plane_distance")]
     [InlineData("uae.g8.u05.l02.proof_reason_classify")]
     [InlineData("uae.g8.u06.l03.rotation_origin_coordinate")]
     [InlineData("uae.g8.u11.l06.trapezoid_midsegment")]
@@ -53,6 +56,9 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
     [Theory]
     [InlineData("05:01:LINES", "uae.g8.u05.l01.transversal_angle_measure")]
     [InlineData("05:03:ANGLES-OF-TRIANGLES", "uae.g8.u05.l03.triangle_angle_measure")]
+    [InlineData("05:05:THE-PYTHAGOREAN-THEOREM", "uae.g8.u05.l05.pythagorean_integer_triple")]
+    [InlineData("05:06:USING-THE-PYTHAGOREAN-THEOREM", "uae.g8.u05.l06.pythagorean_context_diagonal")]
+    [InlineData("05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "uae.g8.u05.l07.coordinate_plane_distance")]
     [InlineData("05:02:GEOMETRIC-PROOF", "uae.g8.u05.l02.proof_reason_classify")]
     [InlineData("06:03:ROTATIONS", "uae.g8.u06.l03.rotation_origin_coordinate")]
     [InlineData("11:06:TRAPEZOIDS-AND-KITES", "uae.g8.u11.l06.trapezoid_midsegment")]
@@ -171,6 +177,88 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
                 family, invalid, question.CorrectAnswer));
             Assert.False(ExactSkillContractQuestionEngine.Verify(
                 family, p, (expected + 1).ToString(CultureInfo.InvariantCulture)));
+        }
+    }
+
+    [Theory]
+    [InlineData("uae.g8.u05.l05.pythagorean_integer_triple")]
+    [InlineData("uae.g8.u05.l06.pythagorean_context_diagonal")]
+    [InlineData("uae.g8.u05.l07.coordinate_plane_distance")]
+    public void PythagoreanQuestionsComputeIndependentGeometryAndRejectTamperedCases(string family)
+    {
+        var triples = new (int A, int B, int C)[]
+            { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (9, 12, 15) };
+        var space = new (int X, int Y, int Z, int D)[]
+            { (1, 2, 2, 3), (2, 3, 6, 7), (3, 4, 12, 13), (6, 6, 7, 11) };
+        var engine = new ExactSkillContractQuestionEngine();
+        var all = Enumerable.Range(1, 80).SelectMany(seed =>
+            engine.Generate("g8-original-pythagoras-regression", family, [family],
+                ExactSkillQuestionDifficulty.Standard, 3, 61000 + seed, []))
+            .ToArray();
+        var expectedModes = family.EndsWith("pythagorean_integer_triple",
+            StringComparison.Ordinal) ? new[] { 0, 1, 2 } : new[] { 0, 1, 2, 3 };
+        Assert.Equal(expectedModes, all.Select(q => q.Parameters["mode"])
+            .Distinct().OrderBy(x => x).ToArray());
+        foreach (var q in all)
+        {
+            var p = q.Parameters;
+            var triple = triples[p["i"]];
+            var scale = p["scale"];
+            int expected;
+            if (family.EndsWith("pythagorean_integer_triple", StringComparison.Ordinal))
+            {
+                expected = p["mode"] switch
+                {
+                    0 => triple.C * scale,
+                    1 => triple.B * scale,
+                    _ => p["altered"] == 0 ? 1 : 0
+                };
+                if (p["mode"] == 2)
+                {
+                    // An altered purported hypotenuse breaks the exact converse.
+                    var c = triple.C + p["altered"];
+                    Assert.Equal(p["altered"] == 0,
+                        triple.A * triple.A + triple.B * triple.B == c * c);
+                }
+            }
+            else if (family.EndsWith("pythagorean_context_diagonal", StringComparison.Ordinal))
+            {
+                expected = p["mode"] switch
+                {
+                    0 or 3 => triple.C * scale,
+                    1 => triple.B * scale,
+                    _ => space[p["i"]].D * scale
+                };
+                if (p["mode"] == 2)
+                {
+                    var (x, y, z, d) = space[p["i"]];
+                    Assert.Equal(d * d, x * x + y * y + z * z);
+                }
+            }
+            else
+            {
+                var pairs = System.Text.RegularExpressions.Regex.Matches(
+                    q.Prompt, @"\((-?\d+)، (-?\d+)\)");
+                Assert.Equal(2, pairs.Count);
+                int x1 = int.Parse(pairs[0].Groups[1].Value, CultureInfo.InvariantCulture);
+                int y1 = int.Parse(pairs[0].Groups[2].Value, CultureInfo.InvariantCulture);
+                int x2 = int.Parse(pairs[1].Groups[1].Value, CultureInfo.InvariantCulture);
+                int y2 = int.Parse(pairs[1].Groups[2].Value, CultureInfo.InvariantCulture);
+                var sum = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+                expected = (int)Math.Sqrt(sum);
+                Assert.Equal(sum, expected * expected);
+            }
+            Assert.Equal(expected.ToString(CultureInfo.InvariantCulture), q.CorrectAnswer);
+            Assert.Contains(q.Prompt, c => c is >= 'ء' and <= 'ي');
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, q.CorrectAnswer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(family, p,
+                (expected + 1).ToString(CultureInfo.InvariantCulture)));
+            var tampered = new Dictionary<string, int>(p) { ["mode"] = 999 };
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, tampered, q.CorrectAnswer));
+            var extra = new Dictionary<string, int>(p) { ["unapproved"] = 7 };
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, extra, q.CorrectAnswer));
         }
     }
 
