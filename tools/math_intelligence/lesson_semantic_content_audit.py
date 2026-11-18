@@ -233,18 +233,18 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
                       grade4_replacement - grade6_replacement -
                       grade7_replacement - grade8_replacement)
     # Lock every independently approved scope, including the G8 one-lesson
-    # retirement: 4,819 identifiers belong to all unaffected programmes.
+    # retirement: 4,742 identifiers belong to all unaffected programmes.
     # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5306 or len(supplemental) != 73 or
+    if (len(by_code) != 5229 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
-        len(grade8_replacement) != 76 or len(untouched_base) != 4819):
+        len(grade8_replacement) != 76 or len(untouched_base) != 4742):
         errors.append(
-            "Effective learner snapshot requires 4,819 other lessons, "
+            "Effective learner snapshot requires 4,742 other lessons, "
             "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
             "76 Arabic G8 General and 73 independently certified G12, "
-            "totaling exactly 5,306; "
+            "totaling exactly 5,229; "
             f"got {len(untouched_base)} other, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "
