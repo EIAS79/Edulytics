@@ -11,12 +11,12 @@
   "lessonsCount": 76,
   "summary": {
     "sourceLessons": 76,
-    "lessonScopedAutomatedSubsetRemediationsCommitted": 6,
-    "awaitingSemanticsInspection": 70,
+    "lessonScopedAutomatedSubsetRemediationsCommitted": 7,
+    "awaitingSemanticsInspection": 69,
     "fullPedagogicalCoverageCertified": 0,
     "publisherPageItemParityCertified": 0
   },
-  "method": "Compared Arabic authored pack/RichV2 objectives with exact contract families. Six high-risk families replaced with source-scoped exact numeric or reason-selection subsets. Remaining 70 require actual question review; mathematical family existence alone does not prove lesson-semantic alignment.",
+  "method": "Compared Arabic authored pack/RichV2 objectives with exact contract families. Six high-risk lesson contracts replaced with source-scoped exact numeric or reason-selection subsets. Remaining 70 require actual question review; mathematical family existence alone does not prove lesson-semantic alignment.. Previous PR #640 U12L04 two-set union remains a separately scoped partial teacher-review item.",
   "lessons": [
     {
       "ordinal": 1,
@@ -1336,11 +1336,11 @@
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u12-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 275–284; printed 887–896",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
-      "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "FINITE_TWO_SET_INCLUSION_EXCLUSION_CARDINALITY",
+      "teacherReviewRequired": "Three-set inclusion-exclusion, complete Venn diagrams and contextual written explanations",
+      "sampledLearnerPromptVerified": true,
+      "independentExactGraderInCI": "PR640_VERIFIED_ON_PREMERGE_EXACT_HEAD"
     }
   ]
 }
