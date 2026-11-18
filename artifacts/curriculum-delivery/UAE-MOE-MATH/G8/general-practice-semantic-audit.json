@@ -11,12 +11,12 @@
   "lessonsCount": 76,
   "summary": {
     "sourceLessons": 76,
-    "lessonScopedAutomatedSubsetRemediationsCommitted": 7,
-    "awaitingSemanticsInspection": 69,
+    "lessonScopedAutomatedSubsetRemediationsCommitted": 9,
+    "awaitingSemanticsInspection": 67,
     "fullPedagogicalCoverageCertified": 0,
     "publisherPageItemParityCertified": 0
   },
-  "method": "Compared Arabic authored pack/RichV2 objectives with exact contract families. Six high-risk lesson contracts replaced with source-scoped exact numeric or reason-selection subsets. Remaining 70 require actual question review; mathematical family existence alone does not prove lesson-semantic alignment.. Previous PR #640 U12L04 two-set union remains a separately scoped partial teacher-review item.",
+  "method": "Compared the authored Arabic RichV2 objectives with lesson-scoped exact family mechanics. Eight confirmed mismatches are repaired in scoped numeric/reason-selection subsets; the previously fixed U12L04 remains a separately scoped partial teacher-review item. Remaining 67 require per-question learner prompt, independent verifier and teacher-objective inspection. No full-pedagogical coverage or publisher-item parity is certified.",
   "lessons": [
     {
       "ordinal": 1,
@@ -596,15 +596,15 @@
       "arabicTitle": "المستقيمات",
       "mechanic": "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
       "allowedFamilies": [
-        "supporting.algebra.equations.mixed"
+        "uae.g8.u05.l01.transversal_angle_measure"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l01-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 7–14; printed 371–378",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "PARALLEL_TRANSVERSAL_CORRESPONDING_ALTERNATE_SAME_SIDE_ANGLE_MEASURES",
+      "teacherReviewRequired": "Construction/identification of a transversal, diagram-based angle positions and proof of parallelism remain teacher-reviewed",
       "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
     },
     {
       "ordinal": 34,
@@ -628,15 +628,15 @@
       "arabicTitle": "زوايا المثلثات",
       "mechanic": "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
       "allowedFamilies": [
-        "supporting.algebra.equations.mixed"
+        "uae.g8.u05.l03.triangle_angle_measure"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u05-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 25–32; printed 389–396",
-      "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
-      "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "semanticAuditStatus": "PARTIAL_TEACHER_REVIEW",
+      "verifiedAutoGradeSubset": "TRIANGLE_INTERIOR_SUM_AND_REMOTE_EXTERIOR_ANGLE_MEASURES",
+      "teacherReviewRequired": "Diagram interpretation, angle-expression algebra, isosceles cases and explanation of the exterior-angle theorem remain teacher-reviewed",
       "sampledLearnerPromptVerified": false,
-      "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
+      "independentExactGraderInCI": "TEST_COMMITTED_NOT_YET_PASSED"
     },
     {
       "ordinal": 36,
