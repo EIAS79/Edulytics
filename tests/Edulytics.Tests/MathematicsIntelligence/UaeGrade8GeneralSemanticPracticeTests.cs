@@ -152,8 +152,12 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
                 {
                     ["base2"] = a
                 };
+                // Submit the correct numerical answer for the forged equal-base shape:
+                // only the trapezoid-geometry validation may reject it.
+                var forgedNumericalAnswer = a.ToString(CultureInfo.InvariantCulture);
+                Assert.NotEqual(question.CorrectAnswer, forgedNumericalAnswer);
                 Assert.False(ExactSkillContractQuestionEngine.Verify(
-                    family, impossible, question.CorrectAnswer));
+                    family, impossible, forgedNumericalAnswer));
             }
         }
     }
