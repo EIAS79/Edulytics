@@ -4,9 +4,10 @@ using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
 
 /// <summary>
-/// Original, Arabic, scope-limited exact numerical/selection questions for six UAE
-/// G8 General lessons. Full drawings, geometric proofs and explanations are not
-/// automatically graded and remain teacher-reviewed. No publisher questions reused.
+/// First-party Arabic, source-scoped exact Practice for eleven UAE Grade 8 General
+/// lesson subskills. This is not whole-lesson academic certification: diagrams,
+/// open explanations, proofs and non-integral metric answers remain teacher-reviewed.
+/// No publisher question text or figures are reproduced.
 /// </summary>
 internal static class UaeGrade8GeneralSemanticQuestions
 {
