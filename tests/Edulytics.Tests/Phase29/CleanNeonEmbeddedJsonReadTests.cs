@@ -15,7 +15,7 @@ public sealed class CleanNeonEmbeddedJsonReadTests
         var index = new EmbeddedCanonicalLessonContentIndex();
         // Grade4 owner 93->132, plus owner-approved Grade6 General 59->128.
         // Original G7 General English 62 retired; 78 first-party Arabic lessons replace them.
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76, index.Count);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77, index.Count);
         Assert.True(index.TryGet("PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES", out var grade7));
         Assert.Equal(CanonicalLessonContentStatus.Published, grade7.Status);
         Assert.Contains(grade7.Translations, t => t.CultureCode == "ar");
