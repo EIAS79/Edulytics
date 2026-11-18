@@ -10522,7 +10522,7 @@ public static class LessonPracticeContractRegistry
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES", "geometry.angles.relationships", "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
-            ["supporting.algebra.equations.mixed"],
+            ["uae.g8.u05.l01.transversal_angle_measure"],
             "UAE_G8_U05L01_PDF7_14_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
@@ -10538,7 +10538,7 @@ public static class LessonPracticeContractRegistry
         // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES", "geometry.angles.relationships", "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
-            ["supporting.algebra.equations.mixed"],
+            ["uae.g8.u05.l03.triangle_angle_measure"],
             "UAE_G8_U05L03_PDF25_32_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
