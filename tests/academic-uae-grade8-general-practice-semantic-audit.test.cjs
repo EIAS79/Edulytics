@@ -21,6 +21,18 @@ test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do 
  assert.equal(audit.summary.lessonScopedAutomatedSubsetRemediationsCommitted,12);
  assert.equal(audit.summary.awaitingSemanticsInspection,64);
  assert.equal(audit.academicLanguage,'ar');
+ assert.equal(audit.sourceEditionConflict,'SOURCE_VERSION_CONFLICT');
+ assert.equal(audit.sourceEditionEvidence.selectedIndex,'03-9-12.pdf');
+ assert.equal(audit.sourceEditionEvidence.selectedIndexCoverYear,'2019-2020');
+ assert.equal(audit.sourceEditionEvidence.selectedIndexUnitCount,12);
+ assert.equal(audit.sourceEditionEvidence.selectedIndexNumberedLessonCount,76);
+ assert.equal(audit.sourceEditionEvidence.conflictingIndex,'01-1-4.pdf');
+ assert.equal(audit.sourceEditionEvidence.conflictingIndexCoverYear,'2025-2026');
+ assert.equal(audit.sourceEditionEvidence.conflictingIndexUnitCount,8);
+ assert.equal(audit.sourceEditionEvidence.conflictingIndexNumberedLessonCount,56);
+ assert.equal(audit.sourceEditionEvidence.targetYearParityCertified,false);
+ assert.match(audit.sourceVersion,/2019-2020/);
+ assert.match(audit.sourceVersion,/2025-2026/);
  const used=new Set();
  for(let i=0;i<76;i++){
   const a=audit.lessons[i],p=pack.Lessons[i],code=p.LessonCode;
