@@ -68,6 +68,15 @@ test('G8 76 scoped semantic audit rows preserve Arabic academic identity and do 
   }
  }
 });
+test('U01L01 Arabic rational numbers include exact terminating-versus-recurring questions without false whole-lesson certification',()=>{
+ const a=audit.lessons[0];
+ assert.equal(a.ordinal,1);
+ assert.equal(a.semanticAuditStatus,'PENDING_SEMANTIC_REVIEW');
+ assert.ok(a.allowedFamilies.includes('uae.g6.u05.l08.classify_fraction_decimal'));
+ assert.ok(a.allowedFamilies.includes('uae.g6.u05.l08.fraction_exact_decimal'));
+ assert.equal(a.sampledLearnerPromptVerified,false);
+ assert.match(a.mechanic,/REPEATING_DECIMAL/);
+});
 test('the six formerly mismapped G8 lessons have no unrelated arithmetic, chance or reflection Practice',()=>{
  const forbidden=[
   ['05:01:LINES','supporting.algebra.equations.mixed'],
