@@ -62,12 +62,12 @@ def main():
         errors.append("SOURCE_LIMITS_OR_APPROVAL_MISREPRESENTED")
     for label,expected in {
         "isolated":{
-            "generalLessons":76,"advancedLessons":77,"publishedGeneralMetadata":76,
+            "generalLessons":76,"advancedLessons":0,"publishedGeneralMetadata":76,
             "legacyExtra":0,"persistedTranslations":0,"productionWritten":False,
         },
         "rehearsal":{
             "originalEnglishFixture":77,"ownerApprovedArabicLessons":76,
-            "independentCutoverRuns":2,"grade8AdvancedRetained":77,
+            "independentCutoverRuns":2,"grade8AdvancedRetired":True,
             "productionDatabaseWritten":False,
         },
         "e2e":{
