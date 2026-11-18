@@ -77,6 +77,14 @@ test('U01L01 Arabic rational numbers include exact terminating-versus-recurring 
  assert.equal(a.sampledLearnerPromptVerified,false);
  assert.match(a.mechanic,/REPEATING_DECIMAL/);
 });
+test('U01L09 estimation excludes unrelated quadratic-equation solving',()=>{
+ const a=audit.lessons[8];
+ assert.equal(a.ordinal,9);
+ assert.equal(a.semanticAuditStatus,'PENDING_SEMANTIC_REVIEW');
+ assert.ok(!a.allowedFamilies.includes('supporting.algebra.quadratic_larger_root'));
+ assert.ok(a.allowedFamilies.includes('uae.g6.u06.l02.perfect_square'));
+ assert.match(a.teacherReviewRequired,/non-perfect square and cube roots/);
+});
 test('the six formerly mismapped G8 lessons have no unrelated arithmetic, chance or reflection Practice',()=>{
  const forbidden=[
   ['05:01:LINES','supporting.algebra.equations.mixed'],
