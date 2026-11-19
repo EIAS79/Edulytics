@@ -19,6 +19,7 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     [InlineData("midpoint", 3, -2, 7, "-2", "2")]
     [InlineData("composite_evaluation", 3, -2, 7, "11", "21")]
     [InlineData("outer_coefficient_no_solution", 3, -2, 7, "لا حل", "-2")]
+    [InlineData("context_tolerance_endpoints", 1, 20, 3, "17,23", "17,22")]
     public void IndependentVerifierAcceptsCorrectAndRejectsWrong(
         string suffix, int a, int midpoint, int radius, string correct, string incorrect)
     {
@@ -82,7 +83,8 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
             Prefix + "evaluate_absolute",
             Prefix + "midpoint",
             Prefix + "composite_evaluation",
-            Prefix + "outer_coefficient_no_solution"
+            Prefix + "outer_coefficient_no_solution",
+            Prefix + "context_tolerance_endpoints"
         };
         var questions = engine.Generate("UAE-G9-GENERAL",
             "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
