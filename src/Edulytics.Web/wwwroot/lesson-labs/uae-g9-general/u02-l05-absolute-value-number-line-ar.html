@@ -17,7 +17,7 @@ svg{direction:ltr;width:100%;min-width:580px;height:auto}
 .label{font:15px system-ui,Arial,sans-serif;fill:#193a53}.sol{fill:#064d8a;font-weight:700}.center{fill:#b44c00;stroke:#b44c00}
 .teacher{border-inline-start:4px solid #4a637e;background:#eaf1f8;padding:.9rem}
 @media(prefers-reduced-motion:no-preference){.marker{transition:cx .2s}}
-textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65rem;direction:rtl;border:1px solid #889cb7;border-radius:8px}button{font:inherit;background:#124b7c;color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;cursor:pointer}button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-offset:2px}#cooldownSubmission{white-space:pre-wrap;direction:rtl}</style>
+textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65rem;direction:rtl;border:1px solid #889cb7;border-radius:8px}button{font:inherit;background:#124b7c;color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;cursor:pointer}button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-offset:2px}#cooldownSubmission{white-space:pre-wrap;direction:rtl}.point-picker{direction:ltr;display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0 1rem}.point-picker button{min-width:2.5rem;background:#e8eff8;color:#153a57;border:1px solid #6d88a4;padding:.4rem}.point-picker button[aria-pressed="true"]{background:#124b7c;color:white}.point-picker button:focus-visible{outline:3px solid #ba641c;outline-offset:2px}</style>
 </head>
 <body><main>
 <header><p>المنهج الوزاري الإماراتي · الصف التاسع العام · الوحدة الثانية · الدرس ٢–٥</p>
@@ -56,6 +56,10 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <form id="cooldownResponse" aria-labelledby="cooldownTitle">
 <label for="cooldownQ1">١. الحلّان ووصف الرسم:</label>
 <textarea id="cooldownQ1" required rows="3" placeholder="اكتب الحلّين واشرح مكانهما على خط الأعداد"></textarea>
+<fieldset><legend>تمثيل الحلين على خط الأعداد: اختر نقطتين من −٥ إلى ١٠</legend>
+<p id="pointPickerHelp">اختر نقطتين بالضغط أو باستخدام لوحة المفاتيح. يمكنك إلغاء اختيار نقطة بالضغط عليها ثانية. تقييم الرسم يتم بواسطة المعلم.</p>
+<div class="point-picker" id="cooldownPointPicker" role="group" aria-describedby="pointPickerHelp"></div>
+<p id="selectedPoints" role="status" aria-live="polite">لم يتم اختيار نقطتين بعد.</p></fieldset>
 <label for="cooldownQ2">٢. مجموعة الحل والسبب:</label>
 <textarea id="cooldownQ2" required rows="3" placeholder="اكتب مجموعة الحل وسبب اختيارك"></textarea>
 <label for="cooldownQ3">٣. المعادلة وتبرير المركز والمسافة:</label>
@@ -98,11 +102,26 @@ function draw(){
  document.getElementById('answers').textContent=d.answer;
 }
 document.getElementById('case').addEventListener('change',draw);draw();
+const selectedCoolDownPoints=new Set();
+const picker=document.getElementById('cooldownPointPicker');
+const selectedStatus=document.getElementById('selectedPoints');
+function updatePointPicker(){
+ for(const button of picker.querySelectorAll('button'))button.setAttribute('aria-pressed',String(selectedCoolDownPoints.has(Number(button.dataset.point))));
+ const points=[...selectedCoolDownPoints].sort((a,b)=>a-b);
+ selectedStatus.textContent=points.length===2?'النقطتان المختارتان: '+points.join(' ، '):'النقاط المختارة: '+(points.length?points.join(' ، '):'لا توجد')+' — مطلوب نقطتان.';
+}
+for(let point=-5;point<=10;point++){
+ const button=document.createElement('button');button.type='button';button.dataset.point=String(point);button.textContent=String(point);button.setAttribute('aria-label','تحديد النقطة '+point);button.setAttribute('aria-pressed','false');
+ button.addEventListener('click',()=>{if(selectedCoolDownPoints.has(point))selectedCoolDownPoints.delete(point);else if(selectedCoolDownPoints.size<2)selectedCoolDownPoints.add(point);else {selectedStatus.textContent='ألغِ تحديد نقطة قبل اختيار نقطة أخرى.';return;}updatePointPicker();});
+ picker.appendChild(button);
+}
+updatePointPicker();
 document.getElementById('cooldownResponse').addEventListener('submit',event=>{
  event.preventDefault();
  const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim());
  if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
- const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,answers:answers.map((answer,i)=>({question:i+1,response:answer}))};
+ if(selectedCoolDownPoints.size!==2){document.getElementById('cooldownMessage').textContent='حدد نقطتين على خط الأعداد للسؤال الأول.';return;}
+ const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer}))};
  document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
  document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
  document.getElementById('cooldownKey').hidden=false;
