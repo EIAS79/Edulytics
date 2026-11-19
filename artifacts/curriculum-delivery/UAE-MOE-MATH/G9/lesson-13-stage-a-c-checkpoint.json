@@ -43,7 +43,17 @@
       "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
       "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
       "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html"
-    ]
+    ],
+    "coolDown": {
+      "status": "AUTHORED_IN_EXISTING_LESSON_NUMBERLINE_ACTIVITY_NOT_CLAIMED_RUNTIME_TESTED",
+      "artifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "mathematicalCases": [
+        "two real roots and number-line scale",
+        "empty solution justification",
+        "equation from two symmetric endpoints"
+      ],
+      "teacherReviewForOpenWork": true
+    }
   },
   "stageC": {
     "status": "EXACT_PRACTICE_FAMILIES_IMPLEMENTED_D_TESTS_WRITTEN_NOT_RUN",
@@ -62,9 +72,9 @@
     "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json"
   },
   "blockingGaps": [
-    "GENERAL_COMPREHENSIVE_INDEX_LOCK has not passed: final unique lesson count and raw 86 full objective comparison incomplete.",
-    "The Stage B static number-line activity and RichV2 visual rendering have not been validated in learner runtime; runtime tests belong to Stage D.",
-    "Source element-level exercise and visual equivalence has not been marked 100%; teacher-reviewed open responses still need rubric integration into actual lesson workflow."
+    "The comprehensive cross-edition semantic index lock from the attached plan has not passed for all General source lessons.",
+    "Full source-element 1:1 coverage and teacher rubric integration into actual graded learner workflow remain incomplete; a static Cool-down alone is not system integration.",
+    "No Stage D tests, browser visual verification or final audit have been run; tests stay WRITTEN_NOT_RUN."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -73,5 +83,36 @@
   "neonTouched": false,
   "githubBranch": "fix/g9-general-full-year-scope-86",
   "issuedUtc": "2026-11-19T19:35:00+01:00",
-  "note": "Incomplete A-C checkpoint is deliberately not a completed lesson; no next-lesson transition."
+  "note": "Incomplete A-C checkpoint is deliberately not a completed lesson; no next-lesson transition.",
+  "localSourceVerification": {
+    "device": "Our-CS",
+    "root": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_09",
+    "scope": "Student Books verified on device; teacher guide PDF not found in listed Grade_09 PDF files",
+    "studentPdf": "01_Student_Books\\01.pdf",
+    "sourcePrintedPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "sourcePdfPages": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ],
+    "directLocalMontageReviewed": true,
+    "academicLessonObjectives": [
+      "evaluate absolute value of a substituted algebraic expression",
+      "solve absolute value equations with zero, one or two solutions",
+      "represent solutions as real points on number line",
+      "write a distance equation from midpoint and radius",
+      "interpret context and explain impossibility of negative absolute distances"
+    ],
+    "comparedAgainst": "Existing canonical Arabic lesson pack + dedicated practice families + RichV2 + original number-line lab"
+  }
 }
