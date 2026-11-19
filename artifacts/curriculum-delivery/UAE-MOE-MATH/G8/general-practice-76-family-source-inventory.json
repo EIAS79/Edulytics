@@ -133,39 +133,21 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.algebra.simplify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "uae.g8.u01.l03.monomial_multiply",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         },
         {
-          "family": "supporting.algebra.expand",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "uae.g8.u01.l03.monomial_divide",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
-          ]
-        },
-        {
-          "family": "supporting.powers10.multiply",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
-          ]
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         }
       ],
@@ -181,39 +163,12 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.algebra.expand",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "uae.g8.u01.l04.monomial_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
-          ]
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
-          ]
-        },
-        {
-          "family": "uae.g6.u06.l02.integer_power",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
-            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
-          ]
-        },
-        {
-          "family": "uae.g6.u06.l02.fraction_power",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
-            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         }
       ],
@@ -229,30 +184,12 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.powers10.evaluate",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "family": "uae.g8.u01.l05.negative_integer_exponent",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
-          ]
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
-          ]
-        },
-        {
-          "family": "supporting.powers10.missing_exponent",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         }
       ],
@@ -364,10 +301,22 @@
           ]
         },
         {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson12SurfaceAreaQuestions.cs",
+          "family": "uae.g8.u01.l08.square_root_exact",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l08.cube_root_exact",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -391,10 +340,22 @@
           ]
         },
         {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson12SurfaceAreaQuestions.cs",
+          "family": "uae.g8.u01.l09.square_root_bounds",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l09.cube_root_bounds",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -523,19 +484,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.algebra.equations.mixed",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "uae.g8.u02.l03.write_two_step_equation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearEquationQuestionFactory.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
         }
       ],
       "allFound": true,
@@ -550,27 +505,12 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.algebra.equations.mixed",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "algebra.linear.variables_both_sides",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
-          ]
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearEquationQuestionFactory.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
           ]
         }
       ],
@@ -649,12 +589,6 @@
           ]
         },
         {
-          "family": "usccss.g6.u03.l07.unit_rate_equivalence",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
           "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
           "foundInService": true,
@@ -712,12 +646,12 @@
           "arabicPromptExamplesInFile": []
         },
         {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "family": "uae.g8.u03.l03.direct_variation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
-            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         }
       ],
@@ -832,10 +766,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -856,16 +793,13 @@
           "arabicPromptExamplesInFile": []
         },
         {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearEquationQuestionFactory.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -1438,10 +1372,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
+          "family": "geometry.congruence.identify_criterion",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
         }
       ],
       "allFound": true,
@@ -1500,12 +1437,6 @@
         {
           "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
           "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "usccss.g6.u02.l05.scaled_ratio_missing_term",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": []
         }
@@ -1789,19 +1720,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "supporting.statistics.scatter_correlation",
-          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "family": "uae.g8.u09.l01.scatter_direction",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
-            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
-        },
-        {
-          "family": "statistics.correlation.direction",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
         }
       ],
       "allFound": true,
@@ -1930,12 +1855,6 @@
           "arabicPromptExamplesInFile": []
         },
         {
-          "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
           "family": "statistics.center_spread.range",
           "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
           "foundInService": true,
@@ -1957,16 +1876,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "statistics.distribution_shape.classify",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.cs",
+          "family": "uae.g8.u09.l06.distribution_shape",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "usccss.g6.u08.l16.box_plot_source_quartiles",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2002,10 +1918,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g6.u07.l06.absolute_distance_values",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
+          "family": "uae.g8.u10.l02.segment_addition",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2020,10 +1939,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
+          "family": "uae.g8.u10.l03.midpoint_coordinate",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2038,12 +1960,12 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "uae.g4.u12.l01.segments_from_points",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit12GeometryOneQuestions.cs",
+          "family": "uae.g8.u10.l04.segment_reason",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
           "arabicPromptExamplesInFile": [
-            "مجسم جميع أوجهه ستة مربعات متطابقة طول ضلع المربع {b} سم",
-            "مجسم بقاعدتين مستطيلتين متطابقتين وأربعة أوجه جانبية مستطيلة؛ أبعاده {b} سم و{b+c} سم و{b+2*c} سم"
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
           ]
         }
       ],
@@ -2089,16 +2011,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2113,16 +2032,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2137,16 +2053,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
+          "family": "uae.g8.u11.l04.rectangle_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
-        },
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
-          "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,
@@ -2161,10 +2074,13 @@
       "semanticStatus": "PENDING_SEMANTIC_REVIEW",
       "families": [
         {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG5U05SourceThousandths.cs",
+          "family": "uae.g8.u11.l05.rhombus_diagonals",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
           "foundInService": true,
-          "arabicPromptExamplesInFile": []
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
         }
       ],
       "allFound": true,

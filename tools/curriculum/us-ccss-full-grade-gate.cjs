@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -197,7 +197,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
       ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','26ac012a0531f952683fa0103d4e832b074269b9']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','f029049539a014168d138e53b4d47a183cdf9a6f']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','a09b910f98f4dc01e63f2978740553de8793f602']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',

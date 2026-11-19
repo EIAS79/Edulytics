@@ -13,6 +13,13 @@ on:
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tests/academic-uae-grade8-arabic-*.test.cjs'
       - 'tests/academic-uae-grade8-general-ar-*.test.cjs'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade8GeneralSemanticPracticeTests.cs'
+      - 'tests/academic-uae-grade8-general-practice-semantic-audit.test.cjs'
+      - 'tools/G8Sampler/**'
+      - 'tools/curriculum/uae_g8_runtime_audit.py'
+
   workflow_dispatch:
 permissions:
   contents: read
@@ -51,7 +58,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p artifacts/uae-g8-stage-d
-          node --test --test-reporter=tap tests/academic-uae-grade8-arabic-u??l??.test.cjs tests/academic-uae-grade8-general-ar-source76-stage-d-gate.test.cjs | tee artifacts/uae-g8-stage-d/grade8-lessons.tap
+          node --test --test-reporter=tap tests/academic-uae-grade8-arabic-u??l??.test.cjs tests/academic-uae-grade8-general-ar-source76-stage-d-gate.test.cjs tests/academic-uae-grade8-general-practice-semantic-audit.test.cjs | tee artifacts/uae-g8-stage-d/grade8-lessons.tap
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -75,6 +82,21 @@ jobs:
         run: |
           mkdir -p artifacts/uae-g8-stage-d/trx
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade8|FullyQualifiedName~UaeG8|FullyQualifiedName~UsCcssGrade8|FullyQualifiedName~UaeGrade7' --logger 'trx;LogFileName=g8-regressions.trx' --results-directory artifacts/uae-g8-stage-d/trx
+      - name: One complete 76-lesson Arabic learner Practice + grader runtime gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet run --project tools/G8Sampler/G8Sampler.csproj -c Release
+          python3 tools/curriculum/uae_g8_runtime_audit.py
+          git diff --exit-code -- artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-runtime-semantic-screen.json
+          cp artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-runtime-sample.json artifacts/uae-g8-stage-d/grade8-76-runtime-samples.json
+      - name: Publish all-lesson runtime evidence on the same candidate SHA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-76-all-runtime-question-evidence
+          path: artifacts/uae-g8-stage-d/grade8-76-runtime-samples.json
+          if-no-files-found: ignore
       - if: always()
         uses: actions/upload-artifact@v4
         with:

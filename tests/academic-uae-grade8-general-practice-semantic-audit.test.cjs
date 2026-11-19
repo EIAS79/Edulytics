@@ -83,7 +83,7 @@ test('U01L09 estimation excludes unrelated quadratic-equation solving',()=>{
  assert.equal(a.semanticAuditStatus,'PENDING_SEMANTIC_REVIEW');
  assert.ok(!a.allowedFamilies.includes('supporting.algebra.quadratic_larger_root'));
  assert.ok(a.allowedFamilies.includes('uae.g6.u06.l02.perfect_square'));
- assert.match(a.teacherReviewRequired,/non-perfect square and cube roots/);
+ assert.match(a.teacherReviewRequired,/source-item parity NOT certified/);
 });
 test('U04L07 classifies linear-versus-nonlinear models rather than solving unrelated quadratic roots',()=>{
  const a=audit.lessons.find(x=>x.lessonCode.includes(':04:07:LINEAR-AND-NONLINEAR-FUNCTIONS'));
@@ -124,13 +124,19 @@ test('all 76 G8 contracts have batch runtime-sampled Arabic and objective eviden
  const runtime=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-runtime-semantic-screen.json');
  assert.equal(runtime.summary.lessonsSampled,76);
  assert.equal(runtime.summary.generatedQuestions,14592);
- assert.equal(runtime.summary.totalConfiguredFamilyAssignments,176);
+ assert.equal(runtime.summary.totalConfiguredFamilyAssignments,159);
  assert.equal(runtime.summary.allAssignmentsSampled,true);
- assert.equal(runtime.summary.lessonsWithObservedNonArabicPrompts,36);
- assert.equal(runtime.summary.lessonsWithConfirmedUnrelatedOrOffObjectiveExamples,14);
- assert.equal(runtime.summary.releaseBlockedLessons,42);
- assert.equal(runtime.summary.partialReviewPendingLessons,34);
+ assert.equal(runtime.summary.lessonsWithObservedNonArabicPrompts,0);
+ assert.equal(runtime.summary.lessonsWithConfirmedUnrelatedOrOffObjectiveExamples,0);
+ assert.equal(runtime.summary.releaseBlockedLessons,0);
+ assert.equal(runtime.summary.partialReviewPendingLessons,76);
  assert.equal(runtime.summary.fullySourceCertifiedLessons,0);
+ assert.equal(runtime.summary.previouslyObservedMisrouteFindingsRemediated,14);
+ assert.equal(runtime.summary.nonArabicGeneratedQuestionCount,0);
+ assert.equal(runtime.summary.englishGeneratedQuestionCount,0);
+ assert.equal(runtime.summary.nonArabicSolutionCount,0);
+ assert.equal(runtime.summary.englishSolutionCount,0);
+ assert.equal(runtime.summary.lessonsWithObservedEnglishClauses,0);
  assert.equal(runtime.summary.originalStudentBookElementParity,'NOT_CERTIFIED');
  assert.equal(runtime.summary.correctAnswersAcceptedByExactVerifier,14592);
  assert.equal(runtime.summary.invalidTextRejectedByExactVerifier,14592);
@@ -144,10 +150,32 @@ test('all 76 G8 contracts have batch runtime-sampled Arabic and objective eviden
    assert.deepEqual(new Set(row.actualSampleByFamily.map(x=>x.family)),new Set(a.allowedFamilies));
    assert.equal(row.wholeLessonPedagogicalCertification,false);
    assert.equal(row.sourceItemByItemVerification,'NOT_EVIDENCED');
+   assert.equal(row.fullAttemptPromptArabicAndNoEnglishWords,true);
+   assert.equal(row.fullAttemptSolutionsArabicAndNoEnglishWords,true);
    const nonArabic=row.actualSampleByFamily.filter(x=>!x.studentPromptArabic);
    assert.equal(nonArabic.length,row.englishPromptFamilies.length);
    if(nonArabic.length||row.semanticDefectConfirmed)
       assert.equal(row.sampledContractDecision,'BLOCKED_CONFIRMED_SAMPLED_DEFECT');
    else assert.equal(row.sampledContractDecision,'PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING');
+ }
+});
+
+
+test('all 76 source-page references resolve to the owner local books without inventing item-by-item certification',()=>{
+ const p=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-source-page-readability-audit.json');
+ assert.equal(p.summary.referencedLessons,76);
+ assert.equal(p.summary.uniqueLocalBooks,4);
+ assert.equal(p.summary.allBookSha256MatchSourceRecords,true);
+ assert.equal(p.summary.referencedPagesChecked,634);
+ assert.equal(p.summary.sourceElementAcademicParityCertified,false);
+ assert.equal(p.lessons.length,76);
+ for(let i=0;i<76;i++){
+  const row=p.lessons[i];
+  const original=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G8/lesson-'+String(i+1).padStart(3,'0')+'-source-evidence.json');
+  const book=original.source||original.studentSource||original.studentBook;
+  assert.equal(row.lessonCode,audit.lessons[i].lessonCode);
+  assert.equal(row.bookFileSha256Computed,book.sha256);
+  assert.deepEqual(row.referencedPages,book.pdfPages);
+  assert.equal(row.bookPageTextReview,'TEXT_EXTRACTED_NOT_ITEM_BY_ITEM_CERTIFIED');
  }
 });

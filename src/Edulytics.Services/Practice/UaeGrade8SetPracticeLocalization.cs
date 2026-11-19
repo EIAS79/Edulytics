@@ -9,7 +9,7 @@ namespace Edulytics.Services.Practice;
 /// question fingerprint or generation parameters for other curricula.
 /// Three-set Venn reasoning remains teacher-reviewed.
 /// </summary>
-internal static class UaeGrade8SetPracticeLocalization
+internal static partial class UaeGrade8SetPracticeLocalization
 {
     private const string TargetLesson =
         "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS";
@@ -130,7 +130,7 @@ internal static class UaeGrade8SetPracticeLocalization
             "supporting.statistics.quartile" =>
                 ConvertPrompt(text, @"^An ordered data summary states the lower quartile is (.+?)\. What is Q1\?$",
                     m => $"في ملخص بيانات مرتبة، الربيع الأدنى يساوي {m.Groups[1].Value}. ما قيمة Q1؟"),
-            _ => null
+            _ => AdditionalGrade8Prompt(q)
         };
     }
 
@@ -170,7 +170,7 @@ internal static class UaeGrade8SetPracticeLocalization
         "geometry.coordinate.gradient_between_points" =>
             "الميل يساوي فرق الصادات مقسومًا على فرق السينات.",
         "supporting.statistics.quartile" => "الربيع الأول Q1 هو نفسه الربيع الأدنى.",
-        _ => null
+        _ => AdditionalGrade8Solution(family)
     };
 
     private static (int A, int B, int Intersection) CheckedParameters(

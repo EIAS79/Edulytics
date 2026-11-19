@@ -6,17 +6,23 @@
   "academicLanguage": "ar",
   "targetYear": "2026-2027",
   "sourceEditionConflict": "2019-2020 index 12/76 versus 2025-2026 index 8/56",
-  "method": "Generated 192 composed student Practice questions per lesson for 76 lessons using 64 seeds; compared all 182 distinct lesson-to-family mappings to actual Arabic lesson goal summaries and representative prompts; checked exact verifier on all generated correct answers and invalid responses. This is a scoped runtime-semantic screen, not original-book item-by-item signoff.",
+  "method": "Generated 192 composed student Practice questions per lesson for 76 lessons using 64 seeds. Verified all configured lesson-family routes reach a real question, every one of 14592 prompts and solutions has Arabic and no English word of 4+ letters, and the exact verifier accepts expected answers and rejects invalid text. Previously observed 14 off-target family routes were removed/replaced, not evidence of full text-book parity. No source-item academic signoff is claimed.",
   "summary": {
     "lessonsSampled": 76,
     "generatedQuestions": 14592,
-    "totalConfiguredFamilyAssignments": 176,
+    "totalConfiguredFamilyAssignments": 159,
     "allAssignmentsSampled": true,
-    "lessonsWithObservedNonArabicPrompts": 36,
-    "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 14,
-    "releaseBlockedLessons": 42,
-    "partialReviewPendingLessons": 34,
+    "lessonsWithObservedNonArabicPrompts": 0,
+    "lessonsWithObservedEnglishClauses": 0,
+    "nonArabicGeneratedQuestionCount": 0,
+    "englishGeneratedQuestionCount": 0,
+    "nonArabicSolutionCount": 0,
+    "englishSolutionCount": 0,
+    "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 0,
+    "releaseBlockedLessons": 0,
+    "partialReviewPendingLessons": 76,
     "fullySourceCertifiedLessons": 0,
+    "previouslyObservedMisrouteFindingsRemediated": 14,
     "correctAnswersAcceptedByExactVerifier": 14592,
     "invalidTextRejectedByExactVerifier": 14592,
     "independentMathematicalVerifierEvidence": "NOT_TESTED_BY_THIS_HARNESS",
@@ -68,6 +74,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "العشري الدوري أضيف إلى العقود، ولم يثبت استقلال نشاط الكتاب وعناصر التصنيف الأخرى.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -125,6 +134,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الأمثلة الآلية تغطي بعض عمليات القوى؛ اختبار جميع الأشكال والحالات الحدودية يحتاج دليلًا منفصلًا.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -139,40 +151,31 @@
       "targetMechanic": "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
       "richV2ObjectiveExcerpt": "الدرس يربط ضرب أحاديات الحد وقسمتها بقوانين القوى. عند ضرب قوتين لهما الأساس نفسه نجمع الأسس: أ^م × أ^ن = أ^(م+ن). مثال: س^3 × س^4 = س^7 لأن عوامل س السبعة تتجمع. وعند القسمة على قوة لها الأساس نفسه نطرح الأسس: أ^م ÷ أ^ن = أ^(م−ن) بشرط أ≠0؛ مثل س^8 ÷ س^3 = س^5. نضرب المعاملات العددية على حدة ثم نطبق قاعدة الأسس على كل متغير، فتكون (3س^2 ص^3)(−4س^5 ص)=−12س^7 ",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 4,
-      "observedFamilyCount": 4,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "supporting.algebra.expand",
-          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 4(x -7).",
-          "correctAnswer": "4x-28",
+          "family": "uae.g8.u01.l03.monomial_divide",
+          "prompt": "اقسم (25x^5) ÷ (5x^1). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس، مثل 6x^3.",
+          "correctAnswer": "5x^4",
           "studentPromptArabic": true
         },
         {
-          "family": "supporting.powers10.multiply",
-          "prompt": "احسب قيمة التعبير 141 × 10^1.",
-          "correctAnswer": "1410",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "prompt": "احسب قيمة التعبير 2300 ÷ 10^2.",
-          "correctAnswer": "23",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "prompt": "بسّط التعبير الجبري 5x -6x +6 بجمع الحدود المتشابهة.",
-          "correctAnswer": "-1x+6",
+          "family": "uae.g8.u01.l03.monomial_multiply",
+          "prompt": "اضرب أحاديتي الحد (3x^2) × (9x^4). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+          "correctAnswer": "27x^6",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "تدريبات تبسيط/توسيع تعبير خطي وحساب قوى 10 لا تطلب ضرب أو قسمة أحاديات الحد.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "تدريبات تبسيط/توسيع تعبير خطي وحساب قوى 10 لا تطلب ضرب أو قسمة أحاديات الحد.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -184,40 +187,25 @@
       "targetMechanic": "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
       "richV2ObjectiveExcerpt": "يركز الدرس على رفع قوة إلى قوة ورفع حاصل ضرب أو قسمة إلى قوة. إذا كان ن وم موجبين صحيحين فإن (أ^م)^ن = أ^(م×ن) لأن هناك ن مجموعات تتضمن كل مجموعة م من عوامل أ. مثل (س^3)^4 = س^12. وقوة حاصل الضرب: (أب)^ن = أ^ن ب^ن، مثال (3س^2)^3 = 27س^6. وقوة حاصل القسمة: (أ/ب)^ن=أ^ن/ب^ن مع ب≠0. في سياق هندسي إذا كان طول ضلع مكعب 2س^2 مترًا، فالحجم (2س^2)^3=8س^6 متر مكعب. ير",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 4,
-      "observedFamilyCount": 4,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "supporting.algebra.simplify",
-          "prompt": "بسّط التعبير الجبري 2x -6x +7 بجمع الحدود المتشابهة.",
-          "correctAnswer": "-4x+7",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "uae.g6.u06.l02.integer_power",
-          "prompt": "احسب القوة 2^6؛ اكتب الناتج عددًا صحيحًا.",
-          "correctAnswer": "64",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "uae.g6.u06.l02.fraction_power",
-          "prompt": "احسب (1/5)^3 واكتب الناتج كسرًا في أبسط صورة.",
-          "correctAnswer": "1/125",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.algebra.expand",
-          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 5(x -7).",
-          "correctAnswer": "5x-35",
+          "family": "uae.g8.u01.l04.monomial_power",
+          "prompt": "أوجد (4x^2)^2. اكتب الناتج بصيغة معامل متبوعًا بـx^الأس، مثل 9x^6.",
+          "correctAnswer": "16x^4",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "توسيع تعبير خطي وتقييم قوة عددية لا يختبران قواعد رفع أحاديات الحد إلى قوى.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "توسيع تعبير خطي وتقييم قوة عددية لا يختبران قواعد رفع أحاديات الحد إلى قوى.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -229,34 +217,25 @@
       "targetMechanic": "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
       "richV2ObjectiveExcerpt": "الأس السالب لا يجعل الناتج سالبًا تلقائيًا؛ بل يدل على المقلوب. أ^(-ن)=1/أ^ن بشرط أ ≠ 0 ون صحيح موجب. مثل 2^(-3)=1/8، و(-2)^(-3)=−1/8. والأس الصفري أ^0=1 عندما أ≠0. يمكن اكتشاف المعنى عبر جدول قوى العدد 10: 10^2=100، 10^1=10، 10^0=1، 10^-1=0.1، 10^-2=0.01، مع القسمة على 10 في كل انتقال. يهدف الدرس إلى كتابة القوى ذات الأس السالب بصورة لا تحتوي أسسًا سالبة وا",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "supporting.powers10.evaluate",
-          "prompt": "احسب القيمة الدقيقة للتعبير 10^4.",
-          "correctAnswer": "10000",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "prompt": "احسب قيمة التعبير 1410 ÷ 10^1.",
-          "correctAnswer": "141",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.powers10.missing_exponent",
-          "prompt": "أوجد قيمة الأس n التي تحقق المعادلة 26 × 10^n = 260.",
-          "correctAnswer": "1",
+          "family": "uae.g8.u01.l05.negative_integer_exponent",
+          "prompt": "أعد كتابة 5^(-2) في صورة كسر بأس موجب. اكتب 1/المقام دون مسافات.",
+          "correctAnswer": "1/25",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "الأمثلة المولدة تتناول 10 بأسس موجبة أو الأس المجهول دون تطبيق الأس السالب المطلوب.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "الأمثلة المولدة تتناول 10 بأسس موجبة أو الأس المجهول دون تطبيق الأس السالب المطلوب.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -293,6 +272,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "حساب أس 10 لا يكفي لقياس كتابة العدد بالصيغة العلمية المعيارية.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -324,9 +306,9 @@
         },
         {
           "family": "supporting.algebra.expressions.mixed",
-          "prompt": "Evaluate -2x -6 when x=1.",
+          "prompt": "احسب قيمة التعبير -2x -6 عندما x=1.",
           "correctAnswer": "-8",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.standard_form.power10_exponent",
@@ -335,17 +317,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.algebra.expressions.mixed",
-          "samplePrompt": "Evaluate -2x -6 when x=1."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الضرب أو القسمة في قوة عشرة لا يحقق وحده جميع عمليات الجمع/الطرح في الترميز العلمي.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -357,33 +337,37 @@
       "targetMechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
       "richV2ObjectiveExcerpt": "الجذر التربيعي الرئيسي لعدد غير سالب هو العدد غير السالب الذي مربعه يساوي ذلك العدد. مثل √64=8، وليس ±8؛ لكن المعادلة س^2=64 لها حلان س=8 أو س=-8. إذا وضعنا سالبًا خارج الجذر فإن -√25=-5، وإذا كان تحت جذر تربيعي لعدد سالب مثل √(-16) فلا توجد قيمة حقيقية. الجذر التكعيبي لأي عدد حقيقي هو العدد الذي مكعبه يساويه؛ مثل ∛(-27)=-3، و∛125=5. يطبق الطالب ذلك على مساح",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.4: a square edge10 centimeters, find its area. Situation B: Original17.2 extension: cube edge4 units contains how many unit cubes?",
-          "correctAnswer": "264",
-          "studentPromptArabic": false
+          "family": "uae.g6.u06.l02.perfect_square",
+          "prompt": "هل العدد 64 مربع كامل؟ اكتب نعم أو لا.",
+          "correctAnswer": "نعم",
+          "studentPromptArabic": true
         },
         {
-          "family": "uae.g6.u06.l02.perfect_square",
-          "prompt": "هل العدد 5 مربع كامل؟ اكتب نعم أو لا.",
-          "correctAnswer": "لا",
+          "family": "uae.g8.u01.l08.square_root_exact",
+          "prompt": "أوجد الجذر التربيعي الموجب للعدد 16.",
+          "correctAnswer": "4",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u01.l08.cube_root_exact",
+          "prompt": "أوجد الجذر التكعيبي الحقيقي للعدد 343.",
+          "correctAnswer": "7",
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "أحد المسارات يطلب حساب حجم مكعب، لا إيجاد الجذر التربيعي أو التكعيبي.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "أحد المسارات يطلب حساب حجم مكعب، لا إيجاد الجذر التربيعي أو التكعيبي.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -395,33 +379,37 @@
       "targetMechanic": "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
       "richV2ObjectiveExcerpt": "الهدف تقدير الجذر التربيعي أو التكعيبي لعدد ليس مربعًا أو مكعبًا كاملًا، وتحديد موضع تقديره على خط الأعداد. نستخدم عددين مربعين كاملين يحيطان بالعدد: 81<83<100، إذن 9<√83<10، والتقدير العددي نحو 9.11. ولتقدير ∛320 نجد 6^3=216 و7^3=343، فينتج 6<∛320<7، والتقدير حوالي 6.84. يمكن زيادة الدقة بمقارنة مربعات قيم عشرية أو استخدام آلة حاسبة للتحقق، لكن لا أدعي أن ا",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.4: a square edge10 centimeters, find its area. Situation B: Original17.2 extension: cube edge4 units contains how many unit cubes?",
-          "correctAnswer": "264",
-          "studentPromptArabic": false
+          "family": "uae.g6.u06.l02.perfect_square",
+          "prompt": "هل العدد 64 مربع كامل؟ اكتب نعم أو لا.",
+          "correctAnswer": "نعم",
+          "studentPromptArabic": true
         },
         {
-          "family": "uae.g6.u06.l02.perfect_square",
-          "prompt": "هل العدد 5 مربع كامل؟ اكتب نعم أو لا.",
-          "correctAnswer": "لا",
+          "family": "uae.g8.u01.l09.square_root_bounds",
+          "prompt": "الجذر التربيعي للعدد 15 يقع بين عددين صحيحين متتاليين. ما العدد الأصغر منهما؟",
+          "correctAnswer": "3",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "uae.g8.u01.l09.cube_root_bounds",
+          "prompt": "الجذر التكعيبي للعدد 129 يقع بين عددين صحيحين متتاليين. ما العدد الأصغر منهما؟",
+          "correctAnswer": "5",
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "الأسئلة تختبر المربع الكامل وحسابات عددية، وليس تقدير جذر غير كامل.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "الأسئلة تختبر المربع الكامل وحسابات عددية، وليس تقدير جذر غير كامل.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -458,6 +446,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مقارنة الكسور والأعداد العشرية لا تثبت مقارنة الجذور غير النسبية وتصنيف الأعداد الحقيقية.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -477,15 +468,15 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u05.rational_linear_equation",
-          "prompt": "Solve (1/4)x = -4/4. Give x in simplest form.",
+          "prompt": "حل المعادلة (1/4)x = -4/4. اكتب قيمة x في أبسط صورة.",
           "correctAnswer": "-4",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.number.signed_rational_divide",
-          "prompt": "Calculate (1/5) ÷ (-1/4). Give the rational number in simplest form.",
+          "prompt": "احسب (1/5) ÷ (-1/4)، واكتب الناتج النسبي في أبسط صورة.",
           "correctAnswer": "-4/5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.equations.mixed",
@@ -494,21 +485,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u05.rational_linear_equation",
-          "samplePrompt": "Solve (1/4)x = -4/4. Give x in simplest form."
-        },
-        {
-          "family": "usccss.number.signed_rational_divide",
-          "samplePrompt": "Calculate (1/5) ÷ (-1/4). Give the rational number in simplest form."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "حل بعض المعادلات ذات معاملات نسبية وتدريبات قسمة مستقلة لا يثبت كل سياق الدرس.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -545,6 +530,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تدريبات حل معادلة من خطوتين مناسبة جزئيًا؛ توسيع قوس منفرد لا يثبت حل المعادلة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -559,28 +547,25 @@
       "targetMechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
       "richV2ObjectiveExcerpt": "تبدأ كتابة معادلة من خطوتين بتعريف المجهول وتحديد العلاقة بين الكميات. عبارة «ثلاثة أمثال عدد ناقص ثمانية يساوي سالب ثلاثة وعشرين» تصبح 3ن−8=−23؛ لا تصبح 3(ن−8)=-23 لأن الأقواس تغير المعنى. إذا كان الاشتراك الثابت 400 درهم ويضاف 15 درهمًا عن كل شهر، وبلغ الإجمالي 700 درهم، فإن التكلفة 400+15ش=700، وبالتالي ش=20 شهرًا. هذا يربط نص الحياة اليومية بالرموز، ثم ي",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "حل المعادلة 2x − 4 = 4، واكتب قيمة المتغير x.",
-          "correctAnswer": "4",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "prompt": "حل المعادلة 5x -5 = 5، واكتب قيمة المتغير x.",
-          "correctAnswer": "2",
+          "family": "uae.g8.u02.l03.write_two_step_equation",
+          "prompt": "رسوم خدمة ثابتة قدرها 15 درهمًا، ويضاف 10 دراهم عن كل حصة. إذا كان x عدد الحصص وy التكلفة الكلية، فاكتب معادلة y بدلالة x بصيغة y=ax+b من دون مسافات.",
+          "correctAnswer": "y=10x+15",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "سؤال مساحة سطح مكعب وحل المعادلة الجاهزة لا يختبران صياغة معادلة من موقف.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "سؤال مساحة سطح مكعب وحل المعادلة الجاهزة لا يختبران صياغة معادلة من موقف.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -592,34 +577,25 @@
       "targetMechanic": "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
       "richV2ObjectiveExcerpt": "يمكن أن تظهر س في طرفي المساواة؛ نطرح من الطرفين الحد المتغير نفسه حتى يصبح المتغير في طرف واحد. مثال: 8+4س=5س؛ بطرح 4س من كل طرف نحصل 8=س. مثال آخر 6ن−1=4ن−5؛ نطرح 4ن ثم نضيف 1 فتحصل 2ن=−4، أي ن=−2. تحقق بتعويض ن=−2: الطرف الأيسر −13، والأيمن −13. لا تتطلب المعادلة نقل الأرقام وتغيير علاماتها اعتباطًا، بل الحفاظ على مساواة الطرفين بعملية واحدة. يطبق الدرس ع",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "supporting.algebra.equations.mixed",
-          "prompt": "حل المعادلة 3x -8 = 16، واكتب قيمة المتغير x.",
-          "correctAnswer": "8",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "حل المعادلة 3x − 7 = -1، واكتب قيمة المتغير x.",
+          "family": "algebra.linear.variables_both_sides",
+          "prompt": "حل المعادلة التي تحتوي على المتغير في طرفيها: -5x + 3 = 4x − 15. اكتب قيمة x.",
           "correctAnswer": "2",
-          "studentPromptArabic": true
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "prompt": "بسّط التعبير الجبري -2x -5x +3 بجمع الحدود المتشابهة.",
-          "correctAnswer": "-7x+3",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "المسارات تحل معادلات ذات متغير في طرف واحد، ولا تحقق مهارة متغير في كل طرف.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "المسارات تحل معادلات ذات متغير في طرف واحد، ولا تحقق مهارة متغير في كل طرف.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -662,6 +638,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "توجد مهارات توسعة وتبسيط ومعادلات بسيطة؛ حالات الحل المتعدد/الصفري لم تثبت.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -676,57 +655,37 @@
       "targetMechanic": "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
       "richV2ObjectiveExcerpt": "معدل التغير الثابت يصف مقدار تغير المخرجات عند تغير المدخلات بمقدار واحد. يحسب من جدول أو رسم بياني بالعلاقة (ص₂−ص₁)/(س₂−س₁) عندما س₂≠س₁. إذا انخفض رصيد من 170 إلى 140 درهمًا خلال ثلاثة أسابيع، فإن التغير =−30/3=−10 دراهم في الأسبوع، ويعبر السالب عن تناقص الرصيد. أما إنتاج 5 و10 و15 قطعة عند الزمن 2 و4 و6 دقائق فيعطي معدل 2.5 قطعة/دقيقة. لا يصبح كل معدل ثابت",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 4,
-      "observedFamilyCount": 4,
+      "configuredFamilyCount": 3,
+      "observedFamilyCount": 3,
       "actualSampleByFamily": [
         {
-          "family": "ratio.unit_rate.equivalent_ratio",
-          "prompt": "30 items in 5 minutes has the same unit rate as ? items in 10 minutes. Find the missing number.",
-          "correctAnswer": "60",
-          "studentPromptArabic": false
+          "family": "ratio.unit_rate.direct",
+          "prompt": "يتم إنتاج 30 وحدة في 5 دقيقة. كم وحدة تُنتج في دقيقة واحدة؟",
+          "correctAnswer": "6",
+          "studentPromptArabic": true
         },
         {
-          "family": "usccss.g6.u03.l07.unit_rate_equivalence",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Car55miles per hour travels110miles in2hours. 1=yes,0=no. Situation B: If two pairs represent equivalent ratios, their unit rates must match for the same quantity order and units. 1=yes,0=no.",
-          "correctAnswer": "4",
-          "studentPromptArabic": false
+          "family": "ratio.unit_rate.equivalent_ratio",
+          "prompt": "إذا أُنتجت 18 وحدة في 2 دقيقة، فكم وحدة تُنتج في 4 دقيقة بالمعدل الثابت نفسه؟",
+          "correctAnswer": "36",
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "prompt": "A shop sells shirts for $8 each with no fixed fee. Find the total price in dollars of 1 shirts. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "prompt": "يبيع متجر قمصانًا بسعر 8 دولارات للقميص، من دون رسم ثابت. ما ثمن 1 قميص بالدولار؟ اكتب عددًا دقيقًا.",
           "correctAnswer": "8",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "ratio.unit_rate.direct",
-          "prompt": "12 items are produced in 6 minutes. How many items are produced per 1 minute?",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "ratio.unit_rate.equivalent_ratio",
-          "samplePrompt": "30 items in 5 minutes has the same unit rate as ? items in 10 minutes. Find the missing number."
-        },
-        {
-          "family": "usccss.g6.u03.l07.unit_rate_equivalence",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
-        },
-        {
-          "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "samplePrompt": "A shop sells shirts for $8 each with no fixed fee. Find the total price in dollars of 1 shirts. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review."
-        },
-        {
-          "family": "ratio.unit_rate.direct",
-          "samplePrompt": "12 items are produced in 6 minutes. How many items are produced per 1 minute?"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "معدل الوحدة يدعم مفهوم معدل التغير، لكن الجداول/الرسوم تحتاج تحققًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -743,9 +702,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "prompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "prompt": "تمثل العلاقة البيانية مستقيمًا يمر بالنقطتين (0,2) و(3,6). اكتب 1 إن كانت علاقة تناسبية على الرسم الكامل، وإلا اكتب 0.",
           "correctAnswer": "0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
@@ -760,17 +719,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "يوجد تحديد صيغة الميل وبعض حسابات الدالة، وليست كل الأسئلة مخصصة لحساب الميل.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -786,29 +743,27 @@
       "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "للمستقيم y = x − 1، أوجد قيمة y عندما x = -6.",
-          "correctAnswer": "-7",
+          "family": "uae.g8.u03.l03.direct_variation",
+          "prompt": "العلاقة التناسبية المباشرة y=6x. إذا كان x=0، فأوجد قيمة y.",
+          "correctAnswer": "0",
           "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "prompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "prompt": "افحص التمثيل الكامل للعلاقة y=4x+3. هل هي مستقيم يمر بالأصل وله نسبة ثابتة y/x؟ اكتب 1 إذا كانت تناسبية، و0 إن لم تكن.",
           "correctAnswer": "0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "سؤال تكلفة تتضمن رسمًا ثابتًا لا يمثل العلاقة التناسبية ص=م س المطلوبة.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "سؤال تكلفة تتضمن رسمًا ثابتًا لا يمثل العلاقة التناسبية ص=م س المطلوبة.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -845,6 +800,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تظهر مسائل صيغة الميل والمقطع وقراءة المقطع، لكن معظم المسارات إنجليزية.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -884,6 +842,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المقطع الصادي يظهر، لكن المقطع السيني ورسم المستقيم من المقطعين غير مختبرين بصورة كافية.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -917,6 +878,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تحويل الصيغة الخطية لا يغطي الكتابة من الرسم أو النقطتين.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -935,23 +899,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "prompt": "How many solutions does the system x+y=1, 2x+2y=3 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher.",
-          "correctAnswer": "none",
-          "studentPromptArabic": false
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "prompt": "النظام x+y=8 و2x+2y=17. كم حلًا له؟ اكتب 1 لحل واحد، 0 لعدم وجود حل، أو 2 لعدد لا نهائي.",
+          "correctAnswer": "0",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "samplePrompt": "How many solutions does the system x+y=1, 2x+2y=3 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تصنيف عدد حلول النظام لا يختبر إيجاد نقطة التقاطع عبر الرسم.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -963,43 +925,31 @@
       "targetMechanic": "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
       "richV2ObjectiveExcerpt": "يمكن إيجاد الزوج الذي يحقق معادلتين من الدرجة الأولى بالتعويض أو بالحذف، ثم التحقق من الناتج في المعادلتين. بالتعويض إذا كانت ص=س+2 وص=3س−4، نساوي التعبيرين فنحصل س+2=3س−4، أي س=3 ثم ص=5. وبالحذف، في النظام 2س+ص=7 و3س−ص=8، نجمع المعادلتين فنجد 5س=15 وبالتالي س=3 وص=1. من المعاني الواقعية نوعا تذاكر أو سلع، حيث س عدد أحدهما وص عدد الآخر، ويشترط أن يلائم الحل ",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "prompt": "النظام x+y=8 و2x+2y=17. كم حلًا له؟ اكتب 1 لحل واحد، 0 لعدم وجود حل، أو 2 لعدد لا نهائي.",
+          "correctAnswer": "0",
+          "studentPromptArabic": true
+        },
+        {
           "family": "algebra.linear.systems.two_by_two.integer_coefficients",
-          "prompt": "Solve the system 1x+1y=2 and 1x-1y=2. Enter the exact ordered pair x,y. Representing the constraints and explaining a graphical or algebraic solution remains teacher-reviewed.",
-          "correctAnswer": "2,0",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "prompt": "How many solutions does the system x+y=10, x-y=-4 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher.",
-          "correctAnswer": "one",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "حل المعادلة 4x − 3 = 5، واكتب قيمة المتغير x.",
-          "correctAnswer": "2",
+          "prompt": "حل نظام المعادلتين 1x+1y=0 and 1x-1y=-10. اكتب الزوج المرتب للحل بالصيغة x,y.",
+          "correctAnswer": "-5,5",
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.systems.two_by_two.integer_coefficients",
-          "samplePrompt": "Solve the system 1x+1y=2 and 1x-1y=2. Enter the exact ordered pair x,y. Representing the constraints and explaining a graphical or algebraic solution remains teacher-reviewed."
-        },
-        {
-          "family": "algebra.linear.systems.solution_count.classify",
-          "samplePrompt": "How many solutions does the system x+y=10, x-y=-4 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "حل نظام 2×2 مناسب جزئيًا؛ أسئلة معادلة مفردة لا تثبت الحل الجبري لنظام.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1016,22 +966,20 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.modeling.linear_relationship.select_equation",
-          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
+          "prompt": "لخدمة رسم ثابت قدره 16 دولارًا وتكلفة 8 دولارًا لكل وحدة. إذا كان x عدد الوحدات وy التكلفة الكلية، فاكتب معادلة العلاقة بينهما.",
           "correctAnswer": "y=8x+16",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.modeling.linear_relationship.select_equation",
-          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "اختيار معادلة سياقية يمثل جانبًا من العلاقة فقط.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1048,22 +996,20 @@
       "actualSampleByFamily": [
         {
           "family": "functions.table.lookup.invert",
-          "prompt": "Table: x=[1,2,3,4,5]; f(x)=[31,37,32,37,33]. Evaluate f(3) using the table. Enter the integer output.",
+          "prompt": "من جدول القيم x=[1,2,3,4,5] و f(x)=[31,37,32,37,33]، أوجد f(3) واكتب الناتج الصحيح.",
           "correctAnswer": "32",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "functions.table.lookup.invert",
-          "samplePrompt": "Table: x=[1,2,3,4,5]; f(x)=[31,37,32,37,33]. Evaluate f(3) using the table. Enter the integer output."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "قراءة قيمة الدالة من جدول لا تختبر مجال العلاقة ومداها وطرق تمثيلها.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1080,32 +1026,26 @@
       "actualSampleByFamily": [
         {
           "family": "functions.notation.evaluate_context",
-          "prompt": "A named function H gives a quantity in metres after t hours and obeys H(t)=12+5t. Evaluate H(0). Enter the integer output only. Explain with the teacher what the input and output mean in context.",
+          "prompt": "دالة H تعطي مقدارًا بالأمتار بعد t ساعة وتحقق H(t)=12+5t. أوجد H(0) واكتب الناتج الصحيح فقط.",
           "correctAnswer": "12",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "functions.relations.unique_output.classify",
-          "prompt": "Is the relation (-3,7), (-1,10), (-3,-5) a function of its first coordinate? Enter yes or no. Explain graph features with the teacher.",
+          "prompt": "هل العلاقة المحددة بالأزواج المرتبة (-3,7), (-1,10), (-3,-5) تمثل دالة من الإحداثي الأول إلى الثاني؟ اكتب yes لنعم أو no للا.",
           "correctAnswer": "no",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "functions.notation.evaluate_context",
-          "samplePrompt": "A named function H gives a quantity in metres after t hours and obeys H(t)=12+5t. Evaluate H(0). Enter the integer output only. Explain with the teacher what the input and output mean in context."
-        },
-        {
-          "family": "functions.relations.unique_output.classify",
-          "samplePrompt": "Is the relation (-3,7), (-1,10), (-3,-5) a function of its first coordinate? Enter yes or no. Explain graph features with the teacher."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تمييز الدالة وحساب قيمتها مناسب جزئيًا؛ التمثيل والاختبار البياني يحتاجان مراجعة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1136,6 +1076,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تعويض قاعدة خطية وتغيير الصيغة مناسبان جزئيًا؛ تمثيل الرسم يحتاج فحصًا.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1161,22 +1104,20 @@
         },
         {
           "family": "usccss.g7.u02.l12.compare_same_axes_rates",
-          "prompt": "Two proportional lines share the same axes and scales. Their constants are A=2.5, B=2.25. Enter the larger constant of proportionality. Submit an exact numeric response. The comparison assumes identical axes and units. Drawn lines and contextual explanations require teacher review.",
+          "prompt": "مستقيمان تناسبيان على المحاور والمقاييس نفسها. ثابت التناسب للأول A=2.5 وللثاني B=2.25. اكتب ثابت التناسب الأكبر.",
           "correctAnswer": "5/2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u02.l12.compare_same_axes_rates",
-          "samplePrompt": "Two proportional lines share the same axes and scales. Their constants are A=2.5, B=2.25. Enter the larger constant of proportionality. Submit an exact numeric response. The comparison assumes identical axes and units. D"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مقارنة معدل خطي وتمييز خطي/تربيعي جزء من مقارنة الخصائص.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1193,9 +1134,9 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.modeling.linear_relationship.select_equation",
-          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
+          "prompt": "لخدمة رسم ثابت قدره 16 دولارًا وتكلفة 8 دولارًا لكل وحدة. إذا كان x عدد الوحدات وy التكلفة الكلية، فاكتب معادلة العلاقة بينهما.",
           "correctAnswer": "y=8x+16",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g6.u08.l02.linear_rule",
@@ -1210,17 +1151,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.modeling.linear_relationship.select_equation",
-          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "كتابة قاعدة من موقف وبعض التعويض لا تغطي إنشاء الدالة من كل التمثيلات.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1243,22 +1182,20 @@
         },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "prompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "prompt": "افحص التمثيل الكامل للعلاقة y=4x+3. هل هي مستقيم يمر بالأصل وله نسبة ثابتة y/x؟ اكتب 1 إذا كانت تناسبية، و0 إن لم تكن.",
           "correctAnswer": "0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "التصنيف الخطي/غير الخطي مدعوم بعائلة عربية؛ بعض المسارات تتناول التناسب بدل الخطية العامة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1281,9 +1218,9 @@
         },
         {
           "family": "functions.quadratic.output_roots.solve",
-          "prompt": "Given f(x)=(x-(-4))(x-(4)), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher.",
+          "prompt": "إذا كانت f(x)=(x-(-4))(x-(4))، فحل المعادلة f(x)=0 في مجموعة الأعداد الحقيقية. اكتب الجذرين الصحيحين المختلفين مفصولين بفاصلة.",
           "correctAnswer": "-4,4",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g6.u08.l03.linear_vs_square",
@@ -1292,17 +1229,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "functions.quadratic.output_roots.solve",
-          "samplePrompt": "Given f(x)=(x-(-4))(x-(4)), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تقييم دالة تربيعية والجذور جزء من الدرس؛ الرأس ومحور التناظر ورسم القطع المكافئ لم تثبت.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1325,22 +1260,20 @@
         },
         {
           "family": "functions.domain_range.context_bounds",
-          "prompt": "A tank starts with 27 litres and drains at 9 litres per hour. V(t)=27-9t is modeled only from t=0 through t=3 hours. Enter the endpoint form exactly as D=0,3;R=0,27. Explain with the teacher why the context restricts both sets.",
+          "prompt": "يبدأ خزان بسعة 27 لترًا، وينقص حجمه 9 لترًا في الساعة وفق V(t)=27-9t خلال الفترة 0 إلى 3 ساعات. اكتب المجال والمدى بالصيغة D=0,3;R=0,27، مع حساب الحدود الصحيحة.",
           "correctAnswer": "D=0,3;R=0,27",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "functions.domain_range.context_bounds",
-          "samplePrompt": "A tank starts with 27 litres and drains at 9 litres per hour. V(t)=27-9t is modeled only from t=0 through t=3 hours. Enter the endpoint form exactly as D=0,3;R=0,27. Explain with the teacher why the context restricts bot"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مجال سياقي وتصنيف خطية/غير خطية لا يختبران تفسير ازدياد/تناقص الرسم النوعي.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1365,6 +1298,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1392,6 +1328,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1419,6 +1358,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1452,6 +1394,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "توجد زاوية داخلية ناقصة وزاوية مكملة؛ الزوايا الخارجية ومجموع زوايا المضلع لم تستوف.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1479,6 +1424,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1506,6 +1454,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1533,6 +1484,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1572,6 +1526,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "نقل نقطة باتجاهين مناسب جزئيًا؛ نقل شكل كامل ورسم الصورة يحتاج مراجعة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1611,6 +1568,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الانعكاس حول المحورين مناسب لنقاط؛ تناظر الأشكال الكاملة يُراجع.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1638,6 +1598,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1657,9 +1620,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u01.l02.scale_factor",
-          "prompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 4.5, 6.0, 7.5 units. Determine the scale factor from the original triangle to the proposed copy. Check ALL three matching sides, not just one. Enter the number of the mathematically correct choice: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = no uniform scale; 5 = 2/3.",
+          "prompt": "مثلث قائم أصلي أطوال أضلاعه 3, 4, 5 وحدات، ومثلث مرشح مشابه أطوال أضلاعه المناظرة 4.5, 6.0, 7.5 وحدات. أوجد معامل التمدد من الأصل إلى الصورة وتحقق من الأضلاع الثلاثة. اختر رقم الإجابة الصحيحة: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = لا يوجد معامل تماثل ثابت; 5 = 2/3.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.similarity.scale_factor",
@@ -1668,17 +1631,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u01.l02.scale_factor",
-          "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 4.5, 6.0, 7.5 units. Determine the scale factor from the original triangle to the proposed copy. Check ALL three m"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "معدل القياس مناسب جزئيًا؛ مركز التمدد ورسم الصورة يتطلبان توثيقًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1715,6 +1676,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الانعكاس فقط لا يثبت تركيب التحويلات الصلبة بجميع أنواعها.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -1733,23 +1697,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
-          "prompt": "Source side category all three different lengths is Select 1: equilateral; 2: scalene; 3: isosceles-only. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
+          "family": "geometry.congruence.identify_criterion",
+          "prompt": "مثلثان لهما زاويتان متناظرتان قياسهما 45° و47° والضلع المحصور بينهما طوله 7. ما معيار تطابقهما؟ اكتب SSS أو SAS أو ASA أو RHS.",
+          "correctAnswer": "ASA",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
-          "samplePrompt": "Source side category all three different lengths is Select 1: equilateral; 2: scalene; 3: isosceles-only. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "تحديد نوع مثلث بحسب أضلاعه لا يختبر تطابق مضلعين وأجزائهما المتناظرة.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "تحديد نوع مثلث بحسب أضلاعه لا يختبر تطابق مضلعين وأجزائهما المتناظرة.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1772,32 +1734,26 @@
         },
         {
           "family": "usccss.g7.u01.l02.scale_factor",
-          "prompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 1.5, 2.0, 2.5 units. Determine the scale factor from the proposed copy back to the original triangle. Check ALL three matching sides, not just one. Enter the number of the mathematically correct choice: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = no uniform scale; 5 = 2/3.",
+          "prompt": "مثلث أصلي قائم الزاوية أطوال أضلاعه 3, 4, 5، وصورته المقترحة أطوال أضلاعها المناظرة 1.5, 2.0, 2.5. أوجد معامل القياس من الصورة إلى المثلث الأصلي، وتحقق من الأضلاع الثلاثة. اختر رقم الإجابة الصحيحة: 1 = 1/2; 2 = 3/2; 3 = 2; 4 = لا يوجد معامل تماثل ثابت; 5 = 2/3.",
           "correctAnswer": "3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
-          "prompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (2,1), (10,1), (13,7), (5,7). The claimed scale factor is 2. The proposed copy has oblique angles even though both shapes use straight edges. Are these polygons scaled copies at that factor? Check corresponding distances AND angles, including the diagonal. Enter 1 for yes, or 0 for no.",
+          "prompt": "رؤوس المستطيل الأصلي (0,0), (4,0), (4,3), (0,3). رؤوس الشكل المرشح بالترتيب (2,1), (10,1), (13,7), (5,7). معامل التشابه المزعوم 2. للصورة المقترحة زوايا مائلة رغم أن أضلاع الشكلين مستقيمة. هل الشكلان متشابهان بهذا المعامل؟ تحقق من المسافات والزوايا المناظرة والقطر، ثم اكتب 1 لنعم أو 0 للا.",
           "correctAnswer": "0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u01.l02.scale_factor",
-          "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 1.5, 2.0, 2.5 units. Determine the scale factor from the proposed copy back to the original triangle. Check ALL th"
-        },
-        {
-          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
-          "samplePrompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (2,1), (10,1), (13,7), (5,7). The claimed scale factor is 2. The proposed copy has oblique angles even tho"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "معامل التشابه والمسافات المتناظرة مناسب جزئيًا؛ تركيب التمدد والتحويلات يتطلب مراجعة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1809,43 +1765,31 @@
       "targetMechanic": "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
       "richV2ObjectiveExcerpt": "للمضلعين المتشابهين زاوية مناظرة مساوية لكل زاوية في الآخر، وأطوال الأضلاع المتناظرة بنسبة ثابتة تسمى معامل التشابه. إذا كان مستطيل صغير أبعاده 3×6 وآخر كبير 6×12 فالنسب 6/3=12/6=2، وبالتالي هما متشابهان مع معامل 2 من الصغير إلى الكبير. أما مستطيل 3×6 ومستطيل 6×10 فزاويتهما كلها قائمة، ولكن نسب الطول 6/3=2 والعرض 10/6 لا تساوي 2، فليسا متشابهين. قد توضح الرس",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "geometry.similarity.scale_factor",
-          "prompt": "طول ضلع في الشكل الأول 6، وطول الضلع المناظر في شكل مشابه 18. أوجد معامل التشابه من الأول إلى الثاني.",
-          "correctAnswer": "3",
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "prompt": "رؤوس المستطيل الأصلي (0,0), (4,0), (4,3), (0,3). ورؤوس الشكل المقترح بالترتيب (6,3), (14,3), (14,9), (6,9). معامل التشابه المقترح 2، والزوايا المتناظرة كلها قائمة. هل الشكلان متشابهان بهذا المعامل؟ تحقق من جميع المسافات والزوايا والأقطار، ثم اكتب 1 لنعم أو 0 للا.",
+          "correctAnswer": "1",
           "studentPromptArabic": true
         },
         {
-          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
-          "prompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (0,0), (8,0), (11,6), (3,6). The claimed scale factor is 2. The proposed copy has oblique angles even though both shapes use straight edges. Are these polygons scaled copies at that factor? Check corresponding distances AND angles, including the diagonal. Enter 1 for yes, or 0 for no.",
-          "correctAnswer": "0",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "usccss.g6.u02.l05.scaled_ratio_missing_term",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 5 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (5 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: 3 cups pasta,6 ounces tuna,10 ounces soup. Tuna ounces for FIVE batches? Situation B: 18:3 simplifies to ?:1. Find first term.",
-          "correctAnswer": "156",
-          "studentPromptArabic": false
+          "family": "geometry.similarity.scale_factor",
+          "prompt": "طول ضلع في الشكل الأول 3، وطول الضلع المناظر في شكل مشابه 15. أوجد معامل التشابه من الأول إلى الثاني.",
+          "correctAnswer": "5",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
-          "samplePrompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (0,0), (8,0), (11,6), (3,6). The claimed scale factor is 2. The proposed copy has oblique angles even thou"
-        },
-        {
-          "family": "usccss.g6.u02.l05.scaled_ratio_missing_term",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 5 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (5 × A's numerical answer) + (B"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "معدل التشابه وقياس ضلع مناسب جزئيًا؛ خصائص المضلعات المتناظرة لم تثبت بالكامل.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1862,9 +1806,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
-          "prompt": "Two scaled W-shaped figures have corresponding visible segments 6 units in the original and 15 units in its copy. The distance between TWO other points need not be a drawn side; it still uses the same scale factor. An unseen distance in the original is 6 units. What is its distance in the copy? Enter the exact integer answer.",
+          "prompt": "شكلان متشابهان على هيئة W، طول قطعة مرئية في الأصلي 6 وحدات وطول نظيرتها في الصورة 15 وحدة. المسافة بين نقطتين أخريين تتغير بالمعامل نفسه حتى لو لم تكن ضلعًا مرسومًا. إذا كانت المسافة في الأصلي 6، فما المسافة المناظرة في الصورة؟ اكتب الناتج الدقيق.",
           "correctAnswer": "15",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.similarity.scale_factor",
@@ -1873,17 +1817,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
-          "samplePrompt": "Two scaled W-shaped figures have corresponding visible segments 6 units in the original and 15 units in its copy. The distance between TWO other points need not be a drawn side; it still uses the same scale factor. An un"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "قياس غير مباشر ومعامل مقياس مناسب جزئيًا؛ برهان تشابه المثلثات يحتاج معلمًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1900,9 +1842,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "prompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
+          "prompt": "تمثل العلاقة البيانية مستقيمًا يمر بالنقطتين (0,2) و(3,6). اكتب 1 إن كانت علاقة تناسبية على الرسم الكامل، وإلا اكتب 0.",
           "correctAnswer": "0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.gradient_between_points",
@@ -1911,17 +1853,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u02.l10.graphs_origin_slope",
-          "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الميل يمس نسبة التشابه في المثلث القائم لكن لا يثبت معايير تشابهه.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1938,9 +1878,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u01.l06.scaled_area_square_factor",
-          "prompt": "An original shape is a triangle of area 6 square units. Draw a uniformly scaled copy at length scale factor k=1. By what AREA factor (not length factor) has the original area changed? Enter an exact whole number or reduced fraction such as 9/25. Scaling lengths by k scales the area by k squared.",
+          "prompt": "مساحة مثلث أصلي 6 وحدة مربعة، ورُسمت صورة مشابهة بمعامل أطوال k=1. ما معامل تغير المساحة؟",
           "correctAnswer": "1",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.similarity.scale_factor",
@@ -1950,26 +1890,20 @@
         },
         {
           "family": "usccss.g7.u01.l10.change_scale_length_and_area",
-          "prompt": "A triangular plot has real base 120 m and height 90 m. A drawing uses 1 cm to 50 m. What is the base in drawing centimetres? Enter an exact integer or fraction in the specified units. Measure and justify any original construction with your teacher.",
+          "prompt": "قطعة أرض مثلثة طول قاعدتها الحقيقي 120 مترًا وارتفاعها 90 مترًا. مقياس الرسم 1 سم لكل 50 مترًا. ما طول القاعدة في الرسم بالسنتيمتر؟ اكتب عددًا صحيحًا أو كسرًا دقيقًا.",
           "correctAnswer": "12/5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u01.l06.scaled_area_square_factor",
-          "samplePrompt": "An original shape is a triangle of area 6 square units. Draw a uniformly scaled copy at length scale factor k=1. By what AREA factor (not length factor) has the original area changed? Enter an exact whole number or reduc"
-        },
-        {
-          "family": "usccss.g7.u01.l10.change_scale_length_and_area",
-          "samplePrompt": "A triangular plot has real base 120 m and height 90 m. A drawing uses 1 cm to 50 m. What is the base in drawing centimetres? Enter an exact integer or fraction in the specified units. Measure and justify any original con"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "عامل المساحة والطول مرتبطان بالدرس؛ المحيط في جميع حالات المصدر غير مثبت.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1986,9 +1920,9 @@
       "actualSampleByFamily": [
         {
           "family": "usccss.g7.u07.prism_volume_base_height",
-          "prompt": "A right prism has base area 23 square units and height 7 units. Find its volume.",
+          "prompt": "منشور قائم مساحة قاعدته 23 وحدة مربعة وارتفاعه 7 وحدة. احسب حجمه.",
           "correctAnswer": "161",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
@@ -1997,17 +1931,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g7.u07.prism_volume_base_height",
-          "samplePrompt": "A right prism has base area 23 square units and height 7 units. Find its volume."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "حجم أسطوانة صحيح جزئيًا؛ حجم منشور سؤال تمهيدي وليس قياسًا مباشرًا للأسطوانة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2032,6 +1964,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2059,6 +1994,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2098,6 +2036,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مساحة الأسطوانة صحيحة جزئيًا؛ أسئلة مساحة/محيط دائرة مجردة أسئلة داعمة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2131,6 +2072,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مساحة المخروط صحيحة جزئيًا؛ مساحة دائرة مجردة دعم تمهيدي.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2170,6 +2114,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تغيير مساحة/حجم المجسم بالنسبة المكعبة والمربعة مدعوم جزئيًا.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2184,37 +2131,25 @@
       "targetMechanic": "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
       "richV2ObjectiveExcerpt": "مخطط الانتشار يتكون من نقاط يمثل كل منها قيمتين كميتين للحدث نفسه، فتكتب النقطة (س،ص) مع تحديد ما يمثله كل محور. إذا ارتفعت ص عادة عندما تزداد س، فالاتجاه موجب؛ وإذا انخفضت ص عند زيادة س فالارتباط سالب؛ وإذا تناثرت النقاط بلا اتجاه ظاهر فقد يكون الارتباط ضعيفًا أو معدومًا. لا يكفي وجود اتجاه لأن نستنتج علاقة سببية. في نشاط أصلي نقارن درجات حرارة خلال خمسة أي",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "statistics.correlation.direction",
-          "prompt": "Points (1,2),(2,4),(3,6),(4,8) lie on a perfect line. Does r indicate a positive or negative linear relationship?",
-          "correctAnswer": "positive",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "supporting.statistics.scatter_correlation",
-          "prompt": "A scatter plot of water intake and plant growth contains the points (2, 23), (6, 24), (10, 25). Classify the association as positive, negative, or none.",
-          "correctAnswer": "positive",
-          "studentPromptArabic": false
+          "family": "uae.g8.u09.l01.scatter_direction",
+          "prompt": "نقاط الانتشار (1،15)،(2،12)،(3،9)،(4،6)،(5،3). صنّف اتجاه الارتباط الخطي: اكتب 1 لموجب، أو 2 لسالب، أو 0 لعدم وجود اتجاه خطي واضح.",
+          "correctAnswer": "2",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "statistics.correlation.direction",
-          "samplePrompt": "Points (1,2),(2,4),(3,6),(4,8) lie on a perfect line. Does r indicate a positive or negative linear relationship?"
-        },
-        {
-          "family": "supporting.statistics.scatter_correlation",
-          "samplePrompt": "A scatter plot of water intake and plant growth contains the points (2, 23), (6, 24), (10, 25). Classify the association as positive, negative, or none."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "اتجاه الارتباط يدعم قراءة الانتشار؛ الرسم وقراءة النقاط مفتوحان للمراجعة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2231,42 +2166,32 @@
       "actualSampleByFamily": [
         {
           "family": "statistics.linear_model.fit_select",
-          "prompt": "For points (0,2),(1,4),(2,7),(3,9), which line has smaller sum of squared residuals? A) $y=3x+2; B) $y=2.4x+1.9. Enter A or B. Explain the visual goodness-of-fit with the teacher.",
+          "prompt": "للنقاط (0,2),(1,4),(2,7),(3,9)، أي المستقيمين يحقق مجموع مربعات بواقي أصغر؟ الاختيار A: $y=3x+2؛ الاختيار B: $y=2.4x+1.9. اكتب A أو B.",
           "correctAnswer": "b",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "statistics.linear_model.predict",
-          "prompt": "A hand-fit model predicts y=2.4x+1.9. What does it predict at x=$5? Enter the number rounded to one decimal place. State contextual limitations with the teacher.",
+          "prompt": "نموذج خطي مقدَّر معادلته y=2.4x+1.9. ما القيمة المتوقعة عندما x=5؟ قرب الناتج إلى منزلة عشرية واحدة.",
           "correctAnswer": "13.9",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "statistics.linear_model.residual",
-          "prompt": "At x=$0, observed y=$2 while predicted y=2.4x+1.9. What is observed minus predicted? Enter the signed residual to one decimal place.",
+          "prompt": "عند x=0 كانت القيمة المرصودة y=2، وكانت القيمة المتوقعة من النموذج y=2.4x+1.9. أوجد الباقي (المرصود ناقص المتوقع) مع الإشارة، مقربًا إلى منزلة عشرية واحدة.",
           "correctAnswer": "0.1",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "statistics.linear_model.fit_select",
-          "samplePrompt": "For points (0,2),(1,4),(2,7),(3,9), which line has smaller sum of squared residuals? A) $y=3x+2; B) $y=2.4x+1.9. Enter A or B. Explain the visual goodness-of-fit with the teacher."
-        },
-        {
-          "family": "statistics.linear_model.predict",
-          "samplePrompt": "A hand-fit model predicts y=2.4x+1.9. What does it predict at x=$5? Enter the number rounded to one decimal place. State contextual limitations with the teacher."
-        },
-        {
-          "family": "statistics.linear_model.residual",
-          "samplePrompt": "At x=$0, observed y=$2 while predicted y=2.4x+1.9. What is observed minus predicted? Enter the signed residual to one decimal place."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "ملاءمة خط وتنبؤ وباقٍ مدعومة جزئيًا؛ التقدير البصري والتفسير يتطلبان تحققًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2283,15 +2208,15 @@
       "actualSampleByFamily": [
         {
           "family": "statistics.two_way.marginal_count",
-          "prompt": "In a fictional club survey, Group A has Sports12 and Arts8; Group B has Sports9 and Arts11. How many respondents selected Sports in total?",
+          "prompt": "في استطلاع لنادٍ، المجموعة أ: رياضة 12 وفنون 8، والمجموعة ب: رياضة 9 وفنون 11. كم شخصًا اختار الرياضة إجمالًا؟",
           "correctAnswer": "21",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "statistics.two_way.conditional_relative",
-          "prompt": "Fictional two-way data: Group A Sports12/Arts8, Group B Sports9/Arts11. What percent of Group A chose Sports? (row-relative) Enter a percent rounded to two decimal places without the % sign.",
+          "prompt": "بيانات جدول ذي مدخلين: المجموعة أ رياضة 12 وفنون 8، والمجموعة ب رياضة 9 وفنون 11. ما النسبة المئوية من المجموعة أ التي اختارت الرياضة؟ قرب لمنزلتين عشريتين.",
           "correctAnswer": "60",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.statistics.table_total",
@@ -2300,21 +2225,15 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "statistics.two_way.marginal_count",
-          "samplePrompt": "In a fictional club survey, Group A has Sports12 and Arts8; Group B has Sports9 and Arts11. How many respondents selected Sports in total?"
-        },
-        {
-          "family": "statistics.two_way.conditional_relative",
-          "samplePrompt": "Fictional two-way data: Group A Sports12/Arts8, Group B Sports9/Arts11. What percent of Group A chose Sports? (row-relative) Enter a percent rounded to two decimal places without the % sign."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "التكرارات الهامشية والنسب الشرطية من جدول ثنائي مناسبة جزئيًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2357,6 +2276,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المتوسط والوسيط والمدى والربيع جزء من الإحصاء الوصفي.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2371,43 +2293,31 @@
       "targetMechanic": "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
       "richV2ObjectiveExcerpt": "قد يكون لمجموعتين متوسط واحد وتباين مختلف. يساعد متوسط الانحراف المطلق في قياس متوسط بعد القيم عن المتوسط دون إلغاء فروق السالب والموجب. للمجموعة [2،4،6،8] المتوسط5، والانحرافات المطلقة 3،1،1،3، ومن ثم متوسطها2. أما الانحراف المعياري فيصف بعد القيم عن المتوسط عبر مربعات فروقها؛ لمجموعة المجتمع نفسها يكون التباين5 والانحراف المعياري √5≈2.236. ويجب بيان هل الم",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "statistics.center_spread.mad",
-          "prompt": "The synthetic data are 27, 31, 35, 39, 43. Calculate the mean absolute deviation (MAD) from the mean. Enter an exact decimal or fraction.",
-          "correctAnswer": "4.8",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Distance28pages from mean32.6 in TENTHS? Situation B: Source Han data max pages?",
-          "correctAnswer": "180",
-          "studentPromptArabic": false
-        },
-        {
           "family": "statistics.center_spread.range",
-          "prompt": "أصغر قيمة في مجموعة بيانات هي 4 وأكبر قيمة هي 7. أوجد المدى.",
-          "correctAnswer": "3",
+          "prompt": "أصغر قيمة في مجموعة بيانات هي 7 وأكبر قيمة هي 14. أوجد المدى.",
+          "correctAnswer": "7",
+          "studentPromptArabic": true
+        },
+        {
+          "family": "statistics.center_spread.mad",
+          "prompt": "البيانات هي 1, 8, 15, 22, 29. أوجد متوسط الانحرافات المطلقة عن المتوسط الحسابي (MAD). اكتب كسرًا أو عددًا عشريًا دقيقًا.",
+          "correctAnswer": "8.4",
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "statistics.center_spread.mad",
-          "samplePrompt": "The synthetic data are 27, 31, 35, 39, 43. Calculate the mean absolute deviation (MAD) from the mean. Enter an exact decimal or fraction."
-        },
-        {
-          "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الانحراف المطلق المتوسط والمدى مناسب جزئيًا؛ باقي المقاييس من المصدر تحتاج أدلة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2419,37 +2329,25 @@
       "targetMechanic": "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
       "richV2ObjectiveExcerpt": "يوضح شكل توزيع البيانات أين تتجمع القيم، وأين توجد فجوات أو قيم بعيدة، وما إذا كانت الكتل متماثلة حول مركزها أو منحرفة نحو جهة معينة. التوزيع المتماثل تقارب فيه القيم من الجانبين، أما التوزيع الملتوي يمينًا فيملك ذيلًا ممتدًا إلى القيم العالية، والملتوي يسارًا ذيلًا إلى القيم الصغيرة. لمجموعة [2،3،3،4،18] المتوسط6 والوسيط3، والقيمة العالية18 تجعل الذيل الأيم",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g6.u08.l16.box_plot_source_quartiles",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Given100 mice and box interval Q1 to Q3, percentage represented? Situation B: Same homework data. Third quartile Q3?",
-          "correctAnswer": "111",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "statistics.distribution_shape.classify",
-          "prompt": "A synthetic numerical distribution has values 7, 8, 9, 10, 11 with frequencies 2, 2, 2, 2, 2 in the same order. Classify its overall shape as uniform, symmetric bell-shaped, right-skewed, left-skewed, or bimodal. Enter only the classification. Suggesting a real-world context and critiquing a graph remain teacher-reviewed.",
-          "correctAnswer": "uniform",
-          "studentPromptArabic": false
+          "family": "uae.g8.u09.l06.distribution_shape",
+          "prompt": "لقيم البيانات المرتبة 1،2،3،4،5 التكرارات المناظرة 1،2،3،5،8. صنّف شكل التوزيع: 1 منتظم، 2 متناظر شبيه بالجرس، 3 ملتوي لليمين، 4 ملتوي لليسار، 5 ثنائي القمة. اكتب رقم الاختيار.",
+          "correctAnswer": "4",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g6.u08.l16.box_plot_source_quartiles",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
-        },
-        {
-          "family": "statistics.distribution_shape.classify",
-          "samplePrompt": "A synthetic numerical distribution has values 7, 8, 9, 10, 11 with frequencies 2, 2, 2, 2, 2 in the same order. Classify its overall shape as uniform, symmetric bell-shaped, right-skewed, left-skewed, or bimodal. Enter o"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تصنيف شكل التوزيع والربيعات جزء من التحليل؛ الرسم والتفسير يحتاجان مراجعة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2474,6 +2372,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "عد القطع بين نقاط نشاط جزئي لا يغطي مفاهيم الاستقامية والمستويات.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2492,23 +2393,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g6.u07.l06.absolute_distance_values",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Elena donates3.12 from26 earned. Percent? Situation B: Trip target325miles,72% completed. Miles?",
-          "correctAnswer": "258",
-          "studentPromptArabic": false
+          "family": "uae.g8.u10.l02.segment_addition",
+          "prompt": "النقطة ب تقع بين أ وج على خط مستقيم. إذا كان طول أ ب=19 سم وطول ب ج=15 سم، فما طول أ ج بالسنتيمتر؟",
+          "correctAnswer": "34",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g6.u07.l06.absolute_distance_values",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "عد القطع المستقيمة بين نقاط لا يختبر قياس طول قطعة أو جمع الأطوال.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "عد القطع المستقيمة بين نقاط لا يختبر قياس طول قطعة أو جمع الأطوال.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2524,23 +2423,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Sparkling orange juice uses4L orange and5L soda. Total liters for one batch? Situation B: Horizontal distance from(-4,3) to(5,3) in units?",
-          "correctAnswer": "27",
-          "studentPromptArabic": false
+          "family": "uae.g8.u10.l03.midpoint_coordinate",
+          "prompt": "أ(2، -8) وب(4، 6) هما طرفا قطعة مستقيمة. ما الإحداثي الصادي لنقطة منتصف أ ب؟",
+          "correctAnswer": "-1",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المسافة الأفقية/الرأسية جزئية ولا تختبر نقطة المنتصف في المستوى.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2556,18 +2453,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "uae.g4.u12.l01.segments_from_points",
-          "prompt": "على رسم 6 نقاط مختلفة، كم قطعة مستقيمة مختلفة بين كل زوج من النقاط؟",
-          "correctAnswer": "15",
+          "family": "uae.g8.u10.l04.segment_reason",
+          "prompt": "إذا كان أ ب = ج د، وج د = هـ و، فلماذا أ ب = هـ و؟ اختر السبب: 1 مسلمة جمع القطع، 2 خاصية التعدي، 3 تعريف نقطة المنتصف.",
+          "correctAnswer": "2",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "عد القطع بين نقاط لا يقيس إثبات علاقات بين القطع المستقيمة.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "عد القطع بين نقاط لا يقيس إثبات علاقات بين القطع المستقيمة.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2598,6 +2498,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "حساب زاوية مضلع وزاوية مكملة جزئي؛ باقي قوانين الزوايا تحتاج دليلًا.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2612,37 +2515,25 @@
       "targetMechanic": "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
       "richV2ObjectiveExcerpt": "متوازي الأضلاع شكل رباعي فيه كل زوج من الأضلاع المتقابلة متوازٍ. ينتج عن ذلك تساوي الأضلاع المتقابلة وتساوي الزوايا المتقابلة، وتكامل كل زاويتين متجاورتين بمجموع180°. كذلك ينصف قطرَا متوازي الأضلاع أحدهما الآخر، أي إذا تقاطعا عند م فأنصاف كل قطر متساوية. إذا كانت إحدى الزوايا68° فالزاوية المقابلة68° والمتجاورتان112°. وفي شكل أضلاعه المتقابلة أطوالها س+5 و3س−",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "prompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "3",
-          "studentPromptArabic": false
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "prompt": "رباعي فيه زوج واحد فقط من الأضلاع المتقابلة متوازٍ، دون معطيات أخرى. هل هذه المعطيات كافية لإثبات أن الرباعي متوازي أضلاع؟ اكتب 1 لنعم أو 0 للا.",
+          "correctAnswer": "0",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        },
-        {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "samplePrompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "تصنيف رباعي بحسب التوازي جزء من الموضوع؛ خواص متوازي الأضلاع لم تثبت.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2654,37 +2545,25 @@
       "targetMechanic": "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
       "richV2ObjectiveExcerpt": "لإثبات أن شكلًا رباعيًا متوازي أضلاع نستخدم اختبارات عكسية لخصائص الشكل. من الشروط الكافية: أن يكون كل زوج من الأضلاع المتقابلة متوازيًا، أو كل زوج من الأضلاع المتقابلة متساوي الطول، أو أن يكون زوج واحد من الأضلاع المتقابلة متوازيًا ومتساوي الطول في آن واحد، أو أن ينصف قطرَا الشكل أحدهما الآخر، أو أن يكون كل زوج من الزوايا المتقابلة متساويًا. لا يكفي وجود زو",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "prompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "3",
-          "studentPromptArabic": false
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "prompt": "رباعي فيه زوج واحد فقط من الأضلاع المتقابلة متوازٍ، دون معطيات أخرى. هل هذه المعطيات كافية لإثبات أن الرباعي متوازي أضلاع؟ اكتب 1 لنعم أو 0 للا.",
+          "correctAnswer": "0",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        },
-        {
-          "family": "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-          "samplePrompt": "Source category square has how many right angles? Select 1: 2; 2: 0; 3: 4. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "تحديد عدد أزواج الأضلاع المتوازية لرباعي عشوائي لا يختبر شروط إثبات متوازي الأضلاع.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "تحديد عدد أزواج الأضلاع المتوازية لرباعي عشوائي لا يختبر شروط إثبات متوازي الأضلاع.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2696,37 +2575,25 @@
       "targetMechanic": "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
       "richV2ObjectiveExcerpt": "المستطيل متوازي أضلاع زواياه الأربع قائمة. لذلك يحتفظ بجميع خواص متوازي الأضلاع، وتزيد عليها خاصية تساوي قطريه في الطول. كما ينصف كل قطر الآخر. إذا علمنا أن قطري مستطيل طولهما 3س+5 و5س−7 فإن تساويهما يعطي س=6 وطول القطر23. ويمكن إثبات أن متوازي أضلاع مستطيل إذا كانت زاوية واحدة منه قائمة أو إذا كان قطراه متساويين. يربط الدرس هذه الخواص بمخططات غرف مستطيلة وت",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "prompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
-        },
-        {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "prompt": "Every rectangle is a parallelogram Select 1: false; 2: unknown; 3: true. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "3",
-          "studentPromptArabic": false
+          "family": "uae.g8.u11.l04.rectangle_test",
+          "prompt": "متوازي أضلاع له زاوية قائمة واحدة. هل المعطيات كافية لإثبات أنه مستطيل؟ اكتب 1 لنعم أو 0 للا.",
+          "correctAnswer": "1",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
-          "samplePrompt": "Source always/sometimes/never: a parallelogram is a rhombus Select 1: always; 2: sometimes; 3: never. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        },
-        {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "samplePrompt": "Every rectangle is a parallelogram Select 1: false; 2: unknown; 3: true. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "سؤال بناء مربع بأعواد وأوصاف رباعيات عامة لا يقيس خواص المستطيل وأقطاره.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "سؤال بناء مربع بأعواد وأوصاف رباعيات عامة لا يقيس خواص المستطيل وأقطاره.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2742,23 +2609,21 @@
       "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "prompt": "Original activity toothpicks required to build a square Select 1: 6; 2: 4; 3: 3. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
+          "family": "uae.g8.u11.l05.rhombus_diagonals",
+          "prompt": "معين طول قطره الأول 24 سم، ويتقاطع قطراه في نقطة المنتصف م. ما طول نصف هذا القطر بالسنتيمتر؟",
+          "correctAnswer": "12",
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-          "samplePrompt": "Original activity toothpicks required to build a square Select 1: 6; 2: 4; 3: 3. For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED."
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "سؤال بناء مربع بأعواد لا يقيس خواص قطري المعين والمربع.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": "سؤال بناء مربع بأعواد لا يقيس خواص قطري المعين والمربع.",
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2789,6 +2654,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مساحة طائرة ورقية ومتوسط شبه منحرف آليان؛ تصنيف الأشكال والبراهين يحتاج معلمًا.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2822,6 +2690,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "العضوية والفراغ/المنتهية/غير المنتهية آليًا، مع أنشطة وصفية مفتوحة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2867,6 +2738,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "الاحتواء واتحاد/تقاطع/فرق المجموعات الرقمية، مع تمثيلات حرة تُراجع.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2894,6 +2768,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "قراءة مناطق فن الثلاثي آليًا، والرسم والتظليل يتطلبان مراجعة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
@@ -2921,6 +2798,9 @@
       "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
+      "previouslyObservedMismatchesRemediated": null,
+      "fullAttemptPromptArabicAndNoEnglishWords": true,
+      "fullAttemptSolutionsArabicAndNoEnglishWords": true,
       "coverageFinding": "مسألة عد عناصر اتحاد مجموعتين صحيحة جزئيًا؛ المسائل اللفظية الأوسع تحتاج مراجعة.",
       "observedRuntimeStatus": "ready",
       "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
