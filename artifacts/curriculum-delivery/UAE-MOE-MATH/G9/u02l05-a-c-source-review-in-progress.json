@@ -139,21 +139,24 @@
     }
   ],
   "execution": {
-    "abcStatus": "PREPARED_PENDING_TESTS",
+    "abcStatus": "CONTENT_PRACTICE_AND_TEST_SPEC_PREPARED_A_C_ELEMENT_LEDGER_INCOMPLETE",
     "contentModified": true,
     "practiceMappingModified": true,
     "regressionTestsAdded": true,
-    "testsRun": "NOT_RUN",
-    "ci": "NOT_RUN",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "ci": "NOT_RUN_BY_A_C",
     "stageD": "NOT_STARTED",
-    "criticalBlocker": "Practice engine now wired; run .NET generated-question and verifier tests and check CI before A-C closure.",
-    "nextAction": "Implement and test exact absolute-value equation solver practice family, validate against fixtures, then close 2-5 and advance sequentially.",
+    "criticalBlocker": "Before A-C closure finish all source element coverage and general-book semantic crosswalk/SourceSnapshotId. Do not demand executing tests or CI during A-C.",
+    "nextAction": "Complete source objective/activity/rubric ledger, then record A-C closure checkpoint without running tests. Actual test execution only Stage D.",
     "practiceFamilies": [
       "uae.g9.general.u02.l05.two_solutions",
       "uae.g9.general.u02.l05.one_solution",
       "uae.g9.general.u02.l05.no_solution",
       "uae.g9.general.u02.l05.evaluate_absolute",
       "uae.g9.general.u02.l05.midpoint"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u02l05.test.cjs"
     ]
   },
   "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED.",
