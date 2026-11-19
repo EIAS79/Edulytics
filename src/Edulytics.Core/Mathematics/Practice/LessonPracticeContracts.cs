@@ -11079,6 +11079,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L08_P126_131",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // G9 General U02L09 p132-138: genuine weighted averages, not a
+        // generic unweighted-mean substitution; Stage D must validate samples.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-ARITHMETIC-MEAN"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-ARITHMETIC-MEAN", "statistics.weighted_mean",
+            "G9_U02L09_WEIGHTED_SCORES_AND_GROUP_COUNTS",
+            ["uae.g9.u02.l09.weighted_grades",
+             "uae.g9.u02.l09.weighted_group_sizes"],
+            "UAE_G9_GENERAL_2025_AR_U02L09_P132_138",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
