@@ -26,6 +26,15 @@ def check(source: dict, evidence: dict, expected_sha: str) -> list[str]:
     if (scope.get("packCode"), scope.get("grade"), scope.get("pathway"),
         scope.get("academicLanguage")) != ("UAE-MOE-MATH", 9, "General", "ar"):
         defects.append("SOURCE_SCOPE_MISMATCH")
+    # CRITICAL: audit denominator must cover the entire selected school-year
+    # curriculum; a partial student-book TOC must never yield a false PASS.
+    lock = source.get("sourceLock", {})
+    if (source.get("publicationStatus") != "LOCKED_COMPLETE_GRADE9_GENERAL"
+            or lock.get("status") != "LOCKED"
+            or lock.get("verifiedSchoolYearLessonCount") != source.get("lessonCount")
+            or not lock.get("editionConflictResolved")
+            or not lock.get("selectedSourceFingerprints")):
+        defects.append("FULL_SCHOOL_YEAR_SOURCE_LOCK_NOT_PROVEN")
     if evidence.get("branchCommitSha") != expected_sha or len(expected_sha) != 40:
         defects.append("CANDIDATE_SHA_MISMATCH")
     if evidence.get("testsRunInStage") != "D":
