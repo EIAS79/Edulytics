@@ -75,9 +75,30 @@
     "usccss.g6.u07.l06.absolute_distance_values",
     "functions.absolute_value.translate_evaluate"
   ],
-  "engineGap": "No proven exact two-branch symbolic solution set generator or grader. Explicit teacher review for open equations; extend existing absolute-value engine if feasible.",
-  "abcStatus": "A_C_EXPLICIT_GAP",
-  "readyForStageD": false,
+  "engineGap": "Extended existing exact engine with new family; no verified runtime test until Stage D.",
+  "abcStatus": "READY_FOR_STAGE_D_PREPARATION",
+  "readyForStageD": true,
   "testsRun": false,
-  "reason": "Major equation objective lacks verified auto-generated exact question family; source references and rubrics prepared but cannot call this lesson fully closed until extension or approved teacher-only treatment documented."
+  "reason": null,
+  "engineExtension": {
+    "family": "uae.g9.u02.l05.absolute_equation_roots",
+    "sourceFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "supportedCases": [
+      "two roots when distance>0",
+      "one root when distance=0",
+      "no solution when distance<0",
+      "Arabic Eastern digits",
+      "order independent pairs",
+      "reject malformed and wrong answers"
+    ],
+    "writeStatus": "CODE_AUTHORED_UNTESTED",
+    "testsRun": "NOT_RUN",
+    "stageDRequirements": [
+      "build compile gate",
+      "generate real Arabic questions",
+      "test false, invalid, boundary inputs",
+      "independent semantic reviewer check",
+      "check family grading against source"
+    ]
+  }
 }
