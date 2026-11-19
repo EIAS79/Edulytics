@@ -10,7 +10,7 @@
   "expectedLessons": 82,
   "requiredBookCount": 5,
   "sourceFileAuditCoverage": "5/5 files inventoried; full page-level comparison remains incomplete",
-  "indexStatus": "STRUCTURAL_82_DRAFT_SEMANTIC_COVERAGE_NOT_VERIFIED",
+  "indexStatus": "STRUCTURAL_82_DRAFT_THREE_UNIQUE_SUPPLEMENTS_ONE_DUPLICATE_CORE_AUDITED_ITEM_COVERAGE_PENDING",
   "SOURCE_INDEX_COMPLETE": false,
   "unitLessonCounts": [
     {
@@ -1599,7 +1599,7 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "SOURCE_PAGE_LOCATOR_CORRECTED_OPENING_OVERLAP_VERIFIED_FULL_EQUIVALENCE_PENDING",
+      "ElementCoverage": "SOURCE_TARGET_FULL_PAGE_SPANS_REVIEWED_OBJECTIVE_INTEGRATION_IN_PLATFORM_PENDING",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f",
       "SourcePageAccessible": true,
@@ -1633,6 +1633,27 @@
           "pdf": 24,
           "renderHash": "5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f"
         }
+      },
+      "SupplementarySkillComparison": {
+        "source": "01.pdf:7-1",
+        "target": "03-1.pdf:11-1",
+        "classification": "PARTIAL_OVERLAP_POINT_LINE_PLANE_AND_PROOF",
+        "newerPages": [
+          365,
+          372
+        ],
+        "targetPages": [
+          608,
+          615
+        ],
+        "uniqueSourceObjectives": [
+          "spatial representations, modelling and intersections",
+          "collinearity and coplanarity application"
+        ],
+        "targetOnlyObjectives": [
+          "explicit geometry postulates and deduction"
+        ],
+        "review": "FULL_PAGE_RANGES_VISUALLY_REVIEWED_ITEM_LEVEL_NOT_CLOSED"
       }
     },
     {
@@ -1677,7 +1698,7 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "PARTIAL_SOURCE_TARGET_OPENING_COMPARISON_DONE_FULL_EQUIVALENCE_NOT_VERIFIED",
+      "ElementCoverage": "SOURCE_TARGET_FULL_PAGE_SPANS_REVIEWED_OBJECTIVE_INTEGRATION_IN_PLATFORM_PENDING",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "1ae1a034d2ea80edb0d1f081bddc9247640400580e7512be55f5e8d4486874d2",
       "SourcePageAccessible": true,
@@ -1697,6 +1718,41 @@
         "comparedTargetPdfPage": 40,
         "semanticComparison": "PARTIAL_RULER_POSTULATE_OVERLAP_WITH_DISTINCT_PRACTICAL_MEASUREMENT",
         "comparisonStatus": "DIRECT_OPENING_PAGE_PAIR_VERIFIED_FULL_SOURCE_SKILL_EXERCISE_INTEGRATION_NOT_VERIFIED"
+      },
+      "SupplementarySkillComparison": {
+        "source": "01.pdf:7-2",
+        "target": "03-1.pdf:11-3",
+        "classification": "PARTIAL_OVERLAP_MEASUREMENT_AND_PROOF",
+        "newerPages": [
+          374,
+          384
+        ],
+        "targetPages": [
+          624,
+          630
+        ],
+        "uniqueSourceObjectives": [
+          "practical cm/mm ruler measurement and accuracy",
+          "precision and tolerance extension"
+        ],
+        "targetOnlyObjectives": [
+          "formal segment congruence proofs and segment addition"
+        ],
+        "review": "FULL_PAGE_RANGES_VISUALLY_REVIEWED_ITEM_LEVEL_NOT_CLOSED"
+      },
+      "ConfirmedDuplicateSupplement": {
+        "source": "01.pdf:7-4",
+        "target": "03-1.pdf:11-3",
+        "sourcePrintedPages": [
+          398,
+          404
+        ],
+        "targetPrintedPages": [
+          624,
+          630
+        ],
+        "status": "CORE_SEMANTIC_DUPLICATE_EXERCISE_VARIANT_FIDELITY_PENDING",
+        "createSeparateLesson": false
       }
     },
     {
@@ -1860,7 +1916,7 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "PARTIAL_SOURCE_TARGET_OPENING_COMPARISON_DONE_FULL_EQUIVALENCE_NOT_VERIFIED",
+      "ElementCoverage": "SOURCE_TARGET_FULL_PAGE_SPANS_REVIEWED_OBJECTIVE_INTEGRATION_IN_PLATFORM_PENDING",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "d473b8fe706f03fc5e85fcd14eec40307defa6f1377ca8b80a3487b15c2950f2",
       "SourcePageAccessible": true,
@@ -1880,6 +1936,28 @@
         "comparedTargetPdfPage": 111,
         "semanticComparison": "DISTINCT_NUMBER_LINE_MIDPOINT_VS_PERPENDICULAR_DISTANCE",
         "comparisonStatus": "DIRECT_OPENING_PAGE_PAIR_VERIFIED_FULL_SOURCE_SKILL_EXERCISE_INTEGRATION_NOT_VERIFIED"
+      },
+      "SupplementarySkillComparison": {
+        "source": "01.pdf:7-3",
+        "target": "03-1.pdf:12-6",
+        "classification": "DISTINCT_POINT_POINT_DISTANCE_AND_PERPENDICULAR_DISTANCE",
+        "newerPages": [
+          385,
+          396
+        ],
+        "targetPages": [
+          695,
+          704
+        ],
+        "uniqueSourceObjectives": [
+          "distance along number line or in coordinate plane",
+          "midpoint and segment bisection"
+        ],
+        "targetOnlyObjectives": [
+          "point-to-line shortest perpendicular distance",
+          "distance between parallel lines"
+        ],
+        "review": "FULL_PAGE_RANGES_VISUALLY_REVIEWED_ITEM_LEVEL_NOT_CLOSED"
       }
     },
     {
@@ -2112,6 +2190,10 @@
     ],
     "sourceIndexComplete": false,
     "directSourceTargetOpeningPairsVerified": 3,
-    "pairEvidence": "proposed-13x82-canonical-crosswalk.json"
+    "pairEvidence": "proposed-13x82-canonical-crosswalk.json",
+    "sourceTargetFullSpanComparisons": 3,
+    "coreDuplicatePairConfirmed": "01.pdf:7-4 with 03-1.pdf:11-3",
+    "uniqueSkillSupplementaryPairs": 3,
+    "remaining": "Integrate verified unique lesson elements and all exercise variants into 82 actual lessons, not merely mappings"
   }
 }
