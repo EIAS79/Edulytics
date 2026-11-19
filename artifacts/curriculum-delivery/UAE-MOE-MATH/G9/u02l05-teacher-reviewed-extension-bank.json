@@ -143,10 +143,97 @@
       "01.pdf:2-5:EX50",
       "01.pdf:2-5:EX51"
     ],
-    "studentFacingTask": "cooldownQ3",
+    "studentFacingTask": "sourceGraphTasks + cooldownQ3",
     "numericMidpointFamily": "uae.g9.general.u02.l05.midpoint",
     "assessment": "TEACHER_REVIEW_REQUIRED_FULL_EQUATION",
-    "note": "12 source exercises require an absolute value equation from plotted solution points; the numeric midpoint family cannot grade a full written equation."
+    "note": "12 source exercises require an absolute value equation from plotted solution points; the numeric midpoint family cannot grade a full written equation.",
+    "originalArabicVariants": [
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX11",
+        "endpoints": "−٢، ٤",
+        "expectedEquation": "|س−١|=٣",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX12",
+        "endpoints": "−٩، ٣",
+        "expectedEquation": "|س+٣|=٦",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX33",
+        "endpoints": "−٤، ٤",
+        "expectedEquation": "|س|=٤",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX34",
+        "endpoints": "−٦، ٦",
+        "expectedEquation": "|س|=٦",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX35",
+        "endpoints": "−٣ فقط",
+        "expectedEquation": "|س+٣|=٠",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX36",
+        "endpoints": "−٦، ٢",
+        "expectedEquation": "|س+٢|=٤",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX46",
+        "endpoints": "−٣٫٧٥، ٤٫٢٥",
+        "expectedEquation": "|س−٠٫٢٥|=٤",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX47",
+        "endpoints": "−١٫٥، ١٫٥",
+        "expectedEquation": "|س|=١٫٥",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX48",
+        "endpoints": "−٢٫٥، ٣٫٥",
+        "expectedEquation": "|س−٠٫٥|=٣",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX49",
+        "endpoints": "٠، ٠٫٥",
+        "expectedEquation": "|س−٠٫٢٥|=٠٫٢٥",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX50",
+        "endpoints": "٠، ٤/٣",
+        "expectedEquation": "|س−٢/٣|=٢/٣",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      },
+      {
+        "sourceExerciseId": "01.pdf:2-5:EX51",
+        "endpoints": "−٤/٣، ٢/٣",
+        "expectedEquation": "|س+١/٣|=١",
+        "assessment": "TEACHER_REVIEW_REQUIRED",
+        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+      }
+    ],
+    "status": "TWELVE_SOURCE_SPECIFIC_EQUATION_WRITING_PROMPTS_AUTHORED_RUNTIME_NOT_VERIFIED"
   },
   "solveAndGraph": {
     "sourceElementIds": [
