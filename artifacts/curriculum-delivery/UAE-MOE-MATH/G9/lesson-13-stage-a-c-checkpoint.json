@@ -45,14 +45,16 @@
       "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html"
     ],
     "coolDown": {
-      "status": "AUTHORED_IN_EXISTING_LESSON_NUMBERLINE_ACTIVITY_NOT_CLAIMED_RUNTIME_TESTED",
+      "status": "AUTHORED_WITH_LOCAL_STUDENT_RESPONSE_CAPTURE_NOT_CONNECTED_TO_PLATFORM_TEACHER_WORKFLOW",
       "artifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
       "mathematicalCases": [
         "two real roots and number-line scale",
         "empty solution justification",
         "equation from two symmetric endpoints"
       ],
-      "teacherReviewForOpenWork": true
+      "teacherReviewForOpenWork": true,
+      "responseCapture": "local structured three-question student answers, no automatic open-response grade",
+      "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)"
     }
   },
   "stageC": {
@@ -69,12 +71,14 @@
       "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
     ],
     "testsRun": "WRITTEN_NOT_RUN",
-    "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json"
+    "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+    "equivalentNumericAnswerFix": "decimal numeric equivalence including Arabic decimal separator and reordered two-solution pairs; test cases prepared not executed"
   },
   "blockingGaps": [
-    "The comprehensive cross-edition semantic index lock from the attached plan has not passed for all General source lessons.",
-    "Full source-element 1:1 coverage and teacher rubric integration into actual graded learner workflow remain incomplete; a static Cool-down alone is not system integration.",
-    "No Stage D tests, browser visual verification or final audit have been run; tests stay WRITTEN_NOT_RUN."
+    "The comprehensive cross-edition semantic index lock and final 86-entry unique index are still pending objective/example/exercise review.",
+    "Student Cool-down answers can now be captured locally but are not persisted to learner attempts or assigned to teachers in Edulytics; teacher rubric integration remains incomplete.",
+    "Source-element 1:1 exercises and activities coverage must be completed with evidence; an example fixture matrix is not exhaustive.",
+    "Stage D browser, mathematical acceptance and CI not run by design."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -114,5 +118,14 @@
       "interpret context and explain impossibility of negative absolute distances"
     ],
     "comparedAgainst": "Existing canonical Arabic lesson pack + dedicated practice families + RichV2 + original number-line lab"
+  },
+  "executionUpdate": {
+    "commits": [
+      "4c37865c5ebe5ee6d87dd7b9f936340d7e77337c",
+      "24770e6f024a885206d8e0dc04a92c3d7ea82af9",
+      "10a3f1d7d18cbaafb4939a741f2264d120bcb28d",
+      "c2388a9aed1280d5c830aa7dff38af4da220af3c"
+    ],
+    "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
 }
