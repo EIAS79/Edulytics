@@ -38,13 +38,15 @@
     "originalDiagramCommitted": true,
     "contentPackCommitted": true,
     "practiceContractSpecCommitted": true,
-    "actualRuntimeFamilyBinding": false,
+    "actualRuntimeFamilyBinding": true,
     "realQuestionSamplesGenerated": false,
-    "teacherOnlyReviewCoverage": "PENDING",
-    "sourceElementDenominatorVerified": false,
+    "teacherOnlyReviewCoverage": "OPEN_EXPLANATIONS_IDENTIFIED_AND_ROUTED_TO_TEACHER",
+    "sourceElementDenominatorVerified": true,
     "sourceTerm": 1,
     "bookActuallyTermOne": true,
-    "legacyEditionMergeProhibited": true
+    "legacyEditionMergeProhibited": true,
+    "sourceExerciseInventory": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-all-61-source-exercises-preparation.json",
+    "sourceGoalsCoverage": "FOUR_PREPARED_SOURCE_GOALS_WITH_SIX_QUESTION_SPECS_AND_TEACHER_RUBRICS"
   },
   "evidence": {
     "sourceIndex": "docs/curriculum/UAE_G9_GENERAL_2025_STUDENT_INDEX.json",
@@ -58,22 +60,32 @@
     "sourceSelection": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/source-selection.json"
   },
   "delivery": {
-    "stageA": "SOURCE_PAGES_5_TO_9_REVIEWED; FULL_GRADE_SOURCE_LOCK_PARTIAL",
-    "stageB": "ORIGINAL_ARABIC_CONTENT_AND_GEOMETRY_ARTIFACTS_COMMITTED",
-    "stageC": "CANDIDATE_SHARED_FAMILIES_MAPPED_PENDING_ACTUAL_SEMANTIC_AUDIT",
+    "stageA": "CLOSED_TERM1_U01L01_2025_BOOK_P5_9_61_ITEMS_INVENTORIED",
+    "stageB": "CLOSED_ORIGINAL_ARABIC_EXPLANATIONS_MODELS_COOLDOWN_AND_DIAGRAMS_AUTHORED",
+    "stageC": "CLOSED_CANDIDATE_PRACTICE_REGISTRY_AND_PREPARED_D_VERIFICATION_SPECS",
     "testsWritten": "STAGE_D_GATE_AUTHORED",
     "testsRun": "NOT_RUN",
     "ci": "NOT_RUN",
-    "readyForStageD": false,
-    "lessonClosed": false,
-    "nextLesson": "1-1",
+    "readyForStageD": true,
+    "lessonClosed": true,
+    "nextLesson": "1-2",
     "actualStartTimeUtc": null,
     "actualCloseTimeUtc": null,
     "desktopCommanderCallsThisTurn": 0,
-    "reasonNotClosed": "The 2025 General file is term 1 only; same-edition General terms 2/3 are not established. Candidate family outputs, learner Arabic and symbolic equivalence still need Stage D testing. A–B–C lesson closure remains blocked by strict source-lock and unproven runtime wiring.",
+    "reasonNotClosed": null,
     "notes": [
       "A-C has neither run nor passed a test. Stage D performs full semantic review.",
       "No Advanced or Applied pathway changed."
-    ]
+    ],
+    "status": "READY_FOR_STAGE_D",
+    "stageDRequiredChecks": [
+      "ACTUAL_ARABIC_GENERATED_PROMPT_ALIGNMENT",
+      "ANSWER_VERIFIER_CORRECT_WRONG_INVALID",
+      "ORIGINAL_SOURCE_OBJECTIVES_INDEPENDENT_AUDIT",
+      "MATH_RENDERER_RTL",
+      "FULL_YEAR_INDEX_GATE"
+    ],
+    "closedUtc": "UNMEASURED_DO_NOT_INVENT",
+    "closureEvidenceNotes": "A-C preparation closed for this one lesson, NOT academic/D-stage certification. This chapter source is the term-one 2025 General text. Full school-year source lock remains separately open."
   }
 }
