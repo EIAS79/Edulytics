@@ -84,7 +84,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
             Zero => $"حل المعادلة |{a}س{Signed(b)}|=0. اكتب قيمة س.",
             None => $"حل المعادلة |{a}س{Signed(b)}|=−{target}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
             Evaluate => $"إذا كانت س={m+r}، فأوجد قيمة |{a}س{Signed(b)}|.",
-            Composite => $"إذا كانت س={m+r}، احسب قيمة |{a}س{Signed(b)}|−{r+3}.",
+            Composite => CompositePrompt(a, b, m, r, random),
             OuterImpossible => $"حل المعادلة {a}−{r}|س{Signed(-m)}|={a+r}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
             _ => $"نقطتان على خط الأعداد عند {m-r} و{m+r}. ما منتصفهما (مركز معادلة القيمة المطلقة)؟"
         };
@@ -105,6 +105,18 @@ internal static class UaeG9AbsoluteValueEquationQuestions
             0 => $"حل المعادلة |{a}س{Signed(b)}|={target}." + instruction,
             1 => $"حل المعادلة ٢|{a}س{Signed(b)}|={2 * target}." + instruction,
             _ => $"حل المعادلة |({a}س{Signed(b)})/٢|={target}/٢." + instruction
+        };
+    }
+
+    private static string CompositePrompt(int a, int b, int m, int r, Random random)
+    {
+        // Equivalent source-skill variants, all evaluating to a*r-r-3.
+        // Independent verification remains based solely on the immutable parameters.
+        return random.Next(3) switch
+        {
+            0 => $"إذا كانت س={m+r}، احسب |{a}س{Signed(b)}|−{r+3}.",
+            1 => $"إذا كانت س={m+r} وص=−{r}، احسب |{a}س{Signed(b)}|−|ص|−٣.",
+            _ => $"إذا كانت س={m+r} وص={r}، احسب ٢|{a}س{Signed(b)}|−|{a}س{Signed(b)}|−|ص|−٣."
         };
     }
 
