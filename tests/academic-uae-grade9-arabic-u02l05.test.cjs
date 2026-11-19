@@ -151,3 +151,31 @@ test('Every source exercise has guarded numeric or teacher-reviewed routing with
   }
   assert.ok(a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX41')).digitalFamily.endsWith('.outer_coefficient_no_solution'));
 });
+
+
+test('Source exercise routing ledgers remain synchronized for all 64 exercises', () => {
+  const source = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json');
+  const ledger = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-source-exercise-treatment-ledger.json');
+  const items = source.sourceExerciseInventory.items;
+  assert.equal(items.length, 64);
+  assert.equal(ledger.entries.length, items.length);
+  const index = new Map(items.map(item => [item.itemId, item]));
+  assert.equal(index.size, items.length);
+  for (const entry of ledger.entries) {
+    const item = index.get(entry.sourceElementId);
+    assert.ok(item, entry.sourceElementId + ' is missing in source inventory');
+    assert.equal(entry.AllowedDigitalFamily ?? null, item.digitalFamily ?? null,
+      entry.sourceElementId + ': mismatched digital family');
+    if (item.teacherReviewRequired === true || item.teacherVisualReview === true) {
+      assert.match(entry.AssessmentRoute, /TEACHER/,
+        entry.sourceElementId + ': teacher-reviewed work must not be treated as fully autograded');
+    }
+    assert.notEqual(entry.ExactEquivalent, true,
+      entry.sourceElementId + ': source equivalence requires independent audit');
+  }
+  const visual = source.objectives.find(o => o.objectiveId === 'O3');
+  assert.ok(visual);
+  assert.equal(visual.humanReviewRequired, true,
+    'Number-line drawing and explanation must retain teacher review');
+  assert.equal(visual.testsRun, 'WRITTEN_NOT_RUN');
+});
