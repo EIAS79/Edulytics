@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "packCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "targetSchoolYear": "2026-2027",
+    "academicLanguage": "ar",
+    "rtl": true
+  },
+  "requested": {
+    "units": 14,
+    "lessons": 86
+  },
+  "sourceLock": {
+    "status": "BLOCKED_INCOMPLETE_COMPATIBLE_SOURCE",
+    "selectedEdition": "2025-2026",
+    "verifiedSameEditionUnits": 7,
+    "verifiedSameEditionLessons": 43,
+    "missingSameEditionUnits": 7,
+    "missingSameEditionLessons": 43
+  },
+  "priorPreparedABC": {
+    "lessons": 12,
+    "nextUnclosedLesson": "2-5",
+    "sourceEdition": "2025-2026",
+    "countNature": "Prior work checkpoint, not new verified source lock or Stage D pass"
+  },
+  "currentLesson": {
+    "code": "2-5",
+    "title": "حل معادلات تتضمن قيمة مطلقة",
+    "contentPrepared": true,
+    "exactPracticeFamiliesPrepared": 5,
+    "sourcePagesReviewed": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "status": "A_C_EXPLICIT_GAP_SOURCE_LOCK_INCOMPLETE",
+    "closed": false
+  },
+  "closingRule": "No transition past source lock; no next lesson until current closure with Evidence+Checkpoint+Commit. Source missing is explicit A_C_EXPLICIT_GAP, never READY_FOR_STAGE_D.",
+  "stageD": {
+    "testsExecutedByThisPass": false,
+    "ciGatesExecutedByThisPass": false,
+    "e2eExecutedByThisPass": false,
+    "releaseApproved": false
+  },
+  "sourceArtifacts": [
+    "source-inventory.json",
+    "source-selection.json",
+    "edition-diff.json",
+    "source-index.json"
+  ],
+  "blockedReasons": [
+    "Only same-edition General student book 01.pdf has 7 units/43 lessons",
+    "Remaining General books are from 2019-2020 and conflict on unit 7",
+    "02.pdf and 03.pdf are Applied and must be excluded",
+    "Owner target 14/86 not established by current same-edition source"
+  ],
+  "lastUpdated": "2026-11-19"
+}
