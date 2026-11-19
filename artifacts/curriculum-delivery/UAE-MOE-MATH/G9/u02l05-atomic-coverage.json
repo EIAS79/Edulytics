@@ -126,7 +126,7 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_EQUATION_FROM_GRAPH_CORRECTLY_TEACHER_REVIEWED",
+    "status": "A_C_PAGE_105_SIGN_AND_COMPOSITE_ROUTING_CORRECTED_TESTS_NOT_RUN",
     "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
@@ -154,7 +154,14 @@
     "fractionalOuterVariantCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
     "fractionalOuterTestCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc",
     "dualRouteNumericPlusGraph": 6,
-    "graphToEquationTeacherReview": 12
+    "graphToEquationTeacherReview": 12,
+    "additionalCorrectedItemIds": [
+      "EX01",
+      "EX02",
+      "EX03",
+      "EX06",
+      "EX09"
+    ]
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
   "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
@@ -180,9 +187,11 @@
         "pdfPage": 116,
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
-        "digitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
+        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
       },
       {
         "itemId": "01.pdf:2-5:EX02",
@@ -190,9 +199,11 @@
         "pdfPage": 116,
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
-        "digitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
+        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
       },
       {
         "itemId": "01.pdf:2-5:EX03",
@@ -200,9 +211,11 @@
         "pdfPage": 116,
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
-        "digitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
+        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
       },
       {
         "itemId": "01.pdf:2-5:EX04",
@@ -234,11 +247,13 @@
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
-        "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "digitalFamily": "uae.g9.general.u02.l05.no_solution",
+        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
+        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used."
       },
       {
         "itemId": "01.pdf:2-5:EX07",
@@ -270,11 +285,13 @@
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
-        "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "digitalFamily": "uae.g9.general.u02.l05.no_solution",
+        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
+        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used."
       },
       {
         "itemId": "01.pdf:2-5:EX10",
