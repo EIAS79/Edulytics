@@ -98,5 +98,27 @@
   "teacherOnlySourceExercisesLesson2_5": 33,
   "numericCandidateExercisesLesson2_5": 31,
   "teacherVisualReviewInAdditionToNumeric": 6,
-  "fullGradeStageABCStatus": "IN_PROGRESS_NO_FALSE_12_CLOSED_CLAIM"
+  "fullGradeStageABCStatus": "IN_PROGRESS_NO_FALSE_12_CLOSED_CLAIM",
+  "fiveBookIntegrity": {
+    "source": "five-book-page-raster-audit.json",
+    "allFiveSha256Verified": true,
+    "all86RawOpeningPagesExistAndRenderNonBlank": true,
+    "semanticReviewComplete": false
+  },
+  "canonicalTargetPageIntegrity": {
+    "source": "grade9-82-target-index.json",
+    "all82PrimaryPagesRenderAndHaveFingerprint": true,
+    "indexSemanticComplete": false
+  },
+  "u02l05LatestEvidence": {
+    "objectiveTopicMatchesReviewed": 5,
+    "sourceExerciseRows": 64,
+    "digitalFamilyCandidates": 31,
+    "teacherOnlySourceExercises": 33,
+    "numericPlusTeacherVisualSourceExercises": 6,
+    "sourceExerciseRoutingAllPresent": true,
+    "exactItemSemanticEquivalenceComplete": false,
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "indexAndAcdStatus": "82_TARGET_ROWS_AND_FIVE_PDF_FILE_INTEGRITY_VERIFIED; FULL_SEMANTIC_LESSON_COVERAGE_PENDING"
 }
