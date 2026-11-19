@@ -69,13 +69,14 @@
     ]
   },
   "stageC": {
-    "status": "SEVEN_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
-    "familyCount": 7,
+    "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
+    "familyCount": 8,
     "modifiedPaths": [
       "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
       "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
       "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
-      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
     ],
     "testSourcePaths": [
       "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
@@ -86,7 +87,8 @@
     "equivalentNumericAnswerFix": "decimal numeric equivalence including Arabic decimal separator and reordered two-solution pairs; test cases prepared not executed",
     "additionalPreparedFamilies": [
       "uae.g9.general.u02.l05.composite_evaluation",
-      "uae.g9.general.u02.l05.outer_coefficient_no_solution"
+      "uae.g9.general.u02.l05.outer_coefficient_no_solution",
+      "uae.g9.general.u02.l05.context_tolerance_endpoints"
     ]
   },
   "blockingGaps": [
@@ -140,7 +142,10 @@
       "24770e6f024a885206d8e0dc04a92c3d7ea82af9",
       "10a3f1d7d18cbaafb4939a741f2264d120bcb28d",
       "c2388a9aed1280d5c830aa7dff38af4da220af3c",
-      "ef7772b75fac792bab8ee5ff78174b37dc702105"
+      "ef7772b75fac792bab8ee5ff78174b37dc702105",
+      "5aafa633b165d5f49bdda4e181232abdcd17b432",
+      "4bce679dae6aae589e71c0e8875a5a188713e43f",
+      "8e33ca465950a86ce9c030f09411bb50aeb34fa5"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
