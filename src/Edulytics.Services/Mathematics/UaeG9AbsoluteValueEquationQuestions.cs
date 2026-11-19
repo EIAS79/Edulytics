@@ -112,11 +112,13 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     {
         // Equivalent source-skill variants, all evaluating to a*r-r-3.
         // Independent verification remains based solely on the immutable parameters.
-        return random.Next(3) switch
+        return random.Next(5) switch
         {
             0 => $"إذا كانت س={m+r}، احسب |{a}س{Signed(b)}|−{r+3}.",
             1 => $"إذا كانت س={m+r} وص=−{r}، احسب |{a}س{Signed(b)}|−|ص|−٣.",
-            _ => $"إذا كانت س={m+r} وص={r}، احسب ٢|{a}س{Signed(b)}|−|{a}س{Signed(b)}|−|ص|−٣."
+            2 => $"إذا كانت س={m+r} وص={r}، احسب ٢|{a}س{Signed(b)}|−|{a}س{Signed(b)}|−|ص|−٣.",
+            3 => $"إذا كانت س={m+r} وص={r}، احسب |{a}س{Signed(b)}|+|ص|−{2*r+3}.",
+            _ => $"إذا كانت س={m+r}، احسب −|{a}س{Signed(b)}|{Signed(2*a*r-r-3)}."
         };
     }
 
