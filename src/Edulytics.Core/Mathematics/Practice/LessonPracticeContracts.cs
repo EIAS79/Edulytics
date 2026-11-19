@@ -11045,6 +11045,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L05_P103_109",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // UAE G9 General 2025 U02L06 pp.111–117. D semantic gate mandatory.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS", "proportions.equivalent_ratios",
+            "G9_U02L06_RATIO_PROP_CROSS_MULTIPLICATION_UNITS",
+            ["ratio.unit_rate.equivalent_ratio","usccss.g7.u02.l04.proportional_equations",
+             "ratio.unit_rate.direct"],
+            "UAE_G9_GENERAL_2025_AR_U02L06_P111_117",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
