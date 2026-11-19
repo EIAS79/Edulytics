@@ -17,6 +17,8 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     [InlineData("no_solution", 3, -2, 7, "لا يوجد حل", "-2")]
     [InlineData("evaluate_absolute", 3, -2, 7, "21", "-21")]
     [InlineData("midpoint", 3, -2, 7, "-2", "2")]
+    [InlineData("composite_evaluation", 3, -2, 7, "11", "21")]
+    [InlineData("outer_coefficient_no_solution", 3, -2, 7, "لا حل", "-2")]
     public void IndependentVerifierAcceptsCorrectAndRejectsWrong(
         string suffix, int a, int midpoint, int radius, string correct, string incorrect)
     {
@@ -78,13 +80,15 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
             Prefix + "one_solution",
             Prefix + "no_solution",
             Prefix + "evaluate_absolute",
-            Prefix + "midpoint"
+            Prefix + "midpoint",
+            Prefix + "composite_evaluation",
+            Prefix + "outer_coefficient_no_solution"
         };
         var questions = engine.Generate("UAE-G9-GENERAL",
             "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
-            families, ExactSkillQuestionDifficulty.Standard, 5, 20261119,
+            families, ExactSkillQuestionDifficulty.Standard, 7, 20261119,
             Array.Empty<string>());
-        Assert.Equal(5, questions.Count);
+        Assert.Equal(7, questions.Count);
         foreach (var q in questions)
         {
             Assert.StartsWith(Prefix, q.Family);

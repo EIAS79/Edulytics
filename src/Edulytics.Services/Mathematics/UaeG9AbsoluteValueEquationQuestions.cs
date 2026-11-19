@@ -15,12 +15,14 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     internal const string None = "uae.g9.general.u02.l05.no_solution";
     internal const string Evaluate = "uae.g9.general.u02.l05.evaluate_absolute";
     internal const string Center = "uae.g9.general.u02.l05.midpoint";
+    internal const string Composite = "uae.g9.general.u02.l05.composite_evaluation";
+    internal const string OuterImpossible = "uae.g9.general.u02.l05.outer_coefficient_no_solution";
     internal sealed record Item(
         string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     internal static bool Supports(string? family) =>
-        family is Two or Zero or None or Evaluate or Center;
+        family is Two or Zero or None or Evaluate or Center or Composite or OuterImpossible;
 
     private static bool Valid(string family, IReadOnlyDictionary<string, int>? p)
     {
@@ -60,6 +62,8 @@ internal static class UaeG9AbsoluteValueEquationQuestions
             None => "لايوجدحل",
             Evaluate => (a * r).ToString(CultureInfo.InvariantCulture),
             Center => m.ToString(CultureInfo.InvariantCulture),
+            Composite => (a*r-r-3).ToString(CultureInfo.InvariantCulture),
+            OuterImpossible => "لايوجدحل",
             _ => ""
         };
         return true;
@@ -78,6 +82,8 @@ internal static class UaeG9AbsoluteValueEquationQuestions
             Zero => $"حل المعادلة |{a}س{Signed(b)}|=0. اكتب قيمة س.",
             None => $"حل المعادلة |{a}س{Signed(b)}|=−{target}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
             Evaluate => $"إذا كانت س={m+r}، فأوجد قيمة |{a}س{Signed(b)}|.",
+            Composite => $"إذا كانت س={m+r}، احسب قيمة |{a}س{Signed(b)}|−{r+3}.",
+            OuterImpossible => $"حل المعادلة {a}−{r}|س{Signed(-m)}|={a+r}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
             _ => $"نقطتان على خط الأعداد عند {m-r} و{m+r}. ما منتصفهما (مركز معادلة القيمة المطلقة)؟"
         };
         return new Item(family,prompt,
@@ -97,7 +103,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         if (string.IsNullOrWhiteSpace(answer) || answer.Length > 80 ||
             !TryExpected(family,p,out var expected)) return false;
         var actual=Normalized(answer);
-        if (family==None) return actual is "لايوجدحل" or "لاحل" or "لامجموعةحل" or "مجموعةالحلخالية" or "∅" or "{}";
+        if (family is None or OuterImpossible) return actual is "لايوجدحل" or "لاحل" or "لامجموعةحل" or "مجموعةالحلخالية" or "∅" or "{}";
         if (family==Two)
         {
             // Do not silently accept missing answers such as "1,9," or ",1,9".

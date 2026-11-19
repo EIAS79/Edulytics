@@ -35,7 +35,9 @@
     "evidencePaths": [
       "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
       "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-a-c-source-review-in-progress.json"
-    ]
+    ],
+    "exerciseInventory": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+    "sourceExercisesMapped": 64
   },
   "stageB": {
     "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
@@ -55,11 +57,17 @@
       "teacherReviewForOpenWork": true,
       "responseCapture": "local structured three-question student answers, no automatic open-response grade",
       "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)"
-    }
+    },
+    "sourceSpecificExamplesAdded": [
+      "composite absolute expressions",
+      "negative isolation for external coefficient",
+      "equation from graph",
+      "time tolerance with unit normalization"
+    ]
   },
   "stageC": {
-    "status": "EXACT_PRACTICE_FAMILIES_IMPLEMENTED_D_TESTS_WRITTEN_NOT_RUN",
-    "familyCount": 5,
+    "status": "SEVEN_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
+    "familyCount": 7,
     "modifiedPaths": [
       "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
       "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
@@ -72,13 +80,17 @@
     ],
     "testsRun": "WRITTEN_NOT_RUN",
     "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
-    "equivalentNumericAnswerFix": "decimal numeric equivalence including Arabic decimal separator and reordered two-solution pairs; test cases prepared not executed"
+    "equivalentNumericAnswerFix": "decimal numeric equivalence including Arabic decimal separator and reordered two-solution pairs; test cases prepared not executed",
+    "additionalPreparedFamilies": [
+      "uae.g9.general.u02.l05.composite_evaluation",
+      "uae.g9.general.u02.l05.outer_coefficient_no_solution"
+    ]
   },
   "blockingGaps": [
-    "The comprehensive cross-edition semantic index lock and final 86-entry unique index are still pending objective/example/exercise review.",
-    "Student Cool-down answers can now be captured locally but are not persisted to learner attempts or assigned to teachers in Edulytics; teacher rubric integration remains incomplete.",
-    "Source-element 1:1 exercises and activities coverage must be completed with evidence; an example fixture matrix is not exhaustive.",
-    "Stage D browser, mathematical acceptance and CI not run by design."
+    "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
+    "Comprehensive general-edition semantic dedup lock incomplete.",
+    "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
+    "Stage D execution not run by design."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,

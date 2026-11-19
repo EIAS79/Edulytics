@@ -11068,7 +11068,9 @@ public static class LessonPracticeContractRegistry
                 "uae.g9.general.u02.l05.one_solution",
                 "uae.g9.general.u02.l05.no_solution",
                 "uae.g9.general.u02.l05.evaluate_absolute",
-                "uae.g9.general.u02.l05.midpoint"
+                "uae.g9.general.u02.l05.midpoint",
+                "uae.g9.general.u02.l05.composite_evaluation",
+                "uae.g9.general.u02.l05.outer_coefficient_no_solution"
             ],
             "UAE_G9_GENERAL_2025_AR_U02L05_P103_108",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
