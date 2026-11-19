@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "ONE_SEMANTIC_DUPLICATE_DETERMINED_WITH_SUPPLEMENTAL_SOURCE_SAVED; REMAINING_PAIRS_PENDING",
+  "reviewStatus": "FOUR_CONTENT_OVERLAP_GROUPS_SCREENED; ALL_86_ELEMENT_COVERAGE_STILL_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -236,6 +236,51 @@
       "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
       "decision": null,
       "preserveUntilReviewed": true
+    },
+    {
+      "rawOrdinalA": 80,
+      "rawOrdinalB": 84,
+      "reason": "Source book labels 13-3 as congruent triangles and 13-7 as congruence; distinct learning emphases",
+      "status": "SOURCE_OBJECTIVES_COMPARED",
+      "decision": "PARTIAL_OVERLAP_RETAIN_DISTINCT_SKILLS",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-3",
+          "printedPagesReviewed": [
+            735,
+            736,
+            737,
+            738
+          ],
+          "pdfPagesReviewed": [
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-7",
+          "printedPagesReviewed": [
+            777,
+            778,
+            779,
+            780
+          ],
+          "pdfPagesReviewed": [
+            192,
+            193,
+            194,
+            195
+          ],
+          "note": "13-7 starts printed page 776/PDF 192? sample begins later on printed 777; opening page must be rechecked."
+        },
+        "contrast": "13-3 focuses on correspondence of triangle vertices/sides/angles in congruent figures; 13-7 works with transformations and coordinate-based congruence demonstrations and SSS reasoning. Not an exact duplicate."
+      }
     }
   ],
   "rule": "Do not remove or merge lesson based only on title, unit ID, or publisher year. Preserve complementary skills.",
