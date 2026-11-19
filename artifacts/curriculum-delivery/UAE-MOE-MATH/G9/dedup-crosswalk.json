@@ -2,15 +2,56 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "PENDING_FULL_SEMANTIC_COMPARE",
+  "reviewStatus": "EARLY_PAGE_MATCH_FOUND_GLOBAL_REVIEW_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
       "rawOrdinalB": 70,
       "reason": "Same lesson title: geometric segment relationships",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
+      "status": "EARLY_PAGE_SEMANTIC_AND_LAYOUT_OVERLAP_VERIFIED_REMAINDER_PENDING",
       "decision": null,
-      "preserveUntilReviewed": true
+      "preserveUntilReviewed": true,
+      "evidence": {
+        "bookA": {
+          "file": "01.pdf",
+          "sourceLesson": "7-4",
+          "printedPagesReviewed": [
+            398,
+            399,
+            400,
+            401
+          ],
+          "pdfPagesReviewed": [
+            409,
+            410,
+            411,
+            412
+          ]
+        },
+        "bookB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "11-3",
+          "printedPagesReviewed": [
+            624,
+            625,
+            626,
+            627
+          ],
+          "pdfPagesReviewed": [
+            40,
+            41,
+            42,
+            43
+          ]
+        },
+        "observations": [
+          "Matching opening examples on measuring segments and the segment addition postulate with similar diagrams.",
+          "Same adjacent lesson-level skill topic with near-identical worked examples.",
+          "Older source lesson continues through p630, newer source lesson continues beyond p401; remaining activities, exercises and distinct objectives must still be compared before collapsing."
+        ],
+        "comparisonClass": "STRONG_SEMANTIC_DUPLICATE_CANDIDATE_NOT_DECIDED",
+        "coveredSourcePagesBoth": false
+      }
     },
     {
       "rawOrdinalA": 20,
