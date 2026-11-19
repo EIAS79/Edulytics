@@ -10869,6 +10869,20 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+
+        // UAE Grade 9 General / 2025-2026 student book U01L01 / printed pages 5-9.
+        // Reuse only existing expression-interpretation and coefficient candidates.
+        // This A-C preparation is NOT READY_VERIFIED; Stage D must check Arabic
+        // learner prompts, objective alignment, grader and independent verifier.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+            "supporting.algebra.expressions",
+            "G9_U01L01_VERBAL_TO_SYMBOLIC_COMPONENT_IDENTIFICATION",
+            ["usccss.algebra.expression_words", "usccss.algebra.expression_coefficient"],
+            "UAE_G9_GENERAL_AR_U01L01_STAGE_A_C_SOURCE_PREPARED",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
