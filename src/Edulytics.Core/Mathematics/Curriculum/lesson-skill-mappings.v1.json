@@ -11820,17 +11820,19 @@
       ],
       "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L05",
       "officialOutcomeMapped": false,
-      "mappingConfidence": "SOURCE_REVIEWED_FULL_EQUATION_FAMILY_MISSING",
+      "mappingConfidence": "GRADE9_ENGINE_IMPLEMENTED_WITH_UNRUN_D_TESTS",
       "evidence": [
         "Book 01.pdf 2025 General printed p103-109, absolute-value equations with two-case analysis, no/one/two solution cases, number-line contextual distances.",
         "Existing absolute distance and translated-value evaluation are partial reuse; no proof they solve two-branch equations. Stage D must expose missing exact grader coverage.",
-        "New exact question-family branch authored in ExactSkillContractQuestionEngine: Arabic absolute equation set solving 0/1/2 roots; mathematical solver independent of lexical answer verifier. Stage D must execute regression tests."
+        "New exact question-family branch authored in ExactSkillContractQuestionEngine: Arabic absolute equation set solving 0/1/2 roots; mathematical solver independent of lexical answer verifier. Stage D must execute regression tests.",
+        "Added bounded first-party UaeGrade9AbsoluteValueEquationQuestions adapter, wired into shared ExactSkillContractQuestionEngine for generation, solver, independent verifier; Stage D must run actual positive, zero, negative RHS and malformed-input cases. Shared distance engines remain intact but are not misclassified as equation solving."
       ],
-      "practiceReadiness": "PREPARED_ENGINE_EXTENSION_STAGE_D_NOT_RUN",
-      "practiceMechanic": "G9_U02L05_ABSOLUTE_EQUATIONS_TWO_BRANCH_AND_DISTANCE",
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L05_EXACT_ABSOLUTE_TWO_ZERO_NEGATIVE_CASES",
       "allowedQuestionFamilies": [
-        "uae.g9.u02.l05.absolute_equation_roots",
-        "usccss.g6.u07.l06.absolute_distance_values"
+        "uae.g9.u02.l05.absolute_equation_two_solutions",
+        "uae.g9.u02.l05.absolute_equation_zero_distance",
+        "uae.g9.u02.l05.absolute_equation_negative_distance"
       ],
       "officialOutcomeCodes": []
     }
