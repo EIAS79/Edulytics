@@ -11035,6 +11035,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_AR_U02L03_P91_96",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // UAE Grade9 General U02L03 Arabic student lab p90, lesson pp91-96;
+        // numeric exact generator reuse, geometric/algebra-tile teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:03:MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:03:MULTI-STEP-EQUATIONS","algebra.linear.solve",
+            "G9_U02L03_MULTI_STEP_LINEAR_DISTRIBUTION_AND_LIKE_TERMS",
+            ["algebra.linear.ax_plus_b_equals_c",
+             "supporting.algebra.equations.mixed",
+             "supporting.algebra.expand"],
+            "UAE_G9_GENERAL_2025_AR_U02L03_P90_96",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
