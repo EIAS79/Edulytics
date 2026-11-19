@@ -64,6 +64,12 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <textarea id="cooldownQ2" required rows="3" placeholder="اكتب مجموعة الحل وسبب اختيارك"></textarea>
 <label for="cooldownQ3">٣. المعادلة وتبرير المركز والمسافة:</label>
 <textarea id="cooldownQ3" required rows="3" placeholder="اكتب المعادلة وكيف تحققت من الحلين"></textarea>
+<fieldset><legend>تطبيقات وتبرير إضافي من أهداف الدرس</legend>
+<label for="contextQ4">٤. سياق قياس: القيمة المطلوبة ٢٥ سم، والسماحية ٣ سم بالضبط. اكتب معادلة القيمة المطلقة وحدد القياسين الممكنين، ثم فسر معنى السماحية.</label>
+<textarea id="contextQ4" required rows="3" placeholder="المعادلة، القياسان، وتفسير وحدة القياس"></textarea>
+<label for="contextQ5">٥. تحليل خطأ: ادّعى طالب أن المعادلة |س − ٤| = −٢ لها حلان لأننا نحل حالتين دائمًا. حلّل الخطأ واذكر شرط وجود الحلول.</label>
+<textarea id="contextQ5" required rows="3" placeholder="اشرح لماذا لا توجد حلول، ومتى يوجد حل أو حلان"></textarea>
+</fieldset>
 <button type="submit">تجهيز إجابات الطالب لمراجعة المعلم</button>
 <p id="cooldownMessage" role="status" aria-live="polite"></p>
 <label for="cooldownSubmission">سجل الإجابات لنقله إلى المعلم (لا يمثل درجة):</label>
@@ -72,7 +78,7 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <details id="cooldownKey" hidden><summary>التحقق بعد تسجيل المحاولة (إجابات وتفسير)</summary>
 <p>١. س = −٢ أو س = ٨؛ منتصف الحلين ٣ وبعد كل منهما ٥ وحدات.</p>
 <p>٢. مجموعة الحل خالية، لأن القيمة المطلقة لا يمكن أن تساوي عددًا سالبًا.</p>
-<p>٣. المنتصف = ١٣، والمسافة = ٦؛ المعادلة <span class="eq">|س − ١٣| = ٦</span>، والحلان ٧ و١٩.</p>
+<p>٣. المنتصف = ١٣، والمسافة = ٦؛ المعادلة <span class="eq">|س − ١٣| = ٦</span>، والحلان ٧ و١٩.</p><p>٤. |س − ٢٥| = ٣، والقياسان ٢٢ سم و٢٨ سم. السماحية مقدار الاختلاف عن القيمة المستهدفة.</p><p>٥. لا توجد حلول؛ المسافة التي تمثلها القيمة المطلقة لا تكون سالبة. الطرف صفر يعطي حلًا واحدًا، والموجب قد يعطي حلين في هذه المعادلات الخطية.</p>
 </details>
 <div class="teacher"><strong>مراجعة المعلم:</strong> في السؤال الأول يراجع التدرج والنقطتين، وفي الثاني يراجع السبب الرياضي، وفي الثالث يراجع اختيار المركز والمسافة والتحقق. الإجابات الظاهرة للمتعلم ليست تقييمًا آليًا معتمدًا للرسوم أو التفسيرات.</div>
 </section>
@@ -118,10 +124,10 @@ for(let point=-5;point<=10;point++){
 updatePointPicker();
 document.getElementById('cooldownResponse').addEventListener('submit',event=>{
  event.preventDefault();
- const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim());
+ const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim()).concat([4,5].map(n=>document.getElementById('contextQ'+n).value.trim()));
  if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
  if(selectedCoolDownPoints.size!==2){document.getElementById('cooldownMessage').textContent='حدد نقطتين على خط الأعداد للسؤال الأول.';return;}
- const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer}))};
+ const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'}))};
  document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
  document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
  document.getElementById('cooldownKey').hidden=false;
