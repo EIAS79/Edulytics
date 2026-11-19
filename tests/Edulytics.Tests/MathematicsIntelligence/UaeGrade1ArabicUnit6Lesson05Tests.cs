@@ -7,6 +7,27 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UaeGrade1ArabicUnit6Lesson05Tests
 {
     [Fact]
+    public void RegroupingNineteenPlusOneIsValidAndExactlyVerified()
+    {
+        const string family = "uae.g1.u07.l05.regroup_ones_for_tens";
+        var parameters = new Dictionary<string, int>
+        {
+            ["a"] = 19, ["b"] = 1, ["mode"] = 0, ["result"] = 20
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, parameters, "20"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, parameters, "٢٠"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family, parameters, "19"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            family, new Dictionary<string, int>
+            {
+                ["a"] = 19, ["b"] = 1, ["mode"] = 0, ["result"] = 21
+            }, "21"));
+    }
+
+    [Fact]
     public void Unit6SourceExactFamily_RejectsWrongAnswers()
     {
         const string code="PED:UAE-MOE-MATH:L1:COMMON:07:05";

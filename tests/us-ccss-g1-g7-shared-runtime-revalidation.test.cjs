@@ -1,4 +1,4 @@
-
+﻿
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
@@ -9,7 +9,7 @@ const root=path.resolve(__dirname,'..');
 const proof='e702b36328ff90cbb01e7ac81a4a90c06e165989';
 const expected=new Map([
  ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs','4ab3d76929f98384a8cbde990e9298cfa0d7d3f6'],
- ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs','1621291d58735d314953c908ac2d02dc04282e8d'],
+ ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs','e06df7149cf93fdbfafe0590ba79ef6afd0fc4cc'],
  ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b'],
 ]);
 

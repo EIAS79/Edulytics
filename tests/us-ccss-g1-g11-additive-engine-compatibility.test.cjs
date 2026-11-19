@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const cp=require('node:child_process');
@@ -105,16 +105,33 @@ function withoutGrade8ScopedPracticeAssignments(lines){
   assert.ok(count<=77,'G8 scoped contract selector unexpectedly broad');
   return result;
 }
+// A verified UAE-G1 arithmetic correction: the generator legitimately emits
+// 19+1, and 20 is the correct result. Allow exactly this verifier bound,
+ // not arbitrary edits in the US G1/G11 shared Mathematics engine.
+const oldRegroupVerifierLine='            5 => a is >= 11 and <= 19 && b is >= 2 and <= 9 &&';
+const newRegroupVerifierLine='            5 => a is >= 11 and <= 19 && b is >= 1 and <= 9 &&';
 function assertOriginalLinesUnchanged(ref,file){
   const baseline=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(
         stripOnlyRetiredGrade9Contracts(
           stripOnlyRetiredG8AdvancedContract(
             stripOnlyRetiredG7Contract(priorLines(ref,file)))))
-    : priorLines(ref,file);
+    : file===engine
+      ? priorLines(ref,file).map(line=>
+          line===oldRegroupVerifierLine ? newRegroupVerifierLine : line)
+      : priorLines(ref,file);
   const current=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
     : nowLines(file);
+  if(file===engine){
+    const oldLines=priorLines(ref,file);
+    assert.equal(oldLines.filter(x=>x===oldRegroupVerifierLine).length,1,
+      'Exactly one previous G1 regrouping verifier bound was present');
+    assert.equal(current.filter(x=>x===newRegroupVerifierLine).length,1,
+      'Only reviewed G1 19+1 correction is accepted');
+    assert.ok(!current.includes(oldRegroupVerifierLine),
+      'Prior G1 regrouping false negative must not return');
+  }
   if(file===contracts) {
     assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
       'Retired English G7 contract accidentally reinstated');
@@ -156,7 +173,10 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
       assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
         'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
     }else{
-      assert.equal(Number(removed),0,'Previously accepted non-G8 engine source changed');
+      const deleted=git('diff','--unified=0',preG5,'HEAD','--',engine)
+        .split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
+      assert.deepEqual(deleted, ['-'+oldRegroupVerifierLine],
+        'Only the separately proven G1 regrouping false-negative line may change');
     }
     assert.ok(Number(added)>0);
   }
@@ -188,7 +208,7 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
       assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
         'Retired G7 and G8 Advanced plus exact approved Grade8 General contract blob required');
     else
-      assert.deepEqual(deleted,[],
-        'Previously accepted US/G1/G11 exact-engine source must remain immutable');
+      assert.deepEqual(deleted,['-'+oldRegroupVerifierLine],
+        'Only verified UAE G1 19+1 arithmetic correction is allowed; US G1/G11 routes unchanged');
   }
 });
