@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "EARLY_PAGE_MATCH_FOUND_GLOBAL_REVIEW_PENDING",
+  "reviewStatus": "TWO_SOURCE_PAIRS_REVIEWED_TO_DIFFERENT_DEPTHS_GLOBAL_REVIEW_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -81,9 +81,53 @@
       "rawOrdinalA": 4,
       "rawOrdinalB": 48,
       "reason": "Distribution in arithmetic versus polynomials",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
-      "decision": null,
-      "preserveUntilReviewed": true
+      "status": "OBJECTIVE_DISTINCTION_CONFIRMED_FROM_WORKED_PAGES",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "1-4",
+          "printedPagesReviewed": [
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "pdfPagesReviewed": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-5",
+          "printedPagesReviewed": [
+            396,
+            397,
+            398,
+            399
+          ],
+          "pdfPagesReviewed": [
+            44,
+            45,
+            46,
+            47
+          ]
+        },
+        "contrast": "The recent 1-4 uses distribution to expand and simplify expressions (and arithmetic representations). The older 7-5 teaches factoring polynomials using the distributive property / common factor. Reverse use and polynomial factoring adds a distinct objective, so same keyword is insufficient for dedup.",
+        "preservedSkills": [
+          "expansion and simplification by distributive property",
+          "polynomial common-factor decomposition"
+        ],
+        "semanticStatus": "DISTINCT_COMPLEMENTARY_OBJECTIVE",
+        "nextStep": "Verify remaining practice coverage when the two lessons reach their sequential A-C checkpoint."
+      }
     },
     {
       "rawOrdinalA": 24,
