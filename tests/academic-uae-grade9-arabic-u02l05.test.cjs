@@ -224,3 +224,25 @@ test('Source-specific contextual activities preserve textbook semantics and disj
   assert.equal(bank.assessedAutomatically,false);
   assert.equal(bank.sourceSkillRepair.grading,'TEACHER_REVIEW_REQUIRED');
 });
+
+
+test('All twelve original number-line equation exercises have teacher-reviewed authored variants', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const source=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  const ids=bank.graphToFullEquation.sourceElementIds;
+  const variants=bank.graphToFullEquation.originalArabicVariants;
+  assert.equal(ids.length,12);
+  assert.equal(variants.length,12);
+  assert.deepEqual(new Set(variants.map(x=>x.sourceExerciseId)),new Set(ids));
+  const sourceIds=new Set(source.sourceExerciseInventory.items.map(x=>x.itemId));
+  for (const variant of variants) {
+    assert.ok(sourceIds.has(variant.sourceExerciseId));
+    assert.match(variant.expectedEquation,/\|/);
+    const num=Number(variant.sourceExerciseId.slice(-2));
+    assert.ok(html.includes('id="sourceGraph'+num+'"'),num);
+    assert.equal(variant.assessment,'TEACHER_REVIEW_REQUIRED');
+  }
+  assert.match(html,/graphAnswers/);
+  assert.match(html,/graphAnswers:graphAnswers.map/);
+});
