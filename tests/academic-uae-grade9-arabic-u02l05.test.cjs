@@ -24,8 +24,9 @@ test('Only dedicated Grade 9 absolute-value question families are mapped', () =>
   const mappings = read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json');
   const entry = mappings.mappings.find(x => x.lessonCode === lessonCode);
   assert.ok(entry);
-  assert.equal(entry.allowedQuestionFamilies.length, 7);
+  assert.equal(entry.allowedQuestionFamilies.length, 8);
   assert.ok(entry.allowedQuestionFamilies.every(f => f.startsWith(prefix)));
+  assert.ok(entry.allowedQuestionFamilies.includes(prefix + 'context_tolerance_endpoints'));
   assert.equal(entry.officialOutcomeMapped, false);
   assert.notEqual(entry.practiceReadiness, 'READY_VERIFIED');
 });
@@ -37,7 +38,7 @@ test('Dedicated generator and independent verifier are wired, no linear-only fal
   for (const name of ['Supports', 'Build', 'Solve', 'Verify']) {
     assert.ok(engine.includes('UaeG9AbsoluteValueEquationQuestions.' + name + '('));
   }
-  for (const tag of ['two_solutions','one_solution','no_solution','evaluate_absolute','midpoint','composite_evaluation','outer_coefficient_no_solution']) {
+  for (const tag of ['two_solutions','one_solution','no_solution','evaluate_absolute','midpoint','composite_evaluation','outer_coefficient_no_solution','context_tolerance_endpoints']) {
     assert.ok(implementation.includes('uae.g9.general.u02.l05.' + tag));
   }
 });
