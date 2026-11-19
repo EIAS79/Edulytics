@@ -11034,14 +11034,16 @@ public static class LessonPracticeContractRegistry
         // G9 General U02L05 2025 textbook p103-109.
         // Distance/evaluation questions only; two-branch equation solving and
         // negative-RHS/no-solution classifications remain TEACHER_REVIEW_REQUIRED.
-        // Do not mislabel partial family reuse as full READY_VERIFIED practice.
+        // G9 U02L05 p103-109: exact two, one and no-solution families.
+        // Grade9-specific implementation only; no Stage D gate executed yet.
         byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS","algebra.equations.absolute_value",
-            "G9_U02L05_ABSOLUTE_VALUE_TWO_BRANCH_EXACT_ROOTS_AND_DISTANCE",
-            ["uae.g9.u02.l05.absolute_equation_roots",
-             "usccss.g6.u07.l06.absolute_distance_values"],
-            "UAE_G9_GENERAL_2025_AR_U02L05_P103_109_WITH_NEW_EXACT_BRANCH",
-            "PREPARED_PARTIAL_REUSE_STAGE_D_PENDING",Version);
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS", "algebra.equations.absolute_value",
+            "G9_U02L05_ABSOLUTE_EQUATION_EXACT_BRANCHES",
+            ["uae.g9.u02.l05.absolute_equation_two_solutions",
+             "uae.g9.u02.l05.absolute_equation_zero_distance",
+             "uae.g9.u02.l05.absolute_equation_negative_distance"],
+            "UAE_G9_GENERAL_2025_AR_U02L05_P103_109",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
