@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "curriculum": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "language": "ar",
+    "direction": "RTL"
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026",
+    "numberedUnit": 1,
+    "numberedLesson": "1-1",
+    "title": "المتغيرات والتعابير",
+    "printedPages": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "pdfPages": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+  "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+  "runtimePublish": false,
+  "sourceElementLedger": [
+    {
+      "element": "u01l01-notation",
+      "printedPage": 5,
+      "sourcePurpose": "تحديد التعابير اللفظية والجبرية والمتغير والمعامل والأساس والأس",
+      "objective": "O1",
+      "contentEvidence": "KeyConceptsAndRules",
+      "assessment": "ITEM_COEFFICIENT"
+    },
+    {
+      "element": "u01l01-translate-verbal",
+      "printedPage": 6,
+      "sourcePurpose": "تحويل عبارة لفظية إلى تعبير جبري مع ترتيب العمليات",
+      "objective": "O2",
+      "contentEvidence": "WorkedExamples",
+      "assessment": "ITEM_VERBAL_SYMBOLIC"
+    },
+    {
+      "element": "u01l01-context",
+      "printedPage": 6,
+      "sourcePurpose": "كتابة نموذج تكلفة باستخدام متغير ورسم ثابت",
+      "objective": "O3",
+      "contentEvidence": "WorkedExamples",
+      "assessment": "ITEM_FIXED_FEE"
+    },
+    {
+      "element": "u01l01-expression-interpret",
+      "printedPage": 7,
+      "sourcePurpose": "تفسير التعابير رمزيًا ولفظيًا وأسئلة تحقق من الفهم",
+      "objective": "O4",
+      "contentEvidence": "Explanation",
+      "assessment": "ITEM_READ_EXPRESSION"
+    },
+    {
+      "element": "u01l01-geometry",
+      "printedPage": 7,
+      "sourcePurpose": "تعبير جبري عن المحيط أو الحجم من رسم هندسي",
+      "objective": "O3",
+      "contentEvidence": "WorkedExamples",
+      "assessment": "ITEM_RECTANGLE"
+    },
+    {
+      "element": "u01l01-higher-order",
+      "printedPage": 8,
+      "sourcePurpose": "الاستنتاج ومقارنة صيغ جبرية تختلف في توزيع الأقواس والأسس",
+      "objective": "O4",
+      "contentEvidence": "CommonMistakes",
+      "assessment": "ITEM_COMPARE_EXPRESSIONS"
+    },
+    {
+      "element": "u01l01-standardized-review",
+      "printedPage": 9,
+      "sourcePurpose": "تقويم ختامي يتناول التعبير الجبري والمساحة والمحيط",
+      "objective": "O3",
+      "contentEvidence": "WorkedExamples",
+      "assessment": "ITEM_RECTANGLE"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "description": "يميز بين المتغير والمعامل والحد الثابت والأس",
+      "allowed": [
+        "IDENTIFY_COMPONENTS"
+      ]
+    },
+    {
+      "id": "O2",
+      "description": "يحول أوصافًا لفظية إلى تعابير جبرية صحيحة مع الأقواس",
+      "allowed": [
+        "VERBAL_TO_SYMBOLIC"
+      ]
+    },
+    {
+      "id": "O3",
+      "description": "يمثل مسائل تكلفة وهندسة بتعابير جبرية ويفسرها",
+      "allowed": [
+        "MODEL_CONTEXT",
+        "GEOMETRY_EXPRESSION"
+      ]
+    },
+    {
+      "id": "O4",
+      "description": "يفسر التعبير الجبري ويناقش مدى تكافؤ صيغتين",
+      "allowed": [
+        "READ_SYMBOLIC",
+        "COMPARE_MEANING"
+      ]
+    }
+  ],
+  "questionSpec": [
+    {
+      "id": "ITEM_COEFFICIENT",
+      "arPrompt": "ما معامل المتغير س في التعبير ٧س² − ٤؟",
+      "answerType": "integer",
+      "expected": "7",
+      "objective": "O1",
+      "graderIntent": "INTEGER_EXACT",
+      "negativeCases": [
+        "-4",
+        "2"
+      ]
+    },
+    {
+      "id": "ITEM_VERBAL_SYMBOLIC",
+      "arPrompt": "اكتب تعبيرًا جبريًا لعبارة: خمسة أقل من ضعف عدد س.",
+      "answerType": "symbolic",
+      "expected": "2x-5",
+      "objective": "O2",
+      "graderIntent": "SYMBOLIC_EQUIVALENCE",
+      "negativeCases": [
+        "5-2x",
+        "2(x-5)"
+      ],
+      "note": "Accept mathematical equivalence without allowing reversed subtraction"
+    },
+    {
+      "id": "ITEM_FIXED_FEE",
+      "arPrompt": "ثمن الدفتر الواحد ثمانية دراهم، والتوصيل مرة واحدة ستة دراهم. اكتب تكلفة شراء ن دفاتر.",
+      "answerType": "symbolic",
+      "expected": "8n+6",
+      "objective": "O3",
+      "graderIntent": "SYMBOLIC_EQUIVALENCE",
+      "negativeCases": [
+        "8(n+6)",
+        "14n"
+      ]
+    },
+    {
+      "id": "ITEM_RECTANGLE",
+      "arPrompt": "طول مستطيل س + ٣ وعرضه ص. اكتب تعبيرًا لمحيطه.",
+      "answerType": "symbolic",
+      "expected": "2(x+3)+2y",
+      "objective": "O3",
+      "graderIntent": "SYMBOLIC_EQUIVALENCE",
+      "negativeCases": [
+        "(x+3)y",
+        "x+3+2y"
+      ]
+    },
+    {
+      "id": "ITEM_READ_EXPRESSION",
+      "arPrompt": "اشرح بالكلمات معنى التعبير (س − ٦) ÷ ٤.",
+      "answerType": "teacherReview",
+      "expected": "ربع الفرق بين العدد س والعدد ستة",
+      "objective": "O4",
+      "graderIntent": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "ITEM_COMPARE_EXPRESSIONS",
+      "arPrompt": "هل التعبيران ٣س² و(٣س)² متكافئان لكل س؟ برّر.",
+      "answerType": "teacherReview",
+      "expected": "لا؛ الأول 3x² والثاني 9x²",
+      "objective": "O4",
+      "graderIntent": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "cooldown": [
+    {
+      "prompt": "حدّد المتغير والمعامل والحد الثابت في ٩ن − ٢.",
+      "expected": "ن، 9، -2"
+    },
+    {
+      "prompt": "عبّر جبريًا عن نصف مجموع س وثمانية.",
+      "expected": "(x+8)/2"
+    },
+    {
+      "prompt": "ثلاثة دراهم للقلم ورسم ثابت خمسة دراهم، ما تكلفة ك أقلام؟",
+      "expected": "3k+5"
+    }
+  ],
+  "candidateReuse": [
+    {
+      "family": "supporting.algebra.expressions.mixed",
+      "status": "UNVERIFIED_SUITABILITY",
+      "reason": "May assess evaluating expressions rather than verbal translation"
+    },
+    {
+      "family": "supporting.algebra.simplify",
+      "status": "NOT_ALLOWED_AS_PRIMARY",
+      "reason": "Simplifying algebraic expressions alone does not measure verbal-symbolic translation"
+    }
+  ],
+  "forbiddenAsSoleEvidence": [
+    "algebra.linear.ax_plus_b_equals_c",
+    "supporting.algebra.equations.mixed",
+    "supporting.algebra.simplify"
+  ],
+  "semanticGate": {
+    "stage": "D",
+    "testExecutionStatus": "NOT_RUN",
+    "auditedObjectives": 0,
+    "auditedQuestionFamilies": 0,
+    "unresolvedSemanticDefects": "UNKNOWN",
+    "mustRunActualQuestions": true,
+    "studentArabicUi": "NOT_VERIFIED",
+    "forbidReadyVerifiedUntilPassed": true
+  },
+  "aBC": {
+    "a": "SOURCE_ELEMENTS_MAPPED",
+    "b": "AR_CONTENT_DRAFT",
+    "c": "QUESTION_FIXTURES_WRITTEN_RUNTIME_ENGINE_NOT_WIRED",
+    "status": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "lessonClosed": false,
+    "testsWritten": true,
+    "testsRun": false
+  },
+  "notes": [
+    "Source ledger covers observed learning and assessment categories, not a proof that every exercise has been migrated.",
+    "No engine is approved merely from a family name. Stage D must verify actual generated Arabic questions and grading.",
+    "Keep this file outside embedded lesson-pack auto-publish directory."
+  ]
+}
