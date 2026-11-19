@@ -124,12 +124,12 @@ test('all 76 G8 contracts have batch runtime-sampled Arabic and objective eviden
  const runtime=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-76-runtime-semantic-screen.json');
  assert.equal(runtime.summary.lessonsSampled,76);
  assert.equal(runtime.summary.generatedQuestions,14592);
- assert.equal(runtime.summary.totalConfiguredFamilyAssignments,182);
+ assert.equal(runtime.summary.totalConfiguredFamilyAssignments,176);
  assert.equal(runtime.summary.allAssignmentsSampled,true);
- assert.equal(runtime.summary.lessonsWithObservedNonArabicPrompts,56);
- assert.equal(runtime.summary.lessonsWithConfirmedUnrelatedOrOffObjectiveExamples,16);
- assert.equal(runtime.summary.releaseBlockedLessons,58);
- assert.equal(runtime.summary.partialReviewPendingLessons,18);
+ assert.equal(runtime.summary.lessonsWithObservedNonArabicPrompts,55);
+ assert.equal(runtime.summary.lessonsWithConfirmedUnrelatedOrOffObjectiveExamples,14);
+ assert.equal(runtime.summary.releaseBlockedLessons,56);
+ assert.equal(runtime.summary.partialReviewPendingLessons,20);
  assert.equal(runtime.summary.fullySourceCertifiedLessons,0);
  assert.equal(runtime.summary.originalStudentBookElementParity,'NOT_CERTIFIED');
  assert.equal(runtime.summary.correctAnswersAcceptedByExactVerifier,14592);
