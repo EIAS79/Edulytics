@@ -14,7 +14,7 @@
   "ownerTargetUnits": 14,
   "ownerTargetLessons": 86,
   "uniqueLessonsVerified": null,
-  "semanticCrosswalk": "IN_PROGRESS",
+  "semanticCrosswalk": "IN_PROGRESS_PAIR_REVIEWS_NOT_FULL_86",
   "verifiedSourcePageComparison": [
     {
       "sourceA": "01.pdf:7-4",
@@ -37,8 +37,8 @@
   "firstNotClosedLesson": "2-5",
   "lesson2_5": "CONTENT_AND_FIVE_PRACTICE_FAMILIES_PREPARED_NOT_AC_CLOSED",
   "remainingSourceLessonsInRawPlan": 74,
-  "testsRun": "NOT_RUN",
-  "ciGatesRun": "NOT_RUN",
+  "testsRun": "WRITTEN_NOT_RUN",
+  "ciGatesRun": "NOT_INTENTIONALLY_RUN_BY_A_C",
   "stageD": "NOT_STARTED",
   "productionPublish": "NOT_STARTED",
   "remainingCritical": "Complete 86-lesson objective-level review, resolve dedup crosswalk, then sequential A-C closure with evidence and checkpoint.",
@@ -47,5 +47,22 @@
     "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
     "Each line consists of filename, a single space, its lowercase 64-character SHA-256 hex digest, and a terminal newline.",
     "This uniquely fingerprints the supplied five-book source set; semantic dedup gate remains separate."
-  ]
+  ],
+  "confirmedSemanticDuplicates": 1,
+  "semanticDedupUpperBound": 85,
+  "semanticDedupUpperBoundDefinition": "86 raw lesson entries minus 1 confirmed fully compared semantic duplicate; other overlaps could reduce this count further. NOT final unique count.",
+  "neonReadOnlyInventory": {
+    "project": "Edulytiks",
+    "grade9PedagogicalLessons": 0,
+    "grade9PackNodes": 0,
+    "grade9LessonContents": 0,
+    "verifiedReadOnly": true,
+    "productionWrites": 0
+  },
+  "preparedTests": [
+    "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+  ],
+  "u02l05VisualSpec": "u02l05-visual-teacher-rubric-spec.json",
+  "u02l05Closure": "A_C_EXPLICIT_GAP_UNTIL_SEMANTIC_INDEX_AND_VISUAL_REVIEW"
 }
