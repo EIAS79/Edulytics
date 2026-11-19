@@ -1,50 +1,70 @@
 {
-  "schemaVersion": 1,
-  "baseline": {
-    "file": "01.pdf",
-    "edition": "2025-2026",
-    "pathway": "General",
-    "units": "1-7",
-    "verifiedLessonCount": 43
-  },
-  "comparisons": [
+  "schemaVersion": 2,
+  "purpose": "Comprehensive catalog across General textbook editions, not same-edition school distribution",
+  "sourceBooks": [
+    {
+      "file": "01.pdf",
+      "pathway": "General",
+      "edition": "2025-2026",
+      "sourceUnits": "1-7",
+      "rawLessons": 43
+    },
     {
       "file": "02-1.pdf",
-      "edition": "2019-2020",
       "pathway": "General",
-      "toc": "7-10",
-      "status": "SOURCE_VERSION_CONFLICT",
-      "details": [
-        "Overlaps unit 7 of the 2025-2026 first-term file",
-        "Older General unit 7 is quadratic expressions and equations",
-        "Cannot silently treat old units 8-10 as current curriculum continuation"
-      ]
+      "edition": "2019-2020",
+      "sourceUnits": "7-10",
+      "rawLessons": 24
     },
     {
       "file": "03-1.pdf",
-      "edition": "2019-2020",
       "pathway": "General",
-      "toc": "11-13",
-      "status": "SOURCE_VERSION_CONFLICT",
-      "details": [
-        "Older edition covers units 11–13",
-        "Does not establish 2025–2026 annual unit 14 or owner target 86"
-      ]
-    },
+      "edition": "2019-2020",
+      "sourceUnits": "11-13",
+      "rawLessons": 19
+    }
+  ],
+  "referenceBooks": [
     {
       "file": "02.pdf",
       "pathway": "Applied",
-      "status": "EXCLUDED_WRONG_PATHWAY"
+      "notGeneralImport": true
     },
     {
       "file": "03.pdf",
       "pathway": "Applied",
-      "status": "EXCLUDED_WRONG_PATHWAY"
+      "notGeneralImport": true
     }
   ],
-  "unresolved": [
-    "Owner target is 14 units and 86 lessons, while selected same-edition verified first term is 7 units / 43 lessons",
-    "No complete compatible General annual index or verified 2026-2027 source currently available in inspected directory"
+  "union": {
+    "unitsBeforeSemanticDedup": 14,
+    "lessonsBeforeSemanticDedup": 86,
+    "sourceChapter7Collision": "01.pdf source chapter7 tools of geometry; 02-1.pdf source chapter7 quadratic equations, both retained as different units"
+  },
+  "semanticDedup": "PENDING_OBJECTIVE_LEVEL_COMPARISON",
+  "knownExamples": [
+    {
+      "refs": [
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
+      ],
+      "status": "STRONG_OVERLAP_VERIFY_REMAINING_EXERCISES"
+    },
+    {
+      "refs": [
+        "01.pdf:1-4",
+        "02-1.pdf:7-5"
+      ],
+      "status": "DISTINCT_COMPLEMENTARY_SKILL"
+    },
+    {
+      "refs": [
+        "01.pdf:3-3",
+        "03-1.pdf:12-3"
+      ],
+      "status": "PARTIAL_OVERLAP"
+    }
   ],
-  "resolution": "Keep source lock blocked; no arithmetic padding to target counts, no mixing editions."
+  "sourceLock": "TOC_LOCK_ONLY_SEMANTIC_LOCK_PENDING",
+  "testExecution": "NOT_RUN"
 }
