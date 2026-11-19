@@ -10883,6 +10883,24 @@ public static class LessonPracticeContractRegistry
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
             Version);
 
+
+        // UAE G9 General 2025 Arabic term 1, Lesson 1-2 (printed pp.10-15).
+        // Exact Arabic G6 ordering families are mathematical-mechanic reuse,
+        // not evidence of passed G9 semantic audit or Stage D CI.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS",
+            "algebra.order_of_operations",
+            "G9_U01L02_ORDER_OF_OPERATIONS_GROUPING_EXPONENTS_LTR",
+            ["uae.g6.u06.l03.sum_sub_left_right",
+             "uae.g6.u06.l03.division_multiplication_left_right",
+             "uae.g6.u06.l03.parenthesis_first",
+             "uae.g6.u06.l03.exponent_then_multiply",
+             "uae.g6.u06.l03.two_item_cost",
+             "uae.g6.u06.l03.first_operation"],
+            "UAE_G9_GENERAL_2025_AR_U01L02_P10_15",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
