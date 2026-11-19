@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "grade": 9,
+    "pathway": "General",
+    "sourceLesson": "2-5",
+    "title": "حل معادلات تتضمن قيمة مطلقة",
+    "sourceFile": "01.pdf",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "objectiveId": "O1",
+      "category": "evaluation",
+      "expectedMathematics": "Evaluate absolute-value expressions with substitution; distance nonnegative",
+      "sourceFile": "01.pdf",
+      "sourceEdition": "2025-2026",
+      "sourcePrintedPage": 103,
+      "sourcePdfPage": 114,
+      "contentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "questionFamilies": [
+        "uae.g9.general.u02.l05.evaluate_absolute"
+      ],
+      "coverageStatus": "CONTENT_PREPARED_DIGITAL_FAMILY_PREPARED",
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "humanReviewRequired": false,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+    },
+    {
+      "objectiveId": "O2",
+      "category": "equations",
+      "expectedMathematics": "Solve |ax+b|=c for positive, zero or negative right side; 2, 1 or no solutions",
+      "sourceFile": "01.pdf",
+      "sourceEdition": "2025-2026",
+      "sourcePrintedPage": 104,
+      "sourcePdfPage": 115,
+      "contentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "questionFamilies": [
+        "uae.g9.general.u02.l05.two_solutions",
+        "uae.g9.general.u02.l05.one_solution",
+        "uae.g9.general.u02.l05.no_solution"
+      ],
+      "coverageStatus": "CONTENT_PREPARED_DIGITAL_FAMILIES_PREPARED",
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "humanReviewRequired": false,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+    },
+    {
+      "objectiveId": "O3",
+      "category": "number_line",
+      "expectedMathematics": "Represent two solutions on a number line; find midpoint and derive distance equation from two points",
+      "sourceFile": "01.pdf",
+      "sourceEdition": "2025-2026",
+      "sourcePrintedPage": 105,
+      "sourcePdfPage": 116,
+      "contentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "questionFamilies": [
+        "uae.g9.general.u02.l05.midpoint",
+        "uae.g9.general.u02.l05.two_solutions"
+      ],
+      "coverageStatus": "PARTIAL_DIGITAL_TEXT_ONLY_VISUAL_RENDERER_NOT_EVIDENCED",
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "humanReviewRequired": false,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+    },
+    {
+      "objectiveId": "O4",
+      "category": "modelling",
+      "expectedMathematics": "Model temperature, prices, measurements and tolerance as absolute-value distance equations",
+      "sourceFile": "01.pdf",
+      "sourceEdition": "2025-2026",
+      "sourcePrintedPage": 106,
+      "sourcePdfPage": 117,
+      "contentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "questionFamilies": [
+        "uae.g9.general.u02.l05.two_solutions"
+      ],
+      "coverageStatus": "CONTEXTUAL_CASE_RUBRIC_NOT_VERIFIED",
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "humanReviewRequired": true,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+    },
+    {
+      "objectiveId": "O5",
+      "category": "reasoning",
+      "expectedMathematics": "Explain why an absolute-value equation has 0/1/2 real solutions",
+      "sourceFile": "01.pdf",
+      "sourceEdition": "2025-2026",
+      "sourcePrintedPage": 108,
+      "sourcePdfPage": 119,
+      "contentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "questionFamilies": [
+        "uae.g9.general.u02.l05.no_solution",
+        "uae.g9.general.u02.l05.one_solution",
+        "uae.g9.general.u02.l05.two_solutions"
+      ],
+      "coverageStatus": "PARTIAL_TEACHER_REASONING_RUBRIC_REQUIRED",
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "humanReviewRequired": true,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+    }
+  ],
+  "sourceLessonPageSpan": [
+    103,
+    108
+  ],
+  "sourcePdfSpan": [
+    114,
+    119
+  ],
+  "cumulativeReview": {
+    "printedPage": 109,
+    "pdfPage": 120,
+    "notLessonSpecific": true
+  },
+  "summary": {
+    "listedObjectives": 5,
+    "fullyAuditedObjectives": 0,
+    "sourceContentDrafted": true,
+    "nativeNumericPracticeFamilies": 5,
+    "visualRendererVerified": false,
+    "teacherRubricsComplete": false,
+    "testsRun": "WRITTEN_NOT_RUN",
+    "status": "A_C_EXPLICIT_GAP",
+    "nextAction": "Document number-line visual semantics, source question families and contextual teacher rubric; final testing reserved to D."
+  },
+  "semanticAudit": "NOT_RUN_STAGE_D_ONLY"
+}
