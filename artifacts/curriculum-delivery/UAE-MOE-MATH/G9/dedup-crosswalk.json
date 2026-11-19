@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "14_SOURCE_OVERLAP_CANDIDATES_DOCUMENTED; FULL_86_LESSON_OBJECTIVE_AND_EXERCISE_AUDIT_PENDING",
+  "reviewStatus": "20_FLAGGED_PAIRS_WITH_SOURCE_PAGE_COMPARISONS; FULL_86_ELEMENT_AUDIT_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -623,6 +623,228 @@
           ]
         },
         "contrast": "8-1 applies product-of-powers and power-of-a-power rules to multiply like bases; 8-2 applies quotient-of-powers, zero and negative exponent rules to divide powers. Keep both distinct skills."
+      }
+    },
+    {
+      "rawOrdinalA": 49,
+      "rawOrdinalB": 50,
+      "reason": "Both solve quadratic expressions, but leading coefficient regimes differ",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-6",
+          "printedPagesReviewed": [
+            405,
+            406
+          ],
+          "pdfPagesReviewed": [
+            53,
+            54
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-7",
+          "printedPagesReviewed": [
+            412,
+            413
+          ],
+          "pdfPagesReviewed": [
+            60,
+            61
+          ]
+        },
+        "contrast": "7-6 factors monic quadratics x²+bx+c with unit leading coefficient. 7-7 factors ax²+bx+c with a != 1, requiring product-sum / grouping techniques. Preserve both mathematical targets.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 25,
+      "rawOrdinalB": 26,
+      "reason": "Both write linear equations, but canonical forms differ",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-2",
+          "printedPagesReviewed": [
+            226,
+            227
+          ],
+          "pdfPagesReviewed": [
+            237,
+            238
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "4-3",
+          "printedPagesReviewed": [
+            233,
+            234
+          ],
+          "pdfPagesReviewed": [
+            244,
+            245
+          ]
+        },
+        "contrast": "4-2 writes slope-intercept equations y=mx+b from points/slope; 4-3 starts with point-slope y-y1=m(x-x1), then converts forms. Distinct forms and derivation steps.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 28,
+      "rawOrdinalB": 29,
+      "reason": "Both solve basic linear inequalities, different algebraic operations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "5-1",
+          "printedPagesReviewed": [
+            259,
+            260
+          ],
+          "pdfPagesReviewed": [
+            270,
+            271
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "5-2",
+          "printedPagesReviewed": [
+            266,
+            267
+          ],
+          "pdfPagesReviewed": [
+            277,
+            278
+          ]
+        },
+        "contrast": "5-1 preserves inequality direction when adding/subtracting. 5-2 multiplies/divides and introduces direction reversal for negative factors. Preserve separate concept.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 34,
+      "rawOrdinalB": 38,
+      "reason": "Graphing systems versus strategy selection for practical simultaneous equations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "6-1",
+          "printedPagesReviewed": [
+            309,
+            310
+          ],
+          "pdfPagesReviewed": [
+            320,
+            321
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "6-5",
+          "printedPagesReviewed": [
+            338,
+            339
+          ],
+          "pdfPagesReviewed": [
+            349,
+            350
+          ]
+        },
+        "contrast": "6-1 solves a pair of equations graphically and classifies solution counts by intersections. 6-5 selects elimination/substitution/graphing for modeled applications, with method-choice and contextual interpretation.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 78,
+      "rawOrdinalB": 84,
+      "reason": "Triangle classification versus congruence transformations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-1",
+          "printedPagesReviewed": [
+            717,
+            718
+          ],
+          "pdfPagesReviewed": [
+            133,
+            134
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-7",
+          "printedPagesReviewed": [
+            776,
+            777
+          ],
+          "pdfPagesReviewed": [
+            191,
+            192
+          ]
+        },
+        "contrast": "13-1 classifies triangles by side lengths and angles. 13-7 develops congruence using translations, reflections and rotations. Distinct concepts.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 81,
+      "rawOrdinalB": 82,
+      "reason": "Congruence proof criteria: side-based SSS/SAS versus angle-based ASA/AAS",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-4",
+          "printedPagesReviewed": [
+            744,
+            745
+          ],
+          "pdfPagesReviewed": [
+            160,
+            161
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-5",
+          "printedPagesReviewed": [
+            755,
+            756
+          ],
+          "pdfPagesReviewed": [
+            171,
+            172
+          ]
+        },
+        "contrast": "13-4 establishes SSS and SAS criteria; 13-5 continues with ASA and AAS criteria requiring different combinations of known sides/angles. Preserve both; printed 755 begins with continued material so inspect precise chapter break before final page lock.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
       }
     }
   ],
