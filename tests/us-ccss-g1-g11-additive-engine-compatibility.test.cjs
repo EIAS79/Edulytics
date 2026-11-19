@@ -14,7 +14,7 @@ const contracts='src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts
 const familyRegistry='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
 const priorLines=(ref,file)=>cp.execFileSync('git',['show',ref+':'+file],
   {cwd:root,encoding:'utf8'}).split('\n');
-const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').split('\n');
+const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n').split('\n');
 // Owner-directed retirement of one obsolete UAE G7 General English
 // supporting contract is the sole permitted historical contract removal.
 // The shared US G1-G11 exact engine and all other contracts stay immutable.
@@ -39,6 +39,30 @@ const retiredG8AdvancedContractBlock=[
   '            "READY_VERIFIED",',
   '            Version),'
 ];
+// Owner-retired UAE Grade9 removes precisely two orphan unit-rate
+// declarations; the exact shared mathematical engine is NOT modified.
+const retiredGrade9ContractBlocks=['ADVANCED','GENERAL'].map(pathway=>[
+  '        new(',
+  '            "PED:UAE-MOE-MATH:L9:'+pathway+':01:06:RATES-AND-UNIT-RATES",',
+  '            "ratio.unit_rate",',
+  '            "UNIT_RATE",',
+  '            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],',
+  '            "SupportingLesson",',
+  '            "READY_VERIFIED",',
+  '            Version),'
+]);
+function stripOnlyRetiredGrade9Contracts(lines){
+  let result=lines;
+  for(const block of retiredGrade9ContractBlocks){
+    const start=result.findIndex((line,i)=>
+      block.every((expected,offset)=>result[i+offset]===expected));
+    assert.ok(start>=0,'Expected old UAE Grade9 contract missing from pinned original baseline');
+    assert.equal(result.filter(x=>x===block[1]).length,1,
+      'Retired Grade9 contract declaration must occur exactly once');
+    result=[...result.slice(0,start),...result.slice(start+block.length)];
+  }
+  return result;
+}
 function stripOnlyRetiredG8AdvancedContract(lines){
   const start=lines.findIndex((line,i)=>
     retiredG8AdvancedContractBlock.every((expected,offset)=>
@@ -84,8 +108,9 @@ function withoutGrade8ScopedPracticeAssignments(lines){
 function assertOriginalLinesUnchanged(ref,file){
   const baseline=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(
-        stripOnlyRetiredG8AdvancedContract(
-          stripOnlyRetiredG7Contract(priorLines(ref,file))))
+        stripOnlyRetiredGrade9Contracts(
+          stripOnlyRetiredG8AdvancedContract(
+            stripOnlyRetiredG7Contract(priorLines(ref,file)))))
     : priorLines(ref,file);
   const current=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
@@ -95,6 +120,9 @@ function assertOriginalLinesUnchanged(ref,file){
       'Retired English G7 contract accidentally reinstated');
     assert.ok(!current.includes(retiredG8AdvancedContractBlock[1]),
       'Retired English G8 Advanced contract accidentally reinstated');
+    for(const block of retiredGrade9ContractBlocks)
+      assert.ok(!current.includes(block[1]),
+        'Owner-retired UAE Grade9 contract accidentally reinstated');
   }
   let originalIndex=0;
   const added=[];
