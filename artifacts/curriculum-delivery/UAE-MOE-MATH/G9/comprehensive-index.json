@@ -1308,15 +1308,28 @@
       "sourceFile": "03-1.pdf",
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
-      "printedPage": 607,
-      "pdfPage": 23,
+      "printedPage": 608,
+      "pdfPage": 24,
       "sourceLessonRefs": [
         "03-1.pdf:11-1"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
-      "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "CALCULATED_FROM_SPOT_CHECKED_OFFSET_RECONFIRM_ON_LESSON_OPENING"
+      "pdfPageEvidence": "03-1.pdf PDF24 printed608 title 11-1, PDF23 printed607 is preceding geometry laboratory",
+      "pdfPageStatus": "DIRECT_SOURCE_LESSON_TITLE_VISUALLY_VERIFIED",
+      "locatorCorrection": {
+        "previous": {
+          "printed": 607,
+          "pdf": 23,
+          "renderHash": "02bdaa4a7ff453bf2d58b3cdcd64ef2793d62c4115d83c52761bf26f26b53d53"
+        },
+        "verified": {
+          "printed": 608,
+          "pdf": 24,
+          "renderHash": "5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f"
+        },
+        "reason": "PDF23 was geometry laboratory, not Grade9 General lesson 11-1"
+      }
     },
     {
       "rawOrdinal": 69,
