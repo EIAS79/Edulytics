@@ -1,31 +1,37 @@
 {
-  "schemaVersion": 1,
-  "sourceSnapshotId": null,
-  "sourceLock": "BLOCKED",
-  "selectedEdition": "2025-2026",
-  "targetCurriculumPeriod": "2026-2027",
-  "selectedSourceFile": "01.pdf",
-  "selectedSourceStatus": "PARTIAL_TERM1_ONLY",
-  "excluded": [
-    "02.pdf: applied pathway",
-    "03.pdf: applied pathway",
-    "02-1.pdf: General but 2019-2020 edition; cannot join to 2025-2026 without an owner-confirmed crosswalk",
-    "03-1.pdf: General but 2019-2020 edition; cannot join to 2025-2026 without an owner-confirmed crosswalk"
+  "schemaVersion": 3,
+  "selectionDecision": "GENERAL_CROSS_EDITION_UNION",
+  "sourceLock": "TOC_EXTRACTED_SEMANTIC_CROSSWALK_PENDING",
+  "approvedSourceBooks": [
+    "01.pdf",
+    "02-1.pdf",
+    "03-1.pdf"
   ],
-  "criticalGap": "Complete sequential same-edition General volumes for remaining 7 units and 43 lessons, or a documented authoritative complete year source, are not verified among the five local PDF files.",
-  "ownerScope": {
-    "units": 14,
-    "lessons": 86
+  "referenceOnlyBooks": [
+    "02.pdf",
+    "03.pdf"
+  ],
+  "targetPeriod": "2026-2027",
+  "sourceEditions": [
+    "2025-2026",
+    "2019-2020"
+  ],
+  "unitCountRaw": 14,
+  "lessonCountRaw": 86,
+  "unitCountUnique": null,
+  "lessonCountUnique": null,
+  "ownerTarget": {
+    "unitCount": 14,
+    "lessonCount": 86
   },
-  "decision": "DO_NOT_LOCK_OR_CLOSE_FURTHER_LESSONS_UNTIL_SOURCE_IS_RECONCILED",
-  "academicLanguage": "ar",
-  "rtl": true,
-  "neonWriteAllowed": false,
-  "ciAllowedDuringABC": false,
-  "extendedLocalSearch": {
-    "scope": "Grade_09 recursively, all PDF books within school-year source directory",
-    "result": "ONLY_FIVE_ROOT_STUDENT_FILES_AND_TWO_ADVANCED_SUBDIRECTORY_FILES",
-    "remainingCompatibleGeneralVolumeFound": false,
-    "notes": "No compatible same-edition General 2025-2026 continuation found in inspected Grade_09 folder; two additional files under Advanced folder are excluded."
-  }
+  "disallowedAutomaticImport": [
+    "Applied",
+    "Advanced"
+  ],
+  "policy": "Combining General editions is allowed after objective-level dedup. Different publication years are not a blocker. Applied volumes used for reference and not imported as General.",
+  "semanticDedupGate": "PENDING_NOT_LOCKED",
+  "neonWrites": "NONE",
+  "testsRun": "NOT_RUN",
+  "ciExecutedByAgent": "NOT_RUN",
+  "historicalNote": "Previous cross-edition mismatch block is superseded by the five-book owner-approved comprehensive-index plan; no lessons are declared finally unique yet."
 }
