@@ -10942,6 +10942,20 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U01L05_P33_39",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // UAE G9 General 2025 Arabic Student U01L06 pp40-46; domain-range
+        // diagrams and open interpretation are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:06:RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:06:RELATIONS","functions.input_output_tables",
+            "G9_U01L06_RELATIONS_DOMAIN_RANGE_ORDERED_PAIRS",
+            ["uae.g6.u08.l01.linear_output",
+             "uae.g6.u08.l01.linear_input",
+             "uae.g6.u08.l01.division_output",
+             "uae.g6.u08.l01.ordered_pair",
+             "uae.g6.u08.l01.classify_variable"],
+            "UAE_G9_GENERAL_2025_AR_U01L06_P40_46",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
