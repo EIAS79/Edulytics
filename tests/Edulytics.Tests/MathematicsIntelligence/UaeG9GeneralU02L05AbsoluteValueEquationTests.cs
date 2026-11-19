@@ -93,6 +93,24 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     }
 
     [Fact]
+    public void CompositeGeneratorCoversMultipleAbsoluteTermsWithVerifier()
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var multiAbsoluteSeen = false;
+        for (var seed = 1; seed <= 48; seed++)
+        {
+            var q = Assert.Single(engine.Generate("UAE-G9-GENERAL",
+                "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+                new[] { Prefix + "composite_evaluation" },
+                ExactSkillQuestionDifficulty.Standard, 1, seed,
+                Array.Empty<string>()));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(q.Family, q.Parameters, q.CorrectAnswer));
+            if (q.Prompt.Contains("|ص|", StringComparison.Ordinal)) multiAbsoluteSeen = true;
+        }
+        Assert.True(multiAbsoluteSeen);
+    }
+
+    [Fact]
     public void GeneratedProblemsCarryAnswersThatIndependentVerifierAccepts()
     {
         var engine = new ExactSkillContractQuestionEngine();
