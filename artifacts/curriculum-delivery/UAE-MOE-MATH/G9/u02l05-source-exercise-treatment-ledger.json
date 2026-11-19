@@ -19,9 +19,9 @@
       "PDFPage": 116,
       "TaskCategory": "evaluate_substitution",
       "AssessmentRoute": "DIGITAL_FAMILY_CANDIDATE",
-      "AllowedDigitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+      "AllowedDigitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
       "TeacherRubricDimensions": [],
-      "SourceItemSemanticsVerified": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+      "SourceItemSemanticsVerified": "CATEGORY_ROUTE_RECONCILED_IN_ARTIFACTS_INDEPENDENT_AUDIT_PENDING",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
@@ -55,9 +55,9 @@
       "PDFPage": 116,
       "TaskCategory": "evaluate_substitution",
       "AssessmentRoute": "DIGITAL_FAMILY_CANDIDATE",
-      "AllowedDigitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+      "AllowedDigitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
       "TeacherRubricDimensions": [],
-      "SourceItemSemanticsVerified": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+      "SourceItemSemanticsVerified": "CATEGORY_ROUTE_RECONCILED_IN_ARTIFACTS_INDEPENDENT_AUDIT_PENDING",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
@@ -91,9 +91,9 @@
       "PDFPage": 116,
       "TaskCategory": "evaluate_substitution",
       "AssessmentRoute": "DIGITAL_FAMILY_CANDIDATE",
-      "AllowedDigitalFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+      "AllowedDigitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
       "TeacherRubricDimensions": [],
-      "SourceItemSemanticsVerified": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+      "SourceItemSemanticsVerified": "CATEGORY_ROUTE_RECONCILED_IN_ARTIFACTS_INDEPENDENT_AUDIT_PENDING",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
@@ -203,11 +203,11 @@
       "PDFPage": 116,
       "TaskCategory": "solve_and_graph",
       "AssessmentRoute": "DIGITAL_NUMERIC_PLUS_TEACHER_VISUAL",
-      "AllowedDigitalFamily": "uae.g9.general.u02.l05.two_solutions",
+      "AllowedDigitalFamily": "uae.g9.general.u02.l05.no_solution",
       "TeacherRubricDimensions": [
         "visual"
       ],
-      "SourceItemSemanticsVerified": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+      "SourceItemSemanticsVerified": "CATEGORY_ROUTE_RECONCILED_IN_ARTIFACTS_INDEPENDENT_AUDIT_PENDING",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
@@ -317,11 +317,11 @@
       "PDFPage": 116,
       "TaskCategory": "solve_and_graph",
       "AssessmentRoute": "DIGITAL_NUMERIC_PLUS_TEACHER_VISUAL",
-      "AllowedDigitalFamily": "uae.g9.general.u02.l05.two_solutions",
+      "AllowedDigitalFamily": "uae.g9.general.u02.l05.no_solution",
       "TeacherRubricDimensions": [
         "visual"
       ],
-      "SourceItemSemanticsVerified": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+      "SourceItemSemanticsVerified": "CATEGORY_ROUTE_RECONCILED_IN_ARTIFACTS_INDEPENDENT_AUDIT_PENDING",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
@@ -2451,5 +2451,38 @@
   "variantExtensionCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
   "numericPlusVisualReview": 6,
   "all64EntriesHaveStudentFacingRoute": true,
-  "all64EntriesPassedExactIndependentAudit": false
+  "all64EntriesPassedExactIndependentAudit": false,
+  "routingReconciliation": {
+    "status": "ARTIFACT_TO_ARTIFACT_CORRECTION_NOT_SOURCE_MATH_VERIFICATION",
+    "source": "u02l05-atomic-coverage.json",
+    "corrected": [
+      {
+        "id": "01.pdf:2-5:EX01",
+        "from": "uae.g9.general.u02.l05.evaluate_absolute",
+        "to": "uae.g9.general.u02.l05.composite_evaluation"
+      },
+      {
+        "id": "01.pdf:2-5:EX02",
+        "from": "uae.g9.general.u02.l05.evaluate_absolute",
+        "to": "uae.g9.general.u02.l05.composite_evaluation"
+      },
+      {
+        "id": "01.pdf:2-5:EX03",
+        "from": "uae.g9.general.u02.l05.evaluate_absolute",
+        "to": "uae.g9.general.u02.l05.composite_evaluation"
+      },
+      {
+        "id": "01.pdf:2-5:EX06",
+        "from": "uae.g9.general.u02.l05.two_solutions",
+        "to": "uae.g9.general.u02.l05.no_solution"
+      },
+      {
+        "id": "01.pdf:2-5:EX09",
+        "from": "uae.g9.general.u02.l05.two_solutions",
+        "to": "uae.g9.general.u02.l05.no_solution"
+      }
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "lessonClosed": false
+  }
 }
