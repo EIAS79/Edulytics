@@ -128,7 +128,7 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_PAGE_105_SIGN_AND_COMPOSITE_ROUTING_CORRECTED_TESTS_NOT_RUN",
+    "status": "A_C_SOURCE_12_OF_64_MATH_VERIFIED_COVERAGE_AND_RUNTIME_PENDING",
     "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
@@ -164,7 +164,17 @@
       "EX06",
       "EX09"
     ],
-    "lastEvidenceRepair": "O3 visual number-line work cannot be classified as teacherReviewRequired=false; corrected to teacher-reviewed, retaining independent numeric candidate and Stage D runtime gate."
+    "lastEvidenceRepair": "O3 visual number-line work cannot be classified as teacherReviewRequired=false; corrected to teacher-reviewed, retaining independent numeric candidate and Stage D runtime gate.",
+    "sourceMathematicsSpotAudit": {
+      "verifiedCount": 12,
+      "total": 64,
+      "pendingCount": 52,
+      "sourceFile": "01.pdf",
+      "printedPage": 105,
+      "pdfPage": 116,
+      "scope": "independent manual check of book exercise mathematical outcomes, not confirmation of equivalent generated prompt or runtime grading",
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
   "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
@@ -191,10 +201,19 @@
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
         "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
-        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow.",
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|3-h|+13, h=5",
+          "expectedMathAnswer": "15",
+          "independentDerivation": "substitute: |3-5|+13=2+13",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX02",
@@ -203,10 +222,19 @@
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
         "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
-        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow.",
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "16-|g+9|, g=-4",
+          "expectedMathAnswer": "11",
+          "independentDerivation": "16-|-4+9|=16-5",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX03",
@@ -215,10 +243,19 @@
         "taskCategory": "evaluate_substitution",
         "assessmentTreatment": "numeric_or_teacher",
         "digitalFamily": "uae.g9.general.u02.l05.composite_evaluation",
-        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
-        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow."
+        "correctionNote": "Source item has operations outside the absolute-value bars; plain single-absolute evaluation family is too narrow.",
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|f+g|-h, f=3,g=-4,h=5",
+          "expectedMathAnswer": "-4",
+          "independentDerivation": "|3-4|-5=1-5",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX04",
@@ -227,10 +264,19 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|n+7|=5",
+          "expectedMathAnswer": "{-12,-2}",
+          "independentDerivation": "n+7=±5",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX05",
@@ -239,10 +285,19 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|3z-3|=9",
+          "expectedMathAnswer": "{-2,4}",
+          "independentDerivation": "3z-3=±9",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX06",
@@ -251,12 +306,21 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.no_solution",
-        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
         "teacherVisualReview": true,
         "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
-        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used."
+        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used.",
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|4n-1|=-6",
+          "expectedMathAnswer": "∅",
+          "independentDerivation": "absolute value is nonnegative",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX07",
@@ -265,10 +329,19 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|b+4|=2",
+          "expectedMathAnswer": "{-6,-2}",
+          "independentDerivation": "b+4=±2",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX08",
@@ -277,10 +350,19 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
-        "teacherVisualReview": true
+        "teacherVisualReview": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|2t-4|=8",
+          "expectedMathAnswer": "{-2,6}",
+          "independentDerivation": "2t-4=±8",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX09",
@@ -289,12 +371,21 @@
         "taskCategory": "solve_and_graph",
         "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.no_solution",
-        "reviewStatus": "DIRECT_SOURCE_PAGE_EXPRESSION_CASE_MATCH_REVIEW_PENDING_INDEPENDENT_VERIFICATION",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
         "teacherVisualReview": true,
         "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
-        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used."
+        "correctionNote": "Source right-hand-side is negative, so two_solutions cannot be used.",
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "|5h+2|=-8",
+          "expectedMathAnswer": "∅",
+          "independentDerivation": "absolute value is nonnegative",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX10",
@@ -303,12 +394,21 @@
         "taskCategory": "financial_modelling",
         "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
         "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
         "relatedOriginalExercise": "contextQ4",
-        "relatedExerciseIsExactEquivalent": false
+        "relatedExerciseIsExactEquivalent": false,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "investment yield target 12%, deviation 3 percentage points",
+          "expectedMathAnswer": "{9%,15%}",
+          "independentDerivation": "|r-12|=3, yields 9% or 15%",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX11",
@@ -317,10 +417,19 @@
         "taskCategory": "equation_from_number_line",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "number-line endpoints -2 and 4",
+          "expectedMathAnswer": "|x-1|=3",
+          "independentDerivation": "midpoint=1, radius=3",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX12",
@@ -329,10 +438,19 @@
         "taskCategory": "equation_from_number_line",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 116,
+          "sourcePrintedPage": 105,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW",
+          "promptSummary": "number-line endpoints -9 and 3",
+          "expectedMathAnswer": "|x+3|=6",
+          "independentDerivation": "midpoint=-3, radius=6",
+          "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX13",
