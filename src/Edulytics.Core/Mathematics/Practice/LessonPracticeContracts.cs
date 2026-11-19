@@ -10969,6 +10969,22 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U01L07_P47_55",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // Grade9 General U01L08: explicit PARTIAL exact-family coverage only.
+        // Trends/extrema/time-series explanation is teacher-reviewed until D proves
+        // a suitable numeric/visual grader; never label READY_VERIFIED here.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:08:INTERPRETING-FUNCTION-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:08:INTERPRETING-FUNCTION-GRAPHS",
+            "functions.graph.key_features",
+            "GRAPH_INTERVAL_TRENDS_EXTREMA_WITH_TEACHER_CONTEXT",
+            ["uae.g6.u08.l03.linear_vs_square",
+             "uae.g6.u08.l03.y_intercept",
+             "uae.g6.u08.l03.equation_from_line",
+             "geometry.coordinate.y_intercept_from_rule"],
+            "UAE_G9_GENERAL_2025_AR_U01L08_P56_61_PARTIAL_ENGINES",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
