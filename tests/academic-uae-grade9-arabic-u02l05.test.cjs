@@ -132,6 +132,15 @@ test('Every source exercise has guarded numeric or teacher-reviewed routing with
       assert.ok(item.numericAssistanceFamily.endsWith('.midpoint'));
     }
   }
+  for (const num of [1,2,3]) {
+    const item = a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX'+String(num).padStart(2, '0')));
+    assert.ok(item.digitalFamily.endsWith('.composite_evaluation'));
+  }
+  for (const num of [6,9]) {
+    const item = a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX'+String(num).padStart(2, '0')));
+    assert.ok(item.digitalFamily.endsWith('.no_solution'));
+    assert.equal(item.teacherVisualReview, true);
+  }
   for (const num of [24,27,28]) {
     const item = a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX'+num));
     assert.ok(item.digitalFamily.endsWith('.no_solution'));
