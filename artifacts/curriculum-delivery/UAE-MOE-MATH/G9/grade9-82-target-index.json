@@ -1591,21 +1591,21 @@
       "SourceEdition": "2019-2020",
       "SourcePathway": "General",
       "SourcePdfSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
-      "PrintedPage": 607,
-      "PDFPage": 23,
+      "PrintedPage": 608,
+      "PDFPage": 24,
       "SourceRefs": [
         "03-1.pdf:11-1",
         "01.pdf:7-1"
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "PARTIAL_SOURCE_TARGET_OPENING_COMPARISON_DONE_FULL_EQUIVALENCE_NOT_VERIFIED",
+      "ElementCoverage": "SOURCE_PAGE_LOCATOR_CORRECTED_OPENING_OVERLAP_VERIFIED_FULL_EQUIVALENCE_PENDING",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
-      "PdfPageRenderSha256": "02bdaa4a7ff453bf2d58b3cdcd64ef2793d62c4115d83c52761bf26f26b53d53",
+      "PdfPageRenderSha256": "5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
-      "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false,
+      "SourcePageVisualVerified": true,
+      "SourcePageHeadingAndObjectivesVerified": true,
       "SupplementarySourceDirectPageEvidence": {
         "sourceRef": "01.pdf:7-1",
         "sourcePrintedPage": 365,
@@ -1616,9 +1616,23 @@
         ],
         "verification": "DIRECT_FIRST_PAGE_SOURCE_REVIEW_ONLY_FURTHER_ELEMENTS_PENDING",
         "comparedTargetRef": "03-1.pdf:11-1",
-        "comparedTargetPdfPage": 23,
-        "semanticComparison": "DISTINCT_POINT_LINE_PLANE_VS_NECESSARY_SUFFICIENT_CONDITIONS",
-        "comparisonStatus": "DIRECT_OPENING_PAGE_PAIR_VERIFIED_FULL_SOURCE_SKILL_EXERCISE_INTEGRATION_NOT_VERIFIED"
+        "comparedTargetPdfPage": 24,
+        "semanticComparison": "PARTIAL_POINT_LINE_PLANE_OVERLAP_WITH_DISTINCT_ADDITIONAL_PROOF_AND_COLLINEARITY_EXERCISES",
+        "comparisonStatus": "CORRECTED_TARGET_PAGE_DIRECTLY_VERIFIED_FULL_EQUIVALENCE_PENDING",
+        "comparedTargetPrintedPage": 608
+      },
+      "PdfPageRenderHashMethod": "SHA256 pixmap.samples RGB 72dpi (new audit protocol; previous historic hashes not regenerated)",
+      "SourcePageCorrection": {
+        "previous": {
+          "printed": 607,
+          "pdf": 23,
+          "renderHash": "02bdaa4a7ff453bf2d58b3cdcd64ef2793d62c4115d83c52761bf26f26b53d53"
+        },
+        "corrected": {
+          "printed": 608,
+          "pdf": 24,
+          "renderHash": "5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f"
+        }
       }
     },
     {
@@ -2089,7 +2103,7 @@
   "all82PrimaryPageRasterChecksPass": true,
   "sourceTextAndSemanticChecksPending": true,
   "sourceSupplementaryReview": {
-    "status": "SOURCE_TARGET_OPENING_COMPARISONS_COMPLETE_FOR_THREE_SUPPLEMENTS_REMAINING_PAGES_PENDING",
+    "status": "CORRECTED_11_1_SOURCE_LOCATOR_REVIEWED_REMAINING_ELEMENTS_PENDING",
     "source": "01.pdf",
     "supplementaryRefs": [
       "01.pdf:7-1",
