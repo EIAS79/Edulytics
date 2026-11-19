@@ -1,65 +1,45 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "scope": {
     "packCode": "UAE-MOE-MATH",
     "grade": 9,
     "pathway": "General",
-    "targetSchoolYear": "2026-2027",
-    "academicLanguage": "ar",
-    "rtl": true
+    "language": "ar",
+    "rtl": true,
+    "targetSchoolYear": "2026-2027"
   },
-  "requested": {
-    "units": 14,
-    "lessons": 86
-  },
-  "sourceLock": {
-    "status": "BLOCKED_INCOMPLETE_COMPATIBLE_SOURCE",
-    "selectedEdition": "2025-2026",
-    "verifiedSameEditionUnits": 7,
-    "verifiedSameEditionLessons": 43,
-    "missingSameEditionUnits": 7,
-    "missingSameEditionLessons": 43
-  },
-  "priorPreparedABC": {
-    "lessons": 12,
-    "nextUnclosedLesson": "2-5",
-    "sourceEdition": "2025-2026",
-    "countNature": "Prior work checkpoint, not new verified source lock or Stage D pass"
-  },
-  "currentLesson": {
-    "code": "2-5",
-    "title": "حل معادلات تتضمن قيمة مطلقة",
-    "contentPrepared": true,
-    "exactPracticeFamiliesPrepared": 5,
-    "sourcePagesReviewed": [
-      103,
-      104,
-      105,
-      106,
-      107,
-      108
-    ],
-    "status": "A_C_EXPLICIT_GAP_SOURCE_LOCK_INCOMPLETE",
-    "closed": false
-  },
-  "closingRule": "No transition past source lock; no next lesson until current closure with Evidence+Checkpoint+Commit. Source missing is explicit A_C_EXPLICIT_GAP, never READY_FOR_STAGE_D.",
-  "stageD": {
-    "testsExecutedByThisPass": false,
-    "ciGatesExecutedByThisPass": false,
-    "e2eExecutedByThisPass": false,
-    "releaseApproved": false
-  },
-  "sourceArtifacts": [
-    "source-inventory.json",
-    "source-selection.json",
-    "edition-diff.json",
-    "source-index.json"
+  "fiveBooksInventoried": true,
+  "rawGeneralUnits": 14,
+  "rawGeneralLessons": 86,
+  "ownerTargetUnits": 14,
+  "ownerTargetLessons": 86,
+  "uniqueLessonsVerified": null,
+  "semanticCrosswalk": "IN_PROGRESS",
+  "verifiedSourcePageComparison": [
+    {
+      "sourceA": "01.pdf:7-4",
+      "sourceB": "03-1.pdf:11-3",
+      "status": "STRONG_OVERLAP_REMAINDER_PENDING"
+    },
+    {
+      "sourceA": "01.pdf:1-4",
+      "sourceB": "02-1.pdf:7-5",
+      "status": "COMPLEMENTARY_SKILL_RETAIN_BOTH"
+    },
+    {
+      "sourceA": "01.pdf:3-3",
+      "sourceB": "03-1.pdf:12-3",
+      "status": "PARTIAL_OVERLAP_PRESERVE_REVIEW"
+    }
   ],
-  "blockedReasons": [
-    "Only same-edition General student book 01.pdf has 7 units/43 lessons",
-    "Remaining General books are from 2019-2020 and conflict on unit 7",
-    "02.pdf and 03.pdf are Applied and must be excluded",
-    "Owner target 14/86 not established by current same-edition source"
-  ],
-  "lastUpdated": "2026-11-19"
+  "sourceLock": "COMPREHENSIVE_TOC_CAPTURED_SEMANTIC_GATE_PENDING",
+  "previousPreparedLessonCount": 12,
+  "firstNotClosedLesson": "2-5",
+  "lesson2_5": "CONTENT_AND_FIVE_PRACTICE_FAMILIES_PREPARED_NOT_AC_CLOSED",
+  "remainingSourceLessonsInRawPlan": 74,
+  "testsRun": "NOT_RUN",
+  "ciGatesRun": "NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionPublish": "NOT_STARTED",
+  "remainingCritical": "Complete 86-lesson objective-level review, resolve dedup crosswalk, then sequential A-C closure with evidence and checkpoint."
 }
