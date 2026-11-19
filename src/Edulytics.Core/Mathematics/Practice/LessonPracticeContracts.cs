@@ -11010,21 +11010,6 @@ public static class LessonPracticeContractRegistry
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
 
-        // UAE Grade9 General 2025 source pp83-90: one-step equations with
-        // fraction/decimal variations and verification. Stage D not run.
-        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:02:ONE-STEP-EQUATIONS"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L9:GENERAL:02:02:ONE-STEP-EQUATIONS","algebra.equations.one_step",
-            "G9_U02L02_INVERSE_ADD_SUBTRACT_MULTIPLY_DIVIDE",
-            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
-             "uae.g6.u07.l01.result_minus_unknown",
-             "uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide",
-             "uae.g6.u07.l01.test_candidate",
-             "uae.g6.u07.l03.fraction_addition_unknown",
-             "uae.g6.u07.l03.decimal_addition_unknown"],
-            "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
-            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
-
-
         // G9 General U02L03 p91–96: Stage C proposed reuse only.
         // Distribution, fractions and written strategies need independent D audit.
         byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
@@ -11034,18 +11019,6 @@ public static class LessonPracticeContractRegistry
              "supporting.algebra.equations.mixed"],
             "UAE_G9_GENERAL_AR_U02L03_P91_96",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
-
-
-        // UAE Grade9 General U02L03 Arabic student lab p90, lesson pp91-96;
-        // numeric exact generator reuse, geometric/algebra-tile teacher review.
-        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:03:MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L9:GENERAL:02:03:MULTI-STEP-EQUATIONS","algebra.linear.solve",
-            "G9_U02L03_MULTI_STEP_LINEAR_DISTRIBUTION_AND_LIKE_TERMS",
-            ["algebra.linear.ax_plus_b_equals_c",
-             "supporting.algebra.equations.mixed",
-             "supporting.algebra.expand"],
-            "UAE_G9_GENERAL_2025_AR_U02L03_P90_96",
-            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
 
         // UAE G9 General U02L04 p97-102; identity and contradiction cases
