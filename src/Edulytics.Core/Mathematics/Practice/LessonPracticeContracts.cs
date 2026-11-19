@@ -11055,6 +11055,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L06_P111_117",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // G9 General U02L07 pp119–125: percent change needs original denominator.
+        // Existing percent question families must be independently audited in D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE", "percentages.core",
+            "G9_U02L07_INCREASE_DECREASE_PERCENT_CHANGE",
+            ["percentages.core.increase_decrease",
+             "usccss.g7.u04.fractional_change",
+             "percentages.core.of_quantity"],
+            "UAE_G9_GENERAL_2025_AR_U02L07_P119_125",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
