@@ -126,7 +126,7 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_SOURCE_SKILL_CANDIDATES_EXTENDED_EXACT_EQUIVALENCE_UNVERIFIED",
+    "status": "A_C_EQUATION_FROM_GRAPH_CORRECTLY_TEACHER_REVIEWED",
     "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
@@ -142,17 +142,19 @@
       "time_contexts",
       "reasoning_and_visual"
     ],
-    "sourceExercisesWithoutDigitalFamily": 21,
+    "sourceExercisesWithoutDigitalFamily": 33,
     "teacherReviewRoutingPolicy": "TEACHER_REVIEW_REQUIRED_FOR_OPEN_RESPONSES",
     "standaloneFormStatus": "LOCAL_EXPORT_ONLY_NOT_AUTHENTICATED_PLATFORM_GRADE",
     "preparedContextExamples": [
       "contextQ4",
       "contextQ5"
     ],
-    "digitalFamilyCandidates": 43,
+    "digitalFamilyCandidates": 31,
     "familyRoutingCorrections": "EX24/27/28 moved to no_solution; EX38/39 to two_solutions; EX30/37/40/42 require teacher review pending exact families",
     "fractionalOuterVariantCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
-    "fractionalOuterTestCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc"
+    "fractionalOuterTestCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc",
+    "dualRouteNumericPlusGraph": 6,
+    "graphToEquationTeacherReview": 12
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
   "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
@@ -207,60 +209,72 @@
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX05",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX06",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX07",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX08",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX09",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "solve_and_graph",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
+        "assessmentTreatment": "digital_numeric_solutions_plus_teacher_review_number_line_graph",
         "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "teacherVisualReview": true
       },
       {
         "itemId": "01.pdf:2-5:EX10",
@@ -281,20 +295,24 @@
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "equation_from_number_line",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX12",
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "equation_from_number_line",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX13",
@@ -536,40 +554,48 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX34",
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX35",
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX36",
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX37",
@@ -696,60 +722,72 @@
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX47",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX48",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX49",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX50",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX51",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "number_line_to_equation",
-        "assessmentTreatment": "teacher_graph_plus_numeric",
-        "digitalFamily": "uae.g9.general.u02.l05.midpoint",
-        "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
+        "digitalFamily": null,
+        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
+        "teacherReviewRequired": true
       },
       {
         "itemId": "01.pdf:2-5:EX52",
