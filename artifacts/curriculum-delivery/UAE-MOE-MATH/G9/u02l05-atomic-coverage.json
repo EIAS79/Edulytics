@@ -126,11 +126,15 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_EXPLICIT_GAP_PENDING_COMPREHENSIVE_INDEX_AND_VISUAL_RUNTIME_REVIEW",
-    "nextAction": "Finish full-grade comprehensive semantic crosswalk, verify RichV2 visual output in Stage D, and close A-C only after required editorial evidence and checkpoint are complete.",
+    "status": "A_C_EXPLICIT_GAP_PENDING_FULL_INDEX_AND_RUBRIC_INTEGRATION",
+    "nextAction": "Complete lesson-to-renderer visibility integration and teacher review workflow in A-C; execute visual/browser acceptance only in Stage D. Global index semantic review remains pending.",
     "richV2VisualDescriptionsPrepared": true,
-    "teacherRubricPrepared": true
+    "teacherRubricPrepared": true,
+    "visualRendererPrepared": true,
+    "visualRendererStatus": "FIRST_PARTY_RTL_SVG_NUMBERLINE_IMPLEMENTED_STATIC_NO_RUNTIME_ACCEPTANCE",
+    "teacherRubricIntegrated": false
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
-  "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json"
+  "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+  "presentationArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html"
 }
