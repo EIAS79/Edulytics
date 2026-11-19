@@ -76,17 +76,34 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g7.u09.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(7, uaeGrade7.Length);
-        // G8 General semantic repairs add sixteen G8-only exact numeric/choice
-        // families. The prior independently audited 1,691 interactions must
-        // remain unchanged; missing or extra G8 families fail closed.
+        // G8 owner-scoped 76-lesson remediation adds 19 exact question families
+        // to 16 previously independently audited semantic families. Preserve
+        // the 1,691 original non-G8 interaction contracts byte-for-byte.
         var uaeGrade8 = LessonPracticeInteractionRegistry.All
             .Where(x => x.FamilyId.StartsWith("uae.g8.", StringComparison.Ordinal))
             .ToArray();
-        Assert.Equal(16, uaeGrade8.Length);
+        Assert.Equal(35, uaeGrade8.Length);
+        var grade8Symbolic = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "uae.g8.u01.l03.monomial_multiply",
+            "uae.g8.u01.l03.monomial_divide",
+            "uae.g8.u01.l04.monomial_power",
+            "uae.g8.u02.l03.write_two_step_equation"
+        };
         Assert.All(uaeGrade8, contract =>
         {
-            Assert.Equal("exact_integer", contract.AnswerType);
-            Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, contract.InteractionKind);
+            var expected = grade8Symbolic.Contains(contract.FamilyId)
+                ? "contract_defined"
+                : contract.FamilyId == "uae.g8.u01.l05.negative_integer_exponent"
+                    ? "exact_fraction"
+                    : "exact_integer";
+            Assert.Equal(expected, contract.AnswerType);
+            Assert.Equal(expected switch
+            {
+                "contract_defined" => LessonPracticeInteractionKind.ContractDriven,
+                "exact_fraction" => LessonPracticeInteractionKind.FractionEntry,
+                _ => LessonPracticeInteractionKind.IntegerKeypad
+            }, contract.InteractionKind);
             Assert.False(contract.HasVisualRepresentation);
         });
         Assert.Equal(1691,

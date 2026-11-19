@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -195,15 +195,15 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','26ac012a0531f952683fa0103d4e832b074269b9']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','007ca450d0b189e2d4e5492156343007a3408d91']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','cda5c89ebef79c713fb6e7b410b549699cfdd472']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','a09b910f98f4dc01e63f2978740553de8793f602']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','bf70fd0cd93ab095c1b8fbfb6f6e5b92da039223']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d496c82a2ebb173a42219abc11642d23c9f7ea59']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;

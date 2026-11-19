@@ -1,0 +1,2237 @@
+{
+  "scope": "static evidence for all 76 contracts, not academic source-to-generated-prompt certification",
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
+      "title": "الأعداد النسبية",
+      "targetMechanic": "RATIONAL_TERMINATING_AND_REPEATING_DECIMAL_EQUIVALENCE",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 40–47; printed pages 7–14",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g4.u10.l04.decimal_to_hundredths",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit10DecimalPlaceValueQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            ",CultureInfo.InvariantCulture)}% إلى عدد عشري؛ اكتب العدد فقط.",
+            "اقسم النسبة المئوية على مئة."
+          ]
+        },
+        {
+          "family": "uae.g5.u07.l03.simplify_fraction",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit8EquivalentFractionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اكتب الكسر {numerator}/{denominator} في أبسط صورة (بسط/مقام).",
+            "ما العامل المشترك الأكبر للبسط والمقام في الكسر {numerator}/{denominator}؟"
+          ]
+        },
+        {
+          "family": "uae.g5.u07.l08.reducible_fraction_to_decimal",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit10DecimalPlaceValueQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            ",CultureInfo.InvariantCulture)}% إلى عدد عشري؛ اكتب العدد فقط.",
+            "اقسم النسبة المئوية على مئة."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l08.classify_fraction_decimal",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit10DecimalPlaceValueQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            ",CultureInfo.InvariantCulture)}% إلى عدد عشري؛ اكتب العدد فقط.",
+            "اقسم النسبة المئوية على مئة."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l08.fraction_exact_decimal",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit10DecimalPlaceValueQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            ",CultureInfo.InvariantCulture)}% إلى عدد عشري؛ اكتب العدد فقط.",
+            "اقسم النسبة المئوية على مئة."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS",
+      "title": "القوى والأسس",
+      "targetMechanic": "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 48–55; printed pages 15–22",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u06.l02.repeated_to_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g6.u06.l02.integer_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g6.u06.l02.decimal_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g6.u06.l02.fraction_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g6.u06.l02.ten_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g6.u06.l02.power_addition",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS",
+      "title": "ضرب أحاديات الحد وقسمتها",
+      "targetMechanic": "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 56–63; printed 23–30",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u01.l03.monomial_multiply",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l03.monomial_divide",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS",
+      "title": "القوى الأسية لأحاديات الحد",
+      "targetMechanic": "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 64–71; unit-linked PDF 72–75; printed 31–38 plus unit investigation",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u01.l04.monomial_power",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS",
+      "title": "الأسس السالبة",
+      "targetMechanic": "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 76–83; printed 43–50",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u01.l05.negative_integer_exponent",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION",
+      "title": "الترميز العلمي",
+      "targetMechanic": "SCIENTIFIC_NOTATION_NORMALIZED_DECIMAL_AND_TEN_POWER",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 84–91; printed 51–58",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.powers10.evaluate",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "supporting.powers10.missing_exponent",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:07:COMPUTING-WITH-SCIENTIFIC-NOTATION",
+      "title": "الحساب باستخدام الترميز العلمي",
+      "targetMechanic": "SCIENTIFIC_NOTATION_MULTIPLY_DIVIDE_ADD_SUBTRACT",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 92–99; printed 59–66; subsequent unit exploration",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "supporting.standard_form.power10_exponent",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.powers10.multiply",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "supporting.powers10.divide",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "supporting.algebra.expressions.mixed",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS",
+      "title": "الجذور",
+      "targetMechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u06.l02.perfect_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l08.square_root_exact",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l08.cube_root_exact",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS",
+      "title": "تقدير الجذور",
+      "targetMechanic": "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 114–121; printed 81–88",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u06.l02.perfect_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U6L02PowersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "الأساس هو العامل المتكرر، والأس عدد مرات تكراره في حاصل الضرب. لا تستخدم التقريب.",
+            "احسب 10^{exp} بدقة واكتب عددًا صحيحًا."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l09.square_root_bounds",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        },
+        {
+          "family": "uae.g8.u01.l09.cube_root_bounds",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS",
+      "title": "مقارنة الأعداد الحقيقية",
+      "targetMechanic": "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 122–129; unit support PDF130–139; printed 89–96 and unit assessment/projects",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u05.l09.compare_mixed_signed_rationals",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "fractions.compare.unlike.common_denominator",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "uae.g4.u10.l08.decimal_compare",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit10Lesson08DecimalComparisonQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "قارن {x} و{y}: اكتب ٠ إذا الأول أصغر، و١ إذا تساويا، و٢ إذا الأول أكبر.",
+            "أي العددين أكبر: {x} أو {y}؟ اكتب عدد أجزاء المئة في العدد الأكبر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS",
+      "title": "حل المعادلات باستخدام المعاملات النسبية",
+      "targetMechanic": "ONE_STEP_RATIONAL_COEFFICIENT_LINEAR_EQUATION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 144–151, printed 111–118",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u05.rational_linear_equation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "usccss.number.signed_rational_divide",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS",
+      "title": "حل المعادلات المكوّنة من خطوتين",
+      "targetMechanic": "TWO_STEP_LINEAR_AX_PLUS_B_EQUALS_C",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 154–161, printed 121–128",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearEquationQuestionFactory.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.algebra.expand",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS",
+      "title": "كتابة المعادلات المكوّنة من خطوتين",
+      "targetMechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 162–169; printed 129–136",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u02.l03.write_two_step_equation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE",
+      "title": "حل المعادلات التي تحتوي على متغيرات في كل طرف",
+      "targetMechanic": "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 178–185; printed 145–152",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.linear.variables_both_sides",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS",
+      "title": "حل المعادلات المكوّنة من عدة خطوات",
+      "targetMechanic": "MULTI_STEP_DISTRIBUTIVE_LINEAR_EQUATIONS_AND_SOLUTION_COUNT",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 186–193; printed 153–160",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "supporting.algebra.expand",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.algebra.simplify",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.algebra.equations.mixed",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearEquationQuestionFactory.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE",
+      "title": "معدل التغير الثابت",
+      "targetMechanic": "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 204–211; printed 171–178",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "ratio.unit_rate.direct",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "ratio.unit_rate.equivalent_ratio",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:02:SLOPE",
+      "title": "الميل",
+      "targetMechanic": "SLOPE_FROM_POINTS_TABLE_AND_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 214–221; printed 181–188",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM",
+      "title": "المعادلات بصيغة y = mx",
+      "targetMechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g8.u03.l03.direct_variation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM",
+      "title": "صيغة الميل والمقطع",
+      "targetMechanic": "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 232–239; printed 199–206",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS",
+      "title": "تمثيل خط مستقيم بيانيًا باستخدام التقاطعات",
+      "targetMechanic": "GRAPH_LINEAR_EQUATION_USING_X_AND_Y_INTERCEPTS",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 242–249; printed 209–216",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.coordinate.y_intercept_from_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS",
+      "title": "كتابة المعادلات الخطية",
+      "targetMechanic": "WRITE_LINEAR_EQUATION_FROM_POINTS_SLOPE_OR_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 254–261; printed 221–228",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING",
+      "title": "حل أنظمة المعادلات باستخدام التمثيل البياني",
+      "targetMechanic": "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 266–275; printed 233–242",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY",
+      "title": "حل أنظمة المعادلات جبريًا",
+      "targetMechanic": "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 276–283; printed 243–250",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.linear.systems.two_by_two.integer_coefficients",
+          "implementationFile": "src/Edulytics.Services/Mathematics/Generation/ExactLinearSystem2x2QuestionFactory.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g8.u03.l07.system_solution_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS",
+      "title": "تمثيل العلاقات",
+      "targetMechanic": "REPRESENT_LINEAR_RELATION_TABLE_GRAPH_EQUATION_WORDS",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF300–309, printed 267–276",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS",
+      "title": "العلاقات",
+      "targetMechanic": "RELATION_ORDERED_PAIRS_DOMAIN_RANGE_MAPPING_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF310–317, printed 277–284",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "functions.table.lookup.invert",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit4FunctionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS",
+      "title": "الدوال",
+      "targetMechanic": "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF320–327, printed 287–294",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "functions.relations.unique_output.classify",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit4FunctionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "functions.notation.evaluate_context",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit4FunctionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS",
+      "title": "الدوال الخطية",
+      "targetMechanic": "LINEAR_FUNCTION_RULE_TABLE_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 328–337; printed 295–304",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "algebra.linear.standard_form.slope_intercept",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS",
+      "title": "مقارنة خصائص الدوال",
+      "targetMechanic": "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 342–351; printed 309–318",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u02.l12.compare_same_axes_rates",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U8L03FunctionGraphsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "هل النقاط (١،٣)،(٢،٦)،(٣،٩) التي تقع على مستقيم تمثل دالة خطية أم غير خطية؟",
+            "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟"
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS",
+      "title": "تكوين الدوال",
+      "targetMechanic": "BUILD_LINEAR_FUNCTION_FROM_TABLE_GRAPH_CONTEXT",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 352–359; printed 319–326",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "algebra.modeling.linear_relationship.select_equation",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit2AlgebraQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g6.u08.l02.linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U8L02SequenceQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "هل المتتالية ٧،١٤،٢١،٢٨ حسابية أم هندسية؟",
+            "هل المتتالية ٢،٤،٨،١٦ حسابية أم هندسية؟"
+          ]
+        },
+        {
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS",
+      "title": "الدوال الخطية والدوال غير الخطية",
+      "targetMechanic": "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 360–367; printed 327–334",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U8L03FunctionGraphsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "هل النقاط (١،٣)،(٢،٦)،(٣،٩) التي تقع على مستقيم تمثل دالة خطية أم غير خطية؟",
+            "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟"
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS",
+      "title": "الدوال التربيعية",
+      "targetMechanic": "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 368–375; printed 335–342",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "supporting.functions.polynomial_value",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeAdvancedEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "functions.quadratic.output_roots.solve",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit4FunctionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U8L03FunctionGraphsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "هل النقاط (١،٣)،(٢،٦)،(٣،٩) التي تقع على مستقيم تمثل دالة خطية أم غير خطية؟",
+            "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟"
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS",
+      "title": "التمثيلات البيانية النوعية",
+      "targetMechanic": "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
+      "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 380–387; printed 347–354",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "functions.domain_range.context_bounds",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit4FunctionQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "uae.g6.u08.l03.linear_vs_square",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U8L03FunctionGraphsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "هل النقاط (١،٣)،(٢،٦)،(٣،٩) التي تقع على مستقيم تمثل دالة خطية أم غير خطية؟",
+            "هل نقاط مساحة المربع (١،١)،(٢،٤)،(٣،٩) تمثل دالة خطية أم غير خطية؟"
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES",
+      "title": "المستقيمات",
+      "targetMechanic": "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 7–14; printed 371–378",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l01.transversal_angle_measure",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF",
+      "title": "البرهان الهندسي",
+      "targetMechanic": "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 15–22; printed 379–386",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l02.proof_reason_classify",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES",
+      "title": "زوايا المثلثات",
+      "targetMechanic": "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 25–32; printed 389–396",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l03.triangle_angle_measure",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES",
+      "title": "المضلعات والزوايا",
+      "targetMechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 33–40; printed 397–404",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "geometry.angles.supplementary",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM",
+      "title": "نظرية فيثاغورس",
+      "targetMechanic": "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 47–54; printed 411–418",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l05.pythagorean_integer_triple",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM",
+      "title": "استخدام نظرية فيثاغورس",
+      "targetMechanic": "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 59–66; printed 423–430",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l06.pythagorean_context_diagonal",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE",
+      "title": "المسافة على المستوى الإحداثي",
+      "targetMechanic": "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 67–74; printed 431–438",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u05.l07.coordinate_plane_distance",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS",
+      "title": "الإزاحة",
+      "targetMechanic": "TRANSLATE_SHAPE_VECTOR_COORDINATE",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 89–96; printed 453–460",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u05.l11.plot_from_signed_moves",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l12.find_horizontal_endpoint",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l12.find_vertical_endpoint",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS",
+      "title": "الانعكاس",
+      "targetMechanic": "REFLECT_POINT_ACROSS_X_Y_AXES",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 97–104; printed 461–468",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u05.l10.reflect_across_x",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l10.reflect_across_y",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l11.reflect_both_axes",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS",
+      "title": "الدوران",
+      "targetMechanic": "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 111–118; printed 475–482",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u06.l03.rotation_origin_coordinate",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS",
+      "title": "عمليات تغيير الأبعاد/التمدد",
+      "targetMechanic": "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 123–130; printed 487–494",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson2CorrespondenceQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS",
+      "title": "التطابق والتحويلات",
+      "targetMechanic": "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 145–152; printed 509–516",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g6.u05.l10.reflect_across_x",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l10.reflect_across_y",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        },
+        {
+          "family": "uae.g6.u05.l11.reflect_both_axes",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeG6U5L01SignedNumbersQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?",
+            ")}. اكتب عدد الوحدات فقط."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE",
+      "title": "التطابق",
+      "targetMechanic": "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 157–164; printed 521–528",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.congruence.identify_criterion",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS",
+      "title": "التشابه والتحويلات",
+      "targetMechanic": "SIMILARITY_DILATION_AND_RIGID_TRANSFORMS",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 171–178; printed 535–542",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u01.l02.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson2CorrespondenceQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS",
+      "title": "خصائص المضلعات المتشابهة",
+      "targetMechanic": "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 179–186; printed 543–550",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT",
+      "title": "المثلثات المتشابهة والقياس غير المباشر",
+      "targetMechanic": "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 187–194; printed 551–558",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES",
+      "title": "المثلثات القائمة والمتشابهة",
+      "targetMechanic": "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 195–202; printed 559–566",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.coordinate.gradient_between_points",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u02.l10.graphs_origin_slope",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit2Lesson10GraphProportionsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES",
+      "title": "مساحة الأشكال المتشابهة ومحيطها",
+      "targetMechanic": "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
+      "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 203–210; printed 567–574",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "usccss.g7.u01.l06.scaled_area_square_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson6AreaScalingQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "usccss.g7.u01.l10.change_scale_length_and_area",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson10ChangingScalesQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS",
+      "title": "حجم الأسطوانة",
+      "targetMechanic": "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 7–14; printed 587–594",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "usccss.g7.u07.prism_volume_base_height",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES",
+      "title": "حجم المخروط",
+      "targetMechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l02.cone_volume_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 53,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES",
+      "title": "حجم الكرة",
+      "targetMechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 24–31; printed 603–610",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 54,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:04:SURFACE-AREA-OF-CYLINDERS",
+      "title": "مساحة سطح الأسطوانة",
+      "targetMechanic": "CYLINDER_LATERAL_AND_TOTAL_SURFACE_PI_COEFFICIENT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 38–45; printed 617–624",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.geometry.circle_circumference_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES",
+      "title": "مساحة سطح المخروط",
+      "targetMechanic": "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 50–57; printed 629–636",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "supporting.geometry.circle_area_pi_coefficient",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS",
+      "title": "تغيرات الأبعاد",
+      "targetMechanic": "SIMILAR_SOLIDS_SCALE_LENGTH_AREA_SQUARE_VOLUME_CUBE",
+      "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 60–67; printed 639–646",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g7.u09.l06.scale_area_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "uae.g7.u09.l06.scale_volume_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        },
+        {
+          "family": "geometry.similarity.scale_factor",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS",
+      "title": "مخططات الانتشار",
+      "targetMechanic": "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 49–58; printed 661–670",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u09.l01.scatter_direction",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT",
+      "title": "المستقيم الأفضل تمثيلًا",
+      "targetMechanic": "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 61–68; printed 673–680",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "statistics.linear_model.fit_select",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "statistics.linear_model.predict",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "statistics.linear_model.residual",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES",
+      "title": "الجداول ذات المدخلين",
+      "targetMechanic": "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 73–80; printed 685–692",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "statistics.two_way.marginal_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "statistics.two_way.conditional_relative",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit3StatisticsQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "supporting.statistics.table_total",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}.",
+            "دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:04:DESCRIPTIVE-STATISTICS",
+      "title": "الإحصاء الوصفي",
+      "targetMechanic": "DESCRIPTIVE_STATISTICS_FIVE_NUMBER_MEAN_MEDIAN_MODE_RANGE",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 85–92; printed 697–704",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "statistics.center_spread.mean",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "statistics.center_spread.median",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "supporting.statistics.quartile",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeAdvancedEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY",
+      "title": "مقاييس التباين",
+      "targetMechanic": "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 93–100; printed 705–712",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "statistics.center_spread.mad",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        },
+        {
+          "family": "statistics.center_spread.range",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS",
+      "title": "تحليل توزيعات البيانات",
+      "targetMechanic": "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 101–108; printed 713–720",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u09.l06.distribution_shape",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES",
+      "title": "النقاط والمستقيمات والمستويات",
+      "targetMechanic": "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 121–128; printed 733–740",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g4.u12.l01.segments_from_points",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade4Unit12GeometryOneQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مجسم جميع أوجهه ستة مربعات متطابقة طول ضلع المربع {b} سم",
+            "مجسم بقاعدتين مستطيلتين متطابقتين وأربعة أوجه جانبية مستطيلة؛ أبعاده {b} سم و{b+c} سم و{b+2*c} سم"
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE",
+      "title": "القياس الخطي",
+      "targetMechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u10.l02.segment_addition",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS",
+      "title": "المسافة ونقاط المنتصف",
+      "targetMechanic": "CARTESIAN_DISTANCE_AND_MIDPOINT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 141–148; printed 753–760",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u10.l03.midpoint_coordinate",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS",
+      "title": "إثبات العلاقات بين القطع المستقيمة",
+      "targetMechanic": "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 154–161; printed 766–773",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u10.l04.segment_reason",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS",
+      "title": "زوايا المضلعات",
+      "targetMechanic": "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF173–181, printed 785–793",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "geometry.polygons.missing_interior_angle",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        },
+        {
+          "family": "geometry.angles.supplementary",
+          "implementationFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+            "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS",
+      "title": "متوازي الأضلاع",
+      "targetMechanic": "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF183–191, printed 795–803",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS",
+      "title": "اختبارات متوازي الأضلاع",
+      "targetMechanic": "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF193–201, printed 805–813",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u11.l03.parallelogram_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES",
+      "title": "المستطيل",
+      "targetMechanic": "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 203–209; printed 815–821",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u11.l04.rectangle_test",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES",
+      "title": "المعين والمربع",
+      "targetMechanic": "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 210–218; printed 822–830",
+      "semanticStatus": "PENDING_SEMANTIC_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u11.l05.rhombus_diagonals",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8SupplementalQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "اضرب أحاديتي الحد ({Mono(a,m)}) × ({Mono(b,n)}). اكتب الناتج بصيغة معامل متبوعًا بـx^الأس من دون مسافات، مثل 6x^3.",
+            "اضرب المعاملين، واجمع الأسين عند ضرب قوتين لهما الأساس نفسه x."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES",
+      "title": "شبه المنحرف وشكل الطائرة الورقية",
+      "targetMechanic": "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 219–228; printed 831–840",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u11.l06.trapezoid_midsegment",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        },
+        {
+          "family": "uae.g8.u11.l06.kite_diagonal_area",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY",
+      "title": "مقدمة في نظرية المجموعات",
+      "targetMechanic": "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 240–250; printed 852–862",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u12.l01.membership_finite_roster",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        },
+        {
+          "family": "uae.g8.u12.l01.empty_finite_infinite_classify",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS",
+      "title": "المجموعات الجزئية والعمليات على المجموعات",
+      "targetMechanic": "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 253–262; printed 865–874",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u12.l02.subset_classify",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        },
+        {
+          "family": "uae.g8.u12.l02.union_cardinality",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        },
+        {
+          "family": "uae.g8.u12.l02.intersection_cardinality",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        },
+        {
+          "family": "uae.g8.u12.l02.difference_cardinality",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS",
+      "title": "استخدام مخططات فن لدراسة العمليات على المجموعات",
+      "targetMechanic": "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 264–273; printed 876–885",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "uae.g8.u12.l03.three_set_venn_region_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/UaeGrade8GeneralSemanticQuestions.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": [
+            "مثلث قائم الزاوية طول ضلعي قائمته {0} سم و{1} سم. أوجد طول الوتر بالسنتيمتر.",
+            "مثلث قائم الزاوية طول وتره {0} سم وطول أحد ضلعي قائمته {1} سم. أوجد طول ضلع القائمة الآخر بالسنتيمتر."
+          ]
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS",
+      "title": "استخدام المجموعات لحل المسائل",
+      "targetMechanic": "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
+      "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 275–284; printed 887–896",
+      "semanticStatus": "PARTIAL_TEACHER_REVIEW",
+      "families": [
+        {
+          "family": "supporting.sets.union_count",
+          "implementationFile": "src/Edulytics.Services/Mathematics/SupportingPracticeAdvancedEngine.cs",
+          "foundInService": true,
+          "arabicPromptExamplesInFile": []
+        }
+      ],
+      "allFound": true,
+      "sourceToPromptVerified": false
+    }
+  ]
+}

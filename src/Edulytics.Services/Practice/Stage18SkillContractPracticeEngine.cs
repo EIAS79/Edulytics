@@ -127,8 +127,24 @@ public sealed class Stage18SkillContractPracticeEngine
                 "Composed Practice generation requires a valid exact lesson contract and request scope.");
         }
 
+        // Grade 8 General may have more eligible objective families than questions
+        // in a single attempt. Rotate the family priority by the fixed attempt seed
+        // so later objectives remain reachable across attempts. Other curricula
+        // retain their existing deterministic family ordering.
+        IReadOnlyList<string> composedFamilies = contract.AllowedQuestionFamilies;
+        if (contract.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal) &&
+            composedFamilies.Count > 1)
+        {
+            var offset = (int)((uint)seed % (uint)composedFamilies.Count);
+            composedFamilies = composedFamilies
+                .Skip(offset)
+                .Concat(composedFamilies.Take(offset))
+                .ToArray();
+        }
+
         var blueprint = new PracticeAssessmentComposer().Compose(
-            contract.AllowedQuestionFamilies,
+            composedFamilies,
             requestedQuestionCount,
             ResolveCognitiveDifficulty(requestedDifficulty));
 

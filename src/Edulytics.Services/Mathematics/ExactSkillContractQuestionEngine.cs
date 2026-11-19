@@ -293,6 +293,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade2Unit5Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Questions.Supports(family.Trim()) ||
           UaeGrade8GeneralSemanticQuestions.Supports(family.Trim()) ||
+          UaeGrade8SupplementalQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit1Lesson01Questions.Supports(family.Trim()) ||
           UaeGrade5Unit1Lesson01Questions.Supports(family.Trim()) ||
           UaeGrade5Unit1Lesson02Questions.Supports(family.Trim()) ||
@@ -924,6 +925,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit1Questions.Verify(family, parameters, answer);
         if (UaeGrade8GeneralSemanticQuestions.Supports(family))
             return UaeGrade8GeneralSemanticQuestions.Verify(family, parameters, answer);
+        if (UaeGrade8SupplementalQuestions.Supports(family))
+            return UaeGrade8SupplementalQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit1Lesson01Questions.Supports(family))
             return UaeGrade4Unit1Lesson01Questions.Verify(family, parameters, answer);
         if (UaeGrade5Unit1Lesson01Questions.Supports(family))
@@ -4182,6 +4185,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade8GeneralSemanticQuestions.Supports(family))
         {
             var q = UaeGrade8GeneralSemanticQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade8SupplementalQuestions.Supports(family))
+        {
+            var q = UaeGrade8SupplementalQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade4Unit1Lesson01Questions.Supports(family))
@@ -9179,6 +9187,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit1Questions.Solve(problem.Family, p);
         if (UaeGrade8GeneralSemanticQuestions.Supports(problem.Family))
             return UaeGrade8GeneralSemanticQuestions.Solve(problem.Family, p);
+        if (UaeGrade8SupplementalQuestions.Supports(problem.Family))
+            return UaeGrade8SupplementalQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit1Lesson01Questions.Supports(problem.Family))
             return UaeGrade4Unit1Lesson01Questions.Solve(problem.Family, p);
         if (UaeGrade5Unit1Lesson01Questions.Supports(problem.Family))

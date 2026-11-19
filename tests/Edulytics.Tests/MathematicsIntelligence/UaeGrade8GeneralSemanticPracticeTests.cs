@@ -10,6 +10,156 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
 {
     private const string Prefix = "PED:UAE-MOE-MATH:L8:GENERAL:";
 
+    [Fact]
+    public void Grade8ComposedPracticeReachesEveryAllowedFamilyAcrossSeededAttempts()
+    {
+        const string code = Prefix + "01:01:RATIONAL-NUMBERS";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(code, out var contract));
+        Assert.NotNull(contract);
+        var observed = new HashSet<string>(StringComparer.Ordinal);
+        var engine = new Stage18SkillContractPracticeEngine();
+        for (var seed = 1; seed <= contract!.AllowedQuestionFamilies.Count * 6; seed++)
+        {
+            var items = engine.GenerateComposed(
+                Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
+                contract.ToLegacyStage18Contract(),
+                StudentPrivatePracticeDifficulty.MyLevel, 3, seed, [],
+                Guid.NewGuid());
+            Assert.Equal(3, items.Count);
+            foreach (var item in items)
+                observed.Add(Assert.IsType<string>(item.GenerationFamily));
+        }
+        Assert.All(contract.AllowedQuestionFamilies,
+            family => Assert.Contains(family, observed));
+        Assert.Contains("uae.g6.u05.l08.classify_fraction_decimal", observed);
+        Assert.Contains("uae.g6.u05.l08.fraction_exact_decimal", observed);
+    }
+
+    [Theory]
+    [InlineData("supporting.algebra.simplify")]
+    [InlineData("supporting.algebra.expand")]
+    [InlineData("supporting.algebra.equations.mixed")]
+    [InlineData("algebra.linear.ax_plus_b_equals_c")]
+    [InlineData("supporting.powers10.evaluate")]
+    [InlineData("supporting.powers10.multiply")]
+    [InlineData("supporting.powers10.divide")]
+    [InlineData("supporting.powers10.missing_exponent")]
+    [InlineData("geometry.coordinate.evaluate_linear_rule")]
+    [InlineData("geometry.coordinate.y_intercept_from_rule")]
+    [InlineData("geometry.similarity.scale_factor")]
+    [InlineData("algebra.linear.standard_form.slope_intercept")]
+    [InlineData("geometry.angles.supplementary")]
+    [InlineData("geometry.polygons.missing_interior_angle")]
+    [InlineData("statistics.center_spread.mean")]
+    [InlineData("statistics.center_spread.median")]
+    public void Grade8GeneralExactArithmeticPromptAndExplanationAreArabicOnly(
+        string family)
+    {
+        var exact = new ExactSkillContractQuestionEngine().Generate(
+            "g8-arabic-localization", Prefix + "01:01:RATIONAL-NUMBERS",
+            [family], ExactSkillQuestionDifficulty.Standard, 1, 35819, [])[0];
+        var lesson = Prefix + "01:01:RATIONAL-NUMBERS";
+        var prompt = UaeGrade8SetPracticeLocalization.Prompt(lesson, exact);
+        var solution = UaeGrade8SetPracticeLocalization.Solution(lesson, exact);
+        Assert.Contains(prompt, c => c is >= 'ء' and <= 'ي');
+        Assert.Contains(solution, c => c is >= 'ء' and <= 'ي');
+        Assert.DoesNotContain("Find ", prompt, StringComparison.Ordinal);
+        Assert.DoesNotContain("Solve ", prompt, StringComparison.Ordinal);
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, exact.Parameters, exact.CorrectAnswer));
+        Assert.Equal(exact.Prompt, UaeGrade8SetPracticeLocalization.Prompt(
+            "PED:US-CCSS:L8:GENERAL:01:01:RATIONAL-NUMBERS", exact));
+    }
+
+    [Theory]
+    [InlineData("uae.g8.u01.l03.monomial_multiply")]
+    [InlineData("uae.g8.u01.l03.monomial_divide")]
+    [InlineData("uae.g8.u01.l04.monomial_power")]
+    [InlineData("uae.g8.u01.l05.negative_integer_exponent")]
+    [InlineData("uae.g8.u01.l08.square_root_exact")]
+    [InlineData("uae.g8.u01.l08.cube_root_exact")]
+    [InlineData("uae.g8.u01.l09.square_root_bounds")]
+    [InlineData("uae.g8.u01.l09.cube_root_bounds")]
+    [InlineData("uae.g8.u02.l03.write_two_step_equation")]
+    [InlineData("uae.g8.u03.l03.direct_variation")]
+    [InlineData("uae.g8.u10.l02.segment_addition")]
+    [InlineData("uae.g8.u10.l03.midpoint_coordinate")]
+    [InlineData("uae.g8.u10.l04.segment_reason")]
+    [InlineData("uae.g8.u11.l03.parallelogram_test")]
+    [InlineData("uae.g8.u11.l04.rectangle_test")]
+    [InlineData("uae.g8.u11.l05.rhombus_diagonals")]
+    [InlineData("uae.g8.u03.l07.system_solution_count")]
+    [InlineData("uae.g8.u09.l01.scatter_direction")]
+    [InlineData("uae.g8.u09.l06.distribution_shape")]
+    public void Grade8ObjectiveSpecificFamiliesGenerateArabicAndGradeIndependently(
+        string family)
+    {
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+        foreach(var seed in new[] { 9, 817, 1773, 9923, 13021 })
+        {
+            var questions=new ExactSkillContractQuestionEngine().Generate(
+                "g8-batch-academic-closure", family, [family],
+                ExactSkillQuestionDifficulty.Standard, 3, seed, []);
+            Assert.Equal(3,questions.Count);
+            foreach(var q in questions)
+            {
+                Assert.Equal(family,q.Family);
+                Assert.Contains(q.Prompt,c=>c >= (char)0x0621 && c <= (char)0x064A);
+                Assert.Contains(q.Solution,c=>c >= (char)0x0621 && c <= (char)0x064A);
+                Assert.DoesNotMatch(@"[A-Za-z]{4,}",q.Prompt);
+                Assert.DoesNotMatch(@"[A-Za-z]{4,}",q.Solution);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,q.CorrectAnswer));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,"invalid-answer"));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,new Dictionary<string,int>(),q.CorrectAnswer));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(
+                    family,q.Parameters,q.CorrectAnswer+"9"));
+            }
+        }
+    }
+
+    [Fact]
+    public void All76Grade8ComposedAttemptsHaveArabicQuestionAndArabicExplanation()
+    {
+        var index=System.IO.Path.GetFullPath(System.IO.Path.Combine(
+            AppContext.BaseDirectory,"../../../../../",
+            "artifacts/curriculum-delivery/UAE-MOE-MATH/G8/general-practice-semantic-audit.json"));
+        Assert.True(System.IO.File.Exists(index),index);
+        using var doc=JsonDocument.Parse(System.IO.File.ReadAllText(index));
+        var lessons=doc.RootElement.GetProperty("lessons").EnumerateArray().ToArray();
+        Assert.Equal(76,lessons.Length);
+        var engine=new Stage18SkillContractPracticeEngine();
+        foreach(var row in lessons)
+        {
+            var code=row.GetProperty("lessonCode").GetString()!;
+            Assert.True(LessonPracticeContractRegistry.TryResolve(code,out var contract),code);
+            Assert.NotNull(contract);
+            var observed=new HashSet<string>(StringComparer.Ordinal);
+            for(int seed=1;seed<=64;seed++)
+            {
+                var questions=engine.GenerateComposed(
+                    Guid.NewGuid(),Guid.NewGuid(),Guid.NewGuid(),
+                    contract!.ToLegacyStage18Contract(),
+                    StudentPrivatePracticeDifficulty.MyLevel,3,20000+seed,[],
+                    Guid.NewGuid());
+                Assert.Equal(3,questions.Count);
+                foreach(var q in questions)
+                {
+                    var prompt=Assert.IsType<string>(q.Prompt);
+                    var solution=Assert.IsType<string>(q.Solution);
+                    Assert.Contains(prompt,c=>c >= (char)0x0621 && c <= (char)0x064A);
+                    Assert.Contains(solution,c=>c >= (char)0x0621 && c <= (char)0x064A);
+                    Assert.DoesNotMatch(@"[A-Za-z]{4,}",prompt);
+                    Assert.DoesNotMatch(@"[A-Za-z]{4,}",solution);
+                    observed.Add(Assert.IsType<string>(q.GenerationFamily));
+                }
+            }
+            Assert.True(new HashSet<string>(contract!.AllowedQuestionFamilies).SetEquals(observed));
+        }
+    }
+
     [Theory]
     [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
     [InlineData("uae.g8.u05.l03.triangle_angle_measure")]

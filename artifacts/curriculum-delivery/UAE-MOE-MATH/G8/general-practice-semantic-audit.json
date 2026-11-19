@@ -5,7 +5,7 @@
   "track": "GENERAL",
   "academicLanguage": "ar",
   "curriculumYear": "2026-2027",
-  "sourceVersion": "G8 Arabic student-book index 2025-2026 approved for 2026-2027 as discussed",
+  "sourceVersion": "Owner-selected 12 units / 76 numbered lessons: Grade_08/01_Student_Books/03-9-12.pdf index, cover 2019-2020. The 01-1-4.pdf cover 2025-2026 contains a conflicting 8-unit / 56-lesson index. Target year 2026-2027 is not independently certified.",
   "issue": "https://github.com/EIAS79/Edulytics/issues/641",
   "purpose": "Conservative 76-lesson production Practice semantic inventory. This does not certify full lesson source-objective parity.",
   "lessonsCount": 76,
@@ -22,17 +22,19 @@
       "ordinal": 1,
       "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
       "arabicTitle": "الأعداد النسبية",
-      "mechanic": "RATIONAL_TERMINATING_DECIMAL_EQUIVALENCE",
+      "mechanic": "RATIONAL_TERMINATING_AND_REPEATING_DECIMAL_EQUIVALENCE",
       "allowedFamilies": [
         "uae.g4.u10.l04.decimal_to_hundredths",
         "uae.g5.u07.l03.simplify_fraction",
-        "uae.g5.u07.l08.reducible_fraction_to_decimal"
+        "uae.g5.u07.l08.reducible_fraction_to_decimal",
+        "uae.g6.u05.l08.classify_fraction_decimal",
+        "uae.g6.u05.l08.fraction_exact_decimal"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l01-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 40–47; printed pages 7–14",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Open numeric-set classification, original source representations and written justification remain pending per-question review; no whole-lesson signoff.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -63,16 +65,14 @@
       "arabicTitle": "ضرب أحاديات الحد وقسمتها",
       "mechanic": "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
       "allowedFamilies": [
-        "supporting.algebra.simplify",
-        "supporting.algebra.expand",
-        "supporting.powers10.multiply",
-        "supporting.powers10.divide"
+        "uae.g8.u01.l03.monomial_multiply",
+        "uae.g8.u01.l03.monomial_divide"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 56–63; printed 23–30",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -82,16 +82,13 @@
       "arabicTitle": "القوى الأسية لأحاديات الحد",
       "mechanic": "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
       "allowedFamilies": [
-        "supporting.algebra.expand",
-        "supporting.algebra.simplify",
-        "uae.g6.u06.l02.integer_power",
-        "uae.g6.u06.l02.fraction_power"
+        "uae.g8.u01.l04.monomial_power"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 64–71; unit-linked PDF 72–75; printed 31–38 plus unit investigation",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -101,15 +98,13 @@
       "arabicTitle": "الأسس السالبة",
       "mechanic": "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
       "allowedFamilies": [
-        "supporting.powers10.evaluate",
-        "supporting.powers10.divide",
-        "supporting.powers10.missing_exponent"
+        "uae.g8.u01.l05.negative_integer_exponent"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l05-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 76–83; printed 43–50",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -157,14 +152,14 @@
       "mechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
       "allowedFamilies": [
         "uae.g6.u06.l02.perfect_square",
-        "usccss.g6.u01.l17.original_square_cube_values",
-        "uae.g6.u06.l04.cube_volume"
+        "uae.g8.u01.l08.square_root_exact",
+        "uae.g8.u01.l08.cube_root_exact"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l08-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -175,14 +170,14 @@
       "mechanic": "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
       "allowedFamilies": [
         "uae.g6.u06.l02.perfect_square",
-        "supporting.algebra.quadratic_larger_root",
-        "usccss.g6.u01.l17.original_square_cube_values"
+        "uae.g8.u01.l09.square_root_bounds",
+        "uae.g8.u01.l09.cube_root_bounds"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l09-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 114–121; printed 81–88",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -246,15 +241,13 @@
       "arabicTitle": "كتابة المعادلات المكوّنة من خطوتين",
       "mechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
       "allowedFamilies": [
-        "usccss.g7.u02.l08.classify_equations",
-        "supporting.algebra.equations.mixed",
-        "algebra.linear.ax_plus_b_equals_c"
+        "uae.g8.u02.l03.write_two_step_equation"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 162–169; printed 129–136",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -264,15 +257,13 @@
       "arabicTitle": "حل المعادلات التي تحتوي على متغيرات في كل طرف",
       "mechanic": "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
       "allowedFamilies": [
-        "supporting.algebra.equations.mixed",
-        "algebra.linear.ax_plus_b_equals_c",
-        "supporting.algebra.simplify"
+        "algebra.linear.variables_both_sides"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 178–185; printed 145–152",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Auto Practice now targets lesson objective through scoped exact family; diagram construction, other source activities and open written reasoning still require teacher/source review. Full academic certification pending.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -303,14 +294,13 @@
       "allowedFamilies": [
         "ratio.unit_rate.direct",
         "ratio.unit_rate.equivalent_ratio",
-        "usccss.g6.u03.l07.unit_rate_equivalence",
         "usccss.g7.u02.l10.graphs_origin_slope"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l01-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 204–211; printed 171–178",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -338,15 +328,14 @@
       "arabicTitle": "المعادلات بصيغة y = mx",
       "mechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
       "allowedFamilies": [
-        "algebra.modeling.linear_relationship.select_equation",
         "usccss.g7.u02.l10.graphs_origin_slope",
-        "geometry.coordinate.evaluate_linear_rule"
+        "uae.g8.u03.l03.direct_variation"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -372,7 +361,7 @@
       "ordinal": 20,
       "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS",
       "arabicTitle": "تمثيل خط مستقيم بيانيًا باستخدام التقاطعات",
-      "mechanic": "undefined",
+      "mechanic": "GRAPH_LINEAR_EQUATION_USING_X_AND_Y_INTERCEPTS",
       "allowedFamilies": [
         "geometry.coordinate.y_intercept_from_rule",
         "algebra.linear.standard_form.slope_intercept",
@@ -390,7 +379,7 @@
       "ordinal": 21,
       "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS",
       "arabicTitle": "كتابة المعادلات الخطية",
-      "mechanic": "undefined",
+      "mechanic": "WRITE_LINEAR_EQUATION_FROM_POINTS_SLOPE_OR_GRAPH",
       "allowedFamilies": [
         "algebra.linear.standard_form.slope_intercept",
         "geometry.coordinate.evaluate_linear_rule"
@@ -409,13 +398,13 @@
       "arabicTitle": "حل أنظمة المعادلات باستخدام التمثيل البياني",
       "mechanic": "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
       "allowedFamilies": [
-        "algebra.linear.systems.solution_count.classify"
+        "uae.g8.u03.l07.system_solution_count"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l07-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 266–275; printed 233–242",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Original Grade8 Arabic numeric questions on the targeted objective now route to exact Grade8 families. Spatial graph plotting, explanations and full source parity need independent teacher review.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -426,14 +415,13 @@
       "mechanic": "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
       "allowedFamilies": [
         "algebra.linear.systems.two_by_two.integer_coefficients",
-        "algebra.linear.systems.solution_count.classify",
-        "algebra.linear.ax_plus_b_equals_c"
+        "uae.g8.u03.l07.system_solution_count"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l08-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 276–283; printed 243–250",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Original Grade8 Arabic numeric questions on the targeted objective now route to exact Grade8 families. Spatial graph plotting, explanations and full source parity need independent teacher review.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -545,13 +533,13 @@
       "mechanic": "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
       "allowedFamilies": [
         "usccss.g7.u02.l10.graphs_origin_slope",
-        "functions.quadratic.output_roots.solve"
+        "uae.g6.u08.l03.linear_vs_square"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u04-l07-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 360–367; printed 327–334",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Existing Arabic classification family tests line versus square outputs; broader function tables, unequal x-interval rates and freehand graphs still require separately evidenced assessment or teacher review. Not full-lesson signoff.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -796,13 +784,13 @@
       "arabicTitle": "التطابق",
       "mechanic": "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
       "allowedFamilies": [
-        "usccss.g5.u07.l08.source_triangle_side_and_angle_types"
+        "geometry.congruence.identify_criterion"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 157–164; printed 521–528",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Auto Practice now targets lesson objective through scoped exact family; diagram construction, other source activities and open written reasoning still require teacher/source review. Full academic certification pending.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -831,14 +819,13 @@
       "mechanic": "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
       "allowedFamilies": [
         "geometry.similarity.scale_factor",
-        "usccss.g7.u01.l04.angle_and_distance_scaling",
-        "usccss.g6.u02.l05.scaled_ratio_missing_term"
+        "usccss.g7.u01.l04.angle_and_distance_scaling"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u07-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 179–186; printed 543–550",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -917,14 +904,13 @@
       "arabicTitle": "حجم المخروط",
       "mechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
       "allowedFamilies": [
-        "uae.g7.u09.l02.cone_volume_pi_coefficient",
-        "uae.g7.u09.l01.cylinder_volume_pi_coefficient"
+        "uae.g7.u09.l02.cone_volume_pi_coefficient"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Removed off-target family uae.g7.u09.l01.cylinder_volume_pi_coefficient from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -934,14 +920,13 @@
       "arabicTitle": "حجم الكرة",
       "mechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
       "allowedFamilies": [
-        "uae.g7.u09.l03.sphere_volume_pi_coefficient",
-        "geometry.similarity.scale_factor"
+        "uae.g7.u09.l03.sphere_volume_pi_coefficient"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 24–31; printed 603–610",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Removed off-target family geometry.similarity.scale_factor from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1004,14 +989,13 @@
       "arabicTitle": "مخططات الانتشار",
       "mechanic": "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
       "allowedFamilies": [
-        "supporting.statistics.scatter_correlation",
-        "statistics.correlation.direction"
+        "uae.g8.u09.l01.scatter_direction"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l01-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 49–58; printed 661–670",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Original Grade8 Arabic numeric questions on the targeted objective now route to exact Grade8 families. Spatial graph plotting, explanations and full source parity need independent teacher review.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1077,14 +1061,13 @@
       "mechanic": "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
       "allowedFamilies": [
         "statistics.center_spread.mad",
-        "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
         "statistics.center_spread.range"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l05-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 93–100; printed 705–712",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1094,14 +1077,13 @@
       "arabicTitle": "تحليل توزيعات البيانات",
       "mechanic": "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
       "allowedFamilies": [
-        "statistics.distribution_shape.classify",
-        "usccss.g6.u08.l16.box_plot_source_quartiles"
+        "uae.g8.u09.l06.distribution_shape"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u09-l06-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 101–108; printed 713–720",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Original Grade8 Arabic numeric questions on the targeted objective now route to exact Grade8 families. Spatial graph plotting, explanations and full source parity need independent teacher review.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1127,14 +1109,13 @@
       "arabicTitle": "القياس الخطي",
       "mechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
       "allowedFamilies": [
-        "uae.g4.u12.l01.segments_from_points",
-        "usccss.g6.u07.l06.absolute_distance_values"
+        "uae.g8.u10.l02.segment_addition"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1144,13 +1125,13 @@
       "arabicTitle": "المسافة ونقاط المنتصف",
       "mechanic": "CARTESIAN_DISTANCE_AND_MIDPOINT",
       "allowedFamilies": [
-        "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances"
+        "uae.g8.u10.l03.midpoint_coordinate"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 141–148; printed 753–760",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1160,13 +1141,13 @@
       "arabicTitle": "إثبات العلاقات بين القطع المستقيمة",
       "mechanic": "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
       "allowedFamilies": [
-        "uae.g4.u12.l01.segments_from_points"
+        "uae.g8.u10.l04.segment_reason"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 154–161; printed 766–773",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1193,14 +1174,13 @@
       "arabicTitle": "متوازي الأضلاع",
       "mechanic": "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
       "allowedFamilies": [
-        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+        "uae.g8.u11.l03.parallelogram_test"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF183–191, printed 795–803",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Use objective-specific Grade8 parallelogram property and sufficiency tests. Source drawings and written geometric proofs remain teacher-reviewed.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1210,14 +1190,13 @@
       "arabicTitle": "اختبارات متوازي الأضلاع",
       "mechanic": "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
       "allowedFamilies": [
-        "usccss.g5.u07.l04.source_quadrilateral_sort_attributes",
-        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+        "uae.g8.u11.l03.parallelogram_test"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF193–201, printed 805–813",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1227,14 +1206,13 @@
       "arabicTitle": "المستطيل",
       "mechanic": "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
       "allowedFamilies": [
-        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
-        "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"
+        "uae.g8.u11.l04.rectangle_test"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l04-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 203–209; printed 815–821",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1244,13 +1222,13 @@
       "arabicTitle": "المعين والمربع",
       "mechanic": "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
       "allowedFamilies": [
-        "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"
+        "uae.g8.u11.l05.rhombus_diagonals"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u11-l05-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF 210–218; printed 822–830",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Pending per-question family-to-objective inspection",
+      "teacherReviewRequired": "Exact first-party Grade8 objective-aligned automatic Practice added/reused for measurable numeric subskills. Source drawings, open reasoning, proofs and other nonnumeric representations remain to be inspected by academic reviewers. Full source-item parity NOT certified.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1339,5 +1317,17 @@
       "sampledLearnerPromptVerified": true,
       "independentExactGraderInCI": "PR640_VERIFIED_ON_PREMERGE_EXACT_HEAD"
     }
-  ]
+  ],
+  "sourceEditionConflict": "SOURCE_VERSION_CONFLICT",
+  "sourceEditionEvidence": {
+    "selectedIndex": "03-9-12.pdf",
+    "selectedIndexCoverYear": "2019-2020",
+    "selectedIndexUnitCount": 12,
+    "selectedIndexNumberedLessonCount": 76,
+    "conflictingIndex": "01-1-4.pdf",
+    "conflictingIndexCoverYear": "2025-2026",
+    "conflictingIndexUnitCount": 8,
+    "conflictingIndexNumberedLessonCount": 56,
+    "targetYearParityCertified": false
+  }
 }
