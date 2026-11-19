@@ -10901,6 +10901,23 @@ public static class LessonPracticeContractRegistry
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
             Version);
 
+
+        // UAE G9 General 2025 T1 lesson 1-3: mathematical-property reuse
+        // from existing Arabic Grade6 engines; independent Stage D review pending.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:03:PROPERTIES-OF-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:03:PROPERTIES-OF-NUMBERS", "algebra.equivalent_properties",
+            "G9_U01L03_PROPERTIES_AND_INVALID_SUBTRACTION_DIVISION",
+            ["uae.g4.u02.l01.commutative_add",
+             "uae.g4.u02.l01.associative_add",
+             "uae.g4.u02.l01.additive_identity",
+             "uae.g4.u03.l05.identity",
+             "uae.g4.u03.l06.grouped_product",
+             "uae.g6.u06.l08.classify_property",
+             "uae.g6.u06.l08.rewrite_associative",
+             "uae.g6.u06.l08.triangle_area_reordered"],
+            "UAE_G9_GENERAL_2025_AR_U01L03_P16_22",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
