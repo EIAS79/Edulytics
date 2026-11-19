@@ -11,7 +11,8 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     [Fact]
     public void AllFiveExactFamiliesAreRegisteredAndLessonScoped()
     {
-        Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson, out var contract));
+        Assert.True(LessonPracticeContractRegistry.TryResolve(Lesson, out var contract));
+        Assert.False(LessonPracticeCapabilityResolver.TryResolve(Lesson, out _));
         Assert.NotNull(contract);
         Assert.Equal(5, contract!.AllowedQuestionFamilies.Count);
         Assert.All(contract.AllowedQuestionFamilies, family =>
