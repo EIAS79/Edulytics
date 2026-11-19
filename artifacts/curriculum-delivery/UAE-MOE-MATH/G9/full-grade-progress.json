@@ -11,8 +11,8 @@
   "fiveBooksInventoried": true,
   "rawGeneralUnits": 14,
   "rawGeneralLessons": 86,
-  "ownerTargetUnits": 14,
-  "ownerTargetLessons": 86,
+  "ownerTargetUnits": 13,
+  "ownerTargetLessons": 82,
   "uniqueLessonsVerified": null,
   "semanticCrosswalk": "20_SOURCE_PAIR_COMPARISONS_DOCUMENTED; FULL_86_LESSON_ELEMENT_LEVEL_COMPARE_INCOMPLETE",
   "verifiedSourcePageComparison": [
@@ -32,7 +32,7 @@
       "status": "PARTIAL_OVERLAP_PRESERVE_REVIEW"
     }
   ],
-  "sourceLock": "COMPREHENSIVE_TOC_CAPTURED_SEMANTIC_GATE_PENDING",
+  "sourceLock": "RAW_FIVE_BOOK_TOC_CAPTURED; OWNER_13_82_TARGET_PENDING_EDITION_DEDUP_AND_FULL_SOURCE_EVIDENCE",
   "previousPreparedLessonCount": 12,
   "firstNotClosedLesson": "2-5",
   "lesson2_5": "CONTENT_AND_FIVE_PRACTICE_FAMILIES_PREPARED_NOT_AC_CLOSED",
@@ -41,7 +41,7 @@
   "ciGatesRun": "NOT_RUN_BY_A_C",
   "stageD": "NOT_STARTED",
   "productionPublish": "NOT_STARTED",
-  "remainingCritical": "Complete 86-lesson objective-level review, resolve dedup crosswalk, then sequential A-C closure with evidence and checkpoint.",
+  "remainingCritical": "Reconcile 14/86 raw edition index to owner 13/82 unique target with evidenced unit-7 historical nine lessons and no duplicates; finish U02L05 source-element coverage and teacher rubric workflow before advancing.",
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
   "sourceSnapshotComputation": [
     "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
@@ -81,5 +81,10 @@
   "dedupSourceEntriesReferenced": 33,
   "bookPageShiftFix": "03-1.pdf: printed p755=physical PDF p170, printed p776=PDF p191, printed p793=PDF p208",
   "currentLessonStatus": "ARABIC_PACK_RICHV2_EXACT_PRACTICE_RTL_NUMBERLINE_TEACHER_RUBRIC_PREPARED; ATOMIC_EDITORIAL_COVERAGE_AND_INDEX_LOCK_PENDING",
-  "status": "A_C_IN_PROGRESS_NOT_COMPLETED"
+  "status": "A_C_IN_PROGRESS_INDEX_RECONCILIATION_REQUIRED",
+  "ownerTargetSource": "EDULYTICS_UAE_GRADE_9_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md (uploaded 2026-11-19)",
+  "rawInventoryIsNotFinalCatalog": true,
+  "remainingSourceLessonsExplanation": "74 = 86 raw source entries minus 12 prepared; not the canonical 82-target remaining count",
+  "targetIndexComplete": false,
+  "completedCanonicalLessonsVerified": null
 }
