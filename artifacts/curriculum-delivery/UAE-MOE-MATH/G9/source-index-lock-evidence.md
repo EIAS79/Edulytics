@@ -42,3 +42,14 @@ Reference evidence is `grade9-unit7-opening-page-evidence.json` and `dedup-cross
 | CI and Stage D | NOT_RUN |
 
 No source title or new skill should be deleted to force numeric compliance.
+
+## Direct local source integrity check — 19 November 2026
+
+`five-book-page-raster-audit.json` records a newly executed read-only local audit:
+
+- All five file SHA-256 hashes independently recomputed on the authorized Our-CS computer and matching the source manifest.
+- Every one of the 86 raw General lesson opening physical PDF page references is within its source PDF and renders a nonblank grayscale image.
+- Each opening page has a reproducible thumbnail pixel SHA-256 fingerprint, allowing later comparisons against the same scan without repeated desktop reads.
+- Page accessibility and nonblank appearance **do not certify** printed-page heading correspondence, the accuracy of each exercise, or semantic duplicate decisions.
+
+`SOURCE_INDEX_COMPLETE` therefore remains **false**.
