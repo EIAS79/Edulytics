@@ -139,7 +139,7 @@
     }
   ],
   "execution": {
-    "abcStatus": "CONTENT_PRACTICE_AND_TEST_SPEC_PREPARED_A_C_ELEMENT_LEDGER_INCOMPLETE",
+    "abcStatus": "CONTENT_SKILLS_RICHV2_AND_TEST_FILES_PREPARED_PENDING_INDEX_LOCK",
     "contentModified": true,
     "practiceMappingModified": true,
     "regressionTestsAdded": true,
@@ -147,7 +147,7 @@
     "ci": "NOT_RUN_BY_A_C",
     "stageD": "NOT_STARTED",
     "criticalBlocker": "Before A-C closure finish all source element coverage and general-book semantic crosswalk/SourceSnapshotId. Do not demand executing tests or CI during A-C.",
-    "nextAction": "Complete source objective/activity/rubric ledger, then record A-C closure checkpoint without running tests. Actual test execution only Stage D.",
+    "nextAction": "Finish 86-entry source semantic crosswalk and 2-5 coverage/editorial checkpoint; never run tests before Stage D.",
     "practiceFamilies": [
       "uae.g9.general.u02.l05.two_solutions",
       "uae.g9.general.u02.l05.one_solution",
@@ -212,6 +212,9 @@
   "files": {
     "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
     "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
-    "contracts": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+    "visualRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+    "dotnetTests": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
   }
 }
