@@ -11024,6 +11024,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // G9 General U02L03 p91–96: Stage C proposed reuse only.
+        // Distribution, fractions and written strategies need independent D audit.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS", "algebra.linear.solve",
+            "G9_U02L03_MULTI_STEP_DISTRIBUTION_AND_CHECK",
+            ["algebra.linear.ax_plus_b_equals_c",
+             "supporting.algebra.equations.mixed"],
+            "UAE_G9_GENERAL_AR_U02L03_P91_96",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
