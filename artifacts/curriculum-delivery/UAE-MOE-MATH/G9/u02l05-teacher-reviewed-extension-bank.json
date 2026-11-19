@@ -32,11 +32,23 @@
     "01.pdf:2-5:EX63",
     "01.pdf:2-5:EX64",
     "01.pdf:2-5:EX40",
-    "01.pdf:2-5:EX42"
+    "01.pdf:2-5:EX42",
+    "01.pdf:2-5:EX11",
+    "01.pdf:2-5:EX12",
+    "01.pdf:2-5:EX33",
+    "01.pdf:2-5:EX34",
+    "01.pdf:2-5:EX35",
+    "01.pdf:2-5:EX36",
+    "01.pdf:2-5:EX46",
+    "01.pdf:2-5:EX47",
+    "01.pdf:2-5:EX48",
+    "01.pdf:2-5:EX49",
+    "01.pdf:2-5:EX50",
+    "01.pdf:2-5:EX51"
   ],
-  "sourceExerciseCount": 21,
+  "sourceExerciseCount": 33,
   "exactItemLevelSemanticEquivalence": "PENDING_PER_ITEM_REVIEW",
-  "status": "ORIGINAL_CONTEXT_BANK_AUTHORED_NOT_PLATFORM_TEACHER_AUTHENTICATED",
+  "status": "OPEN_RESPONSES_ROUTED_TO_RUBRIC_BUT_INDIVIDUAL_EQUIVALENCE_NOT_VERIFIED",
   "groups": [
     {
       "taskId": "extensionQ1",
@@ -115,5 +127,39 @@
       ],
       "expected": "٢|س−٣|−١=٨ ⇒ س=−١٫٥ أو ٧٫٥؛ |(٣س−١٢)/٤|=٣ ⇒ س=٠ أو ٨"
     }
-  ]
+  ],
+  "graphToFullEquation": {
+    "sourceElementIds": [
+      "01.pdf:2-5:EX11",
+      "01.pdf:2-5:EX12",
+      "01.pdf:2-5:EX33",
+      "01.pdf:2-5:EX34",
+      "01.pdf:2-5:EX35",
+      "01.pdf:2-5:EX36",
+      "01.pdf:2-5:EX46",
+      "01.pdf:2-5:EX47",
+      "01.pdf:2-5:EX48",
+      "01.pdf:2-5:EX49",
+      "01.pdf:2-5:EX50",
+      "01.pdf:2-5:EX51"
+    ],
+    "studentFacingTask": "cooldownQ3",
+    "numericMidpointFamily": "uae.g9.general.u02.l05.midpoint",
+    "assessment": "TEACHER_REVIEW_REQUIRED_FULL_EQUATION",
+    "note": "12 source exercises require an absolute value equation from plotted solution points; the numeric midpoint family cannot grade a full written equation."
+  },
+  "solveAndGraph": {
+    "sourceElementIds": [
+      "01.pdf:2-5:EX04",
+      "01.pdf:2-5:EX05",
+      "01.pdf:2-5:EX06",
+      "01.pdf:2-5:EX07",
+      "01.pdf:2-5:EX08",
+      "01.pdf:2-5:EX09"
+    ],
+    "studentFacingTask": "cooldownQ1+cooldownStudentNumberLine",
+    "assessment": "DIGITAL_NUMERIC_PLUS_TEACHER_VISUAL_REVIEW"
+  },
+  "teacherOnlySourceExerciseCount": 33,
+  "dualRouteNumericWithTeacherGraphCount": 6
 }
