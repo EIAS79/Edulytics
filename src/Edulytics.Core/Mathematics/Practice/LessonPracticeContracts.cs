@@ -11047,6 +11047,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L03_P90_96",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // UAE G9 General U02L04 p97-102; identity and contradiction cases
+        // must be audited in D independently from simple solver success.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:04:VARIABLES-ON-BOTH-SIDES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:04:VARIABLES-ON-BOTH-SIDES", "algebra.linear.solve",
+            "G9_U02L04_BOTH_SIDES_IDENTITY_NO_SOLUTION",
+            ["algebra.linear.variables_both_sides", "supporting.algebra.expand"],
+            "UAE_G9_GENERAL_2025_AR_U02L04_P97_102",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
