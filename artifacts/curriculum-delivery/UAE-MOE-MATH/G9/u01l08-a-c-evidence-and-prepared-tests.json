@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "path": "01.pdf",
+    "grade": 9,
+    "pathway": "General",
+    "edition": "2025-2026 term 1",
+    "lesson": "1-8",
+    "printedPages": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "pdfPages": [
+      67,
+      68,
+      69,
+      70,
+      71,
+      72
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "sourceElementEvidence": [
+    {
+      "pages": [
+        56,
+        57
+      ],
+      "objective": "O1",
+      "concept": "read graph axes, units and coordinates from contextual time series",
+      "treatment": "Arabic Explanation and Steps; teacher reviews graph reading"
+    },
+    {
+      "pages": [
+        57,
+        58
+      ],
+      "objective": "O2",
+      "concept": "interpret increasing, decreasing and flat periods",
+      "treatment": "Arabic KeyConceptsAndRules, WorkedExamples and interval rubric"
+    },
+    {
+      "pages": [
+        58,
+        59
+      ],
+      "objective": "O3",
+      "concept": "maximum/minimum values and interval description from examples and independent practice",
+      "treatment": "Arabic worked examples and teacher rubric"
+    },
+    {
+      "pages": [
+        58,
+        60
+      ],
+      "objective": "O4",
+      "concept": "interpret contextual data and justify graph-based inference",
+      "treatment": "Arabic real-life graph context, teacher review of written interpretations"
+    },
+    {
+      "pages": [
+        59,
+        60,
+        61
+      ],
+      "objective": "O5",
+      "concept": "independent practice / standardized assessment / spiral review",
+      "treatment": "Question specs and separate source section review; prerequisite items not misclassified as U01L08 skill"
+    }
+  ],
+  "practiceCandidateCoverage": [
+    {
+      "family": "uae.g6.u08.l03.y_intercept",
+      "purpose": "numeric initial value/intercept",
+      "limit": "does not test contextual local extrema or nonlinear intervals"
+    },
+    {
+      "family": "uae.g6.u08.l03.linear_vs_square",
+      "purpose": "classification of graph shape",
+      "limit": "not sufficient for explaining changing trends"
+    },
+    {
+      "family": "uae.g6.u08.l03.equation_from_line",
+      "purpose": "equation of linear represented relation",
+      "limit": "not sufficient for piecewise contextual interpretation"
+    }
+  ],
+  "preparedQuestions": [
+    {
+      "objective": "O1",
+      "question": "يمر الرسم بالنقطة (٤،٧). ما قيمة الدالة عند س=٤؟",
+      "answer": "7",
+      "type": "numeric"
+    },
+    {
+      "objective": "O2",
+      "question": "رسم المسافة يتزايد من الدقيقة ٠ إلى ١٠، ثم يبقى أفقيًا حتى الدقيقة ١٥؛ ماذا يعني الجزء الأفقي؟",
+      "answer": "المسافة ثابتة في الفترة المذكورة",
+      "type": "teacher-reviewed meaning"
+    },
+    {
+      "objective": "O3",
+      "question": "ارتفاعات الرسم: ٢،٥،٩،٧،٣. ما القيمة العظمى؟",
+      "answer": "9",
+      "type": "numeric-source-inspired"
+    },
+    {
+      "objective": "O3",
+      "question": "تغيرت دالة من ٦ إلى ١٠ ثم إلى ٧. حدد متى صارت متناقصة.",
+      "answer": "بعد بلوغ القيمة ١٠",
+      "type": "teacher-reviewed interval"
+    },
+    {
+      "objective": "O4",
+      "question": "هل كل انخفاض في رسم المسافة من المنزل يعني انخفاض سرعة الجسم؟",
+      "answer": "لا، قد يعني الاقتراب من المنزل، ولا تحدد السرعة من الاتجاه وحده",
+      "type": "teacher-reviewed reasoning"
+    },
+    {
+      "objective": "O5",
+      "question": "حدد معنى نقطة تقاطع الرسم مع محور ص في موقف يتتبع كمية عبر الزمن.",
+      "answer": "القيمة عند الزمن صفر",
+      "type": "teacher-reviewed context"
+    }
+  ],
+  "teacherRubric": [
+    {
+      "target": "O1",
+      "passCriteria": "تحديد الإحداثيين من المحور الصحيح، واستخدام الوحدات الفعلية، وعدم اختراع قيمة غير مقروءة"
+    },
+    {
+      "target": "O2",
+      "passCriteria": "تحديد الفترة من مجال س، وقراءة اتجاه التغير من اليسار إلى اليمين، لا من ارتفاع الإحداثي نفسه"
+    },
+    {
+      "target": "O3",
+      "passCriteria": "القيمة العظمى/الصغرى من الرسم ضمن المجال المعروض مع التمييز بين قيمة س وقيمة ص"
+    },
+    {
+      "target": "O4",
+      "passCriteria": "تفسير المنحنى في سياقه وذكر عدم كفاية الرسم لاستنتاج كمية لم تُقَس"
+    }
+  ],
+  "cooldown": [
+    {
+      "prompt": "إذا كان الرسم يمر بالنقطة (٥،٨)، فما قيمة الدالة عند ٥؟",
+      "answer": "8"
+    },
+    {
+      "prompt": "عندما يكون رسم درجة الحرارة أفقيًا من الساعة ٢ إلى ٣، كيف تتغير درجة الحرارة؟",
+      "answer": "تبقى ثابتة"
+    },
+    {
+      "prompt": "هل ارتفاع منحنى عن المحور الأفقي يعني أنه متزايد؟ فسّر.",
+      "answer": "لا؛ التزايد يقاس باتجاه صعود الرسم عند الحركة نحو اليمين",
+      "teacherReview": true
+    }
+  ],
+  "artifacts": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "skillMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceRegistry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  },
+  "stageABC": {
+    "a": "SOURCE_OBJECTIVES_AND_SECTIONS_MAPPED",
+    "b": "ORIGINAL_ARABIC_RTL_CONTENT_AND_COOLDOWN_PREPARED",
+    "c": "EXACT_CANDIDATES_AND_TEACHER_RUBRIC_PREPARED",
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "testsRun": "NOT_RUN",
+    "buildRun": "NOT_RUN",
+    "ciRun": "NOT_RUN",
+    "semanticAudit": "NOT_RUN"
+  },
+  "stageDExplicitGaps": [
+    "No proven automated graph-interpreting family for nonlinear intervals and extrema; teacher rubric required.",
+    "Actual Arabic questions, renderer, grader and scope must be independently audited at Stage D. Do not claim full automatic digital coverage."
+  ],
+  "sourceBoundary": "Lesson pp.56-61 followed by first-unit study guide at printed p.62 (PDF73); later review exercises belong to whole unit, not only lesson 1-8."
+}
