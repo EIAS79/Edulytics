@@ -97,10 +97,11 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         if (string.IsNullOrWhiteSpace(answer) || answer.Length > 80 ||
             !TryExpected(family,p,out var expected)) return false;
         var actual=Normalized(answer);
-        if (family==None) return actual is "لايوجدحل" or "لامجموعةحل" or "∅";
+        if (family==None) return actual is "لايوجدحل" or "لاحل" or "لامجموعةحل" or "مجموعةالحلخالية" or "∅" or "{}";
         if (family==Two)
         {
-            var values=actual.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            // Do not silently accept missing answers such as "1,9," or ",1,9".
+            var values=actual.Split(',');
             if (values.Length!=2 || !int.TryParse(values[0],NumberStyles.Integer,
                 CultureInfo.InvariantCulture,out var first) ||
                 !int.TryParse(values[1],NumberStyles.Integer,
