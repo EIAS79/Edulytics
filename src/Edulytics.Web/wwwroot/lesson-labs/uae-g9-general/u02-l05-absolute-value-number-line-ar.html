@@ -83,6 +83,24 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 </details>
 <div class="teacher"><strong>مراجعة المعلم:</strong> في السؤال الأول يراجع التدرج والنقطتين، وفي الثاني يراجع السبب الرياضي، وفي الثالث يراجع اختيار المركز والمسافة والتحقق. الإجابات الظاهرة للمتعلم ليست تقييمًا آليًا معتمدًا للرسوم أو التفسيرات.</div>
 </section>
+<section aria-labelledby="bankTitle">
+<h2 id="bankTitle">بنك التوسّع والتفكير — مراجعة المعلم</h2>
+<p>أنشطة عربية أصلية إضافية لمجالات التطبيق في صفحات الدرس. اختيارية ولا تدخل ضمن الدرجة الآلية. أدخل الإجابات فقط للمهام التي يحددها المعلم.</p>
+<details id="extendedTasks">
+<summary>عرض الأنشطة السياقية والتفسيرية</summary>
+<ol>
+<li><label for="extensionQ1">الميزانية: مبلغ مستهدف ٢٥٠ درهمًا، والفارق عنه ٢٠ درهمًا بالضبط. اكتب معادلة تصف المبلغين الممكنين وفسر المعنى المالي.</label><textarea id="extensionQ1" rows="2"></textarea></li>
+<li><label for="extensionQ2">المخطط والنسب: نسبتان في مخطط مقارنتين بقيمة مرجعية ٤٠٪، وكل واحدة تبعد عنها ٥ نقاط مئوية. كوّن معادلة القيمة المطلقة وفسر كيف تتحقق من النسب بالمخطط.</label><textarea id="extensionQ2" rows="2"></textarea></li>
+<li><label for="extensionQ3">الزمن: أربعة عدائين، زمن كل منهم المرجعي ١٣ ثانية. افترض أن الزمن الإجمالي يختلف عن المجموع المرجعي بثانيتين بالضبط؛ اكتب معادلة وفسر الزمنين.</label><textarea id="extensionQ3" rows="2"></textarea></li>
+<li><label for="extensionQ4">القياسات والسرعة: طول مستهدف ٢٤٠ سم بسماحية ٥ سم، وسرعة مرجعية ٥٠ كم/ساعة بفارق ٣ كم/ساعة. اكتب معادلتي القيمة المطلقة وحدد القيم المتاحة ووحداتها.</label><textarea id="extensionQ4" rows="3"></textarea></li>
+<li><label for="extensionQ5">الوقت والصوت: موعد مرجعي عند الدقيقة ٣٠ بعد الساعة، والانحراف ٣ دقائق. مستوى صوت مرجعي ٨٠ ديسيبل بفارق ١٠ ديسيبل. ضع نموذجًا عدديًا مستقلًا لكل سياق وحدد القيم الممكنة.</label><textarea id="extensionQ5" rows="3"></textarea></li>
+<li><label for="extensionQ6">القراءة والدرجات: عدد صفحات مستهدف ١٠ في اليوم بفارق صفحتين، ودرجة مستهدفة ٧٥ نقطة بفارق ٥ نقاط. كوّن نموذجين وفسّر حدود كل منهما في الواقع.</label><textarea id="extensionQ6" rows="3"></textarea></li>
+<li><label for="extensionQ7">التبرير: علّق على العبارات «كل معادلة قيمة مطلقة لها حلّان» و«|س|+٣ قد يكون سالبًا» و«حل |س−٤|=٠ هو س=٤». اذكر سبب صحة كل عبارة أو خطئها.</label><textarea id="extensionQ7" rows="3"></textarea></li>
+<li><label for="extensionQ8">التركيب: حل المعادلتين ٢|س−٣|−١=٨ و|(٣س−١٢)/٤|=٣، ثم اشرح كيف تعاملت مع المعامل الخارجي والكسور.</label><textarea id="extensionQ8" rows="3"></textarea></li>
+</ol>
+<p>لا تصحَّح هذه الإجابات تلقائيًا. يجب أن يراجع المعلم النمذجة، الوحدات، خطوات الجبر، وصحة التبرير.</p>
+</details>
+</section>
 <footer><p>نشاط أصلي من Edulytics، مرتبط بكتاب الطالب <span class="eq">01.pdf</span>، الصفحات المطبوعة ١٠٣–١٠٨. المعلم يراجع المخرجات الحرة.</p></footer>
 </main>
 <script>
@@ -150,7 +168,8 @@ document.getElementById('cooldownResponse').addEventListener('submit',event=>{
  const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim()).concat([4,5].map(n=>document.getElementById('contextQ'+n).value.trim()));
  if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
  if(selectedCoolDownPoints.size!==2){document.getElementById('cooldownMessage').textContent='حدد نقطتين على خط الأعداد للسؤال الأول.';return;}
- const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'}))};
+ const extendedAnswers=[1,2,3,4,5,6,7,8].map(n=>({question:n,response:document.getElementById('extensionQ'+n).value.trim()})).filter(x=>x.response);
+ const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'})),extensionAnswers:extendedAnswers.map(x=>({...x,review:'TEACHER_REVIEW_REQUIRED'}))};
  document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
  document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
  document.getElementById('cooldownKey').hidden=false;
