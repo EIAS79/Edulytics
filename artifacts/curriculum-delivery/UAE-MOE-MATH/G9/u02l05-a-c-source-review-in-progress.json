@@ -139,15 +139,22 @@
     }
   ],
   "execution": {
-    "abcStatus": "CONTENT_PREPARED_PRACTICE_ENGINE_GAP",
+    "abcStatus": "PREPARED_PENDING_TESTS",
     "contentModified": true,
-    "practiceMappingModified": false,
-    "regressionTestsAdded": false,
+    "practiceMappingModified": true,
+    "regressionTestsAdded": true,
     "testsRun": "NOT_RUN",
     "ci": "NOT_RUN",
     "stageD": "NOT_STARTED",
-    "criticalBlocker": "Existing G6 absolute-value distance drills do not establish Grade9 |ax+b|=c equation solving, graphing, and no-solution semantics. Do not attach unrelated math families.",
-    "nextAction": "Implement and test exact absolute-value equation solver practice family, validate against fixtures, then close 2-5 and advance sequentially."
+    "criticalBlocker": "Practice engine now wired; run .NET generated-question and verifier tests and check CI before A-C closure.",
+    "nextAction": "Implement and test exact absolute-value equation solver practice family, validate against fixtures, then close 2-5 and advance sequentially.",
+    "practiceFamilies": [
+      "uae.g9.general.u02.l05.two_solutions",
+      "uae.g9.general.u02.l05.one_solution",
+      "uae.g9.general.u02.l05.no_solution",
+      "uae.g9.general.u02.l05.evaluate_absolute",
+      "uae.g9.general.u02.l05.midpoint"
+    ]
   },
   "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED.",
   "sourceVerifiedObjectives": [
