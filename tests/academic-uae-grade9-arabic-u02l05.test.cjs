@@ -81,12 +81,15 @@ test('Source-aligned Cool-down keeps drawings and reasoning under teacher review
 
 test('Cool-down captures numeric points and five open answers without claiming a grade', () => {
   const html = fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html'),'utf8');
-  for(const id of ['cooldownResponse','cooldownQ1','cooldownQ2','cooldownQ3','contextQ4','contextQ5','cooldownPointPicker','selectedPoints','cooldownSubmission','cooldownMessage','cooldownKey']) {
+  for(const id of ['cooldownResponse','cooldownQ1','cooldownQ2','cooldownQ3','contextQ4','contextQ5','cooldownPointPicker','cooldownStudentNumberLine','selectedPoints','cooldownSubmission','cooldownMessage','cooldownKey']) {
     assert.ok(html.includes('id="'+id+'"'), id);
   }
   assert.match(html, /TEACHER_REVIEW_REQUIRED/);
   assert.match(html, /graded:false/);
   assert.match(html, /numberLineSelectedPoints/);
+  assert.match(html, /function renderStudentLine\(/);
+  assert.match(html, /renderStudentLine\(\);/);
+  assert.match(html, /viewBox="0 0 760 145"/);
   assert.match(html, /selectedCoolDownPoints.size!==2/);
   assert.match(html, /contextQ4/);
   assert.match(html, /contextQ5/);
