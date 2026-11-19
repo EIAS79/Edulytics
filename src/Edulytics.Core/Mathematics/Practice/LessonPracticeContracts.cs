@@ -10290,9 +10290,7 @@ public static class LessonPracticeContractRegistry
         // Reuse established numeric family; handwritten proof/diagram teacher scored.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS", "number.exponents.positive_integer", "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
-            ["uae.g6.u06.l02.perfect_square", "usccss.g6.u01.l17.original_square_cube_values", "uae.g6.u06.l04.cube_volume"],
-            "UAE_G8_AR_U01L08_PDF104_111",
-            "READY_VERIFIED", Version);
+            ["uae.g6.u06.l02.perfect_square", "usccss.g6.u01.l17.original_square_cube_values", "uae.g6.u06.l04.cube_volume"], "UAE_G8_AR_U01L08_PDF104_111", "READY_VERIFIED", Version);
 
         // UAE Grade 8 Arabic U01L09, PDF 114–121.
         // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
@@ -10333,9 +10331,7 @@ public static class LessonPracticeContractRegistry
         // proof beyond existing families remain teacher-reviewed in Stage A-C.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS", "supporting.algebra.equations", "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
-            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"],
-            "UAE_G8_U02L03_LOCAL_PDF162_169",
-            "READY_VERIFIED", Version);
+            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"], "UAE_G8_U02L03_LOCAL_PDF162_169", "READY_VERIFIED", Version);
 
         // UAE G8 General owner-selected Arabic Student Book U02:L04, PDF178–185.
         // Reuse exact numeric canonical forms; story modeling and symbolic
@@ -10378,9 +10374,7 @@ public static class LessonPracticeContractRegistry
         // need teacher review. No runtime/CI claims until Stage D.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM", "algebra.relationships.two_unknowns", "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
-            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule"],
-            "UAE_G8_GENERAL_AR_U03L03_PDF222_231",
-            "READY_VERIFIED", Version);
+            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule"], "UAE_G8_GENERAL_AR_U03L03_PDF222_231", "READY_VERIFIED", Version);
 
         // UAE Grade 8 General U03 L04; local Student Book PDF232-239.
         // Reuse existing exact numeric families; diagrams and prose justification
@@ -10668,17 +10662,13 @@ public static class LessonPracticeContractRegistry
         // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES", "geometry.volume", "CONE_VOLUME_ONE_THIRD_CYLINDER",
-            ["uae.g7.u09.l02.cone_volume_pi_coefficient", "uae.g7.u09.l01.cylinder_volume_pi_coefficient"],
-            "UAE_G8_AR_U08L02_PDF15_22_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            ["uae.g7.u09.l02.cone_volume_pi_coefficient", "uae.g7.u09.l01.cylinder_volume_pi_coefficient"], "UAE_G8_AR_U08L02_PDF15_22_TEACHER_REVIEW", "READY_VERIFIED", Version);
 
         // UAE Grade8 General U08L03; original Student Book PDF24–31.
         // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES", "geometry.volume", "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
-            ["uae.g7.u09.l03.sphere_volume_pi_coefficient", "geometry.similarity.scale_factor"],
-            "UAE_G8_AR_U08L03_PDF24_31_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            ["uae.g7.u09.l03.sphere_volume_pi_coefficient", "geometry.similarity.scale_factor"], "UAE_G8_AR_U08L03_PDF24_31_TEACHER_REVIEW", "READY_VERIFIED", Version);
 
         // Grade 8 UAE General Arabic U08L04, Student Book PDF 38–45.
         // Reuse exact geometry numerical family; visuals and written
@@ -10773,9 +10763,7 @@ public static class LessonPracticeContractRegistry
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE", "geometry.points_lines_rays", "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
-            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values"],
-            "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values"], "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW", "READY_VERIFIED", Version);
 
         // UAE Grade8 General Unit10 Lesson3, local Arabic Student Book PDF141-148.
         // Reuse geometry numeric practice; construction and proof teacher-reviewed.
