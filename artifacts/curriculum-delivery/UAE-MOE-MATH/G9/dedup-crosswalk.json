@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "ALL_ORIGINAL_FLAGGED_PAIRS_SCREENED_WITH_SOURCE_PAGE_EVIDENCE; NOT_FULL_86_LESSON_SEMANTIC_AUDIT",
+  "reviewStatus": "14_SOURCE_OVERLAP_CANDIDATES_DOCUMENTED; FULL_86_LESSON_OBJECTIVE_AND_EXERCISE_AUDIT_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -443,6 +443,186 @@
           "note": "13-7 starts printed page 776/PDF 192? sample begins later on printed 777; opening page must be rechecked."
         },
         "contrast": "13-3 focuses on correspondence of triangle vertices/sides/angles in congruent figures; 13-7 works with transformations and coordinate-based congruence demonstrations and SSS reasoning. Not an exact duplicate."
+      }
+    },
+    {
+      "rawOrdinalA": 24,
+      "rawOrdinalB": 25,
+      "reason": "Both lessons use slope-intercept form, but with different mathematical operations",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "4-1",
+          "printedPagesReviewed": [
+            216,
+            217
+          ],
+          "pdfPagesReviewed": [
+            227,
+            228
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "4-2",
+          "printedPagesReviewed": [
+            226,
+            227
+          ],
+          "pdfPagesReviewed": [
+            237,
+            238
+          ]
+        },
+        "contrast": "4-1 constructs graphs from equations already in slope-intercept form; 4-2 derives slope-intercept equations from specified points and slopes, with different unknowns and checks. Distinct learning outcomes."
+      }
+    },
+    {
+      "rawOrdinalA": 11,
+      "rawOrdinalB": 30,
+      "reason": "Both involve multistep manipulation, but equation vs inequality conditions differ",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "2-3",
+          "printedPagesReviewed": [
+            91,
+            92
+          ],
+          "pdfPagesReviewed": [
+            102,
+            103
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "5-3",
+          "printedPagesReviewed": [
+            272,
+            273
+          ],
+          "pdfPagesReviewed": [
+            283,
+            284
+          ]
+        },
+        "contrast": "2-3 solves equalities and checks isolated values; 5-3 solves inequalities including reversing comparison sign on multiplication/division by negative numbers, and depicts a solution range on number line."
+      }
+    },
+    {
+      "rawOrdinalA": 18,
+      "rawOrdinalB": 34,
+      "reason": "Both graph linear expressions but one is a single line and the other is a system",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "3-1",
+          "printedPagesReviewed": [
+            155,
+            156
+          ],
+          "pdfPagesReviewed": [
+            166,
+            167
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "6-1",
+          "printedPagesReviewed": [
+            309,
+            310
+          ],
+          "pdfPagesReviewed": [
+            320,
+            321
+          ]
+        },
+        "contrast": "3-1 plots one linear equation (line, intercepts, coordinate axes); 6-1 solves two simultaneous equations by intersection and distinguishes one/no/infinite solutions."
+      }
+    },
+    {
+      "rawOrdinalA": 45,
+      "rawOrdinalB": 46,
+      "reason": "Titles share polynomial multiplication but factors have different structures",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "lesson": "7-2",
+          "printedPagesReviewed": [
+            374,
+            375
+          ],
+          "pdfPagesReviewed": [
+            22,
+            23
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "lesson": "7-3",
+          "printedPagesReviewed": [
+            382,
+            383
+          ],
+          "pdfPagesReviewed": [
+            30,
+            31
+          ]
+        },
+        "contrast": "7-2 multiplies a polynomial by a single monomial, illustrating distribution to each term; 7-3 multiplies two multi-term polynomials using extended distribution/FOIL, generating multiple cross terms."
+      }
+    },
+    {
+      "rawOrdinalA": 53,
+      "rawOrdinalB": 54,
+      "reason": "Shared exponent terminology but inverse algebraic rules",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "lesson": "8-1",
+          "printedPagesReviewed": [
+            445,
+            446
+          ],
+          "pdfPagesReviewed": [
+            93,
+            94
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "lesson": "8-2",
+          "printedPagesReviewed": [
+            452,
+            453
+          ],
+          "pdfPagesReviewed": [
+            100,
+            101
+          ]
+        },
+        "contrast": "8-1 applies product-of-powers and power-of-a-power rules to multiply like bases; 8-2 applies quotient-of-powers, zero and negative exponent rules to divide powers. Keep both distinct skills."
       }
     }
   ],
