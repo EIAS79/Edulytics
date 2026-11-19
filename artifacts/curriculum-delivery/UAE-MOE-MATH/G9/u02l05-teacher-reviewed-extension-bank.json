@@ -47,8 +47,8 @@
     "01.pdf:2-5:EX51"
   ],
   "sourceExerciseCount": 33,
-  "exactItemLevelSemanticEquivalence": "PENDING_PER_ITEM_REVIEW",
-  "status": "OPEN_RESPONSES_ROUTED_TO_RUBRIC_BUT_INDIVIDUAL_EQUIVALENCE_NOT_VERIFIED",
+  "exactItemLevelSemanticEquivalence": "SOURCE_SKILL_GROUPS_EXTENDED_FOR_TIME_AND_PARAMETER_REASONING_ITEM_LEVEL_RUBRIC_AND_RUNTIME_PENDING",
+  "status": "AUTHORED_ACTIVITY_EXTENSION_PREPARED_NO_TEACHER_RUNTIME_INTEGRATION",
   "groups": [
     {
       "taskId": "extensionQ1",
@@ -71,9 +71,10 @@
       "taskId": "extensionQ3",
       "topic": "relay_timing_reasoning",
       "ids": [
+        32,
         43
       ],
-      "expected": "المرجع ٤×١٣=٥٢ ثانية؛ |ز−٥٢|=٢؛ ٥٠ أو ٥٤ ثانية"
+      "expected": "|ز−٥٢|=٢ ⇒ ٥٠ أو ٥٤ ثانية؛ |ز−٥٣|=١ ⇒ ٥٢ أو ٥٤؛ |ز−٥٠٫٥|=١٫٥ ⇒ ٤٩ أو ٥٢؛ ٤ دقائق ±٥ ثوانٍ تعطي ٣:٥٥ أو ٤:٠٥، أي ٢٣٥ أو ٢٤٥ ثانية."
     },
     {
       "taskId": "extensionQ4",
@@ -116,7 +117,7 @@
         63,
         64
       ],
-      "expected": "القول بأن كل معادلة قيمة مطلقة لها حلّان خطأ؛ |س|+٣ لا يمكن أن يكون سالبًا؛ |س−٤|=٠ يعطي س=٤ فقط"
+      "expected": "توجد ٠/١/٢ حلول حسب إشارة الطرف الآخر؛ |س|+٣ لا يكون سالبًا؛ |س−٤|=٠ له حل واحد. |س+١|>٠ أحيانًا فقط (خطأ عند س=−١). حل |س+ج|=٠ موجب إذا ج<٠. |س|+ج<٠ بلا حلول إذا ج≥٠، وله حلول إذا ج<٠. |س+ج|+ج>٠ ليست صحيحة دائمًا، حسب ج وس."
     },
     {
       "taskId": "extensionQ8",
