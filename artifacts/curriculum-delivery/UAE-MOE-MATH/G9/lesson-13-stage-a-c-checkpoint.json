@@ -58,7 +58,22 @@
       "responseCapture": "local textual answers plus two chosen numeric number-line points, no server persistence or grade",
       "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)",
       "numberLinePointCapture": "ACCESSIBLE_TWO_POINT_PICKER_COMMITTED_UNGRADED_TEACHER_REVIEW",
-      "numberLinePointCaptureCommit": "71fe88d638867b9e3ddb1560aa877868eac6a494"
+      "numberLinePointCaptureCommit": "71fe88d638867b9e3ddb1560aa877868eac6a494",
+      "additionalTeacherReviewedTasks": [
+        {
+          "task": "measurement_tolerance_equation",
+          "expected": "|x-25|=3; x=22 or 28 cm",
+          "answerType": "open_numeric_plus_explanation"
+        },
+        {
+          "task": "negative_absolute_value_misconception",
+          "expected": "nonnegative absolute value cannot equal -2",
+          "answerType": "open_reasoning"
+        }
+      ],
+      "additionalTaskCommit": "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
+      "answerCount": 5,
+      "submission": "LOCAL_UNGRADED_EXPORT_ONLY_NOT_PLATFORM_PERSISTED"
     },
     "sourceSpecificExamplesAdded": [
       "composite absolute expressions",
@@ -91,14 +106,17 @@
       "uae.g9.general.u02.l05.composite_evaluation",
       "uae.g9.general.u02.l05.outer_coefficient_no_solution",
       "uae.g9.general.u02.l05.context_tolerance_endpoints"
-    ]
+    ],
+    "preparedAdditionalRegression": "4f22c00936098fac3c12ba26eed752f7e97843b2"
   },
   "blockingGaps": [
     "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
     "Stage D execution not run by design.",
-    "Number-line selection now captures two points; source-exercise atomic equivalence, teacher-authenticated review workflow, and canonical 13/82 index lock still unresolved."
+    "Number-line selection now captures two points; source-exercise atomic equivalence, teacher-authenticated review workflow, and canonical 13/82 index lock still unresolved.",
+    "19 source exercises have no automated digital family: documented teacher-review and contextual equivalents are not yet all traced individually to student-facing artefacts; no fake 100% claim.",
+    "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -149,7 +167,9 @@
       "5aafa633b165d5f49bdda4e181232abdcd17b432",
       "4bce679dae6aae589e71c0e8875a5a188713e43f",
       "8e33ca465950a86ce9c030f09411bb50aeb34fa5",
-      "71fe88d638867b9e3ddb1560aa877868eac6a494"
+      "71fe88d638867b9e3ddb1560aa877868eac6a494",
+      "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
+      "4f22c00936098fac3c12ba26eed752f7e97843b2"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
