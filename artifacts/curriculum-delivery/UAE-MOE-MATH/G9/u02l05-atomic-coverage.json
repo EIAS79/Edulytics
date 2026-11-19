@@ -128,7 +128,7 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_SOURCE_58_OF_64_MATH_REVIEWED_DIGITAL_EQUIVALENCE_RUNTIME_PENDING",
+    "status": "A_C_SOURCE_64_OF_64_MATH_REVIEWED_STUDENT_FACING_EQUIVALENCE_AND_RUNTIME_PENDING",
     "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
@@ -166,9 +166,9 @@
     ],
     "lastEvidenceRepair": "O3 visual number-line work cannot be classified as teacherReviewRequired=false; corrected to teacher-reviewed, retaining independent numeric candidate and Stage D runtime gate.",
     "sourceMathematicsSpotAudit": {
-      "verifiedCount": 58,
+      "verifiedCount": 64,
       "total": 64,
-      "pendingCount": 6,
+      "pendingCount": 0,
       "sourceFile": "01.pdf",
       "printedPages": [
         105,
@@ -176,15 +176,13 @@
         107,
         108
       ],
-      "scope": "mathematical source-item verification based on direct local scanned pages; does not imply digital-generated question parity or Stage D acceptance",
-      "pendingIds": [
-        "01.pdf:2-5:EX46",
-        "01.pdf:2-5:EX47",
-        "01.pdf:2-5:EX48",
-        "01.pdf:2-5:EX49",
-        "01.pdf:2-5:EX50",
-        "01.pdf:2-5:EX51"
+      "sourcePdfPages": [
+        116,
+        117,
+        118,
+        119
       ],
+      "scope": "source item mathematical outcomes checked against original scanned textbook pages including graph fractions; does not establish parity of every generated student prompt or Stage D assessment correctness",
       "testsRun": "WRITTEN_NOT_RUN"
     }
   },
@@ -1138,10 +1136,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{-15/4,17/4}",
+          "independentDerivation": "|x-1/4|=4; midpoint 1/4 and radius 4",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX47",
@@ -1150,10 +1156,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{-3/2,3/2}",
+          "independentDerivation": "|x|=3/2; midpoint 0",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX48",
@@ -1162,10 +1176,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{-5/2,7/2}",
+          "independentDerivation": "|x-1/2|=3; midpoint 1/2",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX49",
@@ -1174,10 +1196,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{0,1/2}",
+          "independentDerivation": "|x-1/4|=1/4; midpoint 1/4",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX50",
@@ -1186,10 +1216,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{0,4/3}",
+          "independentDerivation": "|x-2/3|=2/3; thirds on number line",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX51",
@@ -1198,10 +1236,18 @@
         "taskCategory": "number_line_to_equation",
         "assessmentTreatment": "teacher_review_full_absolute_value_equation_from_graph",
         "digitalFamily": null,
-        "reviewStatus": "SOURCE_FULL_EQUATION_REQUIRED_NUMERIC_MIDPOINT_ALONE_INSUFFICIENT",
+        "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "numericAssistanceFamily": "uae.g9.general.u02.l05.midpoint",
-        "teacherReviewRequired": true
+        "teacherReviewRequired": true,
+        "sourceMathematicsSpotAudit": {
+          "sourcePdfPage": 118,
+          "sourcePrintedPage": 107,
+          "readMode": "DIRECT_PAGE_IMAGE_REVIEW_HIGH_RESOLUTION_CROP",
+          "expectedMathAnswer": "{-4/3,2/3}",
+          "independentDerivation": "|x+1/3|=1; thirds on number line",
+          "verificationScope": "NUMBER_LINE_SOURCE_MATHEMATICS_ONLY_TEACHER_GRAPH_REVIEW_AND_RUNTIME_NOT_TESTED"
+        }
       },
       {
         "itemId": "01.pdf:2-5:EX52",
