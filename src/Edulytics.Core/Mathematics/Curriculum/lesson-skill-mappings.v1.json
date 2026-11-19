@@ -11532,6 +11532,28 @@
       ],
       "officialOutcomeCodes": [],
       "stageDVerification": "PENDING"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+      "primarySkills": [
+        "supporting.algebra.expressions"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceObjectivesPrepared_RuntimeSemanticAuditPending",
+      "evidence": [
+        "Local 2025-2026 Arabic General student book 01.pdf printed pages 5-9, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Book objectives: read expression components/powers; translate verbal expressions to symbolic expressions; represent contexts. Teacher grades free explanations and drawings.",
+        "Candidate reuse of existing G6 US-CCSS algebra.expression_words and algebra.expression_coefficient; no generated-question semantic audit was run in A-B-C.",
+        "Full objective-to-question evidence artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-source-objectives-practice-contract.json; D gate must validate real Arabic question strings and incorrect/valid answers."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_GENERAL_U01L01_VERBAL_SYMBOLIC_COMPONENTS_SOURCE_GROUNDED",
+      "allowedQuestionFamilies": [
+        "usccss.algebra.expression_words",
+        "usccss.algebra.expression_coefficient"
+      ],
+      "officialOutcomeCodes": []
     }
   ]
 }
