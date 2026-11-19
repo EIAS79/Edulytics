@@ -38,9 +38,15 @@
     ],
     "exerciseInventory": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
     "sourceExercisesMapped": 64,
-    "sourceExercisesWithoutDigitalFamily": 19,
+    "sourceExercisesWithoutDigitalFamily": 21,
     "manualReviewClassificationCommit": "000b7247ecc73987855da3731c6459c3b1e29a09",
-    "sourceExerciseCoverageDisposition": "64 inventoried; 19 non-auto-gradable explicitly teacher-reviewed; exact atomic equivalence pending"
+    "sourceExerciseCoverageDisposition": "64 inventoried; 19 non-auto-gradable explicitly teacher-reviewed; exact atomic equivalence pending",
+    "digitalFamilyCandidates": 43,
+    "caseRoutingCommit": "e4fad865b89aa3d714964743306db31fca9be085",
+    "studentBookReview": "DIRECT_SCANNED_PRINTED_PAGES_105_TO_108_REVIEWED_FOR_64_EXERCISES",
+    "exerciseTreatmentLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-source-exercise-treatment-ledger.json",
+    "canonicalIndexProposal": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
+    "canonicalIndexStatus": "STRUCTURAL_TARGET_PREPARED_SEMANTIC_LOCK_PENDING"
   },
   "stageB": {
     "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
@@ -86,7 +92,8 @@
       "positive outer coefficient with two exact solutions",
       "negative outer coefficient proving no real solution",
       "fractional expression inside absolute value with exact solutions"
-    ]
+    ],
+    "studentNumberLineSvgCommit": "7fa855a19b5cd2026505638356635d7da628316a"
   },
   "stageC": {
     "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
@@ -115,7 +122,9 @@
       "issue": "Existing Node Stage D acceptance assertion expected 7 families while lesson contract and dedicated generator have 8, including context_tolerance_endpoints.",
       "fixCommit": "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f",
       "status": "PREPARED_NOT_RUN"
-    }
+    },
+    "extendedTwoRootFamilyCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
+    "extendedTwoRootStageDTestsWrittenCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc"
   },
   "blockingGaps": [
     "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
@@ -123,9 +132,8 @@
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
     "Stage D execution not run by design.",
     "Number-line selection now captures two points; source-exercise atomic equivalence, teacher-authenticated review workflow, and canonical 13/82 index lock still unresolved.",
-    "19 source exercises have no automated digital family: documented teacher-review and contextual equivalents are not yet all traced individually to student-facing artefacts; no fake 100% claim.",
     "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow.",
-    "Manual classification of 19 items is not a signed academic equivalence review; first unclosed lesson remains U02L05."
+    "43 digital-family candidates and 21 teacher-review items have explicit routing, but independent source-element equivalence and authenticated teacher grading remain incomplete."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -180,7 +188,11 @@
       "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
       "4f22c00936098fac3c12ba26eed752f7e97843b2",
       "000b7247ecc73987855da3731c6459c3b1e29a09",
-      "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f"
+      "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f",
+      "7fa855a19b5cd2026505638356635d7da628316a",
+      "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
+      "8e6bc1ab37099a3a1658622862fab95253acc8fc",
+      "b8f1b85b770c30b9f576f25518a9a80d91406a76"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
