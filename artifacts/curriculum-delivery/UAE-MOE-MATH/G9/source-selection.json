@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "code": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "targetPeriod": "2026-2027",
+    "academicLanguage": "ar"
+  },
+  "lockStatus": "SOURCE_LOCK_PARTIAL_T1_ONLY",
+  "selected": {
+    "term1": {
+      "file": "01.pdf",
+      "pathway": "General",
+      "edition": "2025-2026",
+      "termVisibleOnCover": 1,
+      "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "unitCount": 7,
+      "numberedLessonCount": 43,
+      "bookPageCount": 441,
+      "sourceIndex": "docs/curriculum/UAE_G9_GENERAL_2025_STUDENT_INDEX.json"
+    },
+    "term2": {
+      "status": "NOT_MATCHED_TO_SAME_EDITION",
+      "olderAvailableFile": "02-1.pdf",
+      "olderEdition": "2019-2020",
+      "conflict": "Older term2 Unit 7 quadratic expressions and equations conflicts with newest term1 Unit 7 geometry tools; must not silently renumber or omit."
+    },
+    "term3": {
+      "status": "NOT_MATCHED_TO_SAME_EDITION",
+      "olderAvailableFile": "03-1.pdf",
+      "olderEdition": "2019-2020"
+    }
+  },
+  "excluded": [
+    {
+      "file": "02.pdf",
+      "reason": "Applied pathway"
+    },
+    {
+      "file": "03.pdf",
+      "reason": "Applied pathway"
+    }
+  ],
+  "limitations": [
+    "Cover of 01.pdf visibly has badge '1': first term, not a complete year.",
+    "43 is verified lesson count of 2025-2026 term1 General only; cannot call it annual curriculum.",
+    "Source scope for terms 2 and 3 must be resolved before full-course 100% closure."
+  ],
+  "stageABCCurrentLesson": "1-1",
+  "lessonsClosed": 0,
+  "stageDTestsRun": false
+}
