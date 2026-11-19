@@ -55,8 +55,10 @@
         "equation from two symmetric endpoints"
       ],
       "teacherReviewForOpenWork": true,
-      "responseCapture": "local structured three-question student answers, no automatic open-response grade",
-      "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)"
+      "responseCapture": "local textual answers plus two chosen numeric number-line points, no server persistence or grade",
+      "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)",
+      "numberLinePointCapture": "ACCESSIBLE_TWO_POINT_PICKER_COMMITTED_UNGRADED_TEACHER_REVIEW",
+      "numberLinePointCaptureCommit": "71fe88d638867b9e3ddb1560aa877868eac6a494"
     },
     "sourceSpecificExamplesAdded": [
       "composite absolute expressions",
@@ -95,7 +97,8 @@
     "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
-    "Stage D execution not run by design."
+    "Stage D execution not run by design.",
+    "Number-line selection now captures two points; source-exercise atomic equivalence, teacher-authenticated review workflow, and canonical 13/82 index lock still unresolved."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -145,7 +148,8 @@
       "ef7772b75fac792bab8ee5ff78174b37dc702105",
       "5aafa633b165d5f49bdda4e181232abdcd17b432",
       "4bce679dae6aae589e71c0e8875a5a188713e43f",
-      "8e33ca465950a86ce9c030f09411bb50aeb34fa5"
+      "8e33ca465950a86ce9c030f09411bb50aeb34fa5",
+      "71fe88d638867b9e3ddb1560aa877868eac6a494"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
