@@ -31,20 +31,53 @@
     {
       "source": "01.pdf:7-1",
       "target": "03-1.pdf:11-1",
-      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
-      "reason": "Printed p365/PDF p376 directly reviewed: undefined terms point, line, plane; collinearity and coplanarity. These vocabulary/representation objectives cannot be discarded as segment-proof duplicates. Full exercises and integration into 11-1 require audit."
+      "status": "OPENING_PAGES_COMPARED_DISTINCT_SKILLS_REQUIRE_EXPLICIT_SUPPLEMENT",
+      "reason": "Distinct objectives, not a duplicate. Existing target can only absorb the new concepts if content, activities and exercises are expressly extended.",
+      "directSourceTargetPageEvidence": {
+        "sourceFile": "01.pdf",
+        "sourcePrintedPage": 365,
+        "sourcePdfPage": 376,
+        "targetFile": "03-1.pdf",
+        "targetPrintedPage": 607,
+        "targetPdfPage": 23,
+        "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
+        "targetObserved": "Necessary versus sufficient conditions and counterexamples",
+        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+      }
     },
     {
       "source": "01.pdf:7-2",
       "target": "03-1.pdf:11-3",
-      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
-      "reason": "Printed p374/PDF p385 directly reviewed: segment measurement with rulers in centimetres and millimetres, measurement accuracy, endpoints; distinct procedural measurement from segment relation proof in 11-3. Remaining exercises and content parity pending."
+      "status": "OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_WITH_UNIQUE_MEASUREMENT",
+      "reason": "Partial overlap on measuring segments, but unit precision and practical ruler tasks require explicit treatment.",
+      "directSourceTargetPageEvidence": {
+        "sourceFile": "01.pdf",
+        "sourcePrintedPage": 374,
+        "sourcePdfPage": 385,
+        "targetFile": "03-1.pdf",
+        "targetPrintedPage": 624,
+        "targetPdfPage": 40,
+        "sourceObserved": "Ruler measurements in cm and mm, precision and unit use",
+        "targetObserved": "Ruler postulate plus segment-addition postulate for proof",
+        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+      }
     },
     {
       "source": "01.pdf:7-3",
       "target": "03-1.pdf:12-6",
-      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
-      "reason": "Printed p385/PDF p396 directly reviewed: absolute-value distance on a number line, point separation and midpoint objectives; cannot automatically collapse to perpendicular line distance in 12-6. Requires checking any overlapping algebra distance skills and all remaining lesson elements."
+      "status": "OPENING_PAGES_COMPARED_DISTINCT_DISTANCE_MODELS",
+      "reason": "Different distance contexts; cannot claim the source's midpoint/number-line skill is assessed by the target's perpendicular distance.",
+      "directSourceTargetPageEvidence": {
+        "sourceFile": "01.pdf",
+        "sourcePrintedPage": 385,
+        "sourcePdfPage": 396,
+        "targetFile": "03-1.pdf",
+        "targetPrintedPage": 695,
+        "targetPdfPage": 111,
+        "sourceObserved": "Absolute difference of coordinates on number line and midpoint of a segment",
+        "targetObserved": "Perpendicular point-to-line and parallel-line distance",
+        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+      }
     },
     {
       "source": "01.pdf:7-4",
@@ -999,6 +1032,49 @@
     ],
     "coverageScope": "OPENING_PAGES_DIRECTLY_REVIEWED_ONLY_NOT_FULL_LESSON_PARITY",
     "sourceIndexLock": false,
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "directOpeningPageTargetComparison": {
+    "records": [
+      {
+        "source": "01.pdf:7-1",
+        "target": "03-1.pdf:11-1",
+        "status": "OPENING_PAGES_COMPARED_DISTINCT_SKILLS_REQUIRE_EXPLICIT_SUPPLEMENT",
+        "sourcePrinted": 365,
+        "sourcePdf": 376,
+        "targetPrinted": 607,
+        "targetPdf": 23,
+        "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
+        "targetObserved": "Necessary versus sufficient conditions and counterexamples",
+        "finding": "Distinct objectives, not a duplicate. Existing target can only absorb the new concepts if content, activities and exercises are expressly extended."
+      },
+      {
+        "source": "01.pdf:7-2",
+        "target": "03-1.pdf:11-3",
+        "status": "OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_WITH_UNIQUE_MEASUREMENT",
+        "sourcePrinted": 374,
+        "sourcePdf": 385,
+        "targetPrinted": 624,
+        "targetPdf": 40,
+        "sourceObserved": "Ruler measurements in cm and mm, precision and unit use",
+        "targetObserved": "Ruler postulate plus segment-addition postulate for proof",
+        "finding": "Partial overlap on measuring segments, but unit precision and practical ruler tasks require explicit treatment."
+      },
+      {
+        "source": "01.pdf:7-3",
+        "target": "03-1.pdf:12-6",
+        "status": "OPENING_PAGES_COMPARED_DISTINCT_DISTANCE_MODELS",
+        "sourcePrinted": 385,
+        "sourcePdf": 396,
+        "targetPrinted": 695,
+        "targetPdf": 111,
+        "sourceObserved": "Absolute difference of coordinates on number line and midpoint of a segment",
+        "targetObserved": "Perpendicular point-to-line and parallel-line distance",
+        "finding": "Different distance contexts; cannot claim the source's midpoint/number-line skill is assessed by the target's perpendicular distance."
+      }
+    ],
+    "classification": "ONE_PARTIAL_OVERLAP_AND_TWO_DISTINCT_MATH_OBJECTIVE_FAMILIES",
+    "status": "SOURCE_TO_TARGET_DIFFERENCES_CONFIRMED_FINAL_13X82_INTEGRATION_NOT_DONE",
     "testsRun": "WRITTEN_NOT_RUN"
   }
 }
