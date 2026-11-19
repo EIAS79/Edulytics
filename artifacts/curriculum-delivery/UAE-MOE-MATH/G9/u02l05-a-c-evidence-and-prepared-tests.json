@@ -72,33 +72,34 @@
     }
   ],
   "engineReuse": [
-    "usccss.g6.u07.l06.absolute_distance_values",
-    "functions.absolute_value.translate_evaluate"
+    "Existing shared absolute-distance teaching concepts retained; no longer used as replacement for solving equations."
   ],
-  "engineGap": "Extended existing exact engine with new family; no verified runtime test until Stage D.",
+  "engineGap": "Three bounded Grade9 absolute-value equation families have been authored and registered for 0/1/2 solutions; Stage D compile and semantic audit remain NOT_RUN.",
   "abcStatus": "READY_FOR_STAGE_D_PREPARATION",
   "readyForStageD": true,
   "testsRun": false,
   "reason": null,
   "engineExtension": {
-    "family": "uae.g9.u02.l05.absolute_equation_roots",
-    "sourceFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-    "supportedCases": [
-      "two roots when distance>0",
-      "one root when distance=0",
-      "no solution when distance<0",
-      "Arabic Eastern digits",
-      "order independent pairs",
-      "reject malformed and wrong answers"
+    "families": [
+      "uae.g9.u02.l05.absolute_equation_two_solutions",
+      "uae.g9.u02.l05.absolute_equation_zero_distance",
+      "uae.g9.u02.l05.absolute_equation_negative_distance"
     ],
-    "writeStatus": "CODE_AUTHORED_UNTESTED",
+    "implementation": "src/Edulytics.Services/Mathematics/UaeGrade9AbsoluteValueEquationQuestions.cs",
+    "routing": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "priorFamily": "uae.g9.u02.l05.absolute_equation_roots (unreferenced by revised lesson contract; D to review legacy adapter reuse/removal)",
+    "supports": [
+      "positive RHS two integer roots",
+      "zero RHS single integer root",
+      "negative RHS no root",
+      "Arabic/Western digit normalization and comma-separated unordered pairs"
+    ],
     "testsRun": "NOT_RUN",
     "stageDRequirements": [
-      "build compile gate",
-      "generate real Arabic questions",
-      "test false, invalid, boundary inputs",
-      "independent semantic reviewer check",
-      "check family grading against source"
+      "must compile and generate real Arabic items",
+      "independent verifier for correct, wrong, invalid answer cases",
+      "contextual/number-line questions teacher reviewed",
+      "test extra existing family safety and avoid duplicate active routes"
     ]
   }
 }
