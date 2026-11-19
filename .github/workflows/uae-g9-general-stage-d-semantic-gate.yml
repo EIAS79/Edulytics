@@ -1,0 +1,44 @@
+name: UAE Grade 9 General - Stage D Semantic Gate
+
+# This workflow is deliberately NOT triggered by push or pull_request.
+# Grade 9 A-B-C authors prepare fixtures only. Execution is Stage D ONLY.
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: 'Exact 40-character commit SHA of the Grade 9 A-B-C candidate'
+        required: true
+        type: string
+      evidence_path:
+        description: 'Path to actual independent Stage D question-audit evidence JSON'
+        required: true
+        type: string
+        default: 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/stage-d-real-question-audit.json'
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-audit:
+    name: GRADE9_SEMANTIC_AUDIT_GATE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.candidate_sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate Stage D evidence against every source-index lesson
+        env:
+          CANDIDATE_SHA: ${{ inputs.candidate_sha }}
+          EVIDENCE_PATH: ${{ inputs.evidence_path }}
+        shell: bash
+        run: |
+          test "${#CANDIDATE_SHA}" -eq 40
+          test -f "$EVIDENCE_PATH"
+          python tools/curriculum/uae_g9_stage_d_semantic_gate.py \
+            --source-index docs/curriculum/UAE_G9_GENERAL_2025_STUDENT_INDEX.json \
+            --stage-d-evidence "$EVIDENCE_PATH" \
+            --candidate-sha "$CANDIDATE_SHA"
