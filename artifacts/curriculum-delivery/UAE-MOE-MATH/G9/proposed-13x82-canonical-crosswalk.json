@@ -267,7 +267,61 @@
       "source": "01.pdf:7-4",
       "target": "03-1.pdf:11-3",
       "status": "CONFIRMED_SEMANTIC_DUPLICATE_WITH_EXERCISE_VARIANTS",
-      "reason": "Existing seven-page source comparison established equivalent segment-relationship objectives and diagrams; retain exercise variants"
+      "reason": "Direct review of newer 7-4 printed pp398–404 (PDF409–415) against older 11-3 printed pp624–630 (PDF40–46): both include ruler and segment-addition postulates, equivalence/reflexive/symmetric/transitive segment properties, two-column proofs and applied segment reasoning. Original exercise diagrams/cases differ and must remain in lesson source coverage; no second lesson required for the same instructional core.",
+      "fullLessonEvidence": {
+        "newer": {
+          "file": "01.pdf",
+          "printedPages": [
+            398,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404
+          ],
+          "pdfPages": [
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415
+          ]
+        },
+        "older": {
+          "file": "03-1.pdf",
+          "printedPages": [
+            624,
+            625,
+            626,
+            627,
+            628,
+            629,
+            630
+          ],
+          "pdfPages": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ]
+        },
+        "overlappingTargets": [
+          "ruler postulate",
+          "segment addition postulate",
+          "segment congruence and algebraic proofs",
+          "two-column proofs"
+        ],
+        "exerciseVariantsMustBePreserved": true,
+        "sourceInspection": "DIRECT_SCANNED_PAGES_VISUALLY_COMPARED",
+        "testsRun": "WRITTEN_NOT_RUN",
+        "digitalLessonParity": "NOT_YET_AUDITED"
+      }
     }
   ],
   "records": [
@@ -1000,7 +1054,7 @@
         "01.pdf:7-2",
         "01.pdf:7-4"
       ],
-      "sourceSkillIntegrationStatus": "PENDING_SOURCE_OBJECTIVE_AND_EXERCISE_AUDIT"
+      "sourceSkillIntegrationStatus": "CONFIRMED_CORE_DUPLICATE_BUT_EXERCISE_VARIANTS_NOT_YET_IMPORTED"
     },
     {
       "canonicalOrdinal": 67,
@@ -1269,6 +1323,8 @@
     ],
     "verification": "DIRECT_LOCAL_PAGE_CONTACT_SHEETS",
     "scope": "Full ranges of compared lesson pages visually reviewed; no complete per-exercise or live-platform fidelity audit",
-    "sourceIndexLock": false
+    "sourceIndexLock": false,
+    "duplicatePairsVisuallyReviewed": 1,
+    "referenceOnlyDuplicates": 1
   }
 }
