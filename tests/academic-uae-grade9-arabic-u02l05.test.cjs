@@ -98,3 +98,20 @@ test('Cool-down captures numeric points and five open answers without claiming a
   assert.match(html, /event\.preventDefault\(\)/);
   assert.match(html, /id="cooldownKey" hidden/);
 });
+
+test('Proposed 13x82 crosswalk retains historical quadratic unit 7 and all four recent geometry source refs', () => {
+  const proposed = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/proposed-13x82-canonical-crosswalk.json');
+  assert.equal(proposed.status, 'STRUCTURAL_13x82_PROPOSAL_NOT_SEMANTIC_LOCK');
+  assert.equal(proposed.canClaimCanonicalSourceLock, false);
+  assert.equal(proposed.records.length, 82);
+  assert.equal(new Set(proposed.records.map(x => x.unit)).size, 13);
+  assert.equal(proposed.records.filter(x => x.unit === 7).length, 9);
+  assert.ok(proposed.records.some(x => x.primarySource === '02-1.pdf:7-9'));
+  const originalRefs = new Set([
+    ...proposed.records.map(x => x.primarySource),
+    ...proposed.records.flatMap(x => x.supplementarySources)
+  ]);
+  assert.equal(originalRefs.size, 86);
+  for(const num of [1,2,3,4])assert.ok(originalRefs.has('01.pdf:7-' + num));
+  assert.equal(proposed.reviewPriority.filter(x => x.status.startsWith('CONFIRMED_')).length, 1);
+});
