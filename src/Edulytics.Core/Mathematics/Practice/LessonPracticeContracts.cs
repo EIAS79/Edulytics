@@ -10930,6 +10930,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U01L04_P25_31",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // UAE Grade 9 general U01L05 textbook pp33-39: candidate shared
+        // equation generator; full Arabic/math-semantic evaluation in Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:05:EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:05:EQUATIONS","algebra.linear.solve",
+            "G9_U01L05_SOLVE_VERIFY_CONTEXTUAL_EQUATIONS",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
+             "uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide",
+             "uae.g6.u07.l01.test_candidate","algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U01L05_P33_39",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
