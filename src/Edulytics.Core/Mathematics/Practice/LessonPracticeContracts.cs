@@ -11090,6 +11090,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L09_P132_138",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // G9 General U03L01 2025 p155–162: numeric coordinate practice
+        // plus teacher-graded original Cartesian plots and reasoning.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS", "functions.linear_graphs",
+            "G9_U03L01_GRAPH_TABLE_INTERCEPTS_AND_CONTEXT",
+            ["uae.g6.u08.l01.ordered_pair",
+             "uae.g6.u08.l03.equation_from_line",
+             "uae.g6.u08.l03.y_intercept"],
+            "UAE_G9_GENERAL_2025_AR_U03L01_P155_162",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
