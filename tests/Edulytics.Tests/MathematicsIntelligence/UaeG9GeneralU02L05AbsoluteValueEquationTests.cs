@@ -29,6 +29,8 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
         var family = Prefix + suffix;
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
         Assert.True(ExactSkillContractQuestionEngine.Verify(family, parameters, correct));
+        if (suffix == "no_solution")
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family, parameters, "لا حل"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family, parameters, incorrect));
     }
 
@@ -42,6 +44,8 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
         };
         Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "1,1"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "1,9,13"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "1,9,"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, ",1,9"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,
             new Dictionary<string,int> { ["a"] = 0, ["m"] = 5, ["r"] = 4 }, "1,9"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,
