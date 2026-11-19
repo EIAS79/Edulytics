@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "packCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "academicLanguage": "ar",
+    "rtl": true,
+    "lesson": "2-5",
+    "title": "حل معادلات تتضمن قيمة مطلقة"
+  },
+  "source": {
+    "file": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_09\\01_Student_Books\\01.pdf",
+    "edition": "2025-2026",
+    "printedPageReviewed": 104,
+    "pdfPageIndexReviewed": 114,
+    "remainingLessonPagesNotReviewed": true
+  },
+  "verifiedBookObjectives": [
+    {
+      "id": "O1",
+      "description": "إذا كانت القيمة المطلقة لمقدار مساوية لعدد موجب تنقسم المعادلة إلى حالتين موجب وسالب",
+      "sourcePage": 104
+    },
+    {
+      "id": "O2",
+      "description": "إذا كانت القيمة المطلقة لمقدار مساوية لعدد سالب فلا يوجد حل",
+      "sourcePage": 104
+    },
+    {
+      "id": "O3",
+      "description": "تمثيل الحلول على خط الأعداد والتحقق منها",
+      "sourcePage": 104
+    },
+    {
+      "id": "O4",
+      "description": "تطبيق المسافة عن القيمة المرجعية على سياق درجات الحرارة",
+      "sourcePage": 104
+    }
+  ],
+  "sourceVerifiedExercises": [
+    {
+      "prompt": "|f+5|=17",
+      "expectedSolutions": [
+        -22,
+        12
+      ]
+    },
+    {
+      "prompt": "|b-1|=-3",
+      "expectedSolutions": []
+    },
+    {
+      "prompt": "|y+2|=4",
+      "expectedSolutions": [
+        -6,
+        2
+      ]
+    },
+    {
+      "prompt": "|3n-4|=-1",
+      "expectedSolutions": []
+    }
+  ],
+  "execution": {
+    "abcStatus": "IN_PROGRESS_SOURCE_REVIEW",
+    "contentModified": false,
+    "practiceMappingModified": false,
+    "regressionTestsAdded": false,
+    "testsRun": "NOT_RUN",
+    "ci": "NOT_RUN",
+    "stageD": "NOT_STARTED",
+    "nextAction": "Review the complete printed pages 103–110 before patching existing lesson and practice mappings; then run tests and update index only after closure"
+  },
+  "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED."
+}
