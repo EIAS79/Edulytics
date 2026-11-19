@@ -246,3 +246,22 @@ test('All twelve original number-line equation exercises have teacher-reviewed a
   assert.match(html,/graphAnswers/);
   assert.match(html,/graphAnswers:graphAnswers.map/);
 });
+
+
+test('11-1 points to the actual source lesson rather than the preceding geometry laboratory', () => {
+  const raw = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/comprehensive-index.json');
+  const target = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json');
+  const proposed = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/proposed-13x82-canonical-crosswalk.json');
+  const raster = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/five-book-page-raster-audit.json');
+  const source = raw.records.find(x => x.sourceFile === '03-1.pdf' && x.sourceCode === '11-1');
+  const canonical = target.records.find(x => x.SourceRefs.includes('03-1.pdf:11-1'));
+  const crosswalk = proposed.records.find(x => x.primarySource === '03-1.pdf:11-1');
+  const page = raster.sourcePageChecks.find(x => x.file === '03-1.pdf' && x.lesson === '11-1');
+  for (const row of [source, canonical, crosswalk, page]) assert.ok(row);
+  assert.deepEqual([source.printedPage, source.pdfPage], [608,24]);
+  assert.deepEqual([canonical.PrintedPage,canonical.PDFPage], [608,24]);
+  assert.deepEqual([crosswalk.sourcePrintedPage,crosswalk.sourcePdfPage], [608,24]);
+  assert.deepEqual([page.printed,page.page], [608,24]);
+  assert.equal(page.renderHash,'5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f');
+  assert.equal(target.SOURCE_INDEX_COMPLETE,false);
+});
