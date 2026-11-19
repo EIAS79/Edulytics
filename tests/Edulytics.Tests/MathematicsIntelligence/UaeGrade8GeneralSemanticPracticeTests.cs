@@ -36,6 +36,42 @@ public sealed class UaeGrade8GeneralSemanticPracticeTests
     }
 
     [Theory]
+    [InlineData("supporting.algebra.simplify")]
+    [InlineData("supporting.algebra.expand")]
+    [InlineData("supporting.algebra.equations.mixed")]
+    [InlineData("algebra.linear.ax_plus_b_equals_c")]
+    [InlineData("supporting.powers10.evaluate")]
+    [InlineData("supporting.powers10.multiply")]
+    [InlineData("supporting.powers10.divide")]
+    [InlineData("supporting.powers10.missing_exponent")]
+    [InlineData("geometry.coordinate.evaluate_linear_rule")]
+    [InlineData("geometry.coordinate.y_intercept_from_rule")]
+    [InlineData("geometry.similarity.scale_factor")]
+    [InlineData("algebra.linear.standard_form.slope_intercept")]
+    [InlineData("geometry.angles.supplementary")]
+    [InlineData("geometry.polygons.missing_interior_angle")]
+    [InlineData("statistics.center_spread.mean")]
+    [InlineData("statistics.center_spread.median")]
+    public void Grade8GeneralExactArithmeticPromptAndExplanationAreArabicOnly(
+        string family)
+    {
+        var exact = new ExactSkillContractQuestionEngine().Generate(
+            "g8-arabic-localization", Prefix + "01:01:RATIONAL-NUMBERS",
+            [family], ExactSkillQuestionDifficulty.Standard, 1, 35819, [])[0];
+        var lesson = Prefix + "01:01:RATIONAL-NUMBERS";
+        var prompt = UaeGrade8SetPracticeLocalization.Prompt(lesson, exact);
+        var solution = UaeGrade8SetPracticeLocalization.Solution(lesson, exact);
+        Assert.Contains(prompt, c => c is >= 'ء' and <= 'ي');
+        Assert.Contains(solution, c => c is >= 'ء' and <= 'ي');
+        Assert.DoesNotContain("Find ", prompt, StringComparison.Ordinal);
+        Assert.DoesNotContain("Solve ", prompt, StringComparison.Ordinal);
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            family, exact.Parameters, exact.CorrectAnswer));
+        Assert.Equal(exact.Prompt, UaeGrade8SetPracticeLocalization.Prompt(
+            "PED:US-CCSS:L8:GENERAL:01:01:RATIONAL-NUMBERS", exact));
+    }
+
+    [Theory]
     [InlineData("uae.g8.u05.l01.transversal_angle_measure")]
     [InlineData("uae.g8.u05.l03.triangle_angle_measure")]
     [InlineData("uae.g8.u05.l05.pythagorean_integer_triple")]
