@@ -1,5 +1,19 @@
 name: UAE Grade 8 General Arabic Stage D - 76 lesson diagnostics
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g8-stage-d.yml'
+      - 'tools/curriculum/uae_g8_**'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G8/**'
+      - 'docs/curriculum/UAE_G8_GENERAL_**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'tests/academic-uae-grade8-*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade8GeneralSemanticPracticeTests.cs'
   pull_request:
     branches: [main]
     paths:
