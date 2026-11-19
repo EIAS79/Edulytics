@@ -10997,6 +10997,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L01_P75_80_PARTIAL_MECHANICS",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // G9 General 2025 U02L02 p83-90: reuse verified numeric one-step
+        // mechanisms; no Stage D result or Grade9 language PASS implied.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:02:SOLVING-ONE-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:02:SOLVING-ONE-STEP-EQUATIONS", "algebra.equations.one_step",
+            "G9_U02L02_INVERSE_OPERATIONS_AND_EQUATION_CHECK",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
+             "uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l01.multiply",
+             "uae.g6.u07.l01.divide","uae.g6.u07.l01.test_candidate"],
+            "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
