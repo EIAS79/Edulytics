@@ -31,18 +31,18 @@
     {
       "source": "01.pdf:7-1",
       "target": "03-1.pdf:11-1",
-      "status": "OPENING_PAGES_COMPARED_DISTINCT_SKILLS_REQUIRE_EXPLICIT_SUPPLEMENT",
-      "reason": "Distinct objectives, not a duplicate. Existing target can only absorb the new concepts if content, activities and exercises are expressly extended.",
+      "status": "DIRECT_CORRECTED_SOURCE_TARGET_OPENING_PAGES_PARTIAL_OVERLAP_REMAINDER_PENDING",
+      "reason": "Correct target 11-1 begins PDF24 / printed608, covering point/line/plane axioms and representations shared with newer 7-1; newer's collinearity and coplanarity tasks plus older proof/axiom objectives require independent integration. Earlier comparison against PDF23 was invalid because it was a geometry laboratory.",
       "directSourceTargetPageEvidence": {
         "sourceFile": "01.pdf",
         "sourcePrintedPage": 365,
         "sourcePdfPage": 376,
         "targetFile": "03-1.pdf",
-        "targetPrintedPage": 607,
-        "targetPdfPage": 23,
+        "targetPrintedPage": 608,
+        "targetPdfPage": 24,
         "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
-        "targetObserved": "Necessary versus sufficient conditions and counterexamples",
-        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+        "targetObserved": "Point, line, plane axioms, naming and intersections; free proof",
+        "comparisonScope": "CORRECTED_OPENING_PAGE_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
       }
     },
     {
@@ -786,12 +786,12 @@
       "lessonCode": "11-1",
       "titleAr": "المسلمات والبراهين الحرة",
       "primarySource": "03-1.pdf:11-1",
-      "sourcePdfPage": 23,
-      "sourcePrintedPage": 607,
+      "sourcePdfPage": 24,
+      "sourcePrintedPage": 608,
       "supplementarySources": [
         "01.pdf:7-1"
       ],
-      "sourceSkillIntegrationStatus": "PENDING_SOURCE_OBJECTIVE_AND_EXERCISE_AUDIT"
+      "sourceSkillIntegrationStatus": "PARTIAL_OVERLAP_DIRECT_LESSON_OPENING_COMPARE_REMAINDER_PENDING"
     },
     {
       "canonicalOrdinal": 65,
@@ -1039,14 +1039,14 @@
       {
         "source": "01.pdf:7-1",
         "target": "03-1.pdf:11-1",
-        "status": "OPENING_PAGES_COMPARED_DISTINCT_SKILLS_REQUIRE_EXPLICIT_SUPPLEMENT",
+        "status": "CORRECTED_OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_EXERCISES_PENDING",
         "sourcePrinted": 365,
         "sourcePdf": 376,
-        "targetPrinted": 607,
-        "targetPdf": 23,
+        "targetPrinted": 608,
+        "targetPdf": 24,
         "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
-        "targetObserved": "Necessary versus sufficient conditions and counterexamples",
-        "finding": "Distinct objectives, not a duplicate. Existing target can only absorb the new concepts if content, activities and exercises are expressly extended."
+        "targetObserved": "Point-line-plane postulates, relationships and free proofs",
+        "finding": "Partial overlap, no evidence for full semantic duplication; previous PDF23 target was a lab."
       },
       {
         "source": "01.pdf:7-2",
@@ -1073,8 +1073,8 @@
         "finding": "Different distance contexts; cannot claim the source's midpoint/number-line skill is assessed by the target's perpendicular distance."
       }
     ],
-    "classification": "ONE_PARTIAL_OVERLAP_AND_TWO_DISTINCT_MATH_OBJECTIVE_FAMILIES",
-    "status": "SOURCE_TO_TARGET_DIFFERENCES_CONFIRMED_FINAL_13X82_INTEGRATION_NOT_DONE",
+    "classification": "TWO_PARTIAL_OVERLAPS_AND_ONE_DISTINCT_DISTANCE_MODEL",
+    "status": "CORRECTED_TARGET_11_1_LOCATOR_OPENING_PAIRS_ONLY_FULL_SOURCE_ELEMENT_AUDIT_PENDING",
     "testsRun": "WRITTEN_NOT_RUN"
   }
 }
