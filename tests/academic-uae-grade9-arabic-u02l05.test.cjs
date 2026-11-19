@@ -265,3 +265,20 @@ test('11-1 points to the actual source lesson rather than the preceding geometry
   assert.equal(page.renderHash,'5b376491662eb14c3c850c2bd746eb45f8db8d081f16789e0ac34416a9f6ec3f');
   assert.equal(target.SOURCE_INDEX_COMPLETE,false);
 });
+
+
+test('Fractional source number-line visual examples preserve exact centers and equal spacing', () => {
+  const v = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json');
+  const lesson = v.Lessons.find(x => x.LessonCode === lessonCode);
+  assert.ok(lesson);
+  const fractionals = lesson.Visuals.filter(x => x.Kind === 'NumberLine' &&
+    ['مسافة كسرية بين نقطتين','منتصف والمسافة بكسور الثلث'].includes(x.Title));
+  assert.equal(fractionals.length,2);
+  const decimal = fractionals.find(x => x.Title === 'مسافة كسرية بين نقطتين');
+  assert.deepEqual(decimal.Items, ['−٣٫٧٥','−٢٫٧٥','−١٫٧٥','−٠٫٧٥','٠٫٢٥','١٫٢٥','٢٫٢٥','٣٫٢٥','٤٫٢٥']);
+  assert.match(decimal.Description, /\|س−٠٫٢٥\|=٤/);
+  const thirds = fractionals.find(x => x.Title === 'منتصف والمسافة بكسور الثلث');
+  assert.deepEqual(thirds.Items, ['−٤/٣','−٣/٣','−٢/٣','−١/٣','٠','١/٣','٢/٣']);
+  assert.match(thirds.Description, /\|س\+١\/٣\|=١/);
+  assert.match(thirds.Description, /مراجعة المعلم/);
+});
