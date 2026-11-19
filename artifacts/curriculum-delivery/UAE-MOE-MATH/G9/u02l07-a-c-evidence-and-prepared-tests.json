@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026 General first term",
+    "lesson": "2-7",
+    "printedPages": [
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "pdfPages": [
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "pages": [
+        119,
+        120
+      ],
+      "target": "حساب نسبة تغير بين القيمة الأصلية والجديدة وتحديد الزيادة والنقصان"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        120,
+        121
+      ],
+      "target": "تطبيق الزيادة أو الخصم على مبلغ ثابت مع تفسير الوحدة النقدية"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        121,
+        123
+      ],
+      "target": "حل مسائل التغير السكاني أو التجاري وحفظ المقام الأصلي"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        122,
+        124,
+        125
+      ],
+      "target": "المقارنة بين نسب تغير مختلفة وتبرير التغير النسبي"
+    }
+  ],
+  "fixtures": [
+    {
+      "prompt": "ارتفع السعر من ٨٠ إلى ١٠٠ درهم، ما نسبة الزيادة؟",
+      "answer": "25%"
+    },
+    {
+      "prompt": "انخفض من ٢٥٠ إلى ٢٠٠، ما نسبة النقصان؟",
+      "answer": "20%"
+    },
+    {
+      "prompt": "سعر ٣٦٠ درهمًا بخصم ١٥%، ما الجديد؟",
+      "answer": "306"
+    },
+    {
+      "prompt": "من ١٢٠٠ إلى ١٣٨٠ زائرًا، ما نسبة الزيادة؟",
+      "answer": "15%"
+    },
+    {
+      "prompt": "انخفض من ٨٠ إلى ٦٠: هل ٢٠÷٦٠ هو الحساب الصحيح؟",
+      "answer": "لا، المقام ٨٠",
+      "teacherReview": true
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "ارتفع سعر من ٤٠ إلى ٥٠، ما نسبة الزيادة؟",
+      "a": "25%"
+    },
+    {
+      "q": "انخفض من ٢٠٠ إلى ١٥٠، ما نسبة الانخفاض؟",
+      "a": "25%"
+    },
+    {
+      "q": "لماذا لا نقسم على القيمة الجديدة عند حساب نسبة التغير؟",
+      "a": "القيمة الأصلية مرجع المقارنة",
+      "teacherReview": true
+    }
+  ],
+  "candidateFamilies": [
+    "percentages.core.increase_decrease",
+    "usccss.g7.u04.fractional_change",
+    "percentages.core.of_quantity"
+  ],
+  "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+  "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+  "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+  "abc": {
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "testsRun": "NOT_RUN",
+    "ciRun": "NOT_RUN",
+    "semanticAudit": "NOT_RUN"
+  },
+  "stageDRequired": [
+    "prove generated questions calculate percentage change with original denominator",
+    "test decline/increase vs final-price-only arithmetic",
+    "Arabic labels, currency and invalid cases",
+    "teacher semantic review of word problems"
+  ]
+}
