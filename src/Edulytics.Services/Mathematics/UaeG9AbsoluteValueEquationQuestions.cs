@@ -36,7 +36,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     private static string Normalized(string? raw)
     {
         var text = (raw ?? "").Trim().Replace("−", "-").Replace("–", "-")
-            .Replace('،', ',').Replace('؛', ',').Replace(';', ',');
+            .Replace('،', ',').Replace('؛', ',').Replace(';', ',').Replace('٫', '.');
         var chars = text.Where(c => !char.IsWhiteSpace(c))
             .Select(c => c switch
             {
@@ -102,15 +102,20 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         {
             // Do not silently accept missing answers such as "1,9," or ",1,9".
             var values=actual.Split(',');
-            if (values.Length!=2 || !int.TryParse(values[0],NumberStyles.Integer,
+            if (values.Length!=2 || !decimal.TryParse(values[0],NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint,
                 CultureInfo.InvariantCulture,out var first) ||
-                !int.TryParse(values[1],NumberStyles.Integer,
+                !decimal.TryParse(values[1],NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint,
                 CultureInfo.InvariantCulture,out var second)) return false;
             // Accept either ordering; reject duplicates and extraneous entries.
             return first!=second &&
                 ((first==p["m"]-p["r"] && second==p["m"]+p["r"]) ||
                  (second==p["m"]-p["r"] && first==p["m"]+p["r"]));
         }
-        return actual==expected;
+        // Equivalent representations (+3, 03, 3.0, and Arabic-Indic decimal digits)
+        // must receive the same grade for a mathematically identical integer answer.
+        return decimal.TryParse(actual, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture, out var numeric) &&
+            decimal.TryParse(expected, NumberStyles.Integer, CultureInfo.InvariantCulture,
+                out var target) && numeric == target;
     }
 }
