@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinalInRawIndex": 13,
+  "sourceLessonRefs": [
+    "01.pdf:2-5"
+  ],
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+  "lessonTitleAr": "حل معادلات تتضمن قيمة مطلقة",
+  "sourceFile": "01.pdf",
+  "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+  "sourcePrintedPages": [
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ],
+  "sourcePdfPages": [
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "stageA": {
+    "status": "SOURCE_PAGES_REVIEWED_OBJECTIVES_DOCUMENTED",
+    "evidencePaths": [
+      "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+      "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-a-c-source-review-in-progress.json"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
+    "modifiedPaths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html"
+    ]
+  },
+  "stageC": {
+    "status": "EXACT_PRACTICE_FAMILIES_IMPLEMENTED_D_TESTS_WRITTEN_NOT_RUN",
+    "familyCount": 5,
+    "modifiedPaths": [
+      "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+    ],
+    "testSourcePaths": [
+      "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json"
+  },
+  "blockingGaps": [
+    "GENERAL_COMPREHENSIVE_INDEX_LOCK has not passed: final unique lesson count and raw 86 full objective comparison incomplete.",
+    "The Stage B static number-line activity and RichV2 visual rendering have not been validated in learner runtime; runtime tests belong to Stage D.",
+    "Source element-level exercise and visual equivalence has not been marked 100%; teacher-reviewed open responses still need rubric integration into actual lesson workflow."
+  ],
+  "closeDecision": "A_C_EXPLICIT_GAP",
+  "closed": false,
+  "advanceToNextLesson": false,
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "githubBranch": "fix/g9-general-full-year-scope-86",
+  "issuedUtc": "2026-11-19T19:35:00+01:00",
+  "note": "Incomplete A-C checkpoint is deliberately not a completed lesson; no next-lesson transition."
+}
