@@ -55,7 +55,7 @@ foreach(var row in audit.RootElement.GetProperty("lessons").EnumerateArray()){
                         using var encoded=JsonDocument.Parse(item.GenerationParametersJson!);
                         var parameters=encoded.RootElement.GetProperty("parameters")
                             .EnumerateObject().ToDictionary(x=>x.Name,x=>x.Value.GetInt32());
-                        if(ExactSkillContractQuestionEngine.Verify(family,parameters,item.CorrectAnswer))
+                        if(ExactSkillContractQuestionEngine.Verify(family,parameters,item.CorrectAnswer ?? string.Empty))
                             correctAccepted++;
                         else correctRejected++;
                         if(ExactSkillContractQuestionEngine.Verify(family,parameters,"DefinitelyNotAValidMathAnswer"))

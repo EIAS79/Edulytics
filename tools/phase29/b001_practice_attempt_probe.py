@@ -196,6 +196,14 @@ def grade8_syntactically_valid_wrong_answer(correct, family=None):
     The question comes from the real engine; we never alter an accepted G1,
     G6 or G7 response profile or pretend to verify a textbook source item.
     """
+    # Grade8 real triangle-congruence criterion tasks require one of four
+    # valid categorical alternatives, not a numeric or malformed response.
+    if family == "geometry.congruence.identify_criterion":
+        choices = ("SSS", "SAS", "ASA", "RHS")
+        value = correct.strip().upper()
+        if value not in choices:
+            raise ValueError("Unsupported exact triangle-congruence criterion")
+        return choices[(choices.index(value) + 1) % len(choices)]
     if family == "algebra.linear.systems.solution_count.classify":
         choices = ("one", "none", "infinitely-many")
         value = correct.strip()

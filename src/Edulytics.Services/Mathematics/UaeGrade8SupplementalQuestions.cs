@@ -165,44 +165,50 @@ internal static class UaeGrade8SupplementalQuestions
             }
             case SegmentProof:
             {
-                var mode = random.Next(0, 3);
-                p["mode"] = mode;
-                prompt = (mode switch
+                var mode=random.Next(0,3);
+                var a=random.Next(2,31);
+                var b=random.Next(2,31);
+                p["mode"]=mode;p["a"]=a;p["b"]=b;
+                prompt=(mode switch
                 {
-                    0 => "إذا كانت ب بين أ وج، فلماذا أ ب + ب ج = أ ج؟ ",
-                    1 => "إذا كان أ ب = ج د، وج د = هـ و، فلماذا أ ب = هـ و؟ ",
-                    _ => "إذا كانت م نقطة منتصف أ ب، فلماذا أ م = م ب؟ "
-                }) + "اختر السبب: 1 مسلمة جمع القطع، 2 خاصية التعدي، 3 تعريف نقطة المنتصف.";
-                solution = "اختر المسلمة أو التعريف الذي يبرر الانتقال، وليس نتيجة أخرى.";
+                    0 => $"على المستقيم أ–ب–ج تقع ب بين أ وج. طول أ ب={a} سم وطول ب ج={b} سم، فيكون أ ج={a+b} سم. ما السبب الذي يبرر جمع الطولين؟ ",
+                    1 => $"إذا كان أ ب=ج د={a} سم، وكان ج د=هـ و={a} سم، استنتجنا أ ب=هـ و. ما الخاصية التي تبرر الاستنتاج؟ ",
+                    _ => $"القطعة أ ب طولها {2*a} سم والنقطة م منتصفها، لذلك أ م=م ب={a} سم. ما التعريف الذي يبرر التساوي؟ "
+                })+"اختر السبب: 1 مسلمة جمع القطع، 2 خاصية التعدي، 3 تعريف نقطة المنتصف.";
+                solution="تبرير العلاقة يتطلب المسلمة أو التعريف المناسب. مسلمة جمع القطع، خاصية التعدي، وتعريف نقطة المنتصف تعطي براهين مختلفة.";
                 break;
             }
             case ParallelogramTest:
             {
-                var mode = random.Next(0, 5);
-                p["mode"] = mode;
-                prompt = (mode switch
+                var mode=random.Next(0,5);
+                var a=random.Next(2,25);
+                var b=random.Next(2,25);
+                p["mode"]=mode;p["a"]=a;p["b"]=b;
+                prompt=(mode switch
                 {
-                    0 => "رباعي فيه كل ضلعين متقابلين متساويان في الطول. ",
-                    1 => "رباعي ينصف كل قطر فيه القطر الآخر. ",
-                    2 => "رباعي له زوج واحد من الأضلاع المتقابلة متوازٍ ومتساوٍ في الطول. ",
-                    3 => "رباعي فيه زوج واحد فقط من الأضلاع المتقابلة متوازٍ، دون معطيات أخرى. ",
-                    _ => "رباعي قطرَاه متساويان في الطول دون معطيات أخرى. "
-                }) + "هل هذه المعطيات كافية لإثبات أن الرباعي متوازي أضلاع؟ اكتب 1 لنعم أو 0 للا.";
-                solution = "لا يكفي تساوي القطرين وحده أو توازي زوج واحد؛ أما تنصيف القطرين بعضهما، أو تساوي كل زوج متقابل، أو زوج متقابل متوازٍ ومتساوٍ فيكفي.";
+                    0 => $"رباعي أ ب ج د أطوال الأضلاع المتقابلة فيه {a} و{a} سم، والزوج الآخر {b} و{b} سم. ",
+                    1 => $"رباعي تقاطع قطريه عند م، ونصفا أحد القطرين {a} و{a} سم، ونصفا الآخر {b} و{b} سم. ",
+                    2 => $"رباعي فيه زوج واحد من الأضلاع المتقابلة متوازٍ ومتساوٍ في الطول بمقدار {a} سم. ",
+                    3 => $"رباعي فيه زوج واحد فقط من الأضلاع المتقابلة متوازٍ، وطول أحد ضلعي هذا الزوج {a} سم، دون معطيات أخرى. ",
+                    _ => $"رباعي قطرَاه متساويان في الطول بمقدار {a} سم لكل قطر، دون معطيات أخرى. "
+                })+"هل هذه المعطيات كافية لإثبات أن الرباعي متوازي أضلاع؟ اكتب 1 لنعم أو 0 للا.";
+                solution="يكفي تساوي كل زوج من الأضلاع المتقابلة، أو تنصيف القطرين بعضهما، أو توازي زوج متقابل وتساويه طولًا. تساوي القطرين وحده أو توازي زوج واحد فقط لا يكفي.";
                 break;
             }
             case RectangleTest:
             {
-                var mode = random.Next(0, 4);
-                p["mode"] = mode;
-                prompt = (mode switch
+                var mode=random.Next(0,4);
+                var a=random.Next(3,26);
+                var b=random.Next(3,26);
+                p["mode"]=mode;p["a"]=a;p["b"]=b;
+                prompt=(mode switch
                 {
-                    0 => "متوازي أضلاع قطراه متساويان في الطول. ",
-                    1 => "متوازي أضلاع قطرَاه متعامدان، دون معطيات أخرى. ",
-                    2 => "متوازي أضلاع له زاوية قائمة واحدة. ",
-                    _ => "متوازي أضلاع له ضلعان متقابلان متساويان، دون معطيات أخرى. "
-                }) + "هل المعطيات كافية لإثبات أنه مستطيل؟ اكتب 1 لنعم أو 0 للا.";
-                solution = "متوازي الأضلاع ذو الزاوية القائمة مستطيل، وكذلك ذو القطرين المتساويين. أما تعامد القطرين أو تساوي الضلعين المتقابلين وحده فلا يكفي.";
+                    0 => $"متوازي أضلاع طول قطره الأول {a} سم وطول قطره الثاني {a} سم. ",
+                    1 => $"متوازي أضلاع قطرَاه متعامدان، وطولا الضلعين المتجاورين {a} و{b} سم دون معطيات أخرى. ",
+                    2 => $"متوازي أضلاع طول ضلع فيه {a} سم وله زاوية قائمة واحدة قياسها 90 درجة. ",
+                    _ => $"متوازي أضلاع طول كل ضلع من زوج متقابل فيه {a} سم، والزوج الآخر طوله {b} سم، دون معطيات إضافية. "
+                })+"هل المعطيات كافية لإثبات أنه مستطيل؟ اكتب 1 لنعم أو 0 للا.";
+                solution="في متوازي الأضلاع، تساوي القطرين أو وجود زاوية قائمة يكفي لإثبات أنه مستطيل. أما تعامد القطرين أو تساوي الأضلاع المتقابلة وحده فلا يكفي.";
                 break;
             }
             case RhombusDiagonals:
@@ -236,24 +242,31 @@ internal static class UaeGrade8SupplementalQuestions
             case ScatterDirection:
             {
                 var mode=random.Next(0,3);
-                p["mode"]=mode;
-                prompt=(mode switch
+                var scale=random.Next(1,9);
+                var shift=random.Next(0,15);
+                p["mode"]=mode;p["scale"]=scale;p["shift"]=shift;
+                var values=mode switch
                 {
-                    0 => "نقاط الانتشار (1،3)،(2،6)،(3،9)،(4،12)،(5،15). ",
-                    1 => "نقاط الانتشار (1،15)،(2،12)،(3،9)،(4،6)،(5،3). ",
-                    _ => "نقاط الانتشار (1،2)،(2،9)،(3،5)،(4،9)،(5،2). "
-                })+"صنّف اتجاه الارتباط الخطي: اكتب 1 لموجب، أو 2 لسالب، أو 0 لعدم وجود اتجاه خطي واضح.";
+                    0 => new[]{1,2,3,4,5},
+                    1 => new[]{5,4,3,2,1},
+                    _ => new[]{1,5,3,5,1}
+                };
+                var pairs=string.Join("،",values.Select((v,i)=>$"({i+1}،{shift+scale*v})"));
+                prompt=$"نقاط مخطط الانتشار هي {pairs}. صنّف اتجاه الارتباط الخطي: اكتب 1 لموجب، أو 2 لسالب، أو 0 لعدم وجود اتجاه خطي واضح.";
                 solution="إذا تزداد الصادات بزيادة السينات فالارتباط موجب، وإذا تتناقص فهو سالب، والتوزيع المتماثل دون اتجاه صاعد أو هابط خطيًا لا يُظهر ارتباطًا خطيًا واضحًا.";
                 break;
             }
             case DistributionShape:
             {
                 var mode=random.Next(0,5);
-                p["mode"]=mode;
+                var scale=random.Next(1,8);
+                var baseline=random.Next(0,5);
+                p["mode"]=mode;p["scale"]=scale;p["baseline"]=baseline;
                 int[][] frequencies=[
                     [3,3,3,3,3],[1,3,5,3,1],[8,5,3,2,1],[1,2,3,5,8],[6,2,1,2,6]
                 ];
-                prompt=$"لقيم البيانات المرتبة 1،2،3،4،5 التكرارات المناظرة {string.Join("،",frequencies[mode])}. صنّف شكل التوزيع: 1 منتظم، 2 متناظر شبيه بالجرس، 3 ملتوي لليمين، 4 ملتوي لليسار، 5 ثنائي القمة. اكتب رقم الاختيار.";
+                var values=frequencies[mode].Select(x=>baseline+scale*x);
+                prompt=$"لقيم البيانات المرتبة 1،2،3،4،5 التكرارات المناظرة {string.Join("،",values)}. صنّف شكل التوزيع: 1 منتظم، 2 متناظر شبيه بالجرس، 3 ملتوي لليمين، 4 ملتوي لليسار، 5 ثنائي القمة. اكتب رقم الاختيار.";
                 solution="قارن تكرارات الأطراف والوسط: التساوي يعني انتظامًا، وزيادة الوسط بتناظر تعني شكلًا جرسيًا، وانحراف الذيل يحدد اتجاه الالتواء، ووجود قمتين يفيد ثنائية القمة.";
                 break;
             }
@@ -312,11 +325,17 @@ internal static class UaeGrade8SupplementalQuestions
                 p["component"] is 0 or 1:
                 expected=p["component"]==0?p["x"]:p["y"];
                 return expected.ToString(CultureInfo.InvariantCulture);
-            case SegmentProof when ExactKeys(p,"mode") && p["mode"] is >=0 and <=2:
+            case SegmentProof when ExactKeys(p,"mode","a","b") &&
+                p["mode"] is >=0 and <=2 &&
+                p["a"] is >=2 and <=30 && p["b"] is >=2 and <=30:
                 expected=p["mode"]+1; return expected.ToString(CultureInfo.InvariantCulture);
-            case ParallelogramTest when ExactKeys(p,"mode") && p["mode"] is >=0 and <=4:
+            case ParallelogramTest when ExactKeys(p,"mode","a","b") &&
+                p["mode"] is >=0 and <=4 &&
+                p["a"] is >=2 and <=24 && p["b"] is >=2 and <=24:
                 expected=p["mode"]<=2?1:0; return expected.ToString(CultureInfo.InvariantCulture);
-            case RectangleTest when ExactKeys(p,"mode") && p["mode"] is >=0 and <=3:
+            case RectangleTest when ExactKeys(p,"mode","a","b") &&
+                p["mode"] is >=0 and <=3 &&
+                p["a"] is >=3 and <=25 && p["b"] is >=3 and <=25:
                 expected=p["mode"] is 0 or 2?1:0;
                 return expected.ToString(CultureInfo.InvariantCulture);
             case RhombusDiagonals when ExactKeys(p,"a","b","mode") &&
@@ -329,10 +348,14 @@ internal static class UaeGrade8SupplementalQuestions
                 p["b"] is >=2 and <=14:
                 expected=p["mode"] switch{0=>1,1=>0,_=>2};
                 return expected.ToString(CultureInfo.InvariantCulture);
-            case ScatterDirection when ExactKeys(p,"mode") && p["mode"] is >=0 and <=2:
+            case ScatterDirection when ExactKeys(p,"mode","scale","shift") &&
+                p["mode"] is >=0 and <=2 &&
+                p["scale"] is >=1 and <=8 && p["shift"] is >=0 and <=14:
                 expected=p["mode"] switch{0=>1,1=>2,_=>0};
                 return expected.ToString(CultureInfo.InvariantCulture);
-            case DistributionShape when ExactKeys(p,"mode") && p["mode"] is >=0 and <=4:
+            case DistributionShape when ExactKeys(p,"mode","scale","baseline") &&
+                p["mode"] is >=0 and <=4 &&
+                p["scale"] is >=1 and <=7 && p["baseline"] is >=0 and <=4:
                 expected=p["mode"]+1;
                 return expected.ToString(CultureInfo.InvariantCulture);
             default: throw new InvalidOperationException("Invalid G8 supplemental question parameters.");
