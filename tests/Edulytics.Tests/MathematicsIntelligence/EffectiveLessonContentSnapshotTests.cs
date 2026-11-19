@@ -50,7 +50,7 @@ public sealed class EffectiveLessonContentSnapshotTests
                     }))
             .ToArray();
 
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77, rows.Length);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220, rows.Length);
 
         var quantified = Assert.Single(
             rows,

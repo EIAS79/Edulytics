@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const cp=require('node:child_process');
@@ -14,7 +14,7 @@ const contracts='src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts
 const familyRegistry='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
 const priorLines=(ref,file)=>cp.execFileSync('git',['show',ref+':'+file],
   {cwd:root,encoding:'utf8'}).split('\n');
-const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').split('\n');
+const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n').split('\n');
 // Owner-directed retirement of one obsolete UAE G7 General English
 // supporting contract is the sole permitted historical contract removal.
 // The shared US G1-G11 exact engine and all other contracts stay immutable.
@@ -39,6 +39,30 @@ const retiredG8AdvancedContractBlock=[
   '            "READY_VERIFIED",',
   '            Version),'
 ];
+// Owner-retired UAE Grade9 removes precisely two orphan unit-rate
+// declarations; the exact shared mathematical engine is NOT modified.
+const retiredGrade9ContractBlocks=['ADVANCED','GENERAL'].map(pathway=>[
+  '        new(',
+  '            "PED:UAE-MOE-MATH:L9:'+pathway+':01:06:RATES-AND-UNIT-RATES",',
+  '            "ratio.unit_rate",',
+  '            "UNIT_RATE",',
+  '            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],',
+  '            "SupportingLesson",',
+  '            "READY_VERIFIED",',
+  '            Version),'
+]);
+function stripOnlyRetiredGrade9Contracts(lines){
+  let result=lines;
+  for(const block of retiredGrade9ContractBlocks){
+    const start=result.findIndex((line,i)=>
+      block.every((expected,offset)=>result[i+offset]===expected));
+    assert.ok(start>=0,'Expected old UAE Grade9 contract missing from pinned original baseline');
+    assert.equal(result.filter(x=>x===block[1]).length,1,
+      'Retired Grade9 contract declaration must occur exactly once');
+    result=[...result.slice(0,start),...result.slice(start+block.length)];
+  }
+  return result;
+}
 function stripOnlyRetiredG8AdvancedContract(lines){
   const start=lines.findIndex((line,i)=>
     retiredG8AdvancedContractBlock.every((expected,offset)=>
@@ -59,7 +83,7 @@ function stripOnlyRetiredG7Contract(lines){
 }
 // PR #640: owner-directed G8 U12L04 post-release P1 review fix only.
 // Exact new contract blob is pinned; all non-G8 G1/G11 lines remain compared to historical sources.
-const ownerAuditedExactG8PracticeContractBlob='a09b910f98f4dc01e63f2978740553de8793f602';
+const ownerAuditedExactG8PracticeContractBlob='a2333c365c291b128acd0ed852793505617bb5a5';
 function withoutGrade8ScopedPracticeAssignments(lines){
   // All Grade8 GENERAL Practice rewrites are isolated by their
   // byLesson[...] deterministic contract key; compare every other line
@@ -81,20 +105,41 @@ function withoutGrade8ScopedPracticeAssignments(lines){
   assert.ok(count<=77,'G8 scoped contract selector unexpectedly broad');
   return result;
 }
+// A verified UAE-G1 arithmetic correction: the generator legitimately emits
+// 19+1, and 20 is the correct result. Allow exactly this verifier bound,
+ // not arbitrary edits in the US G1/G11 shared Mathematics engine.
+const oldRegroupVerifierLine='            5 => a is >= 11 and <= 19 && b is >= 2 and <= 9 &&';
+const newRegroupVerifierLine='            5 => a is >= 11 and <= 19 && b is >= 1 and <= 9 &&';
 function assertOriginalLinesUnchanged(ref,file){
   const baseline=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(
-        stripOnlyRetiredG8AdvancedContract(
-          stripOnlyRetiredG7Contract(priorLines(ref,file))))
-    : priorLines(ref,file);
+        stripOnlyRetiredGrade9Contracts(
+          stripOnlyRetiredG8AdvancedContract(
+            stripOnlyRetiredG7Contract(priorLines(ref,file)))))
+    : file===engine
+      ? priorLines(ref,file).map(line=>
+          line===oldRegroupVerifierLine ? newRegroupVerifierLine : line)
+      : priorLines(ref,file);
   const current=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
     : nowLines(file);
+  if(file===engine){
+    const oldLines=priorLines(ref,file);
+    assert.equal(oldLines.filter(x=>x===oldRegroupVerifierLine).length,1,
+      'Exactly one previous G1 regrouping verifier bound was present');
+    assert.equal(current.filter(x=>x===newRegroupVerifierLine).length,1,
+      'Only reviewed G1 19+1 correction is accepted');
+    assert.ok(!current.includes(oldRegroupVerifierLine),
+      'Prior G1 regrouping false negative must not return');
+  }
   if(file===contracts) {
     assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
       'Retired English G7 contract accidentally reinstated');
     assert.ok(!current.includes(retiredG8AdvancedContractBlock[1]),
       'Retired English G8 Advanced contract accidentally reinstated');
+    for(const block of retiredGrade9ContractBlocks)
+      assert.ok(!current.includes(block[1]),
+        'Owner-retired UAE Grade9 contract accidentally reinstated');
   }
   let originalIndex=0;
   const added=[];
@@ -128,7 +173,10 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
       assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
         'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
     }else{
-      assert.equal(Number(removed),0,'Previously accepted non-G8 engine source changed');
+      const deleted=git('diff','--unified=0',preG5,'HEAD','--',engine)
+        .split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
+      assert.deepEqual(deleted, ['-'+oldRegroupVerifierLine],
+        'Only the separately proven G1 regrouping false-negative line may change');
     }
     assert.ok(Number(added)>0);
   }
@@ -160,7 +208,7 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
       assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
         'Retired G7 and G8 Advanced plus exact approved Grade8 General contract blob required');
     else
-      assert.deepEqual(deleted,[],
-        'Previously accepted US/G1/G11 exact-engine source must remain immutable');
+      assert.deepEqual(deleted,['-'+oldRegroupVerifierLine],
+        'Only verified UAE G1 19+1 arithmetic correction is allowed; US G1/G11 routes unchanged');
   }
 });

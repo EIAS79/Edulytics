@@ -1576,16 +1576,15 @@ await using (var db = await NewDbAsync())
         throw new Exception("Phase27.5 PostgreSQL pack-state count failed.");
 
     var uae = states.Single(x => x.FrameworkCode == "UAE-MOE-MATH");
-    // Grade7 General owner-approved retirement removed only 62 obsolete
-    // official textbook references and 3 deprecated source catalogs.
-    // Current immutable pack manifest: 1,467 nodes, 1,358 official,
-    // 42 official lessons and 48 links unchanged.
+    // Owner-retired UAE Grade9: all General and Advanced pedagogical
+    // lessons and G9 official lesson/reference catalogues were removed.
+    // Other UAE grade mathematics references remain available.
     if (uae.VersionCode != "MOE-2026-2027-T1" ||
-        uae.NodeCount != 1467 ||
-        uae.OfficialNodeCount != 1358 ||
-        uae.UnitCount != 6 ||
-        uae.LessonCount != 42 ||
-        uae.LinkCount != 48)
+        uae.NodeCount != 1234 ||
+        uae.OfficialNodeCount != 1180 ||
+        uae.UnitCount != 0 ||
+        uae.LessonCount != 0 ||
+        uae.LinkCount != 0)
         throw new Exception("Phase27.5 PostgreSQL UAE verified-count contract failed.");
 
     var textbookReferenceCount =
@@ -1597,7 +1596,7 @@ await using (var db = await NewDbAsync())
                 x.IsOfficial &&
                 x.Code.StartsWith("UAE:REF:TEXTBOOK:"));
 
-    if (textbookReferenceCount != 1311)
+    if (textbookReferenceCount != 1133)
         throw new Exception("Phase27.5 PostgreSQL UAE textbook-reference count failed.");
 
     var lessons = await db.CurriculumPackContentNodes
@@ -1613,7 +1612,7 @@ await using (var db = await NewDbAsync())
         .Distinct()
         .ToListAsync();
 
-    if (lessons.Count != 42 ||
+    if (lessons.Count != 0 ||
         !lessons.OrderBy(x => x).SequenceEqual(linked.OrderBy(x => x)))
         throw new Exception("Phase27.5 PostgreSQL lesson-standard linkage failed.");
 }

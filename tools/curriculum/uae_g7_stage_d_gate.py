@@ -44,9 +44,9 @@ def main(phase):
                   "UAE:CATALOG:G7:GENERAL:" in x["Code"]]
         check("retired_english_grade7_reference_nodes_absent", len(legacy) == 0, {"legacy_count":len(legacy)})
         check("uae_pack_official_counts_integrity",
-              len(pack["Nodes"]) == pack["NodeCount"] == 1467 and
-              official == pack["OfficialNodeCount"] == 1358 and
-              len(pack["Links"]) == pack["LinkCount"] == 48,
+              len(pack["Nodes"]) == pack["NodeCount"] == 1234 and
+              official == pack["OfficialNodeCount"] == 1180 and
+              len(pack["Links"]) == pack["LinkCount"] == 0,
               {"nodeCount":len(pack["Nodes"]), "declared":pack["NodeCount"],
                "officialActual":official,"officialDeclared":pack["OfficialNodeCount"],
                "links":len(pack["Links"])})

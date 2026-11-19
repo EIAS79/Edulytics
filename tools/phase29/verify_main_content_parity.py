@@ -161,6 +161,15 @@ def run():
         g6_authorized = True
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
         errors.append(f"Grade6 owner-authorized 59-to-128 replacement failed: {exc}")
+    # Grade9 General+Advanced owner-directed irreversible-content retirement.
+    # Exact old assets and the 233 nodes / 48 links are independently pinned.
+    g9_retirement = None
+    try:
+        from verify_uae_g9_retirement_delta import verify as verify_g9
+        g9_retirement = verify_g9(ROOT)
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError,
+            subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade9 owner-authorized zero-lesson retirement invalid: {exc}")
     # Scoped Grade7 General source-to-Arabic retirement with owner's explicit
     # first-party academic consent. This does not claim full textbook exercise
     # parity, a third-party book reproduction licence, or live publication.
@@ -214,6 +223,8 @@ def run():
                         errors.append(f"duplicate retired G8 Advanced identity {key}")
                     baseline[key] = lesson
                 continue
+            if g9_retirement and path in g9_retirement["oldContentPaths"]:
+                continue
             errors.append(f"missing original content pack: {path}")
             continue
         for bucket, doc in [(baseline, load_main(path)), (candidate, json.loads(current.read_text(encoding="utf8")))]:
@@ -241,7 +252,8 @@ def run():
             ["git", "show", f"origin/main:{path}"], cwd=ROOT,
         )
         if original_bytes != current.read_bytes():
-            if not (g7_retirement and path == g7_retirement["corePackPath"]):
+            if not ((g7_retirement and path == g7_retirement["corePackPath"])
+                    or (g9_retirement and path == g9_retirement["corePackPath"])):
                 errors.append(f"modified original curriculum standards/outcomes/mapping: {path}")
         compared_packs += 1
     print(f"MAIN_TO_V2_OFFICIAL_PACK_PARITY compared={compared_packs} errors={len(errors)}")
@@ -264,6 +276,9 @@ def run():
                 verified_blueprints += 1
                 continue
             if g8_advanced and path == g8_advanced["oldBlueprintPath"]:
+                verified_blueprints += 1
+                continue
+            if g9_retirement and path in g9_retirement["oldBlueprintPaths"]:
                 verified_blueprints += 1
                 continue
             errors.append(f"missing original lesson blueprint: {path}")

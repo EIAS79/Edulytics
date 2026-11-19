@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Edulytics.Core.Curriculum;
@@ -106,20 +106,20 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
 
         var uae = states.Single(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
         Assert.Equal("MOE-2026-2027-T1", uae.VersionCode);
-        Assert.Equal(1358, uae.OfficialNodeCount);
+        Assert.Equal(1180, uae.OfficialNodeCount);
         Assert.Equal(
-            1311,
+            1133,
             await db.CurriculumPackContentNodes.CountAsync(x =>
                 x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
                 x.NodeKind == "Reference" &&
                 x.IsOfficial &&
                 x.Code.StartsWith("UAE:REF:TEXTBOOK:")));
-        Assert.Equal(6, uae.UnitCount);
-        Assert.Equal(42, uae.LessonCount);
-        Assert.Equal(48, uae.LinkCount);
+        Assert.Equal(0, uae.UnitCount);
+        Assert.Equal(0, uae.LessonCount);
+        Assert.Equal(0, uae.LinkCount);
 
-        Assert.Equal(42, await db.CurriculumPackContentNodes.CountAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode && x.NodeKind == "Lesson"));
-        Assert.Equal(48, await db.CurriculumPackNodeLinks.CountAsync(x => x.LinkKind == "LessonStandardAlignment"));
+        Assert.Equal(0, await db.CurriculumPackContentNodes.CountAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode && x.NodeKind == "Lesson"));
+        Assert.Equal(0, await db.CurriculumPackNodeLinks.CountAsync(x => x.LinkKind == "LessonStandardAlignment"));
         Assert.False(await db.CurriculumPackContentNodes.AnyAsync(x => x.Code.StartsWith("EDU:")));
     }
 
@@ -153,7 +153,7 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
             .Distinct()
             .ToListAsync();
 
-        Assert.Equal(42, lessonIds.Count);
+        Assert.Empty(lessonIds);
         Assert.Equal(lessonIds.OrderBy(x => x), linkedIds.OrderBy(x => x));
     }
 

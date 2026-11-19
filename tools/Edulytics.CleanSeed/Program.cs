@@ -1,4 +1,4 @@
-using Edulytics.Data.Contexts;
+﻿using Edulytics.Data.Contexts;
 using Edulytics.Data.Repositories;
 using Edulytics.Data.Seeding;
 using Microsoft.EntityFrameworkCore;
@@ -208,7 +208,7 @@ if (metadata != jsonBodies)
     var grade4ArabicCount = await db.CurriculumPedagogicalLessons
         .AsNoTracking()
         .CountAsync(x => x.Code.StartsWith("PED:UAE-MOE-MATH:L4:COMMON:"));
-    if (jsonBodies != 5291 || pedagogical != metadata ||
+    if (jsonBodies != 5071 || pedagogical != metadata ||
         metadata != jsonBodies - 128 + 59 ||
         legacyG6Ids.Length != 59 || legacyG6Contents != 59 ||
         grade4ArabicCount != 132)
@@ -231,7 +231,7 @@ if (await db.Users.AnyAsync() || await db.Schools.AnyAsync() ||
 
 // Real PostgreSQL read path: retain identity and publication metadata in
 // PostgreSQL, but resolve the published learner body from bundled JSON.
-const string smokeCode = "PED:UAE:G9:ADV:T1:L1-2";
+const string smokeCode = "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS";
 var sample = await db.CurriculumPedagogicalLessons.AsNoTracking()
     .SingleAsync(x => x.Code == smokeCode);
 var jsonReadConfiguration = new ConfigurationBuilder()

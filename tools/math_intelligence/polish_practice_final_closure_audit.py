@@ -232,10 +232,23 @@ def audit() -> dict[str, Any]:
         blockers.append(
             f"UAE Grade8 Advanced expected retired 0 or historical 77; got {grade8_advanced_count}"
         )
+    # The owner retired the exact 220 old UAE Grade9 General/Advanced
+    # learner identities. The Polish 1,569-lesson and other grades' counts
+    # remain unchanged; no Grade9 identity may be silently reseeded.
+    retired_grade9_count = sum(
+        str(row.get("lessonCode") or "").startswith(
+            ("PED:UAE-MOE-MATH:L9:", "PED:UAE:G9:"))
+        for row in rows
+    )
+    if retired_grade9_count:
+        blockers.append(
+            f"Owner-retired UAE Grade9 must contain zero lessons; got {retired_grade9_count}"
+        )
     expected_catalogue_count = (
         5110 - 93 + grade4_count + grade12_count
         - 59 + grade6_count - 62 + grade7_count
         - 77 + grade8_general_count - (77 - grade8_advanced_count)
+        - 220
     )
     required_global = {
         "lessonCount": expected_catalogue_count,

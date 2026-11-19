@@ -233,12 +233,14 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var historicUnrelatedBaseline = g7Count == 78
             ? g8GeneralCount == 76 ? 5105 : g8GeneralCount == 77 ? 5106 : -1
             : g7Count == 0 && g8GeneralCount == 77 ? 5090 : -1;
+        // The owner-retired Grade9 General/Advanced cohort is exactly 220
+        // records; subtract them from every otherwise pinned baseline.
         // The retired Grade8 Advanced cohort is exactly 77 records.
         // Both the historical full inventory and the retired clean inventory
         // have exact pinned totals; reject partial/ad-hoc deletions.
         var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
             historicUnrelatedBaseline >= 0
-            ? historicUnrelatedBaseline - (77 - g8AdvancedCount)
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220
             : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
@@ -357,7 +359,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var g7Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(prefix), ct);
         // G8 owner-approved replacement removes only one General lesson.
-        // Preserve exact current G8 scope; do not change any other grade.
+        // Preserve exact current G8 scope. All pinned pre-Grade9-retirement
+        // inventories are reduced by the verified 220 removed G9 lessons.
         var g8GeneralCount = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(
                 "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
@@ -368,7 +371,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             g8GeneralCount == 76 ? 5155 : -1;
         var g7UnrelatedBaseline =
             (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
-                ? historicG7Unrelated - (77 - g8AdvancedCount)
+                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220
                 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
@@ -507,7 +510,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var unexpected = existing.Where(x => !expectedByCode.ContainsKey(x.Code))
             .ToArray();
         // One disposable GitHub-only clean database can contain additional
-        // synthetic CI curricula; production retains a pinned 5,157 baseline.
+        // synthetic CI curricula; the production baseline was reduced by
+        // exactly 220 owner-retired UAE Grade9 lessons, without changing other grades.
         var isIsolatedRehearsal =
             string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
                 "true", StringComparison.Ordinal) &&
@@ -524,8 +528,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             existing.Where(x => x.Code != retired).Count() != 76 ||
             !scope.All(x => actualByCode.TryGetValue(x.Code, out var live) &&
                 live.Id == x.Id && live.FrameworkVersionId == x.FrameworkVersionId) ||
-            (!isIsolatedRehearsal && unrelatedBefore != (advancedCount == 0 ? 5080 : 5157)) ||
-            (isIsolatedRehearsal && unrelatedBefore < 5000) ||
+            (!isIsolatedRehearsal && unrelatedBefore != (advancedCount == 0 ? 4860 : 4937)) ||
+            (isIsolatedRehearsal && unrelatedBefore < 4780) ||
             contentCount != allCount ||
             (advancedCount != 0 && advancedCount != 77) || translationCount != 0)
             throw new InvalidOperationException(
@@ -611,10 +615,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Where(x => x.NodeKind == "Lesson")
             .ToArray();
 
-        if (lessons.Length != 42)
+        if (lessons.Length != 0)
         {
             throw new InvalidOperationException(
-                "UAE pedagogical seed requires exactly 42 verified official Lesson nodes.");
+                "Owner-retired UAE Grade 9 must have zero official Lesson nodes.");
         }
 
         var nodeById = nodes.ToDictionary(x => x.Id);
@@ -658,10 +662,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .OrderBy(x => x.SortOrder)
             .ToArrayAsync(ct);
 
-        if (links.Length != 48)
+        if (links.Length != 0)
         {
             throw new InvalidOperationException(
-                "UAE pedagogical seed requires exactly 48 verified LessonStandardAlignment links.");
+                "Owner-retired UAE Grade 9 must have zero LessonStandardAlignment links.");
         }
 
         foreach (var link in links)
@@ -1236,13 +1240,13 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Select(x => x.Id)
             .ToHashSet();
 
-        if (uaeLessonIds.Count != 42)
+        if (uaeLessonIds.Count != 0)
             throw new InvalidOperationException("UAE pedagogical lesson cardinality drift.");
 
         var uaeMappings = mappings
             .Count(x => uaeLessonIds.Contains(x.PedagogicalLessonId));
 
-        if (uaeMappings != 48)
+        if (uaeMappings != 0)
             throw new InvalidOperationException("UAE pedagogical alignment cardinality drift.");
 
         var mappingCountByLesson = mappings

@@ -135,11 +135,11 @@ public sealed partial class MathematicsCurriculumPackSeeder
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 1467 ||
-                d.OfficialNodeCount != 1358 ||
-                d.UnitCount != 6 ||
-                d.LessonCount != 42 ||
-                d.LinkCount != 48 ||
+                d.NodeCount != 1234 ||
+                d.OfficialNodeCount != 1180 ||
+                d.UnitCount != 0 ||
+                d.LessonCount != 0 ||
+                d.LinkCount != 0 ||
                 !d.VersionName.Contains("2025-2026", StringComparison.Ordinal))
             {
                 throw new InvalidOperationException(
@@ -411,6 +411,50 @@ public sealed partial class MathematicsCurriculumPackSeeder
 
         if (state is not null)
         {
+            // Product-owner-approved removal of every UAE Grade 9 lesson,
+            // including General and Advanced, without a shadow copy.
+            // On production the 233 G9 source nodes, 48 links, 220 pedagogical
+            // lessons and 220 content records were deleted directly. Reconcile
+            // only the exact old import-state fingerprint; never reinsert G9.
+            if (d.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                state.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                state.VersionCode == "MOE-2026-2027-T1" &&
+                state.NodeCount == 1532 &&
+                state.OfficialNodeCount == 1420 &&
+                state.UnitCount == 6 &&
+                state.LessonCount == 42 &&
+                state.LinkCount == 48 &&
+                state.SourceDigest ==
+                    "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" &&
+                state.ContentDigest ==
+                    "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372" &&
+                d.NodeCount == 1234 &&
+                d.OfficialNodeCount == 1180 &&
+                d.LessonCount == 0 &&
+                d.LinkCount == 0)
+            {
+                await ValidatePersistedRowsAsync(d, version.Id, ct);
+                var oldLessons = await _db.CurriculumPedagogicalLessons
+                    .AsNoTracking()
+                    .CountAsync(x => x.FrameworkVersionId == version.Id &&
+                        x.LogicalLevelFrom == 9 && x.LogicalLevelTo == 9, ct);
+                if (oldLessons != 0)
+                    throw new InvalidOperationException(
+                        "Owner-retired UAE Grade 9 must contain zero pedagogical lessons.");
+
+                state.SourceDigest = d.SourceDigest;
+                state.ContentDigest = d.ContentDigest;
+                state.NodeCount = d.NodeCount;
+                state.OfficialNodeCount = d.OfficialNodeCount;
+                state.UnitCount = 0;
+                state.LessonCount = 0;
+                state.LinkCount = 0;
+                state.IsComplete = true;
+                state.ImportedAtUtc = now;
+                await _db.SaveChangesAsync(ct);
+                return;
+            }
+
             if (d.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
             {
                 var authority = LoadAuthorityRepair(d);

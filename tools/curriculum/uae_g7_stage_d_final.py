@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Exact-current-run UAE G7 first-party release readiness; not a production write.
 
 Academic parity to publisher question/illustration is explicitly UNKNOWN.
@@ -81,7 +81,7 @@ def main():
         for key, val in (
             ("approvedArabicLessonCount", 78),
             ("canonicalMetadataCount", 78),
-            ("unrelatedRecordsPreserved", 5078),
+            ("unrelatedRecordsPreserved", 4858),
             ("independentRunCount", 2),
             ("otherGradeDataChanged", False),
             ("productionDatabaseWritten", False),

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 from __future__ import annotations
 
 import argparse
@@ -233,18 +233,18 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
                       grade4_replacement - grade6_replacement -
                       grade7_replacement - grade8_replacement)
     # Lock every independently approved scope, including the G8 one-lesson
-    # retirement: 4,742 identifiers belong to all unaffected programmes.
+    # retirement: 4,522 identifiers belong to unaffected programmes after deleting exactly 220 UAE G9 lessons.
     # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5229 or len(supplemental) != 73 or
+    if (len(by_code) != 5009 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
-        len(grade8_replacement) != 76 or len(untouched_base) != 4742):
+        len(grade8_replacement) != 76 or len(untouched_base) != 4522):
         errors.append(
-            "Effective learner snapshot requires 4,742 other lessons, "
+            "Effective learner snapshot requires 4,522 other lessons, "
             "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
             "76 Arabic G8 General and 73 independently certified G12, "
-            "totaling exactly 5,229; "
+            "totaling exactly 5,009; "
             f"got {len(untouched_base)} other, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "
