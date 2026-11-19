@@ -11901,6 +11901,27 @@
         "uae.g6.u04.l05.to_larger_exact"
       ],
       "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-ARITHMETIC-MEAN",
+      "primarySkills": [
+        "statistics.weighted_mean"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L09",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "NEW_EXACT_FAMILY_PREPARED_D_PENDING",
+      "evidence": [
+        "2025 General textbook pp132–138: weighted arithmetic mean and group-average contexts; direct substitution of unweighted statistics.mean is pedagogically incorrect.",
+        "New UaeGrade9WeightedMeanQuestions class extends shared exact engine. Separate teacher rubric for weighted speeds or formula-based exercises.",
+        "Stage D must run actual Arabic samples, positive/invalid/wrong input checks and independent semantic alignment."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L09_WEIGHTED_MEAN_NUMERIC_AND_GROUP_CONTEXT",
+      "allowedQuestionFamilies": [
+        "uae.g9.u02.l09.weighted_grades",
+        "uae.g9.u02.l09.weighted_group_sizes"
+      ],
+      "officialOutcomeCodes": []
     }
   ]
 }
