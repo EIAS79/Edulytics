@@ -158,13 +158,14 @@
       "arabicTitle": "الجذور",
       "mechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS"
+        "uae.g6.u06.l02.perfect_square",
+        "usccss.g6.u01.l17.original_square_cube_values"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u01-l08-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family uae.g6.u06.l04.cube_volume removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family uae.g6.u06.l04.cube_volume from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -245,13 +246,14 @@
       "arabicTitle": "كتابة المعادلات المكوّنة من خطوتين",
       "mechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS"
+        "supporting.algebra.equations.mixed",
+        "algebra.linear.ax_plus_b_equals_c"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u02-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 162–169; printed 129–136",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family usccss.g7.u02.l08.classify_equations removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family usccss.g7.u02.l08.classify_equations from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -335,13 +337,14 @@
       "arabicTitle": "المعادلات بصيغة y = mx",
       "mechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM"
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "geometry.coordinate.evaluate_linear_rule"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u03-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family algebra.modeling.linear_relationship.select_equation removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family algebra.modeling.linear_relationship.select_equation from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -912,13 +915,13 @@
       "arabicTitle": "حجم المخروط",
       "mechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES"
+        "uae.g7.u09.l02.cone_volume_pi_coefficient"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family uae.g7.u09.l01.cylinder_volume_pi_coefficient removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family uae.g7.u09.l01.cylinder_volume_pi_coefficient from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -928,13 +931,13 @@
       "arabicTitle": "حجم الكرة",
       "mechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES"
+        "uae.g7.u09.l03.sphere_volume_pi_coefficient"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u08-l03-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 24–31; printed 603–610",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family geometry.similarity.scale_factor removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family geometry.similarity.scale_factor from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
@@ -1120,13 +1123,13 @@
       "arabicTitle": "القياس الخطي",
       "mechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
       "allowedFamilies": [
-        "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE"
+        "usccss.g6.u07.l06.absolute_distance_values"
       ],
       "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g8-general-u10-l02-ar.rich-lesson-v2.json",
       "sourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
       "semanticAuditStatus": "PENDING_SEMANTIC_REVIEW",
       "verifiedAutoGradeSubset": null,
-      "teacherReviewRequired": "Confirmed off-target family uae.g4.u12.l01.segments_from_points removed from candidate pool. Remaining families are partial support only; source-to-prompt parity and Arabic presentation remain unverified.",
+      "teacherReviewRequired": "Removed off-target family uae.g4.u12.l01.segments_from_points from automatic Grade8 Practice routing. Remaining questions are partial coverage; source-item parity and Arabic presentation require independent verification.",
       "sampledLearnerPromptVerified": false,
       "independentExactGraderInCI": "UNVERIFIED_BY_THIS_AUDIT"
     },
