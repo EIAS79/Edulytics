@@ -10,11 +10,37 @@
     "title": "حل معادلات تتضمن قيمة مطلقة"
   },
   "source": {
-    "file": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_09\\01_Student_Books\\01.pdf",
+    "file": "01.pdf",
+    "pathway": "General",
     "edition": "2025-2026",
-    "printedPageReviewed": 104,
-    "pdfPageIndexReviewed": 114,
-    "remainingLessonPagesNotReviewed": true
+    "printedPagesReviewed": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "pdfPagesReviewed": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "lessonPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "cumulativeReviewPage": 109
   },
   "verifiedBookObjectives": [
     {
@@ -40,37 +66,142 @@
   ],
   "sourceVerifiedExercises": [
     {
-      "prompt": "|f+5|=17",
-      "expectedSolutions": [
+      "expression": "|f+5|=17",
+      "answers": [
         -22,
         12
-      ]
+      ],
+      "case": "two_solutions",
+      "sourcePage": 104
     },
     {
-      "prompt": "|b-1|=-3",
-      "expectedSolutions": []
+      "expression": "|b-1|=-3",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 104
     },
     {
-      "prompt": "|y+2|=4",
-      "expectedSolutions": [
+      "expression": "|y+2|=4",
+      "answers": [
         -6,
         2
-      ]
+      ],
+      "case": "two_solutions",
+      "sourcePage": 104
     },
     {
-      "prompt": "|3n-4|=-1",
-      "expectedSolutions": []
+      "expression": "|3n-4|=-1",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 104
+    },
+    {
+      "expression": "|n+7|=5",
+      "answers": [
+        -12,
+        -2
+      ],
+      "case": "two_solutions",
+      "sourcePage": 105
+    },
+    {
+      "expression": "|4n-1|=-6",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 105
+    },
+    {
+      "expression": "|2y+6|=6",
+      "answers": [
+        -6,
+        0
+      ],
+      "case": "two_solutions",
+      "sourcePage": 106
+    },
+    {
+      "expression": "|2x-6|=0",
+      "answers": [
+        3
+      ],
+      "case": "one_solution",
+      "sourcePage": 108,
+      "synthetic": true
+    },
+    {
+      "expression": "|x-15|=4",
+      "answers": [
+        11,
+        19
+      ],
+      "case": "two_solutions",
+      "sourcePage": 105
     }
   ],
   "execution": {
-    "abcStatus": "IN_PROGRESS_SOURCE_REVIEW",
-    "contentModified": false,
+    "abcStatus": "CONTENT_PREPARED_PRACTICE_ENGINE_GAP",
+    "contentModified": true,
     "practiceMappingModified": false,
     "regressionTestsAdded": false,
     "testsRun": "NOT_RUN",
     "ci": "NOT_RUN",
     "stageD": "NOT_STARTED",
-    "nextAction": "Review the complete printed pages 103–110 before patching existing lesson and practice mappings; then run tests and update index only after closure"
+    "criticalBlocker": "Existing G6 absolute-value distance drills do not establish Grade9 |ax+b|=c equation solving, graphing, and no-solution semantics. Do not attach unrelated math families.",
+    "nextAction": "Implement and test exact absolute-value equation solver practice family, validate against fixtures, then close 2-5 and advance sequentially."
   },
-  "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED."
+  "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED.",
+  "sourceVerifiedObjectives": [
+    {
+      "id": "O1",
+      "pages": [
+        103,
+        105,
+        106
+      ],
+      "target": "تقييم تعابير القيمة المطلقة عند التعويض وتفسيرها كمسافة غير سالبة"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        103,
+        104,
+        105,
+        106,
+        108
+      ],
+      "target": "حل معادلات القيمة المطلقة بالحالات الموجبة والصفرية والسالبة وتمثيل الحلول"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        105,
+        106,
+        107
+      ],
+      "target": "إنشاء معادلة قيمة مطلقة من نقطتين متناظرتين على خط الأعداد"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "target": "نمذجة سياقات تباين درجات الحرارة والزمن والقياسات مع فحص القيود"
+    },
+    {
+      "id": "O5",
+      "pages": [
+        108
+      ],
+      "target": "تفسير لماذا تكون معادلات القيمة المطلقة ذات حلين أو حل واحد أو بلا حل"
+    }
+  ],
+  "files": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  }
 }
