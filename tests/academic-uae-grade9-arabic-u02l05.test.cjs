@@ -42,7 +42,7 @@ test('G9 General annual scope is 86 target lessons, not 43 falsely certified', (
 test('Absolute value equation independently checks source exercises and edge cases', () => {
   const evidence = load(evidencePath);
   assert.deepEqual(evidence.source.lessonPages, [103,104,105,106,107,108]);
-  assert.equal(evidence.execution.practiceMappingModified, false);
+  assert.equal(evidence.execution.practiceMappingModified, true);
   assert.equal(evidence.execution.testsRun, 'NOT_RUN');
   const cases = [
     [1, 5, 17, [-22,12]], [1,-1,-3,[]], [1,2,4,[-6,2]],
@@ -57,9 +57,17 @@ test('Absolute value equation independently checks source exercises and edge cas
   }
 });
 
-test('Grade 9 absolute-value questions are not deceptively routed to a linear-only solver', () => {
+test('Grade 9 absolute-value equations are routed to dedicated exact solver families', () => {
   const mapping = load('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json');
-  assert.equal(mapping.mappings.find(x => x.lessonCode === code), undefined);
+  const entry = mapping.mappings.find(x => x.lessonCode === code);
+  assert.ok(entry, 'U02L05 mapping exists');
+  assert.equal(entry.allowedQuestionFamilies.length, 5);
+  assert.ok(entry.allowedQuestionFamilies.every(x => x.startsWith('uae.g9.general.u02.l05.')));
   const contracts = fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
-  assert.equal(contracts.includes('byLesson["' + code + '"]'), false);
+  const engine = fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
+  assert.ok(contracts.includes('byLesson["' + code + '"]'));
+  assert.ok(engine.includes('UaeG9AbsoluteValueEquationQuestions.Verify('));
+  assert.ok(engine.includes('UaeG9AbsoluteValueEquationQuestions.Build('));
+  assert.ok(engine.includes('UaeG9AbsoluteValueEquationQuestions.Solve('));
+  assert.ok(engine.includes('UaeG9AbsoluteValueEquationQuestions.Supports('));
 });
