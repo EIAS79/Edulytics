@@ -79,7 +79,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         int b=-a*m, target=a*r;
         string prompt=family switch
         {
-            Two => $"حل المعادلة |{a}س{Signed(b)}|={target}. اكتب الحلين تصاعديًا مفصولين بفاصلة.",
+            Two => TwoSolutionPrompt(a, b, target, random),
             Tolerance => $"درجة الحرارة المطلوبة {m} درجة مئوية، ويُسمح باختلاف مقداره {r} درجات بالضبط. ما درجتا الحرارة اللتان تبعدان هذه المسافة عن القيمة المطلوبة؟ اكتب القيمتين بفاصلة.",
             Zero => $"حل المعادلة |{a}س{Signed(b)}|=0. اكتب قيمة س.",
             None => $"حل المعادلة |{a}س{Signed(b)}|=−{target}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
@@ -91,6 +91,21 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         return new Item(family,prompt,
             "القيمة المطلقة مسافة غير سالبة؛ أعزلها ثم أتحقق من حالتي الموجب والسالب، أو حالة الصفر أو انعدام الحل.",
             AssessmentItemType.ShortAnswer,p);
+    }
+
+    // The independent verifier still receives a,m,r and checks both roots.
+    // Positive external multipliers and rational internal coefficients preserve
+    // the exact same roots; generating their source-like forms does not create a
+    // duplicate engine or make human-reviewed proofs automatically gradable.
+    private static string TwoSolutionPrompt(int a, int b, int target, Random random)
+    {
+        const string instruction = " اكتب الحلين تصاعديًا مفصولين بفاصلة.";
+        return random.Next(3) switch
+        {
+            0 => $"حل المعادلة |{a}س{Signed(b)}|={target}." + instruction,
+            1 => $"حل المعادلة ٢|{a}س{Signed(b)}|={2 * target}." + instruction,
+            _ => $"حل المعادلة |({a}س{Signed(b)})/٢|={target}/٢." + instruction
+        };
     }
 
     private static string Signed(int n) => n<0 ? n.ToString(CultureInfo.InvariantCulture) :
