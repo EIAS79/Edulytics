@@ -293,6 +293,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade2Unit4Questions.Supports(family.Trim()) ||
           UaeGrade2Unit5Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Questions.Supports(family.Trim()) ||
+          UaeGrade9WeightedMeanQuestions.Supports(family.Trim()) ||
           UaeGrade9AbsoluteValueEquationQuestions.Supports(family.Trim()) ||
           UaeGrade8GeneralSemanticQuestions.Supports(family.Trim()) ||
           UaeGrade8SupplementalQuestions.Supports(family.Trim()) ||
@@ -958,6 +959,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit5Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Questions.Supports(family))
             return UaeGrade3Unit1Questions.Verify(family, parameters, answer);
+        if (UaeGrade9WeightedMeanQuestions.Supports(family))
+            return UaeGrade9WeightedMeanQuestions.Verify(family, parameters, answer);
         if (UaeGrade9AbsoluteValueEquationQuestions.Supports(family))
             return UaeGrade9AbsoluteValueEquationQuestions.Verify(family, parameters, answer);
         if (UaeGrade8GeneralSemanticQuestions.Supports(family))
@@ -4235,6 +4238,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade3Unit1Questions.Supports(family))
         {
             var q = UaeGrade3Unit1Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade9WeightedMeanQuestions.Supports(family))
+        {
+            var q = UaeGrade9WeightedMeanQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade9AbsoluteValueEquationQuestions.Supports(family))
@@ -9255,6 +9263,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit5Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Questions.Supports(problem.Family))
             return UaeGrade3Unit1Questions.Solve(problem.Family, p);
+        if (UaeGrade9WeightedMeanQuestions.Supports(problem.Family))
+            return UaeGrade9WeightedMeanQuestions.Solve(problem.Family, p);
         if (UaeGrade9AbsoluteValueEquationQuestions.Supports(problem.Family))
             return UaeGrade9AbsoluteValueEquationQuestions.Solve(problem.Family, p);
         if (UaeGrade8GeneralSemanticQuestions.Supports(problem.Family))
