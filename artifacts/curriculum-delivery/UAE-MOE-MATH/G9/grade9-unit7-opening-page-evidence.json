@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "FIRST_PAGES_DIRECTLY_VISUALLY_COMPARED_NOT_FULL_LESSON_EVIDENCE",
+  "reviewedOnSourceDevice": "Our-CS",
+  "sourceFileHashesFrom": "five-book-inventory.json",
+  "comparisons": [
+    {
+      "newSource": "01.pdf:7-1",
+      "newPrintedPage": 365,
+      "newPdfPage": 376,
+      "olderSource": "03-1.pdf:11-1",
+      "olderPrintedPages": [
+        608,
+        609
+      ],
+      "olderPdfPages": [
+        24,
+        25
+      ],
+      "newerSkillsObserved": [
+        "Define and represent point, line and plane",
+        "Recognize intersecting lines and planes"
+      ],
+      "olderSkillsObserved": [
+        "Postulates on points lines planes and intersections",
+        "Free-form proof and axiom-based deduction"
+      ],
+      "disposition": "PARTIAL_OVERLAP_WITH_DISTINCT_PROOF_COMPONENTS",
+      "closure": "PENDING_FULL_EXERCISES_AND_VISUALS"
+    },
+    {
+      "newSource": "01.pdf:7-2",
+      "newPrintedPage": 374,
+      "newPdfPage": 385,
+      "olderSource": "03-1.pdf:11-3",
+      "olderPrintedPage": 624,
+      "olderPdfPage": 40,
+      "newerSkillsObserved": [
+        "Measure lengths of line segments on calibrated ruler",
+        "Estimate lengths using units"
+      ],
+      "olderSkillsObserved": [
+        "Ruler postulate",
+        "Segment addition postulate and lengths AB+BC=AC"
+      ],
+      "disposition": "PARTIAL_MEASUREMENT_OVERLAP_UNIQUE_SCALE_ESTIMATION_TO_PRESERVE",
+      "closure": "PENDING_FULL_EXERCISES_AND_VISUALS"
+    },
+    {
+      "newSource": "01.pdf:7-3",
+      "newPrintedPage": 385,
+      "newPdfPage": 396,
+      "olderSource": "03-1.pdf:12-6",
+      "olderPrintedPage": 695,
+      "olderPdfPage": 111,
+      "newerSkillsObserved": [
+        "Compute distance between two points on number line",
+        "Find midpoint of a segment on number line"
+      ],
+      "olderSkillsObserved": [
+        "Perpendicular distance from a point to a line",
+        "Definitions of perpendicular line and plane relationships"
+      ],
+      "disposition": "DIFFERENT_PRIMARY_MATH_OBJECTIVES_REQUIRE_SUPPLEMENT_NOT_DUPLICATE",
+      "closure": "PENDING_FULL_EXERCISES_AND_VISUALS"
+    }
+  ],
+  "confirmedSemanticMergeSeparately": "01.pdf:7-4 => 03-1.pdf:11-3",
+  "confirmedFrom": "dedup-crosswalk.json",
+  "sourceIndexLock": false
+}
