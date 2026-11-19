@@ -1616,15 +1616,15 @@
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
       "printedPage": 776,
-      "pdfPage": null,
+      "pdfPage": 191,
       "sourceLessonRefs": [
         "03-1.pdf:13-7"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "PAGE_OFFSET_SHIFTS_IN_SCANNED_VOLUME_EXACT_LOCATION_REVIEW_REQUIRED",
-      "pageMappingEvidence": "Printed 777 appears on physical PDF p192, conflicting with earlier 624->40 offset; do not use fixed offset for late pages."
+      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
+      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
     },
     {
       "rawOrdinal": 85,
@@ -1636,15 +1636,15 @@
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
       "printedPage": 783,
-      "pdfPage": null,
+      "pdfPage": 198,
       "sourceLessonRefs": [
         "03-1.pdf:13-8"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "PAGE_OFFSET_SHIFTS_IN_SCANNED_VOLUME_EXACT_LOCATION_REVIEW_REQUIRED",
-      "pageMappingEvidence": "Printed 777 appears on physical PDF p192, conflicting with earlier 624->40 offset; do not use fixed offset for late pages."
+      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
+      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
     },
     {
       "rawOrdinal": 86,
@@ -1656,15 +1656,15 @@
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
       "printedPage": 793,
-      "pdfPage": null,
+      "pdfPage": 208,
       "sourceLessonRefs": [
         "03-1.pdf:13-9"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "PAGE_OFFSET_SHIFTS_IN_SCANNED_VOLUME_EXACT_LOCATION_REVIEW_REQUIRED",
-      "pageMappingEvidence": "Printed 777 appears on physical PDF p192, conflicting with earlier 624->40 offset; do not use fixed offset for late pages."
+      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
+      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
     }
   ],
   "pageMappingEvidence": [
@@ -1693,9 +1693,21 @@
   "pageMappingExceptions": [
     {
       "file": "03-1.pdf",
-      "printed": 777,
-      "pdfPage": 192,
-      "comparison": "Earlier 624 maps to PDF40 and 735 to PDF151, so offset is not constant across the volume."
+      "printed": 776,
+      "pdfPage": 191,
+      "offset": 585
+    },
+    {
+      "file": "03-1.pdf",
+      "printed": 784,
+      "pdfPage": 199,
+      "offset": 585
+    },
+    {
+      "file": "03-1.pdf",
+      "printed": 793,
+      "pdfPage": 208,
+      "offset": 585
     }
   ],
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
