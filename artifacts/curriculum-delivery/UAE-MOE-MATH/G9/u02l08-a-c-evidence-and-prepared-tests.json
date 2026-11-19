@@ -1,0 +1,114 @@
+{
+  "source": {
+    "file": "01.pdf",
+    "grade": 9,
+    "pathway": "General",
+    "edition": "2025-2026",
+    "lesson": "2-8",
+    "printedPages": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131
+    ],
+    "pdfPages": [
+      137,
+      138,
+      139,
+      140,
+      141,
+      142
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "page": 126,
+      "text": "عزل متغير محدد من معادلة حرفية"
+    },
+    {
+      "id": "O2",
+      "page": 127,
+      "text": "حل صيغ المساحة والمحيط والسرعة بالنسبة إلى متغير مطلوب"
+    },
+    {
+      "id": "O3",
+      "page": 128,
+      "text": "العوامل البعدية ووحدات القياس المركبة"
+    },
+    {
+      "id": "O4",
+      "page": 129,
+      "text": "التحليل البعدي لتحويل الوحدات في سياق واقعي"
+    },
+    {
+      "id": "O5",
+      "pages": [
+        130,
+        131
+      ],
+      "text": "مسائل تطبيقية ودور تقويم وتبرير صحة الوحدة"
+    }
+  ],
+  "fixtures": [
+    {
+      "o": "O1",
+      "q": "إذا ح = ٢(ل + ع)، اعزل ع.",
+      "a": "ح/٢−ل",
+      "grader": "TEACHER_REVIEW_SYMBOLIC"
+    },
+    {
+      "o": "O1",
+      "q": "إذا م = (ق×ع)/٢، اعزل ع.",
+      "a": "٢م/ق",
+      "grader": "TEACHER_REVIEW_SYMBOLIC"
+    },
+    {
+      "o": "O3",
+      "q": "حوّل ٣٫٢ كم إلى أمتار.",
+      "a": "3200",
+      "unit": "m"
+    },
+    {
+      "o": "O4",
+      "q": "حوّل ٩٠ كم/ساعة إلى م/ث.",
+      "a": "25",
+      "unit": "m/s"
+    },
+    {
+      "o": "O2",
+      "q": "محيط دائرة ٢πنق؛ اكتب نق بدلالة ح.",
+      "a": "ح/(٢π)",
+      "grader": "TEACHER_REVIEW_SYMBOLIC"
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "اعزل الزمن ز من العلاقة ع = م/ز.",
+      "a": "ز=م/ع"
+    },
+    {
+      "q": "حوّل ٢٫٥ كم إلى أمتار.",
+      "a": "2500"
+    },
+    {
+      "q": "لماذا يجب إلغاء وحدات الكيلومتر والثانية في مقام التحويل وبسطه بعوامل مناسبة؟",
+      "a": "للحصول على وحدة الناتج الصحيحة",
+      "teacherReview": true
+    }
+  ],
+  "families": [
+    "algebra.literal_equation.isolate.select_form",
+    "uae.g6.u04.l05.to_smaller_exact",
+    "uae.g6.u04.l05.to_larger_exact"
+  ],
+  "rubric": "تحقق من قيود المقام غير الصفري ومن توحيد وحدات الأطوال والزمن قبل الحل.",
+  "status": "READY_FOR_STAGE_D_PREPARATION",
+  "testsRun": "NOT_RUN",
+  "ciRun": "NOT_RUN",
+  "semanticAudit": "NOT_RUN",
+  "remaining": "Stage D must test actual generated Grade9 Arabic learner question and conversion directions; teacher reviews open formula proof."
+}
