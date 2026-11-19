@@ -179,3 +179,31 @@ test('Source exercise routing ledgers remain synchronized for all 64 exercises',
     'Number-line drawing and explanation must retain teacher review');
   assert.equal(visual.testsRun, 'WRITTEN_NOT_RUN');
 });
+
+
+test('All 64 source mathematical outcomes are recorded without claiming Stage D validation', () => {
+  const evidence = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json');
+  assert.equal(evidence.sourceExerciseInventory.items.length, 64);
+  assert.equal(evidence.summary.sourceMathematicsSpotAudit.verifiedCount, 64);
+  assert.equal(evidence.summary.sourceMathematicsSpotAudit.pendingCount, 0);
+  for (const item of evidence.sourceExerciseInventory.items) {
+    assert.ok(item.sourceMathematicsSpotAudit, item.itemId);
+    assert.ok(item.sourceMathematicsSpotAudit.expectedMathAnswer, item.itemId);
+    assert.equal(item.sourceMathematicsSpotAudit.verificationScope.includes('RUNTIME'), true);
+  }
+  assert.equal(evidence.summary.sourceMathematicsSpotAudit.testsRun, 'WRITTEN_NOT_RUN');
+});
+
+test('Original teacher-reviewed activities cover each source timing case and conditional reasoning', () => {
+  const bank = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const html = fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  const timed = bank.groups.find(x=>x.taskId==='extensionQ3');
+  assert.deepEqual(timed.ids,[32,43]);
+  assert.match(html,/٥٠٫٥ ثانية/);
+  assert.match(html,/٤ دقائق مع فرق ٥ ثوانٍ/);
+  const reasoning = bank.groups.find(x=>x.taskId==='extensionQ7');
+  assert.ok(reasoning.ids.includes(59));
+  assert.match(html,/المتباينة \|س\|\+ج<٠ بلا حلول/);
+  assert.match(html,/أحيانًا أو أبدًا/);
+  assert.equal(bank.assessedAutomatically,false);
+});
