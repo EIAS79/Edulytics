@@ -50,12 +50,32 @@
     "dualRouteGraphNumericAndTeacher": 6,
     "directSourcePageReview": "PRINTED_PAGES_103_TO_108_DIRECT_VISUAL_COMPARE",
     "sourcePageRasterAudit": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/five-book-page-raster-audit.json",
-    "exactPerItemSemanticEquivalence": "INCOMPLETE",
+    "exactPerItemSemanticEquivalence": "SOURCE_MATH_CHECKED_STUDENT_FACING_EQUIVALENCE_PENDING",
     "all64SourceExercisesIndividuallyRouted": true,
-    "all64SourceExercisesIndependentExactMathVerified": false,
+    "all64SourceExercisesIndependentExactMathVerified": true,
     "sourceItemRoutingEvidenceCommit": "40ed305fe547bd542e10d39192d81efcd3f3e8a9",
     "lastSourcePageCorrectionCommit": "b9288cfadf56fd9f13f873281fd724db81ea6397",
-    "canonicalPageRasterProofCommit": "10fe491af8372bf98cd763a926ba0ee3418f1d8d"
+    "canonicalPageRasterProofCommit": "10fe491af8372bf98cd763a926ba0ee3418f1d8d",
+    "sourceMathematicsAudit": {
+      "source": "01.pdf",
+      "printedPages": [
+        105,
+        106,
+        107,
+        108
+      ],
+      "sourceNumberedExercises": 64,
+      "mathOutcomesVisuallyChecked": 64,
+      "remainingSourceMathUnchecked": 0,
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+      "scope": "source book mathematical solutions only; not independent actual generated digital prompt validation",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "evidenceCommits": [
+        "befd8ba9bfcaad74dfba4a8a5f280b8839ffe12f",
+        "303938335ed301a76f8cdb68e9dcdc15d1f397a3",
+        "bec804bc17f307e24912d3fc46c34fd541e0a898"
+      ]
+    }
   },
   "stageB": {
     "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
@@ -143,13 +163,13 @@
     "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90"
   },
   "blockingGaps": [
-    "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
+    "All 64 source exercise mathematical outcomes checked from locally scanned student-book pages; independent equivalence of actual generated digital questions and all teacher-reviewed alternatives remains unverified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
     "Stage D execution not run by design.",
     "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow.",
-    "Every one of 64 source exercises has guarded digital or teacher treatment (31 digital candidates, 33 teacher-only, six additional numeric+teacher-graph); exact item-level semantic verification and authenticated grading remain incomplete.",
-    "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration."
+    "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration.",
+    "Teacher-reviewed graph and proof source items are classified and have rubric drafts; authenticated learner submission and teacher assessment are not integrated or verified."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -217,5 +237,6 @@
       "e77f06b6d51bcfeb6d986d8e840b83aa17eddb60"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
-  }
+  },
+  "lastSourceMathAuditCommit": "bec804bc17f307e24912d3fc46c34fd541e0a898"
 }
