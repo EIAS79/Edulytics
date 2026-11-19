@@ -11057,6 +11057,22 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L04_P97_102",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+        // UAE G9 General U02L05 printed 103–108; numerical cases only.
+        // Graph drawing and explanatory modelling remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+            "algebra.linear.solve",
+            "G9_U02L05_ABSOLUTE_EQUATION_0_1_2_SOLUTIONS",
+            [
+                "uae.g9.general.u02.l05.two_solutions",
+                "uae.g9.general.u02.l05.one_solution",
+                "uae.g9.general.u02.l05.no_solution",
+                "uae.g9.general.u02.l05.evaluate_absolute",
+                "uae.g9.general.u02.l05.midpoint"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L05_P103_108",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
