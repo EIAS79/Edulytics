@@ -10,12 +10,12 @@
   "summary": {
     "lessonsSampled": 76,
     "generatedQuestions": 14592,
-    "totalConfiguredFamilyAssignments": 182,
+    "totalConfiguredFamilyAssignments": 176,
     "allAssignmentsSampled": true,
-    "lessonsWithObservedNonArabicPrompts": 56,
-    "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 16,
-    "releaseBlockedLessons": 58,
-    "partialReviewPendingLessons": 18,
+    "lessonsWithObservedNonArabicPrompts": 55,
+    "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 14,
+    "releaseBlockedLessons": 56,
+    "partialReviewPendingLessons": 20,
     "fullySourceCertifiedLessons": 0,
     "correctAnswersAcceptedByExactVerifier": 14592,
     "invalidTextRejectedByExactVerifier": 14592,
@@ -421,32 +421,26 @@
       "targetMechanic": "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
       "richV2ObjectiveExcerpt": "الجذر التربيعي الرئيسي لعدد غير سالب هو العدد غير السالب الذي مربعه يساوي ذلك العدد. مثل √64=8، وليس ±8؛ لكن المعادلة س^2=64 لها حلان س=8 أو س=-8. إذا وضعنا سالبًا خارج الجذر فإن -√25=-5، وإذا كان تحت جذر تربيعي لعدد سالب مثل √(-16) فلا توجد قيمة حقيقية. الجذر التكعيبي لأي عدد حقيقي هو العدد الذي مكعبه يساويه؛ مثل ∛(-27)=-3، و∛125=5. يطبق الطالب ذلك على مساح",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "uae.g6.u06.l02.perfect_square",
-          "prompt": "هل العدد 64 مربع كامل؟ اكتب نعم أو لا.",
-          "correctAnswer": "نعم",
-          "studentPromptArabic": true
-        },
-        {
           "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.2: with32 unit cubes, what is the largest possible whole-number EDGE of one complete cube? Situation B: Original practice5 rectangular prism A dimensions3in×2in×1in. Find full outside surface area.",
-          "correctAnswer": "31",
+          "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Original17.4: a square edge10 centimeters, find its area. Situation B: Original17.2 extension: cube edge4 units contains how many unit cubes?",
+          "correctAnswer": "264",
           "studentPromptArabic": false
         },
         {
-          "family": "uae.g6.u06.l04.cube_volume",
-          "prompt": "طول ضلع مكعب س=1/5 متر، احسب قيمة س³ ككسر في أبسط صورة.",
-          "correctAnswer": "1/125",
+          "family": "uae.g6.u06.l02.perfect_square",
+          "prompt": "هل العدد 5 مربع كامل؟ اكتب نعم أو لا.",
+          "correctAnswer": "لا",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "usccss.g6.u01.l17.original_square_cube_values",
-          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
+          "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B"
         }
       ],
       "semanticDefectConfirmed": true,
@@ -651,13 +645,13 @@
       "targetMechanic": "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
       "richV2ObjectiveExcerpt": "تبدأ كتابة معادلة من خطوتين بتعريف المجهول وتحديد العلاقة بين الكميات. عبارة «ثلاثة أمثال عدد ناقص ثمانية يساوي سالب ثلاثة وعشرين» تصبح 3ن−8=−23؛ لا تصبح 3(ن−8)=-23 لأن الأقواس تغير المعنى. إذا كان الاشتراك الثابت 400 درهم ويضاف 15 درهمًا عن كل شهر، وبلغ الإجمالي 700 درهم، فإن التكلفة 400+15ش=700، وبالتالي ش=20 شهرًا. هذا يربط نص الحياة اليومية بالرموز، ثم ي",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "usccss.g7.u02.l08.classify_equations",
-          "prompt": "A cube has side length 5 units. Calculate its total surface area using A=6s^2. Show units and explain whether the full side-length relationship is proportional. Answer exactly. Teacher review required for tables and reasoning.",
-          "correctAnswer": "150",
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "prompt": "Solve 2x − 4 = 4.",
+          "correctAnswer": "4",
           "studentPromptArabic": false
         },
         {
@@ -665,26 +659,16 @@
           "prompt": "Solve 5x -5 = 5.",
           "correctAnswer": "2",
           "studentPromptArabic": false
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 4x − 3 = 5.",
-          "correctAnswer": "2",
-          "studentPromptArabic": false
         }
       ],
       "englishPromptFamilies": [
         {
-          "family": "usccss.g7.u02.l08.classify_equations",
-          "samplePrompt": "A cube has side length 5 units. Calculate its total surface area using A=6s^2. Show units and explain whether the full side-length relationship is proportional. Answer exactly. Teacher review required for tables and reas"
+          "family": "algebra.linear.ax_plus_b_equals_c",
+          "samplePrompt": "Solve 2x − 4 = 4."
         },
         {
           "family": "supporting.algebra.equations.mixed",
           "samplePrompt": "Solve 5x -5 = 5."
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 4x − 3 = 5."
         }
       ],
       "semanticDefectConfirmed": true,
@@ -931,13 +915,13 @@
       "targetMechanic": "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
       "richV2ObjectiveExcerpt": "تمثل العلاقة ص=م س تناسبًا طرديًا عندما تكون م ثابتًا ويكون التمثيل البياني خطًا مستقيمًا يمر بنقطة الأصل (0،0). العدد م هو معدل التغير أو ثابت التناسب، ويمكن إيجاده من ص/س لنقطة لا تساوي فيها س صفرًا. إذا تدفع حافلة 12 درهمًا لكل ساعة تشغيل، فإن التكلفة ص=12س عند س ساعات؛ لهذا (0،0)،(2،24)،(5،60) تنتمي إلى الخط نفسه. في جدول تناسب طردي تختلف قيم س لكن النسب",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 3,
-      "observedFamilyCount": 3,
+      "configuredFamilyCount": 2,
+      "observedFamilyCount": 2,
       "actualSampleByFamily": [
         {
-          "family": "algebra.modeling.linear_relationship.select_equation",
-          "prompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining which quantities vary and which are constant remains teacher-reviewed.",
-          "correctAnswer": "y=8x+16",
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "prompt": "For the straight line y = x − 1, find y when x = -6.",
+          "correctAnswer": "-7",
           "studentPromptArabic": false
         },
         {
@@ -945,26 +929,16 @@
           "prompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and sorting explanations require teacher review.",
           "correctAnswer": "0",
           "studentPromptArabic": false
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
-          "correctAnswer": "-12",
-          "studentPromptArabic": false
         }
       ],
       "englishPromptFamilies": [
         {
-          "family": "algebra.modeling.linear_relationship.select_equation",
-          "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
+          "family": "geometry.coordinate.evaluate_linear_rule",
+          "samplePrompt": "For the straight line y = x − 1, find y when x = -6."
         },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
           "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
         }
       ],
       "semanticDefectConfirmed": true,
@@ -2271,28 +2245,22 @@
       "targetMechanic": "CONE_VOLUME_ONE_THIRD_CYLINDER",
       "richV2ObjectiveExcerpt": "المخروط الدائري القائم ذو قاعدة دائرية ورأس واحد، وارتفاعه ع يقاس عمودياً من الرأس إلى مركز القاعدة. يساوي حجمه ثلث حجم أسطوانة لها القاعدة نفسها والارتفاع نفسه: ح=(1/3)π نق² ع. إذا كان نصف قطر القاعدة 3 سم والارتفاع 6 سم، فح=18π سم³. يمكن مقارنة مخاريط متساوية القاعدة والارتفاع مع أسطوانة لاستقصاء نسبة الثلث، لكن هذا الاستقصاء لا يجيز استخدام طول المولد الم",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
-          "prompt": "أسطوانة نصف قطرها 6 سم وارتفاعها 6 سم. حجمها kπ سم³. أوجد معامل π، أي العدد k.",
-          "correctAnswer": "216",
-          "studentPromptArabic": true
-        },
-        {
           "family": "uae.g7.u09.l02.cone_volume_pi_coefficient",
-          "prompt": "مخروط دائري قائم نصف قطر قاعدته 3 سم وارتفاعه العمودي 18 سم. حجمه kπ سم³. أوجد k.",
-          "correctAnswer": "54",
+          "prompt": "مخروط دائري قائم نصف قطر قاعدته 6 سم وارتفاعه العمودي 12 سم. حجمه kπ سم³. أوجد k.",
+          "correctAnswer": "144",
           "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "مسار إضافي يطرح حجم الأسطوانة بينما هدف الدرس حجم المخروط؛ هذا تدريب داعم لا إثبات إتقان المخروط.",
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2304,33 +2272,22 @@
       "targetMechanic": "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
       "richV2ObjectiveExcerpt": "الكرة جسم ثلاثي الأبعاد جميع نقاط سطحه تبعد المسافة نفسها عن مركزه، وتسمى تلك المسافة نصف القطر نق. قانون حجم الكرة ح=(4/3)π نق³. إذا نق=3 سم فإن الحجم (4/3)π×27=36π سم³. إذا أعطي القطر 10 سم، فنق=5 سم، فيكون الحجم (500/3)π سم³ تقريباً 523.6 سم³. حجم نصف الكرة هو نصف حجم الكرة الكاملة، أي (2/3)π نق³. عندما يتضاعف نصف قطر كرة، يتضاعف الحجم ثماني مرات بسبب تكع",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
-          "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
-          "correctAnswer": "3",
-          "studentPromptArabic": false
-        },
-        {
           "family": "uae.g7.u09.l03.sphere_volume_pi_coefficient",
-          "prompt": "كرة نصف قطرها 9 سم. حجمها الدقيق kπ سم³. أوجد k.",
-          "correctAnswer": "972",
+          "prompt": "كرة نصف قطرها 39 سم. حجمها الدقيق kπ سم³. أوجد k.",
+          "correctAnswer": "79092",
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
-        }
-      ],
-      "semanticDefectConfirmed": true,
-      "semanticDefectFinding": "سؤال معامل تشابه الأضلاع لا يقيس حجم الكرة.",
+      "englishPromptFamilies": [],
+      "semanticDefectConfirmed": false,
+      "semanticDefectFinding": null,
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2801,20 +2758,14 @@
       "targetMechanic": "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
       "richV2ObjectiveExcerpt": "القياس الخطي يحدد المسافة بين نقطتي نهاية قطعة مستقيمة باستعمال وحدة متفق عليها مثل مم أو سم أو م. إذا كانت A وB على خط الأعداد عند -3 و5 فالطول AB=|5−(-3)|=8 وحدات بغض النظر عن ترتيب النقطتين. إذا كانت B واقعة بين A وC، فمسلّمة جمع أطوال القطع تقول AB+BC=AC. في رسم أصلي A—B—C قد يكون AB=4 سم وBC=7 سم، فيكون AC=11 سم. عند القياس بالمسطرة أضع نقطة البداية عند",
       "questionCountGenerated": 192,
-      "configuredFamilyCount": 2,
-      "observedFamilyCount": 2,
+      "configuredFamilyCount": 1,
+      "observedFamilyCount": 1,
       "actualSampleByFamily": [
         {
           "family": "usccss.g6.u07.l06.absolute_distance_values",
           "prompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 2 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (2 × A's numerical answer) + (B's numerical answer). For any yes/no question, use 1 for yes and 0 for no. For a fraction, use an exact fraction or decimal when exact. Situation A: Elena donates3.12 from26 earned. Percent? Situation B: Trip target325miles,72% completed. Miles?",
           "correctAnswer": "258",
           "studentPromptArabic": false
-        },
-        {
-          "family": "uae.g4.u12.l01.segments_from_points",
-          "prompt": "على رسم 3 نقاط مختلفة، كم قطعة مستقيمة مختلفة بين كل زوج من النقاط؟",
-          "correctAnswer": "3",
-          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
