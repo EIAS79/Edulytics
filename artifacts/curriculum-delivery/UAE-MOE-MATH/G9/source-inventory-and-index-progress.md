@@ -7,7 +7,7 @@ Scope: `UAE-MOE-MATH`, Grade 9, General/Common, Arabic RTL. **Do not include Adv
 Local base: `C:\Users\khali\Downloads\New folder (2)\emirates\Grade_09\01_Student_Books`.
 These PDF files contain scanned pages, with no usable embedded text in initial extraction.
 
-- `01.pdf` — 441 PDF pages; Arabic UAE Grade 9 **General** math volume; the inspected copyright page says 2025. Its contents overview lists Units **1–7**. Unit 1–4 TOC pages were directly inspected as PDF pages 5–8 (1-based). No evidence yet that this file includes all terms/units.
+- `01.pdf` — 441 PDF pages; Arabic UAE Grade 9 **General** math volume; the inspected copyright page says 2025. Its contents overview lists Units **1–7**. SHA-256: `341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade`. Unit 1–4 TOC pages were directly inspected as PDF pages 5–8 (1-based). No evidence yet that this file includes all terms/units.
 - `02.pdf` — 200 pages; cover identifies **Applied pathway** (المسار التطبيقي), 2022–2023. **Excluded** from the General source set.
 - `03.pdf` — 131 pages; cover identifies **Applied pathway**, 2022–2023. **Excluded**.
 - `02-1.pdf` — 262 pages; older Arabic Grade 9 Integrated Math volume 2 (copyright 2020); TOC overview lists 13 units. **Alternate edition only**, not automatically merged with 2025 General.
@@ -23,8 +23,11 @@ The original `_GRADE_INVENTORY.csv` is not a reliable live file index: its histo
 | 2 | المعادلات الخطية | 9 |
 | 3 | الدوال الخطية | 6 |
 | 4 | معادلات الدوال الخطية | 4 |
+| 5 | المتباينات الخطية | 6 |
+| 6 | أنظمة المعادلات والمتباينات الخطية | 6 |
+| 7 | أدوات الهندسة | 4 |
 
-Total **27 numbered lessons in Units 1–4**, *not the complete Grade 9 denominator*.
+Total **43 numbered lessons in Units 1–7** in the directly inspected 2025 General book; *not a verified full-school-year Grade 9 denominator*.
 
 ### Unit 1 — TOC page iv (PDF page 5)
 
@@ -65,9 +68,34 @@ Total **27 numbered lessons in Units 1–4**, *not the complete Grade 9 denomina
 4-3 كتابة المعادلات بصيغة النقطة والميل — p. 233
 4-4 المستقيمات المتوازية والمتعامدة — p. 239
 
+### Unit 5 — TOC page viii (PDF page 9)
+
+5-1 حل المتباينات بالجمع والطرح — p. 259
+5-2 حل المتباينات بالضرب والقسمة — p. 266
+5-3 حل المتباينات متعددة الخطوات — p. 272
+5-4 حل المتباينات المركبة — p. 280
+5-5 المتباينات التي تحتوي على قيمة مطلقة — p. 286
+5-6 التمثيل البياني لمتباينات ذوات متغيرين — p. 291
+
+### Unit 6 — TOC page ix (PDF page 10)
+
+6-1 تمثيل أنظمة المعادلات بيانيًا — p. 309
+6-2 التعويض — p. 318
+6-3 الحذف باستخدام الجمع والطرح — p. 324
+6-4 الحذف باستخدام الضرب — p. 331
+6-5 تطبيق أنظمة المعادلات الخطية — p. 338
+6-6 أنظمة المتباينات — p. 346
+
+### Unit 7 — TOC page x (PDF page 11)
+
+7-1 النقاط والمستقيمات والمستويات — p. 365
+7-2 القياس الخطي — p. 374
+7-3 المسافة ونقاط المنتصف — p. 385
+7-4 إثبات العلاقات بين القطع المستقيمة — p. 398
+
 ## Next strict source-lock operations
 
-1. Inspect remainder of `01.pdf` contents (Units 5–7), all valid **General** books, and edition/term continuity; determine if complete Grade 9 General book set exists. Do not silently fill gaps from Applied or old Integrated.
+1. Inspect any additional **General** student books not in the listed folder, especially later-term volumes, and, and edition/term continuity; determine if complete Grade 9 General book set exists. Do not silently fill gaps from Applied or old Integrated.
 2. Compute source SHA-256 and exact PDF/printed page mapping for all chosen files; produce a complete `source-index.json` with evidence.
 3. Only after complete source lock, compare live Registry/Content and start Lesson 1 in order. Old UAE Grade 9 General/Advanced content was explicitly retired in PR #649; shared engines remain reusable under Reuse → Extend → New Engine.
 4. For A–B–C write tests/specifications but **never run Build, tests, semantic audit gates, E2E or CI**. Those run only in Stage D.
