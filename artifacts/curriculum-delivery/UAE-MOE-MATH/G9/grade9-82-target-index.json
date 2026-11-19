@@ -1703,8 +1703,8 @@
       "PdfPageRenderSha256": "1ae1a034d2ea80edb0d1f081bddc9247640400580e7512be55f5e8d4486874d2",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
-      "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false,
+      "SourcePageVisualVerified": true,
+      "SourcePageHeadingAndObjectivesVerified": true,
       "SupplementarySourceDirectPageEvidence": {
         "sourceRef": "01.pdf:7-2",
         "sourcePrintedPage": 374,
@@ -1753,7 +1753,8 @@
         ],
         "status": "CORE_SEMANTIC_DUPLICATE_EXERCISE_VARIANT_FIDELITY_PENDING",
         "createSeparateLesson": false
-      }
+      },
+      "SourcePageVisualReviewScope": "OPENING_SOURCE_PAGE_DIRECTLY_VIEWED_ON_LOCAL_03-1_PDF; NOT WHOLE LESSON ELEMENT VERIFICATION"
     },
     {
       "ordinal": 67,
@@ -1921,8 +1922,8 @@
       "PdfPageRenderSha256": "d473b8fe706f03fc5e85fcd14eec40307defa6f1377ca8b80a3487b15c2950f2",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
-      "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false,
+      "SourcePageVisualVerified": true,
+      "SourcePageHeadingAndObjectivesVerified": true,
       "SupplementarySourceDirectPageEvidence": {
         "sourceRef": "01.pdf:7-3",
         "sourcePrintedPage": 385,
@@ -1958,7 +1959,8 @@
           "distance between parallel lines"
         ],
         "review": "FULL_PAGE_RANGES_VISUALLY_REVIEWED_ITEM_LEVEL_NOT_CLOSED"
-      }
+      },
+      "SourcePageVisualReviewScope": "OPENING_SOURCE_PAGE_DIRECTLY_VIEWED_ON_LOCAL_03-1_PDF; NOT WHOLE LESSON ELEMENT VERIFICATION"
     },
     {
       "ordinal": 74,
@@ -2194,6 +2196,24 @@
     "sourceTargetFullSpanComparisons": 3,
     "coreDuplicatePairConfirmed": "01.pdf:7-4 with 03-1.pdf:11-3",
     "uniqueSkillSupplementaryPairs": 3,
-    "remaining": "Integrate verified unique lesson elements and all exercise variants into 82 actual lessons, not merely mappings"
+    "remaining": "Integrate verified unique lesson elements and all exercise variants into 82 actual lessons, not merely mappings",
+    "primaryTargetOpeningPagesVisuallySeen": [
+      {
+        "ordinal": 64,
+        "file": "03-1.pdf",
+        "pdfPage": 24
+      },
+      {
+        "ordinal": 66,
+        "file": "03-1.pdf",
+        "pdfPage": 40
+      },
+      {
+        "ordinal": 73,
+        "file": "03-1.pdf",
+        "pdfPage": 111
+      }
+    ],
+    "checkMeaning": "Opening page heading/objectives directly seen in local book; not equivalent to full pages or 82-row semantic lock"
   }
 }
