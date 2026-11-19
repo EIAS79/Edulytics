@@ -102,3 +102,9 @@ Total **43 numbered lessons in Units 1–7** in the directly inspected 2025 Gene
 5. Do not mark lessons `READY_FOR_STAGE_D` or report academic/technical completion without element-level evidence, checkpoint and a lesson commit.
 
 This file records a **partial verified source inventory**, not completion of a lesson, the academic audit, or Stage D.
+
+## Source-versus-retired-blueprint discrepancy identified
+
+The retired file `src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g9-general-t1-ogl-v1.lesson-blueprint.json`, read from pre-PR #649 commit `980ca67282c4d76a79f761ecd2b81b24b200bd6b`, declared **13 units / 82 lessons** with Unit 7 **Quadratic Expressions and Equations**. The actual 2025 General student volume inspected locally declares **Unit 7 أدوات الهندسة**, with 4 numbered lessons. The former English content pack also used `AcademicLanguage: en` and generic template prose. Thus **do not resurrect or copy the old 82-lesson English blueprint/content pack**; preserve only independently applicable mathematical engines or validated content. Reconcile the school-year scope from primary General books before publishing.
+
+One original General lesson inspected at printed pages 5–9 (Lesson 1-1) contains verbal↔symbolic translation, variable/coefficient/power notation, contextual and geometric modeling, higher-order algebraic reasoning, general practice and a standardized-review section. The draft lesson candidate is at `lesson-1-arabic-content-and-skill-contract-draft.md`; it is not yet registered nor closed.
