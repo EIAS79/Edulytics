@@ -11009,6 +11009,21 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // UAE Grade9 General 2025 source pp83-90: one-step equations with
+        // fraction/decimal variations and verification. Stage D not run.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:02:ONE-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:02:ONE-STEP-EQUATIONS","algebra.equations.one_step",
+            "G9_U02L02_INVERSE_ADD_SUBTRACT_MULTIPLY_DIVIDE",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
+             "uae.g6.u07.l01.result_minus_unknown",
+             "uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide",
+             "uae.g6.u07.l01.test_candidate",
+             "uae.g6.u07.l03.fraction_addition_unknown",
+             "uae.g6.u07.l03.decimal_addition_unknown"],
+            "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
