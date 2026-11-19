@@ -60,11 +60,13 @@
         "uae.g9.general.u02.l05.midpoint",
         "uae.g9.general.u02.l05.two_solutions"
       ],
-      "coverageStatus": "PARTIAL_DIGITAL_TEXT_ONLY_VISUAL_RENDERER_NOT_EVIDENCED",
+      "coverageStatus": "DIGITAL_NUMERIC_PLUS_TEACHER_REVIEW_VISUAL_RENDERER_PREPARED_RUNTIME_UNVERIFIED",
       "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
       "testsRun": "WRITTEN_NOT_RUN",
-      "humanReviewRequired": false,
-      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY"
+      "humanReviewRequired": true,
+      "independentVerifierStatus": "IMPLEMENTED_NOT_TESTED_STAGE_D_ONLY",
+      "teacherReviewEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+      "digitalNumericVerification": "WRITTEN_NOT_RUN"
     },
     {
       "objectiveId": "O4",
@@ -131,7 +133,7 @@
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
     "visualRendererPrepared": true,
-    "visualRendererStatus": "FIRST_PARTY_RTL_SVG_NUMBERLINE_IMPLEMENTED_STATIC_NO_RUNTIME_ACCEPTANCE",
+    "visualRendererStatus": "FIRST_PARTY_RTL_SVG_NUMBERLINE_IMPLEMENTED_STATIC_TEACHER_REVIEW_REQUIRED_RUNTIME_UNVERIFIED",
     "teacherRubricIntegrated": false,
     "sourceNumberedExercisesInventoried": 64,
     "sourceExerciseFamiliesNotFullyDigitized": [
@@ -161,7 +163,8 @@
       "EX03",
       "EX06",
       "EX09"
-    ]
+    ],
+    "lastEvidenceRepair": "O3 visual number-line work cannot be classified as teacherReviewRequired=false; corrected to teacher-reviewed, retaining independent numeric candidate and Stage D runtime gate."
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
   "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
