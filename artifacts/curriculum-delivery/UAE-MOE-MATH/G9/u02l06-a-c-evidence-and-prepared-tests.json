@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026",
+    "pathway": "General",
+    "lesson": "2-6",
+    "printedPages": [
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117
+    ],
+    "pdfPages": [
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "learningObjectives": [
+    {
+      "code": "O1",
+      "pages": [
+        111,
+        112
+      ],
+      "text": "تفسير نسبة بين كميتين واختزالها"
+    },
+    {
+      "code": "O2",
+      "pages": [
+        112,
+        113
+      ],
+      "text": "حل تناسب بإيجاد أحد الحدود باستخدام الضرب التبادلي"
+    },
+    {
+      "code": "O3",
+      "pages": [
+        113,
+        115
+      ],
+      "text": "كتابة تناسب من تطبيق حقيقي وحفظ ترتيب المقارنة"
+    },
+    {
+      "code": "O4",
+      "pages": [
+        114,
+        115,
+        116,
+        117
+      ],
+      "text": "تطبيق تناسب على قياس وحساب مسافة أو سعر ووحدات"
+    }
+  ],
+  "preparedQuestionFixtures": [
+    {
+      "objective": "O1",
+      "prompt": "بسط النسبة ١٢ إلى ١٨.",
+      "expected": "2:3"
+    },
+    {
+      "objective": "O2",
+      "prompt": "أوجد س في ٤/٧ = س/٢١.",
+      "expected": "12"
+    },
+    {
+      "objective": "O2",
+      "prompt": "هل ٦/٨ و٩/١٢ متكافئتان؟",
+      "expected": "نعم"
+    },
+    {
+      "objective": "O3",
+      "prompt": "٣ دفاتر ثمنها ١٥ درهمًا، فما ثمن ٨ دفاتر بالسعر نفسه؟",
+      "expected": "40"
+    },
+    {
+      "objective": "O4",
+      "prompt": "٢ سم على الخريطة تمثل ٥ كم؛ كم كيلومترًا تمثل ٦ سم؟",
+      "expected": "15"
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "هل ٣/٤=٩/١٢؟ برر.",
+      "a": "نعم؛ ٣×١٢=٤×٩"
+    },
+    {
+      "q": "أوجد ن إذا ٢/٥ = ن/٢٠.",
+      "a": "8"
+    },
+    {
+      "q": "٣ قطع ثمنها ٢٤ درهمًا؛ كم ثمن ٥ قطع بالسعر نفسه؟",
+      "a": "40"
+    }
+  ],
+  "reviewRubrics": [
+    "تحديد ترتيب الكميتين والوحدات والتناسب قبل الحساب",
+    "إذا كانت هناك رسوم ثابتة أو علاقة غير تناسبية فلا نستعمل نسبة ثابتة",
+    "المسائل ذات الرسم والشرح المكتوب تتطلب مراجعة المعلم"
+  ],
+  "practiceFamilies": [
+    "ratio.unit_rate.equivalent_ratio",
+    "usccss.g7.u02.l04.proportional_equations",
+    "ratio.unit_rate.direct"
+  ],
+  "artifacts": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  },
+  "aBC": {
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "testsRun": "NOT_RUN",
+    "ciRun": "NOT_RUN",
+    "actualPromptsAudited": "NOT_RUN"
+  },
+  "stageDRequirements": [
+    "prove question families test proportions rather than generic unit rates only",
+    "verify Arabic prompts and input acceptance",
+    "verify cross-product and unit handling with independent grader",
+    "teacher review of contexts and open models"
+  ]
+}
