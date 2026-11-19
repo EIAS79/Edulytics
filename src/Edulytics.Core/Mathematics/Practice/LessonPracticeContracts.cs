@@ -11037,10 +11037,10 @@ public static class LessonPracticeContractRegistry
         // Do not mislabel partial family reuse as full READY_VERIFIED practice.
         byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS","algebra.equations.absolute_value",
-            "G9_U02L05_ABSOLUTE_VALUE_DISTANCE_PARTIAL_TEACHER_EQUATION_REVIEW",
-            ["usccss.g6.u07.l06.absolute_distance_values",
-             "functions.absolute_value.translate_evaluate"],
-            "UAE_G9_GENERAL_2025_AR_U02L05_P103_109_PARTIAL_REUSE",
+            "G9_U02L05_ABSOLUTE_VALUE_TWO_BRANCH_EXACT_ROOTS_AND_DISTANCE",
+            ["uae.g9.u02.l05.absolute_equation_roots",
+             "usccss.g6.u07.l06.absolute_distance_values"],
+            "UAE_G9_GENERAL_2025_AR_U02L05_P103_109_WITH_NEW_EXACT_BRANCH",
             "PREPARED_PARTIAL_REUSE_STAGE_D_PENDING",Version);
 
         return byLesson.Values
