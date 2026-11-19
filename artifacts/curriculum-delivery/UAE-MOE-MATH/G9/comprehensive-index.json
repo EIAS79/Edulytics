@@ -1697,5 +1697,11 @@
       "pdfPage": 192,
       "comparison": "Earlier 624 maps to PDF40 and 735 to PDF151, so offset is not constant across the volume."
     }
+  ],
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "sourceSnapshotComputation": [
+    "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
+    "Each line consists of filename, a single space, its lowercase 64-character SHA-256 hex digest, and a terminal newline.",
+    "This uniquely fingerprints the supplied five-book source set; semantic dedup gate remains separate."
   ]
 }
