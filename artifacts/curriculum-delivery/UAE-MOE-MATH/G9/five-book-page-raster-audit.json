@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "source": "direct-local-PDF-render-check",
+  "files": {
+    "01.pdf": {
+      "actualSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "expectedSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "hashMatches": true,
+      "pdfPages": 441,
+      "expectedPages": 441
+    },
+    "02-1.pdf": {
+      "actualSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+      "expectedSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+      "hashMatches": true,
+      "pdfPages": 262,
+      "expectedPages": 262
+    },
+    "03-1.pdf": {
+      "actualSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "expectedSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "hashMatches": true,
+      "pdfPages": 265,
+      "expectedPages": 265
+    },
+    "02.pdf": {
+      "actualSha256": "85befe868edef0dbdbfa3f58752db8b44e99faf573c775eb90755335048a76e9",
+      "expectedSha256": "85befe868edef0dbdbfa3f58752db8b44e99faf573c775eb90755335048a76e9",
+      "hashMatches": true,
+      "pdfPages": 200,
+      "expectedPages": 200
+    },
+    "03.pdf": {
+      "actualSha256": "511465ab6555ebd76f5f4213fb5f51a98e88ec9379b7db3709c593385f5a488f",
+      "expectedSha256": "511465ab6555ebd76f5f4213fb5f51a98e88ec9379b7db3709c593385f5a488f",
+      "hashMatches": true,
+      "pdfPages": 131,
+      "expectedPages": 131
+    }
+  },
+  "sourcePageChecks": [
+    {
+      "file": "01.pdf",
+      "lesson": "1-1",
+      "page": 16,
+      "printed": 5,
+      "withinPdf": true,
+      "renderHash": "bb6368146e18263a63486d96eba693239fc8083a2366851606c81b00a2537a4f",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-2",
+      "page": 21,
+      "printed": 10,
+      "withinPdf": true,
+      "renderHash": "74c66c8c717546500094899d1bc3cd413ef7da10c5d8080c21e773c4abae71b9",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-3",
+      "page": 27,
+      "printed": 16,
+      "withinPdf": true,
+      "renderHash": "dbc89c2dddf1380412b467acce84a29a50dfd811ab5ab9d9954d61c96357e448",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-4",
+      "page": 36,
+      "printed": 25,
+      "withinPdf": true,
+      "renderHash": "69b63ae4f1ed4545d05bac4e68c59da1c34d064bc00d4dd11736d2450bc99afb",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-5",
+      "page": 44,
+      "printed": 33,
+      "withinPdf": true,
+      "renderHash": "6021a39276760ca08884a43351d7299e5474c87256a46fbc11e62d91ff12bdf7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-6",
+      "page": 51,
+      "printed": 40,
+      "withinPdf": true,
+      "renderHash": "97eaa54bee11833b1ef38438e3f514f4228543ff05139cd48b2f163bbd4f98c0",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-7",
+      "page": 58,
+      "printed": 47,
+      "withinPdf": true,
+      "renderHash": "5cff63aea831a13f81f9563f5e62de48b647df8ec5ac695be52d15073d8cc93c",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "1-8",
+      "page": 67,
+      "printed": 56,
+      "withinPdf": true,
+      "renderHash": "4596cc03406bd1b05e67c93e7b039448550fb86fdca6d92993bcec4cac03f4f8",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-1",
+      "page": 86,
+      "printed": 75,
+      "withinPdf": true,
+      "renderHash": "1f29eec62160a5b545e208c0ed77537e55bfc966024744950f249a5ed35be983",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-2",
+      "page": 94,
+      "printed": 83,
+      "withinPdf": true,
+      "renderHash": "9c094a0c0bc839d192f86d0eb2957ec25089e6628c3f5f62c9ce4d2a8560d71e",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-3",
+      "page": 102,
+      "printed": 91,
+      "withinPdf": true,
+      "renderHash": "481252f6d905d90b8edce1c58115b21e7aa767aba5b67836206f9978be9dfee7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-4",
+      "page": 108,
+      "printed": 97,
+      "withinPdf": true,
+      "renderHash": "07d3cba357cd44773dcd8a52e3bf6cce9efeafebdb975812c072a1752f564420",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-5",
+      "page": 114,
+      "printed": 103,
+      "withinPdf": true,
+      "renderHash": "c368cc416b1893f2f70ddb0ed54d6b5a6e5115f98ce663804ff3018938868215",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-6",
+      "page": 122,
+      "printed": 111,
+      "withinPdf": true,
+      "renderHash": "d596115447a69332257c781844de10c6172a30f426c84d0fcc8765d7587af588",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-7",
+      "page": 130,
+      "printed": 119,
+      "withinPdf": true,
+      "renderHash": "7c41fb14c9b04c1be28e002ff6198340b8615114ccb3cb2fc21337649ba02982",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-8",
+      "page": 137,
+      "printed": 126,
+      "withinPdf": true,
+      "renderHash": "a2fe04af5ebad6943a4c0a18e12139cfd423277745dde236f9bf2c2e56af340f",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "2-9",
+      "page": 143,
+      "printed": 132,
+      "withinPdf": true,
+      "renderHash": "2b8f31999ad06ef20e7db0b2351e3796441bcd5814136604e991a41f16e2a162",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-1",
+      "page": 166,
+      "printed": 155,
+      "withinPdf": true,
+      "renderHash": "f5ed9f01120b46d7eb78e9c8c920e3f5a813e5f24e99c4c62e51aa4b78d8c5ec",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-2",
+      "page": 174,
+      "printed": 163,
+      "withinPdf": true,
+      "renderHash": "bd11dd6d02bbb92b4b9b4526c7f431d2cf3531756613334984d9e2335cb8333a",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-3",
+      "page": 183,
+      "printed": 172,
+      "withinPdf": true,
+      "renderHash": "4278cdabfa5620c95a3c2da356872ac99bd24baec51ec79aff34f3be89f5d5e3",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-4",
+      "page": 193,
+      "printed": 182,
+      "withinPdf": true,
+      "renderHash": "3ea8f8c83df0553707fd77d97ff2b7f01f7af4479b351c14471067d1bbb4d381",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-5",
+      "page": 200,
+      "printed": 189,
+      "withinPdf": true,
+      "renderHash": "5941fdadf3d57ee4174deaec6be9e49f2ededc3a53bddbcd608a3350610965d4",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "3-6",
+      "page": 208,
+      "printed": 197,
+      "withinPdf": true,
+      "renderHash": "15476447be235516598b59834323fca4275762b9259b3a7cb128dd616d700258",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "4-1",
+      "page": 227,
+      "printed": 216,
+      "withinPdf": true,
+      "renderHash": "cedebe58efaf05dda9487a41d4f877b58e57684262322f86312119416f88be12",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "4-2",
+      "page": 237,
+      "printed": 226,
+      "withinPdf": true,
+      "renderHash": "b0f03dc1a1c055d96d3c8c577607d0f8e6e992be87367e4e49c65f29d40a203b",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "4-3",
+      "page": 244,
+      "printed": 233,
+      "withinPdf": true,
+      "renderHash": "7fa12edde8b8f8efe21a3e508a467a3aae0afbec27623e5756195b8968480f72",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "4-4",
+      "page": 250,
+      "printed": 239,
+      "withinPdf": true,
+      "renderHash": "257bad631bfa600a77ce707924d9a5369660b20360cef3d525bfec5f61ccdee5",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-1",
+      "page": 270,
+      "printed": 259,
+      "withinPdf": true,
+      "renderHash": "013611c20c8b469838483ed54161d28cdac14f09cc82b6b0bfc9abcd61d1f97d",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-2",
+      "page": 277,
+      "printed": 266,
+      "withinPdf": true,
+      "renderHash": "ce922e329a5c54a9b86c656c564463917141dcc61de5464ddaff9c8c103ee140",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-3",
+      "page": 283,
+      "printed": 272,
+      "withinPdf": true,
+      "renderHash": "0ee171bc78c3d97ff9fe4f302c96d73ef44fef0fb5201de03c08a0cecab3b564",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-4",
+      "page": 291,
+      "printed": 280,
+      "withinPdf": true,
+      "renderHash": "d3d01712f8e52513ccc5e27e246c2c734578732dab8455e07212f72edc9c08aa",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-5",
+      "page": 297,
+      "printed": 286,
+      "withinPdf": true,
+      "renderHash": "07211c384266bc6488369a2f10398991f5b2a4e48e20b348e807db1e745c2312",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "5-6",
+      "page": 302,
+      "printed": 291,
+      "withinPdf": true,
+      "renderHash": "74d7a94e5849040daaf46f0368854066d3400f5a63338193d9b57a79590406e8",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-1",
+      "page": 320,
+      "printed": 309,
+      "withinPdf": true,
+      "renderHash": "16beb970c020e78b65c1e8a7a809ad162d315c8de39db5dfd09b034481a211ea",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-2",
+      "page": 329,
+      "printed": 318,
+      "withinPdf": true,
+      "renderHash": "328a0700c5d609a5932c2f4d4fcbe6b7d644979d3b0a3379f9d18db8f9292007",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-3",
+      "page": 335,
+      "printed": 324,
+      "withinPdf": true,
+      "renderHash": "98d4eed494a1a4ffb3ea2fc347d63192058fbe253347af5960c78967f9018dec",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-4",
+      "page": 342,
+      "printed": 331,
+      "withinPdf": true,
+      "renderHash": "6a00dbc7c44ede912bf2046edc4a56411eeb45303d1b0f2e1026fabb6fe4b4b9",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-5",
+      "page": 349,
+      "printed": 338,
+      "withinPdf": true,
+      "renderHash": "4cf1b324997462c09d0966efdafa74133cbc76ee2a6b523eef0997426c73d746",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "6-6",
+      "page": 357,
+      "printed": 346,
+      "withinPdf": true,
+      "renderHash": "fc8645a746473e40e5ce433bd93698993c964e22aa4b179b1e577f612f09ad48",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "7-1",
+      "page": 376,
+      "printed": 365,
+      "withinPdf": true,
+      "renderHash": "01545dd5979103c91c7b8934ec3b0be905aadf9a982904f5259cb139e82453c8",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "7-2",
+      "page": 385,
+      "printed": 374,
+      "withinPdf": true,
+      "renderHash": "55f2113e5640eea2deda2ba638da5f352f913c9dfa4a893cc7820a343cf034f7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "7-3",
+      "page": 396,
+      "printed": 385,
+      "withinPdf": true,
+      "renderHash": "2c8e5c2ab38788956a06841c0e6e4e99304fcf6416c8edfce7d6db1427fd7998",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "01.pdf",
+      "lesson": "7-4",
+      "page": 409,
+      "printed": 398,
+      "withinPdf": true,
+      "renderHash": "73a616577bccfb85420d69af4460cba3ddfb75ffee0c4668c8eb1052f67a77b6",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-1",
+      "page": 13,
+      "printed": 365,
+      "withinPdf": true,
+      "renderHash": "d855e7d1a83302aa2dc4cd327a9b8d62ad7628cfcfbf7976f6449a57a0cbd40e",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-2",
+      "page": 22,
+      "printed": 374,
+      "withinPdf": true,
+      "renderHash": "1f71ceb7cd09ca5b00dffbb7eab62736ccfdae0ae5160c0b95827e4c22a60cda",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-3",
+      "page": 30,
+      "printed": 382,
+      "withinPdf": true,
+      "renderHash": "664b12f249461bb13c74314dfcbd590638a3c81c9e029d23cbb8d9361d9fe82b",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-4",
+      "page": 36,
+      "printed": 388,
+      "withinPdf": true,
+      "renderHash": "708706e8a005b6918d927a4b95826e405644b3b6d654d757ff7072884f8a9fe7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-5",
+      "page": 44,
+      "printed": 396,
+      "withinPdf": true,
+      "renderHash": "9ff938835197ca82ca68f20fad89e76973fa044c85ba0452b81c4d2853ce11b5",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-6",
+      "page": 53,
+      "printed": 405,
+      "withinPdf": true,
+      "renderHash": "2862a52b92ede57b06102fe2faf865d7792492b682a98603856b70e2a227ddc1",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-7",
+      "page": 60,
+      "printed": 412,
+      "withinPdf": true,
+      "renderHash": "2cb566e65f83d0113dc4687b61785f5ee36f5f4a960571067c01ab40c029e8a7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-8",
+      "page": 66,
+      "printed": 418,
+      "withinPdf": true,
+      "renderHash": "d50dab74b8b595b1cb544f8ea8c883323d00130de43d93c2f496aea13f22e8c8",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "7-9",
+      "page": 72,
+      "printed": 424,
+      "withinPdf": true,
+      "renderHash": "25dc1fc4909d12bf28b9c29bd5792fa03dc11f2e5f2d071bf5cc893bc8f7da22",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-1",
+      "page": 93,
+      "printed": 445,
+      "withinPdf": true,
+      "renderHash": "0acd0d773ad7f9a6a9b05183222c412069c5f3f09e6913c6027988ed68374d38",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-2",
+      "page": 100,
+      "printed": 452,
+      "withinPdf": true,
+      "renderHash": "ba84f667afedcfcf55c7beb50c099eef02ff1635496486e3f8da6aa165e05f0d",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-3",
+      "page": 108,
+      "printed": 460,
+      "withinPdf": true,
+      "renderHash": "821d3100247367ed9864c89b15a2e4f2e28ffcf3c16d25dc5d47bf5e988a0b0b",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-4",
+      "page": 116,
+      "printed": 468,
+      "withinPdf": true,
+      "renderHash": "90ff1bcc32856f6f379863e90d112786ed3bd13b607411d4552c5eb8188c037d",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-5",
+      "page": 125,
+      "printed": 477,
+      "withinPdf": true,
+      "renderHash": "ccf2301d8bb27123c7d401b3989bdc000dab9a909be2c9dc9675f7a5074c98d7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "8-6",
+      "page": 132,
+      "printed": 484,
+      "withinPdf": true,
+      "renderHash": "de75a62e18d2833f41825cb2b6141af0d4cbd0cf1f55bc22b299e53de43c9b17",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "9-1",
+      "page": 150,
+      "printed": 502,
+      "withinPdf": true,
+      "renderHash": "187a59a60215b09452fc40b8d7cbf7c8a68787164d31ace33bc15112bf824ac8",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "9-2",
+      "page": 163,
+      "printed": 515,
+      "withinPdf": true,
+      "renderHash": "1d1dff7cf3acc9f81d3b3eb632bcf48d60fbb2c308be8e7387370f3a39463a5c",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "9-3",
+      "page": 174,
+      "printed": 526,
+      "withinPdf": true,
+      "renderHash": "6e2450707011900ed397ed535a09f569ae5a7acc188b00722313f5b66c801659",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "9-4",
+      "page": 185,
+      "printed": 537,
+      "withinPdf": true,
+      "renderHash": "6faabe9655a0647e61ebecc2290556ca87f8ec73562e4af9043d2c00a5af1e12",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "9-5",
+      "page": 195,
+      "printed": 547,
+      "withinPdf": true,
+      "renderHash": "b6a8a84f7718578758dd018764179fc1c7f9570e8856befee109f395b428bbdc",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "10-1",
+      "page": 209,
+      "printed": 561,
+      "withinPdf": true,
+      "renderHash": "302b1fd1b988fb490960fdcdcf7a68bb4373b1fea2119a4608177f65bbca1157",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "10-2",
+      "page": 217,
+      "printed": 569,
+      "withinPdf": true,
+      "renderHash": "2ca6ed6a4cd1bb6952a89286c5b6a408cb411ab2f0ba14301da83eb482c5c0f0",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "10-3",
+      "page": 225,
+      "printed": 577,
+      "withinPdf": true,
+      "renderHash": "3525e2e4d0a2d87846d3f6c10a12aeb4969aab725af13365a659a5f6119086fd",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "02-1.pdf",
+      "lesson": "10-4",
+      "page": 235,
+      "printed": 587,
+      "withinPdf": true,
+      "renderHash": "08c664e56074bca812d6d35c5837f5ca274c37aa6f3035386cd5d337a299b0d7",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "11-1",
+      "page": 23,
+      "printed": 607,
+      "withinPdf": true,
+      "renderHash": "02bdaa4a7ff453bf2d58b3cdcd64ef2793d62c4115d83c52761bf26f26b53d53",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "11-2",
+      "page": 32,
+      "printed": 616,
+      "withinPdf": true,
+      "renderHash": "62ef29f72bd61d9fdcdef21c361c60c11371228238bd2be6bc73d066735dbf35",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "11-3",
+      "page": 40,
+      "printed": 624,
+      "withinPdf": true,
+      "renderHash": "1ae1a034d2ea80edb0d1f081bddc9247640400580e7512be55f5e8d4486874d2",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "11-4",
+      "page": 47,
+      "printed": 631,
+      "withinPdf": true,
+      "renderHash": "db1654e7291a60fa246cea236b5b22ea5c4b1cb48fd49d1243ebc642aee40643",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-1",
+      "page": 69,
+      "printed": 653,
+      "withinPdf": true,
+      "renderHash": "18d56655f5d9228a6fd886424a3c1037ac044b5cbb3338e17ca7780f4a1aedaa",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-2",
+      "page": 76,
+      "printed": 660,
+      "withinPdf": true,
+      "renderHash": "3bc2eb652e1f5e31448a659ce509ae4d8e274af3239ef5af813ba1ac05fb0cf6",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-3",
+      "page": 84,
+      "printed": 668,
+      "withinPdf": true,
+      "renderHash": "2c54cafbc14bbc1f060d2dcb604ca95d77e2b37c4653583c5afd33ca68a209fd",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-4",
+      "page": 94,
+      "printed": 678,
+      "withinPdf": true,
+      "renderHash": "b7210cb855ec885310fba113c7269aa083512668688f6d65b45f51fe3e929fa4",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-5",
+      "page": 103,
+      "printed": 687,
+      "withinPdf": true,
+      "renderHash": "796ed98b1f788126513917a2fd90cfd7f451c2bd949b56a213df96b4fd133b56",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "12-6",
+      "page": 111,
+      "printed": 695,
+      "withinPdf": true,
+      "renderHash": "d473b8fe706f03fc5e85fcd14eec40307defa6f1377ca8b80a3487b15c2950f2",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-1",
+      "page": 133,
+      "printed": 717,
+      "withinPdf": true,
+      "renderHash": "6b062728e0fbc667ca90945be02c85b24149afd262fe118e848b11fbcf3097fe",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-2",
+      "page": 141,
+      "printed": 725,
+      "withinPdf": true,
+      "renderHash": "1240c5d330816757f149efd2fe02c621452fabb88f1ce81330fb4f0e319df19c",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-3",
+      "page": 151,
+      "printed": 735,
+      "withinPdf": true,
+      "renderHash": "186d8cdcc97e910b44cb5cf2097be6227c762208c0a1c989cd7d0326e49c2426",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-4",
+      "page": 160,
+      "printed": 744,
+      "withinPdf": true,
+      "renderHash": "91575fc581fe818bb88d4f2a6e87b26e3283852ccbb2e6eb39d571b4cd4baad3",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-5",
+      "page": 170,
+      "printed": 755,
+      "withinPdf": true,
+      "renderHash": "45c64b77c0409101c8e1eaac219e8010bf8d1960bbc59da6400abf26cdaf4c4f",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-6",
+      "page": 180,
+      "printed": 765,
+      "withinPdf": true,
+      "renderHash": "0ef919a62b1f15130aa2fa6e8cb81974f2bc6d290b7bd445f5f162b5e71a3818",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-7",
+      "page": 191,
+      "printed": 776,
+      "withinPdf": true,
+      "renderHash": "5485d5e7bac8e48d2544bbfe622eecb3c77340ed522f5bbf0254afc0cb7e7158",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-8",
+      "page": 198,
+      "printed": 783,
+      "withinPdf": true,
+      "renderHash": "ce929048cd41358d783f257608505eeb4bc2973fcd7c80318bf72da65ca1520e",
+      "nonBlankVisual": true
+    },
+    {
+      "file": "03-1.pdf",
+      "lesson": "13-9",
+      "page": 208,
+      "printed": 793,
+      "withinPdf": true,
+      "renderHash": "ae48bb4c9e3ef685786416ee0daf7c501374d769c3bd0247321318354e6ad86e",
+      "nonBlankVisual": true
+    }
+  ],
+  "allFiveHashMatches": true,
+  "all86PagesExist": true,
+  "all86PagesNonBlank": true,
+  "semanticOrTitleVerified": false,
+  "testsRun": "NOT_RUN"
+}
