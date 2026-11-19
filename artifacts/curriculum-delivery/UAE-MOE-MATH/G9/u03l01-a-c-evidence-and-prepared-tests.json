@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026 General term1",
+    "unit": 3,
+    "lesson": 1,
+    "printedPages": [
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162
+    ],
+    "pdfPages": [
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "pages": [
+        155,
+        156
+      ],
+      "target": "التمييز بين المعادلة الخطية والتمثيل البياني وتحديد نقاط مناسبة"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        157,
+        158
+      ],
+      "target": "إنشاء جدول قيم وتحويله إلى أزواج مرتبة"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        158,
+        159
+      ],
+      "target": "استخدام تقاطعات المحورين لرسم المستقيم"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        159,
+        160,
+        161,
+        162
+      ],
+      "target": "قراءة رسم بياني في سياق، وتحديد المجال ووحدات القياس والتحقق"
+    }
+  ],
+  "sourcePracticeSections": [
+    {
+      "pages": [
+        159,
+        160
+      ],
+      "kind": "guided and independent graphing"
+    },
+    {
+      "page": 161,
+      "kind": "graph contexts and tables"
+    },
+    {
+      "page": 162,
+      "kind": "standardized and prior-skill review"
+    }
+  ],
+  "preparedFixtures": [
+    {
+      "o": "O2",
+      "q": "جدول س: ٠،١،٢ والمعادلة ص=٣س−٢. أوجد الأزواج.",
+      "a": "(0,-2),(1,1),(2,4)",
+      "teacherReview": true
+    },
+    {
+      "o": "O3",
+      "q": "للمعادلة ٢س+٣ص=١٢، ما تقاطعا المحورين؟",
+      "a": "(6,0),(0,4)",
+      "teacherReview": true
+    },
+    {
+      "o": "O1",
+      "q": "هل النقطة (٢،٥) تحقق ص=٢س+١؟",
+      "a": "نعم"
+    },
+    {
+      "o": "O4",
+      "q": "يمثل الرسم مخزونًا ينخفض بمعدل وحدة في كل فترة من قيمة أولية ٥؛ اكتب المعادلة.",
+      "a": "y=5-x",
+      "teacherReview": true
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "أوجد نقطتين على المستقيم ص=٢س+١.",
+      "a": "(0,1),(1,3)"
+    },
+    {
+      "q": "للمعادلة س+ص=٥، ما تقاطع محور ص؟",
+      "a": "(0,5)"
+    },
+    {
+      "q": "فسر لماذا قد نرسم جزءًا من المستقيم فقط في مسألة زمن وسعر.",
+      "a": "لأن المجال الواقعي مقيد",
+      "teacherReview": true
+    }
+  ],
+  "familyCandidates": [
+    "uae.g6.u08.l01.ordered_pair",
+    "uae.g6.u08.l03.equation_from_line",
+    "uae.g6.u08.l03.y_intercept"
+  ],
+  "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+  "semanticRubric": "Actual plot, axis scale and real-world interval interpretation require a teacher-reviewed visual.",
+  "abcStatus": "READY_FOR_STAGE_D_PREPARATION",
+  "testsRun": "NOT_RUN",
+  "ciRun": "NOT_RUN",
+  "stageD": "Verify actual learner question-graph alignment and Arabic/RTL before academic acceptance."
+}
