@@ -78,13 +78,18 @@ test('Source-aligned Cool-down keeps drawings and reasoning under teacher review
   assert.equal(checkpoint.stageC.testsRun, 'WRITTEN_NOT_RUN');
 });
 
-test('Cool-down captures all three open answers for teacher review without invented automatic grade', () => {
+test('Cool-down captures numeric points and five open answers without claiming a grade', () => {
   const html = fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html'),'utf8');
-  for(const id of ['cooldownResponse','cooldownQ1','cooldownQ2','cooldownQ3','cooldownSubmission','cooldownMessage','cooldownKey']) {
+  for(const id of ['cooldownResponse','cooldownQ1','cooldownQ2','cooldownQ3','contextQ4','contextQ5','cooldownPointPicker','selectedPoints','cooldownSubmission','cooldownMessage','cooldownKey']) {
     assert.ok(html.includes('id="'+id+'"'), id);
   }
   assert.match(html, /TEACHER_REVIEW_REQUIRED/);
   assert.match(html, /graded:false/);
+  assert.match(html, /numberLineSelectedPoints/);
+  assert.match(html, /selectedCoolDownPoints.size!==2/);
+  assert.match(html, /contextQ4/);
+  assert.match(html, /contextQ5/);
+  assert.match(html, /مراجعة المعلم/);
   assert.match(html, /لم تُرسل البيانات إلى Edulytics/);
   assert.match(html, /event\.preventDefault\(\)/);
   assert.match(html, /id="cooldownKey" hidden/);
