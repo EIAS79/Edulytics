@@ -125,7 +125,35 @@
     "studentNumberLineSvgCommit": "7fa855a19b5cd2026505638356635d7da628316a",
     "teacherReviewedSourceContextBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
     "teacherReviewedContextBankInActivity": true,
-    "teacherBankAddedCommit": "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac"
+    "teacherBankAddedCommit": "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac",
+    "teacherTaskCoverageExtension": {
+      "status": "AUTHORING_PREPARED_NOT_RUNTIME_VERIFIED",
+      "sourceItemsGrouped": [
+        32,
+        43,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "sourcePages": [
+        106,
+        108
+      ],
+      "htmlArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "bankArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "covers": [
+        "three separate relay timing deviations",
+        "four-minute to seconds tolerance conversion",
+        "conditional c-parameter truth classification"
+      ],
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
   },
   "stageC": {
     "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
@@ -160,16 +188,17 @@
     "compositeFamilyVariantsCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
     "sourceRoutingRegressionTestsWritten": "f1fbcc5c675487fa4e3310828ae9e276794a01a3",
     "lastCompositeFamilyExtensionCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
-    "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90"
+    "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90",
+    "lastPreparedSourceMathAndTeacherTaskRegressionCommit": "5e3ea3b2bd29c19fa6f93a70e8cabf06d44c9b34"
   },
   "blockingGaps": [
     "All 64 source exercise mathematical outcomes checked from locally scanned student-book pages; independent equivalence of actual generated digital questions and all teacher-reviewed alternatives remains unverified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
-    "Stage D execution not run by design.",
     "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow.",
     "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration.",
-    "Teacher-reviewed graph and proof source items are classified and have rubric drafts; authenticated learner submission and teacher assessment are not integrated or verified."
+    "Teacher-reviewed graph and proof source items are classified and have rubric drafts; authenticated learner submission and teacher assessment are not integrated or verified.",
+    "Stage D tests intentionally not run during A-C; this is not by itself a reason to postpone A-C closure."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
