@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "g9-general-ar-2025-26-source-u01l01-abcs-v1",
+  "ContentVersion": "g9-general-ar-2025-26-term1-unit1-abc-working-v2",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -14,7 +14,7 @@
   "SourcePolicyVersion": 2,
   "Status": "Draft",
   "ReviewedBy": "Academic review pending: Stage D",
-  "ReviewEvidence": "Source inspected directly from uploaded local 2025 General student PDF pp. 5-9 (PDF pp. 16-20); original Arabic learner content expanded for terminology, verbal↔symbolic translation, contextual and geometric models, reasoning on powers and parentheses. A–B–C remains NOT CLOSED: runtime family/renderer/grader evidence pending. Stage D not run.",
+  "ReviewEvidence": "A–B–C authored for U01L01 and U01L02 from 2025–2026 local General student book. All Stage D tests/semantic audit NOT RUN. No production deployment.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
@@ -41,6 +41,32 @@
           "StepByStepSolutions": "الخطوة ١: حدد الكمية المتغيرة، وعرّف رمزها. الخطوة ٢: اقرأ ألفاظ العمليات: مجموع/زيادة، فرق/أقل من، أمثال، حاصل قسمة. الخطوة ٣: ضع الأقواس عندما تنطبق العملية على مجموع أو فرق كامل. الخطوة ٤: اكتب التعبير، وأبق الأس مرفوعًا للأساس الصحيح. الخطوة ٥: تحقّق بتعويض قيمة تجريبية؛ مثلًا عند س = ٢: ٢س + ٥ = ٩، بينما ٢(س + ٥) = ١٤. الخطوة ٦: راجع الوحدات والتعريفات في المسائل السياقية، ولا تضرب الرسوم الثابتة بعدد العناصر.",
           "CommonMistakes": "خلط الأس ٢ بالمعامل في ٣س²؛ اعتبار ٣س² مساوية لـ (٣س)²؛ عكس ترتيب الطرح في عبارة «سبعة أقل من ضعف العدد»؛ إسقاط الأقواس في نصف مجموع عدد وثمانية؛ ضرب رسم التوصيل الثابت في عدد القطع؛ إغفال مربع نصف القطر في حجم الأسطوانة؛ الخلط بين مساحة المستطيل ومحيطه؛ اعتبار التعبير بلا علامة مساواة معادلة.",
           "QuickSummary": "المتغير رمز لكمية متغيرة، والتعبير الجبري يجمع الأعداد والمتغيرات والعمليات. حدّد المعامل والأساس والأس، وحوّل الكلمات إلى رموز مع مراعاة ترتيب العمليات والأقواس. نمذج تكاليف أو مساحات أو حجومًا بتعابير مناسبة، وافحص المعنى بتعويض قيم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS",
+      "TitleProvenance": "OfficialStudentBookIndex",
+      "TitleSourceReference": "General student 2025–2026 Unit 1 Lesson 1-2 printed pages 10–15 (PDF pages 21–26)",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G9:GENERAL:T1:U01:L02",
+      "IsSupporting": false,
+      "SourceLocator": "01.pdf (general) PDF 21–26 / printed 10–15",
+      "SourceTitle": "رياضيات الصف التاسع العام — كتاب الطالب",
+      "SourcePublisher": "McGraw-Hill Education",
+      "SourceEdition": "UAE 2025–2026 General first term",
+      "SourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "AdaptationStatus": "A-C prepared; Stage D not run",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "ترتيب العمليات",
+          "Explanation": "يمكن أن يحتوي التعبير العددي على جمع وطرح وضرب وقسمة وقوى وأقواس. لا تُنفذ العمليات بحسب ظهورها فقط؛ بل تُحسب أولًا العمليات داخل رموز التجميع، ثم القوى، ثم الضرب والقسمة من اليسار إلى اليمين، ثم الجمع والطرح من اليسار إلى اليمين. عند تعويض المتغيرات في تعبير جبري، نحافظ على الأقواس ونطبق الترتيب نفسه. ويمكن أن يستخدم الرياضيون ترتيب العمليات لنمذجة السعر والخصم والحجم وتكاليف الرحلات.",
+          "KeyConceptsAndRules": "١. احسب ما داخل الأقواس والرموز المجمعة، واعمل من الداخل إلى الخارج عند تداخلها. ٢. قيّم الأسس قبل الضرب والجمع: ٣² = ٣ × ٣ = ٩. ٣. للضرب والقسمة أولوية متساوية؛ احسب من اليسار إلى اليمين. ٤. للجمع والطرح أولوية متساوية؛ احسب من اليسار إلى اليمين. ٥. لا تعكس الترتيب في «١٨ ÷ ٣ × ٢»؛ النتيجة ١٢ وليست ٣. ٦. عند التعويض في ٢س² أو (٢س)² يجب الحفاظ على حدود الأساس. ٧. حجم المكعب الذي طول ضلعه هـ هو هـ³. وفِي السياقات المالية ينبغي تمييز رسوم الحجز الثابتة من سعر القطعة.",
+          "WorkedExamples": "مثال ١: ١٦ − ٨ ÷ ٢ + ١٤ = ١٦ − ٤ + ١٤ = ٢٦. مثال ٢: ٣ × (٢ + ٤)² = ٣ × ٦² = ٣ × ٣٦ = ١٠٨. مثال ٣: ٢٤ ÷ ٣ × ٢ = ٨ × ٢ = ١٦ (الضرب والقسمة من اليسار إلى اليمين). مثال ٤: إذا كان س = ٤ فإن ٣س² − (٢س + ١) = ٣ × ١٦ − ٩ = ٣٩. مثال ٥: يبلغ ثمن ٣ دفاتر سعر الواحد ٧ دراهم مع رسوم ثابتة ٥ دراهم، فالمجموع ٣ × ٧ + ٥ = ٢٦ درهمًا. مثال ٦: مكعب طول ضلعه ٥ سم، حجمه ٥³ = ١٢٥ سم³.",
+          "StepByStepSolutions": "اقرأ التعبير وحدد كل مجموعات الأقواس، ثم نفذ ما بداخلها. اكتب خطوة مستقلة للأسس قبل ضرب الحدود. احسب الضرب والقسمة بترتيبهما من اليسار إلى اليمين، ثم الجمع والطرح بالطريقة نفسها. عوّض قيم المتغيرات قبل الحساب مع المحافظة على التجميع والقوى. تحقق بتقدير معقول وتفسير وحدة القياس.",
+          "CommonMistakes": "حساب الجمع قبل الضرب؛ اعتبار الضرب أعلى أولوية من القسمة بدل التساوي؛ حساب ٣ + ٢² على أنه (٣ + ٢)²؛ نسيان الأقواس عند التعويض بمتغير سالب؛ اعتبار ٢س² = (٢س)²؛ خلط مساحة السطح بالحجم؛ تجاهل رسوم الدفع الثابتة.",
+          "QuickSummary": "ابدأ بالتجميع، ثم القوى، ثم الضرب والقسمة من اليسار إلى اليمين، ثم الجمع والطرح من اليسار إلى اليمين. حافظ على الأقواس عند التعويض، وافحص المعنى والسياق والقياس."
         }
       ]
     }
