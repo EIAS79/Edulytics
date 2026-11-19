@@ -58,6 +58,7 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <textarea id="cooldownQ1" required rows="3" placeholder="اكتب الحلّين واشرح مكانهما على خط الأعداد"></textarea>
 <fieldset><legend>تمثيل الحلين على خط الأعداد: اختر نقطتين من −٥ إلى ١٠</legend>
 <p id="pointPickerHelp">اختر نقطتين بالضغط أو باستخدام لوحة المفاتيح. يمكنك إلغاء اختيار نقطة بالضغط عليها ثانية. تقييم الرسم يتم بواسطة المعلم.</p>
+<svg id="cooldownStudentNumberLine" viewBox="0 0 760 145" role="img" aria-labelledby="studentLineTitle studentLineDescription" style="min-width:560px"><title id="studentLineTitle">خط الأعداد الخاص بإجابة الطالب</title><desc id="studentLineDescription">خط أعداد منتظم من سالب خمسة إلى عشرة، اضغط على أزرار الأعداد لتحديد نقطتين.</desc></svg>
 <div class="point-picker" id="cooldownPointPicker" role="group" aria-describedby="pointPickerHelp"></div>
 <p id="selectedPoints" role="status" aria-live="polite">لم يتم اختيار نقطتين بعد.</p></fieldset>
 <label for="cooldownQ2">٢. مجموعة الحل والسبب:</label>
@@ -111,10 +112,32 @@ document.getElementById('case').addEventListener('change',draw);draw();
 const selectedCoolDownPoints=new Set();
 const picker=document.getElementById('cooldownPointPicker');
 const selectedStatus=document.getElementById('selectedPoints');
+const studentLine=document.getElementById('cooldownStudentNumberLine');
+function renderStudentLine(){
+ const axisNs='http://www.w3.org/2000/svg';
+ studentLine.replaceChildren();
+ function add(tag,attrs,text){
+  const el=document.createElementNS(axisNs,tag);
+  for(const [key,val] of Object.entries(attrs))el.setAttribute(key,String(val));
+  if(text!==undefined)el.textContent=String(text);
+  studentLine.appendChild(el);
+ }
+ add('title',{id:'studentLineTitle'},'اختيارات الطالب على خط الأعداد');
+ add('desc',{id:'studentLineDescription'},'المواضع المختارة: '+([...selectedCoolDownPoints].sort((a,b)=>a-b).join('، ')||'لا توجد'));
+ add('line',{x1:35,y1:72,x2:725,y2:72,class:'axis'});
+ for(let val=-5;val<=10;val++){
+  const x=45+(val+5)*44;
+  add('line',{x1:x,y1:64,x2:x,y2:80,class:'tick'});
+  add('text',{x,y:103,'text-anchor':'middle',class:'label'},val);
+  if(selectedCoolDownPoints.has(val))add('circle',{cx:x,cy:72,r:8,class:'marker'});
+ }
+}
+
 function updatePointPicker(){
  for(const button of picker.querySelectorAll('button'))button.setAttribute('aria-pressed',String(selectedCoolDownPoints.has(Number(button.dataset.point))));
  const points=[...selectedCoolDownPoints].sort((a,b)=>a-b);
  selectedStatus.textContent=points.length===2?'النقطتان المختارتان: '+points.join(' ، '):'النقاط المختارة: '+(points.length?points.join(' ، '):'لا توجد')+' — مطلوب نقطتان.';
+ renderStudentLine();
 }
 for(let point=-5;point<=10;point++){
  const button=document.createElement('button');button.type='button';button.dataset.point=String(point);button.textContent=String(point);button.setAttribute('aria-label','تحديد النقطة '+point);button.setAttribute('aria-pressed','false');
