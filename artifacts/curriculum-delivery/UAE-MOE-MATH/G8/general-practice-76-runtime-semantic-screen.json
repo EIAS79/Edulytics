@@ -12,10 +12,10 @@
     "generatedQuestions": 14592,
     "totalConfiguredFamilyAssignments": 176,
     "allAssignmentsSampled": true,
-    "lessonsWithObservedNonArabicPrompts": 55,
+    "lessonsWithObservedNonArabicPrompts": 36,
     "lessonsWithConfirmedUnrelatedOrOffObjectiveExamples": 14,
-    "releaseBlockedLessons": 56,
-    "partialReviewPendingLessons": 20,
+    "releaseBlockedLessons": 42,
+    "partialReviewPendingLessons": 34,
     "fullySourceCertifiedLessons": 0,
     "correctAnswersAcceptedByExactVerifier": 14592,
     "invalidTextRejectedByExactVerifier": 14592,
@@ -144,47 +144,30 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.algebra.expand",
-          "prompt": "Expand 4(x -7).",
+          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 4(x -7).",
           "correctAnswer": "4x-28",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.multiply",
-          "prompt": "Calculate 141 × 10^1.",
+          "prompt": "احسب قيمة التعبير 141 × 10^1.",
           "correctAnswer": "1410",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.divide",
-          "prompt": "Calculate 2300 ÷ 10^2.",
+          "prompt": "احسب قيمة التعبير 2300 ÷ 10^2.",
           "correctAnswer": "23",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.simplify",
-          "prompt": "Simplify 5x -6x +6.",
+          "prompt": "بسّط التعبير الجبري 5x -6x +6 بجمع الحدود المتشابهة.",
           "correctAnswer": "-1x+6",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.algebra.expand",
-          "samplePrompt": "Expand 4(x -7)."
-        },
-        {
-          "family": "supporting.powers10.multiply",
-          "samplePrompt": "Calculate 141 × 10^1."
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "samplePrompt": "Calculate 2300 ÷ 10^2."
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "samplePrompt": "Simplify 5x -6x +6."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": true,
       "semanticDefectFinding": "تدريبات تبسيط/توسيع تعبير خطي وحساب قوى 10 لا تطلب ضرب أو قسمة أحاديات الحد.",
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
@@ -206,9 +189,9 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.algebra.simplify",
-          "prompt": "Simplify 2x -6x +7.",
+          "prompt": "بسّط التعبير الجبري 2x -6x +7 بجمع الحدود المتشابهة.",
           "correctAnswer": "-4x+7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g6.u06.l02.integer_power",
@@ -224,21 +207,12 @@
         },
         {
           "family": "supporting.algebra.expand",
-          "prompt": "Expand 5(x -7).",
+          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 5(x -7).",
           "correctAnswer": "5x-35",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.algebra.simplify",
-          "samplePrompt": "Simplify 2x -6x +7."
-        },
-        {
-          "family": "supporting.algebra.expand",
-          "samplePrompt": "Expand 5(x -7)."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": true,
       "semanticDefectFinding": "توسيع تعبير خطي وتقييم قوة عددية لا يختبران قواعد رفع أحاديات الحد إلى قوى.",
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
@@ -260,37 +234,24 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.powers10.evaluate",
-          "prompt": "Evaluate 10^4.",
+          "prompt": "احسب القيمة الدقيقة للتعبير 10^4.",
           "correctAnswer": "10000",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.divide",
-          "prompt": "Calculate 1410 ÷ 10^1.",
+          "prompt": "احسب قيمة التعبير 1410 ÷ 10^1.",
           "correctAnswer": "141",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.missing_exponent",
-          "prompt": "26 × 10^n = 260. Find n.",
+          "prompt": "أوجد قيمة الأس n التي تحقق المعادلة 26 × 10^n = 260.",
           "correctAnswer": "1",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.powers10.evaluate",
-          "samplePrompt": "Evaluate 10^4."
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "samplePrompt": "Calculate 1410 ÷ 10^1."
-        },
-        {
-          "family": "supporting.powers10.missing_exponent",
-          "samplePrompt": "26 × 10^n = 260. Find n."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": true,
       "semanticDefectFinding": "الأمثلة المولدة تتناول 10 بأسس موجبة أو الأس المجهول دون تطبيق الأس السالب المطلوب.",
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
@@ -312,42 +273,29 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.standard_form.power10_exponent",
-          "prompt": "50000 = 5 × 10^n. Find n.",
+          "prompt": "أوجد قيمة الأس n التي تحقق المعادلة 50000 = 5 × 10^n.",
           "correctAnswer": "4",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.evaluate",
-          "prompt": "Evaluate 10^1.",
+          "prompt": "احسب القيمة الدقيقة للتعبير 10^1.",
           "correctAnswer": "10",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.missing_exponent",
-          "prompt": "26 × 10^n = 260. Find n.",
+          "prompt": "أوجد قيمة الأس n التي تحقق المعادلة 26 × 10^n = 260.",
           "correctAnswer": "1",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.standard_form.power10_exponent",
-          "samplePrompt": "50000 = 5 × 10^n. Find n."
-        },
-        {
-          "family": "supporting.powers10.evaluate",
-          "samplePrompt": "Evaluate 10^1."
-        },
-        {
-          "family": "supporting.powers10.missing_exponent",
-          "samplePrompt": "26 × 10^n = 260. Find n."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "حساب أس 10 لا يكفي لقياس كتابة العدد بالصيغة العلمية المعيارية.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -364,15 +312,15 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.powers10.multiply",
-          "prompt": "Calculate 77 × 10^3.",
+          "prompt": "احسب قيمة التعبير 77 × 10^3.",
           "correctAnswer": "77000",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.powers10.divide",
-          "prompt": "Calculate 1410 ÷ 10^1.",
+          "prompt": "احسب قيمة التعبير 1410 ÷ 10^1.",
           "correctAnswer": "141",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.expressions.mixed",
@@ -382,27 +330,15 @@
         },
         {
           "family": "supporting.standard_form.power10_exponent",
-          "prompt": "100000 = 1 × 10^n. Find n.",
+          "prompt": "أوجد قيمة الأس n التي تحقق المعادلة 100000 = 1 × 10^n.",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
-          "family": "supporting.powers10.multiply",
-          "samplePrompt": "Calculate 77 × 10^3."
-        },
-        {
-          "family": "supporting.powers10.divide",
-          "samplePrompt": "Calculate 1410 ÷ 10^1."
-        },
-        {
           "family": "supporting.algebra.expressions.mixed",
           "samplePrompt": "Evaluate -2x -6 when x=1."
-        },
-        {
-          "family": "supporting.standard_form.power10_exponent",
-          "samplePrompt": "100000 = 1 × 10^n. Find n."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -508,9 +444,9 @@
         },
         {
           "family": "fractions.compare.unlike.common_denominator",
-          "prompt": "Compare 1/4 and 7/10. Enter <, >, or =.",
+          "prompt": "قارن بين 1/4 و7/10. اكتب الرمز المناسب (< أو > أو =).",
           "correctAnswer": "<",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g4.u10.l08.decimal_compare",
@@ -519,17 +455,12 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "fractions.compare.unlike.common_denominator",
-          "samplePrompt": "Compare 1/4 and 7/10. Enter <, >, or =."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "مقارنة الكسور والأعداد العشرية لا تثبت مقارنة الجذور غير النسبية وتصنيف الأعداد الحقيقية.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -558,9 +489,9 @@
         },
         {
           "family": "supporting.algebra.equations.mixed",
-          "prompt": "Solve 2x +3 = 13.",
+          "prompt": "حل المعادلة 2x +3 = 13، واكتب قيمة المتغير x.",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
@@ -571,10 +502,6 @@
         {
           "family": "usccss.number.signed_rational_divide",
           "samplePrompt": "Calculate (1/5) ÷ (-1/4). Give the rational number in simplest form."
-        },
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "samplePrompt": "Solve 2x +3 = 13."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -598,42 +525,29 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 2x − 4 = 4.",
+          "prompt": "حل المعادلة 2x − 4 = 4، واكتب قيمة المتغير x.",
           "correctAnswer": "4",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.equations.mixed",
-          "prompt": "Solve 5x -5 = 5.",
+          "prompt": "حل المعادلة 5x -5 = 5، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.expand",
-          "prompt": "Expand 3(x -5).",
+          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 3(x -5).",
           "correctAnswer": "3x-15",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 2x − 4 = 4."
-        },
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "samplePrompt": "Solve 5x -5 = 5."
-        },
-        {
-          "family": "supporting.algebra.expand",
-          "samplePrompt": "Expand 3(x -5)."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "تدريبات حل معادلة من خطوتين مناسبة جزئيًا؛ توسيع قوس منفرد لا يثبت حل المعادلة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -650,27 +564,18 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 2x − 4 = 4.",
+          "prompt": "حل المعادلة 2x − 4 = 4، واكتب قيمة المتغير x.",
           "correctAnswer": "4",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.equations.mixed",
-          "prompt": "Solve 5x -5 = 5.",
+          "prompt": "حل المعادلة 5x -5 = 5، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 2x − 4 = 4."
-        },
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "samplePrompt": "Solve 5x -5 = 5."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": true,
       "semanticDefectFinding": "سؤال مساحة سطح مكعب وحل المعادلة الجاهزة لا يختبران صياغة معادلة من موقف.",
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
@@ -692,37 +597,24 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.algebra.equations.mixed",
-          "prompt": "Solve 3x -8 = 16.",
+          "prompt": "حل المعادلة 3x -8 = 16، واكتب قيمة المتغير x.",
           "correctAnswer": "8",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 3x − 7 = -1.",
+          "prompt": "حل المعادلة 3x − 7 = -1، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.simplify",
-          "prompt": "Simplify -2x -5x +3.",
+          "prompt": "بسّط التعبير الجبري -2x -5x +3 بجمع الحدود المتشابهة.",
           "correctAnswer": "-7x+3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "samplePrompt": "Solve 3x -8 = 16."
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 3x − 7 = -1."
-        },
-        {
-          "family": "supporting.algebra.simplify",
-          "samplePrompt": "Simplify -2x -5x +3."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": true,
       "semanticDefectFinding": "المسارات تحل معادلات ذات متغير في طرف واحد، ولا تحقق مهارة متغير في كل طرف.",
       "coverageFinding": "المهارة الآلية المعروضة تدعم جزءًا من المحتوى؛ يلزم مطابقة عناصر المصدر وأهدافه 1:1.",
@@ -744,52 +636,35 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.algebra.simplify",
-          "prompt": "Simplify 2x -6x +7.",
+          "prompt": "بسّط التعبير الجبري 2x -6x +7 بجمع الحدود المتشابهة.",
           "correctAnswer": "-4x+7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.equations.mixed",
-          "prompt": "Solve 5x -5 = 5.",
+          "prompt": "حل المعادلة 5x -5 = 5، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 4x − 3 = 5.",
+          "prompt": "حل المعادلة 4x − 3 = 5، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.algebra.expand",
-          "prompt": "Expand 5(x -7).",
+          "prompt": "استخدم خاصية التوزيع لفك الأقواس في 5(x -7).",
           "correctAnswer": "5x-35",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.algebra.simplify",
-          "samplePrompt": "Simplify 2x -6x +7."
-        },
-        {
-          "family": "supporting.algebra.equations.mixed",
-          "samplePrompt": "Solve 5x -5 = 5."
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 4x − 3 = 5."
-        },
-        {
-          "family": "supporting.algebra.expand",
-          "samplePrompt": "Expand 5(x -7)."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "توجد مهارات توسعة وتبسيط ومعادلات بسيطة؛ حالات الحل المتعدد/الصفري لم تثبت.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -874,29 +749,21 @@
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -4x + 8, find y when x = -4.",
+          "prompt": "للمستقيم y = -4x + 8، أوجد قيمة y عندما x = -4.",
           "correctAnswer": "24",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "algebra.linear.standard_form.slope_intercept",
-          "prompt": "Rewrite 6x+3y=-21 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "prompt": "أعد كتابة المعادلة 6x+3y=-21 على صورة y=mx+b. اكتب الميل ثم المقطع الصادي بالصيغة m,b.",
           "correctAnswer": "-2,-7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
           "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -4x + 8, find y when x = -4."
-        },
-        {
-          "family": "algebra.linear.standard_form.slope_intercept",
-          "samplePrompt": "Rewrite 6x+3y=-21 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -920,9 +787,9 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = x − 1, find y when x = -6.",
+          "prompt": "للمستقيم y = x − 1، أوجد قيمة y عندما x = -6.",
           "correctAnswer": "-7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
@@ -932,10 +799,6 @@
         }
       ],
       "englishPromptFamilies": [
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = x − 1, find y when x = -6."
-        },
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
           "samplePrompt": "Inspect the complete graph defined by y=4x+3. Is it a straight line through the origin with a fixed y/x? Enter 1 for YES proportional or 0 for NO. Submit an exact numeric response. Coordinate plotting, axes, units and so"
@@ -962,42 +825,29 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.linear.standard_form.slope_intercept",
-          "prompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "prompt": "أعد كتابة المعادلة -1x+1y=0 على صورة y=mx+b. اكتب الميل ثم المقطع الصادي بالصيغة m,b.",
           "correctAnswer": "1,0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.y_intercept_from_rule",
-          "prompt": "For the straight line y = -4x + 10, find the y-intercept.",
+          "prompt": "أوجد المقطع الصادي للمستقيم y = -4x + 10.",
           "correctAnswer": "10",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "prompt": "للمستقيم y = -2x − 8، أوجد قيمة y عندما x = 2.",
           "correctAnswer": "-12",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.standard_form.slope_intercept",
-          "samplePrompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
-        },
-        {
-          "family": "geometry.coordinate.y_intercept_from_rule",
-          "samplePrompt": "For the straight line y = -4x + 10, find the y-intercept."
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "تظهر مسائل صيغة الميل والمقطع وقراءة المقطع، لكن معظم المسارات إنجليزية.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1014,42 +864,29 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.coordinate.y_intercept_from_rule",
-          "prompt": "For the straight line y = x − 1, find the y-intercept.",
+          "prompt": "أوجد المقطع الصادي للمستقيم y = x − 1.",
           "correctAnswer": "-1",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "algebra.linear.standard_form.slope_intercept",
-          "prompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "prompt": "أعد كتابة المعادلة 4x+1y=7 على صورة y=mx+b. اكتب الميل ثم المقطع الصادي بالصيغة m,b.",
           "correctAnswer": "-4,7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "prompt": "للمستقيم y = -2x − 8، أوجد قيمة y عندما x = 2.",
           "correctAnswer": "-12",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.coordinate.y_intercept_from_rule",
-          "samplePrompt": "For the straight line y = x − 1, find the y-intercept."
-        },
-        {
-          "family": "algebra.linear.standard_form.slope_intercept",
-          "samplePrompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "المقطع الصادي يظهر، لكن المقطع السيني ورسم المستقيم من المقطعين غير مختبرين بصورة كافية.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1066,32 +903,23 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = x − 1, find y when x = -6.",
+          "prompt": "للمستقيم y = x − 1، أوجد قيمة y عندما x = -6.",
           "correctAnswer": "-7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "algebra.linear.standard_form.slope_intercept",
-          "prompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "prompt": "أعد كتابة المعادلة 4x+1y=7 على صورة y=mx+b. اكتب الميل ثم المقطع الصادي بالصيغة m,b.",
           "correctAnswer": "-4,7",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = x − 1, find y when x = -6."
-        },
-        {
-          "family": "algebra.linear.standard_form.slope_intercept",
-          "samplePrompt": "Rewrite 4x+1y=7 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "تحويل الصيغة الخطية لا يغطي الكتابة من الرسم أو النقطتين.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1152,9 +980,9 @@
         },
         {
           "family": "algebra.linear.ax_plus_b_equals_c",
-          "prompt": "Solve 4x − 3 = 5.",
+          "prompt": "حل المعادلة 4x − 3 = 5، واكتب قيمة المتغير x.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
@@ -1165,10 +993,6 @@
         {
           "family": "algebra.linear.systems.solution_count.classify",
           "samplePrompt": "How many solutions does the system x+y=10, x-y=-4 have? Answer one, none, or infinitely-many. Explain the graph relationship to your teacher."
-        },
-        {
-          "family": "algebra.linear.ax_plus_b_equals_c",
-          "samplePrompt": "Solve 4x − 3 = 5."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -1298,32 +1122,23 @@
       "actualSampleByFamily": [
         {
           "family": "algebra.linear.standard_form.slope_intercept",
-          "prompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+          "prompt": "أعد كتابة المعادلة -1x+1y=0 على صورة y=mx+b. اكتب الميل ثم المقطع الصادي بالصيغة m,b.",
           "correctAnswer": "1,0",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -4x + 8, find y when x = -4.",
+          "prompt": "للمستقيم y = -4x + 8، أوجد قيمة y عندما x = -4.",
           "correctAnswer": "24",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "algebra.linear.standard_form.slope_intercept",
-          "samplePrompt": "Rewrite -1x+1y=0 as y=mx+b. Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed."
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -4x + 8, find y when x = -4."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "تعويض قاعدة خطية وتغيير الصيغة مناسبان جزئيًا؛ تمثيل الرسم يحتاج فحصًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1390,19 +1205,15 @@
         },
         {
           "family": "geometry.coordinate.evaluate_linear_rule",
-          "prompt": "For the straight line y = -2x − 8, find y when x = 2.",
+          "prompt": "للمستقيم y = -2x − 8، أوجد قيمة y عندما x = 2.",
           "correctAnswer": "-12",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "algebra.modeling.linear_relationship.select_equation",
           "samplePrompt": "A service has a fixed fee of 16 dollars and then costs 8 dollars per unit. Let x be the number of units and y the total cost. Write the equation relating x and y in the form y=mx+b. Enter only the equation. Explaining wh"
-        },
-        {
-          "family": "geometry.coordinate.evaluate_linear_rule",
-          "samplePrompt": "For the straight line y = -2x − 8, find y when x = 2."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -1464,9 +1275,9 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.functions.polynomial_value",
-          "prompt": "For p(x)=3x²+0x-7, find p(3).",
+          "prompt": "لدالة كثيرة الحدود p(x)=3x²+0x-7، أوجد p(3).",
           "correctAnswer": "20",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "functions.quadratic.output_roots.solve",
@@ -1482,10 +1293,6 @@
         }
       ],
       "englishPromptFamilies": [
-        {
-          "family": "supporting.functions.polynomial_value",
-          "samplePrompt": "For p(x)=3x²+0x-7, find p(3)."
-        },
         {
           "family": "functions.quadratic.output_roots.solve",
           "samplePrompt": "Given f(x)=(x-(-4))(x-(4)), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher."
@@ -1631,32 +1438,23 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.angles.supplementary",
-          "prompt": "Two angles form a straight line. One angle is 106°. Find the other angle.",
+          "prompt": "زاويتان متجاورتان تشكلان زاوية مستقيمة. إذا كان قياس الأولى 106°، فأوجد قياس الثانية.",
           "correctAnswer": "74",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.polygons.missing_interior_angle",
-          "prompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle.",
+          "prompt": "مضلع عدد أضلاعه 3، مجموع قياسات زواياه الداخلية المعروفة 70°. أوجد قياس الزاوية الداخلية المتبقية.",
           "correctAnswer": "110",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.angles.supplementary",
-          "samplePrompt": "Two angles form a straight line. One angle is 106°. Find the other angle."
-        },
-        {
-          "family": "geometry.polygons.missing_interior_angle",
-          "samplePrompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "توجد زاوية داخلية ناقصة وزاوية مكملة؛ الزوايا الخارجية ومجموع زوايا المضلع لم تستوف.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -1865,19 +1663,15 @@
         },
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 3، وطول الضلع المناظر في شكل مشابه 15. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "usccss.g7.u01.l02.scale_factor",
           "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 4.5, 6.0, 7.5 units. Determine the scale factor from the original triangle to the proposed copy. Check ALL three m"
-        },
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -1972,9 +1766,9 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 6، وطول الضلع المناظر في شكل مشابه 18. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u01.l02.scale_factor",
@@ -1990,10 +1784,6 @@
         }
       ],
       "englishPromptFamilies": [
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
-        },
         {
           "family": "usccss.g7.u01.l02.scale_factor",
           "samplePrompt": "An original right triangle has side lengths 3, 4, 5 units. A proposed copy has corresponding side lengths 1.5, 2.0, 2.5 units. Determine the scale factor from the proposed copy back to the original triangle. Check ALL th"
@@ -2024,9 +1814,9 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 6، وطول الضلع المناظر في شكل مشابه 18. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
@@ -2042,10 +1832,6 @@
         }
       ],
       "englishPromptFamilies": [
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 6 corresponds to a side of length 18 in a similar shape. Find the scale factor from the first shape to the second."
-        },
         {
           "family": "usccss.g7.u01.l04.angle_and_distance_scaling",
           "samplePrompt": "The original rectangle has vertices (0,0), (4,0), (4,3), (0,3). The candidate polygon has boundary-order vertices (0,0), (8,0), (11,6), (3,6). The claimed scale factor is 2. The proposed copy has oblique angles even thou"
@@ -2082,19 +1868,15 @@
         },
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 3، وطول الضلع المناظر في شكل مشابه 15. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "usccss.g7.u01.l04.hidden_corresponding_distance",
           "samplePrompt": "Two scaled W-shaped figures have corresponding visible segments 6 units in the original and 15 units in its copy. The distance between TWO other points need not be a drawn side; it still uses the same scale factor. An un"
-        },
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -2124,19 +1906,15 @@
         },
         {
           "family": "geometry.coordinate.gradient_between_points",
-          "prompt": "Find the gradient of the line through (-4, 3) and (0, -9).",
+          "prompt": "أوجد ميل المستقيم المار بالنقطتين (-4, 3) و(0, -9).",
           "correctAnswer": "-3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
         {
           "family": "usccss.g7.u02.l10.graphs_origin_slope",
           "samplePrompt": "A proposed graphical relationship is a straight line through (0,2) and (3,6). Enter 1 if the entire specified graph is proportional, otherwise 0. Submit an exact numeric response. Coordinate plotting, axes, units and sor"
-        },
-        {
-          "family": "geometry.coordinate.gradient_between_points",
-          "samplePrompt": "Find the gradient of the line through (-4, 3) and (0, -9)."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -2166,9 +1944,9 @@
         },
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 3، وطول الضلع المناظر في شكل مشابه 15. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "usccss.g7.u01.l10.change_scale_length_and_area",
@@ -2181,10 +1959,6 @@
         {
           "family": "usccss.g7.u01.l06.scaled_area_square_factor",
           "samplePrompt": "An original shape is a triangle of area 6 square units. Draw a uniformly scaled copy at length scale factor k=1. By what AREA factor (not length factor) has the original area changed? Enter an exact whole number or reduc"
-        },
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 3 corresponds to a side of length 15 in a similar shape. Find the scale factor from the first shape to the second."
         },
         {
           "family": "usccss.g7.u01.l10.change_scale_length_and_area",
@@ -2310,32 +2084,23 @@
         },
         {
           "family": "supporting.geometry.circle_area_pi_coefficient",
-          "prompt": "A circle has radius 4. Its area is kπ. Find k.",
+          "prompt": "دائرة نصف قطرها 4. إذا كانت مساحتها kπ، فأوجد قيمة k.",
           "correctAnswer": "16",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.geometry.circle_circumference_pi_coefficient",
-          "prompt": "A circle has radius 9. Its circumference is kπ. Find k.",
+          "prompt": "دائرة نصف قطرها 9. إذا كان محيطها kπ، فأوجد قيمة k.",
           "correctAnswer": "18",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.geometry.circle_area_pi_coefficient",
-          "samplePrompt": "A circle has radius 4. Its area is kπ. Find k."
-        },
-        {
-          "family": "supporting.geometry.circle_circumference_pi_coefficient",
-          "samplePrompt": "A circle has radius 9. Its circumference is kπ. Find k."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "مساحة الأسطوانة صحيحة جزئيًا؛ أسئلة مساحة/محيط دائرة مجردة أسئلة داعمة.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2352,9 +2117,9 @@
       "actualSampleByFamily": [
         {
           "family": "supporting.geometry.circle_area_pi_coefficient",
-          "prompt": "A circle has radius 14. Its area is kπ. Find k.",
+          "prompt": "دائرة نصف قطرها 14. إذا كانت مساحتها kπ، فأوجد قيمة k.",
           "correctAnswer": "196",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
@@ -2363,17 +2128,12 @@
           "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "supporting.geometry.circle_area_pi_coefficient",
-          "samplePrompt": "A circle has radius 14. Its area is kπ. Find k."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "مساحة المخروط صحيحة جزئيًا؛ مساحة دائرة مجردة دعم تمهيدي.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2402,22 +2162,17 @@
         },
         {
           "family": "geometry.similarity.scale_factor",
-          "prompt": "A side of length 4 corresponds to a side of length 8 in a similar shape. Find the scale factor from the first shape to the second.",
+          "prompt": "طول ضلع في الشكل الأول 4، وطول الضلع المناظر في شكل مشابه 8. أوجد معامل التشابه من الأول إلى الثاني.",
           "correctAnswer": "2",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.similarity.scale_factor",
-          "samplePrompt": "A side of length 4 corresponds to a side of length 8 in a similar shape. Find the scale factor from the first shape to the second."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "تغيير مساحة/حجم المجسم بالنسبة المكعبة والمربعة مدعوم جزئيًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2540,9 +2295,9 @@
         },
         {
           "family": "supporting.statistics.table_total",
-          "prompt": "A frequency table has counts 5, 2, 8, 6. Find the total frequency.",
+          "prompt": "يعرض جدول تكراري القيم 5, 2, 8, 6. أوجد مجموع التكرارات.",
           "correctAnswer": "21",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
@@ -2553,10 +2308,6 @@
         {
           "family": "statistics.two_way.conditional_relative",
           "samplePrompt": "Fictional two-way data: Group A Sports12/Arts8, Group B Sports9/Arts11. What percent of Group A chose Sports? (row-relative) Enter a percent rounded to two decimal places without the % sign."
-        },
-        {
-          "family": "supporting.statistics.table_total",
-          "samplePrompt": "A frequency table has counts 5, 2, 8, 6. Find the total frequency."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -2580,52 +2331,35 @@
       "actualSampleByFamily": [
         {
           "family": "statistics.center_spread.median",
-          "prompt": "Find the median of 1, 10, 12, 13, 16.",
+          "prompt": "أوجد الوسيط للقيم التالية: 1, 10, 12, 13, 16.",
           "correctAnswer": "12",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "supporting.statistics.quartile",
-          "prompt": "An ordered data summary states the lower quartile is 5. What is Q1?",
+          "prompt": "في ملخص بيانات مرتبة، الربيع الأدنى يساوي 5. ما قيمة Q1؟",
           "correctAnswer": "5",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "statistics.center_spread.range",
-          "prompt": "A data set has minimum 4 and maximum 7. Find its range.",
+          "prompt": "أصغر قيمة في مجموعة بيانات هي 4 وأكبر قيمة هي 7. أوجد المدى.",
           "correctAnswer": "3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "statistics.center_spread.mean",
-          "prompt": "Find the mean of 11, 14, 14, 14, 17.",
+          "prompt": "احسب المتوسط الحسابي للقيم التالية: 11, 14, 14, 14, 17.",
           "correctAnswer": "14",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "statistics.center_spread.median",
-          "samplePrompt": "Find the median of 1, 10, 12, 13, 16."
-        },
-        {
-          "family": "supporting.statistics.quartile",
-          "samplePrompt": "An ordered data summary states the lower quartile is 5. What is Q1?"
-        },
-        {
-          "family": "statistics.center_spread.range",
-          "samplePrompt": "A data set has minimum 4 and maximum 7. Find its range."
-        },
-        {
-          "family": "statistics.center_spread.mean",
-          "samplePrompt": "Find the mean of 11, 14, 14, 14, 17."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "المتوسط والوسيط والمدى والربيع جزء من الإحصاء الوصفي.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
@@ -2654,9 +2388,9 @@
         },
         {
           "family": "statistics.center_spread.range",
-          "prompt": "A data set has minimum 4 and maximum 7. Find its range.",
+          "prompt": "أصغر قيمة في مجموعة بيانات هي 4 وأكبر قيمة هي 7. أوجد المدى.",
           "correctAnswer": "3",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
       "englishPromptFamilies": [
@@ -2667,10 +2401,6 @@
         {
           "family": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
           "samplePrompt": "Edulytics first-party Grade 6 multi-situation exercise. There are 3 independent copies of Situation A and one copy of Situation B. Solve the numerical question in each situation, and enter (3 × A's numerical answer) + (B"
-        },
-        {
-          "family": "statistics.center_spread.range",
-          "samplePrompt": "A data set has minimum 4 and maximum 7. Find its range."
         }
       ],
       "semanticDefectConfirmed": false,
@@ -2854,32 +2584,23 @@
       "actualSampleByFamily": [
         {
           "family": "geometry.angles.supplementary",
-          "prompt": "Two angles form a straight line. One angle is 106°. Find the other angle.",
+          "prompt": "زاويتان متجاورتان تشكلان زاوية مستقيمة. إذا كان قياس الأولى 106°، فأوجد قياس الثانية.",
           "correctAnswer": "74",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         },
         {
           "family": "geometry.polygons.missing_interior_angle",
-          "prompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle.",
+          "prompt": "مضلع عدد أضلاعه 3، مجموع قياسات زواياه الداخلية المعروفة 70°. أوجد قياس الزاوية الداخلية المتبقية.",
           "correctAnswer": "110",
-          "studentPromptArabic": false
+          "studentPromptArabic": true
         }
       ],
-      "englishPromptFamilies": [
-        {
-          "family": "geometry.angles.supplementary",
-          "samplePrompt": "Two angles form a straight line. One angle is 106°. Find the other angle."
-        },
-        {
-          "family": "geometry.polygons.missing_interior_angle",
-          "samplePrompt": "A 3-sided polygon has known interior angles totalling 70°. Find the missing interior angle."
-        }
-      ],
+      "englishPromptFamilies": [],
       "semanticDefectConfirmed": false,
       "semanticDefectFinding": null,
       "coverageFinding": "حساب زاوية مضلع وزاوية مكملة جزئي؛ باقي قوانين الزوايا تحتاج دليلًا.",
       "observedRuntimeStatus": "ready",
-      "sampledContractDecision": "BLOCKED_CONFIRMED_SAMPLED_DEFECT",
+      "sampledContractDecision": "PARTIAL_TEACHER_REVIEW_SOURCE_PARITY_PENDING",
       "sourceItemByItemVerification": "NOT_EVIDENCED",
       "wholeLessonPedagogicalCertification": false
     },
