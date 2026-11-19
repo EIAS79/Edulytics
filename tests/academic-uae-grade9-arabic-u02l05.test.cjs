@@ -207,3 +207,20 @@ test('Original teacher-reviewed activities cover each source timing case and con
   assert.match(html,/أحيانًا أو أبدًا/);
   assert.equal(bank.assessedAutomatically,false);
 });
+
+
+test('Source-specific contextual activities preserve textbook semantics and disjoint source routing', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  const groups=Object.fromEntries(bank.groups.map(g=>[g.taskId,g]));
+  assert.deepEqual(groups.extensionQ2.ids,[31]);
+  assert.deepEqual(groups.extensionQ3.ids,[32,43]);
+  for (const fragment of ['١٢٪','٣ نقاط مئوية','١٥٪','٤ نقاط مئوية',
+                          '٢٠ بوصة','٥٠ ميلًا/ساعة','٢٠٠٠٠ شخص','الصفحة ٢٠٣','١٦٠ نقطة']) {
+    assert.ok(html.includes(fragment), 'Missing textbook-aligned context: '+fragment);
+  }
+  assert.match(groups.extensionQ5.expected,/١٩٠٠٠ أو ٢١٠٠٠/);
+  assert.match(groups.extensionQ6.expected,/١١٠ إلى ٢١٠/);
+  assert.equal(bank.assessedAutomatically,false);
+  assert.equal(bank.sourceSkillRepair.grading,'TEACHER_REVIEW_REQUIRED');
+});
