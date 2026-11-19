@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Edulytics.Core.Curriculum;
@@ -153,7 +153,7 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
             .Distinct()
             .ToListAsync();
 
-        Assert.Equal(0, lessonIds.Count);
+        Assert.Empty(lessonIds);
         Assert.Equal(lessonIds.OrderBy(x => x), linkedIds.OrderBy(x => x));
     }
 
