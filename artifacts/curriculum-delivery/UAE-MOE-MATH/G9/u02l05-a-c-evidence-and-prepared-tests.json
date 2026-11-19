@@ -1,0 +1,83 @@
+{
+  "scope": {
+    "pack": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "lesson": "2-5"
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026",
+    "printedPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "sourceObjectives": [
+    "معنى القيمة المطلقة كمسافة غير سالبة",
+    "حل |x|=k و |ax+b|=k بفرعين",
+    "تمييز حالات لا حل وحل واحد وحلين",
+    "تمثيل حلول القيمة المطلقة على خط الأعداد وتفسير مسائل السياق"
+  ],
+  "preparedFixtures": [
+    {
+      "prompt": "حل |س − ٤| = ٣",
+      "expected": "{١،٧}",
+      "grader": "TEACHER_REVIEW_REQUIRED_UNTIL_SET_SOLUTION_GRADER_VERIFIED"
+    },
+    {
+      "prompt": "حل |٢س + ٣| = ٧",
+      "expected": "{−٥،٢}",
+      "grader": "TEACHER_REVIEW_REQUIRED_UNTIL_SET_SOLUTION_GRADER_VERIFIED"
+    },
+    {
+      "prompt": "حل |س−٥|=−٣",
+      "expected": "لا يوجد حل",
+      "grader": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "prompt": "حل |س + ٢|=٠",
+      "expected": "{−٢}",
+      "grader": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "prompt": "أوجد |−٧|",
+      "expected": "7",
+      "family": "usccss.g6.u07.l06.absolute_distance_values"
+    },
+    {
+      "prompt": "فسر |س−١٢|=٤ على خط الأعداد",
+      "expected": "٨ و١٦",
+      "grader": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "cooldown": [
+    {
+      "prompt": "حل |س|=٦",
+      "expected": "{−٦،٦}"
+    },
+    {
+      "prompt": "هل |س|=−١ لها حل؟",
+      "expected": "لا"
+    },
+    {
+      "prompt": "فسر معنى |س−٣|=٢",
+      "expected": "يبعد س بمقدار ٢ عن ٣"
+    }
+  ],
+  "engineReuse": [
+    "usccss.g6.u07.l06.absolute_distance_values",
+    "functions.absolute_value.translate_evaluate"
+  ],
+  "engineGap": "No proven exact two-branch symbolic solution set generator or grader. Explicit teacher review for open equations; extend existing absolute-value engine if feasible.",
+  "abcStatus": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "testsRun": false,
+  "reason": "Major equation objective lacks verified auto-generated exact question family; source references and rubrics prepared but cannot call this lesson fully closed until extension or approved teacher-only treatment documented."
+}
