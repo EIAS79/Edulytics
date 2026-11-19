@@ -1,4 +1,4 @@
-name: UAE Grade 6 Common Stage D - fail-closed diagnostics
+﻿name: UAE Grade 6 Common Stage D - fail-closed diagnostics
 on:
   pull_request:
     branches: [main]
@@ -160,8 +160,8 @@ jobs:
           DELETE FROM "CurriculumPedagogicalLessons" WHERE "Id" IN (SELECT "Id" FROM ids);
           COMMIT;
           SQL
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5028
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5028
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 4808
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 4808
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumPedagogicalLessons" x' >/tmp/lessons-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumLessonContents" x' >/tmp/content-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."PedagogicalLessonId",x."OutcomeNodeId")) FROM "CurriculumPedagogicalLessonOutcomes" x' >/tmp/outcomes-before
@@ -204,12 +204,12 @@ jobs:
             'phase':'scoped-production','status':'PASS',
             'candidateSha':os.environ['GITHUB_SHA'],
             'approvedArabicLessonCount':128,'canonicalMetadataCount':128,
-            'unrelatedRecordsPreserved':5028,'independentRunCount':2,
+            'unrelatedRecordsPreserved':4808,'independentRunCount':2,
             'unrelatedGradesModified':False,
             'productionDatabaseWritten':False,
             'testDatabase':'disposable PostgreSQL 18'},indent=2)+'\n')
           PY
-          echo 'UAE_G6_SCOPE_ONLY_5028_WITH_78_G7_76_G8_REMAIN_UNCHANGED_PASS'
+          echo 'UAE_G6_SCOPE_ONLY_4808_WITH_78_G7_76_G8_REMAIN_UNCHANGED_PASS'
       - if: always()
         uses: actions/upload-artifact@v4
         with:

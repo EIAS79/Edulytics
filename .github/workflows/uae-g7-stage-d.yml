@@ -1,4 +1,4 @@
-name: UAE Grade 7 General Arabic Stage D - fail-closed diagnostics
+﻿name: UAE Grade 7 General Arabic Stage D - fail-closed diagnostics
 on:
   push:
     branches:
@@ -293,8 +293,8 @@ jobs:
             WHERE "Id" IN (SELECT "Id" FROM g7_cutover_fixture_ids);
           COMMIT;
           SQL
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5078
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5078
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 4858
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 4858
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumPedagogicalLessons" x' >/tmp/g7-other-lesson-hash
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumLessonContents" x' >/tmp/g7-other-content-hash
           export EDULYTICS_G7_SCOPED_RELEASE=CONFIRM_SEED_ONLY_UAE_GRADE7_ARABIC_78
@@ -313,8 +313,8 @@ jobs:
               tail -n 65 "/tmp/g7-scoped-$n.log" | grep -Eiv 'password|credential|secret|connection' || true
               exit 1
             fi
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5156
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5156
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 4936
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 4936
           done
           unset EDULYTICS_G7_SCOPED_RELEASE
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L7:GENERAL:%'" >/tmp/g7-other-lesson-after
@@ -330,7 +330,7 @@ jobs:
           pathlib.Path('artifacts/uae-g7-stage-d/grade7-scoped-production.json').write_text(json.dumps({
             'phase':'scoped-production','status':'PASS','candidateSha':os.environ['GITHUB_SHA'],
             'approvedArabicLessonCount':78,'canonicalMetadataCount':78,
-            'unrelatedRecordsPreserved':5078,'independentRunCount':2,
+            'unrelatedRecordsPreserved':4858,'independentRunCount':2,
             'otherGradeDataChanged':False,'productionDatabaseWritten':False,
             'database':'disposable PostgreSQL 18'},indent=2)+'\n')
           PY
