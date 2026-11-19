@@ -50,6 +50,7 @@ public sealed class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g9.u02.l05.absolute_equation_roots",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -879,6 +880,39 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+
+        if (string.Equals(family, "uae.g9.u02.l05.absolute_equation_roots", StringComparison.Ordinal))
+        {
+            if (!parameters.TryGetValue("center", out var center) ||
+                !parameters.TryGetValue("distance", out var distance) ||
+                center is < -100 or > 100 || distance is < -10 or > 100)
+                return false;
+            var textAnswer = string.Concat((answer ?? "").Trim().Select(c => c switch
+            {
+                >= '٠' and <= '٩' => (char)('0' + c - '٠'),
+                >= '۰' and <= '۹' => (char)('0' + c - '۰'),
+                '−' or '–' => '-',
+                '،' or ';' or '؛' => ',',
+                '{' or '}' or '[' or ']' or '(' or ')' => ' ',
+                _ => c
+            })).Trim();
+            if (distance < 0)
+                return textAnswer is "لا حل" or "لا يوجد حل" or "المجموعة الخالية" or "∅";
+            var pieces = textAnswer.Split(',', StringSplitOptions.TrimEntries |
+                                                StringSplitOptions.RemoveEmptyEntries);
+            if (distance == 0)
+                return pieces.Length == 1 &&
+                       int.TryParse(pieces[0], NumberStyles.Integer,
+                           CultureInfo.InvariantCulture, out var single) &&
+                       single == center;
+            return pieces.Length == 2 &&
+                   int.TryParse(pieces[0], NumberStyles.Integer,
+                       CultureInfo.InvariantCulture, out var first) &&
+                   int.TryParse(pieces[1], NumberStyles.Integer,
+                       CultureInfo.InvariantCulture, out var second) &&
+                   ((first == center - distance && second == center + distance) ||
+                    (first == center + distance && second == center - distance));
+        }
         if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             parameters.TryGetValue("wholeUnknownPercent",out var inversePercent))
         {
@@ -3198,6 +3232,24 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+
+        // G9 General absolute-value equation: two-root, one-root or no-root
+        // cases, independently checked from integer distance parameters.
+        if (string.Equals(family, "uae.g9.u02.l05.absolute_equation_roots", StringComparison.Ordinal))
+        {
+            var center = random.Next(-9 * scale, 9 * scale + 1);
+            var distance = random.Next(-2, 9 * scale + 1);
+            var question = $"أوجد مجموعة حل المعادلة |س − ({center})| = {distance}. اكتب الجذرين مفصولين بفاصلة، أو اكتب «لا حل».";
+            return new ExactProblem(
+                family, question,
+                "القيمة المطلقة مسافة غير سالبة. إذا كان الطرف الآخر سالبًا فلا حل، وإذا كان صفرًا فالحل هو المركز، وإلا الحل المركز ناقص المسافة والمركز زائدها.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>
+                {
+                    ["center"] = center,
+                    ["distance"] = distance
+                });
+        }
 
 
 
@@ -9170,6 +9222,16 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+
+        if (string.Equals(problem.Family, "uae.g9.u02.l05.absolute_equation_roots", StringComparison.Ordinal))
+        {
+            var center = p["center"];
+            var distance = p["distance"];
+            if (distance < 0) return "لا حل";
+            if (distance == 0) return center.ToString(CultureInfo.InvariantCulture);
+            return (center - distance).ToString(CultureInfo.InvariantCulture) + "," +
+                   (center + distance).ToString(CultureInfo.InvariantCulture);
+        }
         if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             p.TryGetValue("wholeUnknownPercent",out var inversePercent))
             return (p["knownPart"]*100L/inversePercent).ToString(CultureInfo.InvariantCulture);
