@@ -53,6 +53,21 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix + "unknown", p, "1,9"));
     }
 
+    [Theory]
+    [InlineData("one_solution", "+03")]
+    [InlineData("one_solution", "3.0")]
+    [InlineData("one_solution", "٣٫٠")]
+    [InlineData("two_solutions", "1.0,9.0")]
+    [InlineData("two_solutions", "٩٫٠،١٫٠")]
+    public void EquivalentNumericNotationsAreAccepted(string familySuffix, string answer)
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["a"] = 2, ["m"] = familySuffix == "one_solution" ? 3 : 5, ["r"] = 4
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix + familySuffix, parameters, answer));
+    }
+
     [Fact]
     public void GeneratedProblemsCarryAnswersThatIndependentVerifierAccepts()
     {
