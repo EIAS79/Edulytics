@@ -110,7 +110,12 @@
       "uae.g9.general.u02.l05.outer_coefficient_no_solution",
       "uae.g9.general.u02.l05.context_tolerance_endpoints"
     ],
-    "preparedAdditionalRegression": "4f22c00936098fac3c12ba26eed752f7e97843b2"
+    "preparedAdditionalRegression": "4f22c00936098fac3c12ba26eed752f7e97843b2",
+    "regressionAssertionCorrection": {
+      "issue": "Existing Node Stage D acceptance assertion expected 7 families while lesson contract and dedicated generator have 8, including context_tolerance_endpoints.",
+      "fixCommit": "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f",
+      "status": "PREPARED_NOT_RUN"
+    }
   },
   "blockingGaps": [
     "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
@@ -174,7 +179,8 @@
       "71fe88d638867b9e3ddb1560aa877868eac6a494",
       "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
       "4f22c00936098fac3c12ba26eed752f7e97843b2",
-      "000b7247ecc73987855da3731c6459c3b1e29a09"
+      "000b7247ecc73987855da3731c6459c3b1e29a09",
+      "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
