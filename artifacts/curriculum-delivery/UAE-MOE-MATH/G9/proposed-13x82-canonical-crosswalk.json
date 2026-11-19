@@ -31,8 +31,8 @@
     {
       "source": "01.pdf:7-1",
       "target": "03-1.pdf:11-1",
-      "status": "DIRECT_CORRECTED_SOURCE_TARGET_OPENING_PAGES_PARTIAL_OVERLAP_REMAINDER_PENDING",
-      "reason": "Correct target 11-1 begins PDF24 / printed608, covering point/line/plane axioms and representations shared with newer 7-1; newer's collinearity and coplanarity tasks plus older proof/axiom objectives require independent integration. Earlier comparison against PDF23 was invalid because it was a geometry laboratory.",
+      "status": "DIRECT_FULL_PAGE_SPANS_VISUALLY_REVIEWED_PARTIAL_OVERLAP_EXACT_EXERCISE_AUDIT_PENDING",
+      "reason": "Latest General 7-1 source pp365-372 and older General 11-1 pp608-615 both cover point/line/plane naming, collinearity/coplanarity and intersections; older also has explicit geometry postulates, short free proofs and structured counterexamples; newest includes applied model and spatial representations. Both have numerous exercises requiring coverage. These are partially overlapping content, not either completely distinct or proven full duplicates.",
       "directSourceTargetPageEvidence": {
         "sourceFile": "01.pdf",
         "sourcePrintedPage": 365,
@@ -42,7 +42,62 @@
         "targetPdfPage": 24,
         "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
         "targetObserved": "Point, line, plane axioms, naming and intersections; free proof",
-        "comparisonScope": "CORRECTED_OPENING_PAGE_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+        "comparisonScope": "FULL_LESSON_PAGE_SPANS_VISUALLY_REVIEWED_BUT_NO_ITEM_BY_ITEM_EQUIVALENCE_OR_PLATFORM_COVERAGE_ACCEPTANCE",
+        "sourcePrintedPagesReviewed": [
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372
+        ],
+        "sourcePdfPagesReviewed": [
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383
+        ],
+        "targetPrintedPagesReviewed": [
+          608,
+          609,
+          610,
+          611,
+          612,
+          613,
+          614,
+          615
+        ],
+        "targetPdfPagesReviewed": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "reviewMode": "DIRECT_LOCAL_SCANNED_PDF_CONTACT_SHEETS",
+        "commonSkills": [
+          "points, lines, planes, naming",
+          "collinearity and coplanarity",
+          "geometric intersections"
+        ],
+        "newerSpecific": [
+          "modelling maps and spatial objects",
+          "multi-plane diagrams and applied collinearity"
+        ],
+        "olderSpecific": [
+          "explicit axioms and postulates",
+          "free proof flow and deductive counterexamples"
+        ],
+        "testsRun": "WRITTEN_NOT_RUN"
       }
     },
     {
@@ -1039,14 +1094,14 @@
       {
         "source": "01.pdf:7-1",
         "target": "03-1.pdf:11-1",
-        "status": "CORRECTED_OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_EXERCISES_PENDING",
+        "status": "CORRECTED_FULL_LESSON_SPANS_REVIEWED_PARTIAL_OVERLAP_ITEM_LEVEL_PENDING",
         "sourcePrinted": 365,
         "sourcePdf": 376,
         "targetPrinted": 608,
         "targetPdf": 24,
         "sourceObserved": "Point, line, plane; collinear and coplanar; naming spatial objects",
         "targetObserved": "Point-line-plane postulates, relationships and free proofs",
-        "finding": "Partial overlap, no evidence for full semantic duplication; previous PDF23 target was a lab."
+        "finding": "Both lesson spans contain geometry point/line/plane, collinearity, coplanarity and intersections, but old source has explicit proof/postulates; neither full equivalence nor lossless integration into 82-row catalog is established."
       },
       {
         "source": "01.pdf:7-2",
@@ -1074,7 +1129,7 @@
       }
     ],
     "classification": "TWO_PARTIAL_OVERLAPS_AND_ONE_DISTINCT_DISTANCE_MODEL",
-    "status": "CORRECTED_TARGET_11_1_LOCATOR_OPENING_PAIRS_ONLY_FULL_SOURCE_ELEMENT_AUDIT_PENDING",
+    "status": "ONE_FULL_SPAN_GEOMETRY_PAIR_REVIEWED_OTHER_PAIRS_OPENING_ONLY_INTEGRATION_PENDING",
     "testsRun": "WRITTEN_NOT_RUN"
   }
 }
