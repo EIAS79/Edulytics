@@ -31,20 +31,20 @@
     {
       "source": "01.pdf:7-1",
       "target": "03-1.pdf:11-1",
-      "status": "PROPOSED_SKILL_SUPPLEMENT_NOT_SEMANTIC_DUPLICATE",
-      "reason": "New point-line-plane vocabulary to be retained alongside older axioms and proof objectives"
+      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
+      "reason": "Printed p365/PDF p376 directly reviewed: undefined terms point, line, plane; collinearity and coplanarity. These vocabulary/representation objectives cannot be discarded as segment-proof duplicates. Full exercises and integration into 11-1 require audit."
     },
     {
       "source": "01.pdf:7-2",
       "target": "03-1.pdf:11-3",
-      "status": "PROPOSED_SKILL_SUPPLEMENT_REQUIRES_EXERCISE_AUDIT",
-      "reason": "New linear measurement objectives must remain distinct from older segment proof content"
+      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
+      "reason": "Printed p374/PDF p385 directly reviewed: segment measurement with rulers in centimetres and millimetres, measurement accuracy, endpoints; distinct procedural measurement from segment relation proof in 11-3. Remaining exercises and content parity pending."
     },
     {
       "source": "01.pdf:7-3",
       "target": "03-1.pdf:12-6",
-      "status": "PROPOSED_SKILL_SUPPLEMENT_REQUIRES_EXERCISE_AUDIT",
-      "reason": "Distance and midpoint content may supplement perpendicular distance but requires exact source-skill comparison"
+      "status": "DIRECT_SOURCE_OPENING_PAGE_REVIEWED_REMAINDER_PENDING",
+      "reason": "Printed p385/PDF p396 directly reviewed: absolute-value distance on a number line, point separation and midpoint objectives; cannot automatically collapse to perpendicular line distance in 12-6. Requires checking any overlapping algebra distance skills and all remaining lesson elements."
     },
     {
       "source": "01.pdf:7-4",
@@ -963,5 +963,42 @@
       "supplementarySources": [],
       "sourceSkillIntegrationStatus": "PENDING_FULL_ELEMENT_COVERAGE"
     }
-  ]
+  ],
+  "latestEditionUnit7OpeningPageReview": {
+    "sourceFile": "01.pdf",
+    "sourceEdition": "2025-2026",
+    "sourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "reviewed": [
+      {
+        "source": "7-1",
+        "printedPage": 365,
+        "pdfPage": 376,
+        "distinctObjectives": [
+          "point-line-plane representation",
+          "collinear versus coplanar"
+        ]
+      },
+      {
+        "source": "7-2",
+        "printedPage": 374,
+        "pdfPage": 385,
+        "distinctObjectives": [
+          "segment measurement in cm and mm",
+          "measurement accuracy"
+        ]
+      },
+      {
+        "source": "7-3",
+        "printedPage": 385,
+        "pdfPage": 396,
+        "distinctObjectives": [
+          "distance on a number line",
+          "midpoint and segment bisector"
+        ]
+      }
+    ],
+    "coverageScope": "OPENING_PAGES_DIRECTLY_REVIEWED_ONLY_NOT_FULL_LESSON_PARITY",
+    "sourceIndexLock": false,
+    "testsRun": "WRITTEN_NOT_RUN"
+  }
 }
