@@ -17,7 +17,7 @@ svg{direction:ltr;width:100%;min-width:580px;height:auto}
 .label{font:15px system-ui,Arial,sans-serif;fill:#193a53}.sol{fill:#064d8a;font-weight:700}.center{fill:#b44c00;stroke:#b44c00}
 .teacher{border-inline-start:4px solid #4a637e;background:#eaf1f8;padding:.9rem}
 @media(prefers-reduced-motion:no-preference){.marker{transition:cx .2s}}
-</style>
+textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65rem;direction:rtl;border:1px solid #889cb7;border-radius:8px}button{font:inherit;background:#124b7c;color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;cursor:pointer}button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-offset:2px}#cooldownSubmission{white-space:pre-wrap;direction:rtl}</style>
 </head>
 <body><main>
 <header><p>المنهج الوزاري الإماراتي · الصف التاسع العام · الوحدة الثانية · الدرس ٢–٥</p>
@@ -53,7 +53,19 @@ svg{direction:ltr;width:100%;min-width:580px;height:auto}
 <li>ما مجموعة حل <span class="eq">|٢س + ٤| = −٦</span>؟ اشرح لماذا.</li>
 <li>نقطتان عند العددين <span class="eq">٧</span> و<span class="eq">١٩</span>. اكتب معادلة قيمة مطلقة لهما باستخدام المنتصف، ووضّح كيف تحققت.</li>
 </ol>
-<details><summary>التحقق بعد المحاولة (إجابات وتفسير)</summary>
+<form id="cooldownResponse" aria-labelledby="cooldownTitle">
+<label for="cooldownQ1">١. الحلّان ووصف الرسم:</label>
+<textarea id="cooldownQ1" required rows="3" placeholder="اكتب الحلّين واشرح مكانهما على خط الأعداد"></textarea>
+<label for="cooldownQ2">٢. مجموعة الحل والسبب:</label>
+<textarea id="cooldownQ2" required rows="3" placeholder="اكتب مجموعة الحل وسبب اختيارك"></textarea>
+<label for="cooldownQ3">٣. المعادلة وتبرير المركز والمسافة:</label>
+<textarea id="cooldownQ3" required rows="3" placeholder="اكتب المعادلة وكيف تحققت من الحلين"></textarea>
+<button type="submit">تجهيز إجابات الطالب لمراجعة المعلم</button>
+<p id="cooldownMessage" role="status" aria-live="polite"></p>
+<label for="cooldownSubmission">سجل الإجابات لنقله إلى المعلم (لا يمثل درجة):</label>
+<textarea id="cooldownSubmission" rows="7" readonly aria-label="إجابات الطالب لمراجعة المعلم"></textarea>
+</form>
+<details id="cooldownKey" hidden><summary>التحقق بعد تسجيل المحاولة (إجابات وتفسير)</summary>
 <p>١. س = −٢ أو س = ٨؛ منتصف الحلين ٣ وبعد كل منهما ٥ وحدات.</p>
 <p>٢. مجموعة الحل خالية، لأن القيمة المطلقة لا يمكن أن تساوي عددًا سالبًا.</p>
 <p>٣. المنتصف = ١٣، والمسافة = ٦؛ المعادلة <span class="eq">|س − ١٣| = ٦</span>، والحلان ٧ و١٩.</p>
@@ -86,5 +98,14 @@ function draw(){
  document.getElementById('answers').textContent=d.answer;
 }
 document.getElementById('case').addEventListener('change',draw);draw();
+document.getElementById('cooldownResponse').addEventListener('submit',event=>{
+ event.preventDefault();
+ const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim());
+ if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
+ const response={lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,answers:answers.map((answer,i)=>({question:i+1,response:answer}))};
+ document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
+ document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
+ document.getElementById('cooldownKey').hidden=false;
+});
 </script>
 </body></html>
