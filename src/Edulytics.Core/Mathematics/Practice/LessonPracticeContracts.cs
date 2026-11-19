@@ -10918,6 +10918,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U01L03_P16_22",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // UAE G9 general U01L04 2025 p25-31. Prepared A-C; not D-verified.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:04:DISTRIBUTIVE-PROPERTY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:04:DISTRIBUTIVE-PROPERTY", "algebra.distributive_property",
+            "G9_U01L04_DISTRIBUTIVE_EXPANSION_FACTORING_MODELS",
+            ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive",
+             "uae.g4.u04.l07.distributive_sum","uae.g6.u06.l10.expand_two_term",
+             "uae.g6.u06.l10.factor_common","uae.g6.u06.l10.mixed_decimal_distribute",
+             "uae.g6.u06.l10.distribution_true_false"],
+            "UAE_G9_GENERAL_2025_AR_U01L04_P25_31",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
