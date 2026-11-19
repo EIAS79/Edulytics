@@ -1,627 +1,1055 @@
 {
-  "schemaVersion": 1,
-  "scope": {
-    "grade": 9,
-    "pathway": "General",
-    "targetPeriod": "2026-2027",
-    "targetUnitCount": 14,
-    "targetLessonCount": 86
-  },
-  "selectedBook": "01.pdf",
-  "selectedBookEdition": "2025-2026",
-  "sourceLock": "BLOCKED_INCOMPLETE_YEAR",
-  "verifiedSelectedTermUnitCount": 7,
-  "verifiedSelectedTermLessonCount": 43,
-  "annualIndexCompleteness": "INCOMPLETE",
-  "sourceSnapshotId": null,
-  "lessons": [
+  "schemaVersion": 2,
+  "source": "five uploaded Grade9 books",
+  "generalVolumes": [
+    "01.pdf",
+    "02-1.pdf",
+    "03-1.pdf"
+  ],
+  "referenceOnlyVolumes": [
+    "02.pdf",
+    "03.pdf"
+  ],
+  "rawSourceLessons": 86,
+  "sourceLessonIndex": [
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-1",
-      "LessonTitleAr": "المتغيرات والتعابير",
-      "Term": 1,
-      "PrintedPage": 5,
-      "PdfPage": 16,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 1,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-1",
+      "sourceLessonTitleAr": "المتغيرات والتعابير",
+      "sourcePrintedPage": 5,
+      "sourcePdfPage": 16,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-1"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-2",
-      "LessonTitleAr": "ترتيب العمليات",
-      "Term": 1,
-      "PrintedPage": 10,
-      "PdfPage": 21,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 2,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-2",
+      "sourceLessonTitleAr": "ترتيب العمليات",
+      "sourcePrintedPage": 10,
+      "sourcePdfPage": 21,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-2"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-3",
-      "LessonTitleAr": "خصائص الأعداد",
-      "Term": 1,
-      "PrintedPage": 16,
-      "PdfPage": 27,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 3,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-3",
+      "sourceLessonTitleAr": "خصائص الأعداد",
+      "sourcePrintedPage": 16,
+      "sourcePdfPage": 27,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-3"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-4",
-      "LessonTitleAr": "خاصية التوزيع",
-      "Term": 1,
-      "PrintedPage": 25,
-      "PdfPage": 36,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 4,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-4",
+      "sourceLessonTitleAr": "خاصية التوزيع",
+      "sourcePrintedPage": 25,
+      "sourcePdfPage": 36,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-4"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-5",
-      "LessonTitleAr": "المعادلات",
-      "Term": 1,
-      "PrintedPage": 33,
-      "PdfPage": 44,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 5,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-5",
+      "sourceLessonTitleAr": "المعادلات",
+      "sourcePrintedPage": 33,
+      "sourcePdfPage": 44,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-5"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-6",
-      "LessonTitleAr": "العلاقات",
-      "Term": 1,
-      "PrintedPage": 40,
-      "PdfPage": 51,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 6,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-6",
+      "sourceLessonTitleAr": "العلاقات",
+      "sourcePrintedPage": 40,
+      "sourcePdfPage": 51,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-6"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-7",
-      "LessonTitleAr": "الدوال",
-      "Term": 1,
-      "PrintedPage": 47,
-      "PdfPage": 58,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 7,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-7",
+      "sourceLessonTitleAr": "الدوال",
+      "sourcePrintedPage": 47,
+      "sourcePdfPage": 58,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-7"
+      ]
     },
     {
-      "UnitOrdinal": 1,
-      "UnitTitleAr": "التعابير والمعادلات والدوال",
-      "LessonOrdinal": "1-8",
-      "LessonTitleAr": "تفسير التمثيل البياني للدالة",
-      "Term": 1,
-      "PrintedPage": 56,
-      "PdfPage": 67,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 8,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "1-8",
+      "sourceLessonTitleAr": "تفسير التمثيل البياني للدالة",
+      "sourcePrintedPage": 56,
+      "sourcePdfPage": 67,
+      "proposedProductUnit": 1,
+      "sourceLessonRefs": [
+        "01.pdf:1-8"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-1",
-      "LessonTitleAr": "كتابة المعادلات",
-      "Term": 1,
-      "PrintedPage": 75,
-      "PdfPage": 86,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 9,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-1",
+      "sourceLessonTitleAr": "كتابة المعادلات",
+      "sourcePrintedPage": 75,
+      "sourcePdfPage": 86,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-1"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-2",
-      "LessonTitleAr": "حل معادلات الخطوة الواحدة",
-      "Term": 1,
-      "PrintedPage": 83,
-      "PdfPage": 94,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 10,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-2",
+      "sourceLessonTitleAr": "حل معادلات الخطوة الواحدة",
+      "sourcePrintedPage": 83,
+      "sourcePdfPage": 94,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-2"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-3",
-      "LessonTitleAr": "حل المعادلات متعددة الخطوات",
-      "Term": 1,
-      "PrintedPage": 91,
-      "PdfPage": 102,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 11,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-3",
+      "sourceLessonTitleAr": "حل المعادلات متعددة الخطوات",
+      "sourcePrintedPage": 91,
+      "sourcePdfPage": 102,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-3"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-4",
-      "LessonTitleAr": "حل معادلات تتضمن متغيرًا في كل طرف",
-      "Term": 1,
-      "PrintedPage": 97,
-      "PdfPage": 108,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "READY_FOR_STAGE_D_PREPARATION"
+      "rawOrdinal": 12,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-4",
+      "sourceLessonTitleAr": "حل معادلات تتضمن متغيرًا في كل طرف",
+      "sourcePrintedPage": 97,
+      "sourcePdfPage": 108,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-4"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-5",
-      "LessonTitleAr": "حل معادلات تتضمن قيمة مطلقة",
-      "Term": 1,
-      "PrintedPage": 103,
-      "PdfPage": 114,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "CONTENT_PREPARED_PRACTICE_ENGINE_GAP"
+      "rawOrdinal": 13,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-5",
+      "sourceLessonTitleAr": "حل معادلات تتضمن قيمة مطلقة",
+      "sourcePrintedPage": 103,
+      "sourcePdfPage": 114,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-5"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-6",
-      "LessonTitleAr": "النسب والتناسب",
-      "Term": 1,
-      "PrintedPage": 111,
-      "PdfPage": 122,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 14,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-6",
+      "sourceLessonTitleAr": "النسب والتناسب",
+      "sourcePrintedPage": 111,
+      "sourcePdfPage": 122,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-6"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-7",
-      "LessonTitleAr": "النسبة المئوية للتغير",
-      "Term": 1,
-      "PrintedPage": 119,
-      "PdfPage": 130,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 15,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-7",
+      "sourceLessonTitleAr": "النسبة المئوية للتغير",
+      "sourcePrintedPage": 119,
+      "sourcePdfPage": 130,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-7"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-8",
-      "LessonTitleAr": "المعادلات الحرفية والتحليل البعدي",
-      "Term": 1,
-      "PrintedPage": 126,
-      "PdfPage": 137,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 16,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-8",
+      "sourceLessonTitleAr": "المعادلات الحرفية والتحليل البعدي",
+      "sourcePrintedPage": 126,
+      "sourcePdfPage": 137,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-8"
+      ]
     },
     {
-      "UnitOrdinal": 2,
-      "UnitTitleAr": "المعادلات الخطية",
-      "LessonOrdinal": "2-9",
-      "LessonTitleAr": "المتوسط الحسابي المرجح",
-      "Term": 1,
-      "PrintedPage": 132,
-      "PdfPage": 143,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 17,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "2-9",
+      "sourceLessonTitleAr": "المتوسط الحسابي المرجح",
+      "sourcePrintedPage": 132,
+      "sourcePdfPage": 143,
+      "proposedProductUnit": 2,
+      "sourceLessonRefs": [
+        "01.pdf:2-9"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-1",
-      "LessonTitleAr": "تمثيل المعادلات الخطية بيانيًا",
-      "Term": 1,
-      "PrintedPage": 155,
-      "PdfPage": 166,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 18,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-1",
+      "sourceLessonTitleAr": "تمثيل المعادلات الخطية بيانيًا",
+      "sourcePrintedPage": 155,
+      "sourcePdfPage": 166,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-1"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-2",
-      "LessonTitleAr": "حل المعادلات الخطية بالتمثيل البياني",
-      "Term": 1,
-      "PrintedPage": 163,
-      "PdfPage": 174,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 19,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-2",
+      "sourceLessonTitleAr": "حل المعادلات الخطية بالتمثيل البياني",
+      "sourcePrintedPage": 163,
+      "sourcePdfPage": 174,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-2"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-3",
-      "LessonTitleAr": "معدل التغير والميل",
-      "Term": 1,
-      "PrintedPage": 172,
-      "PdfPage": 183,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 20,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-3",
+      "sourceLessonTitleAr": "معدل التغير والميل",
+      "sourcePrintedPage": 172,
+      "sourcePdfPage": 183,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-3"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-4",
-      "LessonTitleAr": "التغير الطردي",
-      "Term": 1,
-      "PrintedPage": 182,
-      "PdfPage": 193,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 21,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-4",
+      "sourceLessonTitleAr": "التغير الطردي",
+      "sourcePrintedPage": 182,
+      "sourcePdfPage": 193,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-4"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-5",
-      "LessonTitleAr": "المتتابعات الحسابية على شكل دوال خطية",
-      "Term": 1,
-      "PrintedPage": 189,
-      "PdfPage": 200,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 22,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-5",
+      "sourceLessonTitleAr": "المتتابعات الحسابية على شكل دوال خطية",
+      "sourcePrintedPage": 189,
+      "sourcePdfPage": 200,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-5"
+      ]
     },
     {
-      "UnitOrdinal": 3,
-      "UnitTitleAr": "الدوال الخطية",
-      "LessonOrdinal": "3-6",
-      "LessonTitleAr": "العلاقات التناسبية وغير التناسبية",
-      "Term": 1,
-      "PrintedPage": 197,
-      "PdfPage": 208,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 23,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "3-6",
+      "sourceLessonTitleAr": "العلاقات التناسبية وغير التناسبية",
+      "sourcePrintedPage": 197,
+      "sourcePdfPage": 208,
+      "proposedProductUnit": 3,
+      "sourceLessonRefs": [
+        "01.pdf:3-6"
+      ]
     },
     {
-      "UnitOrdinal": 4,
-      "UnitTitleAr": "معادلات الدوال الخطية",
-      "LessonOrdinal": "4-1",
-      "LessonTitleAr": "تمثيل المعادلات بيانيًا بصيغة الميل والمقطع",
-      "Term": 1,
-      "PrintedPage": 216,
-      "PdfPage": 227,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 24,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "4-1",
+      "sourceLessonTitleAr": "تمثيل المعادلات بيانيًا بصيغة الميل والمقطع",
+      "sourcePrintedPage": 216,
+      "sourcePdfPage": 227,
+      "proposedProductUnit": 4,
+      "sourceLessonRefs": [
+        "01.pdf:4-1"
+      ]
     },
     {
-      "UnitOrdinal": 4,
-      "UnitTitleAr": "معادلات الدوال الخطية",
-      "LessonOrdinal": "4-2",
-      "LessonTitleAr": "كتابة المعادلات بصيغة الميل والمقطع",
-      "Term": 1,
-      "PrintedPage": 226,
-      "PdfPage": 237,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 25,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "4-2",
+      "sourceLessonTitleAr": "كتابة المعادلات بصيغة الميل والمقطع",
+      "sourcePrintedPage": 226,
+      "sourcePdfPage": 237,
+      "proposedProductUnit": 4,
+      "sourceLessonRefs": [
+        "01.pdf:4-2"
+      ]
     },
     {
-      "UnitOrdinal": 4,
-      "UnitTitleAr": "معادلات الدوال الخطية",
-      "LessonOrdinal": "4-3",
-      "LessonTitleAr": "كتابة المعادلات بصيغة النقطة والميل",
-      "Term": 1,
-      "PrintedPage": 233,
-      "PdfPage": 244,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 26,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "4-3",
+      "sourceLessonTitleAr": "كتابة المعادلات بصيغة النقطة والميل",
+      "sourcePrintedPage": 233,
+      "sourcePdfPage": 244,
+      "proposedProductUnit": 4,
+      "sourceLessonRefs": [
+        "01.pdf:4-3"
+      ]
     },
     {
-      "UnitOrdinal": 4,
-      "UnitTitleAr": "معادلات الدوال الخطية",
-      "LessonOrdinal": "4-4",
-      "LessonTitleAr": "المستقيمات المتوازية والمتعامدة",
-      "Term": 1,
-      "PrintedPage": 239,
-      "PdfPage": 250,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 27,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "4-4",
+      "sourceLessonTitleAr": "المستقيمات المتوازية والمتعامدة",
+      "sourcePrintedPage": 239,
+      "sourcePdfPage": 250,
+      "proposedProductUnit": 4,
+      "sourceLessonRefs": [
+        "01.pdf:4-4"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-1",
-      "LessonTitleAr": "حل المتباينات بالجمع والطرح",
-      "Term": 1,
-      "PrintedPage": 259,
-      "PdfPage": 270,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 28,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-1",
+      "sourceLessonTitleAr": "حل المتباينات بالجمع والطرح",
+      "sourcePrintedPage": 259,
+      "sourcePdfPage": 270,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-1"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-2",
-      "LessonTitleAr": "حل المتباينات بالضرب والقسمة",
-      "Term": 1,
-      "PrintedPage": 266,
-      "PdfPage": 277,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 29,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-2",
+      "sourceLessonTitleAr": "حل المتباينات بالضرب والقسمة",
+      "sourcePrintedPage": 266,
+      "sourcePdfPage": 277,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-2"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-3",
-      "LessonTitleAr": "حل المتباينات متعددة الخطوات",
-      "Term": 1,
-      "PrintedPage": 272,
-      "PdfPage": 283,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 30,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-3",
+      "sourceLessonTitleAr": "حل المتباينات متعددة الخطوات",
+      "sourcePrintedPage": 272,
+      "sourcePdfPage": 283,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-3"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-4",
-      "LessonTitleAr": "حل المتباينات المركبة",
-      "Term": 1,
-      "PrintedPage": 280,
-      "PdfPage": 291,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 31,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-4",
+      "sourceLessonTitleAr": "حل المتباينات المركبة",
+      "sourcePrintedPage": 280,
+      "sourcePdfPage": 291,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-4"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-5",
-      "LessonTitleAr": "المتباينات التي تحتوي على قيمة مطلقة",
-      "Term": 1,
-      "PrintedPage": 286,
-      "PdfPage": 297,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 32,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-5",
+      "sourceLessonTitleAr": "المتباينات التي تحتوي على قيمة مطلقة",
+      "sourcePrintedPage": 286,
+      "sourcePdfPage": 297,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-5"
+      ]
     },
     {
-      "UnitOrdinal": 5,
-      "UnitTitleAr": "المتباينات الخطية",
-      "LessonOrdinal": "5-6",
-      "LessonTitleAr": "التمثيل البياني لمتباينات ذوات متغيرين",
-      "Term": 1,
-      "PrintedPage": 291,
-      "PdfPage": 302,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 33,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "5-6",
+      "sourceLessonTitleAr": "التمثيل البياني لمتباينات ذوات متغيرين",
+      "sourcePrintedPage": 291,
+      "sourcePdfPage": 302,
+      "proposedProductUnit": 5,
+      "sourceLessonRefs": [
+        "01.pdf:5-6"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-1",
-      "LessonTitleAr": "تمثيل أنظمة المعادلات بيانيًا",
-      "Term": 1,
-      "PrintedPage": 309,
-      "PdfPage": 320,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 34,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-1",
+      "sourceLessonTitleAr": "تمثيل أنظمة المعادلات بيانيًا",
+      "sourcePrintedPage": 309,
+      "sourcePdfPage": 320,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-1"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-2",
-      "LessonTitleAr": "التعويض",
-      "Term": 1,
-      "PrintedPage": 318,
-      "PdfPage": 329,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 35,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-2",
+      "sourceLessonTitleAr": "التعويض",
+      "sourcePrintedPage": 318,
+      "sourcePdfPage": 329,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-2"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-3",
-      "LessonTitleAr": "الحذف باستخدام الجمع والطرح",
-      "Term": 1,
-      "PrintedPage": 324,
-      "PdfPage": 335,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 36,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-3",
+      "sourceLessonTitleAr": "الحذف باستخدام الجمع والطرح",
+      "sourcePrintedPage": 324,
+      "sourcePdfPage": 335,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-3"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-4",
-      "LessonTitleAr": "الحذف باستخدام الضرب",
-      "Term": 1,
-      "PrintedPage": 331,
-      "PdfPage": 342,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 37,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-4",
+      "sourceLessonTitleAr": "الحذف باستخدام الضرب",
+      "sourcePrintedPage": 331,
+      "sourcePdfPage": 342,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-4"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-5",
-      "LessonTitleAr": "تطبيق أنظمة المعادلات الخطية",
-      "Term": 1,
-      "PrintedPage": 338,
-      "PdfPage": 349,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 38,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-5",
+      "sourceLessonTitleAr": "تطبيق أنظمة المعادلات الخطية",
+      "sourcePrintedPage": 338,
+      "sourcePdfPage": 349,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-5"
+      ]
     },
     {
-      "UnitOrdinal": 6,
-      "UnitTitleAr": "أنظمة المعادلات والمتباينات الخطية",
-      "LessonOrdinal": "6-6",
-      "LessonTitleAr": "أنظمة المتباينات",
-      "Term": 1,
-      "PrintedPage": 346,
-      "PdfPage": 357,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 39,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "6-6",
+      "sourceLessonTitleAr": "أنظمة المتباينات",
+      "sourcePrintedPage": 346,
+      "sourcePdfPage": 357,
+      "proposedProductUnit": 6,
+      "sourceLessonRefs": [
+        "01.pdf:6-6"
+      ]
     },
     {
-      "UnitOrdinal": 7,
-      "UnitTitleAr": "أدوات الهندسة",
-      "LessonOrdinal": "7-1",
-      "LessonTitleAr": "النقاط والمستقيمات والمستويات",
-      "Term": 1,
-      "PrintedPage": 365,
-      "PdfPage": 376,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 40,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "7-1",
+      "sourceLessonTitleAr": "النقاط والمستقيمات والمستويات",
+      "sourcePrintedPage": 365,
+      "sourcePdfPage": 376,
+      "proposedProductUnit": 7,
+      "sourceLessonRefs": [
+        "01.pdf:7-1"
+      ]
     },
     {
-      "UnitOrdinal": 7,
-      "UnitTitleAr": "أدوات الهندسة",
-      "LessonOrdinal": "7-2",
-      "LessonTitleAr": "القياس الخطي",
-      "Term": 1,
-      "PrintedPage": 374,
-      "PdfPage": 385,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 41,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "7-2",
+      "sourceLessonTitleAr": "القياس الخطي",
+      "sourcePrintedPage": 374,
+      "sourcePdfPage": 385,
+      "proposedProductUnit": 7,
+      "sourceLessonRefs": [
+        "01.pdf:7-2"
+      ]
     },
     {
-      "UnitOrdinal": 7,
-      "UnitTitleAr": "أدوات الهندسة",
-      "LessonOrdinal": "7-3",
-      "LessonTitleAr": "المسافة ونقاط المنتصف",
-      "Term": 1,
-      "PrintedPage": 385,
-      "PdfPage": 396,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 42,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "7-3",
+      "sourceLessonTitleAr": "المسافة ونقاط المنتصف",
+      "sourcePrintedPage": 385,
+      "sourcePdfPage": 396,
+      "proposedProductUnit": 7,
+      "sourceLessonRefs": [
+        "01.pdf:7-3"
+      ]
     },
     {
-      "UnitOrdinal": 7,
-      "UnitTitleAr": "أدوات الهندسة",
-      "LessonOrdinal": "7-4",
-      "LessonTitleAr": "إثبات العلاقات بين القطع المستقيمة",
-      "Term": 1,
-      "PrintedPage": 398,
-      "PdfPage": 409,
-      "SelectedSourceFile": "01.pdf",
-      "SourceEdition": "2025-2026",
-      "SourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "SourceTocStatus": "PREVIOUSLY_INDEXED; must retain 2025–2026 source provenance",
-      "abcStatus": "NOT_CLOSED"
+      "rawOrdinal": 43,
+      "sourceFile": "01.pdf",
+      "sourceLessonCode": "7-4",
+      "sourceLessonTitleAr": "إثبات العلاقات بين القطع المستقيمة",
+      "sourcePrintedPage": 398,
+      "sourcePdfPage": 409,
+      "proposedProductUnit": 7,
+      "sourceLessonRefs": [
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
+      ]
+    },
+    {
+      "rawOrdinal": 44,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-1",
+      "sourceLessonTitleAr": "جمع كثيرات الحدود وطرحها",
+      "sourcePrintedPage": 365,
+      "sourcePdfPage": 13,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-1"
+      ]
+    },
+    {
+      "rawOrdinal": 45,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-2",
+      "sourceLessonTitleAr": "ضرب كثيرة حدود في حد",
+      "sourcePrintedPage": 374,
+      "sourcePdfPage": 22,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-2"
+      ]
+    },
+    {
+      "rawOrdinal": 46,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-3",
+      "sourceLessonTitleAr": "ضرب كثيرات الحدود",
+      "sourcePrintedPage": 382,
+      "sourcePdfPage": 30,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-3"
+      ]
+    },
+    {
+      "rawOrdinal": 47,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-4",
+      "sourceLessonTitleAr": "نواتج الضرب الخاصة",
+      "sourcePrintedPage": 388,
+      "sourcePdfPage": 36,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-4"
+      ]
+    },
+    {
+      "rawOrdinal": 48,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-5",
+      "sourceLessonTitleAr": "استخدام خاصية التوزيع",
+      "sourcePrintedPage": 396,
+      "sourcePdfPage": 44,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-5"
+      ]
+    },
+    {
+      "rawOrdinal": 49,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-6",
+      "sourceLessonTitleAr": "حل x²+bx+c=0",
+      "sourcePrintedPage": 405,
+      "sourcePdfPage": 53,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-6"
+      ]
+    },
+    {
+      "rawOrdinal": 50,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-7",
+      "sourceLessonTitleAr": "حل ax²+bx+c=0",
+      "sourcePrintedPage": 412,
+      "sourcePdfPage": 60,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-7"
+      ]
+    },
+    {
+      "rawOrdinal": 51,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-8",
+      "sourceLessonTitleAr": "الفرق بين مربعين",
+      "sourcePrintedPage": 418,
+      "sourcePdfPage": 66,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-8"
+      ]
+    },
+    {
+      "rawOrdinal": 52,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "7-9",
+      "sourceLessonTitleAr": "المربعات الكاملة",
+      "sourcePrintedPage": 424,
+      "sourcePdfPage": 72,
+      "proposedProductUnit": 8,
+      "sourceLessonRefs": [
+        "02-1.pdf:7-9"
+      ]
+    },
+    {
+      "rawOrdinal": 53,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-1",
+      "sourceLessonTitleAr": "خواص ضرب الأسس",
+      "sourcePrintedPage": 445,
+      "sourcePdfPage": 93,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-1"
+      ]
+    },
+    {
+      "rawOrdinal": 54,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-2",
+      "sourceLessonTitleAr": "خواص قسمة الأسس",
+      "sourcePrintedPage": 452,
+      "sourcePdfPage": 100,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-2"
+      ]
+    },
+    {
+      "rawOrdinal": 55,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-3",
+      "sourceLessonTitleAr": "الأسس النسبية",
+      "sourcePrintedPage": 460,
+      "sourcePdfPage": 108,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-3"
+      ]
+    },
+    {
+      "rawOrdinal": 56,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-4",
+      "sourceLessonTitleAr": "الترميز العلمي",
+      "sourcePrintedPage": 468,
+      "sourcePdfPage": 116,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-4"
+      ]
+    },
+    {
+      "rawOrdinal": 57,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-5",
+      "sourceLessonTitleAr": "تبسيط التعابير الجذرية",
+      "sourcePrintedPage": 477,
+      "sourcePdfPage": 125,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-5"
+      ]
+    },
+    {
+      "rawOrdinal": 58,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "8-6",
+      "sourceLessonTitleAr": "العمليات على التعابير الجذرية",
+      "sourcePrintedPage": 484,
+      "sourcePdfPage": 132,
+      "proposedProductUnit": 9,
+      "sourceLessonRefs": [
+        "02-1.pdf:8-6"
+      ]
+    },
+    {
+      "rawOrdinal": 59,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "9-1",
+      "sourceLessonTitleAr": "مقدمة في نظرية المجموعات",
+      "sourcePrintedPage": 502,
+      "sourcePdfPage": 150,
+      "proposedProductUnit": 10,
+      "sourceLessonRefs": [
+        "02-1.pdf:9-1"
+      ]
+    },
+    {
+      "rawOrdinal": 60,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "9-2",
+      "sourceLessonTitleAr": "المجموعات الجزئية والعمليات على المجموعات",
+      "sourcePrintedPage": 515,
+      "sourcePdfPage": 163,
+      "proposedProductUnit": 10,
+      "sourceLessonRefs": [
+        "02-1.pdf:9-2"
+      ]
+    },
+    {
+      "rawOrdinal": 61,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "9-3",
+      "sourceLessonTitleAr": "استخدام مخططات فن لدراسة العمليات على المجموعات",
+      "sourcePrintedPage": 526,
+      "sourcePdfPage": 174,
+      "proposedProductUnit": 10,
+      "sourceLessonRefs": [
+        "02-1.pdf:9-3"
+      ]
+    },
+    {
+      "rawOrdinal": 62,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "9-4",
+      "sourceLessonTitleAr": "استخدام المجموعات لحل المسائل",
+      "sourcePrintedPage": 537,
+      "sourcePdfPage": 185,
+      "proposedProductUnit": 10,
+      "sourceLessonRefs": [
+        "02-1.pdf:9-4"
+      ]
+    },
+    {
+      "rawOrdinal": 63,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "9-5",
+      "sourceLessonTitleAr": "المجموعات غير المنتهية",
+      "sourcePrintedPage": 547,
+      "sourcePdfPage": 195,
+      "proposedProductUnit": 10,
+      "sourceLessonRefs": [
+        "02-1.pdf:9-5"
+      ]
+    },
+    {
+      "rawOrdinal": 64,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "10-1",
+      "sourceLessonTitleAr": "التبرير الاستقرائي والتخمين",
+      "sourcePrintedPage": 561,
+      "sourcePdfPage": 209,
+      "proposedProductUnit": 11,
+      "sourceLessonRefs": [
+        "02-1.pdf:10-1"
+      ]
+    },
+    {
+      "rawOrdinal": 65,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "10-2",
+      "sourceLessonTitleAr": "المنطق",
+      "sourcePrintedPage": 569,
+      "sourcePdfPage": 217,
+      "proposedProductUnit": 11,
+      "sourceLessonRefs": [
+        "02-1.pdf:10-2"
+      ]
+    },
+    {
+      "rawOrdinal": 66,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "10-3",
+      "sourceLessonTitleAr": "العبارات الشرطية",
+      "sourcePrintedPage": 577,
+      "sourcePdfPage": 225,
+      "proposedProductUnit": 11,
+      "sourceLessonRefs": [
+        "02-1.pdf:10-3"
+      ]
+    },
+    {
+      "rawOrdinal": 67,
+      "sourceFile": "02-1.pdf",
+      "sourceLessonCode": "10-4",
+      "sourceLessonTitleAr": "التبرير الاستنتاجي",
+      "sourcePrintedPage": 587,
+      "sourcePdfPage": 235,
+      "proposedProductUnit": 11,
+      "sourceLessonRefs": [
+        "02-1.pdf:10-4"
+      ]
+    },
+    {
+      "rawOrdinal": 68,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "11-1",
+      "sourceLessonTitleAr": "المسلمات والبراهين الحرة",
+      "sourcePrintedPage": 607,
+      "sourcePdfPage": 23,
+      "proposedProductUnit": 12,
+      "sourceLessonRefs": [
+        "03-1.pdf:11-1"
+      ]
+    },
+    {
+      "rawOrdinal": 69,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "11-2",
+      "sourceLessonTitleAr": "البرهان الجبري",
+      "sourcePrintedPage": 616,
+      "sourcePdfPage": 32,
+      "proposedProductUnit": 12,
+      "sourceLessonRefs": [
+        "03-1.pdf:11-2"
+      ]
+    },
+    {
+      "rawOrdinal": 70,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "11-3",
+      "sourceLessonTitleAr": "إثبات علاقات بين القطع المستقيمة",
+      "sourcePrintedPage": 624,
+      "sourcePdfPage": 40,
+      "proposedProductUnit": 12,
+      "sourceLessonRefs": [
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
+      ]
+    },
+    {
+      "rawOrdinal": 71,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "11-4",
+      "sourceLessonTitleAr": "إثبات علاقات بين الزوايا",
+      "sourcePrintedPage": 631,
+      "sourcePdfPage": 47,
+      "proposedProductUnit": 12,
+      "sourceLessonRefs": [
+        "03-1.pdf:11-4"
+      ]
+    },
+    {
+      "rawOrdinal": 72,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-1",
+      "sourceLessonTitleAr": "المستقيمات المتوازية والمتقاطعة",
+      "sourcePrintedPage": 653,
+      "sourcePdfPage": 69,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-1"
+      ]
+    },
+    {
+      "rawOrdinal": 73,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-2",
+      "sourceLessonTitleAr": "الزوايا والمستقيمات المتوازية",
+      "sourcePrintedPage": 660,
+      "sourcePdfPage": 76,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-2"
+      ]
+    },
+    {
+      "rawOrdinal": 74,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-3",
+      "sourceLessonTitleAr": "ميل الخط المستقيم",
+      "sourcePrintedPage": 668,
+      "sourcePdfPage": 84,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-3"
+      ]
+    },
+    {
+      "rawOrdinal": 75,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-4",
+      "sourceLessonTitleAr": "معادلات المستقيم",
+      "sourcePrintedPage": 678,
+      "sourcePdfPage": 94,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-4"
+      ]
+    },
+    {
+      "rawOrdinal": 76,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-5",
+      "sourceLessonTitleAr": "إثبات توازي المستقيمات",
+      "sourcePrintedPage": 687,
+      "sourcePdfPage": 103,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-5"
+      ]
+    },
+    {
+      "rawOrdinal": 77,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "12-6",
+      "sourceLessonTitleAr": "العمودان والمسافة",
+      "sourcePrintedPage": 695,
+      "sourcePdfPage": 111,
+      "proposedProductUnit": 13,
+      "sourceLessonRefs": [
+        "03-1.pdf:12-6"
+      ]
+    },
+    {
+      "rawOrdinal": 78,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-1",
+      "sourceLessonTitleAr": "تصنيف المثلثات",
+      "sourcePrintedPage": 717,
+      "sourcePdfPage": 133,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-1"
+      ]
+    },
+    {
+      "rawOrdinal": 79,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-2",
+      "sourceLessonTitleAr": "زوايا المثلث",
+      "sourcePrintedPage": 725,
+      "sourcePdfPage": 141,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-2"
+      ]
+    },
+    {
+      "rawOrdinal": 80,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-3",
+      "sourceLessonTitleAr": "المثلثات المتطابقة",
+      "sourcePrintedPage": 735,
+      "sourcePdfPage": 151,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-3"
+      ]
+    },
+    {
+      "rawOrdinal": 81,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-4",
+      "sourceLessonTitleAr": "إثبات تطابق المثلثات بضلع وضلع وضلع أو ضلع وزاوية وضلع (SSS/SAS)",
+      "sourcePrintedPage": 744,
+      "sourcePdfPage": 160,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-4"
+      ]
+    },
+    {
+      "rawOrdinal": 82,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-5",
+      "sourceLessonTitleAr": "إثبات تطابق المثلثات بزاوية وضلع وزاوية أو زاوية وزاوية وضلع (ASA/AAS)",
+      "sourcePrintedPage": 755,
+      "sourcePdfPage": 171,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-5"
+      ]
+    },
+    {
+      "rawOrdinal": 83,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-6",
+      "sourceLessonTitleAr": "المثلثات متساوية الساقين ومتساوية الأضلاع",
+      "sourcePrintedPage": 765,
+      "sourcePdfPage": 181,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-6"
+      ]
+    },
+    {
+      "rawOrdinal": 84,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-7",
+      "sourceLessonTitleAr": "تطابق المثلثات",
+      "sourcePrintedPage": 776,
+      "sourcePdfPage": 192,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-7"
+      ]
+    },
+    {
+      "rawOrdinal": 85,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-8",
+      "sourceLessonTitleAr": "المثلثات والبرهان الإحداثي",
+      "sourcePrintedPage": 783,
+      "sourcePdfPage": 199,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-8"
+      ]
+    },
+    {
+      "rawOrdinal": 86,
+      "sourceFile": "03-1.pdf",
+      "sourceLessonCode": "13-9",
+      "sourceLessonTitleAr": "مساحة متوازي الأضلاع والمثلث",
+      "sourcePrintedPage": 793,
+      "sourcePdfPage": 209,
+      "proposedProductUnit": 14,
+      "sourceLessonRefs": [
+        "03-1.pdf:13-9"
+      ]
     }
   ],
-  "executionStatus": "SOURCE_LOCK_PENDING",
-  "notes": [
-    "All rows are indexed from single first-term 2025–2026 file; no older edition rows imported.",
-    "The PdfPage field is 1-based and follows the previously verified printed-to-PDF offset of 11 for 01.pdf; do not assume offset for other source PDFs.",
-    "Owner requested 14 units/86 lessons. Remaining annual source rows are NOT inferred or generated."
-  ]
+  "sourceIndexStatus": "FULL_86_RAW_TOC_MAPPED",
+  "postDedupUniqueLessonCount": null,
+  "semanticReview": "IN_PROGRESS",
+  "testsRun": "NOT_RUN",
+  "note": "Source index is exhaustive for numbered General TOC entries but does not prove semantic uniqueness or rich lesson element coverage."
 }
