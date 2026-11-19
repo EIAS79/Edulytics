@@ -115,3 +115,30 @@ test('Proposed 13x82 crosswalk retains historical quadratic unit 7 and all four 
   for(const num of [1,2,3,4])assert.ok(originalRefs.has('01.pdf:7-' + num));
   assert.equal(proposed.reviewPriority.filter(x => x.status.startsWith('CONFIRMED_')).length, 1);
 });
+
+test('Every source exercise has guarded numeric or teacher-reviewed routing without false graph-equation scoring', () => {
+  const a = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json');
+  const bank = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  assert.equal(a.sourceExerciseInventory.items.length, 64);
+  assert.equal(new Set(a.sourceExerciseInventory.items.map(x => x.itemId)).size, 64);
+  assert.equal(a.sourceExerciseInventory.items.filter(x => !x.digitalFamily).length, 33);
+  assert.equal(a.sourceExerciseInventory.items.filter(x => x.taskCategory === 'solve_and_graph' && x.teacherVisualReview).length, 6);
+  assert.equal(bank.sourceExerciseCount, 33);
+  const linked = new Set(bank.sourceExerciseIdsClassified);
+  for (const item of a.sourceExerciseInventory.items) {
+    if (!item.digitalFamily) assert.ok(linked.has(item.itemId), item.itemId);
+    if (['equation_from_number_line','number_line_to_equation'].includes(item.taskCategory)) {
+      assert.equal(item.digitalFamily, null);
+      assert.ok(item.numericAssistanceFamily.endsWith('.midpoint'));
+    }
+  }
+  for (const num of [24,27,28]) {
+    const item = a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX'+num));
+    assert.ok(item.digitalFamily.endsWith('.no_solution'));
+  }
+  for (const num of [38,39]) {
+    const item = a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX'+num));
+    assert.ok(item.digitalFamily.endsWith('.two_solutions'));
+  }
+  assert.ok(a.sourceExerciseInventory.items.find(x => x.itemId.endsWith('EX41')).digitalFamily.endsWith('.outer_coefficient_no_solution'));
+});
