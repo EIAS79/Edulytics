@@ -38,6 +38,54 @@
       "scope": "logic and reasoning"
     }
   ],
-  "status": "UNIT_TOPIC_CROSS_REFERENCE_ONLY_LESSON_LEVEL_COMPARISON_PENDING",
-  "rule": "Applied-only skills are logged and not imported to General automatically."
+  "status": "UNIT_TOPIC_CROSS_REFERENCE_PLUS_TWO_REAL_PAGE_PAIRS_REVIEWED_OTHER_PAIRS_PENDING",
+  "rule": "Applied-only skills are logged and not imported to General automatically.",
+  "lessonPageComparisons": [
+    {
+      "applied": {
+        "file": "03.pdf",
+        "unit": "8",
+        "lesson": "8-1",
+        "printedPage": 393,
+        "pdfPage": 20
+      },
+      "general": {
+        "file": "02-1.pdf",
+        "unit": "8",
+        "lesson": "8-1",
+        "printedPage": 445,
+        "pdfPage": 93
+      },
+      "status": "EXACT_OR_NEAR_EXACT_WORKED_PAGE_OVERLAP",
+      "observations": [
+        "Same lesson title «خواص ضرب الأسس» and same author photographic illustration.",
+        "Matching monomial multiplication explanation and worked examples; nearly identical problem boxes."
+      ],
+      "disposition": "Reference corroborates general objective only; do not create second General lesson or replace General provenance with Applied."
+    },
+    {
+      "applied": {
+        "file": "02.pdf",
+        "unit": "5",
+        "lesson": "5-1",
+        "printedPage": 220,
+        "pdfPage": 20
+      },
+      "general": {
+        "file": "01.pdf",
+        "unit": "5",
+        "lesson": "5-1",
+        "printedPage": 259,
+        "pdfPage": 270
+      },
+      "status": "SAME_UNIT_ORDINAL_DIFFERENT_LESSON_OBJECTIVE",
+      "observations": [
+        "Applied lesson 5-1: «حل المتباينات متعددة الخطوات».",
+        "General lesson 5-1: «حل المتباينات بالجمع والطرح».",
+        "Applied objective aligns more closely to General 5-3, not General 5-1."
+      ],
+      "nextComparator": "01.pdf:5-3 General printed 272",
+      "disposition": "Do not map units by ordinal alone or import into General."
+    }
+  ]
 }
