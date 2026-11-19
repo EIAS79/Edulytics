@@ -47,7 +47,7 @@
     "01.pdf:2-5:EX51"
   ],
   "sourceExerciseCount": 33,
-  "exactItemLevelSemanticEquivalence": "SOURCE_SKILL_GROUPS_EXTENDED_FOR_TIME_AND_PARAMETER_REASONING_ITEM_LEVEL_RUBRIC_AND_RUNTIME_PENDING",
+  "exactItemLevelSemanticEquivalence": "SOURCE_SPECIFIC_CONTEXTUAL_EQUIVALENCE_AUTHORED_FOR_GROUPS_UNTESTED_PER_ITEM_TEACHER_WORKFLOW",
   "status": "AUTHORED_ACTIVITY_EXTENSION_PREPARED_NO_TEACHER_RUNTIME_INTEGRATION",
   "groups": [
     {
@@ -56,16 +56,15 @@
       "ids": [
         10
       ],
-      "expected": "|م−٢٥٠|=٢٠؛ ٢٣٠ أو ٢٧٠ درهمًا"
+      "expected": "|ع−١٢|=٣، والعائدان ٩٪ أو ١٥٪؛ ثلاث نقاط مئوية لا تعني تغييرًا نسبيًا قدره ٣٪."
     },
     {
       "taskId": "extensionQ2",
       "topic": "chart_or_context_modelling",
       "ids": [
-        31,
-        32
+        31
       ],
-      "expected": "|ن−٤٠|=٥؛ ٣٥٪ و٤٥٪، مع تمييز نقاط مئوية عن نسبة تغير نسبية"
+      "expected": "|ن−١٥|=٤، وأدنى نسبة ١١٪ وأقصاها ١٩٪، مع اعتبار هامش الخطأ نقاطًا مئوية."
     },
     {
       "taskId": "extensionQ3",
@@ -83,7 +82,7 @@
         44,
         45
       ],
-      "expected": "|ط−٢٤٠|=٥ ⇒ ٢٣٥ أو ٢٤٥ سم؛ |ع−٥٠|=٣ ⇒ ٤٧ أو ٥٣ كم/ساعة"
+      "expected": "|ط−٢٠|=٢ ⇒ ١٨ أو ٢٢ بوصة؛ طول العارضة ٦٩ بوصة فيتطلب تبرير قياس القماش؛ |ع−٥٠|=٣ ⇒ ٤٧ أو ٥٣ ميلاً/ساعة؛ ضبط ٤٥ بفارق ١ ⇒ ٤٤ أو ٤٦."
     },
     {
       "taskId": "extensionQ5",
@@ -92,7 +91,7 @@
         52,
         53
       ],
-      "expected": "|د−٣٠|=٣ ⇒ ٢٧،٣٣ دقيقة بعد الساعة؛ |ص−٨٠|=١٠ ⇒ ٧٠ أو ٩٠ ديسيبل؛ القيم العددية لا تعني تساوي الشدة الفيزيائية على مقياس لوغاريتمي"
+      "expected": "|د−٩٠|=٣ ⇒ ٨٧ أو ٩٣ دقيقة؛ |ص−٢٠٠٠٠|=١٠٠٠ ⇒ ١٩٠٠٠ أو ٢١٠٠٠ شخص."
     },
     {
       "taskId": "extensionQ6",
@@ -101,7 +100,7 @@
         54,
         55
       ],
-      "expected": "|ص−١٠|=٢ ⇒ ٨ أو ١٢ صفحة؛ |د−٧٥|=٥ ⇒ ٧٠ أو ٨٠ نقطة"
+      "expected": "|ص−٢٠٣|=١٠ ⇒ ١٩٣ أو ٢١٣ صفحة؛ نطاق التغير عن ١٦٠ نقطة عند خمسة أسئلة من −٥٠ إلى +٥٠، ونطاق المجموع من ١١٠ إلى ٢١٠، بمضاعفات ١٠ تبعًا لعدد الصحيح والخطأ والمتروك."
     },
     {
       "taskId": "extensionQ7",
@@ -162,5 +161,23 @@
     "assessment": "DIGITAL_NUMERIC_PLUS_TEACHER_VISUAL_REVIEW"
   },
   "teacherOnlySourceExerciseCount": 33,
-  "dualRouteNumericWithTeacherGraphCount": 6
+  "dualRouteNumericWithTeacherGraphCount": 6,
+  "sourceSkillRepair": {
+    "status": "PREPARED_SOURCE_SPECIFIC_ARABIC_VARIANTS_NOT_RUNTIME_VERIFIED",
+    "sourcePrintedPages": [
+      105,
+      106,
+      107,
+      108
+    ],
+    "editedGroupIds": [
+      "extensionQ1",
+      "extensionQ2",
+      "extensionQ4",
+      "extensionQ5",
+      "extensionQ6"
+    ],
+    "removedFalseAssociation": "EX32 belongs to timing task Q3 only, not survey task Q2",
+    "grading": "TEACHER_REVIEW_REQUIRED"
+  }
 }
