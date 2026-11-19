@@ -181,8 +181,8 @@ jobs:
               tail -n 55 "/tmp/g6-scoped-$n.log" | grep -Eiv 'password|credential|secret|connection' || true
               exit 1
             fi
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5156
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5156
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 4936
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 4936
           done
           unset EDULYTICS_G6_SCOPED_RELEASE
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%'" >/tmp/lessons-after
