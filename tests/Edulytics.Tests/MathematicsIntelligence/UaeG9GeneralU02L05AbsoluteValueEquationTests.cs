@@ -72,6 +72,27 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     }
 
     [Fact]
+    public void TwoSolutionGeneratorPreparesIntegerOuterFactorAndFractionVariants()
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var seen = new HashSet<string>();
+        for (var seed = 1; seed <= 60; seed++)
+        {
+            var q = Assert.Single(engine.Generate("UAE-G9-GENERAL",
+                "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+                new[] { Prefix + "two_solutions" },
+                ExactSkillQuestionDifficulty.Standard, 1, seed,
+                Array.Empty<string>()));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(q.Family, q.Parameters, q.CorrectAnswer));
+            seen.Add(q.Prompt.Contains(")/٢|", StringComparison.Ordinal) ? "fractional" :
+                q.Prompt.Contains("٢|", StringComparison.Ordinal) ? "outer_factor" : "integer");
+        }
+        Assert.Contains("integer", seen);
+        Assert.Contains("outer_factor", seen);
+        Assert.Contains("fractional", seen);
+    }
+
+    [Fact]
     public void GeneratedProblemsCarryAnswersThatIndependentVerifierAccepts()
     {
         var engine = new ExactSkillContractQuestionEngine();
