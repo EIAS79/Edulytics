@@ -10956,6 +10956,19 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U01L06_P40_46",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // UAE G9 General 2025 Arabic student U01L07 pp47-55.
+        // Function relation and notation mechanics reusable, D audit not run.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:07:FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:07:FUNCTIONS","supporting.functions.core",
+            "G9_U01L07_ONE_OUTPUT_PER_INPUT_VERTICAL_TEST_NOTATION",
+            ["functions.relations.unique_output.classify",
+             "functions.notation.evaluate_context",
+             "uae.g6.u08.l01.linear_output",
+             "uae.g6.u08.l01.ordered_pair"],
+            "UAE_G9_GENERAL_2025_AR_U01L07_P47_55",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
