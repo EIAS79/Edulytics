@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "SIX_CANDIDATE_COMPARISONS_DOCUMENTED_WITH_BOOK_PAGES; OTHER_OBJECTIVE_COMPARISONS_PENDING",
+  "reviewStatus": "ALL_ORIGINAL_FLAGGED_PAIRS_SCREENED_WITH_SOURCE_PAGE_EVIDENCE; NOT_FULL_86_LESSON_SEMANTIC_AUDIT",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -281,25 +281,124 @@
       "rawOrdinalA": 24,
       "rawOrdinalB": 75,
       "reason": "Graphing/writing line equations",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
-      "decision": null,
-      "preserveUntilReviewed": true
+      "status": "SOURCE_OBJECTIVE_OVERLAP_REVIEWED",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-1",
+          "printedPagesReviewed": [
+            216,
+            217
+          ],
+          "pdfPagesReviewed": [
+            227,
+            228
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-4",
+          "printedPagesReviewed": [
+            678,
+            679
+          ],
+          "pdfPagesReviewed": [
+            94,
+            95
+          ]
+        },
+        "sharedSkills": [
+          "slope-intercept formula y=mx+b",
+          "graphing linear equations"
+        ],
+        "distinctSkills": [
+          "source 4-1 prioritizes graphing by slope/intercept",
+          "source 12-4 deriving line equations within coordinate geometry and finding equations using points"
+        ],
+        "nextStep": "Compare full practice/assessment before possible content integration."
+      }
     },
     {
       "rawOrdinalA": 26,
       "rawOrdinalB": 75,
       "reason": "Point-slope and line equations",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
-      "decision": null,
-      "preserveUntilReviewed": true
+      "status": "SOURCE_OBJECTIVE_OVERLAP_REVIEWED",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-3",
+          "printedPagesReviewed": [
+            233,
+            234
+          ],
+          "pdfPagesReviewed": [
+            244,
+            245
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-4",
+          "printedPagesReviewed": [
+            678,
+            679
+          ],
+          "pdfPagesReviewed": [
+            94,
+            95
+          ]
+        },
+        "sharedSkills": [
+          "equation of a line from known points / known slope"
+        ],
+        "distinctSkills": [
+          "new 4-3 emphasizes point-slope form",
+          "old 12-4 emphasizes coordinate geometry and different line equation formats"
+        ],
+        "nextStep": "Verify all examples and exercise objectives; avoid merging away the geometry emphasis."
+      }
     },
     {
       "rawOrdinalA": 40,
       "rawOrdinalB": 68,
       "reason": "Geometry axioms and proof",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
-      "decision": null,
-      "preserveUntilReviewed": true
+      "status": "SOURCE_OBJECTIVE_DISTINCTION_VERIFIED_FROM_LESSON_OPENINGS",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "7-1",
+          "printedPagesReviewed": [
+            365,
+            366
+          ],
+          "pdfPagesReviewed": [
+            376,
+            377
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "11-1",
+          "printedPagesReviewed": [
+            607,
+            608
+          ],
+          "pdfPagesReviewed": [
+            23,
+            24
+          ]
+        },
+        "contrast": "New 7-1 builds vocabulary of points, lines and planes; older 11-1 begins formal postulates and proof methods, adds separate reasoning goals."
+      }
     },
     {
       "rawOrdinalA": 80,
