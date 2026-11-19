@@ -792,9 +792,10 @@
       "printedPage": 398,
       "pdfPage": 409,
       "sourceLessonRefs": [
-        "01.pdf:7-4"
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
       ],
-      "semanticDedupStatus": "NOT_AUDITED",
+      "semanticDedupStatus": "PRIMARY_FOR_SEMANTIC_DUPLICATE_03-1:11-3",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P398_PDF_P409_MATCH"
     },
@@ -884,9 +885,10 @@
       "sourceLessonRefs": [
         "02-1.pdf:7-5"
       ],
-      "semanticDedupStatus": "NOT_AUDITED",
+      "semanticDedupStatus": "COMPLEMENTARY_SKILL_CONFIRMED_WITH_01:1-4",
       "abcStatus": "NOT_STARTED",
-      "pdfPageEvidence": "SOURCE_P396_PDF_P44_MATCH"
+      "pdfPageEvidence": "SOURCE_P396_PDF_P44_MATCH",
+      "sourceLessonPageObjectiveNote": "Printed p396 title is «استخدام خاصية التوزيع»; its worked examples explicitly factor polynomial common factors. Not duplicate of 01.pdf:1-4."
     },
     {
       "rawOrdinal": 49,
@@ -1278,11 +1280,14 @@
       "printedPage": 624,
       "pdfPage": 40,
       "sourceLessonRefs": [
+        "01.pdf:7-4",
         "03-1.pdf:11-3"
       ],
-      "semanticDedupStatus": "NOT_AUDITED",
+      "semanticDedupStatus": "SEMANTIC_DUPLICATE_SOURCE_RETAIN_FOR_ADDITIONAL_EXERCISES",
       "abcStatus": "NOT_STARTED",
-      "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH"
+      "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
+      "primarySourceRef": "01.pdf:7-4",
+      "exportAsSeparateProductLesson": false
     },
     {
       "rawOrdinal": 71,
@@ -1590,5 +1595,10 @@
       "pdfPage": 40
     }
   ],
-  "pageMappingType": "PRINTED_TO_PHYSICAL_PDF_OFFSET_VERIFIED_BY_IMAGE_SPOT_CHECKS; recheck every lesson opening on use"
+  "pageMappingType": "PRINTED_TO_PHYSICAL_PDF_OFFSET_VERIFIED_BY_IMAGE_SPOT_CHECKS; recheck every lesson opening on use",
+  "reviewedFullSourceLessonPairs": 1,
+  "rawSourceLessons": 86,
+  "confirmedSemanticDuplicates": 1,
+  "uniqueLessonCountStatus": "NOT_FINAL_PENDING_ALL_86_REVIEW",
+  "note": "One semantic duplicate identified, plus distinct complementary and partial-overlap skills. Do not present 86 as post-dedup count."
 }
