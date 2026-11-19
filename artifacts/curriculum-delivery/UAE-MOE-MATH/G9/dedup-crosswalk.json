@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "rawGeneralLessonCount": 86,
   "uniqueCount": null,
-  "reviewStatus": "TWO_SOURCE_PAIRS_REVIEWED_TO_DIFFERENT_DEPTHS_GLOBAL_REVIEW_PENDING",
+  "reviewStatus": "THREE_FLAGGED_PAIRS_HAVE_SOURCE_PAGE_EVIDENCE; GLOBAL_86_LESSON_COMPARE_PENDING",
   "candidatePairs": [
     {
       "rawOrdinalA": 43,
@@ -57,9 +57,69 @@
       "rawOrdinalA": 20,
       "rawOrdinalB": 74,
       "reason": "Slope and rate-of-change overlap",
-      "status": "REQUIRES_OBJECTIVE_EXAMPLE_EXERCISE_COMPARISON",
-      "decision": null,
-      "preserveUntilReviewed": true
+      "status": "OBJECTIVE_OVERLAP_COMPARISON_PARTIAL",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "3-3",
+          "printedPagesReviewed": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179
+          ],
+          "pdfPagesReviewed": [
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-3",
+          "printedPagesReviewed": [
+            668,
+            669,
+            670,
+            671,
+            672,
+            673,
+            674,
+            675
+          ],
+          "pdfPagesReviewed": [
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91
+          ]
+        },
+        "overlap": [
+          "Calculating slope from graph and slope change in coordinate points",
+          "Positive/negative/zero/undefined slopes"
+        ],
+        "distinctEmphases": [
+          "New 3-3 embeds rate of change and proportional data contexts",
+          "Older 12-3 emphasizes coordinate geometry and slope criteria connecting to perpendicular/parallel lines"
+        ],
+        "disposition": "Do not merge by title. Preserve later geometry connections, and compare all exercises before final dedup."
+      }
     },
     {
       "rawOrdinalA": 27,
