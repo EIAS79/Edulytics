@@ -579,197 +579,85 @@ public sealed class Phase29CanonicalContentPackPipelineTests
     }
 
     [Fact]
-    public void EmbeddedUaePilotIsPublishedReviewedAndExactlyMapped()
+    public void OwnerRetiredUaeGrade9CannotBeLoadedFromEmbeddedLessonPacks()
     {
-        var documents =
-            MathematicsCanonicalLessonContentSeeder
-                .LoadEmbeddedDocuments();
+        var lessons = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .SelectMany(x => x.Lessons)
+            .ToArray();
 
-        var uae =
-            Assert.Single(documents, x =>
-                        x.PackCode ==
-                            MathematicsCurriculumPackRegistry.UaeCode &&
-                        x.ContentVersion ==
-                            "uae-g9-adv-t1-pilot-v1");
+        Assert.DoesNotContain(lessons, x =>
+            x.LessonCode.StartsWith("PED:UAE:G9:", StringComparison.Ordinal) ||
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:", StringComparison.Ordinal));
 
-        Assert.Equal(
-            "MOE-2026-2027-T1",
-            uae.VersionCode);
-
-        Assert.Equal(
-            CurriculumSourceResolutionStatus.CurrentOfficial,
-            uae.SourceResolution);
-
-        Assert.Equal(
-            2,
-            uae.SourcePolicyVersion);
-
-        Assert.Equal(
-            PedagogicalSourceType.CurrentOfficialTextbook,
-            uae.PedagogicalSourceType);
-
-        Assert.False(
-            string.IsNullOrWhiteSpace(
-                uae.PedagogicalSourceRightsNote));
-
-        Assert.Equal(
-            CanonicalLessonContentStatus.Published,
-            uae.Status);
-
-        Assert.Equal(
-            "Edulytics Curriculum Review",
-            uae.ReviewedBy);
-
-        var lesson =
-            Assert.Single(uae.Lessons);
-
-        Assert.Equal(
-            "PED:UAE:G9:ADV:T1:L1-2",
-            lesson.LessonCode);
-
-        Assert.Equal(
-            LessonTitleProvenance.PedagogicalSource,
-            lesson.TitleProvenance);
-
-        Assert.False(
-            string.IsNullOrWhiteSpace(
-                lesson.TitleSourceReference));
-
-        Assert.Equal(
-            new[]
-            {
-                "UAE:STD:MAT.2.02.01",
-                "UAE:STD:MAT.2.02.02"
-            },
-            lesson.OutcomeCodes);
-
-        Assert.Equal(
-            new[] { "en", "pl" },
-            lesson.Translations
-                .Select(x => x.CultureCode)
-                .OrderBy(x => x)
-                .ToArray());
+        Assert.Contains(lessons, x =>
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal));
     }
 
     [Fact]
-    public async Task EmbeddedUaePilotSeedsThroughFullCurriculumChain()
+    public async Task OwnerRetiredUaeGrade9CannotBeReseededByCurriculumPipeline()
     {
         await using var db = CreateDb();
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(db).SeedAsync();
+        await new MathematicsCanonicalLessonContentSeeder(db).SeedAsync();
 
-        await new MathematicsCurriculumPackSeeder(db)
-            .SeedAsync();
+        var state = await db.CurriculumPackImportStates
+            .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
 
-        await new MathematicsPedagogicalLessonSeeder(db)
-            .SeedAsync();
+        Assert.Equal(1234, state.NodeCount);
+        Assert.Equal(1180, state.OfficialNodeCount);
+        Assert.Equal(0, state.LessonCount);
+        Assert.Equal(0, state.LinkCount);
+        Assert.DoesNotContain(await db.CurriculumPedagogicalLessons
+            .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
+            .ToArrayAsync(), x =>
+                x.LogicalLevelFrom == 9 && x.LogicalLevelTo == 9);
+        Assert.DoesNotContain(await db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
+            .ToArrayAsync(), x =>
+                x.LogicalLevelFrom == 9 && x.LogicalLevelTo == 9 &&
+                x.NodeKind is "Lesson" or "Reference" or "Unit" or "SourceCatalog" or "TermScope");
+    }
 
-        var state =
-            await db.CurriculumPackImportStates
-                .SingleAsync(
-                    x =>
-                        x.FrameworkCode ==
-                        MathematicsCurriculumPackRegistry.UaeCode);
+    [Fact]
+    public async Task OwnerRetiredUaeGrade9ReconcilesExactProductionImportStateWithoutReseeding()
+    {
+        await using var db = CreateDb();
+        var seeder = new MathematicsCurriculumPackSeeder(db);
+        await seeder.SeedAsync();
 
-        var lesson =
-            await db.CurriculumPedagogicalLessons
-                .SingleAsync(
-                    x =>
-                        x.FrameworkVersionId ==
-                            state.FrameworkVersionId &&
-                        x.Code ==
-                            "PED:UAE:G9:ADV:T1:L1-2");
+        var state = await db.CurriculumPackImportStates
+            .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
 
-        var mappedOutcomeCodes =
-            await (
-                from mapping in
-                    db.CurriculumPedagogicalLessonOutcomes
-                join node in
-                    db.CurriculumPackContentNodes
-                    on mapping.OutcomeNodeId equals node.Id
-                where
-                    mapping.FrameworkVersionId ==
-                        state.FrameworkVersionId &&
-                    mapping.PedagogicalLessonId ==
-                        lesson.Id
-                orderby node.Code
-                select node.Code)
-            .ToArrayAsync();
+        // Production metadata before direct no-backup retirement. The in-memory
+        // curriculum nodes have already been reduced to the accepted 1234
+        // non-Grade9 set, exactly like the production post-deletion inventory.
+        state.NodeCount = 1532;
+        state.OfficialNodeCount = 1420;
+        state.UnitCount = 6;
+        state.LessonCount = 42;
+        state.LinkCount = 48;
+        state.SourceDigest =
+            "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f";
+        state.ContentDigest =
+            "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372";
+        await db.SaveChangesAsync();
 
-        Assert.Equal(
-            new[]
-            {
-                "UAE:STD:MAT.2.02.01",
-                "UAE:STD:MAT.2.02.02"
-            },
-            mappedOutcomeCodes);
+        await seeder.SeedAsync();
+        await seeder.SeedAsync();
 
-        var canonicalSeeder =
-            new MathematicsCanonicalLessonContentSeeder(db);
-
-        await canonicalSeeder.SeedAsync();
-
-        var content =
-            await db.CurriculumLessonContents
-                .SingleAsync(
-                    x =>
-                        x.PedagogicalLessonId ==
-                            lesson.Id);
-
-        Assert.Equal(
-            CanonicalLessonContentStatus.Published,
-            content.Status);
-
-        Assert.Equal(
-            "uae-g9-adv-t1-pilot-v1",
-            content.ContentVersion);
-
-        Assert.NotNull(content.VerifiedAtUtc);
-        Assert.NotNull(content.PublishedAtUtc);
-
-        var translations =
-            await db.CurriculumLessonContentTranslations
-                .Where(
-                    x =>
-                        x.CurriculumLessonContentId ==
-                            content.Id)
-                .OrderBy(x => x.CultureCode)
-                .ToArrayAsync();
-
-        Assert.Equal(2, translations.Length);
-
-        Assert.Equal(
-            new[] { "en", "pl" },
-            translations
-                .Select(x => x.CultureCode)
-                .ToArray());
-
-        Assert.All(
-            translations,
-            x =>
-            {
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.Explanation));
-
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.KeyConceptsAndRules));
-
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.WorkedExamples));
-
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.StepByStepSolutions));
-
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.CommonMistakes));
-
-                Assert.False(
-                    string.IsNullOrWhiteSpace(
-                        x.QuickSummary));
-            });
+        Assert.Equal(1234, state.NodeCount);
+        Assert.Equal(1180, state.OfficialNodeCount);
+        Assert.Equal(0, state.UnitCount);
+        Assert.Equal(0, state.LessonCount);
+        Assert.Equal(0, state.LinkCount);
+        Assert.Equal(1234, await db.CurriculumPackContentNodes
+            .CountAsync(x => x.FrameworkVersionId == state.FrameworkVersionId));
+        Assert.Empty(await db.CurriculumPackNodeLinks
+            .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
+            .ToArrayAsync());
     }
 
     private static async Task<(

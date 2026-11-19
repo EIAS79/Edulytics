@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Edulytics.Core.Curriculum;
@@ -611,10 +611,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Where(x => x.NodeKind == "Lesson")
             .ToArray();
 
-        if (lessons.Length != 42)
+        if (lessons.Length != 0)
         {
             throw new InvalidOperationException(
-                "UAE pedagogical seed requires exactly 42 verified official Lesson nodes.");
+                "Owner-retired UAE Grade 9 must have zero official Lesson nodes.");
         }
 
         var nodeById = nodes.ToDictionary(x => x.Id);
@@ -658,10 +658,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .OrderBy(x => x.SortOrder)
             .ToArrayAsync(ct);
 
-        if (links.Length != 48)
+        if (links.Length != 0)
         {
             throw new InvalidOperationException(
-                "UAE pedagogical seed requires exactly 48 verified LessonStandardAlignment links.");
+                "Owner-retired UAE Grade 9 must have zero LessonStandardAlignment links.");
         }
 
         foreach (var link in links)
@@ -1236,13 +1236,13 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Select(x => x.Id)
             .ToHashSet();
 
-        if (uaeLessonIds.Count != 42)
+        if (uaeLessonIds.Count != 0)
             throw new InvalidOperationException("UAE pedagogical lesson cardinality drift.");
 
         var uaeMappings = mappings
             .Count(x => uaeLessonIds.Contains(x.PedagogicalLessonId));
 
-        if (uaeMappings != 48)
+        if (uaeMappings != 0)
             throw new InvalidOperationException("UAE pedagogical alignment cardinality drift.");
 
         var mappingCountByLesson = mappings

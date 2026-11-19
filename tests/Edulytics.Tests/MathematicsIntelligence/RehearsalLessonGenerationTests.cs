@@ -117,13 +117,13 @@ public class RehearsalLessonGenerationTests
             .ToDictionaryAsync(x => x.Code, x => x.Id, StringComparer.Ordinal);
 
         Assert.Equal(state.FrameworkVersionId, current.FrameworkVersionId);
-        Assert.Equal(1467, current.NodeCount);
-        Assert.Equal(1358, current.OfficialNodeCount);
-        Assert.Equal(1311, second.Keys.Count(x =>
+        Assert.Equal(1234, current.NodeCount);
+        Assert.Equal(1180, current.OfficialNodeCount);
+        Assert.Equal(1133, second.Keys.Count(x =>
             x.StartsWith("UAE:REF:TEXTBOOK:", StringComparison.Ordinal)));
         Assert.Equal(first, second);
         Assert.Equal(
-            48,
+            0,
             await db.CurriculumPackNodeLinks.CountAsync(
                 x => x.FrameworkVersionId == current.FrameworkVersionId));
     }
@@ -144,9 +144,9 @@ public class RehearsalLessonGenerationTests
             .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
             .ToArrayAsync();
 
-        Assert.Equal(1467, nodes.Length);
+        Assert.Equal(1234, nodes.Length);
         Assert.Equal(
-            1311,
+            1133,
             nodes.Count(x =>
                 x.NodeKind == "Reference" &&
                 x.IsOfficial &&
