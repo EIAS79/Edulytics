@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "curriculum": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "unit": 1,
+    "lesson": 7,
+    "academicLanguage": "ar",
+    "title": "الدوال"
+  },
+  "source": {
+    "file": "01.pdf",
+    "sourceYear": "2025-2026",
+    "pdfPages": [
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66
+    ],
+    "printedPages": [
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "sourceElements": [
+    {
+      "goal": "O1",
+      "pages": [
+        47,
+        48,
+        49,
+        51
+      ],
+      "description": "التمييز بين العلاقات والدوال بفحص مدخلات مخطط الأسهم والجداول والأزواج المرتبة"
+    },
+    {
+      "goal": "O2",
+      "pages": [
+        49,
+        52,
+        53
+      ],
+      "description": "اختبار الخط الرأسي لرسوم دوال وخطوط ودوائر ومنحنيات"
+    },
+    {
+      "goal": "O3",
+      "pages": [
+        50,
+        51,
+        52
+      ],
+      "description": "تفسير كتابة الدالة ق(س) والتعويض لإيجاد قيمها"
+    },
+    {
+      "goal": "O4",
+      "pages": [
+        48,
+        49,
+        50,
+        52,
+        53
+      ],
+      "description": "المقارنة بين التمثيلات الأربعة وتحديد المخرجات في سياق"
+    },
+    {
+      "goal": "O5",
+      "pages": [
+        53,
+        54,
+        55
+      ],
+      "description": "حل مسائل حياتية، رسوم واختبارات معيارية ومراجعة مهارات سابقة"
+    }
+  ],
+  "exerciseSections": [
+    {
+      "page": 51,
+      "kind": "guided function classification"
+    },
+    {
+      "page": 52,
+      "kind": "representations and function notation"
+    },
+    {
+      "page": 53,
+      "kind": "graph and real-world interpretation"
+    },
+    {
+      "page": 54,
+      "kind": "standardized tests, spiral and prerequisite review"
+    },
+    {
+      "page": 55,
+      "kind": "graphing-calculator extension"
+    }
+  ],
+  "questionSpecifications": [
+    {
+      "goal": "O1",
+      "arabic": "هل العلاقة {(١،٢)،(٢،٢)،(٣،٥)} دالة؟",
+      "answer": "نعم",
+      "badAnswer": "لا",
+      "family": "functions.relations.unique_output.classify"
+    },
+    {
+      "goal": "O1",
+      "arabic": "هل العلاقة {(١،٢)،(١،٥)} دالة؟",
+      "answer": "لا",
+      "badAnswer": "نعم",
+      "family": "functions.relations.unique_output.classify"
+    },
+    {
+      "goal": "O2",
+      "arabic": "هل تمثل الدائرة دالة ص بالنسبة إلى س؟ برر باختبار الخط الرأسي.",
+      "answer": "لا؛ يقطعها بعض الخطوط الرأسية في نقطتين",
+      "teacherReview": true
+    },
+    {
+      "goal": "O3",
+      "arabic": "إذا كانت ق(س)=٣س−٢، احسب ق(٤).",
+      "answer": "10",
+      "family": "functions.notation.evaluate_context"
+    },
+    {
+      "goal": "O3",
+      "arabic": "إذا كانت ق(س)=س²+١، احسب ق(−٣).",
+      "answer": "10",
+      "teacherReview": false
+    },
+    {
+      "goal": "O4",
+      "arabic": "يمثل الجدول مدخلات ٠،١،٢ ومخرجات ١،٣،٥. اكتب قانونًا ممكنًا.",
+      "answer": "2x+1",
+      "teacherReview": true
+    }
+  ],
+  "cooldown": [
+    {
+      "prompt": "لِمَ لا تمثل {(٣،١)،(٣،٤)} دالة؟",
+      "response": "مدخل واحد له مخرجان",
+      "teacherReview": true
+    },
+    {
+      "prompt": "إذا كانت ق(س)=٢س+٥، ما ق(−١)؟",
+      "response": "3"
+    },
+    {
+      "prompt": "هل تكرار قيمة المخرج يمنع أن تكون العلاقة دالة؟",
+      "response": "لا"
+    }
+  ],
+  "enginePolicy": {
+    "reuse": [
+      "functions.relations.unique_output.classify",
+      "functions.notation.evaluate_context",
+      "uae.g6.u08.l01.linear_output",
+      "uae.g6.u08.l01.ordered_pair"
+    ],
+    "doNotDeleteSharedEngines": true,
+    "expectedRealQuestionAlignment": "Stage D independent audit"
+  },
+  "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+  "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+  "registry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+  "stageABC": {
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "objectivesPrepared": 5,
+    "sourceCategoriesMapped": 5,
+    "arabicExplanationsReady": true,
+    "questionSpecsWritten": true,
+    "cooldownReady": true,
+    "openGraphTeacherRubric": true,
+    "testsRun": "NOT_RUN",
+    "ciRun": "NOT_RUN",
+    "semanticAudit": "NOT_RUN"
+  },
+  "limitations": [
+    "No assertion that exercise content is copied; content is original and skill equivalent.",
+    "No claim of having run family generation, grading or learner Arabic/RTL tests in A-C.",
+    "Independent audit of real prompts and all objectives is mandatory in D."
+  ]
+}
