@@ -14,7 +14,7 @@
   "ownerTargetUnits": 14,
   "ownerTargetLessons": 86,
   "uniqueLessonsVerified": null,
-  "semanticCrosswalk": "IN_PROGRESS_PAIR_REVIEWS_NOT_FULL_86",
+  "semanticCrosswalk": "20_SOURCE_PAIR_COMPARISONS_DOCUMENTED; FULL_86_LESSON_ELEMENT_LEVEL_COMPARE_INCOMPLETE",
   "verifiedSourcePageComparison": [
     {
       "sourceA": "01.pdf:7-4",
@@ -64,5 +64,18 @@
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
   ],
   "u02l05VisualSpec": "u02l05-visual-teacher-rubric-spec.json",
-  "u02l05Closure": "A_C_EXPLICIT_GAP_UNTIL_SEMANTIC_INDEX_AND_VISUAL_REVIEW"
+  "u02l05Closure": "A_C_EXPLICIT_GAP_UNTIL_SEMANTIC_INDEX_AND_VISUAL_REVIEW",
+  "dedupCandidatePairsWithEvidence": 20,
+  "rawTitleComparisonsScreened": 3655,
+  "titleScreeningCandidates": 15,
+  "dedupConfirmedSemanticMerge": 1,
+  "finalUniqueLessonCount": null,
+  "sourcePageMappingsCorrected": "03-1.pdf printed 755 onward offset -585, verified physical p170=printed 755 and p191=printed 776",
+  "currentLessonArtifacts": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+    "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json"
+  ],
+  "abcClosedLessonCount": 12,
+  "nextUnclosedLesson": "2-5"
 }
