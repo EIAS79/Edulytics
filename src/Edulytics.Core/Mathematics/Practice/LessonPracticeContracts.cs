@@ -10985,6 +10985,18 @@ public static class LessonPracticeContractRegistry
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
             Version);
 
+
+        // UAE G9 General U02L01 2025 student pp.75-80: prepared skills only.
+        // Complex context-to-equation translations require teacher review until
+        // Stage D proves an appropriate symbolic equation generator and grader.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:01:WRITING-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:01:WRITING-EQUATIONS", "algebra.equations.write_from_context",
+            "G9_U02L01_WRITE_EQUATION_FROM_VERBAL_AND_MODEL",
+            ["uae.g6.u07.l02.write_tape_equation",
+             "uae.g6.u07.l02.subtraction_form"],
+            "UAE_G9_GENERAL_2025_AR_U02L01_P75_80_PARTIAL_MECHANICS",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
