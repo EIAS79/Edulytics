@@ -11057,6 +11057,19 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L04_P97_102",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+
+        // G9 General U02L05 2025 textbook p103-109.
+        // Distance/evaluation questions only; two-branch equation solving and
+        // negative-RHS/no-solution classifications remain TEACHER_REVIEW_REQUIRED.
+        // Do not mislabel partial family reuse as full READY_VERIFIED practice.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS","algebra.equations.absolute_value",
+            "G9_U02L05_ABSOLUTE_VALUE_DISTANCE_PARTIAL_TEACHER_EQUATION_REVIEW",
+            ["usccss.g6.u07.l06.absolute_distance_values",
+             "functions.absolute_value.translate_evaluate"],
+            "UAE_G9_GENERAL_2025_AR_U02L05_P103_109_PARTIAL_REUSE",
+            "PREPARED_PARTIAL_REUSE_STAGE_D_PENDING",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
