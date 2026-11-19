@@ -368,7 +368,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                 .FrameworkVersionId;
 
         Assert.Equal(
-            42,
+            0,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>
@@ -386,8 +386,10 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         // 128 independently authored Arabic lessons without invented official
         // reference nodes. Owner-retired Grade8 Advanced removes another
         // exact 77 English reference-linked pedagogical lessons.
+        // Owner-retired UAE Grade9 removes 96 Advanced + 82 General
+        // old reference-linked lessons and 42 official-linked lessons.
         Assert.Equal(
-            1373 - 10 - 59 - 62 - 1 - 77,
+            1373 - 10 - 59 - 62 - 1 - 77 - 96 - 82,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>
@@ -401,7 +403,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                                 node.NodeKind == "Reference")));
 
         Assert.Equal(
-            48,
+            0,
             await db.CurriculumPedagogicalLessonOutcomes
                 .CountAsync(
                     x =>

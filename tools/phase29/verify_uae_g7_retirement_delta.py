@@ -85,6 +85,10 @@ def verify(root: Path):
     if all_current_content != [Path(NEW_CONTENT).name] or all_current_blueprints != [Path(NEW_BLUEPRINT).name]:
         raise ValueError("extra G7 General content/blueprint remains")
 
+    from verify_uae_g9_retirement_delta import verify as verify_g9
+    grade9_retirement = verify_g9(root)
+    if not grade9_retirement:
+        raise ValueError("Owner-retired UAE Grade9 exact scope unverified")
     before = baseline(CORE_PACK)
     after = current(CORE_PACK)
     def obsolete(x):
@@ -99,10 +103,16 @@ def verify(root: Path):
     else:
         if obsolete_nodes:
             raise ValueError("new main restored old English Grade7 nodes")
-    if after["Nodes"] != [x for x in old_nodes if not obsolete(x)]:
+    def obsolete_g9(x):
+        return (x["LogicalLevelFrom"] == 9 and x["LogicalLevelTo"] == 9
+                and x["Kind"] in ("Lesson","Reference","Unit","TermScope","SourceCatalog"))
+    if after["Nodes"] != [x for x in old_nodes if not obsolete(x) and not obsolete_g9(x)]:
         raise ValueError("unrelated official nodes, positions or source definitions modified")
     for key in before:
-        if key in ("Nodes", "NodeCount", "OfficialNodeCount", "ContentDigest"):
+        if key in ("Nodes", "Links", "NodeCount", "OfficialNodeCount",
+                   "UnitCount", "LessonCount", "LinkCount",
+                   "SourceDigest", "ContentDigest"):
+            # The independent exact G9 removal verifier pins these changes.
             continue
         if before[key] != after.get(key):
             raise ValueError("unrelated UAE pack metadata altered: "+key)
@@ -110,9 +120,9 @@ def verify(root: Path):
         raise ValueError("core-pack metadata keys altered")
     actual_official = sum(bool(x.get("IsOfficial")) and x.get("Kind") in
                           ("Standard", "Outcome", "Reference") for x in after["Nodes"])
-    if not (len(after["Nodes"]) == after["NodeCount"] == 1467
-            and after["OfficialNodeCount"] == actual_official == 1358
-            and len(after["Links"]) == after["LinkCount"] == 48):
+    if not (len(after["Nodes"]) == after["NodeCount"] == 1234
+            and after["OfficialNodeCount"] == actual_official == 1180
+            and len(after["Links"]) == after["LinkCount"] == 0):
         raise ValueError("Grade7 English reference retirement pack counts drift")
     return {
         "oldContentPath": OLD_CONTENT if old_in_main else None,
