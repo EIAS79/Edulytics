@@ -127,7 +127,7 @@
     "teacherReviewedContextBankInActivity": true,
     "teacherBankAddedCommit": "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac",
     "teacherTaskCoverageExtension": {
-      "status": "AUTHORING_PREPARED_NOT_RUNTIME_VERIFIED",
+      "status": "AUTHORING_PREPARED_SOURCE_NUMBERS_ALIGNED_NOT_RUNTIME_VERIFIED",
       "sourceItemsGrouped": [
         32,
         43,
@@ -152,8 +152,23 @@
         "conditional c-parameter truth classification"
       ],
       "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
-      "testsRun": "WRITTEN_NOT_RUN"
-    }
+      "testsRun": "WRITTEN_NOT_RUN",
+      "sourceGroups": [
+        "financial_return_EX10",
+        "survey_margin_EX31",
+        "timing_EX32_EX43",
+        "curtain_speed_EX44_EX45",
+        "media_hearing_EX52_EX53",
+        "reading_scoring_EX54_EX55",
+        "conditional_reasoning_EX56_EX64",
+        "graph_fractional_endpoints_EX11_EX51"
+      ],
+      "sourceIndexedBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "contentCommit": "f6eb5f6ea6f0d9e6396ff244120bf53e0b204063",
+      "bankCommit": "cb19f0e2b24a1d39de9f8b21c817cef9527ca0e1",
+      "regressionCommit": "4a1df66cb30aa8c016319f274e730a15be19c3b8"
+    },
+    "teacherPlatformIntegration": "STAGE_D_RUNTIME_EVIDENCE_PENDING_NOT_STAGE_A_C_AUTHORING_GATE"
   },
   "stageC": {
     "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
@@ -194,11 +209,9 @@
   "blockingGaps": [
     "All 64 source exercise mathematical outcomes checked from locally scanned student-book pages; independent equivalence of actual generated digital questions and all teacher-reviewed alternatives remains unverified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
-    "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
-    "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow.",
     "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration.",
-    "Teacher-reviewed graph and proof source items are classified and have rubric drafts; authenticated learner submission and teacher assessment are not integrated or verified.",
-    "Stage D tests intentionally not run during A-C; this is not by itself a reason to postpone A-C closure."
+    "Global 13x82 source-index semantic lock remains pending: three newer unit-7 skills need evidence-based integration without inventing extra lessons.",
+    "Individual generated student-facing question semantics and teacher-reviewed parity require independent Stage D assessment; A-C authoring prepared."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
