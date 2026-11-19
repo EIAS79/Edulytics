@@ -11067,6 +11067,18 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L07_P119_125",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
 
+
+        // G9 General 2025 U02L08 p126-131. Unit cancellation and literal
+        // formula symbolic reasoning require explicit Stage D semantic review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS", "algebra.literal_equations.isolate",
+            "G9_U02L08_LITERAL_FORMULA_UNIT_ANALYSIS",
+            ["algebra.literal_equation.isolate.select_form",
+             "uae.g6.u04.l05.to_smaller_exact",
+             "uae.g6.u04.l05.to_larger_exact"],
+            "UAE_G9_GENERAL_2025_AR_U02L08_P126_131",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
