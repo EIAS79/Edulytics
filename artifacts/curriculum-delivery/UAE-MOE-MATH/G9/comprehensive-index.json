@@ -1578,14 +1578,15 @@
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
       "printedPage": 755,
-      "pdfPage": 171,
+      "pdfPage": 170,
       "sourceLessonRefs": [
         "03-1.pdf:13-5"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "CALCULATED_FROM_SPOT_CHECKED_OFFSET_RECONFIRM_ON_LESSON_OPENING"
+      "pdfPageStatus": "VISUALLY_VERIFIED_SOURCE_SECTION_OFFSET_585",
+      "pageMappingEvidence": "Verified 03-1.pdf: printed 755=physical PDF 170; printed 776=PDF 191; printed 784=PDF 199; printed 793=PDF 208."
     },
     {
       "rawOrdinal": 83,
@@ -1597,14 +1598,15 @@
       "sourceEdition": "2019-2020",
       "sourceSha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
       "printedPage": 765,
-      "pdfPage": 181,
+      "pdfPage": 180,
       "sourceLessonRefs": [
         "03-1.pdf:13-6"
       ],
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "CALCULATED_FROM_SPOT_CHECKED_OFFSET_RECONFIRM_ON_LESSON_OPENING"
+      "pdfPageStatus": "VISUALLY_VERIFIED_SOURCE_SECTION_OFFSET_585",
+      "pageMappingEvidence": "Verified 03-1.pdf: printed 755=physical PDF 170; printed 776=PDF 191; printed 784=PDF 199; printed 793=PDF 208."
     },
     {
       "rawOrdinal": 84,
@@ -1623,8 +1625,8 @@
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
-      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
+      "pdfPageStatus": "VISUALLY_VERIFIED_SOURCE_SECTION_OFFSET_585",
+      "pageMappingEvidence": "Verified 03-1.pdf: printed 755=physical PDF 170; printed 776=PDF 191; printed 784=PDF 199; printed 793=PDF 208."
     },
     {
       "rawOrdinal": 85,
@@ -1643,8 +1645,8 @@
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
-      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
+      "pdfPageStatus": "VISUALLY_VERIFIED_SOURCE_SECTION_OFFSET_585",
+      "pageMappingEvidence": "Verified 03-1.pdf: printed 755=physical PDF 170; printed 776=PDF 191; printed 784=PDF 199; printed 793=PDF 208."
     },
     {
       "rawOrdinal": 86,
@@ -1663,8 +1665,8 @@
       "semanticDedupStatus": "NOT_AUDITED",
       "abcStatus": "NOT_STARTED",
       "pdfPageEvidence": "SOURCE_P624_PDF_P40_MATCH",
-      "pdfPageStatus": "VERIFIED_SCAN_OFFSET_AFTER_SECTION_13_7",
-      "pageMappingEvidence": "03-1.pdf physical PDF page 191 shows printed 776; PDF p199 shows printed 784; PDF p208 shows printed 793."
+      "pdfPageStatus": "VISUALLY_VERIFIED_SOURCE_SECTION_OFFSET_585",
+      "pageMappingEvidence": "Verified 03-1.pdf: printed 755=physical PDF 170; printed 776=PDF 191; printed 784=PDF 199; printed 793=PDF 208."
     }
   ],
   "pageMappingEvidence": [
@@ -1684,7 +1686,7 @@
       "pdfPage": 40
     }
   ],
-  "pageMappingType": "Variable scan offsets possible; calculated locators are navigation aids only, not authoritative verified page mapping for every lesson.",
+  "pageMappingType": "02-1 and 01 offsets sampled; in 03-1 scanned volume offset changes from printed minus 584 to printed minus 585 by printed 755; verified using chapter 13-5 opening.",
   "reviewedFullSourceLessonPairs": 1,
   "rawSourceLessons": 86,
   "confirmedSemanticDuplicates": 1,
@@ -1693,14 +1695,20 @@
   "pageMappingExceptions": [
     {
       "file": "03-1.pdf",
-      "printed": 776,
-      "pdfPage": 191,
+      "printed": 744,
+      "pdfPage": 160,
+      "offset": 584
+    },
+    {
+      "file": "03-1.pdf",
+      "printed": 755,
+      "pdfPage": 170,
       "offset": 585
     },
     {
       "file": "03-1.pdf",
-      "printed": 784,
-      "pdfPage": 199,
+      "printed": 776,
+      "pdfPage": 191,
       "offset": 585
     },
     {
