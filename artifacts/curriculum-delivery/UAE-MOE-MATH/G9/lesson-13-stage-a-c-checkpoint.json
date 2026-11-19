@@ -168,7 +168,28 @@
       "bankCommit": "cb19f0e2b24a1d39de9f8b21c817cef9527ca0e1",
       "regressionCommit": "4a1df66cb30aa8c016319f274e730a15be19c3b8"
     },
-    "teacherPlatformIntegration": "STAGE_D_RUNTIME_EVIDENCE_PENDING_NOT_STAGE_A_C_AUTHORING_GATE"
+    "teacherPlatformIntegration": "STAGE_D_RUNTIME_EVIDENCE_PENDING_NOT_STAGE_A_C_AUTHORING_GATE",
+    "graphToEquationOriginalVariants": {
+      "status": "12_SOURCE_LINKED_PROMPTS_AUTHORED_TEACHER_REVIEW_NOT_RUNTIME_VERIFIED",
+      "sourceExerciseIds": [
+        "01.pdf:2-5:EX11",
+        "01.pdf:2-5:EX12",
+        "01.pdf:2-5:EX33",
+        "01.pdf:2-5:EX34",
+        "01.pdf:2-5:EX35",
+        "01.pdf:2-5:EX36",
+        "01.pdf:2-5:EX46",
+        "01.pdf:2-5:EX47",
+        "01.pdf:2-5:EX48",
+        "01.pdf:2-5:EX49",
+        "01.pdf:2-5:EX50",
+        "01.pdf:2-5:EX51"
+      ],
+      "studentFacingActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "rubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+      "sourceMappedVariants": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "commit": "c87417c7c003057b68e8879c205ca1f67b8f5f09"
+    }
   },
   "stageC": {
     "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
@@ -204,14 +225,14 @@
     "sourceRoutingRegressionTestsWritten": "f1fbcc5c675487fa4e3310828ae9e276794a01a3",
     "lastCompositeFamilyExtensionCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
     "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90",
-    "lastPreparedSourceMathAndTeacherTaskRegressionCommit": "5e3ea3b2bd29c19fa6f93a70e8cabf06d44c9b34"
+    "lastPreparedSourceMathAndTeacherTaskRegressionCommit": "5e3ea3b2bd29c19fa6f93a70e8cabf06d44c9b34",
+    "lastGraphVariantsStageDTestCommit": "d99d381abdad93e06cf42775718cf13b071cc6e0"
   },
   "blockingGaps": [
-    "All 64 source exercise mathematical outcomes checked from locally scanned student-book pages; independent equivalence of actual generated digital questions and all teacher-reviewed alternatives remains unverified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration.",
     "Global 13x82 source-index semantic lock remains pending: three newer unit-7 skills need evidence-based integration without inventing extra lessons.",
-    "Individual generated student-facing question semantics and teacher-reviewed parity require independent Stage D assessment; A-C authoring prepared."
+    "Source-equivalent draft tasks exist for all 64 numbered exercise skills with 12 graph variants; independent pedagogical comparison and actual learner-teacher runtime await Stage D."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
