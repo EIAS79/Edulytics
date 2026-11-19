@@ -126,8 +126,8 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_SOURCE_EXERCISE_64_INVENTORIED_REMAINING_FAMILY_AND_INDEX_GAPS",
-    "nextAction": "Complete lesson-to-renderer visibility integration and teacher review workflow in A-C; execute visual/browser acceptance only in Stage D. Global index semantic review remains pending.",
+    "status": "A_C_PARTIAL_EXPLICIT_TEACHER_REVIEW_MAPPINGS_NOT_CLOSED",
+    "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
     "visualRendererPrepared": true,
@@ -141,6 +141,13 @@
       "financial_modelling",
       "time_contexts",
       "reasoning_and_visual"
+    ],
+    "sourceExercisesWithoutDigitalFamily": 19,
+    "teacherReviewRoutingPolicy": "TEACHER_REVIEW_REQUIRED_FOR_OPEN_RESPONSES",
+    "standaloneFormStatus": "LOCAL_EXPORT_ONLY_NOT_AUTHENTICATED_PLATFORM_GRADE",
+    "preparedContextExamples": [
+      "contextQ4",
+      "contextQ5"
     ]
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
@@ -256,10 +263,14 @@
         "printedPage": 105,
         "pdfPage": 116,
         "taskCategory": "financial_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX11",
@@ -466,20 +477,28 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "chart_or_context_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX32",
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "chart_or_context_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX33",
@@ -586,30 +605,42 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "relay_timing_reasoning",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX44",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "measurement_and_speed_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX45",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "measurement_and_speed_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX46",
@@ -676,130 +707,182 @@
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "timing_and_sound_contexts",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX53",
         "printedPage": 107,
         "pdfPage": 118,
         "taskCategory": "timing_and_sound_contexts",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX54",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "real_world_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX55",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "real_world_modelling",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ4",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX56",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX57",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX58",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX59",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX60",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX61",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX62",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX63",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       },
       {
         "itemId": "01.pdf:2-5:EX64",
         "printedPage": 108,
         "pdfPage": 119,
         "taskCategory": "reasoning_error_analysis_extreme_cases",
-        "assessmentTreatment": "teacher_review",
+        "assessmentTreatment": "teacher_review_required",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_IDENTIFIED_NOT_INDEPENDENTLY_RUNTIME_AUDITED",
-        "originalMedia": "BOOK_REFERENCE_NOT_COPIED"
+        "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
+        "teacherReviewRequired": true,
+        "digitalEquivalenceStatus": "NOT_AUTOMATICALLY_GRADED",
+        "relatedOriginalExercise": "contextQ5",
+        "relatedExerciseIsExactEquivalent": false
       }
     ],
     "coverageClaim": "ALL_SOURCE_EXERCISE_IDS_CLASSIFIED; NOT_ALL_AUTOMATED_OR_VALIDATED; STAGE_D_NOT_RUN",
