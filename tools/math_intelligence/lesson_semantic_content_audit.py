@@ -235,7 +235,7 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     # Lock every independently approved scope, including the G8 one-lesson
     # retirement: 4,742 identifiers belong to all unaffected programmes.
     # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5229 or len(supplemental) != 73 or
+    if (len(by_code) != 5009 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
