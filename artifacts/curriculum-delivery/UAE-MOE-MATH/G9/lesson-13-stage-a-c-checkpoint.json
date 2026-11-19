@@ -38,15 +38,19 @@
     ],
     "exerciseInventory": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
     "sourceExercisesMapped": 64,
-    "sourceExercisesWithoutDigitalFamily": 21,
+    "sourceExercisesWithoutDigitalFamily": 33,
     "manualReviewClassificationCommit": "000b7247ecc73987855da3731c6459c3b1e29a09",
     "sourceExerciseCoverageDisposition": "64 inventoried; 19 non-auto-gradable explicitly teacher-reviewed; exact atomic equivalence pending",
-    "digitalFamilyCandidates": 43,
+    "digitalFamilyCandidates": 31,
     "caseRoutingCommit": "e4fad865b89aa3d714964743306db31fca9be085",
     "studentBookReview": "DIRECT_SCANNED_PRINTED_PAGES_105_TO_108_REVIEWED_FOR_64_EXERCISES",
     "exerciseTreatmentLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-source-exercise-treatment-ledger.json",
     "canonicalIndexProposal": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
-    "canonicalIndexStatus": "STRUCTURAL_TARGET_PREPARED_SEMANTIC_LOCK_PENDING"
+    "canonicalIndexStatus": "STRUCTURAL_TARGET_PREPARED_SEMANTIC_LOCK_PENDING",
+    "dualRouteGraphNumericAndTeacher": 6,
+    "directSourcePageReview": "PRINTED_PAGES_103_TO_108_DIRECT_VISUAL_COMPARE",
+    "sourcePageRasterAudit": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/five-book-page-raster-audit.json",
+    "exactPerItemSemanticEquivalence": "INCOMPLETE"
   },
   "stageB": {
     "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
@@ -93,7 +97,10 @@
       "negative outer coefficient proving no real solution",
       "fractional expression inside absolute value with exact solutions"
     ],
-    "studentNumberLineSvgCommit": "7fa855a19b5cd2026505638356635d7da628316a"
+    "studentNumberLineSvgCommit": "7fa855a19b5cd2026505638356635d7da628316a",
+    "teacherReviewedSourceContextBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+    "teacherReviewedContextBankInActivity": true,
+    "teacherBankAddedCommit": "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac"
   },
   "stageC": {
     "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
@@ -124,16 +131,18 @@
       "status": "PREPARED_NOT_RUN"
     },
     "extendedTwoRootFamilyCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
-    "extendedTwoRootStageDTestsWrittenCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc"
+    "extendedTwoRootStageDTestsWrittenCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc",
+    "compositeFamilyVariantsCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
+    "sourceRoutingRegressionTestsWritten": "f1fbcc5c675487fa4e3310828ae9e276794a01a3"
   },
   "blockingGaps": [
     "Precisely 64 source-numbered exercises inventoried, but full numerical/visual assessment coverage is not implemented or verified.",
     "Comprehensive general-edition semantic dedup lock incomplete.",
     "Teacher review is locally prepared but not integrated into learner/teacher workflow.",
     "Stage D execution not run by design.",
-    "Number-line selection now captures two points; source-exercise atomic equivalence, teacher-authenticated review workflow, and canonical 13/82 index lock still unresolved.",
     "The standalone activity exports responses locally but is not a persisted authenticated teacher grading workflow.",
-    "43 digital-family candidates and 21 teacher-review items have explicit routing, but independent source-element equivalence and authenticated teacher grading remain incomplete."
+    "Every one of 64 source exercises has guarded digital or teacher treatment (31 digital candidates, 33 teacher-only, six additional numeric+teacher-graph); exact item-level semantic verification and authenticated grading remain incomplete.",
+    "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
@@ -192,7 +201,13 @@
       "7fa855a19b5cd2026505638356635d7da628316a",
       "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
       "8e6bc1ab37099a3a1658622862fab95253acc8fc",
-      "b8f1b85b770c30b9f576f25518a9a80d91406a76"
+      "b8f1b85b770c30b9f576f25518a9a80d91406a76",
+      "c1df27d371393b408eb33beeb5f6a25df25e8d2c",
+      "cd09983228d21452990aef236b0e135f2ea7c323",
+      "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac",
+      "763a38d13aa9264ea8595c943ac61232d2350a29",
+      "58fbedac6f9499805beca96caf2b48d9626606df",
+      "e77f06b6d51bcfeb6d986d8e840b83aa17eddb60"
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   }
