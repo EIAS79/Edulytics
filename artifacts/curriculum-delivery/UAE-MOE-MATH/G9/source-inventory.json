@@ -1,84 +1,62 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "scope": {
-    "curriculumCode": "UAE-MOE-MATH",
+    "curriculum": "UAE-MOE-MATH",
     "grade": 9,
     "pathway": "General",
-    "targetPeriod": "2026-2027",
-    "academicLanguage": "ar",
-    "rtl": true
+    "targetSchoolYear": "2026-2027"
   },
-  "inventoryMethod": "Read original PDF cover/TOC on connected owner device; SHA256 from original files; excluded advanced subdirectory",
-  "originalDirectory": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_09\\01_Student_Books",
-  "files": [
+  "sourceFiles": [
     {
-      "name": "01.pdf",
-      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
-      "bytes": 59315158,
-      "pdfPages": 441,
+      "file": "01.pdf",
+      "pathway": "General",
       "edition": "2025-2026",
-      "pathway": "General",
-      "scope": "BOOK_TERM1_ONLY",
-      "tocUnitRange": "1-7",
-      "tocIndexedLessons": 43,
-      "eligibility": "SELECTED_PARTIAL",
-      "evidence": "book cover and table of contents, previous checked index docs/curriculum/UAE_G9_GENERAL_2025_STUDENT_INDEX.json"
+      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "pdfPages": 441,
+      "rawUnits": 7,
+      "rawLessons": 43
     },
     {
-      "name": "02-1.pdf",
+      "file": "02-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
       "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
-      "bytes": 19299646,
       "pdfPages": 262,
-      "edition": "2019-2020",
-      "pathway": "General",
-      "scope": "OLDER_GENERAL_VOLUME_2",
-      "tocUnitRange": "7-10",
-      "eligibility": "REFERENCE_ONLY_SOURCE_VERSION_CONFLICT",
-      "evidence": "cover PDF 1, contents PDF 3-8; unit 7 quadratic chapter and units 8-10"
+      "rawUnits": 4,
+      "rawLessons": 24
     },
     {
-      "name": "03-1.pdf",
+      "file": "03-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
       "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
-      "bytes": 33469320,
       "pdfPages": 265,
-      "edition": "2019-2020",
-      "pathway": "General",
-      "scope": "OLDER_GENERAL_VOLUME_3",
-      "tocUnitRange": "11-13",
-      "eligibility": "REFERENCE_ONLY_SOURCE_VERSION_CONFLICT",
-      "evidence": "cover PDF 1, contents PDF 4; unit 11-13, not grade 9 General 2025 sequel"
+      "rawUnits": 3,
+      "rawLessons": 19
     },
     {
-      "name": "02.pdf",
+      "file": "02.pdf",
+      "pathway": "Applied",
       "sha256": "85befe868edef0dbdbfa3f58752db8b44e99faf573c775eb90755335048a76e9",
-      "bytes": 24515856,
       "pdfPages": 200,
-      "edition": "2022-2023 (inside cover) / 2023-2024 (front badge)",
-      "pathway": "Applied",
-      "scope": "APPLIED_VOLUME_2",
-      "eligibility": "EXCLUDED_DIFFERENT_PATHWAY",
-      "evidence": "PDF 1 cover says تطبيق, PDF 2 internal cover says المسار التطبيقي"
+      "importToGeneral": false
     },
     {
-      "name": "03.pdf",
-      "sha256": "511465ab6555ebd76f5f4213fb5f51a98e88ec9379b7db3709c593385f5a488f",
-      "bytes": 15524710,
-      "pdfPages": 131,
-      "edition": "2022-2023 (inside cover) / 2023-2024 (front badge)",
+      "file": "03.pdf",
       "pathway": "Applied",
-      "scope": "APPLIED_VOLUME_3",
-      "eligibility": "EXCLUDED_DIFFERENT_PATHWAY",
-      "evidence": "PDF 1 cover says تطبيق, PDF 2 internal cover says المسار التطبيقي"
+      "sha256": "511465ab6555ebd76f5f4213fb5f51a98e88ec9379b7db3709c593385f5a488f",
+      "pdfPages": 131,
+      "importToGeneral": false
     }
   ],
-  "sourceLock": "BLOCKED_EDITION_CONFLICT_AND_MISSING_COMPATIBLE_ANNUAL_VOLUMES",
-  "targetUnitCountOwner": 14,
-  "targetLessonCountOwner": 86,
-  "verifiedSelectedUnitCount": 7,
-  "verifiedSelectedLessonCount": 43,
-  "unverifiedAnnualUnitCount": 7,
-  "unverifiedAnnualLessonCount": 43,
-  "testsRun": "NOT_RUN",
-  "ciRunByAgent": "NOT_RUN",
-  "lastUpdated": "2026-11-19"
+  "rawGeneralTotals": {
+    "units": 14,
+    "lessons": 86
+  },
+  "semanticVerifiedUniqueTotals": null,
+  "lessonIndex": "comprehensive-index.json",
+  "crossEditionReview": "dedup-crosswalk.json",
+  "appliedReview": "applied-cross-reference.json",
+  "status": "FIVE_PDF_SOURCE_FILES_VERIFIED_SEMANTIC_DEDUP_IN_PROGRESS",
+  "testsRun": "NOT_RUN"
 }
