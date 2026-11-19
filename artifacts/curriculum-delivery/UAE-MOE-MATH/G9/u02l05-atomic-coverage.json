@@ -126,7 +126,7 @@
     "visualRendererVerified": false,
     "teacherRubricsComplete": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "status": "A_C_SOURCE_PAGE_BASED_CASE_ROUTING_CORRECTED_EXACT_VARIANTS_PENDING",
+    "status": "A_C_SOURCE_SKILL_CANDIDATES_EXTENDED_EXACT_EQUIVALENCE_UNVERIFIED",
     "nextAction": "Individually verify 64 source exercises and map each to mathematically equivalent existing digital family or independently documented teacher-reviewed artifact; implement platform teacher submission only if demanded by lesson workflow. Resolve 13/82 index lock separately.",
     "richV2VisualDescriptionsPrepared": true,
     "teacherRubricPrepared": true,
@@ -142,15 +142,17 @@
       "time_contexts",
       "reasoning_and_visual"
     ],
-    "sourceExercisesWithoutDigitalFamily": 23,
+    "sourceExercisesWithoutDigitalFamily": 21,
     "teacherReviewRoutingPolicy": "TEACHER_REVIEW_REQUIRED_FOR_OPEN_RESPONSES",
     "standaloneFormStatus": "LOCAL_EXPORT_ONLY_NOT_AUTHENTICATED_PLATFORM_GRADE",
     "preparedContextExamples": [
       "contextQ4",
       "contextQ5"
     ],
-    "digitalFamilyCandidates": 41,
-    "familyRoutingCorrections": "EX24/27/28 moved to no_solution; EX38/39 to two_solutions; EX30/37/40/42 require teacher review pending exact families"
+    "digitalFamilyCandidates": 43,
+    "familyRoutingCorrections": "EX24/27/28 moved to no_solution; EX38/39 to two_solutions; EX30/37/40/42 require teacher review pending exact families",
+    "fractionalOuterVariantCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
+    "fractionalOuterTestCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc"
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
   "richV2ContentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
@@ -493,13 +495,13 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "absolute_equations",
-        "assessmentTreatment": "teacher_review_required_unsupported_coefficient_or_fraction",
-        "digitalFamily": null,
-        "reviewStatus": "DIRECT_SOURCE_PAGE_VISUAL_MATH_CASE_CLASSIFIED_NOT_RUNTIME_VERIFIED",
+        "assessmentTreatment": "extended_two_solution_family_fractional_or_positive_outer_factor",
+        "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
+        "reviewStatus": "SOURCE_MATH_SKILL_MATCH_WITH_EXTENDED_GENERATOR_VARIANTS_TESTS_NOT_RUN",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
-        "teacherReviewRequired": true,
+        "teacherReviewRequired": false,
         "exactSourceExpressionDigitized": false,
-        "correctionNote": "Source equation requires positive outer multiplier or fractional coefficient not represented by the current exact family."
+        "correctionNote": "Reuse existing two_solutions verifier with newly prepared fractional or positive outer-factor question variants; not a claim of exact source-item reproduction."
       },
       {
         "itemId": "01.pdf:2-5:EX31",
@@ -574,13 +576,13 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "absolute_equations_outer_coefficients",
-        "assessmentTreatment": "teacher_review_required_unsupported_coefficient_or_fraction",
-        "digitalFamily": null,
-        "reviewStatus": "DIRECT_SOURCE_PAGE_VISUAL_MATH_CASE_CLASSIFIED_NOT_RUNTIME_VERIFIED",
+        "assessmentTreatment": "extended_two_solution_family_fractional_or_positive_outer_factor",
+        "digitalFamily": "uae.g9.general.u02.l05.two_solutions",
+        "reviewStatus": "SOURCE_MATH_SKILL_MATCH_WITH_EXTENDED_GENERATOR_VARIANTS_TESTS_NOT_RUN",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
-        "teacherReviewRequired": true,
+        "teacherReviewRequired": false,
         "exactSourceExpressionDigitized": false,
-        "correctionNote": "Source equation requires positive outer multiplier or fractional coefficient not represented by the current exact family."
+        "correctionNote": "Reuse existing two_solutions verifier with newly prepared fractional or positive outer-factor question variants; not a claim of exact source-item reproduction."
       },
       {
         "itemId": "01.pdf:2-5:EX38",
