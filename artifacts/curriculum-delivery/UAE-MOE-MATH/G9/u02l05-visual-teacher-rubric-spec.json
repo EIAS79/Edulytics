@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+  "source": {
+    "file": "01.pdf",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "pdfPages": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ]
+  },
+  "presentation": {
+    "locale": "ar",
+    "direction": "rtl",
+    "mathematicalExpressionsDirection": "ltr",
+    "numberLineDirection": "numeric_ascending_left_to_right",
+    "originZeroCenteredWhenRangeAllows": true,
+    "negativeTicks": "UnicodeMinus",
+    "mathGlyph": "|x-m| = r",
+    "screenReaderLabelAr": "خط الأعداد موضح عليه حلّا معادلة القيمة المطلقة",
+    "representSolutionsUsing": [
+      "filled_point_markers",
+      "textual_equivalent_set"
+    ],
+    "emptySolutionRender": "مجموعة الحل: ∅",
+    "singleSolutionRender": "marker_at_midpoint",
+    "twoSolutionsRender": "markers_at_m_minus_r_and_m_plus_r",
+    "geometrySemantics": "Equal distance from midpoint on real number line"
+  },
+  "questionCoverage": [
+    {
+      "sourceSkill": "Substitute and evaluate |expression|",
+      "printedPages": [
+        103
+      ],
+      "practiceFamily": "uae.g9.general.u02.l05.evaluate_absolute",
+      "correction": "numeric independent",
+      "teacherReview": false
+    },
+    {
+      "sourceSkill": "Solve |a*x+b|=positive constant and verify both roots",
+      "printedPages": [
+        104,
+        105
+      ],
+      "practiceFamily": "uae.g9.general.u02.l05.two_solutions",
+      "correction": "unordered_pair_integer",
+      "teacherReview": false
+    },
+    {
+      "sourceSkill": "Solve zero absolute value equality",
+      "printedPages": [
+        104,
+        108
+      ],
+      "practiceFamily": "uae.g9.general.u02.l05.one_solution",
+      "correction": "single_number",
+      "teacherReview": false
+    },
+    {
+      "sourceSkill": "Explain impossible negative absolute value equality",
+      "printedPages": [
+        104,
+        105
+      ],
+      "practiceFamily": "uae.g9.general.u02.l05.no_solution",
+      "correction": "no_solution",
+      "teacherReviewForJustification": true
+    },
+    {
+      "sourceSkill": "Write absolute-value distance equation for endpoints",
+      "printedPages": [
+        105,
+        106,
+        107
+      ],
+      "practiceFamily": "uae.g9.general.u02.l05.midpoint",
+      "correction": "midpoint numeric only",
+      "teacherReviewForFullEquation": true
+    }
+  ],
+  "teacherRubric": {
+    "appliesTo": [
+      "Explain why two/one/zero solutions",
+      "Draw solution set on number line",
+      "Create equation for symmetric points or realistic tolerance"
+    ],
+    "dimensions": [
+      {
+        "id": "mathematics",
+        "maxPoints": 2,
+        "level2": "Correct absolute value equation with sign cases and valid roots",
+        "level1": "Correct model but minor algebra/sign error",
+        "level0": "Incorrect concept or missing model"
+      },
+      {
+        "id": "reasoning",
+        "maxPoints": 2,
+        "level2": "Explicit distance interpretation and justification for number of solutions",
+        "level1": "Partial explanation; missing exclusion of negative distance or zero case",
+        "level0": "No mathematical justification"
+      },
+      {
+        "id": "visual",
+        "maxPoints": 2,
+        "level2": "Correct numeric axis scale and solution markers including negatives",
+        "level1": "Solutions correct but axis/ticks ambiguous",
+        "level0": "Missing or mathematically incorrect representation"
+      },
+      {
+        "id": "context",
+        "maxPoints": 2,
+        "level2": "Correct units, reference point and solution interpretation in applied problem",
+        "level1": "Plausible numeric values but unclear units or reference",
+        "level0": "Invalid context mapping"
+      }
+    ],
+    "totalPoints": 8,
+    "grading": "TEACHER_REVIEW_REQUIRED",
+    "remarks": "Numeric family verifier alone does not mark free-drawn graph or written proof correct."
+  },
+  "answerVariants": {
+    "twoSolutions": "order independent, exactly two values",
+    "single": "numeric with validated parameter set",
+    "noSolutions": [
+      "لا يوجد حل",
+      "∅"
+    ],
+    "graphing": "teacher-reviewed, no automatic pass"
+  },
+  "preparedChecks": [
+    {
+      "case": "Correct",
+      "example": "|x+5|=17",
+      "expected": [
+        -22,
+        12
+      ]
+    },
+    {
+      "case": "InvalidNegativeRHS",
+      "example": "|x-1|=-3",
+      "expected": []
+    },
+    {
+      "case": "BoundaryZero",
+      "example": "|2x-6|=0",
+      "expected": [
+        3
+      ]
+    },
+    {
+      "case": "EquivalentOrder",
+      "example": "|x-15|=4",
+      "expected": [
+        11,
+        19
+      ]
+    },
+    {
+      "case": "Visual",
+      "expected": "markers at -22 and 12 for first case; no fake single marker"
+    },
+    {
+      "case": "InvalidAnswer",
+      "expected": "reject extra answers, missing value, and duplicated pair"
+    }
+  ],
+  "status": {
+    "a": "SOURCE_PAGES_REVIEWED",
+    "b": "ARABIC_DRAFT_PREPARED",
+    "c": "FAMILIES_PREPARED_VISUAL_RENDERER_UNVERIFIED",
+    "tests": "WRITTEN_NOT_RUN",
+    "ci": "NOT_RUN",
+    "academicClosure": "A_C_EXPLICIT_GAP_PENDING_COMPLETE_INDEX_LOCK_AND_VISUAL_IMPLEMENTATION"
+  },
+  "protectedBoundaries": [
+    "No American curriculum or Advanced/Applied lessons imported",
+    "No CI/test execution until D"
+  ]
+}
