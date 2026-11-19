@@ -15,6 +15,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     internal const string None = "uae.g9.general.u02.l05.no_solution";
     internal const string Evaluate = "uae.g9.general.u02.l05.evaluate_absolute";
     internal const string Center = "uae.g9.general.u02.l05.midpoint";
+    internal const string Tolerance = "uae.g9.general.u02.l05.context_tolerance_endpoints";
     internal const string Composite = "uae.g9.general.u02.l05.composite_evaluation";
     internal const string OuterImpossible = "uae.g9.general.u02.l05.outer_coefficient_no_solution";
     internal sealed record Item(
@@ -22,7 +23,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     internal static bool Supports(string? family) =>
-        family is Two or Zero or None or Evaluate or Center or Composite or OuterImpossible;
+        family is Two or Zero or None or Evaluate or Center or Tolerance or Composite or OuterImpossible;
 
     private static bool Valid(string family, IReadOnlyDictionary<string, int>? p)
     {
@@ -57,7 +58,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         var a=p["a"]; var m=p["m"]; var r=p["r"];
         expected=family switch
         {
-            Two => FormattableString.Invariant($"{m-r},{m+r}"),
+            Two or Tolerance => FormattableString.Invariant($"{m-r},{m+r}"),
             Zero => m.ToString(CultureInfo.InvariantCulture),
             None => "لايوجدحل",
             Evaluate => (a * r).ToString(CultureInfo.InvariantCulture),
@@ -79,6 +80,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
         string prompt=family switch
         {
             Two => $"حل المعادلة |{a}س{Signed(b)}|={target}. اكتب الحلين تصاعديًا مفصولين بفاصلة.",
+            Tolerance => $"درجة الحرارة المطلوبة {m} درجة مئوية، ويُسمح باختلاف مقداره {r} درجات بالضبط. ما درجتا الحرارة اللتان تبعدان هذه المسافة عن القيمة المطلوبة؟ اكتب القيمتين بفاصلة.",
             Zero => $"حل المعادلة |{a}س{Signed(b)}|=0. اكتب قيمة س.",
             None => $"حل المعادلة |{a}س{Signed(b)}|=−{target}. إذا لم يوجد حل، اكتب: لا يوجد حل.",
             Evaluate => $"إذا كانت س={m+r}، فأوجد قيمة |{a}س{Signed(b)}|.",
@@ -104,7 +106,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
             !TryExpected(family,p,out var expected)) return false;
         var actual=Normalized(answer);
         if (family is None or OuterImpossible) return actual is "لايوجدحل" or "لاحل" or "لامجموعةحل" or "مجموعةالحلخالية" or "∅" or "{}";
-        if (family==Two)
+        if (family is Two or Tolerance)
         {
             // Do not silently accept missing answers such as "1,9," or ",1,9".
             var values=actual.Split(',');
