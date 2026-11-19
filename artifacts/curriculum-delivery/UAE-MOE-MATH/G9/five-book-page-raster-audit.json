@@ -827,5 +827,45 @@
   "all86PagesExist": true,
   "all86PagesNonBlank": true,
   "semanticOrTitleVerified": false,
-  "testsRun": "NOT_RUN"
+  "testsRun": "NOT_RUN",
+  "fullFilePageTechnicalAudit": {
+    "status": "ALL_1299_PAGES_RENDERABLE_AT_LOW_RESOLUTION_NOT_EDUCATIONALLY_REVIEWED",
+    "method": "pymupdf page.get_pixmap matrix 0.12 RGB on authorized device Our-CS",
+    "files": [
+      {
+        "file": "01.pdf",
+        "pages": 441,
+        "rasterReadable": 441,
+        "sourceBookPageContentReviewed": false
+      },
+      {
+        "file": "02-1.pdf",
+        "pages": 262,
+        "rasterReadable": 262,
+        "sourceBookPageContentReviewed": false
+      },
+      {
+        "file": "03-1.pdf",
+        "pages": 265,
+        "rasterReadable": 265,
+        "sourceBookPageContentReviewed": false
+      },
+      {
+        "file": "02.pdf",
+        "pages": 200,
+        "rasterReadable": 200,
+        "sourceBookPageContentReviewed": false
+      },
+      {
+        "file": "03.pdf",
+        "pages": 131,
+        "rasterReadable": 131,
+        "sourceBookPageContentReviewed": false
+      }
+    ],
+    "totalPages": 1299,
+    "totalPageRastersReadable": 1299,
+    "semanticOrTextbookElementReview": "NOT_COMPLETE",
+    "doesNotSatisfyOwnerSourceBookCoverageGate": true
+  }
 }
