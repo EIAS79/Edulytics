@@ -103,8 +103,8 @@
     {
       "source": "01.pdf:7-2",
       "target": "03-1.pdf:11-3",
-      "status": "OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_WITH_UNIQUE_MEASUREMENT",
-      "reason": "Partial overlap on measuring segments, but unit precision and practical ruler tasks require explicit treatment.",
+      "status": "DIRECT_FULL_PAGE_SPANS_VISUALLY_REVIEWED_PARTIAL_OVERLAP_WITH_DISTINCT_MEASUREMENT_AND_PROOF_REQUIREMENTS_ITEM_PARITY_PENDING",
+      "reason": "Both lessons use segment measurement/addition, but latest book's precision/accuracy expansion is not evidenced in older proof-focused 11-3; older formal congruence proofs are also not covered by ruler-use alone.",
       "directSourceTargetPageEvidence": {
         "sourceFile": "01.pdf",
         "sourcePrintedPage": 374,
@@ -114,14 +114,75 @@
         "targetPdfPage": 40,
         "sourceObserved": "Ruler measurements in cm and mm, precision and unit use",
         "targetObserved": "Ruler postulate plus segment-addition postulate for proof",
-        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+        "comparisonScope": "FULL_LESSON_PAGE_SPANS_VISUALLY_REVIEWED_NOT_EXERCISE_BY_EXERCISE_OR_RUNTIME_ACCEPTANCE",
+        "sourcePrintedPagesReviewed": [
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384
+        ],
+        "sourcePdfPagesReviewed": [
+          385,
+          386,
+          387,
+          388,
+          389,
+          390,
+          391,
+          392,
+          393,
+          394,
+          395
+        ],
+        "targetPrintedPagesReviewed": [
+          624,
+          625,
+          626,
+          627,
+          628,
+          629,
+          630
+        ],
+        "targetPdfPagesReviewed": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "reviewMode": "DIRECT_LOCAL_SCANNED_PDF_CONTACT_SHEETS",
+        "commonSkills": [
+          "segment measurements using a ruler",
+          "segment addition/relations",
+          "congruent segment reasoning"
+        ],
+        "newerSpecific": [
+          "real-world measurements and unit conversions",
+          "precision vs accuracy and measurement tolerances",
+          "drawing and measuring physical objects"
+        ],
+        "olderSpecific": [
+          "two-column and paragraph proofs",
+          "reflexive/symmetric/transitive congruence",
+          "explicit segment addition postulate"
+        ],
+        "testsRun": "WRITTEN_NOT_RUN"
       }
     },
     {
       "source": "01.pdf:7-3",
       "target": "03-1.pdf:12-6",
-      "status": "OPENING_PAGES_COMPARED_DISTINCT_DISTANCE_MODELS",
-      "reason": "Different distance contexts; cannot claim the source's midpoint/number-line skill is assessed by the target's perpendicular distance.",
+      "status": "DIRECT_FULL_PAGE_SPANS_VISUALLY_REVIEWED_DISTINCT_LEARNING_TARGETS_PARTIAL_GENERIC_DISTANCE_VOCABULARY_ONLY_ITEM_PARITY_PENDING",
+      "reason": "Target 12-6 covers shortest perpendicular distance and distance of parallel lines, whereas newer 7-3 teaches point-to-point distance and midpoint; common distance vocabulary does not justify dropping either competency.",
       "directSourceTargetPageEvidence": {
         "sourceFile": "01.pdf",
         "sourcePrintedPage": 385,
@@ -131,7 +192,75 @@
         "targetPdfPage": 111,
         "sourceObserved": "Absolute difference of coordinates on number line and midpoint of a segment",
         "targetObserved": "Perpendicular point-to-line and parallel-line distance",
-        "comparisonScope": "LESSON_OPENING_PAGES_ONLY_EXERCISE_BY_EXERCISE_CHECK_PENDING"
+        "comparisonScope": "FULL_LESSON_PAGE_SPANS_VISUALLY_REVIEWED_NOT_EXERCISE_BY_EXERCISE_OR_RUNTIME_ACCEPTANCE",
+        "sourcePrintedPagesReviewed": [
+          385,
+          386,
+          387,
+          388,
+          389,
+          390,
+          391,
+          392,
+          393,
+          394,
+          395,
+          396
+        ],
+        "sourcePdfPagesReviewed": [
+          396,
+          397,
+          398,
+          399,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407
+        ],
+        "targetPrintedPagesReviewed": [
+          695,
+          696,
+          697,
+          698,
+          699,
+          700,
+          701,
+          702,
+          703,
+          704
+        ],
+        "targetPdfPagesReviewed": [
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ],
+        "reviewMode": "DIRECT_LOCAL_SCANNED_PDF_CONTACT_SHEETS",
+        "commonSkills": [
+          "distance as a nonnegative quantity",
+          "coordinate representations and distances"
+        ],
+        "newerSpecific": [
+          "point-to-point line and plane distances",
+          "midpoint and segment bisector",
+          "number-line absolute difference; coordinate distance formula"
+        ],
+        "olderSpecific": [
+          "perpendicular point-to-line distance",
+          "parallel-lines distance and related proof",
+          "perpendicular slopes and linear equations"
+        ],
+        "testsRun": "WRITTEN_NOT_RUN"
       }
     },
     {
@@ -1106,30 +1235,40 @@
       {
         "source": "01.pdf:7-2",
         "target": "03-1.pdf:11-3",
-        "status": "OPENING_PAGES_COMPARED_PARTIAL_OVERLAP_WITH_UNIQUE_MEASUREMENT",
+        "status": "FULL_SOURCE_TARGET_PAGE_SPANS_VISUALLY_REVIEWED_EXACT_ITEM_PARITY_PENDING",
         "sourcePrinted": 374,
         "sourcePdf": 385,
         "targetPrinted": 624,
         "targetPdf": 40,
         "sourceObserved": "Ruler measurements in cm and mm, precision and unit use",
         "targetObserved": "Ruler postulate plus segment-addition postulate for proof",
-        "finding": "Partial overlap on measuring segments, but unit precision and practical ruler tasks require explicit treatment."
+        "finding": "Both lessons use segment measurement/addition, but latest book's precision/accuracy expansion is not evidenced in older proof-focused 11-3; older formal congruence proofs are also not covered by ruler-use alone."
       },
       {
         "source": "01.pdf:7-3",
         "target": "03-1.pdf:12-6",
-        "status": "OPENING_PAGES_COMPARED_DISTINCT_DISTANCE_MODELS",
+        "status": "FULL_SOURCE_TARGET_PAGE_SPANS_VISUALLY_REVIEWED_EXACT_ITEM_PARITY_PENDING",
         "sourcePrinted": 385,
         "sourcePdf": 396,
         "targetPrinted": 695,
         "targetPdf": 111,
         "sourceObserved": "Absolute difference of coordinates on number line and midpoint of a segment",
         "targetObserved": "Perpendicular point-to-line and parallel-line distance",
-        "finding": "Different distance contexts; cannot claim the source's midpoint/number-line skill is assessed by the target's perpendicular distance."
+        "finding": "Target 12-6 covers shortest perpendicular distance and distance of parallel lines, whereas newer 7-3 teaches point-to-point distance and midpoint; common distance vocabulary does not justify dropping either competency."
       }
     ],
-    "classification": "TWO_PARTIAL_OVERLAPS_AND_ONE_DISTINCT_DISTANCE_MODEL",
-    "status": "ONE_FULL_SPAN_GEOMETRY_PAIR_REVIEWED_OTHER_PAIRS_OPENING_ONLY_INTEGRATION_PENDING",
+    "classification": "TWO_PARTIAL_OVERLAPS_ONE_DISTINCT_DISTANCE_MODEL",
+    "status": "ALL_THREE_GEOMETRY_SOURCE_TARGET_LESSON_SPANS_VISUALLY_REVIEWED_EXACT_SKILL_EXERCISE_INTEGRATION_PENDING",
     "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "fullSpanGeometryReview": {
+    "pairs": 3,
+    "sourceBooks": [
+      "01.pdf",
+      "03-1.pdf"
+    ],
+    "verification": "DIRECT_LOCAL_PAGE_CONTACT_SHEETS",
+    "scope": "Full ranges of compared lesson pages visually reviewed; no complete per-exercise or live-platform fidelity audit",
+    "sourceIndexLock": false
   }
 }
