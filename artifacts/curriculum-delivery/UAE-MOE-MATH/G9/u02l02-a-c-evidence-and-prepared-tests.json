@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026 General term1",
+    "lesson": "2-2",
+    "pagesPrinted": [
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "pagesPdf": [
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "sourcePages": [
+        83,
+        84
+      ],
+      "target": "حل جمع وطرح خطوة واحدة باستخدام العملية العكسية والمساواة"
+    },
+    {
+      "id": "O2",
+      "sourcePages": [
+        84,
+        85
+      ],
+      "target": "حل ضرب وقسمة خطوة واحدة مع الأعداد الصحيحة والكسور"
+    },
+    {
+      "id": "O3",
+      "sourcePages": [
+        85,
+        86,
+        87
+      ],
+      "target": "التحقق بالتعويض في المعادلة الأصلية"
+    },
+    {
+      "id": "O4",
+      "sourcePages": [
+        86,
+        87,
+        88,
+        89
+      ],
+      "target": "نمذجة مشاكل حياتية ومعادلات مفردة وقراءة وحدات الحل"
+    }
+  ],
+  "sourceExerciseSections": [
+    {
+      "pages": [
+        86,
+        87
+      ],
+      "group": "guided and independent one-step equations"
+    },
+    {
+      "pages": [
+        87,
+        88
+      ],
+      "group": "rational/decimal and word-problem equation applications"
+    },
+    {
+      "pages": [
+        89
+      ],
+      "group": "standardized assessments and prerequisite review"
+    },
+    {
+      "pages": [
+        90
+      ],
+      "group": "algebra tile enrichment / early next-lesson bridge"
+    }
+  ],
+  "fixtures": [
+    {
+      "objective": "O1",
+      "question": "حل س + ١٢ = ٢٧.",
+      "answer": "15",
+      "incorrect": "39",
+      "generatorCandidate": "uae.g6.u07.l01.add"
+    },
+    {
+      "objective": "O1",
+      "question": "حل س − ٨ = −٣.",
+      "answer": "5",
+      "incorrect": "-11",
+      "generatorCandidate": "uae.g6.u07.l01.subtract"
+    },
+    {
+      "objective": "O2",
+      "question": "حل −٥س = ٣٠.",
+      "answer": "-6",
+      "incorrect": "6",
+      "generatorCandidate": "uae.g6.u07.l01.multiply"
+    },
+    {
+      "objective": "O2",
+      "question": "حل س/٤ = ٩.",
+      "answer": "36",
+      "incorrect": "2.25",
+      "generatorCandidate": "uae.g6.u07.l01.divide"
+    },
+    {
+      "objective": "O3",
+      "question": "هل س=٤ حل للمعادلة ٣س+٢=١٤؟",
+      "answer": "نعم",
+      "incorrect": "لا",
+      "generatorCandidate": "uae.g6.u07.l01.test_candidate"
+    },
+    {
+      "objective": "O4",
+      "question": "ثمن ثلاثة أقلام متماثلة ٢٤ درهمًا. أوجد ثمن القلم.",
+      "answer": "8",
+      "teacherReviewContext": true
+    }
+  ],
+  "cooldown": [
+    {
+      "question": "حل س + ٩ = ١٤ وتحقق.",
+      "answer": "5"
+    },
+    {
+      "question": "حل ٣س = ٢٧.",
+      "answer": "9"
+    },
+    {
+      "question": "حل س − ٢٫٥ = ٨٫٥.",
+      "answer": "11"
+    }
+  ],
+  "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+  "mappingPath": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+  "contractPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+  "abcStatus": "READY_FOR_STAGE_D_PREPARATION",
+  "testsRun": "NOT_RUN",
+  "ciRun": "NOT_RUN",
+  "semanticAudit": "NOT_RUN",
+  "teacherReviewOpenReasoning": true,
+  "claimOfOneToOnePerExercise": false,
+  "openDChecks": [
+    "actual generator outputs in Arabic and correct targeted one-step methods",
+    "fraction and decimal grading behavior",
+    "invalid/correct/wrong answer verification",
+    "student RTL rendering and no English fallbacks"
+  ]
+}
