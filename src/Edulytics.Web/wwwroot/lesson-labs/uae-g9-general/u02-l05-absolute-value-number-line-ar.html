@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics | الصف التاسع العام | معادلات القيمة المطلقة</title>
+<style>
+:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#142b45;background:#f4f7fb}
+*{box-sizing:border-box}body{margin:0}main{max-width:920px;margin:auto;padding:1.5rem}
+h1,h2{line-height:1.65}h1{font-size:1.6rem}h2{font-size:1.1rem;margin-top:0}
+section{background:white;border:1px solid #c6d1e0;padding:1.3rem;border-radius:13px;margin-block:1rem}
+p{line-height:1.9}label{font-weight:650}select{font:inherit;max-width:100%;padding:.45rem;border-radius:8px;border:1px solid #889cb7}
+.eq{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:system-ui,Arial,sans-serif;font-weight:650}
+.figure{border:1px solid #d5dfea;border-radius:9px;padding:.8rem;overflow-x:auto}
+svg{direction:ltr;width:100%;min-width:580px;height:auto}
+.tick{stroke:#61758a;stroke-width:1.25}.axis{stroke:#213c58;stroke-width:2}.marker{fill:#0665b0;stroke:white;stroke-width:2.4}
+.label{font:15px system-ui,Arial,sans-serif;fill:#193a53}.sol{fill:#064d8a;font-weight:700}.center{fill:#b44c00;stroke:#b44c00}
+.teacher{border-inline-start:4px solid #4a637e;background:#eaf1f8;padding:.9rem}
+@media(prefers-reduced-motion:no-preference){.marker{transition:cx .2s}}
+</style>
+</head>
+<body><main>
+<header><p>المنهج الوزاري الإماراتي · الصف التاسع العام · الوحدة الثانية · الدرس ٢–٥</p>
+<h1>حل معادلات تتضمن قيمة مطلقة</h1>
+<p>القيمة المطلقة تمثل المسافة عن الصفر. نحدد عدد الحلول أولًا من إشارة الطرف الآخر، ثم نتحقق من المواضع على خط الأعداد.</p></header>
+<section aria-labelledby="caseHeading"><h2 id="caseHeading">اختر حالة المعادلة</h2>
+<label for="case">المعادلة:</label>
+<select id="case">
+<option value="two">|س + ٥| = ١٧ — حلان</option>
+<option value="one">|٢س − ٦| = ٠ — حل واحد</option>
+<option value="none">|٣س − ٤| = −١ — لا حل</option>
+<option value="mid">|س − ١٥| = ٤ — نقطتان حول المركز</option>
+</select>
+<p id="explain" aria-live="polite"></p>
+<div class="figure" role="group" aria-labelledby="figureTitle" aria-describedby="figureDesc">
+<h2 id="figureTitle">خط الأعداد</h2>
+<svg id="numberLine" viewBox="0 0 760 170" role="img" aria-labelledby="svgTitle svgDesc">
+<title id="svgTitle">تمثيل حلول معادلة القيمة المطلقة على خط الأعداد</title>
+<desc id="svgDesc">مواضع الحلول والنقطة المرجعية معروضة بتدرج عددي منتظم.</desc>
+</svg>
+<p id="figureDesc">النقاط الزرقاء تمثل الحلول. اللون البرتقالي يحدد المركز عند وجود مسافة من نقطة مرجعية.</p>
+</div>
+<p id="answers" aria-live="polite"></p>
+</section>
+<section><h2>خطوات الحل</h2>
+<ol><li>اعزل تعبير القيمة المطلقة.</li><li>إذا كان الطرف الآخر سالبًا، فلا يوجد حل. وإذا كان صفرًا، فتوجد حالة واحدة. وإذا كان موجبًا، نحل حالتين.</li><li>عوّض في المعادلة الأصلية للتحقق.</li><li>حدد كل حل على خط الأعداد، مع مراعاة المقياس والمسافات.</li></ol>
+<div class="teacher"><strong>مراجعة المعلم:</strong> يُقيّم الرسم الحر وشرح سبب وجود حلين أو حل واحد أو عدم وجود حل، وكذلك تفسير المسافة في المسائل السياقية، بمصفوفة مراجعة مستقلة. لا يُعد هذا النشاط تصحيحًا آليًا لرسوم الطالب أو تبريراته.</div></section>
+<footer><p>نشاط أصلي من Edulytics، مرتبط بكتاب الطالب <span class="eq">01.pdf</span>، الصفحات المطبوعة ١٠٣–١٠٨. المعلم يراجع المخرجات الحرة.</p></footer>
+</main>
+<script>
+'use strict';
+const cases={
+ two:{min:-25,max:15,step:5,points:[-22,12],center:-5,distance:17,label:'نحل س + ٥ = ١٧ أو س + ٥ = −١٧، إذن س = ١٢ أو −٢٢.',answer:'مجموعة الحل: {−٢٢، ١٢}'},
+ one:{min:-2,max:8,step:1,points:[3],center:3,distance:0,label:'حتى تكون القيمة المطلقة صفرًا، يجب أن يكون ٢س − ٦ = ٠، إذن س = ٣.',answer:'مجموعة الحل: {٣}'},
+ none:{min:-5,max:5,step:1,points:[],center:null,distance:null,label:'لا يمكن أن تكون القيمة المطلقة عددًا سالبًا؛ ولذلك لا يوجد حل حقيقي.',answer:'مجموعة الحل: ∅'},
+ mid:{min:8,max:22,step:2,points:[11,19],center:15,distance:4,label:'١٥ منتصف ١١ و١٩، والمسافة من المنتصف إلى كل منهما ٤ وحدات.',answer:'مجموعة الحل: {١١، ١٩}'}
+};
+const svg=document.getElementById('numberLine');
+const ns='http://www.w3.org/2000/svg';
+function node(tag,attributes,text){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attributes||{}))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=String(text);svg.appendChild(e);return e}
+function draw(){
+ const d=cases[document.getElementById('case').value],x=v=>45+(v-d.min)*670/(d.max-d.min);
+ svg.replaceChildren();
+ node('title',{id:'svgTitle'},'خط أعداد لحلول القيمة المطلقة');
+ node('desc',{id:'svgDesc'},d.points.length?'حلول عند '+d.points.join('، '):'لا نقاط حل، المعادلة مستحيلة.');
+ node('line',{x1:35,y1:90,x2:730,y2:90,class:'axis'});
+ for(let n=d.min;n<=d.max;n+=d.step){node('line',{x1:x(n),y1:82,x2:x(n),y2:98,class:'tick'});node('text',{x:x(n),y:120,'text-anchor':'middle',class:'label'},n)}
+ if(d.center!==null){node('line',{x1:x(d.center),y1:52,x2:x(d.center),y2:103,class:'center','stroke-dasharray':'4 4'});node('text',{x:x(d.center),y:44,'text-anchor':'middle',class:'label'},'المركز')}
+ for(const v of d.points){node('circle',{cx:x(v),cy:90,r:9,class:'marker'});node('text',{x:x(v),y:65,'text-anchor':'middle',class:'label sol'},v)}
+ document.getElementById('explain').textContent=d.label;
+ document.getElementById('answers').textContent=d.answer;
+}
+document.getElementById('case').addEventListener('change',draw);draw();
+</script>
+</body></html>
