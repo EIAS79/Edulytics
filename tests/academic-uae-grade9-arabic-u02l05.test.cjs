@@ -59,3 +59,21 @@ test('A–B–C source inventory is five books and not declared as semantic PASS
   assert.equal(catalog.uniqueLessonCount,null);
   assert.notEqual(catalog.semanticDedupStatus,'PASS');
 });
+
+test('Source-aligned Cool-down keeps drawings and reasoning under teacher review', () => {
+  const html = fs.readFileSync(path.join(root, 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html'), 'utf8');
+  assert.match(html, /lang="ar" dir="rtl"/);
+  assert.match(html, /id="cooldownTitle"/);
+  assert.match(html, /\|س − ٣\| = ٥/);
+  assert.match(html, /\|٢س \+ ٤\| = −٦/);
+  assert.match(html, /٧.*١٩/);
+  assert.match(html, /مراجعة المعلم/);
+  assert.match(html, /id="svgDesc"/);
+  const rubric = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json');
+  assert.equal(rubric.teacherRubric.grading, 'TEACHER_REVIEW_REQUIRED');
+  assert.equal(rubric.teacherRubric.totalPoints, 8);
+  const checkpoint = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json');
+  assert.equal(checkpoint.closed, false);
+  assert.equal(checkpoint.advanceToNextLesson, false);
+  assert.equal(checkpoint.stageC.testsRun, 'WRITTEN_NOT_RUN');
+});
