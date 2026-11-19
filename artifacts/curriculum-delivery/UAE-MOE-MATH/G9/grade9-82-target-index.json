@@ -1599,13 +1599,23 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "NOT_FULLY_VERIFIED",
+      "ElementCoverage": "PARTIAL_SUPPLEMENTARY_OPENING_PAGE_AUDITED_NOT_FULLY_VERIFIED",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "02bdaa4a7ff453bf2d58b3cdcd64ef2793d62c4115d83c52761bf26f26b53d53",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
       "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false
+      "SourcePageHeadingAndObjectivesVerified": false,
+      "SupplementarySourceDirectPageEvidence": {
+        "sourceRef": "01.pdf:7-1",
+        "sourcePrintedPage": 365,
+        "sourcePdfPage": 376,
+        "firstPageObjectives": [
+          "point-line-plane definitions",
+          "collinearity and coplanarity"
+        ],
+        "verification": "DIRECT_FIRST_PAGE_SOURCE_REVIEW_ONLY_FURTHER_ELEMENTS_PENDING"
+      }
     },
     {
       "ordinal": 65,
@@ -1649,13 +1659,23 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "NOT_FULLY_VERIFIED",
+      "ElementCoverage": "PARTIAL_SUPPLEMENTARY_OPENING_PAGE_AUDITED_NOT_FULLY_VERIFIED",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "1ae1a034d2ea80edb0d1f081bddc9247640400580e7512be55f5e8d4486874d2",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
       "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false
+      "SourcePageHeadingAndObjectivesVerified": false,
+      "SupplementarySourceDirectPageEvidence": {
+        "sourceRef": "01.pdf:7-2",
+        "sourcePrintedPage": 374,
+        "sourcePdfPage": 385,
+        "firstPageObjectives": [
+          "segment measurement with ruler",
+          "unit conversion and accuracy"
+        ],
+        "verification": "DIRECT_FIRST_PAGE_SOURCE_REVIEW_ONLY_FURTHER_ELEMENTS_PENDING"
+      }
     },
     {
       "ordinal": 67,
@@ -1818,13 +1838,23 @@
       ],
       "DuplicateOf": null,
       "CurriculumDecision": "PRIMARY_LESSON_WITH_UNVERIFIED_GEOMETRY_SUPPLEMENTS",
-      "ElementCoverage": "NOT_FULLY_VERIFIED",
+      "ElementCoverage": "PARTIAL_SUPPLEMENTARY_OPENING_PAGE_AUDITED_NOT_FULLY_VERIFIED",
       "StageABC": "NOT_CLOSED_UNLESS_INDIVIDUAL_CHECKPOINT_EVIDENCED",
       "PdfPageRenderSha256": "d473b8fe706f03fc5e85fcd14eec40307defa6f1377ca8b80a3487b15c2950f2",
       "SourcePageAccessible": true,
       "SourcePageNonblank": true,
       "SourcePageVisualVerified": false,
-      "SourcePageHeadingAndObjectivesVerified": false
+      "SourcePageHeadingAndObjectivesVerified": false,
+      "SupplementarySourceDirectPageEvidence": {
+        "sourceRef": "01.pdf:7-3",
+        "sourcePrintedPage": 385,
+        "sourcePdfPage": 396,
+        "firstPageObjectives": [
+          "distance using absolute value on line",
+          "midpoint and bisector"
+        ],
+        "verification": "DIRECT_FIRST_PAGE_SOURCE_REVIEW_ONLY_FURTHER_ELEMENTS_PENDING"
+      }
     },
     {
       "ordinal": 74,
@@ -2045,5 +2075,15 @@
   ],
   "sourcePageIntegrityAudit": "five-book-page-raster-audit.json",
   "all82PrimaryPageRasterChecksPass": true,
-  "sourceTextAndSemanticChecksPending": true
+  "sourceTextAndSemanticChecksPending": true,
+  "sourceSupplementaryReview": {
+    "status": "THREE_LATEST_UNIT7_LESSON_OPENINGS_VERIFIED_MORE_SOURCE_ELEMENTS_PENDING",
+    "source": "01.pdf",
+    "supplementaryRefs": [
+      "01.pdf:7-1",
+      "01.pdf:7-2",
+      "01.pdf:7-3"
+    ],
+    "sourceIndexComplete": false
+  }
 }
