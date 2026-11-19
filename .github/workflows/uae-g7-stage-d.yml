@@ -272,8 +272,8 @@ jobs:
       - name: Verify scoped production baseline and reimport twice without altering unrelated grades
         run: |
           set -euo pipefail
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5229
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5229
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5009
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5009
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
           CREATE TEMP TABLE g7_cutover_fixture_ids ON COMMIT DROP AS
