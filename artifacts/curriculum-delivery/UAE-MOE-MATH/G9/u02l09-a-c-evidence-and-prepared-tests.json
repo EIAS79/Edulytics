@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "curriculum": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "lesson": "2-9",
+    "language": "ar"
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026 General",
+    "printedPages": [
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138
+    ],
+    "pdfPages": [
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "pages": [
+        132,
+        133
+      ],
+      "goal": "حساب متوسط درجات مرجح بأوزان غير متساوية"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        133,
+        135
+      ],
+      "goal": "تفسير التكرارات والكميات بوصفها أوزانًا وحساب متوسط المجموعة"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        134,
+        136,
+        137
+      ],
+      "goal": "استخدام مجموع المسافات والأزمنة في حساب السرعة المتوسطة الصحيحة"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        136,
+        137,
+        138
+      ],
+      "goal": "حل مسائل متوسط مرجح عكسي وتفسير النتيجة في السياق"
+    }
+  ],
+  "newEngine": "src/Edulytics.Services/Mathematics/UaeGrade9WeightedMeanQuestions.cs",
+  "stageDTestsToRun": [
+    {
+      "family": "weighted_grades",
+      "values": [
+        80,
+        90,
+        70
+      ],
+      "weights": [
+        20,
+        30,
+        50
+      ],
+      "expected": 78,
+      "negative": [
+        80,
+        90,
+        70
+      ]
+    },
+    {
+      "family": "weighted_group_sizes",
+      "values": [
+        60,
+        80,
+        70
+      ],
+      "counts": [
+        2,
+        3,
+        5
+      ],
+      "expected": 71,
+      "invalid": "abc"
+    },
+    {
+      "family": "weighted_grades",
+      "values": [
+        50,
+        50,
+        50
+      ],
+      "weights": [
+        20,
+        30,
+        50
+      ],
+      "expected": 50
+    },
+    {
+      "family": "weighted_grades",
+      "prompt": "إذا كانت أوزان الفئات ٢٠٪ و٣٠٪ و٥٠٪، لا تستخدم المتوسط غير المرجح",
+      "expect": "weighted calculation"
+    }
+  ],
+  "preparedPractice": [
+    {
+      "goal": "O1",
+      "q": "درجات ٨٠ و٩٠ و٧٠ بأوزان ٢٠٪ و٣٠٪ و٥٠٪، ما المتوسط المرجح؟",
+      "a": "78"
+    },
+    {
+      "goal": "O2",
+      "q": "مجموعتان متوسطاهما ٦٠ و٨٠ وعدد أفرادهما ٣ و٧. ما متوسط الجميع؟",
+      "a": "74"
+    },
+    {
+      "goal": "O3",
+      "q": "رحلة ١٢٠ كم خلال ساعتين و٩٠ كم خلال ساعة. ما السرعة المتوسطة؟",
+      "a": "70",
+      "unit": "km/h",
+      "teacherReview": true
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "درجات ٧٠ و٨٠ بأوزان ٤٠٪ و٦٠٪؛ ما المتوسط؟",
+      "a": "76"
+    },
+    {
+      "q": "٤ عناصر متوسطها ٦٠ و٦ عناصر متوسطها ٨٠؛ ما المتوسط الكلي؟",
+      "a": "72"
+    },
+    {
+      "q": "لماذا لا يكفي متوسط سرعات مراحل مختلفة الزمن؟",
+      "a": "لأن الوزن الزمني ليس متساويًا ويجب قسمة المسافة الكلية على الزمن الكلي",
+      "teacherReview": true
+    }
+  ],
+  "artifacts": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "registry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UaeGrade9WeightedMeanQuestions.cs"
+  },
+  "status": {
+    "abc": "READY_FOR_STAGE_D_PREPARATION",
+    "build": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "ci": "NOT_RUN",
+    "semanticAudit": "NOT_RUN"
+  },
+  "caveats": [
+    "Weighted-speed context requires explicit average rate from total distance/time; grade-score engine is not a substitute.",
+    "Input range is intentionally bounded to integer-valued weighted scores. Stage D must verify other textbook numeric/rational cases and extend when needed.",
+    "Learner-facing Arabic prompt, incorrect answers, malformed inputs and independent grade9 objective alignment require Stage D."
+  ]
+}
