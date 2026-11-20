@@ -276,6 +276,14 @@
       "testCommit": "3d6b92ed0e2d528dc0b7e69851953d9d0302bb18",
       "testsRun": "WRITTEN_NOT_RUN",
       "teacherReview": "OPEN_REASONING_REMAINS_TEACHER_REVIEW_REQUIRED"
+    },
+    "rtlAnswerNormalizationRepair": {
+      "description": "strip only Unicode bidirectional format marks U+200E/U+200F/U+061C in normalized numeric Arabic responses",
+      "codePath": "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "commit": "37ed67a41cd699632fc398e82e3a1247333dbaaa",
+      "focusedRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs",
+      "regressionCommit": "8699db69ffc56911658071622a5e50337a85fd40",
+      "testsRun": "WRITTEN_NOT_RUN"
     }
   },
   "blockingGaps": [
