@@ -75,7 +75,14 @@
         "303938335ed301a76f8cdb68e9dcdc15d1f397a3",
         "bec804bc17f307e24912d3fc46c34fd541e0a898"
       ]
-    }
+    },
+    "sourceItemSpecificRepairs": [
+      35,
+      42,
+      56,
+      62,
+      63
+    ]
   },
   "stageB": {
     "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
@@ -202,6 +209,22 @@
       "codeCommit": "167c5180516be6ec37c97eb602dbaf37d47df7e6",
       "targetedTests": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
       "testCommit": "44ea454733be0a27eecb5ac3f5ae7b7d8ea44ded",
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "existingActivitySourceRepairs": {
+      "status": "SOURCE_SPECIFIC_ARABIC_PROMPTS_PREPARED_TEACHER_RUNTIME_NOT_VERIFIED",
+      "cases": [
+        35,
+        40,
+        42,
+        56,
+        62,
+        63
+      ],
+      "studentFacingArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "rubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+      "teacherBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "lastTestCommit": "60974e02d711d9f07c6447904bdc3dbec73d137c",
       "testsRun": "WRITTEN_NOT_RUN"
     }
   },
