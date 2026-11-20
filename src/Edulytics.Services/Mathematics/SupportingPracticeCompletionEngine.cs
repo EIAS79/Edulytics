@@ -96,6 +96,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.surds.coefficient",
             "uae.g9.general.u09.l01.set_membership_cardinality",
             "uae.g9.general.u09.l05.finite_infinite_classification",
+            "uae.g9.general.u10.l02.logic_truth_tables",
             "uae.g9.general.u09.l02.set_operation_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
@@ -301,6 +302,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
             "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
             "uae.g9.general.u09.l05.finite_infinite_classification" => G9FiniteInfiniteClassification(random),
+            "uae.g9.general.u10.l02.logic_truth_tables" => G9LogicTruthTables(random),
             "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
@@ -512,6 +514,10 @@ internal static partial class SupportingPracticeCompletionEngine
                 Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
                     p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
                     .ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u10.l02.logic_truth_tables" =>
+                (p["mode"]==0 ? (p["p"]==1 && p["q"]==1 ? 1 : 0) :
+                 p["mode"]==1 ? (p["p"]==1 || p["q"]==1 ? 1 : 0) :
+                 (p["p"]==1 ? 0 : 1)).ToString(CultureInfo.InvariantCulture),
             "uae.g9.general.u09.l05.finite_infinite_classification" =>
                 (p["mode"] is 0 or 3 ? "0" : "1"),
             "uae.g9.general.u09.l01.set_membership_cardinality" =>
@@ -736,6 +742,25 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
                    parsed==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u10.l02.logic_truth_tables",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("p",out int propositionP) ||
+               !p.TryGetValue("q",out int propositionQ) || !p.TryGetValue("mode",out int mode) ||
+               propositionP is <0 or >1 || propositionQ is <0 or >1 ||
+               mode is <0 or >2 || string.IsNullOrWhiteSpace(answer) ||
+               answer.Length>8) return false;
+            int expected=mode==0 ? (propositionP==1 && propositionQ==1 ? 1 : 0) :
+                         mode==1 ? (propositionP==1 || propositionQ==1 ? 1 : 0) :
+                         (propositionP==1 ? 0 : 1);
+            var norm=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (norm=="0" || norm=="1") &&
+                   int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int provided) &&
+                   provided==expected;
         }
         if (string.Equals(family,"uae.g9.general.u09.l05.finite_infinite_classification",StringComparison.Ordinal))
         {
@@ -1487,6 +1512,19 @@ internal static partial class SupportingPracticeCompletionEngine
             $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
             "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
             ("a",a),("b",b),("mode",mode));
+    }
+
+    private static Problem G9LogicTruthTables(Random r)
+    {
+        var p=r.Next(2);
+        var q=r.Next(2);
+        var mode=r.Next(3);
+        var expression=mode==0 ? "p∧q (الوصل: و)" :
+                       mode==1 ? "p∨q (الفصل: أو)" : "¬p (نفي p)";
+        return P("uae.g9.general.u10.l02.logic_truth_tables",
+            $"قيمة صدق p هي {p} وقيمة صدق q هي {q}. ما قيمة صدق {expression}؟ اكتب ١ للصواب أو ٠ للخطأ.",
+            "الوصل صواب إذا كان الطرفان صوابًا، والفصل صواب إذا كان أحد الطرفين صوابًا، والنفي يعكس صدق العبارة.",
+            ("p",p),("q",q),("mode",mode));
     }
 
     private static Problem G9FiniteInfiniteClassification(Random r)
