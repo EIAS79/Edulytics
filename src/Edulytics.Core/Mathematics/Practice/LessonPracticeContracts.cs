@@ -11280,6 +11280,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L06_P291_296",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_HALF_PLANE", Version);
 
+        // Grade 9 General U06L01 graphical systems: reuse line-value numeric help.
+        // Intersections, coincident/parallel classification and graph explanations remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:01:GRAPHING-LINEAR-SYSTEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:01:GRAPHING-LINEAR-SYSTEMS",
+            "geometry.coordinate.linear_rule",
+            "G9_U06L01_GRAPHICAL_SYSTEMS_TEACHER_REVIEW_COORDINATE_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U06L01_P309_315",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
