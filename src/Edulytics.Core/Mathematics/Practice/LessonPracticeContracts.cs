@@ -11600,6 +11600,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U11L04_P631_639",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General 12-1: two-dimensional line relation only; spatial skew lines
+        // and transversal angle pair identification are teacher-reviewed until dedicated
+        // Grade 9 Arabic exact families pass Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES", "geometry.lines.parallel_intersect",
+            "G9_U12L01_COPLANAR_LINES_NUMERIC_PARTIAL_REUSE",
+            ["usccss.g4.u07.l03.dot_grid_parallel_intersect"],
+            "UAE_G9_GENERAL_2019_AR_U12L01_P653_659",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
