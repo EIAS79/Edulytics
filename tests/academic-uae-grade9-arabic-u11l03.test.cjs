@@ -26,3 +26,17 @@ const c=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-66-stage-a-c-
 assert.equal(c.lessonOrdinal,66);assert.equal(c.closed,true);assert.equal(c.closeDecision,'READY_FOR_STAGE_D');
 assert.equal(c.stageC.testsRun,'WRITTEN_NOT_RUN');assert.equal(c.stageD,'NOT_RUN');
 });
+
+test('Newer General 7-2 ruler offset and estimation supplement is authored without removing segment proofs',()=>{
+ const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l03-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ const skill=rich.KeyConcepts.find(x=>x.Title==='تقدير طول قطعة بمسطرة مدرّجة');
+ const worked=rich.WorkedExamples.find(x=>x.Title==='قياس قطعة لا تبدأ عند الصفر');
+ assert.ok(skill&&worked);
+ assert.match(skill.Rule,/قراءة النهاية/);
+ assert.match(worked.Question,/١٫٢ سم/);
+ assert.match(worked.Answer,/٤٫٤ سم/);
+ assert.match(worked.Check,/٥٫٦/);
+ assert.ok(rich.KeyConcepts.some(x=>x.Title==='مسلمة جمع القطع'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان تطابق قطعتين'));
+ assert.ok(rich.Visuals.some(x=>x.Title==='قراءة مسطرة لا تبدأ عند الصفر'));
+});
