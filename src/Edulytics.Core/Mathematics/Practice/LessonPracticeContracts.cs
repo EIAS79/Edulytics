@@ -11639,6 +11639,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U12L04_P678_686",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 General 12-5 only supplementary numeric prerequisite may auto-grade;
+        // proving parallelism from converse angle conditions remains teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES", "geometry.angles.supplementary",
+            "G9_U12L05_SUPPLEMENTARY_PRECONDITION_ONLY",
+            ["geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U12L05_P687_694",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
