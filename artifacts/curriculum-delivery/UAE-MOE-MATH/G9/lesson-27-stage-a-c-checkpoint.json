@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 27,
+  "unitOrdinal": 4,
+  "lessonOrdinalInUnit": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES",
+  "lessonTitleAr": "المستقيمات المتوازية والمتعامدة",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245
+    ],
+    "pdfPages": [
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256
+    ],
+    "review": "DIRECT_LOCAL_STUDENT_BOOK_VISUAL_REVIEW",
+    "lessonSourceIndex": "01.pdf:4-4"
+  },
+  "stageA": {
+    "status": "SOURCE_PARALLEL_PERPENDICULAR_SLOPES_AND_EXCEPTION_REVIEWED",
+    "learningTargets": [
+      "equal slopes for distinct nonvertical parallel lines",
+      "negative reciprocal for finite nonzero perpendicular slopes",
+      "horizontal and vertical perpendicular exception",
+      "construct line through point parallel/perpendicular to given line"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_PARALLEL_PERPENDICULAR_DIAGRAM_AND_8_TEACHER_TASKS_AUTHORED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u04-l04-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u04-l04-parallel-perpendicular-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u04l04-teacher-parallel-perpendicular-rubric.json",
+    "coolDownQuestions": 4,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "EXISTING_GRADIENT_AND_LINEAR_VALUE_FAMILIES_REUSED_STAGE_D_TESTS_WRITTEN",
+    "strategy": "REUSE_EXISTING_NUMERIC_GRADIENT_TEACHER_REVIEW_FOR_RELATION_PROOF_AND_GRAPH",
+    "allowedQuestionFamilies": [
+      "geometry.coordinate.gradient_between_points",
+      "geometry.coordinate.evaluate_linear_rule"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u04l04.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "G9_GENERAL_U04L04_A_B_C_ARABIC_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T12:09:16.499Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:5-1"
+}
