@@ -11125,6 +11125,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L09_P132_138",
             "PREPARED_STAGE_D_NOT_RUN_CORE_WEIGHTED_REVIEW", Version);
 
+        // Grade 9 General 3-1 (01.pdf pp155–162): numeric coordinate
+        // assistance only; drawn graphs and contextual explanations are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS", "algebra.linear.graph",
+            "G9_U03L01_LINEAR_GRAPHS_INTERCEPTS_NUMERIC_SUPPORT",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L01_P155_162",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
