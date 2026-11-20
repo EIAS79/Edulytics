@@ -11412,6 +11412,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L07_P412_417",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General historical Student Book U07L08 pp418-423.
+        // Exact difference-of-squares integer roots, free factorization teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES", "algebra.factor.difference_of_squares",
+            "G9_U07L08_DIFFERENCE_OF_SQUARES_FACTOR",
+            ["uae.g9.general.u07.l08.difference_squares_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L08_P418_423",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
