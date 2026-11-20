@@ -11193,6 +11193,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U04L01_P216_223",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
 
+        // UAE G9 General 4-2, source pp226–232: numeric reuse only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:02:WRITING-SLOPE-INTERCEPT-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:02:WRITING-SLOPE-INTERCEPT-EQUATIONS", "algebra.linear.write_equation",
+            "G9_U04L02_WRITE_SLOPE_INTERCEPT_FROM_POINTS_AND_GRAPHS",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L02_P226_232",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATION", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
