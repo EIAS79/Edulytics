@@ -11084,7 +11084,8 @@ public static class LessonPracticeContractRegistry
             [
                 "ratio.unit_rate.equivalent_ratio",
                 "ratio.unit_rate.direct",
-                "ratio.unit_rate.divide_total"
+                "ratio.unit_rate.divide_total",
+                "uae.g9.general.u02.l06.two_sided_proportion"
             ],
             "UAE_G9_GENERAL_2025_AR_U02L06_P111_118",
             "PREPARED_STAGE_D_NOT_RUN", Version);
