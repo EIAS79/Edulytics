@@ -51,3 +51,18 @@ test('Newer General 7-1 plane naming and non-collinearity are explicitly preserv
  assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان حر على طول قطعة'));
  assert.ok(rich.Visuals.some(x=>x.Title==='تسمية المستوى بالنقاط'));
 });
+
+test('Newer General source 7-1 page-level 87-item inventory distinguishes 61 core-associated from 26 review items',()=>{
+ const audit=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u07-new-geometry-7-1-source-element-preparation.json');
+ assert.deepEqual(audit.source.printedPages,[365,366,367,368,369,370,371,372,373]);
+ assert.equal(audit.receivingLesson.lessonCode,code);
+ const covered=audit.sourceGroups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i));
+ assert.deepEqual(covered,Array.from({length:87},(_,i)=>i+1));
+ assert.equal(audit.coverage.coreOrLessonAssociated,61);
+ assert.equal(audit.coverage.assessmentOrSpiralOrPriorReview,26);
+ assert.equal(audit.coverage.fullSourceElementAuditPassed,false);
+ const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l01-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ assert.ok(rich.KeyConcepts.some(x=>x.Title==='تقاطع المستويات في الرسم الفراغي'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='تفسير مستقيم التقاطع بين مستويين'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان حر على طول قطعة'));
+});
