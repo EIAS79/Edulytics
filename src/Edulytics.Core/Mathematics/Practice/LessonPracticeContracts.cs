@@ -11222,6 +11222,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U04L04_P239_245",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_LINE_RELATIONS", Version);
 
+        // UAE Grade9 General 5-1, source pp259–265. Existing generic linear
+        // inequality engine is numeric assistance, not a source-specific graph grader.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:01:ADDITION-SUBTRACTION-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:01:ADDITION-SUBTRACTION-INEQUALITIES", "algebra.linear.inequality.solve",
+            "G9_U05L01_ADDITIVE_INEQUALITY_NUMERIC_HELP_TEACHER_GRAPH",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L01_P259_265",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_NUMBER_LINE", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
