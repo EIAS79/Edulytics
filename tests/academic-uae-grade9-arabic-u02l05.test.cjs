@@ -339,3 +339,22 @@ test('Reciprocal denominator concept is present in both Grade 9 Arabic lesson fo
   assert.match(translation.WorkedExamples,/مثال ١٠: ٦\/\|س−١\|\+٢=٥/);
   assert.match(translation.CommonMistakes,/المقام غير الصفري/);
 });
+
+
+test('Graph-rendered source exercises keep exact source coordinates, including fractions and the one-root case', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  const cases=[11,12,33,34,35,36,46,47,48,49,50,51];
+  for(const id of cases){
+    assert.ok(html.includes('data-graph-exercise="'+id+'"'), 'missing visual source graph '+id);
+    assert.ok(html.includes('id="sourceGraph'+id+'"'), 'missing response '+id);
+  }
+  assert.match(html,/const sourceGraphCoordinates=/);
+  assert.match(html,/35:\[-3\]/);
+  assert.match(html,/50:\[0,1\.3333333333333333\]/);
+  assert.match(html,/const sourceGraphExactLabels=\{50:\['٠','٤\/٣'\],51:\['−٤\/٣','٢\/٣'\]/);
+  assert.match(html,/graph\.replaceChildren\(\)/);
+  assert.match(html,/document\.createElementNS\(ns,tag\)/);
+  assert.match(html,/TEACHER_REVIEW_REQUIRED/);
+  assert.equal(bank.graphToFullEquation.originalArabicVariants.length,cases.length);
+});
