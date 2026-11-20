@@ -44,10 +44,24 @@ jobs:
         run: |
           mapfile -t files < <(find tests -maxdepth 1 -name 'academic-uae-grade9*.test.cjs' ! -name 'academic-uae-grade9-strict-source-index-gate.test.cjs' | sort)
           test "${#files[@]}" -gt 0
-          node --test "${files[@]}"
+          node --test "${files[@]}" 2>&1 | tee g9-node-tests.log
+      - name: Upload prepared Grade 9 Node test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-node-test-log
+          path: g9-node-tests.log
+          if-no-files-found: warn
       - name: Strict source-index lock — fail closed until verified
         if: always()
-        run: node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs
+        run: node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
+      - name: Upload strict source gate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-source-gate-log
+          path: g9-source-gate.log
+          if-no-files-found: warn
 
   grade9-dotnet-tests:
     name: G9 scoped .NET tests (diagnostic)
