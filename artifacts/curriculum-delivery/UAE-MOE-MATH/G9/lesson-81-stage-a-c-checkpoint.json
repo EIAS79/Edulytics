@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 81,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 8,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+  "lessonTitleAr": "المثلثات والبرهان الإحداثي",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      783,
+      789
+    ],
+    "pdfPages": [
+      198,
+      204
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_CONTACT_SHEET_REVIEW",
+    "scope": "coordinate triangle proof, strategic coordinates, distance, midpoint, SSS and general proof; runtime not tested"
+  },
+  "stageA": {
+    "status": "SOURCE_COORDINATE_DISTANCE_MIDPOINT_PROOF_REVIEWED",
+    "learningTargets": [
+      "coordinate placement in geometry proof",
+      "distance and midpoint formula",
+      "isosceles coordinate proof",
+      "SSS coordinate proof and free explanations"
+    ]
+  },
+  "stageB": {
+    "status": "NEW_MISSING_ARABIC_PACK_RICHV2_SIX_TEACHER_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l08-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l08-coordinate-proof-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "CA^2=CB^2=52, isosceles"
+      },
+      {
+        "q": 2,
+        "expected": "midpoint (0,0), vertical x=0 is perpendicular to horizontal y=0"
+      },
+      {
+        "q": 3,
+        "expected": "legs 3,4 hypotenuse 5"
+      },
+      {
+        "q": 4,
+        "expected": "matching side lengths 3,4,5; SSS"
+      },
+      {
+        "q": 5,
+        "expected": "CA^2=CB^2=a^2+b^2 for positive a,b"
+      },
+      {
+        "q": 6,
+        "expected": "diagram appearance is not evidence; compute exact distances"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "TEACHER_REVIEW_ONLY_COORDINATE_PROOF_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l08.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "teacherReviewRequiredFor": [
+      "general proof",
+      "distance calculations in proof",
+      "geometry diagrams"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-9"
+}
