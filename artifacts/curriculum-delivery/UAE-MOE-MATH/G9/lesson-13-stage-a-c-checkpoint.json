@@ -263,13 +263,24 @@
     "lastCompositeFamilyExtensionCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
     "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90",
     "lastPreparedSourceMathAndTeacherTaskRegressionCommit": "5e3ea3b2bd29c19fa6f93a70e8cabf06d44c9b34",
-    "lastGraphVariantsStageDTestCommit": "d99d381abdad93e06cf42775718cf13b071cc6e0"
+    "lastGraphVariantsStageDTestCommit": "d99d381abdad93e06cf42775718cf13b071cc6e0",
+    "reciprocalAbsoluteDenominatorVariant": {
+      "strategy": "EXTEND_EXISTING_TWO_SOLUTION_FAMILY",
+      "family": "uae.g9.general.u02.l05.two_solutions",
+      "generatedEquation": "a*r/|a*x-a*m|+a=a+1",
+      "domain": "x != m",
+      "sourceExercise": "01.pdf:2-5:EX42",
+      "generatorArtifact": "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "codeCommit": "0f833b70e4f101cc5212d0b34d830124a51d13f2",
+      "focusedTest": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs",
+      "testCommit": "3d6b92ed0e2d528dc0b7e69851953d9d0302bb18",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "teacherReview": "OPEN_REASONING_REMAINS_TEACHER_REVIEW_REQUIRED"
+    }
   },
   "blockingGaps": [
-    "Comprehensive general-edition semantic dedup lock incomplete.",
-    "13x82 target index exists with 86 source references and verified PDF hashes but supplemental geometry placement still requires exhaustive lesson-element integration.",
-    "Global 13x82 source-index semantic lock remains pending: three newer unit-7 skills need evidence-based integration without inventing extra lessons.",
-    "Source-equivalent draft tasks exist for all 64 numbered exercise skills with 12 graph variants; independent pedagogical comparison and actual learner-teacher runtime await Stage D."
+    "The uploaded A-B-C plan requires a complete source-index lock before lesson closure; the 13-unit/82-lesson index is structurally mapped but the five-book full educational-page audit and final source objective/exercise integration are still incomplete. Do not assert SOURCE_INDEX_COMPLETE or close this lesson until resolved.",
+    "The current lesson's authored teacher-only responses require an actual lesson-to-teacher workflow acceptance check in Stage D, which must not be presented as an A-B-C executed test."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
