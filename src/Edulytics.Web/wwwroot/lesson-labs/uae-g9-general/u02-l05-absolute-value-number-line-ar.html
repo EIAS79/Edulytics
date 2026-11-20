@@ -146,6 +146,7 @@ function draw(){
 }
 document.getElementById('case').addEventListener('change',draw);draw();
 
+const sourceGraphExactLabels={50:['٠','٤/٣'],51:['−٤/٣','٢/٣']};
 const sourceGraphCoordinates={"11":[-2,4],"12":[-9,3],"33":[-4,4],"34":[-6,6],"35":[-3],"36":[-6,2],"46":[-3.75,4.25],"47":[-1.5,1.5],"48":[-2.5,3.5],"49":[0,0.5],"50":[0,1.3333333333333333],"51":[-1.3333333333333333,0.6666666666666666]};
 for(const graph of document.querySelectorAll('svg.source-graph-preview')){
  const id=Number(graph.dataset.graphExercise),points=sourceGraphCoordinates[id];
@@ -160,17 +161,18 @@ for(const graph of document.querySelectorAll('svg.source-graph-preview')){
   graph.appendChild(element);
  }
  add('title',{},'خط أعداد التمرين '+id);
- add('desc',{},'نقاط الحل: '+points.join('، ')+'؛ أوجد المركز ونصف المسافة واكتب المعادلة بنفسك.');
+ const labels=sourceGraphExactLabels[id]||points.map(String);
+ add('desc',{},'نقاط الحل: '+labels.join('، ')+'؛ أوجد المركز ونصف المسافة واكتب المعادلة بنفسك.');
  add('line',{x1:35,y1:56,x2:725,y2:56,class:'axis'});
  for(let tick=low;tick<=high;tick++){
   const pos=x(tick);
   add('line',{x1:pos,y1:49,x2:pos,y2:63,class:'tick'});
   add('text',{x:pos,y:84,'text-anchor':'middle',class:'label'},tick);
  }
- for(const value of points){
+ points.forEach((value,i)=>{
   add('circle',{cx:x(value),cy:56,r:8,class:'marker'});
-  add('text',{x:x(value),y:35,'text-anchor':'middle',class:'label sol'},Number(value.toFixed(4)));
- }
+  add('text',{x:x(value),y:35,'text-anchor':'middle',class:'label sol'},labels[i]);
+ });
 }
 
 const selectedCoolDownPoints=new Set();
