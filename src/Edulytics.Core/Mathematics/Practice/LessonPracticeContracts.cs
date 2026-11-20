@@ -11290,6 +11290,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L01_P309_315",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
 
+
+        // UAE General G9 U06L02 printed 318–323: single-variable substep only.
+        // Full substitution system, identities and contradictions require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS",
+            "algebra.linear.solve",
+            "G9_U06L02_SUBSTITUTION_SINGLE_VARIABLE_SUBSTEP_TEACHER_SYSTEMS",
+            ["algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2025_AR_U06L02_P318_323",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
