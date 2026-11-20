@@ -11182,6 +11182,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L06_P197_202",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_AND_CONTEXT", Version);
 
+        // UAE Grade9 General 4-1, source pp216–223: numeric coordinate assistance.
+        // Source graph drawing and explanation remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM", "algebra.linear.graph",
+            "G9_U04L01_SLOPE_INTERCEPT_NUMERIC_AND_GRAPH_TEACHER",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2025_AR_U04L01_P216_223",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
