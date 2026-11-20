@@ -11610,6 +11610,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U12L01_P653_659",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General 12-2 numeric angle relations only; diagrams and
+        // proofs of the converse remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:02:ANGLES-PARALLEL-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:02:ANGLES-PARALLEL-LINES", "geometry.angles.parallel_lines",
+            "G9_U12L02_CORRESPONDING_AND_SUPPLEMENTARY_NUMERIC",
+            ["geometry.angles.parallel_lines","geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U12L02_P660_666",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
