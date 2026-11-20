@@ -4,7 +4,7 @@ using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
 
 /// <summary>
-/// Grade 9 UAE General lesson 7-6. Exact integer-root cases for monic quadratics.
+/// Grade 9 UAE General lessons 7-6/7-7. Integer-root monic and nonmonic quadratic cases.
 /// This mathematical mechanism cannot be represented by the existing linear
 /// equations or monomial-factor families; explanations remain teacher-reviewed.
 /// </summary>
@@ -12,20 +12,21 @@ internal static class UaeG9MonicQuadraticQuestions
 {
     internal const string Distinct = "uae.g9.general.u07.l06.monic_distinct_roots";
     internal const string Repeated = "uae.g9.general.u07.l06.monic_repeated_root";
+    internal const string NonMonic = "uae.g9.general.u07.l07.nonmonic_integer_roots";
     internal sealed record Item(
         string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
-    internal static bool Supports(string? family) => family is Distinct or Repeated;
+    internal static bool Supports(string? family) => family is Distinct or Repeated or NonMonic;
 
     private static bool Valid(string family, IReadOnlyDictionary<string, int> p)
     {
-        if (!Supports(family) || p.Count != 4 ||
+        if (!Supports(family) || p.Count != (family == NonMonic ? 5 : 4) ||
             !p.TryGetValue("r1", out int r1) || !p.TryGetValue("r2", out int r2) ||
             !p.TryGetValue("b", out int b) || !p.TryGetValue("c", out int c) ||
             r1 is < -8 or > 8 || r2 is < -8 or > 8 ||
-            b != -(r1 + r2) || c != r1 * r2) return false;
-        return family == Distinct ? r1 < r2 : r1 == r2;
+            (family == NonMonic ? (!p.TryGetValue("a", out var a) || a is < 2 or > 6 || b != -a * (r1+r2) || c != a * r1 * r2) : b != -(r1 + r2) || c != r1 * r2)) return false;
+        return family == Repeated ? r1 == r2 : r1 < r2;
     }
 
     private static string Signed(int value) => value < 0
@@ -37,17 +38,21 @@ internal static class UaeG9MonicQuadraticQuestions
         if (!Supports(family)) throw new InvalidOperationException("Unsupported G9 quadratic family.");
         ArgumentNullException.ThrowIfNull(random);
         int a = random.Next(-7, 8), b = family == Repeated ? a : random.Next(-7, 8);
-        if (family == Distinct)
+        if (family != Repeated)
         {
             while (a == b) b = random.Next(-7, 8);
             if (a > b) (a, b) = (b, a);
         }
-        int linear = -(a + b), constant = a * b;
+        int leading = family == NonMonic ? random.Next(2,7) : 1;
+        int linear = -leading * (a + b), constant = leading * a * b;
         var parameters = new Dictionary<string, int>
         {
             ["r1"] = a, ["r2"] = b, ["b"] = linear, ["c"] = constant
         };
-        string prompt = family == Distinct
+        if (family == NonMonic) parameters["a"] = leading;
+        string prompt = family == NonMonic
+            ? $"حل المعادلة {leading}س²{Signed(linear)}س{Signed(constant)}=٠ بالتحليل إلى عاملين باستعمال أ×ج، واكتب الجذرين تصاعديًا مفصولين بفاصلة."
+            : family == Distinct
             ? $"حل المعادلة س²{Signed(linear)}س{Signed(constant)}=٠ بالتحليل إلى عاملين. اكتب الجذرين تصاعديًا مفصولين بفاصلة."
             : $"حل المعادلة س²{Signed(linear)}س{Signed(constant)}=٠ بالتحليل؛ اكتب الجذر المكرر مرة واحدة.";
         return new Item(family, prompt,
@@ -58,7 +63,7 @@ internal static class UaeG9MonicQuadraticQuestions
     internal static string Solve(string family, IReadOnlyDictionary<string, int> p)
     {
         if (!Valid(family, p)) throw new InvalidOperationException("Invalid monic quadratic parameters.");
-        return family == Distinct
+        return family != Repeated
             ? FormattableString.Invariant($"{p["r1"]},{p["r2"]}")
             : p["r1"].ToString(CultureInfo.InvariantCulture);
     }
