@@ -4,7 +4,7 @@ using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
 
 /// <summary>
-/// Grade 9 UAE General lessons 7-6 through 7-8. Integer-root monic and nonmonic quadratic cases.
+/// Grade 9 UAE General lessons 7-6 through 7-9. Integer-root monic and nonmonic quadratic cases.
 /// This mathematical mechanism cannot be represented by the existing linear
 /// equations or monomial-factor families; explanations remain teacher-reviewed.
 /// </summary>
@@ -14,11 +14,12 @@ internal static class UaeG9MonicQuadraticQuestions
     internal const string Repeated = "uae.g9.general.u07.l06.monic_repeated_root";
     internal const string NonMonic = "uae.g9.general.u07.l07.nonmonic_integer_roots";
     internal const string Difference = "uae.g9.general.u07.l08.difference_squares_integer_roots";
+    internal const string PerfectSquareEquation = "uae.g9.general.u07.l09.square_root_equation_integer_roots";
     internal sealed record Item(
         string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
-    internal static bool Supports(string? family) => family is Distinct or Repeated or NonMonic or Difference;
+    internal static bool Supports(string? family) => family is Distinct or Repeated or NonMonic or Difference or PerfectSquareEquation;
 
     private static bool Valid(string family, IReadOnlyDictionary<string, int> p)
     {
@@ -28,7 +29,8 @@ internal static class UaeG9MonicQuadraticQuestions
             r1 is < -8 or > 8 || r2 is < -8 or > 8 ||
             (family == NonMonic ? (!p.TryGetValue("a", out var a) || a is < 2 or > 6 || b != -a * (r1+r2) || c != a * r1 * r2) : b != -(r1 + r2) || c != r1 * r2)) return false;
         return family == Repeated ? r1 == r2 :
-            family == Difference ? r1 == -r2 && r2 > 0 : r1 < r2;
+            family == Difference ? r1 == -r2 && r2 > 0 :
+            family == PerfectSquareEquation ? r1 < r2 && ((r1+r2) % 2 == 0) : r1 < r2;
     }
 
     private static string Signed(int value) => value < 0
@@ -50,6 +52,12 @@ internal static class UaeG9MonicQuadraticQuestions
             b = random.Next(1, 8);
             a = -b;
         }
+        if (family == PerfectSquareEquation)
+        {
+            int center=random.Next(-4,5), radius=random.Next(1,5);
+            a=center-radius;
+            b=center+radius;
+        }
         int leading = family == NonMonic ? random.Next(2,7) : 1;
         int linear = -leading * (a + b), constant = leading * a * b;
         var parameters = new Dictionary<string, int>
@@ -57,7 +65,9 @@ internal static class UaeG9MonicQuadraticQuestions
             ["r1"] = a, ["r2"] = b, ["b"] = linear, ["c"] = constant
         };
         if (family == NonMonic) parameters["a"] = leading;
-        string prompt = family == Difference
+        string prompt = family == PerfectSquareEquation
+            ? $"حل المعادلة (س{Signed(-(a+b)/2)})²={((b-a)/2)*((b-a)/2)} باستخدام الجذور التربيعية، واكتب الحلين تصاعديًا مفصولين بفاصلة."
+            : family == Difference
             ? $"حل المعادلة س²−{-(constant)}=٠ باستخدام الفرق بين مربعين. اكتب الجذرين تصاعديًا مفصولين بفاصلة."
             : family == NonMonic
             ? $"حل المعادلة {leading}س²{Signed(linear)}س{Signed(constant)}=٠ بالتحليل إلى عاملين باستعمال أ×ج، واكتب الجذرين تصاعديًا مفصولين بفاصلة."
