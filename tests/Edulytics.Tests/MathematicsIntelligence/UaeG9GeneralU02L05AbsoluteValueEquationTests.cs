@@ -71,6 +71,21 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
         Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix + familySuffix, parameters, answer));
     }
 
+    [Theory]
+    [InlineData("two_solutions", "\u200F٩،١\u200E")]
+    [InlineData("two_solutions", "\u061C1,9\u200F")]
+    [InlineData("one_solution", "\u200F٣\u200E")]
+    public void InvisibleRtlDirectionMarkersDoNotAlterNumericGrading(string familySuffix, string answer)
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["a"] = 2, ["m"] = familySuffix == "one_solution" ? 3 : 5, ["r"] = 4
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix + familySuffix, parameters, answer));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix + familySuffix,
+            parameters, "\u200F1,8\u200E"));
+    }
+
     [Fact]
     public void TwoSolutionGeneratorPreparesIntegerOuterFactorAndFractionVariants()
     {
