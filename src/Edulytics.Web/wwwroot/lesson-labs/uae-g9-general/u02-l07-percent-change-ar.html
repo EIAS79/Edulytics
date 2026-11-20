@@ -19,14 +19,15 @@
 <li><label for="pctQ6">جدول أصلي: كان عدد المشاركين في ثلاثة أنشطة ٤٠ ثم ٥٠، و٧٥ ثم ٦٠، و٣٠ ثم ٣٠. احسب نسبة التغير لكل نشاط وحدد اتجاهه.</label><textarea id="pctQ6" required></textarea></li>
 <li><label for="pctQ7">قارن تخفيضين على السعر نفسه ١٠٠ درهم: خصم ٢٠٪ ثم ١٠٪ بالتتابع، وخصم ٣٠٪ مرة واحدة. هل الناتجان متساويان؟</label><textarea id="pctQ7" required></textarea></li>
 <li><label for="pctQ8">إذا كانت القيمة الأصلية صفرًا والجديدة ١٠، هل يمكن استخدام صيغة النسبة المئوية للتغير؟ اشرح دون قسمة على صفر.</label><textarea id="pctQ8" required></textarea></li>
+<li><label for="pctQ9">مختبر المئينات: درجات ٢٠ طالبًا مرتبة تصاعديًا هي ٢، ٤، ٦، ٨، ٩، ١٠، ١٢، ١٤، ١٥، ١٦، ١٧، ١٨، ١٩، ٢٠، ٢١، ٢٢، ٢٤، ٢٥، ٢٨، ٣٠. إذا حصل طالب على ٢٨ درجة وكان ١٨ طالبًا من أصل ٢٠ أقل منه، فما مئين رتبته وفق تعريف (عدد الدرجات الأقل ÷ الإجمالي × ١٠٠)؟ وضّح لماذا يختلف هذا المئين عن نسبة التغير.</label><textarea id="pctQ9" required></textarea></li>
 </ol><button type="submit">تجهيز إجابات التقويم للمعلم</button></form>
 <p class="teacher">مراجعة المعلم: صحة تحديد الأصل والمقام، اتجاه الزيادة أو النقصان، خطوات حساب النسب والضرائب والخصومات، الوحدات والتقريب، وصدق تفسير الجدول. تُعد إجابات الطالب الحرّة للتقييم البشري.</p><p id="cooldownStatus" role="status" aria-live="polite"></p><label for="cooldownExport">سجل محلي للمراجعة</label><textarea id="cooldownExport" readonly rows="10"></textarea>
 </section><footer><p>محتوى Edulytics أصلي مبني على مهارات كتاب الطالب العام 01.pdf المطبوع ص١١٩–١٢٥.</p></footer>
 </main><script>'use strict';
 document.getElementById('percentCooldown').addEventListener('submit',event=>{
- event.preventDefault();const answers=[1,2,3,4,5,6,7,8].map(n=>({question:n,response:document.getElementById('pctQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
+ event.preventDefault();const answers=[1,2,3,4,5,6,7,8,9].map(n=>({question:n,response:document.getElementById('pctQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
  const status=document.getElementById('cooldownStatus');
- if(answers.some(a=>!a.response)){status.textContent='يجب إجابة الأسئلة الثمانية قبل تجهيز السجل.';return;}
+ if(answers.some(a=>!a.response)){status.textContent='يجب إجابة الأسئلة التسعة قبل تجهيز السجل.';return;}
  document.getElementById('cooldownExport').value=JSON.stringify({lesson:'UAE-MOE-MATH/G9/General/2-7',language:'ar',graded:false,review:'TEACHER_REVIEW_REQUIRED',answers},null,2);
  status.textContent='تم تجهيز السجل محليًا؛ انسخه وقدمه للمعلم. لم تُرسل الإجابات إلى Edulytics ولم تُحسب درجة.';
 });</script></body></html>
