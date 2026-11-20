@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 41,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-2",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL",
+  "lessonTitleAr": "ضرب كثيرة حدود في حد",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    374,
+    375,
+    376,
+    377,
+    378,
+    379
+  ],
+  "sourcePdfPages": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "stageA": {
+    "status": "SOURCE_STUDENT_BOOK_LESSON_PAGES_DIRECTLY_VISUALLY_REVIEWED",
+    "sourceSkills": [
+      "distribute monomial multiplication to every polynomial term",
+      "add exponents for powers of same variable in multiplication",
+      "preserve negative signs",
+      "interpret rectangle area product"
+    ]
+  },
+  "stageB": {
+    "status": "MISSING_LESSON_AUTHORED_ARABIC_PACK_RICHV2_AND_COOLDOWN",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l02-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l02-monomial-polynomial-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "EXISTING_MONOMIAL_MULTIPLY_ENGINE_REUSED_FOR_NUMERIC_SUBSKILL_WITH_TEACHER_FULL_DISTRIBUTION",
+    "questionFamily": "uae.g8.u01.l03.monomial_multiply",
+    "practiceMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "teacherReviewRequired": [
+      "full multi-term polynomial expansion",
+      "rectangle area diagram and explanation",
+      "negative factor sign reasoning"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u07l02.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T14:23:23.748Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
