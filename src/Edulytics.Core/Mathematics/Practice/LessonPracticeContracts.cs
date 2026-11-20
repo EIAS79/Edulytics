@@ -11430,6 +11430,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L09_P424_431",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General historical Student Book U08L01 pp445-451.
+        // Numeric powers of ten only; symbolic exponent rules teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS", "algebra.exponent.product_rule",
+            "G9_U08L01_EXPONENT_PRODUCT_PROPERTIES",
+            ["supporting.powers10.multiply","supporting.powers10.evaluate"],
+            "UAE_G9_GENERAL_2019_AR_U08L01_P445_451",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
