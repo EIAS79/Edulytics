@@ -37,3 +37,18 @@ test('Original cooldown covers eight teacher tasks and never falsely grades',()=
  assert.match(h,/TEACHER_REVIEW_REQUIRED/);assert.match(h,/graded:false,submitted:false/);
  assert.match(h,/لم يُرسل إلى Edulytics/);
 });
+
+test('Newer General 7-3 number-line distance and midpoint are explicitly taught without conflating perpendicular distance',()=>{
+ const q=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l06-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ const concept=q.KeyConcepts.find(x=>x.Title==='المسافة والمنتصف على خط الأعداد');
+ const example=q.WorkedExamples.find(x=>x.Title==='المسافة والمنتصف على خط الأعداد');
+ assert.ok(concept&&example);
+ assert.match(concept.Rule,/\|ب−أ\|/);
+ assert.match(concept.Rule,/أ\+ب/);
+ assert.match(example.Question,/−٣/);
+ assert.match(example.Answer,/٨ وحدات/);
+ assert.match(example.Answer,/المنتصف ١/);
+ assert.match(example.Check,/٤/);
+ assert.ok(q.KeyConcepts.some(x=>x.Title==='البعد العمودي'));
+ assert.ok(q.Visuals.some(x=>x.Title==='المسافة والمنتصف على خط الأعداد'));
+});
