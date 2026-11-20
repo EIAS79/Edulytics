@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 15,
+  "unitOrdinal": 2,
+  "lessonOrdinalInUnit": 7,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+  "lessonTitleAr": "النسبة المئوية للتغير",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025-2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "pdfPages": [
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_PAGE_VISUAL_INSPECTION",
+    "lessonSourceIndex": "01.pdf:2-7"
+  },
+  "stageA": {
+    "status": "SOURCE_LESSON_OBJECTIVES_VISUALLY_REVIEWED_73_EXERCISE_IDS_INVENTORIED_MATH_NOT_ALL_VERIFIED",
+    "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-source-element-ledger.json",
+    "countNumberedSourceExercises": 73,
+    "sourceExerciseIndependentMathChecked": 0,
+    "sourceExercisePerItemEquivalenceVerified": false,
+    "sourceDataLab": "p125 class exam percent data teacher-reviewed"
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_AND_RICHV2_8_TEACHER_COOLDOWN_AND_ORIGINAL_DIAGRAM_AUTHORED",
+    "lessonAbsentFromPriorCandidate": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l07-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l07-percent-change-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-teacher-cooldown-rubric.json",
+    "coolDownQuestions": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "EXISTING_PERCENT_NUMERIC_ENGINE_REUSED_WITH_ARABIC_SCOPE_AND_TESTS_WRITTEN",
+    "strategy": "REUSE_NO_NEW_ENGINE",
+    "allowedQuestionFamilies": [
+      "percentages.core.increase_decrease",
+      "percentages.core.of_quantity"
+    ],
+    "independentVerifierExisting": true,
+    "focusTests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L07PercentChangeTests.cs",
+      "tests/academic-uae-grade9-arabic-u02l07.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "blockingGaps": [
+    "A-C source-item mathematical/semantic verification still pending for the 73 numbered textbook questions; authoring covers lessons and original activity, but it is not yet demonstrated 1:1 per source exercise."
+  ],
+  "closed": false,
+  "closeDecision": "A_C_EXPLICIT_GAP",
+  "advanceToNextLesson": false,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:2-8"
+}
