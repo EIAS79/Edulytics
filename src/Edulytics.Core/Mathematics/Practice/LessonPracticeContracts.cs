@@ -11231,6 +11231,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L01_P259_265",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_NUMBER_LINE", Version);
 
+        // UAE General G9 5-2 pp266–271: generic linear inequality numeric aid.
+        // Exact sign reversal and number-line proof remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:02:MULTIPLY-DIVIDE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:02:MULTIPLY-DIVIDE-INEQUALITIES", "algebra.linear.inequality.solve",
+            "G9_U05L02_NEGATIVE_MULTIPLIER_REVERSAL_NUMERIC_HELP",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L02_P266_271",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SIGN_REVERSAL", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
