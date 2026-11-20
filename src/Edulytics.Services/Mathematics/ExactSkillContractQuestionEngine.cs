@@ -665,6 +665,35 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // G9 General U13L09: reuse exact scalar area verification with
+                // original Arabic learner prompts. Drawings and reasoning remain teacher reviewed.
+                if ((string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+                        StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+                        StringComparison.Ordinal)) &&
+                    problem.Family is ("geometry.perimeter_area.rectangle_area" or
+                                       "geometry.perimeter_area.triangle_area"))
+                {
+                    if (problem.Family == "geometry.perimeter_area.rectangle_area")
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"متوازي أضلاع قاعدته {problem.Parameters["length"]} سم وارتفاعه العمودي {problem.Parameters["width"]} سم. احسب المساحة بالسم². الارتفاع ليس الضلع المائل.",
+                            Solution = "مساحة متوازي الأضلاع = القاعدة × الارتفاع العمودي. يراجع المعلم الرسم."
+                        };
+                    }
+                    else
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"مثلث قاعدته {problem.Parameters["base"]} سم وارتفاعه العمودي {problem.Parameters["height"]} سم. احسب المساحة بالسم².",
+                            Solution = "مساحة المثلث = القاعدة × الارتفاع العمودي ÷ ٢. يراجع المعلم الرسم."
+                        };
+                    }
+                }
+
                 // Grade 9 General U02L07: retain shared percent computation
                 // and independent verification, but author source-skill Arabic prompts.
                 if (string.Equals(scopeKey,
