@@ -656,6 +656,34 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 9 General U02L07: retain shared percent computation
+                // and independent verification, but author source-skill Arabic prompts.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+                        StringComparison.Ordinal))
+                {
+                    var pct = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "percentages.core.increase_decrease" => problem with
+                        {
+                            Prompt = pct["direction"] > 0
+                                ? $"زادت قيمة أصلية {pct["quantity"]} بنسبة {pct["percent"]}٪. ما القيمة الجديدة بعد الزيادة؟"
+                                : $"انخفضت قيمة أصلية {pct["quantity"]} بنسبة {pct["percent"]}٪. ما القيمة الجديدة بعد النقصان؟",
+                            Solution = "احسب مقدار النسبة من القيمة الأصلية، ثم أضفه للزيادة أو اطرحه للنقصان، وتحقق من اتجاه التغير."
+                        },
+                        "percentages.core.of_quantity" => problem with
+                        {
+                            Prompt = $"يُمنح خصم أو تُضاف ضريبة بنسبة {pct["percent"]}٪ من سعر أصلي {pct["quantity"]} درهمًا. ما مقدار الخصم أو الضريبة قبل إضافة أو طرح النسبة؟",
+                            Solution = "احسب النسبة المعلنة من السعر الأصلي باستخدام الضرب ثم القسمة على ١٠٠."
+                        },
+                        _ => problem
+                    };
+                }
+
                 // Grade 9 General U02L06: reuse proven exact-ratio questions and
                 // independent integer verifier. Only localize this lesson's prompts.
                 if (string.Equals(scopeKey,
