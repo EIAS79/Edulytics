@@ -52,3 +52,19 @@ test('Newer General 7-3 number-line distance and midpoint are explicitly taught 
  assert.ok(q.KeyConcepts.some(x=>x.Title==='البعد العمودي'));
  assert.ok(q.Visuals.some(x=>x.Title==='المسافة والمنتصف على خط الأعداد'));
 });
+
+test('Newer 7-3 inverse midpoint, bisector and visible source exercise ledger are prepared without inventing an unseen item',()=>{
+ const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l06-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ assert.ok(rich.KeyConcepts.some(x=>x.Title==='إيجاد الطرف المجهول من نقطة المنتصف'));
+ assert.ok(rich.KeyConcepts.some(x=>x.Title==='منصف القطعة المستقيمة وإنشاؤه'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='حساب طرف من منتصف معلوم'));
+ assert.match(rich.WorkedExamples.find(x=>x.Title==='حساب طرف من منتصف معلوم').Answer,/ب\(٨،−٢\)/);
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='التمييز بين منصف القطعة ومنصفها العمودي'));
+ const inv=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u07-new-geometry-7-3-source-element-preparation.json');
+ const observed=inv.sourceGroups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i));
+ assert.equal(observed.length,85);
+ assert.equal(new Set(observed).size,85);
+ assert.equal(observed.includes(76),false);
+ assert.equal(inv.coverage.missingVisibleOrdinal,76);
+ assert.equal(inv.coverage.fullSourceElementAuditPassed,false);
+});
