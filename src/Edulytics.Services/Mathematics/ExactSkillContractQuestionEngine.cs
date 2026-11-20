@@ -655,6 +655,37 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 9 General U02L06: reuse proven exact-ratio questions and
+                // independent integer verifier. Only localize this lesson's prompts.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+                        StringComparison.Ordinal))
+                {
+                    var ratio = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "ratio.unit_rate.equivalent_ratio" => problem with
+                        {
+                            Prompt = $"حل التناسب {ratio["baseFirst"]}/{ratio["baseSecond"]} = س/{ratio["targetSecond"]}. تحقّق بالضرب التبادلي بعد التأكد من أن المقامين غير صفريين.",
+                            Solution = "اضرب طرفَي التناسب تبادليًا، ثم اعزل س وتحقق بالتعويض."
+                        },
+                        "ratio.unit_rate.direct" => problem with
+                        {
+                            Prompt = $"تُنتج ورشة {ratio["total"]} قطعة في {ratio["quantity"]} دقيقة بمعدل ثابت. ما عدد القطع لكل دقيقة؟",
+                            Solution = "اقسم العدد الكلي للقطع على عدد الدقائق مع الحفاظ على الوحدة."
+                        },
+                        "ratio.unit_rate.divide_total" => problem with
+                        {
+                            Prompt = $"يوزَّع مجموع {ratio["total"]} بالتناسب {ratio["firstPart"]}:{ratio["secondPart"]}. ما نصيب الجزء الذي يمثّل {ratio["askedPart"]} من أجزاء النسبة؟",
+                            Solution = "اجمع جزأي النسبة، احسب قيمة الجزء الواحد، ثم اضرب في عدد الأجزاء المطلوبة."
+                        },
+                        _ => problem
+                    };
+                }
+
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
