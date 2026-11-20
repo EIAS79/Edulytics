@@ -46,7 +46,7 @@ test('Independent source substitution arithmetic is consistent',()=>{
  assert.equal(3*8-4*(-1),28);
  assert.equal(-13-(-21),8);
  assert.equal(3*(-13)-2*(-21),3);
- assert.equal(104.95*53+18.95*72,6926.75);
+ assert.equal(10495*53+1895*72,692675); // use integer fils to avoid floating-point rounding
  for(const x of [-3,-1,0,4])assert.equal(-6*x+3*(2*x-4),-12);
  for(const x of [-3,-1,0,4])assert.notEqual(2*(2*x+1),4*x+6);
 });
