@@ -213,6 +213,7 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.equivalent.reduce_common_factor",
             "ratio.unit_rate.direct",
             "ratio.unit_rate.equivalent_ratio",
+            "uae.g9.general.u02.l06.two_sided_proportion",
             "ratio.unit_rate.divide_total",
             "statistics.center_spread.mean",
             "statistics.center_spread.median",
@@ -2306,6 +2307,8 @@ public sealed class ExactSkillContractQuestionEngine
             "ratio.unit_rate.direct" =>
                 parameters["quantity"] > 0 &&
                 value * parameters["quantity"] == parameters["total"],
+
+            "uae.g9.general.u02.l06.two_sided_proportion" => VerifyG9TwoSidedProportion(parameters, value),
 
             "ratio.unit_rate.equivalent_ratio" =>
                 parameters["baseSecond"] > 0 &&
@@ -5159,6 +5162,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            "uae.g9.general.u02.l06.two_sided_proportion" =>
+                BuildG9TwoSidedProportion(random, scale),
             "ratio.unit_rate.divide_total" =>
                 BuildRatioDivideTotal(random, scale),
             "statistics.center_spread.mean" =>
@@ -6216,6 +6221,49 @@ public sealed class ExactSkillContractQuestionEngine
             ("baseFirst", baseFirst),
             ("baseSecond", baseSecond),
             ("targetSecond", targetSecond));
+    }
+
+    // Grade 9 General U02L06: cross-multiplication when both numerators
+    // contain a variable. Reuses the shared numeric problem/verifier flow.
+    private static ExactProblem BuildG9TwoSidedProportion(Random random, int scale)
+    {
+        int a, c, d, f;
+        do
+        {
+            a = random.Next(1, 4 + scale);
+            c = random.Next(2, 7 + scale);
+            d = random.Next(1, 4 + scale);
+            f = random.Next(2, 7 + scale);
+        } while (f * a == c * d);
+        var targetX = random.Next(-5 - scale, 9 + scale);
+        var commonRate = random.Next(2, 8 + scale);
+        var b = c * commonRate - a * targetX;
+        var e = f * commonRate - d * targetX;
+        var plusB = b < 0 ? b.ToString(CultureInfo.InvariantCulture) :
+            "+" + b.ToString(CultureInfo.InvariantCulture);
+        var plusE = e < 0 ? e.ToString(CultureInfo.InvariantCulture) :
+            "+" + e.ToString(CultureInfo.InvariantCulture);
+        return Problem(
+            "uae.g9.general.u02.l06.two_sided_proportion",
+            $"حل التناسب ({a}س{plusB})/{c} = ({d}س{plusE})/{f}. حدد شرطي المقامين، ثم اضرب تبادليًا وتحقق.",
+            "عند المقامين غير الصفريين نساوي الضربين التبادليين، نجمع حدود س في طرف، ثم نتحقق بالتعويض.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c),
+            ("d", d), ("e", e), ("f", f));
+    }
+
+    private static bool VerifyG9TwoSidedProportion(
+        IReadOnlyDictionary<string, int> p, long x)
+    {
+        if (!p.TryGetValue("a", out var a) ||
+            !p.TryGetValue("b", out var b) ||
+            !p.TryGetValue("c", out var c) ||
+            !p.TryGetValue("d", out var d) ||
+            !p.TryGetValue("e", out var e) ||
+            !p.TryGetValue("f", out var f) ||
+            c == 0 || f == 0 || (long)f * a == (long)c * d)
+            return false;
+        return (long)f * (a * x + b) == (long)c * (d * x + e);
     }
 
     private static ExactProblem BuildRatioDivideTotal(Random random, int scale)
@@ -10086,6 +10134,10 @@ public sealed class ExactSkillContractQuestionEngine
 
             "ratio.unit_rate.equivalent_ratio" =>
                 (p["baseFirst"] * p["targetSecond"] / p["baseSecond"]).ToString(CultureInfo.InvariantCulture),
+
+            "uae.g9.general.u02.l06.two_sided_proportion" =>
+                ((p["c"] * (long)p["e"] - p["f"] * (long)p["b"]) /
+                 (p["f"] * (long)p["a"] - p["c"] * (long)p["d"])).ToString(CultureInfo.InvariantCulture),
 
             "ratio.unit_rate.divide_total" =>
                 (p["total"] / (p["firstPart"] + p["secondPart"]) * p["askedPart"])
