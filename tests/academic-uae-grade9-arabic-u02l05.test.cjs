@@ -295,3 +295,16 @@ test('One-root graph case must not ask for two plotted roots', () => {
   assert.match(html,/الحالة 35: نقطة الحل الوحيدة/);
   assert.doesNotMatch(html,/الحالة 35: نقطتا الحل/);
 });
+
+
+test('EX42 reciprocal absolute denominator cannot be substituted with fraction inside absolute value', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const q=bank.groups.find(x=>x.taskId==='extensionQ8');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  assert.deepEqual(q.ids,[40,42]);
+  assert.match(html,/٤\/\|س\|\+١٢=١٤/);
+  assert.match(html,/س≠٠/);
+  assert.match(q.expected,/س=−٢ أو ٢/);
+  assert.doesNotMatch(html,/\|\(٣س−١٢\)\/٤\|=٣/);
+  assert.equal(q.sourceLevelTreatment.includes('EX42'),true);
+});
