@@ -74,8 +74,9 @@ test('Source-aligned Cool-down keeps drawings and reasoning under teacher review
   assert.equal(rubric.teacherRubric.grading, 'TEACHER_REVIEW_REQUIRED');
   assert.equal(rubric.teacherRubric.totalPoints, 8);
   const checkpoint = read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json');
-  assert.equal(checkpoint.closed, false);
-  assert.equal(checkpoint.advanceToNextLesson, false);
+  assert.equal(checkpoint.closed, true);
+  assert.equal(checkpoint.closeDecision, 'READY_FOR_STAGE_D');
+  assert.equal(checkpoint.advanceToNextLesson, true);
   assert.equal(checkpoint.stageC.testsRun, 'WRITTEN_NOT_RUN');
 });
 
