@@ -52,6 +52,7 @@ public sealed class ExactSkillContractQuestionEngine
         {
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
+            "uae.g9.general.u07.l03.multiply_coefficient",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -989,6 +990,28 @@ public sealed class ExactSkillContractQuestionEngine
         string answer)
     {
 
+        if (family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            var required=new[]{"a2","a1","a0","b2","b1","b0","degree"};
+            if(parameters.Count!=required.Length||required.Any(k=>!parameters.ContainsKey(k))||
+                parameters["degree"] is <0 or >4||required.Take(6).Any(k=>parameters[k] is <-9 or >9))
+                return false;
+            var normalized=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-', _=>ch
+            }));
+            if(!int.TryParse(normalized,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))
+                return false;
+            int sum=0;
+            for(int i=0;i<=2;i++)
+                for(int j=0;j<=2;j++)
+                    if(i+j==parameters["degree"])
+                        sum+=parameters["a"+i.ToString(CultureInfo.InvariantCulture)]*
+                             parameters["b"+j.ToString(CultureInfo.InvariantCulture)];
+            return submitted==sum;
+        }
+
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
             var keys=new[] {"a2","a1","a0","b2","b1","b0","degree"};
@@ -1324,20 +1347,6 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit8Questions.Verify(family, parameters, answer);
         if (UaeGrade2Term3Questions.Supports(family))
             return UaeGrade2Term3Questions.Verify(family, parameters, answer);
-
-        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
-        {
-            var a2=random.Next(-8,9);var a1=random.Next(-8,9);var a0=random.Next(-8,9);
-            var b2=random.Next(-8,9);var b1=random.Next(-8,9);var b0=random.Next(-8,9);
-            var degree=random.Next(0,3);
-            var sign=family.EndsWith("add_coefficient",StringComparison.Ordinal)?"+":"−";
-            var prompt=$"في كثيرتي الحدود ( {a2}س² + ({a1})س + ({a0}) ) {sign} ( {b2}س² + ({b1})س + ({b0}) )، ما معامل س^{degree} بعد تجميع الحدود المتشابهة؟ إذا كانت الدرجة صفرًا فاكتب الحد الثابت. اكتب العدد فقط.";
-            return Problem(family,prompt,
-                "اجمع معاملات الدرجات المتشابهة عند الجمع؛ وعند الطرح وزع الإشارة السالبة على جميع حدود كثيرة الحدود الثانية قبل الجمع.",
-                AssessmentItemType.Numeric,
-                ("a2",a2),("a1",a1),("a0",a0),
-                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
-        }
 
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
@@ -3363,6 +3372,33 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var a2=random.Next(-8,9);var a1=random.Next(-8,9);var a0=random.Next(-8,9);
+            var b2=random.Next(-8,9);var b1=random.Next(-8,9);var b0=random.Next(-8,9);
+            var degree=random.Next(0,3);
+            var sign=family.EndsWith("add_coefficient",StringComparison.Ordinal)?"+":"−";
+            var prompt=$"في كثيرتي الحدود ( {a2}س² + ({a1})س + ({a0}) ) {sign} ( {b2}س² + ({b1})س + ({b0}) )، ما معامل س^{degree} بعد تجميع الحدود المتشابهة؟ إذا كانت الدرجة صفرًا فاكتب الحد الثابت. اكتب العدد فقط.";
+            return Problem(family,prompt,
+                "اجمع معاملات الدرجات المتشابهة عند الجمع؛ وعند الطرح وزع الإشارة السالبة على جميع حدود كثيرة الحدود الثانية قبل الجمع.",
+                AssessmentItemType.Numeric,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
+        }
+
+        if(family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            var a2=random.Next(-6,7);var a1=random.Next(-6,7);var a0=random.Next(-6,7);
+            var b2=random.Next(-6,7);var b1=random.Next(-6,7);var b0=random.Next(-6,7);
+            var degree=random.Next(0,5);
+            return Problem(family,
+                $"اضرب كثيرتي الحدود ({a2}س²+({a1})س+({a0}))×({b2}س²+({b1})س+({b0})). بعد توزيع كل حد وتجميع الحدود المتشابهة ما معامل س^{degree}؟ الدرجة صفر تعني الحد الثابت. اكتب عددًا صحيحًا فقط.",
+                "اضرب كل حد من كثيرة الحدود الأولى في كل حد من الثانية؛ اجمع أسس المتغير في الضرب، ثم اجمع معاملات الحدود الناتجة من الدرجة المطلوبة.",
+                AssessmentItemType.Numeric,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
+        }
 
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
         {
@@ -9378,6 +9414,16 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var p = problem.Parameters;
 
+        if(problem.Family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            int sum=0;
+            for(int i=0;i<=2;i++)
+                for(int j=0;j<=2;j++)
+                    if(i+j==p["degree"])
+                        sum+=p["a"+i.ToString(CultureInfo.InvariantCulture)]*
+                             p["b"+j.ToString(CultureInfo.InvariantCulture)];
+            return sum.ToString(CultureInfo.InvariantCulture);
+        }
         if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
             var suffix=p["degree"].ToString(CultureInfo.InvariantCulture);
