@@ -35,13 +35,14 @@ public sealed class UaeG9GeneralU02L06RatioProportionTests
         {
             "ratio.unit_rate.equivalent_ratio",
             "ratio.unit_rate.direct",
-            "ratio.unit_rate.divide_total"
+            "ratio.unit_rate.divide_total",
+            "uae.g9.general.u02.l06.two_sided_proportion"
         };
         var questions = engine.Generate(
             "UAE-G9-GENERAL", Lesson, families,
-            ExactSkillQuestionDifficulty.Standard, 3, 20261120,
+            ExactSkillQuestionDifficulty.Standard, 4, 20261120,
             Array.Empty<string>());
-        Assert.Equal(3, questions.Count);
+        Assert.Equal(4, questions.Count);
         foreach (var question in questions)
         {
             Assert.Contains(question.Family, families);
@@ -51,6 +52,25 @@ public sealed class UaeG9GeneralU02L06RatioProportionTests
                 question.Family, question.Parameters, "-999"));
             Assert.True(question.Prompt.Any(c => c >= '\u0600' && c <= '\u06FF'));
         }
+    }
+
+    [Fact]
+    public void TwoSidedProportionAcceptsOnlyValidRootsAndRejectsZeroDenominators()
+    {
+        const string family = "uae.g9.general.u02.l06.two_sided_proportion";
+        var p = new Dictionary<string, int>
+        {
+            ["a"] = 2, ["b"] = 1, ["c"] = 5,
+            ["d"] = 1, ["e"] = 4, ["f"] = 3
+        };
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, "17"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, "١٧"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "16"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+            new Dictionary<string, int>(p) { ["c"] = 0 }, "17"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+            new Dictionary<string, int>(p) { ["f"] = 0 }, "17"));
     }
 
     [Fact]
