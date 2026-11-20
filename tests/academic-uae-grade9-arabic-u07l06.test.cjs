@@ -35,10 +35,9 @@ test('Original Arabic cooldown covers roots, repeat roots, sign reasoning and te
  assert.match(s,/لم تُرسل البيانات إلى Edulytics/);
 });
 test('Both expected source factor fixtures satisfy the original polynomial identity',()=>{
- const roots=[[3,4,7,12],[-4,3,-1,-12],[4,4,-8,16],[2,3,-5,6]];
+ const roots=[[-3,-4,7,12],[4,-3,-1,-12],[4,4,-8,16],[2,3,-5,6]];
  for(const [m,n,b,c]of roots){
-  if(b===7)assert.equal(m+n,b);
-  else assert.equal(-(m+n),b);
+  assert.equal(-(m+n),b);
   assert.equal(m*n,c);
  }
 });
