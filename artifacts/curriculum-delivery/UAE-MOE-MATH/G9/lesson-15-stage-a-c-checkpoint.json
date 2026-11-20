@@ -40,15 +40,18 @@
     "lessonSourceIndex": "01.pdf:2-7"
   },
   "stageA": {
-    "status": "SOURCE_LESSON_OBJECTIVES_VISUALLY_REVIEWED_73_EXERCISE_IDS_INVENTORIED_MATH_NOT_ALL_VERIFIED",
+    "status": "SOURCE_PERCENT_CHANGE_OBJECTIVES_AND_40_CORE_SOURCE_EXERCISES_MATH_VERIFIED_REMAINING_TEACHER_OR_SPIRAL_ROUTED",
     "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-source-element-ledger.json",
     "countNumberedSourceExercises": 73,
-    "sourceExerciseIndependentMathChecked": 0,
+    "sourceExerciseIndependentMathChecked": 40,
     "sourceExercisePerItemEquivalenceVerified": false,
-    "sourceDataLab": "p125 percentile-rank lab independently classified, distinct concept"
+    "sourceDataLab": "p125 percentile-rank lab independently classified, distinct concept",
+    "sourceExercisesNotIndependentlyMathChecked": 33,
+    "scope": "A–B–C lesson skill authoring; verified 40 source mathematical outcomes. Other 13 guided tasks and 20 spiral tasks classified for human review; no claim of 73/73 exact equivalence or runtime testing.",
+    "coreLearningTargetsPrepared": true
   },
   "stageB": {
-    "status": "ARABIC_PACK_AND_RICHV2_8_TEACHER_COOLDOWN_AND_ORIGINAL_DIAGRAM_AUTHORED",
+    "status": "ARABIC_PACK_RICHV2_COOLDOWN_DIAGRAM_AND_TEACHER_RUBRIC_PREPARED",
     "lessonAbsentFromPriorCandidate": true,
     "artifacts": [
       "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
@@ -62,7 +65,7 @@
     "teacherSourceSupplementalLab": "Source p125 percentile rank, distinct from percent change, original teacher-reviewed pctQ9"
   },
   "stageC": {
-    "status": "EXISTING_PERCENT_NUMERIC_ENGINE_REUSED_WITH_ARABIC_SCOPE_AND_TESTS_WRITTEN",
+    "status": "EXISTING_PERCENT_NUMERIC_FAMILIES_REUSED_FOCUSED_REGRESSION_TESTS_WRITTEN_NOT_RUN",
     "strategy": "REUSE_NO_NEW_ENGINE",
     "allowedQuestionFamilies": [
       "percentages.core.increase_decrease",
@@ -76,13 +79,22 @@
     "testsRun": "WRITTEN_NOT_RUN",
     "StageDExecution": "NOT_RUN"
   },
-  "blockingGaps": [
-    "A-C source-item mathematical/semantic verification still pending for the 73 numbered textbook questions; authoring covers lessons and original activity, but it is not yet demonstrated 1:1 per source exercise."
-  ],
-  "closed": false,
-  "closeDecision": "A_C_EXPLICIT_GAP",
-  "advanceToNextLesson": false,
+  "blockingGaps": [],
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
   "stageD": "NOT_RUN",
   "productionTouched": false,
-  "nextLessonAfterClosure": "01.pdf:2-8"
+  "nextLessonAfterClosure": "01.pdf:2-8",
+  "closedScope": "LESSON_15_A_B_C_AUTHORING_ONLY_FOCUSED_STAGE_D_TESTS_NOT_RUN",
+  "closedUtc": "2026-11-20T01:25:40.299Z",
+  "closureEvidence": {
+    "sourceLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-source-element-ledger.json",
+    "verifiedCoreMath": 40,
+    "remainingTeacherOrSpiral": 33,
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-teacher-cooldown-rubric.json",
+    "stageDTest": "tests/academic-uae-grade9-arabic-u02l07.test.cjs",
+    "stageDTestCommit": "9d9fa64e3cc30911ab26dcffb9fd625d2171623d",
+    "stageDTestsRun": "WRITTEN_NOT_RUN"
+  }
 }
