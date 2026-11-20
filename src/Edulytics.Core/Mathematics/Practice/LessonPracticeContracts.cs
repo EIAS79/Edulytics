@@ -11467,6 +11467,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L04_P468_475",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General U08L05: exact integer coefficient of radicals only.
+        // Conjugate rationalization, domains and written proof remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS", "algebra.radical.simplify",
+            "G9_U08L05_RADICAL_SIMPLIFICATION_EXACT",
+            ["supporting.surds.coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U08L05_P477_483",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
