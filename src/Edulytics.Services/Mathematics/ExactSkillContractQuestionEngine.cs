@@ -747,6 +747,21 @@ public sealed class ExactSkillContractQuestionEngine
                     };
                 }
 
+                // UAE General Grade9 6-6: only a boundary-coordinate value
+                // is graded here. Both inequality regions and their intersection
+                // are reviewed by the teacher in the Arabic lesson activity.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "geometry.coordinate.evaluate_linear_rule", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"في تمثيل حد متباينة خطية ص = ({p["gradient"]})س + ({p["intercept"]})، احسب ص عند س = {p["x"]}. اكتب القيمة العددية فقط؛ مراجعة تظليل نظام المتباينات من اختصاص المعلم.",
+                        Solution = "عوض قيمة س في قاعدة المستقيم ثم اجمع الناتج. لا يُصحح هذا السؤال وحده تقاطع نصفي المستويين أو الخطوط الصارمة."
+                    };
+                }
+
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
