@@ -11439,6 +11439,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L01_P445_451",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General U08L02 pp452-459; powers-of-ten exact numeric subset.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:02:QUOTIENT-PROPERTIES-OF-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:02:QUOTIENT-PROPERTIES-OF-EXPONENTS", "algebra.exponent.quotient_rule",
+            "G9_U08L02_EXPONENT_QUOTIENT_PROPERTIES",
+            ["supporting.powers10.divide","supporting.powers10.missing_exponent"],
+            "UAE_G9_GENERAL_2019_AR_U08L02_P452_459",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
