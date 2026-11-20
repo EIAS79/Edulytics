@@ -55,6 +55,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g9.general.u07.l03.multiply_coefficient",
             "uae.g9.general.u07.l04.square_binomial_coefficient",
             "uae.g9.general.u07.l04.conjugate_product_coefficient",
+            "uae.g9.general.u07.l06.monic_quadratic_roots",
+            "uae.g9.general.u07.l07.nonmonic_quadratic_roots",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -1027,6 +1029,25 @@ public sealed class ExactSkillContractQuestionEngine
                 ? dd switch{2=>aa*aa,1=>2*aa*bb,_=>bb*bb}
                 : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
             return submitted==expected;
+        }
+
+        if(family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+        {
+            if(parameters.Count!=3||!parameters.TryGetValue("a",out var aa)||
+                !parameters.TryGetValue("r1",out var one)||!parameters.TryGetValue("r2",out var two)||
+                one is <-8 or >8||two is <-8 or >8||one==two||
+                (family=="uae.g9.general.u07.l06.monic_quadratic_roots"?aa!=1:aa is <2 or >5))
+                return false;
+            var raw=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-','،'=>',','\u200E'=>'\0','\u200F'=>'\0',_=>ch
+            }).Where(ch=>ch!='\0'));
+            var parts=raw.Split(',',StringSplitOptions.None);
+            if(parts.Length!=2||!int.TryParse(parts[0].Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var x)||
+                !int.TryParse(parts[1].Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var y))
+                return false;
+            return (x==one&&y==two)||(x==two&&y==one);
         }
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
@@ -3397,6 +3418,20 @@ public sealed class ExactSkillContractQuestionEngine
             var explanation=family=="uae.g9.general.u07.l04.square_binomial_coefficient" ? "مربع مجموع حدين: أ²+٢أب+ب²." : "فرق مربعين: (أ+ب)(أ−ب)=أ²−ب²؛ الحد الأوسط يساوي صفرًا.";
             return Problem(family,$"بسّط ناتج الضرب الخاص {expression}. ما معامل س^{degree}؟ الدرجة صفر تعني الحد الثابت. اكتب عددًا صحيحًا فقط.",
                 explanation,AssessmentItemType.Numeric,("a",aa),("b",bb),("degree",degree));
+        }
+
+        if(family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+        {
+            var a=family=="uae.g9.general.u07.l06.monic_quadratic_roots"?1:random.Next(2,6);
+            var one=random.Next(-8,9);
+            var two=random.Next(-8,9);
+            while(two==one)two=random.Next(-8,9);
+            var middle=-a*(one+two);
+            var constant=a*one*two;
+            return Problem(family,
+                $"حل المعادلة {a}س²+({middle})س+({constant})=٠ بتحليل كثيرة الحدود إلى عوامل وتطبيق خاصية الضرب الصفري. اكتب الجذرين مفصولين بفاصلة.",
+                "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
+                AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
         }
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
@@ -9458,6 +9493,10 @@ public sealed class ExactSkillContractQuestionEngine
                 : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
             return answer.ToString(CultureInfo.InvariantCulture);
         }
+
+        if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+            return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
+                .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
 
         if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
