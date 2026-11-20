@@ -11301,6 +11301,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L02_P318_323",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
 
+        // UAE G9 General U06L03: only solve one-variable post-elimination substep.
+        // Ordered pairs and source-system reasoning remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT",
+            "algebra.linear.solve",
+            "G9_U06L03_ELIMINATION_ARABIC_LINEAR_SUBSTEP_TEACHER_SYSTEM",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L03_P324_330",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
