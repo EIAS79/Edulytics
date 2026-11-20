@@ -53,6 +53,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
+            "uae.g9.general.u07.l04.square_binomial_coefficient",
+            "uae.g9.general.u07.l04.conjugate_product_coefficient",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -1010,6 +1012,21 @@ public sealed class ExactSkillContractQuestionEngine
                         sum+=parameters["a"+i.ToString(CultureInfo.InvariantCulture)]*
                              parameters["b"+j.ToString(CultureInfo.InvariantCulture)];
             return submitted==sum;
+        }
+
+        if(family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            if(parameters.Count!=3||!parameters.TryGetValue("a",out var aa)||
+               !parameters.TryGetValue("b",out var bb)||!parameters.TryGetValue("degree",out var dd)||
+               aa is <1 or >9||bb is <1 or >9||dd is <0 or >2)return false;
+            var cleaned=string.Concat((answer??"").Trim().Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),'−'=>'-',_=>ch}));
+            if(!int.TryParse(cleaned,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))return false;
+            var expected=family=="uae.g9.general.u07.l04.square_binomial_coefficient"
+                ? dd switch{2=>aa*aa,1=>2*aa*bb,_=>bb*bb}
+                : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
+            return submitted==expected;
         }
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
@@ -3372,6 +3389,15 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+        if(family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            var aa=random.Next(1,10);var bb=random.Next(1,10);var degree=random.Next(0,3);
+            var expression=family=="uae.g9.general.u07.l04.square_binomial_coefficient" ? $"({aa}س+{bb})²" : $"({aa}س+{bb})({aa}س−{bb})";
+            var explanation=family=="uae.g9.general.u07.l04.square_binomial_coefficient" ? "مربع مجموع حدين: أ²+٢أب+ب²." : "فرق مربعين: (أ+ب)(أ−ب)=أ²−ب²؛ الحد الأوسط يساوي صفرًا.";
+            return Problem(family,$"بسّط ناتج الضرب الخاص {expression}. ما معامل س^{degree}؟ الدرجة صفر تعني الحد الثابت. اكتب عددًا صحيحًا فقط.",
+                explanation,AssessmentItemType.Numeric,("a",aa),("b",bb),("degree",degree));
+        }
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
@@ -9424,6 +9450,15 @@ public sealed class ExactSkillContractQuestionEngine
                              p["b"+j.ToString(CultureInfo.InvariantCulture)];
             return sum.ToString(CultureInfo.InvariantCulture);
         }
+        if(problem.Family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            var aa=p["a"];var bb=p["b"];var dd=p["degree"];
+            var answer=problem.Family=="uae.g9.general.u07.l04.square_binomial_coefficient"
+                ? dd switch{2=>aa*aa,1=>2*aa*bb,_=>bb*bb}
+                : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
+            return answer.ToString(CultureInfo.InvariantCulture);
+        }
+
         if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
             var suffix=p["degree"].ToString(CultureInfo.InvariantCulture);
