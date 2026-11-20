@@ -11164,6 +11164,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L04_P182_188",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_MODEL", Version);
 
+        // UAE Grade9 General 3-5, local General source pp189–196:
+        // numeric nth term and position only; graph and conceptual tasks need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS", "sequences.arithmetic.nth_term",
+            "G9_U03L05_ARITHMETIC_NTH_TERM_AND_DISCRETE_LINEAR_FUNCTION",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
+            "UAE_G9_GENERAL_2025_AR_U03L05_P189_196",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_DISCRETE_GRAPH", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
