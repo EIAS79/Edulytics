@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "project": "Edulytics",
+  "curriculum": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "academicLanguage": "ar",
+  "direction": "RTL",
+  "targetSchoolYear": "2026-2027",
+  "pr": 650,
+  "branch": "fix/g9-general-full-year-scope-86",
+  "ownerTarget": {
+    "units": 13,
+    "lessons": 82
+  },
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "stageDStarted": true,
+  "stageDStatus": "D_PENDING_A_C_EVIDENCE",
+  "candidateShaAtInitialInspection": "f95fd5f76bc992d340b8a8e3aa65c804c7d78cbe",
+  "stageDWorkflowCreationCommit": "8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630",
+  "testedCandidateSha": null,
+  "ciRefKind": null,
+  "workflowRunIds": [],
+  "requiredHandoff": {
+    "path": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
+    "status": "MISSING_AT_EXPECTED_PATH"
+  },
+  "sourceInventory": {
+    "file": "source-inventory.json",
+    "generalRawCount": 86,
+    "referenceBookCount": 2,
+    "verifiedUniqueCount": null
+  },
+  "sourceSemanticLock": {
+    "sourceIndexComplete": false,
+    "rawLessonAtomicAuditPassed": 0,
+    "rawLessonCount": 86,
+    "targetLessonElementParityPassed": 0,
+    "targetLessonCount": 82
+  },
+  "authoringReadyForDCount": 82,
+  "firstIncompleteLessonOrdinal": 1,
+  "firstIncompleteReason": "D entry cannot verify source element denominator and independent parity; do not grant D_VERIFIED",
+  "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
+  "tests": {
+    "node": "NOT_RUN_NO_WORKFLOW_RESULT_YET",
+    "dotnet": "NOT_RUN_NO_WORKFLOW_RESULT_YET",
+    "authenticatedE2E": "NOT_RUN",
+    "arabicRtlVisual": "NOT_RUN",
+    "neonReadOnlyLive": "NOT_RECHECKED_THIS_TURN"
+  },
+  "releaseDecision": "NO_GO_SOURCE_100",
+  "notes": [
+    "Uploaded Stage D plan mistakenly says Grade:8 twice in Grade 9 handoff/checkpoint templates; authoritative scope is Grade 9 and no Grade 8 record should be mutated.",
+    "Stage D diagnostics may run while the D entry handoff and source parity gate are blocked.",
+    "No production writes, merge or deployment authorized by this diagnostic checkpoint."
+  ],
+  "evidencePaths": [
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/source-inventory.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/full-grade-progress.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
+    ".github/workflows/uae-grade9-general-stage-d.yml"
+  ]
+}
