@@ -53,3 +53,22 @@ No source title or new skill should be deleted to force numeric compliance.
 - Page accessibility and nonblank appearance **do not certify** printed-page heading correspondence, the accuracy of each exercise, or semantic duplicate decisions.
 
 `SOURCE_INDEX_COMPLETE` therefore remains **false**.
+
+## Source-reconciliation progress — 20 November 2026
+
+Prepared source-target skill supplements have been committed **without claiming full semantic parity**:
+
+| Newer General source | Existing receiving lesson | Targeted retained skill | Authoring commit | Atomic source parity |
+|---|---|---|---|---|
+| `01.pdf:7-1` printed 365 | `03-1.pdf:11-1` | Plane naming by three noncollinear points; collinear vs coplanar distinction, in addition to old proof postulates | `a3761466ff8c1f0876cc36c2b25cf65fcd87ad28` | PENDING |
+| `01.pdf:7-2` printed 374 | `03-1.pdf:11-3` | Calibrated ruler length with nonzero starting reading, unit and precision | `30777bcd2e054edb2af84acf0f86ab40a247efde` | PENDING |
+| `01.pdf:7-3` printed 385 | `03-1.pdf:12-6` | Number-line distance and midpoint, distinct from point-to-line perpendicular distance | `288dc0d66dad6ec4b6d52563943b4144f2ce0760` | PENDING |
+| `01.pdf:7-4` printed 398 | `03-1.pdf:11-3` | Previously recorded segment-relations overlap; supplemental exercise variants must be retained | existing prior evidence | PENDING |
+
+The source image for `01.pdf` printed p.365 (physical PDF page 376) was reopened on the authorized Our-CS device and directly inspected; it confirms explicit point/line/plane representation and the naming/collinearity vocabulary. This is **single-page evidence only**, not a complete source-lesson exercise audit.
+
+Prepared focused tests: `academic-uae-grade9-arabic-u11l01.test.cjs`, `...u11l03.test.cjs`, `...u12l06.test.cjs`; execution reserved for Stage D.
+
+An additional **deliberately strict not-yet-passing** academic source gate is prepared in `tests/academic-uae-grade9-strict-source-index-gate.test.cjs` (commit `9394b47c960c68e4ef172e9a1cbf09f7bf28cccd`), requiring explicit 86-source atomic verification, 82-target source-element parity, and unambiguous supplement placement before `SOURCE_INDEX_COMPLETE` can be true. It is **WRITTEN_NOT_RUN**.
+
+**Do not declare the A–B–C source index or semantic audit complete merely because all 82 authoring checkpoints say READY_FOR_STAGE_D.** The per-lesson authoring records are distinct from the independent source parity gate. No Stage D, CI, merge or production writes are claimed.
