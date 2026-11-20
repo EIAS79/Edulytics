@@ -11,6 +11,16 @@ on:
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
       - 'tests/academic-uae-grade9*.test.cjs'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/academic-uae-grade9*.test.cjs'
   workflow_dispatch:
 
 permissions:
