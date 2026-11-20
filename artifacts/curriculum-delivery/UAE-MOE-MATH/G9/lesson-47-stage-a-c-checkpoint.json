@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 47,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-8",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES",
+  "lessonTitleAr": "الفرق بين مربعين",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    418,
+    419,
+    420,
+    421,
+    422,
+    423
+  ],
+  "sourcePdfPages": [
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_STUDENT_BOOK_PAGE_SPAN_VISUALLY_REVIEWED",
+    "skills": [
+      "difference of two perfect squares identity",
+      "factoring conjugate binomials",
+      "factor out common factor first",
+      "equation roots including fractional values",
+      "area models and common errors"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_STUDENT_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l08-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l08-difference-squares-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "EXISTING_QUADRATIC_ENGINE_EXTENDED_TO_DIFFERENCE_SQUARES_INTEGER_ROOTS",
+    "families": [
+      "uae.g9.general.u07.l08.difference_squares_integer_roots"
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/UaeG9MonicQuadraticQuestions.cs",
+    "teacherReviewRequired": [
+      "symbolic factoring",
+      "noninteger fractional roots",
+      "geometric and area reasoning"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u07l08.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L08DifferenceSquaresTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T15:22:54.145Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
