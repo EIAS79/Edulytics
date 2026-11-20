@@ -11503,6 +11503,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U09L02_P515_525",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U09L03: reuse proven set operation count.
+        // Three-set diagrams, complement region shading and reasoning are teacher-review only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:03:VENN-DIAGRAMS-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:03:VENN-DIAGRAMS-SET-OPERATIONS", "sets.venn_diagram",
+            "G9_U09L03_VENN_SET_OPERATIONS_SHARED_COUNT",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L03_P526_536",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
