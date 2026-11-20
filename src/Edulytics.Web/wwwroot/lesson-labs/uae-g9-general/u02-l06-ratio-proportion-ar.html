@@ -46,6 +46,7 @@ button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-of
 <tbody><tr><th scope="row">الإيجار</th><td>٧٥٠</td></tr><tr><th scope="row">البطاقة الائتمانية</th><td>٣٠٠</td></tr><tr><th scope="row">السيارة</th><td>٤٠٠</td></tr><tr><th scope="row">القرض</th><td>١٥٠</td></tr><tr><th scope="row">الدخل الشهري</th><td>٥٠٠٠</td></tr></tbody></table>
 <textarea id="ratioQ6" required></textarea></li>
 <li><label for="ratioQ7">حل التناسب الذي يحتوي على متغير في طرفيه <span class="math">(٢س+١)/٥=(س+٤)/٣</span>، ثم تحقق من النتيجة بالضرب التبادلي والتعويض.</label><textarea id="ratioQ7" required></textarea></li>
+<li><label for="ratioQ8">هل المساواة <span class="math">٩/٢١=١٢/١٤</span> تمثل تناسبًا صحيحًا؟ برّر حسابيًا، ولا تخترع مجهولًا غير موجود في السؤال.</label><textarea id="ratioQ8" required></textarea></li>
 </ol><button type="submit">تجهيز إجابات التقويم للمعلم</button></form>
 <p class="teacher">مراجعة المعلم: تحقّق من صحة النسب، الضرب التبادلي، شرط المقام غير الصفري، الوحدات، وتفسير المعدل. لا يُعتمد النموذج تصحيحًا آليًا أو تسليمًا مُوثّقًا للمنصة.</p>
 <p id="exportStatus" role="status" aria-live="polite"></p><label for="teacherExport">سجل الإجابات المحلي</label><textarea id="teacherExport" readonly></textarea>
@@ -55,8 +56,8 @@ button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-of
 'use strict';
 document.getElementById('ratioCooldown').addEventListener('submit',event=>{
  event.preventDefault();
- const answers=[1,2,3,4,5,6,7].map(n=>({question:n,response:document.getElementById('ratioQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
- if(answers.some(a=>!a.response)){document.getElementById('exportStatus').textContent='أجب عن الأسئلة السبعة قبل تجهيز السجل.';return;}
+ const answers=[1,2,3,4,5,6,7,8].map(n=>({question:n,response:document.getElementById('ratioQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
+ if(answers.some(a=>!a.response)){document.getElementById('exportStatus').textContent='أجب عن الأسئلة الثمانية قبل تجهيز السجل.';return;}
  const payload={lesson:'UAE-MOE-MATH/G9/General/2-6',locale:'ar',graded:false,review:'TEACHER_REVIEW_REQUIRED',answers};
  document.getElementById('teacherExport').value=JSON.stringify(payload,null,2);
  document.getElementById('exportStatus').textContent='تم تجهيز الإجابات محليًا؛ انسخ السجل وقدّمه للمعلم. لم تُرسل البيانات إلى Edulytics ولم تُحسب درجة.';
