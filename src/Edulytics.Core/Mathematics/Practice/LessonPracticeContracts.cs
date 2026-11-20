@@ -11372,6 +11372,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L03_P382_387",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 UAE General 2019 7-4: numeric coefficients only, teacher checks area and full symbolic proof.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS",
+            "algebra.polynomial.special_products",
+            "G9_U07L04_SPECIAL_PRODUCTS_SQUARE_AND_CONJUGATE",
+            ["uae.g9.general.u07.l04.square_binomial_coefficient",
+             "uae.g9.general.u07.l04.conjugate_product_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L04_P388_393",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
