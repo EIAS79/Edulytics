@@ -233,16 +233,28 @@
   "aBC": {
     "a": "SOURCE_ELEMENTS_MAPPED",
     "b": "AR_CONTENT_DRAFT",
-    "c": "QUESTION_FIXTURES_WRITTEN_RUNTIME_ENGINE_NOT_WIRED",
-    "status": "A_C_EXPLICIT_GAP",
-    "readyForStageD": false,
-    "lessonClosed": false,
+    "c": "RUNTIME_FAMILIES_AND_PRACTICE_CONTRACT_AUTHORED_STAGE_D_NOT_RUN",
+    "status": "READY_FOR_STAGE_D_AUTHORING_ONLY",
+    "readyForStageD": true,
+    "lessonClosed": true,
     "testsWritten": true,
     "testsRun": false
   },
   "notes": [
     "Source ledger covers observed learning and assessment categories, not a proof that every exercise has been migrated.",
     "No engine is approved merely from a family name. Stage D must verify actual generated Arabic questions and grading.",
-    "Keep this file outside embedded lesson-pack auto-publish directory."
-  ]
+    "Keep this file outside embedded lesson-pack auto-publish directory.",
+    "Stage D reconciled the formerly stale A-C handoff: the practice contract and exact lesson-skill mapping are present on the branch. Authoring READY_FOR_STAGE_D does not imply question-sample correctness or Stage D success."
+  ],
+  "runtimeContractEvidence": {
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "practiceMappingPath": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceContractPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "sourceMappedFamilies": [
+      "usccss.algebra.expression_words",
+      "usccss.algebra.expression_coefficient"
+    ],
+    "contractWritten": true,
+    "realQuestionGenerationAndGradingVerified": false
+  }
 }
