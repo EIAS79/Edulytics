@@ -98,6 +98,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "uae.g9.general.u09.l05.finite_infinite_classification",
             "uae.g9.general.u10.l02.logic_truth_tables",
             "uae.g9.general.u10.l03.conditional_truth_tables",
+            "uae.g9.general.u11.l01.incidence_postulates",
             "uae.g9.general.u09.l02.set_operation_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
@@ -305,6 +306,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "uae.g9.general.u09.l05.finite_infinite_classification" => G9FiniteInfiniteClassification(random),
             "uae.g9.general.u10.l02.logic_truth_tables" => G9LogicTruthTables(random),
             "uae.g9.general.u10.l03.conditional_truth_tables" => G9ConditionalTruthTables(random),
+            "uae.g9.general.u11.l01.incidence_postulates" => G9IncidencePostulates(random),
             "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
@@ -516,6 +518,8 @@ internal static partial class SupportingPracticeCompletionEngine
                 Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
                     p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
                     .ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u11.l01.incidence_postulates" =>
+                (p["mode"] is 0 or 1 or 3 or 4 or 6 ? "1" : "0"),
             "uae.g9.general.u10.l03.conditional_truth_tables" =>
                 (p["mode"]==0 ? (p["p"]==1 && p["q"]==0 ? 0 : 1) :
                  p["mode"]==1 ? (p["q"]==1 && p["p"]==0 ? 0 : 1) :
@@ -750,6 +754,19 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
                    parsed==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u11.l01.incidence_postulates",StringComparison.Ordinal))
+        {
+            if(p.Count!=2 || !p.TryGetValue("mode",out int mode) ||
+               !p.TryGetValue("caseIndex",out int caseIndex) ||
+               mode is <0 or >7 || caseIndex is <1 or >20 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return normalized==(mode is 0 or 1 or 3 or 4 or 6 ? "1" : "0");
         }
         if (string.Equals(family,"uae.g9.general.u10.l03.conditional_truth_tables",StringComparison.Ordinal))
         {
@@ -1540,6 +1557,27 @@ internal static partial class SupportingPracticeCompletionEngine
             $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
             "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
             ("a",a),("b",b),("mode",mode));
+    }
+
+    private static Problem G9IncidencePostulates(Random r)
+    {
+        var mode=r.Next(8);
+        var caseIndex=r.Next(1,21);
+        var statement=mode switch
+        {
+            0 => $"من نقطتين مختلفتين أ{caseIndex} وب{caseIndex} يمر مستقيم واحد فقط.",
+            1 => $"ثلاث نقاط أ{caseIndex} وب{caseIndex} وج{caseIndex} غير واقعة على مستقيم واحد تحدد مستوى وحيدًا.",
+            2 => $"ثلاث نقاط أ{caseIndex} وب{caseIndex} وج{caseIndex} على مستقيم واحد تحدد مستوى وحيدًا.",
+            3 => $"مستقيمان مختلفان ل{caseIndex} وم{caseIndex} يتقاطعان يحددان مستوى وحيدًا.",
+            4 => $"مستقيمان مختلفان متوازيان ل{caseIndex} وم{caseIndex} يحددان مستوى وحيدًا.",
+            5 => $"مستقيمان متخالفان ل{caseIndex} وم{caseIndex} يحددان مستوى مشتركًا.",
+            6 => $"مستقيم ل{caseIndex} ونقطة أ{caseIndex} خارجه يحددان مستوى وحيدًا.",
+            _ => $"مستويان مختلفان س{caseIndex} وص{caseIndex} يتقاطعان في نقطة وحيدة فقط."
+        };
+        return P("uae.g9.general.u11.l01.incidence_postulates",
+            $"حدّد هل المسلمة الهندسية التالية صحيحة. {statement} اكتب ١ للصواب أو ٠ للخطأ.",
+            "استخدم مسلمات النقاط والمستقيمات والمستويات: نقطتان تحددان مستقيمًا، وثلاث غير مستقيمة مستوى، والمستويان المختلفان إذا تقاطعا فتقاطعهما مستقيم.",
+            ("mode",mode),("caseIndex",caseIndex));
     }
 
     private static Problem G9ConditionalTruthTables(Random r)
