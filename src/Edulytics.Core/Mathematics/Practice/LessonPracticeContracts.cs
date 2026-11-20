@@ -11103,6 +11103,19 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L07_P119_125",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General original 01.pdf:2-8 literal equations and dimensional analysis.
+        // Foundational numeric practice reuses two exact shared families only.
+        // Core symbolic rearrangement and dimensional unit-cancellation remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS", "algebra.formula.rearrange",
+            "G9_U02L08_LITERAL_FORMULAS_AND_DIMENSIONAL_UNITS_NUMERIC_SUPPORT_ONLY",
+            [
+                "algebra.linear.ax_plus_b_equals_c",
+                "ratio.unit_rate.direct"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L08_P126_131",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_CORE", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
