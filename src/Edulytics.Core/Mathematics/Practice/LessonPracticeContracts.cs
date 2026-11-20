@@ -11260,6 +11260,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L04_P280_285",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_COMPOUND", Version);
 
+        // Grade9 General 5-5: generic linear inequality helps algebraic substeps.
+        // Original absolute-value intervals, unions and graphs are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:05:ABSOLUTE-VALUE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:05:ABSOLUTE-VALUE-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L05_ABSOLUTE_INTERVAL_RAYS_TEACHER_REVIEW_NUMERIC_AID",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L05_P286_290",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_ABSOLUTE", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
