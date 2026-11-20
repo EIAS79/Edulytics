@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 72,
+  "unitOrdinal": 12,
+  "lessonOrdinalInUnit": 5,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES",
+  "lessonTitleAr": "إثبات توازي المستقيمات",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      687,
+      694
+    ],
+    "pdfPages": [
+      103,
+      110
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_VISUAL_REVIEW",
+    "scope": "Converse postulate/theorems, angle-pair identification, parallel uniqueness and perpendicular-to-third reasoning; exact source exercise by exercise runtime parity not claimed"
+  },
+  "stageA": {
+    "status": "SOURCE_CONVERSE_CORRESPONDING_ALTERNATE_SAME_SIDE_PERPENDICULAR_PROOFS_REVIEWED",
+    "learningTargets": [
+      "converse corresponding and alternate angle tests for parallel lines",
+      "same-side interior supplementary converse",
+      "two lines perpendicular to same third line",
+      "proper written proof and geometric evidence"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AND_SIX_ORIGINAL_COOLDOWN_PROOFS_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l05-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u12-l05-prove-parallel-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "64-degree corresponding pair proves parallel via converse"
+      },
+      {
+        "q": 2,
+        "expected": "113+67=180 ⇒ converse same-side interior theorem proves parallel"
+      },
+      {
+        "q": 3,
+        "expected": "x=14, each angle77° ⇒ converse alternate interior theorem"
+      },
+      {
+        "q": 4,
+        "expected": "Equal angle values alone insufficient; positions must satisfy correct converse"
+      },
+      {
+        "q": 5,
+        "expected": "Distinct coplanar lines perpendicular to third line are parallel"
+      },
+      {
+        "q": 6,
+        "expected": "Correct paired transversal angles and named data to infer parallelism"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "SUPPLEMENTARY_NUMERIC_PREREQUISITE_REUSED_PROOF_TEACHER_REVIEW_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "geometry.angles.supplementary"
+    ],
+    "strategy": "REUSE_ONLY_PRECONDITION_DO_NOT_AUTOGRADE_FREE_PROOF",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u12l05.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_SOURCE_SKILL_AUTHORING_ONLY_NOT_STAGE_D",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:12-6"
+}
