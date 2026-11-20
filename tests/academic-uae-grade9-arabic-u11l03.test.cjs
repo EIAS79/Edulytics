@@ -40,3 +40,20 @@ test('Newer General 7-2 ruler offset and estimation supplement is authored witho
  assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان تطابق قطعتين'));
  assert.ok(rich.Visuals.some(x=>x.Title==='قراءة مسطرة لا تبدأ عند الصفر'));
 });
+
+test('Newer 7-2 extension preserves accuracy precision absolute error significant digits and relative error',()=>{
+ const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l03-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ for(const title of ['الدقة والضبط والخطأ المطلق','الأرقام المعنوية','الخطأ النسبي']){
+  assert.ok(rich.KeyConcepts.some(x=>x.Title===title),title);
+ }
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='تحديد مجال القياس من أصغر تدريج'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='الأرقام المعنوية في القياس'));
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='حساب الخطأ النسبي'));
+ assert.match(rich.KeyConcepts.find(x=>x.Title==='الخطأ النسبي').Rule,/المرجع≠٠/);
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان تطابق قطعتين'));
+ const ledger=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u07-new-geometry-7-2-source-element-preparation.json');
+ assert.equal(ledger.coverage.mainSourceNumberedItemCount,60);
+ assert.deepEqual(ledger.mainSourceGroups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i)),Array.from({length:60},(_,i)=>i+1));
+ assert.deepEqual(ledger.accuracyExtension.groups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i)),Array.from({length:23},(_,i)=>i+1));
+ assert.equal(ledger.coverage.fullSourceElementAuditPassed,false);
+});
