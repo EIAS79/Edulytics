@@ -11447,6 +11447,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L02_P452_459",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General 8-3: rational-exponent perfect-power exact practice.
+        // Domain justifications, radical diagrams and symbolic proofs are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS",
+            "algebra.exponent.rational_power",
+            "G9_U08L03_RATIONAL_EXPONENTS_PERFECT_POWER_EXACT",
+            ["uae.g9.general.u08.l03.rational_positive_exact",
+             "uae.g9.general.u08.l03.rational_negative_exact"],
+            "UAE_G9_GENERAL_2019_AR_U08L03_P460_467",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
