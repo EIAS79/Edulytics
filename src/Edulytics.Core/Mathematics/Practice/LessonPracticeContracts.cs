@@ -11212,6 +11212,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U04L03_P233_238",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATIONS", Version);
 
+        // UAE G9 General 4-4 pp239–245: existing slope assistance only.
+        // Parallel/perpendicular classification and proof remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES", "geometry.coordinate.line_relations",
+            "G9_U04L04_PARALLEL_PERPENDICULAR_GRADIENT_NUMERIC_REUSE",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L04_P239_245",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_LINE_RELATIONS", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
