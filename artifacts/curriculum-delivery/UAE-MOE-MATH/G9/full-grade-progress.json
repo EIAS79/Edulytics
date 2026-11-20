@@ -34,7 +34,7 @@
   ],
   "sourceLock": "13/82 structurally proposed from 86 raw entries with four traceable geometry supplements; semantic and source-exercise evidence incomplete.",
   "previousPreparedLessonCount": 12,
-  "firstNotClosedLesson": "6-6",
+  "firstNotClosedLesson": "7-1",
   "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
   "remainingSourceLessonsInRawPlan": 74,
   "testsRun": "WRITTEN_NOT_RUN",
@@ -84,10 +84,10 @@
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json"
   ],
   "abcClosedLessonCount": null,
-  "nextUnclosedLesson": "6-6",
+  "nextUnclosedLesson": "7-1",
   "dedupSourceEntriesReferenced": 33,
   "bookPageShiftFix": "03-1.pdf: printed p755=physical PDF p170, printed p776=PDF p191, printed p793=PDF p208",
-  "currentLessonStatus": "LESSON_38_A_B_C_AUTHORING_CLOSED_NEXT_39_6_6",
+  "currentLessonStatus": "UNIT_6_6_OF_6_AUTHORING_CLOSED_NEXT_40_7_1",
   "status": "A_C_IN_PROGRESS_INDEX_RECONCILIATION_REQUIRED",
   "ownerTargetSource": "EDULYTICS_UAE_GRADE_9_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md (uploaded 2026-11-19)",
   "rawInventoryIsNotFinalCatalog": true,
@@ -101,11 +101,11 @@
   "proposedSupplementarySourceLessonCount": 4,
   "canonicalCrosswalkStatus": "STRUCTURAL_PROPOSAL_PENDING_VERIFIED_SEMANTIC_MERGE",
   "preparedFirst12EvidenceStatus": "LEGACY_CONTENT_PREPARED_NOT_FULLY_AUDITED_IN_ELEMENT_LEDGER",
-  "closedCountNotAssertableReason": "Lesson 13 authoring closed; lessons 1–12 historically PREPARED without reliable closing evidence, so whole-year closed count cannot be claimed.",
+  "closedCountNotAssertableReason": "The first 12 historical lesson checkpoints were only marked PREPARED; they have no independently verified A-B-C closure. Owner catalog remains 13 units / 82 lessons.",
   "teacherOnlySourceExercisesLesson2_5": 33,
   "numericCandidateExercisesLesson2_5": 31,
   "teacherVisualReviewInAdditionToNumeric": 6,
-  "fullGradeStageABCStatus": "LESSONS_13_TO_23_AUTHORING_CLOSED_AS_RECORDED_1_TO_12_NOT_ASSERTED_NEXT_24",
+  "fullGradeStageABCStatus": "RECORDED_LESSONS_13_TO_39_AUTHORING_CLOSED_FIRST_12_HISTORIC_CLOSURE_NOT_CLAIMED_NEXT_40",
   "fiveBookIntegrity": {
     "source": "five-book-page-raster-audit.json",
     "allFiveSha256Verified": true,
@@ -347,7 +347,7 @@
     "closingCommit": "9debcb5b17f80ccd4143d9045f160f1b4af7c243",
     "testsRun": "WRITTEN_NOT_RUN"
   },
-  "verifiedLatestLessonOrdinal": 38,
+  "verifiedLatestLessonOrdinal": 39,
   "lesson36Closure": {
     "status": "READY_FOR_STAGE_D",
     "closed": true,
@@ -368,5 +368,35 @@
     "checkpoint": "lesson-38-stage-a-c-checkpoint.json",
     "closingCommit": "b95f6a265229fad314c2cff3e8225e501a430cbf",
     "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson39Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-39-stage-a-c-checkpoint.json",
+    "closingCommit": "341e435025cf50de90dcb9ed76868de0b4dbaf41",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "unit6Closure": {
+    "status": "6_OF_6_SOURCE_BASED_A_B_C_AUTHORING_CLOSED_STAGE_D_PENDING",
+    "lessonOrdinals": [
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "checkpointPaths": [
+      "lesson-34-stage-a-c-checkpoint.json",
+      "lesson-35-stage-a-c-checkpoint.json",
+      "lesson-36-stage-a-c-checkpoint.json",
+      "lesson-37-stage-a-c-checkpoint.json",
+      "lesson-38-stage-a-c-checkpoint.json",
+      "lesson-39-stage-a-c-checkpoint.json"
+    ],
+    "teacherReviewRequired": true,
+    "ciRun": false,
+    "stageDRun": false,
+    "productionTouched": false
   }
 }
