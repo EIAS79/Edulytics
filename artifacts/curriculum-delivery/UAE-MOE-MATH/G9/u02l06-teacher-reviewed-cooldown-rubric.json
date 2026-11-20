@@ -33,7 +33,7 @@
       {
         "name": "mathematical_reasoning",
         "maxPoints": 2,
-        "criterion": "Explains denominator restrictions, proportionality assumptions and valid counterexamples"
+        "criterion": "Explains denominator restrictions, proportionality assumptions and valid counterexamples Includes algebraic variables on both sides and explains DTI ratio threshold comparison."
       },
       {
         "name": "units_and_context",
@@ -75,13 +75,19 @@
     },
     {
       "id": 6,
-      "expected": "١٢/١=٢٤/٢=٣٦/٣=١٢ قطعة/ساعة ⇒ ٤ ساعات تنتج ٤٨ قطعة",
-      "skill": "table_constant_rate"
+      "expected": "٧٥٠+٣٠٠+٤٠٠+١٥٠=١٦٠٠ درهم؛ ١٦٠٠/٥٠٠٠=٠٫٣٢ ≤ ٠٫٣٦. مع قسط ٢٥٠ يصبح الإجمالي ١٨٥٠ والنسبة ٠٫٣٧>٠٫٣٦؛ يتغير تحقق الشرط.",
+      "skill": "source_spreadsheet_debt_to_income_rate"
+    },
+    {
+      "id": 7,
+      "expected": "٣(٢س+١)=٥(س+٤) ⇒ ٦س+٣=٥س+٢٠ ⇒ س=١٧؛ بالتعويض ٣٥/٥=٢١/٣=٧.",
+      "skill": "two_sided_linear_expressions_in_proportion"
     }
   ],
   "testsWritten": [
     "tests/academic-uae-grade9-arabic-u02l06.test.cjs",
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L06RatioProportionTests.cs"
   ],
-  "testsRun": "WRITTEN_NOT_RUN"
+  "testsRun": "WRITTEN_NOT_RUN",
+  "originalSourceSpreadsheetEquivalent": "DEBT_TO_INCOME_RATIO_WITH_ORIGINAL_NUMBERS_DISTINCT_FROM_BOOK"
 }
