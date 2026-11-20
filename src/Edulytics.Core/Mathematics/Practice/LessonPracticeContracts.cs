@@ -11540,6 +11540,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U10L01_P561_568",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U10L02 logic and truth tables.
+        // Open statement construction and Venn diagrams retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC", "logic.truth_values",
+            "G9_U10L02_TRUTH_TABLE_CONJUNCTION_DISJUNCTION_NEGATION",
+            ["uae.g9.general.u10.l02.logic_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L02_P569_576",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
