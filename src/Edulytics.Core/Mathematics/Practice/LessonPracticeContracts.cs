@@ -11203,6 +11203,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U04L02_P226_232",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATION", Version);
 
+        // UAE G9 General 4-3, printed233–238: numeric gradient/point validation only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:03:POINT-SLOPE-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:03:POINT-SLOPE-FORM", "algebra.linear.point_slope",
+            "G9_U04L03_POINT_SLOPE_SYMBOLIC_TEACHER_NUMERIC_REUSE",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L03_P233_238",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATIONS", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
