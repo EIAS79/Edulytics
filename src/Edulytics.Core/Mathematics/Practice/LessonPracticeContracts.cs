@@ -11476,6 +11476,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L05_P477_483",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U08L06: exact combining of like radical
+        // coefficients. Full symbolic multiplication and conjugate reasoning teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:06:OPERATIONS-ON-RADICAL-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:06:OPERATIONS-ON-RADICAL-EXPRESSIONS", "algebra.radical.combine_like_terms",
+            "G9_U08L06_LIKE_RADICAL_OPERATIONS",
+            ["uae.g9.general.u08.l06.like_radical_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U08L06_P484_490",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
