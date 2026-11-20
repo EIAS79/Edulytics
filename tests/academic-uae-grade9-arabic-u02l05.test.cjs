@@ -308,3 +308,17 @@ test('EX42 reciprocal absolute denominator cannot be substituted with fraction i
   assert.doesNotMatch(html,/\|\(٣س−١٢\)\/٤\|=٣/);
   assert.equal(q.sourceLevelTreatment.includes('EX42'),true);
 });
+
+
+test('Source reasoning tasks distinguish contextual, decimal and impossible equations', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  const reasoning=bank.groups.find(x=>x.taskId==='extensionQ7');
+  assert.deepEqual(reasoning.sourceCasesIndividuallyAuthored,[56,62,63]);
+  assert.match(html,/\|س−٤\|=١٠/);
+  assert.match(html,/\|س−٧\|=٤٫٦/);
+  assert.match(html,/\|س\+٥\|=−٣/);
+  assert.match(reasoning.expected,/س=٢٫٤ أو ١١٫٦/);
+  assert.match(reasoning.expected,/⇒ ∅/);
+  assert.equal(bank.assessedAutomatically,false);
+});
