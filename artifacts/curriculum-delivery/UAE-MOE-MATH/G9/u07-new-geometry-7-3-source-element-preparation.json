@@ -103,8 +103,10 @@
   ],
   "numberingGap": {
     "sourceExerciseNumber": 76,
-    "status": "NOT_VISUALLY_LOCATED_ON_REVIEWED_PRINTED_PAGES_385_TO_395_DO_NOT_INVENT",
-    "resolution": "Recheck source numbering/possible omission or adjacent appendix before asserting 86-of-86"
+    "status": "CONFIRMED_ABSENT_FROM_PRINTED_SOURCE_PAGE_395",
+    "visualEvidence": "Authorized Our-CS original 01.pdf PDF physical page 406 (zero-based page 405) at 2.0 render scale visibly prints exercises 73,74,75 then 77,78,79,80,81..86; no 76 is printed in that source page.",
+    "resolution": "Treat 76 as a publisher-numbering omission in the available owner-local source; do not fabricate an exercise, do not count absent prompt in required content denominator. This evidence does not establish exercise-by-exercise digital parity for the 85 printed items.",
+    "teacherReview": "None for absent item; review existing printed items and constructions."
   },
   "laboratory": {
     "printedPage": 389,
@@ -120,7 +122,8 @@
     "allSourceExercisesIndividuallyDigitalParityVerified": false,
     "fullSourceElementAuditPassed": false,
     "testsRun": "WRITTEN_NOT_RUN",
-    "sourceIndexLock": false
+    "sourceIndexLock": false,
+    "absentSourcePrintedItemConfirmed": true
   },
   "authoredTargetChanges": [
     "number-line distance and midpoint",
