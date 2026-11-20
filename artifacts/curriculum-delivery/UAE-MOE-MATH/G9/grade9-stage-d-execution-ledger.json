@@ -20,10 +20,13 @@
   "stageDWorkflowCreationCommit": "8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630",
   "testedCandidateSha": null,
   "ciRefKind": null,
-  "workflowRunIds": [],
+  "workflowRunIds": [
+    44835212479
+  ],
   "requiredHandoff": {
     "path": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
-    "status": "MISSING_AT_EXPECTED_PATH"
+    "status": "PRESENT_BUT_SOURCE_PARITY_GAPS_EXPLICIT",
+    "evidenceCommit": "187d68c8da889fc94141d7392e1f27fe890518b1"
   },
   "sourceInventory": {
     "file": "source-inventory.json",
@@ -49,7 +52,7 @@
     "arabicRtlVisual": "NOT_RUN",
     "neonReadOnlyLive": "NOT_RECHECKED_THIS_TURN"
   },
-  "releaseDecision": "NO_GO_SOURCE_100",
+  "releaseDecision": "NO_GO_SOURCE_100_AND_TECHNICAL_UNVERIFIED",
   "notes": [
     "Uploaded Stage D plan mistakenly says Grade:8 twice in Grade 9 handoff/checkpoint templates; authoritative scope is Grade 9 and no Grade 8 record should be mutated.",
     "Stage D diagnostics may run while the D entry handoff and source parity gate are blocked.",
@@ -59,6 +62,23 @@
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/source-inventory.json",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/full-grade-progress.json",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
-    ".github/workflows/uae-grade9-general-stage-d.yml"
-  ]
+    ".github/workflows/uae-grade9-general-stage-d.yml",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md"
+  ],
+  "ownerApproval": {
+    "academicContent": "APPROVED_BY_OWNER",
+    "releaseIntent": "AUTHORIZED_BY_OWNER_SUBJECT_TO_REQUIRED_GATES",
+    "record": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md",
+    "evidenceCommit": "d4b8856108a4c1e0aa347d999e33b4225c7a4396",
+    "thirdPartyAssetRights": "UNVERIFIED_NOT_WAIVED"
+  },
+  "diagnostics": {
+    "workflow": ".github/workflows/uae-grade9-general-stage-d.yml",
+    "firstObservedRunId": 44835212479,
+    "firstObservedStatus": "QUEUED",
+    "firstObservedCandidateSha": "609addbc80511f7847d2126657e10b3d740b4b10",
+    "currentRunsForLatestCandidate": "NOT_YET_CONFIRMED",
+    "releaseGateSeparate": true
+  }
 }
