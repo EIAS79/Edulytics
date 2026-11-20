@@ -11250,6 +11250,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L03_P272_277",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_MULTISTEP", Version);
 
+        // UAE Grade9 General U05L04: reuse single-inequality numerical assistance.
+        // AND/OR interval intersection, union, and graphical reasoning remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:04:COMPOUND-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:04:COMPOUND-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L04_AND_OR_COMPOUND_TEACHER_REVIEW_NUMERIC_AID",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L04_P280_285",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_COMPOUND", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
