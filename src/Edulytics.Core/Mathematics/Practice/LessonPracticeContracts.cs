@@ -11628,6 +11628,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U12L03_P668_676",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 General 12-4 numeric evaluation, intercept and gradient only.
+        // Full linear-equation construction and geometric proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:04:EQUATIONS-OF-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:04:EQUATIONS-OF-LINES", "geometry.coordinate.y_intercept_from_rule",
+            "G9_U12L04_LINEAR_RULE_NUMERIC_PARTIAL_REUSE",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2019_AR_U12L04_P678_686",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
