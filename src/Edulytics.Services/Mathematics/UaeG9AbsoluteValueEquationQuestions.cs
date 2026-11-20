@@ -40,7 +40,7 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     {
         var text = (raw ?? "").Trim().Replace("−", "-").Replace("–", "-")
             .Replace('،', ',').Replace('؛', ',').Replace(';', ',').Replace('٫', '.');
-        var chars = text.Where(c => !char.IsWhiteSpace(c))
+        var chars = text.Where(c => !char.IsWhiteSpace(c) && c is not '\u200E' and not '\u200F' and not '\u061C')
             .Select(c => c switch
             {
                 >= '٠' and <= '٩' => (char)('0' + c - '٠'),
