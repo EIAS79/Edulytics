@@ -11342,6 +11342,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L06_P346_351",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_SYSTEM", Version);
 
+        // UAE General G9 2019 book U07L01 printed365–372:
+        // numerical coefficients reuse exact kernel; full polynomials, algebra tiles and explanations require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT",
+            "algebra.polynomial.add_subtract",
+            "G9_U07L01_ADD_SUBTRACT_LIKE_TERMS_TEACHER_FULL_EXPRESSION",
+            ["uae.g9.general.u07.l01.add_coefficient","uae.g9.general.u07.l01.subtract_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L01_P365_372",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
