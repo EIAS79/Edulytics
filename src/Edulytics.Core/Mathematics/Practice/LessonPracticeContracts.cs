@@ -11145,6 +11145,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L02_P163_170",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_ROOTS", Version);
 
+        // UAE Grade 9 General source 3-3: existing exact numeric gradient,
+        // with graphical classification, unit rates and justifications teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE", "geometry.coordinate.gradient",
+            "G9_U03L03_RATE_OF_CHANGE_SLOPE_FROM_TWO_POINTS",
+            ["geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2025_AR_U03L03_P172_179",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
