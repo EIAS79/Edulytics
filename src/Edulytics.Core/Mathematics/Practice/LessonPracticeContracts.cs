@@ -11240,6 +11240,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L02_P266_271",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SIGN_REVERSAL", Version);
 
+        // UAE General Grade9 U05L03: existing single-variable inequality numeric assistance.
+        // Multi-step distribution, graphs and original explanations remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L03_MULTI_STEP_SOURCE_TEACHER_PROOF_NUMERIC_HELP",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L03_P272_277",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_MULTISTEP", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
