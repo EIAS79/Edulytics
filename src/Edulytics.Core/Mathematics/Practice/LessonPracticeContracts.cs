@@ -11687,6 +11687,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L03_P735_743",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 U13L04 recognizes SSS/SAS criteria; formal triangle proof,
+        // included-angle interpretation and CPCTC require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE", "geometry.triangle_congruence.sss",
+            "G9_U13L04_SSS_SAS_RECOGNITION_PARTIAL",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L04_P744_753",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
