@@ -798,6 +798,21 @@ public sealed class ExactSkillContractQuestionEngine
                         _ => problem
                     };
                 }
+                // UAE G9 General U08L05: reuse the shared exact surd coefficient
+                // engine; localize its learner prompt only in this lesson scope.
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS",StringComparison.Ordinal) ||
+                     fingerprintNamespace.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS:",StringComparison.Ordinal) ||
+                     scopeKey.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS:",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"supporting.surds.coefficient",StringComparison.Ordinal))
+                {
+                    problem = problem with
+                    {
+                        Prompt = $"بسّط الجذر: √{problem.Parameters["radicand"]} = م√{problem.Parameters["radicandBase"]}. ما قيمة المعامل م؟",
+                        Solution = "ابحث عن أكبر عامل مربع كامل في العدد تحت الجذر، ثم استخرج جذره الموجب ليصبح معامل الجذر المبسط."
+                    };
+                }
+
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
