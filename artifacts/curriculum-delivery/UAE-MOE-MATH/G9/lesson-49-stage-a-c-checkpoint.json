@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 49,
+  "unitOrdinal": 8,
+  "sourceLessonRef": "02-1.pdf:8-1",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS",
+  "lessonTitleAr": "خواص ضرب الأسس",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451
+  ],
+  "sourcePdfPages": [
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "stageA": {
+    "status": "DIRECT_LOCAL_GENERAL_STUDENT_BOOK_SOURCE_VISUALLY_REVIEWED",
+    "skills": [
+      "same-base exponent product",
+      "power of a power",
+      "power of a product",
+      "variable coefficients and geometric contexts"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_LAB_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u08-l01-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u08-l01-exponent-products-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "SHARED_EXACT_POWERS_OF_TEN_REUSED_SYMBOLIC_FREE_RESPONSES_TEACHER_REVIEWED",
+    "families": [
+      "supporting.powers10.multiply",
+      "supporting.powers10.evaluate"
+    ],
+    "teacherReviewRequired": [
+      "symbolic exponent identities",
+      "power of power",
+      "power of product",
+      "geometric applications"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u08l01.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T15:31:47.801Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
