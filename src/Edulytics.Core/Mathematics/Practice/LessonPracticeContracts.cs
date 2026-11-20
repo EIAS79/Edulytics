@@ -11331,6 +11331,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L05_P338_345",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM_CONTEXT", Version);
 
+        // UAE General G9 U06L06: reuse numeric boundary evaluation only.
+        // The two-dimensional intersection, shaded region and border strictness
+        // remain teacher reviewed, with no false autograding.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES",
+            "geometry.coordinate.linear_rule",
+            "G9_U06L06_HALFPLANE_SYSTEM_TEACHER_REVIEW_COORDINATE_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U06L06_P346_351",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_SYSTEM", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
