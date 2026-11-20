@@ -734,7 +734,9 @@ public sealed class ExactSkillContractQuestionEngine
                 if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
                      string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
                      string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal) ||
-                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal)) &&
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal) ||
+                     string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS", StringComparison.Ordinal)) &&
                     string.Equals(problem.Family, "algebra.linear.ax_plus_b_equals_c", StringComparison.Ordinal))
                 {
                     var p = problem.Parameters;
