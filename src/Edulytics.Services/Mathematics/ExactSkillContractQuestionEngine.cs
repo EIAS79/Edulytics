@@ -771,6 +771,33 @@ public sealed class ExactSkillContractQuestionEngine
                     };
                 }
 
+                // UAE Grade 9 General U08L04: localize only the shared exact
+                // scientific-notation subset without changing its solver/validator.
+                if (string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", StringComparison.Ordinal) ||
+                    string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", StringComparison.Ordinal) ||
+                    fingerprintNamespace.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION:", StringComparison.Ordinal) ||
+                    scopeKey.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION:", StringComparison.Ordinal))
+                {
+                    problem = problem.Family switch
+                    {
+                        "supporting.standard_form.power10_exponent" => problem with
+                        {
+                            Prompt = $"أكمل أس العشرة ن في الترميز العلمي: {problem.Parameters["number"]} = {problem.Parameters["coefficient"]} × ١٠^ن. ما قيمة ن؟",
+                            Solution = "نقسم العدد على المعامل غير الصفري، ثم نحدد عدد مرات الضرب في عشرة مع التحقق من أن المعامل بين ١ و١٠."
+                        },
+                        "supporting.powers10.multiply" => problem with
+                        {
+                            Prompt = $"أوجد الصورة العددية للقيمة {problem.Parameters["value"]} × ١٠^{problem.Parameters["exponent"]}.",
+                            Solution = "نضرب العدد في قوة العشرة، وننقل الفاصلة إلى اليمين بمقدار الأس الموجب."
+                        },
+                        "supporting.powers10.divide" => problem with
+                        {
+                            Prompt = $"أوجد قيمة {problem.Parameters["dividend"]} ÷ ١٠^{problem.Parameters["exponent"]}، واكتب الناتج عددًا عاديًا.",
+                            Solution = "نقسم العدد على قوة العشرة وننقل الفاصلة إلى اليسار بمقدار الأس الموجب."
+                        },
+                        _ => problem
+                    };
+                }
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
