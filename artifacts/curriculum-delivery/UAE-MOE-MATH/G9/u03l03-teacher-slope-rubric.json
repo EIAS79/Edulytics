@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE",
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026 General",
+    "printedPages": [
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179
+    ],
+    "pdfPages": [
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190
+    ]
+  },
+  "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u03-l03-slope-ar.html",
+  "teacherReview": "TEACHER_REVIEW_REQUIRED",
+  "autograded": false,
+  "authenticatedSubmission": false,
+  "answers": [
+    {
+      "id": 1,
+      "expected": "(٩−٣)/(٤−١)=٢"
+    },
+    {
+      "id": 2,
+      "expected": "(−٤−٤)/(٢+٢)=−٢، مستقيم هابط"
+    },
+    {
+      "id": 3,
+      "expected": "(٢−٢)/(٤+٣)=٠، خط أفقي"
+    },
+    {
+      "id": 4,
+      "expected": "(٦−(−١))/(٣−٣) قسمة على صفر؛ غير معرّف، مستقيم رأسي"
+    },
+    {
+      "id": 5,
+      "expected": "(٢٣٤−٧٨)/(٦−٢)=٣٩ درهمًا/يوم"
+    },
+    {
+      "id": 6,
+      "expected": "(−١−(−٣))/(−٤−(−٢))=٢/−٢=−١"
+    },
+    {
+      "id": 7,
+      "expected": "كل فترة س تزيد ٢ وص تزيد ٤، الميل ثابت ويساوي ٢"
+    },
+    {
+      "id": 8,
+      "expected": "الأول ميله ٦/٢=٣، والثاني ٣/٣=١، الأول أكبر"
+    }
+  ],
+  "rubric": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "id": "formula",
+        "points": 3,
+        "criterion": "Correct ordered coordinate subtraction and denominator nonzero"
+      },
+      {
+        "id": "visual_sign",
+        "points": 2,
+        "criterion": "Correct slope sign and horizontal/vertical classification"
+      },
+      {
+        "id": "units",
+        "points": 2,
+        "criterion": "Correct rate units and interpretation of real-life table values"
+      },
+      {
+        "id": "verification",
+        "points": 1,
+        "criterion": "Checks linearity from more than one pair and reasonable answer"
+      }
+    ]
+  },
+  "testsRun": "WRITTEN_NOT_RUN"
+}
