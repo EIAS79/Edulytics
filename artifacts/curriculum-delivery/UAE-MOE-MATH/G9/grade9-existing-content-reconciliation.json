@@ -7,11 +7,11 @@
     "source": "COMPREHENSIVE_SOURCE_INDEX_RAW_86"
   },
   "sourceEntryCount": 86,
-  "existingPackLessonRecords": 15,
-  "rawEntriesWithExistingContent": 13,
-  "rawEntriesWithoutExistingContent": 73,
+  "existingPackLessonRecords": 16,
+  "rawEntriesWithExistingContent": 14,
+  "rawEntriesWithoutExistingContent": 72,
   "rawEntriesWithDuplicateImplementations": 2,
-  "note": "Structural reconciliation only. Existing Edulytics entries are implementation candidates, not textbook authority. Duplicate pack records are not source lessons and should not be imported twice. No academic closure claimed.",
+  "note": "Structural reconciliation only. Existing Edulytics entries are implementation candidates, not textbook authority. Duplicate pack records are not source lessons and should not be imported twice. No academic closure claimed. Grade 9 General U02L06 added as the first actually missing source-index lesson, not a duplicate of prior content. Other 72 remain candidate-missing until inspected.",
   "rows": [
     {
       "ordinal": 1,
@@ -231,11 +231,16 @@
       "sourceTitle": "النسب والتناسب",
       "proposedUnit": 2,
       "proposedLesson": 6,
-      "existingLessonCodes": [],
-      "existingCount": 0,
-      "existingSkillMappings": [],
-      "reconciliationDecision": "ADD_MISSING_AFTER_SOURCE_REVIEW",
-      "sourceCoverage": "INDEX_ENTRY_ONLY_NOT_LESSON_1_TO_1_CONFIRMED"
+      "existingLessonCodes": [
+        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS"
+      ],
+      "existingCount": 1,
+      "existingSkillMappings": [
+        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS"
+      ],
+      "reconciliationDecision": "MISSING_LESSON_ADDED_TO_CANDIDATE_STUDENT_PACK",
+      "sourceCoverage": "SOURCE_PAGES_REVIEWED_ABC_CONTENT_AUTHORED_EXACT_ITEM_PARITY_PENDING",
+      "edulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json"
     },
     {
       "ordinal": 15,
