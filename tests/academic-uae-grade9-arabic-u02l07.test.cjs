@@ -39,15 +39,16 @@ test('Existing percent verifier families are scoped to the new Grade9 Arabic les
  assert.ok(engine.includes('يُمنح خصم'));
 });
 
-test('Original Grade9 percent change diagram and eight independent teacher-only cooldown tasks',()=>{
+test('Original Grade9 percent change diagram and nine independent teacher-only cooldown tasks',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l07-percent-change-ar.html'),'utf8');
  const rubric=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-teacher-cooldown-rubric.json');
  assert.match(html,/<html lang="ar" dir="rtl">/);
  assert.match(html,/pctDesc/);
  assert.match(html,/role="img"/);
  assert.match(html,/القيمة الأصلية/);
- for(let n=1;n<=8;n++)assert.ok(html.includes('id="pctQ'+n+'"'));
- assert.equal(rubric.answers.length,8);
+ for(let n=1;n<=9;n++)assert.ok(html.includes('id="pctQ'+n+'"'));
+ assert.equal(rubric.answers.length,9);
+ assert.match(rubric.answers[8].expected,/مئيني=١٨\/٢٠/);
  assert.match(rubric.answers[4].expected,/١٦⅔٪/);
  assert.match(rubric.answers[7].expected,/غير معرّفة/);
  assert.match(html,/graded:false/);
