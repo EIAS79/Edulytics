@@ -11584,6 +11584,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U11L02_P616_623",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Segment algebra subskill; measurements and geometric proof teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS", "geometry.segment_addition",
+            "G9_U11L03_SEGMENT_ADDITION_NUMERIC_PREREQUISITE",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2019_U11L03_AND_2025_U07L02_U07L04",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
