@@ -79,7 +79,9 @@ test('Teacher review captures real textbook spreadsheet and two-sided algebra ob
  assert.match(rubric.answers.find(x=>x.id===6).expected,/٠٫٣٢/);
  assert.match(rubric.answers.find(x=>x.id===6).expected,/٠٫٣٧/);
  assert.match(rubric.answers.find(x=>x.id===7).expected,/س=١٧/);
- assert.equal(ledger.entries.filter(x=>x.sourceSkillTeacherTask==='ratioQ7').length,6);
+ assert.equal(ledger.entries.filter(x=>x.sourceSkillTeacherTask==='ratioQ7').length,3);
+ assert.deepEqual(ledger.twoSidedRatioDigitalExtension.sourceIds,[37,38,39]);
+ for(let n=9;n<=14;n++)assert.equal(ledger.entries.find(x=>x.sourceElementId.endsWith('EX'+String(n).padStart(2,'0'))).assessmentRoute,'TEACHER_REVIEW_REQUIRED');
  assert.equal(ledger.nonNumberedSourceElements[0].taskCategory,'SPREADSHEET_DEBT_INCOME_RATIO_AND_THRESHOLD');
  assert.equal(ledger.exactItemLevelEquivalenceComplete,false);
 });
