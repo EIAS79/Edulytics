@@ -282,3 +282,16 @@ test('Fractional source number-line visual examples preserve exact centers and e
   assert.match(thirds.Description, /\|س\+١\/٣\|=١/);
   assert.match(thirds.Description, /مراجعة المعلم/);
 });
+
+
+test('One-root graph case must not ask for two plotted roots', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const item=bank.graphToFullEquation.originalArabicVariants.find(x=>x.sourceExerciseId==='01.pdf:2-5:EX35');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  assert.equal(item.numberOfRoots,1);
+  assert.equal(item.center,'−٣');
+  assert.equal(item.distance,'٠');
+  assert.equal(item.expectedEquation,'|س+٣|=٠');
+  assert.match(html,/الحالة 35: نقطة الحل الوحيدة/);
+  assert.doesNotMatch(html,/الحالة 35: نقطتا الحل/);
+});
