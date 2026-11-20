@@ -65,3 +65,19 @@ test('Independent percent change mathematics checks bases, direction and zero-de
  assert.equal(percent(0,10),null);
  assert.ok(Math.abs(100*.8*.9-72)<1e-10);
 });
+
+
+test('Grade 9 percent-change core 40 source exercises are classified without misrepresenting spiral exercises',()=>{
+ const ledger=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l07-source-element-ledger.json');
+ const checkpoint=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-15-stage-a-c-checkpoint.json');
+ assert.equal(ledger.sourceElements.length,73);
+ const verified=ledger.sourceElements.filter(x=>x.sourceMathIndependentlyVerified);
+ assert.equal(verified.length,40);
+ assert.ok(verified.every(x=>x.sourceMathematicsSpotAudit?.expectedMathAnswer));
+ const others=ledger.sourceElements.filter(x=>!x.sourceMathIndependentlyVerified);
+ assert.equal(others.length,33);
+ assert.ok(others.every(x=>x.teacherReviewRequired));
+ assert.equal(checkpoint.closed,true);
+ assert.equal(checkpoint.closeDecision,'READY_FOR_STAGE_D');
+ assert.equal(checkpoint.stageC.testsRun,'WRITTEN_NOT_RUN');
+});
