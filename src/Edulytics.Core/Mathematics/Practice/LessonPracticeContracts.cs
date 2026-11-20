@@ -11270,6 +11270,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U05L05_P286_290",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_ABSOLUTE", Version);
 
+        // UAE Grade9 General 5-6: reuse coordinate-rule numeric value exercise.
+        // Full two-variable inequality plotting and half-plane grading remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES",
+            "geometry.coordinate.linear_rule",
+            "G9_U05L06_HALF_PLANE_SOURCE_TEACHER_REVIEW_COORDINATE_NUMERIC_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U05L06_P291_296",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_HALF_PLANE", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
