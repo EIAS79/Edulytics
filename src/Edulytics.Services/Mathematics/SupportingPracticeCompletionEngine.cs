@@ -95,6 +95,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
             "uae.g9.general.u09.l01.set_membership_cardinality",
+            "uae.g9.general.u09.l02.set_operation_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
             "usccss.g7.u07.complementary_angle",
@@ -298,6 +299,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
             "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
+            "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
             "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
@@ -504,6 +506,10 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.surds.coefficient" =>
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u09.l02.set_operation_cardinality" =>
+                Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
+                    p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
+                    .ToString(CultureInfo.InvariantCulture),
             "uae.g9.general.u09.l01.set_membership_cardinality" =>
                 (p["mode"]==1 ? p["count"] : ((p["candidate"]-p["first"])>=0 &&
                     (p["candidate"]-p["first"])%p["step"]==0 &&
@@ -710,6 +716,22 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var submitted) &&
                 submitted==(mode==0?a+bb:a-bb);
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l02.set_operation_cardinality",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("a",out int setA) ||
+               !p.TryGetValue("b",out int setB) || !p.TryGetValue("mode",out int mode) ||
+               setA is <1 or >255 || setB is <1 or >255 || mode is <0 or >2 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>24) return false;
+            int selected=mode==0 ? setA|setB : mode==1 ? setA&setB : setA&~setB;
+            int independent=Enumerable.Range(0,8).Count(i=>((selected>>i)&1)!=0);
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
+                   parsed==independent;
         }
         if (string.Equals(family,"uae.g9.general.u09.l01.set_membership_cardinality",StringComparison.Ordinal))
         {
@@ -1433,6 +1455,20 @@ internal static partial class SupportingPracticeCompletionEngine
             $"{number} = {coefficient} × 10^n. Find n.",
             "Count how many powers of ten scale the coefficient to the original number.",
             ("coefficient", coefficient), ("exponent", exponent), ("number", number));
+    }
+
+    private static Problem G9SetOperationCardinality(Random r)
+    {
+        var a=r.Next(1,256);
+        var b=r.Next(1,256);
+        var mode=r.Next(3);
+        var first=string.Join("،",Enumerable.Range(1,8).Where(i=>((a>>(i-1))&1)!=0));
+        var second=string.Join("،",Enumerable.Range(1,8).Where(i=>((b>>(i-1))&1)!=0));
+        var operation=mode==0 ? "أ∪ب" : mode==1 ? "أ∩ب" : "أ\\ب";
+        return P("uae.g9.general.u09.l02.set_operation_cardinality",
+            $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
+            "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
+            ("a",a),("b",b),("mode",mode));
     }
 
     private static Problem G9SetMembershipCardinality(Random r)
