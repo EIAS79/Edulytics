@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 76,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 3,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES",
+  "lessonTitleAr": "المثلثات المتطابقة",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      735,
+      743
+    ],
+    "pdfPages": [
+      151,
+      159
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_STUDENT_BOOK_PAGE_VISUAL_REVIEW",
+    "scope": "Polygon/triangle congruence, correspondence, vertex order and CPCTC source objectives reviewed; independent prompt parity not yet tested"
+  },
+  "stageA": {
+    "status": "TRIANGLE_POLYGON_CONGRUENCE_CORRESPONDING_PARTS_AND_CPCTC_SOURCE_REVIEWED",
+    "learningTargets": [
+      "identify corresponding congruent sides/angles",
+      "preserve ordered triangle vertex correspondence",
+      "use CPCTC only after congruence",
+      "solve corresponding parts using algebra",
+      "distinguish similarity from congruence"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_ORIGINAL_TEACHER_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l03-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l03-congruent-triangles-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "B↔E, AC↔DF, C↔F"
+      },
+      {
+        "q": 2,
+        "expected": "x=3, side length7"
+      },
+      {
+        "q": 3,
+        "expected": "y=6, angle25°"
+      },
+      {
+        "q": 4,
+        "expected": "B corresponds E, not F"
+      },
+      {
+        "q": 5,
+        "expected": "AAA yields similarity but not necessarily congruence"
+      },
+      {
+        "q": 6,
+        "expected": "From proved triangle congruence, BC and EF congruent by CPCTC"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "REUSED_EXISTING_CONGRUENCE_RECOGNITION_PARTIAL_TEST_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "geometry.congruence.identify_criterion"
+    ],
+    "strategy": "REUSE_CRITERION_RECOGNITION_ONLY_CORRESPONDENCE_AND_CPCTC_REQUIRE_TEACHER",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l03.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NO_STAGE_D_RUNTIME_PARITY_CLAIM",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-4"
+}
