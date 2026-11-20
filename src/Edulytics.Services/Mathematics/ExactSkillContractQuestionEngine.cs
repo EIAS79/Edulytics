@@ -50,6 +50,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g9.general.u07.l01.add_coefficient",
+            "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -986,6 +988,27 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+
+        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var keys=new[] {"a2","a1","a0","b2","b1","b0","degree"};
+            if (parameters.Count!=keys.Length || keys.Any(k=>!parameters.ContainsKey(k)) ||
+                parameters["degree"] is <0 or >2 ||
+                keys.Take(6).Any(k=>parameters[k] is <-9 or >9))
+                return false;
+            var raw=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-',
+                _=>ch
+            }));
+            if (!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))
+                return false;
+            var suffix=parameters["degree"].ToString(CultureInfo.InvariantCulture);
+            return submitted==(family.EndsWith("add_coefficient",StringComparison.Ordinal)
+                ? parameters["a"+suffix]+parameters["b"+suffix]
+                : parameters["a"+suffix]-parameters["b"+suffix]);
+        }
         if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             parameters.TryGetValue("wholeUnknownPercent",out var inversePercent))
         {
@@ -1301,6 +1324,21 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit8Questions.Verify(family, parameters, answer);
         if (UaeGrade2Term3Questions.Supports(family))
             return UaeGrade2Term3Questions.Verify(family, parameters, answer);
+
+        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var a2=random.Next(-8,9);var a1=random.Next(-8,9);var a0=random.Next(-8,9);
+            var b2=random.Next(-8,9);var b1=random.Next(-8,9);var b0=random.Next(-8,9);
+            var degree=random.Next(0,3);
+            var sign=family.EndsWith("add_coefficient",StringComparison.Ordinal)?"+":"−";
+            var prompt=$"في كثيرتي الحدود ( {a2}س² + ({a1})س + ({a0}) ) {sign} ( {b2}س² + ({b1})س + ({b0}) )، ما معامل س^{degree} بعد تجميع الحدود المتشابهة؟ إذا كانت الدرجة صفرًا فاكتب الحد الثابت. اكتب العدد فقط.";
+            return Problem(family,prompt,
+                "اجمع معاملات الدرجات المتشابهة عند الجمع؛ وعند الطرح وزع الإشارة السالبة على جميع حدود كثيرة الحدود الثانية قبل الجمع.",
+                AssessmentItemType.Numeric,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
+        }
+
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
                 family, parameters, answer);
@@ -9339,6 +9377,15 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+
+        if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var suffix=p["degree"].ToString(CultureInfo.InvariantCulture);
+            var answer=problem.Family.EndsWith("add_coefficient",StringComparison.Ordinal)
+                ? p["a"+suffix]+p["b"+suffix]
+                : p["a"+suffix]-p["b"+suffix];
+            return answer.ToString(CultureInfo.InvariantCulture);
+        }
         if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             p.TryGetValue("wholeUnknownPercent",out var inversePercent))
             return (p["knownPart"]*100L/inversePercent).ToString(CultureInfo.InvariantCulture);
