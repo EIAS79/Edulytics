@@ -44,13 +44,13 @@ test('Only existing reusable exact ratio families are mapped to Grade 9, no fore
  assert.ok(engine.includes('يوزَّع مجموع'));
 });
 
-test('Original ratio bar and seven cool-down tasks remain teacher reviewed and local-only',()=>{
+test('Original ratio bar and eight cool-down tasks remain teacher reviewed and local-only',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html'),'utf8');
  assert.match(html,/<html lang="ar" dir="rtl">/);
  assert.match(html,/ratioBarDescription/);
  assert.match(html,/M63 110v40/);
  assert.match(html,/3 : 4 = 6 : 8/);
- for(let n=1;n<=7;n++)assert.ok(html.includes('id="ratioQ'+n+'"'));
+ for(let n=1;n<=8;n++)assert.ok(html.includes('id="ratioQ'+n+'"'));
  assert.match(html,/جدول أصلي لتحليل نسبة الديون الشهرية إلى الدخل/);
  assert.match(html,/id="ratioQ6"/);
  assert.match(html,/id="ratioQ7"/);
@@ -75,10 +75,11 @@ test('Grade 9 ratio independent mathematics fixtures satisfy cross multiplicatio
 test('Teacher review captures real textbook spreadsheet and two-sided algebra objectives',()=>{
  const rubric=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-teacher-reviewed-cooldown-rubric.json');
  const ledger=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-source-element-ledger.json');
- assert.equal(rubric.answers.length,7);
+ assert.equal(rubric.answers.length,8);
  assert.match(rubric.answers.find(x=>x.id===6).expected,/٠٫٣٢/);
  assert.match(rubric.answers.find(x=>x.id===6).expected,/٠٫٣٧/);
  assert.match(rubric.answers.find(x=>x.id===7).expected,/س=١٧/);
+ assert.match(rubric.answers.find(x=>x.id===8).expected,/غير صحيحة/);
  assert.equal(ledger.entries.filter(x=>x.sourceSkillTeacherTask==='ratioQ7').length,3);
  assert.deepEqual(ledger.twoSidedRatioDigitalExtension.sourceIds,[37,38,39]);
  for(let n=9;n<=14;n++)assert.equal(ledger.entries.find(x=>x.sourceElementId.endsWith('EX'+String(n).padStart(2,'0'))).assessmentRoute,'TEACHER_REVIEW_REQUIRED');
