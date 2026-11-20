@@ -40,3 +40,14 @@ test('Lesson64 A-B-C checkpoint represents authoring closure not Stage D pass',(
  assert.equal(cp.closeDecision,'READY_FOR_STAGE_D');
  assert.equal(cp.stageC.testsRun,'WRITTEN_NOT_RUN');assert.equal(cp.stageD,'NOT_RUN');
 });
+
+test('Newer General 7-1 plane naming and non-collinearity are explicitly preserved in U11L01',()=>{
+ const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l01-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ assert.ok(rich.KeyConcepts.some(x=>x.Title==='تسمية المستقيم والمستوى من رسم'));
+ const naming=rich.WorkedExamples.find(x=>x.Title==='التمييز بين تساير النقاط وتسمية المستوى');
+ assert.ok(naming);
+ assert.match(naming.Answer,/أبج/);
+ assert.match(naming.Check,/متسايرة/);
+ assert.ok(rich.WorkedExamples.some(x=>x.Title==='برهان حر على طول قطعة'));
+ assert.ok(rich.Visuals.some(x=>x.Title==='تسمية المستوى بالنقاط'));
+});
