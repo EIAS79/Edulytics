@@ -11567,6 +11567,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U10L04_P587_595",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General U11L01: latest 2025 points-lines-planes plus original 2019 postulates.
+        // Formal spatial drawings and free proof explanations retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS", "geometry.incidence_postulates",
+            "G9_U11L01_POINTS_LINES_PLANES_INCIDENCE",
+            ["uae.g9.general.u11.l01.incidence_postulates"],
+            "UAE_G9_GENERAL_2019_U11L01_AND_2025_U07L01",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
