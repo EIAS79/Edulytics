@@ -11135,6 +11135,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L01_P155_162",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
 
+        // UAE Grade 9 General textbook 3-2: numerical equation solving only;
+        // x-intercept, no/one/infinite graph cases and free drawings need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING", "algebra.linear.solve_by_graphing",
+            "G9_U03L02_EQUATION_GRAPH_ROOT_NUMERIC_SUPPORT_ONLY",
+            ["algebra.linear.ax_plus_b_equals_c",
+             "algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2025_AR_U03L02_P163_170",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_ROOTS", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
