@@ -95,6 +95,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
             "uae.g9.general.u09.l01.set_membership_cardinality",
+            "uae.g9.general.u09.l05.finite_infinite_classification",
             "uae.g9.general.u09.l02.set_operation_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
@@ -299,6 +300,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
             "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
+            "uae.g9.general.u09.l05.finite_infinite_classification" => G9FiniteInfiniteClassification(random),
             "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
@@ -510,6 +512,8 @@ internal static partial class SupportingPracticeCompletionEngine
                 Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
                     p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
                     .ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u09.l05.finite_infinite_classification" =>
+                (p["mode"] is 0 or 3 ? "0" : "1"),
             "uae.g9.general.u09.l01.set_membership_cardinality" =>
                 (p["mode"]==1 ? p["count"] : ((p["candidate"]-p["first"])>=0 &&
                     (p["candidate"]-p["first"])%p["step"]==0 &&
@@ -732,6 +736,20 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
                    parsed==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l05.finite_infinite_classification",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("mode",out var mode) ||
+               !p.TryGetValue("step",out var step) || !p.TryGetValue("bound",out var bound) ||
+               mode is <0 or >5 || step is <2 or >7 || bound is <3 or >18 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (normalized=="0" || normalized=="1") &&
+                   normalized==(mode is 0 or 3 ? "0" : "1");
         }
         if (string.Equals(family,"uae.g9.general.u09.l01.set_membership_cardinality",StringComparison.Ordinal))
         {
@@ -1469,6 +1487,26 @@ internal static partial class SupportingPracticeCompletionEngine
             $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
             "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
             ("a",a),("b",b),("mode",mode));
+    }
+
+    private static Problem G9FiniteInfiniteClassification(Random r)
+    {
+        var mode=r.Next(6);
+        var step=r.Next(2,8);
+        var bound=r.Next(3,19);
+        var example=mode switch
+        {
+            0 => $"أ={{١،٢،٣،...،{bound}}} (تتوقف عند {bound})",
+            1 => $"أ={{step,step×٢,step×٣,...}} (مضاعفات موجبة تستمر بلا حد)",
+            2 => "أ={−١،−٢،−٣،...} (كل الأعداد الصحيحة السالبة)",
+            3 => $"أ={{س∈ط:١≤س≤{bound}}}",
+            4 => $"أ={{س∈ط:س≥{bound}}} (الأعداد الطبيعية لا تتوقف عند حد أعلى)",
+            _ => "أ={...،−٤،−٢،٠،٢،٤،...} (الأعداد الصحيحة الزوجية)"
+        };
+        return P("uae.g9.general.u09.l05.finite_infinite_classification",
+            $"هل المجموعة {example} منتهية أم غير منتهية؟ اكتب ٠ إذا كانت منتهية، أو ١ إذا كانت غير منتهية.",
+            "المجموعة منتهية إذا كان عدد عناصرها محدودًا؛ التتابع المستمر بلا حد أعلى أو أدنى غير منتهٍ.",
+            ("mode",mode),("step",step),("bound",bound));
     }
 
     private static Problem G9SetMembershipCardinality(Random r)
