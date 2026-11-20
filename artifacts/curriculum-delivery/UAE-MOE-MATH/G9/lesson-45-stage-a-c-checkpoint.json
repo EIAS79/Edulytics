@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 45,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-6",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING",
+  "lessonTitleAr": "حل معادلات من الصورة س²+ب س+ج=٠",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411
+  ],
+  "sourcePdfPages": [
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_STUDENT_BOOK_PAGE_SPAN_VISUALLY_REVIEWED",
+    "skills": [
+      "factor monic quadratic by sum and product",
+      "zero-product equation method",
+      "distinct and repeated integer roots",
+      "verify original equation by substitution",
+      "area and real-world domain modelling"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_STUDENT_LAB_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l06-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l06-monic-factor-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "SPECIALIZED_QUADRATIC_FAMILY_REQUIRED_NO_EQUIVALENT_EXISTING_LINEAR_OR_RATIO_ENGINE",
+    "families": [
+      "uae.g9.general.u07.l06.monic_distinct_roots",
+      "uae.g9.general.u07.l06.monic_repeated_root"
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/UaeG9MonicQuadraticQuestions.cs",
+    "teacherReviewRequired": [
+      "factor-pair explanation",
+      "area diagrams and domain restrictions",
+      "noninteger roots beyond bounded integer root generator"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u07l06.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L06MonicQuadraticTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NOT_EXECUTED_TEST_SUCCESS",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "githubBranch": "fix/g9-general-full-year-scope-86",
+  "closedUtc": "2026-11-20T15:14:06.124Z"
+}
