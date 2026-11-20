@@ -118,6 +118,10 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <li><label for="sourceGraph50">الحالة 50: نقطتا الحل على خط الأعداد ٠، ٤/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="50" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 50، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph50" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
 <li><label for="sourceGraph51">الحالة 51: نقطتا الحل على خط الأعداد −٤/٣، ٢/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="51" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 51، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph51" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li></ol>
 <p>الحالات المرتبطة بالصفحة ١٠٥: ١١ و١٢؛ الصفحة ١٠٦: ٣٣–٣٦؛ الصفحة ١٠٧: ٤٦–٥١.</p></details>
+<p>يمكن تجهيز إجابات هذه الحالات للمعلم بصورة مستقلة دون إكمال التقويم الختامي.</p>
+<button type="button" id="sourceGraphExport">تجهيز سجل تمارين خطوط الأعداد للمعلم</button>
+<p id="sourceGraphExportStatus" role="status" aria-live="polite"></p>
+<label for="sourceGraphSubmission">سجل الإجابات المحلي — مراجعة المعلم فقط</label><textarea id="sourceGraphSubmission" rows="7" readonly aria-describedby="sourceGraphExportStatus"></textarea>
 </section>
 <footer><p>نشاط أصلي من Edulytics، مرتبط بكتاب الطالب <span class="eq">01.pdf</span>، الصفحات المطبوعة ١٠٣–١٠٨. المعلم يراجع المخرجات الحرة.</p></footer>
 </main>
@@ -211,14 +215,25 @@ for(let point=-5;point<=10;point++){
  picker.appendChild(button);
 }
 updatePointPicker();
+const graphQuestionIds=[11,12,33,34,35,36,46,47,48,49,50,51];
+function enteredSourceGraphAnswers(){
+ return graphQuestionIds.map(sourceExercise=>({sourceExercise,response:document.getElementById('sourceGraph'+sourceExercise).value.trim(),review:'TEACHER_REVIEW_REQUIRED'})).filter(x=>x.response);
+}
+document.getElementById('sourceGraphExport').addEventListener('click',()=>{
+ const entries=enteredSourceGraphAnswers(),status=document.getElementById('sourceGraphExportStatus');
+ if(!entries.length){status.textContent='اكتب إجابة حالة واحدة على الأقل قبل تجهيز السجل.';return;}
+ const exportData={lesson:'UAE-MOE-MATH/G9/General/2-5',part:'source_number_line_teacher_review',graded:false,review:'TEACHER_REVIEW_REQUIRED',graphAnswers:entries};
+ document.getElementById('sourceGraphSubmission').value=JSON.stringify(exportData,null,2);
+ status.textContent='تم تجهيز السجل محليًا؛ انسخه وقدمه للمعلم. لم يُرسل إلى Edulytics ولم تُحسب درجة.';
+});
 document.getElementById('cooldownResponse').addEventListener('submit',event=>{
  event.preventDefault();
  const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim()).concat([4,5].map(n=>document.getElementById('contextQ'+n).value.trim()));
  if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
  if(selectedCoolDownPoints.size!==2){document.getElementById('cooldownMessage').textContent='حدد نقطتين على خط الأعداد للسؤال الأول.';return;}
  const extendedAnswers=[1,2,3,4,5,6,7,8].map(n=>({question:n,response:document.getElementById('extensionQ'+n).value.trim()})).filter(x=>x.response);
- const graphAnswers=[11,12,33,34,35,36,46,47,48,49,50,51].map(n=>({sourceExercise:n,response:document.getElementById('sourceGraph'+n).value.trim()})).filter(x=>x.response);
- const response={graphAnswers:graphAnswers.map(x=>({...x,review:'TEACHER_REVIEW_REQUIRED'})),lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'})),extensionAnswers:extendedAnswers.map(x=>({...x,review:'TEACHER_REVIEW_REQUIRED'}))};
+ const graphAnswers=enteredSourceGraphAnswers();
+ const response={graphAnswers,lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'})),extensionAnswers:extendedAnswers.map(x=>({...x,review:'TEACHER_REVIEW_REQUIRED'}))};
  document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
  document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
  document.getElementById('cooldownKey').hidden=false;
