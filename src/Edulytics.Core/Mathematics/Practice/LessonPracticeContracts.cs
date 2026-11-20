@@ -11393,6 +11393,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L05_P396_402",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General historical General Student Book U07L06 pp405-411.
+        // Integer monic factorization, with open reasoning/area drawing teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING", "algebra.quadratic.factor_monic",
+            "G9_U07L06_MONIC_FACTOR_ZERO_PRODUCT",
+            ["uae.g9.general.u07.l06.monic_distinct_roots",
+             "uae.g9.general.u07.l06.monic_repeated_root"],
+            "UAE_G9_GENERAL_2019_AR_U07L06_P405_411",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
