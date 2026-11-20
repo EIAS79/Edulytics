@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 56,
+  "unitOrdinal": 9,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS",
+  "lessonTitleAr": "المجموعات الجزئية والعمليات على المجموعات",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 UAE General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      515,
+      516,
+      517,
+      518,
+      519,
+      520,
+      521,
+      522,
+      523,
+      524,
+      525
+    ],
+    "pdfPages": [
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173
+    ],
+    "method": "DIRECT_LOCAL_BOOK_VISUAL_CONTACT_SHEET",
+    "reviewScope": "Lesson pages and key concept/activities; exercise-by-exercise digital equivalence and runtime not verified"
+  },
+  "stageA": {
+    "status": "SOURCE_PAGES_DIRECTLY_REVIEWED_OBJECTIVES_EXAMPLES_ACTIVITIES_IDENTIFIED",
+    "skills": [
+      "subset and proper subset with distinction from membership",
+      "union and intersection as element operations",
+      "set difference and complement in a given universe",
+      "finite inclusion-exclusion cardinality",
+      "Venn regions and explanations"
+    ],
+    "sourceEvidence": "Local General student book 02-1.pdf printed pp515-525",
+    "sourceSpecificExamplesChecked": [
+      "A={1,2,4}, B={2,3,4}; union/intersection/difference",
+      "universe defined before complement",
+      "finite set cardinality subtract intersection"
+    ],
+    "scope": "Source concepts, worked examples and Venn objectives reviewed; not 100% per-exercise or platform parity proof"
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AND_SIX_QUESTION_COOLDOWN_AUTHORED",
+    "reusedExistingLesson": true,
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u09-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u09-l02-subsets-set-operations-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "coolDownSubmission": "LOCAL_JSON_ONLY_NOT_AUTHENTICATED_PLATFORM",
+    "teacherReviewRequiredFor": [
+      "proper subset justification",
+      "Venn shading and region description",
+      "universe-dependent complement",
+      "set-builder and real-world contexts"
+    ]
+  },
+  "stageC": {
+    "status": "SHARED_SET_OPERATION_ENGINE_REUSED_FOCUSED_STAGE_D_REGRESSION_PREPARED",
+    "practiceFamily": "uae.g9.general.u09.l02.set_operation_cardinality",
+    "engine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "skillMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "verifiedByStaticInspection": "independent population-count verifier for union, intersection and A-minus-B bitmask operations",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u09l02.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "A-B-C_SOURCE_SKILL_AUTHORING_ONLY_NO_LIVE_PLATFORM_VALIDATION"
+}
