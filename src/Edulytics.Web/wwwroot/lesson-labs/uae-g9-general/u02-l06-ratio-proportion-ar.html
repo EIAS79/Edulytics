@@ -40,6 +40,11 @@ button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-of
 <li><label for="ratioQ3">في خريطة أصلية يمثل ٢ سم مسافة ٥ كم. ما المسافة التي تمثلها ٦ سم؟ اكتب التناسب والوحدة.</label><textarea id="ratioQ3" required></textarea></li>
 <li><label for="ratioQ4">حل <span class="math">(س−٢)/٧=٦/١٤</span>. بيّن شرط المقامات.</label><textarea id="ratioQ4" required></textarea></li>
 <li><label for="ratioQ5">هل يصح حساب مسافة إضافية بالتناسب إذا كان معدل السرعة يتغير؟ علّل وأعط مثالًا مضادًا.</label><textarea id="ratioQ5" required></textarea></li>
+<li><label for="ratioQ6">مختبر البيانات: يوضح الجدول التالي إنتاج ورشة بالساعات. افحص ثبات المعدل، وتنبأ بإنتاج ٤ ساعات مع تبرير طريقة الحساب.</label>
+<table dir="rtl" style="border-collapse:collapse;max-width:100%;width:100%;margin:.6rem 0" border="1" cellpadding="8">
+<caption>جدول أصلي لبيانات إنتاج تناسبية</caption><thead><tr><th scope="col">الساعات</th><th scope="col">١</th><th scope="col">٢</th><th scope="col">٣</th></tr></thead>
+<tbody><tr><th scope="row">عدد القطع</th><td>١٢</td><td>٢٤</td><td>٣٦</td></tr></tbody></table>
+<textarea id="ratioQ6" required></textarea></li>
 </ol><button type="submit">تجهيز إجابات التقويم للمعلم</button></form>
 <p class="teacher">مراجعة المعلم: تحقّق من صحة النسب، الضرب التبادلي، شرط المقام غير الصفري، الوحدات، وتفسير المعدل. لا يُعتمد النموذج تصحيحًا آليًا أو تسليمًا مُوثّقًا للمنصة.</p>
 <p id="exportStatus" role="status" aria-live="polite"></p><label for="teacherExport">سجل الإجابات المحلي</label><textarea id="teacherExport" readonly></textarea>
@@ -49,8 +54,8 @@ button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-of
 'use strict';
 document.getElementById('ratioCooldown').addEventListener('submit',event=>{
  event.preventDefault();
- const answers=[1,2,3,4,5].map(n=>({question:n,response:document.getElementById('ratioQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
- if(answers.some(a=>!a.response)){document.getElementById('exportStatus').textContent='أجب عن الأسئلة الخمسة قبل تجهيز السجل.';return;}
+ const answers=[1,2,3,4,5,6].map(n=>({question:n,response:document.getElementById('ratioQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
+ if(answers.some(a=>!a.response)){document.getElementById('exportStatus').textContent='أجب عن الأسئلة الستة قبل تجهيز السجل.';return;}
  const payload={lesson:'UAE-MOE-MATH/G9/General/2-6',locale:'ar',graded:false,review:'TEACHER_REVIEW_REQUIRED',answers};
  document.getElementById('teacherExport').value=JSON.stringify(payload,null,2);
  document.getElementById('exportStatus').textContent='تم تجهيز الإجابات محليًا؛ انسخ السجل وقدّمه للمعلم. لم تُرسل البيانات إلى Edulytics ولم تُحسب درجة.';
