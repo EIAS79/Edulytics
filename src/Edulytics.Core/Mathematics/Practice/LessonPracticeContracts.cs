@@ -11668,6 +11668,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L01_P717_724",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 General U13L02 interior and adjacent exterior numeric questions only;
+        // geometric proof, remote-angle sum and bisector explanation teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS", "geometry.triangles.interior_angle_sum",
+            "G9_U13L02_TRIANGLE_NUMERIC_ANGLE_RELATIONS",
+            ["uae.g4.u16.l06.triangle_missing_angle",
+             "geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U13L02_P725_734",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
