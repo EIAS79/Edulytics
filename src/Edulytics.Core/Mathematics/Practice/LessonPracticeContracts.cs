@@ -11678,6 +11678,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L02_P725_734",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 13-3: existing criterion recognition is prerequisite only;
+        // all vertex correspondence and CPCTC proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES", "geometry.congruence.corresponding_parts",
+            "G9_U13L03_CONGRUENCE_RECOGNITION_PARTIAL",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L03_P735_743",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
