@@ -11403,6 +11403,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L06_P405_411",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General historical Student Book U07L07 pp412-417.
+        // Exact integer-root nonmonic cases; rational roots and reasoning teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING", "algebra.quadratic.factor_nonmonic",
+            "G9_U07L07_NONMONIC_AC_GROUP_FACTOR",
+            ["uae.g9.general.u07.l07.nonmonic_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L07_P412_417",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
