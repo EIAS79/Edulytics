@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 52,
+  "unitOrdinal": 8,
+  "sourceLessonRef": "02-1.pdf:8-4",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION",
+  "lessonTitleAr": "الترميز العلمي",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475
+  ],
+  "sourcePdfPages": [
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_BOOK_PAGES_468_475_VISUALLY_REVIEWED",
+    "skills": [
+      "scientific notation a×10^n with 1<=|a|<10",
+      "ordinary to scientific for large and small decimals",
+      "powers of ten multiplication and division",
+      "coefficient normalization",
+      "real-world quantities and contextual interpretation"
+    ],
+    "scope": "Direct scanned student-book lesson pages visually reviewed; not exercise-by-exercise digital prompt equivalence acceptance"
+  },
+  "stageB": {
+    "status": "SOURCE_ALIGNED_ARABIC_PACK_RICHV2_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u08-l04-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u08-l04-scientific-notation-ar.html",
+    "cooldownQuestions": 5,
+    "teacherReview": "Local JSON teacher-only response; not authenticated platform submission or automatic grading"
+  },
+  "stageC": {
+    "status": "THREE_EXACT_POWERS10_FAMILIES_REUSED_AND_ARABIC_SCOPE_LOCALIZED",
+    "families": [
+      "supporting.standard_form.power10_exponent",
+      "supporting.powers10.multiply",
+      "supporting.powers10.divide"
+    ],
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "scopeLocalization": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "teacherReviewRequired": [
+      "negative scientific exponents",
+      "decimal coefficient normalization and verbal reasoning",
+      "contextual units",
+      "free writing"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u08l04.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NOT_RUNTIME_TESTED",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T15:52:15.980Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
