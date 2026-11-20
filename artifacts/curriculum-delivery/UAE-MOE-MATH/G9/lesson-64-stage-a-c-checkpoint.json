@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 64,
+  "unitOrdinal": 11,
+  "lessonOrdinalInUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS",
+  "lessonTitleAr": "المسلمات والبراهين الحرة",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "primary": {
+      "file": "03-1.pdf",
+      "edition": "2019-2020 UAE General",
+      "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "printedPages": [
+        608,
+        615
+      ],
+      "pdfPages": [
+        24,
+        31
+      ]
+    },
+    "supplementary": {
+      "file": "01.pdf",
+      "edition": "2025-2026 UAE General",
+      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "printedPages": [
+        365,
+        372
+      ],
+      "pdfPages": [
+        376,
+        383
+      ]
+    },
+    "method": "DIRECT_LOCAL_16_SCANNED_PAGE_CONTACT_SHEET",
+    "scope": "Source concepts and principal examples reviewed; no full per-item live equivalence claimed"
+  },
+  "stageA": {
+    "status": "BOTH_GENERAL_BOOK_SOURCE_LESSONS_REVIEWED_LEARNING_OBJECTIVES_AUTHORED",
+    "skills": [
+      "points lines planes and collinearity",
+      "plane incidence and intersections",
+      "geometric axioms and postulates",
+      "informal source-backed geometry proofs"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AND_SIX_QUESTION_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l01-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u11-l01-postulates-informal-proofs-ar.html"
+    ],
+    "teacherReviewRequired": [
+      "geometric models",
+      "proof steps and postulate rationale",
+      "diagram correctness"
+    ],
+    "coolDownQuestions": 6,
+    "submission": "LOCAL_JSON_ONLY_NOT_GRADED"
+  },
+  "stageC": {
+    "status": "SHARED_EXACT_INCIDENCE_CLASSIFICATION_EXTENDED_TESTS_PREPARED_UNRUN",
+    "family": "uae.g9.general.u11.l01.incidence_postulates",
+    "questionEngine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "skillMap": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "testPath": "tests/academic-uae-grade9-arabic-u11l01.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "SOURCE_BASED_ARABIC_STAGE_A_B_C_AUTHORING_NO_STAGE_D_RUNTIME_PASS"
+}
