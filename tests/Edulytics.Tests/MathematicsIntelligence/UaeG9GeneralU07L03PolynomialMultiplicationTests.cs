@@ -11,8 +11,8 @@ public sealed class UaeG9GeneralU07L03PolynomialMultiplicationTests
     [Theory]
     [InlineData(4,"2","3")]
     [InlineData(3,"7","2")]
-    [InlineData(2,"7","6")]
-    [InlineData(1,"-3","3")]
+    [InlineData(2,"14","7")]
+    [InlineData(1,"11","-3")]
     [InlineData(0,"-10","10")]
     public void IndependentVerifierConvolvesAllTermPairs(int degree,string correct,string incorrect)
     {
