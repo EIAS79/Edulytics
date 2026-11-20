@@ -11521,6 +11521,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U09L04_P537_546",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U09L05: reuse and extend shared engine for finite/infinite classification.
+        // One-to-one/onto proofs and uncountability reasoning remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS", "sets.finite_infinite",
+            "G9_U09L05_FINITE_INFINITE_CLASSIFICATION",
+            ["uae.g9.general.u09.l05.finite_infinite_classification"],
+            "UAE_G9_GENERAL_2019_AR_U09L05_P547_551",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
