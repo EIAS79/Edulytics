@@ -11116,6 +11116,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L08_P126_131",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_CORE", Version);
 
+        // Grade 9 General 2-9 weighted mean: ordinary mean is a prerequisite,
+        // not an automatic verifier of weighted mixtures and journey speeds.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE", "statistics.weighted_mean",
+            "G9_U02L09_WEIGHTED_CORE_WITH_TEACHER_REVIEW",
+            ["statistics.center_spread.mean"],
+            "UAE_G9_GENERAL_2025_AR_U02L09_P132_138",
+            "PREPARED_STAGE_D_NOT_RUN_CORE_WEIGHTED_REVIEW", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
