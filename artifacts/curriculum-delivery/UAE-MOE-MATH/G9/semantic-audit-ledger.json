@@ -20,16 +20,29 @@
       "sourceCode": "1-1",
       "sourceTitle": "المتغيرات والتعابير",
       "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
-      "objectiveCount": null,
-      "mappedObjectiveCount": null,
-      "questionFamilyCount": null,
-      "preparedTestCases": [],
-      "evidencePaths": [],
-      "aBCCheckpoint": "PRIOR_PREPARED_CHECKPOINT",
-      "semanticAuditExecutionStatus": "NOT_RUN_STAGE_D",
-      "objectiveCoverageVerification": "PENDING_SOURCE_ATOMIC_LEDGER",
+      "objectiveCount": 4,
+      "mappedObjectiveCount": 4,
+      "questionFamilyCount": 2,
+      "preparedTestCases": [
+        "WRITTEN_NOT_RUN",
+        "EXPRESSION_COEFFICIENT_CANDIDATE",
+        "VERBAL_TO_SYMBOLIC_CANDIDATE",
+        "TEACHER_REVIEW_FREE_EXPLANATION"
+      ],
+      "evidencePaths": [
+        "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-all-61-source-exercises-preparation.json",
+        "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-source-objectives-practice-contract.json",
+        "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-a-c-checkpoint.json",
+        "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+        "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs"
+      ],
+      "aBCCheckpoint": "READY_FOR_STAGE_D_AUTHORING_ONLY",
+      "semanticAuditExecutionStatus": "STATIC_SOURCE_CONTRACT_RECONCILED_TESTS_NOT_RUN",
+      "objectiveCoverageVerification": "FOUR_SOURCE_GOALS_PREPARED_NOT_INDEPENDENTLY_VERIFIED",
       "fullLessonAuditPassed": false,
-      "elementCountDenominator": null
+      "elementCountDenominator": null,
+      "observedNumberedSourceExercises": 61,
+      "observedNumberedSourceItemsStatus": "CATEGORIES_AND_ITEM_NUMBERS_INVENTORIED_NOT_EXACT_DIGITAL_EQUIVALENCE"
     },
     {
       "rawOrdinal": 2,
