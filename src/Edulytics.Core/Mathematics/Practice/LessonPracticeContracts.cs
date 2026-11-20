@@ -11549,6 +11549,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U10L02_P569_576",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General U10L03 conditional truth table numeric subskills;
+        // writing statements and counterexample proof retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:03:CONDITIONAL-STATEMENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:03:CONDITIONAL-STATEMENTS", "logic.conditionals",
+            "G9_U10L03_ORIGINAL_CONVERSE_INVERSE_CONTRAPOSITIVE",
+            ["uae.g9.general.u10.l03.conditional_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L03_P577_586",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
