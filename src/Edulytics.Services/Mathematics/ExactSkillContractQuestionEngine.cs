@@ -359,6 +359,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U6L09DistributionLabQuestions.Supports(family.Trim()) ||
           UaeG6U6L10DistributionQuestions.Supports(family.Trim()) ||
           UaeG9AbsoluteValueEquationQuestions.Supports(family.Trim()) ||
+          UaeG9MonicQuadraticQuestions.Supports(family.Trim()) ||
           UaeG6U7L01EquationPracticeQuestions.Supports(family.Trim()) ||
           UaeG6U7L02AdditionLabQuestions.Supports(family.Trim()) ||
           UaeG6U7L03AdditionEquationQuestions.Supports(family.Trim()) ||
@@ -1233,6 +1234,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L10DistributionQuestions.Verify(family,parameters,answer);
         if (UaeG9AbsoluteValueEquationQuestions.Supports(family))
             return UaeG9AbsoluteValueEquationQuestions.Verify(family,parameters,answer);
+        if (UaeG9MonicQuadraticQuestions.Supports(family))
+            return UaeG9MonicQuadraticQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L01EquationPracticeQuestions.Supports(family))
             return UaeG6U7L01EquationPracticeQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L02AdditionLabQuestions.Supports(family))
@@ -4737,6 +4740,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG9AbsoluteValueEquationQuestions.Supports(family))
         {
             var q=UaeG9AbsoluteValueEquationQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG9MonicQuadraticQuestions.Supports(family))
+        {
+            var q=UaeG9MonicQuadraticQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeG6U7L01EquationPracticeQuestions.Supports(family))
@@ -9647,6 +9655,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L10DistributionQuestions.Solve(problem.Family,p);
         if (UaeG9AbsoluteValueEquationQuestions.Supports(problem.Family))
             return UaeG9AbsoluteValueEquationQuestions.Solve(problem.Family,p);
+        if (UaeG9MonicQuadraticQuestions.Supports(problem.Family))
+            return UaeG9MonicQuadraticQuestions.Solve(problem.Family,p);
         if (UaeG6U7L01EquationPracticeQuestions.Supports(problem.Family))
             return UaeG6U7L01EquationPracticeQuestions.Solve(problem.Family,p);
         if (UaeG6U7L02AdditionLabQuestions.Supports(problem.Family))
