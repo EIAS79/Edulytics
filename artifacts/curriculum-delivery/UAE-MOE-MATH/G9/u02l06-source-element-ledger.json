@@ -347,13 +347,21 @@
       "sourceElementId": "01.pdf:2-6:EX18",
       "sourcePrintedPage": 115,
       "sourcePdfPage": 126,
-      "sourceSkillGroup": "PRACTICE_PROPORTIONS_WITH_VARIABLE",
-      "candidateDigitalFamily": "ratio.unit_rate.equivalent_ratio",
-      "assessmentRoute": "NUMERIC_SKILL_CANDIDATE_EXACT_SOURCE_PARITY_PENDING",
+      "sourceSkillGroup": "STATIC_FALSE_PROPORTION_NO_UNKNOWN_PRINTED",
+      "candidateDigitalFamily": null,
+      "assessmentRoute": "TEACHER_REVIEW_REQUIRED",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
-      "status": "SOURCE_NUMBER_AND_PAGE_GROUP_IDENTIFIED_CANDIDATE_COVERAGE_NOT_EXACT_ITEM_EQUIVALENCE"
+      "status": "SOURCE_NUMBER_AND_PAGE_GROUP_IDENTIFIED_CANDIDATE_COVERAGE_NOT_EXACT_ITEM_EQUIVALENCE",
+      "sourceMathematicsSpotAudit": {
+        "expectedMathAnswer": "NOT_EQUAL_AS_PRINTED",
+        "derivation": "15/35=3/7, while 8/7 differs. No algebraic unknown is printed; do not fabricate a missing variable or solve an equation that was not supplied.",
+        "method": "HIGH_RES_DIRECT_ORIGINAL_PAGE_VISUAL_MATH_CHECK",
+        "sourcePrintedPage": 115,
+        "scope": "SOURCE_AS_PRINTED_FALSE_PROPORTION_REQUIRES_TEACHER_REVIEW"
+      },
+      "sourceSkillTeacherTask": "ratioQ2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX19",
@@ -610,13 +618,21 @@
       "sourceElementId": "01.pdf:2-6:EX32",
       "sourcePrintedPage": 115,
       "sourcePdfPage": 126,
-      "sourceSkillGroup": "APPLICATIONS_RATES_AND_SCALE",
+      "sourceSkillGroup": "SCALE_MODEL_REAL_WORLD_CONVERSION",
       "candidateDigitalFamily": null,
       "assessmentRoute": "TEACHER_REVIEW_REQUIRED",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
-      "status": "SOURCE_NUMBER_AND_PAGE_GROUP_IDENTIFIED_CANDIDATE_COVERAGE_NOT_EXACT_ITEM_EQUIVALENCE"
+      "status": "SOURCE_NUMBER_AND_PAGE_GROUP_IDENTIFIED_CANDIDATE_COVERAGE_NOT_EXACT_ITEM_EQUIVALENCE",
+      "sourceMathematicsSpotAudit": {
+        "expectedMathAnswer": "184.2 in",
+        "derivation": "Scale: one model inch represents 1.67 actual inches; model 110.3 inches implies actual length 110.3×1.67=184.201 inches, rounded to nearest tenth 184.2 inches.",
+        "method": "HIGH_RES_DIRECT_ORIGINAL_PAGE_VISUAL_MATH_CHECK",
+        "sourcePrintedPage": 115,
+        "scope": "SOURCE_CONTEXT_MODEL_MATH_ONLY_ORIGINAL_TEACHER_REVIEW"
+      },
+      "sourceSkillTeacherTask": "ratioQ3"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX33",
@@ -1046,9 +1062,9 @@
       "sourceElementId": "01.pdf:2-6:EX55",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1059,15 +1075,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-5"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX56",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1078,15 +1095,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-5"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX57",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1097,15 +1115,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-5"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX58",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1116,15 +1135,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-5"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX59",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1135,15 +1155,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-4"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX60",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1154,15 +1175,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-3"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX61",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1173,15 +1195,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-3"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX62",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1192,15 +1215,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-3"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX63",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1211,15 +1235,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-3"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX64",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1230,15 +1255,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-4"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX65",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1249,15 +1275,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:1-2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX66",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "SPIRAL_REVIEW_PREVIOUS_LESSON_SKILLS",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1268,15 +1295,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:1-2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX67",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "PREREQUISITE_AND_SPIRAL_SKILL_REVIEW",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1287,15 +1315,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX68",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "PREREQUISITE_AND_SPIRAL_SKILL_REVIEW",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1306,15 +1335,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX69",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "PREREQUISITE_AND_SPIRAL_SKILL_REVIEW",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1325,15 +1355,16 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-2"
     },
     {
       "sourceElementId": "01.pdf:2-6:EX70",
       "sourcePrintedPage": 117,
       "sourcePdfPage": 128,
-      "sourceSkillGroup": "PREREQUISITE_AND_SPIRAL_SKILL_REVIEW",
+      "sourceSkillGroup": "SPIRAL_REVIEW_NOT_NEW_RATIO_CORE_OBJECTIVE",
       "candidateDigitalFamily": null,
-      "assessmentRoute": "PRIOR_LESSON_REVIEW_NOT_FORCE_MAPPED_TO_RATIO",
+      "assessmentRoute": "SPIRAL_PRIOR_SKILL_WITH_TEACHER_REVIEW",
       "studentFacingPath": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
       "sourceExactExpressionIndependentlyReviewed": false,
       "teacherReviewNeeded": true,
@@ -1344,7 +1375,8 @@
         "method": "DIRECT_SCANNED_SOURCE_VISUAL_MATH_REVIEW_WITH_INDEPENDENT_ARITHMETIC",
         "sourcePrintedPage": 117,
         "scope": "SOURCE_MATH_SKILL_ONLY; OPEN_PROOFS_REQUIRE_TEACHER_AND_DIGITAL_VARIANTS_STAGE_D_NOT_RUN"
-      }
+      },
+      "priorGrade9SourceRef": "01.pdf:2-2"
     }
   ],
   "nonNumberedSourceElements": [
@@ -1378,13 +1410,11 @@
   },
   "itemLevelSourceClassificationCorrection": "Review of source printed p115 revised numeric candidate vs teacher route; no automatic exact equivalence asserted.",
   "sourceMathematicsSpotAudit": {
-    "verifiedCount": 68,
-    "pendingCount": 2,
-    "remainingSourceIds": [
-      "01.pdf:2-6:EX18",
-      "01.pdf:2-6:EX32"
-    ],
-    "scope": "Source mathematical answers checked where possible; remaining ambiguous item images must be checked. Stage D tests not run.",
+    "verifiedCount": 70,
+    "pendingCount": 0,
+    "remainingSourceIds": [],
+    "method": "SOURCE_SCANNED_TEXTBOOK_MATHEMATICAL_OUTCOMES_INDEPENDENTLY_CHECKED; NOT LIVE_STUDENT_PROMPT_PARITY",
     "testsRun": "WRITTEN_NOT_RUN"
-  }
+  },
+  "spiralReviewRoutedWithoutFalseRatioReclassification": true
 }
