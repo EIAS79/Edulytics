@@ -322,3 +322,20 @@ test('Source reasoning tasks distinguish contextual, decimal and impossible equa
   assert.match(reasoning.expected,/⇒ ∅/);
   assert.equal(bank.assessedAutomatically,false);
 });
+
+
+test('Reciprocal denominator concept is present in both Grade 9 Arabic lesson formats', () => {
+  const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json');
+  const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json');
+  const lesson=rich.Lessons.find(x=>x.LessonCode===lessonCode);
+  const translation=pack.Lessons.find(x=>x.LessonCode===lessonCode).Translations.find(x=>x.CultureCode==='ar');
+  const concept=lesson.KeyConcepts.find(x=>x.Title==='القيمة المطلقة في مقام كسر');
+  const example=lesson.WorkedExamples.find(x=>x.Title==='حل معادلة فيها قيمة مطلقة في مقام كسر');
+  assert.ok(concept && example);
+  assert.match(concept.Rule,/س≠م/);
+  assert.match(example.Question,/٦\/\|س−١\|\+٢=٥/);
+  assert.match(example.Answer,/س=−١ أو س=٣/);
+  assert.match(example.Steps.join(' '),/شرط التعريف/);
+  assert.match(translation.WorkedExamples,/مثال ١٠: ٦\/\|س−١\|\+٢=٥/);
+  assert.match(translation.CommonMistakes,/المقام غير الصفري/);
+});
