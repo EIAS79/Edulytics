@@ -11714,6 +11714,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L06_P765_773",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General U13L09: original Arabic learner prompts are
+        // scoped inside the existing exact engine; diagrams remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+            "geometry.area.parallelogram",
+            "G9_U13L09_PERPENDICULAR_HEIGHT_TRIANGLE_AND_PARALLELOGRAM",
+            ["geometry.perimeter_area.rectangle_area", "geometry.perimeter_area.triangle_area"],
+            "UAE_G9_GENERAL_2019_AR_U13L09_P793_800",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
