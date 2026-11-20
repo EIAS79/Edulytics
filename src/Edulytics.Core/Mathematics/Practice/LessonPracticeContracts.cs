@@ -11362,6 +11362,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L02_P374_379",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General 2019 book 7-3: exact coefficient kernel only.
+        // Area model and full polynomial expression remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION",
+            "algebra.polynomial.multiply_distribute",
+            "G9_U07L03_FULL_DISTRIBUTION_TEACHER_REVIEW",
+            ["uae.g9.general.u07.l03.multiply_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L03_P382_387",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
