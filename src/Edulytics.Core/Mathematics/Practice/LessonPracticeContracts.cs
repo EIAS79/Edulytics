@@ -11558,6 +11558,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U10L03_P577_586",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General U10L04 deductive laws and proof.
+        // Reuse exact conditional truth prerequisite; proof explanations remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING", "reasoning.deductive",
+            "G9_U10L04_DETACHMENT_SYLLOGISM_PREREQUISITES",
+            ["uae.g9.general.u10.l03.conditional_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L04_P587_595",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
