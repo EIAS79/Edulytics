@@ -1,0 +1,52 @@
+name: UAE Grade 9 General Stage D - fail-closed diagnostics
+
+on:
+  push:
+    branches:
+      - fix/g9-general-full-year-scope-86
+    paths:
+      - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/academic-uae-grade9*.test.cjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade9-node-and-academic-gate:
+    name: G9 source gate and prepared lesson tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record exact candidate ref
+        run: |
+          echo "CandidateSha=${GITHUB_SHA}"
+          echo "TestedRefKind=${GITHUB_REF}"
+      - name: Run prepared Grade 9 Arabic tests
+        run: node --test tests/academic-uae-grade9*.test.cjs
+      - name: Strict source-index lock — fail closed until verified
+        if: always()
+        run: node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs
+
+  grade9-dotnet-tests:
+    name: G9 scoped .NET tests (diagnostic)
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build once and run scoped G9 tests
+        run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-restore
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --filter 'FullyQualifiedName~UaeG9' --logger 'console;verbosity=normal'
