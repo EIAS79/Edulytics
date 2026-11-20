@@ -11530,6 +11530,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U09L05_P547_551",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // Grade 9 General 10-1 inductive conjectures: numeric arithmetic/geometric
+        // term generation reuses existing exact families. Visual and nonlinear
+        // patterns plus counterexample proofs remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES", "reasoning.inductive",
+            "G9_U10L01_INDUCTIVE_PATTERN_NUMERIC_SUBSKILLS",
+            ["sequences.core.arithmetic_nth_term","sequences.core.geometric_nth_term"],
+            "UAE_G9_GENERAL_2019_AR_U10L01_P561_568",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
