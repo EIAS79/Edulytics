@@ -741,7 +741,7 @@ internal static partial class SupportingPracticeCompletionEngine
         {
             if(p.Count!=3 || !p.TryGetValue("mode",out var mode) ||
                !p.TryGetValue("step",out var step) || !p.TryGetValue("bound",out var bound) ||
-               mode is <0 or >5 || step is <2 or >7 || bound is <3 or >18 ||
+               mode is <0 or >5 || step is <2 or >7 || bound is <5 or >18 ||
                string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
             var normalized=string.Concat(answer.Trim().Select(c=>c switch {
                 >= '٠' and <= '٩' => (char)('0'+c-'٠'),
@@ -1493,11 +1493,11 @@ internal static partial class SupportingPracticeCompletionEngine
     {
         var mode=r.Next(6);
         var step=r.Next(2,8);
-        var bound=r.Next(3,19);
+        var bound=r.Next(5,19);
         var example=mode switch
         {
             0 => $"أ={{١،٢،٣،...،{bound}}} (تتوقف عند {bound})",
-            1 => $"أ={{step,step×٢,step×٣,...}} (مضاعفات موجبة تستمر بلا حد)",
+            1 => $"أ=مضاعفات {step} الموجبة: {step}،{2*step}،{3*step}،... (تستمر بلا حد)",
             2 => "أ={−١،−٢،−٣،...} (كل الأعداد الصحيحة السالبة)",
             3 => $"أ={{س∈ط:١≤س≤{bound}}}",
             4 => $"أ={{س∈ط:س≥{bound}}} (الأعداد الطبيعية لا تتوقف عند حد أعلى)",
