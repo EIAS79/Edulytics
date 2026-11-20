@@ -181,7 +181,10 @@
         "endpoints": "−٣ فقط",
         "expectedEquation": "|س+٣|=٠",
         "assessment": "TEACHER_REVIEW_REQUIRED",
-        "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
+        "sourceLevel": "ONE_ROOT_ZERO_DISTANCE_ORIGINAL_ARABIC_TEACHER_PROMPT",
+        "numberOfRoots": 1,
+        "center": "−٣",
+        "distance": "٠"
       },
       {
         "sourceExerciseId": "01.pdf:2-5:EX36",
@@ -233,7 +236,8 @@
         "sourceLevel": "MATHEMATICALLY_EQUIVALENT_TEXT_PROMPT_WITH_NUMBER_LINE_OBJECTIVE"
       }
     ],
-    "status": "TWELVE_SOURCE_SPECIFIC_EQUATION_WRITING_PROMPTS_AUTHORED_RUNTIME_NOT_VERIFIED"
+    "status": "TWELVE_SOURCE_SPECIFIC_EQUATION_WRITING_PROMPTS_AUTHORED_RUNTIME_NOT_VERIFIED",
+    "oneRootCase": "01.pdf:2-5:EX35: one plotted solution, radius zero, not two plotted points"
   },
   "solveAndGraph": {
     "sourceElementIds": [
