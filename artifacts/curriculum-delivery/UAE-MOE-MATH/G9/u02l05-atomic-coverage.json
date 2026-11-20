@@ -191,6 +191,14 @@
       "numericGeneratorFamily": "uae.g9.general.u02.l05.two_solutions",
       "teacherReviewRequired": true,
       "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "reciprocalSourceTeaching": {
+      "sourceElementId": "01.pdf:2-5:EX42",
+      "sourceSkill": "positive numerator / absolute-value denominator; exclude zero",
+      "RichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+      "ArabicPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "completeForA_BAuthoring": true,
+      "StageDTests": "WRITTEN_NOT_RUN"
     }
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
@@ -1069,7 +1077,9 @@
           "independentDerivation": "4/|p|+12=14 implies |p|=2, p != 0",
           "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_AND_STUDENT_FACING_EQUIVALENCE_NOT_TESTED"
         },
-        "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions"
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
+        "originalRichV2TeachingCoverage": "RECIPROCAL_DOMAIN_RULE_AND_ORIGINAL_TWO_ROOT_WORKED_EXAMPLE_AUTHORED_NOT_RUNTIME_TESTED",
+        "sourceContentMathSkillVerified": true
       },
       {
         "itemId": "01.pdf:2-5:EX43",
