@@ -11421,6 +11421,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L08_P418_423",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General historical Student Book U07L09 pp424-431.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:09:PERFECT-SQUARE-TRINOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:09:PERFECT-SQUARE-TRINOMIALS", "algebra.factor.perfect_square_trinomial",
+            "G9_U07L09_PERFECT_SQUARE_ROOTS",
+            ["uae.g9.general.u07.l06.monic_repeated_root",
+             "uae.g9.general.u07.l09.square_root_equation_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L09_P424_431",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
