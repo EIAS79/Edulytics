@@ -11485,6 +11485,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L06_P484_490",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U09L01: bounded finite set membership and cardinality.
+        // Set-builder notation and contextual diagrams remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY", "sets.membership",
+            "G9_U09L01_MEMBERSHIP_AND_CARDINALITY",
+            ["uae.g9.general.u09.l01.set_membership_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L01_P502_514",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
