@@ -48,7 +48,7 @@ test('Eight teacher-reviewed original cooldown cases distinguish weighted averag
 test('Weighted mean, mixture and average speed have independent arithmetic fixtures; Stage D remains unrun',()=>{
  const mean=(a,b,wa,wb)=>(a*wa+b*wb)/(wa+wb);
  assert.equal(mean(80,90,.3,.7),87);
- assert.equal(mean(.10,.30,2,3),.22);
+ assert.ok(Math.abs(mean(.10,.30,2,3)-.22)<1e-12);
  assert.equal(mean(10,20,1,3),17.5);
  assert.ok(Math.abs(80/(40/40+40/80)-160/3)<1e-12);
  assert.equal(mean(60,85,.2,.8),80);
