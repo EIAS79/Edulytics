@@ -11173,6 +11173,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L05_P189_196",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_DISCRETE_GRAPH", Version);
 
+        // UAE Grade9 General 3-6, source pp197–202: numeric support only.
+        // Ratio tables, zero intercept and graphs require teacher explanation.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS", "algebra.linear.proportionality",
+            "G9_U03L06_PROPORTIONAL_NONPROPORTIONAL_ZERO_INTERCEPT",
+            ["ratio.unit_rate.equivalent_ratio", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L06_P197_202",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_AND_CONTEXT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
