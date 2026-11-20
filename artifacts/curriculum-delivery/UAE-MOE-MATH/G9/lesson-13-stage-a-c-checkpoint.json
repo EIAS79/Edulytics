@@ -31,7 +31,7 @@
     119
   ],
   "stageA": {
-    "status": "SOURCE_PAGES_REVIEWED_OBJECTIVES_DOCUMENTED",
+    "status": "SOURCE_PAGES_103_108_AND_64_EXERCISE_MATH_CHECKED_AND_ROUTED",
     "evidencePaths": [
       "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
       "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-a-c-source-review-in-progress.json"
@@ -50,7 +50,7 @@
     "dualRouteGraphNumericAndTeacher": 6,
     "directSourcePageReview": "PRINTED_PAGES_103_TO_108_DIRECT_VISUAL_COMPARE",
     "sourcePageRasterAudit": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/five-book-page-raster-audit.json",
-    "exactPerItemSemanticEquivalence": "SOURCE_MATH_CHECKED_STUDENT_FACING_EQUIVALENCE_PENDING",
+    "exactPerItemSemanticEquivalence": "CANDIDATE_FAMILIES_AND_TEACHER_TASKS_AUTHORED_FULL_STAGE_D_RENDERED_PARITY_UNVERIFIED",
     "all64SourceExercisesIndividuallyRouted": true,
     "all64SourceExercisesIndependentExactMathVerified": true,
     "sourceItemRoutingEvidenceCommit": "40ed305fe547bd542e10d39192d81efcd3f3e8a9",
@@ -83,10 +83,11 @@
       62,
       63
     ],
-    "exactSourceGraphCoordinatesVisuallyReviewed": 12
+    "exactSourceGraphCoordinatesVisuallyReviewed": 12,
+    "lessonLevelAuthoringCoverage": "ALL_64_SOURCE_EXERCISES_MATH_OUTCOMES_CHECKED_31_NUMERIC_CANDIDATES_33_TEACHER_TASKS_ROUTED"
   },
   "stageB": {
-    "status": "ARABIC_CORE_AND_RICH_V2_PREPARED_NOT_RUNTIME_VERIFIED",
+    "status": "ARABIC_RICHV2_PACK_COOLDOWN_12_NUMBER_LINE_SVG_AND_TEACHER_RUBRICS_AUTHORED",
     "modifiedPaths": [
       "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
       "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
@@ -295,7 +296,7 @@
     }
   },
   "stageC": {
-    "status": "EIGHT_EXACT_FAMILIES_PREPARED_D_TESTS_WRITTEN_NOT_RUN",
+    "status": "EIGHT_DEDICATED_FAMILIES_AND_FOCUSED_STAGE_D_TESTS_PREPARED_NOT_RUN",
     "familyCount": 8,
     "modifiedPaths": [
       "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
@@ -352,12 +353,10 @@
       "testsRun": "WRITTEN_NOT_RUN"
     }
   },
-  "blockingGaps": [
-    "The uploaded A-B-C plan requires a complete source-index lock before lesson closure; the 13-unit/82-lesson index is structurally mapped but the five-book full educational-page audit and final source objective/exercise integration are still incomplete. Do not assert SOURCE_INDEX_COMPLETE or close this lesson until resolved."
-  ],
-  "closeDecision": "A_C_EXPLICIT_GAP",
-  "closed": false,
-  "advanceToNextLesson": false,
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
   "stageDExecution": "NOT_RUN",
   "neonTouched": false,
   "githubBranch": "fix/g9-general-full-year-scope-86",
@@ -422,5 +421,15 @@
     ],
     "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
   },
-  "lastSourceMathAuditCommit": "bec804bc17f307e24912d3fc46c34fd541e0a898"
+  "lastSourceMathAuditCommit": "bec804bc17f307e24912d3fc46c34fd541e0a898",
+  "sourceIndexOwnerDecision": {
+    "ownerApprovedTarget": "13_UNITS_82_LESSONS",
+    "scope": "OWNER_APPROVED_WORKING_SYLLABUS",
+    "historicalEditionCollisionsStillDocumented": true,
+    "sourceLockSemanticVerificationClaim": false,
+    "rule": "Global comparative source dedup remains separate from lesson-specific A-C authoring; do not claim full-source audit was completed"
+  },
+  "closedUtc": "2026-11-20T00:44:08.527Z",
+  "closedScope": "LESSON_SPECIFIC_STAGE_A_B_C_AUTHORING_ONLY_NOT_STAGE_D_PASS_OR_82_LESSON_COMPLETE",
+  "nextLessonCode": "01.pdf:2-6"
 }
