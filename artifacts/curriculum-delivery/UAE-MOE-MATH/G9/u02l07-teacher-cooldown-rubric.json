@@ -36,7 +36,8 @@
     "tax amount and final price",
     "successive percentage change",
     "table reasoning",
-    "zero-original boundary"
+    "zero-original boundary",
+    "percentile rank from sorted assessment data (source p125 supplemental lab)"
   ],
   "answers": [
     {
@@ -70,6 +71,10 @@
     {
       "id": 8,
       "expected": "نسبة التغير من أصل صفر غير معرّفة بسبب القسمة على صفر؛ يمكن وصف فرق عددي فقط"
+    },
+    {
+      "id": 9,
+      "expected": "ترتيب مئيني=١٨/٢٠×١٠٠=٩٠؛ أي ٩٠٪ من الدرجات أقل من ٢٨ وفق التعريف المحدد. المئين رتبة داخل مجموعة ولا يقيس تغير القيمة بين فترتين."
     }
   ],
   "rubric": {
@@ -83,7 +88,7 @@
       {
         "id": "reasoning",
         "max": 2,
-        "criterion": "Explains direction, base selection, zero boundary and successive change"
+        "criterion": "Explains direction, base selection, zero boundary and successive change Includes correct differentiation of percentile rank from percent change."
       },
       {
         "id": "units",
