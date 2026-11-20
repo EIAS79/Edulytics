@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION",
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026 General",
+    "printedPages": [
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188
+    ],
+    "pdfPages": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ]
+  },
+  "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u03-l04-direct-variation-ar.html",
+  "teacherReview": "TEACHER_REVIEW_REQUIRED",
+  "autograded": false,
+  "authenticatedSubmission": false,
+  "answers": [
+    {
+      "id": 1,
+      "expected": "ك=٧٢/٨=٩، ص=٩س، وعند س=٧ ص=٦٣"
+    },
+    {
+      "id": 2,
+      "expected": "نعم ك=−٤، يمر بالأصل ويتجه إلى أسفل مع زيادة س"
+    },
+    {
+      "id": 3,
+      "expected": "لا؛ عند س=٠ فإن ص=٢ فلا يمر بالأصل"
+    },
+    {
+      "id": 4,
+      "expected": "ك=٣٤٢٠/٦=٥٧٠ كم/ساعة، د=٥٧٠ز، بعد ١٠ ساعات ٥٧٠٠ كم"
+    },
+    {
+      "id": 5,
+      "expected": "ص/س يساوي ٥ في كل زوج، ص=٥س"
+    },
+    {
+      "id": 6,
+      "expected": "ص/س القيم ٣، ٢٫٥، ٧/٣ مختلفة؛ ليست تغيرًا طرديًا"
+    },
+    {
+      "id": 7,
+      "expected": "ك=٦/٣=٢، ص=٢س، النقطة (١،٢) على الرسم"
+    },
+    {
+      "id": 8,
+      "expected": "التكلفة=٨ن، و٧ كتب ثمنها ٥٦ درهمًا؛ لا يصلح إذا اختلف سعر الوحدة"
+    }
+  ],
+  "rubric": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "id": "constant",
+        "points": 3,
+        "criterion": "Compute k=y/x with x nonzero and verify against additional pairs"
+      },
+      {
+        "id": "graph",
+        "points": 2,
+        "criterion": "Check origin passage and correct sign/line"
+      },
+      {
+        "id": "contexts",
+        "points": 2,
+        "criterion": "Correct numerical rate, units and constant-rate premise"
+      },
+      {
+        "id": "verification",
+        "points": 1,
+        "criterion": "Correct model substitution and no false direct variation"
+      }
+    ]
+  },
+  "testsRun": "WRITTEN_NOT_RUN"
+}
