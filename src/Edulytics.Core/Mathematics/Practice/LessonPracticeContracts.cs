@@ -11592,6 +11592,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_U11L03_AND_2025_U07L02_U07L04",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // U11L04 angle numeric skills; formal proofs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:04:ANGLE-RELATIONS-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:04:ANGLE-RELATIONS-PROOFS", "geometry.angles.vertical",
+            "G9_U11L04_VERTICAL_COMPLEMENTARY_NUMERIC",
+            ["usccss.g7.u07.vertical_angle","usccss.g7.u07.complementary_angle"],
+            "UAE_G9_GENERAL_2019_AR_U11L04_P631_639",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
