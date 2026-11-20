@@ -353,7 +353,10 @@ test('Graph-rendered source exercises keep exact source coordinates, including f
   assert.match(html,/const sourceGraphCoordinates=/);
   assert.match(html,/"35":\[-3\]/);
   assert.match(html,/"50":\[0,1\.3333333333333333\]/);
-  assert.match(html,/const sourceGraphExactLabels=\{50:\['٠','٤\/٣'\],51:\['−٤\/٣','٢\/٣'\]/);
+  assert.match(html,/50:\['٠','٤\/٣'\],51:\['−٤\/٣','٢\/٣'\]/);
+  assert.match(html,/46:\['−٣٫٧٥','٤٫٢٥'\]/);
+  assert.match(html,/49:\['٠','٠٫٥'\]/);
+  assert.match(html,/String\(tick\)\.replace\(/);
   assert.match(html,/graph\.replaceChildren\(\)/);
   assert.match(html,/document\.createElementNS\(ns,tag\)/);
   assert.match(html,/TEACHER_REVIEW_REQUIRED/);
