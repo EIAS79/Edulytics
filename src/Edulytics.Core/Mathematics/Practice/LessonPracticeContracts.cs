@@ -11576,6 +11576,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_U11L01_AND_2025_U07L01",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // U11L02 algebraic proof: only numeric subskills auto-verified.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF", "algebra.linear.solve",
+            "G9_U11L02_LINEAR_EQUATION_PROOF_NUMERIC_PREREQUISITE",
+            ["algebra.linear.ax_plus_b_equals_c","algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2019_AR_U11L02_P616_623",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
