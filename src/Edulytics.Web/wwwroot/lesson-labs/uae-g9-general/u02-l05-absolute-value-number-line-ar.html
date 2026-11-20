@@ -13,6 +13,7 @@ p{line-height:1.9}label{font-weight:650}select{font:inherit;max-width:100%;paddi
 .eq{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:system-ui,Arial,sans-serif;font-weight:650}
 .figure{border:1px solid #d5dfea;border-radius:9px;padding:.8rem;overflow-x:auto}
 svg{direction:ltr;width:100%;min-width:580px;height:auto}
+svg.source-graph-preview{display:block;width:100%;max-width:700px;min-width:0;margin:.65rem 0 1rem;border:1px solid #d5dfea;border-radius:8px;background:#f8fbff;padding:.25rem}
 .tick{stroke:#61758a;stroke-width:1.25}.axis{stroke:#213c58;stroke-width:2}.marker{fill:#0665b0;stroke:white;stroke-width:2.4}
 .label{font:15px system-ui,Arial,sans-serif;fill:#193a53}.sol{fill:#064d8a;font-weight:700}.center{fill:#b44c00;stroke:#b44c00}
 .teacher{border-inline-start:4px solid #4a637e;background:#eaf1f8;padding:.9rem}
@@ -104,18 +105,18 @@ textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65re
 <section aria-labelledby="sourceGraphTasksTitle" id="sourceGraphTasks">
 <h2 id="sourceGraphTasksTitle">إنشاء معادلة من نقاط خط الأعداد — تدريب المعلم</h2>
 <p>اختر الحالات التي يحددها المعلم. المقصود إنشاء المعادلة من حلول معطاة، لا مجرد إيجاد منتصفها. اكتب خطوات التحقق؛ أما رسم الطالب وتبريره فمراجعة المعلم، ولا تُحسب لهما درجة آلية.</p>
-<details><summary>عرض ١٢ حالة متدرجة، ومنها نهايات كسرية</summary><ol><li><label for="sourceGraph11">الحالة 11: نقطتا الحل على خط الأعداد −٢، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph11" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph12">الحالة 12: نقطتا الحل على خط الأعداد −٩، ٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph12" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph33">الحالة 33: نقطتا الحل على خط الأعداد −٤، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph33" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph34">الحالة 34: نقطتا الحل على خط الأعداد −٦، ٦. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph34" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph35">الحالة 35: نقطة الحل الوحيدة على خط الأعداد هي −٣. اكتب معادلة قيمة مطلقة تعطي حلًا واحدًا، وحدد المركز والمسافة الصفرية، واشرح لماذا لا توجد نقطة حل ثانية.</label><textarea id="sourceGraph35" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph36">الحالة 36: نقطتا الحل على خط الأعداد −٦، ٢. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph36" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph46">الحالة 46: نقطتا الحل على خط الأعداد −٣٫٧٥، ٤٫٢٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph46" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph47">الحالة 47: نقطتا الحل على خط الأعداد −١٫٥، ١٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph47" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph48">الحالة 48: نقطتا الحل على خط الأعداد −٢٫٥، ٣٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph48" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph49">الحالة 49: نقطتا الحل على خط الأعداد ٠، ٠٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph49" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph50">الحالة 50: نقطتا الحل على خط الأعداد ٠، ٤/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph50" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
-<li><label for="sourceGraph51">الحالة 51: نقطتا الحل على خط الأعداد −٤/٣، ٢/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><textarea id="sourceGraph51" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li></ol>
+<details><summary>عرض ١٢ حالة متدرجة، ومنها نهايات كسرية</summary><ol><li><label for="sourceGraph11">الحالة 11: نقطتا الحل على خط الأعداد −٢، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="11" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 11، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph11" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph12">الحالة 12: نقطتا الحل على خط الأعداد −٩، ٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="12" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 12، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph12" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph33">الحالة 33: نقطتا الحل على خط الأعداد −٤، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="33" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 33، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph33" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph34">الحالة 34: نقطتا الحل على خط الأعداد −٦، ٦. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="34" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 34، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph34" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph35">الحالة 35: نقطة الحل الوحيدة على خط الأعداد هي −٣. اكتب معادلة قيمة مطلقة تعطي حلًا واحدًا، وحدد المركز والمسافة الصفرية، واشرح لماذا لا توجد نقطة حل ثانية.</label><svg class="source-graph-preview" data-graph-exercise="35" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 35، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph35" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph36">الحالة 36: نقطتا الحل على خط الأعداد −٦، ٢. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="36" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 36، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph36" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph46">الحالة 46: نقطتا الحل على خط الأعداد −٣٫٧٥، ٤٫٢٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="46" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 46، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph46" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph47">الحالة 47: نقطتا الحل على خط الأعداد −١٫٥، ١٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="47" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 47، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph47" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph48">الحالة 48: نقطتا الحل على خط الأعداد −٢٫٥، ٣٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="48" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 48، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph48" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph49">الحالة 49: نقطتا الحل على خط الأعداد ٠، ٠٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="49" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 49، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph49" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph50">الحالة 50: نقطتا الحل على خط الأعداد ٠، ٤/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="50" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 50، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph50" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph51">الحالة 51: نقطتا الحل على خط الأعداد −٤/٣، ٢/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="51" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 51، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph51" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li></ol>
 <p>الحالات المرتبطة بالصفحة ١٠٥: ١١ و١٢؛ الصفحة ١٠٦: ٣٣–٣٦؛ الصفحة ١٠٧: ٤٦–٥١.</p></details>
 </section>
 <footer><p>نشاط أصلي من Edulytics، مرتبط بكتاب الطالب <span class="eq">01.pdf</span>، الصفحات المطبوعة ١٠٣–١٠٨. المعلم يراجع المخرجات الحرة.</p></footer>
@@ -144,6 +145,34 @@ function draw(){
  document.getElementById('answers').textContent=d.answer;
 }
 document.getElementById('case').addEventListener('change',draw);draw();
+
+const sourceGraphCoordinates={"11":[-2,4],"12":[-9,3],"33":[-4,4],"34":[-6,6],"35":[-3],"36":[-6,2],"46":[-3.75,4.25],"47":[-1.5,1.5],"48":[-2.5,3.5],"49":[0,0.5],"50":[0,1.3333333333333333],"51":[-1.3333333333333333,0.6666666666666666]};
+for(const graph of document.querySelectorAll('svg.source-graph-preview')){
+ const id=Number(graph.dataset.graphExercise),points=sourceGraphCoordinates[id];
+ if(!points || !points.length)continue;
+ const low=Math.floor(Math.min(...points))-1,high=Math.ceil(Math.max(...points))+1;
+ const x=value=>45+(value-low)*665/(high-low);
+ graph.replaceChildren();
+ function add(tag,attrs,content){
+  const element=document.createElementNS(ns,tag);
+  for(const [k,v] of Object.entries(attrs))element.setAttribute(k,String(v));
+  if(content!==undefined)element.textContent=String(content);
+  graph.appendChild(element);
+ }
+ add('title',{},'خط أعداد التمرين '+id);
+ add('desc',{},'نقاط الحل: '+points.join('، ')+'؛ أوجد المركز ونصف المسافة واكتب المعادلة بنفسك.');
+ add('line',{x1:35,y1:56,x2:725,y2:56,class:'axis'});
+ for(let tick=low;tick<=high;tick++){
+  const pos=x(tick);
+  add('line',{x1:pos,y1:49,x2:pos,y2:63,class:'tick'});
+  add('text',{x:pos,y:84,'text-anchor':'middle',class:'label'},tick);
+ }
+ for(const value of points){
+  add('circle',{cx:x(value),cy:56,r:8,class:'marker'});
+  add('text',{x:x(value),y:35,'text-anchor':'middle',class:'label sol'},Number(value.toFixed(4)));
+ }
+}
+
 const selectedCoolDownPoints=new Set();
 const picker=document.getElementById('cooldownPointPicker');
 const selectedStatus=document.getElementById('selectedPoints');
