@@ -11321,6 +11321,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L04_P331_337",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
 
+        // UAE General G9 U06L05: numeric one-variable algebraic assistance only.
+        // Choose the method, model contexts and verify the full system with the teacher.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS",
+            "algebra.linear.solve",
+            "G9_U06L05_SYSTEM_APPLICATION_CONTEXT_TEACHER_REVIEW_LINEAR_AID",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L05_P338_345",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM_CONTEXT", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
