@@ -11311,6 +11311,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U06L03_P324_330",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
 
+        // UAE General Grade 9 6-4: existing exact one-variable solver helps
+        // only the algebra after multiplying and eliminating equations.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION",
+            "algebra.linear.solve",
+            "G9_U06L04_ELIMINATION_MULTIPLICATION_NUMERIC_SUBSTEP_TEACHER_SYSTEM",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L04_P331_337",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
