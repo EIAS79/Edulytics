@@ -11696,6 +11696,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L04_P744_753",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 General U13L05 identifies ASA/AAS criteria; diagrams, side inclusion
+        // and rigorous proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:05:ASA-AAS-TRIANGLE-CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:05:ASA-AAS-TRIANGLE-CONGRUENCE", "geometry.triangle_congruence.asa",
+            "G9_U13L05_ASA_AAS_CRITERION_RECOGNITION",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L05_P755_764",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
