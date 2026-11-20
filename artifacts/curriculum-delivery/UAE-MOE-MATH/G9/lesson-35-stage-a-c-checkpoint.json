@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 35,
+  "unitOrdinal": 6,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS",
+  "lessonTitleAr": "التعويض",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82,
+    "year": "2026–2027",
+    "status": "OWNER_APPROVED_WORKING_INDEX_NOT_FULL_SEMANTIC_BOOK_AUDIT"
+  },
+  "source": {
+    "file": "01.pdf",
+    "printedPages": [
+      318,
+      319,
+      320,
+      321,
+      322,
+      323
+    ],
+    "physicalPdfPages": [
+      329,
+      330,
+      331,
+      332,
+      333,
+      334
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "verification": "DIRECT_SOURCE_PAGE_CONTACT_SHEETS_IN_AUTHORING_SESSION"
+  },
+  "stageA": {
+    "status": "SOURCE_SUBSTITUTION_OBJECTIVES_EXAMPLES_ACTIVITY_MATH_REVIEWED",
+    "learningTargets": [
+      "isolate variable and substitute into second equation",
+      "correct signed distribution and parentheses",
+      "find ordered pair and verify both original equations",
+      "distinguish identity versus contradiction",
+      "solve source ticket-revenue context"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "EXISTING_ARABIC_PACK_REUSED_RICHV2_STUDENT_ACTIVITY_TEACHER_RUBRIC_AND_COOLDOWN_AUTHORED",
+    "existingLessonInPackBefore": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u06-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u06-l02-substitution-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u06l02-teacher-substitution-rubric.json",
+    "coolDownQuestions": 3,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "REUSED_EXISTING_LINEAR_BOTH_SIDES_NUMERIC_SUBSTEP_TEACHER_SYSTEM_REVIEW_TESTS_WRITTEN_NOT_RUN",
+    "strategy": "REUSE_SHARED_SINGLE_VARIABLE_VERIFIER_NOT_FALSE_SYSTEM_AUTOGRADING",
+    "allowedQuestionFamilies": [
+      "algebra.linear.variables_both_sides"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u06l02.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN",
+    "arabicScopeLocalized": true
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "LESSON_35_A_B_C_AUTHORING_NOT_STAGE_D_PASS",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT"
+}
