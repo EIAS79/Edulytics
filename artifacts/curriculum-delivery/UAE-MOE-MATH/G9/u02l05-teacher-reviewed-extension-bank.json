@@ -120,12 +120,13 @@
     },
     {
       "taskId": "extensionQ8",
-      "topic": "absolute_equations_outer_coefficients",
+      "topic": "absolute_outer_coefficient_and_reciprocal_absolute_denominator",
       "ids": [
         40,
         42
       ],
-      "expected": "٢|س−٣|−١=٨ ⇒ س=−١٫٥ أو ٧٫٥؛ |(٣س−١٢)/٤|=٣ ⇒ س=٠ أو ٨"
+      "expected": "٢|س|−٣=٨ ⇒ |س|=٥٫٥ ⇒ س=−٥٫٥ أو ٥٫٥. ٤/|س|+١٢=١٤ مع س≠٠ ⇒ ٤/|س|=٢ ⇒ |س|=٢ ⇒ س=−٢ أو ٢؛ كلاهما غير صفري ويحقق الأصل.",
+      "sourceLevelTreatment": "EX40 and EX42 distinct concepts; reciprocal denominator cannot be replaced by fraction inside absolute value"
     }
   ],
   "graphToFullEquation": {
