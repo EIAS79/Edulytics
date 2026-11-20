@@ -11512,6 +11512,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U09L03_P526_536",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE Grade 9 General U09L04: reuse bounded set operation count;
+        // real-world survey/three-set Venn placement remains teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS", "sets.union_intersection_difference",
+            "G9_U09L04_SET_CONTEXT_PROBLEM_NUMERIC_PREREQUISITES",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L04_P537_546",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
