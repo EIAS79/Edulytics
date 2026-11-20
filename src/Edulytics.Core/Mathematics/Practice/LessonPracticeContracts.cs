@@ -11382,6 +11382,17 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L04_P388_393",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General 7-5 2019 source: monomial quotient/product help only;
+        // complete GCF polynomial factorization and zero-product explanation require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:05:DISTRIBUTIVE-FACTOR"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:05:DISTRIBUTIVE-FACTOR",
+            "algebra.polynomial.factor_gcf",
+            "G9_U07L05_DISTRIBUTIVE_GCF_TEACHER_FACTOR_REVIEW",
+            ["uae.g8.u01.l03.monomial_multiply",
+             "uae.g8.u01.l03.monomial_divide"],
+            "UAE_G9_GENERAL_2019_AR_U07L05_P396_402",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
