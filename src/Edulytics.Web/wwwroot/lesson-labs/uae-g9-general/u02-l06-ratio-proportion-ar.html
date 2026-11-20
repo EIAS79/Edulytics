@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics — الصف التاسع العام — النسب والتناسب</title>
+<style>
+:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#142b45;background:#f4f7fb}*{box-sizing:border-box}
+body{margin:0}main{max-width:900px;margin:auto;padding:1.3rem}section{background:white;border:1px solid #c6d1e0;border-radius:12px;padding:1.2rem;margin:1rem 0}
+h1{font-size:1.5rem}h2{font-size:1.18rem}p,li{line-height:1.85}.math{direction:ltr;unicode-bidi:isolate;display:inline-block;font-weight:650}
+svg{width:100%;height:auto;max-width:640px;display:block;margin:auto}textarea{display:block;width:100%;font:inherit;min-height:4rem;border:1px solid #889cb7;padding:.6rem;border-radius:8px}
+button{font:inherit;border:0;border-radius:8px;padding:.7rem 1rem;background:#124b7c;color:white;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-offset:2px}
+.teacher{border-inline-start:4px solid #536d8d;background:#eff4fc;padding:.8rem}#teacherExport{min-height:12rem}
+</style></head><body><main>
+<header><p>UAE-MOE-MATH · الصف التاسع العام · الوحدة الثانية · الدرس ٢–٦</p><h1>النسب والتناسب</h1>
+<p>النسبة مقارنة بالقسمة، والتناسب مساواة نسبتين. أوجد الحد المجهول، واحفظ ترتيب الكميات والوحدات.</p></header>
+<section><h2>نموذج بصري أصلي للنسب المتكافئة</h2>
+<p>المستطيلات المتساوية العرض تمثل حصصًا متناسبة: ٣ من ٧ أجزاء، و٦ من ١٤ جزءًا. تضاعف عدد الأجزاء لا يغيّر النسبة.</p>
+<svg role="img" aria-labelledby="ratioBarTitle ratioBarDescription" viewBox="0 0 700 190">
+<title id="ratioBarTitle">شريطان للنسبة ثلاثة إلى أربعة ثم ستة إلى ثمانية</title>
+<desc id="ratioBarDescription">الشريط الأول ثلاثة أجزاء زرقاء وأربعة رمادية؛ الثاني ستة أجزاء زرقاء وثمانية رمادية، والمقارنة ٣/٧=٦/١٤.</desc>
+<g stroke="#ffffff" stroke-width="2">
+<rect x="18" y="25" width="270" height="40" fill="#20699b"/><rect x="288" y="25" width="360" height="40" fill="#96a6b7"/>
+<rect x="18" y="110" width="270" height="40" fill="#20699b"/><rect x="288" y="110" width="360" height="40" fill="#96a6b7"/>
+</g>
+<g fill="#142b45" font-size="17" text-anchor="middle" direction="ltr"><text x="150" y="20">3</text><text x="470" y="20">4</text><text x="150" y="105">6</text><text x="470" y="105">8</text><text x="330" y="180">3 : 4 = 6 : 8</text></g>
+</svg>
+<p>اختبر النسبتين بالضرب التبادلي: <span class="math">3×8=4×6=24</span>.</p></section>
+<section><h2>طريقة الحل</h2><ol>
+<li>اكتب التناسب بترتيب ثابت للوحدات: <span class="math">أ/ب = ج/د</span>، مع <span class="math">ب≠0</span> و<span class="math">د≠0</span>.</li>
+<li>اضرب تبادليًا: <span class="math">أ×د=ب×ج</span>.</li>
+<li>اعزل المجهول وتحقق بالتعويض. إذا كان السياق واقعيًا فاذكر الوحدة وافحص ثبات المعدل.</li>
+</ol>
+<p>مثال: <span class="math">س/10=3/5</span>، إذن <span class="math">5س=30</span> ومنه <span class="math">س=6</span>، والتحقق <span class="math">6/10=3/5</span>.</p></section>
+<section aria-labelledby="cooldownTitle"><h2 id="cooldownTitle">تقويم ختامي (Cool-down)</h2>
+<p>أجب وحدك أولًا. يحتاج التبرير والسياق ومقياس الرسم إلى مراجعة المعلم، ولا توجد درجات آلية لهذا النموذج.</p>
+<form id="ratioCooldown"><ol>
+<li><label for="ratioQ1">حل التناسب <span class="math">٩/١٢=س/٢٠</span>، مع خطوات الحل والتحقق.</label><textarea id="ratioQ1" required></textarea></li>
+<li><label for="ratioQ2">هل النسبتان <span class="math">٤:٧</span> و<span class="math">٢٤:٤٢</span> متكافئتان؟ برّر بالضرب التبادلي.</label><textarea id="ratioQ2" required></textarea></li>
+<li><label for="ratioQ3">في خريطة أصلية يمثل ٢ سم مسافة ٥ كم. ما المسافة التي تمثلها ٦ سم؟ اكتب التناسب والوحدة.</label><textarea id="ratioQ3" required></textarea></li>
+<li><label for="ratioQ4">حل <span class="math">(س−٢)/٧=٦/١٤</span>. بيّن شرط المقامات.</label><textarea id="ratioQ4" required></textarea></li>
+<li><label for="ratioQ5">هل يصح حساب مسافة إضافية بالتناسب إذا كان معدل السرعة يتغير؟ علّل وأعط مثالًا مضادًا.</label><textarea id="ratioQ5" required></textarea></li>
+</ol><button type="submit">تجهيز إجابات التقويم للمعلم</button></form>
+<p class="teacher">مراجعة المعلم: تحقّق من صحة النسب، الضرب التبادلي، شرط المقام غير الصفري، الوحدات، وتفسير المعدل. لا يُعتمد النموذج تصحيحًا آليًا أو تسليمًا مُوثّقًا للمنصة.</p>
+<p id="exportStatus" role="status" aria-live="polite"></p><label for="teacherExport">سجل الإجابات المحلي</label><textarea id="teacherExport" readonly></textarea>
+</section>
+<footer><p>نشاط أصلي من Edulytics لمهارات كتاب الطالب العربي العام 01.pdf، الصفحات المطبوعة ١١١–١١٨. المعلم يصحّح الإجابات المفتوحة.</p></footer>
+</main><script>
+'use strict';
+document.getElementById('ratioCooldown').addEventListener('submit',event=>{
+ event.preventDefault();
+ const answers=[1,2,3,4,5].map(n=>({question:n,response:document.getElementById('ratioQ'+n).value.trim(),review:'TEACHER_REVIEW_REQUIRED'}));
+ if(answers.some(a=>!a.response)){document.getElementById('exportStatus').textContent='أجب عن الأسئلة الخمسة قبل تجهيز السجل.';return;}
+ const payload={lesson:'UAE-MOE-MATH/G9/General/2-6',locale:'ar',graded:false,review:'TEACHER_REVIEW_REQUIRED',answers};
+ document.getElementById('teacherExport').value=JSON.stringify(payload,null,2);
+ document.getElementById('exportStatus').textContent='تم تجهيز الإجابات محليًا؛ انسخ السجل وقدّمه للمعلم. لم تُرسل البيانات إلى Edulytics ولم تُحسب درجة.';
+});
+</script></body></html>
