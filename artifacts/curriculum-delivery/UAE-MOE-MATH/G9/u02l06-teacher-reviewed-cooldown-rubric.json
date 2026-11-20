@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026 Grade 9 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ]
+  },
+  "studentArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html",
+  "originalAuthoredQuestions": true,
+  "sourceSkillEquivalence": "EQUIVALENT_SKILLS_NOT_COPIED_SOURCE_EXERCISES",
+  "review": "TEACHER_REVIEW_REQUIRED",
+  "autoGraded": false,
+  "authedSubmission": false,
+  "grading": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "name": "correct_ratio_and_proportion",
+        "maxPoints": 4,
+        "criterion": "Mathematically correct setup, proportional equality, cross-multiplication and final numerical values"
+      },
+      {
+        "name": "mathematical_reasoning",
+        "maxPoints": 2,
+        "criterion": "Explains denominator restrictions, proportionality assumptions and valid counterexamples"
+      },
+      {
+        "name": "units_and_context",
+        "maxPoints": 1,
+        "criterion": "Keeps order of compared quantities and converts/labels units accurately"
+      },
+      {
+        "name": "representation",
+        "maxPoints": 1,
+        "criterion": "Matches model or data table with numerical reasoning and clear labels"
+      }
+    ]
+  },
+  "answers": [
+    {
+      "id": 1,
+      "expected": "٩/١٢=س/٢٠ ⇒ ١٢س=١٨٠ ⇒ س=١٥",
+      "skill": "solve_missing_proportion"
+    },
+    {
+      "id": 2,
+      "expected": "٤/٧=٢٤/٤٢ لأن ٤×٤٢=٧×٢٤=١٦٨",
+      "skill": "equivalent_ratios"
+    },
+    {
+      "id": 3,
+      "expected": "٢ سم : ٥ كم = ٦ سم : س كم ⇒ س=١٥ كم",
+      "skill": "scale_and_units"
+    },
+    {
+      "id": 4,
+      "expected": "(س−٢)/٧=٦/١٤ ⇒ ١٤(س−٢)=٤٢ ⇒ س=٥",
+      "skill": "linear_expression_in_proportion"
+    },
+    {
+      "id": 5,
+      "expected": "لا؛ مثال: ساعة بسرعة ٦٠ كم/س وساعة بسرعة ٣٠ كم/س تعطي ٦٠ كم ثم ٣٠ كم وليست مسافات متناسبة مع زمن ثابت المعدل",
+      "skill": "constant_rate_assumption"
+    },
+    {
+      "id": 6,
+      "expected": "١٢/١=٢٤/٢=٣٦/٣=١٢ قطعة/ساعة ⇒ ٤ ساعات تنتج ٤٨ قطعة",
+      "skill": "table_constant_rate"
+    }
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade9-arabic-u02l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L06RatioProportionTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN"
+}
