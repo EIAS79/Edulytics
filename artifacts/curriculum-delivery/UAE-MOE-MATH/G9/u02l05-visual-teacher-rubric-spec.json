@@ -129,7 +129,34 @@
     ],
     "totalPoints": 8,
     "grading": "TEACHER_REVIEW_REQUIRED",
-    "remarks": "Numeric family verifier alone does not mark free-drawn graph or written proof correct."
+    "remarks": "Numeric family verifier alone does not mark free-drawn graph or written proof correct.",
+    "specializedCases": [
+      {
+        "sourceId": "01.pdf:2-5:EX35",
+        "required": "Single solution at -3 with radius 0; a second point or positive radius is not acceptable.",
+        "criterion": "mathematics+visual"
+      },
+      {
+        "sourceId": "01.pdf:2-5:EX42",
+        "required": "4/|x|+12=14 requires x≠0, isolation of reciprocal term, |x|=2, x=±2; wrong to replace by |(a x+b)/c|=d.",
+        "criterion": "mathematics+reasoning"
+      },
+      {
+        "sourceId": "01.pdf:2-5:EX56",
+        "required": "Plausible real-world meaning for |x-4|=10, endpoints -6 and 14 with domain restrictions if situation forbids negatives.",
+        "criterion": "mathematics+context"
+      },
+      {
+        "sourceId": "01.pdf:2-5:EX62",
+        "required": "|x-7|=4.6 yields 2.4 and 11.6; validate both decimal roots.",
+        "criterion": "mathematics+reasoning"
+      },
+      {
+        "sourceId": "01.pdf:2-5:EX63",
+        "required": "|x+5|=-3 is impossible because the absolute value is nonnegative; reject splitting a negative right-hand side into two cases.",
+        "criterion": "mathematics+reasoning"
+      }
+    ]
   },
   "answerVariants": {
     "twoSolutions": "order independent, exactly two values",
