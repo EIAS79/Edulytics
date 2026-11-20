@@ -226,6 +226,17 @@
       "teacherBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
       "lastTestCommit": "60974e02d711d9f07c6447904bdc3dbec73d137c",
       "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "reciprocalDenominatorCoreContent": {
+      "status": "AUTHORING_FIXED_IN_EXISTING_RICHV2_AND_ARABIC_LESSON_PACK",
+      "source": "01.pdf printed 106 / PDF 117 exercise 42",
+      "skill": "4/|p|+12=14, nonzero denominator and two roots",
+      "originalExample": "6/|x-1|+2=5, x != 1, solutions -1 and 3",
+      "richV2Commit": "dae1c68929a7fe3a28047aa952c3d0a7f99193ed",
+      "packCommit": "2ee693fd8de98774d826b08b4a8d1ea48f7de8a9",
+      "focusedRegression": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "regressionCommit": "973b3da68937452266a50bb8d22dee79d044533d",
+      "testsRun": "WRITTEN_NOT_RUN"
     }
   },
   "stageC": {
@@ -287,8 +298,7 @@
     }
   },
   "blockingGaps": [
-    "The uploaded A-B-C plan requires a complete source-index lock before lesson closure; the 13-unit/82-lesson index is structurally mapped but the five-book full educational-page audit and final source objective/exercise integration are still incomplete. Do not assert SOURCE_INDEX_COMPLETE or close this lesson until resolved.",
-    "The current lesson's authored teacher-only responses require an actual lesson-to-teacher workflow acceptance check in Stage D, which must not be presented as an A-B-C executed test."
+    "The uploaded A-B-C plan requires a complete source-index lock before lesson closure; the 13-unit/82-lesson index is structurally mapped but the five-book full educational-page audit and final source objective/exercise integration are still incomplete. Do not assert SOURCE_INDEX_COMPLETE or close this lesson until resolved."
   ],
   "closeDecision": "A_C_EXPLICIT_GAP",
   "closed": false,
