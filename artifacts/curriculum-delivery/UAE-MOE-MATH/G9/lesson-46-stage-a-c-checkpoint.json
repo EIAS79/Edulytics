@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 46,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-7",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING",
+  "lessonTitleAr": "حل معادلات من الصورة أ س²+ب س+ج=٠",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    412,
+    413,
+    414,
+    415,
+    416,
+    417
+  ],
+  "sourcePdfPages": [
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_STUDENT_BOOK_PAGE_SPAN_VISUALLY_REVIEWED",
+    "skills": [
+      "nonmonic quadratic factorization",
+      "a times c decomposition and regrouping",
+      "zero-product rule including fractional roots",
+      "checking by expansion and substitution",
+      "real-world modelling"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_CONTENT_RICHV2_STUDENT_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l07-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l07-nonmonic-factor-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "EXISTING_QUADRATIC_ENGINE_EXTENDED_WITH_NONMONIC_INTEGER_ROOT_FAMILY_FRACTIONAL_WORK_REMAINS_TEACHER_REVIEWED",
+    "families": [
+      "uae.g9.general.u07.l07.nonmonic_integer_roots"
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/UaeG9MonicQuadraticQuestions.cs",
+    "teacherReviewRequired": [
+      "fractional roots and complete grouping",
+      "explanation and geometric area applications"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u07l07.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L07NonmonicQuadraticTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T15:18:41.562Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
