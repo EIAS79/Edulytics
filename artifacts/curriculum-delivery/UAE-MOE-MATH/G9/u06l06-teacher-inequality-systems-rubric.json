@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES",
+  "source": "01.pdf Grade9 General printed346–351 (PDF357–362)",
+  "language": "ar",
+  "rtl": true,
+  "autoGrade": false,
+  "review": "TEACHER_REVIEW_REQUIRED",
+  "criteria": [
+    "shade INTERSECTION not union of inequalities",
+    "use solid boundaries for <= or >= and dashed for strict < or >",
+    "check a point in every inequality",
+    "handle negative multiplier inequality reversal",
+    "respect context restrictions"
+  ],
+  "answers": [
+    {
+      "n": 1,
+      "expected": "نعم، (١،٣) نقطة حل",
+      "check": "٣≥١+١=٢ و٣<−١+٥=٤"
+    },
+    {
+      "n": 2,
+      "expected": "لا، (٢،٣) تقع على الحد المتقطع",
+      "check": "٣≥٣ صحيح، ٣<٣ خطأ"
+    },
+    {
+      "n": 3,
+      "expected": "لا، (٣،١) تخالف القيد الأول",
+      "check": "١≥٤ خطأ"
+    },
+    {
+      "n": 4,
+      "expected": "∅",
+      "check": "القيد ص>س+٣ يتعارض مع ص≤س+١"
+    },
+    {
+      "n": 5,
+      "expected": "الحد الأول متصل والثاني متقطع، (٢،٤) صالحة",
+      "check": "٤≤٢×٢+١=٥، و٤>−٢+٢=٠"
+    },
+    {
+      "n": 6,
+      "expected": "٢٠س+٦٠ص≤٤٨٠، س+ص≥٨، س≥٠،ص≥٠؛ (٦،٢) صالحة",
+      "check": "٢٠×٦+٦٠×٢=٢٤٠≤٤٨٠، ٦+٢=٨"
+    },
+    {
+      "n": 7,
+      "expected": "حدّان متصلان، (٢،٣) حل",
+      "check": "٣≤−٢+٥=٣، ٣≥٢−١=١"
+    },
+    {
+      "n": 8,
+      "expected": "ص<−٢س+٣ مع ص≥س−٢؛ (١،٠) حل",
+      "check": "عكس الإشارة عند القسمة على −٢؛ ٠<١ و٠≥−١"
+    }
+  ],
+  "coolDownAnswers": [
+    {
+      "n": 1,
+      "expected": "(١،٤) صالح؛ (٢،٤) غير صالح",
+      "check": "٤≥٣ و٤<٥، بينما ٤<٤ خطأ"
+    },
+    {
+      "n": 2,
+      "expected": "∅",
+      "check": "لا يمكن أن يكون ص≥٢س+٤ وص<٢س+١ معًا"
+    },
+    {
+      "n": 3,
+      "expected": "تقاطع نصفَي مستوى بحدود متصلة، (٢،٣) صالح",
+      "check": "٣≤٣ و٣≥١"
+    }
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageDStatus": "NOT_RUN"
+}
