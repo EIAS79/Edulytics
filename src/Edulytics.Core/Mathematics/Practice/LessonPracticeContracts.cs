@@ -11458,6 +11458,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U08L03_P460_467",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General U08L04: scientific notation; exact integer powers-of-ten subset.
+        // Negative/fractional coefficients and contextual justification stay teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", "supporting.indices.roots_standard_form",
+            "G9_U08L04_SCIENTIFIC_NOTATION",
+            ["supporting.standard_form.power10_exponent","supporting.powers10.multiply","supporting.powers10.divide"],
+            "UAE_G9_GENERAL_2019_AR_U08L04_P468_475",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
