@@ -57,3 +57,15 @@ test('Newer 7-2 extension preserves accuracy precision absolute error significan
  assert.deepEqual(ledger.accuracyExtension.groups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i)),Array.from({length:23},(_,i)=>i+1));
  assert.equal(ledger.coverage.fullSourceElementAuditPassed,false);
 });
+
+test('Newer 7-4 and older 11-3 proof families are retained while distinct 29 vs 36 source exercise counts remain explicit',()=>{
+ const proof=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l03-ar.rich-lesson-v2.json').Lessons.find(x=>x.LessonCode===code);
+ assert.ok(proof.WorkedExamples.some(x=>x.Title==='برهان جمع قطعتين متطابقتين'));
+ assert.match(proof.WorkedExamples.find(x=>x.Title==='برهان جمع قطعتين متطابقتين').Answer,/أج≅دو/);
+ const compare=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u07-new-geometry-7-4-vs-11-3-source-comparison.json');
+ assert.equal(compare.newer.observedNumberedExercises,29);
+ assert.equal(compare.older.observedNumberedExercises,36);
+ assert.deepEqual(compare.newer.groups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i)),Array.from({length:29},(_,i)=>i+1));
+ assert.deepEqual(compare.older.groups.flatMap(g=>Array.from({length:g.to-g.from+1},(_,i)=>g.from+i)),Array.from({length:36},(_,i)=>i+1));
+ assert.equal(compare.comparison.allDistinctVariantsIndividuallyReviewedInDigitalPractice,false);
+});
