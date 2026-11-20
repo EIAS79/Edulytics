@@ -97,6 +97,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "uae.g9.general.u09.l01.set_membership_cardinality",
             "uae.g9.general.u09.l05.finite_infinite_classification",
             "uae.g9.general.u10.l02.logic_truth_tables",
+            "uae.g9.general.u10.l03.conditional_truth_tables",
             "uae.g9.general.u09.l02.set_operation_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
@@ -303,6 +304,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
             "uae.g9.general.u09.l05.finite_infinite_classification" => G9FiniteInfiniteClassification(random),
             "uae.g9.general.u10.l02.logic_truth_tables" => G9LogicTruthTables(random),
+            "uae.g9.general.u10.l03.conditional_truth_tables" => G9ConditionalTruthTables(random),
             "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
@@ -514,6 +516,12 @@ internal static partial class SupportingPracticeCompletionEngine
                 Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
                     p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
                     .ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u10.l03.conditional_truth_tables" =>
+                (p["mode"]==0 ? (p["p"]==1 && p["q"]==0 ? 0 : 1) :
+                 p["mode"]==1 ? (p["q"]==1 && p["p"]==0 ? 0 : 1) :
+                 p["mode"]==2 ? (p["p"]==0 && p["q"]==1 ? 0 : 1) :
+                 p["mode"]==3 ? (p["q"]==0 && p["p"]==1 ? 0 : 1) :
+                 p["p"]==p["q"] ? 1 : 0).ToString(CultureInfo.InvariantCulture),
             "uae.g9.general.u10.l02.logic_truth_tables" =>
                 (p["mode"]==0 ? (p["p"]==1 && p["q"]==1 ? 1 : 0) :
                  p["mode"]==1 ? (p["p"]==1 || p["q"]==1 ? 1 : 0) :
@@ -742,6 +750,26 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
                    parsed==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u10.l03.conditional_truth_tables",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("p",out int propositionP) ||
+               !p.TryGetValue("q",out int propositionQ) || !p.TryGetValue("mode",out int mode) ||
+               propositionP is <0 or >1 || propositionQ is <0 or >1 || mode is <0 or >4 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            int expected=mode==0 ? (propositionP==1 && propositionQ==0 ? 0 : 1) :
+                         mode==1 ? (propositionQ==1 && propositionP==0 ? 0 : 1) :
+                         mode==2 ? (propositionP==0 && propositionQ==1 ? 0 : 1) :
+                         mode==3 ? (propositionQ==0 && propositionP==1 ? 0 : 1) :
+                         propositionP==propositionQ ? 1 : 0;
+            var norm=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (norm=="0" || norm=="1") &&
+                   int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int given) &&
+                   given==expected;
         }
         if (string.Equals(family,"uae.g9.general.u10.l02.logic_truth_tables",StringComparison.Ordinal))
         {
@@ -1512,6 +1540,22 @@ internal static partial class SupportingPracticeCompletionEngine
             $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
             "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
             ("a",a),("b",b),("mode",mode));
+    }
+
+    private static Problem G9ConditionalTruthTables(Random r)
+    {
+        var p=r.Next(2);
+        var q=r.Next(2);
+        var mode=r.Next(5);
+        var expression=mode==0 ? "p⇒q (الأصلية)" :
+                       mode==1 ? "q⇒p (العكس)" :
+                       mode==2 ? "¬p⇒¬q (المعكوس)" :
+                       mode==3 ? "¬q⇒¬p (المقابل المعاكس)" :
+                       "p⇔q (الثنائية)";
+        return P("uae.g9.general.u10.l03.conditional_truth_tables",
+            $"قيمة p هي {p} وقيمة q هي {q}. ما قيمة صدق {expression}؟ اكتب ١ للصواب أو ٠ للخطأ.",
+            "الشرط p⇒q خاطئ فقط عندما p صائبة وq خاطئة؛ العكس والمعكوس ليسا مكافئين عادةً للأصل؛ المقابل المعاكس مكافئ؛ الثنائية تصدق عندما تتساوى القيمتان.",
+            ("p",p),("q",q),("mode",mode));
     }
 
     private static Problem G9LogicTruthTables(Random r)
