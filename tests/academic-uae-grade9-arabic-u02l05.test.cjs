@@ -244,7 +244,8 @@ test('All twelve original number-line equation exercises have teacher-reviewed a
     assert.equal(variant.assessment,'TEACHER_REVIEW_REQUIRED');
   }
   assert.match(html,/graphAnswers/);
-  assert.match(html,/graphAnswers:graphAnswers.map/);
+  assert.match(html,/graphAnswers/);
+  assert.match(html,/enteredSourceGraphAnswers\(\)/);
 });
 
 
@@ -357,4 +358,19 @@ test('Graph-rendered source exercises keep exact source coordinates, including f
   assert.match(html,/document\.createElementNS\(ns,tag\)/);
   assert.match(html,/TEACHER_REVIEW_REQUIRED/);
   assert.equal(bank.graphToFullEquation.originalArabicVariants.length,cases.length);
+});
+
+
+test('Independent source graph export does not require cooldown completion or automatic grading', () => {
+  const bank=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json');
+  const html=fs.readFileSync(path.join(root,bank.originalAuthoredBank),'utf8');
+  assert.match(html,/id="sourceGraphExport"/);
+  assert.match(html,/id="sourceGraphSubmission"/);
+  assert.match(html,/function enteredSourceGraphAnswers\(\)/);
+  assert.match(html,/sourceGraphExport'\)\.addEventListener\('click'/);
+  assert.match(html,/part:'source_number_line_teacher_review'/);
+  assert.match(html,/graded:false,review:'TEACHER_REVIEW_REQUIRED'/);
+  assert.match(html,/graphAnswers:entries/);
+  assert.match(html,/const graphAnswers=enteredSourceGraphAnswers\(\)/);
+  assert.match(html,/لم يُرسل إلى Edulytics ولم تُحسب درجة/);
 });
