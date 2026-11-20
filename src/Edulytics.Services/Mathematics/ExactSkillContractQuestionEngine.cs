@@ -729,6 +729,20 @@ public sealed class ExactSkillContractQuestionEngine
                         Solution = "اجمع حدود س في طرف والثوابت في الطرف الآخر، ثم اقسم على معامل س غير الصفري. هذه خطوة عددية واحدة؛ يجب مراجعة الحل المرتب في النظام الأصلي."
                     };
                 }
+                // UAE General Grade 9 6-3: localize the one-variable algebra substep.
+                // The full two-variable elimination and verification stay teacher-reviewed.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "algebra.linear.ax_plus_b_equals_c", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"بعد حذف أحد المتغيرين من نظام معادلتين، حل الخطوة الجبرية: ({p["coefficient"]})س + ({p["offset"]}) = {p["right"]}. اكتب قيمة س، ثم أكمل إيجاد المتغير الآخر والتحقق من النظام في نشاط الدرس.",
+                        Solution = "اطرح الحد الثابت من الطرفين، ثم اقسم على معامل س غير الصفري. هذا التمرين لا يصحح النظام كاملًا."
+                    };
+                }
+
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
