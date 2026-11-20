@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS",
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026 Grade9 General",
+    "printedPages": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131
+    ],
+    "studentBookSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l08-literal-dimensional-ar.html",
+  "teacherReview": "TEACHER_REVIEW_REQUIRED",
+  "autograded": false,
+  "authenticatedSubmission": false,
+  "sourceSkillCoverage": [
+    "literal equation rearrangement",
+    "geometric formula rearrangement and domain",
+    "unit factor cancellation",
+    "length and compound-rate conversions",
+    "dimensional reasonableness"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "expected": "م=(٨+٣ن)/٤؛ لا قسمة على صفر لأن المعامل ٤"
+    },
+    {
+      "id": 2,
+      "expected": "س=ص+٥/٢؛ تحقق بالتعويض في طرفَي المعادلة"
+    },
+    {
+      "id": 3,
+      "expected": "ن=م/(٢π)، ومحيط الدائرة ووحدة نصف القطر بوحدات الطول"
+    },
+    {
+      "id": 4,
+      "expected": "ن=√(أ/π)، حيث أ≥٠ ون≥٠ لأن نصف القطر لا يكون سالبًا"
+    },
+    {
+      "id": 5,
+      "expected": "١٠×١٠٠٠×١٫٠٩٤÷١٧٦٠≈٦٫٢١٦ ميل؛ اختزال كم ثم م ثم ياردة"
+    },
+    {
+      "id": 6,
+      "expected": "٣٦×٣٦٠٠÷٥٢٨٠≈٢٤٫٥٤٥ ميل/ساعة"
+    },
+    {
+      "id": 7,
+      "expected": "عكس عامل التحويل غير صحيح؛ ١٠ كم×١٠٠٠ م/كم=١٠٠٠٠ م"
+    },
+    {
+      "id": 8,
+      "expected": "٣٫٦ ميل/ساعة×١٦٠٩٫٣٤٤ م/ميل×١ ساعة/٣٦٠٠ ث≈١٫٦٠٩٣٤٤ م/ث"
+    }
+  ],
+  "rubric": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "id": "equivalent_algebra",
+        "points": 3,
+        "criterion": "Each algebraic transformation is equivalent and the requested variable is isolated"
+      },
+      {
+        "id": "domains_and_units",
+        "points": 2,
+        "criterion": "Denominator and physical constraints, cancellation of original units and correct final dimensions"
+      },
+      {
+        "id": "verification",
+        "points": 2,
+        "criterion": "Substitution and numeric rounding/checking factors"
+      },
+      {
+        "id": "reasoning",
+        "points": 1,
+        "criterion": "Explanation and correction of an incorrect conversion method"
+      }
+    ]
+  },
+  "testsRun": "WRITTEN_NOT_RUN"
+}
