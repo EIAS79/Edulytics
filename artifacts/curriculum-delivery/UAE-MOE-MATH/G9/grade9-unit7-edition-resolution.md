@@ -28,3 +28,12 @@ The first three mappings are **placement proposals**, not permission to discard 
 - `G9_ARABIC_INDEX_LOCK`: **FAIL/PENDING** pending source element inventories, page comparison and remaining three geometry placements.
 
 **Next action:** examine all source examples, exercise categories and visuals for `01.pdf:7-1`, `7-2`, `7-3` against the proposed historical receivers; preserve the unique tasks in Arabic before marking any `MERGED` outcome. No CI / test execution in Stage A–B–C.
+
+## Targeted content repair — newer 7-3 number-line skill (20 November 2026)
+
+- Existing receiving lesson `03-1.pdf:12-6` already covered perpendicular distance, two-point coordinate-plane distance and coordinate midpoint in Arabic RichV2.
+- The previously under-explicit *number-line* formulas from newer `01.pdf:7-3` are now authored in the **existing** lesson `PED:UAE-MOE-MATH:L9:GENERAL:12:06:PERPENDICULAR-DISTANCE-MIDPOINTS`: `|b-a|` distance and `(a+b)/2` midpoint, with worked example endpoints -3 and 5, check, common mistake, and a CalculationChain visual.
+- Source-specific conceptual basis: `grade9-unit7-opening-page-evidence.json`, newer printed page 385. This **does not** independently certify the remaining scanned pages, every source exercise/visual or 1:1 source-item parity.
+- Content commit: `288dc0d66dad6ec4b6d52563943b4144f2ce0760`. Prepared Node regression: `86db8a8307157a321dbd2e581e5c9ac269eaa564`, **WRITTEN_NOT_RUN** (Stage D).
+- The proposed mapping `01.pdf:7-3 -> 03-1.pdf:12-6` stays `PARTIAL_SUPPLEMENT_AUTHORED_NOT_FULLY_AUDITED`; do not count it as a proven semantic duplicate. No increase or decrease to target lesson count is authorized on this evidence.
+- `SOURCE_INDEX_COMPLETE=false` until the remaining source-element inventories and the other Unit 7 supplemental gaps are audited.
