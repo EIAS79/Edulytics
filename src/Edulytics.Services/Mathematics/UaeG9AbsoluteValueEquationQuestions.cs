@@ -100,11 +100,12 @@ internal static class UaeG9AbsoluteValueEquationQuestions
     private static string TwoSolutionPrompt(int a, int b, int target, Random random)
     {
         const string instruction = " اكتب الحلين تصاعديًا مفصولين بفاصلة.";
-        return random.Next(3) switch
+        return random.Next(4) switch
         {
             0 => $"حل المعادلة |{a}س{Signed(b)}|={target}." + instruction,
             1 => $"حل المعادلة ٢|{a}س{Signed(b)}|={2 * target}." + instruction,
-            _ => $"حل المعادلة |({a}س{Signed(b)})/٢|={target}/٢." + instruction
+            2 => $"حل المعادلة |({a}س{Signed(b)})/٢|={target}/٢." + instruction,
+            _ => $"حل المعادلة {target}/|{a}س{Signed(b)}|+{a}={a+1}. شرط التعريف: {a}س{Signed(b)}≠٠." + instruction
         };
     }
 
