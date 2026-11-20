@@ -11352,6 +11352,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U07L01_P365_372",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE General Grade 9, 2019 book 7-2: monomial substep is verified numerically;
+        // multi-term distribution and geometrical explanation remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL",
+            "algebra.polynomial.distribute_monomial",
+            "G9_U07L02_POLYNOMIAL_DISTRIBUTION_TEACHER_REVIEW",
+            ["uae.g8.u01.l03.monomial_multiply"],
+            "UAE_G9_GENERAL_2019_AR_U07L02_P374_379",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
