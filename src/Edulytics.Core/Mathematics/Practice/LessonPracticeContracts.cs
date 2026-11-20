@@ -11659,6 +11659,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_P695_704_PLUS_2025_P385_394",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 U13L01 classifies triangles by BOTH sides and angles.
+        // Basic triangle recognition reused; algebraic/diagram reasoning reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION", "geometry.triangles.classify_by_sides",
+            "G9_U13L01_TRIANGLE_TYPE_RECOGNITION_PARTIAL",
+            ["uae.g3.u13.l04.triangle_types"],
+            "UAE_G9_GENERAL_2019_AR_U13L01_P717_724",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
