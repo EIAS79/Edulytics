@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+  "source": {
+    "file": "01.pdf",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "edition": "2025-2026 General",
+    "printedPages": [
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "pdfPages": [
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    ]
+  },
+  "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l07-percent-change-ar.html",
+  "teacherReview": "TEACHER_REVIEW_REQUIRED",
+  "autograded": false,
+  "authenticatedSubmission": false,
+  "originalContentNotCopied": true,
+  "sourceSkillCoverage": [
+    "percent increase from original",
+    "percent decrease from original",
+    "discount and markup",
+    "tax amount and final price",
+    "successive percentage change",
+    "table reasoning",
+    "zero-original boundary"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "expected": "(٢٣−٢٠)/٢٠×١٠٠=١٥٪ زيادة"
+    },
+    {
+      "id": 2,
+      "expected": "(١٧٢٢−١٠٠٩)/١٧٢٢×١٠٠≈٤١٫٤٪ نقصان"
+    },
+    {
+      "id": 3,
+      "expected": "الخصم ١٥ درهمًا، والنهائي ٨٥ درهمًا"
+    },
+    {
+      "id": 4,
+      "expected": "الضريبة ٤ دراهم، والإجمالي ٨٤ درهمًا"
+    },
+    {
+      "id": 5,
+      "expected": "٢٠٪ زيادة ثم ١٦⅔٪ نقصان؛ المقام الأصلي في العودة ١٢٠ وليس ١٠٠"
+    },
+    {
+      "id": 6,
+      "expected": "٤٠→٥٠ زيادة ٢٥٪؛ ٧٥→٦٠ نقصان ٢٠٪؛ ٣٠→٣٠ تغير ٠٪"
+    },
+    {
+      "id": 7,
+      "expected": "خصمان متتاليان: ١٠٠×٠٫٨×٠٫٩=٧٢ درهمًا؛ خصم ٣٠٪ مرة واحدة=٧٠ درهمًا؛ غير متساويين"
+    },
+    {
+      "id": 8,
+      "expected": "نسبة التغير من أصل صفر غير معرّفة بسبب القسمة على صفر؛ يمكن وصف فرق عددي فقط"
+    }
+  ],
+  "rubric": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "id": "mathematics",
+        "max": 4,
+        "criterion": "Correct original denominator, percent formula and financial operations"
+      },
+      {
+        "id": "reasoning",
+        "max": 2,
+        "criterion": "Explains direction, base selection, zero boundary and successive change"
+      },
+      {
+        "id": "units",
+        "max": 1,
+        "criterion": "Monetary units and numeric rounding in context"
+      },
+      {
+        "id": "representation",
+        "max": 1,
+        "criterion": "Reads table and graphs with correct increasing/decreasing interpretation"
+      }
+    ]
+  },
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L07PercentChangeTests.cs",
+    "tests/academic-uae-grade9-arabic-u02l07.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN"
+}
