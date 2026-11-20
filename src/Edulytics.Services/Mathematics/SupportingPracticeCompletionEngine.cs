@@ -94,6 +94,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root",
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
+            "uae.g9.general.u09.l01.set_membership_cardinality",
             "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
             "usccss.g7.u07.complementary_angle",
@@ -296,6 +297,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
+            "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
             "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
             "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
@@ -502,6 +504,10 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.surds.coefficient" =>
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u09.l01.set_membership_cardinality" =>
+                (p["mode"]==1 ? p["count"] : ((p["candidate"]-p["first"])>=0 &&
+                    (p["candidate"]-p["first"])%p["step"]==0 &&
+                    (p["candidate"]-p["first"])/p["step"]<p["count"] ? 1 : 0)).ToString(CultureInfo.InvariantCulture),
             "uae.g9.general.u08.l06.like_radical_coefficient" =>
                 (p["mode"]==0 ? p["a"]+p["b"] : p["a"]-p["b"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_around_point" =>
@@ -704,6 +710,26 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var submitted) &&
                 submitted==(mode==0?a+bb:a-bb);
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l01.set_membership_cardinality",StringComparison.Ordinal))
+        {
+            if (p.Count!=5 || !p.TryGetValue("first",out int first) ||
+                !p.TryGetValue("step",out int step) || !p.TryGetValue("count",out int count) ||
+                !p.TryGetValue("candidate",out int candidate) || !p.TryGetValue("mode",out int mode) ||
+                first is <1 or >8 || step is <2 or >5 || count is <3 or >5 ||
+                mode is <0 or >1 || candidate<first ||
+                candidate>first+(count-1)*step+1 || string.IsNullOrWhiteSpace(answer) ||
+                answer.Length>24) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch
+            {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            int independent=mode==1 ? count : ((candidate-first)%step==0 &&
+                (candidate-first)/step<count ? 1 : 0);
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
+                parsed==independent;
         }
         var expected = Solve(family, p);
         // Scoped Arabic Grade 7 exact numeric Practice accepts both
@@ -1407,6 +1433,22 @@ internal static partial class SupportingPracticeCompletionEngine
             $"{number} = {coefficient} × 10^n. Find n.",
             "Count how many powers of ten scale the coefficient to the original number.",
             ("coefficient", coefficient), ("exponent", exponent), ("number", number));
+    }
+
+    private static Problem G9SetMembershipCardinality(Random r)
+    {
+        var first=r.Next(1,9);
+        var step=r.Next(2,6);
+        var count=r.Next(3,6);
+        var mode=r.Next(2);
+        var candidate=first+r.Next(count)*step+(r.Next(2)==0 ? 0 : 1);
+        var roster=string.Join("،",Enumerable.Range(0,count).Select(i=>first+i*step));
+        var prompt=mode==0
+            ? $"إذا كانت أ={{{roster}}}، هل العدد {candidate} ينتمي إلى أ؟ اكتب ١ إذا ينتمي أو ٠ إذا لا ينتمي."
+            : $"المجموعة أ={{{roster}}}. كم عنصرًا مختلفًا فيها؟ اكتب عدد العناصر.";
+        return P("uae.g9.general.u09.l01.set_membership_cardinality",prompt,
+            "المجموعة تحتوي العناصر المتميزة فقط. افحص الانتماء من السرد أو احسب عدد العناصر غير المكررة.",
+            ("first",first),("step",step),("count",count),("candidate",candidate),("mode",mode));
     }
 
     private static Problem G9LikeRadicalCoefficient(Random r)
