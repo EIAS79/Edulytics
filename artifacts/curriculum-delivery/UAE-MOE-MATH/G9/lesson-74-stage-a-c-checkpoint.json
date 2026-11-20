@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 74,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION",
+  "lessonTitleAr": "تصنيف المثلثات",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      717,
+      724
+    ],
+    "pdfPages": [
+      133,
+      140
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_PAGES_VISUALLY_REVIEWED",
+    "scope": "Triangle classification concepts and worked examples reviewed; exact item-level generated parity unverified"
+  },
+  "stageA": {
+    "status": "CLASSIFICATION_BY_SIDES_BY_ANGLES_AND_EXPRESSION_EXAMPLES_REVIEWED",
+    "learningTargets": [
+      "acute/right/obtuse triangle classification",
+      "scalene/isosceles/equilateral sides",
+      "valid triangle configurations and equal side expressions",
+      "combined classification"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_ORIGINAL_TEACHER_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l01-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l01-triangle-classification-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "Right isosceles triangle"
+      },
+      {
+        "q": 2,
+        "expected": "Acute scalene (all angles distinct)"
+      },
+      {
+        "q": 3,
+        "expected": "5,5,8 valid isosceles because 5+5>8"
+      },
+      {
+        "q": 4,
+        "expected": "x=3, each equilateral side 7"
+      },
+      {
+        "q": 5,
+        "expected": "2+3<=6 invalid triangle"
+      },
+      {
+        "q": 6,
+        "expected": "Equilateral has all 60-degree acute angles"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "REUSED_EXISTING_TRIANGLE_TYPE_FAMILY_ONLY_FOR_BASIC_CLASSIFICATION_TEST_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "uae.g3.u13.l04.triangle_types"
+    ],
+    "newEngine": false,
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l01.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "teacherReviewRequiredFor": [
+      "dual classification",
+      "equilateral algebra and invalid cases",
+      "diagrams"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_RUNTIME_SOURCE_ITEM_PARITY_UNVERIFIED",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-2"
+}
