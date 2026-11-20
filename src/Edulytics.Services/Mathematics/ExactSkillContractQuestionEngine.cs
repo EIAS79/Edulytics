@@ -715,6 +715,20 @@ public sealed class ExactSkillContractQuestionEngine
                     };
                 }
 
+                // Grade 9 General U06L02: preserve the proven exact one-variable
+                // verifier and localize only the post-substitution algebra substep.
+                // The complete two-variable system is reviewed by the teacher.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "algebra.linear.variables_both_sides", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"بعد التعويض في نظام معادلتين، حل المعادلة الخطية التالية لإيجاد قيمة س: ({p["leftCoefficient"]})س + ({p["leftOffset"]}) = ({p["rightCoefficient"]})س + ({p["rightOffset"]}). اكتب س فقط، ثم أوجد ص وتحقق من المعادلتين في نشاط الدرس.",
+                        Solution = "اجمع حدود س في طرف والثوابت في الطرف الآخر، ثم اقسم على معامل س غير الصفري. هذه خطوة عددية واحدة؛ يجب مراجعة الحل المرتب في النظام الأصلي."
+                    };
+                }
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
