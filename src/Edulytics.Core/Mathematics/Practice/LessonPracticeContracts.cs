@@ -11705,6 +11705,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L05_P755_764",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // G9 U13L06 reuses basic triangle types and missing-angle arithmetic;
+        // isosceles-converse and apex-bisector proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:06:ISOSCELES-EQUILATERAL-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:06:ISOSCELES-EQUILATERAL-TRIANGLES", "geometry.triangles.isosceles_base_angle",
+            "G9_U13L06_ISOSCELES_EQUILATERAL_NUMERIC_PARTIAL",
+            ["uae.g4.u16.l06.triangle_missing_angle","uae.g3.u13.l04.triangle_types"],
+            "UAE_G9_GENERAL_2019_AR_U13L06_P765_773",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
