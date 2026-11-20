@@ -30,7 +30,7 @@ test('Only existing reusable exact ratio families are mapped to Grade 9, no fore
  const m=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json');
  const lesson=m.mappings.find(x=>x.lessonCode===code);
  assert.deepEqual(lesson.allowedQuestionFamilies,[
- 'ratio.unit_rate.equivalent_ratio','ratio.unit_rate.direct','ratio.unit_rate.divide_total']);
+ 'ratio.unit_rate.equivalent_ratio','ratio.unit_rate.direct','ratio.unit_rate.divide_total','uae.g9.general.u02.l06.two_sided_proportion']);
  assert.equal(lesson.officialOutcomeMapped,false);
  assert.equal(lesson.practiceReadiness,'PREPARED_STAGE_D_NOT_RUN');
  const contracts=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
@@ -39,6 +39,8 @@ test('Only existing reusable exact ratio families are mapped to Grade 9, no fore
  assert.ok(engine.includes('string.Equals(scopeKey,'));
  assert.ok(engine.includes('ratio["baseFirst"]'));
  assert.ok(engine.includes('حل التناسب'));
+ assert.ok(engine.includes('VerifyG9TwoSidedProportion'));
+ assert.ok(engine.includes('BuildG9TwoSidedProportion'));
  assert.ok(engine.includes('يوزَّع مجموع'));
 });
 
