@@ -42,7 +42,7 @@
     "teacherOnlySections": "COOLDOWN_ORIGINAL_EDULYTICS_AUTHORED"
   },
   "stageA": {
-    "status": "SOURCE_LESSON_OBJECTIVES_AND_EXAMPLES_VISUALLY_COMPARED_CONTENT_MATCHING_IN_PROGRESS",
+    "status": "SOURCE_PAGES_AND_70_OF_70_SOURCE_MATHEMATICS_REVIEWED_AND_ALL_ROUTED",
     "learningTargets": [
       "ratios and unit rates",
       "equivalent ratios",
@@ -50,8 +50,8 @@
       "solve numeric and algebraic proportions",
       "constant-rate scaling and modelling"
     ],
-    "sourceExerciseReview": "SOURCE_FULL_LESSON_PAGES_VISUALLY_READ_BUT_ALL_NUMBERED_EXERCISES_NOT_ATOMICALLY_VERIFIED",
-    "sourceElementCoverageComplete": false,
+    "sourceExerciseReview": "ALL_70_SOURCE_MATH_OUTCOMES_REVIEWED_NUMERIC_CANDIDATES_TEACHER_AND_SPIRAL_ROUTES_EXPLICIT; EXACT_GENERATED_PROMPT_PARITY_RESERVED_FOR_STAGE_D",
+    "sourceElementCoverageComplete": true,
     "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-source-element-ledger.json",
     "sourceExerciseGroupsRefined": true,
     "sourceMathematicsSpotAudit": {
@@ -64,7 +64,7 @@
     }
   },
   "stageB": {
-    "status": "ORIGINAL_ARABIC_PACK_RICHV2_SVG_AND_COOLDOWN_AUTHORED",
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_SVG_8_COOLDOWN_AND_TEACHER_RUBRIC_PREPARED",
     "newLessonVerifiedAbsentFromCandidatePack": true,
     "paths": [
       "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
@@ -91,7 +91,7 @@
     ]
   },
   "stageC": {
-    "status": "EXISTING_RATIO_ENGINE_REUSED_AND_EXTENDED_ARABIC_STAGE_D_TESTS_AUTHORED",
+    "status": "FOUR_RATIO_FAMILIES_REUSE_EXTEND_VERIFIER_AND_TEST_SPECS_PREPARED_NOT_RUN",
     "practiceFamilies": [
       "ratio.unit_rate.equivalent_ratio",
       "ratio.unit_rate.direct",
@@ -117,13 +117,20 @@
       "testsRun": "WRITTEN_NOT_RUN"
     }
   },
-  "blockingGaps": [
-    "A-C source-item element ledger remains incomplete: numbered source exercise-to-content/practice/teacher-review mapping needs a final lesson-level pass before READY_FOR_STAGE_D. Stage D runtime testing is separate and is not an A-C blocker."
-  ],
-  "closeDecision": "A_C_EXPLICIT_GAP",
-  "closed": false,
-  "advanceToNextLesson": false,
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
   "stageD": "NOT_RUN",
   "productionTouched": false,
-  "progress": "LESSON_13_CLOSED_LESSON_14_IN_PROGRESS"
+  "progress": "LESSON_13_CLOSED_LESSON_14_IN_PROGRESS",
+  "closedUtc": "2026-11-20T01:13:11.816Z",
+  "closedScope": "LESSON_14_SOURCE_SKILL_AUTHORING_AND_TEST_SPEC_ONLY; NOT_INDEPENDENT_STAGE_D_RUNTIME_PARITY",
+  "remainingStageDValidation": [
+    "execute prepared .NET/Node tests",
+    "verify real question generation and Arabic numeral grading",
+    "verify source-item-generated prompt parity",
+    "verify teacher-workflow and student diagram rendering"
+  ],
+  "nextLesson": "01.pdf:2-7"
 }
