@@ -39,7 +39,8 @@ const idx=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-i
 assert.equal(p.Lessons.length,82);
 assert.equal(p.AcademicLanguage,'ar');
 assert.equal(p.TargetCurriculumPeriod,'2026-2027');
-assert.equal(p.SourceCurriculumPeriod,'MIXED:2025-2026+2019-2020');
+assert.equal(p.SourceCurriculumPeriod,'2025-2026');
+assert.match(p.SourceVersionLabel,/2019-2020/);
 assert.match(p.SourceVersionLabel,/02-1\.pdf/);
 assert.match(p.SourceVersionLabel,/03-1\.pdf/);
 assert.match(p.ReviewedBy,/program owner/);
