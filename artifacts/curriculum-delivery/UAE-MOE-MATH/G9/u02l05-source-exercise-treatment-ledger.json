@@ -1546,13 +1546,13 @@
         "mathematics",
         "reasoning"
       ],
-      "SourceItemSemanticsVerified": "SOURCE_SPECIFIC_OPEN_TASK_AUTHORED_TEACHER_REVIEW_AND_STAGE_D_PENDING",
+      "SourceItemSemanticsVerified": "SOURCE_RECIPROCAL_VARIANT_AUTHORED_DOMAIN_AND_TWO_ROOT_MATH_CHECKED_TEACHER_REASONING_PENDING_STAGE_D",
       "CandidateStudentFacingArtifacts": [
         "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs"
       ],
       "ExactEquivalent": "NOT_VERIFIED",
       "StageDTests": "WRITTEN_NOT_RUN",
-      "NumericAssistanceFamily": null,
+      "NumericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions",
       "Grade": 9,
       "Pathway": "General",
       "Language": "ar",
@@ -1562,7 +1562,7 @@
       "LessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
       "RightsStatus": "ORIGINAL_EDULYTICS_EQUIVALENT_NOT_COPIED",
       "StudentFacingTask": "extensionQ8",
-      "VerificationMethod": "SOURCE_PRINTED_PAGE_VISUALLY_REVIEWED_CATEGORY_MATCH_EXACT_ITEM_VALIDATION_PENDING",
+      "VerificationMethod": "SOURCE_MATH_VISUAL_REVIEW_PLUS_NEW_EQUIVALENT_VARIANT_CODE_INSPECTION_RUNTIME_NOT_RUN",
       "TestPaths": [
         "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
         "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
@@ -2514,5 +2514,12 @@
       "task": "extensionQ7",
       "case": "NEGATIVE_RHS_MISCONCEPTION"
     }
-  ]
+  ],
+  "preparedReciprocalDenominatorVariant": {
+    "sourceExerciseId": "01.pdf:2-5:EX42",
+    "sourceExactlyDigitized": false,
+    "numericGeneratorFamily": "uae.g9.general.u02.l05.two_solutions",
+    "teacherReviewRequired": true,
+    "testsRun": "WRITTEN_NOT_RUN"
+  }
 }
