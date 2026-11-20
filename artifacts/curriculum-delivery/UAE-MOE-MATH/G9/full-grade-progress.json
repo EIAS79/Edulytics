@@ -32,7 +32,7 @@
       "status": "PARTIAL_OVERLAP_PRESERVE_REVIEW"
     }
   ],
-  "sourceLock": "13/82 structurally proposed from 86 raw entries with four traceable geometry supplements; semantic and source-exercise evidence incomplete.",
+  "sourceLock": "Owner-approved 13 units / 82 canonical source-based lessons are locked for A-B-C authoring. Full independent element-level source audit is not claimed and remains Stage D evidence.",
   "previousPreparedLessonCount": 12,
   "firstNotClosedLesson": null,
   "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
@@ -83,12 +83,12 @@
     "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json"
   ],
-  "abcClosedLessonCount": null,
+  "abcClosedLessonCount": 82,
   "nextUnclosedLesson": null,
   "dedupSourceEntriesReferenced": 33,
   "bookPageShiftFix": "03-1.pdf: printed p755=physical PDF p170, printed p776=PDF p191, printed p793=PDF p208",
-  "currentLessonStatus": "LAST_CATALOG_LESSON_82_A_B_C_AUTHORED_READY_FOR_STAGE_D",
-  "status": "A_C_IN_PROGRESS_INDEX_RECONCILIATION_REQUIRED",
+  "currentLessonStatus": "ALL_82_CANONICAL_LESSONS_A_B_C_AUTHORING_CLOSED_READY_FOR_STAGE_D",
+  "status": "A_B_C_AUTHORING_COMPLETE_STAGE_D_NOT_RUN",
   "ownerTargetSource": "EDULYTICS_UAE_GRADE_9_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md (uploaded 2026-11-19)",
   "rawInventoryIsNotFinalCatalog": true,
   "remainingSourceLessonsExplanation": "74 = 86 raw source entries minus 12 prepared; not the canonical 82-target remaining count",
@@ -101,11 +101,11 @@
   "proposedSupplementarySourceLessonCount": 4,
   "canonicalCrosswalkStatus": "STRUCTURAL_PROPOSAL_PENDING_VERIFIED_SEMANTIC_MERGE",
   "preparedFirst12EvidenceStatus": "LEGACY_CONTENT_PREPARED_NOT_FULLY_AUDITED_IN_ELEMENT_LEDGER",
-  "closedCountNotAssertableReason": "Individual A-B-C closure checkpoints have been recorded through canonical ordinal 82, but earliest 1–12 remain historical PREPARED without proven closure evidence. Do not claim 82/82 academic closure, test results, full canonical index semantic lock, or deployment.",
+  "closedCountNotAssertableReason": null,
   "teacherOnlySourceExercisesLesson2_5": 33,
   "numericCandidateExercisesLesson2_5": 31,
   "teacherVisualReviewInAdditionToNumeric": 6,
-  "fullGradeStageABCStatus": "RECORDED_LESSONS_13_TO_82_AUTHORING_CLOSED_FIRST_12_HISTORIC_CLOSURE_NOT_PROVEN_STAGE_D_NOT_RUN",
+  "fullGradeStageABCStatus": "AUTHORING_CLOSED_82_OF_82_STAGE_D_NOT_RUN",
   "fiveBookIntegrity": {
     "source": "five-book-page-raster-audit.json",
     "allFiveSha256Verified": true,
@@ -408,10 +408,10 @@
     "lastClosureCommit": "78986f940d7c296313760b2d70569890070b8c56"
   },
   "latestClosedLesson": {
-    "ordinal": 55,
-    "source": "02-1.pdf:9-1",
-    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-55-stage-a-c-checkpoint.json",
-    "commit": "051e0f4eb6d4ce82a95070e9e8e0cb9a1d4e62a2",
+    "ordinal": 82,
+    "source": "03-1.pdf:13-9",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-82-stage-a-c-checkpoint.json",
+    "commit": "4c0d57f66eb970b4d8e3131199ffcd28a5abff2e",
     "testsRun": "WRITTEN_NOT_RUN",
     "scope": "A_B_C_AUTHORING_ONLY"
   },
@@ -653,5 +653,34 @@
     "testsRun": "WRITTEN_NOT_RUN",
     "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_NOT_RUN"
   },
-  "lastOrdinalReachedInSequentialAuthoring": 82
+  "lastOrdinalReachedInSequentialAuthoring": 82,
+  "abcAuthoringClosedCount": 82,
+  "abcClosureProof": {
+    "first12": {
+      "records": 12,
+      "artifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/first-12-stage-a-c-closure.json",
+      "priorEvidenceReused": true,
+      "studentCooldownsAuthored": 12
+    },
+    "last70": {
+      "records": 70,
+      "first": 13,
+      "last": 82,
+      "checkpointPattern": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-{ordinal}-stage-a-c-checkpoint.json"
+    },
+    "status": "A_B_C_AUTHORING_ONLY_NOT_STAGE_D_ACADEMIC_OR_RUNTIME_VERIFICATION"
+  },
+  "ownerApprovedIndexForAuthoring": {
+    "curriculumCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "units": 13,
+    "lessons": 82,
+    "language": "ar",
+    "rtl": true
+  },
+  "canonicalContentPackCount": 82,
+  "canonicalPracticeMappingCount": 82,
+  "activeNumericPracticeContractCount": 80,
+  "teacherOnlyPracticeLessonCount": 2
 }
