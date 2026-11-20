@@ -62,5 +62,5 @@ test('Independent percent change mathematics checks bases, direction and zero-de
  assert.equal(percent(100,120),20);
  assert.ok(Math.abs(percent(120,100)-100/6)<1e-10);
  assert.equal(percent(0,10),null);
- assert.equal(100*.8*.9,72.00000000000001);
+ assert.ok(Math.abs(100*.8*.9-72)<1e-10);
 });
