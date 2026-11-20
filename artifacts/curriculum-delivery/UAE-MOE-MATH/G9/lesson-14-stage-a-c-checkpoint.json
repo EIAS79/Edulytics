@@ -79,20 +79,34 @@
     ]
   },
   "stageC": {
-    "status": "EXISTING_EXACT_RATIO_ENGINE_REUSED_ARABIC_LOCALIZATION_AND_STAGE_D_TESTS_AUTHORED",
+    "status": "EXISTING_RATIO_ENGINE_REUSED_AND_EXTENDED_ARABIC_STAGE_D_TESTS_AUTHORED",
     "practiceFamilies": [
       "ratio.unit_rate.equivalent_ratio",
       "ratio.unit_rate.direct",
-      "ratio.unit_rate.divide_total"
+      "ratio.unit_rate.divide_total",
+      "uae.g9.general.u02.l06.two_sided_proportion"
     ],
-    "strategy": "REUSE_WITH_SCOPE_SPECIFIC_ARABIC_PROMPT_LOCALIZATION_NO_NEW_ENGINE",
+    "strategy": "REUSE_SHARED_RATIO_FAMILIES_AND_EXTEND_TWO_SIDED_CASE_NO_NEW_ENGINE",
     "existingIndependentVerifier": true,
     "testsWritten": [
       "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L06RatioProportionTests.cs",
       "tests/academic-uae-grade9-arabic-u02l06.test.cjs"
     ],
     "testsRun": "WRITTEN_NOT_RUN",
-    "runtimeVerified": false
+    "runtimeVerified": false,
+    "twoSidedRatioExtension": {
+      "family": "uae.g9.general.u02.l06.two_sided_proportion",
+      "sourceExercises": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "independentVerifier": true,
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
   },
   "blockingGaps": [
     "A-C source-item element ledger remains incomplete: numbered source exercise-to-content/practice/teacher-review mapping needs a final lesson-level pass before READY_FOR_STAGE_D. Stage D runtime testing is separate and is not an A-C blocker."
