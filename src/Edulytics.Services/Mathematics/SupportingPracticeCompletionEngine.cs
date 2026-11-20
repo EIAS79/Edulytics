@@ -94,6 +94,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root",
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
+            "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
             "usccss.g7.u07.complementary_angle",
             "usccss.g7.u07.vertical_angle",
@@ -295,6 +296,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
+            "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
             "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
             "usccss.g7.u07.vertical_angle" => G7VerticalAngle(random),
@@ -500,6 +502,8 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.surds.coefficient" =>
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u08.l06.like_radical_coefficient" =>
+                (p["mode"]==0 ? p["a"]+p["b"] : p["a"]-p["b"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_around_point" =>
                 (360 - p["a"] - p["b"] - p["c"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u07.complementary_angle" =>
@@ -684,6 +688,22 @@ internal static partial class SupportingPracticeCompletionEngine
             int independent=isRadius ? (p["mode"]==0 ? 2*p["radius"] : p["radius"])
                 : CircleSegmentTypeG5(p["variant"]);
             return actual==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u08.l06.like_radical_coefficient",StringComparison.Ordinal))
+        {
+            if (p.Count!=4 || !p.TryGetValue("a",out int a) || !p.TryGetValue("b",out int bb) ||
+                !p.TryGetValue("radicand",out int radicand) || !p.TryGetValue("mode",out int mode) ||
+                a is <4 or >9 || bb is <1 or >3 || mode is <0 or >1 ||
+                radicand is not (2 or 3 or 5 or 6 or 7) || string.IsNullOrWhiteSpace(answer) ||
+                answer.Length>30) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch
+            {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var submitted) &&
+                submitted==(mode==0?a+bb:a-bb);
         }
         var expected = Solve(family, p);
         // Scoped Arabic Grade 7 exact numeric Practice accepts both
@@ -1387,6 +1407,21 @@ internal static partial class SupportingPracticeCompletionEngine
             $"{number} = {coefficient} × 10^n. Find n.",
             "Count how many powers of ten scale the coefficient to the original number.",
             ("coefficient", coefficient), ("exponent", exponent), ("number", number));
+    }
+
+    private static Problem G9LikeRadicalCoefficient(Random r)
+    {
+        var a=r.Next(4,10);
+        var b=r.Next(1,4);
+        int[] squareFree=[2,3,5,6,7];
+        var radicand=squareFree[r.Next(squareFree.Length)];
+        var mode=r.Next(2);
+        var prompt=mode==0
+            ? $"بسّط {a}√{radicand}+{b}√{radicand}. اكتب معامل √{radicand} في الناتج فقط."
+            : $"بسّط {a}√{radicand}−{b}√{radicand}. اكتب معامل √{radicand} في الناتج فقط.";
+        return P("uae.g9.general.u08.l06.like_radical_coefficient",prompt,
+            "عند جمع الجذور المتشابهة أو طرحها نجمع المعاملات أو نطرحها، مع الإبقاء على الجذر نفسه.",
+            ("a",a),("b",b),("radicand",radicand),("mode",mode));
     }
 
     private static Problem SurdCoefficient(Random r, int s)
