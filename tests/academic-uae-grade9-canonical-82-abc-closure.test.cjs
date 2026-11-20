@@ -32,3 +32,18 @@ for(let n=13;n<=82;n++){const v=read('artifacts/curriculum-delivery/UAE-MOE-MATH
 const progress=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/full-grade-progress.json');
 assert.notEqual(progress.stageD,'PASSED');assert.notEqual(progress.productionPublish,'PUBLISHED');
 });
+
+test('Grade 9 full-year composite pack must disclose mixed source editions and distinguish owner approval from D certification',()=>{
+const p=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json');
+const idx=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json');
+assert.equal(p.Lessons.length,82);
+assert.equal(p.AcademicLanguage,'ar');
+assert.equal(p.TargetCurriculumPeriod,'2026-2027');
+assert.equal(p.SourceCurriculumPeriod,'MIXED:2025-2026+2019-2020');
+assert.match(p.SourceVersionLabel,/02-1\.pdf/);
+assert.match(p.SourceVersionLabel,/03-1\.pdf/);
+assert.match(p.ReviewedBy,/program owner/);
+assert.match(p.ReviewEvidence,/SOURCE_INDEX_COMPLETE=false/);
+assert.equal(p.Status,'Draft','Never claim Published before real final verification');
+assert.deepEqual([...new Set(idx.records.map(x=>x.SourceEdition))].sort(),['2019-2020','2025-2026']);
+});
