@@ -732,7 +732,9 @@ public sealed class ExactSkillContractQuestionEngine
                 // UAE General Grade 9 6-3: localize the one-variable algebra substep.
                 // The full two-variable elimination and verification stay teacher-reviewed.
                 if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
-                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal)) &&
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
+                     string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal)) &&
                     string.Equals(problem.Family, "algebra.linear.ax_plus_b_equals_c", StringComparison.Ordinal))
                 {
                     var p = problem.Parameters;
