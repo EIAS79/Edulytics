@@ -11075,6 +11075,20 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L05_P103_108",
             "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
 
+        // UAE G9 General U02L06: original Arabic student-book lesson pp111–118.
+        // Exact numeric ratios reuse shared verifier; source interpretation,
+        // diagrams and written cross-multiplication proofs remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS", "ratio.proportion.solve",
+            "G9_U02L06_RATIO_EQUIVALENCE_CROSS_MULTIPLY_AND_RATE",
+            [
+                "ratio.unit_rate.equivalent_ratio",
+                "ratio.unit_rate.direct",
+                "ratio.unit_rate.divide_total"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L06_P111_118",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
