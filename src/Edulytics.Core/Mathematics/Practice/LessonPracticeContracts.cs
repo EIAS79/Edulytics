@@ -11090,6 +11090,19 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U02L06_P111_118",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General source 2-7 (student pp119-125): exact percent
+        // quantity and resulting value skills only; open change interpretation
+        // and non-integer source cases stay teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE", "percent.change.calculate",
+            "G9_U02L07_PERCENT_CHANGE_DISCOUNT_TAX",
+            [
+                "percentages.core.increase_decrease",
+                "percentages.core.of_quantity"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L07_P119_125",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
