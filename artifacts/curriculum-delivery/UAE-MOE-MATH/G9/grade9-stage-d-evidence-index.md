@@ -1,0 +1,22 @@
+# UAE Grade 9 General — Stage D initial evidence index
+
+Candidate: PR #650 (`fix/g9-general-full-year-scope-86`).
+Source snapshot: `SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc`.
+Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027 (not official 2026–2027 edition certification).
+
+## Entry inspection
+- At start of Stage D, branch candidate SHA: `f95fd5f76bc992d340b8a8e3aa65c804c7d78cbe`; subsequently changed by Stage D diagnostics files, so this original SHA must **not** be treated as the tested final release candidate.
+- Required path `grade9-a-c-handoff.md` is not present under `artifacts/curriculum-delivery/UAE-MOE-MATH/G9/` at initial inspection. Existing `full-grade-progress.json` and individual lesson checkpoints document **82 authoring closures only** and do not substitute full source-element evidence.
+- `source-inventory.json` includes 3 General source books (86 raw lessons), 2 Applied reference books; editions 2025–2026 and 2019–2020. `edition-diff.json` leaves full semantic dedup pending.
+- `grade9-82-target-index.json`: 82 target rows, `SOURCE_INDEX_COMPLETE=false`.
+- `semantic-audit-ledger.json`: 86 raw entries, zero rows `fullLessonAuditPassed=true`; denominator unverified for all 86. `full-grade-progress.json` target index unverified.
+- Stage D uploaded plan has stray `Grade: 8` in section 2(1) and checkpoint template, inconsistent with its explicit Grade 9 scope; all executable metadata is fixed to Grade 9. The uploaded plan itself was not silently edited.
+
+## Diagnostics authored
+- `.github/workflows/uae-grade9-general-stage-d.yml`: dedicated Node tests, strict academic source gate, scoped .NET 10 tests; commits `8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630`, `88ee91968942a99508c53a069e0f82f55ddff2da`.
+- `grade9-stage-d-execution-ledger.json`: initial fail-closed ledger, commit `f2794b38994ebc7e098c9848eca86961048cffbe`.
+- No actual G9 workflow run ID or PASS result has been confirmed as of this entry. Do not count other Grade/US workflows as G9 Stage D completion.
+- The strict source index test is intentionally expected to fail until source objective/exercise/visual parity evidence is complete; failure is a **release blocker**, not permission to change the numeric gate.
+
+## Stage D gate
+`D_PENDING_A_C_EVIDENCE` / `NO_GO_SOURCE_100` until the required 86-source / 82-target semantic element coverage is complete, and independently executed CI, authenticated E2E, RTL, Math and DB checks pass on a fixed SHA. No merge, production database changes, or deployment made by these diagnostic commits.
