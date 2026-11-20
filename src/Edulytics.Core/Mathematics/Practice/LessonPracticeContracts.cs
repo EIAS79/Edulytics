@@ -11154,6 +11154,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2025_AR_U03L03_P172_179",
             "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
 
+        // UAE Grade9 General source 3-4: existing numeric ratio and coordinate
+        // support only; original source graphs and proportionality proofs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION", "algebra.linear.direct_variation",
+            "G9_U03L04_DIRECT_VARIATION_CONSTANT_AND_ORIGIN",
+            ["ratio.unit_rate.equivalent_ratio",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L04_P182_188",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_MODEL", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
