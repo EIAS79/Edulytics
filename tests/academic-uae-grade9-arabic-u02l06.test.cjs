@@ -42,13 +42,15 @@ test('Only existing reusable exact ratio families are mapped to Grade 9, no fore
  assert.ok(engine.includes('يوزَّع مجموع'));
 });
 
-test('Original ratio bar and five cool-down tasks remain teacher reviewed and local-only',()=>{
+test('Original ratio bar and six cool-down tasks remain teacher reviewed and local-only',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html'),'utf8');
  assert.match(html,/<html lang="ar" dir="rtl">/);
  assert.match(html,/ratioBarDescription/);
  assert.match(html,/M63 110v40/);
  assert.match(html,/3 : 4 = 6 : 8/);
- for(let n=1;n<=5;n++)assert.ok(html.includes('id="ratioQ'+n+'"'));
+ for(let n=1;n<=6;n++)assert.ok(html.includes('id="ratioQ'+n+'"'));
+ assert.match(html,/جدول أصلي لبيانات إنتاج تناسبية/);
+ assert.match(html,/id="ratioQ6"/);
  assert.match(html,/id="ratioCooldown"/);
  assert.match(html,/graded:false/);
  assert.match(html,/TEACHER_REVIEW_REQUIRED/);
