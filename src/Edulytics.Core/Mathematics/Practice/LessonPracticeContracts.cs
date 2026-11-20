@@ -11494,6 +11494,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U09L01_P502_514",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // UAE G9 General U09L02: bounded union/intersection/difference count only.
+        // Proper subsets, complement universes, and Venn shading teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS", "sets.union_intersection_difference",
+            "G9_U09L02_SET_OPERATION_CARDINALITY",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L02_P515_525",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
