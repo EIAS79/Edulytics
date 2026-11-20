@@ -2130,7 +2130,22 @@ public sealed class ExactSkillContractQuestionEngine
             };
         }
 
-        if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
+        // Grade 9 Arabic proportions accept equivalent Eastern Arabic digits,
+        // without changing the numeric parser for existing curricula.
+        var integerAnswer = string.Equals(family,
+                "uae.g9.general.u02.l06.two_sided_proportion", StringComparison.Ordinal)
+            ? string.Concat((answer ?? string.Empty).Trim()
+                .Where(c => c is not '\u200E' and not '\u200F' and not '\u061C')
+                .Select(c => c switch
+                {
+                    >= '٠' and <= '٩' => (char)('0' + c - '٠'),
+                    >= '۰' and <= '۹' => (char)('0' + c - '۰'),
+                    '−' => '-',
+                    _ => c
+                }))
+            : answer;
+        if (!int.TryParse(integerAnswer, NumberStyles.Integer,
+                CultureInfo.InvariantCulture, out var value))
             return false;
 
         if (family is
