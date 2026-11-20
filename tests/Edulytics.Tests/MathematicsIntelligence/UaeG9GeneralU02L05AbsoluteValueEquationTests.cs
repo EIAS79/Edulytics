@@ -93,6 +93,29 @@ public sealed class UaeG9GeneralU02L05AbsoluteValueEquationTests
     }
 
     [Fact]
+    public void TwoSolutionGeneratorIncludesReciprocalAbsoluteValueDenominatorWithNonzeroDomain()
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var reciprocalSeen = false;
+        for (var seed = 1; seed <= 100; seed++)
+        {
+            var q = Assert.Single(engine.Generate("UAE-G9-GENERAL",
+                "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+                new[] { Prefix + "two_solutions" },
+                ExactSkillQuestionDifficulty.Standard, 1, seed,
+                Array.Empty<string>()));
+            if (!q.Prompt.Contains("/|", StringComparison.Ordinal)) continue;
+            reciprocalSeen = true;
+            Assert.Contains("شرط التعريف:", q.Prompt);
+            Assert.Contains("≠٠", q.Prompt);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(q.Family, q.Parameters, q.CorrectAnswer));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(q.Family, q.Parameters,
+                q.Parameters["m"].ToString()));
+        }
+        Assert.True(reciprocalSeen);
+    }
+
+    [Fact]
     public void CompositeGeneratorCoversMultipleAbsoluteTermsWithVerifier()
     {
         var engine = new ExactSkillContractQuestionEngine();
