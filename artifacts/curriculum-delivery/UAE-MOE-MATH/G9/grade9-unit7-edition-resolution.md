@@ -37,3 +37,11 @@ The first three mappings are **placement proposals**, not permission to discard 
 - Content commit: `288dc0d66dad6ec4b6d52563943b4144f2ce0760`. Prepared Node regression: `86db8a8307157a321dbd2e581e5c9ac269eaa564`, **WRITTEN_NOT_RUN** (Stage D).
 - The proposed mapping `01.pdf:7-3 -> 03-1.pdf:12-6` stays `PARTIAL_SUPPLEMENT_AUTHORED_NOT_FULLY_AUDITED`; do not count it as a proven semantic duplicate. No increase or decrease to target lesson count is authorized on this evidence.
 - `SOURCE_INDEX_COMPLETE=false` until the remaining source-element inventories and the other Unit 7 supplemental gaps are audited.
+
+## Targeted 7-2 measuring supplement repair — 20 November 2026
+
+- Used the previously recorded direct source-opening evidence `grade9-unit7-opening-page-evidence.json`: newer `01.pdf:7-2` printed p.374 / PDF p.385 prioritizes reading calibrated rulers and estimating lengths, while historical `03-1.pdf:11-3` focuses on segment-addition proofs.
+- The existing `U11L03` Arabic RichV2 already described units and ruler graduations; repaired the under-explicit **nonzero ruler-start offset** skill by adding `|end-start|`, an original worked example (1.2 to 5.6 cm => 4.4 cm), a precision caveat, visual calculation chain and typical misconception. Preserved segment-addition and congruence proofs. Also corrected an Arabic conditional grammatical error.
+- RichV2 content commit: `30777bcd2e054edb2af84acf0f86ab40a247efde`. Regression authored in `tests/academic-uae-grade9-arabic-u11l03.test.cjs` commit `22c2d676af8c6dd06b7b5d77eee57b7558a1e705`, **NOT RUN** under Stage A–B–C.
+- Source-device `01.pdf` page range 385–387 was reopened via the authorized Our-CS PDF reader, but it returned scanned image pages without extracted text; this is **not** a complete exercise-by-exercise comparison or a claim to have validated the newly authored example against exact source exercise wording. The example is original and skill-aligned.
+- Mapping `01.pdf:7-2 -> 03-1.pdf:11-3` remains **PARTIAL_SUPPLEMENT_AUTHORED_NOT_FULLY_AUDITED**. `SOURCE_INDEX_COMPLETE=false`; full source examples/exercises/visuals must still be checked before locking.
