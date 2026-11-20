@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 55,
+  "unitOrdinal": 9,
+  "sourceLessonRef": "02-1.pdf:9-1",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY",
+  "lessonTitleAr": "مقدمة في نظرية المجموعات",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514
+  ],
+  "sourcePdfPages": [
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_BOOK_PAGES_502_514_VISUALLY_REVIEWED",
+    "skills": [
+      "finite set definitions and roster",
+      "membership and nonmembership",
+      "set-builder property and domain",
+      "finite cardinality and equal sets",
+      "empty set and universal context"
+    ],
+    "scope": "Direct scanned textbook page review; live source exercise and platform equivalence not tested"
+  },
+  "stageB": {
+    "status": "ARABIC_SOURCE_PACK_RICHV2_AND_FIVE_QUESTION_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u09-l01-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u09-l01-set-theory-intro-ar.html",
+    "cooldownQuestions": 5,
+    "teacherReview": "Open descriptions, set-builder conversion and universe interpretation reviewed by teacher; local record only"
+  },
+  "stageC": {
+    "status": "EXISTING_SHARED_ENGINE_EXTENDED_WITH_INDEPENDENT_MEMBERSHIP_AND_CARDINALITY_VERIFIER",
+    "families": [
+      "uae.g9.general.u09.l01.set_membership_cardinality"
+    ],
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "teacherReviewRequired": [
+      "set-builder notation",
+      "set equality justification",
+      "empty set and universe interpretation"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u09l01.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NOT_RUNTIME_TESTED",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T16:08:21.080Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}
