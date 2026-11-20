@@ -184,6 +184,13 @@
       ],
       "scope": "source item mathematical outcomes checked against original scanned textbook pages including graph fractions; does not establish parity of every generated student prompt or Stage D assessment correctness",
       "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "preparedReciprocalDenominatorVariant": {
+      "sourceExerciseId": "01.pdf:2-5:EX42",
+      "sourceExactlyDigitized": false,
+      "numericGeneratorFamily": "uae.g9.general.u02.l05.two_solutions",
+      "teacherReviewRequired": true,
+      "testsRun": "WRITTEN_NOT_RUN"
     }
   },
   "semanticAudit": "NOT_RUN_STAGE_D_ONLY",
@@ -1047,13 +1054,13 @@
         "printedPage": 106,
         "pdfPage": 117,
         "taskCategory": "absolute_equations_outer_coefficients",
-        "assessmentTreatment": "teacher_review_required_unsupported_coefficient_or_fraction",
+        "assessmentTreatment": "teacher_review_required_with_prepared_numeric_reciprocal_variant",
         "digitalFamily": null,
         "reviewStatus": "SOURCE_PAGE_MATH_INDEPENDENTLY_CHECKED_DIGITAL_RUNTIME_NOT_AUDITED",
         "originalMedia": "BOOK_REFERENCE_NOT_COPIED",
         "teacherReviewRequired": true,
         "exactSourceExpressionDigitized": false,
-        "correctionNote": "Source equation requires positive outer multiplier or fractional coefficient not represented by the current exact family.",
+        "correctionNote": "Source 4/|p|+12=14 requires p!=0; existing two_solutions engine now includes source-equivalent reciprocal-denominator generated variant, but exact source response and written domain proof remain teacher-reviewed. Generator written; runtime Stage D not run.",
         "sourceMathematicsSpotAudit": {
           "sourcePdfPage": 117,
           "sourcePrintedPage": 106,
@@ -1061,7 +1068,8 @@
           "expectedMathAnswer": "{-2,2}",
           "independentDerivation": "4/|p|+12=14 implies |p|=2, p != 0",
           "verificationScope": "SOURCE_ITEM_MATHEMATICS_ONLY_RUNTIME_AND_STUDENT_FACING_EQUIVALENCE_NOT_TESTED"
-        }
+        },
+        "numericAssistanceFamily": "uae.g9.general.u02.l05.two_solutions"
       },
       {
         "itemId": "01.pdf:2-5:EX43",
