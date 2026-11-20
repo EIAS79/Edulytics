@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 40,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-1",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT",
+  "lessonTitleAr": "جمع كثيرات الحدود وطرحها",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372
+  ],
+  "sourcePdfPages": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "stageA": {
+    "status": "SOURCE_STUDENT_BOOK_PAGES_DIRECTLY_VISUALLY_REVIEWED",
+    "skills": [
+      "classify like terms by degree and variable",
+      "add polynomial coefficients of matching degrees",
+      "subtract whole polynomial by distributing minus to all terms",
+      "algebra tiles positive negative cancellation",
+      "contextual addition subtraction and verification"
+    ]
+  },
+  "stageB": {
+    "status": "MISSING_LESSON_AUTHORED_ARABIC_PACK_RICHV2_AND_COOLDOWN",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l01-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l01-polynomial-add-subtract-ar.html",
+    "cooldownOriginalTeacherReviewedQuestions": 4,
+    "existingLessonWasMissing": true
+  },
+  "stageC": {
+    "status": "TWO_NUMERIC_COEFFICIENT_FAMILIES_IN_EXISTING_EXACT_ENGINE",
+    "engine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "families": [
+      "uae.g9.general.u07.l01.add_coefficient",
+      "uae.g9.general.u07.l01.subtract_coefficient"
+    ],
+    "reviewRequiredFor": [
+      "full simplified polynomial response",
+      "sign distribution explanation",
+      "algebra tile drawing and interpretation"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u07l01.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L01PolynomialTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "ownerCatalog": "13 units / 82 lessons approved for authoring",
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T14:19:39.494Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86",
+  "recordedCommits": [
+    "a54ee173291b89c3d5a6a5c9ddce021fa06cd785",
+    "70e03faeedf19040037953033d3f3bb3def4d60b",
+    "0a5af9573b4765e742dd21352187ece8fe6285af",
+    "7234d53c5e8a26d688ff7cfdbd3e94f3d378e359",
+    "087358516ec2fdb3c4244b0a5372af3b5814eed1",
+    "8a20402ee20329f1dbdba6d59239f8b09cc10f71",
+    "2df40626bb77e33d7d71b8d621b633ae5a8d8d9d",
+    "387eea49cbd84d41fcdff92588866f7085614d01"
+  ]
+}
