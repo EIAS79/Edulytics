@@ -29,14 +29,40 @@ public sealed class UaeG9GeneralEmbeddedContentMetadataTests
             Assert.StartsWith(Prefix, lesson.LessonCode);
             Assert.Contains(lesson.Translations, t => t.CultureCode == "ar");
         });
-        // RichV2 authored sidecars are NOT runtime assets until their version-1
-        // schemas and minimum pedagogical fields are independently corrected.
-        // The original 82 first-party canonical lesson bodies are separate.
-        Assert.Null(RichLessonContentV2Registry.Find(First, "ar"));
-        Assert.DoesNotContain(RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons),
-            lesson => lesson.LessonCode.StartsWith(Prefix, StringComparison.Ordinal));
-        // This proves embedded first-party canonical authoring only, not full
-        // RichV2 release, source literal 1:1 parity or Practice certification.
+        // The 82 original Arabic RichV2 files now have matching runtime schema
+        // and full explanation, key concept, worked example and mistake fields.
+        // This is NOT a publisher literal-parity or automatic Practice certificate.
+        Assert.NotNull(RichLessonContentV2Registry.Find(First, "ar"));
+        var richDocuments = RichLessonContentV2Registry.AllDocuments
+            .Where(d => d.Lessons.Any(x =>
+                x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal)))
+            .ToArray();
+        Assert.Equal(82, richDocuments.Length);
+        Assert.All(richDocuments, rich =>
+        {
+            Assert.Equal(1, rich.SchemaVersion);
+            Assert.Equal("UAE-MOE-MATH", rich.PackCode);
+            Assert.Single(rich.Lessons);
+        });
+        var richLessons = richDocuments.SelectMany(d => d.Lessons).ToArray();
+        Assert.Equal(82, richLessons.Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(document.Lessons.Select(x => x.LessonCode).Order(),
+            richLessons.Select(x => x.LessonCode).Order());
+        Assert.All(richLessons, lesson =>
+        {
+            Assert.Equal("ar", lesson.CultureCode);
+            Assert.True(lesson.ExplanationParagraphs.Count >= 2);
+            Assert.True(lesson.KeyConcepts.Count >= 3);
+            Assert.True(lesson.WorkedExamples.Count >= 3);
+            Assert.True(lesson.CommonMistakes.Count >= 2);
+            Assert.True(lesson.SummaryPoints.Count >= 3);
+            Assert.All(lesson.WorkedExamples, example =>
+            {
+                Assert.True(example.Steps.Count >= 3);
+                Assert.False(string.IsNullOrWhiteSpace(example.Method));
+            });
+        });
     }
 
     [Fact]
