@@ -19,7 +19,7 @@ test('All 82 authored Grade 9 General Arabic RichV2 lesson assets are source-ima
  let visuals=0;
  for(const name of files){
   const pack=JSON.parse(fs.readFileSync(path.join(richDirectory,name),'utf8'));
-  assert.equal(pack.PackCode,'UAE-MOE-MATH');
+  assert.equal(pack.PackCode,'UAE-G9-GENERAL');
   assert.ok(Array.isArray(pack.Lessons));
   assert.equal(pack.Lessons.length,1,'one authored lesson per RichV2 artifact');
   for(const lesson of pack.Lessons){
