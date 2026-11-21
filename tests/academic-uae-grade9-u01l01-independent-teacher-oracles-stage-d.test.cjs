@@ -140,3 +140,19 @@ test('U01L01 Q41 excludes degenerate cube while recognizing the algebraic zero r
  assert.ok(question.teacherExpectedEvidence.includes('نستبعد الصفر'));
  assert.equal(question.gradingRoute,'TEACHER_REVIEW_REQUIRED');
 });
+
+test('Source Q41 whole-number cube remains distinct from the authored positive-side analogy',()=>{
+ const source=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json'),'utf8'));
+ const r=source.records[40];
+ const proof=r.cubeDomainReview20261121;
+ assert.equal(r.sourceItem,'U01L01-Q41');
+ assert.equal(proof.sourceWholeNumberDomainMentioned,true);
+ assert.equal(proof.sourcePrintedPage,8);
+ assert.deepEqual(proof.algebraicRoots,[0,6]);
+ assert.equal(proof.publisherIntendedDomainCertified,false);
+ assert.deepEqual(proof.analogAlgebraicRoots,[0,4]);
+ assert.equal(proof.analogExplicitlyPositive,true);
+ assert.equal(proof.analogPhysicalRoot,4);
+ assert.equal(proof.sourceFullParityCertified,false);
+ assert.equal(r.actualHumanTeacherScoringCompleted,false);
+});
