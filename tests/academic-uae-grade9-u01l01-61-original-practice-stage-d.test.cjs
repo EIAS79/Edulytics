@@ -76,3 +76,48 @@ test('Independent source-aligned task arithmetic samples use correct mathematica
  assert.equal(r[36].sourceSkillCategory,'SAME_BASE_POWER_PRODUCT');
  assert.equal(r[46].sourceSkillCategory,'PRIOR_DATA_CHART');
 });
+const vm=require('node:vm');
+
+test('Real student script builds 61 answer boxes and exports only local ungraded teacher responses',()=>{
+ const html=fs.readFileSync(path.join(root,activityPath),'utf8');
+ const script=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+ assert.ok(script);
+ const nodes=new Map();
+ const element=tag=>{
+   let currentId='';
+   return {
+     tag,children:[],attributes:{},value:'',textContent:'',listeners:{},
+     get id(){return currentId;},
+     set id(value){currentId=value;nodes.set(value,this);},
+     setAttribute(name,value){this.attributes[name]=value;},
+     append(...children){this.children.push(...children);},
+     appendChild(child){this.children.push(child);},
+     addEventListener(event,callback){this.listeners[event]=callback;}
+   };
+ };
+ for(const id of ['practice','core','prior','output','status'])element('section').id=id;
+ const document={
+   getElementById:id=>nodes.get(id),
+   createElement:tag=>element(tag)
+ };
+ vm.runInNewContext(script,{document,JSON,Array,String});
+ assert.equal(nodes.get('core').children.length,46);
+ assert.equal(nodes.get('prior').children.length,15);
+ assert.ok(nodes.has('G9-U01L01-T01'));
+ assert.ok(nodes.has('G9-U01L01-T61'));
+ nodes.get('G9-U01L01-T01').value='\u062e\u0645\u0633\u0629 \u0623\u0645\u062b\u0627\u0644 \u0645';
+ nodes.get('G9-U01L01-T61').value='\u0661\u0661\u066b\u0665\u0665';
+ let prevented=false;
+ nodes.get('practice').listeners.submit({preventDefault:()=>{prevented=true;}});
+ assert.equal(prevented,true);
+ const result=JSON.parse(nodes.get('output').value);
+ assert.equal(result.answers.length,61);
+ assert.equal(result.completed,2);
+ assert.equal(result.total,61);
+ assert.equal(result.graded,false);
+ assert.equal(result.submitted,false);
+ assert.equal(result.answers[0].question,'G9-U01L01-T01');
+ assert.equal(result.answers[60].question,'G9-U01L01-T61');
+ assert.ok(result.answers.every(x=>x.review==='TEACHER_REVIEW_REQUIRED'));
+ assert.match(nodes.get('status').textContent,/\u0644\u0645 \u062a\u064f\u0631\u0633\u0644/);
+});
