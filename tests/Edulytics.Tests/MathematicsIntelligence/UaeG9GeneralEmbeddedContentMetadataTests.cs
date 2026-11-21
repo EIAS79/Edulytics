@@ -29,15 +29,14 @@ public sealed class UaeG9GeneralEmbeddedContentMetadataTests
             Assert.StartsWith(Prefix, lesson.LessonCode);
             Assert.Contains(lesson.Translations, t => t.CultureCode == "ar");
         });
-        Assert.NotNull(RichLessonContentV2Registry.Find(First, "ar"));
-        var v2 = RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons)
-            .Where(x => x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal))
-            .ToArray();
-        Assert.Equal(82, v2.Length);
-        Assert.Equal(82, v2.Select(x => x.LessonCode)
-            .Distinct(StringComparer.Ordinal).Count());
-        // This proves embedded first-party authoring only, not source 1:1 parity,
-        // student Practice authorization, or production database import.
+        // RichV2 authored sidecars are NOT runtime assets until their version-1
+        // schemas and minimum pedagogical fields are independently corrected.
+        // The original 82 first-party canonical lesson bodies are separate.
+        Assert.Null(RichLessonContentV2Registry.Find(First, "ar"));
+        Assert.DoesNotContain(RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons),
+            lesson => lesson.LessonCode.StartsWith(Prefix, StringComparison.Ordinal));
+        // This proves embedded first-party canonical authoring only, not full
+        // RichV2 release, source literal 1:1 parity or Practice certification.
     }
 
     [Fact]
