@@ -78,3 +78,10 @@ Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gat
 - **Current hosted gate:** GitHub Actions [#44871005498](https://github.com/EIAS79/Edulytics/actions/runs/44871005498) pending, jobs queued when inspected. **No hosted CI green claim.**
 - **Academic release:** owner approval documented; Unit 7 edition/source crosswalk and atomic source inventories not complete, third-party asset rights and authenticated E2E not independently passed. First incomplete lesson remains **U01L01 D_PENDING**; decision **NO_GO_SOURCE_100**, no merge or production writes.
 - The ledger/checkpoint/report commits following this tested SHA are evidence-only commits, **not themselves tested release SHAs**.
+
+## Stage D.4 U01L01 sports-career source learning gap (tested Node 92e13181d3)
+
+- Original Arabic professional-context teaching in existing RichV2 now models sports-marketing costs `٢٤م+٣٥`; at `م=٤`, total `١٣١`, with fixed design fee counted once; no publisher photo/QR copied.
+- Source structural item `EXTERNAL_SKILLS_CAREER_MEDIA` has an independent locally checked mathematical analogy, but external publisher illustration/QR equivalence is *unverified* and complete lesson/source-element parity remains `UNKNOWN`.
+- Actual isolated local Node run at `92e13181d3916f2a7eeb9fa16d7947fc41ae9dc6`: **378/378 PASS**, 94 Grade 9 files, no skipped. Strict Node and Python source gates each exited 1, expected `NO_GO_SOURCE_100` (raw 0/86, target 0/82); do not convert these tests into 100% source coverage.
+- Last full 17,514 .NET test pass is anchored to earlier `5b3fda1`; .NET has **not** been rerun after the RichV2-only content edit. Hosted GitHub Actions still not confirmed PASS; authenticated E2E/rights and full source handoff remain blocked. No Neon writes, no Render deploy, no merge.
