@@ -6,12 +6,12 @@ const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const packPath='src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json';
 const read=()=>JSON.parse(fs.readFileSync(path.join(root,packPath),'utf8'));
-test('UAE Grade9 draft canonical content uses defined .NET source and title provenance enums',()=>{
+test('UAE Grade9 approved first-party canonical content uses defined .NET source and title provenance enums',()=>{
  const p=read();
  assert.equal(p.SourceResolution,'OwnerSelectedStudentBookCrosscheck');
  assert.equal(p.PedagogicalSourceType,'OwnerSelectedLocalArabicStudentBookReference');
  assert.equal(p.SourcePolicyVersion,2);
- assert.equal(p.Status,'Draft');
+ assert.equal(p.Status,'Published');
  assert.equal(p.Lessons.length,82);
  assert.equal(new Set(p.Lessons.map(x=>x.LessonCode)).size,82);
  assert.ok(p.Lessons.every(x=>x.TitleProvenance==='PedagogicalSource'));
@@ -38,5 +38,5 @@ test('Owner-local Grade9 source policy v2 supplies required checked timestamps, 
  assert.ok(p.PedagogicalSourceRightsNote.includes('Edulytics'));
  assert.ok(p.ReviewEvidence.includes('SOURCE_INDEX_COMPLETE=false'));
  assert.ok(p.Lessons[0].SourceRights.includes('Original independent Edulytics'));
- assert.equal(p.Status,'Draft');
+ assert.equal(p.Status,'Published');
 });
