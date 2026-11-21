@@ -61,5 +61,7 @@ test('Quarantine does not silently authorize academic release, CI bypass or data
    'Owner-approved 82 Arabic canonical bodies may be embedded; this is not a live DB import.');
  assert.equal(read('grade9-release-validation.json').deployed,false);
  assert.equal(read('grade9-release-validation.json').productionWrites,0);
- assert.ok(core.includes('Exclude="Curriculum/LessonContent/RichV2/uae-g9-general-*.rich-lesson-v2.json"'));
+ assert.ok(!core.includes('Exclude="Curriculum/LessonContent/RichV2/uae-g9-general-*.rich-lesson-v2.json"'),
+   'All 82 independently structured owner-original RichV2 lessons are now embedded in the candidate only.');
+ assert.equal(read('grade9-release-validation.json').deployed,false);
 });
