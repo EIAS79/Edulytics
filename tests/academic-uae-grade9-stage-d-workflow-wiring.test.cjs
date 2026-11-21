@@ -49,3 +49,13 @@ test('Grade 9 pull-request source gate does not inadvertently block unrelated sh
  assert.ok(push.includes('src/Edulytics.Services/Mathematics/**'));
  assert.ok(push.includes('src/Edulytics.Core/Mathematics/**'));
 });
+
+test('All three Grade9 Node/Python CI pipelines propagate test errors despite tee log collection',()=>{
+ const node=workflow.split('      - name: Run prepared Grade 9 Arabic tests')[1].split('      - name: Upload prepared')[0];
+ const strict=workflow.split('      - name: Strict source-index lock')[1].split('      - name: Independent Python')[0];
+ const python=workflow.split('      - name: Independent Python source-parity evidence gate')[1].split('      - name: Upload independent')[0];
+ for(const body of [node,strict,python])assert.ok(body.includes('set -o pipefail'),body);
+ assert.ok(node.includes('node --test'));
+ assert.ok(strict.includes('academic-uae-grade9-strict-source-index-gate.test.cjs'));
+ assert.ok(python.includes('uae_g9_stage_d_semantic_gate.py --json'));
+});

@@ -31,7 +31,11 @@ public enum RichLessonVisualKind
     CartesianPlot = 13,
     SignedCartesianPlot = 14,
     ExpressionStripBars = 15,
-    InequalityNumberLine = 16
+    InequalityNumberLine = 16,
+    // Retain stable persisted enum ids and add the diagram kinds used by
+    // Grade 9 authored sidecars. Do not translate these to unrelated visuals.
+    VennDiagram = 17,
+    CoordinatePlane = 18
 }
 
 public sealed class RichLessonContentV2Document

@@ -55,6 +55,7 @@ jobs:
           echo "TestedRefKind=${GITHUB_REF}"
       - name: Run prepared Grade 9 Arabic tests
         run: |
+          set -o pipefail
           mapfile -t files < <(find tests -maxdepth 1 -name 'academic-uae-grade9*.test.cjs' ! -name 'academic-uae-grade9-strict-source-index-gate.test.cjs' | sort)
           test "${#files[@]}" -gt 0
           node --test "${files[@]}" 2>&1 | tee g9-node-tests.log
@@ -67,7 +68,9 @@ jobs:
           if-no-files-found: warn
       - name: Strict source-index lock — fail closed until verified
         if: always()
-        run: node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
+        run: |
+          set -o pipefail
+          node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
       - name: Independent Python source-parity evidence gate
         if: always()
         run: |

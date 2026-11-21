@@ -15,7 +15,7 @@
   },
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
   "stageDStarted": true,
-  "stageDStatus": "D_IN_PROGRESS_LOCAL_DIAGNOSTICS_SOURCE_INDEX_BLOCKED",
+  "stageDStatus": "D_IN_PROGRESS_TECHNICAL_LOCAL_ALL_GREEN_SOURCE_AND_HOSTED_GATES_BLOCKED",
   "candidateShaAtInitialInspection": "f95fd5f76bc992d340b8a8e3aa65c804c7d78cbe",
   "stageDWorkflowCreationCommit": "8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630",
   "testedCandidateSha": null,
@@ -46,13 +46,13 @@
   "firstIncompleteReason": "U01L01 original analogous practices and local checks exist, but original source atomic equivalence and Q7/Q25 wording are not fully certified; 85 additional raw entries unverified",
   "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
   "tests": {
-    "node": "LOCAL_323_PASS_0_FAIL_GITHUB_CI_PENDING",
-    "dotnet": "LOCAL_70_PASS_0_FAIL_GITHUB_CI_PENDING",
-    "authenticatedE2E": "NOT_RUN_G9_NOT_IMPORTED_IN_PRODUCTION",
+    "node": "LOCAL_333_PASS_0_FAIL_GITHUB_CI_PENDING",
+    "dotnet": "LOCAL_FULL_17427_PASS_0_FAIL_0_SKIP_SCOPED_G9_74_PASS_HOSTED_CI_PENDING",
+    "authenticatedE2E": "NOT_RUN_G9_ZERO_PRODUCTION_LESSONS",
     "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
     "neonReadOnlyLive": "2026_11_21_G9_GENERAL_0_LESSONS_0_NODES"
   },
-  "releaseDecision": "NO_GO_SOURCE_86_82_AND_GITHUB_CI_UNVERIFIED",
+  "releaseDecision": "NO_GO_SOURCE_86_82_AND_HOSTED_CI_AND_AUTHENTICATED_G9_E2E_NOT_PASSED",
   "notes": [
     "Uploaded Stage D plan mistakenly says Grade:8 twice in Grade 9 handoff/checkpoint templates; authoritative scope is Grade 9 and no Grade 8 record should be mutated.",
     "Stage D diagnostics may run while the D entry handoff and source parity gate are blocked.",
@@ -83,7 +83,7 @@
     "releaseGateSeparate": true,
     "latestLocalChecks": {
       "date": "2026-11-21",
-      "preparedNodeTestsPassed": 323,
+      "preparedNodeTestsPassed": 333,
       "preparedNodeTestsFailed": 0,
       "scopedDotnetPassed": 70,
       "scopedDotnetFailed": 0,
@@ -107,7 +107,16 @@
         25
       ],
       "sourcePublisherQ7Q25DefinitiveMeaningVerified": false,
-      "independentPythonSourceGate": "LOCAL_NO_GO_0_OF_86_AND_0_OF_82"
+      "independentPythonSourceGate": "LOCAL_NO_GO_0_OF_86_AND_0_OF_82",
+      "metadataAndRenderingNativeRegression": "3_PASSED_0_FAILED",
+      "globalDotnetRetest": "LOCAL_17427_PASSED_0_FAILED_0_SKIPPED",
+      "g9DraftCanonicalPackExcludedFromRuntime": true,
+      "g9RichV2AuthoringExcludedFromRuntime": true,
+      "futureSchemaV2AuthoringStillRequiresReleaseValidation": true,
+      "unapprovedG9PracticeContractsExcludedFromRuntime": true,
+      "nativeGrade9NoReseedAndMathParserTests": "4_PASSED_WITH_NEW_READY_PRACTICE_GUARD",
+      "scopedG9DotnetRetest": "LOCAL_74_PASSED_0_FAILED",
+      "productionNeonWrites": 0
     }
   }
 }

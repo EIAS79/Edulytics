@@ -11708,7 +11708,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G9_GENERAL_2019_AR_U13L09_P793_800",
             "PREPARED_STAGE_D_NOT_RUN", Version);
 
+        // The runtime registry is for independently READY_VERIFIED contracts,
+        // never partially authored Stage D drafts. Grade 9 General is held
+        // separately until its 86-source/82-lesson release gates actually pass.
+        // Keep draft definitions above for later academic/engine completion;
+        // do not expose them through All or TryResolve in production.
         return byLesson.Values
+            .Where(x =>
+                string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal) &&
+                !x.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
     }

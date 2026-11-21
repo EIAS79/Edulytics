@@ -12,13 +12,13 @@ test('Grade9 stage D live diagnostics track real local test coverage and keep fi
  const audit=read(b+'semantic-audit-ledger.json');
  assert.equal(run.grade,9);assert.equal(run.firstIncompleteLessonOrdinal,1);
  assert.ok(run.stageDStarted);
- assert.equal(run.stageDStatus,'D_IN_PROGRESS_LOCAL_DIAGNOSTICS_SOURCE_INDEX_BLOCKED');
- assert.equal(run.tests.node,'LOCAL_323_PASS_0_FAIL_GITHUB_CI_PENDING');
- assert.equal(run.tests.dotnet,'LOCAL_70_PASS_0_FAIL_GITHUB_CI_PENDING');
+ assert.equal(run.stageDStatus,'D_IN_PROGRESS_TECHNICAL_LOCAL_ALL_GREEN_SOURCE_AND_HOSTED_GATES_BLOCKED');
+ assert.equal(run.tests.node,'LOCAL_333_PASS_0_FAIL_GITHUB_CI_PENDING');
+ assert.equal(run.tests.dotnet,'LOCAL_FULL_17427_PASS_0_FAIL_0_SKIP_SCOPED_G9_74_PASS_HOSTED_CI_PENDING');
  assert.equal(progress.stageD,'IN_PROGRESS_FIRST_SOURCE_LESSON_NOT_YET_CLOSED');
  assert.equal(progress.productionPublish,'NOT_STARTED');
  assert.equal(progress.stageDLocalDiagnostics.firstIncompleteOrdinal,1);
- assert.equal(progress.stageDLocalDiagnostics.localNodePass,323);
+ assert.equal(progress.stageDLocalDiagnostics.localNodePass,333);
  assert.equal(progress.stageDLocalDiagnostics.localDotnetPass,70);
  assert.equal(audit.rows.length,86);
  assert.equal(audit.rows[0].fullLessonAuditPassed,false);
@@ -28,7 +28,7 @@ test('Grade9 release remains source-based fail-closed and production untouched',
  const run=read(b+'grade9-stage-d-execution-ledger.json');
  const index=read(b+'grade9-82-target-index.json');
  const progress=read(b+'full-grade-progress.json');
- assert.equal(run.releaseDecision,'NO_GO_SOURCE_86_82_AND_GITHUB_CI_UNVERIFIED');
+ assert.equal(run.releaseDecision,'NO_GO_SOURCE_86_82_AND_HOSTED_CI_AND_AUTHENTICATED_G9_E2E_NOT_PASSED');
  assert.equal(run.sourceSemanticLock.sourceIndexComplete,false);
  assert.equal(index.SOURCE_INDEX_COMPLETE,false);
  assert.equal(index.records.filter(x=>x.ElementCoverage==='FULL_SOURCE_ELEMENT_1_TO_1_VERIFIED').length,0);
