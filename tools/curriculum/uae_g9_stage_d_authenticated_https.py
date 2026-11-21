@@ -118,7 +118,7 @@ def run():
             form=get_page(student,"/student/practice")
             wrong=probe_lesson(student,BASE,lesson_id,extract_adoption(form),
                 extract_csrf(form),extract_idempotency_key(form),sql,
-                answer_mode="well_formed_wrong",wrong_answer_profile="uae-g7")
+                answer_mode="well_formed_wrong",wrong_answer_profile="uae-g9")
             assert wrong.get("status")=="WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED",(code,wrong)
             wrong_count+=1
             form=get_page(student,"/student/practice")
