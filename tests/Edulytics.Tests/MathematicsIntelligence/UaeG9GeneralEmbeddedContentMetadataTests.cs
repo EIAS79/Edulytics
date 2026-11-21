@@ -10,14 +10,34 @@ public sealed class UaeG9GeneralEmbeddedContentMetadataTests
     private const string First = Prefix + "01:01:VARIABLES-AND-EXPRESSIONS";
 
     [Fact]
-    public void Unverified_82_lesson_draft_is_not_implicitly_embedded_or_reseeded()
+    public void Owner_approved_G9_first_party_82_lesson_pack_is_embedded_without_fake_publisher_parity()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
-        Assert.DoesNotContain(documents.SelectMany(d => d.Lessons),
-            lesson => lesson.LessonCode.StartsWith(Prefix, StringComparison.Ordinal));
-        Assert.Null(RichLessonContentV2Registry.Find(First, "ar"));
-        Assert.DoesNotContain(RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons),
-            lesson => lesson.LessonCode.StartsWith(Prefix, StringComparison.Ordinal));
+        var document = Assert.Single(documents.Where(d =>
+            d.Lessons.Any(x =>
+                x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal))));
+        Assert.Equal("UAE-MOE-MATH", document.PackCode);
+        Assert.Equal("ar", document.AcademicLanguage);
+        Assert.Equal("MOE-2026-2027-T1", document.VersionCode);
+        Assert.Equal("Published", document.Status.ToString());
+        Assert.Equal(82, document.Lessons.Count);
+        Assert.Equal(82, document.Lessons
+            .Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.All(document.Lessons, lesson =>
+        {
+            Assert.StartsWith(Prefix, lesson.LessonCode);
+            Assert.Contains(lesson.Translations, t => t.CultureCode == "ar");
+        });
+        Assert.NotNull(RichLessonContentV2Registry.Find(First, "ar"));
+        var v2 = RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons)
+            .Where(x => x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(82, v2.Length);
+        Assert.Equal(82, v2.Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+        // This proves embedded first-party authoring only, not source 1:1 parity,
+        // student Practice authorization, or production database import.
     }
 
     [Fact]
