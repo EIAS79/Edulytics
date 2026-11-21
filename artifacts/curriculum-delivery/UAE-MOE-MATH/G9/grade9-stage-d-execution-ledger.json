@@ -376,5 +376,42 @@
     "releaseDecision": "NO_GO_SOURCE_100",
     "mergeAllowed": false,
     "deployAllowed": false
+  },
+  "stageD4CurrentLessonRootCauseCorrections": {
+    "stage": "D.4",
+    "lessonOrdinal": 1,
+    "category": "CONTENT_AND_SOURCE_HANDOFF",
+    "defect": "U01L01 RichV2 used a bare Arabic comparative phrase as a subtraction expression, and the A-C checkpoint incorrectly claimed the full source atomic denominator was verified",
+    "corrections": [
+      {
+        "file": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+        "detail": "Distinguish comparative relation n<20 from arithmetic difference 20-n; qualify all lesson vocabulary use of less-than",
+        "commits": [
+          "82605aca181e86c199c7d63d934cdb97ee8ebb23",
+          "89e5b24849adbe7157da60c79081f9b95a69ce4d"
+        ]
+      },
+      {
+        "file": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-a-c-checkpoint.json",
+        "detail": "Change sourceElementDenominatorVerified to false and distinguish two printed goals from four derived Edulytics competencies",
+        "commit": "809b7258189d568184519b9c237e48cb697769e6"
+      }
+    ],
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-stage-d-handoff.test.cjs"
+    ],
+    "verifiedFromGithubContent": 13,
+    "testResultKind": "IN_MEMORY_STATIC_ASSERTIONS_ONLY_NOT_HOSTED_CI",
+    "sourceAtomicDenominator": null,
+    "sourceSemanticParity": "UNKNOWN",
+    "firstLessonStatus": "D_PENDING",
+    "sourceGate": "D_PENDING_A_C_EVIDENCE",
+    "attemptedHostedRunId": 44870044832,
+    "hostedResultAtLastInspection": "QUEUED",
+    "authenticatedE2E": "NOT_RUN",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "noLessonIdentityChange": true,
+    "productionWrites": 0
   }
 }
