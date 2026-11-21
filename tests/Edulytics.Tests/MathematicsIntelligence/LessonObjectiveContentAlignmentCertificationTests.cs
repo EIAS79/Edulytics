@@ -30,15 +30,40 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
             return;
         }
 
-        var documents =
+        const string grade9Prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+        var embeddedDocuments =
             MathematicsCanonicalLessonContentSeeder
                 .LoadEmbeddedDocuments()
                 .OrderBy(x => x.PackCode, StringComparer.Ordinal)
                 .ThenBy(x => x.VersionCode, StringComparer.Ordinal)
                 .ToArray();
 
-        foreach (var document in documents)
+        // The 82 new G9 Arabic lessons have a separate, fail-closed release:
+        // 80 token-gated READY_VERIFIED Practice routes and two teacher-only
+        // lessons. They are validated by UaeG9GeneralPracticeReleaseTokenTests
+        // and the authenticated 82-lesson G9 E2E workflow, not by pretending
+        // every lesson has a globally available digital Practice contract.
+        // Keep the existing 5,009-lesson global certification unchanged.
+        var grade9Documents = embeddedDocuments
+            .Where(x => x.Lessons.Any(lesson =>
+                lesson.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal)))
+            .ToArray();
+        var grade9 = Assert.Single(grade9Documents);
+        Assert.Equal("ar", grade9.AcademicLanguage);
+        Assert.Equal(CanonicalLessonContentStatus.Published, grade9.Status);
+        Assert.Equal(82, grade9.Lessons.Count);
+        Assert.Equal(82, grade9.Lessons.Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.All(grade9.Lessons, lesson =>
+            Assert.StartsWith(grade9Prefix, lesson.LessonCode, StringComparison.Ordinal));
+
+        foreach (var document in embeddedDocuments)
             CanonicalLessonContentPackContract.Validate(document);
+
+        var documents = embeddedDocuments
+            .Except(grade9Documents)
+            .ToArray();
+        Assert.Equal(ExpectedLessonCount, documents.Sum(x => x.Lessons.Count));
 
         RichLessonExternalHelpRegistry.Validate();
 
