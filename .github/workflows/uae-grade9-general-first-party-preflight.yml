@@ -4,7 +4,7 @@ name: UAE Grade 9 General first-party source and structural preflight
 # This workflow must never be used alone as release authorization.
 on:
   push:
-    branches: [fix/g9-general-full-year-scope-86]
+    branches: [fix/g9-general-full-year-scope-86, main]
     paths:
       - '.github/workflows/uae-grade9-general-first-party-preflight.yml'
       - 'tools/curriculum/uae_g9_first_party_stage_d_gate.py'
