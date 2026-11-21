@@ -14,6 +14,7 @@ from lesson_skill_resolution_audit import (
     owner_approved_g6_declared_practice,
     owner_approved_g7_declared_practice,
     owner_approved_g8_declared_practice,
+    owner_approved_g9_declared_practice,
     G4_CONTRACTS,
 )
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
@@ -183,6 +184,44 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
             }
         if found_g8 != set(specialist_g8):
             errors.append("G8 owner mapping is not the exact canonical 76-set")
+
+    specialist_g9, g9_teacher_only = owner_approved_g9_declared_practice()
+    if len(specialist_g9) != 80 or len(g9_teacher_only) != 2:
+        errors.append("G9 exact 80 digital and 2 teacher-only first-party lesson routes missing or not registered")
+    else:
+        # G9's source-era mapping JSON may contain a wider A-C candidate set.
+        # The *actual* gated C# 80 digital routes are authoritative; preserve
+        # teacher-only entries with no invented automatic digital families.
+        # Stage D + four-role HTTPS/RTL and scoped PostgreSQL release checks
+        # remain independently mandatory on the final exact SHA.
+        import re
+        contracts = G4_CONTRACTS.read_text(encoding="utf-8-sig")
+        declaration = re.compile(
+            r'byLesson\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\]\s*'
+            r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+            r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]', re.S)
+        rows = declaration.findall(contracts)
+        if len(rows) != 80:
+            errors.append("G9 exact 80 runtime C# digital contracts have drifted")
+        found_g9: set[str] = set()
+        for code, declared, skill, mechanic, raw in rows:
+            family_ids = re.findall(r'"([^"]+)"', raw)
+            if (code != declared or code in found_g9 or
+                    specialist_g9.get(code) != skill or
+                    not mechanic or not family_ids):
+                errors.append("G9 invalid or conflicting first-party digital route: " + code)
+                continue
+            found_g9.add(code)
+            result[code] = {
+                "lessonCode": code,
+                "sourceType": "OwnerApprovedFirstPartyCSharpExactPracticeContract",
+                "primarySkills": [skill],
+                "allowedQuestionFamilies": family_ids,
+                "officialOutcomeCodes": [],
+                "technicalReadiness": "PENDING_CURRENT_SHA_G9_AUTHENTICATED_E2E_AND_EXPLICIT_DIGITAL_TOKEN",
+            }
+        if found_g9 != set(specialist_g9):
+            errors.append("G9 80 digital C# mappings are not the exact owner-approved 80-set")
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
@@ -392,6 +431,7 @@ def audit() -> dict[str, Any]:
     specialist_g6=owner_approved_g6_declared_practice()
     specialist_g7=owner_approved_g7_declared_practice()
     specialist_g8=owner_approved_g8_declared_practice()
+    specialist_g9, g9_teacher_only = owner_approved_g9_declared_practice()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
@@ -558,6 +598,29 @@ def audit() -> dict[str, Any]:
                 "Stage D and release CI must pass independently."
             ]
 
+
+        specialist_g9_ready = bool(
+            len(specialist_g9) == 80
+            and len(g9_teacher_only) == 2
+            and code in specialist_g9
+            and mapping_source == "OwnerApprovedFirstPartyCSharpExactPracticeContract"
+            and mapping is not None
+            and mapping.get("primarySkills") == [specialist_g9[code]]
+            and bool(clean_list(mapping.get("allowedQuestionFamilies")))
+            and semantic_status not in {"CONTENT_WEAK", "REVIEW_REQUIRED", "UNCLASSIFIED"}
+            and not semantic.get("studentFacingDefects")
+        )
+        if specialist_g9_ready:
+            # Contract-level target and reusable exact generators are ready
+            # for Stage D. Production availability still requires the explicit
+            # G9 digital Practice feature token; no source-item parity claim.
+            readiness = "READY_CONTEXTUAL"
+            reasons = [
+                "Owner-approved first-party Grade9 General Arabic exact "
+                "80-lesson C# digital generator mapping, independently gated "
+                "by source, RTL, four-role E2E and production feature token."
+            ]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -594,7 +657,9 @@ def audit() -> dict[str, Any]:
             "specialistGrade6OwnerScopedContractPendingRuntime": specialist_g6_ready,
             "specialistGrade7OwnerScopedContractPendingRuntime": specialist_g7_ready,
             "specialistGrade8OwnerScopedContractPendingRuntime": specialist_g8_ready,
-            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready) else capability_reasons),
+            "specialistGrade9OwnerScopedDigitalContractPendingRuntime": specialist_g9_ready,
+            "grade9TeacherReviewOnlyIndependentlyRecorded": code in g9_teacher_only,
+            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready or specialist_g9_ready) else capability_reasons),
         })
 
     summary["grade4SpecialistExactPracticeCount"] = sum(
