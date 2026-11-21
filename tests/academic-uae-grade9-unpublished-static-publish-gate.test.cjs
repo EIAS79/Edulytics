@@ -57,6 +57,9 @@ test('Quarantine does not silently authorize academic release, CI bypass or data
  assert.equal(progress.productionPublish,'NOT_STARTED');
  assert.ok(ledger.releaseDecision.startsWith('NO_GO_'));
  const core=fs.readFileSync(path.join(root,'src/Edulytics.Core/Edulytics.Core.csproj'),'utf8');
- assert.ok(core.includes('Exclude="Curriculum/LessonContent/Packs/uae-g9-general-*.lesson-content-pack.json"'));
+ assert.ok(!core.includes('Exclude="Curriculum/LessonContent/Packs/uae-g9-general-*.lesson-content-pack.json"'),
+   'Owner-approved 82 Arabic canonical bodies may be embedded; this is not a live DB import.');
+ assert.equal(read('grade9-release-validation.json').deployed,false);
+ assert.equal(read('grade9-release-validation.json').productionWrites,0);
  assert.ok(core.includes('Exclude="Curriculum/LessonContent/RichV2/uae-g9-general-*.rich-lesson-v2.json"'));
 });
