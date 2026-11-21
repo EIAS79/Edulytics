@@ -42,7 +42,24 @@ test('Partial source subset cannot change unknown total element denominator or D
  const c=read('lesson-1-stage-d-checkpoint.json');
  const v=read('grade9-release-validation.json');
  assert.equal(m.separatelyReviewedStructuralGroupsNotDoubleCounted,7);
- assert.ok(m.openUnreviewedGroups.length>=4);
+ assert.deepEqual(m.openUnreviewedGroups,[
+  'launch baseball context prose',
+  'all publisher source illustrations and linked external resources',
+  'full source item by item numerical equivalence'
+ ]);
+ const check=read('u01l01-nonnumbered-source-structure-reinspection-NO_GO.json');
+ const reviewed=m.visuallyInspectedAndLocallyMappedButAtomicParityPending;
+ assert.deepEqual(reviewed.sourceStructuralCheckIds, ['PREVIOUS_INTEGER_OPERATIONS','STUDY_TIP_IDENTIFY_QUANTITIES','VERBAL_OPERATION_TABLE']);
+ for(const id of reviewed.sourceStructuralCheckIds){
+  const item=check.sourceStructuralChecks.find(x=>x.id===id);
+  assert.ok(item);
+  assert.equal(item.sourcePageDirectlyVisuallyInspected,true);
+  assert.equal(item.correspondingIndependentContentLocallyVerified,true);
+  assert.equal(item.fullSourceAtomicEquivalenceCertified,false);
+ }
+ assert.equal(reviewed.sourceAtomicEquivalenceCertified,false);
+ assert.equal(reviewed.publisherImageOrQrRightsVerified,false);
+ assert.equal(reviewed.changesKnown82SourceElementIdCount,false);
  assert.equal(m.rawTotalAtomicSourceElementDenominator,null);
  assert.equal(m.isExhaustiveSourceElementInventory,false);
  assert.equal(m.sourceSemanticParity,'UNKNOWN');
