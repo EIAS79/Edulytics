@@ -101,3 +101,17 @@ test('U01L01 RichV2 includes independent lesson launch context and operation voc
  assert.equal(8*6,48);
  assert.equal(200*3+300*2,1200);
 });
+
+
+test('U01L01 Arabic comparative wording must not be misgraded or taught as an arithmetic difference',()=>{
+ const l=read(base+'RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json').Lessons[0];
+ const sentence=l.ExplanationParagraphs.find(x=>x.includes('«ن أقل من ٢٠»'));
+ assert.ok(sentence,'must explain the comparative wording rather than silently dropping it');
+ assert.match(sentence,/«ن أقل من ٢٠» تفيد المقارنة/);
+ assert.match(sentence,/«الفرق بين ٢٠ ون» فيكتب ٢٠−ن/);
+ assert.match(sentence,/«الفرق بين ن و٢٠» فيكتب ن−٢٠/);
+ assert.doesNotMatch(sentence,/«ن أقل من ٢٠» تكتب ٢٠−ن/);
+ const n=17;
+ assert.equal(n<20,true);
+ assert.equal(20-n,3);
+});
