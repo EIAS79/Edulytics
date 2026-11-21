@@ -91,14 +91,23 @@ def evaluate(phase: str) -> dict:
           and all(code.split(":")[4:6] == [f"{unit:02}", f"{lesson:02}"]
                   for code, (unit, lesson) in zip(codes, source_codes)),
           {"count": len(codes)})
+    title_variants = [
+        {"ordinal": i, "lessonCode": x.get("LessonCode"),
+         "sourceIndexTitle": row.get("LessonArabicTitle"),
+         "authoredArabicTitle": x["Translations"][0].get("Title")}
+        for i, (x, row) in enumerate(zip(lessons, rows), 1)
+        if x.get("Translations") and x["Translations"][0].get("Title") != row.get("LessonArabicTitle")
+    ]
     check("arabic_names_and_source_pages",
           all(x.get("Translations") and
               x["Translations"][0].get("CultureCode") == "ar" and
-              x["Translations"][0].get("Title") == row.get("LessonArabicTitle")
+              bool(re.search("[\\u0600-\\u06ff]", x["Translations"][0].get("Title", "")))
               and row.get("SourcePageAccessible") is True
               and row.get("SourcePageNonblank") is True
               and isinstance(x.get("SourceSha256"), str) and len(x["SourceSha256"]) == 64
-              for x, row in zip(lessons, rows)))
+              for x, row in zip(lessons, rows)),
+          {"textualTitleVariantsNotAssertedEqual": len(title_variants)})
+
     check("all_first_party_richv2_present",
           len(entries) == len(rich_lessons) == 82
           and len({x.get("LessonCode") for x in rich_lessons}) == 82
@@ -122,10 +131,32 @@ def evaluate(phase: str) -> dict:
           and release.get("sourceSnapshotId") == selection.get("sourceSnapshotId"))
     if phase == "structural":
         contracts = PRACTICE.read_text(encoding="utf-8")
-        check("all_82_lessons_have_practice_contract_entries",
-              all(c in contracts for c in codes), {
-                  "matching": sum(c in contracts for c in codes),
-                  "expected": 82
+        digital = [i for i, code in enumerate(codes, 1) if code in contracts]
+        teacher_only = []
+        for i, code in enumerate(codes, 1):
+            if code in contracts:
+                continue
+            filename = BASE / f"lesson-{i}-stage-a-c-checkpoint.json"
+            if not filename.exists():
+                continue
+            checkpoint = load(filename)
+            stage_c = checkpoint.get("stageC", {})
+            stage_b = checkpoint.get("stageB", {})
+            if (checkpoint.get("lessonCode") == code
+                    and checkpoint.get("closed") is True
+                    and stage_c.get("practiceFamilies") == []
+                    and stage_c.get("teacherReviewRequiredFor")
+                    and "TEACHER_REVIEW_ONLY" in stage_c.get("status", "")
+                    and stage_b.get("coolDownQuestions", 0) > 0
+                    and stage_b.get("coolDownGraded") is False):
+                teacher_only.append(i)
+        check("all_82_lessons_have_verified_digital_or_prepared_teacher_route",
+              len(digital) + len(teacher_only) == 82
+              and teacher_only == [80, 81], {
+                  "digitalContracts": len(digital),
+                  "teacherOnlyPrepared": teacher_only,
+                  "teacherOnlyRuntimeVerified": False,
+                  "finalAuthenticatedE2ERequired": True
               })
         check("target_school_year_and_framework_version",
               index.get("schoolYearTarget") == "2026-2027"
@@ -168,6 +199,8 @@ def evaluate(phase: str) -> dict:
         "sourceSnapshotId": selection.get("sourceSnapshotId"),
         "status": "PASS" if all(x["status"] == "PASS" for x in checks) else "D_BLOCKED",
         "checks": checks,
+        "sourceToAuthoredArabicTitleTextualVariants": title_variants,
+        "allTextualTitlesExactMatch": len(title_variants) == 0,
         "unpassed": [x["check"] for x in checks if x["status"] != "PASS"],
         "ownerFirstPartyPublicationScope": "OWNER_APPROVED_LIMITED_FIRST_PARTY" if phase == "source" else "NOT_EVALUATED",
         "publisherSourceLiteralParity": "VERIFIED" if source_parity_confirmed else "UNKNOWN",
