@@ -37,7 +37,7 @@
   "firstNotClosedLesson": null,
   "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
   "remainingSourceLessonsInRawPlan": 74,
-  "testsRun": "LOCAL_NODE_342_PASS_DOTNET_FULL_17427_PASS_DOTNET_G9_74_PASS_STRICT_SOURCE_NO_GO",
+  "testsRun": "LOCAL_NODE_344_PASS_DOTNET_G9_74_PASS_FULL_DOTNET_17427_PREVIOUS_CANDIDATE_SOURCE_GATE_NO_GO",
   "ciGatesRun": "GITHUB_ACTIONS_QUEUED_NO_PASS",
   "stageD": "IN_PROGRESS_FIRST_SOURCE_LESSON_NOT_YET_CLOSED",
   "productionPublish": "NOT_STARTED",
@@ -688,7 +688,7 @@
     "auditedNumberedExerciseSkills": 61,
     "completeRawSourceLessonAudits": 0,
     "fullTargetLessonParity": 0,
-    "localNodePass": 342,
+    "localNodePass": 344,
     "localDotnetPass": 70,
     "strictSourcePass": false,
     "authenticatedStudentE2EPass": false,
@@ -715,6 +715,8 @@
       48
     ],
     "localEdgeSourceChartsPass": true,
-    "u01l01LocalDotnetPublishStaticAssetsPass": true
+    "u01l01LocalDotnetPublishStaticAssetsPass": true,
+    "u01l01ArabicIndicInputWorksInRealEdge": true,
+    "u01l01NonNumberedSourceGroupsReviewedThisTurn": 7
   }
 }

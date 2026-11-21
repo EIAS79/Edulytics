@@ -25,6 +25,19 @@ test('U01L01 prior-review Q47 bar plot requires student-created title and seven 
   assert.equal(plot.validate('U01L01-Q47', [8, 5, 7, 11, 6, 9, 4], '').ok, false);
 });
 
+test('Student chart fields preserve Eastern Arabic and Persian digits without disabling strict validation', () => {
+  const arabicVotes = ['\u0668','\u0665','\u0667','\u0661\u0661','\u0666','\u0669','\u0664'];
+  const a = plot.validate('U01L01-Q47', arabicVotes, 'Arabic student votes');
+  assert.equal(a.ok, true);
+  assert.deepEqual(a.values, [8,5,7,11,6,9,4]);
+  const persianTimes = ['\u06f1\u06f9','\u06f2\u06f1','\u06f2\u06f3\u066b\u06f5','\u06f2\u06f6','\u06f2\u06f9'];
+  const b = plot.validate('U01L01-Q48', persianTimes, 'Persian decimal');
+  assert.equal(b.ok, true);
+  assert.deepEqual(b.values, [19,21,23.5,26,29]);
+  assert.equal(plot.validate('U01L01-Q48', ['\u0661\u0669','\u0662\u0661','\u0662\u0663\u066b\u0665','\u0662\u0660','\u0662\u0669'], 'wrong order').ok, false);
+  assert.equal(plot.validate('U01L01-Q47', ['\u0668','\u0665','\u0667','\u0661\u0661','\u0666','\u0669','11a'], 'Invalid').ok, false);
+});
+
 test('U01L01 prior-review Q48 box plot requires five ordered numeric values and allows fractional median', () => {
   const a = plot.validate('U01L01-Q48', ['١٩', '٢١', '٢٣٫٥', '٢٦', '٢٩'], '');
   assert.equal(a.ok, true);
@@ -67,7 +80,8 @@ test('Student chart builders render real SVG geometry with accessibility labels;
     const response = fakeDoc.createElement('textarea');
     plot.attach({ sourceItem: record.sourceItem, independentTaskId: 'G9-U01L01-T' + i }, row, response);
     const title = descend(row).find(e => e.tagName === 'input' && e.type === 'text');
-    const inputs = descend(row).filter(e => e.tagName === 'input' && e.type === 'number');
+    const inputs = descend(row).filter(e => e.tagName === 'input' && e.attributes['data-plot-number'] === 'true');
+    assert.ok(inputs.every(e => e.type === 'text' && e.inputMode === 'decimal'));
     const button = descend(row).find(e => e.tagName === 'button');
     const alert = descend(row).find(e => e.attributes.role === 'alert');
     const expected = i === 47 ? [8, 5, 7, 11, 6, 9, 4] : [19, 21, 23.5, 26, 29];
@@ -116,6 +130,9 @@ test('U01L01 native Arabic student activity wires the two diagram builders to te
   const records = read(base + 'u01l01-original-61-parallel-skill-practice.json').records;
   assert.ok(records[46].studentPrompt.includes('مخطط أعمدة'));
   assert.ok(records[47].studentPrompt.includes('مخطط صندوق وشاربين'));
+  assert.ok(records[46].studentPrompt.includes('\u0633\u0628\u0639\u0629 \u0623\u0646\u0634\u0637\u0629'));
+  assert.ok(!records[46].studentPrompt.includes('\u0633\u0628\u0639 \u0623\u0644\u0639\u0627\u0628'));
+  assert.ok(records[46].studentPrompt.includes('\u0644\u0644\u0623\u0646\u0634\u0637\u0629'));
   assert.equal(records[46].sourceItem, 'U01L01-Q47');
   assert.equal(records[47].sourceItem, 'U01L01-Q48');
   assert.equal(plot.definitions['U01L01-Q47'].labels.length, 7);

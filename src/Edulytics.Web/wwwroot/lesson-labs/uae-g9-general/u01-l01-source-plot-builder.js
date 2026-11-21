@@ -151,8 +151,14 @@
       const parent = d.createElement('label');
       parent.textContent = label;
       const input = d.createElement('input');
-      input.type = 'number'; input.min = '0'; input.max = '1000';
-      input.step = definition.kind === 'bar' ? '1' : 'any';
+      // Chromium number fields discard Arabic-Indic and Persian digits.
+      // Text fields preserve the original digits; validate() checks values.
+      input.type = 'text';
+      input.inputMode = 'decimal';
+      input.maxLength = 18;
+      input.autocomplete = 'off';
+      input.setAttribute('data-plot-number', 'true');
+      input.setAttribute('dir', 'ltr');
       input.setAttribute('aria-label', label + ' — ' + task.sourceItem);
       parent.append(input); grid.append(parent);
       return input;

@@ -166,7 +166,7 @@ test('U01L01 visual source atomic tasks preserve numbered items cognitive demand
  assert.ok(task(43).studentPrompt.includes("\u0664\u00b3"));
  assert.ok(task(44).studentPrompt.includes("\u0623\u064a \u062a\u0639\u0628\u064a\u0631 \u064a\u0645\u062b\u0644 \u0645\u062d\u064a\u0637\u0647"));
  assert.ok(task(46).studentPrompt.includes("\u0627\u062e\u062a\u0631 \u0645\u0633\u0627\u062d\u062a\u0647\u0627"));
- assert.ok(task(47).studentPrompt.includes("\u0633\u0628\u0639 \u0623\u0644\u0639\u0627\u0628"));
+ assert.ok(task(47).studentPrompt.includes("\u0633\u0628\u0639\u0629 \u0623\u0646\u0634\u0637\u0629"));
  assert.ok(task(47).studentPrompt.includes("\u0623\u0646\u0634\u0626 \u0645\u062e\u0637\u0637 \u0623\u0639\u0645\u062f\u0629"));
  assert.ok(task(48).studentPrompt.includes("\u0661\u0664 \u0645\u0634\u0627\u0631\u0643\u064b\u0627"));
  assert.ok(task(48).studentPrompt.includes("\u0623\u0646\u0634\u0626 \u0645\u062e\u0637\u0637 \u0635\u0646\u062f\u0648\u0642 \u0648\u0634\u0627\u0631\u0628\u064a\u0646"));
