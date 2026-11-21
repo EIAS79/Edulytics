@@ -21,7 +21,7 @@ test('Shared conditional family is wired and has independent bounded truth verif
  assert.ok(engine.includes('"'+family+'" => G9ConditionalTruthTables(random)'));
  assert.ok(engine.includes('private static Problem G9ConditionalTruthTables(Random r)'));
  assert.match(engine,/mode is <0 or >4/);
- assert.match(engine,/given==expected/);
+ assert.match(engine,/given==conditionalExpected/);
  for(let p=0;p<=1;p++)for(let q=0;q<=1;q++){
   const original=p===1&&q===0?0:1;
   const contrapositive=q===0&&p===1?0:1;

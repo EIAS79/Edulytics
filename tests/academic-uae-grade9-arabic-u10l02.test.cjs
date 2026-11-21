@@ -23,7 +23,7 @@ test('Shared exact engine uses independent truth-table verifier and bounded para
  assert.ok(engine.includes('"'+family+'" => G9LogicTruthTables(random)'));
  assert.ok(engine.includes('private static Problem G9LogicTruthTables(Random r)'));
  assert.match(engine,/mode is <0 or >2/);
- assert.match(engine,/provided==expected/);
+ assert.match(engine,/provided==logicExpected/);
  for(let p=0;p<=1;p++)for(let q=0;q<=1;q++){
   assert.equal(p&q,(p===1&&q===1)?1:0);
   assert.equal(p|q,(p===1||q===1)?1:0);

@@ -774,7 +774,7 @@ internal static partial class SupportingPracticeCompletionEngine
                !p.TryGetValue("q",out int propositionQ) || !p.TryGetValue("mode",out int mode) ||
                propositionP is <0 or >1 || propositionQ is <0 or >1 || mode is <0 or >4 ||
                string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
-            int expected=mode==0 ? (propositionP==1 && propositionQ==0 ? 0 : 1) :
+            int conditionalExpected=mode==0 ? (propositionP==1 && propositionQ==0 ? 0 : 1) :
                          mode==1 ? (propositionQ==1 && propositionP==0 ? 0 : 1) :
                          mode==2 ? (propositionP==0 && propositionQ==1 ? 0 : 1) :
                          mode==3 ? (propositionQ==0 && propositionP==1 ? 0 : 1) :
@@ -786,7 +786,7 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return (norm=="0" || norm=="1") &&
                    int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int given) &&
-                   given==expected;
+                   given==conditionalExpected;
         }
         if (string.Equals(family,"uae.g9.general.u10.l02.logic_truth_tables",StringComparison.Ordinal))
         {
@@ -795,7 +795,7 @@ internal static partial class SupportingPracticeCompletionEngine
                propositionP is <0 or >1 || propositionQ is <0 or >1 ||
                mode is <0 or >2 || string.IsNullOrWhiteSpace(answer) ||
                answer.Length>8) return false;
-            int expected=mode==0 ? (propositionP==1 && propositionQ==1 ? 1 : 0) :
+            int logicExpected=mode==0 ? (propositionP==1 && propositionQ==1 ? 1 : 0) :
                          mode==1 ? (propositionP==1 || propositionQ==1 ? 1 : 0) :
                          (propositionP==1 ? 0 : 1);
             var norm=string.Concat(answer.Trim().Select(c=>c switch {
@@ -805,7 +805,7 @@ internal static partial class SupportingPracticeCompletionEngine
             }));
             return (norm=="0" || norm=="1") &&
                    int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int provided) &&
-                   provided==expected;
+                   provided==logicExpected;
         }
         if (string.Equals(family,"uae.g9.general.u09.l05.finite_infinite_classification",StringComparison.Ordinal))
         {
