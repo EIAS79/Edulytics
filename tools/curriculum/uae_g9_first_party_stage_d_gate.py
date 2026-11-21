@@ -131,7 +131,16 @@ def evaluate(phase: str) -> dict:
           and release.get("sourceSnapshotId") == selection.get("sourceSnapshotId"))
     if phase == "structural":
         contracts = PRACTICE.read_text(encoding="utf-8")
-        digital = [i for i, code in enumerate(codes, 1) if code in contracts]
+        # Text presence is not a registered digital contract: Grade9 code
+        # literals also appear in explicit TEACHER_ONLY exclusion guards.
+        # Count only real keyed byLesson assignments and require exact
+        # one-to-one correspondence with the 82 authored lesson identities.
+        digital_contract_codes = set(re.findall(
+            r'byLesson\\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\\]\\s*=\\s*new LessonPracticeContract\\(',
+            contracts
+        ))
+        digital = [i for i, code in enumerate(codes, 1)
+                   if code in digital_contract_codes]
         teacher_only = []
         for i, code in enumerate(codes, 1):
             if code in contracts:

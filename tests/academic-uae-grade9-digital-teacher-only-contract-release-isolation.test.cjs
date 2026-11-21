@@ -27,5 +27,10 @@ test('Exact G9 teacher-only mapping projection is excluded before the 80-digital
  for(const identity of teacherOnly)assert.ok(section.includes(identity));
  assert.ok(section.includes('grade9Enabled && x.AllowedQuestionFamilies.Count > 0'));
  assert.ok(section.includes('present={grade9Prepared.Length}'));
+ const firstPartyGate=fs.readFileSync(path.join(root,'tools/curriculum/uae_g9_first_party_stage_d_gate.py'),'utf8');
+ assert.ok(firstPartyGate.includes('digital_contract_codes = set(re.findall('));
+ assert.ok(firstPartyGate.includes('if code in digital_contract_codes'));
+ assert.ok(!firstPartyGate.includes('if code in contracts'));
+
  assert.ok(section.includes('Unrecognized UAE Grade9 General digital Practice release token.'));
 });
