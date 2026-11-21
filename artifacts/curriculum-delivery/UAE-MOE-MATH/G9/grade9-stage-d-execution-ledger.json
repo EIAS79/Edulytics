@@ -311,5 +311,70 @@
     "metadataConflictResolved": true,
     "rawSourceDedupAndSemanticParityComplete": false,
     "proof": "source-selection.json and grade9-a-c-handoff.md"
+  },
+  "latestIndependentRemoteReadOnlyCheckpoint": {
+    "observedAtUtc": "2026-11-21T05:10:51.536Z",
+    "observedPrHeadSha": "c4538b87d03e467a0ee7cb1e24cf0017a5fc1e23",
+    "observedPrState": "OPEN_DRAFT_UNMERGED",
+    "purpose": "Stage D section 10/12: preserve independent GitHub, Render and Neon read-only evidence on first still-incomplete lesson; this checkpoint commit is not a tested release candidate",
+    "ownerTarget": {
+      "units": 13,
+      "lessons": 82
+    },
+    "firstIncompleteLessonOrdinal": 1,
+    "sourceGate": "D_PENDING_A_C_EVIDENCE",
+    "fullRawSourceAuditsPassed": 0,
+    "rawSourceLessons": 86,
+    "canonicalSourceParitiesPassed": 0,
+    "canonicalLessons": 82,
+    "sourceElementDenominator": "UNKNOWN",
+    "github": {
+      "pr": 650,
+      "workflowRunId": 44868842501,
+      "workflowStatusAtInspection": "pending",
+      "jobsAtInspection": [
+        {
+          "id": 136738558098,
+          "name": "G9 source gate and prepared lesson tests",
+          "status": "queued",
+          "conclusion": null
+        },
+        {
+          "id": 136738558250,
+          "name": "G9 scoped .NET tests (diagnostic)",
+          "status": "queued",
+          "conclusion": null
+        }
+      ],
+      "passingHostedEvidence": false
+    },
+    "render": {
+      "serviceId": "srv-dakq5n2fngtc73a62i10",
+      "latestLiveDeployId": "dep-dbv8f4nf3r2c73fjf8rg",
+      "latestLiveCommitSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+      "grade9CandidateDeployed": false
+    },
+    "neon": {
+      "projectId": "tiny-lab-44877119",
+      "databaseTablesReadOnlyDirectQuery": true,
+      "grade9GeneralPedagogicalLessons": 0,
+      "grade9GeneralPackNodes": 0,
+      "grade9GeneralLessonContents": 0,
+      "productionWrites": 0
+    },
+    "localExecution": {
+      "checkedWorktree": "C:/Users/khali/source/repos/Edulytics",
+      "currentHeadWasOlderAndUnrelatedWorktreeWasDirty": true,
+      "sourceWasNotAltered": true,
+      "githubRemoteAbsentInThatWorktree": true,
+      "cleanCandidateBuildAndTests": "NOT_RUN",
+      "noExistingUncommittedChangesTouched": true
+    },
+    "finalCI": "NOT_VERIFIED",
+    "authenticatedE2E": "NOT_RUN",
+    "finalCandidateSha": null,
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "mergeAllowed": false,
+    "deployAllowed": false
   }
 }
