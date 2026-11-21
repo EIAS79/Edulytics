@@ -74,6 +74,7 @@ jobs:
           set -euo pipefail
           python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase structural
           python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase source
+          python3 tools/curriculum/uae_g9_richv2_runtime_gate.py --require-ready
       - name: Migrate and seed disposable PostgreSQL 18
         run: |
           set -euo pipefail
