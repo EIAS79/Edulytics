@@ -13,12 +13,12 @@ test('Grade9 stage D live diagnostics track real local test coverage and keep fi
  assert.equal(run.grade,9);assert.equal(run.firstIncompleteLessonOrdinal,1);
  assert.ok(run.stageDStarted);
  assert.equal(run.stageDStatus,'D_IN_PROGRESS_TECHNICAL_LOCAL_ALL_GREEN_SOURCE_AND_HOSTED_GATES_BLOCKED');
- assert.equal(run.tests.node,'LOCAL_333_PASS_0_FAIL_GITHUB_CI_PENDING');
+ assert.equal(run.tests.node,'LOCAL_342_PASS_0_FAIL_GITHUB_CI_PENDING');
  assert.equal(run.tests.dotnet,'LOCAL_FULL_17427_PASS_0_FAIL_0_SKIP_SCOPED_G9_74_PASS_HOSTED_CI_PENDING');
  assert.equal(progress.stageD,'IN_PROGRESS_FIRST_SOURCE_LESSON_NOT_YET_CLOSED');
  assert.equal(progress.productionPublish,'NOT_STARTED');
  assert.equal(progress.stageDLocalDiagnostics.firstIncompleteOrdinal,1);
- assert.equal(progress.stageDLocalDiagnostics.localNodePass,333);
+ assert.equal(progress.stageDLocalDiagnostics.localNodePass,342);
  assert.equal(progress.stageDLocalDiagnostics.localDotnetPass,70);
  assert.equal(audit.rows.length,86);
  assert.equal(audit.rows[0].fullLessonAuditPassed,false);
