@@ -185,12 +185,14 @@ def verify(doc, name):
         assert len(ex["Steps"])>=3,(name,ex["Title"])
         assert all(ex.get(k) for k in ("Title","Question","Method","Answer","Check")),(name,ex["Title"])
 
-def main(apply):
+def main(apply, only=None):
     paths={re.search(r"(u\d\d-l\d\d)",f.name).group(1):f
            for f in sorted(PACKS.glob("uae-g9-general-*.rich-lesson-v2.json"))}
     assert len(paths)==82 and EXPECTED<=set(paths),"Source file set changed"
     updated=[]
     for key in sorted(EXPECTED):
+        if only is not None and key!=only:
+            continue
         path=paths[key]
         doc=json.loads(path.read_text(encoding="utf-8"))
         original=copy.deepcopy(doc)
@@ -232,5 +234,6 @@ def main(apply):
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("--apply",action="store_true")
+    p.add_argument("--only",choices=sorted(EXPECTED))
     args=p.parse_args()
-    main(args.apply)
+    main(args.apply,args.only)
