@@ -28,3 +28,17 @@ test('Algebra expression coefficient is not improperly asserted inequivalent for
  assert.equal(3*(0**2),(3*0)**2);
  assert.notEqual(3*(2**2),(3*2)**2);
 });
+test('U01L01 scanned source application coverage includes same-base powers and cylinder volume',()=>{
+ const lesson=read(base+'RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json').Lessons[0];
+ const powers=lesson.KeyConcepts.find(x=>x.Title==="\u0636\u0631\u0628 \u0627\u0644\u0642\u0648\u0649 \u0630\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633 \u0646\u0641\u0633\u0647");
+ const cylinder=lesson.KeyConcepts.find(x=>x.Title==="\u062a\u0645\u062b\u064a\u0644 \u062d\u062c\u0645 \u0627\u0644\u0623\u0633\u0637\u0648\u0627\u0646\u0629 \u0628\u062a\u0639\u0628\u064a\u0631 \u062c\u0628\u0631\u064a");
+ assert.ok(powers&&cylinder);
+ assert.ok(powers.Rule.includes("\u0633\u00b2\u00d7\u0633\u00b3=\u0633\u2075"));
+ assert.ok(cylinder.Rule.includes("\u03c0\u0646\u0642\u00b2"));
+ const powerExample=lesson.WorkedExamples.find(x=>x.Title==="\u062a\u0641\u0633\u064a\u0631 \u0636\u0631\u0628 \u0627\u0644\u0642\u0648\u0649");
+ const cylinderExample=lesson.WorkedExamples.find(x=>x.Title==="\u0646\u0645\u0648\u0630\u062c \u062d\u062c\u0645 \u0623\u0633\u0637\u0648\u0627\u0646\u0629");
+ assert.equal(powerExample?.Answer,"\u0661\u0660\u2077");
+ assert.ok(cylinderExample?.Answer.includes("\u0664\u0665\u03c0"));
+ assert.equal((10**3)*(10**4),10**7);
+ assert.equal(Math.PI*3**2*5,45*Math.PI);
+});
