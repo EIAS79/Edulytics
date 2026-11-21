@@ -60,7 +60,9 @@
     "tests/academic-uae-grade9-u01l01-61-original-practice-stage-d.test.cjs",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-nonnumbered-source-structure-reinspection-NO_GO.json",
     "tests/academic-uae-grade9-u01l01-independent-teacher-oracles-stage-d.test.cjs",
-    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-original-61-parallel-skill-practice.json"
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-original-61-parallel-skill-practice.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-source-wordorder-ambiguities-math-proof-NO_GO.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json"
   ],
   "dStatus": "D_PENDING",
   "updatedAtUtc": "2026-11-21T04:18:11Z",
@@ -451,5 +453,78 @@
     "releaseDecision": "NO_GO_SOURCE_100",
     "finalCandidateSha": null,
     "releaseAllowed": false
+  },
+  "latestOriginalSourceQuestionReview20261121": {
+    "stage": "D.4",
+    "verifiedAtUtc": "2026-11-21T06:15:09.589Z",
+    "testedSha": "e86c715980b934f70355ccd9dfc79cd46926b043",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "originalSource": "Grade_09/01_Student_Books/01.pdf",
+    "sourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "reInspectedPrintedPages": [
+      7,
+      8,
+      9
+    ],
+    "reInspectedPhysicalPdfPages": [
+      18,
+      19,
+      20
+    ],
+    "findings": {
+      "q07": "Two mathematically distinct readings, no publisher official answer proof; original first-party analog remains manual teacher-reviewed",
+      "q25": "Multiplication/addition grouping is ambiguous in original source; do not certify single publisher interpretation",
+      "q41": "The source calls the cube side a whole number with algebraic candidates 0 and 6; independent analog explicitly requires a positive side and accepts 4, not the degenerate root 0"
+    },
+    "originalStudentQuestionsReCreated": false,
+    "independentAnalogRubricQ41Corrected": true,
+    "exactCurrentNode": {
+      "total": 388,
+      "passed": 388,
+      "failed": 0,
+      "skipped": 0,
+      "fileCount": 95
+    },
+    "exactCurrentSourceGate": {
+      "nodeExitCode": 1,
+      "pythonExitCode": 1,
+      "rawVerified": 0,
+      "rawTotal": 86,
+      "canonicalVerified": 0,
+      "canonicalTotal": 82,
+      "sourceIndexComplete": false
+    },
+    "dotnetNotAtLatestSha": {
+      "scopedBaseline": {
+        "passed": 167,
+        "total": 167,
+        "sha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+      },
+      "fullBaseline": {
+        "passed": 17514,
+        "total": 17514,
+        "sha": "7b5e8664fae8f3c9016682d32e44b0af08898d61"
+      }
+    },
+    "latestGitHubActionsRunAtInspection": 44874539153,
+    "latestHostedRunStatusAtInspection": "queued",
+    "passedHostedFinalCi": false,
+    "neonProductionGrade9General": {
+      "pedagogical": 0,
+      "content": 0,
+      "nodes": 0
+    },
+    "renderLiveSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+    "authenticatedStudentE2E": "NOT_RUN",
+    "sourceAtomicDenominator": null,
+    "sourceExactPublisherIntentCertified": false,
+    "mediaRightsThirdPartyVerified": false,
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "noMerge": true,
+    "noDeploy": true,
+    "productionWrites": 0
   }
 }
