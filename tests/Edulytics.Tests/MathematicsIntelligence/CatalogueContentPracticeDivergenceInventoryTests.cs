@@ -66,8 +66,11 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                 if (!hasCapability && !pendingG9)
                     missingCapabilities.Add(lesson.LessonCode);
 
-                if (!hasPresentation && !pendingG9)
-                    presentationMissing.Add(lesson.LessonCode);
+                if (!hasPresentation)
+                {
+                    if (!pendingG9)
+                        presentationMissing.Add(lesson.LessonCode);
+                }
                 else if (
                     presentation!.Kind ==
                     LessonPracticePresentationKind.SpecializedGame)
