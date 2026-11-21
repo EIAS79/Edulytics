@@ -89,6 +89,7 @@ jobs:
           test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents" c JOIN "CurriculumPedagogicalLessons" p ON p."Id"=c."LessonNodeId" WHERE p."Code" LIKE '"'"'PED:UAE-MOE-MATH:L9:GENERAL:%'"'"' AND c."Status"=3')" = 82
       - name: Authenticate disposable G9 General student, teacher, supervisor, school admin; test all lessons
         env:
+          EDULYTICS_G9_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE9_GENERAL_80_DIGITAL_PRACTICE
           Edulytics__Deployment__CleanBootstrap: 'false'
           Edulytics__MeetingDemo__ResetAndSeed: 'true'
           Edulytics__Deployment__RunStartupMigrations: 'false'
