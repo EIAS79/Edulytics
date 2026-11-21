@@ -5,14 +5,14 @@ const fs=require('node:fs');
 const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const read=rel=>JSON.parse(fs.readFileSync(path.join(root,rel),'utf8'));
-test('Grade9 unpublished canonical source drafts remain in Git but are excluded from all shared runtime embedded content',()=>{
+test('Grade9 owner-approved canonical bodies embed without leaking unverified rich sidecars',()=>{
  const csproj=fs.readFileSync(path.join(root,'src/Edulytics.Core/Edulytics.Core.csproj'),'utf8');
- assert.ok(csproj.includes('Exclude="Curriculum/LessonContent/Packs/uae-g9-general-*.lesson-content-pack.json"'));
+ assert.ok(!csproj.includes('Exclude="Curriculum/LessonContent/Packs/uae-g9-general-*.lesson-content-pack.json"'));
  assert.ok(csproj.includes('Exclude="Curriculum/LessonContent/RichV2/uae-g9-general-*.rich-lesson-v2.json"'));
  assert.ok(csproj.includes('Include="Curriculum/LessonContent/RichV2/*.rich-lesson-v2.json"'));
  assert.ok(csproj.includes('Include="Curriculum/LessonContent/Packs/*.lesson-content-pack.json"'));
  const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json');
- assert.equal(pack.Status,'Draft');
+ assert.equal(pack.Status,'Published');
  assert.equal(pack.Lessons.length,82);
  const rootRich=path.join(root,'src/Edulytics.Core/Curriculum/LessonContent/RichV2');
  assert.equal(fs.readdirSync(rootRich).filter(n=>/^uae-g9-general-.*\.rich-lesson-v2\.json$/.test(n)).length,82);
