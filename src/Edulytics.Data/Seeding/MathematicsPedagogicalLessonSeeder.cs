@@ -67,9 +67,28 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var expectedMappings = new List<CurriculumPedagogicalLessonOutcome>();
         var blueprintLessonIds = new HashSet<Guid>();
 
+        // A Published first-party G9 JSON is not permission for an ordinary
+        // global startup to insert 82 production lessons. Only the explicit
+        // G9 scoped token may write production; a clean disposable CI fixture
+        // may seed G9 for isolated rehearsal and authenticated E2E.
+        var isDisposableG9Fixture =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G9", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
         var blueprints =
-            PedagogicalLessonBlueprintRegistry
-                .LoadEmbeddedDocuments();
+            PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+                .Where(x => isDisposableG9Fixture ||
+                    !(x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                      x.LogicalLevel == 9 &&
+                      string.Equals(x.Pathway, "General", StringComparison.Ordinal)))
+                .ToArray();
 
         await BuildUaeAsync(
             stateByCode[MathematicsCurriculumPackRegistry.UaeCode],
@@ -1829,6 +1848,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var stale = allExisting
             .Where(x => !expectedIds.Contains(x.Id) &&
                 !x.Code.StartsWith(retiredGrade8AdvancedPrefix,
+                    StringComparison.Ordinal) &&
+                // Scoped Grade9 records are never purged by ordinary
+                // maintenance after the explicit owner-approved cutover.
+                !x.Code.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:",
                     StringComparison.Ordinal))
             .ToArray();
 
