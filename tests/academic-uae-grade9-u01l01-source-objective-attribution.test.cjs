@@ -26,10 +26,11 @@ test('Printed textbook explicitly has exactly two objectives, while Edulytics fo
  assert.ok(!text.startsWith('الأهداف في المصدر:'));
 });
 
-test('Correcting U01L01 provenance does not regenerate, publish or change 81 other Grade9 lesson identities',()=>{
+test('Correcting U01L01 provenance preserves all lesson identities and does not certify source D parity',()=>{
  const index=read('grade9-82-target-index.json');
  const ledger=read('grade9-stage-d-execution-ledger.json');
- assert.equal(pack.Status,'Draft');
+ assert.equal(pack.Status,'Published');
+ assert.equal(read('grade9-release-validation.json').deployed,false);
  assert.equal(pack.Lessons.length,82);
  const codes=pack.Lessons.map(x=>x.LessonCode);
  assert.equal(new Set(codes).size,82);
