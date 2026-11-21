@@ -1,0 +1,78 @@
+name: UAE Grade 9 General first-party source and structural preflight
+
+# Scoped original-first-party contents only. Full publisher-source parity is separate.
+# This workflow must never be used alone as release authorization.
+on:
+  push:
+    branches: [fix/g9-general-full-year-scope-86]
+    paths:
+      - '.github/workflows/uae-grade9-general-first-party-preflight.yml'
+      - 'tools/curriculum/uae_g9_first_party_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'
+      - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-grade9-general-first-party-preflight.yml'
+      - 'tools/curriculum/uae_g9_first_party_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uae-g9-firstparty-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-first-party:
+    name: G9 82-lesson structure and first-party source scope (publisher parity UNKNOWN)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify 82 authored Arabic lessons with 80 digital and 2 teacher-only routes
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase structural
+      - name: Verify owner's approved first-party scope without publisher item-parity claims
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase source
+      - name: Require explicit UNKNOWN publisher parity and no publication side effects
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          base=Path('artifacts/uae-g9-stage-d')
+          for phase in ('structural','source'):
+              report=json.loads((base/f'grade9-first-party-{phase}-gate.json').read_text())
+              assert report['candidateSha']==os.environ['GITHUB_SHA']
+              assert report['status']=='PASS',report['unpassed']
+              assert report['publisherSourceLiteralParity']=='UNKNOWN'
+              assert report['sourceAtomicParityCertified'] is False
+              assert report['strictSourceGateUnmodified'] is True
+              assert report['readyForProductionRelease'] is False
+              assert report['productionWritten'] is False
+              assert report['requiresSeparateAuthenticatedE2E'] is True
+              assert report['requiresSeparateIsolatedDatabaseRehearsal'] is True
+              assert report['requiresSeparateHostedFinalCI'] is True
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-first-party-scope-evidence
+          path: artifacts/uae-g9-stage-d/grade9-first-party-*-gate.json
+          if-no-files-found: error
+          retention-days: 30
+
+# Not the final release gate. This does not test authenticated G9 roles,
+# 82 student pages, persisted Practice, 0-to-82 Postgres import or Render deploy.
