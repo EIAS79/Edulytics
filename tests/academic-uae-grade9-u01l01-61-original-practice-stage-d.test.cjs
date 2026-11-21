@@ -323,3 +323,46 @@ test('U01L01 source level requires improper fraction, tenths regrouping and deci
  assert.equal((1684+2759)/100,44.43);
  assert.equal((4725-1867)/100,28.58);
 });
+
+
+test('U01L01 independent signed statistics and mm:ss five-number oracles',()=>{
+ const tasks=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
+ const arabic='٠١٢٣٤٥٦٧٨٩';
+ const parseDigits=s=>s.replace(/[٠-٩]/g,d=>String(arabic.indexOf(d))).replace(/−/g,'-');
+ const toArabic=n=>String(n).replace(/\d/g,d=>arabic[Number(d)]);
+ const mmss=s=>{
+  const [m,seconds]=parseDigits(s).split(':').map(Number);
+  assert.ok(Number.isInteger(m)&&Number.isInteger(seconds)&&seconds>=0&&seconds<60);
+  return 60*m+seconds;
+ };
+ const asTime=n=>toArabic(Math.floor(n/60))+':'+toArabic(String(n%60).padStart(2,'0'));
+ const values=tasks[47].studentPrompt.match(/[٠-٩]{1,2}:[٠-٩]{2}/g);
+ assert.ok(values,'the prompt must include mm:ss race-time source analog data');
+ assert.equal(values.length,14);
+ const times=values.map(mmss).sort((a,b)=>a-b);
+ const minimum=times[0],q1=times[3],median=(times[6]+times[7])/2,q3=times[10],maximum=times[13];
+ assert.deepEqual([minimum,q1,median,q3,maximum],[860,945,1035,1150,1290]);
+ for(const t of [minimum,q1,median,q3,maximum])assert.ok(tasks[47].teacherExpectedEvidence.includes(asTime(t)),asTime(t));
+ assert.ok(tasks[47].teacherExpectedEvidence.includes(asTime(q3-q1)));
+ assert.ok(tasks[47].teacherExpectedEvidence.includes(asTime(maximum-minimum)));
+ const summary=values=>{
+  const sorted=values.slice().sort((a,b)=>a-b),n=sorted.length;
+  const sum=sorted.reduce((a,b)=>a+b,0);
+  const mid=n%2?sorted[(n-1)/2]:(sorted[n/2-1]+sorted[n/2])/2;
+  const count=new Map();
+  for(const v of sorted)count.set(v,(count.get(v)||0)+1);
+  const max=Math.max(...count.values());
+  const modes=[...count].filter(([,v])=>v===max).map(([v])=>v).sort((a,b)=>a-b);
+  return {sum,mean:sum/n,median:mid,modes};
+ };
+ const fromPrompt=task=>[...task.studentPrompt.matchAll(/[−-]?[٠-٩]+/g)].map(m=>Number(parseDigits(m[0])));
+ const results=[48,49,50].map(i=>summary(fromPrompt(tasks[i])));
+ assert.deepEqual(results,[
+  {sum:70,mean:7,median:7,modes:[7]},
+  {sum:0,mean:0,median:0,modes:[-2,0]},
+  {sum:112,mean:14,median:13,modes:[18]}
+ ]);
+ assert.ok(tasks[48].teacherExpectedEvidence.includes('المتوسط ٧'));
+ assert.ok(tasks[49].teacherExpectedEvidence.includes('المنوالان −٢ و٠'));
+ assert.ok(tasks[50].teacherExpectedEvidence.includes('المتوسط ١٤'));
+});
