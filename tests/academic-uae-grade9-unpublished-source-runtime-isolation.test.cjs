@@ -57,8 +57,11 @@ test('RichV2 repaired schema 1 is accepted while incompatible schema 2 is still 
 test('Grade9 draft exact Practice families are excluded from publicly READY_VERIFIED runtime registry until academic release',()=>{
  const file=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
  assert.ok(file.includes('string.Equals(x.Readiness, "READY_VERIFIED"'));
- assert.ok(file.includes('!x.LessonCode.StartsWith('));
- assert.ok(file.includes('"PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal'));
+ assert.ok(file.includes('const string grade9Prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";'));
+ assert.ok(file.includes('"EDULYTICS_G9_DIGITAL_PRACTICE_RELEASE"'));
+ assert.ok(file.includes('"CONFIRM_RELEASE_UAE_GRADE9_GENERAL_80_DIGITAL_PRACTICE"'));
+ assert.ok(file.includes('? grade9Enabled && x.AllowedQuestionFamilies.Count > 0'));
+ assert.ok(file.includes('grade9Prepared.Length != 80'));
  assert.ok(file.includes('return byLesson.Values'));
  assert.ok(file.includes('ByLessonCode.TryGetValue(lessonCode.Trim(), out contract)'));
 });
