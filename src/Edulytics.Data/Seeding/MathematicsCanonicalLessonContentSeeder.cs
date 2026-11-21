@@ -40,7 +40,24 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     public async Task SeedAsync(
         CancellationToken ct = default)
     {
-        var documents = LoadEmbeddedDocuments();
+        // Only exact disposable GitHub G9 can include Grade9 in global
+        // CleanSeed; production must use the explicit 0-to-82 scoped importer.
+        var isolatedG9Fixture =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G9", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+        var documents = LoadEmbeddedDocuments()
+            .Where(x => isolatedG9Fixture ||
+                !x.Lessons.Any(lesson => lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)))
+            .ToArray();
 
         // No reviewed runtime pack is safer than fabricated content.
         // Phase 29 remains open until approved packs are supplied.
@@ -57,7 +74,24 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     /// </summary>
     public async Task SeedMetadataOnlyAsync(CancellationToken ct = default)
     {
-        var documents = LoadEmbeddedDocuments();
+        // Only exact disposable GitHub G9 can include Grade9 in global
+        // CleanSeed; production must use the explicit 0-to-82 scoped importer.
+        var isolatedG9Fixture =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G9", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+        var documents = LoadEmbeddedDocuments()
+            .Where(x => isolatedG9Fixture ||
+                !x.Lessons.Any(lesson => lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)))
+            .ToArray();
         if (documents.Count == 0)
             return;
 
