@@ -37,11 +37,11 @@
   "firstNotClosedLesson": null,
   "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
   "remainingSourceLessonsInRawPlan": 74,
-  "testsRun": "WRITTEN_NOT_RUN",
-  "ciGatesRun": "NOT_RUN_BY_A_C",
-  "stageD": "NOT_STARTED",
+  "testsRun": "LOCAL_G9_NODE_316_PASS_DOTNET_70_PASS_STRICT_SOURCE_FAIL",
+  "ciGatesRun": "GITHUB_ACTIONS_QUEUED_NO_PASS",
+  "stageD": "IN_PROGRESS_FIRST_SOURCE_LESSON_NOT_YET_CLOSED",
   "productionPublish": "NOT_STARTED",
-  "remainingCritical": "All 82 target A-B-C authoring checkpoints are recorded. Full source-element 1:1 equivalence is not certified: reconcile 86 raw General entries and four newer geometry supplements with 82 target rows, including 7-3 visually unlocated exercise 76 and all distinct 7-4 vs 11-3 exercise variants. Stage D tests not run; SOURCE_INDEX_COMPLETE=false.",
+  "remainingCritical": "Source lesson U01L01 has 61 numbered exercises visually inspected and mapped to independent skill-analog teacher work, but full atomic parity including source wording exceptions 7 and 25 remains unverified. Remaining 85 source entries/81 canonical lessons and four supplements still require independent element audits. GitHub Grade9 CI is queued, not passed. No Render or Neon production publish.",
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
   "sourceSnapshotComputation": [
     "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
@@ -682,5 +682,18 @@
   "canonicalContentPackCount": 82,
   "canonicalPracticeMappingCount": 82,
   "activeNumericPracticeContractCount": 80,
-  "teacherOnlyPracticeLessonCount": 2
+  "teacherOnlyPracticeLessonCount": 2,
+  "stageDLocalDiagnostics": {
+    "firstIncompleteOrdinal": 1,
+    "auditedNumberedExerciseSkills": 61,
+    "completeRawSourceLessonAudits": 0,
+    "fullTargetLessonParity": 0,
+    "localNodePass": 316,
+    "localDotnetPass": 70,
+    "strictSourcePass": false,
+    "authenticatedStudentE2EPass": false,
+    "releaseAuthorizedByOwner": true,
+    "productionPublishExecuted": false,
+    "stageDAuditSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json"
+  }
 }

@@ -73,8 +73,8 @@
       "sourceSkillCategory": "VERBAL_TO_ALGEBRAIC_EXPRESSION",
       "sourceGroup": "CHECK_YOUR_UNDERSTANDING",
       "scope": "CORE_SKILL",
-      "studentPrompt": "حوّل «العدد ص منقوصًا منه ٩» إلى تعبير.",
-      "teacherExpectedEvidence": "ص−٩.",
+      "studentPrompt": "عدد ١١ منقوص منه العدد س. اكتب التعبير الجبري الذي يمثّل العبارة ووضح ترتيب الطرح.",
+      "teacherExpectedEvidence": "١١−س؛ العدد الثابت هو المطروح منه، فلا يجوز قلب الترتيب إلى س−١١.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
       "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
     },
@@ -253,8 +253,8 @@
       "sourceSkillCategory": "VERBAL_TO_ALGEBRAIC_EXPRESSION",
       "sourceGroup": "GUIDED_INDEPENDENT_PRACTICE",
       "scope": "CORE_SKILL",
-      "studentPrompt": "اكتب الفرق بين ٤٢ والعدد ب.",
-      "teacherExpectedEvidence": "٤٢−ب.",
+      "studentPrompt": "اكتب تعبيرًا جبريًا لعدد ت مطروح منه ٣٥، ثم قارن نتيجته بالتعبير ٣٥−ت عند ت=٤٠.",
+      "teacherExpectedEvidence": "ت−٣٥؛ عند ت=٤٠ يساوي ٥، أما ٣٥−ت فيساوي −٥، لذا الترتيب يؤثر في المعنى.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
       "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
     },
@@ -421,10 +421,11 @@
       "sourceSkillCategory": "PHONE_DATA_SUBSCRIPTION_MODEL",
       "sourceGroup": "GUIDED_INDEPENDENT_PRACTICE",
       "scope": "CORE_SKILL",
-      "studentPrompt": "اشتراك شهري ٤٨ درهمًا بالإضافة إلى نصف درهم لكل دقيقة س و١٫٥ درهم لكل خدمة ص؛ اكتب التكلفة.",
-      "teacherExpectedEvidence": "٤٨+٠٫٥س+١٫٥ص.",
+      "studentPrompt": "خدمة هاتف تكلف ٣٩ درهمًا شهريًا، و٠٫٤ درهم لكل دقيقة إضافية س، و٣ دراهم لكل باقة إضافية ص. فسّر معنى كل حد في ٣٩+٠٫٤س+٣ص، ثم احسب التكلفة عند س=٢٠ وص=٢.",
+      "teacherExpectedEvidence": "٣٩ رسم ثابت، ٠٫٤س للدقائق، ٣ص للباقات؛ التكلفة ٣٩+٨+٦=٥٣ درهمًا.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q35",
@@ -445,10 +446,11 @@
       "sourceSkillCategory": "SCORING_RATE_EQUATION_MODEL",
       "sourceGroup": "PROBLEM_SOLVING_AND_HIGHER_ORDER",
       "scope": "CORE_SKILL",
-      "studentPrompt": "يحصل فريق على ٦ نقاط لكل هدف ونقطة لكل مكافأة. عبّر عن المجموع إذا سجل غ أهداف وب مكافآت. إذا أحرز ٢٦ نقطة منها مكافأتان، فكم هدفًا سجل؟",
-      "teacherExpectedEvidence": "المجموع ٦غ+ب. بالتعويض: ٦غ+٢=٢٦، ومنه غ=٤ أهداف.",
+      "studentPrompt": "في لعبة رياضية يسجل الفريق ٥ نقاط عن كل هدف، وقد يحصل على نقطة إضافية واحدة بعد الهدف. (أ) اكتب المجموع إذا كان هـ عدد الأهداف وإ عدد النقاط الإضافية، واشرح لماذا ٠≤إ≤هـ. (ب) فاز فريق ٢٣–٠؛ حدد الأهداف والإضافات. (ج) فاز فريق ١٨–٦؛ حدد أهداف وإضافات كل فريق.",
+      "teacherExpectedEvidence": "المجموع ٥هـ+إ مع ٠≤إ≤هـ. عند ٢٣: أربعة أهداف وثلاث إضافات؛ عند ١٨: ثلاثة أهداف وثلاث إضافات؛ وعند ٦: هدف واحد وإضافة واحدة.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q37",
@@ -457,10 +459,11 @@
       "sourceSkillCategory": "SAME_BASE_POWER_PRODUCT",
       "sourceGroup": "PROBLEM_SOLVING_AND_HIGHER_ORDER",
       "scope": "CORE_SKILL",
-      "studentPrompt": "أكمل النمط: ١٠²×١٠¹=١٠³، و١٠²×١٠²=١٠⁴، فما ١٠²×١٠³؟ فسّر قاعدة الأسس.",
-      "teacherExpectedEvidence": "١٠⁵؛ عند ضرب قوتين لهما الأساس نفسه نجمع الأسين.",
+      "studentPrompt": "اكتشف النمط: ١٠²×١٠¹=١٠³، و١٠²×١٠²=١٠⁴. (أ) أكمل ١٠²×١٠³ و١٠²×١٠⁴ بالضرب المتكرر. (ب) اكتب قاعدة رمزية لِـ ١٠^م × ١٠^ن. (ج) ضع فرضية وفسّر سبب جمع الأسّين.",
+      "teacherExpectedEvidence": "١٠²×١٠³=١٠⁵ (خمسة عوامل من ١٠)، و١٠²×١٠⁴=١٠⁶ (ستة عوامل). القاعدة ١٠^م×١٠^ن=١٠^(م+ن) عندما يكون الأساس نفسه؛ عدد العوامل يساوي مجموع الأسين.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q38",
@@ -481,8 +484,8 @@
       "sourceSkillCategory": "OPEN_VARIABLE_MODEL",
       "sourceGroup": "PROBLEM_SOLVING_AND_HIGHER_ORDER",
       "scope": "CORE_SKILL",
-      "studentPrompt": "اختر متغيرًا للزمن واكتب تعبيرًا أصليًا لتكلفة تعتمد عليه مع رسم ثابت؛ عرّف وحداته.",
-      "teacherExpectedEvidence": "مثال صالح: ٣ز+٨ دراهم عندما ز عدد الساعات، مع تفسير كل حد.",
+      "studentPrompt": "اختر بنفسك مقدارًا من نشاط يومي (زمن أو مسافة أو عدد وحدات)، وعرّف له متغيرًا مع وحدة. اكتب تعبيرًا جبريًا يصف موقفًا حقيقيًا من اختيارك، ثم فسّر ما يمثله كل جزء من التعبير وكيف تتحقق من معقوليته.",
+      "teacherExpectedEvidence": "إجابة مفتوحة صحيحة تصف الكمية والمتغير ووحدته والتعبير وتفسيره. مثال: ز ساعات نشاط أسبوعي، و٣ز+٢ يمثل ثلاث حصص مدة كل منها ز ساعة مع ساعتين إضافيتين.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
       "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
     },
@@ -529,10 +532,11 @@
       "sourceSkillCategory": "CUBE_VOLUME_EXPONENT_MULTIPLE_CHOICE",
       "sourceGroup": "STANDARDIZED_ASSESSMENT",
       "scope": "CORE_SKILL",
-      "studentPrompt": "مكعب حرفه ٥ وحدات؛ اختر صيغة حجمه وفسّر الأس.",
-      "teacherExpectedEvidence": "٥³=١٢٥ وحدة مكعبة؛ ثلاثة أبعاد متساوية.",
+      "studentPrompt": "يمثل نموذج مكعب كبير أربع مكعبات صغيرة على طول كل حافة. أي تعبير يحصي المكعبات الصغيرة: (أ) ٤×٣، (ب) ٤²، (ج) ٤³، (د) ٣⁴؟ اختر وفسّر اعتمادًا على الأبعاد الثلاثة.",
+      "teacherExpectedEvidence": "الاختيار (ج): ٤³=٤×٤×٤=٦٤ مكعبًا صغيرًا. الأس ٣ لوجود ثلاثة أبعاد، وليس لأنه الرقم الثالث في الاختيارات.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q44",
@@ -541,10 +545,11 @@
       "sourceSkillCategory": "RECTANGLE_PERIMETER_MULTIPLE_CHOICE",
       "sourceGroup": "STANDARDIZED_ASSESSMENT",
       "scope": "CORE_SKILL",
-      "studentPrompt": "مستطيل طوله ل وعرضه ع؛ أيهما يمثل المحيط، ٢(ل+ع) أم ل×ع؟ برر.",
-      "teacherExpectedEvidence": "المحيط ٢(ل+ع)، والثاني هو المساحة.",
+      "studentPrompt": "مستطيل طوله ل وعرضه ع. أي تعبير يمثل محيطه: (أ) ٢ل×ع، (ب) ل+ع، (ج) ٢ل+٢ع، (د) ٤(ل+ع)؟ اختر وبيّن لماذا لا تمثل بقية الصيغ المحيط.",
+      "teacherExpectedEvidence": "الاختيار (ج): ٢ل+٢ع=٢(ل+ع)، لأنه مجموع أطوال الأضلاع الأربعة. التعبير ل×ع يمثل المساحة.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q45",
@@ -565,10 +570,11 @@
       "sourceSkillCategory": "RECTANGLE_AREA",
       "sourceGroup": "STANDARDIZED_ASSESSMENT",
       "scope": "CORE_SKILL",
-      "studentPrompt": "ما مساحة مستطيل طوله ٩ م وعرضه ٥ م؟",
-      "teacherExpectedEvidence": "٤٥ م².",
+      "studentPrompt": "قطعة أرض مستطيلة طولها ٧ م وعرضها ٣ م. اختر مساحتها من: (أ) ١٠ م²، (ب) ٢١ م²، (ج) ٢٨ م²، (د) ٤٢ م². اشرح سبب اختيارك.",
+      "teacherExpectedEvidence": "الاختيار (ب): ٧×٣=٢١ م²؛ الوحدة المربعة صحيحة للمساحة، و١٠ يمثل مجموع البعدين فقط.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q47",
@@ -577,10 +583,11 @@
       "sourceSkillCategory": "PRIOR_DATA_CHART",
       "sourceGroup": "SPIRAL_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "بيانات تفضيلات نادي: كرة ٨، قراءة ٥، سباحة ٧؛ مثّلها بمخطط أعمدة له عناوين ومحور واضح.",
-      "teacherExpectedEvidence": "ثلاثة أعمدة بارتفاعات ٨ و٥ و٧ مع تسميات صحيحة، مراجعة معلم.",
+      "studentPrompt": "في تصويت لألعاب نادٍ كانت الأصوات لسبع ألعاب: الكرة ٨، القراءة ٥، السباحة ٧، الشطرنج ١١، الرسم ٦، الجري ٩، والموسيقى ٤. أنشئ مخطط أعمدة سباعيًا بعنوان، ومحور أفقي للألعاب ومحور رأسي للأصوات، ثم حدّد الأكثر والأقل.",
+      "teacherExpectedEvidence": "الأعمدة السبعة بارتفاعات ٨، ٥، ٧، ١١، ٦، ٩، ٤ مع تسميات صحيحة. الأعلى الشطرنج ١١، والأقل الموسيقى ٤؛ يُراجع المعلم الرسم.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q48",
@@ -589,10 +596,11 @@
       "sourceSkillCategory": "PRIOR_BOX_PLOT",
       "sourceGroup": "SPIRAL_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "يُمثّل مخطط صندوق أزمنة سباق: الأصغر ١٢، والربع الأول ١٤، والوسيط ١٧، والربع الثالث ٢٠، والأكبر ٢٢ دقيقة. فسّر الوسيط واحسب المدى الربيعي.",
-      "teacherExpectedEvidence": "الوسيط ١٧ دقيقة؛ نصف الأزمنة أقل منه أو تساويه ونصفها أكبر منه أو تساويه. المدى الربيعي = ٢٠−١٤=٦ دقائق.",
+      "studentPrompt": "هذه أزمنة ١٤ مشاركًا في سباق ٥ كم، بالدقائق: ١٩، ٢٠، ٢١، ٢١، ٢٢، ٢٢، ٢٣، ٢٤، ٢٤، ٢٥، ٢٦، ٢٧، ٢٨، ٢٩. أنشئ مخطط صندوق وشاربين من البيانات نفسها، وحدّد القيم الخمس، ثم اكتب جملة تفسّر توزيع الأزمنة.",
+      "teacherExpectedEvidence": "الأصغر ١٩، الربع الأول ٢١، الوسيط ٢٣٫٥، الربع الثالث ٢٦، الأكبر ٢٩. المدى الربيعي ٥ دقائق، والمدى الكلي ١٠ دقائق. ارسم الصندوق ٢١–٢٦ والشاربين إلى ١٩ و٢٩ واشرح الانتشار.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q49",
@@ -601,10 +609,11 @@
       "sourceSkillCategory": "PRIOR_MEAN_MEDIAN_MODE",
       "sourceGroup": "SPIRAL_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "أوجد المتوسط والوسيط والمنوال للبيانات ٣، ٤، ٤، ٥، ٩.",
-      "teacherExpectedEvidence": "المتوسط ٥؛ الوسيط ٤؛ المنوال ٤.",
+      "studentPrompt": "أوجد المتوسط الحسابي والوسيط والمنوال لمجموعة القيم العشر التالية: ٣، ٥، ٥، ٦، ٧، ٧، ٧، ٩، ١٠، ١١. اشرح كيف حددت الوسيط لعشرة أعداد.",
+      "teacherExpectedEvidence": "مجموع القيم ٧٠، المتوسط ٧، الوسيط متوسط العنصرين الخامس والسادس (٧+٧)/٢=٧، والمنوال ٧.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q50",
@@ -613,10 +622,11 @@
       "sourceSkillCategory": "PRIOR_MEAN_MEDIAN_MODE",
       "sourceGroup": "SPIRAL_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "أوجد المتوسط والوسيط والمنوال للبيانات −٢، −١، −١، ٠، ٤.",
-      "teacherExpectedEvidence": "المتوسط ٠؛ الوسيط −١؛ المنوال −١.",
+      "studentPrompt": "أوجد المتوسط الحسابي والوسيط وجميع قيم المنوال للبيانات: −٤، −٢، −٢، −٢، ٠، ٠، ٠، ١، ٤، ٥. هل يمكن أن يكون للبيانات أكثر من منوال؟",
+      "teacherExpectedEvidence": "المجموع صفر ومنه المتوسط ٠؛ الوسيط ٠؛ المنوالان −٢ و٠ لأن كلاً منهما تكرر ثلاث مرات.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q51",
@@ -625,10 +635,11 @@
       "sourceSkillCategory": "PRIOR_MEAN_MEDIAN_MODE",
       "sourceGroup": "SPIRAL_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "أوجد المتوسط والوسيط والمنوال للبيانات ٥، ٧، ٧، ٨، ١٣.",
-      "teacherExpectedEvidence": "المتوسط ٨؛ الوسيط ٧؛ المنوال ٧.",
+      "studentPrompt": "أوجد المتوسط الحسابي والوسيط والمنوال لمجموعة القيم الثماني: ٤، ٩، ١٠، ١٢، ١٤، ١٨، ١٨، ٢٧.",
+      "teacherExpectedEvidence": "المجموع ١١٢، المتوسط ١٤، الوسيط (١٢+١٤)/٢=١٣، والمنوال ١٨.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q52",
@@ -685,10 +696,11 @@
       "sourceSkillCategory": "PREREQUISITE_FRACTION_DECIMAL_ARITHMETIC",
       "sourceGroup": "PREREQUISITE_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "اجمع ١/٤ و٢/٥ في أبسط صورة.",
-      "teacherExpectedEvidence": "١٣/٢٠.",
+      "studentPrompt": "احسب ٥/٦ + ٧/٩ في أبسط صورة، ثم اكتب الناتج كعدد كسري.",
+      "teacherExpectedEvidence": "المقام المشترك ١٨؛ ١٥/١٨+١٤/١٨=٢٩/١٨=١ و١١/١٨.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q57",
@@ -709,10 +721,11 @@
       "sourceSkillCategory": "PREREQUISITE_FRACTION_DECIMAL_ARITHMETIC",
       "sourceGroup": "PREREQUISITE_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "احسب ٧/٨ − ١/٤.",
-      "teacherExpectedEvidence": "٥/٨.",
+      "studentPrompt": "احسب ٣/٥ − ٧/٣، وعبّر عن النتيجة في أبسط صورة مع بيان الإشارة.",
+      "teacherExpectedEvidence": "نحوّل إلى المقام ١٥: ٩/١٥−٣٥/١٥=−٢٦/١٥؛ الناتج سالب لأن المطروح أكبر.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q59",
@@ -733,10 +746,11 @@
       "sourceSkillCategory": "PREREQUISITE_FRACTION_DECIMAL_ARITHMETIC",
       "sourceGroup": "PREREQUISITE_REVIEW",
       "scope": "PRIOR_SKILL_REVIEW",
-      "studentPrompt": "احسب ٢/٣ + ١/٦.",
-      "teacherExpectedEvidence": "٥/٦.",
+      "studentPrompt": "احسب ٧/٨ + ٥/١٢ في أبسط صورة، واكتب الناتج كعدد كسري.",
+      "teacherExpectedEvidence": "المضاعف المشترك الأصغر ٢٤؛ ٢١/٢٤+١٠/٢٤=٣١/٢٤=١ و٧/٢٤.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visualTaskScope": "ORIGINAL_ANALOGOUS_COGNITIVE_DEMAND_REVIEWED_FROM_SCANNED_TEXTBOOK"
     },
     {
       "sourceItem": "U01L01-Q61",

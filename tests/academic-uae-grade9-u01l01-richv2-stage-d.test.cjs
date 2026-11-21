@@ -65,3 +65,23 @@ test('U01L01 source exercise 1 through 61 is visually categorized without a fals
  assert.equal(audit.fullLessonParityGranted,false);
  assert.equal(audit.fullyComparedDigitalExerciseItems,0);
 });
+test('U01L01 RichV2 now includes each visually observed reading and translation competency',()=>{
+ const l=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json').Lessons[0];
+ assert.equal(l.CultureCode,'ar');
+ assert.ok(l.KeyConcepts.length>=9);
+ assert.ok(l.WorkedExamples.length>=9);
+ for(const title of [
+ "\u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u062a\u0639\u0627\u0628\u064a\u0631 \u0627\u0644\u0644\u0641\u0638\u064a\u0629 \u0648\u062a\u0645\u064a\u064a\u0632 \u0627\u0644\u062d\u062f \u0648\u0627\u0644\u0639\u0627\u0645\u0644",
+ "\u0645\u0641\u0631\u062f\u0627\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0627\u062a \u0648\u0627\u0644\u062a\u0631\u062a\u064a\u0628 \u0627\u0644\u0644\u0641\u0638\u064a",
+ "\u0637\u0631\u0642 \u0643\u062a\u0627\u0628\u0629 \u0636\u0631\u0628 \u0627\u0644\u0645\u062a\u063a\u064a\u0631\u0627\u062a \u0648\u0627\u0644\u0639\u0648\u0627\u0645\u0644"
+ ])assert.ok(l.KeyConcepts.some(x=>x.Title===title),title);
+ for(const title of [
+ "\u0648\u0635\u0641 \u062a\u0639\u0628\u064a\u0631 \u062c\u0628\u0631\u064a \u0641\u064a\u0647 \u0643\u0633\u0631 \u0648\u0642\u0648\u0629",
+ "\u0627\u0644\u0645\u0641\u0631\u062f\u0627\u062a \u0648\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0637\u0631\u062d",
+ "\u0646\u0645\u0648\u0630\u062c \u062c\u0628\u0631\u064a \u0644\u062a\u0643\u0644\u0641\u062a\u064a\u0646 \u0645\u062a\u063a\u064a\u0631\u062a\u064a\u0646"
+ ])assert.ok(l.WorkedExamples.some(x=>x.Title===title),title);
+ const example=l.WorkedExamples.find(x=>x.Title==="\u0627\u0644\u0645\u0641\u0631\u062f\u0627\u062a \u0648\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0637\u0631\u062d");
+ assert.ok(example.Answer.includes("\u0666\u0633\u2212\u0661\u0664"));
+ assert.ok(example.Check.includes("\u0661\u0664\u2212\u0666\u0633"));
+ assert.equal(6*4-14,10);
+});

@@ -15,7 +15,7 @@
   },
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
   "stageDStarted": true,
-  "stageDStatus": "D_PENDING_A_C_EVIDENCE",
+  "stageDStatus": "D_IN_PROGRESS_LOCAL_DIAGNOSTICS_SOURCE_INDEX_BLOCKED",
   "candidateShaAtInitialInspection": "f95fd5f76bc992d340b8a8e3aa65c804c7d78cbe",
   "stageDWorkflowCreationCommit": "8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630",
   "testedCandidateSha": null,
@@ -43,16 +43,16 @@
   },
   "authoringReadyForDCount": 82,
   "firstIncompleteLessonOrdinal": 1,
-  "firstIncompleteReason": "D entry cannot verify source element denominator and independent parity; do not grant D_VERIFIED",
+  "firstIncompleteReason": "U01L01 original analogous practices and local checks exist, but original source atomic equivalence and Q7/Q25 wording are not fully certified; 85 additional raw entries unverified",
   "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
   "tests": {
-    "node": "NOT_RUN_NO_WORKFLOW_RESULT_YET",
-    "dotnet": "NOT_RUN_NO_WORKFLOW_RESULT_YET",
-    "authenticatedE2E": "NOT_RUN",
-    "arabicRtlVisual": "NOT_RUN",
-    "neonReadOnlyLive": "NOT_RECHECKED_THIS_TURN"
+    "node": "LOCAL_316_PASS_0_FAIL_GITHUB_CI_PENDING",
+    "dotnet": "LOCAL_70_PASS_0_FAIL_GITHUB_CI_PENDING",
+    "authenticatedE2E": "NOT_RUN_G9_NOT_IMPORTED_IN_PRODUCTION",
+    "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
+    "neonReadOnlyLive": "2026_11_21_G9_GENERAL_0_LESSONS_0_NODES"
   },
-  "releaseDecision": "NO_GO_SOURCE_100_AND_TECHNICAL_UNVERIFIED",
+  "releaseDecision": "NO_GO_SOURCE_86_82_AND_GITHUB_CI_UNVERIFIED",
   "notes": [
     "Uploaded Stage D plan mistakenly says Grade:8 twice in Grade 9 handoff/checkpoint templates; authoritative scope is Grade 9 and no Grade 8 record should be mutated.",
     "Stage D diagnostics may run while the D entry handoff and source parity gate are blocked.",
@@ -64,7 +64,8 @@
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
     ".github/workflows/uae-grade9-general-stage-d.yml",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
-    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md"
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json"
   ],
   "ownerApproval": {
     "academicContent": "APPROVED_BY_OWNER",
@@ -79,6 +80,26 @@
     "firstObservedStatus": "QUEUED",
     "firstObservedCandidateSha": "609addbc80511f7847d2126657e10b3d740b4b10",
     "currentRunsForLatestCandidate": "NOT_YET_CONFIRMED",
-    "releaseGateSeparate": true
+    "releaseGateSeparate": true,
+    "latestLocalChecks": {
+      "date": "2026-11-21",
+      "preparedNodeTestsPassed": 316,
+      "preparedNodeTestsFailed": 0,
+      "scopedDotnetPassed": 70,
+      "scopedDotnetFailed": 0,
+      "strictSourceIndexTest": "FAILED_AS_REQUIRED_WHILE_INCOMPLETE",
+      "sourceNumberedQuestionSkillReviews": 61,
+      "sourceUnnumberedAtomsNotFullyAudited": true,
+      "sourceQuestionWordingExceptions": [
+        7,
+        25
+      ],
+      "sourceRawLessonsFullyVerified": 0,
+      "targetLessonFullParityVerified": 0,
+      "studentStaticPreview": "EDGE_4X4_CUBE_GRID_WITH_ARABIC_RTL",
+      "fullAuthenticatedE2E": false,
+      "renderPublished": false,
+      "neonProductionWrites": 0
+    }
   }
 }

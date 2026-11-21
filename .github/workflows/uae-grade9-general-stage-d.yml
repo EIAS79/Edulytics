@@ -11,6 +11,8 @@ on:
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
       - 'tests/academic-uae-grade9*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
   pull_request:
     branches:
       - main
@@ -21,7 +23,14 @@ on:
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
       - 'tests/academic-uae-grade9*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
   workflow_dispatch:
+
+concurrency:
+  # Cancel older runs of the same event/ref; retain independent PR and push gates.
+  group: uae-g9-stage-d-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
