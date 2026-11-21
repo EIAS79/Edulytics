@@ -48,7 +48,23 @@ def inspect(page,ordinal,code,lesson_id,title,width,screenshot=False):
     if (context["direction"]!="rtl" or
         context["scrollWidth"]>context["clientWidth"]+16 or
         attrs["scrollWidth"]>attrs["clientWidth"]+16):
-        raise AssertionError(f"G9 RTL / mobile overflow: {ordinal} {width} {context} {attrs}")
+        # On failures only: inspect which *visible element* extends outside
+        # the lesson section. Never weaken the viewport or RTL assertions.
+        offenders=root.evaluate("""e=>{
+          const a=e.getBoundingClientRect();
+          return [...e.querySelectorAll('*')].map(x=>{
+            const r=x.getBoundingClientRect(),s=getComputedStyle(x);
+            return {tag:x.tagName,cls:String(x.className||'').slice(0,100),
+              left:Math.round(r.left),right:Math.round(r.right),
+              width:Math.round(r.width),scrollWidth:x.scrollWidth,
+              clientWidth:x.clientWidth,overflowX:s.overflowX,
+              snippet:(x.children.length? '':x.textContent||'').slice(0,90)}
+          }).filter(x=>x.width>0 &&
+              (x.left<a.left-16 || x.right>a.right+16)).slice(0,12)
+        }""")
+        raise AssertionError(
+            f"G9 RTL / mobile overflow: {ordinal} {width} {context} {attrs} offenders={offenders}"
+        )
     for forbidden in ("Concept model","Instructional diagram",
                       "YouTube discovery could not load right now"):
         assert forbidden not in text,("unapproved G9 generic fallback",ordinal,forbidden)

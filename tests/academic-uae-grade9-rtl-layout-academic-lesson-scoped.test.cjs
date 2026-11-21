@@ -13,5 +13,11 @@ test('G9 authentic Arabic lesson forces RTL from academic scope even when portal
  assert.ok(layout.includes('<html lang="@pageLanguage"'));
  const grade7Path=view.includes('isUaeGrade7Arabic || isUaeGrade8Arabic');
  assert.ok(grade7Path,'existing Grade7/8 academic content handling must remain');
+ assert.ok(view.includes('uae-g9-arabic-reader'),'exact G9 main reader class required');
+ const css=read('src/Edulytics.Web/wwwroot/css/arabic-rtl.css');
+ assert.ok(css.includes('.uae-g9-arabic-reader .rich-lesson-visual'));
+ assert.ok(css.includes('overflow-x: auto;'));
+ assert.ok(css.includes('grid-template-columns: minmax(0, 1fr);'));
+ assert.ok(!css.includes('.lesson-learning-section { overflow-x: hidden'),'never mask lesson overflow');
  assert.ok(!view.includes('CultureInfo.CurrentUICulture ='),'student view must not mutate global localization');
 });

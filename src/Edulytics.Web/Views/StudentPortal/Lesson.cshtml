@@ -1997,7 +1997,7 @@
             </div>
         </div>
     </header>
-    <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
+    <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main @(isUaeGrade9Arabic ? "uae-g9-arabic-reader" : null)">
         @* G12 section 1.1: source-skill first-party instructional graphs, not
            the original textbook's 1:1 figures or automatically marked tasks. *@
         @* Grade 12 Section 3.7: reuse the typed mathematics renderer for eight
