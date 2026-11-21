@@ -1,13 +1,13 @@
 # UAE Grade 9 General - Stage D / Final CI gate status
 
 - Checked UTC: 2026-11-21T02:51:32Z
-- PR #650 branch SHA: 97e399bee1b898dc112d5b8a5c3942cc47fce598
+- PR #650 branch SHA at ORIGINAL source-entry snapshot: 97e399bee1b898dc112d5b8a5c3942cc47fce598. Current branch SHA must be queried from GitHub; the self-referential commit hash is not embedded in its own commit.
 - Final candidate SHA: NOT ESTABLISHED. Live main: 4c50d2ca762cb58bcaa4fd500f465060bad4e36a
 - Verified local PDF SHA and page counts: 5/5, including Applied used for comparison only; this does NOT establish full-page element inventories.
 - Required A-C handoff PRESENT, but explicitly D_PENDING_A_C_EVIDENCE.
 - 86 raw source lessons: 0 full atomic source audits with positive denominator. 82 canonical authoring targets: 0 full 1:1 source parity records. Semantic coverage UNKNOWN.
-- Historical source-selection 14/86 differs from latest A-C handoff 13/82; Unit 7 edition discrepancy remains unverified.
-- Hosted G9 run 44857599478: queued, not PASS. Previous local diagnostic results are not final candidate CI or authenticated 82-lesson E2E evidence.
+- Original source-selection ownerTarget was wrongly populated from raw 14/86, now corrected to authoring 13/82; raw source inventory remains 14/86, semantic dedup and Unit 7 equivalence remain unverified.
+- Hosted G9 run 44857599478: originally recorded as queued at the INITIAL snapshot, subsequently superseded. Release gate must query latest PR-head workflow; initial queued status is NOT current evidence. Earlier local tests are not final candidate CI or authenticated 82-lesson E2E proof.
 - Neon live G9 General: zero lessons and zero nodes. Render live commit: 4c50d2ca762cb58bcaa4fd500f465060bad4e36a. No production writes, merge or deployment.
 - Owner academic approval recorded; teacher source sign-off and third-party source asset rights remain separate.
 
@@ -35,3 +35,8 @@ Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gat
 ## U01L01 partial source-element traceability
 
 - Compiled the 61 separately identified numbered exercise containers and 21 known instruction elements on scanned printed pages 5-9 into a nonexhaustive, SHA-grounded source-element manifest. Known partial IDs=82, **not** 82 audited lessons or a verified raw lesson denominator. Exact publisher task parity and independent teacher review remain unverified.
+
+## Local full .NET regression after metadata reconciliation
+
+- Complete local Release binary reuse test produced verified TRX: **17,427 passed, 0 failed, 0 not executed**; process exit 0. SDK 10.0.300 used temporarily on the owner machine; repository global.json restored to 10.0.200. No new C# build performed in this run; no production changes.
+- Grade9 prepared Node diagnostics **368/368 passed**. Source gate remains NO_GO (0/86 raw, 0/82 target), hosted current-candidate CI still has no passing result and authenticated final release E2E has not been completed. These local checks do **not** authorize merge/deploy.

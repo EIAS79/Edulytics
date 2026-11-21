@@ -164,7 +164,11 @@
     "runId": 44857599478,
     "sha": "97e399bee1b898dc112d5b8a5c3942cc47fce598",
     "status": "queued",
-    "conclusion": null
+    "conclusion": null,
+    "statusAtInitialSnapshot": "queued",
+    "historicalSnapshot": true,
+    "currentHeadRunMustBeQueriedAtPublication": true,
+    "isPassingFinalCIProof": false
   },
   "finalCiPassed": false,
   "fullAuthenticatedE2EPassed": false,
@@ -182,7 +186,7 @@
     "Full raw source lesson audit 0/86; canonical target 1:1 verified 0/82",
     "Source selection metadata is aligned to 13/82; raw 14/86 still awaits the separately required full semantic dedup and source-element parity verification",
     "01.pdf modern Unit 7 geometry 4 lessons conflicts with historical 02-1.pdf quadratic Unit 7 9 lessons",
-    "G9 hosted GitHub Actions run 44857599478 queued without success",
+    "The current PR-head G9 hosted CI requires a fresh successful workflow run; previous queued/cancelled run IDs do not confer acceptance",
     "Authenticated student/teacher/supervisor/admin isolated E2E not verified",
     "Third-party image asset rights unverified"
   ],
@@ -230,5 +234,19 @@
   "sourceSelectionHistoricalTargetIsRawSourceCount": true,
   "firstLessonKnownPartialSourceElementIds": 82,
   "firstLessonRawAtomicDenominator": null,
-  "firstLessonPartialSourceElementIdsManifest": "u01l01-preliminary-source-element-ids-NO_GO.json"
+  "firstLessonPartialSourceElementIdsManifest": "u01l01-preliminary-source-element-ids-NO_GO.json",
+  "localFullNativeDiagnostic": {
+    "passed": 17427,
+    "failed": 0,
+    "notExecuted": 0,
+    "total": 17427,
+    "result": "PASS",
+    "buildMode": "Release --no-build --no-restore (reused unchanged C# binaries)",
+    "sdkUsedAtLocalTestRuntime": "10.0.300",
+    "repoSdkPinAfterTest": "10.0.200",
+    "trxLocalPath": "g9-test-results/g9-source-reconciliation-full-native.trx",
+    "verifiedAtUtc": "2026-11-21T04:07:24Z",
+    "hostedCandidateEvidence": false,
+    "authorizesPublication": false
+  }
 }

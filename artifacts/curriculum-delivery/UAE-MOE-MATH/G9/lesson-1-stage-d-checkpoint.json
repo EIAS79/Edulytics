@@ -29,7 +29,7 @@
     "Full raw source lesson audit 0/86; canonical target 1:1 verified 0/82",
     "Source selection metadata is reconciled; 86 raw lessons still need complete source atomic evidence before 82 canonical lessons can be certified",
     "01.pdf modern Unit 7 geometry 4 lessons conflicts with historical 02-1.pdf quadratic Unit 7 9 lessons",
-    "G9 hosted GitHub Actions run 44857599478 queued without success",
+    "The current PR-head G9 hosted CI requires a fresh successful workflow run; previous queued/cancelled run IDs do not confer acceptance",
     "Authenticated student/teacher/supervisor/admin isolated E2E not verified",
     "Third-party image asset rights unverified"
   ],
@@ -74,5 +74,13 @@
   "targetAuthoringLessonCount": 82,
   "partialSourceElementManifest": "u01l01-preliminary-source-element-ids-NO_GO.json",
   "knownDistinctSourceSubsetElementIds": 82,
-  "sourceTotalAtomicElementDenominatorStillUnknown": true
+  "sourceTotalAtomicElementDenominatorStillUnknown": true,
+  "candidateShaMeaning": "Historical source-entry checkpoint commit; current candidate SHA is taken from the PR head and exact tested ref at release time",
+  "localNativeFullDiagnostics": {
+    "passed": 17427,
+    "failed": 0,
+    "noBuild": true,
+    "hostedAcceptance": false,
+    "sourceSemanticParity": "UNKNOWN"
+  }
 }
