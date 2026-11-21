@@ -149,5 +149,100 @@
   "realEdgeArabicIndicPlotInputs": "PRESERVED_TEXT_DECIMAL_MOBILE_INPUT_AND_STRICT_VALIDATION",
   "independentWordOrderSourceExceptionProof": "u01l01-source-wordorder-ambiguities-math-proof-NO_GO.json",
   "g9StaticDraftPublishLeakNowBlocked": "PASS_0_G9_DRAFTS_IN_LOCAL_PUBLISHED_WEBROOT_AND_ENDPOINT_MANIFEST",
-  "releaseDecision": "NO_GO"
+  "releaseDecision": "NO_GO",
+  "directFivePageSourceReinspection20261121": {
+    "inspectedAtUtc": "2026-11-21T05:20:34.446Z",
+    "source": "OWNER_LOCAL_01_PDF_DIRECT_PAGE_VISUAL_REVIEW",
+    "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+    "sourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "physicalPdfPages1Based": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "observations": [
+      {
+        "printedPage": 5,
+        "subject": "two printed objectives, eight glossary entries, worked example 1a/b, guided 1a/b, intro context and annotated term/power diagrams",
+        "category": "OBJECTIVES_EXAMPLES_VOCAB_AND_DIAGRAMS"
+      },
+      {
+        "printedPage": 6,
+        "subject": "four-operation vocabulary table, example 2a/b/c and example 3, guided 2a/b and question 3, career media and source study-tip",
+        "category": "VOCAB_EXAMPLES_GUIDED_MEDIA"
+      },
+      {
+        "printedPage": 7,
+        "subject": "numbered exercises 1–34, including visual cylinder 29 and Q34 parts a/b/c",
+        "category": "EXERCISE_SKILL_CATEGORIES"
+      },
+      {
+        "printedPage": 8,
+        "subject": "numbered exercises 35–42, explicit Q35, Q36, Q37 lettered subparts, power table, cube diagram",
+        "category": "CONTEXT_AND_VISUAL_EXERCISES"
+      },
+      {
+        "printedPage": 9,
+        "subject": "numbered exercises 43–61 including cube/rectangle, categorical vote table, 14 mm:ss race times, signed statistics and arithmetic reviews",
+        "category": "PRACTICE_AND_SPIRAL_REVIEW"
+      }
+    ],
+    "numberedExerciseContainersByPrintedPage": {
+      "7": 34,
+      "8": 8,
+      "9": 19
+    },
+    "observedTotalNumberedExerciseContainers": 61,
+    "knownLetteredChildrenQ34ToQ37": 11,
+    "independentTeacherOracleMathSamples": {
+      "q35FractionOf50": 30,
+      "q36SolutionsTo23_18_6": [
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "q48FiveNumberSummarySeconds": [
+        860,
+        945,
+        1035,
+        1150,
+        1290
+      ],
+      "q48IqrSeconds": 205,
+      "q48RangeSeconds": 430,
+      "q49Mean": 7,
+      "q50Mean": 0,
+      "q51Mean": 14
+    },
+    "numericResultsVerifiedByIndependentInMemoryCalculation": true,
+    "sourceTextAmbiguitiesStillRequireSpecificReview": [
+      7,
+      25
+    ],
+    "allSourceItemsFullySemanticallyMatched": false,
+    "fullSourceAtomicDenominatorEstablished": false,
+    "reproducedThirdPartySourceMedia": false,
+    "sourceCopyrightClearanceForOriginalMedia": "UNVERIFIED",
+    "publisherSourceExerciseOneToOneParityGranted": false,
+    "sourceIndexComplete": false,
+    "releaseDecision": "NO_GO_SOURCE_100"
+  }
 }
