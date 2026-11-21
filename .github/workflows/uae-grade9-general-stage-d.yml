@@ -157,7 +157,7 @@ jobs:
               raise SystemExit('SOURCE_DIAGNOSTIC_INVALID_RESULT')
           print(status)
           with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a',encoding='utf-8') as summary:
-              summary.write('Publisher source-literal parity (NOT the first-party acceptance gate): ' + status + '\\n')
+              summary.write('Publisher source-literal parity (NOT the first-party acceptance gate): ' + status + '\n')
           PY
       - name: Upload independent Python source-parity evidence
         if: always()
