@@ -274,3 +274,22 @@ test('U01L01 source has two printed goals mapped explicitly to four expanded Edu
    assert.equal(row.sourceExerciseItemFullyCertified,false);
  }
 });
+test('U01L01 source visual lesson corpus records 21 nonnumbered teaching elements separate from 61 numbered exercises',()=>{
+ const subset=read(base+'u01l01-nonnumbered-source-visual-subset.json');
+ const numbered=read(base+'u01l01-61-source-visual-skill-audit.json');
+ assert.equal(subset.observedTwoSourceObjectives,2);
+ assert.equal(subset.observedGlossaryTerms,8);
+ assert.equal(subset.observedWorkedExampleSubparts,6);
+ assert.equal(subset.observedGuidedPracticePrompts,5);
+ assert.equal(subset.itemizedNonNumberedInstructionalSubsetCount,21);
+ assert.equal(subset.elements.length,21);
+ assert.equal(numbered.records.length,61);
+ assert.equal(subset.combinedDocumentedSubsetCount,82);
+ const types=subset.elements.reduce((acc,row)=>(acc[row.type]=(acc[row.type]||0)+1,acc),{});
+ assert.deepEqual(types,{'printed-objective':2,'glossary':8,'worked-example-subpart':6,'guided-practice':5});
+ assert.deepEqual(subset.sourcePdfPage1Based,[16,17]);
+ assert.ok(subset.elements.every(x=>x.visualTextbookLocationVerified===true));
+ assert.ok(subset.elements.every(x=>x.fullSourceAtomicEquivalenceCertified===false));
+ assert.equal(subset.sourceTotalAtomicElementDenominatorVerified,false);
+ assert.equal(subset.fullSourceLessonAuditPassed,false);
+});

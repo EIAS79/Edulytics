@@ -46,7 +46,7 @@
   "firstIncompleteReason": "U01L01 original analogous practices and local checks exist, but original source atomic equivalence and Q7/Q25 wording are not fully certified; 85 additional raw entries unverified",
   "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
   "tests": {
-    "node": "LOCAL_317_PASS_0_FAIL_GITHUB_CI_PENDING",
+    "node": "LOCAL_318_PASS_0_FAIL_GITHUB_CI_PENDING",
     "dotnet": "LOCAL_70_PASS_0_FAIL_GITHUB_CI_PENDING",
     "authenticatedE2E": "NOT_RUN_G9_NOT_IMPORTED_IN_PRODUCTION",
     "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
@@ -83,7 +83,7 @@
     "releaseGateSeparate": true,
     "latestLocalChecks": {
       "date": "2026-11-21",
-      "preparedNodeTestsPassed": 317,
+      "preparedNodeTestsPassed": 318,
       "preparedNodeTestsFailed": 0,
       "scopedDotnetPassed": 70,
       "scopedDotnetFailed": 0,
@@ -99,7 +99,9 @@
       "studentStaticPreview": "EDGE_4X4_CUBE_GRID_WITH_ARABIC_RTL",
       "fullAuthenticatedE2E": false,
       "renderPublished": false,
-      "neonProductionWrites": 0
+      "neonProductionWrites": 0,
+      "sourceNonnumberedInstructionalSubsetObserved": 21,
+      "sourceDocumentedSubsetElements": 82
     }
   }
 }
