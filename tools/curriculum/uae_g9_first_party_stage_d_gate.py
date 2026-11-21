@@ -206,8 +206,8 @@ def evaluate(phase: str) -> dict:
         "publisherSourceLiteralParity": "VERIFIED" if source_parity_confirmed else "UNKNOWN",
         "publisherRightsVerified": False,
         "sourceAtomicParityCertified": source_parity_confirmed,
-        "grade9PublishedLessonCount": 0,
-        "grade9ProductionImportCompleted": False,
+        "productionGrade9PublishedLessons": "NOT_QUERIED_BY_THIS_LOCAL_PREFLIGHT",
+        "grade9ProductionImportPerformedByThisGate": False,
         "grade9ContentPackStatus": pack.get("Status"),
         "readyForProductionRelease": False,  # no E2E/CI/DB authorization in this gate
         "requiresSeparateAuthenticatedE2E": True,
