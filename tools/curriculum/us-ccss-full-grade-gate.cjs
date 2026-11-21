@@ -187,6 +187,16 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // C# and Python Git blobs are pinned above, including unchanged US G1
   // semantic lines. Historical grade1 signed source approval and the
   // mandatory fresh US G1 math/authenticated CI are NOT waived.
+  // G9 General first-party 2026-11-21: exact technical-only re-pin of the
+  // two shared mathematics blobs after independent pre-G5/G1 comparisons
+  // preserved 9,717 original engine lines and 8,649 non-retired contract
+  // lines, with exactly THREE G9/G1 audited replacements in the engine:
+  // partial class declaration, G9-only Eastern-digit normalization branch,
+  // and the previously approved G1 19+1 bound. Precisely 80 G9 direct
+  // digital contracts were added without deleting older-grade contracts.
+  // This DOES NOT reapprove historical G1 source pedagogy or waive current
+  // branch G1 maths and authenticated two-school checks. Any further SHA
+  // change, ninth path, or source deletion fails closed as before.
   const auditedG1UnaffectedDeltas=new Map([
     ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
       ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
@@ -195,9 +205,9 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','e06df7149cf93fdbfafe0590ba79ef6afd0fc4cc']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','fa4d40a57669f766e4cf2ce69ed6d573c6736d24']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','a2333c365c291b128acd0ed852793505617bb5a5']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','e49b17d57f38027e148e68b63268997de65792bb']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',

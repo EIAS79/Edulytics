@@ -105,6 +105,7 @@ def load_mappings(skill_ids: set[str]) -> tuple[dict[str, dict[str, Any]], list[
                 and str(row.get("practiceReadiness") or "").startswith(
                     ("PREPARED_", "TEACHER_REVIEW_ONLY_")
                 )
+            )
             if is_g9_authoring_candidate:
                 pending_skill_proposals.append({
                     "lessonCode": lesson_code,
