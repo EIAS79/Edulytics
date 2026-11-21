@@ -150,10 +150,11 @@ def evaluate(phase: str) -> dict:
                     and stage_b.get("coolDownQuestions", 0) > 0
                     and stage_b.get("coolDownGraded") is False):
                 teacher_only.append(i)
-        check("all_82_lessons_have_verified_digital_or_prepared_teacher_route",
+        check("all_82_lessons_have_prepared_digital_or_teacher_routes",
               len(digital) + len(teacher_only) == 82
               and teacher_only == [80, 81], {
-                  "digitalContracts": len(digital),
+                  "preparedDigitalContractDefinitions": len(digital),
+                  "preparedIsNotRuntimeReady": True,
                   "teacherOnlyPrepared": teacher_only,
                   "teacherOnlyRuntimeVerified": False,
                   "finalAuthenticatedE2ERequired": True
