@@ -61,7 +61,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         // No reviewed runtime pack is safer than fabricated content.
         // Phase 29 remains open until approved packs are supplied.
-        if (documents.Count == 0)
+        if (documents.Length == 0)
             return;
 
         await SeedDocumentsAsync(documents, ct);
@@ -92,7 +92,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 !x.Lessons.Any(lesson => lesson.LessonCode.StartsWith(
                     "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)))
             .ToArray();
-        if (documents.Count == 0)
+        if (documents.Length == 0)
             return;
 
         // During the explicit one-shot 93-to-132 UAE G4 production release,
