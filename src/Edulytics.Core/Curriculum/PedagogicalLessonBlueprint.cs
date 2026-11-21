@@ -395,6 +395,32 @@ public static class PedagogicalLessonBlueprintContract
         document.Lessons.All(x => x.LessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal));
 
+    // UAE Grade9 owner-approved first-party mathematical curriculum references
+    // copyrighted local source books but never licenses their pages or artwork.
+    // This narrow exception must not apply to other paths or source materials.
+    private static bool IsUaeG9OriginalFirstPartyWithReferenceOnlySource(
+        PedagogicalLessonBlueprintDocument document) =>
+        document.SchemaVersion == 1 &&
+        document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+        document.LogicalLevel == 9 &&
+        string.Equals(document.Pathway, "General", StringComparison.Ordinal) &&
+        string.Equals(document.BlueprintCode,
+            "UAE-G9-GENERAL-AR82-OWNER-FIRST-PARTY-V1:COMPOSITE-SOURCE-CANDIDATE",
+            StringComparison.Ordinal) &&
+        string.Equals(document.SourceLicense,
+            "Reference-only local copyrighted student text; original Edulytics content, no reuse license presumed",
+            StringComparison.Ordinal) &&
+        string.Equals(document.RequiredDigitalAttribution,
+            "No publisher prose or artwork embedded. Provenance recorded privately.",
+            StringComparison.Ordinal) &&
+        string.Equals(document.SourceRightsNote,
+            "All learner-facing explanations and exercises are represented as first-party Edulytics authorship. Owner approval does not grant publisher illustration, page-copy or QR/linked-resource rights; publisher-specific assets must remain excluded.",
+            StringComparison.Ordinal) &&
+        document.Units is { Count: 13 } &&
+        document.Lessons is { Count: 82 } &&
+        document.Lessons.All(x => x.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal));
+
     public static void Validate(
         PedagogicalLessonBlueprintDocument document)
     {
@@ -447,7 +473,8 @@ public static class PedagogicalLessonBlueprintContract
         // declare the publisher's book CC/PD or accept this exception for
         // unrelated courses, arbitrary G7 files, or copied illustrations.
         if (!IsUaeG7OriginalFirstPartyWithReferenceOnlySource(document) &&
-            !IsUaeG8OriginalFirstPartyWithReferenceOnlySource(document))
+            !IsUaeG8OriginalFirstPartyWithReferenceOnlySource(document) &&
+            !IsUaeG9OriginalFirstPartyWithReferenceOnlySource(document))
         {
             PedagogicalSourceLicensePolicy.Validate(document.SourceLicense);
         }
