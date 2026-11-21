@@ -1,8 +1,8 @@
 # UAE-MOE-MATH · Grade 9 General · U01L01 · المتغيرات والتعابير
 
-**Delivery stage:** A–B–C candidate, learner-facing Arabic draft; **not published and not yet closed**.  
-**Source:** Local General student book `Grade_09/01_Student_Books/01.pdf`, copyright 2025, printed pages 5–7; source SHA-256 `341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade`.  
-**Existing prior code identity (retired in PR #649):** `PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS`; validate adoption of this identity on re-registration, not a reference to still-existing live content.  
+**Delivery stage:** A–B–C candidate, learner-facing Arabic draft; **not published and not yet closed**.
+**Source:** Local General student book `Grade_09/01_Student_Books/01.pdf`, copyright 2025, printed pages 5–7; source SHA-256 `341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade`.
+**Existing prior code identity (retired in PR #649):** `PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS`; validate adoption of this identity on re-registration, not a reference to still-existing live content.
 **Academic language:** ar; **direction:** RTL. Display mathematical expressions in isolated LTR math containers.
 
 ## Learning objectives derived from the inspected source
@@ -50,11 +50,11 @@ These are source-aligned design objectives, **not** claims of independent, D-sta
 
 ## Cool-down — independent Edulytics formative activity
 
-1. في التعبير `9t - 2`، ما المتغير وما المعامل وما الحد الثابت؟  
+1. في التعبير `9t - 2`، ما المتغير وما المعامل وما الحد الثابت؟
    *Expected:* `t`; `9`; `-2`.
-2. اكتب تعبيرًا لعبارة «نصف مجموع العدد `q` وثمانية».  
+2. اكتب تعبيرًا لعبارة «نصف مجموع العدد `q` وثمانية».
    *Expected:* `(q + 8)/2`, or a mathematically equivalent expression.
-3. يشتري طالب `s` من الأقلام بثمن `3` دراهم للقلم، ويُضاف رسم واحد مقداره `5` دراهم. اكتب التكلفة وفسّر الحد الثابت.  
+3. يشتري طالب `s` من الأقلام بثمن `3` دراهم للقلم، ويُضاف رسم واحد مقداره `5` دراهم. اكتب التكلفة وفسّر الحد الثابت.
    *Expected:* `3s + 5`; `5` is the once-only fixed charge.
 
 Use immediate feedback for closed symbolic items and teacher rubric for open verbal explanations. This Cool-down is **Edulytics-authored**, not presented as a reproduction of an inaccessible teacher-only activity.
