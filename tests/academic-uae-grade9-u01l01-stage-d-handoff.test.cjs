@@ -22,3 +22,19 @@ test('Grade 9 lesson 1 source-objectives spec and authoring checkpoint agree on 
  assert.equal(cp.delivery.ci,'NOT_RUN');
  assert.equal(source.semanticGate.forbidReadyVerifiedUntilPassed,true);
 });
+
+
+test('U01L01 A-C checkpoint cannot claim a source-element denominator before the full atomic ledger is complete',()=>{
+ const prefix='artifacts/curriculum-delivery/UAE-MOE-MATH/G9/';
+ const cp=read(prefix+'u01l01-stage-a-c-checkpoint.json');
+ const sourceSubset=read(prefix+'u01l01-preliminary-source-element-ids-NO_GO.json');
+ const goals=read(prefix+'u01l01-source-objectives-practice-contract.json');
+ assert.equal(sourceSubset.rawTotalAtomicSourceElementDenominator,null);
+ assert.equal(sourceSubset.atomicSubpartDenominatorKnown,false);
+ assert.equal(cp.lesson.sourceElementDenominatorVerified,false);
+ assert.equal(goals.sourceTextbookExplicitObjectiveCount,2);
+ assert.equal(goals.edulyticsExpandedPracticeCompetencyObjectiveCount,4);
+ assert.match(cp.lesson.sourceGoalsCoverage,/TWO_PRINTED_SOURCE_GOALS_FOUR_DERIVED/);
+ assert.equal(cp.delivery.status,'READY_FOR_STAGE_D');
+ assert.equal(cp.delivery.ci,'NOT_RUN');
+});
