@@ -65,3 +65,16 @@ Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gat
 - The A-C checkpoint had `sourceElementDenominatorVerified=true` although the partial source inventory records `rawTotalAtomicSourceElementDenominator=null`. Corrected the checkpoint to `false`; documented two printed goals versus four derived competencies. No numerator, denominator, lesson identity, or source certification was fabricated.
 - Added regression cases in the existing Grade9 U01L01 RichV2 and handoff Node test files. Independent read-back content assertions: **13/13 PASS** (not Node runner, not CI). Changed-file regression code awaits hosted execution; workflow [44870044832](https://github.com/EIAS79/Edulytics/actions/runs/44870044832) last observed queued. Candidate after code/test edits: `2a8af19bc2b285c661100f53ef4797d1a0d05d49`; this report commit is not itself a tested release SHA.
 - Source full atomic parity: **0/86 raw / 0/82 target**, denominator unknown, Unit 7 edition conflict open. U01L01 remains `D_PENDING`; no lesson was closed. `D_PENDING_A_C_EVIDENCE` and `NO_GO_SOURCE_100` remain mandatory. No authenticated 82-lesson E2E, merger, Neon writes, or Render deploy asserted.
+
+
+## Stage D G9 U01L01 — verified isolated diagnostics (21 Nov 2026)
+
+- **Exact tested checkout SHA:** `5b3fda1a3eee3b4f28b44183c2c5fabd995bf0ef` (PR #650 branch). These are actual local process results, not hosted GitHub Actions / Final CI or authenticated student E2E.
+- **Node tests:** 377/377 passed, 0 failed, 0 skipped across 94 prepared G9 files; focused U01L01 32/32. Strict Node source gate remained intentionally red, Python gate exit 1 (0/86 raw independent audits, 0/82 canonical 1:1 parity).
+- **.NET:** solution restore/build passed (0 errors, 2 nonblocking xUnit2012 warnings); 167/167 Grade9+Grade7 scoped, then **17,514/17,514** full native tests passed, 0 failed/skipped; local TRX files under `%TEMP%/g9-StageD-TRX/`.
+- **SDK constraint:** repository `global.json` pins 10.0.200 but local device has 10.0.300; the *isolated temporary Git checkout only* used 10.0.300. Pin restored after tests and working tree clean. Hosted CI with exact declared SDK remains mandatory.
+- **Local Web publish check:** `dotnet publish --no-build --no-restore` succeeded; `Edulytics.Web.dll` present, **no draft G9 HTML/JS** in publishable wwwroot. No Render deployment occurred.
+- **Live read-only production inspection:** Neon grade9 General lesson/content/pack-node counts 0/0/0; Render remains live on `4c50d2ca` deploy `dep-dbv8f4nf3r2c73fjf8rg`. PR #650 remains Draft/unmerged.
+- **Current hosted gate:** GitHub Actions [#44871005498](https://github.com/EIAS79/Edulytics/actions/runs/44871005498) pending, jobs queued when inspected. **No hosted CI green claim.**
+- **Academic release:** owner approval documented; Unit 7 edition/source crosswalk and atomic source inventories not complete, third-party asset rights and authenticated E2E not independently passed. First incomplete lesson remains **U01L01 D_PENDING**; decision **NO_GO_SOURCE_100**, no merge or production writes.
+- The ledger/checkpoint/report commits following this tested SHA are evidence-only commits, **not themselves tested release SHAs**.
