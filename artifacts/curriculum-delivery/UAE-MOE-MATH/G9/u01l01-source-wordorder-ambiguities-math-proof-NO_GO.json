@@ -25,7 +25,23 @@
       "independentAnalogResolution": "Two explicit separate questions, one expression and one equality; student must distinguish types.",
       "independentAnalogEquationMath": "r/5 = 2 - 3",
       "independentAnalogSolution": -5,
-      "automaticSourceAnswerSelectionAllowed": false
+      "automaticSourceAnswerSelectionAllowed": false,
+      "sourceVisualReinspection": {
+        "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+        "sourcePrintedPage": 7,
+        "sourcePdfPage1Based": 18,
+        "sourceQuestionNumber": 7,
+        "visualPromptParaphrase": "ناتج قسمة المتغير على سبعة يُقارَن بالعدد واحد مع بيان الفرق بمقدار سبعة؛ موضع المقارنة لا يُعطي تعبيرًا جبريًا غير ملتبس بلا مرجع الإجابة",
+        "literalComparativeReadingMath": "r / 7 = 1 - 7",
+        "literalComparativeImpliedSolution": -42,
+        "alternativeReadingMath": "r / 7 - 1 = 7",
+        "alternativeImpliedSolution": 56,
+        "imageSource": "OWNER_LOCAL_SCANNED_PAGE_NO_UPLOAD",
+        "sourceImageInspected": true,
+        "sourceImageOriginalRightsProven": false,
+        "officialPublisherSolutionReviewed": false,
+        "automatedPublisherAnswerSelectionAllowed": false
+      }
     },
     {
       "item": "U01L01-Q25",
@@ -47,7 +63,22 @@
         "3x + 16",
         "3(x + 16)"
       ],
-      "automaticSourceAnswerSelectionAllowed": false
+      "automaticSourceAnswerSelectionAllowed": false,
+      "sourceVisualReinspection": {
+        "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+        "sourcePrintedPage": 7,
+        "sourcePdfPage1Based": 18,
+        "sourceQuestionNumber": 25,
+        "visualPromptParaphrase": "يطلب التعبير عن ثلاثة مضروبة في عدد مع إضافة ستة عشر، ولا تظهر أقواس صريحة في النص المطبوع",
+        "candidateA": "3x + 16",
+        "candidateB": "3(x + 16)",
+        "candidateAAtX2": 22,
+        "candidateBAtX2": 54,
+        "imageSource": "OWNER_LOCAL_SCANNED_PAGE_NO_UPLOAD",
+        "sourceImageInspected": true,
+        "officialPublisherSolutionReviewed": false,
+        "groupingCertified": false
+      }
     }
   ],
   "sourceQuestionLanguageCopiedIntoRuntime": false,
@@ -57,5 +88,21 @@
   "targetEdulyticsLessonStageDClosed": false,
   "sourceIndexComplete": false,
   "productionPublishAllowed": false,
-  "releaseDecision": "NO_GO"
+  "releaseDecision": "NO_GO",
+  "ownerSourceReinspection20261121": {
+    "sourcePagesInspected": [
+      {
+        "printed": 7,
+        "pdfPage1Based": 18
+      }
+    ],
+    "sourcePdfPagePixelsAtInspect": [
+      1673,
+      2099
+    ],
+    "noSourceImageUploadedToGithub": true,
+    "sourceSnapshotSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "independentlyAuthoredStudentAnalogsRemainUnchanged": true,
+    "bothAmbiguitiesRemainHumanReviewRequired": true
+  }
 }
