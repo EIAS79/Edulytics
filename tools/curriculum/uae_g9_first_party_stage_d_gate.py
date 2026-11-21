@@ -58,7 +58,7 @@ def evaluate(phase: str) -> dict:
         block = load(file)
         for lesson in block.get("Lessons", []):
             rich_lessons.append(lesson)
-            if block.get("PackCode") != "UAE-G9-GENERAL":
+            if block.get("PackCode") != "UAE-MOE-MATH" or block.get("SchemaVersion") != 1:
                 media_violations.append(f"{file.name}: inconsistent RichV2 pack identity")
             if lesson.get("Videos"):
                 media_violations.append(f"{file.name}: unlicensed video not cleared")
