@@ -30,7 +30,8 @@ test('U01L01 all 61 parallel student prompts remain teacher-only and non-publish
  for(const x of items){
   assert.equal(x.gradingRoute,'TEACHER_REVIEW_REQUIRED');
   assert.equal(x.comparisonStatus,'ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED');
-  assert.ok(x.teacherExpectedEvidence.trim().length>5);
+  assert.equal(typeof x.teacherExpectedEvidence,'string');
+  assert.ok(x.teacherExpectedEvidence.trim().length>0,'Q'+x.sourceItem+' must have a nonempty teacher rubric; a short algebraic expression is valid');
  }
  assert.equal(items.slice(0,46).filter(x=>x.scope==='CORE_SKILL').length,46);
  assert.equal(items.slice(46).filter(x=>x.scope==='PRIOR_SKILL_REVIEW').length,15);
