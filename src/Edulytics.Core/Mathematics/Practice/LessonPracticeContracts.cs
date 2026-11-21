@@ -11726,8 +11726,20 @@ public static class LessonPracticeContractRegistry
             throw new InvalidOperationException(
                 "Unrecognized UAE Grade9 General digital Practice release token.");
 
-        // Automatic mapping projections can include non-gradable, teacher-only
-        // Grade9 lessons. They must never count as digital Practice contracts.
+        // Grade 9 General has exactly two first-party teacher-reviewed lessons
+        // with no eligible independent exact-question families. The general
+        // mappings projection is evaluated before these 80 explicit G9 digital
+        // overrides and can supply a synthetic fallback contract for a
+        // teacher-only lesson. Remove ONLY those exact non-digital identities;
+        // never whitelist their generated questions or relax the 80-contract
+        // production readiness invariant.
+        const string teacherOnlyCongruenceTransforms =
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS";
+        const string teacherOnlyCoordinateProof =
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF";
+        byLesson.Remove(teacherOnlyCongruenceTransforms);
+        byLesson.Remove(teacherOnlyCoordinateProof);
+
         var grade9Prepared = byLesson.Values.Where(x =>
             x.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal) &&
             x.AllowedQuestionFamilies.Count > 0).ToArray();
@@ -11740,7 +11752,10 @@ public static class LessonPracticeContractRegistry
                 string.Equals(x.Readiness, "READY_VERIFIED",
                     StringComparison.Ordinal))))
             throw new InvalidOperationException(
-                "UAE Grade9 exact digital release requires 80 distinct prepared lesson contracts.");
+                "UAE Grade9 exact digital release requires 80 distinct prepared lesson contracts; " +
+                $"present={grade9Prepared.Length}, distinct=" +
+                $"{grade9Prepared.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count()}, " +
+                $"alreadyReady={grade9Prepared.Count(x => string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal))}.");
 
         return byLesson.Values
             .Where(x =>

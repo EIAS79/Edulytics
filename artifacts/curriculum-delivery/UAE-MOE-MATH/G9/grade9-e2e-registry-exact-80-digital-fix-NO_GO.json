@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE-MOE-MATH/G9/GENERAL/AR",
+  "sourceCommit": "e2e69c39ad8fcfb946188ed8580357e275d1bb76",
+  "failingRun": "https://github.com/EIAS79/Edulytics/actions/runs/44926771961",
+  "runtimeError": "LessonPracticeContractRegistry static initialization threw because G9 exact digital release requires 80 distinct prepared lesson contracts",
+  "mappingFacts": {
+    "canonical": 82,
+    "digitalFamilyMappings": 80,
+    "teacherOnlyFamilyMappings": 2,
+    "directDigitalContracts": 80
+  },
+  "repair": "Remove only the two exact teacher-only lesson identities from projected digital registry before 80-scope integrity gate, preserving original digital readiness and existing other curricula",
+  "exactTeacherOnly": [
+    "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+    "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF"
+  ],
+  "guardNotWeakened": true,
+  "negativeTestsExpected": true,
+  "e2eRetest": "NOT_YET_RUN",
+  "sourceLiteralParity": "UNKNOWN",
+  "noNeonWrites": true,
+  "publicationAuthorized": false
+}

@@ -1,0 +1,31 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const contracts=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+const prefix='PED:UAE-MOE-MATH:L9:GENERAL:';
+const teacherOnly=[prefix+'13:07:CONGRUENCE-TRANSFORMATIONS',prefix+'13:08:TRIANGLES-AND-COORDINATE-PROOF'];
+test('Grade9 owner-selected canonical scope has 80 digitizable and precisely 2 teacher-only lessons',()=>{
+ const entries=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json').mappings.filter(x=>x.lessonCode?.startsWith(prefix));
+ assert.equal(entries.length,82);
+ const eligible=entries.filter(x=>Array.isArray(x.allowedQuestionFamilies)&&x.allowedQuestionFamilies.length>0);
+ assert.equal(eligible.length,80);
+ assert.deepEqual(entries.filter(x=>!x.allowedQuestionFamilies?.length).map(x=>x.lessonCode),teacherOnly);
+ const direct=[...contracts.matchAll(/byLesson\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\]\s*=\s*new LessonPracticeContract\(/g)].map(m=>m[1]);
+ assert.equal(direct.length,80);
+ assert.equal(new Set(direct).size,80);
+ assert.deepEqual(direct.slice().sort(),eligible.map(x=>x.lessonCode).sort());
+});
+test('Exact G9 teacher-only mapping projection is excluded before the 80-digital release contract gate',()=>{
+ const section=contracts.split('const string grade9Prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";')[1];
+ assert.ok(section,'release logic exists');
+ const begin=section.indexOf('byLesson.Remove(teacherOnlyCongruenceTransforms)');
+ const next=section.indexOf('byLesson.Remove(teacherOnlyCoordinateProof)');
+ const ready=section.indexOf('var grade9Prepared = byLesson.Values.Where');
+ const guard=section.indexOf('grade9Prepared.Length != 80');
+ assert.ok(begin>=0 && next>begin && ready>next && guard>ready);
+ for(const identity of teacherOnly)assert.ok(section.includes(identity));
+ assert.ok(section.includes('grade9Enabled && x.AllowedQuestionFamilies.Count > 0'));
+ assert.ok(section.includes('present={grade9Prepared.Length}'));
+ assert.ok(section.includes('Unrecognized UAE Grade9 General digital Practice release token.'));
+});
