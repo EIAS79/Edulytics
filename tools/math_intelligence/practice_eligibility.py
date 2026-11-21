@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
+from pathlib import Path
 from typing import Any
 
 from polish_practice_map import load_polish_outcome_mappings
@@ -52,6 +54,56 @@ def classify_lesson(
         "AdaptationStatus",
         "adaptationStatus",
     )
+
+
+    # Exactly two source-authored Grade9 General lessons require a teacher to
+    # assess diagrams and open coordinate proofs. They must never be mislabeled
+    # as automatically generated/graded exercises. The checkpoint is checked
+    # independently; mere Grade9 membership does not bypass Practice controls.
+    g9_teacher_review = {
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS": 80,
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF": 81,
+    }
+    lesson_code = _text(lesson, "LessonCode", "lessonCode")
+    if lesson_code in g9_teacher_review:
+        ordinal = g9_teacher_review[lesson_code]
+        source = (Path(__file__).resolve().parents[2]
+                  / "artifacts/curriculum-delivery/UAE-MOE-MATH/G9"
+                  / f"lesson-{ordinal}-stage-a-c-checkpoint.json")
+        try:
+            checkpoint = json.loads(source.read_text(encoding="utf-8"))
+            stage_c = checkpoint.get("stageC") or {}
+            stage_b = checkpoint.get("stageB") or {}
+            valid = (
+                pack_code == "UAE-MOE-MATH"
+                and _text(pack, "AcademicLanguage", "academicLanguage") == "ar"
+                and _text(pack, "Status", "status") == "Published"
+                and checkpoint.get("lessonCode") == lesson_code
+                and checkpoint.get("lessonOrdinal") == ordinal
+                and checkpoint.get("closed") is True
+                and stage_c.get("practiceFamilies") == []
+                and "TEACHER_REVIEW_ONLY" in str(stage_c.get("status") or "")
+                and bool(stage_c.get("teacherReviewRequiredFor"))
+                and stage_b.get("coolDownQuestions", 0) > 0
+                and stage_b.get("coolDownGraded") is False
+            )
+        except (OSError, ValueError, TypeError, KeyError):
+            valid = False
+        if valid:
+            return PracticeEligibility(
+                "NON_STANDALONE_WITH_EVIDENCE",
+                "UAE_G9_OPEN_RESPONSE_TEACHER_REVIEW_ONLY",
+                (
+                    f"Exact closed authoring checkpoint lesson-{ordinal} records teacher-review-only route.",
+                    "No automated mathematical item generator or automatic grade is claimed.",
+                    "The user-facing teacher grading flow requires independent four-role HTTPS E2E.",
+                ),
+            )
+        return PracticeEligibility(
+            "BLOCKED_TEMPORARY",
+            "UAE_G9_TEACHER_REVIEW_EVIDENCE_MISSING",
+            ("Missing or inconsistent exact teacher-only checkpoint; block automatic Practice.",),
+        )
 
     # Polish Phase-29 identities are learner-facing official-outcome lessons.
     # They become Practice-eligible only through the exact reviewed OutcomeCode
