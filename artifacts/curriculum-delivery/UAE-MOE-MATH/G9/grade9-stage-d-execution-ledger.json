@@ -457,5 +457,111 @@
     "sourceElementDenominator": null,
     "fullSourceMatchingPassed": false,
     "releaseAllowed": false
+  },
+  "latestIsolatedStageDVerification20261121": {
+    "observedAtUtc": "2026-11-21T05:43:46.369Z",
+    "testedCandidateSha": "5b3fda1a3eee3b4f28b44183c2c5fabd995bf0ef",
+    "testedRefKind": "clean-independent-Git-checkout-of-PR650-branch",
+    "branch": "fix/g9-general-full-year-scope-86",
+    "lessonOrdinal": 1,
+    "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+    "stageDSections": [
+      "D.1",
+      "D.2",
+      "D.4",
+      "Final CI preflight"
+    ],
+    "resultKind": "REAL_LOCAL_TEST_PROCESS_NOT_HOSTED_CI_NOT_AUTHENTICATED_E2E",
+    "node": {
+      "executableVersion": "v24.21.0",
+      "testFiles": 94,
+      "preparedTests": {
+        "total": 377,
+        "passed": 377,
+        "failed": 0,
+        "skipped": 0
+      },
+      "focusedU01L01": {
+        "total": 32,
+        "passed": 32,
+        "failed": 0,
+        "skipped": 0
+      },
+      "strictSourceGate": {
+        "exitCode": 1,
+        "passed": 0,
+        "failed": 1,
+        "expectedFailClosed": true
+      }
+    },
+    "dotnet": {
+      "repositoryGlobalJsonSdkPin": "10.0.200",
+      "diagnosticSdkUsed": "10.0.300",
+      "temporarySdkAdjustmentOnlyOnIsolatedCheckout": true,
+      "sdkPinRestored": true,
+      "checkoutCleanAfterTest": true,
+      "solutionRestore": "PASS",
+      "solutionBuild": "PASS",
+      "buildErrors": 0,
+      "buildWarnings": 2,
+      "buildWarningKind": "xUnit2012 in existing U02L06 and U02L07 test assertions",
+      "g9G7Scoped": {
+        "total": 167,
+        "passed": 167,
+        "failed": 0,
+        "skipped": 0,
+        "localTrxPath": "%TEMP%/g9-StageD-TRX/g9-stageD-scoped.trx"
+      },
+      "fullNativeRegression": {
+        "total": 17514,
+        "passed": 17514,
+        "failed": 0,
+        "skipped": 0,
+        "duration": "00:08:55",
+        "localTrxPath": "%TEMP%/g9-StageD-TRX/g9-stageD-full-regression.trx"
+      }
+    },
+    "localWebPublish": {
+      "result": "PASS",
+      "deployedToProduction": false,
+      "webDllExists": true,
+      "draftG9HtmlJsAssetLeak": false,
+      "destination": "%TEMP%/g9-StageD-unpublished-output-5b3fda1"
+    },
+    "academicSource": {
+      "strictPythonGateExitCode": 1,
+      "rawSourceLessonsVerified": 0,
+      "rawSourceLessonCount": 86,
+      "canonicalSourceParityVerified": 0,
+      "canonicalLessonCount": 82,
+      "sourceElementDenominator": null,
+      "sourceIndexComplete": false,
+      "unit7EditionConflictResolved": false,
+      "sourceHandOff": "D_PENDING_A_C_EVIDENCE"
+    },
+    "gitHubActions": {
+      "runId": 44871005498,
+      "statusAtInspection": "pending",
+      "jobsAtInspection": [
+        "G9 scoped .NET tests (diagnostic):queued",
+        "G9 source gate and prepared lesson tests:queued"
+      ],
+      "hostedCandidatePassed": false
+    },
+    "production": {
+      "neonGrade9GeneralPedagogicalLessons": 0,
+      "neonGrade9GeneralContentNodes": 0,
+      "neonGrade9GeneralPackNodes": 0,
+      "renderLiveSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+      "renderDeployId": "dep-dbv8f4nf3r2c73fjf8rg",
+      "productionWritesByThisVerification": 0
+    },
+    "authenticatedGrade9E2E": "NOT_RUN",
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "finalCandidateSha": null,
+    "mergeAllowed": false,
+    "renderDeployAllowed": false
   }
 }
