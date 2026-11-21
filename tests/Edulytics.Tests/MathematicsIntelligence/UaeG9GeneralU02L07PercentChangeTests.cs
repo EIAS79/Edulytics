@@ -41,7 +41,7 @@ public sealed class UaeG9GeneralU02L07PercentChangeTests
         foreach (var q in questions)
         {
             Assert.Contains(q.Family, families);
-            Assert.True(q.Prompt.Any(c => c >= '\u0600' && c <= '\u06FF'));
+            Assert.Contains(q.Prompt, c => c >= '\u0600' && c <= '\u06FF');
             Assert.True(ExactSkillContractQuestionEngine.Verify(
                 q.Family, q.Parameters, q.CorrectAnswer));
             Assert.False(ExactSkillContractQuestionEngine.Verify(

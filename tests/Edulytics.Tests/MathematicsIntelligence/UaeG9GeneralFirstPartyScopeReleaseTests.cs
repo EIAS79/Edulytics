@@ -14,7 +14,7 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
     public void One_Grade9_General_Arabic_blueprint_owns_exactly_82_ordered_first_party_identities()
     {
         var document = Assert.Single(PedagogicalLessonBlueprintRegistry
-            .LoadEmbeddedDocuments().Where(x => x.BlueprintCode == Blueprint));
+            .LoadEmbeddedDocuments(), x => x.BlueprintCode == Blueprint);
         PedagogicalLessonBlueprintContract.Validate(document);
         Assert.Equal(1, document.SchemaVersion);
         Assert.Equal("UAE-MOE-MATH", document.PackCode);
@@ -45,7 +45,7 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
     public void Grade9_reference_only_source_rights_exception_is_exact_scoped()
     {
         var source = Assert.Single(PedagogicalLessonBlueprintRegistry
-            .LoadEmbeddedDocuments().Where(x => x.BlueprintCode == Blueprint));
+            .LoadEmbeddedDocuments(), x => x.BlueprintCode == Blueprint);
         PedagogicalLessonBlueprintContract.Validate(source);
         Assert.Contains("no reuse license presumed", source.SourceLicense);
         Assert.Contains("publisher illustration", source.SourceRightsNote);
@@ -73,8 +73,8 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
     public void Approved_Grade9_canonical_content_is_Published_but_no_database_import_is_implied()
     {
         var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
-        var pack = Assert.Single(docs.Where(d => d.Lessons.Any(x =>
-            x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal))));
+        var pack = Assert.Single(docs, d => d.Lessons.Any(x =>
+            x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal)));
         Assert.Equal("ar", pack.AcademicLanguage);
         Assert.Equal("Published", pack.Status.ToString());
         Assert.Equal("MOE-2026-2027-T1", pack.VersionCode);

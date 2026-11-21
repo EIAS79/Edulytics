@@ -13,9 +13,9 @@ public sealed class UaeG9GeneralEmbeddedContentMetadataTests
     public void Owner_approved_G9_first_party_82_lesson_pack_is_embedded_without_fake_publisher_parity()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
-        var document = Assert.Single(documents.Where(d =>
+        var document = Assert.Single(documents, d =>
             d.Lessons.Any(x =>
-                x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal))));
+                x.LessonCode.StartsWith(Prefix, StringComparison.Ordinal)));
         Assert.Equal("UAE-MOE-MATH", document.PackCode);
         Assert.Equal("ar", document.AcademicLanguage);
         Assert.Equal("MOE-2026-2027-T1", document.VersionCode);

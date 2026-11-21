@@ -50,7 +50,7 @@ public sealed class UaeG9GeneralU02L06RatioProportionTests
                 question.Family, question.Parameters, question.CorrectAnswer));
             Assert.False(ExactSkillContractQuestionEngine.Verify(
                 question.Family, question.Parameters, "-999"));
-            Assert.True(question.Prompt.Any(c => c >= '\u0600' && c <= '\u06FF'));
+            Assert.Contains(question.Prompt, c => c >= '\u0600' && c <= '\u06FF');
         }
     }
 
