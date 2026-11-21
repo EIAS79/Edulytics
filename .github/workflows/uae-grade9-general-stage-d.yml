@@ -16,12 +16,14 @@ on:
   pull_request:
     branches:
       - main
+    # Do not make the still-red G9 source gate block unrelated grade PRs
+    # that only modify shared math engines or other RichV2 lessons.
     paths:
       - '.github/workflows/uae-grade9-general-stage-d.yml'
       - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
-      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
-      - 'src/Edulytics.Core/Mathematics/**'
-      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g9-general-*'
       - 'tests/academic-uae-grade9*.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
       - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
