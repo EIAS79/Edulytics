@@ -11726,8 +11726,11 @@ public static class LessonPracticeContractRegistry
             throw new InvalidOperationException(
                 "Unrecognized UAE Grade9 General digital Practice release token.");
 
+        // Automatic mapping projections can include non-gradable, teacher-only
+        // Grade9 lessons. They must never count as digital Practice contracts.
         var grade9Prepared = byLesson.Values.Where(x =>
-            x.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal)).ToArray();
+            x.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal) &&
+            x.AllowedQuestionFamilies.Count > 0).ToArray();
         if (grade9Enabled &&
             (grade9Prepared.Length != 80 ||
              grade9Prepared.Select(x => x.LessonCode)
@@ -11742,7 +11745,7 @@ public static class LessonPracticeContractRegistry
         return byLesson.Values
             .Where(x =>
                 x.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal)
-                    ? grade9Enabled
+                    ? grade9Enabled && x.AllowedQuestionFamilies.Count > 0
                     : string.Equals(x.Readiness, "READY_VERIFIED",
                         StringComparison.Ordinal))
             .Select(x =>
