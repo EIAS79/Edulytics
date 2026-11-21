@@ -50,7 +50,7 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
             .ToArray();
         var grade9 = Assert.Single(grade9Documents);
         Assert.Equal("ar", grade9.AcademicLanguage);
-        Assert.Equal(CanonicalLessonContentStatus.Published, grade9.Status);
+        Assert.Equal("Published", grade9.Status.ToString());
         Assert.Equal(82, grade9.Lessons.Count);
         Assert.Equal(82, grade9.Lessons.Select(x => x.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
