@@ -4,7 +4,7 @@ name: UAE Grade 9 General real isolated four-role E2E and 82x2 Arabic RTL
 # intentionally not READY_VERIFIED: this must fail until independent grader CI passes.
 on:
   push:
-    branches: [fix/g9-general-full-year-scope-86]
+    branches: [fix/g9-general-full-year-scope-86, main]
     paths:
       - '.github/workflows/uae-grade9-general-authenticated-e2e.yml'
       - 'tools/curriculum/uae_g9_stage_d_*.py'
