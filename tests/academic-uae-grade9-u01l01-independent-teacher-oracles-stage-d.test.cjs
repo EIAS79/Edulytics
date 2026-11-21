@@ -116,3 +116,14 @@ test('U01L01 box plot uses duration mm:ss, not decimal-minute arithmetic',()=>{
  for(const x of ['١٤:٢٠','١٥:٤٥','١٧:١٥','١٩:١٠','٢١:٣٠','٣:٢٥','٧:١٠'])
   includes(48,x);
 });
+
+
+test('U01L01 Q44 rubric independently explains all three perimeter distractors',()=>{
+ const l=7,w=3;
+ const options={أ:2*l*w,ب:l+w,ج:2*l+2*w,د:4*(l+w)};
+ assert.deepEqual(options,{أ:42,ب:10,ج:20,د:40});
+ const rubric=item(44).teacherExpectedEvidence;
+ for(const token of ['(أ)','(ب)','(ج)','(د)','ضعف المساحة','نصف المحيط','ضعف المحيط','٢٠','٤٢','١٠','٤٠'])
+  assert.ok(rubric.includes(token),'missing distractor justification '+token);
+ assert.equal(item(44).gradingRoute,'TEACHER_REVIEW_REQUIRED');
+});
