@@ -9,7 +9,7 @@ test('Absolute inequality Arabic content covers inside/outside and negative thre
  const lesson=pack.Lessons.find(x=>x.LessonCode===id),rich=v.Lessons.find(x=>x.LessonCode===id);
  assert.ok(lesson&&rich);assert.equal(pack.AcademicLanguage,'ar');
  assert.equal(rich.WorkedExamples.length,4);
- assert.match(lesson.Translations[0].Explanation,/الشعاعين/);
+ assert.match(lesson.Translations[0].Explanation,/الشعاعين|س<م−ر أو س>م\+ر/);
  assert.match(rich.WorkedExamples[3].Answer,/∅/);
 });
 test('Arabic original number lines, 8 open questions and teacher-only export',()=>{

@@ -32,7 +32,7 @@ test('Conditional Cool-down offers six open teacher reviewed source tasks',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u10-l03-conditionals-ar.html'),'utf8');
  assert.match(html,/<html lang="ar" dir="rtl">/);
  for(let i=1;i<=6;i++)assert.ok(html.includes('id="q'+i+'"'));
- assert.match(html,/المقابل المعاكس/);assert.match(html,/العدد ٦/);
+ assert.match(html,/المقابل المعاكس/);assert.match(html,/مضاعفات ٤/);
  assert.match(html,/graded:false,submitted:false,review:'TEACHER_REVIEW_REQUIRED'/);
  assert.match(html,/لم تُرسل إجابات ولم تُحتسب درجة/);
 });

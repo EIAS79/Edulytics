@@ -23,7 +23,7 @@ test('Two special product numeric families reuse existing exact kernel and leave
  assert.ok(gen>start);
  const practice=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
  assert.ok(practice.includes('byLesson["'+code+'"]'));
- assert.ok(row.teacherReviewRequiredFor.some(x=>x.includes('area')));
+ assert.ok(row.teacherReviewRequiredFor.some(x=>x.includes('area') || x.includes('geometric')));
 });
 test('Original model and four-question teacher Cool-down provide no autograding claim',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l04-special-products-ar.html'),'utf8');

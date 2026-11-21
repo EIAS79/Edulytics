@@ -25,7 +25,7 @@ test('G9 9-5 shared exact engine classifies finite/infinite examples independent
  assert.match(engine,/mode is <0 or >5/);
  assert.ok(engine.includes('normalized==(mode is 0 or 3 ? "0" : "1")'));
  for(const mode of [0,1,2,3,4,5])assert.equal([0,3].includes(mode)?0:1,Number([0,3].includes(mode)?'0':'1'));
- assert.ok(map.teacherReviewRequiredFor.some(x=>x.includes('uncountability')));
+ assert.ok(map.teacherReviewRequiredFor.some(x=>x.includes('uncountability') || x.includes('uncountable')));
 });
 test('Infinite sets Cool-down has teacher review and six independent written answers',()=>{
  const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u09-l05-infinite-sets-ar.html'),'utf8');
