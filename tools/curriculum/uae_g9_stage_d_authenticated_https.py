@@ -72,7 +72,8 @@ def validate_html(page,code,title):
     for part in ("explanation","concepts","examples","steps","mistakes","summary"):
         assert "lesson-learning-section--"+part in page, "missing "+part+": "+code
     assert re.search(r"[\u0600-\u06ff]",page)
-    for bad in ("Concept model","Instructional diagram","YouTube discovery could not load right now"):
+    for bad in ("Concept model","Instructional diagram","YouTube discovery could not load right now",
+                "McGraw-Hill", "McGraw Hill", "McGraw-Hill Education"):
         assert bad not in page,"G9 English generic fallback: "+code
 
 def run():
