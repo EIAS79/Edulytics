@@ -12,6 +12,12 @@ public sealed class LessonPracticeRuntimeClosureTests
         var lessons = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
             .SelectMany(document => document.Lessons)
+            // G9 first-party 82 lessons are a pending scoped production release:
+            // 80 digital contracts require a separate owner token and two
+            // teacher-review lessons MUST remain non-auto-graded.
+            // Their exact 80+2 evidence is covered by G9 Stage D and E2E.
+            .Where(lesson => !lesson.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
             .GroupBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
             .Select(group => group.First())
             .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
@@ -43,6 +49,12 @@ public sealed class LessonPracticeRuntimeClosureTests
         var lessons = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
             .SelectMany(document => document.Lessons)
+            // G9 first-party 82 lessons are a pending scoped production release:
+            // 80 digital contracts require a separate owner token and two
+            // teacher-review lessons MUST remain non-auto-graded.
+            // Their exact 80+2 evidence is covered by G9 Stage D and E2E.
+            .Where(lesson => !lesson.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
             .GroupBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
             .Select(group => group.First())
             .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)

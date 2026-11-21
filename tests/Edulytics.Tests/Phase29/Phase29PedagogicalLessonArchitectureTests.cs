@@ -752,8 +752,17 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
             .ToArray();
 
         Assert.NotEmpty(canonicalCodes);
+        const string g9Prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+        // G9 82 source bodies are deliberately NOT automatically imported by
+        // global seed; only the separately guarded scoped production importer
+        // can insert them. All other canonical lesson IDs must still match.
+        Assert.Equal(82, canonicalCodes.Count(x =>
+            x.StartsWith(g9Prefix, StringComparison.Ordinal)));
+        Assert.DoesNotContain(pedagogicalCodes, x =>
+            x.StartsWith(g9Prefix, StringComparison.Ordinal));
         Assert.All(
-            canonicalCodes,
+            canonicalCodes.Where(code =>
+                !code.StartsWith(g9Prefix, StringComparison.Ordinal)),
             code => Assert.Contains(code, pedagogicalCodes));
     }
 
