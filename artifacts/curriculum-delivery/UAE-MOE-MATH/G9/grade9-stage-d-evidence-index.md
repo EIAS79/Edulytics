@@ -20,3 +20,10 @@ Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027
 
 ## Stage D gate
 `D_PENDING_A_C_EVIDENCE` / `NO_GO_SOURCE_100` until the required 86-source / 82-target semantic element coverage is complete, and independently executed CI, authenticated E2E, RTL, Math and DB checks pass on a fixed SHA. No merge, production database changes, or deployment made by these diagnostic commits.
+
+## Stage D source-entry recheck - 2026-11-21T02:51:32Z
+- Handoff present: D_PENDING_A_C_EVIDENCE, source 0/86 audited and target 0/82 1:1 verified.
+- 5/5 real local PDFs matched SHA and page count only. Semantic full-page inspection NOT certified.
+- Source-selection 14/86 differs from latest handoff 13/82. Unit 7 remains unresolved.
+- Run 44857599478 queued on inspected candidate 97e399bee1b898dc112d5b8a5c3942cc47fce598, not a passing hosted CI run.
+- Checkpoint: lesson-1-stage-d-checkpoint.json. Release: grade9-release-validation.json. CI status: grade9-final-ci-summary.md.
