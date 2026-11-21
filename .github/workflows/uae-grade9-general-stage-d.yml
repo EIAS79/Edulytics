@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - fix/g9-general-full-year-scope-86
+      - main
     paths:
       - '.github/workflows/uae-grade9-general-stage-d.yml'
       - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
