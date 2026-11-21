@@ -42,3 +42,26 @@ test('U01L01 scanned source application coverage includes same-base powers and c
  assert.equal((10**3)*(10**4),10**7);
  assert.equal(Math.PI*3**2*5,45*Math.PI);
 });
+test('U01L01 teacher cooldown covers explicit verbal order and selective power geometry and fee contexts',()=>{
+ const html=fs.readFileSync(path.join(root,'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u01-l01-source-cooldown-ar.html'),'utf8');
+ assert.ok(html.includes("\u0627\u0643\u062a\u0628 \u062a\u0639\u0628\u064a\u0631\u064b\u0627 \u062c\u0628\u0631\u064a\u064b\u0627 \u0644\u062b\u0644\u0627\u062b\u0629 \u0623\u0645\u062b\u0627\u0644 \u0627\u0644\u0639\u062f\u062f \u0633\u060c \u062b\u0645 \u0623\u0636\u0641 \u062e\u0645\u0633\u0629."));
+ for(let i=1;i<=7;i++) assert.ok(html.includes('id="q'+i+'"'),'missing teacher task '+i);
+ for(const topic of ["\u0661\u0660\u00b2 \u00d7 \u0661\u0660\u2074","\u062d\u062c\u0645\u0647\u0627","\u0627\u0634\u062a\u0631\u0627\u0643 \u0634\u0647\u0631\u064a","\u0627\u0644\u062a\u0648\u0632\u064a\u0639"]) assert.ok(html.includes(topic),topic);
+ assert.ok(html.includes('Array.from({length:7}'));
+ assert.ok(html.includes("graded:false,submitted:false"));
+ assert.ok(html.includes('TEACHER_REVIEW_REQUIRED'));
+});
+test('U01L01 source exercise 1 through 61 is visually categorized without a false parity claim',()=>{
+ const source=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-all-61-source-exercises-preparation.json');
+ const audit=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-d-selective-source-visual-audit.json');
+ assert.equal(source.items.length,61);
+ assert.deepEqual(source.items.map(x=>Number(x.sourceItem.split('-Q')[1])),Array.from({length:61},(_,i)=>i+1));
+ assert.ok(source.items.every(x=>x.visualSourceSkillCategory && x.visualSkillClassificationStatus==='LOCAL_PDF_VISUALLY_CLASSIFIED_NOT_PARITY_VERIFIED'));
+ assert.ok(source.items.every(x=>x.stageDAudit==='NOT_RUN'));
+ assert.equal(source.items[28].visualSourceSkillCategory,'CYLINDER_VOLUME_MODEL');
+ assert.equal(source.items[36].visualSourceSkillCategory,'SAME_BASE_POWER_PRODUCT');
+ assert.equal(source.items[46].proposedDigitalTreatment,'PRIOR_SKILL_REVIEW_SEPARATE_FROM_U01L01_PRIMARY_GRADER');
+ assert.equal(audit.fullSourceAtomicAuditPassed,false);
+ assert.equal(audit.fullLessonParityGranted,false);
+ assert.equal(audit.fullyComparedDigitalExerciseItems,0);
+});

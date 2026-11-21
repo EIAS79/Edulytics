@@ -665,6 +665,32 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 9 General U01L01 reuses the shared verifier, but its
+                // learner-facing prompt must remain Arabic for this lesson only.
+                // Keep x in the expression because the exact symbolic verifier uses x.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+                        StringComparison.Ordinal))
+                {
+                    var expression = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "usccss.algebra.expression_coefficient" => problem with
+                        {
+                            Prompt = $"في التعبير {expression["coefficient"]}x + {expression["constant"]}، ما معامل المتغير x؟",
+                            Solution = "المعامل هو العدد المضروب في المتغير x، وليس الحد الثابت."
+                        },
+                        "usccss.algebra.expression_words" => problem with
+                        {
+                            Prompt = $"اكتب تعبيرًا جبريًا يمثل مجموع {expression["coefficient"]} أمثال x و{expression["constant"]}، مستخدمًا المتغير x.",
+                            Solution = "نضرب المعامل في المتغير x ثم نضيف الحد الثابت."
+                        },
+                        _ => problem
+                    };
+                }
                 // G9 General U13L09: reuse exact scalar area verification with
                 // original Arabic learner prompts. Drawings and reasoning remain teacher reviewed.
                 if ((string.Equals(fingerprintNamespace,
