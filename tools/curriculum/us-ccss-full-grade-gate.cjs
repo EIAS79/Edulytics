@@ -187,6 +187,13 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // C# and Python Git blobs are pinned above, including unchanged US G1
   // semantic lines. Historical grade1 signed source approval and the
   // mandatory fresh US G1 math/authenticated CI are NOT waived.
+  // Also pin the exact G9-only `uae-g9` wrong-answer profile addition in
+  // the existing Grade8 negative probe helper. The diff from main changes
+  // precisely one `elif wrong_answer_profile == "uae-g8"` into
+  // `elif wrong_answer_profile in ("uae-g8", "uae-g9")`;
+  // US/G1, UAE G2-G8, and default negative responses remain unchanged.
+  // The original 124-path G1 scope intersects this PR in ONLY three known
+  // shared files, not a ninth path. Current cross-grade CI remains mandatory.
   // G9 General first-party 2026-11-21: exact technical-only re-pin of the
   // two shared mathematics blobs after independent pre-G5/G1 comparisons
   // preserved 9,717 original engine lines and 8,649 non-retired contract
@@ -213,7 +220,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d496c82a2ebb173a42219abc11642d23c9f7ea59']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','aad8812d88c670218bb4f6e6c8a957db50d8099c']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
