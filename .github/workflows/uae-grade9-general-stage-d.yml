@@ -1,4 +1,4 @@
-name: UAE Grade 9 General Stage D - fail-closed diagnostics
+name: UAE Grade 9 General Stage D - G7-parity first-party release checks and separate literal-parity diagnostics
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/uae-grade9-general-stage-d.yml'
       - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
+      - 'tools/curriculum/uae_g9_first_party_stage_d_gate.py'
       - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
       - 'src/Edulytics.Core/Curriculum/LessonContent/**'
       - 'src/Edulytics.Core/Mathematics/**'
@@ -45,7 +46,7 @@ permissions:
 
 jobs:
   grade9-node-and-academic-gate:
-    name: G9 source gate and prepared lesson tests
+    name: G9 first-party source acceptance and prepared lesson tests (literal parity reported separately)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -57,6 +58,35 @@ jobs:
         run: |
           echo "CandidateSha=${GITHUB_SHA}"
           echo "TestedRefKind=${GITHUB_REF}"
+      # The Grade 7 release path accepts owner-authorized first-party teaching
+      # content without falsely certifying 1:1 publisher exercise parity.
+      # This is a REQUIRED step; source evidence or author approval failures block CI.
+      - name: G7-parity owner first-party source acceptance
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase structural
+          python3 tools/curriculum/uae_g9_first_party_stage_d_gate.py --phase source
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for phase in ('structural', 'source'):
+              report = json.loads(Path(f'artifacts/uae-g9-stage-d/grade9-first-party-{phase}-gate.json').read_text(encoding='utf-8'))
+              if report.get('status') != 'PASS' or report.get('unpassed'):
+                  raise SystemExit(f'FIRST_PARTY_{phase.upper()}_NO_GO: release evidence is not acceptable')
+          source = json.loads(Path('artifacts/uae-g9-stage-d/grade9-first-party-source-gate.json').read_text(encoding='utf-8'))
+          if source.get('ownerFirstPartyPublicationScope') != 'OWNER_APPROVED_LIMITED_FIRST_PARTY':
+              raise SystemExit('OWNER_SCOPE_NOT_APPROVED')
+          if source.get('publisherSourceLiteralParity') not in ('UNKNOWN', 'VERIFIED'):
+              raise SystemExit('INVALID_PUBLISHER_LITERAL_PARITY')
+          print('G7_PARITY_FIRST_PARTY_ACCEPTED; PUBLISHER_LITERAL_PARITY=' + source['publisherSourceLiteralParity'])
+          PY
+      - name: Upload Grade 9 first-party source acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-first-party-stage-d-source-evidence
+          path: artifacts/uae-g9-stage-d/grade9-first-party-*-gate.json
+          if-no-files-found: error
       - name: Run prepared Grade 9 Arabic tests
         run: |
           set -o pipefail
@@ -70,16 +100,65 @@ jobs:
           name: grade9-node-test-log
           path: g9-node-tests.log
           if-no-files-found: warn
-      - name: Strict source-index lock — fail closed until verified
+      # Separate non-release publisher item-parity diagnostics: preserve genuine
+      # test failures and artifacts, but do not veto first-party owner approval.
+      - name: Strict source-index lock — publisher literal parity diagnostic
+        id: publisher_literal_node
         if: always()
+        continue-on-error: true
         run: |
           set -o pipefail
           node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
       - name: Independent Python source-parity evidence gate
+        id: publisher_literal_python
         if: always()
+        continue-on-error: true
         run: |
           set -o pipefail
           python3 tools/curriculum/uae_g9_stage_d_semantic_gate.py --json | tee g9-python-source-parity.json
+      - name: Verify independently reported publisher parity is genuine and separate from first-party release
+        if: always()
+        env:
+          PUBLISHER_NODE_OUTCOME: ${{ steps.publisher_literal_node.outcome }}
+          PUBLISHER_PYTHON_OUTCOME: ${{ steps.publisher_literal_python.outcome }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path('g9-python-source-parity.json')
+          if not path.is_file():
+              raise SystemExit('SOURCE_DIAGNOSTIC_MISSING: Python source result absent')
+          report = json.loads(path.read_text(encoding='utf-8'))
+          if report.get('gate') != 'UAE_G9_GENERAL_SOURCE_ATOMIC_PARITY':
+              raise SystemExit('SOURCE_DIAGNOSTIC_INVALID_GATE')
+          result = report.get('releaseDecision')
+          raw = report.get('verifiedRawSourceLessons')
+          target = report.get('verifiedCanonicalLessons')
+          node = os.environ['PUBLISHER_NODE_OUTCOME']
+          python = os.environ['PUBLISHER_PYTHON_OUTCOME']
+          if result == 'NO_GO':
+              if not isinstance(raw, int) or not isinstance(target, int):
+                  raise SystemExit('SOURCE_DIAGNOSTIC_MISSING_COUNTS')
+              if not (0 <= raw <= 86 and 0 <= target <= 82):
+                  raise SystemExit('SOURCE_DIAGNOSTIC_INVALID_COUNTS')
+              if not report.get('failures'):
+                  raise SystemExit('SOURCE_DIAGNOSTIC_NO_EXPLANATION')
+              if any('invalid or missing gate evidence:' in failure for failure in report['failures']):
+                  raise SystemExit('SOURCE_DIAGNOSTIC_INVALID_EVIDENCE_NOT_WAIVED')
+              if node != 'failure' or python != 'failure':
+                  raise SystemExit('SOURCE_DIAGNOSTIC_INCONSISTENT_RED_STATUS')
+              status = f'UNKNOWN: {raw}/86 raw and {target}/82 canonical independent atomic audits; separate from owner-approved first-party scope'
+          elif result == 'PASS':
+              if raw != 86 or target != 82 or node != 'success' or python != 'success':
+                  raise SystemExit('SOURCE_DIAGNOSTIC_FALSE_PASS')
+              status = 'VERIFIED: full publisher atomic-parity diagnostics succeeded'
+          else:
+              raise SystemExit('SOURCE_DIAGNOSTIC_INVALID_RESULT')
+          print(status)
+          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a',encoding='utf-8') as summary:
+              summary.write('Publisher source-literal parity (NOT the first-party acceptance gate): ' + status + '\\n')
+          PY
       - name: Upload independent Python source-parity evidence
         if: always()
         uses: actions/upload-artifact@v4

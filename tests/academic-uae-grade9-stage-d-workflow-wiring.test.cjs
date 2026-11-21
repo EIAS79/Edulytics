@@ -66,6 +66,25 @@ test('Grade 9 pull-request source gate does not inadvertently block unrelated sh
  assert.ok(push.includes('src/Edulytics.Core/Mathematics/**'));
 });
 
+
+test('Grade 7 owner-approved first-party path is release-required; exact publisher parity remains genuinely red but separately reported',()=>{
+ const firstParty=workflow.split('      - name: G7-parity owner first-party source acceptance')[1].split('      - name: Upload Grade 9 first-party source acceptance evidence')[0];
+ assert.ok(firstParty.includes('--phase structural'));
+ assert.ok(firstParty.includes('--phase source'));
+ assert.ok(firstParty.includes('FIRST_PARTY_'));
+ assert.ok(!firstParty.includes('continue-on-error'));
+ const node=workflow.split('      - name: Run prepared Grade 9 Arabic tests')[1].split('      - name: Upload prepared')[0];
+ assert.ok(!node.includes('continue-on-error'));
+ const literalNode=workflow.split('      - name: Strict source-index lock')[1].split('      - name: Independent Python')[0];
+ const literalPython=workflow.split('      - name: Independent Python source-parity evidence gate')[1].split('      - name: Verify independently reported publisher parity')[0];
+ assert.ok(literalNode.includes('id: publisher_literal_node'));
+ assert.ok(literalPython.includes('id: publisher_literal_python'));
+ for(const body of [literalNode,literalPython])assert.ok(body.includes('continue-on-error: true'));
+ const proof=workflow.split('      - name: Verify independently reported publisher parity')[1].split('      - name: Upload independent Python')[0];
+ assert.ok(!proof.includes('continue-on-error'));
+ for(const marker of ['SOURCE_DIAGNOSTIC_INVALID_EVIDENCE_NOT_WAIVED','SOURCE_DIAGNOSTIC_FALSE_PASS','SOURCE_DIAGNOSTIC_INCONSISTENT_RED_STATUS','GITHUB_STEP_SUMMARY'])assert.ok(proof.includes(marker));
+});
+
 test('All three Grade9 Node/Python CI pipelines propagate test errors despite tee log collection',()=>{
  const node=workflow.split('      - name: Run prepared Grade 9 Arabic tests')[1].split('      - name: Upload prepared')[0];
  const strict=workflow.split('      - name: Strict source-index lock')[1].split('      - name: Independent Python')[0];
