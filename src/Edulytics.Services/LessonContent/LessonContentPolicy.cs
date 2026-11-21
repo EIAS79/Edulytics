@@ -71,12 +71,33 @@ public static class LessonContentPolicy
         lessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
 
+    // Two first-party Arabic lessons in the approved 82-item G9 General
+    // index require teacher-reviewed geometry, not automated Practice. Their
+    // educational pages still belong in the 82-page student course when the
+    // explicit G9 release token is present. Never use a broad G9 prefix:
+    // unlisted legacy English or draft identities remain hidden.
+    public static bool IsUaeG9TeacherOnlyArabicLesson(
+        string frameworkCode, string? lessonCode, string? practiceReleaseToken) =>
+        IsUaeGrade9GeneralScope(frameworkCode, lessonCode) &&
+        string.Equals(practiceReleaseToken,
+            "CONFIRM_RELEASE_UAE_GRADE9_GENERAL_80_DIGITAL_PRACTICE",
+            StringComparison.Ordinal) &&
+        (string.Equals(lessonCode,
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+            StringComparison.Ordinal) ||
+         string.Equals(lessonCode,
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+            StringComparison.Ordinal));
+
     public static bool IsUaeG9ArabicLesson(
         string frameworkCode, string? lessonCode) =>
         IsUaeGrade9GeneralScope(frameworkCode, lessonCode) &&
-        LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract) &&
-        contract is not null &&
-        string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal);
+        ((LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract) &&
+          contract is not null &&
+          string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal)) ||
+         IsUaeG9TeacherOnlyArabicLesson(frameworkCode, lessonCode,
+             Environment.GetEnvironmentVariable(
+                 "EDULYTICS_G9_DIGITAL_PRACTICE_RELEASE")));
 
     // Owner-approved UAE G6 General Arabic (128 lessons) is independently
     // authored and published without invented formal outcome mappings.

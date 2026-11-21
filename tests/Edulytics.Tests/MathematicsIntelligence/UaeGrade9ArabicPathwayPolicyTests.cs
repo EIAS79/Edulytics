@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text.Json;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Lessons;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.LessonContent;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -104,6 +105,40 @@ public sealed class UaeGrade9ArabicPathwayPolicyTests
             throw new InvalidOperationException("G9 authored 82-lesson identity baseline changed unexpectedly");
         foreach (var lesson in lessons)
             yield return new object[] { lesson };
+    }
+
+    private const string G9DigitalReleaseToken =
+        "CONFIRM_RELEASE_UAE_GRADE9_GENERAL_80_DIGITAL_PRACTICE";
+
+    [Theory]
+    [InlineData("PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS")]
+    [InlineData("PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF")]
+    public void ExactTeacherOnlyG9ArabicPagesCanEnterReleaseWithoutAutograding(
+        string lessonCode)
+    {
+        Assert.True(LessonContentPolicy.IsUaeGrade9GeneralScope(Framework, lessonCode));
+        Assert.True(LessonContentPolicy.IsUaeG9TeacherOnlyArabicLesson(
+            Framework, lessonCode, G9DigitalReleaseToken));
+        Assert.False(LessonContentPolicy.IsUaeG9TeacherOnlyArabicLesson(
+            Framework, lessonCode, null));
+        Assert.False(LessonContentPolicy.IsUaeG9TeacherOnlyArabicLesson(
+            Framework, lessonCode, "WRONG_RELEASE_TOKEN"));
+        Assert.False(LessonContentPolicy.IsUaeG9TeacherOnlyArabicLesson(
+            MathematicsCurriculumPackRegistry.CommonCoreCode, lessonCode,
+            G9DigitalReleaseToken));
+        Assert.False(LessonPracticeContractRegistry.TryResolve(lessonCode, out _));
+    }
+
+    [Theory]
+    [InlineData("PED:UAE-MOE-MATH:L9:GENERAL:13:06:SIMILARITY")]
+    [InlineData("PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA")]
+    [InlineData("PED:UAE-MOE-MATH:L9:GENERAL:13:07:UNREVIEWED")]
+    [InlineData("PED:UAE-MOE-MATH:L9:ADVANCED:13:07:CONGRUENCE-TRANSFORMATIONS")]
+    public void TeacherOnlyG9ContentReleaseDoesNotWhitelistAnyOtherLesson(
+        string lessonCode)
+    {
+        Assert.False(LessonContentPolicy.IsUaeG9TeacherOnlyArabicLesson(
+            Framework, lessonCode, G9DigitalReleaseToken));
     }
 
     [Theory]
