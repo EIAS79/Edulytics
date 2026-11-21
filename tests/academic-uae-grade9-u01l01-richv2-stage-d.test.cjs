@@ -9,7 +9,8 @@ test('Grade9 U01L01 RichV2 is an additive Arabic rendering of the existing autho
  const rich=read(base+'RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json');
  const lesson=rich.Lessons.find(x=>x.LessonCode===code);
  assert.ok(src&&lesson);
- assert.equal(rich.SchemaVersion,2);
+ assert.equal(rich.SchemaVersion,1);
+ assert.equal(rich.PackCode,'UAE-MOE-MATH');
  assert.equal(lesson.CultureCode,'ar');
  assert.equal(lesson.Title,src.Translations.find(x=>x.CultureCode==='ar').Title);
  assert.ok(lesson.ExplanationParagraphs.length>=3);
