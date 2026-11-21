@@ -88,7 +88,12 @@ test('Direct scanned-source nonnumbered instructional structures are checked wit
  assert.equal(extra.newSupplementarySourceStructuralGroupsVisuallyInspected,7);
  assert.equal(extra.sourceStructuralChecks.length,7);
  assert.equal(new Set(extra.sourceStructuralChecks.map(e=>e.id)).size,7);
- assert.equal(extra.sourceStructuralChecks.find(e=>e.id==='EXTERNAL_SKILLS_CAREER_MEDIA').correspondingIndependentContentLocallyVerified,false);
+ const career=extra.sourceStructuralChecks.find(e=>e.id==='EXTERNAL_SKILLS_CAREER_MEDIA');
+ assert.equal(career.correspondingIndependentContentLocallyVerified,true,'new original math career model is locally present');
+ assert.equal(career.professionalApplicationMathValidated,true);
+ assert.equal(career.publisherPhotographyAndExternalQrStillUnverified,true,'external publisher media and QR are not certified');
+ assert.equal(career.officialSourceMediaCopied,false);
+ assert.equal(career.fullSourceAtomicEquivalenceCertified,false);
  assert.ok(extra.sourceStructuralChecks.every(e=>e.sourcePageDirectlyVisuallyInspected));
  assert.ok(extra.sourceStructuralChecks.every(e=>e.fullSourceAtomicEquivalenceCertified===false));
  assert.equal(extra.activitySha256,sha(extra.activityFile));
