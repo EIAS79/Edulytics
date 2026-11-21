@@ -127,3 +127,16 @@ test('U01L01 Q44 rubric independently explains all three perimeter distractors',
   assert.ok(rubric.includes(token),'missing distractor justification '+token);
  assert.equal(item(44).gradingRoute,'TEACHER_REVIEW_REQUIRED');
 });
+
+test('U01L01 Q41 excludes degenerate cube while recognizing the algebraic zero root',()=>{
+ const matches=[0,1,2,3,4,5].filter(s=>s**3===4*s**2);
+ assert.deepEqual(matches,[0,4]);
+ const physical=matches.filter(s=>s>0);
+ assert.deepEqual(physical,[4]);
+ const question=item(41);
+ assert.ok(question.studentPrompt.includes('موجب'));
+ assert.ok(question.teacherExpectedEvidence.includes('س=٠'));
+ assert.ok(question.teacherExpectedEvidence.includes('س=٤'));
+ assert.ok(question.teacherExpectedEvidence.includes('نستبعد الصفر'));
+ assert.equal(question.gradingRoute,'TEACHER_REVIEW_REQUIRED');
+});
