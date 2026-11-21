@@ -75,6 +75,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 -m py_compile tools/curriculum/uae_g9_stage_d_authenticated_https.py tools/curriculum/uae_g9_stage_d_browser_rtl.py
+          python3 tools/curriculum/uae_g9_richv2_runtime_gate.py --require-ready
           dotnet tool restore
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln -c Release --no-restore
