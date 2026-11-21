@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 2,
+  "scope": {
+    "packCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "language": "ar",
+    "rtl": true,
+    "targetSchoolYear": "2026-2027"
+  },
+  "fiveBooksInventoried": true,
+  "rawGeneralUnits": 14,
+  "rawGeneralLessons": 86,
+  "ownerTargetUnits": 13,
+  "ownerTargetLessons": 82,
+  "uniqueLessonsVerified": null,
+  "semanticCrosswalk": "20_SOURCE_PAIR_COMPARISONS_DOCUMENTED; FULL_86_LESSON_ELEMENT_LEVEL_COMPARE_INCOMPLETE",
+  "verifiedSourcePageComparison": [
+    {
+      "sourceA": "01.pdf:7-4",
+      "sourceB": "03-1.pdf:11-3",
+      "status": "STRONG_OVERLAP_REMAINDER_PENDING"
+    },
+    {
+      "sourceA": "01.pdf:1-4",
+      "sourceB": "02-1.pdf:7-5",
+      "status": "COMPLEMENTARY_SKILL_RETAIN_BOTH"
+    },
+    {
+      "sourceA": "01.pdf:3-3",
+      "sourceB": "03-1.pdf:12-3",
+      "status": "PARTIAL_OVERLAP_PRESERVE_REVIEW"
+    }
+  ],
+  "sourceLock": "Owner-approved 13 units / 82 canonical source-based lessons are locked for A-B-C authoring. Full independent element-level source audit is not claimed and remains Stage D evidence.",
+  "previousPreparedLessonCount": 12,
+  "firstNotClosedLesson": null,
+  "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "remainingSourceLessonsInRawPlan": 74,
+  "testsRun": "LOCAL_REBUILT_DOTNET_FULL_17432_PASS_NODE_G9_372_PASS_G9G7_POLICY_11_PASS_SOURCE_GATE_NO_GO",
+  "ciGatesRun": "GITHUB_ACTIONS_QUEUED_NO_PASS",
+  "stageD": "D_PENDING_A_C_EVIDENCE",
+  "productionPublish": "NOT_STARTED",
+  "remainingCritical": "Source lesson U01L01 has 61 numbered exercises visually inspected and mapped to independent skill-analog teacher work, but full atomic parity including source wording exceptions 7 and 25 remains unverified. Remaining 85 source entries/81 canonical lessons and four supplements still require independent element audits. GitHub Grade9 CI is queued, not passed. No Render or Neon production publish.",
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "sourceSnapshotComputation": [
+    "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
+    "Each line consists of filename, a single space, its lowercase 64-character SHA-256 hex digest, and a terminal newline.",
+    "This uniquely fingerprints the supplied five-book source set; semantic dedup gate remains separate."
+  ],
+  "confirmedSemanticDuplicates": 1,
+  "semanticDedupUpperBound": 85,
+  "semanticDedupUpperBoundDefinition": "86 raw lesson entries minus 1 confirmed fully compared semantic duplicate; other overlaps could reduce this count further. NOT final unique count.",
+  "neonReadOnlyInventory": {
+    "project": "Edulytiks",
+    "grade9PedagogicalLessons": 0,
+    "grade9PackNodes": 0,
+    "grade9LessonContents": 0,
+    "verifiedReadOnly": true,
+    "productionWrites": 0
+  },
+  "preparedTests": [
+    "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+  ],
+  "u02l05VisualSpec": "u02l05-visual-teacher-rubric-spec.json",
+  "u02l05Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-13-stage-a-c-checkpoint.json",
+    "closingCommit": "17ce2b3d02402b9193a7a581767fb394da75e292",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "globalIndex": "OWNER_TARGET_13_82_APPROVED_SEMANTIC_AUDIT_NOT_CLAIMED"
+  },
+  "dedupCandidatePairsWithEvidence": 20,
+  "rawTitleComparisonsScreened": 3655,
+  "titleScreeningCandidates": 15,
+  "dedupConfirmedSemanticMerge": 1,
+  "finalUniqueLessonCount": null,
+  "sourcePageMappingsCorrected": "03-1.pdf printed 755 onward offset -585, verified physical p170=printed 755 and p191=printed 776",
+  "currentLessonArtifacts": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+    "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-13-stage-a-c-checkpoint.json"
+  ],
+  "abcClosedLessonCount": 82,
+  "nextUnclosedLesson": null,
+  "dedupSourceEntriesReferenced": 33,
+  "bookPageShiftFix": "03-1.pdf: printed p755=physical PDF p170, printed p776=PDF p191, printed p793=PDF p208",
+  "currentLessonStatus": "ALL_82_CANONICAL_LESSONS_A_B_C_AUTHORING_CLOSED_READY_FOR_STAGE_D",
+  "status": "A_B_C_AUTHORING_COMPLETE_STAGE_D_NOT_RUN",
+  "ownerTargetSource": "EDULYTICS_UAE_GRADE_9_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md (uploaded 2026-11-19)",
+  "rawInventoryIsNotFinalCatalog": true,
+  "remainingSourceLessonsExplanation": "74 = 86 raw source entries minus 12 prepared; not the canonical 82-target remaining count",
+  "targetIndexComplete": false,
+  "completedCanonicalLessonsVerified": null,
+  "canonicalCrosswalkProposal": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/proposed-13x82-canonical-crosswalk.json",
+  "canonicalCrosswalkProposalCommit": "372f17f1b661e7ffc8c62d57dc396cf9608024d0",
+  "proposedCanonicalUnitCount": 13,
+  "proposedCanonicalLessonCount": 82,
+  "proposedSupplementarySourceLessonCount": 4,
+  "canonicalCrosswalkStatus": "STRUCTURAL_PROPOSAL_PENDING_VERIFIED_SEMANTIC_MERGE",
+  "preparedFirst12EvidenceStatus": "LEGACY_CONTENT_PREPARED_NOT_FULLY_AUDITED_IN_ELEMENT_LEDGER",
+  "closedCountNotAssertableReason": null,
+  "teacherOnlySourceExercisesLesson2_5": 33,
+  "numericCandidateExercisesLesson2_5": 31,
+  "teacherVisualReviewInAdditionToNumeric": 6,
+  "fullGradeStageABCStatus": "AUTHORING_CLOSED_82_OF_82_STAGE_D_NOT_RUN",
+  "fiveBookIntegrity": {
+    "source": "five-book-page-raster-audit.json",
+    "allFiveSha256Verified": true,
+    "all86RawOpeningPagesExistAndRenderNonBlank": true,
+    "semanticReviewComplete": false
+  },
+  "canonicalTargetPageIntegrity": {
+    "source": "grade9-82-target-index.json",
+    "all82PrimaryPagesRenderAndHaveFingerprint": true,
+    "indexSemanticComplete": false
+  },
+  "u02l05LatestEvidence": {
+    "objectiveTopicMatchesReviewed": 5,
+    "sourceExerciseRows": 64,
+    "digitalFamilyCandidates": 31,
+    "teacherOnlySourceExercises": 33,
+    "numericPlusTeacherVisualSourceExercises": 6,
+    "sourceExerciseRoutingAllPresent": true,
+    "exactItemSemanticEquivalenceComplete": false,
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "indexAndAcdStatus": "82_TARGET_ROWS_AND_FIVE_PDF_FILE_INTEGRITY_VERIFIED; FULL_SEMANTIC_LESSON_COVERAGE_PENDING",
+  "lesson2_6": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u02l06Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "sourceExercisesRouted": 70,
+    "sourceMathematicsChecked": 70,
+    "nonNumberedLabsRouted": 1,
+    "closingCommit": "11609e6f80c2e101769a68164e7be24dab8326f3",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceItemParity": "STAGE_D_NOT_VERIFIED"
+  },
+  "lesson2_7": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u02l07Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-15-stage-a-c-checkpoint.json",
+    "commit": "bebf61d1cc8f3cc883985679cafde456ce6243f3",
+    "sourceMathReviewed": 40,
+    "sourceTeacherOrSpiralUnverified": 33,
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson2_8": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u02l08Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-16-stage-a-c-checkpoint.json",
+    "commit": "402e8e61040440dc2a75afc53f1bd2e62c45b84e",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson2_9": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u02l09Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-17-stage-a-c-checkpoint.json",
+    "commit": "f8bcacf106f8e44b1cbc6ec68cfa39e726065e26",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson3_1": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u03l01Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-18-stage-a-c-checkpoint.json",
+    "commit": "c27bd68bc1e2785ab753381393cd8ef41f6c487d",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson3_2": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u03l02Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-19-stage-a-c-checkpoint.json",
+    "commit": "34080b40f55caf3bb737c3999cd25f2863f1dd6b",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson3_3": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u03l03Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-20-stage-a-c-checkpoint.json",
+    "commit": "a94e48957fe74b750baea9aed879284e5975e343",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson3_4": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "u03l04Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "evidence": "lesson-21-stage-a-c-checkpoint.json",
+    "commit": "38b3c24c3d0c1658ef04df38a046a2978ade44a4",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceExerciseItemByItemVerified": false
+  },
+  "lesson22Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:3-5",
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS",
+    "checkpoint": "lesson-22-stage-a-c-checkpoint.json",
+    "commit": "acb911633d51c03a498032515c80f5ca1c2d6d14",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson23Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:3-6",
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS",
+    "checkpoint": "lesson-23-stage-a-c-checkpoint.json",
+    "commit": "11d8de0b3018497deb04f511187c4f87482dacee",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson24Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:4-1",
+    "checkpoint": "lesson-24-stage-a-c-checkpoint.json",
+    "commit": "747f224436a4619ba601f8aa5ad6c35250c47cc4",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson25Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:4-2",
+    "checkpoint": "lesson-25-stage-a-c-checkpoint.json",
+    "commit": "d43c23def18886a564d6e1e9a2323d17ed66c9d9",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson26Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:4-3",
+    "checkpoint": "lesson-26-stage-a-c-checkpoint.json",
+    "commit": "04e845cf78cf3586c11ca1207bb6be4be485eec6",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson27Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:4-4",
+    "checkpoint": "lesson-27-stage-a-c-checkpoint.json",
+    "commit": "ac43605137b157f6b6ccd5b7621f7c3a83e16f11",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "unit4StageABC": {
+    "scope": "G9_GENERAL_U04_4_LESSONS",
+    "status": "FOUR_LESSON_CLOSURE_CHECKPOINTS_RECORDED_STAGE_D_NOT_RUN",
+    "ordinals": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "closeEvidence": [
+      "lesson-24-stage-a-c-checkpoint.json",
+      "lesson-25-stage-a-c-checkpoint.json",
+      "lesson-26-stage-a-c-checkpoint.json",
+      "lesson-27-stage-a-c-checkpoint.json"
+    ]
+  },
+  "lesson28Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-1",
+    "checkpoint": "lesson-28-stage-a-c-checkpoint.json",
+    "commit": "e1d5e76485ea0a9725ebf06510bf4baad4cc9626",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson29Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-2",
+    "checkpoint": "lesson-29-stage-a-c-checkpoint.json",
+    "commit": "8b25d6d541ea9f6f9e556aae97f2d069dc0a5085",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson5_2": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson30Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-3",
+    "checkpoint": "lesson-30-stage-a-c-checkpoint.json",
+    "commit": "06d7175f04a65a30e8efa8a0a797075a42b51e3f",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson5_3": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson31Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-4",
+    "checkpoint": "lesson-31-stage-a-c-checkpoint.json",
+    "commit": "f995391a6620f2c9e9513b539db6e916cace781a",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson5_4": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson32Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-5",
+    "checkpoint": "lesson-32-stage-a-c-checkpoint.json",
+    "commit": "d41f9a4bc19498a98bf6959803c1e792283122c9",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson5_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson33Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:5-6",
+    "checkpoint": "lesson-33-stage-a-c-checkpoint.json",
+    "commit": "ae7a452ea518c525638dcee148e7f40a51f71dad",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson5_6": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "unit5Authoring": {
+    "recordedLessonOrdinals": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "closedCheckpoints": [
+      "lesson-28-stage-a-c-checkpoint.json",
+      "lesson-29-stage-a-c-checkpoint.json",
+      "lesson-30-stage-a-c-checkpoint.json",
+      "lesson-31-stage-a-c-checkpoint.json",
+      "lesson-32-stage-a-c-checkpoint.json",
+      "lesson-33-stage-a-c-checkpoint.json"
+    ],
+    "status": "SIX_LESSONS_RECORDED_READY_FOR_STAGE_D_AUTHORING_ONLY",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceSemanticAllItemsAudited": false,
+    "productionTouched": false
+  },
+  "lesson34Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "source": "01.pdf:6-1",
+    "checkpoint": "lesson-34-stage-a-c-checkpoint.json",
+    "commit": "6446bcaf8c29eb65a5a959d6fcc32a73616148cc",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson6_1": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson35Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-35-stage-a-c-checkpoint.json",
+    "closingCommit": "9debcb5b17f80ccd4143d9045f160f1b4af7c243",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "verifiedLatestLessonOrdinal": 39,
+  "lesson36Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-36-stage-a-c-checkpoint.json",
+    "closingCommit": "c9982f242ada82e4f5300c215123c4bf698678a4",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson37Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-37-stage-a-c-checkpoint.json",
+    "closingCommit": "6ebb5d29c8d526719e1bcfe36ad9fcfbbfad0e1e",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson38Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-38-stage-a-c-checkpoint.json",
+    "closingCommit": "b95f6a265229fad314c2cff3e8225e501a430cbf",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson39Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "closed": true,
+    "checkpoint": "lesson-39-stage-a-c-checkpoint.json",
+    "closingCommit": "341e435025cf50de90dcb9ed76868de0b4dbaf41",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "unit6Closure": {
+    "status": "6_OF_6_SOURCE_BASED_A_B_C_AUTHORING_CLOSED_STAGE_D_PENDING",
+    "lessonOrdinals": [
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "checkpointPaths": [
+      "lesson-34-stage-a-c-checkpoint.json",
+      "lesson-35-stage-a-c-checkpoint.json",
+      "lesson-36-stage-a-c-checkpoint.json",
+      "lesson-37-stage-a-c-checkpoint.json",
+      "lesson-38-stage-a-c-checkpoint.json",
+      "lesson-39-stage-a-c-checkpoint.json"
+    ],
+    "teacherReviewRequired": true,
+    "ciRun": false,
+    "stageDRun": false,
+    "productionTouched": false
+  },
+  "unit7Authoring": {
+    "lastClosedLessonOrdinal": 44,
+    "nextLessonOrdinal": 45,
+    "unitLessonCount": 9,
+    "sourceBook": "02-1.pdf",
+    "stageDTests": "WRITTEN_NOT_RUN",
+    "lastClosureCommit": "78986f940d7c296313760b2d70569890070b8c56"
+  },
+  "latestClosedLesson": {
+    "ordinal": 82,
+    "source": "03-1.pdf:13-9",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-82-stage-a-c-checkpoint.json",
+    "commit": "4c0d57f66eb970b4d8e3131199ffcd28a5abff2e",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "scope": "A_B_C_AUTHORING_ONLY"
+  },
+  "lesson9_2": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson56Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-56-stage-a-c-checkpoint.json",
+    "commit": "62d6a7b6e4e2a0296d8b9c9fc278a787c3a6a7b6",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "source": "02-1.pdf printed 515–525"
+  },
+  "lesson9_3": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson57Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-57-stage-a-c-checkpoint.json",
+    "commit": "19c41f1da7de2b324f0085b17b948639769c7b16",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "source": "02-1.pdf printed 526–536"
+  },
+  "lesson9_4": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson58Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-58-stage-a-c-checkpoint.json",
+    "commit": "7511fefecbe0655cc7a4efce9e80956f8f787a5b",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "source": "02-1.pdf printed 537–546"
+  },
+  "lesson9_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson59Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-59-stage-a-c-checkpoint.json",
+    "commit": "066ff231de6b154754e92c92d931e5313daa5ff2",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "source": "02-1.pdf printed 547–551"
+  },
+  "unit9Authoring": {
+    "status": "UNIT_9_FIVE_LESSON_CHECKPOINTS_READY_FOR_STAGE_D",
+    "lessonOrdinals": [
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "sourceBooks": [
+      "02-1.pdf"
+    ],
+    "stageD": "NOT_RUN",
+    "historicLessons1To12NotCounted": true
+  },
+  "lesson10_1": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson60Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-60-stage-a-c-checkpoint.json",
+    "commit": "0971b17362860ed0c089acd0fc6ec015ac569ed8",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "source": "02-1.pdf printed 561–568"
+  },
+  "lesson10_2": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson61Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-61-stage-a-c-checkpoint.json",
+    "commit": "1fc1553419402e88b227130b8f4d31cde368f588",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson10_3": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson62Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-62-stage-a-c-checkpoint.json",
+    "commit": "6b7359c1c9f59a3a4daac638bcbe7ef80311d8a0",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson10_4": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson63Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-63-stage-a-c-checkpoint.json",
+    "commit": "bd3afef9a6116f4e6d13595a26c18d551f7034c2",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "unit10Authoring": {
+    "status": "UNIT_10_FOUR_LESSON_CHECKPOINTS_READY_FOR_STAGE_D",
+    "lessonOrdinals": [
+      60,
+      61,
+      62,
+      63
+    ],
+    "sourceBooks": [
+      "02-1.pdf"
+    ],
+    "stageD": "NOT_RUN",
+    "historicLessons1To12NotCounted": true
+  },
+  "lesson11_1": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
+  "lesson64Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-64-stage-a-c-checkpoint.json",
+    "commit": "daad640acc9199620d48b3005fc90e275a3a0e9e",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sources": [
+      "03-1.pdf:11-1",
+      "01.pdf:7-1"
+    ]
+  },
+  "lesson65Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-65-stage-a-c-checkpoint.json",
+    "commit": "50e8545cddcd31cf215bb35ab73eb9623722e3dd",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson66Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-66-stage-a-c-checkpoint.json",
+    "commit": "0ede9c6a7e3771c3e5a2bab14d68db8ecbe4147c",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson67Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-67-stage-a-c-checkpoint.json",
+    "commit": "ef9cd45a1dac68ae653b9e3f4cdc89501c6a1263",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "unit11Authoring": {
+    "status": "UNIT_11_FOUR_LESSON_CHECKPOINTS_READY_FOR_STAGE_D",
+    "lessonOrdinals": [
+      64,
+      65,
+      66,
+      67
+    ],
+    "sourceBooks": [
+      "03-1.pdf",
+      "01.pdf"
+    ],
+    "stageD": "NOT_RUN",
+    "historicLessons1To12NotCounted": true
+  },
+  "latestU12L01Closure": {
+    "status": "READY_FOR_STAGE_D",
+    "code": "PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-68-stage-a-c-checkpoint.json",
+    "closedCommit": "b5ab37eaf98dcbbd2d3298b30b1b7290ae948a53",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "sourceEvidence": "03-1.pdf printed 653–659",
+    "runtimeVerified": false
+  },
+  "latestU12L02Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-69-stage-a-c-checkpoint.json",
+    "closingCommit": "efbae073c07b87e4ca999caa3b619d0faa4e60a6",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU12L03Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-70-stage-a-c-checkpoint.json",
+    "closingCommit": "2247db3229dad137f91f9b3ed55e209ccb092c10",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU12L04Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-71-stage-a-c-checkpoint.json",
+    "closingCommit": "8ecbd9f59b7c425a3777b8c8785a3f20bc4dd967",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU12L05Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-72-stage-a-c-checkpoint.json",
+    "closingCommit": "95a82b6b6572fe3173dfe15402180bca4c8b4f30",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU12L06Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-73-stage-a-c-checkpoint.json",
+    "closingCommit": "cdc62e0fa1e6ba9e404e67ec0f0c82356e09d99d",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "sourceSupplement": "01.pdf:7-3 preserved"
+  },
+  "unit12AuthoringClosure": {
+    "ordinalFrom": 68,
+    "ordinalTo": 73,
+    "lessons": 6,
+    "allSixCheckpointsClosed": true,
+    "testsRun": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN",
+    "publication": "NOT_PUBLISHED",
+    "note": "Source-specific source-item equivalence of emitted question runtime remains Stage D responsibility; these are A-B-C authoring closures only."
+  },
+  "latestU13L01Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-74-stage-a-c-checkpoint.json",
+    "closingCommit": "d654c6c3fbac7db475321cd7d2c02141ec878696",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU13L02Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-75-stage-a-c-checkpoint.json",
+    "closingCommit": "5b894eb96c572a631d9521b10888f49687ab4040",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU13L03Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-76-stage-a-c-checkpoint.json",
+    "closingCommit": "cb8deae5829e8b991117edf55c073538aaf7d516",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU13L04Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-77-stage-a-c-checkpoint.json",
+    "closingCommit": "ccd56eae98a52b248f6b36394310ca9f2acfd67c",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU13L05Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-78-stage-a-c-checkpoint.json",
+    "closingCommit": "e750563b80818b19f6b22b42a9cc42422b64356d",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "latestU13L06Closure": {
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-79-stage-a-c-checkpoint.json",
+    "closingCommit": "c6f8e283708cc7d1c731b6d8f7ec90ce202555ec",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "lesson80Closure": {
+    "source": "03-1.pdf:13-7",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-80-stage-a-c-checkpoint.json",
+    "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_NOT_RUN",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson81Closure": {
+    "source": "03-1.pdf:13-8",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-81-stage-a-c-checkpoint.json",
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "lesson82Closure": {
+    "source": "03-1.pdf:13-9",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-82-stage-a-c-checkpoint.json",
+    "closingCommit": "4c0d57f66eb970b4d8e3131199ffcd28a5abff2e",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_NOT_RUN"
+  },
+  "lastOrdinalReachedInSequentialAuthoring": 82,
+  "abcAuthoringClosedCount": 82,
+  "abcClosureProof": {
+    "first12": {
+      "records": 12,
+      "artifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/first-12-stage-a-c-closure.json",
+      "priorEvidenceReused": true,
+      "studentCooldownsAuthored": 12
+    },
+    "last70": {
+      "records": 70,
+      "first": 13,
+      "last": 82,
+      "checkpointPattern": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/lesson-{ordinal}-stage-a-c-checkpoint.json"
+    },
+    "status": "A_B_C_AUTHORING_ONLY_NOT_STAGE_D_ACADEMIC_OR_RUNTIME_VERIFICATION"
+  },
+  "ownerApprovedIndexForAuthoring": {
+    "curriculumCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "units": 13,
+    "lessons": 82,
+    "language": "ar",
+    "rtl": true
+  },
+  "canonicalContentPackCount": 82,
+  "canonicalPracticeMappingCount": 82,
+  "activeNumericPracticeContractCount": 80,
+  "teacherOnlyPracticeLessonCount": 2,
+  "stageDLocalDiagnostics": {
+    "firstIncompleteOrdinal": 1,
+    "auditedNumberedExerciseSkills": 61,
+    "completeRawSourceLessonAudits": 0,
+    "fullTargetLessonParity": 0,
+    "localNodePass": 372,
+    "localDotnetPass": 70,
+    "strictSourcePass": false,
+    "authenticatedStudentE2EPass": false,
+    "releaseAuthorizedByOwner": true,
+    "productionPublishExecuted": false,
+    "stageDAuditSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json",
+    "itemizedNonnumberedSourceInstructionalElements": 21,
+    "observedSubsetSourceItems": 82,
+    "embeddedG9DraftCanonicalPackEnabled": false,
+    "embeddedG9RichV2Enabled": false,
+    "globalDotnetRegressionRetest": "PASSED_CURRENT_17427_0_FAILURE",
+    "unapprovedG9PracticeContractsExcludedFromRuntime": true,
+    "localDotnetFullSuitePassed": 17432,
+    "localDotnetFullSuiteFailed": 0,
+    "localDotnetGrade9Passed": 74,
+    "u01l01SourceVisualSkillStructureValidated": [
+      29,
+      37,
+      41,
+      43,
+      44,
+      46,
+      47,
+      48
+    ],
+    "localEdgeSourceChartsPass": true,
+    "u01l01LocalDotnetPublishStaticAssetsPass": false,
+    "u01l01ArabicIndicInputWorksInRealEdge": true,
+    "u01l01NonNumberedSourceGroupsReviewedThisTurn": 7,
+    "u01l01MathOracleRegressionsPassed": 6,
+    "u01l01ScannedSourceVerbalExceptionsProvedButNotOfficiallyResolved": [
+      7,
+      25
+    ],
+    "u01l01LocalDotnetPublishQuarantineGuardPassed": true,
+    "unapprovedG9StaticSourceFilesRetained": 84,
+    "unapprovedG9StaticFilesPublished": 0,
+    "u01l01CanonicalDraftPrintedGoalAttributionCorrected": true,
+    "sourcePrintedObjectivesCount": 2,
+    "edulyticsDerivedCompetenciesCount": 4,
+    "u01l01Q48TimeNotationLocalEdgePassed": true,
+    "rawVsOwnerCountMetadataReconciled": true,
+    "rawSourceSemanticAuditStillBlocked": true,
+    "q35LocalEdgeTeacherReviewSmokePassed": true
+  }
+}

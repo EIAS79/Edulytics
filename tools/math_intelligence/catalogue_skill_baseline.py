@@ -71,12 +71,13 @@ def load_skill_registry() -> tuple[set[str], list[dict[str, Any]]]:
     return ids, skills
 
 
-def load_mappings(skill_ids: set[str]) -> tuple[dict[str, dict[str, Any]], list[str]]:
+def load_mappings(skill_ids: set[str]) -> tuple[dict[str, dict[str, Any]], list[str], list[dict[str, Any]]]:
     if not LESSON_MAPPINGS.exists():
-        return {}, []
+        return {}, [], []
     doc = read_json(LESSON_MAPPINGS)
     result: dict[str, dict[str, Any]] = {}
     errors: list[str] = []
+    pending_skill_proposals: list[dict[str, Any]] = []
     for row in doc.get("mappings") or []:
         if not isinstance(row, dict):
             continue
@@ -91,16 +92,39 @@ def load_mappings(skill_ids: set[str]) -> tuple[dict[str, dict[str, Any]], list[
         mapped_skills = clean_list(row.get("primarySkills")) + clean_list(row.get("secondarySkills"))
         unknown = sorted(set(mapped_skills) - skill_ids)
         if unknown:
-            errors.append(
-                f"{lesson_code} references unknown SkillIds: {', '.join(unknown)}"
+            # Scope-specific *authoring proposals*, not registered runtime
+            # skill IDs. Preserve and report all unregistered concepts without
+            # silently treating them as verified/adaptive skills.
+            # Everything outside this exact owner-first-party G9 draft remains
+            # an integrity error under strict CI.
+            is_g9_authoring_candidate = (
+                lesson_code.startswith("PED:UAE-MOE-MATH:L9:GENERAL:")
+                and row.get("officialOutcomeMapped") is False
+                and str(row.get("sourceType") or "").startswith("UAE_G9_GENERAL_")
+                and bool(row.get("mappingConfidence"))
+                and str(row.get("practiceReadiness") or "").startswith(
+                    ("PREPARED_", "TEACHER_REVIEW_ONLY_")
+                )
             )
+            if is_g9_authoring_candidate:
+                pending_skill_proposals.append({
+                    "lessonCode": lesson_code,
+                    "unregisteredSkillConcepts": unknown,
+                    "registeredSkillIds": sorted(set(mapped_skills) & skill_ids),
+                    "status": "AUTHORING_PROPOSAL_NOT_REGISTERED_NOT_RUNTIME_VERIFIED",
+                })
+            else:
+                errors.append(
+                    f"{lesson_code} references unknown SkillIds: {', '.join(unknown)}"
+                )
         result[lesson_code] = row
-    return result, errors
+    return result, errors, pending_skill_proposals
 
 
 def audit() -> dict[str, Any]:
     skill_ids, skill_rows = load_skill_registry()
-    mappings, mapping_errors = load_mappings(skill_ids)
+    mappings, mapping_errors, pending_skill_proposals = load_mappings(skill_ids)
+    pending_by_code = {row["lessonCode"]: row for row in pending_skill_proposals}
 
     seen_codes: dict[str, str] = {}
     duplicate_codes: list[dict[str, str]] = []
@@ -177,7 +201,19 @@ def audit() -> dict[str, Any]:
                 "isSupportingFlag": is_supporting,
                 "structuralContentStatus": quality,
                 "structuralIssues": quality_issues,
-                "skillMappingStatus": "MAPPED_FOUNDATION" if mapping else "UNMAPPED",
+                "skillMappingStatus": (
+                    "AUTHORING_PROPOSAL_NOT_REGISTERED" if code in pending_by_code
+                    else "MAPPED_FOUNDATION" if mapping else "UNMAPPED"
+                ),
+                "unregisteredCandidateSkillConcepts": (
+                    pending_by_code[code]["unregisteredSkillConcepts"]
+                    if code in pending_by_code else []
+                ),
+                "registeredSkillIds": (
+                    sorted(set(clean_list(mapping.get("primarySkills")) +
+                               clean_list(mapping.get("secondarySkills"))) & skill_ids)
+                    if mapping else []
+                ),
                 "primarySkills": [] if not mapping else clean_list(mapping.get("primarySkills")),
                 "secondarySkills": [] if not mapping else clean_list(mapping.get("secondarySkills")),
                 "mappingConfidence": None if not mapping else mapping.get("mappingConfidence"),
@@ -216,10 +252,24 @@ def audit() -> dict[str, Any]:
             "structuralContent": dict(structural),
             "duplicateLessonCodeCount": len(duplicate_codes),
             "mappingIntegrityErrorCount": len(mapping_errors),
+            "unregisteredCandidateLessonCount": len(pending_skill_proposals),
+            "unregisteredCandidateSkillReferenceCount": sum(
+                len(row["unregisteredSkillConcepts"]) for row in pending_skill_proposals
+            ),
+            "unregisteredDistinctCandidateSkillCount": len({
+                skill for row in pending_skill_proposals
+                for skill in row["unregisteredSkillConcepts"]
+            }),
             "blockerCount": len(blockers),
         },
         "blockers": blockers,
         "mappingErrors": mapping_errors,
+        "unregisteredSkillProposals": pending_skill_proposals,
+        "unregisteredSkillProposalNotice": (
+            "Grade9 owner-first-party source descriptions are NOT registered "
+            "skill IDs; this structural report does not certify their adaptive "
+            "mapping, independent grading, or source/publisher literal parity."
+        ),
         "duplicateLessonCodes": duplicate_codes,
         "skills": skill_rows,
         "sourceBreakdown": {

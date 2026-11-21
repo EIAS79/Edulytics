@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 68,
+  "unitOrdinal": 12,
+  "lessonOrdinalInUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES",
+  "lessonTitleAr": "المستقيمات المتوازية والمتقاطعة",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "edition": "2019–2020 UAE General student book",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      653,
+      659
+    ],
+    "pdfPages": [
+      69,
+      75
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_BOOK_PAGE_VISUAL_REVIEW",
+    "scope": "Lesson heading objectives definitions, worked illustrations, geometry classification and practice sections reviewed; individual source-exercise equivalence not claimed"
+  },
+  "stageA": {
+    "status": "BOOK_LESSON_12_1_PARALLEL_SKEW_PLANES_TRANSVERSAL_ANGLE_CLASSES_REVIEWED",
+    "learningTargets": [
+      "parallel vs intersecting vs noncoplanar skew lines",
+      "parallel planes",
+      "transversal and corresponding, alternate interior/exterior, same-side interior angle pairs"
+    ],
+    "sourceSemanticParity": "SOURCE_OBJECTIVES_REVIEWED_ITEM_BY_ITEM_PARITY_STAGE_D_PENDING"
+  },
+  "stageB": {
+    "status": "EXISTING_ARABIC_PACK_EXTENDED_NEW_MISSING_RICHV2_AND_ORIGINAL_SIX_OPEN_COOLDOWN_AUTHORED",
+    "newLessonVerifiedAbsentFromCandidatePack": true,
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l01-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u12-l01-parallel-skew-transversal-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "coolDownSubmission": "LOCAL_JSON_ONLY_NOT_AUTHENTICATED_PLATFORM",
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "Skew lines do not lie in a common plane; absence of intersection is not sufficient for parallelism."
+      },
+      {
+        "q": 2,
+        "expected": "Correct pairs of parallel and skew noncoplanar box edges; labelled drawing."
+      },
+      {
+        "q": 3,
+        "expected": "Correct corresponding relative position at both transversal intersections."
+      },
+      {
+        "q": 4,
+        "expected": "Both alternate interior and alternate exterior pairs, correctly positioned on different transversal sides."
+      },
+      {
+        "q": 5,
+        "expected": "Same-side interior vs alternate interior differ in the side of transversal."
+      },
+      {
+        "q": 6,
+        "expected": "Corresponding angle equality requires parallel lines, not position alone."
+      }
+    ],
+    "teacherReviewRequiredFor": [
+      "3D skew classification",
+      "transversal angle naming and diagrams",
+      "written reasoning and proof"
+    ]
+  },
+  "stageC": {
+    "status": "REUSE_EXISTING_COPLANAR_LINE_FAMILY_WITH_FOCUSED_TEST_SPEC_WRITTEN_NOT_RUN",
+    "strategy": "REUSE_EXISTING_EXACT_ENGINE_PARTIAL_SKILL_NO_NEW_ENGINE",
+    "practiceFamilies": [
+      "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+    ],
+    "exactNumericScope": "COPLANAR_PARALLEL_VS_INTERSECTING_ONLY",
+    "teacherOnlyRemainder": [
+      "skew lines",
+      "parallel planes",
+      "four transversal angle pair categories"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u12l01.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "LESSON_SPECIFIC_A_B_C_AUTHORING_ONLY_STAGE_D_SOURCE_ITEM_AND_ARABIC_LIVE_GENERATION_PARITY_NOT_PASSED",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:12-2"
+}

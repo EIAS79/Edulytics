@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 30,
+  "unitOrdinal": 5,
+  "lessonOrdinalInUnit": 3,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES",
+  "lessonTitleAr": "حل المتباينات متعددة الخطوات",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      272,
+      273,
+      274,
+      275,
+      276,
+      277
+    ],
+    "pdfPages": [
+      283,
+      284,
+      285,
+      286,
+      287,
+      288
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_BOOK_PAGES_AND_SOURCE_CORE_EXAMPLES",
+    "lessonSourceIndex": "01.pdf:5-3"
+  },
+  "stageA": {
+    "status": "SOURCE_MULTI_STEP_DISTRIBUTION_COMBINING_SIGNS_AND_APPLICATIONS_REVIEWED",
+    "learningTargets": [
+      "distribute and combine like terms to solve multistep inequalities",
+      "rearrange variable terms on both sides",
+      "reverse inequality only for negative multiplication and division",
+      "recognize no-solution and all-real number cases",
+      "graph open/closed solution sets and check contextual constraints"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_NUMBER_LINE_LAB_EIGHT_TEACHER_TASKS_AND_COOLDOWN_AUTHORED",
+    "existingLessonInPackBefore": false,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u05-l03-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u05-l03-multi-step-inequalities-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u05l03-teacher-multistep-inequalities-rubric.json",
+    "coolDownQuestions": 4,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "REUSED_GENERIC_LINEAR_INEQUALITY_NUMERIC_FAMILY_TESTS_WRITTEN_NOT_RUN",
+    "strategy": "REUSE_GENERIC_INEQUALITY_NUMERIC_AID_TEACHER_GRADES_DISTRIBUTION_TWO_SIDE_AND_DRAWINGS",
+    "allowedQuestionFamilies": [
+      "algebra.linear.inequality.ax_plus_b_relation_c"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u05l03.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "G9_GENERAL_U05L03_A_B_C_SOURCE_BASED_AUTHORING_NOT_RUNTIME_PASS",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:5-4"
+}

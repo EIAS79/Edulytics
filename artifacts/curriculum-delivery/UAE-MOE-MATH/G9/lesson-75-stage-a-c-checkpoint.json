@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 75,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS",
+  "lessonTitleAr": "زوايا المثلثات",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      725,
+      734
+    ],
+    "pdfPages": [
+      141,
+      150
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_VISUAL_REVIEW",
+    "scope": "Interior angle sum, exterior angle theorem, algebraic missing angles and geometry justification; all generated prompt runtime parity reserved for Stage D"
+  },
+  "stageA": {
+    "status": "INTERIOR_EXTERIOR_TRIANGLE_ANGLE_THEOREMS_SOURCE_OBJECTIVES_REVIEWED",
+    "learningTargets": [
+      "interior sum 180 degrees",
+      "exterior theorem two remote interior angles",
+      "linear pair and adjacent interior",
+      "triangle angle bisectors",
+      "algebraic angle equations"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_ORIGINAL_TEACHER_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l02-triangle-angles-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "third angle 65°"
+      },
+      {
+        "q": 2,
+        "expected": "exterior 100°, adjacent interior 80°"
+      },
+      {
+        "q": 3,
+        "expected": "x=25; angles 35°,70°,75°"
+      },
+      {
+        "q": 4,
+        "expected": "each bisected angle 35°, angle bisector not segment bisector"
+      },
+      {
+        "q": 5,
+        "expected": "remote interior 75°, adjacent interior 55°"
+      },
+      {
+        "q": 6,
+        "expected": "proof using parallel line and alternate-angle relationships, straight 180°"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "REUSE_TRIANGLE_MISSING_ANGLE_AND_SUPPLEMENTARY_FAMILIES_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "uae.g4.u16.l06.triangle_missing_angle",
+      "geometry.angles.supplementary"
+    ],
+    "newEngine": false,
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l02.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "teacherReviewRequiredFor": [
+      "written exterior angle theorem proof",
+      "bisector diagram",
+      "algebraic multi-angle tasks"
+    ],
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_EDUCATIONAL_AUTHORING_ONLY_NO_STAGE_D_VALIDATION",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-3"
+}

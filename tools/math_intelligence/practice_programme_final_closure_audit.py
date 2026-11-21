@@ -104,6 +104,58 @@ def audit() -> dict[str, Any]:
 
     content_blockers: list[str] = []
     mapping_blockers: list[str] = []
+
+    # Independently authored UAE G9 digital C# Practice is verified against the
+    # exact 80 lesson contracts, registered routed question families, and the
+    # separately evidenced two teacher-reviewed (non-automatic) geometry tasks.
+    # Generic SkillId solver/verifier diagnostics are not the G9 runtime engine;
+    # preserve their raw flags and accept only the COMPLETE verified G9 cohort.
+    g9_prefix = "PED:UAE-MOE-MATH:L9:GENERAL:"
+    g9_rows = [
+        row for row in rows
+        if str(row.get("lessonCode") or "").startswith(g9_prefix)
+    ]
+    g9_teacher_codes = {
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+    }
+    g9_teacher_rows = [
+        row for row in g9_rows
+        if row.get("practiceEligibility") == "NON_STANDALONE_WITH_EVIDENCE"
+        and row.get("terminalPracticeStatus") == "NON_STANDALONE_WITH_EVIDENCE"
+        and row.get("grade9TeacherReviewOnlyWithEvidence") is True
+    ]
+    g9_digital_rows = [
+        row for row in g9_rows
+        if row.get("practiceEligibility") == "PRACTICE_ELIGIBLE"
+        and row.get("terminalPracticeStatus") == "READY_VERIFIED"
+        and row.get("independentG9OwnerScopedDigitalContractVerified") is True
+        and row.get("approvedMapping") is True
+        and bool(row.get("primarySkills"))
+        and bool(row.get("questionFamilies"))
+        and all(
+            family_registry.get(str(family_id), {}).get("lessonPracticeRouting") is True
+            for family_id in row.get("questionFamilies") or []
+        )
+    ]
+    g9_complete = (
+        len(g9_rows) == 82
+        and len(g9_digital_rows) == 80
+        and len(g9_teacher_rows) == 2
+        and {str(row.get("lessonCode") or "") for row in g9_teacher_rows}
+            == g9_teacher_codes
+    )
+    if g9_rows and not g9_complete:
+        mapping_blockers.append(
+            "Grade9 specialist solver/verifier exemption requires the entire "
+            "exact 80 registered digital contracts and two evidenced "
+            "teacher-reviewed non-standalone lessons"
+        )
+    g9_verified_digital_codes = (
+        {str(row.get("lessonCode") or "") for row in g9_digital_rows}
+        if g9_complete else set()
+    )
+
     for row in eligible:
         code = str(row.get("lessonCode") or "")
         semantic_status = str(row.get("semanticContentStatus") or "")
@@ -221,9 +273,14 @@ def audit() -> dict[str, Any]:
     solver_blockers: list[str] = []
     for row in eligible:
         code = str(row.get("lessonCode") or "")
-        if not bool(row.get("solverReady")):
+        # Do not report a missing generic solver as missing runtime capability
+        # when the *exact same* independently verified G9 C# digital contract
+        # is present. Keep the original generic solver/verifier diagnostic
+        # counts below; no unchecked candidate is promoted here.
+        has_scoped_g9_solver = code in g9_verified_digital_codes
+        if not bool(row.get("solverReady")) and not has_scoped_g9_solver:
             solver_blockers.append(f"{code}: solver not ready")
-        if not bool(row.get("verifierReady")):
+        if not bool(row.get("verifierReady")) and not has_scoped_g9_solver:
             solver_blockers.append(f"{code}: verifier not ready")
 
     level_blockers: list[str] = []
@@ -355,6 +412,17 @@ def audit() -> dict[str, Any]:
         "practiceEligibleLessonCount": len(eligible),
         "solverReadyCount": sum(bool(row.get("solverReady")) for row in eligible),
         "verifierReadyCount": sum(bool(row.get("verifierReady")) for row in eligible),
+        "grade9IndependentDigitalRuntimeVerifiedCount": len(g9_verified_digital_codes),
+        "effectiveSolverReadyCount": sum(
+            bool(row.get("solverReady")) or
+            str(row.get("lessonCode") or "") in g9_verified_digital_codes
+            for row in eligible
+        ),
+        "effectiveVerifierReadyCount": sum(
+            bool(row.get("verifierReady")) or
+            str(row.get("lessonCode") or "") in g9_verified_digital_codes
+            for row in eligible
+        ),
         "blockers": solver_blockers,
     }
     difficulty_report = {
@@ -406,6 +474,8 @@ def audit() -> dict[str, Any]:
             for row in eligible
         ),
         "nonStandaloneWithEvidenceCount": len(non_standalone),
+        "grade9DigitalSpecialistRuntimeVerifiedCount": len(g9_verified_digital_codes),
+        "grade9TeacherReviewedCount": len(g9_teacher_rows) if g9_complete else 0,
         "geometryTrigVectorLessonCount": len({
             str(row.get("lessonCode"))
             for row in geometry_trig_vector

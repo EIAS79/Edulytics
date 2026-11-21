@@ -56,11 +56,21 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                         out var presentation) &&
                     presentation is not null;
 
-                if (!hasCapability)
+                // G9 is explicitly pending 0-to-82 scoped production import.
+                // Its 80 runtime contracts are guarded by a separate token
+                // and its 2 teacher-reviewed lessons cannot be auto-graded.
+                // Keep each row's truthful hasCapability/presentation status
+                // without declaring unreleased G9 as an older-grade regression.
+                var pendingG9 = lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
+                if (!hasCapability && !pendingG9)
                     missingCapabilities.Add(lesson.LessonCode);
 
                 if (!hasPresentation)
-                    presentationMissing.Add(lesson.LessonCode);
+                {
+                    if (!pendingG9)
+                        presentationMissing.Add(lesson.LessonCode);
+                }
                 else if (
                     presentation!.Kind ==
                     LessonPracticePresentationKind.SpecializedGame)
@@ -230,9 +240,12 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                     WriteIndented = true
                 }));
 
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220, rows.Count);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 + 82, rows.Count);
         Assert.Empty(missingCapabilities);
         Assert.Empty(presentationMissing);
+        Assert.Equal(82, rows.Count(row =>
+            row.GetType().GetProperty("lessonCode")?.GetValue(row)?.ToString()
+                ?.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal) == true));
 
         var fixtureRows = rows
             .Where(row =>

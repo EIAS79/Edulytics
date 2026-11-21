@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 33,
+  "unitOrdinal": 5,
+  "lessonOrdinalInUnit": 6,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES",
+  "lessonTitleAr": "التمثيل البياني لمتباينات ذوات متغيرين",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      291,
+      292,
+      293,
+      294,
+      295,
+      296
+    ],
+    "pdfPages": [
+      302,
+      303,
+      304,
+      305,
+      306,
+      307
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_BOOK_PAGES_CORE_EXAMPLES_REVIEWED",
+    "lessonSourceIndex": "01.pdf:5-6"
+  },
+  "stageA": {
+    "status": "SOURCE_DASHED_SOLID_BOUNDARY_TEST_POINT_AND_HALF_PLANE_REVIEWED",
+    "learningTargets": [
+      "graph linear inequalities in two variables",
+      "dashed boundary for strict vs solid for inclusive",
+      "test a point not on boundary and shade correct half plane",
+      "solve for y and handle vertical/horizontal boundaries",
+      "verify coordinate pairs by substitution"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_COORDINATE_SVG_EIGHT_TEACHER_TASKS_AND_COOLDOWN_AUTHORED",
+    "existingLessonInPackBefore": false,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u05-l06-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u05-l06-two-variable-inequalities-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u05l06-teacher-two-variable-inequalities-rubric.json",
+    "coolDownQuestions": 4,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "REUSED_COORDINATE_RULE_NUMERIC_ASSISTANCE_GRAPH_TEACHER_REVIEW_TESTS_WRITTEN",
+    "strategy": "REUSE_COORDINATE_VALUE_ONLY_GRAPHING_REQUIRES_TEACHER_REVIEW",
+    "allowedQuestionFamilies": [
+      "geometry.coordinate.evaluate_linear_rule"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u05l06.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "G9_GENERAL_U05L06_ARABIC_A_B_C_AUTHORING_NOT_GRAPH_RUNTIME_ACCEPTANCE",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:6-1"
+}

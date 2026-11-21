@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "grade": 9,
+    "pathway": "General",
+    "unit": 2,
+    "lesson": 3,
+    "language": "ar"
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026",
+    "printedPages": [
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "pdfPages": [
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "pages": [
+        91,
+        92
+      ],
+      "description": "حل معادلات من خطوتين باستعمال عمليات عكسية"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        92,
+        93
+      ],
+      "description": "حذف الأقواس وجمع الحدود المتشابهة لحل معادلات متعددة الخطوات"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        93,
+        94,
+        95
+      ],
+      "description": "حل معادلات ذات كسور وأعداد عشرية بعد تبسيطها"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        94,
+        95,
+        96
+      ],
+      "description": "نمذجة مسائل التكلفة والزمن والمقارنة والتحقق من الحل"
+    }
+  ],
+  "sourceSectionInventory": [
+    {
+      "pages": [
+        93,
+        94
+      ],
+      "purpose": "guided/independent multistep equation solving"
+    },
+    {
+      "pages": [
+        94,
+        95
+      ],
+      "purpose": "fraction/decimal and contextual cases"
+    },
+    {
+      "pages": [
+        95,
+        96
+      ],
+      "purpose": "higher-order, standardized assessment and prior-skill review"
+    }
+  ],
+  "preparedFixtures": [
+    {
+      "target": "O1",
+      "question": "حل ٥س−٧=١٨",
+      "expected": "5",
+      "wrong": "11"
+    },
+    {
+      "target": "O2",
+      "question": "حل ٤(س−٢)+٦=١٨",
+      "expected": "5",
+      "wrong": "6"
+    },
+    {
+      "target": "O2",
+      "question": "حل ٣(٢س+١)=٣٣",
+      "expected": "5",
+      "wrong": "6"
+    },
+    {
+      "target": "O3",
+      "question": "حل س÷٣+٤=١٠",
+      "expected": "18",
+      "wrong": "2"
+    },
+    {
+      "target": "O4",
+      "question": "أجرة ثابتة ١٠ دراهم و٥ دراهم للساعة؛ بلغت ٤٥ درهمًا. كم ساعة؟",
+      "expected": "7",
+      "wrong": "9"
+    },
+    {
+      "target": "O4",
+      "question": "اشرح لماذا نتحقق من الحل في المعادلة الأصلية لا في خطوة وسيطة.",
+      "expected": "قد تتضمن خطوة سابقة خطأ",
+      "reviewer": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "أوجد س: ٢س + ٧ = ١٥",
+      "a": "4"
+    },
+    {
+      "q": "أوجد س: ٢(س + ٤)=١٨",
+      "a": "5"
+    },
+    {
+      "q": "أوجد س: س÷٥ + ٢ = ٦",
+      "a": "20"
+    }
+  ],
+  "artifacts": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "registry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  },
+  "stageAC": {
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "sourceGoalsMapped": 4,
+    "teacherOpenExplanationsRubric": true,
+    "questionFixturesPrepared": 6,
+    "testsRun": "NOT_RUN",
+    "ciRun": "NOT_RUN",
+    "semanticAudit": "NOT_RUN"
+  },
+  "stageDGaps": [
+    "Actual generated family prompts may solve simple affine rather than source distributive multistep; independent audit must classify coverage before accepting.",
+    "Fraction and decimal prompts and invalid input grading require a checked generated-sample evidence.",
+    "RTL/Arabic student behavior and learner login require Stage D."
+  ]
+}

@@ -43,13 +43,20 @@ public sealed class ExactSkillQuestionPoolExhaustedException()
 /// alignment; this engine owns exact parameter generation, solving, independent
 /// verification and reconstructable fingerprints for approved question families.
 /// </summary>
-public sealed class ExactSkillContractQuestionEngine
+public sealed partial class ExactSkillContractQuestionEngine
 {
     private const int MaxRetriesPerItem = 128;
 
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g9.general.u07.l01.add_coefficient",
+            "uae.g9.general.u07.l01.subtract_coefficient",
+            "uae.g9.general.u07.l03.multiply_coefficient",
+            "uae.g9.general.u07.l04.square_binomial_coefficient",
+            "uae.g9.general.u07.l04.conjugate_product_coefficient",
+            "uae.g9.general.u07.l06.monic_quadratic_roots",
+            "uae.g9.general.u07.l07.nonmonic_quadratic_roots",
             "uae.g1.u01.l01.read_write_1_5",
             "uae.g1.u01.l02.zero_cardinality",
             "uae.g1.u01.l03.read_write_6_8",
@@ -213,6 +220,7 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.equivalent.reduce_common_factor",
             "ratio.unit_rate.direct",
             "ratio.unit_rate.equivalent_ratio",
+            "uae.g9.general.u02.l06.two_sided_proportion",
             "ratio.unit_rate.divide_total",
             "statistics.center_spread.mean",
             "statistics.center_spread.median",
@@ -350,6 +358,9 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U6L08PropertiesQuestions.Supports(family.Trim()) ||
           UaeG6U6L09DistributionLabQuestions.Supports(family.Trim()) ||
           UaeG6U6L10DistributionQuestions.Supports(family.Trim()) ||
+          UaeG9AbsoluteValueEquationQuestions.Supports(family.Trim()) ||
+          UaeG9MonicQuadraticQuestions.Supports(family.Trim()) ||
+          UaeG9RationalExponentQuestions.Supports(family.Trim()) ||
           UaeG6U7L01EquationPracticeQuestions.Supports(family.Trim()) ||
           UaeG6U7L02AdditionLabQuestions.Supports(family.Trim()) ||
           UaeG6U7L03AdditionEquationQuestions.Supports(family.Trim()) ||
@@ -654,6 +665,209 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 9 General U01L01 reuses the shared verifier, but its
+                // learner-facing prompt must remain Arabic for this lesson only.
+                // Keep x in the expression because the exact symbolic verifier uses x.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+                        StringComparison.Ordinal))
+                {
+                    var expression = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "usccss.algebra.expression_coefficient" => problem with
+                        {
+                            Prompt = $"في التعبير {expression["coefficient"]}x + {expression["constant"]}، ما معامل المتغير x؟",
+                            Solution = "المعامل هو العدد المضروب في المتغير x، وليس الحد الثابت."
+                        },
+                        "usccss.algebra.expression_words" => problem with
+                        {
+                            Prompt = $"اكتب تعبيرًا جبريًا يمثل مجموع {expression["coefficient"]} أمثال x و{expression["constant"]} على صورة ax + b.",
+                            Solution = "نضرب المعامل في المتغير x ثم نضيف الحد الثابت."
+                        },
+                        _ => problem
+                    };
+                }
+                // G9 General U13L09: reuse exact scalar area verification with
+                // original Arabic learner prompts. Drawings and reasoning remain teacher reviewed.
+                if ((string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+                        StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+                        StringComparison.Ordinal)) &&
+                    problem.Family is ("geometry.perimeter_area.rectangle_area" or
+                                       "geometry.perimeter_area.triangle_area"))
+                {
+                    if (problem.Family == "geometry.perimeter_area.rectangle_area")
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"متوازي أضلاع قاعدته {problem.Parameters["length"]} سم وارتفاعه العمودي {problem.Parameters["width"]} سم. احسب المساحة بالسم². الارتفاع ليس الضلع المائل.",
+                            Solution = "مساحة متوازي الأضلاع = القاعدة × الارتفاع العمودي. يراجع المعلم الرسم."
+                        };
+                    }
+                    else
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"مثلث قاعدته {problem.Parameters["base"]} سم وارتفاعه العمودي {problem.Parameters["height"]} سم. احسب المساحة بالسم².",
+                            Solution = "مساحة المثلث = القاعدة × الارتفاع العمودي ÷ ٢. يراجع المعلم الرسم."
+                        };
+                    }
+                }
+
+                // Grade 9 General U02L07: retain shared percent computation
+                // and independent verification, but author source-skill Arabic prompts.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+                        StringComparison.Ordinal))
+                {
+                    var pct = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "percentages.core.increase_decrease" => problem with
+                        {
+                            Prompt = pct["direction"] > 0
+                                ? $"زادت قيمة أصلية {pct["quantity"]} بنسبة {pct["percent"]}٪. ما القيمة الجديدة بعد الزيادة؟"
+                                : $"انخفضت قيمة أصلية {pct["quantity"]} بنسبة {pct["percent"]}٪. ما القيمة الجديدة بعد النقصان؟",
+                            Solution = "احسب مقدار النسبة من القيمة الأصلية، ثم أضفه للزيادة أو اطرحه للنقصان، وتحقق من اتجاه التغير."
+                        },
+                        "percentages.core.of_quantity" => problem with
+                        {
+                            Prompt = $"يُمنح خصم أو تُضاف ضريبة بنسبة {pct["percent"]}٪ من سعر أصلي {pct["quantity"]} درهمًا. ما مقدار الخصم أو الضريبة قبل إضافة أو طرح النسبة؟",
+                            Solution = "احسب النسبة المعلنة من السعر الأصلي باستخدام الضرب ثم القسمة على ١٠٠."
+                        },
+                        _ => problem
+                    };
+                }
+
+                // Grade 9 General U02L06: reuse proven exact-ratio questions and
+                // independent integer verifier. Only localize this lesson's prompts.
+                if (string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+                        StringComparison.Ordinal))
+                {
+                    var ratio = problem.Parameters;
+                    problem = problem.Family switch
+                    {
+                        "ratio.unit_rate.equivalent_ratio" => problem with
+                        {
+                            Prompt = $"حل التناسب {ratio["baseFirst"]}/{ratio["baseSecond"]} = س/{ratio["targetSecond"]}. تحقّق بالضرب التبادلي بعد التأكد من أن المقامين غير صفريين.",
+                            Solution = "اضرب طرفَي التناسب تبادليًا، ثم اعزل س وتحقق بالتعويض."
+                        },
+                        "ratio.unit_rate.direct" => problem with
+                        {
+                            Prompt = $"تُنتج ورشة {ratio["total"]} قطعة في {ratio["quantity"]} دقيقة بمعدل ثابت. ما عدد القطع لكل دقيقة؟",
+                            Solution = "اقسم العدد الكلي للقطع على عدد الدقائق مع الحفاظ على الوحدة."
+                        },
+                        "ratio.unit_rate.divide_total" => problem with
+                        {
+                            Prompt = $"يوزَّع مجموع {ratio["total"]} بالتناسب {ratio["firstPart"]}:{ratio["secondPart"]}. ما نصيب الجزء الذي يمثّل {ratio["askedPart"]} من أجزاء النسبة؟",
+                            Solution = "اجمع جزأي النسبة، احسب قيمة الجزء الواحد، ثم اضرب في عدد الأجزاء المطلوبة."
+                        },
+                        _ => problem
+                    };
+                }
+
+                // Grade 9 General U06L02: preserve the proven exact one-variable
+                // verifier and localize only the post-substitution algebra substep.
+                // The complete two-variable system is reviewed by the teacher.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "algebra.linear.variables_both_sides", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"بعد التعويض في نظام معادلتين، حل المعادلة الخطية التالية لإيجاد قيمة س: ({p["leftCoefficient"]})س + ({p["leftOffset"]}) = ({p["rightCoefficient"]})س + ({p["rightOffset"]}). اكتب س فقط، ثم أوجد ص وتحقق من المعادلتين في نشاط الدرس.",
+                        Solution = "اجمع حدود س في طرف والثوابت في الطرف الآخر، ثم اقسم على معامل س غير الصفري. هذه خطوة عددية واحدة؛ يجب مراجعة الحل المرتب في النظام الأصلي."
+                    };
+                }
+                // UAE General Grade 9 6-3: localize the one-variable algebra substep.
+                // The full two-variable elimination and verification stay teacher-reviewed.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT", StringComparison.Ordinal) ||
+                     string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION", StringComparison.Ordinal) ||
+                     string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "algebra.linear.ax_plus_b_equals_c", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"بعد حذف أحد المتغيرين من نظام معادلتين، حل الخطوة الجبرية: ({p["coefficient"]})س + ({p["offset"]}) = {p["right"]}. اكتب قيمة س، ثم أكمل إيجاد المتغير الآخر والتحقق من النظام في نشاط الدرس.",
+                        Solution = "اطرح الحد الثابت من الطرفين، ثم اقسم على معامل س غير الصفري. هذا التمرين لا يصحح النظام كاملًا."
+                    };
+                }
+
+                // UAE General Grade9 6-6: only a boundary-coordinate value
+                // is graded here. Both inequality regions and their intersection
+                // are reviewed by the teacher in the Arabic lesson activity.
+                if ((string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES", StringComparison.Ordinal) ||
+                     string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES", StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family, "geometry.coordinate.evaluate_linear_rule", StringComparison.Ordinal))
+                {
+                    var p = problem.Parameters;
+                    problem = problem with
+                    {
+                        Prompt = $"في تمثيل حد متباينة خطية ص = ({p["gradient"]})س + ({p["intercept"]})، احسب ص عند س = {p["x"]}. اكتب القيمة العددية فقط؛ مراجعة تظليل نظام المتباينات من اختصاص المعلم.",
+                        Solution = "عوض قيمة س في قاعدة المستقيم ثم اجمع الناتج. لا يُصحح هذا السؤال وحده تقاطع نصفي المستويين أو الخطوط الصارمة."
+                    };
+                }
+
+                // UAE Grade 9 General U08L04: localize only the shared exact
+                // scientific-notation subset without changing its solver/validator.
+                if (string.Equals(fingerprintNamespace, "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", StringComparison.Ordinal) ||
+                    string.Equals(scopeKey, "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", StringComparison.Ordinal) ||
+                    fingerprintNamespace.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION:", StringComparison.Ordinal) ||
+                    scopeKey.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION:", StringComparison.Ordinal))
+                {
+                    problem = problem.Family switch
+                    {
+                        "supporting.standard_form.power10_exponent" => problem with
+                        {
+                            Prompt = $"أكمل أس العشرة ن في الترميز العلمي: {problem.Parameters["number"]} = {problem.Parameters["coefficient"]} × ١٠^ن. ما قيمة ن؟",
+                            Solution = "نقسم العدد على المعامل غير الصفري، ثم نحدد عدد مرات الضرب في عشرة مع التحقق من أن المعامل بين ١ و١٠."
+                        },
+                        "supporting.powers10.multiply" => problem with
+                        {
+                            Prompt = $"أوجد الصورة العددية للقيمة {problem.Parameters["value"]} × ١٠^{problem.Parameters["exponent"]}.",
+                            Solution = "نضرب العدد في قوة العشرة، وننقل الفاصلة إلى اليمين بمقدار الأس الموجب."
+                        },
+                        "supporting.powers10.divide" => problem with
+                        {
+                            Prompt = $"أوجد قيمة {problem.Parameters["dividend"]} ÷ ١٠^{problem.Parameters["exponent"]}، واكتب الناتج عددًا عاديًا.",
+                            Solution = "نقسم العدد على قوة العشرة وننقل الفاصلة إلى اليسار بمقدار الأس الموجب."
+                        },
+                        _ => problem
+                    };
+                }
+                // UAE G9 General U08L05: reuse the shared exact surd coefficient
+                // engine; localize its learner prompt only in this lesson scope.
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS",StringComparison.Ordinal) ||
+                     fingerprintNamespace.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS:",StringComparison.Ordinal) ||
+                     scopeKey.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS:",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"supporting.surds.coefficient",StringComparison.Ordinal))
+                {
+                    problem = problem with
+                    {
+                        Prompt = $"بسّط الجذر: √{problem.Parameters["radicand"]} = م√{problem.Parameters["radicandBase"]}. ما قيمة المعامل م؟",
+                        Solution = "ابحث عن أكبر عامل مربع كامل في العدد تحت الجذر، ثم استخرج جذره الموجب ليصبح معامل الجذر المبسط."
+                    };
+                }
+
                 // Grade 6 Arabic student-book ratio lab: keep the proven
                 // ratio solver/verifier; replace only the learner prompt/steps.
                 if (string.Equals(fingerprintNamespace,
@@ -802,6 +1016,16 @@ public sealed class ExactSkillContractQuestionEngine
                      string.Equals(problem.Family,"uae.g5.u05.l13.contextual_decimal_unit_rate",StringComparison.Ordinal)))
                     problem=LocalizeG6DecimalByDecimal(problem);
 
+                // Owner-approved G9 General: first-party Arabic instructions
+                // around unchanged solver, verifier, question params and answer.
+                // No Grade9 Practice runtime readiness is granted here.
+                const string grade9GeneralPrefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+                if (scopeKey.StartsWith(grade9GeneralPrefix, StringComparison.Ordinal) ||
+                    fingerprintNamespace.StartsWith(grade9GeneralPrefix, StringComparison.Ordinal))
+                {
+                    problem = LocalizeUaeGrade9GeneralArabic(problem);
+                }
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -878,6 +1102,83 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+
+        if (family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            var required=new[]{"a2","a1","a0","b2","b1","b0","degree"};
+            if(parameters.Count!=required.Length||required.Any(k=>!parameters.ContainsKey(k))||
+                parameters["degree"] is <0 or >4||required.Take(6).Any(k=>parameters[k] is <-9 or >9))
+                return false;
+            var normalized=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-', _=>ch
+            }));
+            if(!int.TryParse(normalized,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))
+                return false;
+            int sum=0;
+            for(int i=0;i<=2;i++)
+                for(int j=0;j<=2;j++)
+                    if(i+j==parameters["degree"])
+                        sum+=parameters["a"+i.ToString(CultureInfo.InvariantCulture)]*
+                             parameters["b"+j.ToString(CultureInfo.InvariantCulture)];
+            return submitted==sum;
+        }
+
+        if(family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            if(parameters.Count!=3||!parameters.TryGetValue("a",out var aa)||
+               !parameters.TryGetValue("b",out var bb)||!parameters.TryGetValue("degree",out var dd)||
+               aa is <1 or >9||bb is <1 or >9||dd is <0 or >2)return false;
+            var cleaned=string.Concat((answer??"").Trim().Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),'−'=>'-',_=>ch}));
+            if(!int.TryParse(cleaned,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))return false;
+            var expected=family=="uae.g9.general.u07.l04.square_binomial_coefficient"
+                ? dd switch{2=>aa*aa,1=>2*aa*bb,_=>bb*bb}
+                : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
+            return submitted==expected;
+        }
+
+        if(family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+        {
+            if(parameters.Count!=3||!parameters.TryGetValue("a",out var aa)||
+                !parameters.TryGetValue("r1",out var one)||!parameters.TryGetValue("r2",out var two)||
+                one is <-8 or >8||two is <-8 or >8||one==two||
+                (family=="uae.g9.general.u07.l06.monic_quadratic_roots"?aa!=1:aa is <2 or >5))
+                return false;
+            var raw=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-','،'=>',','\u200E'=>'\0','\u200F'=>'\0',_=>ch
+            }).Where(ch=>ch!='\0'));
+            var parts=raw.Split(',',StringSplitOptions.None);
+            if(parts.Length!=2||!int.TryParse(parts[0].Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var x)||
+                !int.TryParse(parts[1].Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var y))
+                return false;
+            return (x==one&&y==two)||(x==two&&y==one);
+        }
+
+        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var keys=new[] {"a2","a1","a0","b2","b1","b0","degree"};
+            if (parameters.Count!=keys.Length || keys.Any(k=>!parameters.ContainsKey(k)) ||
+                parameters["degree"] is <0 or >2 ||
+                keys.Take(6).Any(k=>parameters[k] is <-9 or >9))
+                return false;
+            var raw=string.Concat((answer??"").Trim().Select(ch=>ch switch {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−'=>'-',
+                _=>ch
+            }));
+            if (!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out var submitted))
+                return false;
+            var suffix=parameters["degree"].ToString(CultureInfo.InvariantCulture);
+            return submitted==(family.EndsWith("add_coefficient",StringComparison.Ordinal)
+                ? parameters["a"+suffix]+parameters["b"+suffix]
+                : parameters["a"+suffix]-parameters["b"+suffix]);
+        }
         if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             parameters.TryGetValue("wholeUnknownPercent",out var inversePercent))
         {
@@ -1039,6 +1340,12 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L09DistributionLabQuestions.Verify(family,parameters,answer);
         if (UaeG6U6L10DistributionQuestions.Supports(family))
             return UaeG6U6L10DistributionQuestions.Verify(family,parameters,answer);
+        if (UaeG9AbsoluteValueEquationQuestions.Supports(family))
+            return UaeG9AbsoluteValueEquationQuestions.Verify(family,parameters,answer);
+        if (UaeG9MonicQuadraticQuestions.Supports(family))
+            return UaeG9MonicQuadraticQuestions.Verify(family,parameters,answer);
+        if (UaeG9RationalExponentQuestions.Supports(family))
+            return UaeG9RationalExponentQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L01EquationPracticeQuestions.Supports(family))
             return UaeG6U7L01EquationPracticeQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L02AdditionLabQuestions.Supports(family))
@@ -1191,6 +1498,7 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit8Questions.Verify(family, parameters, answer);
         if (UaeGrade2Term3Questions.Supports(family))
             return UaeGrade2Term3Questions.Verify(family, parameters, answer);
+
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
                 family, parameters, answer);
@@ -2095,7 +2403,22 @@ public sealed class ExactSkillContractQuestionEngine
             };
         }
 
-        if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
+        // Grade 9 Arabic proportions accept equivalent Eastern Arabic digits,
+        // without changing the numeric parser for existing curricula.
+        var integerAnswer = string.Equals(family,
+                "uae.g9.general.u02.l06.two_sided_proportion", StringComparison.Ordinal)
+            ? string.Concat((answer ?? string.Empty).Trim()
+                .Where(c => c is not '\u200E' and not '\u200F' and not '\u061C')
+                .Select(c => c switch
+                {
+                    >= '٠' and <= '٩' => (char)('0' + c - '٠'),
+                    >= '۰' and <= '۹' => (char)('0' + c - '۰'),
+                    '−' => '-',
+                    _ => c
+                }))
+            : answer;
+        if (!int.TryParse(integerAnswer, NumberStyles.Integer,
+                CultureInfo.InvariantCulture, out var value))
             return false;
 
         if (family is
@@ -2272,6 +2595,8 @@ public sealed class ExactSkillContractQuestionEngine
             "ratio.unit_rate.direct" =>
                 parameters["quantity"] > 0 &&
                 value * parameters["quantity"] == parameters["total"],
+
+            "uae.g9.general.u02.l06.two_sided_proportion" => VerifyG9TwoSidedProportion(parameters, value),
 
             "ratio.unit_rate.equivalent_ratio" =>
                 parameters["baseSecond"] > 0 &&
@@ -3198,6 +3523,56 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+        if(family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            var aa=random.Next(1,10);var bb=random.Next(1,10);var degree=random.Next(0,3);
+            var expression=family=="uae.g9.general.u07.l04.square_binomial_coefficient" ? $"({aa}س+{bb})²" : $"({aa}س+{bb})({aa}س−{bb})";
+            var explanation=family=="uae.g9.general.u07.l04.square_binomial_coefficient" ? "مربع مجموع حدين: أ²+٢أب+ب²." : "فرق مربعين: (أ+ب)(أ−ب)=أ²−ب²؛ الحد الأوسط يساوي صفرًا.";
+            return Problem(family,$"بسّط ناتج الضرب الخاص {expression}. ما معامل س^{degree}؟ الدرجة صفر تعني الحد الثابت. اكتب عددًا صحيحًا فقط.",
+                explanation,AssessmentItemType.Numeric,("a",aa),("b",bb),("degree",degree));
+        }
+
+        if(family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+        {
+            var a=family=="uae.g9.general.u07.l06.monic_quadratic_roots"?1:random.Next(2,6);
+            var one=random.Next(-8,9);
+            var two=random.Next(-8,9);
+            while(two==one)two=random.Next(-8,9);
+            var middle=-a*(one+two);
+            var constant=a*one*two;
+            return Problem(family,
+                $"حل المعادلة {a}س²+({middle})س+({constant})=٠ بتحليل كثيرة الحدود إلى عوامل وتطبيق خاصية الضرب الصفري. اكتب الجذرين مفصولين بفاصلة.",
+                "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
+                AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
+        }
+
+        if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var a2=random.Next(-8,9);var a1=random.Next(-8,9);var a0=random.Next(-8,9);
+            var b2=random.Next(-8,9);var b1=random.Next(-8,9);var b0=random.Next(-8,9);
+            var degree=random.Next(0,3);
+            var sign=family.EndsWith("add_coefficient",StringComparison.Ordinal)?"+":"−";
+            var prompt=$"في كثيرتي الحدود ( {a2}س² + ({a1})س + ({a0}) ) {sign} ( {b2}س² + ({b1})س + ({b0}) )، ما معامل س^{degree} بعد تجميع الحدود المتشابهة؟ إذا كانت الدرجة صفرًا فاكتب الحد الثابت. اكتب العدد فقط.";
+            return Problem(family,prompt,
+                "اجمع معاملات الدرجات المتشابهة عند الجمع؛ وعند الطرح وزع الإشارة السالبة على جميع حدود كثيرة الحدود الثانية قبل الجمع.",
+                AssessmentItemType.Numeric,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
+        }
+
+        if(family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            var a2=random.Next(-6,7);var a1=random.Next(-6,7);var a0=random.Next(-6,7);
+            var b2=random.Next(-6,7);var b1=random.Next(-6,7);var b0=random.Next(-6,7);
+            var degree=random.Next(0,5);
+            return Problem(family,
+                $"اضرب كثيرتي الحدود ({a2}س²+({a1})س+({a0}))×({b2}س²+({b1})س+({b0})). بعد توزيع كل حد وتجميع الحدود المتشابهة ما معامل س^{degree}؟ الدرجة صفر تعني الحد الثابت. اكتب عددًا صحيحًا فقط.",
+                "اضرب كل حد من كثيرة الحدود الأولى في كل حد من الثانية؛ اجمع أسس المتغير في الضرب، ثم اجمع معاملات الحدود الناتجة من الدرجة المطلوبة.",
+                AssessmentItemType.Numeric,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("degree",degree));
+        }
 
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
         {
@@ -4472,6 +4847,21 @@ public sealed class ExactSkillContractQuestionEngine
             var q=UaeG6U6L10DistributionQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
+        if (UaeG9AbsoluteValueEquationQuestions.Supports(family))
+        {
+            var q=UaeG9AbsoluteValueEquationQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG9MonicQuadraticQuestions.Supports(family))
+        {
+            var q=UaeG9MonicQuadraticQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG9RationalExponentQuestions.Supports(family))
+        {
+            var q=UaeG9RationalExponentQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
         if (UaeG6U7L01EquationPracticeQuestions.Supports(family))
         {
             var q=UaeG6U7L01EquationPracticeQuestions.Build(family,random);
@@ -5120,6 +5510,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            "uae.g9.general.u02.l06.two_sided_proportion" =>
+                BuildG9TwoSidedProportion(random, scale),
             "ratio.unit_rate.divide_total" =>
                 BuildRatioDivideTotal(random, scale),
             "statistics.center_spread.mean" =>
@@ -6177,6 +6569,49 @@ public sealed class ExactSkillContractQuestionEngine
             ("baseFirst", baseFirst),
             ("baseSecond", baseSecond),
             ("targetSecond", targetSecond));
+    }
+
+    // Grade 9 General U02L06: cross-multiplication when both numerators
+    // contain a variable. Reuses the shared numeric problem/verifier flow.
+    private static ExactProblem BuildG9TwoSidedProportion(Random random, int scale)
+    {
+        int a, c, d, f;
+        do
+        {
+            a = random.Next(1, 4 + scale);
+            c = random.Next(2, 7 + scale);
+            d = random.Next(1, 4 + scale);
+            f = random.Next(2, 7 + scale);
+        } while (f * a == c * d);
+        var targetX = random.Next(-5 - scale, 9 + scale);
+        var commonRate = random.Next(2, 8 + scale);
+        var b = c * commonRate - a * targetX;
+        var e = f * commonRate - d * targetX;
+        var plusB = b < 0 ? b.ToString(CultureInfo.InvariantCulture) :
+            "+" + b.ToString(CultureInfo.InvariantCulture);
+        var plusE = e < 0 ? e.ToString(CultureInfo.InvariantCulture) :
+            "+" + e.ToString(CultureInfo.InvariantCulture);
+        return Problem(
+            "uae.g9.general.u02.l06.two_sided_proportion",
+            $"حل التناسب ({a}س{plusB})/{c} = ({d}س{plusE})/{f}. حدد شرطي المقامين، ثم اضرب تبادليًا وتحقق.",
+            "عند المقامين غير الصفريين نساوي الضربين التبادليين، نجمع حدود س في طرف، ثم نتحقق بالتعويض.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c),
+            ("d", d), ("e", e), ("f", f));
+    }
+
+    private static bool VerifyG9TwoSidedProportion(
+        IReadOnlyDictionary<string, int> p, long x)
+    {
+        if (!p.TryGetValue("a", out var a) ||
+            !p.TryGetValue("b", out var b) ||
+            !p.TryGetValue("c", out var c) ||
+            !p.TryGetValue("d", out var d) ||
+            !p.TryGetValue("e", out var e) ||
+            !p.TryGetValue("f", out var f) ||
+            c == 0 || f == 0 || (long)f * a == (long)c * d)
+            return false;
+        return (long)f * (a * x + b) == (long)c * (d * x + e);
     }
 
     private static ExactProblem BuildRatioDivideTotal(Random random, int scale)
@@ -9162,6 +9597,38 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+
+        if(problem.Family=="uae.g9.general.u07.l03.multiply_coefficient")
+        {
+            int sum=0;
+            for(int i=0;i<=2;i++)
+                for(int j=0;j<=2;j++)
+                    if(i+j==p["degree"])
+                        sum+=p["a"+i.ToString(CultureInfo.InvariantCulture)]*
+                             p["b"+j.ToString(CultureInfo.InvariantCulture)];
+            return sum.ToString(CultureInfo.InvariantCulture);
+        }
+        if(problem.Family is "uae.g9.general.u07.l04.square_binomial_coefficient" or "uae.g9.general.u07.l04.conjugate_product_coefficient")
+        {
+            var aa=p["a"];var bb=p["b"];var dd=p["degree"];
+            var answer=problem.Family=="uae.g9.general.u07.l04.square_binomial_coefficient"
+                ? dd switch{2=>aa*aa,1=>2*aa*bb,_=>bb*bb}
+                : dd switch{2=>aa*aa,1=>0,_=>-bb*bb};
+            return answer.ToString(CultureInfo.InvariantCulture);
+        }
+
+        if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
+            return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
+                .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
+        {
+            var suffix=p["degree"].ToString(CultureInfo.InvariantCulture);
+            var answer=problem.Family.EndsWith("add_coefficient",StringComparison.Ordinal)
+                ? p["a"+suffix]+p["b"+suffix]
+                : p["a"+suffix]-p["b"+suffix];
+            return answer.ToString(CultureInfo.InvariantCulture);
+        }
         if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             p.TryGetValue("wholeUnknownPercent",out var inversePercent))
             return (p["knownPart"]*100L/inversePercent).ToString(CultureInfo.InvariantCulture);
@@ -9301,6 +9768,12 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L09DistributionLabQuestions.Solve(problem.Family,p);
         if (UaeG6U6L10DistributionQuestions.Supports(problem.Family))
             return UaeG6U6L10DistributionQuestions.Solve(problem.Family,p);
+        if (UaeG9AbsoluteValueEquationQuestions.Supports(problem.Family))
+            return UaeG9AbsoluteValueEquationQuestions.Solve(problem.Family,p);
+        if (UaeG9MonicQuadraticQuestions.Supports(problem.Family))
+            return UaeG9MonicQuadraticQuestions.Solve(problem.Family,p);
+        if (UaeG9RationalExponentQuestions.Supports(problem.Family))
+            return UaeG9RationalExponentQuestions.Solve(problem.Family,p);
         if (UaeG6U7L01EquationPracticeQuestions.Supports(problem.Family))
             return UaeG6U7L01EquationPracticeQuestions.Solve(problem.Family,p);
         if (UaeG6U7L02AdditionLabQuestions.Supports(problem.Family))
@@ -10045,6 +10518,10 @@ public sealed class ExactSkillContractQuestionEngine
 
             "ratio.unit_rate.equivalent_ratio" =>
                 (p["baseFirst"] * p["targetSecond"] / p["baseSecond"]).ToString(CultureInfo.InvariantCulture),
+
+            "uae.g9.general.u02.l06.two_sided_proportion" =>
+                ((p["c"] * (long)p["e"] - p["f"] * (long)p["b"]) /
+                 (p["f"] * (long)p["a"] - p["c"] * (long)p["d"])).ToString(CultureInfo.InvariantCulture),
 
             "ratio.unit_rate.divide_total" =>
                 (p["total"] / (p["firstPart"] + p["secondPart"]) * p["askedPart"])

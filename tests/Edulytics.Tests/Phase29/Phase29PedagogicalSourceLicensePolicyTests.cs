@@ -72,13 +72,14 @@ public sealed class Phase29PedagogicalSourceLicensePolicyTests
                 if (blueprint.SchemaVersion == 1)
                 {
                     if (blueprint.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
-                        (blueprint.LogicalLevel == 7 || blueprint.LogicalLevel == 8) &&
+                        (blueprint.LogicalLevel == 7 || blueprint.LogicalLevel == 8 || blueprint.LogicalLevel == 9) &&
                         string.Equals(blueprint.Pathway, "General", StringComparison.Ordinal))
                     {
                         // A copyrighted textbook reference is NOT an open license.
-                        // Validate the owner-authored, no-copy, narrowly scoped G7/G8 exception.
+                        // Validate the owner-authored, no-copy, narrowly scoped G7/G8/G9 exception.
+// This does NOT approve the publisher textbook license or source copying.
                         Assert.False(PedagogicalSourceLicensePolicy.IsApproved(blueprint.SourceLicense));
-                        Assert.Equal(blueprint.LogicalLevel == 7 ? 78 : 76, blueprint.Lessons.Count);
+                        Assert.Equal(blueprint.LogicalLevel == 7 ? 78 : blueprint.LogicalLevel == 8 ? 76 : 82, blueprint.Lessons.Count);
                         PedagogicalLessonBlueprintContract.Validate(blueprint);
                     }
                     else

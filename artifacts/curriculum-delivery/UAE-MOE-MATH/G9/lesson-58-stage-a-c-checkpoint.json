@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 58,
+  "unitOrdinal": 9,
+  "lessonOrdinalInUnit": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS",
+  "lessonTitleAr": "استخدام المجموعات لحل المسائل",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      537,
+      538,
+      539,
+      540,
+      541,
+      542,
+      543,
+      544,
+      545,
+      546
+    ],
+    "pdfPages": [
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_PAGE_VISUAL_REVIEW",
+    "scope": "Reviewed textbook context and selected two/three-set problem diagrams. Individual source exercise parity and live assessment unverified."
+  },
+  "stageA": {
+    "status": "SOURCE_CONTEXUAL_VENN_PROBLEM_OBJECTIVES_AND_EXAMPLES_REVIEWED",
+    "skills": [
+      "model survey counts with two-set Venn diagrams",
+      "subtract overlap and calculate outside union",
+      "place three-set intersection first and adjust pair intersections",
+      "justify inclusion-exclusion and units in context"
+    ],
+    "scope": "Main lesson objectives, examples and exercise classes reviewed, not an exhaustive per-exercise numeric audit"
+  },
+  "stageB": {
+    "status": "ARABIC_SOURCE_PACK_RICHV2_ORIGINAL_SIX_QUESTION_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u09-l04-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u09-l04-set-word-problems-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "studentAnswers": "TEACHER_REVIEW_REQUIRED",
+    "coolDownGraded": false,
+    "submission": "LOCAL_ONLY_NO_STUDENT_AUTHENTICATION"
+  },
+  "stageC": {
+    "status": "REUSE_EXISTING_SET_OPERATION_CARDINALITY_FAMILY_WITH_PREPARED_REGRESSION",
+    "family": "uae.g9.general.u09.l02.set_operation_cardinality",
+    "engine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "skillMap": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "testPath": "tests/academic-uae-grade9-arabic-u09l04.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "STAGE_A_B_C_AUTHORING_WITH_SOURCE_SKILL_ALIGNMENT_NOT_STAGE_D_RUNTIME_PASS"
+}

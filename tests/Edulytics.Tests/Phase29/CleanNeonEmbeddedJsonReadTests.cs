@@ -17,7 +17,7 @@ public sealed class CleanNeonEmbeddedJsonReadTests
         // Original G7 General English 62 retired; 78 first-party Arabic lessons replace them.
         // Owner-retired UAE Grade 9: 96 Advanced + 82 General + 41
         // official Advanced + 1 pilot = 220 unique JSON lesson identities.
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220, index.Count);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 + 82, index.Count);
         Assert.True(index.TryGet("PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES", out var grade7));
         Assert.Equal(CanonicalLessonContentStatus.Published, grade7.Status);
         Assert.Contains(grade7.Translations, t => t.CultureCode == "ar");
@@ -27,7 +27,9 @@ public sealed class CleanNeonEmbeddedJsonReadTests
         Assert.Contains(grade6.Translations, t => t.CultureCode == "ar");
         Assert.False(index.TryGet("PED:UAE-MOE-MATH:L6:GENERAL:05:05:FACTORS-AND-MULTIPLES", out _));
         Assert.False(index.TryGet("PED:UAE:G9:ADV:T1:L1-2", out _));
-        Assert.False(index.TryGet("PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS", out _));
+        Assert.True(index.TryGet("PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS", out var g9General));
+        Assert.Equal(CanonicalLessonContentStatus.Published, g9General.Status);
+        Assert.Contains(g9General.Translations, t => t.CultureCode == "ar");
         Assert.True(index.TryGet("PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS", out var body));
         Assert.Equal(CanonicalLessonContentStatus.Published, body.Status);
         Assert.Contains(body.Translations, t => t.CultureCode == "ar");

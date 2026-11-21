@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 2,
+  "rawGeneralLessonCount": 86,
+  "uniqueCount": null,
+  "reviewStatus": "20_FLAGGED_PAIRS_WITH_SOURCE_PAGE_COMPARISONS; FULL_86_ELEMENT_AUDIT_PENDING",
+  "candidatePairs": [
+    {
+      "rawOrdinalA": 43,
+      "rawOrdinalB": 70,
+      "reason": "Same lesson title: geometric segment relationships",
+      "status": "FULL_PRINTED_LESSON_PAGES_COMPARED",
+      "decision": "SEMANTIC_DUPLICATE_WITH_SOURCE_EXERCISE_VARIANTS",
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "7-4",
+          "printedPagesReviewed": [
+            398,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404
+          ],
+          "pdfPagesReviewed": [
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "11-3",
+          "printedPagesReviewed": [
+            624,
+            625,
+            626,
+            627,
+            628,
+            629,
+            630
+          ],
+          "pdfPagesReviewed": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ]
+        },
+        "matchingObjectives": [
+          "Segment addition postulate and finding lengths of segments",
+          "Properties of equality and segment congruence",
+          "Proofs concerning equal segments"
+        ],
+        "sameWorkedVisuals": [
+          "segment ruler AB AC BC",
+          "folding wood frame illustration and corresponding X,Y/Z length example",
+          "segment congruence proof tabular examples"
+        ],
+        "note": "Same learning objectives and worked visuals confirmed across full seven printed lesson pages. Minor contextual/exercise differences retained as supplemental review items, not extra lesson identity."
+      },
+      "primarySource": "01.pdf:7-4",
+      "supportingSource": "03-1.pdf:11-3",
+      "sourceLessonRefs": [
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
+      ],
+      "preserveSupplementalExerciseVariations": true,
+      "doNotCreateSeparateProductLessonForSupportingSource": true
+    },
+    {
+      "rawOrdinalA": 20,
+      "rawOrdinalB": 74,
+      "reason": "Slope and rate-of-change overlap",
+      "status": "OBJECTIVE_OVERLAP_COMPARISON_PARTIAL",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "3-3",
+          "printedPagesReviewed": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179
+          ],
+          "pdfPagesReviewed": [
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-3",
+          "printedPagesReviewed": [
+            668,
+            669,
+            670,
+            671,
+            672,
+            673,
+            674,
+            675
+          ],
+          "pdfPagesReviewed": [
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91
+          ]
+        },
+        "overlap": [
+          "Calculating slope from graph and slope change in coordinate points",
+          "Positive/negative/zero/undefined slopes"
+        ],
+        "distinctEmphases": [
+          "New 3-3 embeds rate of change and proportional data contexts",
+          "Older 12-3 emphasizes coordinate geometry and slope criteria connecting to perpendicular/parallel lines"
+        ],
+        "disposition": "Do not merge by title. Preserve later geometry connections, and compare all exercises before final dedup."
+      }
+    },
+    {
+      "rawOrdinalA": 27,
+      "rawOrdinalB": 72,
+      "reason": "Parallel/transversal lines overlap",
+      "status": "OBJECTIVE_DISTINCTION_FROM_SOURCE_PAGES",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-4",
+          "printedPagesReviewed": [
+            239,
+            240,
+            241,
+            242
+          ],
+          "pdfPagesReviewed": [
+            250,
+            251,
+            252,
+            253
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-1",
+          "printedPagesReviewed": [
+            653,
+            654
+          ],
+          "pdfPagesReviewed": [
+            69,
+            70
+          ]
+        },
+        "contrast": "4-4 teaches coordinate/slope equations to determine parallel or perpendicular lines; 12-1 introduces geometric definitions and transversals, pairs of angles and coplanarity. Distinct learning objectives."
+      }
+    },
+    {
+      "rawOrdinalA": 27,
+      "rawOrdinalB": 76,
+      "reason": "Perpendicular/distance overlap",
+      "status": "OBJECTIVE_DISTINCTION_FROM_SOURCE_PAGES",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-4",
+          "printedPagesReviewed": [
+            239,
+            240,
+            241,
+            242
+          ],
+          "pdfPagesReviewed": [
+            250,
+            251,
+            252,
+            253
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-6",
+          "printedPagesReviewed": [
+            695,
+            696
+          ],
+          "pdfPagesReviewed": [
+            111,
+            112
+          ]
+        },
+        "contrast": "4-4 slope and line equations for parallel/perpendicular relationships versus 12-6 perpendicular lines and shortest distance constructions in Euclidean geometry; preserve construction and proof."
+      }
+    },
+    {
+      "rawOrdinalA": 4,
+      "rawOrdinalB": 48,
+      "reason": "Distribution in arithmetic versus polynomials",
+      "status": "OBJECTIVE_DISTINCTION_CONFIRMED_FROM_WORKED_PAGES",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "1-4",
+          "printedPagesReviewed": [
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "pdfPagesReviewed": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-5",
+          "printedPagesReviewed": [
+            396,
+            397,
+            398,
+            399
+          ],
+          "pdfPagesReviewed": [
+            44,
+            45,
+            46,
+            47
+          ]
+        },
+        "contrast": "The recent 1-4 uses distribution to expand and simplify expressions (and arithmetic representations). The older 7-5 teaches factoring polynomials using the distributive property / common factor. Reverse use and polynomial factoring adds a distinct objective, so same keyword is insufficient for dedup.",
+        "preservedSkills": [
+          "expansion and simplification by distributive property",
+          "polynomial common-factor decomposition"
+        ],
+        "semanticStatus": "DISTINCT_COMPLEMENTARY_OBJECTIVE",
+        "nextStep": "Verify remaining practice coverage when the two lessons reach their sequential A-C checkpoint."
+      }
+    },
+    {
+      "rawOrdinalA": 24,
+      "rawOrdinalB": 75,
+      "reason": "Graphing/writing line equations",
+      "status": "SOURCE_OBJECTIVE_OVERLAP_REVIEWED",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-1",
+          "printedPagesReviewed": [
+            216,
+            217
+          ],
+          "pdfPagesReviewed": [
+            227,
+            228
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-4",
+          "printedPagesReviewed": [
+            678,
+            679
+          ],
+          "pdfPagesReviewed": [
+            94,
+            95
+          ]
+        },
+        "sharedSkills": [
+          "slope-intercept formula y=mx+b",
+          "graphing linear equations"
+        ],
+        "distinctSkills": [
+          "source 4-1 prioritizes graphing by slope/intercept",
+          "source 12-4 deriving line equations within coordinate geometry and finding equations using points"
+        ],
+        "nextStep": "Compare full practice/assessment before possible content integration."
+      }
+    },
+    {
+      "rawOrdinalA": 26,
+      "rawOrdinalB": 75,
+      "reason": "Point-slope and line equations",
+      "status": "SOURCE_OBJECTIVE_OVERLAP_REVIEWED",
+      "decision": "PARTIAL_OVERLAP",
+      "preserveUntilReviewed": true,
+      "retainBothPendingFullCoverage": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-3",
+          "printedPagesReviewed": [
+            233,
+            234
+          ],
+          "pdfPagesReviewed": [
+            244,
+            245
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "12-4",
+          "printedPagesReviewed": [
+            678,
+            679
+          ],
+          "pdfPagesReviewed": [
+            94,
+            95
+          ]
+        },
+        "sharedSkills": [
+          "equation of a line from known points / known slope"
+        ],
+        "distinctSkills": [
+          "new 4-3 emphasizes point-slope form",
+          "old 12-4 emphasizes coordinate geometry and different line equation formats"
+        ],
+        "nextStep": "Verify all examples and exercise objectives; avoid merging away the geometry emphasis."
+      }
+    },
+    {
+      "rawOrdinalA": 40,
+      "rawOrdinalB": 68,
+      "reason": "Geometry axioms and proof",
+      "status": "SOURCE_OBJECTIVE_DISTINCTION_VERIFIED_FROM_LESSON_OPENINGS",
+      "decision": "COMPLEMENTARY_SKILL",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "7-1",
+          "printedPagesReviewed": [
+            365,
+            366
+          ],
+          "pdfPagesReviewed": [
+            376,
+            377
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "11-1",
+          "printedPagesReviewed": [
+            607,
+            608
+          ],
+          "pdfPagesReviewed": [
+            23,
+            24
+          ]
+        },
+        "contrast": "New 7-1 builds vocabulary of points, lines and planes; older 11-1 begins formal postulates and proof methods, adds separate reasoning goals."
+      }
+    },
+    {
+      "rawOrdinalA": 80,
+      "rawOrdinalB": 84,
+      "reason": "Source book labels 13-3 as congruent triangles and 13-7 as congruence; distinct learning emphases",
+      "status": "SOURCE_OBJECTIVES_COMPARED",
+      "decision": "PARTIAL_OVERLAP_RETAIN_DISTINCT_SKILLS",
+      "preserveUntilReviewed": false,
+      "retainBoth": true,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-3",
+          "printedPagesReviewed": [
+            735,
+            736,
+            737,
+            738
+          ],
+          "pdfPagesReviewed": [
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-7",
+          "printedPagesReviewed": [
+            777,
+            778,
+            779,
+            780
+          ],
+          "pdfPagesReviewed": [
+            192,
+            193,
+            194,
+            195
+          ],
+          "note": "13-7 starts printed page 776/PDF 192? sample begins later on printed 777; opening page must be rechecked."
+        },
+        "contrast": "13-3 focuses on correspondence of triangle vertices/sides/angles in congruent figures; 13-7 works with transformations and coordinate-based congruence demonstrations and SSS reasoning. Not an exact duplicate."
+      }
+    },
+    {
+      "rawOrdinalA": 24,
+      "rawOrdinalB": 25,
+      "reason": "Both lessons use slope-intercept form, but with different mathematical operations",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "4-1",
+          "printedPagesReviewed": [
+            216,
+            217
+          ],
+          "pdfPagesReviewed": [
+            227,
+            228
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "4-2",
+          "printedPagesReviewed": [
+            226,
+            227
+          ],
+          "pdfPagesReviewed": [
+            237,
+            238
+          ]
+        },
+        "contrast": "4-1 constructs graphs from equations already in slope-intercept form; 4-2 derives slope-intercept equations from specified points and slopes, with different unknowns and checks. Distinct learning outcomes."
+      }
+    },
+    {
+      "rawOrdinalA": 11,
+      "rawOrdinalB": 30,
+      "reason": "Both involve multistep manipulation, but equation vs inequality conditions differ",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "2-3",
+          "printedPagesReviewed": [
+            91,
+            92
+          ],
+          "pdfPagesReviewed": [
+            102,
+            103
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "5-3",
+          "printedPagesReviewed": [
+            272,
+            273
+          ],
+          "pdfPagesReviewed": [
+            283,
+            284
+          ]
+        },
+        "contrast": "2-3 solves equalities and checks isolated values; 5-3 solves inequalities including reversing comparison sign on multiplication/division by negative numbers, and depicts a solution range on number line."
+      }
+    },
+    {
+      "rawOrdinalA": 18,
+      "rawOrdinalB": 34,
+      "reason": "Both graph linear expressions but one is a single line and the other is a system",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "lesson": "3-1",
+          "printedPagesReviewed": [
+            155,
+            156
+          ],
+          "pdfPagesReviewed": [
+            166,
+            167
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "lesson": "6-1",
+          "printedPagesReviewed": [
+            309,
+            310
+          ],
+          "pdfPagesReviewed": [
+            320,
+            321
+          ]
+        },
+        "contrast": "3-1 plots one linear equation (line, intercepts, coordinate axes); 6-1 solves two simultaneous equations by intersection and distinguishes one/no/infinite solutions."
+      }
+    },
+    {
+      "rawOrdinalA": 45,
+      "rawOrdinalB": 46,
+      "reason": "Titles share polynomial multiplication but factors have different structures",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "lesson": "7-2",
+          "printedPagesReviewed": [
+            374,
+            375
+          ],
+          "pdfPagesReviewed": [
+            22,
+            23
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "lesson": "7-3",
+          "printedPagesReviewed": [
+            382,
+            383
+          ],
+          "pdfPagesReviewed": [
+            30,
+            31
+          ]
+        },
+        "contrast": "7-2 multiplies a polynomial by a single monomial, illustrating distribution to each term; 7-3 multiplies two multi-term polynomials using extended distribution/FOIL, generating multiple cross terms."
+      }
+    },
+    {
+      "rawOrdinalA": 53,
+      "rawOrdinalB": 54,
+      "reason": "Shared exponent terminology but inverse algebraic rules",
+      "status": "OPENING_PAGE_OBJECTIVES_REVIEWED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "lesson": "8-1",
+          "printedPagesReviewed": [
+            445,
+            446
+          ],
+          "pdfPagesReviewed": [
+            93,
+            94
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "lesson": "8-2",
+          "printedPagesReviewed": [
+            452,
+            453
+          ],
+          "pdfPagesReviewed": [
+            100,
+            101
+          ]
+        },
+        "contrast": "8-1 applies product-of-powers and power-of-a-power rules to multiply like bases; 8-2 applies quotient-of-powers, zero and negative exponent rules to divide powers. Keep both distinct skills."
+      }
+    },
+    {
+      "rawOrdinalA": 49,
+      "rawOrdinalB": 50,
+      "reason": "Both solve quadratic expressions, but leading coefficient regimes differ",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-6",
+          "printedPagesReviewed": [
+            405,
+            406
+          ],
+          "pdfPagesReviewed": [
+            53,
+            54
+          ]
+        },
+        "sourceB": {
+          "file": "02-1.pdf",
+          "sourceLesson": "7-7",
+          "printedPagesReviewed": [
+            412,
+            413
+          ],
+          "pdfPagesReviewed": [
+            60,
+            61
+          ]
+        },
+        "contrast": "7-6 factors monic quadratics x²+bx+c with unit leading coefficient. 7-7 factors ax²+bx+c with a != 1, requiring product-sum / grouping techniques. Preserve both mathematical targets.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 25,
+      "rawOrdinalB": 26,
+      "reason": "Both write linear equations, but canonical forms differ",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "4-2",
+          "printedPagesReviewed": [
+            226,
+            227
+          ],
+          "pdfPagesReviewed": [
+            237,
+            238
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "4-3",
+          "printedPagesReviewed": [
+            233,
+            234
+          ],
+          "pdfPagesReviewed": [
+            244,
+            245
+          ]
+        },
+        "contrast": "4-2 writes slope-intercept equations y=mx+b from points/slope; 4-3 starts with point-slope y-y1=m(x-x1), then converts forms. Distinct forms and derivation steps.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 28,
+      "rawOrdinalB": 29,
+      "reason": "Both solve basic linear inequalities, different algebraic operations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "5-1",
+          "printedPagesReviewed": [
+            259,
+            260
+          ],
+          "pdfPagesReviewed": [
+            270,
+            271
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "5-2",
+          "printedPagesReviewed": [
+            266,
+            267
+          ],
+          "pdfPagesReviewed": [
+            277,
+            278
+          ]
+        },
+        "contrast": "5-1 preserves inequality direction when adding/subtracting. 5-2 multiplies/divides and introduces direction reversal for negative factors. Preserve separate concept.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 34,
+      "rawOrdinalB": 38,
+      "reason": "Graphing systems versus strategy selection for practical simultaneous equations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "01.pdf",
+          "sourceLesson": "6-1",
+          "printedPagesReviewed": [
+            309,
+            310
+          ],
+          "pdfPagesReviewed": [
+            320,
+            321
+          ]
+        },
+        "sourceB": {
+          "file": "01.pdf",
+          "sourceLesson": "6-5",
+          "printedPagesReviewed": [
+            338,
+            339
+          ],
+          "pdfPagesReviewed": [
+            349,
+            350
+          ]
+        },
+        "contrast": "6-1 solves a pair of equations graphically and classifies solution counts by intersections. 6-5 selects elimination/substitution/graphing for modeled applications, with method-choice and contextual interpretation.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 78,
+      "rawOrdinalB": 84,
+      "reason": "Triangle classification versus congruence transformations",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-1",
+          "printedPagesReviewed": [
+            717,
+            718
+          ],
+          "pdfPagesReviewed": [
+            133,
+            134
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-7",
+          "printedPagesReviewed": [
+            776,
+            777
+          ],
+          "pdfPagesReviewed": [
+            191,
+            192
+          ]
+        },
+        "contrast": "13-1 classifies triangles by side lengths and angles. 13-7 develops congruence using translations, reflections and rotations. Distinct concepts.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending."
+      }
+    },
+    {
+      "rawOrdinalA": 81,
+      "rawOrdinalB": 82,
+      "reason": "Congruence proof criteria: side-based SSS/SAS versus angle-based ASA/AAS",
+      "status": "SOURCE_INTRO_OBJECTIVES_COMPARED",
+      "decision": "COMPLEMENTARY_SKILL",
+      "retainBoth": true,
+      "preserveUntilReviewed": false,
+      "evidence": {
+        "sourceA": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-4",
+          "printedPagesReviewed": [
+            744,
+            745
+          ],
+          "pdfPagesReviewed": [
+            160,
+            161
+          ]
+        },
+        "sourceB": {
+          "file": "03-1.pdf",
+          "sourceLesson": "13-5",
+          "printedPagesReviewed": [
+            755,
+            756
+          ],
+          "pdfPagesReviewed": [
+            170,
+            171
+          ]
+        },
+        "contrast": "13-4 proves triangle congruence by SSS and SAS. 13-5 begins at physically verified PDF p170 (= printed p755) and proves congruence by ASA and AAS; these have different givens and proof conditions.",
+        "reviewLimit": "Lesson opening and immediate examples were compared; full exercise-by-exercise parity is still pending.",
+        "pageLocatorVerification": "03-1.pdf: printed 754=PDF169 and 755=PDF170, verified from blue chapter 13-5 page; scanned physical offset changes at printed 755."
+      }
+    }
+  ],
+  "rule": "Do not remove or merge lesson based only on title, unit ID, or publisher year. Preserve complementary skills.",
+  "confirmedDeduplicatedSourceEntries": 1
+}

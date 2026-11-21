@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 21,
+  "unitOrdinal": 3,
+  "lessonOrdinalInUnit": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION",
+  "lessonTitleAr": "التغير الطردي",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188
+    ],
+    "pdfPages": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_SOURCE_LESSON_VISUALLY_READ",
+    "lessonSourceIndex": "01.pdf:3-4"
+  },
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_DIRECT_VARIATION_OBJECTIVES_TABLES_GRAPHS_AND_CONTEXT_REVIEWED",
+    "learningTargets": [
+      "y=kx and proportionality constant",
+      "origin graph and negative/positive constant",
+      "table constant ratio checks",
+      "fixed-rate real-life direct variation"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_ORIGIN_GRAPH_AND_8_COOLDOWN_PREPARED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u03-l04-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u03-l04-direct-variation-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u03l04-teacher-direct-variation-rubric.json",
+    "coolDownQuestions": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "EXISTING_RATIO_AND_COORDINATE_NUMERIC_SUPPORT_REUSED_STAGE_D_TESTS_WRITTEN",
+    "strategy": "REUSE_EXISTING_EXACT_NUMERIC_FAMILIES_WITH_TEACHER_REVIEW_FOR_CORE_GRAPH",
+    "allowedQuestionFamilies": [
+      "ratio.unit_rate.equivalent_ratio",
+      "geometry.coordinate.evaluate_linear_rule"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u03l04.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "GRADE9_GENERAL_U03L04_A_B_C_ARABIC_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T01:53:16.171Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:3-5"
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 73,
+  "unitOrdinal": 12,
+  "lessonOrdinalInUnit": 6,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:06:PERPENDICULAR-DISTANCE-MIDPOINTS",
+  "lessonTitleAr": "التعامدات والمسافة",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "primary": {
+      "file": "03-1.pdf",
+      "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "printedPages": [
+        695,
+        704
+      ],
+      "pdfPages": [
+        111,
+        120
+      ]
+    },
+    "supplementary": {
+      "file": "01.pdf",
+      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "sourceLesson": "7-3",
+      "printedPages": [
+        385,
+        394
+      ],
+      "pdfPages": [
+        396,
+        405
+      ]
+    },
+    "method": "DIRECT_LOCAL_GENERAL_STUDENT_BOOK_PAGE_SPANS_VISUALLY_REVIEWED",
+    "scope": "Original perpendicular point-line and parallel-line distances plus newer distinct point-point distances, midpoint and bisector. Full item-by-item runtime parity not asserted."
+  },
+  "stageA": {
+    "status": "TWO_TEXTBOOK_SOURCE_LEARNING_SKILL_SETS_REVIEWED_AND_DISTINCT_TARGETS_PRESERVED",
+    "learningTargets": [
+      "shortest point-to-line perpendicular distance",
+      "distance between parallel lines",
+      "coordinate point-to-point distance",
+      "one-dimensional absolute difference",
+      "segment midpoint",
+      "segment bisector vs perpendicular bisector"
+    ],
+    "supplementPreserved": "Latest 01.pdf 7-3 is not semantically discarded as duplicate of older 03-1.pdf 12-6"
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_EIGHT_ORIGINAL_TEACHER_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l06-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u12-l06-perpendicular-distance-midpoints-ar.html"
+    ],
+    "coolDownQuestions": 8,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "Distance from (4,2) to horizontal y=-1 is 3 at foot (4,-1)"
+      },
+      {
+        "q": 2,
+        "expected": "Parallel y=2 and y=-3 distance 5; perpendicular not slanted"
+      },
+      {
+        "q": 3,
+        "expected": "(1,1) to (4,5): distance sqrt(9+16)=5"
+      },
+      {
+        "q": 4,
+        "expected": "Midpoint (2.5,3)"
+      },
+      {
+        "q": 5,
+        "expected": "Number line -5 to 3 distance 8, midpoint -1"
+      },
+      {
+        "q": 6,
+        "expected": "Segment bisector passes midpoint; perpendicular bisector adds right angle"
+      },
+      {
+        "q": 7,
+        "expected": "Foot (1,1) from (0,2) to y=x, distance sqrt(2)"
+      },
+      {
+        "q": 8,
+        "expected": "Nonparallel lines do not retain a single fixed distance between them"
+      }
+    ],
+    "submission": "LOCAL_JSON_ONLY_NOT_AUTHENTICATED_PLATFORM"
+  },
+  "stageC": {
+    "status": "EXISTING_NUMERIC_PERPENDICULAR_AND_GRADIENT_PREREQUISITES_ONLY_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+      "geometry.coordinate.gradient_between_points"
+    ],
+    "strategy": "REUSE_NUMERIC_PREREQUISITES_KEEP_FREE_DISTANCE_AND_MIDPOINT_TEACHER_REVIEW",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u12l06.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "teacherReviewRequiredFor": [
+      "original perpendicular distance",
+      "latest point distance and midpoint",
+      "geometry drawing and proof"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_SOURCE_SKILL_AUTHORING_ONLY_NOT_PRODUCTION_OR_STAGE_D_RUNTIME_PASS",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-1"
+}

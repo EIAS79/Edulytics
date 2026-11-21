@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE-MOE-MATH/G9/General/ar",
+  "phase": "STAGE_D_TEACHER_ONLY_ARABIC_CONTENT_VISIBILITY",
+  "sourceLiteralParity": "UNKNOWN",
+  "targetCanonicalLessonCount": 82,
+  "digitalEligibleCount": 80,
+  "teacherOnlyCount": 2,
+  "teacherOnlyLessonCodes": [
+    "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+    "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF"
+  ],
+  "priorBug": "G9 Arabic content selection was coupled exclusively to READY_VERIFIED digital Practice registry, hiding both teacher-only lessons after tokened 80-lesson release",
+  "fix": "Require exact 2 G9 General teacher-only lesson codes and exact G9 digital release token for Arabic lesson content selection, without creating any Practice contracts or granting automated grading",
+  "negativeGuards": [
+    "no token or wrong token rejects both teacher-only identities",
+    "unlisted G9 General identity and Advanced identity rejected",
+    "US Common Core framework rejected",
+    "unapproved English-only legacy lessons rejected by exact G9 gate and Arabic academic selection"
+  ],
+  "unitTest": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs",
+  "unitTestHostedResult": "NOT_RUN",
+  "isolatedE2E": "NOT_RUN",
+  "productionWrites": 0,
+  "neonPublishedG9GeneralLessonsAtInspection": 0,
+  "publisherAtomicParityCertified": false,
+  "stageDClosed": false,
+  "releaseAuthorized": false
+}

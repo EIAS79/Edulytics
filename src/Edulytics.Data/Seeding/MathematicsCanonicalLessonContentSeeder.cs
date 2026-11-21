@@ -40,11 +40,28 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     public async Task SeedAsync(
         CancellationToken ct = default)
     {
-        var documents = LoadEmbeddedDocuments();
+        // Only exact disposable GitHub G9 can include Grade9 in global
+        // CleanSeed; production must use the explicit 0-to-82 scoped importer.
+        var isolatedG9Fixture =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G9", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+        var documents = LoadEmbeddedDocuments()
+            .Where(x => isolatedG9Fixture ||
+                !x.Lessons.Any(lesson => lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)))
+            .ToArray();
 
         // No reviewed runtime pack is safer than fabricated content.
         // Phase 29 remains open until approved packs are supplied.
-        if (documents.Count == 0)
+        if (documents.Length == 0)
             return;
 
         await SeedDocumentsAsync(documents, ct);
@@ -57,8 +74,25 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     /// </summary>
     public async Task SeedMetadataOnlyAsync(CancellationToken ct = default)
     {
-        var documents = LoadEmbeddedDocuments();
-        if (documents.Count == 0)
+        // Only exact disposable GitHub G9 can include Grade9 in global
+        // CleanSeed; production must use the explicit 0-to-82 scoped importer.
+        var isolatedG9Fixture =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G9", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+        var documents = LoadEmbeddedDocuments()
+            .Where(x => isolatedG9Fixture ||
+                !x.Lessons.Any(lesson => lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)))
+            .ToArray();
+        if (documents.Length == 0)
             return;
 
         // During the explicit one-shot 93-to-132 UAE G4 production release,
@@ -174,6 +208,42 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         await SeedDocumentsAsync(documents, ct, metadataOnly: true);
     }
 
+
+    /// <summary>
+    /// UAE Grade9 General first-party owner-approved 82 Arabic lessons.
+    /// Called only within the guarded Grade9 outer transaction; the JSON
+    /// content is served from the embedded authored pack and no copyrighted
+    /// publisher prose or translated exercise pages are persisted to Neon.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade9MetadataAsync(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+        var documents = LoadEmbeddedDocuments()
+            .Where(document => document.Lessons.Any(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+        foreach (var document in documents)
+        {
+            if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+                document.VersionCode != "MOE-2026-2027-T1" ||
+                document.AcademicLanguage != "ar" ||
+                document.TargetCurriculumPeriod != "2026-2027" ||
+                document.Status != CanonicalLessonContentStatus.Published)
+                throw new InvalidOperationException(
+                    "G9 scoped metadata requires one owner-approved Published first-party Arabic UAE pack.");
+            document.Lessons = document.Lessons.Where(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)).ToList();
+        }
+        if (documents.Length != 1 ||
+            documents[0].Lessons.Count != 82 ||
+            documents[0].Lessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal).Count() != 82)
+            throw new InvalidOperationException(
+                "G9 scoped metadata release requires exactly 82 unique Arabic lesson records.");
+
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
 
     /// <summary>
     /// The owner-approved 76-lesson Grade8 General Arabic cutover uses only

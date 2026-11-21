@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE-MOE-MATH/G9/General/ar",
+  "sourceRun": "https://github.com/EIAS79/Edulytics/actions/runs/44925786452",
+  "sourceRunSha": "8bf9522b8dce23cd97bb76e60a0b7e4c52fd5799",
+  "failureStep": "Authenticate disposable G9 General student, teacher, supervisor, school admin; test all lessons",
+  "failureStage": "school_adoption",
+  "rootCause": "G9 disposable UAE-secondary primary student was enrolled in first alphabetically ordered pathway (Advanced) despite G9 student scenario requiring General. The secondary student was assigned General but E2E logs in primary.",
+  "environmentGuard": [
+    "GITHUB_ACTIONS=true",
+    "EDULYTICS_CI_REHEARSAL=true",
+    "EDULYTICS_CI_REHEARSAL_PROGRAMME=UAE-G9",
+    "ASPNETCORE_ENVIRONMENT=Staging",
+    "database=edulytics_clean_ci",
+    "schoolKey=uae-secondary"
+  ],
+  "change": "Select General for primary G9 student only under exact disposable conditions, preserve UAE G5-G7 fixture logic, and expose scoped failure fields if it regresses",
+  "productionSchoolModified": false,
+  "productionDatabaseWrite": false,
+  "e2eRetest": "PENDING",
+  "releaseAllowed": false,
+  "sourceLiteralParity": "UNKNOWN"
+}

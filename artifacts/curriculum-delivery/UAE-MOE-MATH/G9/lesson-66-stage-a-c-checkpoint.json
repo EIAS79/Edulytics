@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 66,
+  "unitOrdinal": 11,
+  "lessonOrdinalInUnit": 3,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS",
+  "lessonTitleAr": "إثبات علاقات بين القطع المستقيمة",
+  "source": {
+    "primary": {
+      "file": "03-1.pdf",
+      "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "printedPages": [
+        624,
+        630
+      ],
+      "pdfPages": [
+        40,
+        46
+      ]
+    },
+    "supplementary": {
+      "file": "01.pdf",
+      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "sourceLessons": [
+        "7-2",
+        "7-4"
+      ],
+      "printedPages": [
+        [
+          374,
+          384
+        ],
+        [
+          398,
+          404
+        ]
+      ]
+    },
+    "review": "SOURCE_SCANNED_BOOK_SKILLS_NOT_PER_ITEM_RUNTIME_AUDITED"
+  },
+  "stageA": {
+    "status": "SOURCE_PROOF_AND_MEASUREMENT_OBJECTIVES_REVIEWED",
+    "skills": [
+      "segment addition and congruence",
+      "reflexive symmetric transitive proofs",
+      "measurement in mm cm precision",
+      "segments and algebraic unknowns"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AND_SIX_TEACHER_COOLDOWN_TASKS_PREPARED",
+    "coolDownQuestions": 6,
+    "teacherReviewRequired": [
+      "ruler precision",
+      "diagram and between-point justification",
+      "free and formal segment proofs"
+    ],
+    "studentRecord": "LOCAL_JSON_ONLY"
+  },
+  "stageC": {
+    "status": "LINEAR_EQUATION_NUMERIC_FAMILY_REUSED_PREPARED_STAGE_D_SPEC",
+    "families": [
+      "algebra.linear.ax_plus_b_equals_c"
+    ],
+    "testPath": "tests/academic-uae-grade9-arabic-u11l03.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "scope": "SOURCE_ARABIC_AUTHORING_NO_LIVE_EXERCISE_PARITY_CLAIM"
+}

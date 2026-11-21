@@ -232,28 +232,88 @@ def audit() -> dict[str, Any]:
         blockers.append(
             f"UAE Grade8 Advanced expected retired 0 or historical 77; got {grade8_advanced_count}"
         )
-    # The owner retired the exact 220 old UAE Grade9 General/Advanced
-    # learner identities. The Polish 1,569-lesson and other grades' counts
-    # remain unchanged; no Grade9 identity may be silently reseeded.
-    retired_grade9_count = sum(
-        str(row.get("lessonCode") or "").startswith(
-            ("PED:UAE-MOE-MATH:L9:", "PED:UAE:G9:"))
+    # The 220 historical Grade 9 lessons were permanently retired. Their
+    # return must fail, but the NEW owner-authored Grade 9 General Arabic
+    # candidate is an exact, different 82-lesson identity set (80 independently
+    # verified digital contracts and 2 separately evidenced teacher-only tasks).
+    # This remains a catalogue/Practice check, not textbook literal parity.
+    g9_prefix = "PED:UAE-MOE-MATH:L9:GENERAL:"
+    grade9_general_rows = [
+        row for row in rows
+        if str(row.get("lessonCode") or "").startswith(g9_prefix)
+    ]
+    grade9_general_count = len(grade9_general_rows)
+    legacy_grade9_rows = [
+        str(row.get("lessonCode") or "")
         for row in rows
-    )
-    if retired_grade9_count:
+        if str(row.get("lessonCode") or "").startswith("PED:UAE:G9:")
+        or (str(row.get("lessonCode") or "").startswith("PED:UAE-MOE-MATH:L9:")
+            and not str(row.get("lessonCode") or "").startswith(g9_prefix))
+    ]
+    if legacy_grade9_rows:
         blockers.append(
-            f"Owner-retired UAE Grade9 must contain zero lessons; got {retired_grade9_count}"
+            f"Retired UAE Grade9 legacy/Advanced lesson identities returned: "
+            f"{len(legacy_grade9_rows)}"
         )
+    if grade9_general_count not in (0, 82):
+        blockers.append(
+            "New Grade9 General Arabic catalogue must contain exactly 0 "
+            f"or 82 complete lessons, got {grade9_general_count}"
+        )
+
+    approved_teacher_only_codes = {
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+        "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+    }
+    non_standalone_rows = [
+        row for row in rows
+        if row.get("terminalPracticeStatus") == "NON_STANDALONE_WITH_EVIDENCE"
+    ]
+    expected_teacher_only_codes = (
+        approved_teacher_only_codes if grade9_general_count == 82 else set()
+    )
+    actual_teacher_only_codes = {
+        str(row.get("lessonCode") or "") for row in non_standalone_rows
+    }
+    if actual_teacher_only_codes != expected_teacher_only_codes:
+        blockers.append(
+            "Non-standalone exceptions differ from the two exact Grade9 "
+            "teacher-only source-based lesson identities"
+        )
+
+    if grade9_general_count == 82:
+        digital_rows = [
+            row for row in grade9_general_rows
+            if row.get("terminalPracticeStatus") == "READY_VERIFIED"
+            and row.get("independentG9OwnerScopedDigitalContractVerified") is True
+        ]
+        teacher_rows = [
+            row for row in grade9_general_rows
+            if str(row.get("lessonCode") or "") in approved_teacher_only_codes
+            and row.get("grade9TeacherReviewOnlyWithEvidence") is True
+            and row.get("practiceEligibility") == "NON_STANDALONE_WITH_EVIDENCE"
+            and row.get("terminalPracticeStatus") == "NON_STANDALONE_WITH_EVIDENCE"
+        ]
+        if len(digital_rows) != 80 or len(teacher_rows) != 2:
+            blockers.append(
+                "Grade9 General must have exactly 80 genuinely verified "
+                "digital contracts and 2 evidenced teacher-only lessons; "
+                f"found {len(digital_rows)} digital / {len(teacher_rows)} teacher"
+            )
     expected_catalogue_count = (
         5110 - 93 + grade4_count + grade12_count
         - 59 + grade6_count - 62 + grade7_count
         - 77 + grade8_general_count - (77 - grade8_advanced_count)
-        - 220
+        - 220 + grade9_general_count
     )
+    expected_teacher_only_count = (
+        2 if grade9_general_count == 82 else 0
+    )
+    expected_eligible_count = expected_catalogue_count - expected_teacher_only_count
     required_global = {
         "lessonCount": expected_catalogue_count,
-        "practiceEligibleLessonCount": expected_catalogue_count,
-        "READY_VERIFIED": expected_catalogue_count,
+        "practiceEligibleLessonCount": expected_eligible_count,
+        "READY_VERIFIED": expected_eligible_count,
         "internalBlockerCount": 0,
     }
     for key, expected in required_global.items():
@@ -263,9 +323,11 @@ def audit() -> dict[str, Any]:
                 f"global matrix {key} expected {expected}, got {actual}"
             )
 
-    if int(summary.get("nonStandaloneLessonCount", 0)) != 0:
+    if int(summary.get("nonStandaloneLessonCount", 0)) != expected_teacher_only_count:
         blockers.append(
-            "learner-facing full catalogue must have zero non-standalone lesson exclusions"
+            "Only the two exact source-evidenced Grade9 teacher-reviewed "
+            f"lessons may be non-standalone; expected {expected_teacher_only_count}, "
+            f"got {summary.get('nonStandaloneLessonCount', 0)}"
         )
     if int(summary.get("practiceEligibleBlockedCount", 0)) != 0:
         blockers.append(

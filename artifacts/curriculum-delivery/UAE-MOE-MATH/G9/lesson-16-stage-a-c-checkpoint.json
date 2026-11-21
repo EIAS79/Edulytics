@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 16,
+  "unitOrdinal": 2,
+  "lessonOrdinalInUnit": 8,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS",
+  "lessonTitleAr": "المعادلات الحرفية والتحليل البعدي",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131
+    ],
+    "pdfPages": [
+      137,
+      138,
+      139,
+      140,
+      141,
+      142
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_PDF_FULL_LESSON_SPAN_VISUALLY_READ",
+    "lessonSourceIndex": "01.pdf:2-8"
+  },
+  "stageA": {
+    "status": "SOURCE_LESSON_OBJECTIVES_EXAMPLES_VISUALLY_READ_AND_REUSED",
+    "learningTargets": [
+      "literal equation rearrangement",
+      "solving for variable on either side of formula",
+      "geometric formula rearrangement",
+      "dimensional analysis with multiple unit factors and compound speed units"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "sourceExerciseItemByItemNotClaimed": true,
+    "sourceExamplesMathReviewed": 5,
+    "scope": "Source lesson opening, explanations, examples, visuals and exercise categories reviewed; exact per-exercise generated question parity not claimed."
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_VISUAL_8_TEACHER_COOLDOWN_PREPARED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l08-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l08-literal-dimensional-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l08-teacher-cooldown-rubric.json",
+    "coolDownQuestions": 8,
+    "authenticatedSubmission": false,
+    "teacherReviewRequired": true
+  },
+  "stageC": {
+    "status": "EXISTING_NUMERIC_ENGINE_REUSED_CORE_SYMBOLIC_AND_UNITS_TEACHER_REVIEW_STAGE_D_TESTS_WRITTEN",
+    "strategy": "REUSE_NUMERIC_SUPPORT_ONLY_NO_NEW_ENGINE",
+    "allowedQuestionFamilies": [
+      "algebra.linear.ax_plus_b_equals_c",
+      "ratio.unit_rate.direct"
+    ],
+    "numericScope": "SUPPLEMENTAL_NOT_SYMBOLIC_LITERAL_AUTOGRADING",
+    "teacherReviewScope": "SYMBOLIC_FORMULA_SOLVING_AND_MULTI_UNIT_DIMENSIONAL_ANALYSIS",
+    "testSourcePaths": [
+      "tests/academic-uae-grade9-arabic-u02l08.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "GRADE9_GENERAL_U02L08_A_B_C_AUTHORING_ONLY_NOT_RUNTIME_VALIDATION",
+  "closedUtc": "2026-11-20T01:30:23.432Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:2-9"
+}

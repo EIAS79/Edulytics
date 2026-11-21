@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE-MOE-MATH Grade 9 General production read-only inventory",
+  "neonProject": "Edulytiks",
+  "neonProjectId": "tiny-lab-44877119",
+  "databaseBranch": "DEFAULT",
+  "queryMode": "READ_ONLY_SELECT_ONLY",
+  "counts": {
+    "generalGrade9PedagogicalLessons": 0,
+    "generalGrade9PackNodes": 0,
+    "generalGrade9Contents": 0,
+    "grade8GeneralLessons": 76
+  },
+  "sql": "SELECT (SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L9:GENERAL:%') AS general_grade9_pedagogical_lessons, (SELECT COUNT(*) FROM \"CurriculumPackContentNodes\" WHERE \"FrameworkCode\"='UAE-MOE-MATH' AND \"LogicalLevelFrom\"=9 AND \"Pathway\"='General') AS general_grade9_pack_nodes, (SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%') AS grade8_general_lessons, (SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPackContentNodes\" n ON c.\"LessonNodeId\"=n.\"Id\" WHERE n.\"FrameworkCode\"='UAE-MOE-MATH' AND n.\"LogicalLevelFrom\"=9 AND n.\"Pathway\"='General') AS grade9_contents",
+  "interpretation": "Grade 9 General is not present in production DB in these checked tables; GitHub prepared content alone is not production publication. Grade 8 rows must be protected.",
+  "productionWrites": 0,
+  "grade9StageDPublishVerified": false,
+  "readOnlyNote": "No student-level identifiers queried; only aggregate counts."
+}

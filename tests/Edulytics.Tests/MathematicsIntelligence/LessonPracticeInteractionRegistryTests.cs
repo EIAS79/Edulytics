@@ -83,6 +83,13 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g8.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(35, uaeGrade8.Length);
+        // Grade 9 General adds precisely 27 separately registered first-party
+        // presentation families. Protect the legacy baseline independently,
+        // rather than disguising the extra families as unexplained drift.
+        var uaeGrade9 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g9.general.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(27, uaeGrade9.Length);
         var grade8Symbolic = new HashSet<string>(StringComparer.Ordinal)
         {
             "uae.g8.u01.l03.monomial_multiply",
@@ -110,7 +117,8 @@ public sealed class LessonPracticeInteractionRegistryTests
             LessonPracticeInteractionRegistry.All.Count -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
             uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length -
-            uaeGrade6.Length - uaeGrade7.Length - uaeGrade8.Length);
+            uaeGrade6.Length - uaeGrade7.Length - uaeGrade8.Length -
+            uaeGrade9.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

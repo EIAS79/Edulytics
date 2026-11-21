@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 77,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE",
+  "lessonTitleAr": "إثبات تطابق المثلثات بضلع وضلع وضلع أو ضلع وزاوية وضلع (SSS/SAS)",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      744,
+      753
+    ],
+    "pdfPages": [
+      160,
+      169
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_CONTACT_SHEET_REVIEW",
+    "scope": "Source theorem objectives, examples and diagrams reviewed; all exercise-by-exercise and generated runtime parity not claimed"
+  },
+  "stageA": {
+    "status": "SOURCE_SSS_THREE_SIDES_SAS_INCLUDED_ANGLE_AND_SHARED_SIDE_REVIEWED",
+    "learningTargets": [
+      "SSS three corresponding side equalities",
+      "SAS two sides plus included angle",
+      "shared side reflexive",
+      "SSA is insufficient",
+      "CPCTC only after congruence"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_TEACHER_COOLDOWN_TASKS_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l04-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l04-sss-sas-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "SSS and corresponding vertex order"
+      },
+      {
+        "q": 2,
+        "expected": "SAS with 60° included angle between 6 and 8 sides"
+      },
+      {
+        "q": 3,
+        "expected": "Shared side reflexive completes three pairs for SSS"
+      },
+      {
+        "q": 4,
+        "expected": "Included angle mandatory; SSA is different"
+      },
+      {
+        "q": 5,
+        "expected": "SSA is insufficient in general, ambiguous triangle possible"
+      },
+      {
+        "q": 6,
+        "expected": "BC corresponds EF; CPCTC only after proof"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "REUSE_EXISTING_CONGRUENCE_CRITERION_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "geometry.congruence.identify_criterion"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l04.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "teacherReviewRequiredFor": [
+      "formal congruence proof",
+      "diagram construction",
+      "SSA disambiguation"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "STAGE_A_B_C_AUTHORING_ONLY_NO_STAGE_D_RUNTIME_PASS",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-5"
+}

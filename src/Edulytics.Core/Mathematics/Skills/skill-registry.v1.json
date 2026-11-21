@@ -7179,7 +7179,753 @@
       "v2QuestionFamilies": [
         "uae.g8.u05.l07.coordinate_plane_distance"
       ]
+    },
+    {
+      "id": "functions.graph.key_features",
+      "domain": "functions",
+      "canonicalName": "رياضيات الصف التاسع العام — تفسير التمثيل البياني للدالة",
+      "semantics": "فسّر منحنى الدالة بقراءة المحاور والوحدات أولًا، ثم صنف فترات التزايد والتناقص والثبات، وحدد القيم القصوى والتقاطعات داخل المجال المرسوم فقط، وربطها بالمعنى السياقي.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g6.u08.l03.linear_vs_square",
+        "uae.g6.u08.l03.y_intercept",
+        "uae.g6.u08.l03.equation_from_line",
+        "geometry.coordinate.y_intercept_from_rule"
+      ]
+    },
+    {
+      "id": "algebra.equations.write_from_context",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — كتابة المعادلات",
+      "semantics": "لكتابة معادلة من الكلمات أو الرسم أو الجدول: عرّف المجهول، مثّل الطرفين، ضع المساواة مع المحافظة على العمليات والأقواس، ثم تحقق من أن كل حد يطابق معنى العبارة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g6.u07.l02.write_tape_equation",
+        "uae.g6.u07.l02.subtraction_form"
+      ]
+    },
+    {
+      "id": "ratio.proportion.solve",
+      "domain": "ratio",
+      "canonicalName": "رياضيات الصف التاسع العام — النسب والتناسب",
+      "semantics": "النسبة مقارنة بالقسمة، والتناسب مساواة نسبتين. للحكم على تكافؤ نسبتين أو حل تناسب نستخدم الضرب التبادلي بعد التحقق من المقامات؛ نوحّد الوحدات في مسائل المعدل والمقياس ونتحقق بالتعويض.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.divide_total",
+        "uae.g9.general.u02.l06.two_sided_proportion"
+      ]
+    },
+    {
+      "id": "percent.change.calculate",
+      "domain": "percentages",
+      "canonicalName": "رياضيات الصف التاسع العام — النسبة المئوية للتغير",
+      "semantics": "التغير النسبي نسبة الفرق إلى القيمة الأصلية غير الصفرية. نسب الزيادة والنقصان والخصم والضريبة تختلف في التطبيق، لكن قيمة النسبة تحسب من الأساس المحدد؛ اذكر الاتجاه ووحدة الناتج.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.core.increase_decrease",
+        "percentages.core.of_quantity"
+      ]
+    },
+    {
+      "id": "algebra.formula.rearrange",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — المعادلات الحرفية والتحليل البعدي",
+      "semantics": "اعزل المتغير المطلوب بعمليات متكافئة مع شروط المجال، واستخدم عوامل تحويل تساوي واحدًا بحيث تختزل الوحدات ويظل البعد النهائي صحيحًا. الرسم الحر والتبرير الرمزي يراجعان من المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "ratio.unit_rate.direct"
+      ]
+    },
+    {
+      "id": "statistics.weighted_mean",
+      "domain": "statistics",
+      "canonicalName": "رياضيات الصف التاسع العام — المتوسط الحسابي المرجح",
+      "semantics": "اضرب كل قيمة في وزنها، اجمع، ثم اقسم على مجموع الأوزان. متوسط سرعة الرحلة=المسافة الكلية/الزمن الكلي. في الخلط نزن التراكيز بحسب الكميات، ونحتفظ بوحدات متسقة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.center_spread.mean"
+      ]
+    },
+    {
+      "id": "algebra.linear.graph",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — تمثيل المعادلات الخطية بيانيًا",
+      "semantics": "يمثل كل حل للمعادلة الخطية نقطة على مستقيم. إيجاد المقطع السيني عند ص=٠ والمقطع الصادي عند س=٠، أو تكوين جدول نقاط، يعطي رسمًا صحيحًا. الرسم الحر وتفسيره يراجعان من المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule"
+      ]
+    },
+    {
+      "id": "algebra.linear.solve_by_graphing",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — حل المعادلات الخطية بالتمثيل البياني",
+      "semantics": "الحل البياني للمعادلة هو المقطع السيني لرسم الفرق بين الطرفين، أو إحداثي س لنقطة تقاطع رسوميْهما. تحقق جبريًا، وميّز الحل الواحد وعدم وجود حل والحلول غير المحدودة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.gradient",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — معدل التغير والميل",
+      "semantics": "الميل=التغير في ص ÷ التغير في س عند تغير س غير صفري؛ موجب صاعد، سالب هابط، صفر أفقي، غير معرف رأسي. يجب أن يكون الميل ثابتًا بين نقطتين على المستقيم نفسه مع وحدة معدل التغير المناسبة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "algebra.linear.direct_variation",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — التغير الطردي",
+      "semantics": "التغير الطردي ص=ك س، ك=ص/س عند س غير صفري، ورسمه مستقيم يمر بالأصل. للتحقق من بيانات جدول يجب ثبات ص/س، ونمذجة المعدل الثابت في المسائل الحياتية.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "algebra.linear.proportionality",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — العلاقات التناسبية وغير التناسبية",
+      "semantics": "العلاقة التناسبية ص=ك س لها نسبة ثابتة وتمر بالأصل. قد تكون العلاقة خطية غير تناسبية إذا كان مقطعها غير صفري. نتحقق من النسبة والمقطع والرسم والسياق، مع إبقاء الرسوم والتفسيرات لمراجعة المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "algebra.linear.write_equation",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — كتابة المعادلات بصيغة الميل والمقطع",
+      "semantics": "اكتب ص=م س+ب. من ميل ونقطة ب=ص−م س؛ من نقطتين احسب الميل أولًا ثم ب، وتحقق من جميع النقاط. الخط الرأسي س=ثابت مستثنى من صيغة الميل والمقطع.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "algebra.linear.point_slope",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — كتابة المعادلات بصيغة النقطة والميل",
+      "semantics": "صيغة النقطة والميل ص−ص₁=م(س−س₁). من نقطتين احسب الميل أولًا، ثم عوض بأي نقطة صحيحة. تبسيط الصيغة يعطي صيغة الميل والمقطع، مع استثناء المستقيم الرأسي ذي الميل غير المعرف.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.line_relations",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — المستقيمات المتوازية والمتعامدة",
+      "semantics": "للمستقيمات غير الرأسية: الميل نفسه للموازاة، والسالب المقلوب للتعامد. المستقيم الأفقي عمودي على الرأسي. لإنشاء مستقيم يمر بنقطة حدد الميل ثم اكتب صيغة النقطة والميل وتحقق من المقطع.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.linear_rule",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — التمثيل البياني لمتباينات ذوات متغيرين",
+      "semantics": "الحدية خط مساواة، متقطع للمتباينات الصارمة ومتصل عندما تُشمل المساواة. اختبر نقطة خارج الحد، وظلل نصف المستوى المناسب. يمكن أن يكون الحد رأسيًا أو أفقيًا؛ تحقق بالتعويض.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.add_subtract",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — جمع كثيرات الحدود وطرحها",
+      "semantics": "اجمع أو اطرح معاملات الحدود المتشابهة فقط. قبل طرح كثيرة حدود، غيّر إشارة كل حد فيها. رتب الناتج وتحقق بتعويض قيمة إن لزم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l01.add_coefficient",
+        "uae.g9.general.u07.l01.subtract_coefficient"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.distribute_monomial",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — ضرب كثيرة حدود في حد",
+      "semantics": "وزع الحد الأحادي على جميع الحدود، ثم اضرب المعاملات واجمع أسس المتغير نفسه، واحفظ الإشارات.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g8.u01.l03.monomial_multiply"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.multiply_distribute",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — ضرب كثيرات الحدود",
+      "semantics": "اضرب كل حد في الأولى بكل حد في الثانية، ثم اجمع الحدود المتشابهة ورتب الناتج. التوزيع المنظم ونموذج المساحة يوفران وسيلتين مستقلتين للتحقق.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l03.multiply_coefficient"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.special_products",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — نواتج الضرب الخاصة",
+      "semantics": "مربع مجموع حدين: أ²+٢أب+ب². مربع الفرق: أ²−٢أب+ب². حاصل ضرب المترافقين: أ²−ب². يظل التوزيع الكامل وسيلة تحقق.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l04.square_binomial_coefficient",
+        "uae.g9.general.u07.l04.conjugate_product_coefficient"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.factor_gcf",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — استخدام خاصية التوزيع",
+      "semantics": "التوزيع والتحليل بحد مشترك عمليتان متعاكستان. اخرج أكبر عامل مشترك، ثم تحقق بالتوزيع. إذا أصبح حاصل ضرب عاملين صفرًا فكل عامل يمكن أن يساوي صفرًا.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g8.u01.l03.monomial_multiply",
+        "uae.g8.u01.l03.monomial_divide"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.factor_monic",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — حل معادلات من الصورة س²+ب س+ج=٠",
+      "semantics": "لتفكيك س²+ب س+ج نبحث عن عددين مجموعهما ب وحاصل ضربهما ج، ثم نحل كل عامل مساويًا للصفر. نتحقق بالتعويض ونراعي قيود المسألة الواقعية.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l06.monic_distinct_roots",
+        "uae.g9.general.u07.l06.monic_repeated_root"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.factor_nonmonic",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — حل معادلات من الصورة أ س²+ب س+ج=٠",
+      "semantics": "في أ س²+ب س+ج=٠ نستخدم أ×ج ونفك الحد الأوسط ونجمع الحدود لتحليل المقدار، ثم نحل كل عامل مساويًا للصفر ونراجع الجذور الكسرية أو الصحيحة بالتعويض.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l07.nonmonic_integer_roots"
+      ]
+    },
+    {
+      "id": "algebra.factor.difference_of_squares",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — الفرق بين مربعين",
+      "semantics": "فرق مربعين يعني أ²−ب²، وتحليله (أ−ب)(أ+ب). نراجع وجود عامل مشترك، ونتحقق بالنشر، ونستخدم حاصل الضرب الصفري إذا كان لدينا معادلة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l08.difference_squares_integer_roots"
+      ]
+    },
+    {
+      "id": "algebra.factor.perfect_square_trinomial",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — المربعات الكاملة",
+      "semantics": "المربع الكامل ثلاثي الحدود يتكون من مربعين وحدّ أوسط يساوي ±ضعف حاصل ضرب الجذرين. حل (تعبير)²=ر يتطلب فحص إشارة ر وإشارتَي الجذر إذا ر موجب.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u07.l06.monic_repeated_root",
+        "uae.g9.general.u07.l09.square_root_equation_integer_roots"
+      ]
+    },
+    {
+      "id": "algebra.exponent.product_rule",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — خواص ضرب الأسس",
+      "semantics": "في ضرب قوى الأساس نفسه نجمع الأسس؛ وفي قوة القوة نضرب الأسس؛ وفي قوة حاصل الضرب نرفع كل عامل إلى القوة. نضرب المعاملات ونراجع الأسس بالتعويض.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.powers10.multiply",
+        "supporting.powers10.evaluate"
+      ]
+    },
+    {
+      "id": "algebra.exponent.quotient_rule",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — خواص قسمة الأسس",
+      "semantics": "في قسمة قوى الأساس الواحد نطرح أس المقام من أس البسط بشرط الأساس غير الصفري. الأس صفر يعطي ١، والأس السالب يدل على مقلوب القوة، وقوة الكسر توزع على البسط والمقام.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.powers10.divide",
+        "supporting.powers10.missing_exponent"
+      ]
+    },
+    {
+      "id": "algebra.exponent.rational_power",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — الأسس النسبية",
+      "semantics": "الأس الكسري م/ن يعني الجذر النوني ثم القوة م، والأس السالب يعني المقلوب. افحص مجال الجذور وقيمة الأساس قبل التبسيط.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u08.l03.rational_positive_exact",
+        "uae.g9.general.u08.l03.rational_negative_exact"
+      ]
+    },
+    {
+      "id": "algebra.radical.simplify",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — تبسيط التعابير الجذرية",
+      "semantics": "استخرج العوامل المربعة من تحت الجذر، واستخدم خاصية ضرب الجذور غير السالبة، ولا توزع الجذر على الجمع. عند إنطاق المقام اضرب البسط والمقام بالعامل المناسب أو بالمرافق، وراجع المجال.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.surds.coefficient"
+      ]
+    },
+    {
+      "id": "algebra.radical.combine_like_terms",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — العمليات على التعابير الجذرية",
+      "semantics": "بسّط الجذور أولًا، واجمع معاملات الجذور المتشابهة فقط. اضرب بالتوزيع وقانون الجذور، ثم بسّط الناتج. المرافق يبسّط فرق المربعين، والمجالات مهمة عند المتغيرات.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u08.l06.like_radical_coefficient"
+      ]
+    },
+    {
+      "id": "sets.membership",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — مقدمة في نظرية المجموعات",
+      "semantics": "حدد عناصر المجموعة بدقة واكتبها بالسرد أو الوصف بالخاصية. رمزا الانتماء ∈ وعدم الانتماء ∉، وعدد العناصر يحسب المتميز فقط. الترتيب والتكرار لا يغيران المجموعة، والمجموعة الخالية ليس لها عناصر.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u09.l01.set_membership_cardinality"
+      ]
+    },
+    {
+      "id": "sets.union_intersection_difference",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — المجموعات الجزئية والعمليات على المجموعات",
+      "semantics": "الجزئية تعني احتواء جميع العناصر، والجزئية الحقيقية تشترط عدم المساواة. الاتحاد يجمع دون تكرار، والتقاطع يحدد المشترك، والفرق اتجاهي، والمتممة تعتمد على المجموعة الشاملة. عدد عناصر الاتحاد يطرح عناصر التقاطع مرة واحدة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u09.l02.set_operation_cardinality"
+      ]
+    },
+    {
+      "id": "sets.venn_diagram",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — استخدام مخططات فن لدراسة العمليات على المجموعات",
+      "semantics": "المخطط يوضح عضوية العناصر ومناطق العمليات على مجموعتين أو ثلاث. ظلّل بعد تحديد الشاملة والأقواس ومعنى الاتحاد والتقاطع والفرق والمتممة، وراجع منطقة كل عنصر. التبرير والرسم يراجعهما المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u09.l02.set_operation_cardinality"
+      ]
+    },
+    {
+      "id": "sets.finite_infinite",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — المجموعات غير المنتهية",
+      "semantics": "المجموعات الطبيعية والزوجية والأعداد الصحيحة غير منتهية وقابلة للعد؛ يمكن إقامة مراسلة واحد لواحد بين الطبيعية والزوجية ن↦٢ن. الأعداد الحقيقية في فترة غير فارغة غير قابلة للعد. تصنيف المثال العددي يمكن أن يُصحح آليًا، أما المراسلات والبراهين والتفسير فيراجعها المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u09.l05.finite_infinite_classification"
+      ]
+    },
+    {
+      "id": "reasoning.inductive",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — التبرير الاستقرائي والتخمين",
+      "semantics": "لاحظ أنماط الأعداد أو الأشكال، اقترح تخمينًا، ثم اختبره. الفرق الثابت والنسبة الثابتة يساعدان على توليد حدود في أنماط خاصة، أما الأمثلة المضادة فتنقض التخمينات العامة، والأمثلة المؤيدة وحدها ليست برهانًا.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.geometric_nth_term"
+      ]
+    },
+    {
+      "id": "logic.truth_values",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — المنطق",
+      "semantics": "العبارة المنطقية لها قيمة صدق أو كذب. النفي يعكس القيمة، والوصل يتطلب صدق الطرفين، والفصل الشامل يتطلب صدق أحدهما على الأقل. استعمل جدولًا من أربع حالات للتحقق من العبارات المركبة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u10.l02.logic_truth_tables"
+      ]
+    },
+    {
+      "id": "logic.conditionals",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — العبارات الشرطية",
+      "semantics": "الشرطية p⇒q تخطئ فقط إذا صدق الفرض وكذبت النتيجة. العكس q⇒p والمعكوس ¬p⇒¬q والمقابل المعاكس ¬q⇒¬p؛ الأصلية تكافئ مقابلها المعاكس. الثنائية p⇔q صادقة عندما تتطابق القيم. المثال المضاد يفند الشرطية إذا حقق الفرض دون النتيجة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u10.l03.conditional_truth_tables"
+      ]
+    },
+    {
+      "id": "reasoning.deductive",
+      "domain": "algebra",
+      "canonicalName": "رياضيات الصف التاسع العام — التبرير الاستنتاجي",
+      "semantics": "التبرير الاستنتاجي يستعمل قواعد صحيحة للوصول إلى نتائج لازمة. من أدواته قانون الفصل (p⇒q مع p ينتج q) وقانون القياس (p⇒q وq⇒r ينتج p⇒r). لا تؤكد التالي ولا تنكر المقدم، واذكر مبرر كل خطوة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u10.l03.conditional_truth_tables"
+      ]
+    },
+    {
+      "id": "geometry.incidence_postulates",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — المسلمات والبراهين الحرة",
+      "semantics": "اربط النقاط والمستقيمات والمستويات بمسلمات واضحة، واكتب البرهان الحر من المعطيات عبر مبررات صحيحة إلى نتيجة. تثبت مسلمات المستوى العلاقات الأساسية؛ التبرير الهندسي والرسم المفتوح يخضعان لمراجعة المعلم.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g9.general.u11.l01.incidence_postulates"
+      ]
+    },
+    {
+      "id": "geometry.segment_addition",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — إثبات علاقات بين القطع المستقيمة",
+      "semantics": "المسلمة أج=أب+بج تعتمد على وقوع ب بين أ وج. التطابق يعني تساوي الطول ويخضع للانعكاس والتناظر والتعدي. عند القياس استخدم الوحدات والدقة المناسبة، وعند البرهان برر كل خطوة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ]
+    },
+    {
+      "id": "geometry.angles.vertical",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — إثبات علاقات بين الزوايا",
+      "semantics": "مسلمة جمع الزوايا تضيف قياسات الزوايا المجاورة داخل زاوية. الزوج الخطي مجموع قياسيه ١٨٠°، والمتتامتان ٩٠°، والمتقابلتان بالرأس متطابقتان. استخدم خواص المساواة لإثبات العلاقات دون الاعتماد على الشكل وحده.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g7.u07.vertical_angle",
+        "usccss.g7.u07.complementary_angle"
+      ]
+    },
+    {
+      "id": "geometry.lines.parallel_intersect",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — المستقيمات المتوازية والمتقاطعة",
+      "semantics": "المستقيمان المتوازيان في مستوى واحد ولا يلتقيان؛ المتخالفان ليسا في مستوى واحد ولا يلتقيان؛ المتقاطعان يلتقيان في نقطة. القاطع ينتج أزواجًا من الزوايا المتناظرة والمتبادلة داخليًا وخارجيًا والمتحالفة داخليًا، وتصنيفها يعتمد على موضعها.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ]
+    },
+    {
+      "id": "geometry.angles.parallel_lines",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — الزوايا والمستقيمات المتوازية",
+      "semantics": "التوازي مع القاطع يعطي تطابق الزوايا المتناظرة والمتبادلة داخليًا وخارجيًا، وتكامل المتحالفتين داخليًا. العكس يساعد على إثبات التوازي عندما تتوافر شروط نوع الزوج.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.gradient_between_points",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — ميل الخط المستقيم",
+      "semantics": "الميل=التغير الرأسي/التغير الأفقي. الأفقي ميله صفر والرأسي غير معرف؛ للمتوازيين ميل متساوٍ وللمتعامدين ميلان سالبا المقلوب حيث يُعرّفان. يشير ميل الرسم إلى معدل التغير.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.y_intercept_from_rule",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — معادلات المستقيم",
+      "semantics": "الميل والمقطع: ص=م س+ب. الميل والنقطة: ص−ص١=م(س−س١). من نقطتين نحسب الميل ثم نعوّض. الأفقي ص ثابت والرأسي س ثابت. تحقق بالتعويض وتفسير المقطع والميل.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "geometry.distance.perpendicular_point_line",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — التعامدات والمسافة",
+      "semantics": "أقصر بعد من نقطة لمستقيم هو العمود، والمسافة بين متوازيين عمودية وثابتة. المسافة بين نقطتين جذر مجموع مربعي التغيرين، والمنتصف متوسط إحداثيي النقطتين. فرق بين منصف القطعة والمنصف العمودي.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "geometry.triangles.classify_by_sides",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — تصنيف المثلثات",
+      "semantics": "تُصنّف المثلثات حسب الزوايا: حادة أو قائمة أو منفرجة؛ وحسب الأضلاع: مختلفة أو متساوية الساقين أو متساوية الأضلاع. كل مثلث له مجموع زوايا ١٨٠° ويجب أن تحقق أطوال أضلاعه شرط المثلث.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g3.u13.l04.triangle_types"
+      ]
+    },
+    {
+      "id": "geometry.triangles.interior_angle_sum",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — زوايا المثلثات",
+      "semantics": "مجموع زوايا المثلث الداخلية ١٨٠°؛ الخارجية تساوي مجموع البعيدتين وتكمل الداخلية المجاورة إلى ١٨٠°. منصف الزاوية يقسم قياسها بالتساوي.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u16.l06.triangle_missing_angle",
+        "geometry.angles.supplementary"
+      ]
+    },
+    {
+      "id": "geometry.congruence.corresponding_parts",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — المثلثات المتطابقة",
+      "semantics": "المثلثان المتطابقان يتساويان في الأجزاء المتناظرة. ترتيب الرؤوس ضروري لتحديد الضلع أو الزاوية المناظرة، وCPCTC تطبَّق بعد إثبات تطابق المثلثين.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.triangle_congruence.sss",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — إثبات تطابق المثلثات بضلع وضلع وضلع أو ضلع وزاوية وضلع",
+      "semantics": "SSS يتطلب ثلاثة أزواج من الأضلاع المتطابقة. SAS يتطلب زوجي أضلاع والزاوية المحصورة. SSA ليست قاعدة عامة. برهن التطابق أولًا ثم استخدم CPCTC.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.triangle_congruence.asa",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — إثبات تطابق المثلثات بزاويتين والضلع المحصور أو غير المحصور (ASA/AAS)",
+      "semantics": "ASA زاويتان وضلع بينهما. AAS زاويتان وضلع غير محصور. AAA وحدها لا تثبت التطابق. احفظ المراسلة ثم استعمل CPCTC بعد إثبات تطابق المثلثين.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.triangles.isosceles_base_angle",
+      "domain": "geometry",
+      "canonicalName": "رياضيات الصف التاسع العام — المثلثات متساوية الساقين ومتساوية الأضلاع",
+      "semantics": "الزاويتان المقابلتان للساقين المتساويتين متساويتان والعكس. المثلث المتساوي الأضلاع زواياه الثلاث ٦٠°. الحساب باستعمال ١٨٠° والمساواة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u16.l06.triangle_missing_angle",
+        "uae.g3.u13.l04.triangle_types"
+      ]
     }
-
   ]
 }

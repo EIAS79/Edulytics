@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics | الصف التاسع العام | تحليل المعادلات التربيعية</title>
+<style>
+:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#16324f;background:#f3f7fc}
+*{box-sizing:border-box}body{margin:0}main{max-width:890px;margin:auto;padding:1.4rem}section{background:white;border:1px solid #d3dfed;border-radius:12px;padding:1.2rem;margin:1rem 0}p,li{line-height:1.9}.eq{direction:ltr;unicode-bidi:isolate;display:inline-block}label{font-weight:650}textarea{width:100%;font:inherit;display:block;direction:rtl;min-height:70px;padding:.6rem;margin:.4rem 0 1rem;border:1px solid #879bb3;border-radius:6px}button{font:inherit;padding:.7rem 1rem;background:#135080;color:#fff;border:0;border-radius:7px}button:focus-visible,textarea:focus-visible{outline:3px solid #b96a17}#status{white-space:pre-wrap}
+</style></head><body><main>
+<header><p>المنهج الوزاري الإماراتي | الصف التاسع العام | الوحدة السابعة | الدرس ٧–٦</p>
+<h1>حل معادلات من الصورة <span class="eq">س²+ب س+ج=٠</span></h1>
+<p>نبحث عن عددين مجموعهما معامل س، وحاصل ضربهما الحد الثابت، ثم نستعمل خاصية حاصل الضرب الصفري.</p></header>
+<section><h2>مثال محلول</h2>
+<p><span class="eq">س²+٧س+١٢=٠</span>. العددان ٣ و٤ مجموعهما ٧ وحاصل ضربهما ١٢، ومنه <span class="eq">(س+٣)(س+٤)=٠</span>. إذن س=−٣ أو س=−٤.</p>
+<p>الحل لا يكتمل دون التحقق بالتعويض في المعادلة الأصلية.</p>
+</section>
+<section><h2>تدريب التحليل والتحقق</h2>
+<p>حل <span class="eq">س²−س−١٢=٠</span>. اكتب العددين اللذين مجموعهما −١ وحاصل ضربهما −١٢، ثم حل بالعاملين وتحقق.</p>
+<label for="factorAnswer">التحليل والحلول وخطوات التحقق</label><textarea id="factorAnswer" placeholder="العاملان، الجذور، والتحقق"></textarea>
+<p>حل <span class="eq">س²−٨س+١٦=٠</span>، وبيّن سبب وجود جذر مكرر.</p>
+<label for="repeatAnswer">الجذر المكرر وسببه</label><textarea id="repeatAnswer"></textarea>
+</section>
+<section aria-labelledby="cooldown"><h2 id="cooldown">تقويم ختامي (Cool-down)</h2>
+<ol>
+<li>حل <span class="eq">س²+٥س+٦=٠</span> بالتحليل وتحقق من الجذرين.</li>
+<li>حل <span class="eq">س²−٦س+٩=٠</span> واكتب عدد الجذور المختلفة.</li>
+<li>هل التحليل <span class="eq">(س−٢)(س+٣)</span> يساوي <span class="eq">س²+س−٦</span>؟ أثبت بالتوزيع ثم حل المعادلة الناتجة عندما يساوي حاصل الضرب صفرًا.</li>
+<li>في مسألة مستطيل أبعاده <span class="eq">(س+٣)</span> و<span class="eq">(س+٤)</span>، فسّر لماذا يجب فحص قيود الأطوال قبل قبول الجذور الناتجة عن مساواة المساحة بالصفر.</li>
+</ol>
+<form id="teacherReview"><label for="q1">١. العاملان والتحقق</label><textarea id="q1" required></textarea>
+<label for="q2">٢. الجذر المكرر</label><textarea id="q2" required></textarea>
+<label for="q3">٣. التوزيع وحاصل الضرب الصفري</label><textarea id="q3" required></textarea>
+<label for="q4">٤. التفسير الواقعي</label><textarea id="q4" required></textarea>
+<button type="submit">تجهيز الإجابات لمراجعة المعلم</button></form>
+<label for="submission">السجل المحلي — ليس تصحيحًا آليًا</label><textarea id="submission" readonly rows="9" aria-describedby="status"></textarea>
+<p id="status" aria-live="polite"></p>
+</section><footer>نشاط عربي أصلي يحقق مهارات كتاب الطالب العام 02-1.pdf، الصفحات المطبوعة ٤٠٥–٤١١. المعلم يراجع خطوات التحليل والتبرير.</footer></main>
+<script>
+'use strict';
+document.getElementById('teacherReview').addEventListener('submit',event=>{
+ event.preventDefault();
+ const ids=['factorAnswer','repeatAnswer','q1','q2','q3','q4'];
+ const answers=ids.map(id=>({question:id,response:document.getElementById(id).value.trim()}));
+ if(answers.slice(2).some(x=>!x.response)){document.getElementById('status').textContent='أكمل الأسئلة الأربعة في التقويم الختامي.';return;}
+ const payload={lesson:'UAE-MOE-MATH/G9/General/7-6',review:'TEACHER_REVIEW_REQUIRED',graded:false,answers};
+ document.getElementById('submission').value=JSON.stringify(payload,null,2);
+ document.getElementById('status').textContent='تم تجهيز سجل الإجابات على الجهاز فقط؛ انسخه وقدمه للمعلم. لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
+});
+</script></body></html>

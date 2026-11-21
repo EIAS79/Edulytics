@@ -60,6 +60,45 @@ public static class LessonContentPolicy
         contract is not null &&
         string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal);
 
+    // Stage D Grade 9 General Arabic must be an explicitly verified identity.
+    // The UAE framework default language is English, so a broad prefix alone
+    // must never publish a legacy English or draft Grade 9 lesson.
+    public static bool IsUaeGrade9GeneralScope(
+        string frameworkCode, string? lessonCode) =>
+        string.Equals(frameworkCode,
+            MathematicsCurriculumPackRegistry.UaeCode, StringComparison.Ordinal) &&
+        lessonCode is not null &&
+        lessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
+
+    // Two first-party Arabic lessons in the approved 82-item G9 General
+    // index require teacher-reviewed geometry, not automated Practice. Their
+    // educational pages still belong in the 82-page student course when the
+    // explicit G9 release token is present. Never use a broad G9 prefix:
+    // unlisted legacy English or draft identities remain hidden.
+    public static bool IsUaeG9TeacherOnlyArabicLesson(
+        string frameworkCode, string? lessonCode, string? practiceReleaseToken) =>
+        IsUaeGrade9GeneralScope(frameworkCode, lessonCode) &&
+        string.Equals(practiceReleaseToken,
+            "CONFIRM_RELEASE_UAE_GRADE9_GENERAL_80_DIGITAL_PRACTICE",
+            StringComparison.Ordinal) &&
+        (string.Equals(lessonCode,
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+            StringComparison.Ordinal) ||
+         string.Equals(lessonCode,
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+            StringComparison.Ordinal));
+
+    public static bool IsUaeG9ArabicLesson(
+        string frameworkCode, string? lessonCode) =>
+        IsUaeGrade9GeneralScope(frameworkCode, lessonCode) &&
+        ((LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract) &&
+          contract is not null &&
+          string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal)) ||
+         IsUaeG9TeacherOnlyArabicLesson(frameworkCode, lessonCode,
+             Environment.GetEnvironmentVariable(
+                 "EDULYTICS_G9_DIGITAL_PRACTICE_RELEASE")));
+
     // Owner-approved UAE G6 General Arabic (128 lessons) is independently
     // authored and published without invented formal outcome mappings.
     // The general UAE/Cambridge Supporting-lesson exclusion stays in force.
@@ -71,7 +110,9 @@ public static class LessonContentPolicy
         string? lessonCode = null) =>
         (IsUaeGrade7GeneralScope(frameworkCode, lessonCode)
             ? IsUaeG7ArabicLesson(frameworkCode, lessonCode)
-            : !isSupporting ||
+            : IsUaeGrade9GeneralScope(frameworkCode, lessonCode)
+                ? IsUaeG9ArabicLesson(frameworkCode, lessonCode)
+                : !isSupporting ||
         (string.Equals(frameworkCode,
              MathematicsCurriculumPackRegistry.UaeCode,
              StringComparison.Ordinal) &&

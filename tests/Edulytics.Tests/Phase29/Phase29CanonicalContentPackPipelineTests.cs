@@ -579,7 +579,7 @@ public sealed class Phase29CanonicalContentPackPipelineTests
     }
 
     [Fact]
-    public void OwnerRetiredUaeGrade9CannotBeLoadedFromEmbeddedLessonPacks()
+    public void RetiredUaeGrade9LegacyRemainsAbsentAndNewGeneralHasExact82AuthoredSources()
     {
         var lessons = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -589,8 +589,9 @@ public sealed class Phase29CanonicalContentPackPipelineTests
 
         Assert.DoesNotContain(lessons, x =>
             x.LessonCode.StartsWith("PED:UAE:G9:", StringComparison.Ordinal) ||
-            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:", StringComparison.Ordinal));
-
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:ADVANCED:", StringComparison.Ordinal));
+        Assert.Equal(82, lessons.Count(x =>
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)));
         Assert.Contains(lessons, x =>
             x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal));
     }

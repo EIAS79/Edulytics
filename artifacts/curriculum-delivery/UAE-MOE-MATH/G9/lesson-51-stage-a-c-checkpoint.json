@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 51,
+  "unitOrdinal": 8,
+  "sourceLessonRef": "02-1.pdf:8-3",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS",
+  "lessonTitleAr": "الأسس النسبية",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467
+  ],
+  "sourcePdfPages": [
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_BOOK_PAGES_460_467_VISUALLY_REVIEWED",
+    "skills": [
+      "rational exponent as nth root and numerator power",
+      "negative rational exponents and reciprocal",
+      "odd/even root domain",
+      "exact integer and fractional answers",
+      "applied models and domain explanations"
+    ],
+    "sourceReviewScope": "Direct eight-page book contact-sheet review and existing pack mapping; not exhaustive exercise-to-item digital parity"
+  },
+  "stageB": {
+    "status": "ARABIC_EXISTING_PACK_AND_RICHV2_EXTENDED_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u08-l03-ar.rich-lesson-v2.json",
+    "studentLab": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u08-l03-rational-exponents-ar.html",
+    "cooldownQuestions": 5,
+    "teacherReview": "Original free-form explanations and domain reasoning reviewed by teacher; local answer record, not authenticated platform submission"
+  },
+  "stageC": {
+    "status": "EXISTING_RATIONAL_EXPONENT_FAMILIES_REUSED_AND_CONTRACT_WIRED",
+    "families": [
+      "uae.g9.general.u08.l03.rational_positive_exact",
+      "uae.g9.general.u08.l03.rational_negative_exact"
+    ],
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "independentVerifier": "src/Edulytics.Services/Mathematics/UaeG9RationalExponentQuestions.cs",
+    "teacherReviewRequired": [
+      "signed base parity",
+      "non-real even roots",
+      "symbolic/irrational powers and proofs",
+      "real-life interpretation"
+    ],
+    "testPaths": [
+      "tests/academic-uae-grade9-arabic-u08l03.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NOT_RUNTIME_TESTED",
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "productionPublished": false,
+  "closedUtc": "2026-11-20T15:45:42.556Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}

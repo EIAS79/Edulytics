@@ -369,7 +369,23 @@ internal static class MeetingDemoProvisioner
         // school data outside disposable GitHub PostgreSQL rehearsals.
         var isUaeG8Ci = disposableCi &&
             string.Equals(ciProgramme, "UAE-G8", StringComparison.Ordinal);
-        var activeSchools = isUaeG8Ci
+        // UAE G9 uses ONLY disposable PostgreSQL with a Grade9 General
+        // Arabic secondary-school adoption and a foreign US school tenant.
+        // The permanent school fixture remains unchanged.
+        var isUaeG9Ci = disposableCi &&
+            string.Equals(ciProgramme, "UAE-G9", StringComparison.Ordinal);
+        var activeSchools = isUaeG9Ci
+            ? Schools.Where(s => s.Key is "uae-secondary" or "commoncore-secondary")
+                .Select(s => s.Key == "uae-secondary"
+                    ? s with
+                    {
+                        DefaultCulture = "ar",
+                        PrimaryLoginLogicalLevel = 9,
+                        SecondaryLoginLogicalLevel = 10,
+                        SecondaryLoginPathway = "General"
+                    }
+                    : s).ToArray()
+            : isUaeG8Ci
             ? Schools.Where(s => s.Key is "uae-middle" or "commoncore-middle")
                 .Select(s => s.Key == "uae-middle"
                     ? s with
@@ -1344,19 +1360,26 @@ DELETE FROM "Schools";
         var primaryLoginClass = SelectLoginClass(
             classes,
             definition.PrimaryLoginLogicalLevel,
-            // UAE-G5 disposable CI must authenticate the General learner, not
-            // the alphabetically first Advanced class. Do not alter live/demo tenants.
-            definition.Key == "uae-primary" &&
+            // In disposable G5-G7 and G9 rehearsals the login student's
+            // adoption must be General, not the alphabetically first Advanced
+            // class. This exact CI/environment/database guard never modifies
+            // permanent demo or production school pathway selection.
+            (definition.Key == "uae-primary" ||
+             definition.Key == "uae-secondary") &&
             string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
                 "true", StringComparison.OrdinalIgnoreCase) &&
             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
                 "true", StringComparison.OrdinalIgnoreCase) &&
-            (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G5", StringComparison.Ordinal) ||
-             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G6", StringComparison.Ordinal) ||
-             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G7", StringComparison.Ordinal)) &&
+            ((definition.Key == "uae-primary" &&
+              (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G5", StringComparison.Ordinal) ||
+               string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G6", StringComparison.Ordinal) ||
+               string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G7", StringComparison.Ordinal))) ||
+             (definition.Key == "uae-secondary" &&
+              string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G9", StringComparison.Ordinal))) &&
             string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 "Staging", StringComparison.Ordinal) &&
             string.Equals(db.Database.GetDbConnection().Database,

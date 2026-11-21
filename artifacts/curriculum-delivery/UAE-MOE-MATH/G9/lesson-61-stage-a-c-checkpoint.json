@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 61,
+  "unitOrdinal": 10,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC",
+  "lessonTitleAr": "المنطق",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      569,
+      570,
+      571,
+      572,
+      573,
+      574,
+      575,
+      576
+    ],
+    "pdfPages": [
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_PAGE_VISUAL_REVIEW",
+    "scope": "Truth values, conjunction/disjunction/negation and table source examples reviewed; full source item fidelity not claimed"
+  },
+  "stageA": {
+    "status": "SOURCE_LOGIC_PROPOSITION_AND_TRUTH_TABLE_OBJECTIVES_REVIEWED",
+    "skills": [
+      "identify statements with a truth value",
+      "evaluate negation",
+      "evaluate conjunction and inclusive disjunction",
+      "complete all four rows of truth table and reason on sets"
+    ],
+    "teacherOpenSourceNotes": "Diagram and contextual propositions teacher reviewed"
+  },
+  "stageB": {
+    "status": "ARABIC_SOURCE_PACK_RICHV2_AND_SIX_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u10-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u10-l02-logic-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherReviewRequired": [
+      "open-language statements",
+      "truth table explanations",
+      "Venn diagram modelling"
+    ]
+  },
+  "stageC": {
+    "status": "SHARED_EXACT_ENGINE_EXTENDED_WITH_INDEPENDENT_TRUTH_TABLE_VERIFIER",
+    "family": "uae.g9.general.u10.l02.logic_truth_tables",
+    "questionEngine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "skillMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "testPath": "tests/academic-uae-grade9-arabic-u10l02.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "ARABIC_SOURCE_A_B_C_AUTHORING_ONLY_NO_RUNTIME_PASS"
+}

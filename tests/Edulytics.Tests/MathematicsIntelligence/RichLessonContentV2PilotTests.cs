@@ -112,7 +112,7 @@ public sealed class RichLessonContentV2PilotTests
             .ThenBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
 
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220, dossiers.Length);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 + 82, dossiers.Length);
         Assert.DoesNotContain(
             dossiers,
             dossier =>
@@ -262,12 +262,14 @@ public sealed class RichLessonContentV2PilotTests
     }
 
     [Fact]
-    public void OwnerRetiredUaeGrade9HasNoRichV2Lesson()
+    public void OwnerRetiredLegacyUaeGrade9HasNoRichV2AndNewGeneralHasExact82()
     {
-        Assert.DoesNotContain(
-            RichLessonContentV2Registry.AllDocuments.SelectMany(x => x.Lessons),
-            x => x.LessonCode.StartsWith("PED:UAE:G9:", StringComparison.Ordinal) ||
-                 x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:", StringComparison.Ordinal));
+        var lessons = RichLessonContentV2Registry.AllDocuments.SelectMany(x => x.Lessons).ToArray();
+        Assert.DoesNotContain(lessons, x =>
+            x.LessonCode.StartsWith("PED:UAE:G9:", StringComparison.Ordinal) ||
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:ADVANCED:", StringComparison.Ordinal));
+        Assert.Equal(82, lessons.Count(x =>
+            x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal)));
     }
 
     [Fact]

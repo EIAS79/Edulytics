@@ -224,32 +224,40 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     grade6 = "PED:UAE-MOE-MATH:L6:GENERAL:"
     grade7 = "PED:UAE-MOE-MATH:L7:GENERAL:"
     grade8 = "PED:UAE-MOE-MATH:L8:GENERAL:"
+    grade9 = "PED:UAE-MOE-MATH:L9:GENERAL:"
     supplemental = {code for code in by_code if code.startswith(grade12)}
     grade4_replacement = {code for code in by_code if code.startswith(grade4)}
     grade6_replacement = {code for code in by_code if code.startswith(grade6)}
     grade7_replacement = {code for code in by_code if code.startswith(grade7)}
     grade8_replacement = {code for code in by_code if code.startswith(grade8)}
+    grade9_first_party = {code for code in by_code if code.startswith(grade9)}
     untouched_base = (set(by_code) - supplemental -
                       grade4_replacement - grade6_replacement -
-                      grade7_replacement - grade8_replacement)
-    # Lock every independently approved scope, including the G8 one-lesson
-    # retirement: 4,522 identifiers belong to unaffected programmes after deleting exactly 220 UAE G9 lessons.
-    # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5009 or len(supplemental) != 73 or
+                      grade7_replacement - grade8_replacement -
+                      grade9_first_party)
+    # Preserve the 5,009 pre-G9 embedded identities and make the new G9
+    # owner-authored 82 an explicit independent scope. Do not treat these as
+    # 82 additional old-programme lessons or certify third-party item parity.
+    # The Grade9 source/structural, 80-digital/2-teacher and authenticated
+    # release gates remain separate and mandatory.
+    if (len(by_code) != 5091 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
-        len(grade8_replacement) != 76 or len(untouched_base) != 4522):
+        len(grade8_replacement) != 76 or
+        len(grade9_first_party) != 82 or len(untouched_base) != 4522):
         errors.append(
-            "Effective learner snapshot requires 4,522 other lessons, "
+            "Effective learner snapshot requires 4,522 unaffected lessons, "
             "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
-            "76 Arabic G8 General and 73 independently certified G12, "
-            "totaling exactly 5,009; "
-            f"got {len(untouched_base)} other, "
+            "76 Arabic G8 General, 73 independently certified G12, "
+            "and 82 owner-authored Grade9 General Arabic lessons, "
+            "totaling exactly 5,091; "
+            f"got {len(untouched_base)} unaffected, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "
             f"{len(grade7_replacement)} G7, "
             f"{len(grade8_replacement)} G8, "
+            f"{len(grade9_first_party)} G9, "
             f"{len(supplemental)} G12, {len(by_code)} total."
         )
 

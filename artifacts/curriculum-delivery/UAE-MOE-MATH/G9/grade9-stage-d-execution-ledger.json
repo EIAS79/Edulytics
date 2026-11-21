@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 1,
+  "project": "Edulytics",
+  "curriculum": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "academicLanguage": "ar",
+  "direction": "RTL",
+  "targetSchoolYear": "2026-2027",
+  "pr": 650,
+  "branch": "fix/g9-general-full-year-scope-86",
+  "ownerTarget": {
+    "units": 13,
+    "lessons": 82
+  },
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "stageDStarted": true,
+  "stageDStatus": "D_PENDING_A_C_EVIDENCE",
+  "candidateShaAtInitialInspection": "f95fd5f76bc992d340b8a8e3aa65c804c7d78cbe",
+  "stageDWorkflowCreationCommit": "8fbc6f71e4c2012115fd6b2a9e12d2fe19cb0630",
+  "testedCandidateSha": null,
+  "ciRefKind": null,
+  "workflowRunIds": [
+    44835212479,
+    44857599478
+  ],
+  "requiredHandoff": {
+    "path": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
+    "status": "PRESENT_BUT_SOURCE_PARITY_GAPS_EXPLICIT",
+    "evidenceCommit": "187d68c8da889fc94141d7392e1f27fe890518b1"
+  },
+  "sourceInventory": {
+    "file": "source-inventory.json",
+    "generalRawCount": 86,
+    "referenceBookCount": 2,
+    "verifiedUniqueCount": null
+  },
+  "sourceSemanticLock": {
+    "sourceIndexComplete": false,
+    "rawLessonAtomicAuditPassed": 0,
+    "rawLessonCount": 86,
+    "targetLessonElementParityPassed": 0,
+    "targetLessonCount": 82
+  },
+  "authoringReadyForDCount": 82,
+  "firstIncompleteLessonOrdinal": 1,
+  "firstIncompleteReason": "U01L01 original analogous practices and local checks exist, but original source atomic equivalence and Q7/Q25 wording are not fully certified; 85 additional raw entries unverified",
+  "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
+  "tests": {
+    "node": "LOCAL_372_PASS_0_FAIL_HOSTED_CI_QUEUED",
+    "dotnet": "LOCAL_REBUILT_FULL_17432_PASS_0_FAIL_0_SKIP_ARABIC_G9G7_93_PASS_HOSTED_CI_PENDING",
+    "authenticatedE2E": "NOT_RUN_G9_ZERO_PRODUCTION_LESSONS",
+    "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
+    "neonReadOnlyLive": "2026_11_21_G9_GENERAL_0_LESSONS_0_NODES"
+  },
+  "releaseDecision": "NO_GO_SOURCE_100",
+  "notes": [
+    "Uploaded Stage D plan mistakenly says Grade:8 twice in Grade 9 handoff/checkpoint templates; authoritative scope is Grade 9 and no Grade 8 record should be mutated.",
+    "Stage D diagnostics may run while the D entry handoff and source parity gate are blocked.",
+    "No production writes, merge or deployment authorized by this diagnostic checkpoint."
+  ],
+  "evidencePaths": [
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/source-inventory.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/full-grade-progress.json",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
+    ".github/workflows/uae-grade9-general-stage-d.yml",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-a-c-handoff.md",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md",
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json"
+  ],
+  "ownerApproval": {
+    "academicContent": "APPROVED_BY_OWNER",
+    "releaseIntent": "AUTHORIZED_BY_OWNER_SUBJECT_TO_REQUIRED_GATES",
+    "record": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-academic-release-decision.md",
+    "evidenceCommit": "d4b8856108a4c1e0aa347d999e33b4225c7a4396",
+    "thirdPartyAssetRights": "UNVERIFIED_NOT_WAIVED"
+  },
+  "diagnostics": {
+    "workflow": ".github/workflows/uae-grade9-general-stage-d.yml",
+    "firstObservedRunId": 44835212479,
+    "firstObservedStatus": "QUEUED",
+    "firstObservedCandidateSha": "609addbc80511f7847d2126657e10b3d740b4b10",
+    "currentRunsForLatestCandidate": "NOT_YET_CONFIRMED",
+    "releaseGateSeparate": true,
+    "latestLocalChecks": {
+      "date": "2026-11-21",
+      "preparedNodeTestsPassed": 372,
+      "preparedNodeTestsFailed": 0,
+      "scopedDotnetPassed": 70,
+      "scopedDotnetFailed": 0,
+      "strictSourceIndexTest": "FAILED_AS_REQUIRED_WHILE_INCOMPLETE",
+      "sourceNumberedQuestionSkillReviews": 61,
+      "sourceUnnumberedAtomsNotFullyAudited": true,
+      "sourceQuestionWordingExceptions": [
+        7,
+        25
+      ],
+      "sourceRawLessonsFullyVerified": 0,
+      "targetLessonFullParityVerified": 0,
+      "studentStaticPreview": "EDGE_4X4_CUBE_GRID_WITH_ARABIC_RTL",
+      "fullAuthenticatedE2E": false,
+      "renderPublished": false,
+      "neonProductionWrites": 0,
+      "sourceNonnumberedInstructionalSubsetObserved": 21,
+      "sourceDocumentedSubsetElements": 82,
+      "ambiguousOriginalWordingAddressedInAnalogs": [
+        7,
+        25
+      ],
+      "sourcePublisherQ7Q25DefinitiveMeaningVerified": false,
+      "independentPythonSourceGate": "LOCAL_NO_GO_0_OF_86_AND_0_OF_82",
+      "metadataAndRenderingNativeRegression": "3_PASSED_0_FAILED",
+      "globalDotnetRetest": "LOCAL_CURRENT_CANDIDATE_17427_PASSED_0_FAILED_0_SKIPPED",
+      "g9DraftCanonicalPackExcludedFromRuntime": true,
+      "g9RichV2AuthoringExcludedFromRuntime": true,
+      "futureSchemaV2AuthoringStillRequiresReleaseValidation": true,
+      "unapprovedG9PracticeContractsExcludedFromRuntime": true,
+      "nativeGrade9NoReseedAndMathParserTests": "4_PASSED_WITH_NEW_READY_PRACTICE_GUARD",
+      "scopedG9DotnetRetest": "LOCAL_74_PASSED_0_FAILED_0_SKIPPED_THIS_CANDIDATE",
+      "productionNeonWrites": 0,
+      "u01l01OriginalArabicStudentChartRegressions": "LOCAL_9_NEW_TESTS_PASS",
+      "u01l01OriginalArabicSourceVisualRepairs": "Q37_TABLE_Q44_Q46_RECTANGLES_Q47_BAR_CHART_Q48_BOX_PLOT",
+      "u01l01RealEdgeLocalChartSmoke": "61_TASKS_2_STUDENT_DIAGRAMS_PRODUCED_1_STALE_INVALIDATION_CONFIRMED",
+      "u01l01BookPagesVisuallyReinspected": "01.pdf_PDF_PAGES_16_20_SOURCE_SHA_VERIFIED",
+      "u01l01SourceVisualAuditReport": "u01l01-source-visual-structure-closure-NO_GO.json",
+      "u01l01DotnetReleasePublishStaticChartFiles": "UNPUBLISHED_STATIC_DRAFT_QUARANTINED_NOT_COPIED_TO_PUBLISH",
+      "u01l01ActualEdgeArabicDigitsBeforeFix": "HTML_NUMBER_INPUT_DISCARDED_ARABIC_INDIC_DIGITS",
+      "u01l01ActualEdgeArabicDigitsAfterFix": "HTML_TEXT_DECIMAL_INPUT_PRESERVES_ARABIC_AND_PERSIAN_NUMERALS_AND_PLOTS",
+      "u01l01OperationVocabularyRowsVerifiedInEdge": 4,
+      "u01l01OriginalTermPowerSvgVerifiedInEdge": true,
+      "u01l01AdditionalNonNumberedSourceStructureGroupsVisuallyReviewed": 7,
+      "u01l01AdditionalNonNumberedEvidence": "u01l01-nonnumbered-source-structure-reinspection-NO_GO.json",
+      "u01l01PublishedStaticAssetsMatchCurrentSha": "REPLACED_BY_FAIL_CLOSED_DRAFT_WEB_PUBLISH_EXCLUSION",
+      "u01l01PreparedNodeSuite": "344_PASSED_0_FAILED",
+      "sourceQ07Q25SourceReinspection": "DIRECT_SCANNED_BOOK_P7_Q7_Q25_TWO_PLAUSIBLE_READINGS_DOCUMENTED_NO_OFFICIAL_INTENT_CLAIM",
+      "sourceQ07Q25SourceReinspectionProof": "u01l01-source-wordorder-ambiguities-math-proof-NO_GO.json",
+      "u01l01IndependentMathematicalOracle": "6_TESTS_NUMERIC_ALGEBRA_FRACTION_DECIMAL_STATISTICS_ALL_PASSED",
+      "u01l01TeacherReviewStillRequired": true,
+      "grade9ScopedDotnetLocal": "74_PASSED_0_FAILED_CURRENT",
+      "globalDotnetLastExactCandidate": "CURRENT_CANDIDATE_WITH_UAE_G9_STATIC_ASSET_QUARANTINE_17427_PASS_0_FAIL",
+      "grade9DotnetCurrentExactCandidate": "74_PASS_0_FAIL_AFTER_LAST_G9_SOURCE_ONLY_UPDATE",
+      "webPublishUnapprovedG9DraftFileCount": 0,
+      "webPublishUnauditedStaticManifestReferences": 0,
+      "g9DraftAuthoringStaticFilesRetained": 84,
+      "g9UnpublishedWebAssetsQuarantineEvidence": "g9-unpublished-static-asset-quarantine-NO_GO.json",
+      "g9WorkflowGlobalJsonSdkPinned": "10.0.200",
+      "unpublishedG9AuthoringStaticFilesRetained": 84,
+      "unpublishedG9StaticAssetsPublishedLocally": 0,
+      "g9StaticWebAssetManifestUnreleasedReferences": 0,
+      "g9HostedDotnetPublishAssetsGateConfigured": true,
+      "g9HostedPinnedSdkMatchesGlobalJson": true,
+      "renderMainChecksPassDockerFinalCopyFromDotnetPublishVerified": true,
+      "renderLastDeployedProductionSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+      "u01l01PrintedSourceObjectiveCount": 2,
+      "u01l01EdulyticsDerivedTrainingCompetencies": 4,
+      "u01l01CanonicalDraftFalseSourceObjectiveAttribution": "FIXED_WITH_2_NEW_REGRESSION_TESTS",
+      "strictSourceGate": "NO_GO_EXIT_1_0_OF_86_0_OF_82",
+      "grade9ScopedDotnetCurrentWorktree": "74_PASS_0_FAIL_0_SKIP",
+      "grade9SourceQ48TimeRepresentation": "PRINTED_PAGE_9_MMS_14_RACE_TIMES_SKILL_ANALOG_FIXED",
+      "grade9SourceQ48ActualEdgeSmoke": "PASS_MMSS_ARABIC_SVG_PLOT_61_TASKS_UNGRADED_LOCAL_ONLY",
+      "grade9SourceQ48SourceRubric": "14_INDEPENDENT_MMSS_TIMES_5_NUMBER_BOX_IQR_3M25S_RANGE_7M10S",
+      "grade9SourceQ48ReleaseCertification": "NOT_VERIFIED_SOURCE_PARITY_AND_AUTHENTICATED_E2E_NOT_PASSED",
+      "latestSourceGate": "NO_GO_RAW_0_OF_86_CANONICAL_0_OF_82",
+      "latestSourceRepairEvidence": "u01l01-source-visual-structure-closure-NO_GO.json",
+      "sourceOwnerTargetVsRawMetadata": "RECONCILED_13_82_AUTHORING_14_86_RAW",
+      "u01l01KnownMappedSourceSubsetIds": 82,
+      "u01l01RawTotalAtomicElementDenominator": null,
+      "fullNativeRegressionAfterOwnerScopeCorrection": "17427_PASS_0_FAIL_0_SKIP_REUSED_RELEASE_DLL",
+      "fullNativeRegressionTRXLocalOnly": "g9-test-results/g9-source-reconciliation-full-native.trx",
+      "fullNativeRegressionAfterScopeCorrectionAtUtc": "2026-11-21T04:07:24Z",
+      "localDotnetSdkTemporarilyUsed": "10.0.300",
+      "repoSdkPinRestored": "10.0.200",
+      "localFullNativeResultCannotReplaceHostedCiOrSourceEvidence": true,
+      "q35CorrectSourceVerb": "DESCRIBE_NOT_HALF",
+      "u01l01PrintedLetteredSubpartsObserved": 11,
+      "u01l01AtomicDenominator": null,
+      "q35VisualSourceSubpartTest": "tests/academic-uae-grade9-u01l01-q35-source-wording.test.cjs",
+      "q35IndependentFractionAnalogy": "FRACTION_3_OVER_5_OF_50_EQUALS_30_NOT_HALF",
+      "q35ActualEdgeBrowserPreview": "PASS_SOURCE_DIRECT_FRACTION_ARABIC_STUDENT_TEXT_UNGRADED_EXPORT",
+      "sourceQ35OriginalVerifiedPage": "01.pdf_PRINTED_8_PDF_19_3_OVER_4_OF_28_EQUALS_21",
+      "g9ScopedDotnetAfterQ35": "74_PASS_0_FAIL_0_SKIP_FROM_TRX",
+      "g9ScopedDotnetAfterQ35CheckedUtc": "2026-11-21T04:18:11Z",
+      "g9PreparedNodeAfterQ35": "372_PASS_0_FAIL",
+      "rawLessonSourceDenominator": null,
+      "u01l01SourceExplicitChildSubpartIds": 11,
+      "G9_ARABIC_PATHWAY_GUARD": {
+        "unitTestsPassed": 11,
+        "unitTestsFailed": 0,
+        "fullGuard": "NOT_VERIFIED",
+        "api": "NOT_RUN",
+        "dom": "NOT_RUN",
+        "missingArabicApprovedFixture": "NOT_RUN",
+        "evidence": "grade9-arabic-pathway-guard-evidence-NO_GO.json",
+        "fullNativeSuiteNewBuild": "17432_PASS_ZERO_FAIL_ZERO_SKIP",
+        "workFlowScopedPolicyFilter": "INCLUDED_G9_G7",
+        "hostedAcceptance": "NOT_PASSED",
+        "all82DraftIdentityPolicyTests": "93_PASS_0_FAIL_0_SKIP",
+        "all82DraftIdentityNegativeCases": 82,
+        "sourceStatus": "NO_GO_SOURCE_100",
+        "authenticatedApiDomStatus": "NOT_RUN",
+        "all82PolicyTrxEvidenceLocal": "g9-test-results/g9-arabic-pathway-all82.trx"
+      }
+    }
+  },
+  "pendingCandidateSha": "97e399bee1b898dc112d5b8a5c3942cc47fce598",
+  "lastGateAssessmentAtUtc": "2026-11-21T05:21:09.935Z",
+  "blockedLessons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82
+  ],
+  "currentSourceGateStatus": "D_PENDING_A_C_EVIDENCE",
+  "lastLessonStageDCheckpoint": "lesson-1-stage-d-checkpoint.json",
+  "lastSourceGateEvidencePath": "grade9-release-validation.json",
+  "sourceReadEvidence": {
+    "fileShaAndPageCountMatch": 5,
+    "fullPageSemanticAudit": false
+  },
+  "sourceScopeCountReconciliation": {
+    "ownerSelected": {
+      "units": 13,
+      "lessons": 82
+    },
+    "rawToc": {
+      "units": 14,
+      "lessons": 86
+    },
+    "previouslyMislabeledOwnerTarget": {
+      "units": 14,
+      "lessons": 86
+    },
+    "metadataConflictResolved": true,
+    "rawSourceDedupAndSemanticParityComplete": false,
+    "proof": "source-selection.json and grade9-a-c-handoff.md"
+  },
+  "latestIndependentRemoteReadOnlyCheckpoint": {
+    "observedAtUtc": "2026-11-21T05:10:51.536Z",
+    "observedPrHeadSha": "c4538b87d03e467a0ee7cb1e24cf0017a5fc1e23",
+    "observedPrState": "OPEN_DRAFT_UNMERGED",
+    "purpose": "Stage D section 10/12: preserve independent GitHub, Render and Neon read-only evidence on first still-incomplete lesson; this checkpoint commit is not a tested release candidate",
+    "ownerTarget": {
+      "units": 13,
+      "lessons": 82
+    },
+    "firstIncompleteLessonOrdinal": 1,
+    "sourceGate": "D_PENDING_A_C_EVIDENCE",
+    "fullRawSourceAuditsPassed": 0,
+    "rawSourceLessons": 86,
+    "canonicalSourceParitiesPassed": 0,
+    "canonicalLessons": 82,
+    "sourceElementDenominator": "UNKNOWN",
+    "github": {
+      "pr": 650,
+      "workflowRunId": 44868842501,
+      "workflowStatusAtInspection": "pending",
+      "jobsAtInspection": [
+        {
+          "id": 136738558098,
+          "name": "G9 source gate and prepared lesson tests",
+          "status": "queued",
+          "conclusion": null
+        },
+        {
+          "id": 136738558250,
+          "name": "G9 scoped .NET tests (diagnostic)",
+          "status": "queued",
+          "conclusion": null
+        }
+      ],
+      "passingHostedEvidence": false
+    },
+    "render": {
+      "serviceId": "srv-dakq5n2fngtc73a62i10",
+      "latestLiveDeployId": "dep-dbv8f4nf3r2c73fjf8rg",
+      "latestLiveCommitSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+      "grade9CandidateDeployed": false
+    },
+    "neon": {
+      "projectId": "tiny-lab-44877119",
+      "databaseTablesReadOnlyDirectQuery": true,
+      "grade9GeneralPedagogicalLessons": 0,
+      "grade9GeneralPackNodes": 0,
+      "grade9GeneralLessonContents": 0,
+      "productionWrites": 0
+    },
+    "localExecution": {
+      "checkedWorktree": "C:/Users/khali/source/repos/Edulytics",
+      "currentHeadWasOlderAndUnrelatedWorktreeWasDirty": true,
+      "sourceWasNotAltered": true,
+      "githubRemoteAbsentInThatWorktree": true,
+      "cleanCandidateBuildAndTests": "NOT_RUN",
+      "noExistingUncommittedChangesTouched": true
+    },
+    "finalCI": "NOT_VERIFIED",
+    "authenticatedE2E": "NOT_RUN",
+    "finalCandidateSha": null,
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "mergeAllowed": false,
+    "deployAllowed": false
+  },
+  "stageD4CurrentLessonRootCauseCorrections": {
+    "stage": "D.4",
+    "lessonOrdinal": 1,
+    "category": "CONTENT_AND_SOURCE_HANDOFF",
+    "defect": "U01L01 RichV2 used a bare Arabic comparative phrase as a subtraction expression, and the A-C checkpoint incorrectly claimed the full source atomic denominator was verified",
+    "corrections": [
+      {
+        "file": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+        "detail": "Distinguish comparative relation n<20 from arithmetic difference 20-n; qualify all lesson vocabulary use of less-than",
+        "commits": [
+          "82605aca181e86c199c7d63d934cdb97ee8ebb23",
+          "89e5b24849adbe7157da60c79081f9b95a69ce4d"
+        ]
+      },
+      {
+        "file": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-a-c-checkpoint.json",
+        "detail": "Change sourceElementDenominatorVerified to false and distinguish two printed goals from four derived Edulytics competencies",
+        "commit": "809b7258189d568184519b9c237e48cb697769e6"
+      }
+    ],
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-stage-d-handoff.test.cjs"
+    ],
+    "verifiedFromGithubContent": 13,
+    "testResultKind": "IN_MEMORY_STATIC_ASSERTIONS_ONLY_NOT_HOSTED_CI",
+    "sourceAtomicDenominator": null,
+    "sourceSemanticParity": "UNKNOWN",
+    "firstLessonStatus": "D_PENDING",
+    "sourceGate": "D_PENDING_A_C_EVIDENCE",
+    "attemptedHostedRunId": 44870044832,
+    "hostedResultAtLastInspection": "QUEUED",
+    "authenticatedE2E": "NOT_RUN",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "noLessonIdentityChange": true,
+    "productionWrites": 0
+  },
+  "currentLessonDirectSourceRecheck": {
+    "source": "OWNER_LOCAL_PDF_DIRECT_FIVE_PAGE_VISUAL_INSPECTION",
+    "physicalPdfPages": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "printedPages": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "scope": "First lesson only. No stage D approval without full atomic source parity.",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-d-selective-source-visual-audit.json",
+    "evidenceCommit": "013e07e8289e893f8bfcd4132c64e40ee6c0ba6d",
+    "sourceGateRegression": "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs",
+    "sourceGateRegressionCommit": "6f79fac511c93f91c5806d44956b31f0bc40bc9a",
+    "independentTeacherOracleTest": "tests/academic-uae-grade9-u01l01-61-original-practice-stage-d.test.cjs",
+    "independentTeacherOracleTestCommit": "cd1ecc8d6886de99d040668fc77919826ce5efdc",
+    "numericSamplesValidatedInMemory": [
+      "Q35",
+      "Q36",
+      "Q48",
+      "Q49",
+      "Q50",
+      "Q51"
+    ],
+    "actualNodeRunnerResult": "NOT_RUN_AT_THIS_SHA",
+    "actualDotnetRunnerResult": "NOT_RUN_AT_THIS_SHA",
+    "hostedCurrentRunId": 44870444429,
+    "hostedJobStatesAtInspection": [
+      "queued",
+      "queued"
+    ],
+    "sourceAtomicElementsFullyAudited": false,
+    "sourceElementDenominator": null,
+    "fullSourceMatchingPassed": false,
+    "releaseAllowed": false
+  },
+  "latestIsolatedStageDVerification20261121": {
+    "observedAtUtc": "2026-11-21T05:43:46.369Z",
+    "testedCandidateSha": "5b3fda1a3eee3b4f28b44183c2c5fabd995bf0ef",
+    "testedRefKind": "clean-independent-Git-checkout-of-PR650-branch",
+    "branch": "fix/g9-general-full-year-scope-86",
+    "lessonOrdinal": 1,
+    "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+    "stageDSections": [
+      "D.1",
+      "D.2",
+      "D.4",
+      "Final CI preflight"
+    ],
+    "resultKind": "REAL_LOCAL_TEST_PROCESS_NOT_HOSTED_CI_NOT_AUTHENTICATED_E2E",
+    "node": {
+      "executableVersion": "v24.21.0",
+      "testFiles": 94,
+      "preparedTests": {
+        "total": 377,
+        "passed": 377,
+        "failed": 0,
+        "skipped": 0
+      },
+      "focusedU01L01": {
+        "total": 32,
+        "passed": 32,
+        "failed": 0,
+        "skipped": 0
+      },
+      "strictSourceGate": {
+        "exitCode": 1,
+        "passed": 0,
+        "failed": 1,
+        "expectedFailClosed": true
+      }
+    },
+    "dotnet": {
+      "repositoryGlobalJsonSdkPin": "10.0.200",
+      "diagnosticSdkUsed": "10.0.300",
+      "temporarySdkAdjustmentOnlyOnIsolatedCheckout": true,
+      "sdkPinRestored": true,
+      "checkoutCleanAfterTest": true,
+      "solutionRestore": "PASS",
+      "solutionBuild": "PASS",
+      "buildErrors": 0,
+      "buildWarnings": 2,
+      "buildWarningKind": "xUnit2012 in existing U02L06 and U02L07 test assertions",
+      "g9G7Scoped": {
+        "total": 167,
+        "passed": 167,
+        "failed": 0,
+        "skipped": 0,
+        "localTrxPath": "%TEMP%/g9-StageD-TRX/g9-stageD-scoped.trx"
+      },
+      "fullNativeRegression": {
+        "total": 17514,
+        "passed": 17514,
+        "failed": 0,
+        "skipped": 0,
+        "duration": "00:08:55",
+        "localTrxPath": "%TEMP%/g9-StageD-TRX/g9-stageD-full-regression.trx"
+      }
+    },
+    "localWebPublish": {
+      "result": "PASS",
+      "deployedToProduction": false,
+      "webDllExists": true,
+      "draftG9HtmlJsAssetLeak": false,
+      "destination": "%TEMP%/g9-StageD-unpublished-output-5b3fda1"
+    },
+    "academicSource": {
+      "strictPythonGateExitCode": 1,
+      "rawSourceLessonsVerified": 0,
+      "rawSourceLessonCount": 86,
+      "canonicalSourceParityVerified": 0,
+      "canonicalLessonCount": 82,
+      "sourceElementDenominator": null,
+      "sourceIndexComplete": false,
+      "unit7EditionConflictResolved": false,
+      "sourceHandOff": "D_PENDING_A_C_EVIDENCE"
+    },
+    "gitHubActions": {
+      "runId": 44871005498,
+      "statusAtInspection": "pending",
+      "jobsAtInspection": [
+        "G9 scoped .NET tests (diagnostic):queued",
+        "G9 source gate and prepared lesson tests:queued"
+      ],
+      "hostedCandidatePassed": false
+    },
+    "production": {
+      "neonGrade9GeneralPedagogicalLessons": 0,
+      "neonGrade9GeneralContentNodes": 0,
+      "neonGrade9GeneralPackNodes": 0,
+      "renderLiveSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+      "renderDeployId": "dep-dbv8f4nf3r2c73fjf8rg",
+      "productionWritesByThisVerification": 0
+    },
+    "authenticatedGrade9E2E": "NOT_RUN",
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "finalCandidateSha": null,
+    "mergeAllowed": false,
+    "renderDeployAllowed": false
+  },
+  "latestU01L01CareerLearningRepair20261121": {
+    "stage": "D.4",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "lastContentFixCommit": "f5e55c72f42c3fc180c29aa21e87322effebdfed",
+    "lastTestFixCommit": "00de154e67273104b1408455a3b516a89126a648",
+    "auditedTestedSha": "92e13181d3916f2a7eeb9fa16d7947fc41ae9dc6",
+    "correctedIssue": "Independent career-math application absent from the sports marketing source structure; now an original fee-plus-quantity example in the existing U01L01 RichV2, not copied media",
+    "sourcePrintedPage": 6,
+    "sourcePdfPage1Based": 17,
+    "sourceElementGroup": "EXTERNAL_SKILLS_CAREER_MEDIA",
+    "teachingArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+    "sourceHandoffArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-nonnumbered-source-structure-reinspection-NO_GO.json",
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs"
+    ],
+    "mathematicalOracle": "24×4+35=131; 24×0+35=35; 24×(4+35)≠131",
+    "nodePreparedLocal": {
+      "files": 94,
+      "total": 378,
+      "passed": 378,
+      "failed": 0,
+      "skipped": 0,
+      "runner": "node --test",
+      "commit": "92e13181d3916f2a7eeb9fa16d7947fc41ae9dc6"
+    },
+    "dotnetLatestFullRegression": {
+      "total": 17514,
+      "passed": 17514,
+      "failed": 0,
+      "commit": "5b3fda1a3eee3b4f28b44183c2c5fabd995bf0ef",
+      "statusAtCurrentSha": "NOT_REEXECUTED_AFTER_RICHV2_CHANGE"
+    },
+    "strictNodeSourceGate": {
+      "exitCode": 1,
+      "fullRawSourceAudits": 0,
+      "rawSourceLessons": 86
+    },
+    "strictPythonSourceGate": {
+      "exitCode": 1,
+      "canonicalLessonsWithAtomicParity": 0,
+      "canonicalLessons": 82
+    },
+    "publisherMediaOrLinkedQrVerified": false,
+    "firstLessonFullSemanticParity": "UNKNOWN",
+    "fullAtomicSourceDenominator": null,
+    "authenticatedE2E": "NOT_RUN",
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "passedHostedCiAtCurrentSha": false,
+    "productionWrites": 0
+  },
+  "latestGrade9U01L01MathAndTeacherRubricVerification20261121": {
+    "stage": "D.2/D.4",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "observedAtUtc": "2026-11-21T06:07:36.464Z",
+    "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7",
+    "refKind": "isolated local checkout of PR650 branch",
+    "changes": [
+      {
+        "category": "CONTENT",
+        "summary": "Original independent sports marketing worked example; publisher photo and QR still unverified",
+        "commit": "f5e55c72f42c3fc180c29aa21e87322effebdfed"
+      },
+      {
+        "category": "HUMAN_REVIEW",
+        "summary": "Q44 teacher rubric independently explains all four answers, without changing the student task or automatic grading route",
+        "commit": "26d1d3fe9962031c28dfd34ff300ab245a535c8f"
+      }
+    ],
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs",
+      "tests/academic-uae-grade9-u01l01-independent-teacher-oracles-stage-d.test.cjs"
+    ],
+    "preparedNode": {
+      "files": 95,
+      "total": 385,
+      "passed": 385,
+      "failed": 0,
+      "skipped": 0,
+      "local": true,
+      "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+    },
+    "independentTeacherOracle": {
+      "tests": 7,
+      "passed": 7,
+      "sourceTaskCount": 61,
+      "gradingRoute": "TEACHER_REVIEW_REQUIRED",
+      "teacherActuallySignedOff": false
+    },
+    "currentDotnetScoped": {
+      "total": 167,
+      "passed": 167,
+      "failed": 0,
+      "skipped": 0,
+      "localSdk": "10.0.300",
+      "repositorySdkPin": "10.0.200",
+      "sdkPinRestored": true,
+      "checkoutClean": true,
+      "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+    },
+    "fullDotnetLatestEarlierBaseline": {
+      "total": 17514,
+      "passed": 17514,
+      "failed": 0,
+      "skipped": 0,
+      "testedSha": "7b5e8664fae8f3c9016682d32e44b0af08898d61",
+      "notCurrentSha": true
+    },
+    "localWebPublishEarlierBaseline": {
+      "result": "PASS",
+      "testedSha": "7b5e8664fae8f3c9016682d32e44b0af08898d61",
+      "draftStaticLeak": false,
+      "notProductionDeploy": true
+    },
+    "strictSourceParityNode": {
+      "exitCode": 1,
+      "expectedNoGo": true
+    },
+    "strictSourceParityPython": {
+      "exitCode": 1,
+      "expectedNoGo": true,
+      "rawVerified": 0,
+      "rawTotal": 86,
+      "canonicalVerified": 0,
+      "canonicalTotal": 82
+    },
+    "sourceElementDenominator": null,
+    "semanticParity": "UNKNOWN",
+    "unit7ConflictResolved": false,
+    "rightsPublisherPhotosQrVerified": false,
+    "authenticatedE2E": "NOT_RUN",
+    "githubActionsRunId": 44873103973,
+    "githubActionsStatusAtInspection": "pending",
+    "hostedFinalCI": "NOT_PASS_VERIFIED",
+    "liveRenderSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+    "productionGrade9GeneralLessons": 0,
+    "productionGrade9GeneralContent": 0,
+    "productionWrites": 0,
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "stageDStatus": "D_PENDING_A_C_EVIDENCE",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "finalCandidateSha": null,
+    "releaseAllowed": false
+  },
+  "latestOriginalSourceQuestionReview20261121": {
+    "stage": "D.4",
+    "verifiedAtUtc": "2026-11-21T06:15:09.589Z",
+    "testedSha": "e86c715980b934f70355ccd9dfc79cd46926b043",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "originalSource": "Grade_09/01_Student_Books/01.pdf",
+    "sourcePdfSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "reInspectedPrintedPages": [
+      7,
+      8,
+      9
+    ],
+    "reInspectedPhysicalPdfPages": [
+      18,
+      19,
+      20
+    ],
+    "findings": {
+      "q07": "Two mathematically distinct readings, no publisher official answer proof; original first-party analog remains manual teacher-reviewed",
+      "q25": "Multiplication/addition grouping is ambiguous in original source; do not certify single publisher interpretation",
+      "q41": "The source calls the cube side a whole number with algebraic candidates 0 and 6; independent analog explicitly requires a positive side and accepts 4, not the degenerate root 0"
+    },
+    "originalStudentQuestionsReCreated": false,
+    "independentAnalogRubricQ41Corrected": true,
+    "exactCurrentNode": {
+      "total": 388,
+      "passed": 388,
+      "failed": 0,
+      "skipped": 0,
+      "fileCount": 95
+    },
+    "exactCurrentSourceGate": {
+      "nodeExitCode": 1,
+      "pythonExitCode": 1,
+      "rawVerified": 0,
+      "rawTotal": 86,
+      "canonicalVerified": 0,
+      "canonicalTotal": 82,
+      "sourceIndexComplete": false
+    },
+    "dotnetNotAtLatestSha": {
+      "scopedBaseline": {
+        "passed": 167,
+        "total": 167,
+        "sha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+      },
+      "fullBaseline": {
+        "passed": 17514,
+        "total": 17514,
+        "sha": "7b5e8664fae8f3c9016682d32e44b0af08898d61"
+      }
+    },
+    "latestGitHubActionsRunAtInspection": 44874539153,
+    "latestHostedRunStatusAtInspection": "queued",
+    "passedHostedFinalCi": false,
+    "neonProductionGrade9General": {
+      "pedagogical": 0,
+      "content": 0,
+      "nodes": 0
+    },
+    "renderLiveSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+    "authenticatedStudentE2E": "NOT_RUN",
+    "sourceAtomicDenominator": null,
+    "sourceExactPublisherIntentCertified": false,
+    "mediaRightsThirdPartyVerified": false,
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "noMerge": true,
+    "noDeploy": true,
+    "productionWrites": 0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "purpose": "Comprehensive catalog across General textbook editions, not same-edition school distribution",
+  "sourceBooks": [
+    {
+      "file": "01.pdf",
+      "pathway": "General",
+      "edition": "2025-2026",
+      "sourceUnits": "1-7",
+      "rawLessons": 43
+    },
+    {
+      "file": "02-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
+      "sourceUnits": "7-10",
+      "rawLessons": 24
+    },
+    {
+      "file": "03-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
+      "sourceUnits": "11-13",
+      "rawLessons": 19
+    }
+  ],
+  "referenceBooks": [
+    {
+      "file": "02.pdf",
+      "pathway": "Applied",
+      "notGeneralImport": true
+    },
+    {
+      "file": "03.pdf",
+      "pathway": "Applied",
+      "notGeneralImport": true
+    }
+  ],
+  "union": {
+    "unitsBeforeSemanticDedup": 14,
+    "lessonsBeforeSemanticDedup": 86,
+    "sourceChapter7Collision": "01.pdf source chapter7 tools of geometry; 02-1.pdf source chapter7 quadratic equations, both retained as different units"
+  },
+  "semanticDedup": "PENDING_OBJECTIVE_LEVEL_COMPARISON",
+  "knownExamples": [
+    {
+      "refs": [
+        "01.pdf:7-4",
+        "03-1.pdf:11-3"
+      ],
+      "status": "STRONG_OVERLAP_VERIFY_REMAINING_EXERCISES"
+    },
+    {
+      "refs": [
+        "01.pdf:1-4",
+        "02-1.pdf:7-5"
+      ],
+      "status": "DISTINCT_COMPLEMENTARY_SKILL"
+    },
+    {
+      "refs": [
+        "01.pdf:3-3",
+        "03-1.pdf:12-3"
+      ],
+      "status": "PARTIAL_OVERLAP"
+    }
+  ],
+  "sourceLock": "TOC_LOCK_ONLY_SEMANTIC_LOCK_PENDING",
+  "testExecution": "NOT_RUN"
+}

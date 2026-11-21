@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 80,
+  "unitOrdinal": 13,
+  "lessonOrdinalInUnit": 7,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+  "lessonTitleAr": "تحويلات التطابق",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      776,
+      782
+    ],
+    "pdfPages": [
+      191,
+      197
+    ],
+    "method": "DIRECT_LOCAL_STUDENT_BOOK_CONTACT_SHEET_REVIEW",
+    "scope": "Translation, reflection, rotation, coordinate rigid motions, preserving congruence; rendered source exercises runtime NOT verified"
+  },
+  "stageA": {
+    "status": "SOURCE_RIGID_MOTION_TRANSFORMS_AND_COORDINATES_REVIEWED",
+    "learningTargets": [
+      "translate, reflect and rotate plane figures",
+      "identify congruence-preserving transformations",
+      "coordinate triangle images and verification of side distances",
+      "distinguish isometry from dilation"
+    ]
+  },
+  "stageB": {
+    "status": "EXISTING_ARABIC_PACK_RICHV2_AND_SIX_NEW_TEACHER_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u13-l07-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u13-l07-congruence-transformations-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "(-1,3)"
+      },
+      {
+        "q": 2,
+        "expected": "(1,-2),(4,-2),(1,-5)"
+      },
+      {
+        "q": 3,
+        "expected": "(2,3), distances sqrt(13) both"
+      },
+      {
+        "q": 4,
+        "expected": "dilation factor 2 doubles sides; NOT congruent"
+      },
+      {
+        "q": 5,
+        "expected": "same translation vector applied to all vertices; side differences unchanged"
+      },
+      {
+        "q": 6,
+        "expected": "reflected points (1,1),(-3,1),(-1,4); AB length 4 retained"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "TEACHER_REVIEW_ONLY_TRANSFORMATION_NO_FALSE_REUSE_PREPARED_TESTS_NOT_RUN",
+    "practiceFamilies": [],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u13l07.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "teacherReviewRequiredFor": [
+      "coordinate transformations and free-response construction",
+      "preservation of distances and angles",
+      "diagrams and explanation"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_STAGE_D_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:13-8"
+}

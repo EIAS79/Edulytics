@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scope": "GRADE9_GENERAL_REFERENCE_ONLY",
+  "appliedFiles": [
+    "02.pdf",
+    "03.pdf"
+  ],
+  "noAppliedLessonImport": true,
+  "unitLevelCrossReferences": [
+    {
+      "appliedUnit": "1-4",
+      "generalFile": "01.pdf",
+      "generalUnits": "1-4",
+      "scope": "linear expressions/equations/functions"
+    },
+    {
+      "appliedUnit": "5-6",
+      "generalFile": "01.pdf",
+      "generalUnits": "5-6",
+      "scope": "inequalities and linear systems"
+    },
+    {
+      "appliedUnit": "7",
+      "generalFile": "02-1.pdf",
+      "generalSourceUnit": "7",
+      "scope": "quadratics"
+    },
+    {
+      "appliedUnit": "8",
+      "generalFile": "02-1.pdf",
+      "generalSourceUnit": "8",
+      "scope": "exponents and radicals"
+    },
+    {
+      "appliedUnit": "9",
+      "generalFile": "02-1.pdf",
+      "generalSourceUnit": "10",
+      "scope": "logic and reasoning"
+    }
+  ],
+  "status": "UNIT_TOPIC_CROSS_REFERENCE_PLUS_THREE_REAL_PAGE_PAIRS_REVIEWED_OTHER_PAIRS_PENDING",
+  "rule": "Applied-only skills are logged and not imported to General automatically.",
+  "lessonPageComparisons": [
+    {
+      "applied": {
+        "file": "03.pdf",
+        "unit": "8",
+        "lesson": "8-1",
+        "printedPage": 393,
+        "pdfPage": 20
+      },
+      "general": {
+        "file": "02-1.pdf",
+        "unit": "8",
+        "lesson": "8-1",
+        "printedPage": 445,
+        "pdfPage": 93
+      },
+      "status": "EXACT_OR_NEAR_EXACT_WORKED_PAGE_OVERLAP",
+      "observations": [
+        "Same lesson title «خواص ضرب الأسس» and same author photographic illustration.",
+        "Matching monomial multiplication explanation and worked examples; nearly identical problem boxes."
+      ],
+      "disposition": "Reference corroborates general objective only; do not create second General lesson or replace General provenance with Applied."
+    },
+    {
+      "applied": {
+        "file": "02.pdf",
+        "unit": "5",
+        "lesson": "5-1",
+        "printedPage": 220,
+        "pdfPage": 20
+      },
+      "general": {
+        "file": "01.pdf",
+        "unit": "5",
+        "lesson": "5-1",
+        "printedPage": 259,
+        "pdfPage": 270
+      },
+      "status": "SAME_UNIT_ORDINAL_DIFFERENT_LESSON_OBJECTIVE",
+      "observations": [
+        "Applied lesson 5-1: «حل المتباينات متعددة الخطوات».",
+        "General lesson 5-1: «حل المتباينات بالجمع والطرح».",
+        "Applied objective aligns more closely to General 5-3, not General 5-1."
+      ],
+      "nextComparator": "01.pdf:5-3 General printed 272",
+      "disposition": "Do not map units by ordinal alone or import into General."
+    },
+    {
+      "applied": {
+        "file": "02.pdf",
+        "sourceUnit": "5",
+        "sourceLesson": "5-1",
+        "printedPage": 220,
+        "pdfPage": 20,
+        "title": "حل المتباينات متعددة الخطوات"
+      },
+      "general": {
+        "file": "01.pdf",
+        "sourceUnit": "5",
+        "sourceLesson": "5-3",
+        "printedPagesReviewed": [
+          272,
+          273
+        ],
+        "pdfPagesReviewed": [
+          283,
+          284
+        ],
+        "title": "حل المتباينات متعددة الخطوات"
+      },
+      "status": "SAME_TARGET_SKILL_DISTINCT_PRESENTATION",
+      "overlap": [
+        "Solve multistep inequalities, including variable terms and sign reversal when dividing by negative coefficient",
+        "Use number-line representation for solution set"
+      ],
+      "distinctEmphases": [
+        "General p273 adds distributive property example 4(3t-5)+7 >= 8t+3",
+        "Applied lesson opens with savings and income scenario"
+      ],
+      "disposition": "Keep General 5-3 as identity. Applied content is an optional reference for context variety; do not add Applied source lesson to General."
+    }
+  ]
+}

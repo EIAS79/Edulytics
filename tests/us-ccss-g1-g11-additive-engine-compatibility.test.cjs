@@ -17,7 +17,7 @@ const priorLines=(ref,file)=>cp.execFileSync('git',['show',ref+':'+file],
 const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n').split('\n');
 // Owner-directed retirement of one obsolete UAE G7 General English
 // supporting contract is the sole permitted historical contract removal.
-// The shared US G1-G11 exact engine and all other contracts stay immutable.
+// Preserve exact old G1/G11 routes and permit only narrowly scoped G9 additions.
 const retiredG7GeneralContractBlock=[
   '        new(',
   '            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:RATES-AND-UNIT-RATES",',
@@ -39,8 +39,8 @@ const retiredG8AdvancedContractBlock=[
   '            "READY_VERIFIED",',
   '            Version),'
 ];
-// Owner-retired UAE Grade9 removes precisely two orphan unit-rate
-// declarations; the exact shared mathematical engine is NOT modified.
+// Owner-retired UAE Grade9 removes two orphan unit-rate declarations;
+// new first-party G9 exact-family branches are separately tested and scoped.
 const retiredGrade9ContractBlocks=['ADVANCED','GENERAL'].map(pathway=>[
   '        new(',
   '            "PED:UAE-MOE-MATH:L9:'+pathway+':01:06:RATES-AND-UNIT-RATES",',
@@ -83,7 +83,10 @@ function stripOnlyRetiredG7Contract(lines){
 }
 // PR #640: owner-directed G8 U12L04 post-release P1 review fix only.
 // Exact new contract blob is pinned; all non-G8 G1/G11 lines remain compared to historical sources.
-const ownerAuditedExactG8PracticeContractBlob='a2333c365c291b128acd0ed852793505617bb5a5';
+const oldEngineClass='public sealed class ExactSkillContractQuestionEngine';
+const newEngineClass='public sealed partial class ExactSkillContractQuestionEngine';
+const oldSharedIntegerParser='        if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))';
+const newSharedIntegerParser='        if (!int.TryParse(integerAnswer, NumberStyles.Integer,';
 function withoutGrade8ScopedPracticeAssignments(lines){
   // All Grade8 GENERAL Practice rewrites are isolated by their
   // byLesson[...] deterministic contract key; compare every other line
@@ -118,7 +121,9 @@ function assertOriginalLinesUnchanged(ref,file){
             stripOnlyRetiredG7Contract(priorLines(ref,file)))))
     : file===engine
       ? priorLines(ref,file).map(line=>
-          line===oldRegroupVerifierLine ? newRegroupVerifierLine : line)
+          line===oldRegroupVerifierLine ? newRegroupVerifierLine :
+          line===oldEngineClass ? newEngineClass :
+          line===oldSharedIntegerParser ? newSharedIntegerParser : line)
       : priorLines(ref,file);
   const current=file===contracts
     ? withoutGrade8ScopedPracticeAssignments(nowLines(file))
@@ -131,6 +136,12 @@ function assertOriginalLinesUnchanged(ref,file){
       'Only reviewed G1 19+1 correction is accepted');
     assert.ok(!current.includes(oldRegroupVerifierLine),
       'Prior G1 regrouping false negative must not return');
+    assert.ok(current.includes(newEngineClass),'G9 engine partial class required');
+    assert.ok(current.includes(newSharedIntegerParser));
+    assert.ok(current.some(line=>line.includes('"uae.g9.general.u02.l06.two_sided_proportion"')),
+      'Arabic digit normalization must be confined to the G9 exact family');
+    assert.ok(current.some(line=>line.includes(': answer;')),
+      'Existing curricula must retain the original integer parser');
   }
   if(file===contracts) {
     assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
@@ -168,15 +179,20 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
   for(const row of diff.split('\n').filter(Boolean)){
     const [added,removed,file]=row.split('\t');
     if(file===contracts){
-      assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
-        'Grade8 General contracts plus owner-retired Advanced block must match the pinned reviewed contract blob');
+      assert.equal(nowLines(contracts).filter(x=>x.includes(
+        'byLesson["PED:UAE-MOE-MATH:L9:GENERAL:') &&
+        x.includes('= new LessonPracticeContract(')).length,80,
+        'Exactly 80 new G9 digital contract declarations are authorized');
       assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
         'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
     }else{
       const deleted=git('diff','--unified=0',preG5,'HEAD','--',engine)
         .split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
-      assert.deepEqual(deleted, ['-'+oldRegroupVerifierLine],
-        'Only the separately proven G1 regrouping false-negative line may change');
+      assert.deepEqual(deleted,[
+        '-'+oldEngineClass,
+        '-'+oldSharedIntegerParser,
+        '-'+oldRegroupVerifierLine
+      ],'Historical engine deletions must be only the G9 partial/parser and proven G1 correction');
     }
     assert.ok(Number(added)>0);
   }
@@ -205,10 +221,15 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
     const changes=git('diff','--unified=0',preG5,'HEAD','--',file);
     const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
     if(file===contracts)
-      assert.equal(git('hash-object',contracts),ownerAuditedExactG8PracticeContractBlob,
-        'Retired G7 and G8 Advanced plus exact approved Grade8 General contract blob required');
+      assert.equal(nowLines(contracts).filter(x=>x.includes(
+        'byLesson["PED:UAE-MOE-MATH:L9:GENERAL:') &&
+        x.includes('= new LessonPracticeContract(')).length,80,
+        'G9 may add 80 independent digital declarations without changing older contracts');
     else
-      assert.deepEqual(deleted,['-'+oldRegroupVerifierLine],
-        'Only verified UAE G1 19+1 arithmetic correction is allowed; US G1/G11 routes unchanged');
+      assert.deepEqual(deleted,[
+        '-'+oldEngineClass,
+        '-'+oldSharedIntegerParser,
+        '-'+oldRegroupVerifierLine
+      ],'No unrelated historical G1/G11 shared engine lines may be deleted');
   }
 });

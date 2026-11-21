@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics | الصف التاسع العام | معادلات القيمة المطلقة</title>
+<style>
+:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#142b45;background:#f4f7fb}
+*{box-sizing:border-box}body{margin:0}main{max-width:920px;margin:auto;padding:1.5rem}
+h1,h2{line-height:1.65}h1{font-size:1.6rem}h2{font-size:1.1rem;margin-top:0}
+section{background:white;border:1px solid #c6d1e0;padding:1.3rem;border-radius:13px;margin-block:1rem}
+p{line-height:1.9}label{font-weight:650}select{font:inherit;max-width:100%;padding:.45rem;border-radius:8px;border:1px solid #889cb7}
+.eq{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:system-ui,Arial,sans-serif;font-weight:650}
+.figure{border:1px solid #d5dfea;border-radius:9px;padding:.8rem;overflow-x:auto}
+svg{direction:ltr;width:100%;min-width:580px;height:auto}
+svg.source-graph-preview{display:block;width:100%;max-width:700px;min-width:0;margin:.65rem 0 1rem;border:1px solid #d5dfea;border-radius:8px;background:#f8fbff;padding:.25rem}
+.tick{stroke:#61758a;stroke-width:1.25}.axis{stroke:#213c58;stroke-width:2}.marker{fill:#0665b0;stroke:white;stroke-width:2.4}
+.label{font:15px system-ui,Arial,sans-serif;fill:#193a53}.sol{fill:#064d8a;font-weight:700}.center{fill:#b44c00;stroke:#b44c00}
+.teacher{border-inline-start:4px solid #4a637e;background:#eaf1f8;padding:.9rem}
+@media(prefers-reduced-motion:no-preference){.marker{transition:cx .2s}}
+textarea{display:block;width:100%;font:inherit;margin:.4rem 0 1rem;padding:.65rem;direction:rtl;border:1px solid #889cb7;border-radius:8px}button{font:inherit;background:#124b7c;color:#fff;border:0;border-radius:8px;padding:.7rem 1rem;cursor:pointer}button:focus-visible,textarea:focus-visible{outline:3px solid #ba641c;outline-offset:2px}#cooldownSubmission{white-space:pre-wrap;direction:rtl}.point-picker{direction:ltr;display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0 1rem}.point-picker button{min-width:2.5rem;background:#e8eff8;color:#153a57;border:1px solid #6d88a4;padding:.4rem}.point-picker button[aria-pressed="true"]{background:#124b7c;color:white}.point-picker button:focus-visible{outline:3px solid #ba641c;outline-offset:2px}</style>
+</head>
+<body><main>
+<header><p>المنهج الوزاري الإماراتي · الصف التاسع العام · الوحدة الثانية · الدرس ٢–٥</p>
+<h1>حل معادلات تتضمن قيمة مطلقة</h1>
+<p>القيمة المطلقة تمثل المسافة عن الصفر. نحدد عدد الحلول أولًا من إشارة الطرف الآخر، ثم نتحقق من المواضع على خط الأعداد.</p></header>
+<section aria-labelledby="caseHeading"><h2 id="caseHeading">اختر حالة المعادلة</h2>
+<label for="case">المعادلة:</label>
+<select id="case">
+<option value="two">|س + ٥| = ١٧ — حلان</option>
+<option value="one">|٢س − ٦| = ٠ — حل واحد</option>
+<option value="none">|٣س − ٤| = −١ — لا حل</option>
+<option value="mid">|س − ١٥| = ٤ — نقطتان حول المركز</option>
+</select>
+<p id="explain" aria-live="polite"></p>
+<div class="figure" role="group" aria-labelledby="figureTitle" aria-describedby="figureDesc">
+<h2 id="figureTitle">خط الأعداد</h2>
+<svg id="numberLine" viewBox="0 0 760 170" role="img" aria-labelledby="svgTitle svgDesc">
+<title id="svgTitle">تمثيل حلول معادلة القيمة المطلقة على خط الأعداد</title>
+<desc id="svgDesc">مواضع الحلول والنقطة المرجعية معروضة بتدرج عددي منتظم.</desc>
+</svg>
+<p id="figureDesc">النقاط الزرقاء تمثل الحلول. اللون البرتقالي يحدد المركز عند وجود مسافة من نقطة مرجعية.</p>
+</div>
+<p id="answers" aria-live="polite"></p>
+</section>
+<section><h2>خطوات الحل</h2>
+<ol><li>اعزل تعبير القيمة المطلقة.</li><li>إذا كان الطرف الآخر سالبًا، فلا يوجد حل. وإذا كان صفرًا، فتوجد حالة واحدة. وإذا كان موجبًا، نحل حالتين.</li><li>عوّض في المعادلة الأصلية للتحقق.</li><li>حدد كل حل على خط الأعداد، مع مراعاة المقياس والمسافات.</li></ol>
+<div class="teacher"><strong>مراجعة المعلم:</strong> يُقيّم الرسم الحر وشرح سبب وجود حلين أو حل واحد أو عدم وجود حل، وكذلك تفسير المسافة في المسائل السياقية، بمصفوفة مراجعة مستقلة. لا يُعد هذا النشاط تصحيحًا آليًا لرسوم الطالب أو تبريراته.</div></section>
+<section aria-labelledby="cooldownTitle">
+<h2 id="cooldownTitle">تقويم ختامي (Cool-down)</h2>
+<p>أكمل المسائل التالية بصورة مستقلة بعد النشاط. إجابات المسائل العددية قابلة للتحقق بالحساب، أما التفسير والرسم فيُراجعان مع المعلم.</p>
+<ol>
+<li>حل المعادلة <span class="eq">|س − ٣| = ٥</span>، ثم حدّد الحلّين على خط الأعداد من دون تغيير التدريج.</li>
+<li>ما مجموعة حل <span class="eq">|٢س + ٤| = −٦</span>؟ اشرح لماذا.</li>
+<li>نقطتان عند العددين <span class="eq">٧</span> و<span class="eq">١٩</span>. اكتب معادلة قيمة مطلقة لهما باستخدام المنتصف، ووضّح كيف تحققت.</li>
+</ol>
+<form id="cooldownResponse" aria-labelledby="cooldownTitle">
+<label for="cooldownQ1">١. الحلّان ووصف الرسم:</label>
+<textarea id="cooldownQ1" required rows="3" placeholder="اكتب الحلّين واشرح مكانهما على خط الأعداد"></textarea>
+<fieldset><legend>تمثيل الحلين على خط الأعداد: اختر نقطتين من −٥ إلى ١٠</legend>
+<p id="pointPickerHelp">اختر نقطتين بالضغط أو باستخدام لوحة المفاتيح. يمكنك إلغاء اختيار نقطة بالضغط عليها ثانية. تقييم الرسم يتم بواسطة المعلم.</p>
+<svg id="cooldownStudentNumberLine" viewBox="0 0 760 145" role="img" aria-labelledby="studentLineTitle studentLineDescription" style="min-width:560px"><title id="studentLineTitle">خط الأعداد الخاص بإجابة الطالب</title><desc id="studentLineDescription">خط أعداد منتظم من سالب خمسة إلى عشرة، اضغط على أزرار الأعداد لتحديد نقطتين.</desc></svg>
+<div class="point-picker" id="cooldownPointPicker" role="group" aria-describedby="pointPickerHelp"></div>
+<p id="selectedPoints" role="status" aria-live="polite">لم يتم اختيار نقطتين بعد.</p></fieldset>
+<label for="cooldownQ2">٢. مجموعة الحل والسبب:</label>
+<textarea id="cooldownQ2" required rows="3" placeholder="اكتب مجموعة الحل وسبب اختيارك"></textarea>
+<label for="cooldownQ3">٣. المعادلة وتبرير المركز والمسافة:</label>
+<textarea id="cooldownQ3" required rows="3" placeholder="اكتب المعادلة وكيف تحققت من الحلين"></textarea>
+<fieldset><legend>تطبيقات وتبرير إضافي من أهداف الدرس</legend>
+<label for="contextQ4">٤. سياق قياس: القيمة المطلوبة ٢٥ سم، والسماحية ٣ سم بالضبط. اكتب معادلة القيمة المطلقة وحدد القياسين الممكنين، ثم فسر معنى السماحية.</label>
+<textarea id="contextQ4" required rows="3" placeholder="المعادلة، القياسان، وتفسير وحدة القياس"></textarea>
+<label for="contextQ5">٥. تحليل خطأ: ادّعى طالب أن المعادلة |س − ٤| = −٢ لها حلان لأننا نحل حالتين دائمًا. حلّل الخطأ واذكر شرط وجود الحلول.</label>
+<textarea id="contextQ5" required rows="3" placeholder="اشرح لماذا لا توجد حلول، ومتى يوجد حل أو حلان"></textarea>
+</fieldset>
+<button type="submit">تجهيز إجابات الطالب لمراجعة المعلم</button>
+<p id="cooldownMessage" role="status" aria-live="polite"></p>
+<label for="cooldownSubmission">سجل الإجابات لنقله إلى المعلم (لا يمثل درجة):</label>
+<textarea id="cooldownSubmission" rows="7" readonly aria-label="إجابات الطالب لمراجعة المعلم"></textarea>
+</form>
+<details id="cooldownKey" hidden><summary>التحقق بعد تسجيل المحاولة (إجابات وتفسير)</summary>
+<p>١. س = −٢ أو س = ٨؛ منتصف الحلين ٣ وبعد كل منهما ٥ وحدات.</p>
+<p>٢. مجموعة الحل خالية، لأن القيمة المطلقة لا يمكن أن تساوي عددًا سالبًا.</p>
+<p>٣. المنتصف = ١٣، والمسافة = ٦؛ المعادلة <span class="eq">|س − ١٣| = ٦</span>، والحلان ٧ و١٩.</p><p>٤. |س − ٢٥| = ٣، والقياسان ٢٢ سم و٢٨ سم. السماحية مقدار الاختلاف عن القيمة المستهدفة.</p><p>٥. لا توجد حلول؛ المسافة التي تمثلها القيمة المطلقة لا تكون سالبة. الطرف صفر يعطي حلًا واحدًا، والموجب قد يعطي حلين في هذه المعادلات الخطية.</p>
+</details>
+<div class="teacher"><strong>مراجعة المعلم:</strong> في السؤال الأول يراجع التدرج والنقطتين، وفي الثاني يراجع السبب الرياضي، وفي الثالث يراجع اختيار المركز والمسافة والتحقق. الإجابات الظاهرة للمتعلم ليست تقييمًا آليًا معتمدًا للرسوم أو التفسيرات.</div>
+</section>
+<section aria-labelledby="bankTitle">
+<h2 id="bankTitle">بنك التوسّع والتفكير — مراجعة المعلم</h2>
+<p>أنشطة عربية أصلية إضافية لمجالات التطبيق في صفحات الدرس. اختيارية ولا تدخل ضمن الدرجة الآلية. أدخل الإجابات فقط للمهام التي يحددها المعلم.</p>
+<details id="extendedTasks">
+<summary>عرض الأنشطة السياقية والتفسيرية</summary>
+<ol>
+<li><label for="extensionQ1">العائد المالي: توقعت شركة عائدًا على الاستثمار بنسبة ١٢٪، وقد يزيد العائد الفعلي أو ينقص ٣ نقاط مئوية بالضبط. اكتب معادلة قيمة مطلقة وحدد نسبتي العائد الممكنتين، مع التمييز بين النقاط المئوية والنسبة النسبية.</label><textarea id="extensionQ1" rows="2"></textarea></li>
+<li><label for="extensionQ2">الاستبانة: في مخطط دائري بلغت نسبة من أجابوا «محتمل جدًا» ١٥٪، وكان هامش الخطأ ٤ نقاط مئوية. اكتب معادلة القيمة المطلقة التي تحدد أدنى وأقصى نسبة محتملة واشرح قراءة النسب في المخطط.</label><textarea id="extensionQ2" rows="2"></textarea></li>
+<li><label for="extensionQ3">الزمن: أربعة عدائين، زمن كل منهم المرجعي ١٣ ثانية؛ إذا اختلف الزمن الإجمالي بثانيتين بالضبط، اكتب المعادلة والزمنين. ثم حل حالتين إضافيتين: زمن مرجعي ٥٣ ثانية بفارق ثانية واحدة، وزمن مرجعي ٥٠٫٥ ثانية بفارق ١٫٥ ثانية. وحوّل مدة عرض مسرحي مرجعية ٤ دقائق مع فرق ٥ ثوانٍ إلى زمنين بالدقائق والثواني وبالثواني فقط.</label><textarea id="extensionQ3" rows="2"></textarea></li>
+<li><label for="extensionQ4">القياس والسرعة: ستارة طولها المرجعي ٢٠ بوصة، ويُسمح باختلاف مقداره بوصتان؛ اكتب المعادلة وحدد الطولين الممكنين، ثم ناقش هل يلائمان عارضة طولها ٥ أقدام و٩ بوصات. عداد سرعة مضبوط على ٥٠ ميلًا/ساعة، وقد يختلف بمقدار ٣ أميال/ساعة؛ اكتب المعادلة والسرعتين. إذا أظهر العداد ٤٥ ميلًا/ساعة بفارق ميل واحد فما النطاق الجديد؟</label><textarea id="extensionQ4" rows="3"></textarea></li>
+<li><label for="extensionQ5">الوقت والسمع: مدة التسجيل المرجعية ساعة ونصف مع فرق ٣ دقائق؛ اكتب معادلة القيمة المطلقة وحدد مدتي التسجيل بالدقائق. وفي نموذج السمع توجد قيمة مرجعية ٢٠٠٠٠ شخص بهامش ١٠٠٠ شخص زيادة أو نقصانًا؛ اكتب معادلة القيمة المطلقة والمديين الممكنين وفسر المعنى.</label><textarea id="extensionQ5" rows="3"></textarea></li>
+<li><label for="extensionQ6">القراءة والدرجات: يتوقف أعضاء نادي القراءة عند الصفحة ٢٠٣، قبلها أو بعدها بعشر صفحات؛ اكتب المعادلة وحدد الصفحتين. وفي مسابقة أسئلة يوجد رصيد ابتدائي ١٦٠ نقطة، والجواب الصحيح يضيف ١٠، والخاطئ يخصم ١٠، والمترك لا يغيّر الرصيد؛ حلّل حدود رصيد خمس مسائل وأعطِ نماذج للإجابات المختلفة.</label><textarea id="extensionQ6" rows="3"></textarea></li>
+<li><label for="extensionQ7">التبرير: قيّم «كل معادلة قيمة مطلقة لها حلّان» و«|س|+٣ قد يكون سالبًا» و«حل |س−٤|=٠ هو س=٤». ثم صنّف كل عبارة إلى دائمًا أو أحيانًا أو أبدًا مع مثال مضاد عند اللزوم: «|س+١| أكبر من صفر»، «حل |س+ج|=٠ موجب»، «المتباينة |س|+ج<٠ بلا حلول»، «|س+ج|+ج موجب». فسّر أثر قيمة ج. ثم (أ) اكتب موقفًا من الحياة الواقعية يمثله |س−٤|=١٠، وحلّه وفسّر س=−٦ أو ١٤ بحسب سياقك؛ (ب) حل |س−٧|=٤٫٦ فتحصل على حلين عشريين وتحقق منهما؛ (ج) طالب قال إن |س+٥|=−٣ لها حلّان لأنه كتب س+٥=±(−٣). اشرح الخطأ وما مجموعة الحل الصحيحة.</label><textarea id="extensionQ7" rows="3"></textarea></li>
+<li><label for="extensionQ8">التركيب: حل المعادلتين <bdi class="eq" dir="ltr">٢|س|−٣=٨</bdi> و<bdi class="eq" dir="ltr">٤/|س|+١٢=١٤</bdi>. في المعادلة الثانية بيّن لماذا <bdi class="eq" dir="ltr">س≠٠</bdi>، واعزل الكسر ثم حل الحالتين وتحقق بالتعويض. اشرح اختلاف المعامل خارج رمز القيمة المطلقة عن وجود القيمة المطلقة في مقام الكسر.</label><textarea id="extensionQ8" rows="3"></textarea></li>
+</ol>
+<p>لا تصحَّح هذه الإجابات تلقائيًا. يجب أن يراجع المعلم النمذجة، الوحدات، خطوات الجبر، وصحة التبرير.</p>
+</details>
+</section>
+<section aria-labelledby="sourceGraphTasksTitle" id="sourceGraphTasks">
+<h2 id="sourceGraphTasksTitle">إنشاء معادلة من نقاط خط الأعداد — تدريب المعلم</h2>
+<p>اختر الحالات التي يحددها المعلم. المقصود إنشاء المعادلة من حلول معطاة، لا مجرد إيجاد منتصفها. اكتب خطوات التحقق؛ أما رسم الطالب وتبريره فمراجعة المعلم، ولا تُحسب لهما درجة آلية.</p>
+<details><summary>عرض ١٢ حالة متدرجة، ومنها نهايات كسرية</summary><ol><li><label for="sourceGraph11">الحالة 11: نقطتا الحل على خط الأعداد −٢، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="11" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 11، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph11" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph12">الحالة 12: نقطتا الحل على خط الأعداد −٩، ٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="12" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 12، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph12" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph33">الحالة 33: نقطتا الحل على خط الأعداد −٤، ٤. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="33" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 33، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph33" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph34">الحالة 34: نقطتا الحل على خط الأعداد −٦، ٦. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="34" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 34، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph34" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph35">الحالة 35: نقطة الحل الوحيدة على خط الأعداد هي −٣. اكتب معادلة قيمة مطلقة تعطي حلًا واحدًا، وحدد المركز والمسافة الصفرية، واشرح لماذا لا توجد نقطة حل ثانية.</label><svg class="source-graph-preview" data-graph-exercise="35" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 35، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph35" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph36">الحالة 36: نقطتا الحل على خط الأعداد −٦، ٢. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="36" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 36، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph36" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph46">الحالة 46: نقطتا الحل على خط الأعداد −٣٫٧٥، ٤٫٢٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="46" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 46، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph46" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph47">الحالة 47: نقطتا الحل على خط الأعداد −١٫٥، ١٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="47" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 47، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph47" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph48">الحالة 48: نقطتا الحل على خط الأعداد −٢٫٥، ٣٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="48" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 48، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph48" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph49">الحالة 49: نقطتا الحل على خط الأعداد ٠، ٠٫٥. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="49" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 49، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph49" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph50">الحالة 50: نقطتا الحل على خط الأعداد ٠، ٤/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="50" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 50، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph50" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li>
+<li><label for="sourceGraph51">الحالة 51: نقطتا الحل على خط الأعداد −٤/٣، ٢/٣. اكتب معادلة قيمة مطلقة وحدد المنتصف والمسافة. اعرض تبريرك للمعلم.</label><svg class="source-graph-preview" data-graph-exercise="51" viewBox="0 0 760 126" role="img" aria-label="خط أعداد الحالة 51، حدد المركز واكتب المعادلة من النقاط الزرقاء"></svg><textarea id="sourceGraph51" rows="2" placeholder="المعادلة والمركز والمسافة"></textarea></li></ol>
+<p>الحالات المرتبطة بالصفحة ١٠٥: ١١ و١٢؛ الصفحة ١٠٦: ٣٣–٣٦؛ الصفحة ١٠٧: ٤٦–٥١.</p></details>
+<p>يمكن تجهيز إجابات هذه الحالات للمعلم بصورة مستقلة دون إكمال التقويم الختامي.</p>
+<button type="button" id="sourceGraphExport">تجهيز سجل تمارين خطوط الأعداد للمعلم</button>
+<p id="sourceGraphExportStatus" role="status" aria-live="polite"></p>
+<label for="sourceGraphSubmission">سجل الإجابات المحلي — مراجعة المعلم فقط</label><textarea id="sourceGraphSubmission" rows="7" readonly aria-describedby="sourceGraphExportStatus"></textarea>
+</section>
+<footer><p>نشاط أصلي من Edulytics، مرتبط بكتاب الطالب <span class="eq">01.pdf</span>، الصفحات المطبوعة ١٠٣–١٠٨. المعلم يراجع المخرجات الحرة.</p></footer>
+</main>
+<script>
+'use strict';
+const cases={
+ two:{min:-25,max:15,step:5,points:[-22,12],center:-5,distance:17,label:'نحل س + ٥ = ١٧ أو س + ٥ = −١٧، إذن س = ١٢ أو −٢٢.',answer:'مجموعة الحل: {−٢٢، ١٢}'},
+ one:{min:-2,max:8,step:1,points:[3],center:3,distance:0,label:'حتى تكون القيمة المطلقة صفرًا، يجب أن يكون ٢س − ٦ = ٠، إذن س = ٣.',answer:'مجموعة الحل: {٣}'},
+ none:{min:-5,max:5,step:1,points:[],center:null,distance:null,label:'لا يمكن أن تكون القيمة المطلقة عددًا سالبًا؛ ولذلك لا يوجد حل حقيقي.',answer:'مجموعة الحل: ∅'},
+ mid:{min:8,max:22,step:2,points:[11,19],center:15,distance:4,label:'١٥ منتصف ١١ و١٩، والمسافة من المنتصف إلى كل منهما ٤ وحدات.',answer:'مجموعة الحل: {١١، ١٩}'}
+};
+const svg=document.getElementById('numberLine');
+const ns='http://www.w3.org/2000/svg';
+function node(tag,attributes,text){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attributes||{}))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=String(text);svg.appendChild(e);return e}
+function draw(){
+ const d=cases[document.getElementById('case').value],x=v=>45+(v-d.min)*670/(d.max-d.min);
+ svg.replaceChildren();
+ node('title',{id:'svgTitle'},'خط أعداد لحلول القيمة المطلقة');
+ node('desc',{id:'svgDesc'},d.points.length?'حلول عند '+d.points.join('، '):'لا نقاط حل، المعادلة مستحيلة.');
+ node('line',{x1:35,y1:90,x2:730,y2:90,class:'axis'});
+ for(let n=d.min;n<=d.max;n+=d.step){node('line',{x1:x(n),y1:82,x2:x(n),y2:98,class:'tick'});node('text',{x:x(n),y:120,'text-anchor':'middle',class:'label'},n)}
+ if(d.center!==null){node('line',{x1:x(d.center),y1:52,x2:x(d.center),y2:103,class:'center','stroke-dasharray':'4 4'});node('text',{x:x(d.center),y:44,'text-anchor':'middle',class:'label'},'المركز')}
+ for(const v of d.points){node('circle',{cx:x(v),cy:90,r:9,class:'marker'});node('text',{x:x(v),y:65,'text-anchor':'middle',class:'label sol'},v)}
+ document.getElementById('explain').textContent=d.label;
+ document.getElementById('answers').textContent=d.answer;
+}
+document.getElementById('case').addEventListener('change',draw);draw();
+
+const sourceGraphExactLabels={11:['−٢','٤'],12:['−٩','٣'],33:['−٤','٤'],34:['−٦','٦'],35:['−٣'],36:['−٦','٢'],46:['−٣٫٧٥','٤٫٢٥'],47:['−١٫٥','١٫٥'],48:['−٢٫٥','٣٫٥'],49:['٠','٠٫٥'],50:['٠','٤/٣'],51:['−٤/٣','٢/٣']};
+const sourceGraphCoordinates={"11":[-2,4],"12":[-9,3],"33":[-4,4],"34":[-6,6],"35":[-3],"36":[-6,2],"46":[-3.75,4.25],"47":[-1.5,1.5],"48":[-2.5,3.5],"49":[0,0.5],"50":[0,1.3333333333333333],"51":[-1.3333333333333333,0.6666666666666666]};
+for(const graph of document.querySelectorAll('svg.source-graph-preview')){
+ const id=Number(graph.dataset.graphExercise),points=sourceGraphCoordinates[id];
+ if(!points || !points.length)continue;
+ const low=Math.floor(Math.min(...points))-1,high=Math.ceil(Math.max(...points))+1;
+ const x=value=>45+(value-low)*665/(high-low);
+ graph.replaceChildren();
+ function add(tag,attrs,content){
+  const element=document.createElementNS(ns,tag);
+  for(const [k,v] of Object.entries(attrs))element.setAttribute(k,String(v));
+  if(content!==undefined)element.textContent=String(content);
+  graph.appendChild(element);
+ }
+ add('title',{},'خط أعداد التمرين '+id);
+ const labels=sourceGraphExactLabels[id]||points.map(String);
+ add('desc',{},'نقاط الحل: '+labels.join('، ')+'؛ أوجد المركز ونصف المسافة واكتب المعادلة بنفسك.');
+ add('line',{x1:35,y1:56,x2:725,y2:56,class:'axis'});
+ for(let tick=low;tick<=high;tick++){
+  const pos=x(tick);
+  add('line',{x1:pos,y1:49,x2:pos,y2:63,class:'tick'});
+  add('text',{x:pos,y:84,'text-anchor':'middle',class:'label'},String(tick).replace(/-/g,'−').replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[Number(d)]));
+ }
+ points.forEach((value,i)=>{
+  add('circle',{cx:x(value),cy:56,r:8,class:'marker'});
+  add('text',{x:x(value),y:35,'text-anchor':'middle',class:'label sol'},labels[i]);
+ });
+}
+
+const selectedCoolDownPoints=new Set();
+const picker=document.getElementById('cooldownPointPicker');
+const selectedStatus=document.getElementById('selectedPoints');
+const studentLine=document.getElementById('cooldownStudentNumberLine');
+function renderStudentLine(){
+ const axisNs='http://www.w3.org/2000/svg';
+ studentLine.replaceChildren();
+ function add(tag,attrs,text){
+  const el=document.createElementNS(axisNs,tag);
+  for(const [key,val] of Object.entries(attrs))el.setAttribute(key,String(val));
+  if(text!==undefined)el.textContent=String(text);
+  studentLine.appendChild(el);
+ }
+ add('title',{id:'studentLineTitle'},'اختيارات الطالب على خط الأعداد');
+ add('desc',{id:'studentLineDescription'},'المواضع المختارة: '+([...selectedCoolDownPoints].sort((a,b)=>a-b).join('، ')||'لا توجد'));
+ add('line',{x1:35,y1:72,x2:725,y2:72,class:'axis'});
+ for(let val=-5;val<=10;val++){
+  const x=45+(val+5)*44;
+  add('line',{x1:x,y1:64,x2:x,y2:80,class:'tick'});
+  add('text',{x,y:103,'text-anchor':'middle',class:'label'},val);
+  if(selectedCoolDownPoints.has(val))add('circle',{cx:x,cy:72,r:8,class:'marker'});
+ }
+}
+
+function updatePointPicker(){
+ for(const button of picker.querySelectorAll('button'))button.setAttribute('aria-pressed',String(selectedCoolDownPoints.has(Number(button.dataset.point))));
+ const points=[...selectedCoolDownPoints].sort((a,b)=>a-b);
+ selectedStatus.textContent=points.length===2?'النقطتان المختارتان: '+points.join(' ، '):'النقاط المختارة: '+(points.length?points.join(' ، '):'لا توجد')+' — مطلوب نقطتان.';
+ renderStudentLine();
+}
+for(let point=-5;point<=10;point++){
+ const button=document.createElement('button');button.type='button';button.dataset.point=String(point);button.textContent=String(point);button.setAttribute('aria-label','تحديد النقطة '+point);button.setAttribute('aria-pressed','false');
+ button.addEventListener('click',()=>{if(selectedCoolDownPoints.has(point))selectedCoolDownPoints.delete(point);else if(selectedCoolDownPoints.size<2)selectedCoolDownPoints.add(point);else {selectedStatus.textContent='ألغِ تحديد نقطة قبل اختيار نقطة أخرى.';return;}updatePointPicker();});
+ picker.appendChild(button);
+}
+updatePointPicker();
+const graphQuestionIds=[11,12,33,34,35,36,46,47,48,49,50,51];
+function enteredSourceGraphAnswers(){
+ return graphQuestionIds.map(sourceExercise=>({sourceExercise,response:document.getElementById('sourceGraph'+sourceExercise).value.trim(),review:'TEACHER_REVIEW_REQUIRED'})).filter(x=>x.response);
+}
+document.getElementById('sourceGraphExport').addEventListener('click',()=>{
+ const entries=enteredSourceGraphAnswers(),status=document.getElementById('sourceGraphExportStatus');
+ if(!entries.length){status.textContent='اكتب إجابة حالة واحدة على الأقل قبل تجهيز السجل.';return;}
+ const exportData={lesson:'UAE-MOE-MATH/G9/General/2-5',part:'source_number_line_teacher_review',graded:false,review:'TEACHER_REVIEW_REQUIRED',graphAnswers:entries};
+ document.getElementById('sourceGraphSubmission').value=JSON.stringify(exportData,null,2);
+ status.textContent='تم تجهيز السجل محليًا؛ انسخه وقدمه للمعلم. لم يُرسل إلى Edulytics ولم تُحسب درجة.';
+});
+document.getElementById('cooldownResponse').addEventListener('submit',event=>{
+ event.preventDefault();
+ const answers=[1,2,3].map(n=>document.getElementById('cooldownQ'+n).value.trim()).concat([4,5].map(n=>document.getElementById('contextQ'+n).value.trim()));
+ if(answers.some(x=>!x)){document.getElementById('cooldownMessage').textContent='يجب كتابة إجابة لكل سؤال قبل تجهيز السجل.';return;}
+ if(selectedCoolDownPoints.size!==2){document.getElementById('cooldownMessage').textContent='حدد نقطتين على خط الأعداد للسؤال الأول.';return;}
+ const extendedAnswers=[1,2,3,4,5,6,7,8].map(n=>({question:n,response:document.getElementById('extensionQ'+n).value.trim()})).filter(x=>x.response);
+ const graphAnswers=enteredSourceGraphAnswers();
+ const response={graphAnswers,lesson:'UAE-MOE-MATH/G9/General/2-5',review:'TEACHER_REVIEW_REQUIRED',graded:false,numberLineSelectedPoints:[...selectedCoolDownPoints].sort((a,b)=>a-b),answers:answers.map((answer,i)=>({question:i+1,response:answer,review:'TEACHER_REVIEW_REQUIRED'})),extensionAnswers:extendedAnswers.map(x=>({...x,review:'TEACHER_REVIEW_REQUIRED'}))};
+ document.getElementById('cooldownSubmission').value=JSON.stringify(response,null,2);
+ document.getElementById('cooldownMessage').textContent='تم تجهيز سجل الإجابات محليًا. انسخه وقدمه إلى المعلم؛ لم تُرسل البيانات إلى Edulytics ولم تُحتسب درجة.';
+ document.getElementById('cooldownKey').hidden=false;
+});
+</script>
+</body></html>

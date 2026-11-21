@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "frameworkCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "academicLanguage": "ar",
+    "targetCurriculumPeriod": "2026-2027"
+  },
+  "dataSource": {
+    "provider": "Neon",
+    "project": "Edulytiks",
+    "projectId": "tiny-lab-44877119",
+    "frameworkVersion": "MOE-2026-2027-T1",
+    "access": "READ_ONLY_SELECT",
+    "inspectionDate": "2026-11-19"
+  },
+  "queries": [
+    {
+      "table": "CurriculumPedagogicalLessons",
+      "filter": "Code LIKE 'PED:UAE-MOE-MATH:L9:%'",
+      "count": 0
+    },
+    {
+      "table": "CurriculumPackContentNodes",
+      "filter": "FrameworkCode='UAE-MOE-MATH' AND Code ILIKE '%L9:%'",
+      "count": 0
+    },
+    {
+      "table": "CurriculumLessonContents",
+      "filter": "Join CurriculumPackContentNodes with FrameworkCode='UAE-MOE-MATH' AND LogicalLevelFrom=9",
+      "count": 0
+    }
+  ],
+  "githubPreparation": {
+    "branch": "fix/g9-general-full-year-scope-86",
+    "rawGeneralSourceEntries": 86,
+    "sourceUnits": 14,
+    "previousPreparedLessons": 12,
+    "lesson2_5": "DRAFT_PREPARED_NOT_CLOSED",
+    "semanticDedup": "PENDING"
+  },
+  "classification": {
+    "productionLessonRows": "MISSING",
+    "productionContentRows": "MISSING",
+    "candidateDeployStatus": "NOT_DEPLOYED",
+    "stageDAction": "Check latest live state again after A-C handoff and before migration/publish"
+  },
+  "safety": {
+    "neonWrites": 0,
+    "stageACannotDeploy": true,
+    "otherCurriculaUntouched": true
+  },
+  "note": "Reading these tables alone is not a full registry inventory; counts are limited to targeted Grade 9 pedagogy/content tables."
+}

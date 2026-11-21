@@ -443,7 +443,10 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             # Opt-in only: never change existing US or G1 negative controls.
             if wrong_answer_profile == "uae-g7":
                 answer=grade7_syntactically_valid_wrong_answer(answer,family)
-            elif wrong_answer_profile == "uae-g8":
+            elif wrong_answer_profile in ("uae-g8", "uae-g9"):
+                # UAE G9 uses the same mathematically valid categorical
+                # negative controls for SSS/SAS/ASA/RHS, linear systems,
+                # and numerical answer perturbations; no US/G7 changes.
                 answer=grade8_syntactically_valid_wrong_answer(answer,family)
             elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
                 answer=grade6_syntactically_valid_wrong_answer(answer,family)

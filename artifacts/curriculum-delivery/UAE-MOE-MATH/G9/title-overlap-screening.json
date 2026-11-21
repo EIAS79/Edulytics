@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "curriculum": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General"
+  },
+  "sourceLessonCount": 86,
+  "rawPairsScreened": 3655,
+  "method": "Arabic normalized token Jaccard (40%) and character Levenshtein similarity (60%); threshold >=0.53",
+  "candidateCount": 15,
+  "source": "comprehensive-index.json",
+  "candidates": [
+    {
+      "sourceA": 43,
+      "sourceB": 70,
+      "sourceRefA": "01.pdf:7-4",
+      "sourceRefB": "01.pdf:7-4",
+      "normalizedTitleSimilarity": 1,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 11,
+      "sourceB": 30,
+      "sourceRefA": "01.pdf:2-3",
+      "sourceRefB": "01.pdf:5-3",
+      "normalizedTitleSimilarity": 0.74,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 27,
+      "sourceB": 72,
+      "sourceRefA": "01.pdf:4-4",
+      "sourceRefB": "03-1.pdf:12-1",
+      "normalizedTitleSimilarity": 0.733,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 49,
+      "sourceB": 50,
+      "sourceRefA": "02-1.pdf:7-6",
+      "sourceRefB": "02-1.pdf:7-7",
+      "normalizedTitleSimilarity": 0.687,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 24,
+      "sourceB": 25,
+      "sourceRefA": "01.pdf:4-1",
+      "sourceRefB": "01.pdf:4-2",
+      "normalizedTitleSimilarity": 0.639,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 25,
+      "sourceB": 26,
+      "sourceRefA": "01.pdf:4-2",
+      "sourceRefB": "01.pdf:4-3",
+      "normalizedTitleSimilarity": 0.636,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 53,
+      "sourceB": 54,
+      "sourceRefA": "02-1.pdf:8-1",
+      "sourceRefB": "02-1.pdf:8-2",
+      "normalizedTitleSimilarity": 0.615,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 4,
+      "sourceB": 48,
+      "sourceRefA": "01.pdf:1-4",
+      "sourceRefB": "02-1.pdf:7-5",
+      "normalizedTitleSimilarity": 0.614,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 81,
+      "sourceB": 82,
+      "sourceRefA": "03-1.pdf:13-4",
+      "sourceRefB": "03-1.pdf:13-5",
+      "normalizedTitleSimilarity": 0.608,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 18,
+      "sourceB": 34,
+      "sourceRefA": "01.pdf:3-1",
+      "sourceRefB": "01.pdf:6-1",
+      "normalizedTitleSimilarity": 0.586,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 43,
+      "sourceB": 71,
+      "sourceRefA": "01.pdf:7-4",
+      "sourceRefB": "03-1.pdf:11-4",
+      "normalizedTitleSimilarity": 0.586,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 70,
+      "sourceB": 71,
+      "sourceRefA": "01.pdf:7-4",
+      "sourceRefB": "03-1.pdf:11-4",
+      "normalizedTitleSimilarity": 0.586,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 28,
+      "sourceB": 29,
+      "sourceRefA": "01.pdf:5-1",
+      "sourceRefB": "01.pdf:5-2",
+      "normalizedTitleSimilarity": 0.572,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 34,
+      "sourceB": 38,
+      "sourceRefA": "01.pdf:6-1",
+      "sourceRefB": "01.pdf:6-5",
+      "normalizedTitleSimilarity": 0.549,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    },
+    {
+      "sourceA": 78,
+      "sourceB": 84,
+      "sourceRefA": "03-1.pdf:13-1",
+      "sourceRefB": "03-1.pdf:13-7",
+      "normalizedTitleSimilarity": 0.533,
+      "reviewStatus": "TITLE_SCREENING_ONLY_NOT_EVIDENCE_OF_DUPLICATE"
+    }
+  ],
+  "restrictions": [
+    "Title similarity alone is never a semantic duplication decision.",
+    "Low similarity cannot prove unique learning objectives.",
+    "Candidate pair must be compared by goals, examples and exercises before keep/merge.",
+    "Other non-title semantic overlaps are still possible."
+  ],
+  "executionStatus": "PREPARED_NOT_STAGE_D_TESTED"
+}
