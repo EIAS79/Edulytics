@@ -563,5 +563,59 @@
     "finalCandidateSha": null,
     "mergeAllowed": false,
     "renderDeployAllowed": false
+  },
+  "latestU01L01CareerLearningRepair20261121": {
+    "stage": "D.4",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "lastContentFixCommit": "f5e55c72f42c3fc180c29aa21e87322effebdfed",
+    "lastTestFixCommit": "00de154e67273104b1408455a3b516a89126a648",
+    "auditedTestedSha": "92e13181d3916f2a7eeb9fa16d7947fc41ae9dc6",
+    "correctedIssue": "Independent career-math application absent from the sports marketing source structure; now an original fee-plus-quantity example in the existing U01L01 RichV2, not copied media",
+    "sourcePrintedPage": 6,
+    "sourcePdfPage1Based": 17,
+    "sourceElementGroup": "EXTERNAL_SKILLS_CAREER_MEDIA",
+    "teachingArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+    "sourceHandoffArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-nonnumbered-source-structure-reinspection-NO_GO.json",
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs"
+    ],
+    "mathematicalOracle": "24×4+35=131; 24×0+35=35; 24×(4+35)≠131",
+    "nodePreparedLocal": {
+      "files": 94,
+      "total": 378,
+      "passed": 378,
+      "failed": 0,
+      "skipped": 0,
+      "runner": "node --test",
+      "commit": "92e13181d3916f2a7eeb9fa16d7947fc41ae9dc6"
+    },
+    "dotnetLatestFullRegression": {
+      "total": 17514,
+      "passed": 17514,
+      "failed": 0,
+      "commit": "5b3fda1a3eee3b4f28b44183c2c5fabd995bf0ef",
+      "statusAtCurrentSha": "NOT_REEXECUTED_AFTER_RICHV2_CHANGE"
+    },
+    "strictNodeSourceGate": {
+      "exitCode": 1,
+      "fullRawSourceAudits": 0,
+      "rawSourceLessons": 86
+    },
+    "strictPythonSourceGate": {
+      "exitCode": 1,
+      "canonicalLessonsWithAtomicParity": 0,
+      "canonicalLessons": 82
+    },
+    "publisherMediaOrLinkedQrVerified": false,
+    "firstLessonFullSemanticParity": "UNKNOWN",
+    "fullAtomicSourceDenominator": null,
+    "authenticatedE2E": "NOT_RUN",
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonStatus": "D_PENDING",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "passedHostedCiAtCurrentSha": false,
+    "productionWrites": 0
   }
 }
