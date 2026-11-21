@@ -75,7 +75,9 @@ public sealed class UaeG9GeneralPreparedPracticeFamilyPreflightTests
                     }
                     var item = generated[0];
                     if (!item.Prompt.Any(ch => ch is >= '\u0600' and <= '\u06ff'))
-                        failures.Add($"{code} / {family}: NOT_ARABIC");
+                        failures.Add($"{code} / {family}: NOT_ARABIC prompt=" +
+                            item.Prompt.Replace('\n', ' ')[..Math.Min(140, item.Prompt.Length)] +
+                            " params=" + JsonSerializer.Serialize(item.Parameters));
                     if (!ExactSkillContractQuestionEngine.Verify(
                         family, item.Parameters, item.CorrectAnswer))
                         failures.Add($"{code} / {family}: CORRECT_ANSWER_REJECTED");
