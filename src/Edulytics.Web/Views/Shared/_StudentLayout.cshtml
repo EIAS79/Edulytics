@@ -3,7 +3,12 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
 @{
-    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    // The Grade 9 General Arabic lesson has its own academic reading
+    // direction. Do not infer it from a student portal language preference:
+    // an English UI cookie must not flip a verified Arabic lesson to LTR.
+    var pageLanguage = ViewData["ForceUaeG9AcademicArabicDirection"] is true
+        ? "ar"
+        : CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var localizedProductName = Shared["ProductName"].Value;
     var action = ViewContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
     var controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? string.Empty;

@@ -46,6 +46,11 @@
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal);
     var isUaeGrade9Arabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
+    // This owner-approved first-party Arabic academic body is RTL even if the
+    // authenticated student's UI preference/session culture is still English.
+    // The flag is scoped to the exact UAE G9 General lesson, never to other
+    // curricula or the user's global language preference.
+    ViewData["ForceUaeG9AcademicArabicDirection"] = isUaeGrade9Arabic;
     var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ||
