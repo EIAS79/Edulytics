@@ -143,7 +143,7 @@ def evaluate(phase: str) -> dict:
                    if code in digital_contract_codes]
         teacher_only = []
         for i, code in enumerate(codes, 1):
-            if code in contracts:
+            if code in digital_contract_codes:
                 continue
             filename = BASE / f"lesson-{i}-stage-a-c-checkpoint.json"
             if not filename.exists():
