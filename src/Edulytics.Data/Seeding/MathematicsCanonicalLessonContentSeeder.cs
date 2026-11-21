@@ -176,6 +176,42 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
 
     /// <summary>
+    /// UAE Grade9 General first-party owner-approved 82 Arabic lessons.
+    /// Called only within the guarded Grade9 outer transaction; the JSON
+    /// content is served from the embedded authored pack and no copyrighted
+    /// publisher prose or translated exercise pages are persisted to Neon.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade9MetadataAsync(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+        var documents = LoadEmbeddedDocuments()
+            .Where(document => document.Lessons.Any(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+        foreach (var document in documents)
+        {
+            if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+                document.VersionCode != "MOE-2026-2027-T1" ||
+                document.AcademicLanguage != "ar" ||
+                document.TargetCurriculumPeriod != "2026-2027" ||
+                document.Status != CanonicalLessonContentStatus.Published)
+                throw new InvalidOperationException(
+                    "G9 scoped metadata requires one owner-approved Published first-party Arabic UAE pack.");
+            document.Lessons = document.Lessons.Where(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)).ToList();
+        }
+        if (documents.Length != 1 ||
+            documents[0].Lessons.Count != 82 ||
+            documents[0].Lessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal).Count() != 82)
+            throw new InvalidOperationException(
+                "G9 scoped metadata release requires exactly 82 unique Arabic lesson records.");
+
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
+
+    /// <summary>
     /// The owner-approved 76-lesson Grade8 General Arabic cutover uses only
     /// validated first-party JSON canonical metadata. Existing published
     /// predecessor records are replaced under the outer Grade8 transaction.
