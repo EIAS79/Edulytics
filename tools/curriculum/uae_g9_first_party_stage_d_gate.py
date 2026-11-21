@@ -136,7 +136,7 @@ def evaluate(phase: str) -> dict:
         # Count only real keyed byLesson assignments and require exact
         # one-to-one correspondence with the 82 authored lesson identities.
         digital_contract_codes = set(re.findall(
-            r'byLesson\\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\\]\\s*=\\s*new LessonPracticeContract\\(',
+            r'byLesson\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\]\s*=\s*new LessonPracticeContract\(',
             contracts
         ))
         digital = [i for i, code in enumerate(codes, 1)
