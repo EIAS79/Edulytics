@@ -50,6 +50,13 @@ G8_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-
 G8_APPROVAL = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G8/grade8-owner-academic-approval.json"
 G8_CONTRACTS = ROOT / "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
 
+G9_PREFIX = "PED:UAE-MOE-MATH:L9:GENERAL:"
+G9_CONTENT = CONTENT_DIR / "uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json"
+G9_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g9-general-ar82-owner-first-party-v1.lesson-blueprint.json"
+G9_APPROVAL = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-owner-first-party-release-scope.json"
+G9_CHECKPOINT_DIR = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G9"
+
+
 
 
 
@@ -349,6 +356,97 @@ def owner_approved_g8_declared_practice() -> dict[str, str]:
         return mapped if set(mapped) == set(ccodes) else {}
     except (KeyError, TypeError, OSError, ValueError, json.JSONDecodeError):
         return {}
+
+
+
+
+def owner_approved_g9_declared_practice() -> tuple[dict[str, str], set[str]]:
+    """Validate the *exact* first-party G9 General 80-digital/2-teacher scope.
+
+    Only C# lesson contracts with registered mathematical skills and routable
+    registered families qualify. This is not official textbook literal parity
+    or proof that a token-gated contract is already enabled in production.
+    The same-SHA four-role authenticated G9 CI and scoped 0-to-82 PostgreSQL
+    release rehearsal remain independent mandatory publication gates.
+    """
+    inputs = (G9_CONTENT, G9_BLUEPRINT, G9_APPROVAL,
+              G4_CONTRACTS, G4_FAMILIES, G4_SKILLS)
+    if not all(p.is_file() for p in inputs):
+        return {}, set()
+    try:
+        content, blueprint, approval = (
+            read_json(p) for p in (G9_CONTENT, G9_BLUEPRINT, G9_APPROVAL))
+        skills = {row["id"] for row in read_json(G4_SKILLS)["skills"]}
+        families = {
+            row["id"]: row for row in read_json(G4_FAMILIES)["families"]
+        }
+        source = G4_CONTRACTS.read_text(encoding="utf-8-sig")
+        content_codes = [row["LessonCode"] for row in content["Lessons"]]
+        blueprint_codes = [row["LessonCode"] for row in blueprint["Lessons"]]
+        if not (
+            content_codes == blueprint_codes
+            and len(content_codes) == len(set(content_codes)) == 82
+            and all(code.startswith(G9_PREFIX) for code in content_codes)
+            and content.get("PackCode") == blueprint.get("PackCode") == "UAE-MOE-MATH"
+            and content.get("VersionCode") == blueprint.get("VersionCode") == "MOE-2026-2027-T1"
+            and content.get("AcademicLanguage") == "ar"
+            and content.get("Status") == "Published"
+            and blueprint.get("LogicalLevel") == approval.get("grade") == 9
+            and blueprint.get("Pathway") == approval.get("pathway") == "General"
+            and len(blueprint.get("Units", [])) == 13
+            and approval.get("ownerApprovedLessons") == 82
+            and approval.get("ownerAcademicApprovalRecorded") is True
+            and approval.get("ownerPermissionToProceedToReleaseGates") is True
+            and approval.get("academicFirstPartyScopeApproved") is True
+            and approval.get("originalPublisherElementParity") == "NOT_INDEPENDENTLY_VERIFIED"
+            and approval.get("sourceLiteralParityClaim") == "UNKNOWN"
+            and approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False
+        ):
+            return {}, set()
+
+        declaration = re.compile(
+            r'byLesson\["(PED:UAE-MOE-MATH:L9:GENERAL:[^"]+)"\]\s*'
+            r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+            r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]', re.S)
+        rows = declaration.findall(source)
+        mapped: dict[str, str] = {}
+        if len(rows) != 80:
+            return {}, set()
+        for code, declared_code, skill, mechanic, family_text in rows:
+            family_ids = re.findall(r'"([^"]+)"', family_text)
+            if (code != declared_code or code not in content_codes
+                    or code in mapped or skill not in skills or
+                    not mechanic or not family_ids or
+                    len(family_ids) != len(set(family_ids)) or
+                    any(f not in families or
+                        families[f].get("lessonPracticeRouting") is not True
+                        for f in family_ids)):
+                return {}, set()
+            mapped[code] = skill
+
+        teacher_only: set[str] = set()
+        for ordinal in (80, 81):
+            checkpoint = read_json(
+                G9_CHECKPOINT_DIR / f"lesson-{ordinal}-stage-a-c-checkpoint.json")
+            stage_c = checkpoint.get("stageC") or {}
+            stage_b = checkpoint.get("stageB") or {}
+            code = checkpoint.get("lessonCode")
+            if (code != content_codes[ordinal - 1]
+                    or checkpoint.get("closed") is not True
+                    or code in mapped
+                    or stage_c.get("practiceFamilies") != []
+                    or "TEACHER_REVIEW_ONLY" not in str(stage_c.get("status") or "")
+                    or not stage_c.get("teacherReviewRequiredFor")
+                    or stage_b.get("coolDownQuestions", 0) < 1
+                    or stage_b.get("coolDownGraded") is not False):
+                return {}, set()
+            teacher_only.add(code)
+
+        if set(mapped) | teacher_only != set(content_codes) or len(teacher_only) != 2:
+            return {}, set()
+        return mapped, teacher_only
+    except (KeyError, TypeError, OSError, ValueError, json.JSONDecodeError):
+        return {}, set()
 
 
 def separately_certified_g12_practice() -> set[str]:
@@ -679,7 +777,13 @@ def audit() -> dict[str, Any]:
     g6_owner_skills = owner_approved_g6_declared_practice()
     g7_owner_skills = owner_approved_g7_declared_practice()
     g8_owner_skills = owner_approved_g8_declared_practice()
-    owner_declared_skills = {**g6_owner_skills, **g7_owner_skills, **g8_owner_skills}
+    g9_owner_skills, g9_teacher_only = owner_approved_g9_declared_practice()
+    if len(g9_owner_skills) != 80 or len(g9_teacher_only) != 2:
+        # An independently witnessed first-party Stage D is not permission to
+        # disregard 80 registered digital skill/family mappings.
+        raise ValueError("G9 first-party digital and teacher-only scope is not registry-complete")
+    owner_declared_skills = {**g6_owner_skills, **g7_owner_skills,
+                             **g8_owner_skills, **g9_owner_skills}
 
     summary = Counter()
     by_pack: dict[str, Counter] = defaultdict(Counter)
