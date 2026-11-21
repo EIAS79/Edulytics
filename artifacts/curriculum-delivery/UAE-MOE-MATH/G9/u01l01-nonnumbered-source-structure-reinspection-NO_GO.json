@@ -86,12 +86,14 @@
       "sourcePrintedPage": 6,
       "sourcePdfPage1Based": 17,
       "sourceVisualPurpose": "QR linked skill material, sports profession illustration and contextual source image",
-      "independentArabicLearningEvidence": "No copying of source media; independent mathematical modeling context only",
+      "independentArabicLearningEvidence": "درس RichV2 الحالي يتضمن شرحًا ومثالًا مهنيًا أصليًا عن ميزانية حملة تسويق رياضي: ٢٤م+٣٥ وعند م=٤ تكون ١٣١ درهمًا؛ لا يتضمن أي صورة أو QR أو مادة من الناشر.",
       "sourcePageDirectlyVisuallyInspected": true,
-      "correspondingIndependentContentLocallyVerified": false,
+      "correspondingIndependentContentLocallyVerified": true,
       "officialSourceMediaCopied": false,
       "fullSourceAtomicEquivalenceCertified": false,
-      "sourceFullLessonAuditPassed": false
+      "sourceFullLessonAuditPassed": false,
+      "professionalApplicationMathValidated": true,
+      "publisherPhotographyAndExternalQrStillUnverified": true
     },
     {
       "id": "STUDENT_REVIEW_STRUCTURE",
@@ -117,7 +119,7 @@
   "activityFile": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u01-l01-original-61-practice-ar.html",
   "activitySha256": "5ac728413a9c0e9c0324cc6e04ef6c91897e2a9ca7001e9a35d9a7f28602d696",
   "remainingGaps": [
-    "External linked source material and original photos not independently verified or recreated",
+    "External publisher photographs and QR-linked materials remain unverified; equivalent original sports-marketing career math explanation now included in RichV2",
     "Source question 7 and question 25 word order ambiguities remain",
     "Full atomic pedagogical source item denominator not independently established",
     "Complete teacher-reviewed grading and semantic parity of independent analogs not certified",
@@ -139,5 +141,20 @@
     "assetContentChangedByThisCorrection": false,
     "originalEvidenceValue": "89e64b02414e503df9baa465ea401ee116c7be345c47d3a8070aeea8ee1528e6",
     "studentAuthenticatedE2E": "NOT_RUN"
+  },
+  "latestSourceCareerContextFix": {
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "sourcePrintedPage": 6,
+    "sourcePdfPage1Based": 17,
+    "sourceSourceFile": "01.pdf",
+    "sourceElementGroup": "EXTERNAL_SKILLS_CAREER_MEDIA",
+    "independentArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json",
+    "originalExampleTitle": "تطبيق مهني: تكلفة حملة تسويق رياضي",
+    "mathOracle": "24*4+35=131",
+    "mathematicalCareerContextLocallyVerified": true,
+    "publisherMediaAndExternalQRSourceEquivalence": false,
+    "allSourceElementsParityVerified": false,
+    "sourceAtomicDenominator": null,
+    "releaseDecision": "NO_GO"
   }
 }
