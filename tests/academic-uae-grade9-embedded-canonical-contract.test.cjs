@@ -27,9 +27,9 @@ test('Every embedded lesson-content pack enum value must exist in actual .NET mo
  }
  assert.ok(lessons>82);
 });
-test('UAE General Grade9 cross-edition canonical pack is Draft and defines all 82 source-linked Arabic titles under Source Policy v2',()=>{
+test('UAE General Grade9 owner-approved first-party pack is Published without literal publisher parity and defines all 82 source-linked Arabic titles under Source Policy v2',()=>{
  const pack=JSON.parse(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json'),'utf8'));
- assert.equal(pack.Status,'Draft');
+ assert.equal(pack.Status,'Published');
  assert.equal(pack.SourcePolicyVersion,2);
  assert.ok(namesOfEnum('CurriculumSourceResolutionStatus').has(pack.SourceResolution));
  assert.equal(pack.Lessons.length,82);
