@@ -128,3 +128,25 @@ test('Real student script builds 61 answer boxes and exports only local ungraded
  assert.ok(result.answers.every(x=>x.review==='TEACHER_REVIEW_REQUIRED'));
  assert.match(nodes.get('status').textContent,/\u0644\u0645 \u062a\u064f\u0631\u0633\u0644/);
 });
+test('U01L01 source skills preserve reasoning direction for powers, unit conversion and box plots',()=>{
+ const tasks=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
+ assert.ok(tasks[36].studentPrompt.includes("\u0627\u0644\u0646\u0645\u0637"));
+ assert.equal(tasks[36].sourceSkillCategory,'SAME_BASE_POWER_PRODUCT');
+ assert.ok(tasks[44].studentPrompt.includes("\u0628\u0627\u0644\u064a\u0627\u0631\u062f\u0627\u062a"));
+ assert.ok(tasks[44].teacherExpectedEvidence.includes("\u0663\u0633/\u0663\u0666"));
+ assert.equal(tasks[44].sourceSkillCategory,'FABRIC_LENGTH_UNIT_CONVERSION');
+ assert.ok(tasks[47].studentPrompt.includes("\u0627\u0644\u0645\u062f\u0649 \u0627\u0644\u0631\u0628\u064a\u0639\u064a"));
+ assert.equal(tasks[47].sourceSkillCategory,'PRIOR_BOX_PLOT');
+ assert.equal(10**2*10**3,10**5);
+ assert.equal(3*240/36,20);
+ assert.equal(20-14,6);
+});
+test('U01L01 multistep context tasks retain fractional composition and inverse scoring',()=>{
+ const tasks=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
+ assert.equal(tasks[34].sourceSkillCategory,'FRACTION_OF_REAL_QUANTITY_MODEL');
+ assert.equal(tasks[35].sourceSkillCategory,'SCORING_RATE_EQUATION_MODEL');
+ assert.ok(tasks[34].studentPrompt.includes("\u0646\u0635\u0641"));
+ assert.ok(tasks[35].teacherExpectedEvidence.includes("\u0666\u063a+\u0662=\u0662\u0666"));
+ assert.equal(50*3/5/2,15);
+ assert.equal((26-2)/6,4);
+});

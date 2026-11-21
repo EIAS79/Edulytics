@@ -44,6 +44,8 @@
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal);
     var isUaeGrade8Arabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal);
+    var isUaeGrade9Arabic =
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
     var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ||
@@ -51,7 +53,7 @@
         isUaeGrade4Arabic ||
         isUaeGrade5Arabic ||
         isUaeGrade6Arabic ||
-        isUaeGrade7Arabic || isUaeGrade8Arabic;
+        isUaeGrade7Arabic || isUaeGrade8Arabic || isUaeGrade9Arabic;
     var lessonNavTitle = isUaePrimaryArabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaePrimaryArabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaePrimaryArabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
@@ -129,6 +131,22 @@
                 <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@practiceNavTitle</button>
             </form>
         </nav>
+    }
+
+    @* UAE Grade 9 General U01L01: original Arabic activities remain
+       teacher reviewed and separate from automatically graded Practice. *@
+    @if (Model.LessonCode == "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS")
+    {
+        <section class="student-card" lang="ar" dir="rtl"
+                 aria-label="أنشطة عربية إضافية لدرس المتغيرات والتعابير">
+            <h2>التقويم الختامي والتدريب الإضافي</h2>
+            <p>أنشطة كتابية عربية أصلية، مع ٦١ مهمة إضافية مرتبطة بمهارات الكتاب.
+                يراجع المعلم الإجابات؛ ولا تُرسل هذه الأنشطة أو تُحتسب ضمن درجات التدريب التلقائي.</p>
+            <a class="school-button school-button-primary"
+               href="/lesson-labs/uae-g9-general/u01-l01-source-cooldown-ar.html">
+                افتح التقويم الختامي والتمارين الإضافية
+            </a>
+        </section>
     }
 
     @* G11 Algebra 2: authentic first-party written response with manual teacher review, not a machine-graded claim. *@
