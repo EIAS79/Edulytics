@@ -369,7 +369,23 @@ internal static class MeetingDemoProvisioner
         // school data outside disposable GitHub PostgreSQL rehearsals.
         var isUaeG8Ci = disposableCi &&
             string.Equals(ciProgramme, "UAE-G8", StringComparison.Ordinal);
-        var activeSchools = isUaeG8Ci
+        // UAE G9 uses ONLY disposable PostgreSQL with a Grade9 General
+        // Arabic secondary-school adoption and a foreign US school tenant.
+        // The permanent school fixture remains unchanged.
+        var isUaeG9Ci = disposableCi &&
+            string.Equals(ciProgramme, "UAE-G9", StringComparison.Ordinal);
+        var activeSchools = isUaeG9Ci
+            ? Schools.Where(s => s.Key is "uae-secondary" or "commoncore-secondary")
+                .Select(s => s.Key == "uae-secondary"
+                    ? s with
+                    {
+                        DefaultCulture = "ar",
+                        PrimaryLoginLogicalLevel = 9,
+                        SecondaryLoginLogicalLevel = 10,
+                        SecondaryLoginPathway = "General"
+                    }
+                    : s).ToArray()
+            : isUaeG8Ci
             ? Schools.Where(s => s.Key is "uae-middle" or "commoncore-middle")
                 .Select(s => s.Key == "uae-middle"
                     ? s with
