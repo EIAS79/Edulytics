@@ -105,3 +105,22 @@ test('Direct scanned-source nonnumbered instructional structures are checked wit
  assert.equal(main.targetLessonStageDClosed,false);
  assert.equal(old.sourceTotalAtomicElementDenominatorVerified,false);
 });
+
+
+test('Direct U01L01 five-page source review records exact physical pages and independent numerical findings but no source lock',()=>{
+ const source=read(base+'u01l01-stage-d-selective-source-visual-audit.json');
+ const r=source.directFivePageSourceReinspection20261121;
+ assert.deepEqual(r.printedPages,[5,6,7,8,9]);
+ assert.deepEqual(r.physicalPdfPages1Based,[16,17,18,19,20]);
+ assert.deepEqual(r.numberedExerciseContainersByPrintedPage,{'7':34,'8':8,'9':19});
+ assert.equal(r.observedTotalNumberedExerciseContainers,61);
+ assert.equal(r.knownLetteredChildrenQ34ToQ37,11);
+ assert.deepEqual(r.independentTeacherOracleMathSamples.q48FiveNumberSummarySeconds,[860,945,1035,1150,1290]);
+ assert.equal(r.independentTeacherOracleMathSamples.q48IqrSeconds,205);
+ assert.equal(r.independentTeacherOracleMathSamples.q48RangeSeconds,430);
+ assert.deepEqual(r.sourceTextAmbiguitiesStillRequireSpecificReview,[7,25]);
+ assert.equal(r.fullSourceAtomicDenominatorEstablished,false);
+ assert.equal(r.publisherSourceExerciseOneToOneParityGranted,false);
+ assert.equal(source.all61ExercisesIndividuallyCompared,false);
+ assert.equal(source.fullSourceAtomicAuditPassed,false);
+});
