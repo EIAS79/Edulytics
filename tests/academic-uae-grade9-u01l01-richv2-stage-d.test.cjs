@@ -127,3 +127,30 @@ test('U01L01 Arabic lesson vocabulary distinguishes subtractive less-than from t
  assert.ok(rule.includes('لكنها قد تصف متباينة'));
  assert.doesNotMatch(rule,/الطرح: الفرق\/ناقص\/مطروح منه\/أقل من/);
 });
+
+
+test('U01L01 sports career context must be original, algebraically sound and cannot certify publisher media',()=>{
+ const rich=read(base+'RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json');
+ const lesson=rich.Lessons.find(x=>x.LessonCode===code);
+ const example=lesson.WorkedExamples.find(x=>x.Title==='تطبيق مهني: تكلفة حملة تسويق رياضي');
+ assert.ok(example,'source career category needs independent instructional equivalence');
+ assert.ok(lesson.ExplanationParagraphs.some(p=>p.includes('التسويق الرياضي')&&p.includes('٢٤م+٣٥')));
+ assert.match(example.Answer,/٢٤م\+٣٥/);
+ assert.match(example.Answer,/١٣١/);
+ assert.ok(example.Steps.length>=3);
+ assert.equal(24*4+35,131);
+ assert.equal(24*0+35,35);
+ assert.notEqual(24*(4+35),131,'fixed design fee must not be repeated');
+ const audit=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-nonnumbered-source-structure-reinspection-NO_GO.json');
+ const career=audit.sourceStructuralChecks.find(x=>x.id==='EXTERNAL_SKILLS_CAREER_MEDIA');
+ assert.equal(career.sourcePrintedPage,6);
+ assert.equal(career.correspondingIndependentContentLocallyVerified,true);
+ assert.equal(career.professionalApplicationMathValidated,true);
+ assert.equal(career.officialSourceMediaCopied,false);
+ assert.equal(career.publisherPhotographyAndExternalQrStillUnverified,true);
+ assert.equal(career.fullSourceAtomicEquivalenceCertified,false);
+ assert.equal(audit.fullRawSourceLessonAtomicAuditPassed,false);
+ assert.equal(audit.canonicalGrade9LessonStageDClosed,false);
+ assert.equal(audit.productionImportAllowed,false);
+ assert.equal(audit.releaseDecision,'NO_GO');
+});
