@@ -4,7 +4,7 @@ name: UAE Grade 9 General isolated 0-to-82 database release rehearsal
 # and never targets Neon or Render. Publisher item parity remains UNKNOWN.
 on:
   push:
-    branches: [fix/g9-general-full-year-scope-86]
+    branches: [fix/g9-general-full-year-scope-86, main]
     paths:
       - '.github/workflows/uae-grade9-general-isolated-82-import.yml'
       - 'src/Edulytics.Core/Curriculum/**'
