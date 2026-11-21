@@ -377,5 +377,101 @@
     "releaseDecision": "NO_GO_SOURCE_100",
     "passedHostedCiAtCurrentSha": false,
     "productionWrites": 0
+  },
+  "latestGrade9U01L01MathAndTeacherRubricVerification20261121": {
+    "stage": "D.2/D.4",
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "observedAtUtc": "2026-11-21T06:07:36.464Z",
+    "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7",
+    "refKind": "isolated local checkout of PR650 branch",
+    "changes": [
+      {
+        "category": "CONTENT",
+        "summary": "Original independent sports marketing worked example; publisher photo and QR still unverified",
+        "commit": "f5e55c72f42c3fc180c29aa21e87322effebdfed"
+      },
+      {
+        "category": "HUMAN_REVIEW",
+        "summary": "Q44 teacher rubric independently explains all four answers, without changing the student task or automatic grading route",
+        "commit": "26d1d3fe9962031c28dfd34ff300ab245a535c8f"
+      }
+    ],
+    "regressionTests": [
+      "tests/academic-uae-grade9-u01l01-richv2-stage-d.test.cjs",
+      "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs",
+      "tests/academic-uae-grade9-u01l01-independent-teacher-oracles-stage-d.test.cjs"
+    ],
+    "preparedNode": {
+      "files": 95,
+      "total": 385,
+      "passed": 385,
+      "failed": 0,
+      "skipped": 0,
+      "local": true,
+      "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+    },
+    "independentTeacherOracle": {
+      "tests": 7,
+      "passed": 7,
+      "sourceTaskCount": 61,
+      "gradingRoute": "TEACHER_REVIEW_REQUIRED",
+      "teacherActuallySignedOff": false
+    },
+    "currentDotnetScoped": {
+      "total": 167,
+      "passed": 167,
+      "failed": 0,
+      "skipped": 0,
+      "localSdk": "10.0.300",
+      "repositorySdkPin": "10.0.200",
+      "sdkPinRestored": true,
+      "checkoutClean": true,
+      "testedSha": "93a6f8e0e4701e60f6d5e89d331ae46f6e1168e7"
+    },
+    "fullDotnetLatestEarlierBaseline": {
+      "total": 17514,
+      "passed": 17514,
+      "failed": 0,
+      "skipped": 0,
+      "testedSha": "7b5e8664fae8f3c9016682d32e44b0af08898d61",
+      "notCurrentSha": true
+    },
+    "localWebPublishEarlierBaseline": {
+      "result": "PASS",
+      "testedSha": "7b5e8664fae8f3c9016682d32e44b0af08898d61",
+      "draftStaticLeak": false,
+      "notProductionDeploy": true
+    },
+    "strictSourceParityNode": {
+      "exitCode": 1,
+      "expectedNoGo": true
+    },
+    "strictSourceParityPython": {
+      "exitCode": 1,
+      "expectedNoGo": true,
+      "rawVerified": 0,
+      "rawTotal": 86,
+      "canonicalVerified": 0,
+      "canonicalTotal": 82
+    },
+    "sourceElementDenominator": null,
+    "semanticParity": "UNKNOWN",
+    "unit7ConflictResolved": false,
+    "rightsPublisherPhotosQrVerified": false,
+    "authenticatedE2E": "NOT_RUN",
+    "githubActionsRunId": 44873103973,
+    "githubActionsStatusAtInspection": "pending",
+    "hostedFinalCI": "NOT_PASS_VERIFIED",
+    "liveRenderSha": "4c50d2ca762cb58bcaa4fd500f465060bad4e36a",
+    "productionGrade9GeneralLessons": 0,
+    "productionGrade9GeneralContent": 0,
+    "productionWrites": 0,
+    "firstIncompleteLessonOrdinal": 1,
+    "lessonDStatus": "D_PENDING",
+    "stageDStatus": "D_PENDING_A_C_EVIDENCE",
+    "releaseDecision": "NO_GO_SOURCE_100",
+    "finalCandidateSha": null,
+    "releaseAllowed": false
   }
 }
