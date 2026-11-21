@@ -40,3 +40,10 @@ Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gat
 
 - Complete local Release binary reuse test produced verified TRX: **17,427 passed, 0 failed, 0 not executed**; process exit 0. SDK 10.0.300 used temporarily on the owner machine; repository global.json restored to 10.0.200. No new C# build performed in this run; no production changes.
 - Grade9 prepared Node diagnostics **368/368 passed**. Source gate remains NO_GO (0/86 raw, 0/82 target), hosted current-candidate CI still has no passing result and authenticated final release E2E has not been completed. These local checks do **not** authorize merge/deploy.
+
+## U01L01 printed Q35 correction (Stage D.4 local-only evidence)
+
+- Reopened scanned 01.pdf printed p8/PDF p19. Confirmed Q35 asks to **describe** a fraction of the whole, not take **half** of that fraction. Original source correct model 3/4 of 28 = 21. Existing Edulytics independent student task previously introduced an unasked-for factor 1/2; it now models independent 3/5 of 50 = 30 with two corresponding parts, no duplicated task ID.
+- Original SVG/lesson authoring source retained; local Edge 61-task student page displayed corrected Q35 verbatim and exported an ungraded teacher-review response. Q47 bar/Q48 box interactive graph regression also passed, including Arabic mm:ss input.
+- 11 explicitly printed a/b/c children under Q34?Q37 mapped with source pages; parent numbered container count remains 61 and known instructional elements 21; total original source atomic denominator remains UNKNOWN, never 82/93 assumed automatically.
+- Local Grade9 Node 372/372 PASS, scoped .NET 74/74 PASS verified from TRX. Earlier full .NET suite 17,427/17,427 passed on unchanged C# assembly. Hosted latest candidate CI still unpassed; independent source gate NO_GO (0/86 raw, 0/82 canonical). U01L01 remains D_PENDING, no production writes or merge/deploy.

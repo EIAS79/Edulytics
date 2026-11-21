@@ -145,9 +145,9 @@ test('U01L01 multistep context tasks retain fractional composition and inverse s
  const tasks=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
  assert.equal(tasks[34].sourceSkillCategory,'FRACTION_OF_REAL_QUANTITY_MODEL');
  assert.equal(tasks[35].sourceSkillCategory,'SCORING_RATE_EQUATION_MODEL');
- assert.ok(tasks[34].studentPrompt.includes("\u0646\u0635\u0641"));
+ assert.ok(tasks[34].studentPrompt.includes("\u062b\u0644\u0627\u062b\u0629 \u0623\u062e\u0645\u0627\u0633"));
  assert.ok(tasks[35].teacherExpectedEvidence.includes("\u0665\u0647\u0640+\u0625"));
- assert.equal(50*3/5/2,15);
+ assert.equal(50*3/5,30);
  assert.equal((26-2)/6,4);
 });
 test('U01L01 visual source atomic tasks preserve numbered items cognitive demand and exact numeric rubrics',()=>{

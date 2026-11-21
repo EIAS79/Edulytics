@@ -33,3 +33,5 @@ Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027
 - A-C owner-versus-raw scope metadata corrected: source-selection.json ownerTarget=13/82, source raw=14/86, unique source lesson counts remain unknown. Stage D source gate still D_PENDING_A_C_EVIDENCE.
 
 - U01L01 preliminary source-element IDs: 61 numbered exercise containers + 21 known instructional elements by original printed pages 5-9, with additional 7 structural groups not double-counted. All atomic subparts/total denominator/teacher parity remain unverified; no D_VERIFIED status.
+
+- U01L01 printed p8/PDF p19 Q35 reading corrected: describe direct 3/4 fraction, never halve it. Repaired independent 3/5 of 50 = 30 analog; source example remains 3/4 of 28 = 21. Documented 11 lettered child items under Q34-Q37 numbered parents; not additive to exhaustive atomic count. Lesson D_PENDING, NO_GO.

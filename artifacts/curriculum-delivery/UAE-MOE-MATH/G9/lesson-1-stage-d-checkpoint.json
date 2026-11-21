@@ -48,10 +48,11 @@
     "u01l01-source-visual-structure-closure-NO_GO.json",
     "u01l01-61-source-visual-skill-audit.json",
     "tests/academic-uae-grade9-u01l01-time-duration-source-parity.test.cjs",
-    "u01l01-preliminary-source-element-ids-NO_GO.json"
+    "u01l01-preliminary-source-element-ids-NO_GO.json",
+    "u01l01-q35-source-wording-semantic-fix-NO_GO.json"
   ],
   "dStatus": "D_PENDING",
-  "updatedAtUtc": "2026-11-21T03:07:47Z",
+  "updatedAtUtc": "2026-11-21T04:18:11Z",
   "handoffGate": "D_PENDING_A_C_EVIDENCE",
   "sourcePrintedPage": 5,
   "sourcePdfPage1Based": 16,
@@ -82,5 +83,14 @@
     "noBuild": true,
     "hostedAcceptance": false,
     "sourceSemanticParity": "UNKNOWN"
+  },
+  "q35SemanticCorrectionEvidence": "u01l01-q35-source-wording-semantic-fix-NO_GO.json",
+  "visuallyConfirmedQ34Q37LetteredSubparts": 11,
+  "stageD4Q35IndependentBrowserVerification": "PASS_LOCAL_EDGE_UNGRADED_EXPORT",
+  "stageD4Q35Regression": {
+    "nodePrepared": 372,
+    "g9DotnetScoped": 74,
+    "fullSourceAtomicAudit": false,
+    "authenticatedE2E": false
   }
 }

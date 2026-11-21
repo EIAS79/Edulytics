@@ -192,7 +192,7 @@
   ],
   "localNodeDiagnostic": {
     "result": "PASS",
-    "passed": 368,
+    "passed": 372,
     "failed": 0,
     "sourceGateResult": "NO_GO",
     "sourceGateExitCode": 1,
@@ -248,5 +248,25 @@
     "verifiedAtUtc": "2026-11-21T04:07:24Z",
     "hostedCandidateEvidence": false,
     "authorizesPublication": false
+  },
+  "u01l01Q35UnaskedHalfFixed": true,
+  "u01l01Q35SourceVisualProof": "u01l01-q35-source-wording-semantic-fix-NO_GO.json",
+  "knownLetteredSourceSubparts": 11,
+  "Q35LocalVerification": {
+    "sourcePrintedPage": 8,
+    "sourcePdfPage1Based": 19,
+    "sourceResult": "3/4 * 28 = 21",
+    "studentAnalogResult": "3/5 * 50 = 30",
+    "independentStudentTaskId": "G9-U01L01-T35",
+    "studentPreviewActualEdge": "PASS",
+    "teacherReviewOnly": true,
+    "localNodeSuitePassed": 372,
+    "localNodeSuiteFailed": 0,
+    "g9NativeTrxScopedPass": 74,
+    "g9NativeTrxScopedFail": 0,
+    "sourceFull1to1Parity": false,
+    "authenticatedProductionStudentE2E": false,
+    "publicationAllowed": false,
+    "testedAtUtc": "2026-11-21T04:18:11Z"
   }
 }

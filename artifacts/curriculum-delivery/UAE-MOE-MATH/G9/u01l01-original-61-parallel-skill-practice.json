@@ -437,10 +437,16 @@
       "sourceSkillCategory": "FRACTION_OF_REAL_QUANTITY_MODEL",
       "sourceGroup": "PROBLEM_SOLVING_AND_HIGHER_ORDER",
       "scope": "CORE_SKILL",
-      "studentPrompt": "ثلاثة أخماس الحكايات تتناول أشخاصًا مألوفين. اكتب تعبيرًا لنصف هذا الجزء من إجمالي ن حكاية، ثم احسب العدد عند ن=٥٠.",
-      "teacherExpectedEvidence": "نصف ثلاثة أخماس ن يساوي (١/٢)×(٣/٥)ن = ٣ن/١٠؛ وعند ن=٥٠ يكون العدد ١٥.",
+      "studentPrompt": "ثلاثة أخماس القصص تتناول شخصيات مألوفة. (أ) اكتب تعبيرًا يصف عدد تلك القصص إذا كان مجموع القصص ن. (ب) استخدم التعبير للتنبؤ بالعدد إذا كان المجموع ٥٠ قصة.",
+      "teacherExpectedEvidence": "(أ) ٣ن/٥، لأن ثلاثة أخماس العدد ن تساوي (٣/٥)×ن دون نصف إضافي. (ب) عند ن=٥٠، العدد المتوقع ٣٠ قصة.",
       "gradingRoute": "TEACHER_REVIEW_REQUIRED",
-      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED"
+      "comparisonStatus": "ORIGINAL_ANALOGOUS_PRACTICE_PREPARED_NOT_INDEPENDENT_PARITY_CERTIFIED",
+      "visuallyVerifiedOriginalSourceSubparts": [
+        "a",
+        "b"
+      ],
+      "originalSourceExtraHalfOperationIsUnsupported": true,
+      "originalSourceNumbersCopiedToIndependentAnalog": false
     },
     {
       "sourceItem": "U01L01-Q36",

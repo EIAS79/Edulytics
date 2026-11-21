@@ -71,8 +71,8 @@ test('Independent textbook-source ambiguous verbal Q07/Q25 is preserved as ambig
 test('Independent Arabic algebra Q34-Q37 has exact reproducible economic, proportional, sports and power results',()=>{
   checkExpected(34,'53');
   assert.equal(39+0.4*20+3*2,53);
-  checkExpected(35,'15');
-  assert.equal((1/2)*(3/5)*50,15);
+  checkExpected(35,'30');
+  assert.equal((3/5)*50,30);
   for (const [score,goals,extras] of [[23,4,3],[18,3,3],[6,1,1]]) {
     assert.equal(score,5*goals+extras);
     assert.ok(extras>=0 && extras<=goals);
