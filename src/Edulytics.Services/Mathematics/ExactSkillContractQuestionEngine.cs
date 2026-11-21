@@ -43,7 +43,7 @@ public sealed class ExactSkillQuestionPoolExhaustedException()
 /// alignment; this engine owns exact parameter generation, solving, independent
 /// verification and reconstructable fingerprints for approved question families.
 /// </summary>
-public sealed class ExactSkillContractQuestionEngine
+public sealed partial class ExactSkillContractQuestionEngine
 {
     private const int MaxRetriesPerItem = 128;
 
@@ -1015,6 +1015,16 @@ public sealed class ExactSkillContractQuestionEngine
                     (string.Equals(problem.Family,"uae.g5.u05.l13.exact_decimal_divide",StringComparison.Ordinal) ||
                      string.Equals(problem.Family,"uae.g5.u05.l13.contextual_decimal_unit_rate",StringComparison.Ordinal)))
                     problem=LocalizeG6DecimalByDecimal(problem);
+
+                // Owner-approved G9 General: first-party Arabic instructions
+                // around unchanged solver, verifier, question params and answer.
+                // No Grade9 Practice runtime readiness is granted here.
+                const string grade9GeneralPrefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+                if (scopeKey.StartsWith(grade9GeneralPrefix, StringComparison.Ordinal) ||
+                    fingerprintNamespace.StartsWith(grade9GeneralPrefix, StringComparison.Ordinal))
+                {
+                    problem = LocalizeUaeGrade9GeneralArabic(problem);
+                }
 
                 var answer = Solve(problem);
 
