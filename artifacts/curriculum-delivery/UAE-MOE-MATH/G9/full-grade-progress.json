@@ -37,7 +37,7 @@
   "firstNotClosedLesson": null,
   "lesson2_5": "READY_FOR_STAGE_D_A_B_C_AUTHORED_TESTS_NOT_RUN",
   "remainingSourceLessonsInRawPlan": 74,
-  "testsRun": "LOCAL_NODE_350_PASS_DOTNET_G9_74_PASS_FULL_DOTNET_17427_PASS_PREVIOUS_BACKEND_SOURCE_GATE_NO_GO",
+  "testsRun": "LOCAL_NODE_354_PASS_DOTNET_FULL_17427_PASS_DOTNET_G9_74_PASS_STRICT_SOURCE_NO_GO",
   "ciGatesRun": "GITHUB_ACTIONS_QUEUED_NO_PASS",
   "stageD": "IN_PROGRESS_FIRST_SOURCE_LESSON_NOT_YET_CLOSED",
   "productionPublish": "NOT_STARTED",
@@ -688,7 +688,7 @@
     "auditedNumberedExerciseSkills": 61,
     "completeRawSourceLessonAudits": 0,
     "fullTargetLessonParity": 0,
-    "localNodePass": 350,
+    "localNodePass": 354,
     "localDotnetPass": 70,
     "strictSourcePass": false,
     "authenticatedStudentE2EPass": false,
@@ -699,7 +699,7 @@
     "observedSubsetSourceItems": 82,
     "embeddedG9DraftCanonicalPackEnabled": false,
     "embeddedG9RichV2Enabled": false,
-    "globalDotnetRegressionRetest": "PASSED_17427_0_FAILURE",
+    "globalDotnetRegressionRetest": "PASSED_CURRENT_17427_0_FAILURE",
     "unapprovedG9PracticeContractsExcludedFromRuntime": true,
     "localDotnetFullSuitePassed": 17427,
     "localDotnetFullSuiteFailed": 0,
@@ -715,13 +715,16 @@
       48
     ],
     "localEdgeSourceChartsPass": true,
-    "u01l01LocalDotnetPublishStaticAssetsPass": true,
+    "u01l01LocalDotnetPublishStaticAssetsPass": false,
     "u01l01ArabicIndicInputWorksInRealEdge": true,
     "u01l01NonNumberedSourceGroupsReviewedThisTurn": 7,
     "u01l01MathOracleRegressionsPassed": 6,
     "u01l01ScannedSourceVerbalExceptionsProvedButNotOfficiallyResolved": [
       7,
       25
-    ]
+    ],
+    "u01l01LocalDotnetPublishQuarantineGuardPassed": true,
+    "unapprovedG9StaticSourceFilesRetained": 84,
+    "unapprovedG9StaticFilesPublished": 0
   }
 }

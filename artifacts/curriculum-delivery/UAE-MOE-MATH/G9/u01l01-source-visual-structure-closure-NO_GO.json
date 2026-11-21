@@ -175,17 +175,15 @@
   "productionImportAllowed": false,
   "releaseDecision": "NO_GO",
   "localDotnetReleasePublish": {
-    "result": "PASSED_LOCAL_ONLY",
-    "webProject": "src/Edulytics.Web/Edulytics.Web.csproj",
-    "scriptIncludedInPublishedWwwroot": true,
-    "htmlIncludedInPublishedWwwroot": true,
-    "productionRenderNotDeployed": true,
-    "productionNeonNotModified": true,
-    "sourceChangedAfterEarlierPublish": false,
-    "freshPublishRequiredBeforeHostedAcceptance": false,
-    "latestCandidatePublishVerified": true,
-    "localUpdatedHtmlAndPlotJsSha256MatchedPublishedAssets": true,
-    "authenticatedProductionDeploymentVerified": false
+    "result": "PASS_LOCAL_DRAFT_QUARANTINE_VERIFIED",
+    "releaseCandidateDraftHTMLAndJSIncluded": false,
+    "publishedG9DraftFileCount": 0,
+    "sourceAuthoringFileCount": 84,
+    "staticAssetsEndpointManifestG9References": 0,
+    "publishedWebAssemblyPresent": true,
+    "previousUnquarantinedLocalPublishLeakedUnapprovedDraft": true,
+    "currentAppRenderDeploymentOccurred": false,
+    "proofReport": "g9-unpublished-static-asset-quarantine-NO_GO.json"
   },
   "studentVisualRecentRegressionFixes": {
     "ArabicIndicNumberFieldsBrowserPreserveDigits": true,
