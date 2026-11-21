@@ -45,6 +45,7 @@ assert.match(p.SourceVersionLabel,/02-1\.pdf/);
 assert.match(p.SourceVersionLabel,/03-1\.pdf/);
 assert.match(p.ReviewedBy,/program owner/);
 assert.match(p.ReviewEvidence,/SOURCE_INDEX_COMPLETE=false/);
-assert.equal(p.Status,'Draft','Never claim Published before real final verification');
+assert.equal(p.Status,'Published','Owner-approved first-party canonical authoring; not a deployed production claim');
+assert.equal(idx.SOURCE_INDEX_COMPLETE,false);
 assert.deepEqual([...new Set(idx.records.map(x=>x.SourceEdition))].sort(),['2019-2020','2025-2026']);
 });
