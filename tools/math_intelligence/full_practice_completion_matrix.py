@@ -133,6 +133,8 @@ def audit() -> dict[str, Any]:
     approved_g6 = lesson_skill_resolution_audit.owner_approved_g6_declared_practice()
     approved_g7 = lesson_skill_resolution_audit.owner_approved_g7_declared_practice()
     approved_g8 = lesson_skill_resolution_audit.owner_approved_g8_declared_practice()
+    approved_g9, teacher_only_g9 = (
+        lesson_skill_resolution_audit.owner_approved_g9_declared_practice())
 
     skills_doc = read_json(SKILL_REGISTRY)
     families_doc = read_json(FAMILY_REGISTRY)
@@ -162,11 +164,18 @@ def audit() -> dict[str, Any]:
         skill_row = skill_by_code.get(code, {})
         title = str(row.get("title") or semantic_row.get("title") or skill_row.get("title") or "")
         primary_skills = clean_list(row.get("approvedPrimarySkills"))
+        # A documented open proof/diagram is assessed by the teacher, not
+        # an automatic Practice engine; do not require a fictitious solver.
+        teacher_only_route = (
+            code in teacher_only_g9
+            and eligibility_by_code.get(code) is not None
+            and eligibility_by_code[code].status == "NON_STANDALONE_WITH_EVIDENCE"
+        )
 
         question_families = clean_list(row.get("approvedQuestionFamilies"))
         representations: set[str] = set()
         domains: set[str] = set()
-        for skill_id in primary_skills:
+        for skill_id in ([] if teacher_only_route else primary_skills):
             skill_doc = skills.get(skill_id)
             if skill_doc is None:
                 internal_blockers.append(f"{code}: approved SkillId {skill_id} missing from registry")
@@ -219,6 +228,16 @@ def audit() -> dict[str, Any]:
             and row.get("approvedMapping") is True
             and not semantic_row.get("studentFacingDefects")
         )
+        is_owner_scoped_g9 = (
+            len(approved_g9) == 80
+            and len(teacher_only_g9) == 2
+            and code in approved_g9
+            and row.get("specialistGrade9OwnerScopedDigitalContractPendingRuntime") is True
+            and row.get("generationReadiness") == "READY_CONTEXTUAL"
+            and row.get("approvedMapping") is True
+            and primary_skills == [approved_g9[code]]
+            and not semantic_row.get("studentFacingDefects")
+        )
         for family_id in question_families:
             family = families.get(family_id)
             if family is None:
@@ -262,6 +281,15 @@ def audit() -> dict[str, Any]:
                         "targetGrade8SkillId": approved_g8[code],
                         "reuseEvidence":
                             "owner-scoped-g8-csharp-lesson-contract-registered-exact-family",
+                    })
+                elif (is_owner_scoped_g9 and original_skill in skills
+                      and family.get("lessonPracticeRouting") is True):
+                    cross_grade_family_adapters.append({
+                        "family": family_id,
+                        "originalSkillId": original_skill,
+                        "targetGrade9SkillId": approved_g9[code],
+                        "reuseEvidence":
+                            "exact-owner-approved-g9-digital-csharp-contract-with-registered-family",
                     })
                 else:
                     internal_blockers.append(
@@ -330,10 +358,18 @@ def audit() -> dict[str, Any]:
             and all(f in families and families[f].get("lessonPracticeRouting") is True
                     for f in question_families)
         )
+        specialist_g9_ready = bool(
+            is_owner_scoped_g9
+            and len(question_families) > 0
+            and all(f in families and
+                    families[f].get("lessonPracticeRouting") is True
+                    for f in question_families)
+        )
         # Contract readiness here is independent of persisted HTTPS/RTL Stage D.
         # Those run as mandatory separate same-SHA CI release gates.
         runtime_contract_ready = (specialist_g12_ready or specialist_g4_ready
-            or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready) or (
+            or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready
+            or specialist_g9_ready) or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -418,6 +454,8 @@ def audit() -> dict[str, Any]:
             "independentG7OwnerScopedExactPracticeContractVerified": specialist_g7_ready,
             "independentG8OwnerScopedExactPracticeContractVerified": specialist_g8_ready,
             "crossGradeExactFamilyReuse": cross_grade_family_adapters,
+            "independentG9OwnerScopedDigitalContractVerified": specialist_g9_ready,
+            "grade9TeacherReviewOnlyWithEvidence": teacher_only_route,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
@@ -486,6 +524,22 @@ def audit() -> dict[str, Any]:
         internal_blockers.append(
             "Grade8 76 owner-approved Arabic first-party exact Practice routes "
             "not fully bound to canonical 76 lesson skills/families")
+    summary["grade9OwnerScopedExactDigitalContractCount"] = sum(
+        row["independentG9OwnerScopedDigitalContractVerified"] for row in rows)
+    summary["grade9TeacherReviewOnlyEvidenceCount"] = sum(
+        row["grade9TeacherReviewOnlyWithEvidence"] for row in rows)
+    g9_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L9:GENERAL:")]
+    if g9_rows and (
+        len(g9_rows) != 82 or len(approved_g9) != 80 or
+        len(teacher_only_g9) != 2 or
+        summary["grade9OwnerScopedExactDigitalContractCount"] != 80 or
+        summary["grade9TeacherReviewOnlyEvidenceCount"] != 2
+    ):
+        internal_blockers.append(
+            "Grade9 General requires exactly 80 registered, routable first-party "
+            "digital C# contracts and two independently evidenced teacher-only "
+            "routes. Neither digital readiness nor teacher grading may be invented.")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(
