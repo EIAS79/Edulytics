@@ -231,7 +231,7 @@ def main(argv=None) -> int:
     except Exception as exc:
         result = {"phase": args.phase, "status": "D_BLOCKED",
                   "failure": f"INVALID_EVIDENCE: {type(exc).__name__}: {exc}"}
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=True, indent=2))
     return 0 if result["status"] == "PASS" else 1
 
 
