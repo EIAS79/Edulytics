@@ -32,7 +32,10 @@ public sealed class UaeG9GeneralU01L01ArabicExpressionTests
             if (question.Family == Families[0])
                 Assert.StartsWith("في التعبير", question.Prompt);
             else
+            {
                 Assert.StartsWith("اكتب تعبيرًا جبريًا", question.Prompt);
+                Assert.Contains("على صورة ax + b", question.Prompt);
+            }
 
             Assert.True(ExactSkillContractQuestionEngine.Verify(
                 question.Family, question.Parameters, question.CorrectAnswer));

@@ -685,7 +685,7 @@ public sealed class ExactSkillContractQuestionEngine
                         },
                         "usccss.algebra.expression_words" => problem with
                         {
-                            Prompt = $"اكتب تعبيرًا جبريًا يمثل مجموع {expression["coefficient"]} أمثال x و{expression["constant"]}، مستخدمًا المتغير x.",
+                            Prompt = $"اكتب تعبيرًا جبريًا يمثل مجموع {expression["coefficient"]} أمثال x و{expression["constant"]} على صورة ax + b.",
                             Solution = "نضرب المعامل في المتغير x ثم نضيف الحد الثابت."
                         },
                         _ => problem
