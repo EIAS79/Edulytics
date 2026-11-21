@@ -203,7 +203,7 @@
     }
   },
   "pendingCandidateSha": "97e399bee1b898dc112d5b8a5c3942cc47fce598",
-  "lastGateAssessmentAtUtc": "2026-11-21T03:07:47Z",
+  "lastGateAssessmentAtUtc": "2026-11-21T05:21:09.935Z",
   "blockedLessons": [
     1,
     2,
@@ -413,5 +413,49 @@
     "releaseDecision": "NO_GO_SOURCE_100",
     "noLessonIdentityChange": true,
     "productionWrites": 0
+  },
+  "currentLessonDirectSourceRecheck": {
+    "source": "OWNER_LOCAL_PDF_DIRECT_FIVE_PAGE_VISUAL_INSPECTION",
+    "physicalPdfPages": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "printedPages": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+    "scope": "First lesson only. No stage D approval without full atomic source parity.",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-stage-d-selective-source-visual-audit.json",
+    "evidenceCommit": "013e07e8289e893f8bfcd4132c64e40ee6c0ba6d",
+    "sourceGateRegression": "tests/academic-uae-grade9-u01l01-source-visual-evidence.test.cjs",
+    "sourceGateRegressionCommit": "6f79fac511c93f91c5806d44956b31f0bc40bc9a",
+    "independentTeacherOracleTest": "tests/academic-uae-grade9-u01l01-61-original-practice-stage-d.test.cjs",
+    "independentTeacherOracleTestCommit": "cd1ecc8d6886de99d040668fc77919826ce5efdc",
+    "numericSamplesValidatedInMemory": [
+      "Q35",
+      "Q36",
+      "Q48",
+      "Q49",
+      "Q50",
+      "Q51"
+    ],
+    "actualNodeRunnerResult": "NOT_RUN_AT_THIS_SHA",
+    "actualDotnetRunnerResult": "NOT_RUN_AT_THIS_SHA",
+    "hostedCurrentRunId": 44870444429,
+    "hostedJobStatesAtInspection": [
+      "queued",
+      "queued"
+    ],
+    "sourceAtomicElementsFullyAudited": false,
+    "sourceElementDenominator": null,
+    "fullSourceMatchingPassed": false,
+    "releaseAllowed": false
   }
 }
