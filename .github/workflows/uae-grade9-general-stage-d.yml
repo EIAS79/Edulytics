@@ -1,0 +1,158 @@
+name: UAE Grade 9 General Stage D - fail-closed diagnostics
+
+on:
+  push:
+    branches:
+      - fix/g9-general-full-year-scope-86
+    paths:
+      - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/LessonContentPolicy.cs'
+      - 'src/Edulytics.Services/LessonContent/LessonContentService.cs'
+      - 'tests/academic-uae-grade9*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs'
+      - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
+  pull_request:
+    branches:
+      - main
+    # Do not make the still-red G9 source gate block unrelated grade PRs
+    # that only modify shared math engines or other RichV2 lessons.
+    paths:
+      - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g9-general-*'
+      - 'tests/academic-uae-grade9*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs'
+      - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
+  workflow_dispatch:
+
+concurrency:
+  # Cancel older runs of the same event/ref; retain independent PR and push gates.
+  group: uae-g9-stage-d-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  grade9-node-and-academic-gate:
+    name: G9 source gate and prepared lesson tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record exact candidate ref
+        run: |
+          echo "CandidateSha=${GITHUB_SHA}"
+          echo "TestedRefKind=${GITHUB_REF}"
+      - name: Run prepared Grade 9 Arabic tests
+        run: |
+          set -o pipefail
+          mapfile -t files < <(find tests -maxdepth 1 -name 'academic-uae-grade9*.test.cjs' ! -name 'academic-uae-grade9-strict-source-index-gate.test.cjs' | sort)
+          test "${#files[@]}" -gt 0
+          node --test "${files[@]}" 2>&1 | tee g9-node-tests.log
+      - name: Upload prepared Grade 9 Node test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-node-test-log
+          path: g9-node-tests.log
+          if-no-files-found: warn
+      - name: Strict source-index lock — fail closed until verified
+        if: always()
+        run: |
+          set -o pipefail
+          node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
+      - name: Independent Python source-parity evidence gate
+        if: always()
+        run: |
+          set -o pipefail
+          python3 tools/curriculum/uae_g9_stage_d_semantic_gate.py --json | tee g9-python-source-parity.json
+      - name: Upload independent Python source-parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-python-source-parity
+          path: g9-python-source-parity.json
+          if-no-files-found: warn
+      - name: Upload strict source gate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-source-gate-log
+          path: g9-source-gate.log
+          if-no-files-found: warn
+
+  grade9-dotnet-tests:
+    name: G9 scoped .NET tests (diagnostic)
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200' # Must match repository global.json exactly.
+      - name: Build once and run scoped G9 tests
+        run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-restore
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --filter 'FullyQualifiedName~UaeG9|FullyQualifiedName~UaeGrade9ArabicPathwayPolicyTests|FullyQualifiedName~UaeGrade7ArabicPathwayPolicyTests' --logger 'console;verbosity=normal' --logger 'trx;LogFileName=g9-scoped.trx' --results-directory ./g9-test-results
+      - name: Fail closed if zero Grade 9 tests were executed
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          files = sorted(Path('g9-test-results').glob('*.trx'))
+          if not files:
+              raise SystemExit('NO_G9_TRX: no Grade 9 .NET test report was produced')
+          total = 0
+          failed = 0
+          for file in files:
+              root = ET.parse(file).getroot()
+              counters = next((node for node in root.iter() if node.tag.endswith('Counters')), None)
+              if counters is None:
+                  raise SystemExit('INVALID_G9_TRX: missing test counters')
+              total += int(counters.attrib.get('total', 0))
+              failed += int(counters.attrib.get('failed', 0))
+          print('Grade 9 scoped .NET tests:', total, 'total,', failed, 'failed')
+          if total == 0:
+              raise SystemExit('ZERO_G9_TESTS: a successful empty test filter is not acceptance')
+          if failed:
+              raise SystemExit('FAILED_G9_TESTS: math tests must pass')
+          PY
+      - name: Verify unpublished Grade 9 General authoring labs are absent from production publish
+        run: |
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output ./g9-publish-check
+          test -f g9-publish-check/Edulytics.Web.dll
+          test -d g9-publish-check/wwwroot
+          test -f g9-publish-check/Edulytics.Web.staticwebassets.endpoints.json
+          if test -d g9-publish-check/wwwroot/lesson-labs/uae-g9-general &&
+             find g9-publish-check/wwwroot/lesson-labs/uae-g9-general -type f -print -quit | grep -q .; then
+            echo 'NO_GO: Unverified Grade 9 General HTML/JS leaked into deployable wwwroot' >&2
+            exit 1
+          fi
+          if grep -l 'lesson-labs/uae-g9-general' g9-publish-check/Edulytics.Web.staticwebassets.endpoints.json; then
+            echo 'NO_GO: Unverified Grade 9 General leaked into static asset manifest' >&2
+            exit 1
+          fi
+          echo 'PASS: Grade 9 General source drafts stay in Git but are not production static assets'
+
+      - name: Upload Grade 9 .NET test result evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-dotnet-trx
+          path: g9-test-results/*.trx
+          if-no-files-found: warn

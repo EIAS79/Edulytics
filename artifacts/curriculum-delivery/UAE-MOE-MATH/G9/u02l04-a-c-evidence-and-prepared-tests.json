@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025–2026",
+    "pathway": "General",
+    "lesson": "2-4",
+    "printedPages": [
+      97,
+      98,
+      99,
+      100,
+      101,
+      102
+    ],
+    "pdfPages": [
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "sourceObjectives": [
+    {
+      "id": "O1",
+      "pages": [
+        97,
+        98
+      ],
+      "target": "حل معادلات بمتغير على الطرفين بعمليات المساواة"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        98,
+        99,
+        100
+      ],
+      "target": "جمع الحدود والتوزيع في معادلات الطرفين"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        98,
+        101
+      ],
+      "target": "تمييز حالة الحل الواحد والتطابق والمتناقضة"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        99,
+        100,
+        101,
+        102
+      ],
+      "target": "نمذجة سياقات هندسية ومالية والتحقق في الأصل"
+    }
+  ],
+  "sourceSections": [
+    {
+      "printedPage": 100,
+      "type": "guided and independent both-sides equations"
+    },
+    {
+      "printedPage": 101,
+      "type": "real-world contextual and discriminating solutions"
+    },
+    {
+      "printedPage": 102,
+      "type": "standardized/spaced prior-skill review"
+    }
+  ],
+  "fixtures": [
+    {
+      "o": "O1",
+      "prompt": "حل ٥س + ٣ = ٢س + ١٨.",
+      "expected": "5"
+    },
+    {
+      "o": "O2",
+      "prompt": "حل ٢(س + ٤)=٤س − ٢.",
+      "expected": "5"
+    },
+    {
+      "o": "O3",
+      "prompt": "ما مجموعة حل ٣(س−٢) = ٣س−٦؟",
+      "expected": "جميع الأعداد الحقيقية",
+      "grading": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "o": "O3",
+      "prompt": "ما مجموعة حل ٧س+٢=٧س+٥؟",
+      "expected": "مجموعة خالية",
+      "grading": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "o": "O4",
+      "prompt": "أجر الخدمة الأولى ٣٠+٥س والثانية ١٠+٩س؛ متى تتساويان؟",
+      "expected": "5"
+    }
+  ],
+  "cooldown": [
+    {
+      "prompt": "حل ٧س + ١ = ٤س + ١٦.",
+      "expected": "5"
+    },
+    {
+      "prompt": "حل ٢(س + ٣) = ٢س + ٦.",
+      "expected": "جميع الأعداد الحقيقية"
+    },
+    {
+      "prompt": "ما مجموعة حل ٩س + ٣ = ٩س + ٨؟",
+      "expected": "لا حل"
+    }
+  ],
+  "files": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "registry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  },
+  "aBC": {
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "testsRun": "NOT_RUN",
+    "semanticAudit": "NOT_RUN",
+    "ci": "NOT_RUN",
+    "teacherOpenCaseRubricPrepared": true
+  },
+  "stageDRequired": [
+    "Verify actual question-family coverage for identity/no-solution cases",
+    "Verify symbolic/empty/all-solution grader, including wrong and invalid responses",
+    "Check Arabic learner questions and RTL math render",
+    "Do not promote READY_VERIFIED based on existence of shared Grade7 engine"
+  ]
+}

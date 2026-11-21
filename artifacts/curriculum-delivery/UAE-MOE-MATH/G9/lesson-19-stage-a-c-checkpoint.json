@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 19,
+  "unitOrdinal": 3,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING",
+  "lessonTitleAr": "حل المعادلات الخطية بالتمثيل البياني",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170
+    ],
+    "pdfPages": [
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181
+    ],
+    "review": "DIRECT_LOCAL_SCANNED_SOURCE_LESSON_VISUALLY_REVIEWED",
+    "lessonSourceIndex": "01.pdf:3-2"
+  },
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_OBJECTIVES_GRAPH_ROOT_0_1_INFINITE_SOLUTION_AND_APPLICATION_EXAMPLES_REVIEWED",
+    "learningTargets": [
+      "find equation roots from x-intercepts",
+      "solve by graphing both sides or difference",
+      "distinguish zero/one/infinite solutions",
+      "interpret time and cost graph roots"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "sourceMathExactParityAllExercisesNotClaimed": true,
+    "sourceExampleOutcomesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_GRAPH_8_COOLDOWN_PREPARED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u03-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u03-l02-graphical-solving-ar.html"
+    ],
+    "teacherReviewRequired": true,
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u03l02-teacher-graph-roots-rubric.json",
+    "coolDownQuestions": 8,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "REUSED_EXISTING_EXACT_LINEAR_NUMERIC_SOLVER_GRAPH_ROOTS_TEACHER_REVIEW_TESTS_WRITTEN",
+    "strategy": "REUSE_EXISTING_ALGEBRA_ENGINE_NUMERIC_ONLY",
+    "allowedQuestionFamilies": [
+      "algebra.linear.ax_plus_b_equals_c",
+      "algebra.linear.variables_both_sides"
+    ],
+    "graphicalInterpretationTeacherReview": true,
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u03l02.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "GRADE9_GENERAL_U03L02_A_B_C_ARABIC_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T01:44:34.238Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:3-3"
+}

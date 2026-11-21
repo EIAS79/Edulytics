@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 70,
+  "unitOrdinal": 12,
+  "lessonOrdinalInUnit": 3,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:03:SLOPE-OF-LINE",
+  "lessonTitleAr": "ميل الخط المستقيم",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      668,
+      676
+    ],
+    "pdfPages": [
+      84,
+      92
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_STUDENT_BOOK_PAGE_REVIEW",
+    "scope": "Lesson gradient objectives, worked graphs, parallel/perpendicular slope and context tasks reviewed visually; all individual source exercise parity not asserted"
+  },
+  "stageA": {
+    "status": "SOURCE_GRADIENT_FROM_COORDINATES_GRAPH_HORIZONTAL_VERTICAL_PARALLEL_PERPENDICULAR_REVIEWED",
+    "learningTargets": [
+      "rise over run from graph and coordinate pair",
+      "positive/negative slope",
+      "horizontal slope zero; vertical slope undefined",
+      "parallel and perpendicular slopes",
+      "slope as contextual rate"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_AND_RICHV2_AND_ORIGINAL_TEACHER_COOLDOWN_AUTHORED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u12-l03-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u12-l03-slope-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "coolDownGraded": false,
+    "submission": "LOCAL_JSON_ONLY_NO_PLATFORM_GRADING",
+    "teacherRubric": [
+      {
+        "q": 1,
+        "expected": "(10-2)/(5-1)=2, rising line"
+      },
+      {
+        "q": 2,
+        "expected": "(-1-5)/(4-(-2))=-1, descending"
+      },
+      {
+        "q": 3,
+        "expected": "Horizontal line y constant: slope zero"
+      },
+      {
+        "q": 4,
+        "expected": "Vertical x constant: denominator zero; undefined slope"
+      },
+      {
+        "q": 5,
+        "expected": "Slopes 2 and -1/2 perpendicular, 3/4 and 3/4 parallel if distinct"
+      },
+      {
+        "q": 6,
+        "expected": "Positive/negative line drawing and km/hour rate units"
+      }
+    ]
+  },
+  "stageC": {
+    "status": "REUSE_EXISTING_EXACT_COORDINATE_GRADIENT_FAMILY_TESTS_WRITTEN_NOT_RUN",
+    "practiceFamilies": [
+      "geometry.coordinate.gradient_between_points"
+    ],
+    "strategy": "REUSE_EXISTING_FAMILY_TEACHER_REVIEW_FOR_UNDEFINED_VERTICAL_AND_FREE_DIAGRAMS",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u12l03.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY_NO_INDEPENDENT_STAGE_D_RUNTIME_OR_ITEM_LEVEL_PARITY_PASS",
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLesson": "03-1.pdf:12-4"
+}

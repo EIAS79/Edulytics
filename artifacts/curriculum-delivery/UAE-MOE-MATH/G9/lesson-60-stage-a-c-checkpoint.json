@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 60,
+  "unitOrdinal": 10,
+  "lessonOrdinalInUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES",
+  "lessonTitleAr": "التبرير الاستقرائي والتخمين",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 UAE General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      561,
+      562,
+      563,
+      564,
+      565,
+      566,
+      567,
+      568
+    ],
+    "pdfPages": [
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216
+    ],
+    "method": "DIRECT_LOCAL_BOOK_PAGE_VISUAL_REVIEW",
+    "scope": "Numeric and visual pattern objectives, conjectures, counterexample tasks reviewed from source, but item-level live parity unverified"
+  },
+  "stageA": {
+    "status": "DIRECT_SOURCE_INDUCTION_AND_COUNTEREXAMPLE_OBJECTIVES_REVIEWED",
+    "skills": [
+      "predict and generalize numeric patterns",
+      "identify regular first/second differences and geometrical changes",
+      "form inductive conjectures",
+      "produce a valid counterexample"
+    ],
+    "sourceExample": "4,10,18,28,40 => next 54",
+    "review": "Book pages read directly; not exhaustive source item response parity"
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_QUESTION_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u10-l01-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u10-l01-inductive-reasoning-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "openReasoningTeacherReview": true,
+    "studentRecord": "LOCAL_JSON_ONLY"
+  },
+  "stageC": {
+    "status": "SHARED_EXACT_ARITHMETIC_GEOMETRIC_SEQUENCE_FAMILIES_REUSED_NUMERIC_ONLY",
+    "practiceFamilies": [
+      "sequences.core.arithmetic_nth_term",
+      "sequences.core.geometric_nth_term"
+    ],
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "skillMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "testPath": "tests/academic-uae-grade9-arabic-u10l01.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "teacherReviewRequired": [
+      "figure-based conjectures",
+      "nonlinear quadratic-difference source sequence",
+      "proof or counterexample"
+    ]
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "SOURCE_A_B_C_AUTHORING_ONLY_NOT_LIVE_TEST_PASS"
+}

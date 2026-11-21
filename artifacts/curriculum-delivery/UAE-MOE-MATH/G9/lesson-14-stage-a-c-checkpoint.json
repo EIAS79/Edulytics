@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 14,
+  "unitOrdinal": 2,
+  "lessonOrdinalInUnit": 6,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+  "lessonTitleAr": "النسب والتناسب",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026 UAE General student book",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ],
+    "pdfPages": [
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129
+    ],
+    "method": "DIRECT_LOCAL_BOOK_PAGE_VISUAL_REVIEW",
+    "teacherOnlySections": "COOLDOWN_ORIGINAL_EDULYTICS_AUTHORED"
+  },
+  "stageA": {
+    "status": "SOURCE_PAGES_AND_70_OF_70_SOURCE_MATHEMATICS_REVIEWED_AND_ALL_ROUTED",
+    "learningTargets": [
+      "ratios and unit rates",
+      "equivalent ratios",
+      "cross multiplication for proportions",
+      "solve numeric and algebraic proportions",
+      "constant-rate scaling and modelling"
+    ],
+    "sourceExerciseReview": "ALL_70_SOURCE_MATH_OUTCOMES_REVIEWED_NUMERIC_CANDIDATES_TEACHER_AND_SPIRAL_ROUTES_EXPLICIT; EXACT_GENERATED_PROMPT_PARITY_RESERVED_FOR_STAGE_D",
+    "sourceElementCoverageComplete": true,
+    "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-source-element-ledger.json",
+    "sourceExerciseGroupsRefined": true,
+    "sourceMathematicsSpotAudit": {
+      "verifiedCount": 70,
+      "total": 70,
+      "pendingCount": 0,
+      "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-source-element-ledger.json",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "scope": "SOURCE_ITEM_MATHEMATICS_ONLY_NO_RUNTIME_PROMPT_PARITY_CLAIM"
+    }
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_SVG_8_COOLDOWN_AND_TEACHER_RUBRIC_PREPARED",
+    "newLessonVerifiedAbsentFromCandidatePack": true,
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l06-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l06-ratio-proportion-ar.html"
+    ],
+    "teacherReviewRequiredFor": [
+      "scaling diagrams",
+      "written proportion proof",
+      "unit and constant-rate explanation",
+      "spreadsheet lab"
+    ],
+    "coolDownQuestions": 8,
+    "coolDownGraded": false,
+    "coolDownSubmission": "LOCAL_JSON_ONLY_NOT_AUTHENTICATED_PLATFORM",
+    "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l06-teacher-reviewed-cooldown-rubric.json",
+    "sourceSpecificRepairs": [
+      "EX9–14 true/false ratio equivalence separated from missing-number family",
+      "EX15/17/22/23/28/29/34 variable denominators teacher reviewed",
+      "EX35/36 one-sided numerator",
+      "EX37–39 two-sided algebraic proportion",
+      "p118 original DTI spreadsheet analogue",
+      "source EX18 and exercise groups 1-3/9-14 false proportions without invented unknowns"
+    ]
+  },
+  "stageC": {
+    "status": "FOUR_RATIO_FAMILIES_REUSE_EXTEND_VERIFIER_AND_TEST_SPECS_PREPARED_NOT_RUN",
+    "practiceFamilies": [
+      "ratio.unit_rate.equivalent_ratio",
+      "ratio.unit_rate.direct",
+      "ratio.unit_rate.divide_total",
+      "uae.g9.general.u02.l06.two_sided_proportion"
+    ],
+    "strategy": "REUSE_SHARED_RATIO_FAMILIES_AND_EXTEND_TWO_SIDED_CASE_NO_NEW_ENGINE",
+    "existingIndependentVerifier": true,
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L06RatioProportionTests.cs",
+      "tests/academic-uae-grade9-arabic-u02l06.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false,
+    "twoSidedRatioExtension": {
+      "family": "uae.g9.general.u02.l06.two_sided_proportion",
+      "sourceExercises": [
+        37,
+        38,
+        39
+      ],
+      "independentVerifier": true,
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "progress": "LESSON_13_CLOSED_LESSON_14_IN_PROGRESS",
+  "closedUtc": "2026-11-20T01:13:11.816Z",
+  "closedScope": "LESSON_14_SOURCE_SKILL_AUTHORING_AND_TEST_SPEC_ONLY; NOT_INDEPENDENT_STAGE_D_RUNTIME_PARITY",
+  "remainingStageDValidation": [
+    "execute prepared .NET/Node tests",
+    "verify real question generation and Arabic numeral grading",
+    "verify source-item-generated prompt parity",
+    "verify teacher-workflow and student diagram rendering"
+  ],
+  "nextLesson": "01.pdf:2-7"
+}

@@ -11532,6 +11532,2225 @@
       ],
       "officialOutcomeCodes": [],
       "stageDVerification": "PENDING"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+      "primarySkills": [
+        "supporting.algebra.expressions"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceObjectivesPrepared_RuntimeSemanticAuditPending",
+      "evidence": [
+        "Local 2025-2026 Arabic General student book 01.pdf printed pages 5-9, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Book objectives: read expression components/powers; translate verbal expressions to symbolic expressions; represent contexts. Teacher grades free explanations and drawings.",
+        "Candidate reuse of existing G6 US-CCSS algebra.expression_words and algebra.expression_coefficient; no generated-question semantic audit was run in A-B-C.",
+        "Full objective-to-question evidence artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-source-objectives-practice-contract.json; D gate must validate real Arabic question strings and incorrect/valid answers."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_GENERAL_U01L01_VERBAL_SYMBOLIC_COMPONENTS_SOURCE_GROUNDED",
+      "allowedQuestionFamilies": [
+        "usccss.algebra.expression_words",
+        "usccss.algebra.expression_coefficient"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS",
+      "primarySkills": [
+        "algebra.order_of_operations"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_PreparedForStageD",
+      "evidence": [
+        "Source 01.pdf printed pages 10-15: rules for grouping, exponents, multiplication/division left-to-right, sum/sub left-to-right, substitution, money/cube context.",
+        "Reuse existing verified Arabic UAE G6 U06L03 exact family mechanics; same mathematical ordering and numeric answer form; enrichment/source-specific examples authored for G9.",
+        "Stage D must check actual generated question alignment, Arabic learner strings, valid/wrong/invalid grade and independent verifier."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L02_SOURCE_ORDER_OF_OPERATIONS_EXACT",
+      "allowedQuestionFamilies": [
+        "uae.g6.u06.l03.sum_sub_left_right",
+        "uae.g6.u06.l03.division_multiplication_left_right",
+        "uae.g6.u06.l03.parenthesis_first",
+        "uae.g6.u06.l03.exponent_then_multiply",
+        "uae.g6.u06.l03.two_item_cost",
+        "uae.g6.u06.l03.first_operation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:03:PROPERTIES-OF-NUMBERS",
+      "primarySkills": [
+        "algebra.equivalent_properties"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_PreparedStageD",
+      "evidence": [
+        "01.pdf original Grade 9 General printed pages 16–22; real-world grouping, commutative/associative, additive/multiplicative identities, zero/inverses and invalid subtraction/division.",
+        "Reuse existing UAE Grade 6 U06L08 Arabic numeric property questions; open mathematical reasons and source diagrams require teacher evaluation.",
+        "Stage D semantic, RTL and grader tests NOT RUN."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L03_CLASSIFY_AND_APPLY_NUMERIC_PROPERTIES",
+      "allowedQuestionFamilies": [
+        "uae.g4.u02.l01.commutative_add",
+        "uae.g4.u02.l01.associative_add",
+        "uae.g4.u02.l01.additive_identity",
+        "uae.g4.u03.l05.identity",
+        "uae.g4.u03.l06.grouped_product",
+        "uae.g6.u06.l08.classify_property",
+        "uae.g6.u06.l08.rewrite_associative",
+        "uae.g6.u06.l08.triangle_area_reordered"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:04:DISTRIBUTIVE-PROPERTY",
+      "primarySkills": [
+        "algebra.distributive_property"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_PreparedStageD",
+      "evidence": [
+        "Original General 2025 student printed pp.25–31; distributing across sums and differences, factoring, rectangle area and contextual arithmetic.",
+        "Reuse shared Arabic UAE Grade6/G4 exact families as skill mechanics; Stage D must audit actual questions, RTL and grader."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L04_DISTRIBUTIVE_EXPANSION_FACTOR_AND_AREA",
+      "allowedQuestionFamilies": [
+        "uae.g6.u06.l09.expand_variable",
+        "uae.g6.u06.l09.evaluate_distributive",
+        "uae.g4.u04.l07.distributive_sum",
+        "uae.g6.u06.l10.expand_two_term",
+        "uae.g6.u06.l10.factor_common",
+        "uae.g6.u06.l10.mixed_decimal_distribute",
+        "uae.g6.u06.l10.distribution_true_false"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:05:EQUATIONS",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_PreparedStageD",
+      "evidence": [
+        "01.pdf Grade 9 General printed pp.33–39: identify/test solutions, inverse-operation equations, multistep equations with distributive terms, contextual tickets/geometry and solution sets.",
+        "Reuse Arabic one-step candidate families and existing affine linear exact family; real learner Arabic display requires Stage D verification. Teacher-review algebraic written reasoning."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L05_SOLVE_CHECK_ONE_STEP_AFFINE_EQUATIONS",
+      "allowedQuestionFamilies": [
+        "uae.g6.u07.l01.add",
+        "uae.g6.u07.l01.subtract",
+        "uae.g6.u07.l01.multiply",
+        "uae.g6.u07.l01.divide",
+        "uae.g6.u07.l01.test_candidate",
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:06:RELATIONS",
+      "primarySkills": [
+        "functions.input_output_tables"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_DPending",
+      "evidence": [
+        "01.pdf General printed pages 40–46: relations via input-output, domain/range, ordered pairs, mapping diagrams, Cartesian plots, independent/dependent variables.",
+        "Reuse source-related Arabic UAE G6 U08L01 exact table/ordered-pair mechanics; set domain/range and free graph explanation teacher-reviewed pending D."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L06_INPUT_OUTPUT_DOMAIN_RANGE_ORDERED_PAIRS",
+      "allowedQuestionFamilies": [
+        "uae.g6.u08.l01.linear_output",
+        "uae.g6.u08.l01.linear_input",
+        "uae.g6.u08.l01.division_output",
+        "uae.g6.u08.l01.ordered_pair",
+        "uae.g6.u08.l01.classify_variable"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:07:FUNCTIONS",
+      "primarySkills": [
+        "supporting.functions.core"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L07",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceReviewed_DPending",
+      "evidence": [
+        "2025–2026 Grade 9 General textbook 01.pdf printed pp.47–55, classification of functions from graphs and mappings; function notation/evaluation and real-world context.",
+        "Reuse UAE Grade8 mathematical-function families regardless of source-curriculum name; no assumption of PASS or fully Arabic actual learner questions.",
+        "Open vertical-line diagrams and verbal interpretations are teacher reviewed; Stage D must run real-sample semantic and RTL audit."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L07_UNIQUE_OUTPUT_FUNCTION_AND_NOTATION",
+      "allowedQuestionFamilies": [
+        "functions.relations.unique_output.classify",
+        "functions.notation.evaluate_context",
+        "uae.g6.u08.l01.linear_output",
+        "uae.g6.u08.l01.ordered_pair"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:08:INTERPRETING-FUNCTION-GRAPHS",
+      "primarySkills": [
+        "functions.graph.key_features",
+        "functions.linear_graphs"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U01L08",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "PARTIAL_EXACT_CAPABILITY_REQUIRES_D_AND_TEACHER_REVIEW",
+      "evidence": [
+        "General 2025 student source pp.56-61: interpret time-based graphs, increasing/decreasing/constant intervals, extrema, initial value and graph contexts.",
+        "Existing linear graph/intercept families provide only a subset; non-linear interval interpretations and open contextual readings require dedicated teacher assessment and possible engine extension.",
+        "Stage D must fail semantic coverage if a source objective lacks generated/teacher review evidence; family reuse alone does not establish a PASS."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U01L08_GRAPH_INTERVAL_TRENDS_EXTREMA_CONTEXT",
+      "allowedQuestionFamilies": [
+        "uae.g6.u08.l03.linear_vs_square",
+        "uae.g6.u08.l03.y_intercept",
+        "uae.g6.u08.l03.equation_from_line",
+        "geometry.coordinate.y_intercept_from_rule"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:01:WRITING-EQUATIONS",
+      "primarySkills": [
+        "algebra.equations.write_from_context"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "PARTIAL_NUMERIC_FAMILIES_AND_TEACHER_OPEN_EQUATIONS",
+      "evidence": [
+        "Book 01.pdf 2025 General pp.75–80: write equations from verbal statements, contexts, diagrams, money and length. Meaningful accuracy depends on preserving equality and operation order.",
+        "Reused Grade6 Arabic tape and subtraction-form question mechanisms only where the question actually asks writing an equation. Free verbal-to-symbolic multi-step responses are prepared for teacher review until a verified symbolic equation grader exists.",
+        "No automatic assumption of semantic coverage from a generator family; Stage D must sample real Arabic questions and scoring."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L01_TRANSLATE_VERBAL_TO_EQUATION",
+      "allowedQuestionFamilies": [
+        "uae.g6.u07.l02.write_tape_equation",
+        "uae.g6.u07.l02.subtraction_form"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:02:SOLVING-ONE-STEP-EQUATIONS",
+      "primarySkills": [
+        "algebra.equations.one_step"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "A_C_SOURCE_REVIEWED_D_AUDIT_PENDING",
+      "evidence": [
+        "2025 UAE Grade 9 General Student Book p83–90, one-step inverse operations, equality and rational numbers with checks and applied contexts.",
+        "Candidate reuse of Arabic Grade6 one-step families; Grade9 contexts and noninteger variants must be separately verified in Stage D.",
+        "Teacher reviews equation derivation and explanation if symbolic response outside existing families."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L02_ONE_STEP_INVERSE_EQUALITY_CHECK",
+      "allowedQuestionFamilies": [
+        "uae.g6.u07.l01.add",
+        "uae.g6.u07.l01.subtract",
+        "uae.g6.u07.l01.result_minus_unknown",
+        "uae.g6.u07.l01.multiply",
+        "uae.g6.u07.l01.divide",
+        "uae.g6.u07.l01.test_candidate",
+        "uae.g6.u07.l03.fraction_addition_unknown",
+        "uae.g6.u07.l03.decimal_addition_unknown"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_PREPARED_D_TESTS_PENDING",
+      "evidence": [
+        "General 2025 Grade9 source p91-96: group like terms, distributive property, solve multi-step expressions and translate contexts.",
+        "Reuse existing linear equation families with explicit teacher rubric for algebraic written steps, fractions and context models; check learner prompts in Stage D."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L03_MULTI_STEP_EQUATIONS_DISTRIBUTION_AND_CHECK",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "supporting.algebra.equations.mixed",
+        "supporting.algebra.expand"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:04:VARIABLES-ON-BOTH-SIDES",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_REVIEWED_STAGE_D_AUDIT_PENDING",
+      "evidence": [
+        "Source 01.pdf printed pp97-102: equations with variable on each side, parentheses, identity and contradiction, geometric and contextual equations.",
+        "Reuse Grade7 algebra.linear.variables_both_sides where semantically aligned; algebra expand is supporting only, not a replacement for equation-solving evidence.",
+        "Stage D must prove cases of unique solution, no solution, infinitely many solutions, Arabic render and independent grader."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U02L04_BOTH_SIDES_IDENTITY_CONTRADICTION",
+      "allowedQuestionFamilies": [
+        "algebra.linear.variables_both_sides",
+        "supporting.algebra.expand"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_REVIEWED_STAGE_D_AUDIT_PENDING",
+      "evidence": [
+        "01.pdf General printed pp103–108: evaluate absolute expressions, solve |ax+b|=c including two/one/no solution, number line midpoint modelling, applied tolerances.",
+        "Only numerical solving/evaluation/midpoint responses are native-scored. Open graphing and contextual reasoning require teacher rubric.",
+        "Eight exact families delegate to UaeG9AbsoluteValueEquationQuestions with independent parameter verification; full Stage D audit not yet run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U02L05_ABSOLUTE_EQUATION_0_1_2_SOLUTIONS",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u02.l05.two_solutions",
+        "uae.g9.general.u02.l05.one_solution",
+        "uae.g9.general.u02.l05.no_solution",
+        "uae.g9.general.u02.l05.evaluate_absolute",
+        "uae.g9.general.u02.l05.midpoint",
+        "uae.g9.general.u02.l05.composite_evaluation",
+        "uae.g9.general.u02.l05.outer_coefficient_no_solution",
+        "uae.g9.general.u02.l05.context_tolerance_endpoints"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS",
+      "primarySkills": [
+        "ratio.proportion.solve",
+        "ratio.unit_rate"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Source: local latest Grade 9 General student book 01.pdf printed 111–118 (PDF122–129), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Source objectives: express and simplify ratios; decide equivalent ratios using product property; solve proportions, including expressions with unknown terms; apply constant rates, scales and everyday contexts.",
+        "Reuse existing exact ratio mathematics; scope-specific Arabic prompt localization applies only to this lesson. Teachers review proof/diagrams, spreadsheet interpretation, and free-written real-life modelling.",
+        "Tests written, not executed. Book-source item-by-item semantic parity is not a Stage D PASS.",
+        "Extended existing shared exact ratio engine with source-specific two-sided linear proportion family and independent cross-product verifier. Stage D not executed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U02L06_EQUIVALENT_RATIO_CROSS_MULTIPLY_TWO_SIDED_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.divide_total",
+        "uae.g9.general.u02.l06.two_sided_proportion"
+      ],
+      "forbiddenQuestionFamilies": [
+        "statistics.center_spread.mean",
+        "percentages.core.of_quantity"
+      ],
+      "teacherReviewRequiredFor": [
+        "written justification",
+        "scale diagrams",
+        "variable on both sides of a ratio in free response",
+        "spreadsheet model"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE",
+      "primarySkills": [
+        "percent.change.calculate",
+        "percent.increase_decrease",
+        "percent.discount_and_tax"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L07",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_OBJECTIVES_STAGE_D_RUNTIME_PENDING",
+      "evidence": [
+        "Source 01.pdf printed pp119–125, current General Grade9 Arabic student book (2025–2026), file SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Learning targets: percent change as difference / original; increase/decrease direction; finding sale discount, sales tax/markup and total; analyze tables and compare successive percentage changes.",
+        "Two exact existing families support amount-of-percent and resulting value after stated increase/decrease. Percent-change-from-two-given-values, open explanations, fractional tax and chart interpretations are manually teacher reviewed pending verified dedicated numeric support. Tests authored but NOT RUN."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U02L07_PERCENT_CHANGE_AND_CONTEXT",
+      "allowedQuestionFamilies": [
+        "percentages.core.increase_decrease",
+        "percentages.core.of_quantity"
+      ],
+      "teacherReviewRequiredFor": [
+        "percent change from two values including decimals",
+        "directional and relative change from table",
+        "multi-stage discounts and tax on rounded decimal prices",
+        "source book diagrams and written justifications"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS",
+      "primarySkills": [
+        "algebra.formula.rearrange",
+        "measurement.dimensional_analysis"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L08",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "ORIGINAL_STUDENT_BOOK_OBJECTIVES_TEACHER_REVIEW_FOR_SYMBOLIC_AND_UNITS",
+      "evidence": [
+        "Local 2025–2026 Grade9 General student 01.pdf printed pp126–131, original source SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Learning objectives: rearrange literal equations to isolate specified variable and dimensional analysis with unit-factor cancellation, including rates and geometry.",
+        "Only supplementary existing numeric solving/unit-rate families reused; these are not exact autograders for symbolic formula rearrangement or multi-unit conversion. Original lesson examples and eight Cool-down tasks remain teacher-reviewed. Stage D tests prepared but not executed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_REVIEW_FOR_CORE_SYMBOLIC_SKILLS",
+      "practiceMechanic": "G9_U02L08_LITERAL_EQUATIONS_AND_DIMENSIONAL_ANALYSIS_WITH_PARTIAL_NUMERIC_REUSE",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "ratio.unit_rate.direct"
+      ],
+      "teacherReviewRequiredFor": [
+        "literal equation symbolic rearrangement",
+        "isolation involving variables on both sides",
+        "geometry formulas and domain conditions",
+        "multi-step dimensional analysis and unit cancellation",
+        "full textbook diagrams and justified source solutions"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE",
+      "primarySkills": [
+        "statistics.weighted_mean",
+        "algebra.weighted_mixture",
+        "ratio.average_speed"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U02L09",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_MATCHED_CORE_WEIGHTED_TASKS_TEACHER_REVIEW",
+      "evidence": [
+        "Grade9 General original 01.pdf printed pp132–138 source book full page spans visually reviewed, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Objectives: weighted mean of observations, mixtures weighted by quantity, weighted grades, and average travel speed from total distance divided by total time.",
+        "Existing arithmetic mean family can serve as a numerical prerequisite only; it does not grade the weighted mixture or multi-leg speed models. Those are taught in source-based Arabic content and teacher-reviewed exercises, Stage D unrun."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_CORE_WEIGHTED_SKILLS_TEACHER_REVIEW",
+      "practiceMechanic": "G9_GENERAL_U02L09_WEIGHTED_MEANS_MIXTURES_SPEED",
+      "allowedQuestionFamilies": [
+        "statistics.center_spread.mean"
+      ],
+      "teacherReviewRequiredFor": [
+        "frequency-weighted averages",
+        "different percentage-weighted grades",
+        "algebraic mixture concentration equations",
+        "average speed with unequal durations or distances",
+        "original diagram and full written justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS",
+      "primarySkills": [
+        "algebra.linear.graph",
+        "geometry.coordinate.intercepts"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "ORIGINAL_GENERAL_STUDENT_BOOK_OBJECTIVES_AND_GRAPHS_REVIEWED",
+      "evidence": [
+        "Local Arabic UAE General book 01.pdf printed 155–162, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Learning targets: graph lines by value tables, x/y intercepts, vertical and horizontal equations, read graph with realistic units and scale.",
+        "Existing coordinate numeric engine reused for rule evaluation and y-intercept numerical support, not used to auto-grade drawn graphs or graph-model explanations."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_STUDENT_GRAPHS_TEACHER_REVIEW",
+      "practiceMechanic": "G9_U03L01_GRAPHING_LINEAR_EQUATIONS_INTERCEPTS_TABLES",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "drawing a straight line on scaled axes",
+        "graphing a vertical or horizontal line",
+        "deriving intercepts algebraically for arbitrary linear equations",
+        "graph interpretation and units",
+        "teacher checking model versus graph"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING",
+      "primarySkills": [
+        "algebra.linear.solve_by_graphing",
+        "algebra.linear.root"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_GRAPH_ROOT_OBJECTIVES_STAGE_D_PENDING",
+      "evidence": [
+        "Grade9 General 01.pdf printed pp163–170, source SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Graph equation roots from x-intercepts, difference-of-sides graph, one/no/infinite solution identities, and real-life zero-crossing.",
+        "Existing exact numeric linear equation solving families reused for algebraic answer consistency only. Student graph drawing and root interpretation remain teacher reviewed. Tests authored but not executed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_GRAPHS_TEACHER_REVIEW",
+      "practiceMechanic": "G9_U03L02_LINEAR_EQUATION_ROOT_FROM_GRAPH",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ],
+      "teacherReviewRequiredFor": [
+        "graph root x-intercept of a linear function",
+        "horizontal versus coincident zero graph",
+        "plotting two sides and recognizing intersection",
+        "interpreting real-context graph zero",
+        "checking hand drawn graph"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE",
+      "primarySkills": [
+        "geometry.coordinate.gradient",
+        "algebra.linear.rate_of_change"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_OBJECTIVES_AND_SLOPE_VISUALLY_REVIEWED",
+      "evidence": [
+        "Grade9 General 01.pdf printed pp172–179 (PDF183–190), source SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Targets: calculate rate of change from tables/graphs and coordinate slope between two points; distinguish positive, negative, zero and undefined; represent units.",
+        "Existing exact gradient_between_points family covers numeric two-point slope; unit interpretation and special visual reasoning require teacher review. Stage D tests authored but not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_VISUAL",
+      "practiceMechanic": "G9_U03L03_RATE_OF_CHANGE_AND_GRADIENT",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ],
+      "teacherReviewRequiredFor": [
+        "source table interpretation and unit rate",
+        "special-case vertical and horizontal graph explanations",
+        "independent graph sketches and slope triangles",
+        "nonlinear change or other context justifications"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION",
+      "primarySkills": [
+        "algebra.linear.direct_variation",
+        "ratio.constant_of_proportionality"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_DIRECT_VARIATION_OBJECTIVES_AND_GRAPH_REVIEWED",
+      "evidence": [
+        "Grade9 General 01.pdf printed 182–188 PDF193–199, original SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Targets: direct variation y=kx, k=y/x when x!=0, model through origin, tables and real-life constant rates.",
+        "Existing ratio and linear-function-value families provide exact numeric assistance only. Direct-variation identification, source graphs and contextual explanations remain teacher reviewed. Stage D tests prepared and not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_MODEL",
+      "practiceMechanic": "G9_U03L04_DIRECT_VARIATION_AND_RATE_CONSTANT",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "graph of line through origin",
+        "identification of non-direct linear equations",
+        "negative proportionality reasoning",
+        "table constant-ratio proof",
+        "context fixed rate and unit interpretation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS",
+      "primarySkills": [
+        "sequences.arithmetic.nth_term",
+        "algebra.linear.sequence_as_function"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_STUDENT_BOOK_ARITHMETIC_SEQUENCE_OBJECTIVES_REVIEWED",
+      "evidence": [
+        "01.pdf UAE G9 General printed pp189–196 PDF200–207; original local book used.",
+        "Arithmetic difference d, nth term a1+(n-1)d, linear function discrete domain, graph points, position of term, contextual linear rate.",
+        "Existing arithmetic nth term and find-position question families reused. Explanations, source diagrams and open word problems reviewed by teacher; Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH",
+      "practiceMechanic": "G9_U03L05_ARITHMETIC_NTH_TERM_AND_DISCRETE_FUNCTION",
+      "allowedQuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.find_position_arithmetic"
+      ],
+      "teacherReviewRequiredFor": [
+        "source lesson discrete coordinate graph and interpretation",
+        "arithmetic versus non-arithmetic classification with reasoning",
+        "units and real-life contexts",
+        "writing linear function from a table"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS",
+      "primarySkills": [
+        "algebra.linear.proportionality",
+        "algebra.linear.zero_intercept"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U03L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_3_6_INTERCEPT_TABLE_AND_GRAPH_TARGETS_REVIEWED",
+      "evidence": [
+        "01.pdf Grade9 General printed pp197–202 (PDF208–213) student book visual review.",
+        "Identifying proportional relation y=kx versus linear nonproportional y=kx+b, table ratios, graph through origin, contextual fixed fee.",
+        "Reuse existing exact unit-rate equivalent ratio and linear y value families for numeric assistance; conceptual proportionality decisions, real-world units and plotted graph require teacher review. Stage D tests written, not executed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_PROPORTIONALITY",
+      "practiceMechanic": "G9_U03L06_PROPORTIONAL_VERSUS_NONPROPORTIONAL",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.equivalent_ratio",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "graph intersects origin versus nonzero y-intercept",
+        "constant difference versus constant quotient comparison",
+        "classify tables, graphs and equations",
+        "fixed-fee contextual models"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM",
+      "primarySkills": [
+        "algebra.linear.slope_intercept.graph",
+        "geometry.coordinate.gradient"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U04L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_LOCAL_BOOK_SLOPE_INTERCEPT_OBJECTIVES_REVIEWED",
+      "evidence": [
+        "01.pdf Grade9 General 2025–26 printed216–223 PDF227–234.",
+        "Represent y=mx+b using intercept and slope; rewrite standard form; horizontal/vertical special cases; interpret contextual slope/intercept.",
+        "Existing exact coordinate gradient, y intercept and linear function evaluation only for numeric assistance; plotted line and visual interpretation teacher-reviewed. Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH",
+      "practiceMechanic": "G9_U04L01_GRAPH_SLOPE_INTERCEPT_AND_STANDARD_FORM",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.gradient_between_points"
+      ],
+      "teacherReviewRequiredFor": [
+        "graph slope/intercept on coordinate plane",
+        "standard form to graph",
+        "horizontal vs vertical slopes",
+        "source contextual interpretation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:02:WRITING-SLOPE-INTERCEPT-EQUATIONS",
+      "primarySkills": [
+        "algebra.linear.write_equation_slope_intercept",
+        "geometry.coordinate.gradient"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U04L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_BOOK_SLOPE_POINT_AND_TWO_POINTS_REVIEWED",
+      "evidence": [
+        "UAE General student 01.pdf printed226–232, PDF237–243, writing slope-intercept from slope/point, two points, graphs, real-life contexts.",
+        "Reuse existing gradient and coordinate-value families for numeric help only; writing open equation and interpreting source graph require teacher review; Stage D test not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATIONS",
+      "practiceMechanic": "G9_U04L02_WRITE_SLOPE_INTERCEPT_FROM_POINTS",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "write whole symbolic y=mx+b equation",
+        "read original graph and point coordinates",
+        "interpret initial fee and unit-rate contexts",
+        "vertical line exceptional cases"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:03:POINT-SLOPE-FORM",
+      "primarySkills": [
+        "algebra.linear.point_slope_equation",
+        "geometry.coordinate.gradient"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U04L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_POINT_SLOPE_FROM_POINT_TWO_POINTS_REVIEWED",
+      "evidence": [
+        "01.pdf Grade9 General printed233–238 PDF244–249, point-slope form y-y1=m(x-x1), simplification, two points, vertical lines.",
+        "Existing gradient and evaluate linear rule families only as numeric help; exact written symbolic equation and graph interpretation remain teacher reviewed. Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYMBOLIC",
+      "practiceMechanic": "G9_U04L03_POINT_SLOPE_FROM_POINT_AND_TWO_POINTS",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "symbolic point-slope equations",
+        "expand and simplify negative/fractional slopes",
+        "graphs and context modelling",
+        "vertical line exceptional cases"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES",
+      "primarySkills": [
+        "geometry.coordinate.parallel_slopes",
+        "geometry.coordinate.perpendicular_slopes"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U04L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "STUDENT_SOURCE_PARALLEL_AND_PERPENDICULAR_RULES_REVIEWED",
+      "evidence": [
+        "01.pdf Grade9 General printed239–245 PDF250–256.",
+        "Equal slopes for distinct nonvertical parallel lines; negative reciprocal for finite nonzero perpendicular slopes; horizontal/vertical exception; equations through point.",
+        "Reuse coordinate gradient family for numerical check only; actual parallel/perpendicular classification and symbolic equation open teacher rubric; tests written not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_LINE_RELATIONS",
+      "practiceMechanic": "G9_U04L04_PARALLEL_PERPENDICULAR_SLOPE_RELATIONS",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "classify parallel perpendicular intersecting and coincident lines",
+        "negative reciprocal including zero and undefined exceptions",
+        "write slope-intercept equations from point with parallel/perpendicular gradient",
+        "source diagrams and right angle justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:01:ADDITION-SUBTRACTION-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequality.add_subtract",
+        "geometry.number_line.inequality"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_BOOK_ADDITION_SUBTRACTION_AND_NUMBER_LINE_REVIEWED",
+      "evidence": [
+        "01.pdf General Grade9 printed259–265 PDF270–276; addition and subtraction preserve inequality direction, signed numbers, graph open vs closed.",
+        "Existing linear inequality ax+b relation c can provide general numeric assistance, not restricted to one-step a=1; exact source parity remains teacher-reviewed until Stage D."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_NUMBER_LINE",
+      "practiceMechanic": "G9_U05L01_ADDITIVE_INEQUALITY_NUMERIC_HELP",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "one-step additive inequality equivalence",
+        "open/closed number-line graph direction",
+        "context domain nonnegative restrictions",
+        "written justification of inequality sign"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:02:MULTIPLY-DIVIDE-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequality.multiply_divide",
+        "geometry.number_line.inequality"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_BOOK_SIGN_REVERSAL_RULES_GRAPH_AND_CONTEXT_REVIEWED",
+      "evidence": [
+        "Grade9 General 01.pdf printed266–271 PDF277–282, multiplying and dividing inequalities positive/negative, nonzero divisor, graph endpoints.",
+        "Existing linear-inequality family reused as numerical assistance; exact sign-division source skill and explanation reviewed by teacher, Stage D tests pending."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_SIGN_REVERSAL",
+      "practiceMechanic": "G9_U05L02_MULTIPLY_DIVIDE_NEGATIVE_REVERSAL",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "reason for reversing relation on negative multiplier",
+        "source one-step multiply and divide scenarios",
+        "draw solution rays and open/closed endpoints",
+        "division by zero and unknown-sign caveats"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequality.solve",
+        "algebra.distributive_property"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_CORE_MULTI_STEP_PROBLEMS_AUTHORED_STAGE_D_PENDING",
+      "evidence": [
+        "Local latest UAE General Grade9 student textbook 01.pdf printed 272–277 (PDF283–288), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Source: one-/both-sided linear inequalities, distribution and combining like terms, negative-sign reversal, number-line graphing, real-world budget applications.",
+        "Reused generic ax_plus_b inequality family for numerical assistance only; distributive/two-sided and full-sentence source tasks remain explicitly teacher-reviewed; no exact generated-source equivalence or Stage D execution claimed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_MULTI_STEP",
+      "practiceMechanic": "G9_U05L03_MULTI_STEP_DISTRIBUTION_COMBINE_SIGN_REVERSAL",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "distribute and combine like terms on both sides",
+        "negative coefficient sign-reversal reasoning",
+        "all-real or no-solution cases",
+        "source number-line graph and applied contexts"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:04:COMPOUND-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequality.solve",
+        "algebra.compound_inequality.union_intersection"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_CORE_COMPOUND_AND_OR_GRAPH_TEACHER_REVIEW_STAGE_D_PENDING",
+      "evidence": [
+        "Direct local UAE General Grade9 student book 01.pdf printed 280–285 / PDF291–296, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Intersect AND, unite OR, solve three-way and conditional cases, graph intervals, applied constraints.",
+        "Existing generic single-inequality exact family offers numerical assistance only; compound interval union/intersection and drawn graphs remain teacher-reviewed and are not falsely autograded."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_COMPOUND",
+      "practiceMechanic": "G9_U05L04_COMPOUND_AND_OR_TEACHER_SCORED",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "intersection AND and union OR",
+        "combined interval endpoints and number-line diagrams",
+        "all-real/empty solutions of compound conditions",
+        "written context and three-way inequalities"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:05:ABSOLUTE-VALUE-INEQUALITIES",
+      "primarySkills": [
+        "algebra.absolute_value.inequality",
+        "algebra.compound_inequality.union_intersection"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_ABSOLUTE_INEQUALITY_CORE_PREPARED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Direct local UAE Grade9 General student book 01.pdf printed286–290 / PDF297–301, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Less-than absolute value yields interval intersection, greater-than yields outside union; handle inclusive endpoints and negative-threshold impossibility or all-real cases.",
+        "Reused single inequality numeric family only for supporting algebraic substeps, not as an automatic scorer for original absolute-value inequality source; teacher reviews full compound and graph tasks."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_ABSOLUTE",
+      "practiceMechanic": "G9_U05L05_ABSOLUTE_VALUE_INTERVAL_AND_RAYS_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "full absolute-value inequality with AND/OR splitting",
+        "negative right-hand-side zero/one/all solution logic",
+        "open and closed graph endpoints",
+        "source-context models"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequality.two_variable_graph",
+        "geometry.coordinate.half_plane"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U05L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_TWO_VARIABLE_GRAPH_SOURCE_REVIEWED_STAGE_D_UNVERIFIED",
+      "evidence": [
+        "Local latest UAE Grade9 General student book 01.pdf printed291–296 / PDF302–307, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Source targets: dashed/solid boundary, x/y intercepts, choose test point off boundary, shade half-plane, vertical/horizontal boundary special cases, context modelling.",
+        "Existing coordinate.evaluate_linear_rule only evaluates numeric values in linear rule; it is not a substitute for source-required half-plane graph or proof. Graph and teacher written answers remain TEACHER_REVIEW_REQUIRED."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_HALF_PLANE",
+      "practiceMechanic": "G9_U05L06_LINEAR_RULE_NUMERIC_AID_TEACHER_HALF_PLANE",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "dashed or solid boundary graph",
+        "half-plane shaded orientation",
+        "vertical/horizontal boundary lines",
+        "test-point reasoning and contextual modelling"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:01:GRAPHING-LINEAR-SYSTEMS",
+      "primarySkills": [
+        "algebra.linear.system.graphical_solution",
+        "geometry.coordinate.intersection"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_GRAPHICAL_SYSTEMS_REVIEWED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Direct local Grade9 UAE General student book 01.pdf printed309–315 / PDF320–326, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Core source: graphical solution point, parallel no-solution systems, coincident infinite solutions, verify each point in both equations.",
+        "Existing coordinate.evaluate_linear_rule is reused only to evaluate y at x; no false automatic solution-of-system or graph grading. Teacher reviews intersection and contextual proofs."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_SYSTEMS",
+      "practiceMechanic": "G9_U06L01_GRAPH_LINE_INTERSECTION_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "plot both linear equations accurately",
+        "decide intersection parallel or coincident",
+        "read ordered pair and verify both equations",
+        "interpret source business and real-world intersection"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS",
+      "primarySkills": [
+        "algebra.linear.systems.substitution"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Original local General student book 01.pdf printed pages 318–323, SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Source substitution lesson: isolate either variable, parenthesize substitution, solve single-variable equality, recover ordered pair and verify in two equations. Source includes unique/no/infinite cases and context modelling.",
+        "Shared exact linear-both-sides family only checks the single-variable algebraic substep after substitution. The ordered pair, identities, contradictions, context and explanation are teacher-reviewed; no false system autograding.",
+        "Arabic lesson-specific prompt adaptation prepared, tests written but not executed (Stage D)."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U06L02_SUBSTITUTION_TEACHER_REVIEW_LINEAR_SUBSTEP_NUMERIC_AID",
+      "allowedQuestionFamilies": [
+        "algebra.linear.variables_both_sides"
+      ],
+      "teacherReviewRequiredFor": [
+        "isolate and substitute into both equations",
+        "verify both coordinates in original equations",
+        "identify inconsistent or dependent systems",
+        "show parentheses and distribute accurately",
+        "real-world two-equation modelling"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT",
+      "primarySkills": [
+        "algebra.linear.systems.elimination.add_subtract"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Source: locally reviewed latest UAE General student book 01.pdf printed 324–330 (PDF335–341), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Eliminate variables through equation addition or subtraction, solve remaining linear equation, substitute back, check pair, classify dependent/inconsistent equations, interpret wages context.",
+        "Reuse existing exact single-variable linear family solely for the isolated algebraic substep after elimination. Whole system, choice of operation, ordered-pair check and context stay teacher reviewed.",
+        "Arabic scope prompt authored, focused tests written not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U06L03_ELIMINATION_ADD_SUB_TEACHER_SYSTEM_REVIEW_NUMERIC_AID",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "choose addition or subtraction based on coefficients",
+        "eliminate across both original equations",
+        "ordered-pair validation in both equations",
+        "dependent/inconsistent systems",
+        "context modelling and interpretation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION",
+      "primarySkills": [
+        "algebra.linear.systems.elimination.multiplication"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Latest local Grade 9 General book 01.pdf printed 331–337 (PDF342–348), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Choose common coefficient, multiply every equation term by nonzero factor, add/subtract, recover ordered pair, verify both originals, handle aircraft-wind context.",
+        "Existing one-variable exact linear family only provides post-elimination numeric practice; whole two-variable elimination and source contextual proof teacher-reviewed.",
+        "Arabic scoped numeric prompt, original teacher work and cooldown authored. Stage D unrun."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U06L04_ELIMINATION_MULTIPLICATION_TEACHER_SYSTEM_REVIEW_NUMERIC_AID",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "scale entire equations by common nonzero factors",
+        "eliminate variable and derive ordered pair",
+        "check both original equations",
+        "classify dependent/inconsistent systems",
+        "aircraft and wind context units"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS",
+      "primarySkills": [
+        "algebra.linear.systems.apply_and_model"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Latest local UAE Grade9 General student book 01.pdf printed 338–345 (PDF349–356), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade.",
+        "Choose graph/substitution/elimination as suited to equation form, translate source penguin context into two independent conditions, verify both constraints and units.",
+        "Reuse exact linear substep as numeric assistance only; do not grade system modeling, variable definitions, contextual restrictions or ordered-pair proof automatically.",
+        "Existing Arabic pack plus RichV2, eight teacher tasks and cooldown authored; Stage D unrun."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U06L05_SYSTEM_CONTEXT_TEACHER_REVIEW_LINEAR_SUBSTEP_NUMERIC_AID",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "model two independent linear equations from context",
+        "select graph/substitution/elimination and explain why",
+        "verify ordered pair in both original equations",
+        "interpret integer nonnegative populations and real quantities",
+        "solve identities and contradictions in systems"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES",
+      "primarySkills": [
+        "algebra.linear.inequalities.systems_two_variables"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2025_STUDENT_BOOK_U06L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Latest local General book 01.pdf printed346–351 (PDF357–362), SHA256 341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade; pp352–354 unit review.",
+        "Source objectives: graph common intersection of two halfplanes, use solid and dashed boundaries, test points in both inequalities, apply contextual linear constraints.",
+        "Reuse exact linear-coordinate evaluation solely for numeric boundary-value calculation. The halfplane shading, strictness, intersection and feasibility require teacher review, not falsely automated.",
+        "Original Arabic interactive source graphic, teacher tasks, cooldown and prepared tests authored. Stage D not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U06L06_SYSTEM_HALFPLANE_INTERSECTION_TEACHER_GRAPH_REVIEW_COORDINATE_AID",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule"
+      ],
+      "teacherReviewRequiredFor": [
+        "draw both inequality boundary lines with correct scale",
+        "select dashed versus solid boundaries",
+        "shade INTERSECTION of both halfplanes",
+        "verify point satisfies both original inequalities",
+        "interpret feasible contextual integer nonnegative region"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT",
+      "primarySkills": [
+        "algebra.polynomial.add_subtract",
+        "algebra.polynomial.combine_like_terms"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Book 02-1.pdf General Grade9 printed 365–372, PDF 13–20, SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source objectives: algebra tiles, identify like terms, add and subtract polynomials by combining like powers and distributing negative through entire subtracted polynomial.",
+        "Reused existing exact-question kernel for numeric coefficient checks only; complete multi-term simplified expression and tile diagrams require teacher review. Stage D not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U07L01_POLYNOMIAL_COEFFICIENT_ADD_SUBTRACT_WITH_TEACHER_FULL_EXPRESSION",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l01.add_coefficient",
+        "uae.g9.general.u07.l01.subtract_coefficient"
+      ],
+      "teacherReviewRequiredFor": [
+        "combine all like-term coefficients into full simplified polynomial",
+        "explain negative distributive operation for every term",
+        "draw, group and interpret algebra tiles",
+        "verify equality by numeric substitution"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL",
+      "primarySkills": [
+        "algebra.polynomial.distribute_monomial"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Original locally verified General book 02-1.pdf printed374–379 (PDF22–27), file SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source: distribute monomial through every polynomial term; product of powers; negative coefficients; algebraic area model.",
+        "Reuse existing G8 general exact monomial multiplication family only for numeric monomial substep. The complete polynomial distribution and geometric diagram must be reviewed by the teacher."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U07L02_MONOMIAL_DISTRIBUTION_TEACHER_MULTI_TERM",
+      "allowedQuestionFamilies": [
+        "uae.g8.u01.l03.monomial_multiply"
+      ],
+      "teacherReviewRequiredFor": [
+        "multiply a monomial by every polynomial term",
+        "sign and power handling for whole expression",
+        "area model, drawing and explanation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION",
+      "primarySkills": [
+        "algebra.polynomial.multiply_distribute",
+        "algebra.polynomial.combine_like_terms"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_ARABIC_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Original 2019 General book 02-1.pdf printed382–387 (PDF30–35), SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source objectives: multiply polynomial by polynomial using complete distribution, collect like terms, represent area with rectangles and use contexts.",
+        "Shared exact kernel extended with coefficient convolution only; fully expanded algebraic expressions, tables and diagrams reviewed by teacher; generated prompts not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U07L03_POLYNOMIAL_PRODUCT_COEFFICIENT_WITH_TEACHER_FULL_EXPANSION",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l03.multiply_coefficient"
+      ],
+      "teacherReviewRequiredFor": [
+        "whole simplified polynomial after distribution",
+        "area rectangle product and explanation",
+        "term-by-term symbolic working"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS",
+      "primarySkills": [
+        "algebra.polynomial.special_products"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_MATH_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original locally inspected General book 02-1.pdf printed388–393 (PDF36–41) SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source objectives: square sum, square difference, conjugate products, algebra tile/area explanations and contexts.",
+        "Two specialized coefficient families extend the shared exact polynomial kernel, not a new engine. Teacher validates full symbolic expansion and diagrams."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U07L04_SPECIAL_PRODUCTS_COEFFICIENT_AND_TEACHER_AREA",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l04.square_binomial_coefficient",
+        "uae.g9.general.u07.l04.conjugate_product_coefficient"
+      ],
+      "teacherReviewRequiredFor": [
+        "full expansion of a binomial square or conjugate pair",
+        "geometric square and ring diagram construction",
+        "explanation of missing or doubled middle term"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:05:DISTRIBUTIVE-FACTOR",
+      "primarySkills": [
+        "algebra.polynomial.factor_gcf",
+        "algebra.distributive.property",
+        "algebra.zero_product"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_OBJECTIVES_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Local General student book 02-1.pdf printed396–402, PDF44–50, SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source skills: distributive property in both directions; greatest monomial common factor; check factorization by expansion; zero-product solutions and models.",
+        "Reuse existing exact monomial multiplication/division numeric skills. Full GCF factorization, parenthesis equivalence and zero-product solutions remain teacher-reviewed; no false numeric grading."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U07L05_DISTRIBUTIVE_GCF_TEACHER_FACTOR_REVIEW",
+      "allowedQuestionFamilies": [
+        "uae.g8.u01.l03.monomial_multiply",
+        "uae.g8.u01.l03.monomial_divide"
+      ],
+      "teacherReviewRequiredFor": [
+        "select greatest common monomial factor across all terms",
+        "write complete polynomial factorization and verify by expansion",
+        "solve zero product equation with every root",
+        "model area or distribution reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING",
+      "primarySkills": [
+        "algebra.quadratic.factor_monic",
+        "algebra.quadratic.zero_product"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Local General 02-1.pdf printed pp405–411 (PDF53–59), SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Lesson: factor monic quadratic by finding product/sum; zero-product equations, repeated roots, context validity and verification.",
+        "Only exact integer-root quadratic families are auto-gradable; full reasoning and area diagrams require teacher review. Stage D tests written not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U07L06_MONIC_QUADRATIC_FACTOR_SOLVE",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l06.monic_distinct_roots",
+        "uae.g9.general.u07.l06.monic_repeated_root"
+      ],
+      "teacherReviewRequiredFor": [
+        "show factor pairs and sign reasoning",
+        "area diagram and context domain",
+        "noninteger roots not represented by integer-root generator"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING",
+      "primarySkills": [
+        "algebra.quadratic.factor_nonmonic",
+        "algebra.quadratic.zero_product"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L07",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "General original book 02-1.pdf printed pp412–417 (PDF60–65), SHA256 2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b.",
+        "Source: a*c decomposition, group terms, solve nonmonic quadratic with integer and rational roots; exact engine covers integer roots, rational roots remain source-authored teacher-reviewed.",
+        "Source pages visually reviewed. Stage D tests written not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U07L07_NONMONIC_AC_GROUP_FACTOR",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l07.nonmonic_integer_roots"
+      ],
+      "teacherReviewRequiredFor": [
+        "fractional-root factorization",
+        "full a*c grouping steps",
+        "diagrams and real-world context"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES",
+      "primarySkills": [
+        "algebra.factor.difference_of_squares",
+        "algebra.quadratic.zero_product"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L08",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original General 02-1.pdf printed pp418–423 (PDF66–71); verified directly on local computer.",
+        "Difference of perfect squares identity, common factor, factoring nonunit-square coefficients, zero-product roots and fractional roots.",
+        "Exact integer-root difference squares use existing quadratic engine; symbolic factorization and fractional-root explanations require teacher review."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U07L08_DIFFERENCE_SQUARES_FACTOR",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l08.difference_squares_integer_roots"
+      ],
+      "teacherReviewRequiredFor": [
+        "symbolic factoring explanation",
+        "fractional roots of nonunit-square coefficients",
+        "area model and diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:09:PERFECT-SQUARE-TRINOMIALS",
+      "primarySkills": [
+        "algebra.factor.perfect_square_trinomial",
+        "algebra.square_root_equation"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U07L09",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original Grade9 General 02-1.pdf printed pp424–431 (PDF72–79), direct local page visual review.",
+        "Perfect square trinomial identities, classify middle term, solve square equations with +/− including repeated/no-real and irrational roots.",
+        "Existing quadratic exact generator extended for integer square-root equations; full symbolic factoring and irrational root forms teacher-reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U07L09_PERFECT_SQUARE_ROOTS",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u07.l06.monic_repeated_root",
+        "uae.g9.general.u07.l09.square_root_equation_integer_roots"
+      ],
+      "teacherReviewRequiredFor": [
+        "nonmonic perfect square symbolic factorization",
+        "irrational sqrt answer",
+        "written derivation and diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS",
+      "primarySkills": [
+        "algebra.exponent.product_rule",
+        "algebra.exponent.power_of_product",
+        "algebra.exponent.power_of_power"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original General 02-1.pdf printed pp445–451 (PDF93–99), directly read locally.",
+        "Numeric power-of-ten multiplication and evaluation reuse shared exact engine; symbolic multiplication, power of power, multiple variables and original geometric diagrams teacher-reviewed.",
+        "No unsupported symbolic family is marked exact. Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L01_EXPONENT_PRODUCT_PROPERTIES",
+      "allowedQuestionFamilies": [
+        "supporting.powers10.multiply",
+        "supporting.powers10.evaluate"
+      ],
+      "teacherReviewRequiredFor": [
+        "symbolic same-base product exponent simplification",
+        "power of power and power of product",
+        "geometric contexts and proof"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:02:QUOTIENT-PROPERTIES-OF-EXPONENTS",
+      "primarySkills": [
+        "algebra.exponent.quotient_rule",
+        "algebra.exponent.negative_exponent",
+        "algebra.exponent.zero"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original General 02-1.pdf printed pp452–459 (PDF100–107) visually reviewed.",
+        "Shared numeric power-of-ten division reused, zero/negative exponents, variable quotient and power-of-quotient remain teacher-reviewed.",
+        "Stage D tests prepared, not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L02_EXPONENT_QUOTIENT_PROPERTIES",
+      "allowedQuestionFamilies": [
+        "supporting.powers10.divide",
+        "supporting.powers10.missing_exponent"
+      ],
+      "teacherReviewRequiredFor": [
+        "zero and negative exponent symbolic reasoning",
+        "variable exponent quotient simplification",
+        "power of quotient and unit contexts"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS",
+      "primarySkills": [
+        "algebra.exponent.rational_power",
+        "algebra.radical.nth_root"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original General 02-1.pdf printed pp460–467 (PDF108–115), visually reviewed.",
+        "Exact perfect-power rational exponent cases generated independently; signed-base, irrational and domain explanations teacher reviewed.",
+        "Stage D tests prepared not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L03_RATIONAL_EXPONENT_EXACT",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u08.l03.rational_positive_exact",
+        "uae.g9.general.u08.l03.rational_negative_exact"
+      ],
+      "teacherReviewRequiredFor": [
+        "negative base parity and root domain",
+        "irrational radical simplification",
+        "symbolic variable exponents"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION",
+      "primarySkills": [
+        "supporting.indices.roots_standard_form",
+        "supporting.powers10"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_SOURCE_BOOK_OBJECTIVES_PREPARED_TESTS_NOT_RUN",
+      "evidence": [
+        "02-1.pdf UAE Grade9 General term2 printed pages 468–475 / PDF116–123; source math reviewed.",
+        "Objective: express scientific form with coefficient of magnitude 1 to less than 10, convert in both directions, multiply and divide powers of ten, normalize coefficient.",
+        "Reuse existing solver-backed families for positive integer exponents; fractional coefficients, negative powers and free explanations receive teacher review. Stage D not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L04_SCIENTIFIC_NOTATION",
+      "allowedQuestionFamilies": [
+        "supporting.standard_form.power10_exponent",
+        "supporting.powers10.multiply",
+        "supporting.powers10.divide"
+      ],
+      "teacherReviewRequiredFor": [
+        "negative exponent in scientific notation",
+        "fractional coefficient normalization",
+        "unit-bearing word problems",
+        "symbolic justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS",
+      "primarySkills": [
+        "algebra.radical.simplify",
+        "supporting.surds.coefficient"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "Original Grade9 General book 02-1.pdf printed pp477–483 PDF125–131, directly reviewed.",
+        "Objectives: simplify radical expressions extracting square factors; multiply radicals; rationalize a single radical and conjugate denominators; preserve real-domain requirements.",
+        "Reuse supported exact coefficient extraction for the auto-gradable subset. Conjugates, domains, variable roots, diagram interpretations and explanations remain teacher reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L05_SIMPLIFY_RADICALS_EXACT_COEFFICIENT",
+      "allowedQuestionFamilies": [
+        "supporting.surds.coefficient"
+      ],
+      "teacherReviewRequiredFor": [
+        "radical multiplication derivation",
+        "rationalization and conjugate denominator",
+        "symbolic negative-variable absolute value",
+        "source word problems and reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:08:06:OPERATIONS-ON-RADICAL-EXPRESSIONS",
+      "primarySkills": [
+        "algebra.radical.operations",
+        "algebra.radical.combine_like_terms"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U08L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_NOT_RUN",
+      "evidence": [
+        "Original Grade9 General 02-1.pdf printed 484–490 / PDF132–138 visually reviewed.",
+        "Source includes add/subtract like radicals, simplify before combining, distributive products, binomial products and conjugates.",
+        "Extended the existing exact SupportingPracticeCompletionEngine with a Grade9-specific coefficient-add/subtract family and independent verifier. Symbolic products, domains and interpretation remain teacher-reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U08L06_RADICAL_OPERATIONS",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u08.l06.like_radical_coefficient"
+      ],
+      "teacherReviewRequiredFor": [
+        "radical multiplication and distribution",
+        "conjugate products",
+        "simplification and domain reasoning",
+        "geometric word problems"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY",
+      "primarySkills": [
+        "sets.membership",
+        "sets.cardinality"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U09L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "BOOK_SOURCE_ARABIC_PREPARED_STAGE_D_TESTS_NOT_RUN",
+      "evidence": [
+        "Original General student book 02-1.pdf printed pp502–514 PDF150–162 directly visually reviewed.",
+        "Objectives: define sets, membership and non-membership, roster and set-builder representation, empty set, finite cardinality and equal sets.",
+        "Extended existing shared exact engine for bounded finite membership/cardinality questions only; open constructions, set-builder, universe diagrams and contextual interpretation teacher reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U09L01_SET_MEMBERSHIP_CARDINALITY",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u09.l01.set_membership_cardinality"
+      ],
+      "teacherReviewRequiredFor": [
+        "roster versus set-builder conversion",
+        "universal and empty-set interpretation",
+        "set equality justification",
+        "source context and diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS",
+      "primarySkills": [
+        "sets.subset",
+        "sets.union_intersection_difference"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U09L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_TESTS_NOT_RUN",
+      "evidence": [
+        "Original UAE Grade9 General 02-1.pdf printed pages 515–525 PDF163–173 visually reviewed.",
+        "Targets: subsets/proper subsets, union, intersection, difference, complement in universe, inclusion-exclusion cardinality and Venn regions.",
+        "Existing shared SupportingPracticeCompletionEngine extended for bounded finite set-operation count with independent verifier. Subset definitions, complement, diagrams and reasons remain teacher-reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U09L02_SET_OPERATIONS_COUNT",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u09.l02.set_operation_cardinality"
+      ],
+      "teacherReviewRequiredFor": [
+        "subset versus proper subset proof",
+        "Venn shading and region interpretation",
+        "universe-dependent complement",
+        "set-builder and real contexts"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:03:VENN-DIAGRAMS-SET-OPERATIONS",
+      "primarySkills": [
+        "sets.venn_diagram",
+        "sets.union_intersection_difference"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U09L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_ARABIC_AUTHORING_PREPARED_RUNTIME_NOT_TESTED",
+      "evidence": [
+        "General book 02-1.pdf printed pages 526–536 visual review; 2-set and 3-set Venn regions, complement, intersections and compound operations.",
+        "Reuse lesson 56 bounded union/intersection/difference count engine for the numeric part; diagram shading and open set expressions are teacher-reviewed.",
+        "Source-specific student Cool-down and visual examples authored; no automatic diagram grading, Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U09L03_VENN_REGION_AND_SET_OPERATIONS",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u09.l02.set_operation_cardinality"
+      ],
+      "teacherReviewRequiredFor": [
+        "two/three-set Venn shading and region explanation",
+        "universe-dependent complement",
+        "compound set operations and bracket interpretation",
+        "written justification and source diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS",
+      "primarySkills": [
+        "sets.union_intersection_difference",
+        "sets.venn_problem_solving"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U09L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_LEARNING_TARGETS_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "UAE Grade 9 General student book 02-1.pdf pp537–546 visually reviewed for two/three-set survey problems and Venn region counts.",
+        "Existing set union/intersection/difference count engine reused for bounded numeric prerequisites; multi-set population contexts and diagrams remain teacher-reviewed.",
+        "Prepared Arabic examples with independent inclusion-exclusion checks and original Cool-down; no Stage D runtime verification."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U09L04_TWO_THREE_SET_VENN_WORD_PROBLEM",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u09.l02.set_operation_cardinality"
+      ],
+      "teacherReviewRequiredFor": [
+        "two and three-set story-to-Venn translation",
+        "outside union and complement with fixed universe",
+        "inclusion-exclusion reasoning and triple intersections",
+        "open response word problems and diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS",
+      "primarySkills": [
+        "sets.finite_infinite",
+        "sets.countable"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U09L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_OBJECTIVES_AUTHORED_PREPARED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Student book 02-1.pdf printed 547–551 (PDF195–199) introduces finite/infinite sets, one-to-one correspondence, countable and uncountable sets.",
+        "Shared SupportingPracticeCompletionEngine extended with six bounded finite/infinite classification templates and independent response verifier.",
+        "Bijection proofs, Hilbert hotel discussion and uncountability argument remain open teacher-reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U09L05_FINITE_INFINITE_CLASSIFICATION",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u09.l05.finite_infinite_classification"
+      ],
+      "teacherReviewRequiredFor": [
+        "one-to-one and onto correspondence demonstration",
+        "cardinality of infinite proper subsets",
+        "countable versus uncountable proof",
+        "infinite hotel reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES",
+      "primarySkills": [
+        "reasoning.inductive",
+        "reasoning.conjecture_counterexample"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U10L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_PAGE_AUTHORING_PREPARED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "02-1.pdf printed 561–568 visual source review: numeric patterns, figure conjectures, counterexamples, and data tables.",
+        "Existing exact arithmetic and geometric nth-term question families reused only for numeric pattern subskills, not treated as automatically grading inductive justification.",
+        "Visual pattern rules, quadratic differences, free conjectures and counterexamples are teacher-reviewed in the original Cool-down."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U10L01_CONJECTURES_PATTERN_SUBSKILL_REUSE",
+      "allowedQuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.geometric_nth_term"
+      ],
+      "teacherReviewRequiredFor": [
+        "source quadratic-difference patterns",
+        "figure-based conjectures",
+        "writing and testing counterexamples",
+        "inductive reasoning justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC",
+      "primarySkills": [
+        "logic.truth_values",
+        "logic.conjunction_disjunction_negation"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U10L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_OBJECTIVES_PREPARED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Direct 02-1.pdf printed 569–576 source review: statement truth value, logical negation, conjunction, disjunction, tables and Venn interpretations.",
+        "Existing SupportingPracticeCompletionEngine extended with three connective modes and independent 0/1 verifier.",
+        "Truth table completion, language statements and Venn explanations in student Cool-down teacher-reviewed; no Stage D run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U10L02_TWO_PROPOSITION_LOGIC_TRUTH_TABLE",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u10.l02.logic_truth_tables"
+      ],
+      "teacherReviewRequiredFor": [
+        "writing and interpreting statements",
+        "full truth table explanations",
+        "Venn compound regions and open reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:03:CONDITIONAL-STATEMENTS",
+      "primarySkills": [
+        "logic.conditionals",
+        "logic.converse_inverse_contrapositive"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U10L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_OBJECTIVES_AUTHORED_STAGE_D_PENDING",
+      "evidence": [
+        "Local 02-1.pdf source printed 577–586: conditional p→q, converse, inverse, contrapositive and two-way conditional language.",
+        "Shared SupportingPracticeCompletionEngine extended with four truth assignments and five conditional modes, independent verifier, Arabic prompts.",
+        "Open conversion of written geometric and number conditions, proof, diagrams and counterexamples remain teacher-reviewed; Stage D unrun."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U10L03_CONDITIONAL_TRUTH_TABLES",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u10.l03.conditional_truth_tables"
+      ],
+      "teacherReviewRequiredFor": [
+        "forming converse inverse contrapositive in natural language",
+        "producing counterexamples",
+        "geometric condition diagrams",
+        "biconditional justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING",
+      "primarySkills": [
+        "reasoning.deductive",
+        "logic.conditionals"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U10L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "BOOK_SOURCE_ARABIC_PREPARED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Direct General book 02-1.pdf printed pages 587–595 review: law of detachment and law of syllogism, invalid inference and geometric reasoning.",
+        "Existing conditional truth table exact family reused for numerical prerequisite only; all deductive-law validity and proof justifications teacher-reviewed.",
+        "Arabic RichV2 and original Cool-down authored; tests written not run."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U10L04_DEDUCTIVE_RULES_TEACHER_PLUS_CONDITIONAL_TRUTH_PREREQUISITES",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u10.l03.conditional_truth_tables"
+      ],
+      "teacherReviewRequiredFor": [
+        "law of detachment and law of syllogism validity",
+        "distinguishing affirming the consequent",
+        "reasoned geometric steps and counterexamples"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS",
+      "primarySkills": [
+        "geometry.points_lines_planes",
+        "geometry.incidence_postulates"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_U11L01_AND_2025_U07L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_TWO_GENERAL_BOOKS_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "Latest General 01.pdf printed365–372: point line plane naming, collinear/coplanar and spatial modelling; original 03-1.pdf printed608–615: postulates and informal proofs.",
+        "Existing shared engine extended for 8 independent incidence truth prompts; teacher reviews open proofs and construction models.",
+        "Both source book SHA-256 verified in five-book inventory. Tests written, runtime not executed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_GENERAL_U11L01_POINTS_LINES_PLANES_POSTULATES",
+      "allowedQuestionFamilies": [
+        "uae.g9.general.u11.l01.incidence_postulates"
+      ],
+      "teacherReviewRequiredFor": [
+        "informal proofs with postulate citations",
+        "spatial point-line-plane models and drawings",
+        "segment addition geometric argument"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF",
+      "primarySkills": [
+        "algebra.proof",
+        "algebra.linear.solve"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U11L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_BOOK_ARABIC_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed616–623: addition/subtraction/multiplication/division equality properties, two-column reasoning and algebraic angle applications.",
+        "Reuse exact linear equation family for numeric solution only; formal proof steps and property naming require teacher grading."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U11L02_ALGEBRAIC_PROOF_NUMERIC_PREREQUISITES",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ],
+      "teacherReviewRequiredFor": [
+        "two-column proof and each equality justification",
+        "formal geometric/algebraic reasoning",
+        "naming symmetry transitivity and substitution"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS",
+      "primarySkills": [
+        "geometry.segment_addition",
+        "geometry.segment_congruence",
+        "measurement.ruler_precision"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_U11L03_AND_2025_U07L02_U07L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_SKILL_ARABIC_AUTHORING_STAGE_D_UNRUN",
+      "evidence": [
+        "Older General 03-1.pdf printed624–630: ruler and segment-addition postulates, segment-congruence proofs and contexts.",
+        "New General 01.pdf 7-2 and7-4: accurate ruler measurements in mm/cm, precision and segment relationships.",
+        "Existing exact algebra linear family reused for segment-length equations only, not geometric reasoning/measurement drawings."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U11L03_SEGMENT_LENGTH_EQUATION_NUMERIC_SUBSKILL",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "teacherReviewRequiredFor": [
+        "precise ruler marking and conversion",
+        "informal and two-column segment proofs",
+        "diagram and between-point reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:04:ANGLE-RELATIONS-PROOFS",
+      "primarySkills": [
+        "geometry.angles.addition",
+        "geometry.angles.vertical",
+        "geometry.angles.linear_pair"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U11L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "BOOK_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed631–639: angle addition postulate, linear pairs, vertical angles and geometric proofs.",
+        "Reuse exact vertical and complementary angle questions for numeric subskills; written proof teacher-reviewed."
+      ],
+      "practiceReadiness": "PREPARED_STAGE_D_NOT_RUN",
+      "practiceMechanic": "G9_U11L04_ANGLE_MEASUREMENT_NUMERIC_PREREQUISITES",
+      "allowedQuestionFamilies": [
+        "usccss.g7.u07.vertical_angle",
+        "usccss.g7.u07.complementary_angle"
+      ],
+      "teacherReviewRequiredFor": [
+        "proof of vertical angle theorem",
+        "free angle-addition argument",
+        "diagrams and rays"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES",
+      "primarySkills": [
+        "geometry.lines.parallel_intersect",
+        "geometry.lines.skew",
+        "geometry.angles.transversal.classification"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U12L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_BOOK_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf Grade 9 General printed pages 653–659: co-planar parallel vs non-coplanar skew lines, parallel planes, transversal and corresponding/alternate interior/alternate exterior/same-side interior angles.",
+        "Reuse existing dot-grid parallel/intersection family ONLY for co-planar classification, and require teacher-reviewed source-specific 3D skew and transversal-angle classification.",
+        "Generated English source wording is not Grade 9 Arabic presentation parity; Stage D must verify/localize actual learner prompts before publishing."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L01_COPLANAR_PARALLEL_INTERSECT_PARTIAL_SKILL_REUSE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ],
+      "teacherReviewRequiredFor": [
+        "noncoplanar skew lines and planes",
+        "transversal corresponding angles",
+        "alternate interior/exterior and same-side interior angles",
+        "free drawing and proof"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:02:ANGLES-PARALLEL-LINES",
+      "primarySkills": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.corresponding",
+        "geometry.angles.alternate",
+        "geometry.angles.same_side_interior"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U12L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_LOCAL_STUDENT_BOOK_CONTENT_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed 660–666: corresponding angles postulate; alternate interior/exterior and same-side interior angle theorems; algebraic angle measure and converses.",
+        "Reuse existing independent numeric parallel-lines and supplementary-angle verifiers; all diagrams and reasoning about converse/angle pair types remain teacher reviewed.",
+        "Exact emitted English prompts and Grade9 Arabic styling require Stage D review before production."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L02_NUMERIC_PARALLEL_ANGLE_RELATIONS",
+      "allowedQuestionFamilies": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary"
+      ],
+      "teacherReviewRequiredFor": [
+        "corresponding/alternate/same-side position classification",
+        "converse parallel lines proof",
+        "labelled angle diagrams",
+        "algebraic expressions requiring multi-step proof"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:03:SLOPE-OF-LINE",
+      "primarySkills": [
+        "geometry.coordinate.slope_between_points",
+        "geometry.lines.parallel_slope",
+        "geometry.lines.perpendicular_slope"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U12L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "LOCAL_BOOK_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed668–676: rise/run slope from graph and coordinates; horizontal zero and vertical undefined; comparing slopes of parallel and perpendicular lines; contextual rates.",
+        "Reuse shared independent geometry.coordinate.gradient_between_points exact numeric family only. Other slope meaning and proofs remain teacher-reviewed until an exact matching family is approved.",
+        "Original shared family emitted language is not guaranteed Arabic; Stage D must verify translated prompts and source parity."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L03_GRADIENT_COORDINATE_NUMERIC_PARTIAL_REUSE",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ],
+      "teacherReviewRequiredFor": [
+        "vertical undefined gradient",
+        "horizontal gradient and visual interpretation",
+        "parallel and perpendicular inference",
+        "rate-of-change contexts",
+        "free diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:04:EQUATIONS-OF-LINES",
+      "primarySkills": [
+        "geometry.coordinate.slope_intercept",
+        "geometry.coordinate.point_slope",
+        "geometry.coordinate.line_from_points"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U12L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_LOCAL_BOOK_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf General printed678–686: slope-intercept y=mx+b, point-slope form, equation from two points, parallel/perpendicular equations and contextual linear models.",
+        "Reuse existing exact linear function evaluation, y-intercept extraction and coordinate gradient families for supported numeric subskills; deriving and presenting full equations, vertical lines and graphical explanations remain teacher reviewed.",
+        "Source-specific Arabic learner prompts and complete generated coverage need Stage D verification."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L04_EXISTING_NUMERIC_LINEAR_RULE_SUPPORT",
+      "allowedQuestionFamilies": [
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule",
+        "geometry.coordinate.gradient_between_points"
+      ],
+      "teacherReviewRequiredFor": [
+        "equation from two points",
+        "point-slope form rearrangement",
+        "vertical line equations",
+        "parallel/perpendicular equations",
+        "real-world linear models"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES",
+      "primarySkills": [
+        "geometry.parallel.converse_angles",
+        "geometry.parallel.perpendicular_transversal"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U12L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_SOURCE_OBJECTIVES_PREPARED_NO_RUNTIME_CLAIMS",
+      "evidence": [
+        "03-1.pdf printed687–694: converse corresponding and alternate interior/exterior angle theorems; same-side interior supplementary converse; lines perpendicular to same transversal; parallel uniqueness.",
+        "Existing independent supplementary angle family covers only the numeric precondition; no existing exact family has been verified for reasoning in the converse, so geometry proofs and diagrams remain teacher reviewed.",
+        "Stage D must check Arabic localization and actual emitted prompts, not assume generic English family covers all original exercises."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L05_SUPPLEMENTARY_PRECONDITION_ONLY_PROOF_REVIEWED",
+      "allowedQuestionFamilies": [
+        "geometry.angles.supplementary"
+      ],
+      "teacherReviewRequiredFor": [
+        "converse corresponding/alternate/same-side proofs",
+        "perpendicular transversals",
+        "diagram labels",
+        "free written proof"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:12:06:PERPENDICULAR-DISTANCE-MIDPOINTS",
+      "primarySkills": [
+        "geometry.distance.perpendicular_point_line",
+        "geometry.distance.parallel_lines",
+        "geometry.coordinate.distance_two_points",
+        "geometry.coordinate.segment_midpoint"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_AND_2025_STUDENT_BOOK_U12L06_WITH_U07L03_SUPPLEMENT",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "BOOK_SKILL_AUTHORING_STAGE_D_PENDING",
+      "evidence": [
+        "Old General 03-1.pdf printed695–704 (PDF111–120): shortest perpendicular distance point-to-line and distance between parallel lines.",
+        "Latest General 01.pdf printed385–394 (PDF396–405): line-number absolute distance, point-to-point coordinate distance, midpoint and segment bisector. These skills are mathematically distinct and must all be retained.",
+        "Existing perpendicular-right-angle judgement and coordinate-gradient families support only prerequisites; actual distance, midpoint answers and constructed proofs are teacher reviewed until a correct verified dedicated exact answer family exists."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U12L06_PERPENDICULAR_RECOGNITION_GRADIENT_NUMERIC_PREREQUISITES_ONLY",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+        "geometry.coordinate.gradient_between_points"
+      ],
+      "teacherReviewRequiredFor": [
+        "point-to-line perpendicular distance",
+        "distance between parallel lines",
+        "two-point Euclidean distance",
+        "segment midpoint and bisector",
+        "free geometric explanations"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION",
+      "primarySkills": [
+        "geometry.triangles.classify_by_sides",
+        "geometry.triangles.classify_by_angles"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L01",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_TRIANGLE_CLASSIFICATION_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed717–724: classify triangles by angle acute/right/obtuse and by side scalene/isosceles/equilateral, including algebraic side expressions and concrete diagrams.",
+        "Reuse existing triangle-type recognition family for basic side/shape classification only; dual classification and multi-step geometry algebra in free response remain teacher reviewed.",
+        "Grade3 generic family prompt may be too elementary and/or English; Stage D must verify age/content/language match."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L01_TRIANGLE_SIDE_CLASSIFICATION_PARTIAL_REUSE",
+      "allowedQuestionFamilies": [
+        "uae.g3.u13.l04.triangle_types"
+      ],
+      "teacherReviewRequiredFor": [
+        "combined angles and side classification",
+        "triangle inequality and impossible angle cases",
+        "algebraic equal-side expressions",
+        "diagram-based reasoning"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS",
+      "primarySkills": [
+        "geometry.triangles.interior_angle_sum",
+        "geometry.triangles.exterior_angle_theorem",
+        "geometry.angles.bisector"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L02",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_ARABIC_AUTHORING_NO_STAGE_D_RUNTIME",
+      "evidence": [
+        "03-1.pdf printed725–734: interior angle sum 180°, exterior angle theorem, linear pair with adjacent interior, angle bisectors, algebraic expressions and geometric proof.",
+        "Reuse existing independent triangle missing angle and supplementary numeric families; do not misrepresent exterior theorem drawings or full written proofs as automatically verified.",
+        "Stage D to validate actual Arabic prompt equivalence, mathematical negatives and generated constraints."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L02_TRIANGLE_ANGLE_NUMERIC_PARTIAL_REUSE",
+      "allowedQuestionFamilies": [
+        "uae.g4.u16.l06.triangle_missing_angle",
+        "geometry.angles.supplementary"
+      ],
+      "teacherReviewRequiredFor": [
+        "exterior angle as sum of two remote interior angles",
+        "triangle angle-sum proof",
+        "angle bisector diagrams",
+        "algebraic multi-angle relations"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES",
+      "primarySkills": [
+        "geometry.congruence.corresponding_parts",
+        "geometry.congruence.triangle_vertex_order"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L03",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "DIRECT_SOURCE_CONTENT_AUTHORED_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed735–743: congruent polygons and triangles, corresponding side and angle identification, proper vertex order and congruent corresponding parts (CPCTC).",
+        "Existing triangle congruence criterion identification family may provide a preliminary numerical/recognition support but does not assess arbitrary vertex correspondences and CPCTC proofs; those remain teacher-reviewed.",
+        "Do not claim source-item question parity or English-to-Arabic runtime readiness until Stage D."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L03_CONGRUENCE_CRITERION_PRELIMINARY_ONLY",
+      "allowedQuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ],
+      "teacherReviewRequiredFor": [
+        "corresponding vertex order and matching parts",
+        "CPCTC written reasoning",
+        "algebraic corresponding side and angle values",
+        "congruent vs similar polygon diagrams"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE",
+      "primarySkills": [
+        "geometry.triangle_congruence.sss",
+        "geometry.triangle_congruence.sas"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L04",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_SKILL_AUTHORING_STAGE_D_UNRUN",
+      "evidence": [
+        "03-1.pdf student book printed744–753: SSS three corresponding equal sides; SAS two sides and included angle; shared side reflexive; CPCTC after proof.",
+        "Reuse existing geometry.congruence.identify_criterion recognition family only, never auto-grade diagram/CPCTC or formal proofs.",
+        "SSA not sufficient generally; do not silently accept non-included angle as SAS."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L04_SSS_SAS_RECOGNITION_TEACHER_PROOF",
+      "allowedQuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ],
+      "teacherReviewRequiredFor": [
+        "formal SSS/SAS proofs",
+        "included-angle diagram validity",
+        "shared side reflexive",
+        "SSA counterexamples",
+        "CPCTC deductions"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:05:ASA-AAS-TRIANGLE-CONGRUENCE",
+      "primarySkills": [
+        "geometry.triangle_congruence.asa",
+        "geometry.triangle_congruence.aas"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L05",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_BOOK_AUTHORING_STAGE_D_UNRUN",
+      "evidence": [
+        "03-1.pdf printed755–764: ASA with included side, AAS with nonincluded side and triangle-congruence justifications.",
+        "Reuse general criterion recognition family for simple discrimination only; formal proof and specific correspondences teacher reviewed.",
+        "AAA congruence false. Stage D must inspect actual generated language and family-supported cases."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L05_ASA_AAS_RECOGNITION_TEACHER_PROOF",
+      "allowedQuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ],
+      "teacherReviewRequiredFor": [
+        "formal ASA/AAS proofs",
+        "distinguishing included from nonincluded side on diagram",
+        "AAA counterexample",
+        "CPCTC deductions"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:06:ISOSCELES-EQUILATERAL-TRIANGLES",
+      "primarySkills": [
+        "geometry.triangles.isosceles_base_angle",
+        "geometry.triangles.equilateral_angles"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L06",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_STAGE_A_B_AUTHORING_STAGE_D_NOT_RUN",
+      "evidence": [
+        "03-1.pdf printed765–773: base angle theorem and converse; equilateral triangles and related algebra/angle calculations.",
+        "Reuse existing missing-triangle-angle and triangle-type recognition families for numeric and categorization prerequisites only; proof remains teacher graded."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L06_BASE_ANGLE_NUMERIC_PARTIAL_REUSE",
+      "allowedQuestionFamilies": [
+        "uae.g4.u16.l06.triangle_missing_angle",
+        "uae.g3.u13.l04.triangle_types"
+      ],
+      "teacherReviewRequiredFor": [
+        "base-angle theorem proof",
+        "isosceles converse diagram",
+        "equilateral expression proof",
+        "apex bisector and perpendicular"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:07:CONGRUENCE-TRANSFORMATIONS",
+      "primarySkills": [
+        "geometry.transformations.translation",
+        "geometry.transformations.reflection",
+        "geometry.transformations.rotation",
+        "geometry.transformations.rigid_isometry"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L07",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_EDUCATIONAL_AUTHORING_ONLY_NO_EXACT_TRANSFORMATION_ENGINE",
+      "evidence": [
+        "03-1.pdf printed776–782: translation, reflection and rotation as rigid congruence transformations, coordinate image identification.",
+        "Existing exact question engine has no dedicated transformation/rotation/reflection/translation family. Do not route to triangle congruence-criterion generator because it is a different skill.",
+        "Stage A-B-C student examples and teacher-reviewed cooldown authored; dedicated automated generation is not falsely asserted."
+      ],
+      "practiceReadiness": "TEACHER_REVIEW_ONLY_STAGE_D_ENGINE_DECISION_PENDING",
+      "practiceMechanic": "G9_U13L07_ORIGINAL_TEACHER_REVIEW_RIGID_COORDINATE_TRANSFORMS",
+      "allowedQuestionFamilies": [],
+      "teacherReviewRequiredFor": [
+        "translation images",
+        "reflection coordinates",
+        "rotation coordinates",
+        "isometry distance proof",
+        "diagram orientation"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:08:TRIANGLES-AND-COORDINATE-PROOF",
+      "primarySkills": [
+        "geometry.coordinate.distance",
+        "geometry.coordinate.midpoint",
+        "geometry.triangles.coordinate_proof"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L08",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_EDUCATIONAL_AUTHORING_ONLY_PROOF_NOT_AUTO_SCORED",
+      "evidence": [
+        "03-1.pdf printed 783–789 demonstrates selecting coordinates, distance and midpoint and proving triangle side and congruence relations.",
+        "Shared numeric calculation families do not constitute proof grading; teacher reviews coordinate arguments and geometry diagrams.",
+        "Stage A-B-C authentic authoring done; live grading and Stage D execution not claimed."
+      ],
+      "practiceReadiness": "TEACHER_REVIEW_ONLY_STAGE_D_ENGINE_DECISION_PENDING",
+      "practiceMechanic": "G9_U13L08_COORDINATE_PROOF_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [],
+      "teacherReviewRequiredFor": [
+        "distance and midpoint calculations presented with proof",
+        "general coordinate proofs",
+        "coordinate diagrams and algebraic justification"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+      "primarySkills": [
+        "geometry.area.parallelogram",
+        "geometry.area.triangle",
+        "geometry.area.height_perpendicular"
+      ],
+      "sourceType": "UAE_G9_GENERAL_2019_STUDENT_BOOK_U13L09",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCE_ALIGNED_AUTHORING_WITH_REUSED_EXACT_AREA_SCALAR_ENGINE",
+      "evidence": [
+        "03-1.pdf printed793–800: parallelogram area b*h, triangle area b*h/2, corresponding perpendicular height, algebraic unknown dimensions and practical areas.",
+        "Numeric part reuses existing rectangle-area multiplication verifier localized to parallelogram base/perpendicular height and existing triangle-area verifier; no new engine.",
+        "Source diagrams, formal rearrangement, oblique base-height choices and algebraic proof require independent teacher review. Stage D tests not run."
+      ],
+      "practiceReadiness": "PREPARED_NOT_RUN_STAGE_D",
+      "practiceMechanic": "G9_U13L09_PARALLELOGRAM_AND_TRIANGLE_AREA_WITH_TEACHER_DIAGRAM_CHECK",
+      "allowedQuestionFamilies": [
+        "geometry.perimeter_area.rectangle_area",
+        "geometry.perimeter_area.triangle_area"
+      ],
+      "teacherReviewRequiredFor": [
+        "oblique parallelogram correct perpendicular height",
+        "area transformation and proof",
+        "composite shapes and reverse dimensions",
+        "source diagrams"
+      ],
+      "officialOutcomeCodes": []
     }
   ]
 }

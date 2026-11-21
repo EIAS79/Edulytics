@@ -494,6 +494,114 @@
             }
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.VennDiagram)
+    {
+        // First-party two-set Venn figure. The complete original model data
+        // remains in the accessible item list; neither region is silently omitted.
+        <div class="rich-lesson-venn" dir="rtl" style="max-width:760px">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380"
+                 role="img" aria-label="@Model.Description"
+                 style="display:block;width:100%;height:auto">
+                <title>@Model.Title</title>
+                <desc>@Model.Description</desc>
+                <rect x="40" y="20" width="620" height="330" rx="10" fill="none"
+                      stroke="currentColor" stroke-opacity=".4" stroke-width="2" />
+                <circle cx="282" cy="173" r="132" fill="#60a5fa" fill-opacity=".2"
+                        stroke="#2563eb" stroke-width="2.5" />
+                <circle cx="418" cy="173" r="132" fill="#fbbf24" fill-opacity=".2"
+                        stroke="#b45309" stroke-width="2.5" />
+                <text x="205" y="124" fill="currentColor" font-size="19"
+                      text-anchor="middle">&#x0623;</text>
+                <text x="495" y="124" fill="currentColor" font-size="19"
+                      text-anchor="middle">&#x0628;</text>
+                <text x="219" y="192" fill="currentColor" font-size="15"
+                      text-anchor="middle">@(Model.Items.Count > 0 ? Model.Items[0] : "\u0623 \u0641\u0642\u0637")</text>
+                <text x="350" y="192" fill="currentColor" font-size="14"
+                      text-anchor="middle">@(Model.Items.Count > 1 ? Model.Items[1] : "\u0623 \u2229 \u0628")</text>
+                <text x="481" y="192" fill="currentColor" font-size="15"
+                      text-anchor="middle">@(Model.Items.Count > 2 ? Model.Items[2] : "\u0628 \u0641\u0642\u0637")</text>
+                <text x="350" y="329" fill="currentColor" font-size="14"
+                      text-anchor="middle">@(Model.Items.Count > 3 ? Model.Items[3] : "")</text>
+            </svg>
+            <ul class="rich-lesson-visual__items" dir="rtl">
+                @foreach (var item in Model.Items)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.CoordinatePlane)
+    {
+        var lines = RichLessonCoordinateDiagram.ParseLines(Model.Description);
+        var points = RichLessonCoordinateDiagram.ParsePoints(Model.Items);
+        var clipId = "rich-coord-" + ((uint)Model.Title.GetHashCode()).ToString("x8");
+        var colors = new[] { "#1d4ed8", "#b91c1c", "#047857", "#7c3aed" };
+        var lineNumber = 0;
+        <div class="rich-lesson-coordinate" dir="ltr" style="max-width:760px">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 460"
+                 role="img" aria-label="@Model.Description"
+                 style="display:block;width:100%;height:auto">
+                <title>@Model.Title</title><desc>@Model.Description</desc>
+                <defs>
+                    <clipPath id="@clipId">
+                        <rect x="180" y="80" width="300" height="300" />
+                    </clipPath>
+                </defs>
+                @for (var tick = -10; tick <= 10; tick++)
+                {
+                    var gx = 330 + tick * 15;
+                    var gy = 230 - tick * 15;
+                    <line x1="@gx" y1="80" x2="@gx" y2="380"
+                          stroke="currentColor" stroke-opacity=".12" />
+                    <line x1="180" y1="@gy" x2="480" y2="@gy"
+                          stroke="currentColor" stroke-opacity=".12" />
+                    @if (tick != 0 && tick % 2 == 0)
+                    {
+                        @Html.Raw(FormattableString.Invariant($"<text x=\"{gx}\" y=\"244\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\">{tick}</text>"))
+                        @Html.Raw(FormattableString.Invariant($"<text x=\"322\" y=\"{gy+4}\" text-anchor=\"end\" fill=\"currentColor\" font-size=\"10\">{tick}</text>"))
+                    }
+                }
+                <line x1="175" y1="230" x2="488" y2="230"
+                      stroke="currentColor" stroke-width="2.5" />
+                <line x1="330" y1="72" x2="330" y2="386"
+                      stroke="currentColor" stroke-width="2.5" />
+                <text x="493" y="225" font-size="16" fill="currentColor">&#x0633;</text>
+                <text x="338" y="66" font-size="16" fill="currentColor">&#x0635;</text>
+                <g clip-path="@($"url(#{clipId})")">
+                    @foreach (var line in lines)
+                    {
+                        var y1 = 230d - (line.Slope * -10d + line.Intercept) * 15d;
+                        var y2 = 230d - (line.Slope * 10d + line.Intercept) * 15d;
+                        var color = colors[lineNumber++ % colors.Length];
+                        @if (line.ShadeBelow || line.ShadeAbove)
+                        {
+                            var borderY = line.ShadeBelow ? 380d : 80d;
+                            var area = FormattableString.Invariant($"180,{y1} 480,{y2} 480,{borderY} 180,{borderY}");
+                            <polygon points="@area" fill="@color" fill-opacity=".13" />
+                        }
+                        <line x1="180" y1="@y1" x2="480" y2="@y2"
+                              stroke="@color" stroke-width="3"
+                              stroke-dasharray="@(line.IsDashed ? "8 5" : "none")" />
+                    }
+                    @foreach (var point in points)
+                    {
+                        var px = 330d + point.X * 15d;
+                        var py = 230d - point.Y * 15d;
+                        <circle cx="@px" cy="@py" r="5" fill="#047857"
+                                stroke="#fff" stroke-width="1.5" />
+                    }
+                </g>
+            </svg>
+            <p dir="rtl">@Model.Description</p>
+            <ul dir="rtl">
+                @foreach (var item in Model.Items)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 24,
+  "unitOrdinal": 4,
+  "lessonOrdinalInUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM",
+  "lessonTitleAr": "تمثيل المعادلات بيانيًا بصيغة الميل والمقطع",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223
+    ],
+    "pdfPages": [
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234
+    ],
+    "review": "DIRECT_SCANNED_LOCAL_STUDENT_BOOK_VISUALLY_READ",
+    "lessonSourceIndex": "01.pdf:4-1"
+  },
+  "stageA": {
+    "status": "SOURCE_SLOPE_INTERCEPT_GRAPH_STANDARD_FORM_AND_CONTEXT_REVIEWED",
+    "learningTargets": [
+      "slope-intercept equation y=mx+b",
+      "plot from y intercept and slope",
+      "convert standard form to slope intercept",
+      "horizontal and vertical line exception"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SVG_SLOPE_GRAPH_AND_8_TEACHER_TASKS_AUTHORED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u04-l01-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u04-l01-slope-intercept-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u04l01-teacher-slope-intercept-rubric.json",
+    "coolDownQuestions": 4,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "EXISTING_COORDINATE_NUMERIC_FAMILIES_REUSED_STAGE_D_TESTS_WRITTEN",
+    "strategy": "REUSE_EXISTING_EXACT_NUMERIC_FAMILIES_TEACHER_REVIEW_FOR_GRAPH",
+    "allowedQuestionFamilies": [
+      "geometry.coordinate.evaluate_linear_rule",
+      "geometry.coordinate.y_intercept_from_rule",
+      "geometry.coordinate.gradient_between_points"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u04l01.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "G9_GENERAL_U04L01_A_B_C_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T11:59:20.279Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:4-2"
+}

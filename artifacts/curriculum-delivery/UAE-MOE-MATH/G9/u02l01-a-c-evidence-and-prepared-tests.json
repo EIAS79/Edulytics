@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "code": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "term": 1,
+    "unit": 2,
+    "lesson": 1,
+    "lang": "ar"
+  },
+  "source": {
+    "file": "01.pdf",
+    "edition": "2025-2026",
+    "printedPages": [
+      75,
+      76,
+      77,
+      78,
+      79,
+      80
+    ],
+    "pdfPages": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "objectives": [
+    {
+      "code": "O1",
+      "sourcePages": [
+        75,
+        77
+      ],
+      "text": "ترجمة عبارات إلى معادلات يساوي طرفاها المقدار نفسه"
+    },
+    {
+      "code": "O2",
+      "sourcePages": [
+        75,
+        76,
+        78
+      ],
+      "text": "بناء معادلات من نماذج قيمة مجهولة ومجموع تكلفة"
+    },
+    {
+      "code": "O3",
+      "sourcePages": [
+        77,
+        79
+      ],
+      "text": "التعبير عن علاقات هندسية أو سياقية بتعابير متساوية"
+    },
+    {
+      "code": "O4",
+      "sourcePages": [
+        78,
+        79,
+        80
+      ],
+      "text": "فحص صحة المعادلة الممثلة للموقف وشرح دلالة المتغير"
+    }
+  ],
+  "exerciseSections": [
+    {
+      "page": 77,
+      "section": "guided examples and checks"
+    },
+    {
+      "page": 78,
+      "section": "independent numerical and word-problem equation writing"
+    },
+    {
+      "page": 79,
+      "section": "contextual, higher-order and graph/geometry writing"
+    },
+    {
+      "page": 80,
+      "section": "standardized unit review and prerequisite practice"
+    }
+  ],
+  "fixtures": [
+    {
+      "o": "O1",
+      "q": "مجموع س وسبعة يساوي تسعة عشر؛ اكتب معادلة.",
+      "expected": "x+7=19",
+      "negative": "x+19=7",
+      "kind": "symbolic_equation_teacher_review_pending_D"
+    },
+    {
+      "o": "O1",
+      "q": "أربعة أقل من ثلاثة أمثال عدد ص يساوي عشرين؛ اكتب معادلة.",
+      "expected": "3y-4=20",
+      "negative": "4-3y=20",
+      "kind": "symbolic_equation_teacher_review_pending_D"
+    },
+    {
+      "o": "O2",
+      "q": "شراء خمس تذاكر بسعر س ورسم حجز ثابت عشرة دراهم كلف ١١٠ دراهم. اكتب معادلة.",
+      "expected": "5x+10=110",
+      "negative": "5(x+10)=110",
+      "kind": "symbolic_equation_teacher_review_pending_D"
+    },
+    {
+      "o": "O3",
+      "q": "محيط مستطيل عرضه س وطوله س+٣ هو ٣٠؛ اكتب معادلة.",
+      "expected": "2x+2(x+3)=30",
+      "kind": "symbolic_equation_teacher_review_pending_D"
+    },
+    {
+      "o": "O4",
+      "q": "هل المعادلة ٢٠٠ + ٤س = ٣٢٠ تمثل رصيدًا أوليًا ٢٠٠ وزيادة س لأربعة أسابيع؟",
+      "expected": "نعم",
+      "kind": "teacher_review_reasoning"
+    }
+  ],
+  "cooldown": [
+    {
+      "q": "أكتب معادلة: خمسة أمثال عدد زائد اثنين يساوي اثنين وثلاثين.",
+      "answer": "5x+2=32"
+    },
+    {
+      "q": "إذا كنت تملك ٥٠ درهمًا وتوفر ١٠ دراهم أسبوعيًا، فاكتب معادلة تصف الوصول إلى ١٢٠ درهمًا بعد س أسبوع.",
+      "answer": "50+10x=120"
+    },
+    {
+      "q": "فسر لماذا ٣س−٧=١١ لا تساوي ٧−٣س=١١.",
+      "answer": "تختلف عملية الطرح واتجاهها",
+      "teacherReview": true
+    }
+  ],
+  "implementation": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "registry": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  },
+  "abc": {
+    "sourceObjectivesMapped": true,
+    "originalArabicContentReady": true,
+    "practiceCasesPrepared": true,
+    "teacherAssessmentRubricRequired": true,
+    "status": "READY_FOR_STAGE_D_PREPARATION",
+    "testsRun": "NOT_RUN",
+    "ciRun": "NOT_RUN"
+  },
+  "notes": [
+    "Candidate families target a limited aspect of equation writing, not verified full objective coverage.",
+    "Actual generated questions and symbolic-equation grader must be independently audited in Stage D.",
+    "No automatic academic PASS or runtime deployment implied by A-C preparation."
+  ]
+}

@@ -26,6 +26,17 @@
     <PackageReference Include="MessagePack" Version="2.5.307" />
   </ItemGroup>
 
+  <!-- Stage D fail-closed: Grade 9 General lesson labs are authoring drafts.
+       They may be opened from the local source tree for manual QA, but must
+       not be copied to any deployable wwwroot until every Grade 9 source
+       and hosted student acceptance gate is independently approved.
+       Remove this explicit quarantine only in the audited release PR. -->
+  <ItemGroup>
+    <Content Update="wwwroot/lesson-labs/uae-g9-general/**/*">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Curriculum/G12/grade12-firstparty-teacher-tasks.json"
                       LogicalName="Edulytics.Web.G12.FirstPartyTeacherTasks" />

@@ -1,0 +1,25 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edulytics | المستقيمات المتوازية والمتعامدة</title><style>:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;background:#f3f6fa;color:#17334d}body{margin:0}main{max-width:900px;margin:auto;padding:1.2rem}section{background:white;margin:1rem 0;padding:1rem;border:1px solid #c7d5e4;border-radius:11px}p,li{line-height:1.85}textarea{width:100%;box-sizing:border-box;padding:.6rem;font:inherit;border:1px solid #9badc0;border-radius:7px;margin:.5rem 0 1rem}svg{width:100%;height:auto;direction:ltr;border:1px solid #c5d2dd}button{font:inherit;color:white;background:#135180;padding:.65rem;border:0;border-radius:8px}.eq{direction:ltr;unicode-bidi:isolate;display:inline-block}</style></head><body><main><header><p>UAE-MOE-MATH · التاسع العام · الوحدة الرابعة · الدرس ٤–٤</p><h1>المستقيمات المتوازية والمتعامدة</h1><p>كتاب الطالب 01.pdf، الصفحات المطبوعة ٢٣٩–٢٤٥.</p></header>
+<section><h2>الميل يحدد علاقة المستقيمين</h2>
+<p>للمستقيمين المتميزين غير الرأسيين: التوازي عندما <bdi class="eq">م₁=م₂</bdi>، والتعامد عندما <bdi class="eq">م₁×م₂=−١</bdi> إذا كان الميلان محدودين وغير صفريين. عند ميل ٢/٣ يكون ميل العمودي −٣/٢.</p>
+<p>الأفقي ص=ثابت عمودي على الرأسي س=ثابت. لا نحسب حاصل ضرب صفر في ميل غير معرف.</p>
+<svg viewBox="0 0 650 320" role="img" aria-labelledby="plotTitle plotDesc"><title id="plotTitle">أمثلة التوازي والتعامد</title><desc id="plotDesc">في يسار الرسم خطان صاعدان متوازيان لهما الميل نفسه ومقطعان مختلفان؛ وفي اليمين خط أفقي وآخر رأسي متعامدان.</desc>
+<line x1="60" y1="275" x2="315" y2="275" stroke="#526476"/><line x1="85" y1="35" x2="85" y2="295" stroke="#526476"/>
+<line x1="85" y1="210" x2="225" y2="70" stroke="#0a6799" stroke-width="4"/><line x1="85" y1="265" x2="225" y2="125" stroke="#a86630" stroke-width="4"/>
+<text x="175" y="35" font-size="18">متوازيان</text>
+<line x1="360" y1="180" x2="615" y2="180" stroke="#0b669f" stroke-width="4"/><line x1="490" y1="50" x2="490" y2="286" stroke="#b3682a" stroke-width="4"/>
+<rect x="490" y="158" width="22" height="22" fill="none" stroke="#5c7390" stroke-width="2"/>
+<text x="410" y="35" font-size="18">متعامدان</text></svg>
+<p>يجب أن يحدد الطالب العلاقة من الميل والمقطع، لا من الرسم التقريبي وحده.</p></section>
+<section><h2>تدريب موجه</h2><ol>
+<li><label for="lineQ1">قارن ص=٣س+٢ وص=٣س−٤: هل هما متوازيان؟ وضح اختلاف المقطع.</label><textarea id="lineQ1" rows="2"></textarea></li>
+<li><label for="lineQ2">هل ص=٢/٣س+١ وص=−٣/٢س+٥ متعامدان؟ برر بالحاصل.</label><textarea id="lineQ2" rows="2"></textarea></li>
+<li><label for="lineQ3">اكتب معادلة مستقيم يمر بـ(٢،٧) وموازٍ لص=٣س−١.</label><textarea id="lineQ3" rows="2"></textarea></li>
+<li><label for="lineQ4">اكتب معادلة مستقيم يمر بـ(٢،٧) ومتعامد مع ص=٢س+٣.</label><textarea id="lineQ4" rows="2"></textarea></li>
+</ol></section>
+<section><h2>التقويم الختامي (Cool-down)</h2><ol>
+<li><label for="lineQ5">ما ميل المستقيم العمودي على مستقيم ميله −٤/٥؟</label><textarea id="lineQ5" rows="2"></textarea></li>
+<li><label for="lineQ6">هل ص=−٢س+٣ وص=−٢س+٣ مستقيمان متوازيان متميزان أم متطابقان؟</label><textarea id="lineQ6" rows="2"></textarea></li>
+<li><label for="lineQ7">قارن المستقيمين ص=٥ وس=−٢. هل هما متعامدان؟ ولماذا لا تعمل قاعدة حاصل ضرب الميلين؟</label><textarea id="lineQ7" rows="2"></textarea></li>
+<li><label for="lineQ8">أوجد معادلة المستقيم المار بـ(٠،−١) والعمودي على ص=−٣س+٤.</label><textarea id="lineQ8" rows="2"></textarea></li>
+</ol><p>التفسير والرسوم ومقارنة المستقيمات مراجعة معلم؛ لا توجد درجة آلية.</p><button type="button" id="teacherExport">تجهيز الإجابات للمعلم</button><p id="status" role="status" aria-live="polite"></p><label for="teacherOutput">سجل محلي للمعلم</label><textarea id="teacherOutput" rows="7" readonly></textarea></section></main>
+<script>'use strict';document.getElementById('teacherExport').addEventListener('click',()=>{const answers=Array.from({length:8},(_,i)=>({question:i+1,response:document.getElementById('lineQ'+(i+1)).value.trim(),review:'TEACHER_REVIEW_REQUIRED'})).filter(x=>x.response);if(!answers.length){document.getElementById('status').textContent='أجب عن سؤال واحد على الأقل.';return;}document.getElementById('teacherOutput').value=JSON.stringify({lesson:'UAE-MOE-MATH/G9/General/4-4',graded:false,submitted:false,answers},null,2);document.getElementById('status').textContent='تم تجهيز السجل محليًا؛ لم يتم الإرسال ولم تُحتسب درجة.';});</script></body></html>

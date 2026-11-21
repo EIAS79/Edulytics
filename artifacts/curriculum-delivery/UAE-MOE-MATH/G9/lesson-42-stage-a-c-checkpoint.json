@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 42,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-3",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION",
+  "lessonTitleAr": "ضرب كثيرات الحدود",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    382,
+    383,
+    384,
+    385,
+    386,
+    387
+  ],
+  "sourcePdfPages": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "stageA": {
+    "status": "GENERAL_STUDENT_SOURCE_FULL_LESSON_VISUALLY_REVIEWED",
+    "skills": [
+      "all-pairs product of two or more polynomial terms",
+      "complete distributive property and like-term collection",
+      "table or area model",
+      "negative signs and exponent addition under multiplication"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AREA_TABLE_AND_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l03-ar.rich-lesson-v2.json",
+    "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l03-polynomial-multiply-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "SHARED_EXACT_ENGINE_PRODUCT_COEFFICIENT_CONVOLUTION_WITH_TEACHER_FULL_EXPANSION",
+    "questionFamily": "uae.g9.general.u07.l03.multiply_coefficient",
+    "sharedEngine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "practiceMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "teacherReviewRequired": [
+      "full symbolic expansion",
+      "area model and explanations"
+    ],
+    "testPaths": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L03PolynomialMultiplicationTests.cs",
+      "tests/academic-uae-grade9-arabic-u07l03.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "codeRelocationFixCommit": "ba9606337a650b8c6dd7b1b905077111c15a5fef",
+    "testFixtureCorrectionCommit": "2bc6386cf84486b3f2d33c29c9ed5a46ea55c8fc"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "productionPublished": false,
+  "neonTouched": false,
+  "closedUtc": "2026-11-20T14:30:08.008Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}

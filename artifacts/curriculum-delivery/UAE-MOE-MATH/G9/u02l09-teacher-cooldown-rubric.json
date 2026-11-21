@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE",
+  "source": {
+    "file": "01.pdf",
+    "printedPages": [
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138
+    ],
+    "pdfPages": [
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149
+    ],
+    "edition": "2025–2026 Grade9 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade"
+  },
+  "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l09-weighted-average-ar.html",
+  "teacherReview": "TEACHER_REVIEW_REQUIRED",
+  "autograded": false,
+  "authenticatedSubmission": false,
+  "sourceSkillCoverage": [
+    "frequency-weighted averages",
+    "percent-weighted performance grades",
+    "solution concentration mixtures",
+    "total distance over total travel time",
+    "solving unknown from weighted average"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "expected": "٠٫٣×٨٠+٠٫٧×٩٠=٨٧"
+    },
+    {
+      "id": 2,
+      "expected": "(٢×١٠٪+٣×٣٠٪)/٥=٢٢٪"
+    },
+    {
+      "id": 3,
+      "expected": "(٦٠+١٢٠)/(١+٢)=٦٠ كم/ساعة"
+    },
+    {
+      "id": 4,
+      "expected": "٠٫٢×٦٠+٠٫٨×س=٨٠ ⇒ س=٨٥"
+    },
+    {
+      "id": 5,
+      "expected": "(٢×٥+٣×١٠+١×١٥)/(٢+٣+١)=٥٥/٦≈٩٫١٧"
+    },
+    {
+      "id": 6,
+      "expected": "المتوسط البسيط=١٥، والمرجح=(١٠×١+٢٠×٣)/٤=١٧٫٥"
+    },
+    {
+      "id": 7,
+      "expected": "(٤×٠٫٠٥+٦×٠٫١٥)/١٠=٠٫١١=١١٪"
+    },
+    {
+      "id": 8,
+      "expected": "٤٠ كم/٤٠ كم/ساعة=١ ساعة، و٤٠/٨٠=٠٫٥ ساعة، إذن ٨٠/١٫٥=٥٣⅓ كم/ساعة لا ٦٠"
+    }
+  ],
+  "rubric": {
+    "maxPoints": 8,
+    "dimensions": [
+      {
+        "id": "weighted_model",
+        "points": 3,
+        "criterion": "Correct choice of weights and denominator, including solution and frequency tasks"
+      },
+      {
+        "id": "math_accuracy",
+        "points": 2,
+        "criterion": "Numeric arithmetic and solving the weighted unknown"
+      },
+      {
+        "id": "context_units",
+        "points": 2,
+        "criterion": "Correct concentration, time and distance units; mixes and velocity contextual validity"
+      },
+      {
+        "id": "reasoning",
+        "points": 1,
+        "criterion": "Explain why equal-weight mean or averaging velocities can be wrong"
+      }
+    ]
+  },
+  "testsRun": "WRITTEN_NOT_RUN"
+}

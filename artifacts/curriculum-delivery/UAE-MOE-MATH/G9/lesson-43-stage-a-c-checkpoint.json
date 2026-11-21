@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 43,
+  "unitOrdinal": 7,
+  "sourceLessonRef": "02-1.pdf:7-4",
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS",
+  "lessonTitleAr": "نواتج الضرب الخاصة",
+  "sourceFile": "02-1.pdf",
+  "sourceSha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+  "sourcePrintedPages": [
+    388,
+    389,
+    390,
+    391,
+    392,
+    393
+  ],
+  "sourcePdfPages": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41
+  ],
+  "stageA": {
+    "status": "SOURCE_GENERAL_STUDENT_BOOK_PAGES_VISUALLY_REVIEWED",
+    "skills": [
+      "square of a sum",
+      "square of a difference",
+      "conjugate products difference of squares",
+      "geometric area and algebra tiles",
+      "applications and self-check by full expansion"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AREA_MODEL_AND_COOLDOWN_AUTHORED",
+    "contentPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u07-l04-ar.rich-lesson-v2.json",
+    "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u07-l04-special-products-ar.html",
+    "cooldownQuestions": 4
+  },
+  "stageC": {
+    "status": "TWO_SPECIAL_PRODUCT_COEFFICIENT_FAMILIES_ADDED_TO_EXISTING_EXACT_ENGINE",
+    "families": [
+      "uae.g9.general.u07.l04.square_binomial_coefficient",
+      "uae.g9.general.u07.l04.conjugate_product_coefficient"
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "teacherReviewRequired": [
+      "full symbolic identities",
+      "geometric area drawing",
+      "explain middle-term cancellation"
+    ],
+    "tests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU07L04SpecialProductsTests.cs",
+      "tests/academic-uae-grade9-arabic-u07l04.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN"
+  },
+  "closed": true,
+  "closeDecision": "READY_FOR_STAGE_D",
+  "advanceToNextLesson": true,
+  "closedScope": "A_B_C_AUTHORING_ONLY",
+  "stageDExecution": "NOT_RUN",
+  "productionPublished": false,
+  "neonTouched": false,
+  "closedUtc": "2026-11-20T14:35:42.412Z",
+  "githubBranch": "fix/g9-general-full-year-scope-86"
+}

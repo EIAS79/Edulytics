@@ -94,6 +94,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root",
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
+            "uae.g9.general.u09.l01.set_membership_cardinality",
+            "uae.g9.general.u09.l05.finite_infinite_classification",
+            "uae.g9.general.u10.l02.logic_truth_tables",
+            "uae.g9.general.u10.l03.conditional_truth_tables",
+            "uae.g9.general.u11.l01.incidence_postulates",
+            "uae.g9.general.u09.l02.set_operation_cardinality",
+            "uae.g9.general.u08.l06.like_radical_coefficient",
             "supporting.geometry.angle_around_point",
             "usccss.g7.u07.complementary_angle",
             "usccss.g7.u07.vertical_angle",
@@ -295,6 +302,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
+            "uae.g9.general.u09.l01.set_membership_cardinality" => G9SetMembershipCardinality(random),
+            "uae.g9.general.u09.l05.finite_infinite_classification" => G9FiniteInfiniteClassification(random),
+            "uae.g9.general.u10.l02.logic_truth_tables" => G9LogicTruthTables(random),
+            "uae.g9.general.u10.l03.conditional_truth_tables" => G9ConditionalTruthTables(random),
+            "uae.g9.general.u11.l01.incidence_postulates" => G9IncidencePostulates(random),
+            "uae.g9.general.u09.l02.set_operation_cardinality" => G9SetOperationCardinality(random),
+            "uae.g9.general.u08.l06.like_radical_coefficient" => G9LikeRadicalCoefficient(random),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
             "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
             "usccss.g7.u07.vertical_angle" => G7VerticalAngle(random),
@@ -500,6 +514,30 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.surds.coefficient" =>
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u09.l02.set_operation_cardinality" =>
+                Enumerable.Range(0,8).Count(i => (((p["mode"]==0 ? (p["a"]|p["b"]) :
+                    p["mode"]==1 ? (p["a"]&p["b"]) : (p["a"]&~p["b"]))>>i)&1)!=0)
+                    .ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u11.l01.incidence_postulates" =>
+                (p["mode"] is 0 or 1 or 3 or 4 or 6 ? "1" : "0"),
+            "uae.g9.general.u10.l03.conditional_truth_tables" =>
+                (p["mode"]==0 ? (p["p"]==1 && p["q"]==0 ? 0 : 1) :
+                 p["mode"]==1 ? (p["q"]==1 && p["p"]==0 ? 0 : 1) :
+                 p["mode"]==2 ? (p["p"]==0 && p["q"]==1 ? 0 : 1) :
+                 p["mode"]==3 ? (p["q"]==0 && p["p"]==1 ? 0 : 1) :
+                 p["p"]==p["q"] ? 1 : 0).ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u10.l02.logic_truth_tables" =>
+                (p["mode"]==0 ? (p["p"]==1 && p["q"]==1 ? 1 : 0) :
+                 p["mode"]==1 ? (p["p"]==1 || p["q"]==1 ? 1 : 0) :
+                 (p["p"]==1 ? 0 : 1)).ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u09.l05.finite_infinite_classification" =>
+                (p["mode"] is 0 or 3 ? "0" : "1"),
+            "uae.g9.general.u09.l01.set_membership_cardinality" =>
+                (p["mode"]==1 ? p["count"] : ((p["candidate"]-p["first"])>=0 &&
+                    (p["candidate"]-p["first"])%p["step"]==0 &&
+                    (p["candidate"]-p["first"])/p["step"]<p["count"] ? 1 : 0)).ToString(CultureInfo.InvariantCulture),
+            "uae.g9.general.u08.l06.like_radical_coefficient" =>
+                (p["mode"]==0 ? p["a"]+p["b"] : p["a"]-p["b"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_around_point" =>
                 (360 - p["a"] - p["b"] - p["c"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u07.complementary_angle" =>
@@ -684,6 +722,124 @@ internal static partial class SupportingPracticeCompletionEngine
             int independent=isRadius ? (p["mode"]==0 ? 2*p["radius"] : p["radius"])
                 : CircleSegmentTypeG5(p["variant"]);
             return actual==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u08.l06.like_radical_coefficient",StringComparison.Ordinal))
+        {
+            if (p.Count!=4 || !p.TryGetValue("a",out int a) || !p.TryGetValue("b",out int bb) ||
+                !p.TryGetValue("radicand",out int radicand) || !p.TryGetValue("mode",out int mode) ||
+                a is <4 or >9 || bb is <1 or >3 || mode is <0 or >1 ||
+                radicand is not (2 or 3 or 5 or 6 or 7) || string.IsNullOrWhiteSpace(answer) ||
+                answer.Length>30) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch
+            {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var submitted) &&
+                submitted==(mode==0?a+bb:a-bb);
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l02.set_operation_cardinality",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("a",out int setA) ||
+               !p.TryGetValue("b",out int setB) || !p.TryGetValue("mode",out int mode) ||
+               setA is <1 or >255 || setB is <1 or >255 || mode is <0 or >2 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>24) return false;
+            int selected=mode==0 ? setA|setB : mode==1 ? setA&setB : setA&~setB;
+            int independent=Enumerable.Range(0,8).Count(i=>((selected>>i)&1)!=0);
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
+                   parsed==independent;
+        }
+        if (string.Equals(family,"uae.g9.general.u11.l01.incidence_postulates",StringComparison.Ordinal))
+        {
+            if(p.Count!=2 || !p.TryGetValue("mode",out int mode) ||
+               !p.TryGetValue("caseIndex",out int caseIndex) ||
+               mode is <0 or >7 || caseIndex is <1 or >20 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return normalized==(mode is 0 or 1 or 3 or 4 or 6 ? "1" : "0");
+        }
+        if (string.Equals(family,"uae.g9.general.u10.l03.conditional_truth_tables",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("p",out int propositionP) ||
+               !p.TryGetValue("q",out int propositionQ) || !p.TryGetValue("mode",out int mode) ||
+               propositionP is <0 or >1 || propositionQ is <0 or >1 || mode is <0 or >4 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            int conditionalExpected=mode==0 ? (propositionP==1 && propositionQ==0 ? 0 : 1) :
+                         mode==1 ? (propositionQ==1 && propositionP==0 ? 0 : 1) :
+                         mode==2 ? (propositionP==0 && propositionQ==1 ? 0 : 1) :
+                         mode==3 ? (propositionQ==0 && propositionP==1 ? 0 : 1) :
+                         propositionP==propositionQ ? 1 : 0;
+            var norm=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (norm=="0" || norm=="1") &&
+                   int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int given) &&
+                   given==conditionalExpected;
+        }
+        if (string.Equals(family,"uae.g9.general.u10.l02.logic_truth_tables",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("p",out int propositionP) ||
+               !p.TryGetValue("q",out int propositionQ) || !p.TryGetValue("mode",out int mode) ||
+               propositionP is <0 or >1 || propositionQ is <0 or >1 ||
+               mode is <0 or >2 || string.IsNullOrWhiteSpace(answer) ||
+               answer.Length>8) return false;
+            int logicExpected=mode==0 ? (propositionP==1 && propositionQ==1 ? 1 : 0) :
+                         mode==1 ? (propositionP==1 || propositionQ==1 ? 1 : 0) :
+                         (propositionP==1 ? 0 : 1);
+            var norm=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (norm=="0" || norm=="1") &&
+                   int.TryParse(norm,NumberStyles.Integer,CultureInfo.InvariantCulture,out int provided) &&
+                   provided==logicExpected;
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l05.finite_infinite_classification",StringComparison.Ordinal))
+        {
+            if(p.Count!=3 || !p.TryGetValue("mode",out var mode) ||
+               !p.TryGetValue("step",out var step) || !p.TryGetValue("bound",out var bound) ||
+               mode is <0 or >5 || step is <2 or >7 || bound is <5 or >18 ||
+               string.IsNullOrWhiteSpace(answer) || answer.Length>8) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            return (normalized=="0" || normalized=="1") &&
+                   normalized==(mode is 0 or 3 ? "0" : "1");
+        }
+        if (string.Equals(family,"uae.g9.general.u09.l01.set_membership_cardinality",StringComparison.Ordinal))
+        {
+            if (p.Count!=5 || !p.TryGetValue("first",out int first) ||
+                !p.TryGetValue("step",out int step) || !p.TryGetValue("count",out int count) ||
+                !p.TryGetValue("candidate",out int candidate) || !p.TryGetValue("mode",out int mode) ||
+                first is <1 or >8 || step is <2 or >5 || count is <3 or >5 ||
+                mode is <0 or >1 || candidate<first ||
+                candidate>first+(count-1)*step+1 || string.IsNullOrWhiteSpace(answer) ||
+                answer.Length>24) return false;
+            var normalized=string.Concat(answer.Trim().Select(c=>c switch
+            {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _=>c
+            }));
+            int independent=mode==1 ? count : ((candidate-first)%step==0 &&
+                (candidate-first)/step<count ? 1 : 0);
+            return int.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var parsed) &&
+                parsed==independent;
         }
         var expected = Solve(family, p);
         // Scoped Arabic Grade 7 exact numeric Practice accepts both
@@ -1387,6 +1543,121 @@ internal static partial class SupportingPracticeCompletionEngine
             $"{number} = {coefficient} × 10^n. Find n.",
             "Count how many powers of ten scale the coefficient to the original number.",
             ("coefficient", coefficient), ("exponent", exponent), ("number", number));
+    }
+
+    private static Problem G9SetOperationCardinality(Random r)
+    {
+        var a=r.Next(1,256);
+        var b=r.Next(1,256);
+        var mode=r.Next(3);
+        var first=string.Join("،",Enumerable.Range(1,8).Where(i=>((a>>(i-1))&1)!=0));
+        var second=string.Join("،",Enumerable.Range(1,8).Where(i=>((b>>(i-1))&1)!=0));
+        var operation=mode==0 ? "أ∪ب" : mode==1 ? "أ∩ب" : "أ\\ب";
+        return P("uae.g9.general.u09.l02.set_operation_cardinality",
+            $"أ={{{first}}}، ب={{{second}}}. ما عدد عناصر {operation}؟ اكتب العدد فقط.",
+            "احسب منطقة الاتحاد أو التقاطع أو الفرق، وعد العناصر المختلفة دون تكرار.",
+            ("a",a),("b",b),("mode",mode));
+    }
+
+    private static Problem G9IncidencePostulates(Random r)
+    {
+        var mode=r.Next(8);
+        var caseIndex=r.Next(1,21);
+        var statement=mode switch
+        {
+            0 => $"من نقطتين مختلفتين أ{caseIndex} وب{caseIndex} يمر مستقيم واحد فقط.",
+            1 => $"ثلاث نقاط أ{caseIndex} وب{caseIndex} وج{caseIndex} غير واقعة على مستقيم واحد تحدد مستوى وحيدًا.",
+            2 => $"ثلاث نقاط أ{caseIndex} وب{caseIndex} وج{caseIndex} على مستقيم واحد تحدد مستوى وحيدًا.",
+            3 => $"مستقيمان مختلفان ل{caseIndex} وم{caseIndex} يتقاطعان يحددان مستوى وحيدًا.",
+            4 => $"مستقيمان مختلفان متوازيان ل{caseIndex} وم{caseIndex} يحددان مستوى وحيدًا.",
+            5 => $"مستقيمان متخالفان ل{caseIndex} وم{caseIndex} يحددان مستوى مشتركًا.",
+            6 => $"مستقيم ل{caseIndex} ونقطة أ{caseIndex} خارجه يحددان مستوى وحيدًا.",
+            _ => $"مستويان مختلفان س{caseIndex} وص{caseIndex} يتقاطعان في نقطة وحيدة فقط."
+        };
+        return P("uae.g9.general.u11.l01.incidence_postulates",
+            $"حدّد هل المسلمة الهندسية التالية صحيحة. {statement} اكتب ١ للصواب أو ٠ للخطأ.",
+            "استخدم مسلمات النقاط والمستقيمات والمستويات: نقطتان تحددان مستقيمًا، وثلاث غير مستقيمة مستوى، والمستويان المختلفان إذا تقاطعا فتقاطعهما مستقيم.",
+            ("mode",mode),("caseIndex",caseIndex));
+    }
+
+    private static Problem G9ConditionalTruthTables(Random r)
+    {
+        var p=r.Next(2);
+        var q=r.Next(2);
+        var mode=r.Next(5);
+        var expression=mode==0 ? "p⇒q (الأصلية)" :
+                       mode==1 ? "q⇒p (العكس)" :
+                       mode==2 ? "¬p⇒¬q (المعكوس)" :
+                       mode==3 ? "¬q⇒¬p (المقابل المعاكس)" :
+                       "p⇔q (الثنائية)";
+        return P("uae.g9.general.u10.l03.conditional_truth_tables",
+            $"قيمة p هي {p} وقيمة q هي {q}. ما قيمة صدق {expression}؟ اكتب ١ للصواب أو ٠ للخطأ.",
+            "الشرط p⇒q خاطئ فقط عندما p صائبة وq خاطئة؛ العكس والمعكوس ليسا مكافئين عادةً للأصل؛ المقابل المعاكس مكافئ؛ الثنائية تصدق عندما تتساوى القيمتان.",
+            ("p",p),("q",q),("mode",mode));
+    }
+
+    private static Problem G9LogicTruthTables(Random r)
+    {
+        var p=r.Next(2);
+        var q=r.Next(2);
+        var mode=r.Next(3);
+        var expression=mode==0 ? "p∧q (الوصل: و)" :
+                       mode==1 ? "p∨q (الفصل: أو)" : "¬p (نفي p)";
+        return P("uae.g9.general.u10.l02.logic_truth_tables",
+            $"قيمة صدق p هي {p} وقيمة صدق q هي {q}. ما قيمة صدق {expression}؟ اكتب ١ للصواب أو ٠ للخطأ.",
+            "الوصل صواب إذا كان الطرفان صوابًا، والفصل صواب إذا كان أحد الطرفين صوابًا، والنفي يعكس صدق العبارة.",
+            ("p",p),("q",q),("mode",mode));
+    }
+
+    private static Problem G9FiniteInfiniteClassification(Random r)
+    {
+        var mode=r.Next(6);
+        var step=r.Next(2,8);
+        var bound=r.Next(5,19);
+        var example=mode switch
+        {
+            0 => $"أ={{١،٢،٣،...،{bound}}} (تتوقف عند {bound})",
+            1 => $"أ=مضاعفات {step} الموجبة: {step}،{2*step}،{3*step}،... (تستمر بلا حد)",
+            2 => "أ={−١،−٢،−٣،...} (كل الأعداد الصحيحة السالبة)",
+            3 => $"أ={{س∈ط:١≤س≤{bound}}}",
+            4 => $"أ={{س∈ط:س≥{bound}}} (الأعداد الطبيعية لا تتوقف عند حد أعلى)",
+            _ => "أ={...،−٤،−٢،٠،٢،٤،...} (الأعداد الصحيحة الزوجية)"
+        };
+        return P("uae.g9.general.u09.l05.finite_infinite_classification",
+            $"هل المجموعة {example} منتهية أم غير منتهية؟ اكتب ٠ إذا كانت منتهية، أو ١ إذا كانت غير منتهية.",
+            "المجموعة منتهية إذا كان عدد عناصرها محدودًا؛ التتابع المستمر بلا حد أعلى أو أدنى غير منتهٍ.",
+            ("mode",mode),("step",step),("bound",bound));
+    }
+
+    private static Problem G9SetMembershipCardinality(Random r)
+    {
+        var first=r.Next(1,9);
+        var step=r.Next(2,6);
+        var count=r.Next(3,6);
+        var mode=r.Next(2);
+        var candidate=first+r.Next(count)*step+(r.Next(2)==0 ? 0 : 1);
+        var roster=string.Join("،",Enumerable.Range(0,count).Select(i=>first+i*step));
+        var prompt=mode==0
+            ? $"إذا كانت أ={{{roster}}}، هل العدد {candidate} ينتمي إلى أ؟ اكتب ١ إذا ينتمي أو ٠ إذا لا ينتمي."
+            : $"المجموعة أ={{{roster}}}. كم عنصرًا مختلفًا فيها؟ اكتب عدد العناصر.";
+        return P("uae.g9.general.u09.l01.set_membership_cardinality",prompt,
+            "المجموعة تحتوي العناصر المتميزة فقط. افحص الانتماء من السرد أو احسب عدد العناصر غير المكررة.",
+            ("first",first),("step",step),("count",count),("candidate",candidate),("mode",mode));
+    }
+
+    private static Problem G9LikeRadicalCoefficient(Random r)
+    {
+        var a=r.Next(4,10);
+        var b=r.Next(1,4);
+        int[] squareFree=[2,3,5,6,7];
+        var radicand=squareFree[r.Next(squareFree.Length)];
+        var mode=r.Next(2);
+        var prompt=mode==0
+            ? $"بسّط {a}√{radicand}+{b}√{radicand}. اكتب معامل √{radicand} في الناتج فقط."
+            : $"بسّط {a}√{radicand}−{b}√{radicand}. اكتب معامل √{radicand} في الناتج فقط.";
+        return P("uae.g9.general.u08.l06.like_radical_coefficient",prompt,
+            "عند جمع الجذور المتشابهة أو طرحها نجمع المعاملات أو نطرحها، مع الإبقاء على الجذر نفسه.",
+            ("a",a),("b",b),("radicand",radicand),("mode",mode));
     }
 
     private static Problem SurdCoefficient(Random r, int s)

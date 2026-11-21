@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "scope": {
+    "curriculum": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "targetSchoolYear": "2026-2027"
+  },
+  "sourceFiles": [
+    {
+      "file": "01.pdf",
+      "pathway": "General",
+      "edition": "2025-2026",
+      "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+      "pdfPages": 441,
+      "rawUnits": 7,
+      "rawLessons": 43
+    },
+    {
+      "file": "02-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
+      "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+      "pdfPages": 262,
+      "rawUnits": 4,
+      "rawLessons": 24
+    },
+    {
+      "file": "03-1.pdf",
+      "pathway": "General",
+      "edition": "2019-2020",
+      "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+      "pdfPages": 265,
+      "rawUnits": 3,
+      "rawLessons": 19
+    },
+    {
+      "file": "02.pdf",
+      "pathway": "Applied",
+      "sha256": "85befe868edef0dbdbfa3f58752db8b44e99faf573c775eb90755335048a76e9",
+      "pdfPages": 200,
+      "importToGeneral": false
+    },
+    {
+      "file": "03.pdf",
+      "pathway": "Applied",
+      "sha256": "511465ab6555ebd76f5f4213fb5f51a98e88ec9379b7db3709c593385f5a488f",
+      "pdfPages": 131,
+      "importToGeneral": false
+    }
+  ],
+  "rawGeneralTotals": {
+    "units": 14,
+    "lessons": 86
+  },
+  "semanticVerifiedUniqueTotals": null,
+  "lessonIndex": "comprehensive-index.json",
+  "crossEditionReview": "dedup-crosswalk.json",
+  "appliedReview": "applied-cross-reference.json",
+  "status": "FIVE_PDF_SOURCE_FILES_VERIFIED_SEMANTIC_DEDUP_IN_PROGRESS",
+  "testsRun": "NOT_RUN"
+}

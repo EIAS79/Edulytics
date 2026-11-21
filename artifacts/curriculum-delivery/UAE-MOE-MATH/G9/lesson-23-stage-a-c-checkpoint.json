@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 23,
+  "unitOrdinal": 3,
+  "lessonOrdinalInUnit": 6,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS",
+  "lessonTitleAr": "العلاقات التناسبية وغير التناسبية",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "studentBook": "01.pdf",
+    "edition": "2025–2026 General",
+    "sha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "printedPages": [
+      197,
+      198,
+      199,
+      200,
+      201,
+      202
+    ],
+    "pdfPages": [
+      208,
+      209,
+      210,
+      211,
+      212,
+      213
+    ],
+    "review": "DIRECT_LOCAL_STUDENT_BOOK_LESSON_VISUALLY_READ",
+    "lessonSourceIndex": "01.pdf:3-6"
+  },
+  "stageA": {
+    "status": "STUDENT_SOURCE_PROPORTIONAL_AND_NONPROPORTIONAL_TABLES_GRAPHS_AND_CONTEXT_REVIEWED",
+    "learningTargets": [
+      "distinguish y=kx vs y=kx+b",
+      "test constant quotient of table",
+      "identify origin intercept and slope",
+      "interpret fixed fee versus variable rate"
+    ],
+    "sourceExerciseItemByItemVerified": false,
+    "allSourceMathExercisesClaimedVerified": false,
+    "sourceCoreExamplesMathematicallyRecomputed": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_ORIGINAL_ORIGIN_GRAPH_AND_8_TEACHER_TASKS_AUTHORED",
+    "newLessonVerifiedAbsentFromPack": true,
+    "artifacts": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u03-l06-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u03-l06-proportional-ar.html"
+    ],
+    "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u03l06-teacher-proportionality-rubric.json",
+    "coolDownQuestions": 4,
+    "teacherQuestionsTotal": 8,
+    "teacherReviewRequired": true,
+    "authenticatedSubmission": false
+  },
+  "stageC": {
+    "status": "EXISTING_RATIO_AND_LINEAR_RULE_FAMILIES_REUSED_STAGE_D_TESTS_WRITTEN",
+    "strategy": "REUSE_EXISTING_NUMERIC_FAMILIES_TEACHER_REVIEW_FOR_GRAPHS_AND_CONTEXT",
+    "allowedQuestionFamilies": [
+      "ratio.unit_rate.equivalent_ratio",
+      "geometry.coordinate.evaluate_linear_rule"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u03l06.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "StageDExecution": "NOT_RUN"
+  },
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "closedScope": "G9_GENERAL_U03L06_A_B_C_ARABIC_AUTHORING_ONLY",
+  "closedUtc": "2026-11-20T11:55:27.634Z",
+  "blockingGaps": [],
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "nextLessonAfterClosure": "01.pdf:4-1"
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "packCode": "UAE-MOE-MATH",
+    "grade": 9,
+    "pathway": "General",
+    "academicLanguage": "ar",
+    "rtl": true,
+    "lesson": "2-5",
+    "title": "حل معادلات تتضمن قيمة مطلقة"
+  },
+  "source": {
+    "file": "01.pdf",
+    "pathway": "General",
+    "edition": "2025-2026",
+    "printedPagesReviewed": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "pdfPagesReviewed": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "lessonPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "cumulativeReviewPage": 109
+  },
+  "verifiedBookObjectives": [
+    {
+      "id": "O1",
+      "description": "إذا كانت القيمة المطلقة لمقدار مساوية لعدد موجب تنقسم المعادلة إلى حالتين موجب وسالب",
+      "sourcePage": 104
+    },
+    {
+      "id": "O2",
+      "description": "إذا كانت القيمة المطلقة لمقدار مساوية لعدد سالب فلا يوجد حل",
+      "sourcePage": 104
+    },
+    {
+      "id": "O3",
+      "description": "تمثيل الحلول على خط الأعداد والتحقق منها",
+      "sourcePage": 104
+    },
+    {
+      "id": "O4",
+      "description": "تطبيق المسافة عن القيمة المرجعية على سياق درجات الحرارة",
+      "sourcePage": 104
+    }
+  ],
+  "sourceVerifiedExercises": [
+    {
+      "expression": "|f+5|=17",
+      "answers": [
+        -22,
+        12
+      ],
+      "case": "two_solutions",
+      "sourcePage": 104
+    },
+    {
+      "expression": "|b-1|=-3",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 104
+    },
+    {
+      "expression": "|y+2|=4",
+      "answers": [
+        -6,
+        2
+      ],
+      "case": "two_solutions",
+      "sourcePage": 104
+    },
+    {
+      "expression": "|3n-4|=-1",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 104
+    },
+    {
+      "expression": "|n+7|=5",
+      "answers": [
+        -12,
+        -2
+      ],
+      "case": "two_solutions",
+      "sourcePage": 105
+    },
+    {
+      "expression": "|4n-1|=-6",
+      "answers": [],
+      "case": "no_solution",
+      "sourcePage": 105
+    },
+    {
+      "expression": "|2y+6|=6",
+      "answers": [
+        -6,
+        0
+      ],
+      "case": "two_solutions",
+      "sourcePage": 106
+    },
+    {
+      "expression": "|2x-6|=0",
+      "answers": [
+        3
+      ],
+      "case": "one_solution",
+      "sourcePage": 108,
+      "synthetic": true
+    },
+    {
+      "expression": "|x-15|=4",
+      "answers": [
+        11,
+        19
+      ],
+      "case": "two_solutions",
+      "sourcePage": 105
+    }
+  ],
+  "execution": {
+    "abcStatus": "CONTENT_SKILLS_RICHV2_AND_TEST_FILES_PREPARED_PENDING_INDEX_LOCK",
+    "contentModified": true,
+    "practiceMappingModified": true,
+    "regressionTestsAdded": true,
+    "testsRun": "WRITTEN_NOT_RUN",
+    "ci": "NOT_RUN_BY_A_C",
+    "stageD": "NOT_STARTED",
+    "criticalBlocker": "Before A-C closure finish all source element coverage and general-book semantic crosswalk/SourceSnapshotId. Do not demand executing tests or CI during A-C.",
+    "nextAction": "Finish 86-entry source semantic crosswalk and 2-5 coverage/editorial checkpoint; never run tests before Stage D.",
+    "practiceFamilies": [
+      "uae.g9.general.u02.l05.two_solutions",
+      "uae.g9.general.u02.l05.one_solution",
+      "uae.g9.general.u02.l05.no_solution",
+      "uae.g9.general.u02.l05.evaluate_absolute",
+      "uae.g9.general.u02.l05.midpoint"
+    ],
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u02l05.test.cjs"
+    ]
+  },
+  "caveat": "One reviewed page is insufficient to establish complete textbook fidelity. Keep 2-5 NOT_CLOSED.",
+  "sourceVerifiedObjectives": [
+    {
+      "id": "O1",
+      "pages": [
+        103,
+        105,
+        106
+      ],
+      "target": "تقييم تعابير القيمة المطلقة عند التعويض وتفسيرها كمسافة غير سالبة"
+    },
+    {
+      "id": "O2",
+      "pages": [
+        103,
+        104,
+        105,
+        106,
+        108
+      ],
+      "target": "حل معادلات القيمة المطلقة بالحالات الموجبة والصفرية والسالبة وتمثيل الحلول"
+    },
+    {
+      "id": "O3",
+      "pages": [
+        105,
+        106,
+        107
+      ],
+      "target": "إنشاء معادلة قيمة مطلقة من نقطتين متناظرتين على خط الأعداد"
+    },
+    {
+      "id": "O4",
+      "pages": [
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "target": "نمذجة سياقات تباين درجات الحرارة والزمن والقياسات مع فحص القيود"
+    },
+    {
+      "id": "O5",
+      "pages": [
+        108
+      ],
+      "target": "تفسير لماذا تكون معادلات القيمة المطلقة ذات حلين أو حل واحد أو بلا حل"
+    }
+  ],
+  "files": {
+    "content": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+    "visualRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+    "dotnetTests": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+  }
+}

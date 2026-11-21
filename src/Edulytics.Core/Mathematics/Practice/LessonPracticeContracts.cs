@@ -10869,7 +10869,855 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+
+        // UAE Grade 9 General / 2025-2026 student book U01L01 / printed pages 5-9.
+        // Reuse only existing expression-interpretation and coefficient candidates.
+        // This A-C preparation is NOT READY_VERIFIED; Stage D must check Arabic
+        // learner prompts, objective alignment, grader and independent verifier.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS",
+            "supporting.algebra.expressions",
+            "G9_U01L01_VERBAL_TO_SYMBOLIC_COMPONENT_IDENTIFICATION",
+            ["usccss.algebra.expression_words", "usccss.algebra.expression_coefficient"],
+            "UAE_G9_GENERAL_AR_U01L01_STAGE_A_C_SOURCE_PREPARED",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
+
+        // UAE G9 General 2025 Arabic term 1, Lesson 1-2 (printed pp.10-15).
+        // Exact Arabic G6 ordering families are mathematical-mechanic reuse,
+        // not evidence of passed G9 semantic audit or Stage D CI.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:02:ORDER-OF-OPERATIONS",
+            "algebra.order_of_operations",
+            "G9_U01L02_ORDER_OF_OPERATIONS_GROUPING_EXPONENTS_LTR",
+            ["uae.g6.u06.l03.sum_sub_left_right",
+             "uae.g6.u06.l03.division_multiplication_left_right",
+             "uae.g6.u06.l03.parenthesis_first",
+             "uae.g6.u06.l03.exponent_then_multiply",
+             "uae.g6.u06.l03.two_item_cost",
+             "uae.g6.u06.l03.first_operation"],
+            "UAE_G9_GENERAL_2025_AR_U01L02_P10_15",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
+
+        // UAE G9 General 2025 T1 lesson 1-3: mathematical-property reuse
+        // from existing Arabic Grade6 engines; independent Stage D review pending.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:03:PROPERTIES-OF-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:03:PROPERTIES-OF-NUMBERS", "algebra.equivalent_properties",
+            "G9_U01L03_PROPERTIES_AND_INVALID_SUBTRACTION_DIVISION",
+            ["uae.g4.u02.l01.commutative_add",
+             "uae.g4.u02.l01.associative_add",
+             "uae.g4.u02.l01.additive_identity",
+             "uae.g4.u03.l05.identity",
+             "uae.g4.u03.l06.grouped_product",
+             "uae.g6.u06.l08.classify_property",
+             "uae.g6.u06.l08.rewrite_associative",
+             "uae.g6.u06.l08.triangle_area_reordered"],
+            "UAE_G9_GENERAL_2025_AR_U01L03_P16_22",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+
+        // UAE G9 general U01L04 2025 p25-31. Prepared A-C; not D-verified.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:04:DISTRIBUTIVE-PROPERTY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:04:DISTRIBUTIVE-PROPERTY", "algebra.distributive_property",
+            "G9_U01L04_DISTRIBUTIVE_EXPANSION_FACTORING_MODELS",
+            ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive",
+             "uae.g4.u04.l07.distributive_sum","uae.g6.u06.l10.expand_two_term",
+             "uae.g6.u06.l10.factor_common","uae.g6.u06.l10.mixed_decimal_distribute",
+             "uae.g6.u06.l10.distribution_true_false"],
+            "UAE_G9_GENERAL_2025_AR_U01L04_P25_31",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+
+        // UAE Grade 9 general U01L05 textbook pp33-39: candidate shared
+        // equation generator; full Arabic/math-semantic evaluation in Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:05:EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:05:EQUATIONS","algebra.linear.solve",
+            "G9_U01L05_SOLVE_VERIFY_CONTEXTUAL_EQUATIONS",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
+             "uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide",
+             "uae.g6.u07.l01.test_candidate","algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U01L05_P33_39",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
+
+        // UAE G9 General 2025 Arabic Student U01L06 pp40-46; domain-range
+        // diagrams and open interpretation are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:06:RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:06:RELATIONS","functions.input_output_tables",
+            "G9_U01L06_RELATIONS_DOMAIN_RANGE_ORDERED_PAIRS",
+            ["uae.g6.u08.l01.linear_output",
+             "uae.g6.u08.l01.linear_input",
+             "uae.g6.u08.l01.division_output",
+             "uae.g6.u08.l01.ordered_pair",
+             "uae.g6.u08.l01.classify_variable"],
+            "UAE_G9_GENERAL_2025_AR_U01L06_P40_46",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
+
+        // UAE G9 General 2025 Arabic student U01L07 pp47-55.
+        // Function relation and notation mechanics reusable, D audit not run.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:07:FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:07:FUNCTIONS","supporting.functions.core",
+            "G9_U01L07_ONE_OUTPUT_PER_INPUT_VERTICAL_TEST_NOTATION",
+            ["functions.relations.unique_output.classify",
+             "functions.notation.evaluate_context",
+             "uae.g6.u08.l01.linear_output",
+             "uae.g6.u08.l01.ordered_pair"],
+            "UAE_G9_GENERAL_2025_AR_U01L07_P47_55",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",Version);
+
+
+        // Grade9 General U01L08: explicit PARTIAL exact-family coverage only.
+        // Trends/extrema/time-series explanation is teacher-reviewed until D proves
+        // a suitable numeric/visual grader; never label READY_VERIFIED here.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:01:08:INTERPRETING-FUNCTION-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:01:08:INTERPRETING-FUNCTION-GRAPHS",
+            "functions.graph.key_features",
+            "GRAPH_INTERVAL_TRENDS_EXTREMA_WITH_TEACHER_CONTEXT",
+            ["uae.g6.u08.l03.linear_vs_square",
+             "uae.g6.u08.l03.y_intercept",
+             "uae.g6.u08.l03.equation_from_line",
+             "geometry.coordinate.y_intercept_from_rule"],
+            "UAE_G9_GENERAL_2025_AR_U01L08_P56_61_PARTIAL_ENGINES",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT",
+            Version);
+
+
+        // UAE G9 General U02L01 2025 student pp.75-80: prepared skills only.
+        // Complex context-to-equation translations require teacher review until
+        // Stage D proves an appropriate symbolic equation generator and grader.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:01:WRITING-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:01:WRITING-EQUATIONS", "algebra.equations.write_from_context",
+            "G9_U02L01_WRITE_EQUATION_FROM_VERBAL_AND_MODEL",
+            ["uae.g6.u07.l02.write_tape_equation",
+             "uae.g6.u07.l02.subtraction_form"],
+            "UAE_G9_GENERAL_2025_AR_U02L01_P75_80_PARTIAL_MECHANICS",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+
+        // G9 General 2025 U02L02 p83-90: reuse verified numeric one-step
+        // mechanisms; no Stage D result or Grade9 language PASS implied.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:02:SOLVING-ONE-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:02:SOLVING-ONE-STEP-EQUATIONS", "algebra.equations.one_step",
+            "G9_U02L02_INVERSE_OPERATIONS_AND_EQUATION_CHECK",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract",
+             "uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l01.multiply",
+             "uae.g6.u07.l01.divide","uae.g6.u07.l01.test_candidate",
+             "uae.g6.u07.l03.fraction_addition_unknown", "uae.g6.u07.l03.decimal_addition_unknown"],
+            "UAE_G9_GENERAL_2025_AR_U02L02_P83_90",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+
+        // UAE Grade9 General 2025 source pp83-90: one-step equations with
+        // fraction/decimal variations and verification. Stage D not run.
+
+
+
+        // G9 General U02L03 p91–96: Stage C proposed reuse only.
+        // Distribution, fractions and written strategies need independent D audit.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:03:SOLVING-MULTI-STEP-EQUATIONS", "algebra.linear.solve",
+            "G9_U02L03_MULTI_STEP_DISTRIBUTION_AND_CHECK",
+            ["algebra.linear.ax_plus_b_equals_c",
+             "supporting.algebra.equations.mixed", "supporting.algebra.expand"],
+            "UAE_G9_GENERAL_AR_U02L03_P91_96",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+
+        // UAE Grade9 General U02L03 Arabic student lab p90, lesson pp91-96;
+        // numeric exact generator reuse, geometric/algebra-tile teacher review.
+
+
+
+        // UAE G9 General U02L04 p97-102; identity and contradiction cases
+        // must be audited in D independently from simple solver success.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:04:VARIABLES-ON-BOTH-SIDES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:04:VARIABLES-ON-BOTH-SIDES", "algebra.linear.solve",
+            "G9_U02L04_BOTH_SIDES_IDENTITY_NO_SOLUTION",
+            ["algebra.linear.variables_both_sides", "supporting.algebra.expand"],
+            "UAE_G9_GENERAL_2025_AR_U02L04_P97_102",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+        // UAE G9 General U02L05 printed 103–108; numerical cases only.
+        // Graph drawing and explanatory modelling remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+            "algebra.linear.solve",
+            "G9_U02L05_ABSOLUTE_EQUATION_0_1_2_SOLUTIONS",
+            [
+                "uae.g9.general.u02.l05.two_solutions",
+                "uae.g9.general.u02.l05.one_solution",
+                "uae.g9.general.u02.l05.no_solution",
+                "uae.g9.general.u02.l05.evaluate_absolute",
+                "uae.g9.general.u02.l05.midpoint",
+                "uae.g9.general.u02.l05.composite_evaluation",
+                "uae.g9.general.u02.l05.outer_coefficient_no_solution"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L05_P103_108",
+            "PREPARED_STAGE_D_PENDING_SEMANTIC_AUDIT", Version);
+
+        // UAE G9 General U02L06: original Arabic student-book lesson pp111–118.
+        // Exact numeric ratios reuse shared verifier; source interpretation,
+        // diagrams and written cross-multiplication proofs remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:06:RATIOS-AND-PROPORTIONS", "ratio.proportion.solve",
+            "G9_U02L06_RATIO_EQUIVALENCE_CROSS_MULTIPLY_AND_RATE",
+            [
+                "ratio.unit_rate.equivalent_ratio",
+                "ratio.unit_rate.direct",
+                "ratio.unit_rate.divide_total",
+                "uae.g9.general.u02.l06.two_sided_proportion"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L06_P111_118",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General source 2-7 (student pp119-125): exact percent
+        // quantity and resulting value skills only; open change interpretation
+        // and non-integer source cases stay teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:07:PERCENT-CHANGE", "percent.change.calculate",
+            "G9_U02L07_PERCENT_CHANGE_DISCOUNT_TAX",
+            [
+                "percentages.core.increase_decrease",
+                "percentages.core.of_quantity"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L07_P119_125",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General original 01.pdf:2-8 literal equations and dimensional analysis.
+        // Foundational numeric practice reuses two exact shared families only.
+        // Core symbolic rearrangement and dimensional unit-cancellation remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:08:LITERAL-EQUATIONS-DIMENSIONAL-ANALYSIS", "algebra.formula.rearrange",
+            "G9_U02L08_LITERAL_FORMULAS_AND_DIMENSIONAL_UNITS_NUMERIC_SUPPORT_ONLY",
+            [
+                "algebra.linear.ax_plus_b_equals_c",
+                "ratio.unit_rate.direct"
+            ],
+            "UAE_G9_GENERAL_2025_AR_U02L08_P126_131",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_CORE", Version);
+
+        // Grade 9 General 2-9 weighted mean: ordinary mean is a prerequisite,
+        // not an automatic verifier of weighted mixtures and journey speeds.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:02:09:WEIGHTED-AVERAGE", "statistics.weighted_mean",
+            "G9_U02L09_WEIGHTED_CORE_WITH_TEACHER_REVIEW",
+            ["statistics.center_spread.mean"],
+            "UAE_G9_GENERAL_2025_AR_U02L09_P132_138",
+            "PREPARED_STAGE_D_NOT_RUN_CORE_WEIGHTED_REVIEW", Version);
+
+        // Grade 9 General 3-1 (01.pdf pp155–162): numeric coordinate
+        // assistance only; drawn graphs and contextual explanations are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:01:GRAPHING-LINEAR-EQUATIONS", "algebra.linear.graph",
+            "G9_U03L01_LINEAR_GRAPHS_INTERCEPTS_NUMERIC_SUPPORT",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L01_P155_162",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
+        // UAE Grade 9 General textbook 3-2: numerical equation solving only;
+        // x-intercept, no/one/infinite graph cases and free drawings need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:02:SOLVING-LINEAR-EQUATIONS-BY-GRAPHING", "algebra.linear.solve_by_graphing",
+            "G9_U03L02_EQUATION_GRAPH_ROOT_NUMERIC_SUPPORT_ONLY",
+            ["algebra.linear.ax_plus_b_equals_c",
+             "algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2025_AR_U03L02_P163_170",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_ROOTS", Version);
+
+        // UAE Grade 9 General source 3-3: existing exact numeric gradient,
+        // with graphical classification, unit rates and justifications teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:03:RATE-OF-CHANGE-AND-SLOPE", "geometry.coordinate.gradient",
+            "G9_U03L03_RATE_OF_CHANGE_SLOPE_FROM_TWO_POINTS",
+            ["geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2025_AR_U03L03_P172_179",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
+        // UAE Grade9 General source 3-4: existing numeric ratio and coordinate
+        // support only; original source graphs and proportionality proofs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:04:DIRECT-VARIATION", "algebra.linear.direct_variation",
+            "G9_U03L04_DIRECT_VARIATION_CONSTANT_AND_ORIGIN",
+            ["ratio.unit_rate.equivalent_ratio",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L04_P182_188",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_MODEL", Version);
+
+        // UAE Grade9 General 3-5, local General source pp189–196:
+        // numeric nth term and position only; graph and conceptual tasks need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:05:ARITHMETIC-SEQUENCES-AS-LINEAR-FUNCTIONS", "sequences.arithmetic.nth_term",
+            "G9_U03L05_ARITHMETIC_NTH_TERM_AND_DISCRETE_LINEAR_FUNCTION",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
+            "UAE_G9_GENERAL_2025_AR_U03L05_P189_196",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_DISCRETE_GRAPH", Version);
+
+        // UAE Grade9 General 3-6, source pp197–202: numeric support only.
+        // Ratio tables, zero intercept and graphs require teacher explanation.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:03:06:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS", "algebra.linear.proportionality",
+            "G9_U03L06_PROPORTIONAL_NONPROPORTIONAL_ZERO_INTERCEPT",
+            ["ratio.unit_rate.equivalent_ratio", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U03L06_P197_202",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_AND_CONTEXT", Version);
+
+        // UAE Grade9 General 4-1, source pp216–223: numeric coordinate assistance.
+        // Source graph drawing and explanation remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:01:GRAPHING-SLOPE-INTERCEPT-FORM", "algebra.linear.graph",
+            "G9_U04L01_SLOPE_INTERCEPT_NUMERIC_AND_GRAPH_TEACHER",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2025_AR_U04L01_P216_223",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH", Version);
+
+        // UAE G9 General 4-2, source pp226–232: numeric reuse only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:02:WRITING-SLOPE-INTERCEPT-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:02:WRITING-SLOPE-INTERCEPT-EQUATIONS", "algebra.linear.write_equation",
+            "G9_U04L02_WRITE_SLOPE_INTERCEPT_FROM_POINTS_AND_GRAPHS",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L02_P226_232",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATION", Version);
+
+        // UAE G9 General 4-3, printed233–238: numeric gradient/point validation only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:03:POINT-SLOPE-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:03:POINT-SLOPE-FORM", "algebra.linear.point_slope",
+            "G9_U04L03_POINT_SLOPE_SYMBOLIC_TEACHER_NUMERIC_REUSE",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L03_P233_238",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_EQUATIONS", Version);
+
+        // UAE G9 General 4-4 pp239–245: existing slope assistance only.
+        // Parallel/perpendicular classification and proof remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:04:04:PARALLEL-AND-PERPENDICULAR-LINES", "geometry.coordinate.line_relations",
+            "G9_U04L04_PARALLEL_PERPENDICULAR_GRADIENT_NUMERIC_REUSE",
+            ["geometry.coordinate.gradient_between_points",
+             "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U04L04_P239_245",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_LINE_RELATIONS", Version);
+
+        // UAE Grade9 General 5-1, source pp259–265. Existing generic linear
+        // inequality engine is numeric assistance, not a source-specific graph grader.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:01:ADDITION-SUBTRACTION-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:01:ADDITION-SUBTRACTION-INEQUALITIES", "algebra.linear.inequality.solve",
+            "G9_U05L01_ADDITIVE_INEQUALITY_NUMERIC_HELP_TEACHER_GRAPH",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L01_P259_265",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_NUMBER_LINE", Version);
+
+        // UAE General G9 5-2 pp266–271: generic linear inequality numeric aid.
+        // Exact sign reversal and number-line proof remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:02:MULTIPLY-DIVIDE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:02:MULTIPLY-DIVIDE-INEQUALITIES", "algebra.linear.inequality.solve",
+            "G9_U05L02_NEGATIVE_MULTIPLIER_REVERSAL_NUMERIC_HELP",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L02_P266_271",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SIGN_REVERSAL", Version);
+
+        // UAE General Grade9 U05L03: existing single-variable inequality numeric assistance.
+        // Multi-step distribution, graphs and original explanations remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:03:MULTI-STEP-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L03_MULTI_STEP_SOURCE_TEACHER_PROOF_NUMERIC_HELP",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L03_P272_277",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_MULTISTEP", Version);
+
+        // UAE Grade9 General U05L04: reuse single-inequality numerical assistance.
+        // AND/OR interval intersection, union, and graphical reasoning remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:04:COMPOUND-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:04:COMPOUND-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L04_AND_OR_COMPOUND_TEACHER_REVIEW_NUMERIC_AID",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L04_P280_285",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_COMPOUND", Version);
+
+        // Grade9 General 5-5: generic linear inequality helps algebraic substeps.
+        // Original absolute-value intervals, unions and graphs are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:05:ABSOLUTE-VALUE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:05:ABSOLUTE-VALUE-INEQUALITIES",
+            "algebra.linear.inequality.solve",
+            "G9_U05L05_ABSOLUTE_INTERVAL_RAYS_TEACHER_REVIEW_NUMERIC_AID",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "UAE_G9_GENERAL_2025_AR_U05L05_P286_290",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_ABSOLUTE", Version);
+
+        // UAE Grade9 General 5-6: reuse coordinate-rule numeric value exercise.
+        // Full two-variable inequality plotting and half-plane grading remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:05:06:GRAPHING-TWO-VARIABLE-INEQUALITIES",
+            "geometry.coordinate.linear_rule",
+            "G9_U05L06_HALF_PLANE_SOURCE_TEACHER_REVIEW_COORDINATE_NUMERIC_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U05L06_P291_296",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_HALF_PLANE", Version);
+
+        // Grade 9 General U06L01 graphical systems: reuse line-value numeric help.
+        // Intersections, coincident/parallel classification and graph explanations remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:01:GRAPHING-LINEAR-SYSTEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:01:GRAPHING-LINEAR-SYSTEMS",
+            "geometry.coordinate.linear_rule",
+            "G9_U06L01_GRAPHICAL_SYSTEMS_TEACHER_REVIEW_COORDINATE_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U06L01_P309_315",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
+
+
+        // UAE General G9 U06L02 printed 318–323: single-variable substep only.
+        // Full substitution system, identities and contradictions require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:02:SUBSTITUTION-SYSTEMS",
+            "algebra.linear.solve",
+            "G9_U06L02_SUBSTITUTION_SINGLE_VARIABLE_SUBSTEP_TEACHER_SYSTEMS",
+            ["algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2025_AR_U06L02_P318_323",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEMS", Version);
+
+        // UAE G9 General U06L03: only solve one-variable post-elimination substep.
+        // Ordered pairs and source-system reasoning remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:03:ELIMINATION-ADD-SUBTRACT",
+            "algebra.linear.solve",
+            "G9_U06L03_ELIMINATION_ARABIC_LINEAR_SUBSTEP_TEACHER_SYSTEM",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L03_P324_330",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
+
+        // UAE General Grade 9 6-4: existing exact one-variable solver helps
+        // only the algebra after multiplying and eliminating equations.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION",
+            "algebra.linear.solve",
+            "G9_U06L04_ELIMINATION_MULTIPLICATION_NUMERIC_SUBSTEP_TEACHER_SYSTEM",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L04_P331_337",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM", Version);
+
+        // UAE General G9 U06L05: numeric one-variable algebraic assistance only.
+        // Choose the method, model contexts and verify the full system with the teacher.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:05:LINEAR-SYSTEMS-APPLICATIONS",
+            "algebra.linear.solve",
+            "G9_U06L05_SYSTEM_APPLICATION_CONTEXT_TEACHER_REVIEW_LINEAR_AID",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2025_AR_U06L05_P338_345",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_SYSTEM_CONTEXT", Version);
+
+        // UAE General G9 U06L06: reuse numeric boundary evaluation only.
+        // The two-dimensional intersection, shaded region and border strictness
+        // remain teacher reviewed, with no false autograding.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:06:06:SYSTEMS-OF-INEQUALITIES",
+            "geometry.coordinate.linear_rule",
+            "G9_U06L06_HALFPLANE_SYSTEM_TEACHER_REVIEW_COORDINATE_AID",
+            ["geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G9_GENERAL_2025_AR_U06L06_P346_351",
+            "PREPARED_STAGE_D_NOT_RUN_TEACHER_GRAPH_SYSTEM", Version);
+
+        // UAE General G9 2019 book U07L01 printed365–372:
+        // numerical coefficients reuse exact kernel; full polynomials, algebra tiles and explanations require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:01:POLYNOMIAL-ADD-SUBTRACT",
+            "algebra.polynomial.add_subtract",
+            "G9_U07L01_ADD_SUBTRACT_LIKE_TERMS_TEACHER_FULL_EXPRESSION",
+            ["uae.g9.general.u07.l01.add_coefficient","uae.g9.general.u07.l01.subtract_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L01_P365_372",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE General Grade 9, 2019 book 7-2: monomial substep is verified numerically;
+        // multi-term distribution and geometrical explanation remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:02:MONOMIAL-TIMES-POLYNOMIAL",
+            "algebra.polynomial.distribute_monomial",
+            "G9_U07L02_POLYNOMIAL_DISTRIBUTION_TEACHER_REVIEW",
+            ["uae.g8.u01.l03.monomial_multiply"],
+            "UAE_G9_GENERAL_2019_AR_U07L02_P374_379",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General 2019 book 7-3: exact coefficient kernel only.
+        // Area model and full polynomial expression remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:03:POLYNOMIAL-MULTIPLICATION",
+            "algebra.polynomial.multiply_distribute",
+            "G9_U07L03_FULL_DISTRIBUTION_TEACHER_REVIEW",
+            ["uae.g9.general.u07.l03.multiply_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L03_P382_387",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 UAE General 2019 7-4: numeric coefficients only, teacher checks area and full symbolic proof.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:04:SPECIAL-PRODUCTS",
+            "algebra.polynomial.special_products",
+            "G9_U07L04_SPECIAL_PRODUCTS_SQUARE_AND_CONJUGATE",
+            ["uae.g9.general.u07.l04.square_binomial_coefficient",
+             "uae.g9.general.u07.l04.conjugate_product_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U07L04_P388_393",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General 7-5 2019 source: monomial quotient/product help only;
+        // complete GCF polynomial factorization and zero-product explanation require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:05:DISTRIBUTIVE-FACTOR"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:05:DISTRIBUTIVE-FACTOR",
+            "algebra.polynomial.factor_gcf",
+            "G9_U07L05_DISTRIBUTIVE_GCF_TEACHER_FACTOR_REVIEW",
+            ["uae.g8.u01.l03.monomial_multiply",
+             "uae.g8.u01.l03.monomial_divide"],
+            "UAE_G9_GENERAL_2019_AR_U07L05_P396_402",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General historical General Student Book U07L06 pp405-411.
+        // Integer monic factorization, with open reasoning/area drawing teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:06:MONIC-QUADRATIC-FACTORING", "algebra.quadratic.factor_monic",
+            "G9_U07L06_MONIC_FACTOR_ZERO_PRODUCT",
+            ["uae.g9.general.u07.l06.monic_distinct_roots",
+             "uae.g9.general.u07.l06.monic_repeated_root"],
+            "UAE_G9_GENERAL_2019_AR_U07L06_P405_411",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General historical Student Book U07L07 pp412-417.
+        // Exact integer-root nonmonic cases; rational roots and reasoning teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:07:NONMONIC-QUADRATIC-FACTORING", "algebra.quadratic.factor_nonmonic",
+            "G9_U07L07_NONMONIC_AC_GROUP_FACTOR",
+            ["uae.g9.general.u07.l07.nonmonic_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L07_P412_417",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General historical Student Book U07L08 pp418-423.
+        // Exact difference-of-squares integer roots, free factorization teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:08:DIFFERENCE-OF-SQUARES", "algebra.factor.difference_of_squares",
+            "G9_U07L08_DIFFERENCE_OF_SQUARES_FACTOR",
+            ["uae.g9.general.u07.l08.difference_squares_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L08_P418_423",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General historical Student Book U07L09 pp424-431.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:07:09:PERFECT-SQUARE-TRINOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:07:09:PERFECT-SQUARE-TRINOMIALS", "algebra.factor.perfect_square_trinomial",
+            "G9_U07L09_PERFECT_SQUARE_ROOTS",
+            ["uae.g9.general.u07.l06.monic_repeated_root",
+             "uae.g9.general.u07.l09.square_root_equation_integer_roots"],
+            "UAE_G9_GENERAL_2019_AR_U07L09_P424_431",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General historical Student Book U08L01 pp445-451.
+        // Numeric powers of ten only; symbolic exponent rules teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:01:PRODUCT-PROPERTIES-OF-EXPONENTS", "algebra.exponent.product_rule",
+            "G9_U08L01_EXPONENT_PRODUCT_PROPERTIES",
+            ["supporting.powers10.multiply","supporting.powers10.evaluate"],
+            "UAE_G9_GENERAL_2019_AR_U08L01_P445_451",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General U08L02 pp452-459; powers-of-ten exact numeric subset.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:02:QUOTIENT-PROPERTIES-OF-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:02:QUOTIENT-PROPERTIES-OF-EXPONENTS", "algebra.exponent.quotient_rule",
+            "G9_U08L02_EXPONENT_QUOTIENT_PROPERTIES",
+            ["supporting.powers10.divide","supporting.powers10.missing_exponent"],
+            "UAE_G9_GENERAL_2019_AR_U08L02_P452_459",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General 8-3: rational-exponent perfect-power exact practice.
+        // Domain justifications, radical diagrams and symbolic proofs are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:03:RATIONAL-EXPONENTS",
+            "algebra.exponent.rational_power",
+            "G9_U08L03_RATIONAL_EXPONENTS_PERFECT_POWER_EXACT",
+            ["uae.g9.general.u08.l03.rational_positive_exact",
+             "uae.g9.general.u08.l03.rational_negative_exact"],
+            "UAE_G9_GENERAL_2019_AR_U08L03_P460_467",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General U08L04: scientific notation; exact integer powers-of-ten subset.
+        // Negative/fractional coefficients and contextual justification stay teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:04:SCIENTIFIC-NOTATION", "supporting.indices.roots_standard_form",
+            "G9_U08L04_SCIENTIFIC_NOTATION",
+            ["supporting.standard_form.power10_exponent","supporting.powers10.multiply","supporting.powers10.divide"],
+            "UAE_G9_GENERAL_2019_AR_U08L04_P468_475",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General U08L05: exact integer coefficient of radicals only.
+        // Conjugate rationalization, domains and written proof remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:05:SIMPLIFYING-RADICAL-EXPRESSIONS", "algebra.radical.simplify",
+            "G9_U08L05_RADICAL_SIMPLIFICATION_EXACT",
+            ["supporting.surds.coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U08L05_P477_483",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U08L06: exact combining of like radical
+        // coefficients. Full symbolic multiplication and conjugate reasoning teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:08:06:OPERATIONS-ON-RADICAL-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:08:06:OPERATIONS-ON-RADICAL-EXPRESSIONS", "algebra.radical.combine_like_terms",
+            "G9_U08L06_LIKE_RADICAL_OPERATIONS",
+            ["uae.g9.general.u08.l06.like_radical_coefficient"],
+            "UAE_G9_GENERAL_2019_AR_U08L06_P484_490",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U09L01: bounded finite set membership and cardinality.
+        // Set-builder notation and contextual diagrams remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:01:INTRODUCTION-TO-SET-THEORY", "sets.membership",
+            "G9_U09L01_MEMBERSHIP_AND_CARDINALITY",
+            ["uae.g9.general.u09.l01.set_membership_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L01_P502_514",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General U09L02: bounded union/intersection/difference count only.
+        // Proper subsets, complement universes, and Venn shading teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:02:SUBSETS-AND-SET-OPERATIONS", "sets.union_intersection_difference",
+            "G9_U09L02_SET_OPERATION_CARDINALITY",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L02_P515_525",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U09L03: reuse proven set operation count.
+        // Three-set diagrams, complement region shading and reasoning are teacher-review only.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:03:VENN-DIAGRAMS-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:03:VENN-DIAGRAMS-SET-OPERATIONS", "sets.venn_diagram",
+            "G9_U09L03_VENN_SET_OPERATIONS_SHARED_COUNT",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L03_P526_536",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U09L04: reuse bounded set operation count;
+        // real-world survey/three-set Venn placement remains teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:04:SETS-WORD-PROBLEMS", "sets.union_intersection_difference",
+            "G9_U09L04_SET_CONTEXT_PROBLEM_NUMERIC_PREREQUISITES",
+            ["uae.g9.general.u09.l02.set_operation_cardinality"],
+            "UAE_G9_GENERAL_2019_AR_U09L04_P537_546",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U09L05: reuse and extend shared engine for finite/infinite classification.
+        // One-to-one/onto proofs and uncountability reasoning remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS", "sets.finite_infinite",
+            "G9_U09L05_FINITE_INFINITE_CLASSIFICATION",
+            ["uae.g9.general.u09.l05.finite_infinite_classification"],
+            "UAE_G9_GENERAL_2019_AR_U09L05_P547_551",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General 10-1 inductive conjectures: numeric arithmetic/geometric
+        // term generation reuses existing exact families. Visual and nonlinear
+        // patterns plus counterexample proofs remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:01:INDUCTIVE-REASONING-CONJECTURES", "reasoning.inductive",
+            "G9_U10L01_INDUCTIVE_PATTERN_NUMERIC_SUBSKILLS",
+            ["sequences.core.arithmetic_nth_term","sequences.core.geometric_nth_term"],
+            "UAE_G9_GENERAL_2019_AR_U10L01_P561_568",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE Grade 9 General U10L02 logic and truth tables.
+        // Open statement construction and Venn diagrams retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:02:LOGIC", "logic.truth_values",
+            "G9_U10L02_TRUTH_TABLE_CONJUNCTION_DISJUNCTION_NEGATION",
+            ["uae.g9.general.u10.l02.logic_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L02_P569_576",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General U10L03 conditional truth table numeric subskills;
+        // writing statements and counterexample proof retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:03:CONDITIONAL-STATEMENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:03:CONDITIONAL-STATEMENTS", "logic.conditionals",
+            "G9_U10L03_ORIGINAL_CONVERSE_INVERSE_CONTRAPOSITIVE",
+            ["uae.g9.general.u10.l03.conditional_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L03_P577_586",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General U10L04 deductive laws and proof.
+        // Reuse exact conditional truth prerequisite; proof explanations remain teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING", "reasoning.deductive",
+            "G9_U10L04_DETACHMENT_SYLLOGISM_PREREQUISITES",
+            ["uae.g9.general.u10.l03.conditional_truth_tables"],
+            "UAE_G9_GENERAL_2019_AR_U10L04_P587_595",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General U11L01: latest 2025 points-lines-planes plus original 2019 postulates.
+        // Formal spatial drawings and free proof explanations retain teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:01:POSTULATES-INFORMAL-PROOFS", "geometry.incidence_postulates",
+            "G9_U11L01_POINTS_LINES_PLANES_INCIDENCE",
+            ["uae.g9.general.u11.l01.incidence_postulates"],
+            "UAE_G9_GENERAL_2019_U11L01_AND_2025_U07L01",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // U11L02 algebraic proof: only numeric subskills auto-verified.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF", "algebra.linear.solve",
+            "G9_U11L02_LINEAR_EQUATION_PROOF_NUMERIC_PREREQUISITE",
+            ["algebra.linear.ax_plus_b_equals_c","algebra.linear.variables_both_sides"],
+            "UAE_G9_GENERAL_2019_AR_U11L02_P616_623",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Segment algebra subskill; measurements and geometric proof teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:03:SEGMENT-RELATIONS-PROOFS", "geometry.segment_addition",
+            "G9_U11L03_SEGMENT_ADDITION_NUMERIC_PREREQUISITE",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G9_GENERAL_2019_U11L03_AND_2025_U07L02_U07L04",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // U11L04 angle numeric skills; formal proofs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:11:04:ANGLE-RELATIONS-PROOFS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:11:04:ANGLE-RELATIONS-PROOFS", "geometry.angles.vertical",
+            "G9_U11L04_VERTICAL_COMPLEMENTARY_NUMERIC",
+            ["usccss.g7.u07.vertical_angle","usccss.g7.u07.complementary_angle"],
+            "UAE_G9_GENERAL_2019_AR_U11L04_P631_639",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // UAE G9 General 12-1: two-dimensional line relation only; spatial skew lines
+        // and transversal angle pair identification are teacher-reviewed until dedicated
+        // Grade 9 Arabic exact families pass Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:01:PARALLEL-INTERSECTING-LINES", "geometry.lines.parallel_intersect",
+            "G9_U12L01_COPLANAR_LINES_NUMERIC_PARTIAL_REUSE",
+            ["usccss.g4.u07.l03.dot_grid_parallel_intersect"],
+            "UAE_G9_GENERAL_2019_AR_U12L01_P653_659",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General 12-2 numeric angle relations only; diagrams and
+        // proofs of the converse remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:02:ANGLES-PARALLEL-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:02:ANGLES-PARALLEL-LINES", "geometry.angles.parallel_lines",
+            "G9_U12L02_CORRESPONDING_AND_SUPPLEMENTARY_NUMERIC",
+            ["geometry.angles.parallel_lines","geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U12L02_P660_666",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 General 12-3 coordinate gradient numeric reuse; undefined vertical
+        // slopes and spatial/real-world interpretation remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:03:SLOPE-OF-LINE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:03:SLOPE-OF-LINE", "geometry.coordinate.gradient_between_points",
+            "G9_U12L03_GRADIENT_NUMERIC_PARTIAL_REUSE",
+            ["geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2019_AR_U12L03_P668_676",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 General 12-4 numeric evaluation, intercept and gradient only.
+        // Full linear-equation construction and geometric proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:04:EQUATIONS-OF-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:04:EQUATIONS-OF-LINES", "geometry.coordinate.y_intercept_from_rule",
+            "G9_U12L04_LINEAR_RULE_NUMERIC_PARTIAL_REUSE",
+            ["geometry.coordinate.evaluate_linear_rule",
+             "geometry.coordinate.y_intercept_from_rule",
+             "geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2019_AR_U12L04_P678_686",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 General 12-5 only supplementary numeric prerequisite may auto-grade;
+        // proving parallelism from converse angle conditions remains teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:05:PROVING-PARALLEL-LINES", "geometry.angles.supplementary",
+            "G9_U12L05_SUPPLEMENTARY_PRECONDITION_ONLY",
+            ["geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U12L05_P687_694",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General 12-6: only prerequisite right-angle recognition and
+        // coordinate gradient are autogenerated. Exact distance, midpoint, and
+        // segment-bisector responses remain teacher reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:12:06:PERPENDICULAR-DISTANCE-MIDPOINTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:12:06:PERPENDICULAR-DISTANCE-MIDPOINTS", "geometry.distance.perpendicular_point_line",
+            "G9_U12L06_PERPENDICULAR_AND_GRADIENT_PREREQUISITES",
+            ["usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+             "geometry.coordinate.gradient_between_points"],
+            "UAE_G9_GENERAL_2019_P695_704_PLUS_2025_P385_394",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 U13L01 classifies triangles by BOTH sides and angles.
+        // Basic triangle recognition reused; algebraic/diagram reasoning reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:01:TRIANGLE-CLASSIFICATION", "geometry.triangles.classify_by_sides",
+            "G9_U13L01_TRIANGLE_TYPE_RECOGNITION_PARTIAL",
+            ["uae.g3.u13.l04.triangle_types"],
+            "UAE_G9_GENERAL_2019_AR_U13L01_P717_724",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 General U13L02 interior and adjacent exterior numeric questions only;
+        // geometric proof, remote-angle sum and bisector explanation teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:02:TRIANGLE-ANGLE-RELATIONS", "geometry.triangles.interior_angle_sum",
+            "G9_U13L02_TRIANGLE_NUMERIC_ANGLE_RELATIONS",
+            ["uae.g4.u16.l06.triangle_missing_angle",
+             "geometry.angles.supplementary"],
+            "UAE_G9_GENERAL_2019_AR_U13L02_P725_734",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 13-3: existing criterion recognition is prerequisite only;
+        // all vertex correspondence and CPCTC proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:03:CONGRUENT-TRIANGLES", "geometry.congruence.corresponding_parts",
+            "G9_U13L03_CONGRUENCE_RECOGNITION_PARTIAL",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L03_P735_743",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 U13L04 recognizes SSS/SAS criteria; formal triangle proof,
+        // included-angle interpretation and CPCTC require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:04:SSS-SAS-TRIANGLE-CONGRUENCE", "geometry.triangle_congruence.sss",
+            "G9_U13L04_SSS_SAS_RECOGNITION_PARTIAL",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L04_P744_753",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 General U13L05 identifies ASA/AAS criteria; diagrams, side inclusion
+        // and rigorous proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:05:ASA-AAS-TRIANGLE-CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:05:ASA-AAS-TRIANGLE-CONGRUENCE", "geometry.triangle_congruence.asa",
+            "G9_U13L05_ASA_AAS_CRITERION_RECOGNITION",
+            ["geometry.congruence.identify_criterion"],
+            "UAE_G9_GENERAL_2019_AR_U13L05_P755_764",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // G9 U13L06 reuses basic triangle types and missing-angle arithmetic;
+        // isosceles-converse and apex-bisector proof require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:06:ISOSCELES-EQUILATERAL-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:06:ISOSCELES-EQUILATERAL-TRIANGLES", "geometry.triangles.isosceles_base_angle",
+            "G9_U13L06_ISOSCELES_EQUILATERAL_NUMERIC_PARTIAL",
+            ["uae.g4.u16.l06.triangle_missing_angle","uae.g3.u13.l04.triangle_types"],
+            "UAE_G9_GENERAL_2019_AR_U13L06_P765_773",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // Grade 9 General U13L09: original Arabic learner prompts are
+        // scoped inside the existing exact engine; diagrams remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L9:GENERAL:13:09:PARALLELOGRAM-TRIANGLE-AREA",
+            "geometry.area.parallelogram",
+            "G9_U13L09_PERPENDICULAR_HEIGHT_TRIANGLE_AND_PARALLELOGRAM",
+            ["geometry.perimeter_area.rectangle_area", "geometry.perimeter_area.triangle_area"],
+            "UAE_G9_GENERAL_2019_AR_U13L09_P793_800",
+            "PREPARED_STAGE_D_NOT_RUN", Version);
+
+        // The runtime registry is for independently READY_VERIFIED contracts,
+        // never partially authored Stage D drafts. Grade 9 General is held
+        // separately until its 86-source/82-lesson release gates actually pass.
+        // Keep draft definitions above for later academic/engine completion;
+        // do not expose them through All or TryResolve in production.
         return byLesson.Values
+            .Where(x =>
+                string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal) &&
+                !x.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
     }

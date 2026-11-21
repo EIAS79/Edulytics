@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 59,
+  "unitOrdinal": 9,
+  "lessonOrdinalInUnit": 5,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:09:05:INFINITE-SETS",
+  "lessonTitleAr": "المجموعات غير المنتهية",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 UAE General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      547,
+      548,
+      549,
+      550,
+      551
+    ],
+    "pdfPages": [
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "method": "DIRECT_SCANNED_LOCAL_PAGE_VISUAL_REVIEW",
+    "scope": "Source concepts and examples (finite/infinite sets, bijection, countability) reviewed. No complete runtime or source item parity claim."
+  },
+  "stageA": {
+    "status": "SOURCE_BOOK_OBJECTIVES_FINITE_INFINITE_AND_COUNTABILITY_REVIEWED",
+    "skills": [
+      "finite versus infinite sets",
+      "one-to-one correspondence between naturals and positive evens",
+      "countable integers versus uncountable real intervals",
+      "infinite proper subsets may have same cardinality"
+    ],
+    "sourceEditionNote": "2019–2020 book is owner-approved under source book policy; year not a blocker"
+  },
+  "stageB": {
+    "status": "ARABIC_SOURCE_PACK_RICHV2_SIX_OPEN_COOLDOWN_TASKS_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u09-l05-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u09-l05-infinite-sets-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "teacherReviewRequiredFor": [
+      "bijection and onto proofs",
+      "uncountability explanation",
+      "infinite hotel movement justification"
+    ],
+    "submission": "LOCAL_JSON_ONLY_NO_AUTHENTICATED_GRADE"
+  },
+  "stageC": {
+    "status": "SHARED_ENGINE_EXTENDED_FOR_FINITE_INFINITE_CLASSIFICATION_WITH_INDEPENDENT_VERIFIER",
+    "practiceFamily": "uae.g9.general.u09.l05.finite_infinite_classification",
+    "questionEngine": "src/Edulytics.Services/Mathematics/SupportingPracticeCompletionEngine.cs",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "skillMapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "testsWritten": [
+      "tests/academic-uae-grade9-arabic-u09l05.test.cjs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "A_B_C_SOURCE_AUTHORING_AND_TEST_SPEC_ONLY_NO_RUNTIME_PASS"
+}

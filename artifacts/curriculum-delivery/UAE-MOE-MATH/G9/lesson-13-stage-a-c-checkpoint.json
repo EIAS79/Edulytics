@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinalInRawIndex": 13,
+  "sourceLessonRefs": [
+    "01.pdf:2-5"
+  ],
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:02:05:ABSOLUTE-VALUE-EQUATIONS",
+  "lessonTitleAr": "حل معادلات تتضمن قيمة مطلقة",
+  "sourceFile": "01.pdf",
+  "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+  "sourcePrintedPages": [
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ],
+  "sourcePdfPages": [
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "stageA": {
+    "status": "SOURCE_PAGES_103_108_AND_64_EXERCISE_MATH_CHECKED_AND_ROUTED",
+    "evidencePaths": [
+      "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+      "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-a-c-source-review-in-progress.json"
+    ],
+    "exerciseInventory": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+    "sourceExercisesMapped": 64,
+    "sourceExercisesWithoutDigitalFamily": 33,
+    "manualReviewClassificationCommit": "000b7247ecc73987855da3731c6459c3b1e29a09",
+    "sourceExerciseCoverageDisposition": "64 inventoried; 19 non-auto-gradable explicitly teacher-reviewed; exact atomic equivalence pending",
+    "digitalFamilyCandidates": 31,
+    "caseRoutingCommit": "e4fad865b89aa3d714964743306db31fca9be085",
+    "studentBookReview": "DIRECT_SCANNED_PRINTED_PAGES_105_TO_108_REVIEWED_FOR_64_EXERCISES",
+    "exerciseTreatmentLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-source-exercise-treatment-ledger.json",
+    "canonicalIndexProposal": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/grade9-82-target-index.json",
+    "canonicalIndexStatus": "STRUCTURAL_TARGET_PREPARED_SEMANTIC_LOCK_PENDING",
+    "dualRouteGraphNumericAndTeacher": 6,
+    "directSourcePageReview": "PRINTED_PAGES_103_TO_108_DIRECT_VISUAL_COMPARE",
+    "sourcePageRasterAudit": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/five-book-page-raster-audit.json",
+    "exactPerItemSemanticEquivalence": "CANDIDATE_FAMILIES_AND_TEACHER_TASKS_AUTHORED_FULL_STAGE_D_RENDERED_PARITY_UNVERIFIED",
+    "all64SourceExercisesIndividuallyRouted": true,
+    "all64SourceExercisesIndependentExactMathVerified": true,
+    "sourceItemRoutingEvidenceCommit": "40ed305fe547bd542e10d39192d81efcd3f3e8a9",
+    "lastSourcePageCorrectionCommit": "b9288cfadf56fd9f13f873281fd724db81ea6397",
+    "canonicalPageRasterProofCommit": "10fe491af8372bf98cd763a926ba0ee3418f1d8d",
+    "sourceMathematicsAudit": {
+      "source": "01.pdf",
+      "printedPages": [
+        105,
+        106,
+        107,
+        108
+      ],
+      "sourceNumberedExercises": 64,
+      "mathOutcomesVisuallyChecked": 64,
+      "remainingSourceMathUnchecked": 0,
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-atomic-coverage.json",
+      "scope": "source book mathematical solutions only; not independent actual generated digital prompt validation",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "evidenceCommits": [
+        "befd8ba9bfcaad74dfba4a8a5f280b8839ffe12f",
+        "303938335ed301a76f8cdb68e9dcdc15d1f397a3",
+        "bec804bc17f307e24912d3fc46c34fd541e0a898"
+      ]
+    },
+    "sourceItemSpecificRepairs": [
+      35,
+      42,
+      56,
+      62,
+      63
+    ],
+    "exactSourceGraphCoordinatesVisuallyReviewed": 12,
+    "lessonLevelAuthoringCoverage": "ALL_64_SOURCE_EXERCISES_MATH_OUTCOMES_CHECKED_31_NUMERIC_CANDIDATES_33_TEACHER_TASKS_ROUTED"
+  },
+  "stageB": {
+    "status": "ARABIC_RICHV2_PACK_COOLDOWN_12_NUMBER_LINE_SVG_AND_TEACHER_RUBRICS_AUTHORED",
+    "modifiedPaths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html"
+    ],
+    "coolDown": {
+      "status": "AUTHORED_WITH_LOCAL_STUDENT_RESPONSE_CAPTURE_NOT_CONNECTED_TO_PLATFORM_TEACHER_WORKFLOW",
+      "artifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "mathematicalCases": [
+        "two real roots and number-line scale",
+        "empty solution justification",
+        "equation from two symmetric endpoints"
+      ],
+      "teacherReviewForOpenWork": true,
+      "responseCapture": "local textual answers plus two chosen numeric number-line points, no server persistence or grade",
+      "answerDisclosure": "worked key hidden until form submitted (not a secure graded assessment)",
+      "numberLinePointCapture": "ACCESSIBLE_TWO_POINT_PICKER_COMMITTED_UNGRADED_TEACHER_REVIEW",
+      "numberLinePointCaptureCommit": "71fe88d638867b9e3ddb1560aa877868eac6a494",
+      "additionalTeacherReviewedTasks": [
+        {
+          "task": "measurement_tolerance_equation",
+          "expected": "|x-25|=3; x=22 or 28 cm",
+          "answerType": "open_numeric_plus_explanation"
+        },
+        {
+          "task": "negative_absolute_value_misconception",
+          "expected": "nonnegative absolute value cannot equal -2",
+          "answerType": "open_reasoning"
+        }
+      ],
+      "additionalTaskCommit": "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
+      "answerCount": 5,
+      "submission": "LOCAL_UNGRADED_EXPORT_ONLY_NOT_PLATFORM_PERSISTED"
+    },
+    "sourceSpecificExamplesAdded": [
+      "composite absolute expressions",
+      "negative isolation for external coefficient",
+      "equation from graph",
+      "time tolerance with unit normalization",
+      "positive outer coefficient with two exact solutions",
+      "negative outer coefficient proving no real solution",
+      "fractional expression inside absolute value with exact solutions"
+    ],
+    "studentNumberLineSvgCommit": "7fa855a19b5cd2026505638356635d7da628316a",
+    "teacherReviewedSourceContextBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+    "teacherReviewedContextBankInActivity": true,
+    "teacherBankAddedCommit": "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac",
+    "teacherTaskCoverageExtension": {
+      "status": "AUTHORING_PREPARED_SOURCE_NUMBERS_ALIGNED_NOT_RUNTIME_VERIFIED",
+      "sourceItemsGrouped": [
+        32,
+        43,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "sourcePages": [
+        106,
+        108
+      ],
+      "htmlArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "bankArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "covers": [
+        "three separate relay timing deviations",
+        "four-minute to seconds tolerance conversion",
+        "conditional c-parameter truth classification"
+      ],
+      "testsWritten": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "sourceGroups": [
+        "financial_return_EX10",
+        "survey_margin_EX31",
+        "timing_EX32_EX43",
+        "curtain_speed_EX44_EX45",
+        "media_hearing_EX52_EX53",
+        "reading_scoring_EX54_EX55",
+        "conditional_reasoning_EX56_EX64",
+        "graph_fractional_endpoints_EX11_EX51"
+      ],
+      "sourceIndexedBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "contentCommit": "f6eb5f6ea6f0d9e6396ff244120bf53e0b204063",
+      "bankCommit": "cb19f0e2b24a1d39de9f8b21c817cef9527ca0e1",
+      "regressionCommit": "4a1df66cb30aa8c016319f274e730a15be19c3b8"
+    },
+    "teacherPlatformIntegration": "STAGE_D_RUNTIME_EVIDENCE_PENDING_NOT_STAGE_A_C_AUTHORING_GATE",
+    "graphToEquationOriginalVariants": {
+      "status": "12_SOURCE_LINKED_PROMPTS_AUTHORED_TEACHER_REVIEW_NOT_RUNTIME_VERIFIED",
+      "sourceExerciseIds": [
+        "01.pdf:2-5:EX11",
+        "01.pdf:2-5:EX12",
+        "01.pdf:2-5:EX33",
+        "01.pdf:2-5:EX34",
+        "01.pdf:2-5:EX35",
+        "01.pdf:2-5:EX36",
+        "01.pdf:2-5:EX46",
+        "01.pdf:2-5:EX47",
+        "01.pdf:2-5:EX48",
+        "01.pdf:2-5:EX49",
+        "01.pdf:2-5:EX50",
+        "01.pdf:2-5:EX51"
+      ],
+      "studentFacingActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "rubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+      "sourceMappedVariants": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "commit": "c87417c7c003057b68e8879c205ca1f67b8f5f09"
+    },
+    "fractionalSourceVisuals": {
+      "status": "RICH_V2_AUTHORED_STAGE_D_RENDERING_UNVERIFIED",
+      "sourceItems": [
+        "01.pdf:2-5:EX46",
+        "01.pdf:2-5:EX51"
+      ],
+      "renderType": "NumberLine",
+      "visualCountAdded": 2,
+      "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u02-l05-ar.rich-lesson-v2.json",
+      "codeCommit": "167c5180516be6ec37c97eb602dbaf37d47df7e6",
+      "targetedTests": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "testCommit": "44ea454733be0a27eecb5ac3f5ae7b7d8ea44ded",
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "existingActivitySourceRepairs": {
+      "status": "SOURCE_SPECIFIC_ARABIC_PROMPTS_PREPARED_TEACHER_RUNTIME_NOT_VERIFIED",
+      "cases": [
+        35,
+        40,
+        42,
+        56,
+        62,
+        63
+      ],
+      "studentFacingArtifact": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "rubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+      "teacherBank": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-teacher-reviewed-extension-bank.json",
+      "lastTestCommit": "60974e02d711d9f07c6447904bdc3dbec73d137c",
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "reciprocalDenominatorCoreContent": {
+      "status": "AUTHORING_FIXED_IN_EXISTING_RICHV2_AND_ARABIC_LESSON_PACK",
+      "source": "01.pdf printed 106 / PDF 117 exercise 42",
+      "skill": "4/|p|+12=14, nonzero denominator and two roots",
+      "originalExample": "6/|x-1|+2=5, x != 1, solutions -1 and 3",
+      "richV2Commit": "dae1c68929a7fe3a28047aa952c3d0a7f99193ed",
+      "packCommit": "2ee693fd8de98774d826b08b4a8d1ea48f7de8a9",
+      "focusedRegression": "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "regressionCommit": "973b3da68937452266a50bb8d22dee79d044533d",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "sourceEvidenceLedgerCommit": "cdacc006b4086046fc44484004c8f6603b3aecbb",
+      "atomicCoverageCommit": "64028e19371db1daf86b0c41b93a4f744462cec7",
+      "decision": "A_B_SPECIFIC_SKILL_REPAIRED_C_STAGED_TESTS_NOT_RUN"
+    },
+    "sourceGraphVisuals": {
+      "status": "TWELVE_AUTHORED_SOURCE_COORDINATE_SVG_PREVIEWS_RUNTIME_NOT_TESTED",
+      "ids": [
+        11,
+        12,
+        33,
+        34,
+        35,
+        36,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "studentActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "exactFractions": [
+        "٤/٣",
+        "−٤/٣",
+        "٢/٣"
+      ],
+      "singleRootCase": "EX35",
+      "teacherReview": true,
+      "svgCommit": "0e2aea6c9f3033c1bbc3bb00852b11fcc38d91d7",
+      "testCommit": "9f026fc84d171d1a3899ee2952564819bfc75b00",
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "graphToEquationStandaloneTeacherExport": {
+      "status": "AUTHORED_LOCAL_JSON_NOT_PLATFORM_SUBMITTED_OR_GRADED",
+      "sourceExerciseCount": 12,
+      "standaloneFromCoolDown": true,
+      "studentGraphActivity": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "teacherReviewRequired": true,
+      "codeCommit": "4a8d4892a7488691853cc6bcd625817fe27c8755",
+      "preparedRegressionCommit": "ba8bb3c38e2cf2d9f4225262ccac8e120079ac06",
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    "sourceGraphArabicPresentation": {
+      "status": "12_ORIGINAL_SOURCE_GRAPH_CASES_ARABIC_DIGIT_LABELS_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "file": "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u02-l05-absolute-value-number-line-ar.html",
+      "sourceOriginalCoordinatesPreserved": true,
+      "oneRootCase": 35,
+      "sourceFractionCases": [
+        50,
+        51
+      ],
+      "fixCommit": "f0558b49e506a323011d47edbb7c8a0a25a9121d",
+      "targetedTestsCommit": "c301f8c6e1c9c4979f75f8691f613c2383b90534",
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
+  },
+  "stageC": {
+    "status": "EIGHT_DEDICATED_FAMILIES_AND_FOCUSED_STAGE_D_TESTS_PREPARED_NOT_RUN",
+    "familyCount": 8,
+    "modifiedPaths": [
+      "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+    ],
+    "testSourcePaths": [
+      "tests/academic-uae-grade9-arabic-u02l05.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs"
+    ],
+    "testsRun": "WRITTEN_NOT_RUN",
+    "reviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u02l05-visual-teacher-rubric-spec.json",
+    "equivalentNumericAnswerFix": "decimal numeric equivalence including Arabic decimal separator and reordered two-solution pairs; test cases prepared not executed",
+    "additionalPreparedFamilies": [
+      "uae.g9.general.u02.l05.composite_evaluation",
+      "uae.g9.general.u02.l05.outer_coefficient_no_solution",
+      "uae.g9.general.u02.l05.context_tolerance_endpoints"
+    ],
+    "preparedAdditionalRegression": "4f22c00936098fac3c12ba26eed752f7e97843b2",
+    "regressionAssertionCorrection": {
+      "issue": "Existing Node Stage D acceptance assertion expected 7 families while lesson contract and dedicated generator have 8, including context_tolerance_endpoints.",
+      "fixCommit": "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f",
+      "status": "PREPARED_NOT_RUN"
+    },
+    "extendedTwoRootFamilyCommit": "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
+    "extendedTwoRootStageDTestsWrittenCommit": "8e6bc1ab37099a3a1658622862fab95253acc8fc",
+    "compositeFamilyVariantsCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
+    "sourceRoutingRegressionTestsWritten": "f1fbcc5c675487fa4e3310828ae9e276794a01a3",
+    "lastCompositeFamilyExtensionCommit": "58fbedac6f9499805beca96caf2b48d9626606df",
+    "lastSourceRegressionFixtureCommit": "1310e8fdf416b5993e71e134724420d798e41f90",
+    "lastPreparedSourceMathAndTeacherTaskRegressionCommit": "5e3ea3b2bd29c19fa6f93a70e8cabf06d44c9b34",
+    "lastGraphVariantsStageDTestCommit": "d99d381abdad93e06cf42775718cf13b071cc6e0",
+    "reciprocalAbsoluteDenominatorVariant": {
+      "strategy": "EXTEND_EXISTING_TWO_SOLUTION_FAMILY",
+      "family": "uae.g9.general.u02.l05.two_solutions",
+      "generatedEquation": "a*r/|a*x-a*m|+a=a+1",
+      "domain": "x != m",
+      "sourceExercise": "01.pdf:2-5:EX42",
+      "generatorArtifact": "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "codeCommit": "0f833b70e4f101cc5212d0b34d830124a51d13f2",
+      "focusedTest": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs",
+      "testCommit": "3d6b92ed0e2d528dc0b7e69851953d9d0302bb18",
+      "testsRun": "WRITTEN_NOT_RUN",
+      "teacherReview": "OPEN_REASONING_REMAINS_TEACHER_REVIEW_REQUIRED"
+    },
+    "rtlAnswerNormalizationRepair": {
+      "description": "strip only Unicode bidirectional format marks U+200E/U+200F/U+061C in normalized numeric Arabic responses",
+      "codePath": "src/Edulytics.Services/Mathematics/UaeG9AbsoluteValueEquationQuestions.cs",
+      "commit": "37ed67a41cd699632fc398e82e3a1247333dbaaa",
+      "focusedRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG9GeneralU02L05AbsoluteValueEquationTests.cs",
+      "regressionCommit": "8699db69ffc56911658071622a5e50337a85fd40",
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageDExecution": "NOT_RUN",
+  "neonTouched": false,
+  "githubBranch": "fix/g9-general-full-year-scope-86",
+  "issuedUtc": "2026-11-19T19:35:00+01:00",
+  "note": "Incomplete A-C checkpoint is deliberately not a completed lesson; no next-lesson transition.",
+  "localSourceVerification": {
+    "device": "Our-CS",
+    "root": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_09",
+    "scope": "Student Books verified on device; teacher guide PDF not found in listed Grade_09 PDF files",
+    "studentPdf": "01_Student_Books\\01.pdf",
+    "sourcePrintedPages": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "sourcePdfPages": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ],
+    "directLocalMontageReviewed": true,
+    "academicLessonObjectives": [
+      "evaluate absolute value of a substituted algebraic expression",
+      "solve absolute value equations with zero, one or two solutions",
+      "represent solutions as real points on number line",
+      "write a distance equation from midpoint and radius",
+      "interpret context and explain impossibility of negative absolute distances"
+    ],
+    "comparedAgainst": "Existing canonical Arabic lesson pack + dedicated practice families + RichV2 + original number-line lab"
+  },
+  "executionUpdate": {
+    "commits": [
+      "4c37865c5ebe5ee6d87dd7b9f936340d7e77337c",
+      "24770e6f024a885206d8e0dc04a92c3d7ea82af9",
+      "10a3f1d7d18cbaafb4939a741f2264d120bcb28d",
+      "c2388a9aed1280d5c830aa7dff38af4da220af3c",
+      "ef7772b75fac792bab8ee5ff78174b37dc702105",
+      "5aafa633b165d5f49bdda4e181232abdcd17b432",
+      "4bce679dae6aae589e71c0e8875a5a188713e43f",
+      "8e33ca465950a86ce9c030f09411bb50aeb34fa5",
+      "71fe88d638867b9e3ddb1560aa877868eac6a494",
+      "a65a0f0493a70661be2b62c09d3f7a94746cf3dc",
+      "4f22c00936098fac3c12ba26eed752f7e97843b2",
+      "000b7247ecc73987855da3731c6459c3b1e29a09",
+      "e1449d9fbaad6d5a5f6c35c3f1299368bc92cb4f",
+      "7fa855a19b5cd2026505638356635d7da628316a",
+      "166fa9da0805ecd7640a471bdf7c6e62e3b68aa3",
+      "8e6bc1ab37099a3a1658622862fab95253acc8fc",
+      "b8f1b85b770c30b9f576f25518a9a80d91406a76",
+      "c1df27d371393b408eb33beeb5f6a25df25e8d2c",
+      "cd09983228d21452990aef236b0e135f2ea7c323",
+      "e7a15da3466c1d9e11292a2be0f10f8c059dd9ac",
+      "763a38d13aa9264ea8595c943ac61232d2350a29",
+      "58fbedac6f9499805beca96caf2b48d9626606df",
+      "e77f06b6d51bcfeb6d986d8e840b83aa17eddb60"
+    ],
+    "assertion": "Changes committed; unit progression not authorized by incomplete checkpoint; no tests run."
+  },
+  "lastSourceMathAuditCommit": "bec804bc17f307e24912d3fc46c34fd541e0a898",
+  "sourceIndexOwnerDecision": {
+    "ownerApprovedTarget": "13_UNITS_82_LESSONS",
+    "scope": "OWNER_APPROVED_WORKING_SYLLABUS",
+    "historicalEditionCollisionsStillDocumented": true,
+    "sourceLockSemanticVerificationClaim": false,
+    "rule": "Global comparative source dedup remains separate from lesson-specific A-C authoring; do not claim full-source audit was completed"
+  },
+  "closedUtc": "2026-11-20T00:44:08.527Z",
+  "closedScope": "LESSON_SPECIFIC_STAGE_A_B_C_AUTHORING_ONLY_NOT_STAGE_D_PASS_OR_82_LESSON_COMPLETE",
+  "nextLessonCode": "01.pdf:2-6"
+}

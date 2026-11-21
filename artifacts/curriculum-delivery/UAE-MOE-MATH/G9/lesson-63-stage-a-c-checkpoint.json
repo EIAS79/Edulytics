@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 63,
+  "unitOrdinal": 10,
+  "lessonOrdinalInUnit": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:10:04:DEDUCTIVE-REASONING",
+  "lessonTitleAr": "التبرير الاستنتاجي",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "02-1.pdf",
+    "edition": "2019-2020 General student book",
+    "sha256": "2932a5503818efd2e606bcc478f50978582330e731754e8e30229568ae56a85b",
+    "printedPages": [
+      587,
+      588,
+      589,
+      590,
+      591,
+      592,
+      593,
+      594,
+      595
+    ],
+    "pdfPages": [
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_PAGE_VISUAL_REVIEW",
+    "scope": "Textbook law of detachment/syllogism examples and geometric reasoning classes reviewed; full per-item and runtime parity not verified"
+  },
+  "stageA": {
+    "status": "SOURCE_BOOK_DEDUCTIVE_LAWS_AND_INVALID_INFERENCE_IDENTIFIED",
+    "skills": [
+      "law of detachment",
+      "law of syllogism",
+      "affirming consequent versus valid inference",
+      "justifying geometric logical steps"
+    ],
+    "openProofsTeacherReview": true
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_AND_SIX_OPEN_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u10-l04-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u10-l04-deductive-reasoning-ar.html"
+    ],
+    "coolDownQuestions": 6,
+    "teacherReviewRequiredFor": [
+      "deductive proof and syllogism",
+      "logical error analysis",
+      "geometric angle justification"
+    ],
+    "studentRecord": "LOCAL_ONLY_NOT_AUTHENTICATED"
+  },
+  "stageC": {
+    "status": "REUSE_EXACT_CONDITIONAL_TRUTH_NUMERIC_PREREQUISITE_WRITTEN_TESTS_ONLY",
+    "family": "uae.g9.general.u10.l03.conditional_truth_tables",
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "testPath": "tests/academic-uae-grade9-arabic-u10l04.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "SOURCE_ARABIC_AUTHORING_ONLY_NO_STAGED_RUNTIME_TESTS"
+}

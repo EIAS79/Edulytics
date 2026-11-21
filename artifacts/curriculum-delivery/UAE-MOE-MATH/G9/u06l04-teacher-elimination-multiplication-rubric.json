@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:06:04:ELIMINATION-MULTIPLICATION",
+  "source": "01.pdf General printed331–337 (PDF342–348)",
+  "language": "ar",
+  "rtl": true,
+  "autoGrade": false,
+  "review": "TEACHER_REVIEW_REQUIRED",
+  "criteria": [
+    "multiply both sides and every term by a common nonzero factor",
+    "select a useful common multiple of coefficients",
+    "perform elimination then find ordered pair",
+    "check both original equations",
+    "handle contextual units and dependent/inconsistent systems"
+  ],
+  "answers": [
+    {
+      "n": 1,
+      "expected": "(٢،−٣)",
+      "check": "−٢(٢س+٣ص=−٥) ⇒ −٤س−٦ص=١٠; add first ⇒ س=٢"
+    },
+    {
+      "n": 2,
+      "expected": "(١،٢)",
+      "check": "٣×first + (−٢)×second ⇒ ٦س=٦"
+    },
+    {
+      "n": 3,
+      "expected": "سرعة الطائرة ١١٧ كم/س وسرعة الرياح ١٣ كم/س",
+      "check": "٤(١١٧+١٣)=٥٢٠; ٥(١١٧−١٣)=٥٢٠"
+    },
+    {
+      "n": 4,
+      "expected": "(−٣،١)",
+      "check": "٢×second ⇒ ٢س+١٠ص=٤; subtract first ⇒ ٣ص=٣"
+    },
+    {
+      "n": 5,
+      "expected": "(٣،٢)",
+      "check": "٣×٣+٤×٢=١٧; ٢×٣−٣×٢=٠"
+    },
+    {
+      "n": 6,
+      "expected": "حلول غير منتهية",
+      "check": "٢(س+٢ص=٤) is ٢س+٤ص=٨"
+    },
+    {
+      "n": 7,
+      "expected": "∅",
+      "check": "٢(س+٢ص=٥) gives ٢س+٤ص=١٠, contradictory to ٨"
+    },
+    {
+      "n": 8,
+      "expected": "(٣،٣)",
+      "check": "٣(س+٢ص=٩)−(٣س+ص=١٢) ⇒ ٥ص=١٥"
+    }
+  ],
+  "coolDownAnswers": [
+    {
+      "n": 1,
+      "expected": "(٣،٢)",
+      "check": "٦س=١٨"
+    },
+    {
+      "n": 2,
+      "expected": "∅",
+      "check": "٣×second ⇒ ٣س+٦ص=١٢ contradicts ٩"
+    },
+    {
+      "n": 3,
+      "expected": "حلول غير منتهية",
+      "check": "example pairs (٣،١),(٤،٣); second is twice first"
+    }
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageDStatus": "NOT_RUN"
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 9,
+  "pathway": "General",
+  "language": "ar",
+  "rtl": true,
+  "lessonOrdinal": 65,
+  "unitOrdinal": 11,
+  "lessonOrdinalInUnit": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:11:02:ALGEBRAIC-PROOF",
+  "lessonTitleAr": "البرهان الجبري",
+  "ownerApprovedCatalog": {
+    "units": 13,
+    "lessons": 82
+  },
+  "source": {
+    "file": "03-1.pdf",
+    "sha256": "eab188122aacdcb6a454731c72f33e62dc46b4442b690de92926b03dc8a34b10",
+    "printedPages": [
+      616,
+      623
+    ],
+    "pdfPages": [
+      32,
+      39
+    ],
+    "method": "DIRECT_LOCAL_SCANNED_BOOK_PAGE_CONTACT_SHEET",
+    "reviewScope": "Main textbook equality properties and proof examples reviewed; no item-level runtime claim"
+  },
+  "stageA": {
+    "status": "BOOK_PROPERTIES_EQUALITY_AND_FORMAL_PROOF_REVIEWED",
+    "skills": [
+      "algebraic proof with two columns",
+      "addition subtraction multiplication division equality",
+      "reflection symmetry transitivity substitution",
+      "geometry measure equality"
+    ]
+  },
+  "stageB": {
+    "status": "ARABIC_PACK_RICHV2_SIX_QUESTION_COOLDOWN_PREPARED",
+    "paths": [
+      "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u11-l02-ar.rich-lesson-v2.json",
+      "src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/u11-l02-algebraic-proof-ar.html"
+    ],
+    "teacherReviewRequiredFor": [
+      "proof statements and reasons",
+      "geometry equality justification"
+    ],
+    "coolDownQuestions": 6,
+    "submission": "LOCAL_ONLY_NOT_GRADED"
+  },
+  "stageC": {
+    "status": "REUSE_LINEAR_EQUATION_NUMERIC_FAMILIES_TESTS_PREPARED_NOT_RUN",
+    "families": [
+      "algebra.linear.ax_plus_b_equals_c",
+      "algebra.linear.variables_both_sides"
+    ],
+    "mapping": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "testPath": "tests/academic-uae-grade9-arabic-u11l02.test.cjs",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "runtimeVerified": false
+  },
+  "blockingGaps": [],
+  "closeDecision": "READY_FOR_STAGE_D",
+  "closed": true,
+  "advanceToNextLesson": true,
+  "stageD": "NOT_RUN",
+  "productionTouched": false,
+  "closedScope": "SOURCE_BASED_A_B_C_AUTHORING_NOT_STAGE_D_PASS"
+}

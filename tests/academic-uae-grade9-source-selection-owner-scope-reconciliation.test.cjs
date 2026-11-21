@@ -1,0 +1,76 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname,'..');
+const b = 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/';
+const read = name => JSON.parse(fs.readFileSync(path.join(root,b,name),'utf8'));
+
+test('A-C owner-selected catalog is exactly 13 units and 82 authored lessons',()=>{
+  const s=read('source-selection.json');
+  const index=read('grade9-82-target-index.json');
+  const handoff=fs.readFileSync(path.join(root,b+'grade9-a-c-handoff.md'),'utf8');
+  assert.deepEqual(s.ownerTarget,{unitCount:13,lessonCount:82});
+  assert.equal(index.expectedUnits,13);
+  assert.equal(index.expectedLessons,82);
+  assert.equal(index.records.length,82);
+  assert.ok(handoff.includes('Owner-selected target:** 13 units, 82 numbered lessons'));
+  assert.ok(s.ownerTargetProvenance.includes('grade9-a-c-handoff.md'));
+  assert.ok(s.ownerTargetProvenance.includes('not certified official 2026-2027'));
+});
+test('Raw source TOC 14/86 stays traceable, and earlier mislabeled owner metadata remains auditable',()=>{
+  const s=read('source-selection.json');
+  const raw=read('source-unit-index.json');
+  const rows=read('source-index.json');
+  assert.equal(s.unitCountRaw,14);
+  assert.equal(s.lessonCountRaw,86);
+  assert.equal(raw.unitCountRaw,14);
+  assert.equal(raw.lessonCountRaw,86);
+  assert.equal(rows.sourceLessonIndex.length,86);
+  assert.equal(rows.rawSourceLessons,86);
+  assert.deepEqual(s.ownerTargetHistoricalRawCountMisclassification,{unitCount:14,lessonCount:86});
+  assert.equal(s.sourceSnapshotId,read('grade9-stage-d-execution-ledger.json').sourceSnapshotId);
+  assert.deepEqual(s.approvedSourceBooks,['01.pdf','02-1.pdf','03-1.pdf']);
+  assert.deepEqual(s.referenceOnlyBooks,['02.pdf','03.pdf']);
+});
+test('Changing metadata cannot silently certify source dedup, unique source count or publication',()=>{
+  const s=read('source-selection.json');
+  const index=read('grade9-82-target-index.json');
+  const stage=read('grade9-stage-d-execution-ledger.json');
+  const rv=read('grade9-release-validation.json');
+  const lesson=read('lesson-1-stage-d-checkpoint.json');
+  assert.equal(s.unitCountUnique,null);
+  assert.equal(s.lessonCountUnique,null);
+  assert.equal(s.sourceLock,'TOC_EXTRACTED_SEMANTIC_CROSSWALK_PENDING');
+  assert.equal(s.semanticDedupGate,'PENDING_NOT_LOCKED');
+  assert.equal(index.SOURCE_INDEX_COMPLETE,false);
+  assert.equal(index.records.filter(x=>x.ElementCoverage==='FULL_SOURCE_ELEMENT_1_TO_1_VERIFIED').length,0);
+  assert.equal(stage.sourceSemanticLock.rawLessonAtomicAuditPassed,0);
+  assert.equal(stage.sourceSemanticLock.targetLessonElementParityPassed,0);
+  assert.equal(stage.firstIncompleteLessonOrdinal,1);
+  assert.equal(stage.stageDStatus,'D_PENDING_A_C_EVIDENCE');
+  assert.equal(stage.releaseDecision,'NO_GO_SOURCE_100');
+  assert.equal(rv.sourceScopeMetadataMismatchRemediated,true);
+  assert.equal(rv.semanticDedupComplete,false);
+  assert.equal(rv.sourceIndexComplete,false);
+  assert.equal(rv.decision,'NO_GO_SOURCE_100');
+  assert.deepEqual(rv.sourceSelectionCurrentOwnerTarget,{unitCount:13,lessonCount:82});
+  assert.deepEqual(rv.sourceSelectionRawSourceCounts,{unitCount:14,lessonCount:86});
+  assert.equal(rv.productionWrites,0);
+  assert.equal(rv.deployed,false);
+  assert.equal(lesson.dStatus,'D_PENDING');
+  assert.equal(lesson.sourceElementCount,null);
+});
+test('Four modern Unit7 supplementary raw lessons are retained without being promoted to verified matches',()=>{
+  const raw=read('source-index.json');
+  const s=read('source-selection.json');
+  const matching=raw.sourceLessonIndex.filter(x=>x.sourceFile==='01.pdf' &&
+      ['7-1','7-2','7-3','7-4'].includes(x.sourceLessonCode));
+  assert.equal(matching.length,4);
+  assert.equal(new Set(matching.map(x=>x.sourceLessonCode)).size,4);
+  assert.equal(s.semanticDedupGate,'PENDING_NOT_LOCKED');
+  const u7=fs.readFileSync(path.join(root,b+'grade9-unit7-edition-resolution.md'),'utf8');
+  for(const suffix of ['7-1','7-2','7-3','7-4']) assert.ok(u7.includes('01.pdf:'+suffix));
+  assert.ok(u7.includes('not a proven duplicate'));
+});

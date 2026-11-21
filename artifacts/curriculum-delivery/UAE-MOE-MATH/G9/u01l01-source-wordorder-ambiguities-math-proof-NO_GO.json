@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "ownerLessonOrdinal": 1,
+  "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+  "sourceSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+  "sourcePrintedPage": 7,
+  "sourcePdfPage1Based": 18,
+  "directScannedVisualInspected": true,
+  "sourceQuestionProofs": [
+    {
+      "item": "U01L01-Q07",
+      "independentTaskId": "G9-U01L01-T07",
+      "observedSourceSemanticProblem": "Arabic comparative phrase combines a quotient, a value less than one, and an offset of seven; precedence and intended equation are not explicitly disambiguated.",
+      "candidateReadingA": {
+        "description": "Quotient is seven smaller than one",
+        "math": "r/7 = 1 - 7",
+        "solution": -42
+      },
+      "candidateReadingB": {
+        "description": "Quotient minus one equals seven",
+        "math": "r/7 - 1 = 7",
+        "solution": 56
+      },
+      "publisherOfficialIntendedExpressionKnown": false,
+      "independentAnalogResolution": "Two explicit separate questions, one expression and one equality; student must distinguish types.",
+      "independentAnalogEquationMath": "r/5 = 2 - 3",
+      "independentAnalogSolution": -5,
+      "automaticSourceAnswerSelectionAllowed": false,
+      "sourceVisualReinspection": {
+        "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+        "sourcePrintedPage": 7,
+        "sourcePdfPage1Based": 18,
+        "sourceQuestionNumber": 7,
+        "visualPromptParaphrase": "ناتج قسمة المتغير على سبعة يُقارَن بالعدد واحد مع بيان الفرق بمقدار سبعة؛ موضع المقارنة لا يُعطي تعبيرًا جبريًا غير ملتبس بلا مرجع الإجابة",
+        "literalComparativeReadingMath": "r / 7 = 1 - 7",
+        "literalComparativeImpliedSolution": -42,
+        "alternativeReadingMath": "r / 7 - 1 = 7",
+        "alternativeImpliedSolution": 56,
+        "imageSource": "OWNER_LOCAL_SCANNED_PAGE_NO_UPLOAD",
+        "sourceImageInspected": true,
+        "sourceImageOriginalRightsProven": false,
+        "officialPublisherSolutionReviewed": false,
+        "automatedPublisherAnswerSelectionAllowed": false
+      }
+    },
+    {
+      "item": "U01L01-Q25",
+      "independentTaskId": "G9-U01L01-T25",
+      "observedSourceSemanticProblem": "The position of an addition following a verbal multiplication phrase does not expressly state grouping.",
+      "candidateReadingA": {
+        "description": "Three times variable, then plus sixteen",
+        "math": "3x + 16",
+        "atX2": 22
+      },
+      "candidateReadingB": {
+        "description": "Three times the sum of variable and sixteen",
+        "math": "3(x + 16)",
+        "atX2": 54
+      },
+      "publisherOfficialIntendedExpressionKnown": false,
+      "independentAnalogResolution": "Explicitly compares both groupings and asks learner to evaluate to reveal difference.",
+      "independentAnalogExpressions": [
+        "3x + 16",
+        "3(x + 16)"
+      ],
+      "automaticSourceAnswerSelectionAllowed": false,
+      "sourceVisualReinspection": {
+        "sourceFile": "Grade_09/01_Student_Books/01.pdf",
+        "sourcePrintedPage": 7,
+        "sourcePdfPage1Based": 18,
+        "sourceQuestionNumber": 25,
+        "visualPromptParaphrase": "يطلب التعبير عن ثلاثة مضروبة في عدد مع إضافة ستة عشر، ولا تظهر أقواس صريحة في النص المطبوع",
+        "candidateA": "3x + 16",
+        "candidateB": "3(x + 16)",
+        "candidateAAtX2": 22,
+        "candidateBAtX2": 54,
+        "imageSource": "OWNER_LOCAL_SCANNED_PAGE_NO_UPLOAD",
+        "sourceImageInspected": true,
+        "officialPublisherSolutionReviewed": false,
+        "groupingCertified": false
+      }
+    }
+  ],
+  "sourceQuestionLanguageCopiedIntoRuntime": false,
+  "teacherReviewRoute": "TEACHER_REVIEW_REQUIRED",
+  "sourceQuestionVerbatimTranscriptionCertified": false,
+  "fullSourceAtomicAuditPassed": false,
+  "targetEdulyticsLessonStageDClosed": false,
+  "sourceIndexComplete": false,
+  "productionPublishAllowed": false,
+  "releaseDecision": "NO_GO",
+  "ownerSourceReinspection20261121": {
+    "sourcePagesInspected": [
+      {
+        "printed": 7,
+        "pdfPage1Based": 18
+      }
+    ],
+    "sourcePdfPagePixelsAtInspect": [
+      1673,
+      2099
+    ],
+    "noSourceImageUploadedToGithub": true,
+    "sourceSnapshotSha256": "341c104a9d05bca7f02462ff87ea7a6787143bb1ef2a06f19e690e08f6ec6ade",
+    "independentlyAuthoredStudentAnalogsRemainUnchanged": true,
+    "bothAmbiguitiesRemainHumanReviewRequired": true
+  }
+}

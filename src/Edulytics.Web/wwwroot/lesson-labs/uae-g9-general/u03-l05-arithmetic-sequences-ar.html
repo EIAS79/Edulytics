@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics | التاسع العام | المتتابعات الحسابية على شكل دوال خطية</title>
+<style>
+:root{font-family:system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#132c45;background:#f1f5fa}
+*{box-sizing:border-box}body{margin:0}main{max-width:940px;margin:auto;padding:1.3rem}
+section{background:#fff;border:1px solid #d0dbe7;border-radius:12px;margin:1rem 0;padding:1rem}
+h1{font-size:1.6rem}h2{font-size:1.15rem}p,li{line-height:1.85}
+svg{width:100%;height:auto;direction:ltr;border:1px solid #bdcddd;border-radius:8px}
+.eq{direction:ltr;unicode-bidi:isolate;display:inline-block}
+textarea,input{font:inherit;border:1px solid #8297ad;border-radius:7px;padding:.5rem;width:100%;margin:.45rem 0 1rem}
+button{font:inherit;background:#124c78;color:white;padding:.65rem;border:0;border-radius:8px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #ab630d}
+</style></head>
+<body><main>
+<header><p>UAE-MOE-MATH · الصف التاسع العام · الوحدة الثالثة · الدرس ٣–٥</p>
+<h1>المتتابعات الحسابية على شكل دوال خطية</h1><p>كتاب الطالب المحلي 01.pdf، الصفحات المطبوعة ١٨٩–١٩٦.</p></header>
+<section><h2>من الحد الأول إلى قاعدة الحد النوني</h2>
+<p>إذا كان الحد الأول أ₁ والفرق المشترك د، فإن <bdi class="eq">أₙ=أ₁+(ن−١)د</bdi> وتصبح الدالة خطية <bdi class="eq">أₙ=د×ن+(أ₁−د)</bdi> عند ن=١،٢،٣،… فقط.</p>
+<p>مثال: ٣، ٥، ٧، ٩، … الفرق ٢، وقاعدة الحد النوني <bdi class="eq">أₙ=٢ن+١</bdi>.</p>
+<svg viewBox="0 0 720 360" role="img" aria-labelledby="scatterTitle scatterDesc">
+<title id="scatterTitle">أول أربعة حدود للمتتابعة كنقاط منفصلة</title>
+<desc id="scatterDesc">أربع نقاط منفصلة عند (١،٣)، (٢،٥)، (٣،٧)، (٤،٩). لا يوجد خط متصل بينها لأن ن رتبة طبيعية موجبة.</desc>
+<line x1="80" y1="312" x2="672" y2="312" stroke="#263d55" stroke-width="2"/>
+<line x1="80" y1="312" x2="80" y2="25" stroke="#263d55" stroke-width="2"/>
+<text x="675" y="335" font-size="18" text-anchor="end">ن</text>
+<text x="55" y="29" font-size="18">أₙ</text>
+<g><line x1="80" y1="308" x2="80" y2="316" stroke="#526b84"/><text x="80" y="340" font-size="16" text-anchor="middle">0</text></g><g><line x1="198" y1="308" x2="198" y2="316" stroke="#526b84"/><text x="198" y="340" font-size="16" text-anchor="middle">1</text></g><g><line x1="316" y1="308" x2="316" y2="316" stroke="#526b84"/><text x="316" y="340" font-size="16" text-anchor="middle">2</text></g><g><line x1="434" y1="308" x2="434" y2="316" stroke="#526b84"/><text x="434" y="340" font-size="16" text-anchor="middle">3</text></g><g><line x1="552" y1="308" x2="552" y2="316" stroke="#526b84"/><text x="552" y="340" font-size="16" text-anchor="middle">4</text></g>
+<g><line x1="74" y1="312" x2="86" y2="312" stroke="#526b84"/><text x="65" y="318" font-size="16" text-anchor="end">0</text></g><g><line x1="74" y1="285" x2="86" y2="285" stroke="#526b84"/><text x="65" y="291" font-size="16" text-anchor="end">2</text></g><g><line x1="74" y1="258" x2="86" y2="258" stroke="#526b84"/><text x="65" y="264" font-size="16" text-anchor="end">4</text></g><g><line x1="74" y1="231" x2="86" y2="231" stroke="#526b84"/><text x="65" y="237" font-size="16" text-anchor="end">6</text></g><g><line x1="74" y1="204" x2="86" y2="204" stroke="#526b84"/><text x="65" y="210" font-size="16" text-anchor="end">8</text></g><g><line x1="74" y1="177" x2="86" y2="177" stroke="#526b84"/><text x="65" y="183" font-size="16" text-anchor="end">10</text></g>
+<circle cx="198" cy="231" r="8" fill="#075c9a" stroke="white" stroke-width="2"/><circle cx="316" cy="177" r="8" fill="#075c9a" stroke="white" stroke-width="2"/><circle cx="434" cy="123" r="8" fill="#075c9a" stroke="white" stroke-width="2"/><circle cx="552" cy="69" r="8" fill="#075c9a" stroke="white" stroke-width="2"/>
+</svg>
+<p>العلامات الزرقاء تمثل حدود المتتابعة فقط. لا نصل بينها لأن إدخال رتب كسرية لا يصف حدود هذه المتتابعة.</p>
+</section>
+<section><h2>تدريب وتفسير المعلم</h2>
+<ol>
+<li><label for="seqQ1">أوجد الفرق المشترك في المتتابعة ٨، ٢، −٤، −١٠، … ووضح سبب كونه ثابتًا.</label><textarea id="seqQ1" rows="2"></textarea></li>
+<li><label for="seqQ2">اكتب قاعدة الحد النوني للمتتابعة ٣، ٥، ٧، ٩، … ثم احسب الحد السادس.</label><textarea id="seqQ2" rows="2"></textarea></li>
+<li><label for="seqQ3">اشرح لماذا يمثل الرسم أربع نقاط منفصلة لا خطًا متصلًا، ثم حدد إحداثيات النقاط.</label><textarea id="seqQ3" rows="2"></textarea></li>
+<li><label for="seqQ4">إذا أₙ=٤ن−١٦، فأوجد رتبة الحد الذي قيمته ٣٢ وتحقق من الرتبة.</label><textarea id="seqQ4" rows="2"></textarea></li>
+</ol></section>
+<section><h2>التقويم الختامي (Cool-down)</h2>
+<ol>
+<li><label for="seqQ5">حدد الفرق المشترك والحد الخامس للمتتابعة −١٢، −٨، −٤، ٠، …</label><textarea id="seqQ5" rows="2"></textarea></li>
+<li><label for="seqQ6">اكتب صيغة أₙ للمتتابعة ٨، ٢، −٤، −١٠، … وأوجد الحد السادس.</label><textarea id="seqQ6" rows="2"></textarea></li>
+<li><label for="seqQ7">هل ٢، ٤، ٨، ١٦ متتابعة حسابية؟ برر بفروق الحدود.</label><textarea id="seqQ7" rows="2"></textarea></li>
+<li><label for="seqQ8">يُزاد رصيد ادخار ٠٫٤٢ درهم أسبوعيًا، ويبدأ بـ٠٫٤٢ درهم للأسبوع الأول. اكتب قاعدة المبلغ في الأسبوع ن واحسب الأسبوع الخامس.</label><textarea id="seqQ8" rows="2"></textarea></li>
+</ol>
+<p>الرسوم والتبريرات والإجابات الكتابية تحتاج مراجعة المعلم؛ لا يجري تصحيح أو إرسال تلقائي.</p>
+<button type="button" id="prepareTeacher">تجهيز إجابات المعلم</button><p id="status" role="status" aria-live="polite"></p>
+<label for="teacherExport">سجل المراجعة المحلي</label><textarea id="teacherExport" rows="9" readonly></textarea>
+</section>
+<footer><p>محتوى تعليمي أصلي للمهارة، مرتبط بكتاب الطالب الإماراتي؛ العرض والأنشطة عربية RTL.</p></footer>
+</main>
+<script>
+'use strict';
+document.getElementById('prepareTeacher').addEventListener('click',()=>{
+ const answers=Array.from({length:8},(_,i)=>({question:i+1,response:document.getElementById('seqQ'+(i+1)).value.trim(),review:'TEACHER_REVIEW_REQUIRED'})).filter(x=>x.response);
+ const status=document.getElementById('status');
+ if(!answers.length){status.textContent='اكتب إجابة واحدة على الأقل.';return}
+ document.getElementById('teacherExport').value=JSON.stringify({lesson:'UAE-MOE-MATH/G9/General/3-5',graded:false,submitted:false,review:'TEACHER_REVIEW_REQUIRED',answers},null,2);
+ status.textContent='تم تجهيز الإجابات محليًا. انسخ السجل للمعلم؛ لم تُرسل البيانات ولم تُحسب درجة.';
+});
+</script></body></html>
