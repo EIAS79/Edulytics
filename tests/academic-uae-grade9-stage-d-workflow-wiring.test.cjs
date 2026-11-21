@@ -10,9 +10,15 @@ test('Grade 9 Stage D path filters cover original lesson HTML, content, native a
  'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**',
  'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**',
  'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs',
- 'tests/academic-uae-grade9*.test.cjs'
+ 'tests/academic-uae-grade9*.test.cjs',
+ 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
  ];
- for(const glob of globs)assert.equal(workflow.split(glob).length-1,2,glob);
+ const pushPaths=workflow.split('  push:')[1].split('  pull_request:')[0];
+ const pullPaths=workflow.split('  pull_request:')[1].split('  workflow_dispatch:')[0];
+ for(const glob of globs){
+  assert.ok(pushPaths.includes("'"+glob+"'"),'push '+glob);
+  assert.ok(pullPaths.includes("'"+glob+"'"),'PR '+glob);
+ }
  assert.equal(workflow.split('src/Edulytics.Core/Curriculum/LessonContent/**').length-1,1);
  assert.match(workflow,/pull_request:/);assert.match(workflow,/push:/);
 });
@@ -21,6 +27,8 @@ test('Stage D concurrency cancels stale same-event runs, while source gate and z
  assert.ok(workflow.includes('github.event.pull_request.number || github.ref'));
  assert.ok(workflow.includes('cancel-in-progress: true'));
  assert.ok(workflow.includes('node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs'));
+ assert.ok(workflow.includes('python3 tools/curriculum/uae_g9_stage_d_semantic_gate.py --json'));
+ assert.ok(workflow.includes('grade9-python-source-parity'));
  assert.ok(workflow.includes('dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj'));
  for(const x of ['NO_G9_TRX','ZERO_G9_TESTS','FAILED_G9_TESTS'])assert.ok(workflow.includes(x));
 });

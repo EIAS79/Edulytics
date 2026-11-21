@@ -85,3 +85,19 @@ test('U01L01 RichV2 now includes each visually observed reading and translation 
  assert.ok(example.Check.includes("\u0661\u0664\u2212\u0666\u0633"));
  assert.equal(6*4-14,10);
 });
+test('U01L01 RichV2 includes independent lesson launch context and operation vocabulary without reproducing source examples',()=>{
+ const l=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json').Lessons[0];
+ assert.ok(l.ExplanationParagraphs.length>=7);
+ assert.ok(l.KeyConcepts.length>=10);
+ assert.ok(l.WorkedExamples.length>=10);
+ assert.ok(l.Visuals.length>=4);
+ assert.ok(l.KeyConcepts.some(x=>x.Title==="\u0642\u0627\u0645\u0648\u0633 \u0644\u0641\u0638\u064a \u0644\u0644\u0639\u0645\u0644\u064a\u0627\u062a \u0627\u0644\u062c\u0628\u0631\u064a\u0629"));
+ assert.ok(l.WorkedExamples.some(x=>x.Title==="\u062a\u0645\u0647\u064a\u062f \u0631\u064a\u0627\u0636\u064a \u0628\u062a\u0643\u0644\u0641\u0629 \u062a\u0630\u0627\u0643\u0631"));
+ assert.ok(l.Visuals.some(x=>x.Title==="\u0645\u0641\u0631\u062f\u0627\u062a \u0627\u0644\u0639\u0645\u0644\u064a\u0627\u062a \u0627\u0644\u062c\u0628\u0631\u064a\u0629"&&x.Items.length>=6));
+ assert.ok(l.ExplanationParagraphs.some(x=>x.includes("\u0662\u0660\u0660\u0645+\u0663\u0660\u0660\u0628")));
+ assert.ok(l.ExplanationParagraphs.some(x=>x.includes("\u0662\u0660\u2212\u0646")));
+ const example=l.WorkedExamples.find(x=>x.Title==="\u062a\u0645\u0647\u064a\u062f \u0631\u064a\u0627\u0636\u064a \u0628\u062a\u0643\u0644\u0641\u0629 \u062a\u0630\u0627\u0643\u0631");
+ assert.ok(example.Answer.includes("\u0664\u0668 \u062f\u0631\u0647\u0645\u064b\u0627"));
+ assert.equal(8*6,48);
+ assert.equal(200*3+300*2,1200);
+});

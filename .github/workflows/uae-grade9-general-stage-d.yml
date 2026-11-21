@@ -6,6 +6,7 @@ on:
       - fix/g9-general-full-year-scope-86
     paths:
       - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
       - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
       - 'src/Edulytics.Core/Curriculum/LessonContent/**'
       - 'src/Edulytics.Core/Mathematics/**'
@@ -20,6 +21,7 @@ on:
     # that only modify shared math engines or other RichV2 lessons.
     paths:
       - '.github/workflows/uae-grade9-general-stage-d.yml'
+      - 'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
       - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**'
       - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-general-*'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-*'
@@ -66,6 +68,18 @@ jobs:
       - name: Strict source-index lock — fail closed until verified
         if: always()
         run: node --test tests/academic-uae-grade9-strict-source-index-gate.test.cjs 2>&1 | tee g9-source-gate.log
+      - name: Independent Python source-parity evidence gate
+        if: always()
+        run: |
+          set -o pipefail
+          python3 tools/curriculum/uae_g9_stage_d_semantic_gate.py --json | tee g9-python-source-parity.json
+      - name: Upload independent Python source-parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-python-source-parity
+          path: g9-python-source-parity.json
+          if-no-files-found: warn
       - name: Upload strict source gate evidence
         if: always()
         uses: actions/upload-artifact@v4

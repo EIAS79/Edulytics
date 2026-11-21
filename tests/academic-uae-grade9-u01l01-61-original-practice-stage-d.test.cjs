@@ -293,3 +293,31 @@ test('U01L01 source visual lesson corpus records 21 nonnumbered teaching element
  assert.equal(subset.sourceTotalAtomicElementDenominatorVerified,false);
  assert.equal(subset.fullSourceLessonAuditPassed,false);
 });
+test('U01L01 source Q7 and Q25 ambiguous word order is disambiguated for students but publisher intent remains unverified',()=>{
+ const records=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
+ const audit=read(base+'u01l01-61-source-visual-skill-audit.json');
+ assert.deepEqual(audit.requiresFurtherTextAmbiguityInspection,[7,25]);
+ assert.deepEqual(audit.studentAnalogsAddressSourceWordOrderExceptionsExplicitly,[7,25]);
+ assert.equal(audit.sourcePublisherDefinitiveIntendedExpressionKnownForExceptions,false);
+ for(const n of [7,25]){
+  assert.equal(records[n-1].wordingExceptionHandling,'ORIGINAL_AMBIGUOUS_SOURCE_PHRASE_DISAMBIGUATED_IN_EDULYTICS_ANALOG_NOT_PUBLISHER_INTENT_CERTIFIED');
+ }
+ assert.ok(records[6].studentPrompt.includes("\u0627\u0644\u062a\u0639\u0628\u064a\u0631 \u0648\u0627\u0644\u0645\u0639\u0627\u062f\u0644\u0629"));
+ assert.ok(records[6].teacherExpectedEvidence.includes("\u0631/\u0665\u2212\u0663"));
+ assert.ok(records[6].teacherExpectedEvidence.includes("\u0631/\u0665=\u0662\u2212\u0663"));
+ assert.ok(records[24].teacherExpectedEvidence.includes("\u0663\u0633+\u0661\u0666"));
+ assert.ok(records[24].teacherExpectedEvidence.includes("\u0663(\u0633+\u0661\u0666)"));
+ assert.equal(3*2+16,22);
+ assert.equal(3*(2+16),54);
+ assert.equal((2-3)*5,-5);
+});
+test('U01L01 source level requires improper fraction, tenths regrouping and decimal place alignment',()=>{
+ const records=read(base+'u01l01-original-61-parallel-skill-practice.json').records;
+ assert.ok(records[21].studentPrompt.includes("\u0644\u062b\u0644\u062b"));
+ assert.ok(records[54].teacherExpectedEvidence.includes("\u0662\u0661/\u0668"));
+ assert.ok(records[58].teacherExpectedEvidence.includes("\u0664\u0664\u066b\u0664\u0663"));
+ assert.ok(records[60].teacherExpectedEvidence.includes("\u0662\u0668\u066b\u0665\u0668"));
+ assert.ok(Math.abs(7/6*9/4-21/8)<1e-12);
+ assert.equal((1684+2759)/100,44.43);
+ assert.equal((4725-1867)/100,28.58);
+});
