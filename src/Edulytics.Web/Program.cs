@@ -415,7 +415,25 @@ if (g8ScopedRelease && (runStartupDataMaintenance || !readCanonicalJson))
     throw new InvalidOperationException(
         "Grade8 scoped replacement requires JSON canonical delivery and disabled global maintenance.");
 
-// Owner-approved Grade 4 replacement cannot be a silent no-op when production
+// Owner-approved Grade9 General Arabic first-party 0-to-82 scoped release.
+// This token never grants textbook-source literal parity or publisher rights.
+const string g9ScopedToken =
+    "CONFIRM_SEED_ONLY_UAE_GRADE9_GENERAL_ARABIC_82";
+var g9RequestedToken =
+    Environment.GetEnvironmentVariable("EDULYTICS_G9_SCOPED_RELEASE");
+var g9ScopedRelease = string.Equals(
+    g9RequestedToken, g9ScopedToken, StringComparison.Ordinal);
+if (!string.IsNullOrEmpty(g9RequestedToken) && !g9ScopedRelease)
+    throw new InvalidOperationException(
+        "Invalid Grade9 scoped release token.");
+if (g9ScopedRelease && (g6ScopedRelease || g7ScopedRelease || g8ScopedRelease))
+    throw new InvalidOperationException(
+        "Grade9 scoped release cannot be combined with any other grade release.");
+if (g9ScopedRelease && (runStartupDataMaintenance || !readCanonicalJson))
+    throw new InvalidOperationException(
+        "Grade9 scoped import requires JSON delivery and disabled global maintenance.");
+
+// // Owner-approved Grade 4 replacement cannot be a silent no-op when production
 // maintenance is disabled. The exact migration token is checked again inside
 // the pedagogical seeder, before any existing lesson/content can be removed.
 if (string.Equals(
@@ -479,6 +497,12 @@ using (var scope =
         var g8Seeder = scope.ServiceProvider.GetRequiredService<
             Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
         await g8Seeder.SeedOnlyApprovedUaeGrade8Async();
+    }
+    else if (g9ScopedRelease)
+    {
+        var g9Seeder = scope.ServiceProvider.GetRequiredService<
+            Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+        await g9Seeder.SeedOnlyApprovedUaeGrade9Async();
     }
     else if (runStartupDataMaintenance)
     {
