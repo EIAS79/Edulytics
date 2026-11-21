@@ -62,7 +62,9 @@
     "tests/academic-uae-grade9-u01l01-independent-teacher-oracles-stage-d.test.cjs",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-original-61-parallel-skill-practice.json",
     "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-source-wordorder-ambiguities-math-proof-NO_GO.json",
-    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json"
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G9/u01l01-61-source-visual-skill-audit.json",
+    "u01l01-q03-dual-squared-variable-source-repair-NO_GO.json",
+    "tests/academic-uae-grade9-u01l01-q03-dual-square-source-stage-d.test.cjs"
   ],
   "dStatus": "D_PENDING",
   "updatedAtUtc": "2026-11-21T04:18:11Z",
@@ -526,5 +528,20 @@
     "noMerge": true,
     "noDeploy": true,
     "productionWrites": 0
+  },
+  "stageD4Q03ExponentCorrection": {
+    "sourceFile": "01.pdf",
+    "sourcePrintedPage": 7,
+    "sourcePdfPage1Based": 18,
+    "sourceItem": "U01L01-Q03",
+    "sourceBothVariablesSquared": true,
+    "analoguePromptAndTeacherOracleRepaired": true,
+    "newHtmlSha256": "838abf8f17026c32d6ce304d70993086a87a01cd41ee968085ee48a80da113a6",
+    "record": "u01l01-q03-dual-squared-variable-source-repair-NO_GO.json",
+    "regressionTest": "tests/academic-uae-grade9-u01l01-q03-dual-square-source-stage-d.test.cjs",
+    "sourceElementDenominator": null,
+    "teacherReviewComplete": false,
+    "sourceSemanticParity": "UNKNOWN",
+    "releaseDecision": "NO_GO_SOURCE_100"
   }
 }
