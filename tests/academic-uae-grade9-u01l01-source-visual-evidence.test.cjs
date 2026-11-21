@@ -129,3 +129,26 @@ test('Direct U01L01 five-page source review records exact physical pages and ind
  assert.equal(source.all61ExercisesIndividuallyCompared,false);
  assert.equal(source.fullSourceAtomicAuditPassed,false);
 });
+
+test('U01L01 visual source Q07 Q25 ambiguity cannot be automatically certified',()=>{
+ const proof=read(base+'u01l01-source-wordorder-ambiguities-math-proof-NO_GO.json');
+ assert.equal(proof.sourcePrintedPage,7);
+ assert.equal(proof.sourcePdfPage1Based,18);
+ assert.equal(proof.ownerSourceReinspection20261121.noSourceImageUploadedToGithub,true);
+ const [q7,q25]=proof.sourceQuestionProofs;
+ assert.equal(q7.item,'U01L01-Q07');
+ assert.equal(q7.sourceVisualReinspection.sourceQuestionNumber,7);
+ assert.equal(q7.sourceVisualReinspection.officialPublisherSolutionReviewed,false);
+ assert.equal(q7.publisherOfficialIntendedExpressionKnown,false);
+ assert.equal(q7.automaticSourceAnswerSelectionAllowed,false);
+ assert.equal((1-7)*7,-42);
+ assert.equal((7+1)*7,56);
+ assert.equal(q25.item,'U01L01-Q25');
+ assert.equal(q25.sourceVisualReinspection.groupingCertified,false);
+ assert.equal(q25.publisherOfficialIntendedExpressionKnown,false);
+ assert.equal(q25.automaticSourceAnswerSelectionAllowed,false);
+ assert.equal(3*2+16,22);
+ assert.equal(3*(2+16),54);
+ assert.equal(proof.targetEdulyticsLessonStageDClosed,false);
+ assert.equal(proof.productionPublishAllowed,false);
+});
