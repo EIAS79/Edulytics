@@ -1360,19 +1360,26 @@ DELETE FROM "Schools";
         var primaryLoginClass = SelectLoginClass(
             classes,
             definition.PrimaryLoginLogicalLevel,
-            // UAE-G5 disposable CI must authenticate the General learner, not
-            // the alphabetically first Advanced class. Do not alter live/demo tenants.
-            definition.Key == "uae-primary" &&
+            // In disposable G5-G7 and G9 rehearsals the login student's
+            // adoption must be General, not the alphabetically first Advanced
+            // class. This exact CI/environment/database guard never modifies
+            // permanent demo or production school pathway selection.
+            (definition.Key == "uae-primary" ||
+             definition.Key == "uae-secondary") &&
             string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
                 "true", StringComparison.OrdinalIgnoreCase) &&
             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
                 "true", StringComparison.OrdinalIgnoreCase) &&
-            (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G5", StringComparison.Ordinal) ||
-             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G6", StringComparison.Ordinal) ||
-             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G7", StringComparison.Ordinal)) &&
+            ((definition.Key == "uae-primary" &&
+              (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G5", StringComparison.Ordinal) ||
+               string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G6", StringComparison.Ordinal) ||
+               string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G7", StringComparison.Ordinal))) ||
+             (definition.Key == "uae-secondary" &&
+              string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G9", StringComparison.Ordinal))) &&
             string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 "Staging", StringComparison.Ordinal) &&
             string.Equals(db.Database.GetDbConnection().Database,

@@ -64,7 +64,11 @@ def school_adoption():
     rows=sql(q).splitlines()
     assert len(rows)==1,"G9 only one exact student school adoption"
     adopt,level,key,culture,pathway=rows[0].split("|",4)
-    assert re.fullmatch(UUID,adopt) and level=="9" and culture=="ar" and pathway=="General"
+    if not (re.fullmatch(UUID,adopt) and level=="9" and culture=="ar" and pathway=="General"):
+        raise AssertionError(
+            f"G9_DISPOSABLE_ADOPTION_SCOPE_MISMATCH level={level!r} "
+            f"culture={culture!r} pathway={pathway!r}"
+        )
     return adopt,key
 
 def validate_html(page,code,title):
