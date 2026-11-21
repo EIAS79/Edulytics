@@ -48,7 +48,7 @@
   "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
   "tests": {
     "node": "LOCAL_372_PASS_0_FAIL_HOSTED_CI_QUEUED",
-    "dotnet": "LOCAL_FULL_17427_PASS_0_FAIL_0_SKIP_SCOPED_G9_74_PASS_HOSTED_CI_PENDING",
+    "dotnet": "LOCAL_REBUILT_FULL_17432_PASS_0_FAIL_0_SKIP_ARABIC_G9G7_11_PASS_HOSTED_CI_PENDING",
     "authenticatedE2E": "NOT_RUN_G9_ZERO_PRODUCTION_LESSONS",
     "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
     "neonReadOnlyLive": "2026_11_21_G9_GENERAL_0_LESSONS_0_NODES"
@@ -182,7 +182,19 @@
       "g9ScopedDotnetAfterQ35CheckedUtc": "2026-11-21T04:18:11Z",
       "g9PreparedNodeAfterQ35": "372_PASS_0_FAIL",
       "rawLessonSourceDenominator": null,
-      "u01l01SourceExplicitChildSubpartIds": 11
+      "u01l01SourceExplicitChildSubpartIds": 11,
+      "G9_ARABIC_PATHWAY_GUARD": {
+        "unitTestsPassed": 11,
+        "unitTestsFailed": 0,
+        "fullGuard": "NOT_VERIFIED",
+        "api": "NOT_RUN",
+        "dom": "NOT_RUN",
+        "missingArabicApprovedFixture": "NOT_RUN",
+        "evidence": "grade9-arabic-pathway-guard-evidence-NO_GO.json",
+        "fullNativeSuiteNewBuild": "17432_PASS_ZERO_FAIL_ZERO_SKIP",
+        "workFlowScopedPolicyFilter": "INCLUDED_G9_G7",
+        "hostedAcceptance": "NOT_PASSED"
+      }
     }
   },
   "pendingCandidateSha": "97e399bee1b898dc112d5b8a5c3942cc47fce598",

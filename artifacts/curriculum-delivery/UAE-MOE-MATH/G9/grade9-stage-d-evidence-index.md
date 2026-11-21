@@ -35,3 +35,5 @@ Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027
 - U01L01 preliminary source-element IDs: 61 numbered exercise containers + 21 known instructional elements by original printed pages 5-9, with additional 7 structural groups not double-counted. All atomic subparts/total denominator/teacher parity remain unverified; no D_VERIFIED status.
 
 - U01L01 printed p8/PDF p19 Q35 reading corrected: describe direct 3/4 fraction, never halve it. Repaired independent 3/5 of 50 = 30 analog; source example remains 3/4 of 28 = 21. Documented 11 lettered child items under Q34-Q37 numbered parents; not additive to exhaustive atomic count. Lesson D_PENDING, NO_GO.
+
+- Revised 21 Nov Grade9 Stage D Arabic pathway gate: shared Grade9 student/staff API selection now rejects unreadied and legacy English G9 General. Local .NET G9/G7 policy regression 11/11 PASS and Node prepared 372/372 PASS. Approved-G9 missing-Arabic HTTP fixture, DOM, 82 Arabic titles and tenant E2E NOT_RUN. Gate remains partial and release NO_GO. Evidence grade9-arabic-pathway-guard-evidence-NO_GO.json.

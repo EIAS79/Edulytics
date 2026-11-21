@@ -11,8 +11,11 @@ on:
       - 'src/Edulytics.Core/Curriculum/LessonContent/**'
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/LessonContentPolicy.cs'
+      - 'src/Edulytics.Services/LessonContent/LessonContentService.cs'
       - 'tests/academic-uae-grade9*.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs'
       - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
   pull_request:
     branches:
@@ -28,6 +31,7 @@ on:
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g9-general-*'
       - 'tests/academic-uae-grade9*.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs'
       - 'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**'
   workflow_dispatch:
 
@@ -104,7 +108,7 @@ jobs:
         run: |
           dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
           dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-restore
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --filter 'FullyQualifiedName~UaeG9' --logger 'console;verbosity=normal' --logger 'trx;LogFileName=g9-scoped.trx' --results-directory ./g9-test-results
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --filter 'FullyQualifiedName~UaeG9|FullyQualifiedName~UaeGrade9ArabicPathwayPolicyTests|FullyQualifiedName~UaeGrade7ArabicPathwayPolicyTests' --logger 'console;verbosity=normal' --logger 'trx;LogFileName=g9-scoped.trx' --results-directory ./g9-test-results
       - name: Fail closed if zero Grade 9 tests were executed
         run: |
           python3 - <<'PY'

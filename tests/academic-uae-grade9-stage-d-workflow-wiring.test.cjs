@@ -10,6 +10,7 @@ test('Grade 9 Stage D path filters cover original lesson HTML, content, native a
  'artifacts/curriculum-delivery/UAE-MOE-MATH/G9/**',
  'src/Edulytics.Web/wwwroot/lesson-labs/uae-g9-general/**',
  'tests/Edulytics.Tests/MathematicsIntelligence/UaeG9*.cs',
+ 'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs',
  'tests/academic-uae-grade9*.test.cjs',
  'tools/curriculum/uae_g9_stage_d_semantic_gate.py'
  ];
@@ -30,6 +31,21 @@ test('Stage D concurrency cancels stale same-event runs, while source gate and z
  assert.ok(workflow.includes('python3 tools/curriculum/uae_g9_stage_d_semantic_gate.py --json'));
  assert.ok(workflow.includes('grade9-python-source-parity'));
  assert.ok(workflow.includes('dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj'));
+ assert.ok(workflow.includes('FullyQualifiedName~UaeGrade9ArabicPathwayPolicyTests'));
+ assert.ok(workflow.includes('FullyQualifiedName~UaeGrade7ArabicPathwayPolicyTests'));
+ const push=workflow.split('  push:')[1].split('  pull_request:')[0];
+ const pr=workflow.split('  pull_request:')[1].split('  workflow_dispatch:')[0];
+ for(const file of [
+   'tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade9ArabicPathwayPolicyTests.cs'
+ ]) {
+   assert.ok(push.includes("'"+file+"'"));
+   assert.ok(pr.includes("'"+file+"'"));
+ }
+ for(const file of [
+   'src/Edulytics.Services/LessonContent/LessonContentPolicy.cs',
+   'src/Edulytics.Services/LessonContent/LessonContentService.cs'
+ ]) assert.ok(push.includes("'"+file+"'"));
+
  for(const x of ['NO_G9_TRX','ZERO_G9_TESTS','FAILED_G9_TESTS'])assert.ok(workflow.includes(x));
 });
 test('Grade 9 pull-request source gate does not inadvertently block unrelated shared-engine or other grade content changes',()=>{

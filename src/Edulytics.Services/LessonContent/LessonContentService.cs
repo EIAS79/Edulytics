@@ -167,6 +167,11 @@ public sealed class LessonContentService : ILessonContentService
                             context.FrameworkCode, x.Code) ||
                         LessonContentPolicy.IsUaeG7ArabicLesson(
                             context.FrameworkCode, x.Code))
+                    .Where(x =>
+                        !LessonContentPolicy.IsUaeGrade9GeneralScope(
+                            context.FrameworkCode, x.Code) ||
+                        LessonContentPolicy.IsUaeG9ArabicLesson(
+                            context.FrameworkCode, x.Code))
                     .OrderBy(x => x.SortOrder)
                     .Select(lesson =>
                     {
@@ -489,6 +494,10 @@ public sealed class LessonContentService : ILessonContentService
             (LessonContentPolicy.IsUaeGrade7GeneralScope(
                  context.FrameworkCode, lesson.Code) &&
              !LessonContentPolicy.IsUaeG7ArabicLesson(
+                 context.FrameworkCode, lesson.Code)) ||
+            (LessonContentPolicy.IsUaeGrade9GeneralScope(
+                 context.FrameworkCode, lesson.Code) &&
+             !LessonContentPolicy.IsUaeG9ArabicLesson(
                  context.FrameworkCode, lesson.Code)))
         {
             return LessonContentQueryResult<CanonicalLessonDetail>.Failure(
@@ -808,6 +817,13 @@ public sealed class LessonContentService : ILessonContentService
 
         var grade7Arabic = LessonContentPolicy.IsUaeG7ArabicLesson(
             frameworkCode, lessonCode);
+        // Never select G9 General draft/legacy English content as an Arabic
+        // academic lesson merely because the old record was Published.
+        if (LessonContentPolicy.IsUaeGrade9GeneralScope(frameworkCode, lessonCode) &&
+            !LessonContentPolicy.IsUaeG9ArabicLesson(frameworkCode, lessonCode))
+            return null;
+        var grade9Arabic = LessonContentPolicy.IsUaeG9ArabicLesson(
+            frameworkCode, lessonCode);
         // Never expose unconverted Grade8 General English-only legacy lessons.
         var grade8General = string.Equals(frameworkCode,
                 MathematicsCurriculumPackRegistry.UaeCode, StringComparison.Ordinal) &&
@@ -818,7 +834,8 @@ public sealed class LessonContentService : ILessonContentService
             return null;
         var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) ||
                                 grade2Arabic || grade3Arabic || grade4Arabic ||
-                                grade5Arabic || grade6Arabic || grade7Arabic || grade8General) &&
+                                grade5Arabic || grade6Arabic || grade7Arabic ||
+                                grade8General || grade9Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,

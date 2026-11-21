@@ -49,7 +49,8 @@
     "u01l01-61-source-visual-skill-audit.json",
     "tests/academic-uae-grade9-u01l01-time-duration-source-parity.test.cjs",
     "u01l01-preliminary-source-element-ids-NO_GO.json",
-    "u01l01-q35-source-wording-semantic-fix-NO_GO.json"
+    "u01l01-q35-source-wording-semantic-fix-NO_GO.json",
+    "grade9-arabic-pathway-guard-evidence-NO_GO.json"
   ],
   "dStatus": "D_PENDING",
   "updatedAtUtc": "2026-11-21T04:18:11Z",
@@ -92,5 +93,16 @@
     "g9DotnetScoped": 74,
     "fullSourceAtomicAudit": false,
     "authenticatedE2E": false
+  },
+  "sourceLanguage": "ar",
+  "curriculumFamily": "UAE_MOE_ARABIC",
+  "foreignFallbackRejected": "NOT_RUN",
+  "arabicLessonTitleVerified": "NOT_RUN",
+  "G9_ARABIC_PATHWAY_GUARD": {
+    "policyTests": "PASS_11",
+    "api": "NOT_RUN",
+    "dom": "NOT_RUN",
+    "fullGate": "PENDING",
+    "fullNativeBuildSuite": "17432_PASS"
   }
 }
