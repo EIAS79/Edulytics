@@ -62,5 +62,20 @@
     "stageDSemanticGateFailClosed": true,
     "localWorkflowWiringChecksPassed": 4,
     "hostedRunResult": "PENDING_NOT_PASSED"
+  },
+  "all82AuthoredIdentityPolicyRegression": {
+    "sourceOfLessonIdentities": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json",
+    "sourcePackLessonCount": 82,
+    "distinctLessonCount": 82,
+    "identityNegativeCasesAdded": 82,
+    "targetedG9AndG7DotnetTestsPassed": 93,
+    "targetedG9AndG7DotnetTestsFailed": 0,
+    "targetedG9AndG7DotnetTestsSkipped": 0,
+    "trxLocal": "g9-test-results/g9-arabic-pathway-all82.trx",
+    "checks": "current draft identities cannot be selected as student lesson, cannot fall back to en or unapproved ar",
+    "isOnlyPolicyLevelNotAuthenticatedApiOrDom": true,
+    "runAgainstUncommittedTestExpansionAfterSourceCommit": "cef19ac0abe5b6d2ba5fa455bae1a91893995caa",
+    "testedFinalReleaseCandidateSha": null,
+    "recordedAtUtc": "2026-11-21T04:58:38Z"
   }
 }

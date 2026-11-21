@@ -48,7 +48,7 @@
   "selectedSourceEdition": "MIXED_2019_2020_AND_2025_2026_UNRESOLVED",
   "tests": {
     "node": "LOCAL_372_PASS_0_FAIL_HOSTED_CI_QUEUED",
-    "dotnet": "LOCAL_REBUILT_FULL_17432_PASS_0_FAIL_0_SKIP_ARABIC_G9G7_11_PASS_HOSTED_CI_PENDING",
+    "dotnet": "LOCAL_REBUILT_FULL_17432_PASS_0_FAIL_0_SKIP_ARABIC_G9G7_93_PASS_HOSTED_CI_PENDING",
     "authenticatedE2E": "NOT_RUN_G9_ZERO_PRODUCTION_LESSONS",
     "arabicRtlVisual": "LOCAL_EDGE_STATIC_ACTIVITY_61_TASKS_AND_CUBE_MODEL_PASS_NOT_AUTHENTICATED",
     "neonReadOnlyLive": "2026_11_21_G9_GENERAL_0_LESSONS_0_NODES"
@@ -193,7 +193,12 @@
         "evidence": "grade9-arabic-pathway-guard-evidence-NO_GO.json",
         "fullNativeSuiteNewBuild": "17432_PASS_ZERO_FAIL_ZERO_SKIP",
         "workFlowScopedPolicyFilter": "INCLUDED_G9_G7",
-        "hostedAcceptance": "NOT_PASSED"
+        "hostedAcceptance": "NOT_PASSED",
+        "all82DraftIdentityPolicyTests": "93_PASS_0_FAIL_0_SKIP",
+        "all82DraftIdentityNegativeCases": 82,
+        "sourceStatus": "NO_GO_SOURCE_100",
+        "authenticatedApiDomStatus": "NOT_RUN",
+        "all82PolicyTrxEvidenceLocal": "g9-test-results/g9-arabic-pathway-all82.trx"
       }
     }
   },

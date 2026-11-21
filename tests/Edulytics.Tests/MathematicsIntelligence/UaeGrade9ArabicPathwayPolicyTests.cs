@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Lessons;
 using Edulytics.Services.LessonContent;
@@ -65,4 +66,58 @@ public sealed class UaeGrade9ArabicPathwayPolicyTests
             "PED:US-CCSS-MATH:G1:U01:L01",
             Content("en", "US English"), Content("ar", "Wrong Arabic"))?.CultureCode);
     }
+
+    public static IEnumerable<object[]> All82AuthoringGrade9Codes()
+    {
+        // The repository's authored scope is 82, NOT the 86 raw book entries.
+        // Locate the checked-in draft pack on both the local developer machine
+        // and an isolated CI agent without referencing production databases.
+        const string packPath = "src/Edulytics.Core/Curriculum/LessonContent/Packs/" +
+                                "uae-g9-general-ar-2025-student-u01l01.lesson-content-pack.json";
+        var startDirectories = new[] { Directory.GetCurrentDirectory(), AppContext.BaseDirectory };
+        string? source = null;
+        foreach (var start in startDirectories)
+        {
+            for (var dir = new DirectoryInfo(start); dir is not null; dir = dir.Parent)
+            {
+                var path = Path.Combine(dir.FullName, packPath);
+                if (File.Exists(path))
+                {
+                    source = path;
+                    break;
+                }
+            }
+            if (source is not null)
+                break;
+        }
+
+        if (source is null)
+            throw new InvalidOperationException("Required G9 82-lesson authoring pack not located");
+
+        using var json = JsonDocument.Parse(File.ReadAllText(source));
+        var lessons = json.RootElement.GetProperty("Lessons")
+            .EnumerateArray()
+            .Select(x => x.GetProperty("LessonCode").GetString()
+                ?? throw new InvalidOperationException("G9 LessonCode cannot be null"))
+            .ToArray();
+        if (lessons.Length != 82 || lessons.Distinct(StringComparer.Ordinal).Count() != 82)
+            throw new InvalidOperationException("G9 authored 82-lesson identity baseline changed unexpectedly");
+        foreach (var lesson in lessons)
+            yield return new object[] { lesson };
+    }
+
+    [Theory]
+    [MemberData(nameof(All82AuthoringGrade9Codes))]
+    public void EveryUnapprovedG9AuthoredIdentityRejectsStudentFallback(
+        string lessonCode)
+    {
+        Assert.True(LessonContentPolicy.IsUaeGrade9GeneralScope(Framework, lessonCode));
+        Assert.False(LessonContentPolicy.IsUaeG9ArabicLesson(Framework, lessonCode));
+        Assert.False(LessonContentPolicy.CanExposeStudentLesson(Framework, false, lessonCode));
+        Assert.False(LessonContentPolicy.CanExposeStudentLesson(Framework, true, lessonCode));
+        Assert.Null(Choose(Framework, lessonCode,
+            Content("en", "Legacy English content"),
+            Content("ar", "Unverified Arabic draft")));
+    }
+
 }
