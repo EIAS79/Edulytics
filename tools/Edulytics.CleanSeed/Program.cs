@@ -208,7 +208,7 @@ if (metadata != jsonBodies)
     }
     else
     {
-    
+
         // The independent Grade4 legacy-replacement rehearsal intentionally starts
         // from frozen pre-G6 production with 59 old English Grade6 lessons. Its
         // narrowly approved 93->132 G4-only transaction MUST NOT touch another
@@ -230,7 +230,7 @@ if (metadata != jsonBodies)
         if (!g4LegacyRehearsal)
             throw new InvalidOperationException(
                 $"Canonical metadata count {metadata} does not match approved JSON identities {jsonBodies}.");
-    
+
         var legacyG6Ids = await db.CurriculumPedagogicalLessons
             .AsNoTracking()
             .Where(x => x.Code.StartsWith("PED:UAE-MOE-MATH:L6:GENERAL:"))
