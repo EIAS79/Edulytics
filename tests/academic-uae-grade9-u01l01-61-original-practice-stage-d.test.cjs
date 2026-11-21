@@ -24,6 +24,8 @@ test('All 61 visually identified Grade 9 lesson 1-1 source items have an origina
    assert.equal(task.printedPage,source.printedPage);
    assert.equal(task.sourceSkillCategory,source.visualSourceSkillCategory);
    assert.equal(task.sourceGroup,source.sourceGroup);
+   assert.equal(source.independentTeacherTaskId,task.independentTaskId);
+   assert.equal(source.stageDAudit,'NOT_RUN');
    assert.equal(task.independentTaskId,'G9-U01L01-T'+String(i+1).padStart(2,'0'));
    assert.equal(task.scope,i<46?'CORE_SKILL':'PRIOR_SKILL_REVIEW');
    assert.equal(task.gradingRoute,'TEACHER_REVIEW_REQUIRED');
@@ -53,6 +55,11 @@ test('Student activity is 61-task Arabic RTL teacher-only and reachable from exi
  assert.ok(tasks.every(x=>!Object.hasOwn(x,'teacherExpectedEvidence')));
  assert.ok(tasks.every(x=>x.studentPrompt && x.independentTaskId && x.sourceItem));
  assert.match(html,/<html lang="ar" dir="rtl">/);
+ assert.match(html,/role="img"/);
+ assert.match(html,/id="g9-geometry-title"/);
+ assert.match(html,/<ellipse cx="165"/);
+ assert.match(html,/<polygon points="430,70/);
+ assert.ok(html.includes('question.textContent=task.studentPrompt;'));
  assert.match(html,/event\.preventDefault\(\)/);
  assert.match(html,/graded:false/);
  assert.match(html,/submitted:false/);

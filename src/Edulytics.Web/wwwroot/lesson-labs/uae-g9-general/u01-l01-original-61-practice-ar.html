@@ -21,6 +21,30 @@ small{color:#47607a}
 <h1>تدريب إضافي أصلي — المتغيرات والتعابير</h1>
 <p>الصف التاسع العام، الوحدة الأولى، الدرس الأول. ٦١ مهمة أصلية مستقلة تغطي فئات المهارات في الأسئلة المرقمة بالكتاب: ٤٦ لتطبيق مهارات الدرس، و١٥ لمراجعة المهارات السابقة. هذا ليس نقلًا لأسئلة الناشر.</p>
 <p class="notice">هذه أنشطة كتابية يراجعها المعلم. لا تُرسل إجابات الطالب إلى Edulytics، ولا تُحتسب درجات آلية. التدريب التلقائي الأساسي للدرس منفصل عن هذه الأنشطة.</p>
+<section aria-labelledby="g9-geometry-title">
+<h2 id="g9-geometry-title">نماذج هندسية أصلية</h2>
+<p>توضح الرسوم التالية الرموز في مهام حجم الأسطوانة والمكعب. ليست هذه الرسوم نقلًا من الكتاب.</p>
+<svg role="img" aria-label="أسطوانة بنصف قطر نق وارتفاع ع؛ حجمها ط مضروبًا في مربع نصف القطر والارتفاع، ومكعب طول حرفه س وحجمه س تكعيب" viewBox="0 0 620 230" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#226187" stroke-width="3">
+<ellipse cx="165" cy="52" rx="70" ry="22" fill="#e6f3fb"/>
+<path d="M95 52 V175 M235 52 V175"/>
+<path d="M95 175 A70 22 0 0 0 235 175"/>
+<path d="M95 175 A70 22 0 0 1 235 175" stroke-dasharray="5 5"/>
+<path d="M165 52 H235" stroke="#b24c40"/>
+<path d="M247 52 V175" stroke="#b24c40"/>
+<polygon points="430,70 505,70 505,145 430,145" fill="#dff0f9"/>
+<polygon points="430,70 463,42 538,42 505,70" fill="#eff8fd"/>
+<polygon points="505,70 538,42 538,117 505,145" fill="#b9deef"/>
+</g>
+<g fill="#153c57" font-size="17" font-family="Arial,sans-serif" text-anchor="middle">
+<text x="199" y="44">نق</text>
+<text x="267" y="120">ع</text>
+<text x="165" y="215">ح = π × نق² × ع</text>
+<text x="466" y="168">س</text>
+<text x="486" y="210">ح = س³</text>
+</g>
+</svg>
+</section>
 <form id="practice">
 <details open><summary>تدريب مهارات الدرس — ٤٦ سؤالًا</summary><ol id="core"></ol></details>
 <details><summary>مراجعة المهارات السابقة — ١٥ سؤالًا</summary><ol id="prior" start="47"></ol></details>
@@ -35,7 +59,7 @@ for(const task of tasks) {
   const entry=document.createElement('li');
   const question=document.createElement('label');
   question.setAttribute('for',task.independentTaskId);
-  question.textContent=task.independentTaskId.split('-').pop().replace('T','')+'. '+task.studentPrompt;
+  question.textContent=task.studentPrompt;
   const answer=document.createElement('textarea');
   answer.id=task.independentTaskId;
   answer.rows=3;
