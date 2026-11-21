@@ -21,8 +21,8 @@
   "unitCountUnique": null,
   "lessonCountUnique": null,
   "ownerTarget": {
-    "unitCount": 14,
-    "lessonCount": 86
+    "unitCount": 13,
+    "lessonCount": 82
   },
   "disallowedAutomaticImport": [
     "Applied",
@@ -33,11 +33,17 @@
   "neonWrites": "NONE",
   "testsRun": "NOT_RUN",
   "ciExecutedByAgent": "NOT_RUN",
-  "historicalNote": "Previous cross-edition mismatch block is superseded by the five-book owner-approved comprehensive-index plan; no lessons are declared finally unique yet.",
+  "historicalNote": "Previous cross-edition mismatch block is superseded by the five-book owner-approved comprehensive-index plan; no lessons are declared finally unique yet. Previously the raw 14/86 counted as ownerTarget, now separated from owner-selected 13/82 based strictly on the pre-existing A-C handoff. This is a metadata correction, not semantic dedup completion.",
   "sourceSnapshotId": "SHA256SOURCESET:5e9c781829dd99b6fcd4449b5052930d15a28756abd78303466b5a5ec3fe3adc",
   "sourceSnapshotComputation": [
     "Algorithm SHA-256 over UTF-8 lines in precisely this order: 01.pdf, 02-1.pdf, 03-1.pdf, 02.pdf, 03.pdf.",
     "Each line consists of filename, a single space, its lowercase 64-character SHA-256 hex digest, and a terminal newline.",
     "This uniquely fingerprints the supplied five-book source set; semantic dedup gate remains separate."
-  ]
+  ],
+  "ownerTargetHistoricalRawCountMisclassification": {
+    "unitCount": 14,
+    "lessonCount": 86
+  },
+  "ownerTargetProvenance": "grade9-a-c-handoff.md plus grade9-82-target-index.json (owner-selected authoring scope, not certified official 2026-2027 index)",
+  "ownerTargetVsRawSourceAccounting": "The first is the 13/82 authoring scope. Raw source TOC remains 14/86 and is NOT a 1:1 audited or semantically unique catalog."
 }

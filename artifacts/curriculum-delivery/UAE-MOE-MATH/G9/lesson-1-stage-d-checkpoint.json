@@ -27,7 +27,7 @@
   "openDefects": [
     "A-C full-page SourceElementId/SourcePage inventory and 1:1 source parity missing",
     "Full raw source lesson audit 0/86; canonical target 1:1 verified 0/82",
-    "Historical source-selection ownerTarget 14/86 conflicts with latest handoff 13/82",
+    "Source selection metadata is reconciled; 86 raw lessons still need complete source atomic evidence before 82 canonical lessons can be certified",
     "01.pdf modern Unit 7 geometry 4 lessons conflicts with historical 02-1.pdf quadratic Unit 7 9 lessons",
     "G9 hosted GitHub Actions run 44857599478 queued without success",
     "Authenticated student/teacher/supervisor/admin isolated E2E not verified",
@@ -47,7 +47,8 @@
     "grade9-unit7-edition-resolution.md",
     "u01l01-source-visual-structure-closure-NO_GO.json",
     "u01l01-61-source-visual-skill-audit.json",
-    "tests/academic-uae-grade9-u01l01-time-duration-source-parity.test.cjs"
+    "tests/academic-uae-grade9-u01l01-time-duration-source-parity.test.cjs",
+    "u01l01-preliminary-source-element-ids-NO_GO.json"
   ],
   "dStatus": "D_PENDING",
   "updatedAtUtc": "2026-11-21T03:07:47Z",
@@ -67,5 +68,11 @@
     "localScopedDotnetPassed": 74,
     "authenticatedStudentE2ePassed": false,
     "sourceAtomicParitySatisfied": false
-  }
+  },
+  "sourceScopeMetadataReconciled": true,
+  "rawSourceCountUnverifiedSemantically": 86,
+  "targetAuthoringLessonCount": 82,
+  "partialSourceElementManifest": "u01l01-preliminary-source-element-ids-NO_GO.json",
+  "knownDistinctSourceSubsetElementIds": 82,
+  "sourceTotalAtomicElementDenominatorStillUnknown": true
 }

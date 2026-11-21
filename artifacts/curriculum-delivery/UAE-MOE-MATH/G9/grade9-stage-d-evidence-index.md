@@ -29,3 +29,7 @@ Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027
 - Checkpoint: lesson-1-stage-d-checkpoint.json. Release: grade9-release-validation.json. CI status: grade9-final-ci-summary.md.
 
 - Lesson 1 D.4 Q48: corrected source-relevant mm:ss race-time representation using 14 independent values and 5-value student SVG; actual local Edge pass, 4 new math/validation tests. Full source parity, authenticated student E2E and hosted CI remain unverified.
+
+- A-C owner-versus-raw scope metadata corrected: source-selection.json ownerTarget=13/82, source raw=14/86, unique source lesson counts remain unknown. Stage D source gate still D_PENDING_A_C_EVIDENCE.
+
+- U01L01 preliminary source-element IDs: 61 numbered exercise containers + 21 known instructional elements by original printed pages 5-9, with additional 7 structural groups not double-counted. All atomic subparts/total denominator/teacher parity remain unverified; no D_VERIFIED status.

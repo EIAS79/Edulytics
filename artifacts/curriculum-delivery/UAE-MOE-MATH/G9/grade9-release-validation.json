@@ -180,7 +180,7 @@
   "blockers": [
     "A-C full-page SourceElementId/SourcePage inventory and 1:1 source parity missing",
     "Full raw source lesson audit 0/86; canonical target 1:1 verified 0/82",
-    "Historical source-selection ownerTarget 14/86 conflicts with latest handoff 13/82",
+    "Source selection metadata is aligned to 13/82; raw 14/86 still awaits the separately required full semantic dedup and source-element parity verification",
     "01.pdf modern Unit 7 geometry 4 lessons conflicts with historical 02-1.pdf quadratic Unit 7 9 lessons",
     "G9 hosted GitHub Actions run 44857599478 queued without success",
     "Authenticated student/teacher/supervisor/admin isolated E2E not verified",
@@ -188,7 +188,7 @@
   ],
   "localNodeDiagnostic": {
     "result": "PASS",
-    "passed": 361,
+    "passed": 368,
     "failed": 0,
     "sourceGateResult": "NO_GO",
     "sourceGateExitCode": 1,
@@ -215,5 +215,20 @@
     "skipped": 0,
     "hostedCiPassed": false
   },
-  "D4U01L01Q48VerifiedAtUtc": "2026-11-21T03:07:47Z"
+  "D4U01L01Q48VerifiedAtUtc": "2026-11-21T03:07:47Z",
+  "sourceSelectionCurrentOwnerTarget": {
+    "unitCount": 13,
+    "lessonCount": 82
+  },
+  "sourceSelectionRawSourceCounts": {
+    "unitCount": 14,
+    "lessonCount": 86
+  },
+  "sourceScopeMetadataMismatchRemediated": true,
+  "semanticDedupComplete": false,
+  "sourceIndexComplete": false,
+  "sourceSelectionHistoricalTargetIsRawSourceCount": true,
+  "firstLessonKnownPartialSourceElementIds": 82,
+  "firstLessonRawAtomicDenominator": null,
+  "firstLessonPartialSourceElementIdsManifest": "u01l01-preliminary-source-element-ids-NO_GO.json"
 }

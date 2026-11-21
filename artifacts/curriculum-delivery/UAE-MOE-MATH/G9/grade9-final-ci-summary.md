@@ -26,3 +26,12 @@ Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gat
 - U01L01 Q48 source printed page 9 uses mm:ss race-time notation. Existing independent lesson/task updated to 14 authored mm:ss results and manual Q1/median/Q3 boxplot input; source numerical results were not copied.
 - Real local Microsoft Edge 61-task preview and Arabic mm:ss SVG/chart draft export: PASS (ungraded, local only). Grade9 Node diagnostic 361/361 PASS; scoped native .NET 74/74 PASS.
 - Source atomic denominator still unknown and strict gate still NO_GO: 0/86 raw lessons, 0/82 canonical; Stage D entry D_PENDING_A_C_EVIDENCE; Final CI not passed, 82-lesson authenticated E2E not performed.
+
+## Source counts reconciliation (metadata only; Stage D remains pending)
+
+- The historical source-selection file incorrectly populated ownerTarget with raw source TOC 14 units/86 entries. Corrected to the owner-selected A-C handoff scope 13 units/82 lessons, while retaining raw unitCountRaw=14, lessonCountRaw=86, unitCountUnique=null, lessonCountUnique=null, semanticDedupGate=PENDING_NOT_LOCKED.
+- The original 14/86 values remain preserved as an explicitly named historical raw-scope record, not removed. No lesson was created, deleted, or certified; source SHA/snapshot unchanged and NO_GO_SOURCE_100 remains.
+
+## U01L01 partial source-element traceability
+
+- Compiled the 61 separately identified numbered exercise containers and 21 known instruction elements on scanned printed pages 5-9 into a nonexhaustive, SHA-grounded source-element manifest. Known partial IDs=82, **not** 82 audited lessons or a verified raw lesson denominator. Exact publisher task parity and independent teacher review remain unverified.
