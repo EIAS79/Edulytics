@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edulytics — تمارين مستقلة للمتغيرات والتعابير</title>
+<style>
+body{font:1rem/1.8 system-ui,"Noto Sans Arabic",Arial,sans-serif;color:#173047;background:#f5f8fb;margin:0}
+main{max-width:900px;margin:auto;padding:1rem}
+section,details{background:#fff;border:1px solid #b9cad8;border-radius:10px;margin:1rem 0;padding:1rem}
+summary{font-weight:700;cursor:pointer}
+li{margin:1rem 0;padding:.4rem;border-bottom:1px solid #edf1f6}
+textarea{display:block;width:100%;box-sizing:border-box;min-height:5rem;font:inherit;margin-top:.4rem;border:1px solid #829aae;border-radius:6px;padding:.5rem}
+button{font:inherit;background:#15517b;color:white;border:0;border-radius:7px;padding:.7rem 1.2rem;cursor:pointer}
+button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #c18118}
+.notice{background:#f0f5fa;padding:1rem;border-inline-start:4px solid #326795}
+small{color:#47607a}
+</style>
+</head>
+<body><main>
+<h1>تدريب إضافي أصلي — المتغيرات والتعابير</h1>
+<p>الصف التاسع العام، الوحدة الأولى، الدرس الأول. ٦١ مهمة أصلية مستقلة تغطي فئات المهارات في الأسئلة المرقمة بالكتاب: ٤٦ لتطبيق مهارات الدرس، و١٥ لمراجعة المهارات السابقة. هذا ليس نقلًا لأسئلة الناشر.</p>
+<p class="notice">هذه أنشطة كتابية يراجعها المعلم. لا تُرسل إجابات الطالب إلى Edulytics، ولا تُحتسب درجات آلية. التدريب التلقائي الأساسي للدرس منفصل عن هذه الأنشطة.</p>
+<form id="practice">
+<details open><summary>تدريب مهارات الدرس — ٤٦ سؤالًا</summary><ol id="core"></ol></details>
+<details><summary>مراجعة المهارات السابقة — ١٥ سؤالًا</summary><ol id="prior" start="47"></ol></details>
+<button type="submit">تجهيز سجل الإجابات للمعلم</button>
+</form>
+<section><label for="output">سجل الإجابات المحلي (للمراجعة اليدوية)</label><textarea id="output" rows="13" readonly></textarea><p id="status" role="status" aria-live="polite"></p></section>
+</main>
+<script>
+'use strict';
+const tasks = [{"sourceItem":"U01L01-Q01","independentTaskId":"G9-U01L01-T01","studentPrompt":"اشرح لفظيًا معنى ٥م.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q02","independentTaskId":"G9-U01L01-T02","studentPrompt":"اكتب عبارة لفظية للتعبير (٣/٤)ر³.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q03","independentTaskId":"G9-U01L01-T03","studentPrompt":"صف لفظيًا أ² − ١٢ب.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q04","independentTaskId":"G9-U01L01-T04","studentPrompt":"حوّل عبارة «مجموع عدد ن و١٦» إلى تعبير جبري.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q05","independentTaskId":"G9-U01L01-T05","studentPrompt":"حوّل «العدد ص منقوصًا منه ٩» إلى تعبير.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q06","independentTaskId":"G9-U01L01-T06","studentPrompt":"اكتب مجموع ثلاثة وثمانية أمثال ك.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q07","independentTaskId":"G9-U01L01-T07","studentPrompt":"اكتب ناتج قسمة ر على ٤ ثم اطرح ٩.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q08","independentTaskId":"G9-U01L01-T08","studentPrompt":"اكتب ثلثي مربع ي بتعبير جبري.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q09","independentTaskId":"G9-U01L01-T09","studentPrompt":"اكتب ستة مضافة إلى مكعب ن.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q10","independentTaskId":"G9-U01L01-T10","studentPrompt":"دفع شخص ٦٠ درهمًا مقابل مشتريات قيمتها د؛ مثّل الباقي.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q11","independentTaskId":"G9-U01L01-T11","studentPrompt":"اشرح ٧م لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q12","independentTaskId":"G9-U01L01-T12","studentPrompt":"اشرح (٢/٥)ص لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q13","independentTaskId":"G9-U01L01-T13","studentPrompt":"اشرح ١٨+ر لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q14","independentTaskId":"G9-U01L01-T14","studentPrompt":"اشرح و−٣٦ لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q15","independentTaskId":"G9-U01L01-T15","studentPrompt":"اشرح ٤س² لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q16","independentTaskId":"G9-U01L01-T16","studentPrompt":"اشرح ر³/٨ لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q17","independentTaskId":"G9-U01L01-T17","studentPrompt":"اشرح ٣أ+٤ لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q18","independentTaskId":"G9-U01L01-T18","studentPrompt":"اشرح ر²×ت⁵ لفظيًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q19","independentTaskId":"G9-U01L01-T19","studentPrompt":"اكتب تعبيرًا لعدد ن مضافًا إليه ١٢.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q20","independentTaskId":"G9-U01L01-T20","studentPrompt":"اكتب الفرق بين ٤٢ والعدد ب.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q21","independentTaskId":"G9-U01L01-T21","studentPrompt":"اكتب سبعة أمثال ك.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q22","independentTaskId":"G9-U01L01-T22","studentPrompt":"اكتب ربع العدد ن.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q23","independentTaskId":"G9-U01L01-T23","studentPrompt":"اكتب حاصل قسمة ز على ٨.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q24","independentTaskId":"G9-U01L01-T24","studentPrompt":"اكتب ٣٦ مقسومة على ق، حيث ق لا يساوي صفرًا.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q25","independentTaskId":"G9-U01L01-T25","studentPrompt":"اكتب أربعة أمثال س زائد ١١.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q26","independentTaskId":"G9-U01L01-T26","studentPrompt":"اكتب ٢٧ مطروحًا منه مثلي د.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q27","independentTaskId":"G9-U01L01-T27","studentPrompt":"اكتب مربع ف منقوصًا منه ٨.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q28","independentTaskId":"G9-U01L01-T28","studentPrompt":"اكتب ٢٥ مقسومة على مكعب ت؛ حدّد شرط المجال.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q29","independentTaskId":"G9-U01L01-T29","studentPrompt":"نصف قطر أسطوانة ٣ سم وارتفاعها ع سم؛ اكتب الحجم ووحدة القياس.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q30","independentTaskId":"G9-U01L01-T30","studentPrompt":"عملت ندى ١٨ ساعة بأجر أ درهم للساعة و٧ ساعات بأجر ب؛ مثّل إجمالي الأجر.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q31","independentTaskId":"G9-U01L01-T31","studentPrompt":"اشرح لفظيًا ١٧+٤س².","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q32","independentTaskId":"G9-U01L01-T32","studentPrompt":"اشرح ٥ق²+٣ق.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q33","independentTaskId":"G9-U01L01-T33","studentPrompt":"اشرح (٤/٥)ر³.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q34","independentTaskId":"G9-U01L01-T34","studentPrompt":"اشتراك شهري ٤٨ درهمًا بالإضافة إلى نصف درهم لكل دقيقة س و١٫٥ درهم لكل خدمة ص؛ اكتب التكلفة.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q35","independentTaskId":"G9-U01L01-T35","studentPrompt":"ثلاثة أخماس مجموعة من الأشخاص يؤيدون نشاطًا. اكتب العدد المؤيد إذا كان إجماليهم ن، ثم احسبه عند ن=٢٥.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q36","independentTaskId":"G9-U01L01-T36","studentPrompt":"تُحتسب ٥ نقاط لكل هدف ونقطتان لكل مكافأة؛ اكتب صيغة المجموع لهدفين غ ومكافآت ب، ثم احسبه عند غ=٦ وب=١.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q37","independentTaskId":"G9-U01L01-T37","studentPrompt":"أكمل ١٠⁴×١٠² واكتب تفسيرًا لقاعدة جمع الأسين.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q38","independentTaskId":"G9-U01L01-T38","studentPrompt":"وضّح الفرق بين وصف لفظي مثل «ضعف ن» والكتابة الجبرية «٢ن»، واذكر مثالًا آخر.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q39","independentTaskId":"G9-U01L01-T39","studentPrompt":"اختر متغيرًا للزمن واكتب تعبيرًا أصليًا لتكلفة تعتمد عليه مع رسم ثابت؛ عرّف وحداته.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q40","independentTaskId":"G9-U01L01-T40","studentPrompt":"قارن ٤ن²+٤ و٤(ن²+٤). هل يتكافآن لكل ن؟ اثبت بالتوزيع.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q41","independentTaskId":"G9-U01L01-T41","studentPrompt":"مكعب طول حرفه س موجب، وحجمه أربعة أمثال مساحة وجه واحد؛ ما قيمة س؟","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q42","independentTaskId":"G9-U01L01-T42","studentPrompt":"صِف موقفًا من الحياة يمكن التعبير عنه بمتغيرين، واكتب النموذج الجبري موضحًا معنى كل متغير.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q43","independentTaskId":"G9-U01L01-T43","studentPrompt":"مكعب حرفه ٥ وحدات؛ اختر صيغة حجمه وفسّر الأس.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q44","independentTaskId":"G9-U01L01-T44","studentPrompt":"مستطيل طوله ل وعرضه ع؛ أيهما يمثل المحيط، ٢(ل+ع) أم ل×ع؟ برر.","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q45","independentTaskId":"G9-U01L01-T45","studentPrompt":"ستارة بعرض س بوصة وارتفاع ٢ ياردة؛ اكتب مساحتها بالبوصة المربعة. (الياردة ٣٦ بوصة).","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q46","independentTaskId":"G9-U01L01-T46","studentPrompt":"ما مساحة مستطيل طوله ٩ م وعرضه ٥ م؟","scope":"CORE_SKILL"},{"sourceItem":"U01L01-Q47","independentTaskId":"G9-U01L01-T47","studentPrompt":"بيانات تفضيلات نادي: كرة ٨، قراءة ٥، سباحة ٧؛ مثّلها بمخطط أعمدة له عناوين ومحور واضح.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q48","independentTaskId":"G9-U01L01-T48","studentPrompt":"أزمنة سباق بالدقائق: ١٢، ١٤، ١٤، ١٧، ١٩، ٢٠، ٢٢؛ صمّم مخطط صندوق وقيمه الخمس.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q49","independentTaskId":"G9-U01L01-T49","studentPrompt":"أوجد المتوسط والوسيط والمنوال للبيانات ٣، ٤، ٤، ٥، ٩.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q50","independentTaskId":"G9-U01L01-T50","studentPrompt":"أوجد المتوسط والوسيط والمنوال للبيانات −٢، −١، −١، ٠، ٤.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q51","independentTaskId":"G9-U01L01-T51","studentPrompt":"أوجد المتوسط والوسيط والمنوال للبيانات ٥، ٧، ٧، ٨، ١٣.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q52","independentTaskId":"G9-U01L01-T52","studentPrompt":"لوح مستطيل طوله ٩ أقدام وعرضه ٤ أقدام؛ أوجد مساحته بالقدم المربع.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q53","independentTaskId":"G9-U01L01-T53","studentPrompt":"احسب (٢/٣)×(٣/٥) في أبسط صورة.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q54","independentTaskId":"G9-U01L01-T54","studentPrompt":"احسب (٥/٦)÷(١٠/٩) في أبسط صورة.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q55","independentTaskId":"G9-U01L01-T55","studentPrompt":"احسب (٧/١٠)×(٥/١٤) في أبسط صورة.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q56","independentTaskId":"G9-U01L01-T56","studentPrompt":"اجمع ١/٤ و٢/٥ في أبسط صورة.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q57","independentTaskId":"G9-U01L01-T57","studentPrompt":"احسب ٨٫٤٣ − ٢٫١٧.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q58","independentTaskId":"G9-U01L01-T58","studentPrompt":"احسب ٧/٨ − ١/٤.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q59","independentTaskId":"G9-U01L01-T59","studentPrompt":"احسب ٣٫١٨ + ٤٫٧٦.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q60","independentTaskId":"G9-U01L01-T60","studentPrompt":"احسب ٢/٣ + ١/٦.","scope":"PRIOR_SKILL_REVIEW"},{"sourceItem":"U01L01-Q61","independentTaskId":"G9-U01L01-T61","studentPrompt":"احسب ١٩٫٤ − ٧٫٨٥.","scope":"PRIOR_SKILL_REVIEW"}];
+for(const task of tasks) {
+  const entry=document.createElement('li');
+  const question=document.createElement('label');
+  question.setAttribute('for',task.independentTaskId);
+  question.textContent=task.independentTaskId.split('-').pop().replace('T','')+'. '+task.studentPrompt;
+  const answer=document.createElement('textarea');
+  answer.id=task.independentTaskId;
+  answer.rows=3;
+  answer.setAttribute('aria-label','إجابة السؤال '+task.independentTaskId);
+  entry.append(question,answer);
+  document.getElementById(task.scope==='CORE_SKILL'?'core':'prior').appendChild(entry);
+}
+document.getElementById('practice').addEventListener('submit',event=>{
+  event.preventDefault();
+  const answers=tasks.map(task=>({
+    question:task.independentTaskId,
+    sourceSkillReference:task.sourceItem,
+    response:document.getElementById(task.independentTaskId).value.trim(),
+    review:'TEACHER_REVIEW_REQUIRED'
+  }));
+  const filled=answers.filter(answer=>answer.response).length;
+  document.getElementById('output').value=JSON.stringify({
+    lesson:'PED:UAE-MOE-MATH:L9:GENERAL:01:01:VARIABLES-AND-EXPRESSIONS',
+    assignment:'ORIGINAL_SOURCE_SKILL_PARALLEL_61',
+    graded:false,
+    submitted:false,
+    review:'TEACHER_REVIEW_REQUIRED',
+    completed:filled,
+    total:tasks.length,
+    answers
+  },null,2);
+  document.getElementById('status').textContent='جهزت '+filled+' إجابة من أصل '+tasks.length+' للمراجعة اليدوية. لم تُرسل البيانات ولم تُحتسب درجة.';
+});
+</script>
+</body></html>
