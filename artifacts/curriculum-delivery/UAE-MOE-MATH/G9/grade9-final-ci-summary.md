@@ -20,3 +20,9 @@ releaseDecision = NO_GO_SOURCE_100
 First lesson U01L01 D_PENDING, next lessons not closed. Grade is 9; Grade 8 field in supplied template is an acknowledged copy error in the handoff.
 
 Local preparation test recheck: 357/357 Node PASS on worktree, source atomic gate NO_GO (exit 1). This is not hosted final CI acceptance.
+
+## D.4 local technical progress (not final CI)
+
+- U01L01 Q48 source printed page 9 uses mm:ss race-time notation. Existing independent lesson/task updated to 14 authored mm:ss results and manual Q1/median/Q3 boxplot input; source numerical results were not copied.
+- Real local Microsoft Edge 61-task preview and Arabic mm:ss SVG/chart draft export: PASS (ungraded, local only). Grade9 Node diagnostic 361/361 PASS; scoped native .NET 74/74 PASS.
+- Source atomic denominator still unknown and strict gate still NO_GO: 0/86 raw lessons, 0/82 canonical; Stage D entry D_PENDING_A_C_EVIDENCE; Final CI not passed, 82-lesson authenticated E2E not performed.

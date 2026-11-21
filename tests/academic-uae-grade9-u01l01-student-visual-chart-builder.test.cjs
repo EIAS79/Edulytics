@@ -81,7 +81,7 @@ test('Student chart builders render real SVG geometry with accessibility labels;
     plot.attach({ sourceItem: record.sourceItem, independentTaskId: 'G9-U01L01-T' + i }, row, response);
     const title = descend(row).find(e => e.tagName === 'input' && e.type === 'text');
     const inputs = descend(row).filter(e => e.tagName === 'input' && e.attributes['data-plot-number'] === 'true');
-    assert.ok(inputs.every(e => e.type === 'text' && e.inputMode === 'decimal'));
+    assert.ok(inputs.every(e => e.type === 'text' && e.inputMode === (i === 47 ? 'decimal' : 'text')));
     const button = descend(row).find(e => e.tagName === 'button');
     const alert = descend(row).find(e => e.attributes.role === 'alert');
     const expected = i === 47 ? [8, 5, 7, 11, 6, 9, 4] : [19, 21, 23.5, 26, 29];

@@ -27,3 +27,5 @@ Target: 13 units / 82 General Arabic RTL lessons, school year target 2026–2027
 - Source-selection 14/86 differs from latest handoff 13/82. Unit 7 remains unresolved.
 - Run 44857599478 queued on inspected candidate 97e399bee1b898dc112d5b8a5c3942cc47fce598, not a passing hosted CI run.
 - Checkpoint: lesson-1-stage-d-checkpoint.json. Release: grade9-release-validation.json. CI status: grade9-final-ci-summary.md.
+
+- Lesson 1 D.4 Q48: corrected source-relevant mm:ss race-time representation using 14 independent values and 5-value student SVG; actual local Edge pass, 4 new math/validation tests. Full source parity, authenticated student E2E and hosted CI remain unverified.

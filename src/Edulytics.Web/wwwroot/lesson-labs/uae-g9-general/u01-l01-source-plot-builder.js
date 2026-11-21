@@ -26,12 +26,35 @@
     return Number(normalized);
   }
 
+  // Running times are durations (mm:ss), not decimal minutes.
+  function parseMinutesSeconds(raw) {
+    const normalized = String(raw).trim()
+      .replace(/[\u0660-\u0669]/g, ch => String(ch.charCodeAt(0) - 0x0660))
+      .replace(/[\u06f0-\u06f9]/g, ch => String(ch.charCodeAt(0) - 0x06f0));
+    if (!/^\d{1,3}:[0-5]\d$/.test(normalized)) return NaN;
+    const [minutes, seconds] = normalized.split(':').map(Number);
+    return minutes + seconds / 60;
+  }
+
+  function formatMinutesSeconds(value) {
+    const totalSeconds = Math.round(value * 60);
+    return Math.floor(totalSeconds / 60) + ':' +
+      String(totalSeconds % 60).padStart(2, '0');
+  }
+
   function validate(sourceItem, rawValues, title) {
     const definition = definitions[sourceItem];
     if (!definition) return { ok: false, error: 'هذه المهمة لا تحتاج إلى مخطط.' };
     if (!Array.isArray(rawValues) || rawValues.length !== definition.labels.length)
       return { ok: false, error: 'عدد حقول المخطط غير صحيح.' };
-    const values = rawValues.map(parseNumber);
+    const timed = definition.kind === 'box' && rawValues.some(value =>
+      typeof value === 'string' && value.includes(':'));
+    if (timed && rawValues.some(value => !String(value).includes(':')))
+      return { ok: false, error: '\u0627\u0643\u062a\u0628 \u062c\u0645\u064a\u0639 \u0627\u0644\u0623\u0632\u0645\u0646\u0629 \u0628\u0635\u064a\u063a\u0629 \u062f\u0642\u064a\u0642\u0629:\u062b\u0627\u0646\u064a\u0629 \u0623\u0648 \u062c\u0645\u064a\u0639\u0647\u0627 \u0628\u0627\u0644\u062f\u0642\u0627\u0626\u0642.' };
+    const values = rawValues.map(value =>
+      definition.kind === 'box' && typeof value === 'string' && value.includes(':')
+        ? parseMinutesSeconds(value)
+        : parseNumber(value));
     if (values.some(v => !Number.isFinite(v) || v < 0 || v > 1000))
       return { ok: false, error: 'أدخل قيمًا رقمية غير سالبة لا تتجاوز ١٠٠٠.' };
     if (definition.kind === 'bar' && values.some(v => !Number.isInteger(v)))
@@ -46,7 +69,10 @@
     return {
       ok: true, taskId: sourceItem, kind: definition.kind,
       title: normalizedTitle || definition.name, labels: definition.labels.slice(),
-      unit: definition.unit, values, review: 'TEACHER_REVIEW_REQUIRED',
+      unit: timed ? '\u062f\u0642\u064a\u0642\u0629:\u062b\u0627\u0646\u064a\u0629' : definition.unit,
+      timeFormat: timed ? 'mm:ss' : 'decimal-minutes',
+      rawEntries: rawValues.map(value => String(value)),
+      values, review: 'TEACHER_REVIEW_REQUIRED',
       graded: false
     };
   }
@@ -104,7 +130,8 @@
         const value = axisMin + tick * (axisMax - axisMin) / 5, px = x(value);
         append('line', { x1: px, y1: 251, x2: px, y2: 270, stroke: axis });
         append('text', { x: px, y: 290, 'text-anchor': 'middle',
-          fill: 'currentColor', 'font-size': 13 }, Number(value.toFixed(1)));
+          fill: 'currentColor', 'font-size': 13 },
+          result.timeFormat === 'mm:ss' ? formatMinutesSeconds(value) : Number(value.toFixed(1)));
       }
       append('line', { x1: x(a[0]), y1: 178, x2: x(a[4]), y2: 178,
         stroke: mark, 'stroke-width': 3 });
@@ -137,6 +164,8 @@
     fieldset.append(legend);
     const info = d.createElement('p');
     info.textContent = 'أدخل القيم التي استنتجتها بنفسك، ثم اضغط معاينة. الرسم وصفٌ لإجابتك وليس تصحيحًا آليًا.';
+    if (definition.kind === 'box')
+      info.textContent += ' \u0644\u0623\u0632\u0645\u0646\u0629 \u0627\u0644\u0633\u0628\u0627\u0642 \u0627\u0643\u062a\u0628 \u062f\u0642\u064a\u0642\u0629:\u062b\u0627\u0646\u064a\u0629 \u0645\u062b\u0644 17:30 \u0623\u0648 \u0642\u064a\u0645\u0629 \u0628\u0627\u0644\u062f\u0642\u0627\u0626\u0642.';
     fieldset.append(info);
     const titleLabel = d.createElement('label');
     titleLabel.textContent = 'عنوان المخطط';
@@ -154,7 +183,7 @@
       // Chromium number fields discard Arabic-Indic and Persian digits.
       // Text fields preserve the original digits; validate() checks values.
       input.type = 'text';
-      input.inputMode = 'decimal';
+      input.inputMode = definition.kind === 'box' ? 'text' : 'decimal';
       input.maxLength = 18;
       input.autocomplete = 'off';
       input.setAttribute('data-plot-number', 'true');

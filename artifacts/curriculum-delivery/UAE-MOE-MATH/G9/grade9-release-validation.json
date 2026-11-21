@@ -188,11 +188,32 @@
   ],
   "localNodeDiagnostic": {
     "result": "PASS",
-    "passed": 357,
+    "passed": 361,
     "failed": 0,
     "sourceGateResult": "NO_GO",
     "sourceGateExitCode": 1,
     "finalCiPassed": false,
     "testRefKind": "local_worktree_before_gate_evidence_commit"
-  }
+  },
+  "d4Lesson01SourceSkillRepairLocalOnly": {
+    "sourceItem": "U01L01-Q48",
+    "sourcePage": 9,
+    "sourcePdfPage1Based": 20,
+    "originalFormat": "mm:ss",
+    "studentAnalogFormat": "mm:ss",
+    "raceDataValues": 14,
+    "studentChartValues": 5,
+    "gradeAssignedAutomatically": false,
+    "actualEdgeBrowserSmoke": "PASS",
+    "hostedCiAndAuthenticatedE2e": "NOT_VERIFIED",
+    "source1to1Parity": "UNKNOWN",
+    "releaseDecision": "NO_GO_SOURCE_100"
+  },
+  "localGrade9DotnetDiagnostic": {
+    "passed": 74,
+    "failed": 0,
+    "skipped": 0,
+    "hostedCiPassed": false
+  },
+  "D4U01L01Q48VerifiedAtUtc": "2026-11-21T03:07:47Z"
 }

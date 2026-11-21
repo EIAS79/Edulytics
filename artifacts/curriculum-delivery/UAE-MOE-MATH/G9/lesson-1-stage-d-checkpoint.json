@@ -44,12 +44,28 @@
     "edition-diff.json",
     "semantic-audit-ledger.json",
     "grade9-82-target-index.json",
-    "grade9-unit7-edition-resolution.md"
+    "grade9-unit7-edition-resolution.md",
+    "u01l01-source-visual-structure-closure-NO_GO.json",
+    "u01l01-61-source-visual-skill-audit.json",
+    "tests/academic-uae-grade9-u01l01-time-duration-source-parity.test.cjs"
   ],
   "dStatus": "D_PENDING",
-  "updatedAtUtc": "2026-11-21T02:51:32Z",
+  "updatedAtUtc": "2026-11-21T03:07:47Z",
   "handoffGate": "D_PENDING_A_C_EVIDENCE",
   "sourcePrintedPage": 5,
   "sourcePdfPage1Based": 16,
-  "finalCandidateSha": null
+  "finalCandidateSha": null,
+  "stageD4LocalFindingAndRepair": {
+    "category": "CONTENT/VISUAL",
+    "sourceItem": "U01L01-Q48",
+    "finding": "Scanned source uses 14 mm:ss race times but independent digital analog used integer-minute values",
+    "rootCauseFixed": "Q48 author-created mm:ss race times; exact-second quartile verifier, Arabic/Persian input and SVG axis; teacher review only",
+    "studentPreviewVerifiedLocally": true,
+    "authE2eCertified": false,
+    "sourceCoverageFull": false,
+    "localNodeAllGrade9TestsPassed": 361,
+    "localScopedDotnetPassed": 74,
+    "authenticatedStudentE2ePassed": false,
+    "sourceAtomicParitySatisfied": false
+  }
 }

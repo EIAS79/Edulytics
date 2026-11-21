@@ -119,8 +119,8 @@ test('Independent statistical graph analogs Q47-Q51 use correct total, quartiles
   const [min,q1,mid,q3,max]=[times[0],median(lower),median(times),median(upper),times.at(-1)];
   assert.deepEqual([min,q1,mid,q3,max],[19,21,23.5,26,29]);
   assert.equal(q3-q1,5);
-  checkExpected(48,'23.5');
-  checkExpected(48,'26');
+  checkExpected(48,'17:15');
+  checkExpected(48,'19:10');
   const data49=[3,5,5,6,7,7,7,9,10,11];
   assert.equal(data49.reduce((a,b)=>a+b,0),70);
   assert.equal(median(data49),7);

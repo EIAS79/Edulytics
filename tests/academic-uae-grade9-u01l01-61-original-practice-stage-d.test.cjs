@@ -181,12 +181,14 @@ test('U01L01 visual source atomic tasks preserve numbered items cognitive demand
  assert.equal(2*7+2*3,20);
  assert.equal(7*3,21);
  assert.equal(8+5+7+11+6+9+4,50);
- const times=[19,20,21,21,22,22,23,24,24,25,26,27,28,29];
+ // Keep the independent five-number oracle tied to the current mm:ss task data.
+ const times=['14:20','14:55','15:10','15:45','16:05','16:40','17:00','17:30','18:15','18:45','19:10','20:25','20:50','21:30']
+   .map(value=>{const [m,s]=value.split(':').map(Number);return m*60+s;});
  assert.equal(times.length,14);
- assert.equal((times[6]+times[7])/2,23.5);
- assert.equal(times[3],21);
- assert.equal(times[10],26);
- assert.equal(times[10]-times[3],5);
+ assert.equal((times[6]+times[7])/2,17*60+15);
+ assert.equal(times[3],15*60+45);
+ assert.equal(times[10],19*60+10);
+ assert.equal(times[10]-times[3],3*60+25);
  assert.ok(Math.abs(3/5-7/3-(-26/15))<1e-12);
 });
 test('U01L01 original statistics and fraction analogs match source data set cardinality and result types',()=>{
