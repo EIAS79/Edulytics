@@ -10,7 +10,8 @@ test('U01L0'+n+' retains canonical identity and Arabic source objectives in new 
  const pack=source.Lessons.find(x=>x.LessonCode===lessonCode);
  const rich=read(base+'RichV2/uae-g9-general-u01-l0'+n+'-ar.rich-lesson-v2.json');
  assert.ok(pack,'canonical pack lesson must exist');
- assert.equal(rich.PackCode,'UAE-G9-GENERAL');
+ assert.equal(rich.SchemaVersion,1);
+ assert.equal(rich.PackCode,'UAE-MOE-MATH');
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,lessonCode);
