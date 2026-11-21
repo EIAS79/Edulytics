@@ -435,6 +435,160 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
 
     /// <summary>
+    /// Owner-authorized first-party UAE Grade9 General Arabic scope. Import only
+    /// 82 canonical identities and 82 Published JSON metadata records. The
+    /// 86 source-edition entries are research evidence, not a seeding target.
+    /// Never rewrite historical Grade9 IDs or another curriculum. Like Grade7,
+    /// literal publisher-item parity stays UNKNOWN, not falsely 100%.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade9Async(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L9:GENERAL:";
+
+        if (!_db.Database.IsNpgsql())
+            throw new InvalidOperationException(
+                "Scoped UAE Grade9 production import requires PostgreSQL.");
+
+        MathematicsCurriculumPackRegistry.Validate();
+        var states = await _db.CurriculumPackImportStates
+            .AsNoTracking()
+            .Where(x => x.IsComplete && SupportedCodes.Contains(x.FrameworkCode))
+            .ToArrayAsync(ct);
+        if (states.Length != 4 ||
+            !SupportedCodes.ToHashSet(StringComparer.Ordinal)
+                .SetEquals(states.Select(x => x.FrameworkCode)))
+            throw new InvalidOperationException(
+                "Scoped Grade9 import requires exactly four accepted pack states.");
+        var byCode = states.ToDictionary(x => x.FrameworkCode, StringComparer.Ordinal);
+
+        var expectedLessons = new List<CurriculumPedagogicalLesson>();
+        var expectedMappings = new List<CurriculumPedagogicalLessonOutcome>();
+        var blueprintIds = new HashSet<Guid>();
+        var blueprints = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments();
+        var g9Documents = blueprints.Where(x =>
+            x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+            x.LogicalLevel == 9 &&
+            string.Equals(x.Pathway, "General", StringComparison.Ordinal))
+            .ToArray();
+        if (g9Documents.Length != 1 ||
+            g9Documents[0].Lessons.Count != 82 ||
+            g9Documents[0].Units.Count != 13 ||
+            g9Documents[0].BlueprintCode !=
+                "UAE-G9-GENERAL-AR82-OWNER-FIRST-PARTY-V1:COMPOSITE-SOURCE-CANDIDATE")
+            throw new InvalidOperationException(
+                "Grade9 release requires the exact owner-selected 13-unit/82-lesson first-party blueprint.");
+
+        await BuildUaeAsync(byCode[MathematicsCurriculumPackRegistry.UaeCode],
+            expectedLessons, expectedMappings, ct);
+        await BuildBlueprintLessonsAsync(
+            byCode, blueprints, expectedLessons, expectedMappings, blueprintIds, ct);
+        await BuildOutcomeBackedLessonsAsync(
+            byCode, blueprints, expectedLessons, expectedMappings, ct);
+        ValidateExpectedGraph(expectedLessons, expectedMappings, blueprintIds);
+
+        var scoped = expectedLessons.Where(x =>
+            x.Code.StartsWith(prefix, StringComparison.Ordinal)).ToArray();
+        if (scoped.Length != 82 ||
+            scoped.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 82 ||
+            scoped.Any(x =>
+                x.LogicalLevelFrom != 9 || x.LogicalLevelTo != 9 ||
+                !string.Equals(x.Pathway, "General", StringComparison.Ordinal) ||
+                !x.Title.Any(c => c is >= '\u0600' and <= '\u06ff')))
+            throw new InvalidOperationException(
+                "Grade9 release requires precisely 82 unique Arabic General lessons.");
+
+        var ids = scoped.Select(x => x.Id).ToHashSet();
+        var mappings = expectedMappings.Where(x =>
+            ids.Contains(x.PedagogicalLessonId)).ToArray();
+
+        var existing = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var g9ActualCount = existing.Length;
+        var scopedByCode = scoped.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        if (g9ActualCount is not (0 or 82) ||
+            existing.Any(x =>
+                !scopedByCode.TryGetValue(x.Code, out var expected) ||
+                x.Id != expected.Id ||
+                x.FrameworkVersionId != expected.FrameworkVersionId))
+            throw new InvalidOperationException(
+                "Grade9 scoped release refused: unexpected existing lesson identity.");
+
+        var allCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
+        var g9Content = await _db.CurriculumLessonContents
+            .CountAsync(x => existing.Select(p => p.Id)
+                .Contains(x.PedagogicalLessonId), ct);
+        var unrelated = allCount - g9ActualCount;
+        var g7General = await _db.CurriculumPedagogicalLessons.CountAsync(
+            x => x.Code.StartsWith("PED:UAE-MOE-MATH:L7:GENERAL:"), ct);
+        var g8General = await _db.CurriculumPedagogicalLessons.CountAsync(
+            x => x.Code.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
+        var g8Advanced = await _db.CurriculumPedagogicalLessons.CountAsync(
+            x => x.Code.StartsWith("PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
+        var g9Advanced = await _db.CurriculumPedagogicalLessons.CountAsync(
+            x => x.Code.StartsWith("PED:UAE-MOE-MATH:L9:ADVANCED:"), ct);
+        var translations = await _db.CurriculumLessonContentTranslations.CountAsync(ct);
+        var isCiRehearsal =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+
+        if (allCount != contentCount ||
+            g9Content != g9ActualCount ||
+            g7General != 78 || g8General != 76 ||
+            g8Advanced != 0 || g9Advanced != 0 ||
+            translations != 0 ||
+            (!isCiRehearsal && unrelated != 4936) ||
+            (isCiRehearsal && unrelated < 4800))
+            throw new InvalidOperationException(
+                "Grade9 scoped release refused: unexpected production/isolated DB baseline. " +
+                "No unrelated grade or historical identity is eligible for replacement.");
+
+        await using var transaction =
+            await _db.Database.BeginTransactionAsync(ct);
+        await _db.Database.ExecuteSqlRawAsync(
+            "SELECT pg_advisory_xact_lock(27500029);", ct);
+
+        await UpsertLessonsAsync(scoped, ct);
+        await UpsertMappingsAsync(scoped, mappings, ct);
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedOnlyApprovedUaeGrade9MetadataAsync(ct);
+
+        var after = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var afterIds = after.Select(x => x.Id).ToArray();
+        var metadata = await _db.CurriculumLessonContents
+            .Where(x => afterIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+        var afterAll = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var afterContents = await _db.CurriculumLessonContents.CountAsync(ct);
+        if (after.Length != 82 ||
+            metadata.Length != 82 ||
+            metadata.Any(x => (int)x.Status != 3) ||
+            after.Any(x => !scopedByCode.TryGetValue(x.Code, out var expected) ||
+                x.Id != expected.Id || x.Title != expected.Title) ||
+            afterAll != unrelated + 82 || afterContents != unrelated + 82 ||
+            await _db.CurriculumPedagogicalLessons.CountAsync(
+                x => x.Code.StartsWith("PED:UAE-MOE-MATH:L7:GENERAL:"), ct) != 78 ||
+            await _db.CurriculumPedagogicalLessons.CountAsync(
+                x => x.Code.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:"), ct) != 76)
+            throw new InvalidOperationException(
+                "Grade9 0-to-82 postconditions failed; entire transaction rolled back.");
+
+        await transaction.CommitAsync(ct);
+        Console.WriteLine(
+            "UAE_G9_SCOPED_PRODUCTION_82_LESSONS_AND_82_METADATA_PASS " +
+            $"unrelatedBaseline={unrelated} otherCurriculaUnchanged=true");
+    }
+
+
+    /// <summary>
     /// Owner-authorized Grade8 General 77 legacy to 76 first-party Arabic cutover.
     /// Preserves deterministic 76 pedagogical lesson IDs and all adoptions.
     /// The extra U12L05 and its single metadata row retire inside the SAME
