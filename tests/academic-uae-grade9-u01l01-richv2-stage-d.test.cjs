@@ -115,3 +115,15 @@ test('U01L01 Arabic comparative wording must not be misgraded or taught as an ar
  assert.equal(n<20,true);
  assert.equal(20-n,3);
 });
+
+
+test('U01L01 Arabic lesson vocabulary distinguishes subtractive less-than from the inequality relation',()=>{
+ const l=read(base+'RichV2/uae-g9-general-u01-l01-ar.rich-lesson-v2.json').Lessons[0];
+ const paragraph=l.ExplanationParagraphs.find(x=>x.includes('«ن أقل من ٢٠»'));
+ const rule=l.KeyConcepts.find(x=>x.Title==='قاموس لفظي للعمليات الجبرية').Rule;
+ assert.ok(paragraph.includes('«أقل من» تحتاج سياقًا'));
+ assert.ok(paragraph.includes('«ن أقل من ٢٠» تفيد المقارنة'));
+ assert.doesNotMatch(paragraph,/«مطروح منه» و«أقل من» للطرح/);
+ assert.ok(rule.includes('لكنها قد تصف متباينة'));
+ assert.doesNotMatch(rule,/الطرح: الفرق\/ناقص\/مطروح منه\/أقل من/);
+});
