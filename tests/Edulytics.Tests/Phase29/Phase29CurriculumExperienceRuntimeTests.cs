@@ -60,7 +60,7 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
         var levels = CurriculumLevelIdentityRegistry.ForPack(
             MathematicsCurriculumPackRegistry.UaeCode);
 
-        Assert.Equal(19, levels.Count);
+        Assert.Equal(18, levels.Count);
 
         foreach (var logicalLevel in Enumerable.Range(1, 4))
         {
@@ -79,7 +79,7 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
                 .ToArray();
 
             Assert.Equal(
-                logicalLevel == 8
+                logicalLevel is 8 or 9
                     ? new string?[] { "General" }
                     : new string?[] { "Advanced", "General" },
                 levelPathways);

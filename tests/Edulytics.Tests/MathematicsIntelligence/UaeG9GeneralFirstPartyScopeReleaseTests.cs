@@ -11,6 +11,29 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
         "UAE-G9-GENERAL-AR82-OWNER-FIRST-PARTY-V1:COMPOSITE-SOURCE-CANDIDATE";
 
     [Fact]
+    public void Retired_UAE_Grade9_Advanced_is_not_a_selectable_pathway()
+    {
+        MathematicsCurriculumPackRegistry.Validate();
+        var uae = Assert.Single(MathematicsCurriculumPackRegistry.All,
+            x => x.Code == MathematicsCurriculumPackRegistry.UaeCode);
+
+        Assert.Equal(18, uae.Levels.Count);
+        Assert.Contains(uae.Levels, x =>
+            x.LogicalLevel == 9 && x.Pathway == "General");
+        Assert.DoesNotContain(uae.Levels, x =>
+            x.LogicalLevel == 9 && x.Pathway == "Advanced");
+        Assert.DoesNotContain(uae.Levels, x =>
+            x.LogicalLevel == 8 && x.Pathway == "Advanced");
+        foreach (var grade in new[] { 5, 6, 7, 10, 11, 12 })
+        {
+            Assert.Contains(uae.Levels, x =>
+                x.LogicalLevel == grade && x.Pathway == "General");
+            Assert.Contains(uae.Levels, x =>
+                x.LogicalLevel == grade && x.Pathway == "Advanced");
+        }
+    }
+
+    [Fact]
     public void One_Grade9_General_Arabic_blueprint_owns_exactly_82_ordered_first_party_identities()
     {
         var document = Assert.Single(PedagogicalLessonBlueprintRegistry
