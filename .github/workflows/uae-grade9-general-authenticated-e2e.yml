@@ -6,6 +6,10 @@ on:
   push:
     branches: [fix/g9-general-full-year-scope-86, main]
     paths:
+      # A retired academic pathway must pass all four exact-main G9 gates.
+      - 'src/Edulytics.Core/Curriculum/MathematicsCurriculumPackRegistry.cs'
+      - 'docs/PHASE_29_SOURCE_ACQUISITION_MATRIX.json'
+      - 'tests/Edulytics.Tests/Phase29/Phase29CurriculumExperienceRuntimeTests.cs'
       - '.github/workflows/uae-grade9-general-authenticated-e2e.yml'
       - 'tools/curriculum/uae_g9_stage_d_*.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
@@ -16,6 +20,10 @@ on:
   pull_request:
     branches: [main]
     paths:
+      # A retired academic pathway must pass all four exact-main G9 gates.
+      - 'src/Edulytics.Core/Curriculum/MathematicsCurriculumPackRegistry.cs'
+      - 'docs/PHASE_29_SOURCE_ACQUISITION_MATRIX.json'
+      - 'tests/Edulytics.Tests/Phase29/Phase29CurriculumExperienceRuntimeTests.cs'
       - '.github/workflows/uae-grade9-general-authenticated-e2e.yml'
       - 'tools/curriculum/uae_g9_stage_d_*.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
