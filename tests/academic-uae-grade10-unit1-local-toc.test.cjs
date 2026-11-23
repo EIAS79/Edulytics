@@ -34,8 +34,8 @@ test('Grade10 Unit1 nine preliminary titles remain traceable without being mista
     const row = index.rows[i];
     assert.equal(row.candidateOrdinal, i + 1);
     assert.equal(row.sourceLessonNumbersPreliminary, `1-${i+1}`);
-    assert.equal(row.titleArabicCandidate, fromBook[i][0]);
-    assert.equal(row.bookPrintedOpeningPage, fromBook[i][1]);
+    assert.equal(row.titleArabicCandidate, preliminaryCandidate[i][0]);
+    assert.equal(row.bookPrintedOpeningPage, preliminaryCandidate[i][1]);
     assert.equal(row.bookTocPhysicalPdfPage, 5);
     assert.equal(row.bookSha256,
       'd7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72');
