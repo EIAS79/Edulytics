@@ -98,3 +98,30 @@ test('Grade10 U01L01 exact mapping reuses only existing correct coefficient fami
     assert.equal(P[d]-Q[d], [10,-9,3][d]);
   }
 });
+
+test('U01L01 original realistic polynomial area model has independently checked boundaries', () => {
+  const lesson=pack.Lessons.find(x=>x.LessonCode.includes(':L10:GENERAL:01:01:'));
+  const ar=lesson.Translations.find(x=>x.CultureCode==='ar');
+  assert.match(ar.WorkedExamples,/20−x/);
+  assert.match(ar.StepByStepSolutions,/المحيط/);
+  assert.match(ar.CommonMistakes,/40−x/);
+  const P=40;
+  const widthByPerimeter=x=>(P-2*x)/2;
+  const areaFromGeometry=x=>x*widthByPerimeter(x);
+  const areaFromPolynomial=x=>20*x-x*x;
+  for(const x of [1,2,5,8,10,12,15,18,19])
+    assert.equal(areaFromGeometry(x),areaFromPolynomial(x));
+  assert.equal(areaFromGeometry(10),100);
+  assert.equal(areaFromGeometry(5),areaFromGeometry(15));
+  assert.ok(widthByPerimeter(25)<0,'impossible geometric width excluded');
+});
+test('Grade10 U01L01 element ledger is source-page-grounded and never marks Stage D run', () => {
+  const ledger=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-source-elements.json'),'utf8'));
+  assert.equal(ledger.sourceElements.length,25);
+  assert.equal(ledger.elementDenominatorForThisBook,25);
+  assert.equal(ledger.sourceIndexLocked,false);
+  assert.equal(ledger.testsRun,'WRITTEN_NOT_RUN');
+  assert.ok(ledger.sourceElements.some(x=>x.goal.includes('fixed-perimeter')));
+  assert.ok(ledger.sourceElements.some(x=>x.coverageStatus==='TEACHER_REVIEW_REQUIRED'));
+});

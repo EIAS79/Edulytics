@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathwayTarget": "General",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "verifiedFrom": "owner-uploaded original seven PDF bytes 2026-11-23, read-only local PyMuPDF + visual source page inspection",
+  "desktopCommanderCalls": 0,
+  "sourceLock": "PENDING_SEMANTIC_DEDUPLICATION",
+  "pdfs": [
+    {
+      "name": "01.pdf",
+      "pages": 537,
+      "pathway": "General",
+      "edition": "2025–2026",
+      "classification": "PRIMARY_GENERAL_FULL_ANNUAL",
+      "sha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+      "notes": "Seven-unit TOC pp4–11; original U01L01 pp20–25"
+    },
+    {
+      "name": "01متقدم_.pdf",
+      "pages": 353,
+      "pathway": "Advanced",
+      "edition": "2025–2026",
+      "classification": "PRIMARY_ADVANCED_SOURCE_PART",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "notes": "Twelve-unit TOC; composite 3-1 overlap with General U01L01; objectives individually preserved"
+    },
+    {
+      "name": "02-1.pdf",
+      "pages": 76,
+      "pathway": "Unclassified",
+      "edition": "not established",
+      "classification": "CHAPTER_EXCERPT_PATHWAY_UNVERIFIED",
+      "sha256": "f472ec50c4427ac257c968381e7537fa07a3e291b4a48fcf5cf914917d11f83b",
+      "notes": "Title page starts «التناسب والتشابه», chapter 6, rather than book cover; cannot assign school pathway without provenance"
+    },
+    {
+      "name": "02-2.pdf",
+      "pages": 171,
+      "pathway": "General",
+      "edition": "2018–2019",
+      "classification": "HISTORICAL_GENERAL_EXCERPT",
+      "sha256": "d3bfcb3d23850934d8e8aec88f962e5020165f6fc13823ef42a93385abdd2e1d",
+      "notes": "Cover General 2018–2019; starts «الوسط الهندسي», older geometry unit; not a new annual edition"
+    },
+    {
+      "name": "03.pdf",
+      "pages": 264,
+      "pathway": "Applied",
+      "edition": "2022–2023 interior, 2023–2024 cover",
+      "classification": "APPLIED_VARIANT_A",
+      "sha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+      "notes": "Nine units listed; overlapping content with companion Applied PDF but not byte-identical"
+    },
+    {
+      "name": "03متقدم_.pdf",
+      "pages": 267,
+      "pathway": "Advanced",
+      "edition": "2018–2019",
+      "classification": "HISTORICAL_ADVANCED_SOURCE_PART",
+      "sha256": "cc6b74da11980d3b9fe1cc19d2131acdb081e3ab0b493b96b7a6b9623e397ea6",
+      "notes": "Older 12-unit Advanced table of contents; body coverage subset, candidate unique pedagogy not assumed duplicate"
+    },
+    {
+      "name": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "pages": 225,
+      "pathway": "Applied",
+      "edition": "2022–2023 interior, 2023–2024 cover",
+      "classification": "APPLIED_VARIANT_B_OVERLAP",
+      "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+      "notes": "Nine-unit table of contents largely overlaps 03.pdf, with page-level changes; not independently counted as nine more units"
+    }
+  ],
+  "duplicateGuard": {
+    "appliedVariantFiles": [
+      "03.pdf",
+      "رياضيات كتاب الطالب تطبيقي 10 8.pdf"
+    ],
+    "evidence": "First TOC pages and matching original PDF page thumbnails are highly overlapping; not byte-identical; two editions must not double-count lessons",
+    "status": "CANDIDATE_OVERLAP_NOT_COMPLETE_PAGE_LEVEL_DUPLICATE_PROOF"
+  },
+  "finalCanonicalLessonCount": null,
+  "finalCanonicalUnitCount": null,
+  "existingGeneralBaseline": 48,
+  "existingAdvancedBaseline": 52,
+  "appliedProductionLessonBaseline": 0,
+  "safeMigrationPolicy": "Reuse General existing lesson identity on exact/partial compatible skill; preserve Advanced old identity/links until Stage D cohort, adoption, enrollment and grade references migrated and verified. Unique Advanced/Applied lesson belongs to General with a distinct Arabic title. Never delete Neon student data in Stage A-C.",
+  "completeLessonClosureAllowedBeforeSourceLock": false
+}
