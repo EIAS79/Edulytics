@@ -169,7 +169,9 @@ test('Grade10 U01L01 uses an actual Arabic RichV2 lesson including visual calcul
  assert.equal(x.Title,'جمع كثيرات الحدود وطرحها');
  assert.ok(x.WorkedExamples.length>=5);
  assert.ok(x.Visuals.length>=3);
- assert.ok(x.Visuals.every(v=>v.Kind==='CalculationChain'&&v.Items.length>=3));
+ assert.ok(x.Visuals.every(v=>v.Items.length>=3));
+ assert.ok(x.Visuals.some(v=>v.Kind==='ExpressionStripBars'&&v.Rows.length===3));
+ assert.ok(x.Visuals.some(v=>v.Kind==='ShapeDecomposition'&&v.Rows.length===3));
  assert.ok(x.KeyConcepts.some(v=>v.Title==='المعامل الرئيس'));
  assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٣س³−٤س²+٧س−١٣')));
  assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٢٠س−س²')));
