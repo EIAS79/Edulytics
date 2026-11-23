@@ -13,7 +13,7 @@
   "existingGeneralPackLessonCountAtBranchRead": 48,
   "first48PositionalLinksAreVerifiedSemanticMatches": false,
   "possibleNewOrExtensionCandidatesAfterFirst48": 108,
-  "warning": "The 156 headings are candidates, not a final verified denominator or authority to delete/add runtime lessons. Crosswalk and true semantically distinct skills require reading source pages from all seven books; existing app is not source of academic TOC.",
+  "warning": "The 156 headings are candidates, not a final verified denominator or authority to delete/add runtime lessons. Crosswalk and true semantically distinct skills require reading source pages from all seven books; existing app is not source of academic TOC. Source volume coverage is incomplete: Advanced 2025–26 Units5–8 and Applied Units1–3 bodies not attached; TOC only is not lesson equivalence evidence.",
   "rows": [
     {
       "candidateOrdinal": 1,
@@ -1641,5 +1641,12 @@
     "entries": 9,
     "verification": "Original PDF page visually reviewed on 2026-11-23. Only book unit 1 table-of-contents titles, ordering and opening page numbers verified. Physical PDF p20–25 U01L01 body was reviewed independently. No other lesson body is claimed audited.",
     "progress": "PREPARATION_ONLY_NOT_READY_FOR_STAGE_D"
-  }
+  },
+  "verifiedMainBookTocFamilyLessonCounts": {
+    "general2025": 48,
+    "advanced2025": 86,
+    "applied2022_2024": 59,
+    "sourceEntriesBeforeDedup": 193
+  },
+  "sourceBodyCoverageGapsArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-toc-and-body-coverage.json"
 }
