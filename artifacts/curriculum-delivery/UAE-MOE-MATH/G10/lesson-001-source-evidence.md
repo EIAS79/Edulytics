@@ -25,3 +25,7 @@
 5. Tests added in this commit are **authored and NOT RUN**. No CI, .NET, E2E or Stage D results are claimed.
 
 **Continuation cursor:** ordinal **1** until gaps above are resolved and `Evidence + Checkpoint + Commit` are sufficient for `READY_FOR_STAGE_D`. Do not advance to lesson 2 on this checkpoint.
+
+## Cross-book index discovery — Advanced 2025–2026
+
+The `01متقدم_.pdf` local file (SHA256 `0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815`), physical PDF page **7**, identifies Advanced Unit 3 lesson **3-1** as «العمليات على كثيرات الحدود», printed opening page **179**. Physical PDF page **196** (printed 179) confirms goals including simplifying expressions and adding/subtracting/multiplying/dividing polynomials. This creates a **candidate semantic overlap** with General U01L01 and adjacent lessons, not a proven duplicate. Further lesson-body visual review is pending. The preliminary 156-row source appendix incorrectly mapped Unit 3 lesson numbers/titles; rows 66–73 are corrected at the indexed-heading level, **not yet semantic closure**.
