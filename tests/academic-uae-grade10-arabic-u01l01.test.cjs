@@ -188,3 +188,14 @@ test('U01L01 rental application includes per-day charge, per-distance rate and c
  assert.equal(102-60,42);
  assert.ok(lesson.Visuals.some(x=>x.Title.includes('تكلفة ثابتة لكل يوم')));
 });
+test('U01L01 RichV2 closes original geometry, sign-distribution, and multivariate teaching elements',()=>{
+ const rich=JSON.parse(fs.readFileSync(path.join(root,
+ 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json'),'utf8'));
+ const item=rich.Lessons[0];
+ assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('٥س+٧')));
+ assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('−س²−٤س+٢')));
+ assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('٤س²ص+٣سص+٣')));
+ assert.equal((12*1+18)-(4*1+6)-(3*1+5),12);
+ assert.equal((2-1)-(3+3-2),-3);
+ assert.equal((3-2+4)+(1+5-1),10);
+});
