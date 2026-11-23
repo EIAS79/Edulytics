@@ -80,3 +80,21 @@ test('U01L01 source-specified standard form, visual and original exit check are 
   assert.equal(P(1)+Q(1),2);
   assert.equal(P(1)-Q(1),8);
 });
+test('Grade10 U01L01 exact mapping reuses only existing correct coefficient families (authored, not run in A–C)', () => {
+  const map = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'), 'utf8'));
+  const lesson = map.mappings.find(x => x.lessonCode ===
+    'PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS');
+  assert.ok(lesson);
+  assert.deepEqual(lesson.allowedQuestionFamilies, [
+    'uae.g9.general.u07.l01.add_coefficient',
+    'uae.g9.general.u07.l01.subtract_coefficient'
+  ]);
+  assert.match(lesson.practiceReadiness, /NOT_READY_FOR_STAGE_D/);
+  assert.ok(lesson.teacherReviewRequiredFor.length >= 3);
+  const P = [3, -4, 2], Q = [-7, 5, -1];
+  for (let d=0; d<=2; d++) {
+    assert.equal(P[d]+Q[d], [-4,1,1][d]);
+    assert.equal(P[d]-Q[d], [10,-9,3][d]);
+  }
+});
