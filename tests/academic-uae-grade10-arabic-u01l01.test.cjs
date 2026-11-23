@@ -125,3 +125,11 @@ test('Grade10 U01L01 element ledger is source-page-grounded and never marks Stag
   assert.ok(ledger.sourceElements.some(x=>x.goal.includes('fixed-perimeter')));
   assert.ok(ledger.sourceElements.some(x=>x.coverageStatus==='TEACHER_REVIEW_REQUIRED'));
 });
+test('U01L01 source identity is the verified 2025–26 General volume 1, not an annual textbook', () => {
+  const lesson=pack.Lessons.find(x=>x.LessonCode==='PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS');
+  assert.equal(lesson.SourceSha256,'d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72');
+  assert.match(lesson.SourceEdition,/2025–2026, Volume 1/);
+  assert.match(lesson.SourceLocator,/PDF pages 20–25/);
+  assert.match(lesson.RetrievalChannel,/Owner-uploaded/);
+  assert.equal(pack.Lessons.length,48,'this is only the current Volume1 baseline, NOT annual count');
+});
