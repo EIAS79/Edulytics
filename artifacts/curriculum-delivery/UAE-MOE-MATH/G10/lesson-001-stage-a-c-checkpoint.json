@@ -32,14 +32,15 @@
   "academicLanguageTarget": "ar",
   "arabicContentEnhanced": true,
   "checkedExistingEngine": "Existing Grade9 numeric add/sub coefficient question families (BuildOriginalProblem, Solve, Verify in ExactSkillContractQuestionEngine) inspected and reused as Grade10 mapping; not run or validated via selected Grade10 Practice",
-  "skillContractStatus": "EXACT_LESSON_MAPPING_WRITTEN_PARTIAL_REUSE_NOT_READY_FOR_STAGE_D",
+  "skillContractStatus": "EXACT_FAMILY_CONTRACT_AUTHORED_BUT_RUNTIME_PROJECTION_NOT_AUTHORIZED",
   "coolDown": {
     "type": "EDULYTICS_AUTHORED_SUBSTITUTE",
     "sourceOriginalStatus": "SOURCE_NOT_ACCESSIBLE",
     "teacherRubricWritten": true
   },
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u01l01.test.cjs"
+    "tests/academic-uae-grade10-arabic-u01l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialAddSubtractReuseTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -47,7 +48,8 @@
     "Seven-book final source/skill deduplication and canonical count",
     "Verify General U01L01 selected student Practice route and numeric renderer/grader with independent verifier in Stage D",
     "Confirm original activities or authored substitutes cover mathematical depth and teacher UI routing",
-    "Finish migration-safe General target catalog and source lock before READY_FOR_STAGE_D"
+    "Finish migration-safe General target catalog and source lock before READY_FOR_STAGE_D",
+    "Stage D selected Grade10 Practice registry, renderer, independent grading and authenticated student interaction proof"
   ],
   "firstIncompleteLessonOrdinal": 1,
   "nextEligibleLessonOrdinal": null,
@@ -80,5 +82,7 @@
   "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-source-elements.json",
   "sourceElementsIndexed": 25,
   "sourceSelectionPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json",
-  "sourceAccess": "OWNER_UPLOADED_PDF_LOCAL_READ_NO_DESKTOP"
+  "sourceAccess": "OWNER_UPLOADED_PDF_LOCAL_READ_NO_DESKTOP",
+  "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-c-exact-contract.json",
+  "practiceRuntimeGate": "FAIL_CLOSED: projection requires READY_VERIFIED single primary skill and valid family registry, Grade10 lesson currently not authorized"
 }
