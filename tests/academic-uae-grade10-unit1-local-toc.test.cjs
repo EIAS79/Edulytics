@@ -14,7 +14,8 @@ const index = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-index-
 const pack = load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
 const inventory = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-inventory.json');
 
-const fromBook = [
+// Historical preliminary extraction; not the source-verified Arabic TOC.
+const preliminaryCandidate = [
   ['جمع كثيرات الحدود وطرحها', 7],
   ['ضرب كثيرة حدود في أحادية الحد', 14],
   ['ضرب كثيرات الحدود', 22],
@@ -26,10 +27,10 @@ const fromBook = [
   ['المربعات الكاملة', 64],
 ];
 
-test('Grade10 General Unit1 9 candidate titles remain in verified local book order', () => {
-  assert.equal(fromBook.length, 9);
-  assert.equal(new Set(fromBook.map(x => x[0])).size, 9, 'unit lesson titles must be distinct');
-  for (let i = 0; i < fromBook.length; i++) {
+test('Grade10 Unit1 nine preliminary titles remain traceable without being mistaken for the verified book', () => {
+  assert.equal(preliminaryCandidate.length, 9);
+  assert.equal(new Set(preliminaryCandidate.map(x => x[0])).size, 9, 'unit lesson titles must be distinct');
+  for (let i = 0; i < preliminaryCandidate.length; i++) {
     const row = index.rows[i];
     assert.equal(row.candidateOrdinal, i + 1);
     assert.equal(row.sourceLessonNumbersPreliminary, `1-${i+1}`);
@@ -49,4 +50,19 @@ test('seven-book source hashes do not masquerade as semantic validation', () => 
   assert.equal(inventory.allSevenFileHashesMatched, true);
   assert.equal(index.sourceLock, false, 'do not silently mark global source index approved');
   assert.equal(inventory.sourceLock, false, 'book hashes are not proof of semantic coverage');
+});
+
+test('Source-verified General Volume1 TOC supersedes the preliminary 156-candidate title wording', () => {
+  const verified = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/general-2025-volume1-48-verified-book-toc.json');
+  assert.equal(verified.sourceLessonCount,48);
+  assert.equal(verified.titleDifferenceFromEarlier156CandidateCount,14);
+  assert.equal(verified.lessons.length,48);
+  assert.equal(verified.lessons[1].titleArabicSourceToc,'ضرب كثيرة حدود في أحادية حد');
+  assert.notEqual(verified.lessons[1].titleArabicSourceToc,preliminaryCandidate[1][0]);
+  assert.equal(verified.lessons[5].titleArabicSourceToc,'حل x² + bx + c = 0');
+  assert.equal(verified.lessons[6].titleArabicSourceToc,'حل ax² + bx + c = 0');
+  assert.equal(verified.lessons[47].titleArabicSourceToc,'شبه المنحرف وشكل الطائرة الورقية');
+  assert.equal(verified.lessons[47].printedPageInOriginalToc,587);
+  assert.equal(verified.lessons[47].printedOpeningPageVerified,487);
+  assert.equal(verified.sourceLock,false,'48 verified headings do not establish whole seven-book semantic parity');
 });
