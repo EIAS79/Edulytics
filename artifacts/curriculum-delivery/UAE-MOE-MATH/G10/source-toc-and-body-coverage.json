@@ -27,7 +27,7 @@
         10,
         11
       ],
-      "bookBodyRangeNote": "Unit1 p20–25 and Unit7 p505 directly sampled; other lesson body audit pending",
+      "bookBodyRangeNote": "2025–2026 Volume 1/Term 1 only. Seven units/48 source lesson headings and body through last volume page; NOT the full school year.",
       "unitBodiesPresentOnUploadedFile": [
         1,
         2,
@@ -38,7 +38,8 @@
         7
       ],
       "unitBodiesFullAcademicAudit": false,
-      "sourceTocLessonCount": 48
+      "sourceTocLessonCount": 48,
+      "sourceTocScope": "2025_2026_GENERAL_VOLUME_1_ONLY"
     },
     {
       "pathway": "Advanced",
@@ -158,6 +159,17 @@
   "originalPreliminaryCandidateCount": 156,
   "sourceGaps": [
     {
+      "case": "GENERAL_2025_LATER_TERM_SOURCE_NOT_IN_SEVEN",
+      "pathway": "General",
+      "period": "2025–2026",
+      "sourceTocUnits": [],
+      "reason": "01.pdf explicitly shows Volume/Part 1 on cover; 48 headings are only those in Volume1. No current-edition General Volumes2/3 were supplied. 02-2.pdf is a distinct 2018–19 General excerpt with Unit8+ body; 02-1.pdf is an old unclassified Unit6 excerpt.",
+      "resolution": "Owner has approved existing seven PDFs only: continue bounded source scope and do not claim complete annual 2025–26 General count.",
+      "acquisitionRequired": false,
+      "blockingGeneralContentReview": false,
+      "scopeDisposition": "OUTSIDE_OWNER_APPROVED_FILE_SET_BODY_UNAVAILABLE"
+    },
+    {
       "case": "ADVANCED_NEW_VOLUME2_MISSING",
       "pathway": "Advanced",
       "period": "2025–2026",
@@ -222,8 +234,11 @@
   "desktopCommanderCalls": 0,
   "ownerDecision": "SEVEN_EXISTING_PDFS_SUFFICIENT_SOURCE_SCOPE; GENERAL_COMPLETENESS_IS_MANDATORY",
   "additionalExternalBooksRequired": false,
-  "generalBookFullSourceAvailable": true,
+  "generalBookFullSourceAvailable": false,
   "general48LessonCompletionVerified": false,
   "approvedSourceScopeArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/owner-approved-source-scope.json",
-  "globalSourceLockStatus": "PENDING_ONLY_WITHIN_OWNER_APPROVED_SEVEN_FILES"
+  "globalSourceLockStatus": "PENDING_ONLY_WITHIN_OWNER_APPROVED_SEVEN_FILES",
+  "general2025Volume1FullSourceAvailable": true,
+  "generalAnnualSourceComplete": false,
+  "generalAnnualLessonCount": null
 }
