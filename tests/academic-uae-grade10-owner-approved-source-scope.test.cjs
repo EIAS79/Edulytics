@@ -18,7 +18,10 @@ test('General volume1 lessons do not stand for complete annual General syllabus'
   assert.equal(s.authoritativeGeneralBook.tocUnitCount,7);
   assert.deepEqual(s.authoritativeGeneralBook.tocLessonCounts,[9,6,6,6,9,6,6]);
   assert.equal(s.authoritativeGeneralBook.tocLessonCount,48);
-  assert.equal(s.authoritativeGeneralBook.pdfPages,537);\n  assert.equal(s.authoritativeGeneralBook.isCompleteAnnualGeneral,false);\n  assert.equal(s.authoritativeGeneralBook.annualLessonCount,null);\n  assert.equal(cov.generalAnnualSourceComplete,false);
+  assert.equal(s.authoritativeGeneralBook.pdfPages,537);
+  assert.equal(s.authoritativeGeneralBook.isCompleteAnnualGeneral,false);
+  assert.equal(s.authoritativeGeneralBook.annualLessonCount,null);
+  assert.equal(cov.generalAnnualSourceComplete,false);
   assert.equal(s.authoritativeGeneralBook.all48AppLessonsVerified,false);
   assert.equal(s.sourceScopeSemanticClosure,'PENDING');
   assert.equal(s.canonicalLessonCount,null);
