@@ -156,3 +156,21 @@ test('Grade10 U01L01 contract covers exact whole polynomial while teacher graphi
  assert.ok(con.teacherReviewRequired.some(x=>/diagram|algebra-tile|graphic/.test(x)));
  assert.match(con.runtimeGate.currentlyApprovedRuntime,/^NO:/);
 });
+
+test('Grade10 U01L01 uses an actual Arabic RichV2 lesson including visual calculation and source-correct mathematical checks',()=>{
+ const rich=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json'),'utf8'));
+ assert.equal(rich.SchemaVersion,1);
+ assert.equal(rich.PackCode,'UAE-MOE-MATH');
+ assert.equal(rich.Lessons.length,1);
+ const x=rich.Lessons[0];
+ assert.equal(x.LessonCode,'PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS');
+ assert.equal(x.CultureCode,'ar');
+ assert.equal(x.Title,'جمع كثيرات الحدود وطرحها');
+ assert.ok(x.WorkedExamples.length>=5);
+ assert.ok(x.Visuals.length>=3);
+ assert.ok(x.Visuals.every(v=>v.Kind==='CalculationChain'&&v.Items.length>=3));
+ assert.ok(x.KeyConcepts.some(v=>v.Title==='المعامل الرئيس'));
+ assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٣س³−٤س²+٧س−١٣')));
+ assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٢٠س−س²')));
+});
