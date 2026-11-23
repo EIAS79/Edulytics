@@ -174,3 +174,17 @@ test('Grade10 U01L01 uses an actual Arabic RichV2 lesson including visual calcul
  assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٣س³−٤س²+٧س−١٣')));
  assert.ok(x.WorkedExamples.some(v=>v.Answer.includes('٢٠س−س²')));
 });
+test('U01L01 rental application includes per-day charge, per-distance rate and correct multi-day arithmetic',()=>{
+ const rich=JSON.parse(fs.readFileSync(path.join(root,
+ 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json'),'utf8'));
+ const lesson=rich.Lessons[0];
+ const ex=lesson.WorkedExamples.find(x=>x.Title==='نموذج تأجير متعدد الأيام وجمع كثيرتي تكلفة');
+ assert.ok(ex);
+ assert.ok(ex.Question.includes('١٨ي+٠٫٢ك'));
+ assert.ok(ex.Answer.includes('١٦٢ و٤٢'));
+ assert.equal(18*3+0.2*240,102);
+ assert.equal(12*3+0.1*240,60);
+ assert.equal(102+60,162);
+ assert.equal(102-60,42);
+ assert.ok(lesson.Visuals.some(x=>x.Title.includes('تكلفة ثابتة لكل يوم')));
+});
