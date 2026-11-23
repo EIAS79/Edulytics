@@ -58,3 +58,25 @@ test('Only UAE Grade 10 Advanced selection is removed; other levels preserved', 
   assert.match(registry, /new\(12,"Grade 12","Secondary","Advanced",true\)/);
   assert.match(registry, /uae\.Levels\.Count != 17/);
 });
+
+test('U01L01 source-specified standard form, visual and original exit check are authored (not executed here)', () => {
+  const lesson = pack.Lessons.find(x => x.LessonCode.includes(':L10:GENERAL:01:01:'));
+  const ar = lesson.Translations.find(x => x.CultureCode === 'ar');
+  assert.match(ar.Explanation, /الصيغة القياسية/);
+  assert.match(ar.Explanation, /المعامل الرئيس/);
+  assert.match(ar.WorkedExamples, /الطريقة العمودية/);
+  assert.match(ar.QuickSummary, /Cool-down/);
+  assert.match(lesson.AdaptationStatus, /A_C_EXPLICIT_GAP/);
+  const A = x => 2*x*x*x-x*x+5*x-4;
+  const B = x => -x*x*x+3*x*x-2*x+9;
+  const sum = x => x*x*x+2*x*x+3*x+5;
+  const difference = x => 3*x*x*x-4*x*x+7*x-13;
+  for (const x of [-5,-1,0,1,2,7]) {
+    assert.equal(A(x)+B(x),sum(x));
+    assert.equal(A(x)-B(x),difference(x));
+  }
+  const P = x => 3*x*x-2*x+4;
+  const Q = x => -x*x+5*x-7;
+  assert.equal(P(1)+Q(1),2);
+  assert.equal(P(1)-Q(1),8);
+});
