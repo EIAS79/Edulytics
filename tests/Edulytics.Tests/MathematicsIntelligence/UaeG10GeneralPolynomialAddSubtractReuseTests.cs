@@ -113,6 +113,10 @@ public sealed class UaeG10GeneralPolynomialAddSubtractReuseTests
     [InlineData("2x^2+2x+6", false)]
     [InlineData("x^3+2x+5", false)]
     [InlineData("x²+سص+5", false)]
+    [InlineData("2x+2x^2+5", false)]
+    [InlineData("2x^2+2x^2-2x^2+2x+5", false)]
+    [InlineData("0x^2+2x+5", false)]
+    [InlineData("2x^2+2x+5+0", false)]
     [InlineData("2x^2+1/2x+5", false)]
     public void Grade10WholeExpressionVerifierChecksArabicAndWesternDigits(string submitted, bool expected)
     {

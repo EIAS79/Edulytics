@@ -69,7 +69,7 @@ internal static class UaeG10PolynomialResponse
         string expression=builder.ToString();
         if(expression.Length==0)return false;
         if(expression[0] is not ('+' or '-'))expression="+"+expression;
-        int pos=0,count=0;
+        int pos=0,count=0,previousDegree=3;
         while(pos<expression.Length)
         {
             char sign=expression[pos];
@@ -96,6 +96,13 @@ internal static class UaeG10PolynomialResponse
                         CultureInfo.InvariantCulture,out absolute))return false;
             }
             if(absolute>1000)return false;
+            // Lesson 1-1 explicitly asks for the standard polynomial form:
+            // powers must descend, with no repeated degrees or zero-padding
+            // terms. A zero polynomial may be entered as a sole 0.
+            if(degree>=previousDegree ||
+               (absolute==0 && !(count==1 && pos==expression.Length && degree==0)))
+                return false;
+            previousDegree=degree;
             int sum=result[degree]+(sign=='-'?-absolute:absolute);
             if(sum is < -1000 or > 1000)return false;
             result[degree]=sum;
