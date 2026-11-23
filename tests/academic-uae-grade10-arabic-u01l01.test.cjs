@@ -133,3 +133,17 @@ test('U01L01 source identity is the verified 2025–26 General volume 1, not an 
   assert.match(lesson.RetrievalChannel,/Owner-uploaded/);
   assert.equal(pack.Lessons.length,48,'this is only the current Volume1 baseline, NOT annual count');
 });
+
+test('Real Grade10 General Volume1 blueprint and manifest reference local UAE source, not unrelated GCSE',()=>{
+ const blueprint=JSON.parse(fs.readFileSync(path.join(root,
+   'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
+ const manifest=JSON.parse(fs.readFileSync(path.join(root,
+   'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
+ assert.equal(blueprint.Units[0].Title,'التعابير والمعادلات التربيعية');
+ assert.match(blueprint.SourceEdition,/2025–2026, Volume 1/);
+ assert.match(blueprint.PedagogicalSourceType,/OfficialUaeStudentBook/);
+ assert.equal(manifest.SourceFile,'01.pdf');
+ assert.equal(manifest.Units[0].ls[0],'جمع كثيرات الحدود وطرحها');
+ assert.equal(manifest.LessonCount,48,'General 2025–26 Volume1 only; NOT annual course count');
+ assert.ok(!blueprint.SourceTitle.includes('GCSE'));
+});
