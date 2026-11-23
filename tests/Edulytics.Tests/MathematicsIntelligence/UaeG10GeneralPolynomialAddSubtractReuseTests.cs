@@ -104,6 +104,56 @@ public sealed class UaeG10GeneralPolynomialAddSubtractReuseTests
         }
     }
 
+
+    [Theory]
+    [InlineData("٢س²+٢س+٥", true)]
+    [InlineData("2x^2+2x+5", true)]
+    [InlineData("2س² + ٢س + ٥", true)]
+    [InlineData("س²+٢س+٥", false)]
+    [InlineData("2x^2+2x+6", false)]
+    [InlineData("x^3+2x+5", false)]
+    [InlineData("x²+سص+5", false)]
+    [InlineData("2x^2+1/2x+5", false)]
+    public void Grade10WholeExpressionVerifierChecksArabicAndWesternDigits(string submitted, bool expected)
+    {
+        const string family="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression";
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+        {
+            ["a2"]=3, ["a1"]=-4, ["a0"]=7,
+            ["b2"]=-1,["b1"]=6,["b0"]=-2,
+            ["subtract"]=0
+        };
+        Assert.Equal(expected,ExactSkillContractQuestionEngine.Verify(family,p,submitted));
+    }
+
+    [Fact]
+    public void Grade10WholeExpressionHandlesSubtractionCancellationAndInvalidParameters()
+    {
+        const string family="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression";
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+        {
+            ["a2"]=3, ["a1"]=-4, ["a0"]=7,
+            ["b2"]=-1,["b1"]=6,["b0"]=-2,
+            ["subtract"]=1
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,"٤س²−١٠س+٩"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,"4x^2-10x+9"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"٤س²−١٠س−٩"));
+        var cancelled=new Dictionary<string,int>(StringComparer.Ordinal)
+        {
+            ["a2"]=2, ["a1"]=1, ["a0"]=-4,
+            ["b2"]=-2,["b1"]=-1,["b0"]=4,
+            ["subtract"]=0
+        };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,cancelled,"0"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,cancelled,"س"));
+        p["a2"]=100;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"٤س²−١٠س+٩"));
+        p["a2"]=3;
+        p["subtract"]=2;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"٤س²−١٠س+٩"));
+    }
+
     [Fact]
     public void DerivedOriginalRectangleAreaModelAgreesWithGeometricPerimeterOracle()
     {
