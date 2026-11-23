@@ -1,5 +1,6 @@
 using System.Globalization;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -55,6 +56,18 @@ public sealed class UaeG10GeneralPolynomialAddSubtractReuseTests
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family, tampered, item.CorrectAnswer));
             }
         }
+    }
+
+    [Theory]
+    [InlineData("uae.g9.general.u07.l01.add_coefficient")]
+    [InlineData("uae.g9.general.u07.l01.subtract_coefficient")]
+    public void OriginalSharedCoefficientFamiliesRenderAsIntegerKeypad(string family)
+    {
+        // The declared family has an integer numeric answer. A generic
+        // contract_defined renderer would misrepresent the correct input UI.
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family, out var interaction));
+        Assert.NotNull(interaction);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, interaction!.InteractionKind);
     }
 
     [Fact]

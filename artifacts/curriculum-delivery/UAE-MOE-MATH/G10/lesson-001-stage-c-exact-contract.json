@@ -4,14 +4,14 @@
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
   "practiceSubset": "NUMERIC_COEFFICIENT_ADDITION_SUBTRACTION_ONLY",
   "primarySkills": [
-    "algebra.polynomial.add_subtract",
-    "algebra.polynomial.combine_like_terms"
+    "algebra.polynomial.add_subtract"
   ],
   "otherTeachingSkills": [
     "algebra.polynomial.standard_form",
     "algebra.polynomial.degree_leading_coefficient",
     "algebra.polynomial.multivariable_degree",
-    "algebra.polynomial.contextual_modeling"
+    "algebra.polynomial.contextual_modeling",
+    "algebra.polynomial.combine_like_terms"
   ],
   "allowedQuestionFamilies": [
     "uae.g9.general.u07.l01.add_coefficient",
@@ -41,7 +41,7 @@
     9
   ],
   "expectedAnswerType": "Numeric integer",
-  "proposedRenderer": "NumericEntry (must confirm LessonPracticeInteractionRegistry mapping before authorization)",
+  "proposedRenderer": "IntegerKeypad, supported for both existing Grade9 numeric coefficient families (authored logic; not Stage-D tested)",
   "grader": "ExactSkillContractQuestionEngine.Verify, not a full polynomial symbolic grading engine",
   "answerFormats": [
     "western_integer",
@@ -61,9 +61,13 @@
     "requiresExactlyOnePrimarySkill": true,
     "requiresApprovedSkillAndRoutedFamilyRegistry": true,
     "currentMappingPracticeReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
-    "currentMappingPrimarySkillCount": 4,
-    "currentlyApprovedRuntime": "NO_DO_NOT_CLAIM_PRACTICE_AVAILABLE",
-    "stageDAction": "After source lock and StageD tests, decide whether to split partial skill contract into a validated single-skill ready mapping, and audit correct family interaction registry. Never promote full U01L01 graded coverage based on coefficient-only questions."
+    "currentMappingPrimarySkillCount": 1,
+    "currentlyApprovedRuntime": "NO—Grade10 mapping not READY_VERIFIED and families not production-routed",
+    "stageDAction": "Validate teacher/student actual selected Practice and generation/verifier for both reused families; productionRouting and lesson Practice gating must pass explicit Stage-D checks before promotion; full symbolic expression remains teacher reviewed.",
+    "currentMappingPrimarySkillId": "algebra.polynomial.add_subtract",
+    "familyRegistrySkillIdsMatchPrimary": true,
+    "familyRegistryProductionRouting": false,
+    "familyRegistryStatus": "StageCAuthoredPendingD"
   },
   "testsWritten": [
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialAddSubtractReuseTests.cs"

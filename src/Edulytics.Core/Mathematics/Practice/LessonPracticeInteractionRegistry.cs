@@ -217,6 +217,17 @@ public static class LessonPracticeInteractionRegistry
             answerType == "contract_defined")
             return LessonPracticeInteractionKind.ContractDriven;
 
+        // G9/G10 original coefficient-only arithmetic has a single signed
+        // integer answer. The two exact solver/verifier families are shared;
+        // their registry still declares contract_defined for general routing.
+        // Render an integer keypad instead of a free-text/structured widget.
+        // This does NOT authorize Practice; capability remains fail-closed
+        // until Stage D explicitly certifies the exact lesson mapping.
+        if (answerType == "contract_defined" &&
+            familyId is "uae.g9.general.u07.l01.add_coefficient" or
+                        "uae.g9.general.u07.l01.subtract_coefficient")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
         // Declared numeric answer type is authoritative. Families named compare*
         // may ask for a numerical gap, not a <, =, > relation.
         if (answerType=="exact_integer")

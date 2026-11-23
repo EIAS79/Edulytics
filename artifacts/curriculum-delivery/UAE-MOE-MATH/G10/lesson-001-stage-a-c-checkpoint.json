@@ -31,8 +31,8 @@
   "sourceElementDenominatorVerified": false,
   "academicLanguageTarget": "ar",
   "arabicContentEnhanced": true,
-  "checkedExistingEngine": "Existing Grade9 numeric add/sub coefficient question families (BuildOriginalProblem, Solve, Verify in ExactSkillContractQuestionEngine) inspected and reused as Grade10 mapping; not run or validated via selected Grade10 Practice",
-  "skillContractStatus": "EXACT_FAMILY_CONTRACT_AUTHORED_BUT_RUNTIME_PROJECTION_NOT_AUTHORIZED",
+  "checkedExistingEngine": "Two G9 coefficient-only families BuildProblem/Solve/Verify inspected; Grade10 mapping now one matching primary skill and integer-keypad UI explicitly routed. Family registry status StageCAuthoredPendingD and productionRouting false; NOT_READY in A–C; Stage D tests not run.",
+  "skillContractStatus": "ONE_PRIMARY_SKILL_ALIGNED_EXACT_FAMILIES_INTEGER_KEYPAD_AUTHORED_NOT_RUN",
   "coolDown": {
     "type": "EDULYTICS_AUTHORED_SUBSTITUTE",
     "sourceOriginalStatus": "SOURCE_NOT_ACCESSIBLE",
@@ -84,7 +84,7 @@
   "sourceSelectionPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json",
   "sourceAccess": "OWNER_UPLOADED_PDF_LOCAL_READ_NO_DESKTOP",
   "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-c-exact-contract.json",
-  "practiceRuntimeGate": "FAIL_CLOSED: projection requires READY_VERIFIED single primary skill and valid family registry, Grade10 lesson currently not authorized",
+  "practiceRuntimeGate": "FAIL_CLOSED: Grade10 mapping PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D; family registry productionRouting false; after Stage D approval only numeric coefficient subskills eligible",
   "ownerApprovedSourceScope": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/owner-approved-source-scope.json",
   "generalSourceComplete": false,
   "general48LessonImplementationComplete": false,
@@ -92,5 +92,13 @@
   "generalVolume1SourceComplete": true,
   "generalAnnualSourceComplete": false,
   "generalAnnualLessonCount": null,
-  "general48LessonsAreVolume1Only": true
+  "general48LessonsAreVolume1Only": true,
+  "stageDRoutingGates": {
+    "lessonMappedSinglePrimary": true,
+    "questionFamilySkillMatchesPrimary": true,
+    "integerKeypadCodeAuthored": true,
+    "questionFamilyProductionRouting": false,
+    "grade10PracticeReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageDTestsRun": false
+  }
 }
