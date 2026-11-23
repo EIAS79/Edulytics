@@ -88,7 +88,8 @@ test('Grade10 U01L01 exact mapping reuses only existing correct coefficient fami
   assert.ok(lesson);
   assert.deepEqual(lesson.allowedQuestionFamilies, [
     'uae.g9.general.u07.l01.add_coefficient',
-    'uae.g9.general.u07.l01.subtract_coefficient'
+    'uae.g9.general.u07.l01.subtract_coefficient',
+    'uae.g10.general.u01.l01.full_polynomial_add_subtract_expression'
   ]);
   assert.match(lesson.practiceReadiness, /NOT_READY_FOR_STAGE_D/);
   assert.ok(lesson.teacherReviewRequiredFor.length >= 3);
@@ -202,13 +203,46 @@ test('U01L01 RichV2 closes original geometry, sign-distribution, and multivariat
  assert.equal((3-2+4)+(1+5-1),10);
 });
 
-test('Grade10 UAE Book Volume1 Unit1 actual nine Arabic lesson headings are preserved in catalog',()=>{
- const m=JSON.parse(fs.readFileSync(path.join(root,'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
- assert.equal(m.Units[0].title,'التعابير والمعادلات التربيعية');
- assert.deepEqual(m.Units[0].ls,[
- 'جمع كثيرات الحدود وطرحها','ضرب كثيرة حدود في أحادية الحد','ضرب كثيرات الحدود',
- 'نواتج الضرب الخاصة','استخدام خاصية التوزيع',
- 'حل المعادلات التربيعية على الصورة x² + bx + c = 0',
- 'حل المعادلات التربيعية على الصورة ax² + bx + c = 0',
- 'الفرق بين مربعين','المربعات الكاملة']);
+test('General Volume1 48 source-verified Arabic titles match actual provisional manifest and blueprint without claiming full annual parity',()=>{
+  const toc=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/general-2025-volume1-48-verified-book-toc.json'),'utf8'));
+  const manifest=JSON.parse(fs.readFileSync(path.join(root,
+    'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
+  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
+  assert.equal(toc.sourceLessonCount,48);
+  assert.equal(toc.sourceLock,false);
+  assert.equal(manifest.CanonicalUnifiedIndexLocked,false);
+  assert.equal(manifest.LessonCount,48);
+  assert.equal(blueprint.Lessons.length,48);
+  for(const unit of manifest.Units) {
+    const source=toc.lessons.filter(x=>x.unit===unit.n);
+    assert.ok(source.length>0);
+    assert.equal(unit.title,source[0].unitTitleArabic);
+    assert.deepEqual(unit.ls,source.map(x=>x.titleArabicSourceToc));
+    assert.equal(blueprint.Units.find(x=>x.Number===unit.n).Title,source[0].unitTitleArabic);
+  }
+  for(let i=0;i<48;i++) {
+    const actual=blueprint.Lessons[i],source=toc.lessons[i];
+    assert.equal(actual.UnitNumber,source.unit);
+    assert.equal(actual.LessonNumber,Number(source.lessonNumber.split('-')[1]));
+    assert.equal(actual.Title,source.titleArabicSourceToc);
+    assert.equal(actual.UnitTitle,source.unitTitleArabic);
+  }
+});
+
+test('Grade10 U01L01 retains intentionally blocked A-C closure and truthful source-versus-target periods',()=>{
+  const selection=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json'),'utf8'));
+  const checkpoint=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-a-c-checkpoint.json'),'utf8'));
+  assert.equal(selection.pdfs.find(x=>x.name==='01.pdf').classification,'PRIMARY_GENERAL_VOLUME1_TERM1');
+  assert.equal(selection.generalAnnualSourceComplete,false);
+  assert.equal(selection.finalCanonicalLessonCount,null);
+  assert.equal(checkpoint.status,'A_C_EXPLICIT_GAP');
+  assert.equal(checkpoint.firstIncompleteLessonOrdinal,1);
+  assert.equal(checkpoint.testsRun,'WRITTEN_NOT_RUN');
+  assert.match(pack.SourceCurriculumPeriod,/2025-2026.*Volume 1/);
+  assert.match(pack.TargetCurriculumPeriod,/2026-2027/);
+  assert.equal(pack.AcademicLanguage,'en','untranslated lessons cannot claim Arabic cutover');
 });
