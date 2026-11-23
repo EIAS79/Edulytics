@@ -4,6 +4,23 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
+      "version": 1,
+      "skillId": "algebra.polynomial.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-v1-u01l01-whole-expression-bounded-exact-verifier-v1",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",

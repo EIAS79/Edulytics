@@ -228,6 +228,11 @@ public static class LessonPracticeInteractionRegistry
                         "uae.g9.general.u07.l01.subtract_coefficient")
             return LessonPracticeInteractionKind.IntegerKeypad;
 
+        // Whole polynomial is a symbolic structured response, not a numeric coefficient.
+        if(answerType=="contract_defined" &&
+           familyId=="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         // Declared numeric answer type is authoritative. Families named compare*
         // may ask for a numerical gap, not a <, =, > relation.
         if (answerType=="exact_integer")

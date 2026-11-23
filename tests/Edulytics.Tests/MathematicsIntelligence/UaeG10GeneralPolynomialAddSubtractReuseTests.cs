@@ -70,6 +70,40 @@ public sealed class UaeG10GeneralPolynomialAddSubtractReuseTests
         Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, interaction!.InteractionKind);
     }
 
+
+    [Fact]
+    public void Grade10WholePolynomialFamilyUsesSharedExactEngineAndIndependentVerifier()
+    {
+        const string family="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression";
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var ui));
+        Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,ui!.InteractionKind);
+        var engine=new ExactSkillContractQuestionEngine();
+        foreach(var seed in new[]{20261123,20261124})
+        foreach(var difficulty in new[]{ExactSkillQuestionDifficulty.Standard,
+                                         ExactSkillQuestionDifficulty.Challenge})
+        {
+            var questions=engine.Generate(LessonCode,LessonCode,[family],difficulty,4,seed,[]);
+            Assert.Equal(4,questions.Count);
+            foreach(var question in questions)
+            {
+                Assert.Equal(AssessmentItemType.ShortAnswer,question.ItemType);
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,
+                           question.Parameters,question.CorrectAnswer));
+                string ascii=question.CorrectAnswer.Replace("س","x").Replace("²","^2");
+                Assert.True(ExactSkillContractQuestionEngine.Verify(family,
+                           question.Parameters,ascii));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+                            question.Parameters,question.CorrectAnswer+"+1"));
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,
+                            question.Parameters,"x^3+1"));
+                var corrupt=question.Parameters.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
+                corrupt["subtract"]=9;
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,corrupt,question.CorrectAnswer));
+            }
+        }
+    }
+
     [Fact]
     public void DerivedOriginalRectangleAreaModelAgreesWithGeometricPerimeterOracle()
     {
