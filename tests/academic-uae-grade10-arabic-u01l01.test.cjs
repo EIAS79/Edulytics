@@ -147,3 +147,12 @@ test('Real Grade10 General Volume1 blueprint and manifest reference local UAE so
  assert.equal(manifest.LessonCount,48,'General 2025–26 Volume1 only; NOT annual course count');
  assert.ok(!blueprint.SourceTitle.includes('GCSE'));
 });
+test('Grade10 U01L01 contract covers exact whole polynomial while teacher graphics remain separate',()=>{
+ const con=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-c-exact-contract.json'),'utf8'));
+ assert.deepEqual(con.primarySkills,['algebra.polynomial.add_subtract']);
+ assert.ok(con.allowedQuestionFamilies.includes('uae.g10.general.u01.l01.full_polynomial_add_subtract_expression'));
+ assert.ok(con.rendererMatrix.some(x=>x.kind==='StructuredEntry'));
+ assert.ok(con.teacherReviewRequired.some(x=>/diagram|algebra-tile|graphic/.test(x)));
+ assert.match(con.runtimeGate.currentlyApprovedRuntime,/^NO:/);
+});
