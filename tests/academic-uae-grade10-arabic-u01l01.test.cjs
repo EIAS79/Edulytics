@@ -199,3 +199,14 @@ test('U01L01 RichV2 closes original geometry, sign-distribution, and multivariat
  assert.equal((2-1)-(3+3-2),-3);
  assert.equal((3-2+4)+(1+5-1),10);
 });
+
+test('Grade10 UAE Book Volume1 Unit1 actual nine Arabic lesson headings are preserved in catalog',()=>{
+ const m=JSON.parse(fs.readFileSync(path.join(root,'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
+ assert.equal(m.Units[0].title,'التعابير والمعادلات التربيعية');
+ assert.deepEqual(m.Units[0].ls,[
+ 'جمع كثيرات الحدود وطرحها','ضرب كثيرة حدود في أحادية الحد','ضرب كثيرات الحدود',
+ 'نواتج الضرب الخاصة','استخدام خاصية التوزيع',
+ 'حل المعادلات التربيعية على الصورة x² + bx + c = 0',
+ 'حل المعادلات التربيعية على الصورة ax² + bx + c = 0',
+ 'الفرق بين مربعين','المربعات الكاملة']);
+});
