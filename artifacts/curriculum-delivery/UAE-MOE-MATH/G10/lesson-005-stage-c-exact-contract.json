@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 5,
+  "canonicalCode": "G10-U01-L05",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:05:USING-THE-DISTRIBUTIVE-PROPERTY",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceEdition": "2025–2026 General Vol1",
+  "sourcePdfPages": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "sourceReviewPage": 55,
+  "reviewPageIsCumulativeUnitReview": true,
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "primarySkills": [
+    "algebra.polynomial.factor_gcf"
+  ],
+  "skillSemantics": "Existing approved skill explicitly covers inverse distributive factoring and zero product property. Use one registered primary skill for both source tasks, keeping teacher-only four-term grouping and context models separately.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l05.gcf_complete_factor",
+    "uae.g10.general.u01.l05.zero_product_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+    "uae.g10.general.u01.l03.full_polynomial_product"
+  ],
+  "reusePolicy": "Extend shared ExactSkillContractQuestionEngine with bounded canonical GCF expression parser and zero-product integer root oracle; no general CAS or source-exercise copying.",
+  "engine": "Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine",
+  "generator": "BuildG10DistributiveFactor(family,random,difficulty)",
+  "independentVerifier": "UaeG10DistributiveFactorResponse.Verify(family,parameters,answer)",
+  "representations": [
+    {
+      "family": "uae.g10.general.u01.l05.gcf_complete_factor",
+      "input": "StructuredEntry",
+      "answerType": "contract_defined",
+      "limits": "GCF g∈[2,7], primitive binomial ax+b with a∈[1,5], b nonzero ±5, gcd(a,|b|)=1; common x exponent k∈[0,2]. Canonical positive GCF first and ascending linear factor required."
+    },
+    {
+      "family": "uae.g10.general.u01.l05.zero_product_roots",
+      "input": "StructuredEntry",
+      "answerType": "contract_defined",
+      "limits": "g∈[2,7], a∈[1,5], nonzero integer r∈[-5,5]; g*x*(a*x−a*r)=0; unordered two integer answers 0 and r accepted."
+    }
+  ],
+  "testSafety": {
+    "positive": [
+      "canonical factored expression returns true",
+      "unreordered and reordered integer root pair accepted",
+      "Arabic/Western digits normalized"
+    ],
+    "negative": [
+      "missing zero root rejected",
+      "nonmaximal GCF rejected",
+      "invalid parameter shapes/bounds rejected",
+      "wrong sign rejected",
+      "undeclared generic multiplication family forbidden"
+    ],
+    "boundary": [
+      "k=0 constant GCF",
+      "k=2 quadratic monomial GCF",
+      "negative nonzero root",
+      "unit coefficient inside primitive factor"
+    ]
+  },
+  "teacherReviewRequired": [
+    "factor by grouping with four terms and rearrangement",
+    "multivariable polynomial GCF and signed reordering",
+    "drawn rectangle area proof",
+    "vertical height/time contextual interpretation and domain check",
+    "open mathematical argument and teacher physical manipulatives"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralDistributiveFactorTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "productionRouting": false,
+    "StageD": "NOT_STARTED",
+    "scope": "Stage A-B-C authoring only"
+  }
+}
