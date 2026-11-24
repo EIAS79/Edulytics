@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 10,
+  "canonicalCode": "G10-U01-L10",
+  "unitOrdinal": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "قسمة كثيرات الحدود",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L10:C010",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "Advanced 2025–2026 Vol1 Unit3 L3-2 integrated into General only",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212
+  ],
+  "sourcePrintedPages": [
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominator": 27,
+  "sourceElementsMapped": 27,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-source-elements.json",
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 12
+  },
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-source-evidence.md",
+  "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l10-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 10,
+  "originalVisualModels": 5,
+  "newCanonicalContentPackEntryCreated": true,
+  "newContentPackLessonCodeCount": 49,
+  "original48LessonCodesPreserved": true,
+  "fullGradeArabicContentComplete": false,
+  "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.divide_long_synthetic"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+    "uae.g10.general.u01.l10.linear_divisor_remainder",
+    "uae.g10.general.u01.l10.monomial_division_expression"
+  ],
+  "independentVerifiers": [
+    "UaeG10PolynomialDivisionResponse.Verify",
+    "UaeG10DivisionResponse.Verify"
+  ],
+  "runtimeRendererMatrix": {
+    "linearQuotient": "StructuredEntry",
+    "linearRemainder": "IntegerKeypad",
+    "monomialQuotient": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "nonmonic higher-degree divisors",
+    "multivariable/rational coefficient division",
+    "CAS laboratory and graph interpretation",
+    "area-model and unit constraints",
+    "student proof and source page reasoning"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l10.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialDivisionReuseTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closedAtUtc": "2026-11-24T12:57:38Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "sourceContentReadyCommit": "1af83ac73d28d58e4fa8a27ff977852b6181ed3e",
+  "firstIncompleteLessonOrdinal": 11,
+  "nextEligibleLessonOrdinal": 11,
+  "closureBasis": "Nine original Advanced PDF 3-2 student pages inspected, 27 unique categorized source/assessment types mapped, first-party Arabic 10 examples + 5 visual models, new content pack entry with one canonical ID, reused two existing linear division families + monomial-only extension, independent verifier, written not-run tests, teacher rubric.",
+  "remainingStageDObligations": [
+    "Execute .NET and Node tests written for source exact linear/monomial division (including zero placeholder and negative root)",
+    "Inspect RTL structured expression response and integer remainder as authenticated student, persist grading without PII exposure",
+    "Verify CAS and nonmonic/quadratic teacher-only boundaries are not routed to exact families",
+    "Enable production Practice only after CI/E2E Stage D verification and full-grade source-content readiness"
+  ]
+}
