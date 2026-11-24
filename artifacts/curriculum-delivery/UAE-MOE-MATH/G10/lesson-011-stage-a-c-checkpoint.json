@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 11,
+  "canonicalCode": "G10-U01-L11",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "الدوال كثيرة الحدود",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L11:C011",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "UAE 2025–2026 Advanced Vol1 Unit3 Lesson3-3 integrated into sole General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220
+  ],
+  "sourcePrintedPages": [
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominator": 27,
+  "sourceElementsMapped": 27,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementCounts": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 5,
+    "TEACHER_REVIEW_REQUIRED": 12
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l11-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 11,
+  "originalVisualModels": 5,
+  "actualCartesianPlotCount": 2,
+  "contentPackCurrentLessonCount": 50,
+  "legacy48LessonCodesPreserved": true,
+  "globalArabicContentComplete": false,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.functions"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+    "uae.g10.general.u01.l11.polynomial_degree_integer",
+    "uae.g10.general.u01.l11.polynomial_end_behavior"
+  ],
+  "rendererMatrix": {
+    "evaluation": "IntegerKeypad",
+    "degree": "IntegerKeypad",
+    "endBehavior": "StructuredEntry"
+  },
+  "independentVerifier": "UaeG10PolynomialFunctionResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "freehand smooth graphs and end arrows",
+    "root/intercept and turning-point analysis requiring full source graph",
+    "algebraic input composition",
+    "polynomial contextual models with physically limited domain"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l11.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialFunctionsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "sourceContentReadyCommit": "e34dbbce887fbe674ab055c7ebd787e93e2f7743",
+  "closedAtUtc": "2026-11-24T13:08:58Z",
+  "firstIncompleteLessonOrdinal": 12,
+  "nextEligibleLessonOrdinal": 12,
+  "closureBasis": "Eight scanned original Advanced PDF213–220 pages, 27 categorized source goals/assessment types mapped, first-party 11 Arabic examples with two real Cartesian numeric plots (5 visuals total), teacher graph rubric, one primary polynomial functions skill and three bounded exact families with independent verifier, Stage D tests written NOT RUN.",
+  "remainingStageDObligations": [
+    "Run authored .NET/Node polynomial degree, integer evaluation, leading sign and end-behavior tests",
+    "Inspect authenticated Arabic RTL CartesianPlot and input presentation with real student session",
+    "Verify graph-reading teacher activities stay manual and digital bounded families remain fail-closed",
+    "Complete all 148 source-approved lesson bodies before production migration or release"
+  ]
+}
