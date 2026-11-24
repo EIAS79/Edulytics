@@ -51,6 +51,8 @@ public sealed partial class ExactSkillContractQuestionEngine
         new HashSet<string>(StringComparer.Ordinal)
         {
             "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
+            UaeG10MonomialPolynomialResponse.WholeFamily,
+            UaeG10MonomialPolynomialResponse.CoefficientFamily,
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
@@ -1159,6 +1161,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 return false;
             return (x==one&&y==two)||(x==two&&y==one);
         }
+
+        if (UaeG10MonomialPolynomialResponse.Supports(family))
+            return UaeG10MonomialPolynomialResponse.Verify(family,parameters,answer);
 
         if (family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
             return UaeG10PolynomialResponse.Verify(parameters,answer);
@@ -3550,6 +3555,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
                 AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
         }
+
+        if (UaeG10MonomialPolynomialResponse.Supports(family))
+            return BuildG10MonomialPolynomial(family,random,difficulty);
 
         if (family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
         {
@@ -9646,6 +9654,11 @@ public sealed partial class ExactSkillContractQuestionEngine
         if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
             return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
                 .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (UaeG10MonomialPolynomialResponse.Supports(problem.Family))
+            return problem.Family==UaeG10MonomialPolynomialResponse.WholeFamily
+                ? UaeG10MonomialPolynomialResponse.Format(p)
+                : UaeG10MonomialPolynomialResponse.NumericCoefficient(p);
 
         if (problem.Family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
             return UaeG10PolynomialResponse.Format(problem.Parameters);
