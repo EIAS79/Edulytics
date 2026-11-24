@@ -17,8 +17,8 @@ public sealed partial class ExactSkillContractQuestionEngine
     {
         int limit=difficulty==ExactSkillQuestionDifficulty.Challenge?6:4;
         int degree=random.Next(1,3);
-        int q2=degree==2?NonZero(random,limit):0;
-        int q1=degree==1?NonZero(random,limit):random.Next(-limit,limit+1);
+        int q2=degree==2?NonZeroG10PolynomialDivision(random,limit):0;
+        int q1=degree==1?NonZeroG10PolynomialDivision(random,limit):random.Next(-limit,limit+1);
         int q0=random.Next(-limit,limit+1),r=random.Next(-4,5);
         int remainder=random.Next(-6,7);
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
@@ -38,7 +38,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             ("degree",degree),("q2",q2),("q1",q1),("q0",q0),("r",r),("remainder",remainder));
     }
 
-    private static int NonZero(Random random,int limit)
+    private static int NonZeroG10PolynomialDivision(Random random,int limit)
     {
         int n;
         do n=random.Next(-limit,limit+1);while(n==0);
