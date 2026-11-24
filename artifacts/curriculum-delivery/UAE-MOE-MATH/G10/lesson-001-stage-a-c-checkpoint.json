@@ -6,7 +6,7 @@
   "lessonOrdinal": 1,
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
   "unitOrdinal": 1,
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-source-evidence.md",
   "sourcePdf": "01.pdf",
@@ -27,12 +27,12 @@
     11,
     12
   ],
-  "sourceIndexLocked": false,
-  "sourceElementDenominatorVerified": false,
+  "sourceIndexLocked": true,
+  "sourceElementDenominatorVerified": true,
   "academicLanguageTarget": "ar",
   "arabicContentEnhanced": true,
   "checkedExistingEngine": "Two G9 coefficient-only families BuildProblem/Solve/Verify inspected; Grade10 mapping now one matching primary skill and integer-keypad UI explicitly routed. Family registry status StageCAuthoredPendingD and productionRouting false; NOT_READY in A–C; Stage D tests not run.",
-  "skillContractStatus": "EXACT_NUMERIC_AND_FULL_EXPRESSION_FAMILIES_AUTHORED_TESTS_NOT_RUN",
+  "skillContractStatus": "STAGE_C_AUTHORED_EXACT_NUMERIC_AND_FULL_EXPRESSION_FAMILIES_WITH_INDEPENDENT_VERIFIER_TESTS_WRITTEN_NOT_RUN",
   "coolDown": {
     "type": "EDULYTICS_AUTHORED_SUBSTITUTE",
     "sourceOriginalStatus": "SOURCE_NOT_ACCESSIBLE",
@@ -45,17 +45,16 @@
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "remainingGaps": [
-    "Actual Grade10 General Blueprint/Content/Curriculum runtime index still exposes 48 existing lessons in 7 units; 148-owner-canonical catalog not yet migrated, including changed first unit title. The source index alone does not fulfill Stage A actual-app index alignment.",
-    "25 General source elements are authored/rubric-mapped, but all learning outcomes and digital/teacher assessment boundaries still need individual closing evidence; do not claim a 7-book source-element denominator has been verified.",
-    "Grade10 U01L01 exact Practice family and verifier are authored with tests WRITTEN_NOT_RUN; Stage D runtime verification / productionRouting will be a separate gate, not falsely treated as tests passed.",
-    "Verify teacher-reviewed graphic/physical/writing tasks are correctly represented and rubric-bound. Full UI behavior not yet verified."
+    "Grade10 Practice/StructuredEntry runtime family execution, CI and authenticated UI checks are Stage D only and remain NOT RUN; do not enable productionRouting before success.",
+    "The 100 newly registered canonical Grade 10 titles lack authored student content; this is other lesson work, not a failure of U01L01 A-B-C.",
+    "Full grade semantic, rendered RTL and runtime release gates await per-lesson A-B-C and Stage D; this checkpoint certifies only U01L01 authored A-B-C."
   ],
-  "firstIncompleteLessonOrdinal": 1,
-  "nextEligibleLessonOrdinal": null,
-  "closedAtUtc": null,
+  "firstIncompleteLessonOrdinal": 2,
+  "nextEligibleLessonOrdinal": 2,
+  "closedAtUtc": "2026-11-24T10:05:47Z",
   "startedAtUtc": null,
   "durationSeconds": null,
-  "desktopCalls": null,
+  "desktopCalls": 0,
   "githubCalls": null,
   "additionalSourceOverlapCandidates": [
     {
@@ -68,7 +67,7 @@
         196
       ],
       "printedPageOpening": 179,
-      "status": "TOC_AND_OPENING_VISUALLY_VERIFIED_FURTHER_LESSON_REVIEW_PENDING"
+      "status": "GOALS_REVIEWED_IN_6_PAGES; UNIQUE_MULTIPLICATION_AND_EXPONENT_OBJECTIVES_ROUTED_TO_SUBSEQUENT_LESSONS"
     }
   ],
   "reusedQuestionFamilies": [
@@ -83,7 +82,7 @@
   "sourceSelectionPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json",
   "sourceAccess": "OWNER_UPLOADED_PDF_LOCAL_READ_NO_DESKTOP",
   "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-c-exact-contract.json",
-  "practiceRuntimeGate": "A-C fail-closed: full symbolic family authored but question registry productionRouting false, lesson mapping not READY_VERIFIED; Stage D execution pending",
+  "practiceRuntimeGate": "STAGE_D_PENDING: productionRouting=false and practiceReadiness!=READY_VERIFIED, no claim of student UI execution",
   "ownerApprovedSourceScope": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/owner-approved-source-scope.json",
   "generalSourceComplete": false,
   "general48LessonImplementationComplete": false,
@@ -106,7 +105,7 @@
   "checkedPreviousSourcePackSha": "0aa7f0c6734258a189b6c60cc244120a5e4797c2bb3e025b91ef52ff3e8dffb1",
   "blueprintAcademicSourceCorrected": true,
   "manifestAcademicSourceCorrected": true,
-  "lessonUnitDisplayTitleArabic": "التعابير والمعادلات التربيعية",
+  "lessonUnitDisplayTitleArabic": "كثيرات الحدود والتحليل",
   "fullExpressionPracticeFamily": "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
   "exactFamilyContractUpdated": true,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
@@ -129,5 +128,15 @@
   "canonicalUnitTitle": "كثيرات الحدود والتحليل",
   "canonicalLessonTitle": "جمع كثيرات الحدود وطرحها",
   "sourceIndexLockMeaning": "Owner approved canonical lesson names and order. Full runtime catalog and lesson-level 7-book semantic equivalence remain incomplete.",
-  "canonicalIndexApprovalIsNotLessonClosure": true
+  "canonicalIndexApprovalIsNotLessonClosure": true,
+  "sourceElementCoverageCount": 25,
+  "sourceElementDenominator": 25,
+  "canonicalIndexApprovalScope": "CLOSED_CATALOG_IDENTITY_NOT_FULL_GRADE_CONTENT_RELEASE",
+  "lessonOriginalSourceUnitTitleArabic": "التعابير والمعادلات التربيعية",
+  "fullCourseBlueprintAligned": true,
+  "fullCourseContentPackAligned": false,
+  "exactSkillContractStatus": "STAGE_C_AUTHORED_EXACT_NUMERIC_AND_FULL_EXPRESSION_FAMILIES_WITH_INDEPENDENT_VERIFIER_TESTS_WRITTEN_NOT_RUN",
+  "evidenceClosurePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
+  "closeEvidenceCommit": "20fa431b324e6df9082f978d6e76cd3afeadf8c3",
+  "closureBasis": "25_of_25_documented_element_types_mapped; 6_advanced_source_goal_crosswalk; 9_Arabic_worked_examples; 8_visuals; one_primary_exact_skill; 3_authored_families; teacher-rubric; Blueprint_148_registered"
 }
