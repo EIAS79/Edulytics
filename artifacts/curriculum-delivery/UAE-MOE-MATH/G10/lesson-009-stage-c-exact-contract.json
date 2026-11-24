@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "canonicalCode": "G10-U01-L09",
+  "canonicalOrdinal": 9,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:09:PERFECT-SQUARES",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourcePdfPages": [
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sourcePrintedPages": [
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourceEdition": "UAE General Grade10 2025–2026 Volume1",
+  "primarySkills": [
+    "algebra.factor.perfect_square_trinomial"
+  ],
+  "secondarySkills": [
+    "algebra.square_root_equation",
+    "algebra.quadratic.repeated_root",
+    "algebra.polynomial.common_factor"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l09.full_perfect_square_factor",
+    "uae.g10.general.u01.l09.classify_perfect_square",
+    "uae.g10.general.u01.l09.shifted_square_two_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l04.full_special_product",
+    "uae.g10.general.u01.l08.full_difference_squares_factor"
+  ],
+  "reusePolicy": "Extend shared bounded ExactSkillContractQuestionEngine with one owner-source-perfect-square generator and independently parameter-verified full factor, classify and positive two-root shifted square contracts. Do not substitute L04 expansion or L08 difference-of-squares families.",
+  "generator": "BuildG10PerfectSquares(family,random,difficulty)",
+  "independentVerifier": "UaeG10PerfectSquaresResponse.Verify(family,parameters,answer)",
+  "bounds": {
+    "factor": "a=1..6,b=1..7,sign=±1,delta=0",
+    "classify": "factor bounds with delta=0 exact or delta=1 near-miss",
+    "shiftRoots": "h=−6..6,r=1..8, exact h±r integers"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l09.full_perfect_square_factor",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined"
+    },
+    {
+      "family": "uae.g10.general.u01.l09.classify_perfect_square",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined"
+    },
+    {
+      "family": "uae.g10.general.u01.l09.shifted_square_two_roots",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined"
+    }
+  ],
+  "teacherReviewRequired": [
+    "square-trinomial geometric four-section diagram",
+    "irrational radical answers e.g. (س+٦)²=١٢ and simplification √١٢=٢√٣",
+    "falling body physical time h(t)=h0−١٦t² and negative time exclusion",
+    "square roots of expressions with non-rational answer",
+    "written proof/comparison of general factoring methods and repeated zero root"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPerfectSquaresTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "approvedStudentPractice": false
+  },
+  "note": "READY_FOR_STAGE_D is solely A-B-C evidence/authoring handoff; no Stage D automated tests, authentication or production publication."
+}
