@@ -484,6 +484,46 @@
       "scopeDetail": "Biquadratic quartic with 4 real integer roots"
     },
     {
+      "id": "uae.g10.general.u01.l14.remainder_theorem_value",
+      "version": 1,
+      "skillId": "algebra.polynomial.remainder_factor_theorems",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-advanced-u03l06-owner-source-shared-division-independent-remainder-verifier-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "linear_divisor",
+        "function_evaluation"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Integer f(a) remainder of division by (x−a)"
+    },
+    {
+      "id": "uae.g10.general.u01.l14.factor_theorem_decision",
+      "version": 1,
+      "skillId": "algebra.polynomial.remainder_factor_theorems",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "uae-g10-advanced-u03l06-owner-source-shared-division-independent-remainder-verifier-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "linear_divisor",
+        "function_evaluation"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Boolean yes/no factor theorem iff f(a)=0"
+    },
+    {
       "id": "uae.g10.general.u01.l09.classify_perfect_square",
       "version": 1,
       "skillId": "algebra.factor.perfect_square_trinomial",
