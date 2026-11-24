@@ -4,7 +4,7 @@
 
 ## Source selection and exact boundary
 
-- General `01.pdf`, 2025–2026 Volume1, SHA-256 `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`. Original lesson PDF **49–54**, printed **36–41** (six pages, visually reopened in this task).
+- General `01.pdf`, 2025–2026 Volume1, SHA-256 `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`. Original lesson PDF **48–54**, printed **35–41** (seven pages including the preparatory algebra-tile lab, visually reopened in this task).
 - PDF page **55** / printed 42 is a **unit-wide cumulative review**, not a unique seventh lesson page. Its mixed-source tasks are documented but not counted twice in this lesson's denominator. PDF page **56** begins U01L06 «تحليل ثلاثيات الحدود إلى العوامل».
 - Educational scope differs from prior U01L02 forward multiplication. U01L05 emphasizes inverse distribution to factor out a GCF, four-term grouping, zero-product equation solving, preserving zero roots, and original area/projectile applications.
 - Original source pages provide the learning objectives and exercise types; the copied copyright-protected publisher artwork or exact original exercise text is not committed.
@@ -38,7 +38,7 @@
 | `G10-GEN-2025-U01L05-E23` | 54 | 41 | reasoning | contrast factoring with division, check all solution branches | RichV2 SummaryPoints and teacher rubric | `TEACHER_REVIEW_REQUIRED` |
 | `G10-GEN-2025-U01L05-E24` | 54 | 41 | writing | explain why factorization is inverse distribution and zero-product proof | RichV2 ExplanationParagraphs and original teacher rubric | `TEACHER_REVIEW_REQUIRED` |
 
-**Reviewed denominator: 24 distinct educational goal, worked-model, assessment, representation, and written-reasoning element types.** 11 authored content elements, 3 digital-scoring exact family tasks authored with tests not run, 10 open/human-scored tasks. This is not a claim that every individual numbered publisher question was copied or that full-year 148-lesson source parity is complete.
+**Reviewed denominator: 28 distinct educational goal, worked-model, assessment, representation, and written-reasoning element types.** 11 authored content elements, 3 digital-scoring exact family tasks authored with tests not run, 10 open/human-scored tasks. This is not a claim that every individual numbered publisher question was copied or that full-year 148-lesson source parity is complete.
 
 ## B — Original Arabic content and visual representations
 
@@ -61,3 +61,14 @@
 ## Exit and continuation
 
 All reviewed distinct source element types have an authored Arabic / eligible digital / teacher-scored destination and exact evidence. Handoff status `READY_FOR_STAGE_D` means **Stage A–B–C authoring only**. The next canonical lesson is `G10-U01-L06` «حل س²+بس+ج=٠» (check approved title from the Blueprint); it must not be closed until its original source pages are individually read and documented.
+
+## 2026-11-25 — Correction of omitted original algebra-tiles laboratory (PDF48/printed35)
+
+The original source has a preparatory laboratory immediately before PDF49, explicitly labeled `1-5`: analysis by reversing distribution using algebra tiles. Prior denominator of 24 omitted **four distinct pedagogical elements**; it was incomplete. These are now included as 28 total:
+
+- `G10-GEN-2025-U01L05-E25` (VISUAL_LAB): Pre-lesson algebra tiles factor an expression with positive and negative unit tiles (e.g. 2س−8 as 2(س−4)). Edulytics destination: RichV2 new visual «مختبر القطع الجبرية: التحليل العكسي» and teacher rubric. Status `TEACHER_REVIEW_REQUIRED`.
+- `G10-GEN-2025-U01L05-E26` (VISUAL_LAB): Arrange a square variable tile and positive variable tiles into a rectangle, identifying variable monomial as common factor (e.g. س²+3س). Edulytics destination: RichV2 original algebra tile visualization of س²+٥س=س(س+٥). Status `CONTENT_AUTHORED`.
+- `G10-GEN-2025-U01L05-E27` (INVESTIGATION): Explore what it means for a binomial to have no nonunit common factor using algebra tile feasibility (e.g. 4س²+7). Edulytics destination: RichV2 original nonfactorable-GCF example and teacher rubric for comparing primitive polynomials. Status `TEACHER_REVIEW_REQUIRED`.
+- `G10-GEN-2025-U01L05-E28` (WRITTEN_REFLECTION): Write a justification contrasting factorable and nonfactorable binomials, showing each factorization's reversal by multiplication. Edulytics destination: Teacher rubric original algebra-tile activity and source-aligned reflection. Status `TEACHER_REVIEW_REQUIRED`.
+
+The original Arabic RichV2 now includes a sixth independently authored algebra-tiles visual, with signed rows, square tile and nonfactorable-by-GCF comparison. Teacher assessment has a specific signed-tile drawing and mathematical writing rubric. PDF55 remains a mixed cumulative review, and does not count as a separate lesson or duplicate denominator. **The correction does not imply Stage D tests have been run.**
