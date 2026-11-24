@@ -118,7 +118,7 @@ public sealed class UaeG10GeneralRootsZerosTests
             Assert.Equal(x*x*x-x*x-4*x+4,(x-1)*(x-2)*(x+2));
         }
         // Quadratic factor of 2±3i is (x-2)^2+3^2.
-        Assert.Equal(13,(-4+13));
+        Assert.Equal(13,(0-2)*(0-2)+3*3);
         // Degree 5 with multiplicities 2 and 3 has five complex zeros,
         // even if there are only two distinct real abscissae.
         Assert.Equal(5,2+3);
