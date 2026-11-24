@@ -233,7 +233,9 @@ public static class LessonPracticeInteractionRegistry
            (familyId=="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression" ||
             familyId=="uae.g10.general.u01.l02.full_monomial_polynomial_product" ||
             familyId=="uae.g10.general.u01.l03.full_polynomial_product" ||
-            familyId=="uae.g10.general.u01.l04.full_special_product"))
+            familyId=="uae.g10.general.u01.l04.full_special_product" ||
+            familyId=="uae.g10.general.u01.l05.gcf_complete_factor" ||
+            familyId=="uae.g10.general.u01.l05.zero_product_roots"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
