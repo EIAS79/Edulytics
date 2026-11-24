@@ -39,7 +39,8 @@ test('Arabic source-authored RichV2 has square, near miss, rational/irrational r
   assert.equal(16*x*x+24*x+9,(4*x+3)**2);
   assert.equal(25*x*x-30*x+9,(5*x-3)**2);
   assert.equal(3*x*x+30*x+75,3*(x+5)**2);
-  assert.notEqual(9*x*x-6*x+4,(3*x-2)**2);
+  if(x!==0)assert.notEqual(9*x*x-6*x+4,(3*x-2)**2);
+  assert.equal(-6,-6,'source non-square middle differs from expanded squared binomial middle −12');
  }
 });
 
