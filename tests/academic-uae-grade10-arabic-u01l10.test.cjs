@@ -73,6 +73,6 @@ test('Exact source families reuse linear solver and extend monomial once, Stage 
  const monomial=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10Division.cs'),'utf8');
  assert.match(exact,/BuildG10PolynomialDivision/);
  assert.match(exact,/BuildG10Division/);
- assert.match(linear,/UaeG10PolynomialDivisionResponse\.Verify/);
+ assert.match(linear,/internal static bool Verify\(string family/);
  assert.match(monomial,/UaeG10DivisionResponse/);
 });
