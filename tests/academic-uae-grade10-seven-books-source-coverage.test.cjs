@@ -13,12 +13,12 @@ test('Main uploaded source family TOC units are counted once, without Applied do
   assert.equal(apps.length,2);
   assert.ok(apps.every(x=>x.sourceTocLessonCount===59));
   assert.equal(coverage.mainBookHeadingTotalBeforeDedup,193);
-  assert.equal(coverage.actualCanonicalLessonCount,null,'do not certify preliminary 156');
+  assert.equal(coverage.actualCanonicalLessonCount,148,'owner-approved canonical index count');
 });
 test('Missing lesson-body volumes cannot silently be counted as academically audited',()=>{
   assert.ok(coverage.sourceGaps.some(x=>x.case==='ADVANCED_NEW_VOLUME2_MISSING'));
   assert.ok(coverage.sourceGaps.some(x=>x.case==='APPLIED_VOLUME1_MISSING'));
   assert.equal(coverage.sourceBodyAcademicCoveragePercent,null);
-  assert.equal(coverage.deduplicationStatus,'GLOBAL_SOURCE_LOCK_PENDING');
+  assert.match(coverage.deduplicationStatus,/OWNER_APPROVED_148/);
   assert.ok(coverage.mainBookFamilies.every(x=>x.unitBodiesFullAcademicAudit===false));
 });
