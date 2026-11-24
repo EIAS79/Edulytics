@@ -94,7 +94,7 @@ internal static class UaeG10MonomialPolynomialResponse
         return TryParse(answer,out var parsed)&&parsed.SequenceEqual(Expected(p));
     }
 
-    private static string Format(IReadOnlyList<int> values)
+    internal static string Format(IReadOnlyList<int> values)
     {
         var b=new StringBuilder();
         for(int d=4;d>=0;d--)
@@ -124,7 +124,7 @@ internal static class UaeG10MonomialPolynomialResponse
         return b.ToString();
     }
 
-    private static bool TryParse(string? answer,out int[] result)
+    internal static bool TryParse(string? answer,out int[] result)
     {
         result=new int[5];
         if(string.IsNullOrWhiteSpace(answer)||answer.Length>128)return false;
