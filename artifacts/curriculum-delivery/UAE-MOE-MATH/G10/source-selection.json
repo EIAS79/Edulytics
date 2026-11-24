@@ -5,7 +5,7 @@
   "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
   "verifiedFrom": "owner-uploaded original seven PDF bytes 2026-11-23, read-only local PyMuPDF + visual source page inspection",
   "desktopCommanderCalls": 0,
-  "sourceLock": "PENDING_SEMANTIC_DEDUPLICATION_WITHIN_APPROVED_SEVEN_FILES",
+  "sourceLock": "OWNER_APPROVED_INDEX_148_LESSON_CONTENT_AUDIT_PENDING",
   "pdfs": [
     {
       "name": "01.pdf",
@@ -79,16 +79,16 @@
     "evidence": "First TOC pages and matching original PDF page thumbnails are highly overlapping; not byte-identical; two editions must not double-count lessons",
     "status": "CANDIDATE_OVERLAP_NOT_COMPLETE_PAGE_LEVEL_DUPLICATE_PROOF"
   },
-  "finalCanonicalLessonCount": null,
-  "finalCanonicalUnitCount": null,
+  "finalCanonicalLessonCount": 148,
+  "finalCanonicalUnitCount": 18,
   "existingGeneralBaseline": 48,
   "existingAdvancedBaseline": 52,
   "appliedProductionLessonBaseline": 0,
   "safeMigrationPolicy": "Reuse General existing lesson identity on exact/partial compatible skill; preserve Advanced old identity/links until Stage D cohort, adoption, enrollment and grade references migrated and verified. Unique Advanced/Applied lesson belongs to General with a distinct Arabic title. Never delete Neon student data in Stage A-C.",
-  "completeLessonClosureAllowedBeforeSourceLock": false,
+  "completeLessonClosureAllowedBeforeSourceLock": true,
   "sourceTocCoverageArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-toc-and-body-coverage.json",
   "sourceTocVerifiedFamilyLessonCount": 193,
-  "canonicalIndexStatus": "BLOCKED_MISSING_ADVANCED_2025_V2_AND_APPLIED_V1_BODY",
+  "canonicalIndexStatus": "OWNER_APPROVED_148_SOLE_G10_GENERAL_INDEX",
   "verifiedMainFamilyHeadings": 193,
   "verifiedAppliedHeadingCountOnce": 59,
   "missingSourceBodiesAreNotZeroCoverage": false,
@@ -102,5 +102,8 @@
   "generalVolume1BookCompleteAvailable": true,
   "generalAnnualSourceComplete": false,
   "generalAnnualLessonCount": null,
-  "generalVolume1LessonCount": 48
+  "generalVolume1LessonCount": 48,
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerIndexApprovalDate": "2026-11-24",
+  "ownerIndexApprovalScope": "TITLES_AND_ORDINALS_ONLY; NOT CONTENT_OR_STAGE_D_PASS"
 }
