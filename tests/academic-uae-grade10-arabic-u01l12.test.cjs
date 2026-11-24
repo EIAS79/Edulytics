@@ -45,7 +45,7 @@ test('First-party graph visuals use mathematically correct original coordinate s
  const plots=l.Visuals.filter(v=>v.Kind==='CartesianPlot');
  assert.equal(plots.length,3);
  assert.ok(plots.every(v=>v.Rows.length>=5));
- const f=x=>x**3-4*x,g=x=>x**4-5*x*x+4,q=x=>-(x-1)**2+4;
+ const f=x=>x**3-4*x,g=x=>x**4-5*x*x+4,q=x=>-((x-1)**2)+4;
  for(const [i,fun] of [[0,f],[1,q],[2,g]]) {
    for(const pt of plots[i].Rows){
      const x=Number(pt.Cells[0]),y=Number(pt.Cells[1]);
