@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 8,
+  "canonicalCode": "G10-U01-L08",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "الفرق بين مربعين",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:08:DIFFERENCE-OF-TWO-SQUARES",
+  "status": "READY_FOR_STAGE_D",
+  "sourceIndexLocked": true,
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceEdition": "UAE General Grade10 2025–2026 Volume1",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+  ],
+  "sourcePrintedPages": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "crossbookSemanticGoalId": "C11",
+  "crossbookEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-crossbook-semantic-crosswalk.json",
+  "sourceElementDenominator": 26,
+  "sourceElementsMapped": 26,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementsByStatus": {
+    "CONTENT_AUTHORED": 12,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 3,
+    "TEACHER_REVIEW_REQUIRED": 11
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l08-ar.rich-lesson-v2.json",
+  "arabicWorkedExamplesCount": 11,
+  "originalVisualModelsCount": 6,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.factor.difference_of_squares"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l08.full_difference_squares_factor",
+    "uae.g10.general.u01.l08.difference_squares_rational_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l04.full_special_product",
+    "uae.g10.general.u01.l07.nonmonic_full_factor"
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "independentVerifier": "UaeG10DifferenceSquaresResponse.Verify",
+  "rendererMatrix": {
+    "fullFactor": "StructuredEntry",
+    "rationalRoots": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "GCF first and grouped expressions with higher powers",
+    "multivariable conjugate factorization",
+    "geometry area difference and open proof",
+    "avoid losing zero roots of higher degree",
+    "semantic boundary to U01L09 perfect-square trinomials"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralDifferenceSquaresTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "sourceBodyWholeGradeComplete": false,
+  "startedAtUtc": null,
+  "closedAtUtc": "2026-11-24T12:16:40Z",
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "contentReadyCommit": "fbc028e0e0aee184888de137862f240d9df30268",
+  "firstIncompleteLessonOrdinal": 9,
+  "nextEligibleLessonOrdinal": 9,
+  "closureBasis": "Owner-approved 148 lesson index, original visually reviewed 01.pdf pages71–76; exact 26 categorized source elements mapped; 11 authored Arabic examples and six visual models, teacher rubric for non-automatable work, source-bounded Grade10 inverse factoring and rational-root exact contracts; deferred tests written not run.",
+  "remainingStageDObligations": [
+    "Run authored Node/.NET tests and validate all generated factor/root tasks, wrong answers, Arabic digit handling",
+    "Authenticated student Arabic/RTL StructuredEntry interaction and score persistence",
+    "Only activate production question-family routing if Stage D succeeds",
+    "Complete all Grade10 Arabic lesson bodies before production migration/publish"
+  ]
+}
