@@ -21,6 +21,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+      "version": 1,
+      "skillId": "algebra.polynomial.multiply_distribute",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-owner-source-u01l02-bounded-monomial-distributive-exact-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+      "version": 1,
+      "skillId": "algebra.polynomial.multiply_distribute",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-owner-source-u01l02-bounded-monomial-distributive-exact-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
