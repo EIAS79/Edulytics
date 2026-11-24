@@ -18,7 +18,8 @@ public sealed partial class ExactSkillContractQuestionEngine
     {
         if(family==UaeG10MonicQuadraticResponse.PrimeFamily)
         {
-            int b=random.Next(-9,10),c;
+            int b,c;
+            do b=random.Next(-9,10);while(b==0);
             do c=random.Next(-20,21);while(c==0);
             string poly=UaeG10MonicQuadraticResponse.Polynomial(b,c);
             return Problem(family,
@@ -28,7 +29,7 @@ public sealed partial class ExactSkillContractQuestionEngine
         }
         int r1,r2;
         do r1=random.Next(-6,7);while(r1==0);
-        do r2=random.Next(-6,7);while(r2==0||
+        do r2=random.Next(-6,7);while(r2==0||r2==-r1||
             (family==UaeG10MonicQuadraticResponse.RootsFamily&&r2==r1));
         int bCoeff=-(r1+r2),cCoeff=r1*r2;
         string expr=UaeG10MonicQuadraticResponse.Polynomial(bCoeff,cCoeff);
@@ -58,10 +59,10 @@ internal static class UaeG10MonicQuadraticResponse
     private static bool ValidRoots(IReadOnlyDictionary<string,int> p,string family)=>
         p.Count==2&&p.TryGetValue("r1",out int r1)&&p.TryGetValue("r2",out int r2)&&
         r1 is >= -6 and <=6 and not 0&&r2 is >=-6 and <=6 and not 0&&
-        (family!=RootsFamily||r1!=r2);
+        r1+r2!=0&&(family!=RootsFamily||r1!=r2);
     private static bool ValidPrime(IReadOnlyDictionary<string,int> p)=>
         p.Count==2&&p.TryGetValue("b",out int b)&&p.TryGetValue("c",out int c)&&
-        b is >=-9 and <=9&&c is >=-20 and <=20 and not 0;
+        b is >=-9 and <=9 and not 0&&c is >=-20 and <=20 and not 0;
     private static bool IntegerFactorable(int b,int c)
     {
         // For integer-coefficient monic quadratics, a factorization into
