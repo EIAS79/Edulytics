@@ -16,22 +16,22 @@
   "SourceCheckedAtUtc": "2026-11-23T00:00:00Z",
   "SourceLicense": "Textbook reference for internal academic alignment; no OGL license is asserted for UAE textbook content.",
   "RequiredDigitalAttribution": "No UK open-government content is reproduced in the Edulytics-authored Arabic lesson.",
-  "SourceSelectionReason": "Only owner-approved local UAE student books govern UAE-MOE-MATH G10 General lesson objectives, ordering and source scope; no foreign GCSE content is used as the academic source.",
-  "SourceSelectionEvidence": "Owner-provided Grade10 General Arabic 01.pdf; SHA256 d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72; pages 5–11 book TOC and physical pages 20–25 for U01L01; 48 lesson headings only Volume1, not full academic year. On 2026-11-24 the owner approved the sole 148-lesson/18-unit unified Arabic index; the currently authored 48-lesson content pack is a source-volume subset and is not full curricular parity.",
+  "SourceSelectionReason": "Only owner-approved local UAE student books govern UAE-MOE-MATH G10 General lesson objectives, ordering and source scope; no foreign GCSE content is used as the academic source. The owner-approved canonical course now has 18 units and 148 lesson identities from seven local books; 100 newly registered entries have not yet received authored student content.",
+  "SourceSelectionEvidence": "Owner-provided Grade10 General Arabic 01.pdf; SHA256 d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72; pages 5–11 book TOC and physical pages 20–25 for U01L01; 48 lesson headings only Volume1, not full academic year. On 2026-11-24 the owner approved the sole 148-lesson/18-unit unified Arabic index; the currently authored 48-lesson content pack is a source-volume subset and is not full curricular parity. This blueprint contains catalog identities for all 148, preserving all 48 legacy PED lesson codes. 100 new catalog entries are authoring backlog, NOT verified/published content.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/"
   ],
   "SourceRightsNote": "This blueprint uses the original UAE student textbook for scope and mathematical objectives only. Student explanations/examples are independently authored. No copyrighted publisher illustrations imported.",
-  "SemanticGraphSha256": "0d7d72c67079cb64cbf167cc7f2c5b1a868aec371ccf5694fdc4ada9533e9dd7",
+  "SemanticGraphSha256": "d9f374599c0c3a94e83e02d76ddd1a8a96103cfa4335530d48cd61d84a53d916",
   "AcquisitionDiagnostics": {
-    "UnitCount": 7,
-    "LessonCount": 48,
+    "UnitCount": 18,
+    "LessonCount": 148,
     "OfficialStandardCount": 0,
     "AddressingCoverageCount": 0,
     "FormalMappingCount": 0,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
-    "LessonsWithoutNumberedAddressingStandard": 48,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 48,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 148,
+    "LessonsWithoutNumberedAddressingStandard": 148,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 148,
     "MultiStandardLessons": 0
   },
   "Units": [
@@ -40,63 +40,162 @@
       "UnitCode": "UAE-G10-GENERAL:U01",
       "SortOrder": 1,
       "Title": "كثيرات الحدود والتحليل",
-      "LessonCount": 9,
+      "LessonCount": 16,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "71786cbb9dcb24aa38df658662b652cae330fd3fc9620b0e9a89945385625521"
+      "SemanticSha256": "1564f8605ee10e26fae878a1f6d2f7eb9d1b0e743f7717a87309c65dfc58f80d"
     },
     {
       "Number": 2,
       "UnitCode": "UAE-G10-GENERAL:U02",
       "SortOrder": 2,
       "Title": "الأسس والتعابير الجذرية",
-      "LessonCount": 6,
+      "LessonCount": 8,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "2a128d46fc3acc959dae64df1c980fc81f06a30e95dfbc366a0d1fa0bacbcc52"
+      "SemanticSha256": "3e85cc83ea693b3fdac6cab03473ac0b99a4a5fe7eb5fca9eccc82451ec0032a"
     },
     {
       "Number": 3,
       "UnitCode": "UAE-G10-GENERAL:U03",
       "SortOrder": 3,
-      "Title": "المستقيمات المتوازية والمتعامدة",
-      "LessonCount": 6,
+      "Title": "الأنظمة الخطية والمصفوفات",
+      "LessonCount": 9,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "14cb80ee835d9913eb96c1a558c25799e8d2f5af83557841d75f5b168db3bda6"
+      "SemanticSha256": "ace6f443dc559de229930c47c47a4e0a230620449a97ffb2e629901807fef9ac"
     },
     {
       "Number": 4,
       "UnitCode": "UAE-G10-GENERAL:U04",
       "SortOrder": 4,
-      "Title": "التحويلات الهندسية والتناظر",
-      "LessonCount": 6,
+      "Title": "الدوال والمعادلات التربيعية",
+      "LessonCount": 8,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "dcff1928f48064d431fd0733b10b86da7b06bd29478188ea59be01e7de2c4c08"
+      "SemanticSha256": "7037448e7f6a2a74ff6a60081a19ee0a90f304fe88dd109c9d6c7051870081d2"
     },
     {
       "Number": 5,
       "UnitCode": "UAE-G10-GENERAL:U05",
       "SortOrder": 5,
-      "Title": "المثلثات المتطابقة",
+      "Title": "الدوال الأسية واللوغاريتمية",
       "LessonCount": 9,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "fc4620433550bdb663025122e612054bb1eaefe027c9b0478c1c675fbb3b78ff"
+      "SemanticSha256": "0cf9d2e058ebaec5f339624c7fbb34f23269782874e26cf5e54efa9175fd2f67"
     },
     {
       "Number": 6,
       "UnitCode": "UAE-G10-GENERAL:U06",
       "SortOrder": 6,
-      "Title": "علاقات المثلثات",
-      "LessonCount": 6,
+      "Title": "الدوال والعلاقات النسبية والعكسية",
+      "LessonCount": 7,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "5f280efe47e380350ea7b576f7bdefce96a7010f003bea2e3744d222949ae806"
+      "SemanticSha256": "d492a7720b30d400579cd3f82d98886c9cc45c5987c3698a3509a0a1bd18f344"
     },
     {
       "Number": 7,
       "UnitCode": "UAE-G10-GENERAL:U07",
       "SortOrder": 7,
-      "Title": "الأشكال الرباعية",
+      "Title": "المستقيمات والهندسة الإحداثية",
       "LessonCount": 6,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SemanticSha256": "14c7180b89ede9a65206596f396e1ddc5d3d2978864572dd2a432bcf82fc1ceb"
+      "SemanticSha256": "0b5b08ea1349d66444b859211fe3c9ba1e8fb09d10c0e77127713940e3ba3049"
+    },
+    {
+      "Number": 8,
+      "UnitCode": "UAE-G10-GENERAL:U08",
+      "SortOrder": 8,
+      "Title": "التحويلات الهندسية والتناظر",
+      "LessonCount": 6,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c1e0c47ac5428bcfbcbb73636a837d5f65e010193999a220665d6bf2780ca873"
+    },
+    {
+      "Number": 9,
+      "UnitCode": "UAE-G10-GENERAL:U09",
+      "SortOrder": 9,
+      "Title": "المثلثات وتطابقها",
+      "LessonCount": 9,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "99c163620d0f084fef93e1a32c1d555352d21bf05ef62888d607facbf3de27c5"
+    },
+    {
+      "Number": 10,
+      "UnitCode": "UAE-G10-GENERAL:U10",
+      "SortOrder": 10,
+      "Title": "علاقات المثلثات والمتباينات",
+      "LessonCount": 6,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "433603c2d9f6d9160208247de6465b5729bc2b4448ccf150aeab4024a3632a17"
+    },
+    {
+      "Number": 11,
+      "UnitCode": "UAE-G10-GENERAL:U11",
+      "SortOrder": 11,
+      "Title": "التناسب والتشابه",
+      "LessonCount": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "9d6d53716cf251bc1c4df32e1e478783779823845406e9420e15e4a96e4c4657"
+    },
+    {
+      "Number": 12,
+      "UnitCode": "UAE-G10-GENERAL:U12",
+      "SortOrder": 12,
+      "Title": "المضلعات والأشكال الرباعية",
+      "LessonCount": 6,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "e36135108a7bd16afff691408653a65c59826dd9aa567c98b2429832f5cfb7ef"
+    },
+    {
+      "Number": 13,
+      "UnitCode": "UAE-G10-GENERAL:U13",
+      "SortOrder": 13,
+      "Title": "الدوائر",
+      "LessonCount": 9,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6bc29969916b7b65eee0c60f4a966e13221bd7e6f0f9798cddbf8381f9d15ad2"
+    },
+    {
+      "Number": 14,
+      "UnitCode": "UAE-G10-GENERAL:U14",
+      "SortOrder": 14,
+      "Title": "المثلث القائم وحساب المثلثات",
+      "LessonCount": 18,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "25294a0dc71d04cfeb610ebbdd2de4d66b12c6928d3f6b282658b9e02aaeada1"
+    },
+    {
+      "Number": 15,
+      "UnitCode": "UAE-G10-GENERAL:U15",
+      "SortOrder": 15,
+      "Title": "الهندسة الفراغية والمجسمات",
+      "LessonCount": 8,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6b62c87d94cfdbc8666ad0a7a871c2435ab97cc7773012326648c6c01efe3c88"
+    },
+    {
+      "Number": 16,
+      "UnitCode": "UAE-G10-GENERAL:U16",
+      "SortOrder": 16,
+      "Title": "الاحتمالات",
+      "LessonCount": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ae167946c3455836afcb2206d402c8330ff5f23814b64c5388b112237d4c0eab"
+    },
+    {
+      "Number": 17,
+      "UnitCode": "UAE-G10-GENERAL:U17",
+      "SortOrder": 17,
+      "Title": "المتتاليات والمتسلسلات",
+      "LessonCount": 6,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "3f6f0228b32beb9ce7b3dab82e52a0d2ef34319352525fee26203590539b0088"
+    },
+    {
+      "Number": 18,
+      "UnitCode": "UAE-G10-GENERAL:U18",
+      "SortOrder": 18,
+      "Title": "التبرير والبرهان",
+      "LessonCount": 3,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "88f08760426962fd9b59bde403f939f4924b01259ee1c0648609afc329031fa3"
     }
   ],
   "Lessons": [
@@ -344,13 +443,139 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U01:L09"
     },
     {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L10",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L10:C010",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 10,
+      "Title": "قسمة كثيرات الحدود",
+      "SortOrder": 10,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "601ca7c5cd0d1d468657c2ed0fbdafe235e7495886901adb249fdc6f06206540",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L11",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L11:C011",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 11,
+      "Title": "الدوال كثيرة الحدود",
+      "SortOrder": 11,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "edd773465ff9d15932e56bd63e03f0d12caca061b4bd64c038743d75a6751dd3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L12",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L12:C012",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 12,
+      "Title": "تحليل التمثيلات البيانية للدوال كثيرة الحدود",
+      "SortOrder": 12,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7a2acf4cb3ee1424509c5a63142db70f7818464fb4a0145049f732b72a2738ce",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L13",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L13:C013",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 13,
+      "Title": "حل المعادلات كثيرة الحدود",
+      "SortOrder": 13,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "3992630ae9f86b375844b9a40d7247ce742ff9f1a583e794e94d95e34ac24a5b",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L14",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L14:C014",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 14,
+      "Title": "نظريتا الباقي والعامل",
+      "SortOrder": 14,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c1241be80a36e00f549894d488c4eca01dfb2722b980cc19dfcb7498e7c4ba61",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L15",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L15:C015",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 15,
+      "Title": "الجذور والأصفار",
+      "SortOrder": 15,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2aa1e7f340cd11b7a811c157987566f0bee228a5f2f5c151dc7e580655e0e7ec",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L16",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L16:C016",
+      "UnitNumber": 1,
+      "UnitTitle": "كثيرات الحدود والتحليل",
+      "LessonNumber": 16,
+      "Title": "نظرية الصفر النسبي",
+      "SortOrder": 16,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "0f51fc5928176a944ebf698b1d9764b6203fe43791ab9ab7baec7235217e5a4a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U02:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:01:MULTIPLICATION-PROPERTIES-OF-EXPONENTS",
       "UnitNumber": 2,
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 1,
       "Title": "خواص ضرب الأسس",
-      "SortOrder": 10,
+      "SortOrder": 17,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "9e2204180a2031fdb4f39397717e3bb27f9800c269e11909848c326e09d50621",
       "Alignments": [
@@ -377,7 +602,7 @@
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 2,
       "Title": "خواص قسمة الأسس",
-      "SortOrder": 11,
+      "SortOrder": 18,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "71f9e2c96e43cb4e0edd863d3380147764b110b71c6a5ecb922a3cfcb5ab68ba",
       "Alignments": [
@@ -404,7 +629,7 @@
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 3,
       "Title": "الأسس النسبية",
-      "SortOrder": 12,
+      "SortOrder": 19,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "65ca5da09c4f770a157ee3435b2b840d4bfe5fb864c2b03f54a5e06211fe5de1",
       "Alignments": [
@@ -431,7 +656,7 @@
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 4,
       "Title": "الترميز العلمي",
-      "SortOrder": 13,
+      "SortOrder": 20,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "8b10c7f2d4b1031387d339b4cdf653cacbde1aa75aca2dcb3fa7c76b12e6837d",
       "Alignments": [
@@ -458,7 +683,7 @@
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 5,
       "Title": "تبسيط التعابير الجذرية",
-      "SortOrder": 14,
+      "SortOrder": 21,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "23e32dffc03629e407a18871c2140827900ce66cc71e332cea04e9983a4cb0c6",
       "Alignments": [
@@ -485,7 +710,7 @@
       "UnitTitle": "الأسس والتعابير الجذرية",
       "LessonNumber": 6,
       "Title": "العمليات على التعابير الجذرية",
-      "SortOrder": 15,
+      "SortOrder": 22,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "5db31bb38575d629727a8153e189ac25230a691d4b7642232d6732130dc08ba4",
       "Alignments": [
@@ -506,13 +731,643 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U02:L06"
     },
     {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L07:C023",
+      "UnitNumber": 2,
+      "UnitTitle": "الأسس والتعابير الجذرية",
+      "LessonNumber": 7,
+      "Title": "تمثيل الدوال الجذرية بيانيًا",
+      "SortOrder": 23,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "38feaa08e891f655e04dd99d12b16ad4c039800094bda350875905c05be36847",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08:C024",
+      "UnitNumber": 2,
+      "UnitTitle": "الأسس والتعابير الجذرية",
+      "LessonNumber": 8,
+      "Title": "حل المعادلات الجذرية",
+      "SortOrder": 24,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "78a4838cb1b6a516fe7f1b3f7f39a363ce2788a0835b2d0904703e776c9b49a8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L01:C025",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 1,
+      "Title": "حل أنظمة المعادلات الخطية بالتمثيل البياني",
+      "SortOrder": 25,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f0e44b78e21e2f930c6fef4781d8d242cd897806e7d6e39f4421e9479fa3add6",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02:C026",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 2,
+      "Title": "حل أنظمة المتباينات بالتمثيل البياني",
+      "SortOrder": 26,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "d9ce6af47e07ae4d382d60865d0891cb9d53a44bafb9ad7a8c55bedc702de87a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L03:C027",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 3,
+      "Title": "البرمجة الخطية",
+      "SortOrder": 27,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "54f7709582a7b47b2ea6f0b9ad8de2ca73e53cc9a5552152c13b8267094038dc",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L04:C028",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 4,
+      "Title": "حل أنظمة المعادلات بثلاثة متغيرات",
+      "SortOrder": 28,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "e8062289dd05cce8505eabf381819f28e0ed4198e9dac9778440457947896613",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L05:C029",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 5,
+      "Title": "العمليات على المصفوفات",
+      "SortOrder": 29,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c70d8039f5d1d78b769f65e84981efa1c5f3df501d8493fa71a26f1d5c69f870",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06:C030",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 6,
+      "Title": "ضرب المصفوفات",
+      "SortOrder": 30,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2a6c73ce967b961b3dbcb16b21d52160a6aa35b5d4900165420f461c70ab58ac",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07:C031",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 7,
+      "Title": "قاعدة كرامر والمحددات",
+      "SortOrder": 31,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "1dd9833fbe6a6c3ef077d9cb8bebd7640a6676435b1d506c2147ecc20431679e",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 8,
+      "Title": "حل أنظمة المعادلات باستخدام المصفوفات العكسية",
+      "SortOrder": 32,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6a013600990dfd9547a375ca14c59a408b2f2df83ce778532af4e070f6466bce",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09:C033",
+      "UnitNumber": 3,
+      "UnitTitle": "الأنظمة الخطية والمصفوفات",
+      "LessonNumber": 9,
+      "Title": "المصفوفات الموسعة",
+      "SortOrder": 33,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "1bb0e8bd623631dc0422c5114e4778641483593dc34866a3eab0b3c4b8249d5d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L01:C034",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 1,
+      "Title": "تمثيل الدوال التربيعية بيانيًا",
+      "SortOrder": 34,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "563b39ab0b75db87a3d57c484a767fa8686b462fe719a9be98be62d1d9ddc4c9",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02:C035",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 2,
+      "Title": "حل المعادلات التربيعية بالتمثيل البياني",
+      "SortOrder": 35,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "61803bec338071afd1e7d111db12dc98553e37539a4e236e0a3273219f6ec1a7",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03:C036",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 3,
+      "Title": "الأعداد المركبة",
+      "SortOrder": 36,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5ec0b89d1b7e542a62429696b25a533f81e2cb1555283c959a52be3023e0c92a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04:C037",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 4,
+      "Title": "حل المعادلات التربيعية بإكمال المربع",
+      "SortOrder": 37,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "aa03d08acd584b0bdc4ad2b21a6552496edc17276eb6398857f5d4be68441405",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05:C038",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 5,
+      "Title": "القانون العام والمميز للمعادلة التربيعية",
+      "SortOrder": 38,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c8de6c78678bd3643af2ddee29728bfa5aed1f1579c9eadff991a2b1e59e6dfb",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06:C039",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 6,
+      "Title": "المتباينات التربيعية",
+      "SortOrder": 39,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8c9f0f1c7c3d389ddf4447500ba1bc536605d1f9d21a45e2f156ba7e8e965bc2",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L07:C040",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 7,
+      "Title": "العلاقات والدوال التربيعية وتحويلاتها",
+      "SortOrder": 40,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "4f5a88d2d2589f4df593e34bc522459f810a3c1ab87d17a5957be04b0984bb79",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08:C041",
+      "UnitNumber": 4,
+      "UnitTitle": "الدوال والمعادلات التربيعية",
+      "LessonNumber": 8,
+      "Title": "معدل تغير الدالة التربيعية",
+      "SortOrder": 41,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c4509ee5a85556a12c0facb86df218b4f17f83fedbb973fedd7b678679a1d5f4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L01:C042",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 1,
+      "Title": "تمثيل الدوال الأسية بيانيًا",
+      "SortOrder": 42,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8d7799ce50e487f25eecd94156192cb846e50c9fde699015388b6dd2458eaa3b",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 2,
+      "Title": "حل المعادلات والمتباينات الأسية",
+      "SortOrder": 43,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "74c8eff3e8585ec3371122c88dc80fb4e149bd6469a55c7eccf6187e3f8053b6",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03:C044",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 3,
+      "Title": "اللوغاريتمات والدوال اللوغاريتمية",
+      "SortOrder": 44,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "d415a3f6ee27aa50a7d52c0e2ee9d33e7083829a2bff59f21bfef6b763b15405",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 4,
+      "Title": "حل المعادلات والمتباينات اللوغاريتمية",
+      "SortOrder": 45,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5d88b17e73c508d5b4a6361b1c717d1bac20d1cb86fc8fb62aab533d611dcc3f",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 5,
+      "Title": "خواص اللوغاريتمات",
+      "SortOrder": 46,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "bcc02f1d41d53af69a6ec7dcc3d6ec1625fc220b9766ce6c569f9d2f1beef231",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 6,
+      "Title": "اللوغاريتمات العشرية",
+      "SortOrder": 47,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c3dff9528d4aee7e76852bf253022e022d75f458ee2ef2b44e3bd2e870dd7a65",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 7,
+      "Title": "اللوغاريتمات الطبيعية",
+      "SortOrder": 48,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2bebb76ee65b00fa9acf703636ec12a5d96f0e7a9cb08f220eaa3d753e369549",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 8,
+      "Title": "استخدام الدوال الأسية واللوغاريتمية",
+      "SortOrder": 49,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c693bfd88f7883f2372e94a04fee9c9cdd27fefdfd5fc3be0bf453f1d7014237",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
+      "UnitNumber": 5,
+      "UnitTitle": "الدوال الأسية واللوغاريتمية",
+      "LessonNumber": 9,
+      "Title": "النمو والاضمحلال",
+      "SortOrder": 50,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ce892b1c7a577861be0400f5ed9b487b155eeaa0b422fb873c234c94d5089d72",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L01:C051",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 1,
+      "Title": "العمليات على الدوال",
+      "SortOrder": 51,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7e720c8d7d03a0b701d65c1353edf58fbcb359abf6985b0e81ac2ba25ffc5ef7",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L02:C052",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 2,
+      "Title": "العلاقات والدوال العكسية",
+      "SortOrder": 52,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "974fd4bef80cccc009a019abc901c0dfbf51a40907f92d4a32c8c5b7df237357",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L03:C053",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 3,
+      "Title": "ضرب التعابير النسبية وقسمتها",
+      "SortOrder": 53,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "63314f64ebfc637676f11bdc5ba62761241c3d4ed871a78aea48c14335948464",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L04:C054",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 4,
+      "Title": "جمع التعابير النسبية وطرحها",
+      "SortOrder": 54,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "06f9c057a4bd82f589105aa8b10d29353eb62c570b19a76e41afe33f6c84de84",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L05:C055",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 5,
+      "Title": "تمثيل الدوال النسبية بيانيًا",
+      "SortOrder": 55,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2578f5f852bee7d55840e57a3b41093022755ec7d98580224b6d64c046e811f5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L06:C056",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 6,
+      "Title": "التغير",
+      "SortOrder": 56,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "244777a7f0da540776ce413ce817df903aa06694eca21840c120c0241b183ae3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L07:C057",
+      "UnitNumber": 6,
+      "UnitTitle": "الدوال والعلاقات النسبية والعكسية",
+      "LessonNumber": 7,
+      "Title": "حل المعادلات والمتباينات النسبية",
+      "SortOrder": 57,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "83a940e8d407679ee48c260180a4dc291e962372fc4fa09323bf6f811b250c4d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 1,
       "Title": "المستقيمات المتوازية والمتقاطعة",
-      "SortOrder": 16,
+      "SortOrder": 58,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "b29f23ecdf8db3734e8f7d36cb61ef955a2a660cdb8187863191e8ab56cdbbb4",
       "Alignments": [
@@ -535,11 +1390,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L02",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:02:ANGLES-AND-PARALLEL-LINES",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 2,
       "Title": "الزوايا والمستقيمات المتوازية",
-      "SortOrder": 17,
+      "SortOrder": 59,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "0e705974a6bb2cf17ce1317bde365944219b096ef3847d5eac5f4fb600f9d5d7",
       "Alignments": [
@@ -562,11 +1417,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L03",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:03:SLOPE-OF-A-LINE",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 3,
       "Title": "ميل الخط المستقيم",
-      "SortOrder": 18,
+      "SortOrder": 60,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "294068e0c8d809b1d848cc85b423430d3a6b6900d02078e1a779357d93831183",
       "Alignments": [
@@ -589,11 +1444,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L04",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:04:EQUATIONS-OF-LINES",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 4,
       "Title": "معادلات المستقيم",
-      "SortOrder": 19,
+      "SortOrder": 61,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "96631b78eef8e8fe1775c7420562a9c581fd1c42d4ffa6623474a4e432d3c170",
       "Alignments": [
@@ -616,11 +1471,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L05",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:05:PROVING-LINES-PARALLEL",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 5,
       "Title": "إثبات توازي المستقيمات",
-      "SortOrder": 20,
+      "SortOrder": 62,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "73c9d7b629b02496673f621345e53a9ee63e775587b102705aea156819f0c589",
       "Alignments": [
@@ -643,11 +1498,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U03:L06",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:06:PERPENDICULARS-AND-DISTANCE",
-      "UnitNumber": 3,
-      "UnitTitle": "المستقيمات المتوازية والمتعامدة",
+      "UnitNumber": 7,
+      "UnitTitle": "المستقيمات والهندسة الإحداثية",
       "LessonNumber": 6,
       "Title": "المتعامدات والمسافة",
-      "SortOrder": 21,
+      "SortOrder": 63,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "e5ab5ef060a7f9a902757f332741330db35ebbc2055f4df00b7f8ad5dd01cdc2",
       "Alignments": [
@@ -670,11 +1525,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:01:REFLECTIONS",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 1,
       "Title": "الانعكاس",
-      "SortOrder": 22,
+      "SortOrder": 64,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "5abc29a5ecfd0ed9d17135b2c16ce363b4fb40ba06e5d4510f03e1f8818f7d77",
       "Alignments": [
@@ -697,11 +1552,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L02",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:02:TRANSLATIONS",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 2,
       "Title": "الإزاحة",
-      "SortOrder": 23,
+      "SortOrder": 65,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "f6da26b903b814727229c7fa708df324c8850d87bd5fb98e27b1950ab84e3eff",
       "Alignments": [
@@ -724,11 +1579,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L03",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:03:ROTATIONS",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 3,
       "Title": "الدوران",
-      "SortOrder": 24,
+      "SortOrder": 66,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "c6655ebad1a447b17008f341c0da7fa6dea668b0082560fe1016e6cae57f3b44",
       "Alignments": [
@@ -751,11 +1606,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L04",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:04:COMPOSITIONS-OF-TRANSFORMATIONS",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 4,
       "Title": "تركيب التحويلات",
-      "SortOrder": 25,
+      "SortOrder": 67,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "8576076040520819c24c4fd4093b5d82f240fbfb1c5b897fc64203262ebdb0dd",
       "Alignments": [
@@ -778,11 +1633,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L05",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:05:SYMMETRY",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 5,
       "Title": "التناظر",
-      "SortOrder": 26,
+      "SortOrder": 68,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "a0909237476b68dbe78949490d5e99952769791398718f37351bbbbe5e2acce7",
       "Alignments": [
@@ -805,11 +1660,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U04:L06",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:06:DILATIONS",
-      "UnitNumber": 4,
+      "UnitNumber": 8,
       "UnitTitle": "التحويلات الهندسية والتناظر",
       "LessonNumber": 6,
       "Title": "عمليات تغيير الأبعاد (التمدد)",
-      "SortOrder": 27,
+      "SortOrder": 69,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "d1a14e7d52b8e7315803eeef7fa6acdb11f8a249aa1612f1d76d8498153bd8ce",
       "Alignments": [
@@ -832,11 +1687,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:01:CLASSIFYING-TRIANGLES",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 1,
       "Title": "تصنيف المثلثات",
-      "SortOrder": 28,
+      "SortOrder": 70,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "3cb0e03f4d2943d1f60e4b23de931f7633f2b0dba5f2175f3d459cc621714289",
       "Alignments": [
@@ -859,11 +1714,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L02",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:02:ANGLES-OF-TRIANGLES",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 2,
       "Title": "زوايا المثلثات",
-      "SortOrder": 29,
+      "SortOrder": 71,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "97c035ff725b94e81bdd22f5b66fb31d6e3c12f6418a03d8e18a54274e10377d",
       "Alignments": [
@@ -886,11 +1741,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L03",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:03:CONGRUENT-TRIANGLES",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 3,
       "Title": "المثلثات المتطابقة",
-      "SortOrder": 30,
+      "SortOrder": 72,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "95b57c6c2dee4aac30c1426509ed89c6776ae0b645bfc34d01f0f947162e34ac",
       "Alignments": [
@@ -913,11 +1768,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L04",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:04:PROVING-CONGRUENCE-SSS-AND-SAS",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 4,
       "Title": "إثبات تطابق المثلثات–تساوي الأضلاع الثلاثة (SSS)، تساوي ضلعين وزاوية (SAS)",
-      "SortOrder": 31,
+      "SortOrder": 73,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "c936aa0e15ca7f65ef942f5721f8a534d25009671cc1416e9899082e4e4f1cd2",
       "Alignments": [
@@ -940,11 +1795,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L05",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:05:PROVING-CONGRUENCE-ASA-AND-AAS",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 5,
       "Title": "إثبات تطابق المثلثات–تساوي زاويتين والضلع المحصور بينهما (ASA) وتساوي زاويتين وضلع (AAS)",
-      "SortOrder": 32,
+      "SortOrder": 74,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "34c45d8a936a3b517ddfa535562f82e5df6eb27ecf20ae6ac2558a9994cb6d05",
       "Alignments": [
@@ -967,11 +1822,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L06",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:06:ISOSCELES-AND-EQUILATERAL-TRIANGLES",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 6,
       "Title": "المثلثات متساوية الساقين ومتساوية الأضلاع",
-      "SortOrder": 33,
+      "SortOrder": 75,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "a3304de50c81a5bd4ec197912d7c0a9a451fae4a6f2ec726e62d26548e2642d3",
       "Alignments": [
@@ -994,11 +1849,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L07",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:07:CONGRUENCE-TRANSFORMATIONS",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 7,
       "Title": "تحويلات التطابق",
-      "SortOrder": 34,
+      "SortOrder": 76,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "970073159e3b120bd035a655dd2374a26d6d0f59bc3fbb420f5c9c3a68aa8b5c",
       "Alignments": [
@@ -1021,11 +1876,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L08",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:08:TRIANGLES-AND-COORDINATE-PROOF",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 8,
       "Title": "المثلثات والبرهان الإحداثي",
-      "SortOrder": 35,
+      "SortOrder": 77,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "1f262e23a529718abac159d58dfb370d3e3e1944e1e860c05d6dffc2c9e6cd3e",
       "Alignments": [
@@ -1048,11 +1903,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U05:L09",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:09:AREA-OF-PARALLELOGRAMS-AND-TRIANGLES",
-      "UnitNumber": 5,
-      "UnitTitle": "المثلثات المتطابقة",
+      "UnitNumber": 9,
+      "UnitTitle": "المثلثات وتطابقها",
       "LessonNumber": 9,
       "Title": "مساحة متوازي الأضلاع والمثلث",
-      "SortOrder": 36,
+      "SortOrder": 78,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "8365fb02ecd0a164f295bf392c71f6e84e779a8b24fab35906841742170b7a03",
       "Alignments": [
@@ -1075,11 +1930,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:01:PERPENDICULAR-BISECTORS",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 1,
       "Title": "منصفات المثلثات",
-      "SortOrder": 37,
+      "SortOrder": 79,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "0912094ab9fdb45d59bb5e90f34b9924b55f4fa2a6bbafcc0977939ef60e5eae",
       "Alignments": [
@@ -1102,11 +1957,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L02",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 2,
       "Title": "متوسطات المثلثات وارتفاعاتها",
-      "SortOrder": 38,
+      "SortOrder": 80,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "fe82c6ffb9782ad8b98ee917d6f0a1fe176306f586a065026181e91146e0ae7f",
       "Alignments": [
@@ -1129,11 +1984,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L03",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 3,
       "Title": "المتباينات في مثلث واحد",
-      "SortOrder": 39,
+      "SortOrder": 81,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "1c818d2c1d96e8d1c3b979dc51161a28d1d89b497c308de4eeb7315537a52603",
       "Alignments": [
@@ -1156,11 +2011,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L04",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 4,
       "Title": "البرهان غير المباشر",
-      "SortOrder": 40,
+      "SortOrder": 82,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "fe06fb1f06bf5e83310c77066f00be221d45b788d0f9b4746481c80dc95b36f0",
       "Alignments": [
@@ -1183,11 +2038,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L05",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 5,
       "Title": "متباينة المثلث",
-      "SortOrder": 41,
+      "SortOrder": 83,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "869945a2a1a15a588aafbbcf5cceb62a81fbdfaf9de174819abcb9441ed491ec",
       "Alignments": [
@@ -1210,11 +2065,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U06:L06",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:06:INEQUALITIES-IN-TWO-TRIANGLES",
-      "UnitNumber": 6,
-      "UnitTitle": "علاقات المثلثات",
+      "UnitNumber": 10,
+      "UnitTitle": "علاقات المثلثات والمتباينات",
       "LessonNumber": 6,
       "Title": "المتباينات في مثلثين",
-      "SortOrder": 42,
+      "SortOrder": 84,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "8791abd7752a262064ae584c2c7cd6115b85a4c727e516a9ab90c6183adce7f1",
       "Alignments": [
@@ -1235,13 +2090,139 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L06"
     },
     {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01:C085",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 1,
+      "Title": "النسب والتناسب",
+      "SortOrder": 85,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c72a239fdf276f4f0642db93c07afe79a0773b1c11fb6e148e97aebe14008066",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02:C086",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 2,
+      "Title": "المضلعات المتشابهة",
+      "SortOrder": 86,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "02d2fac476b6680173fe56c8eab5318d44231a12d2796e5c5cca3fff2d90df9e",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03:C087",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 3,
+      "Title": "المثلثات المتشابهة",
+      "SortOrder": 87,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "808ec32d12d94332da48d4e6a5e319dddf85ef4fd52a561916f286b74ed8a63e",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04:C088",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 4,
+      "Title": "المستقيمات المتوازية والأجزاء المتناسبة",
+      "SortOrder": 88,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "764f3a3feac120e7a2fc74018ab4974f772ef7bf9a739c1184e043abbbb6d687",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05:C089",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 5,
+      "Title": "أجزاء المثلثات المتشابهة",
+      "SortOrder": 89,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "85ee6d55252b4bbb7342c904dbcb95966fac755088deeb45540be5595372cedd",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06:C090",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 6,
+      "Title": "تحويلات التشابه",
+      "SortOrder": 90,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7d355149c5c067c043f1ec7db0dcf08f81eb5d1cf3907b7cb6580a2e8ffd55e4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07:C091",
+      "UnitNumber": 11,
+      "UnitTitle": "التناسب والتشابه",
+      "LessonNumber": 7,
+      "Title": "مقياس الرسم والنماذج المقياسية",
+      "SortOrder": 91,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "fb438a6a8bcb9394f7580fe3d1cdcbddf61a94b37f0e82d06faf04abd310c8ea",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L01",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:01:ANGLES-OF-POLYGONS",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 1,
       "Title": "زوايا المضلعات",
-      "SortOrder": 43,
+      "SortOrder": 92,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "a22ca14e253a25635f1ecad6daebecb6abfe4f3bfc5393deed983e78744a435c",
       "Alignments": [
@@ -1264,11 +2245,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L02",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 2,
       "Title": "متوازي الأضلاع",
-      "SortOrder": 44,
+      "SortOrder": 93,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "84dec221a62cb4af0142e6b83542927956f856e74b62064a3b1966dade1e1299",
       "Alignments": [
@@ -1291,11 +2272,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L03",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:03:TESTS-FOR-PARALLELOGRAMS",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 3,
       "Title": "اختبارات متوازي الأضلاع",
-      "SortOrder": 45,
+      "SortOrder": 94,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "b982f13ecc8aa3ee0cf03bafb71aa9681ed3fbcedfa0829e4dc16560d44d5822",
       "Alignments": [
@@ -1318,11 +2299,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L04",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:04:RECTANGLES",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 4,
       "Title": "المستطيل",
-      "SortOrder": 46,
+      "SortOrder": 95,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "5a08a7cb5caa56f65fbcfeebf984fa5c54be73a0472354119a30645b07c11dae",
       "Alignments": [
@@ -1345,11 +2326,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L05",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:05:RHOMBI-AND-SQUARES",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 5,
       "Title": "المعين والمربع",
-      "SortOrder": 47,
+      "SortOrder": 96,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "3bff96106a23931da9c07113f1a511e6c2b3627fa87625b15254bb5ae095c274",
       "Alignments": [
@@ -1372,11 +2353,11 @@
     {
       "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:U07:L06",
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:06:TRAPEZOIDS-AND-KITES",
-      "UnitNumber": 7,
-      "UnitTitle": "الأشكال الرباعية",
+      "UnitNumber": 12,
+      "UnitTitle": "المضلعات والأشكال الرباعية",
       "LessonNumber": 6,
       "Title": "شبه المنحرف وشكل الطائرة الورقية",
-      "SortOrder": 48,
+      "SortOrder": 97,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
       "SemanticSha256": "eb8c8ad8a83e81dcf771b732fad185cd1620f1bf5922b5acb3a07a6b801f1a0a",
       "Alignments": [
@@ -1395,6 +2376,924 @@
       ],
       "FormalTargets": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01:C098",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 1,
+      "Title": "الدوائر ومحيطها",
+      "SortOrder": 98,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "dcb39ccb69f7b403606882eed9a4444a89c0c32510f75d3e38f04e51afa90c07",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L02:C099",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 2,
+      "Title": "قياس الزوايا والأقواس",
+      "SortOrder": 99,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "1e9fd8888fcb03bda380c3c854fee8c9fb9881a44601955b7a5b37c87edb0eb0",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03:C100",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 3,
+      "Title": "الأقواس والأوتار",
+      "SortOrder": 100,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "a932430151eb70cceeae4a237ae76ec305a428d0a78a569685ae4bf00bbc1da0",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04:C101",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 4,
+      "Title": "الزوايا المحيطية",
+      "SortOrder": 101,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "44306d43cfcfaac5cc321c4a9a5ef158dd0487ad43019c4a9ceb3b348bf212c3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05:C102",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 5,
+      "Title": "المماسات",
+      "SortOrder": 102,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "053015454d64aff7b0d4205eaf8c0882e98b64581fb2d9273213be78192f6520",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06:C103",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 6,
+      "Title": "القاطع والمماس وقياس الزوايا",
+      "SortOrder": 103,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "89f2d4571d29f1a408cccc1afc72da52494a2ab6eada103b5a9e680871d8bc4d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07:C104",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 7,
+      "Title": "القطع الخاصة في الدائرة",
+      "SortOrder": 104,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "3cdee5c74d29fdf17334cf314ba98e3151e14cf9bbf432278b862950870122e8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08:C105",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 8,
+      "Title": "معادلة الدائرة",
+      "SortOrder": 105,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "d71633355e0d27d5245b57b0bc8f49ff5b95192c36d2f6dd70b678d911de644c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09:C106",
+      "UnitNumber": 13,
+      "UnitTitle": "الدوائر",
+      "LessonNumber": 9,
+      "Title": "مساحة الدائرة والقطاع الدائري",
+      "SortOrder": 106,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "71e6f3933088ec4c68f710f047c9f53df74864a308e85be7e1e46cab7c19c66c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L01:C107",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 1,
+      "Title": "النسب المثلثية في المثلثات القائمة",
+      "SortOrder": 107,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8f91532a3baf95fd9e8451af0c1ae827fd77e6cf2949e77a0cfa93eb70788de9",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L02:C108",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 2,
+      "Title": "الزوايا وقياسها",
+      "SortOrder": 108,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "b6c207cf38f1c1a40d98e1f536ef3af8e9424d8968c1f8546b6354e6b2bed030",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L03:C109",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 3,
+      "Title": "النسب المثلثية للزوايا العامة",
+      "SortOrder": 109,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6eb9a231bb208b30a3901dad2052bf2827cf44ab22989f93ab5701458e0c1b91",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L04:C110",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 4,
+      "Title": "قانون الجيب",
+      "SortOrder": 110,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "bed1ae820a51a5a05aa2a0c34fd0be71f39f8d50a8fc5a9dc83a1eeae373f539",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L05:C111",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 5,
+      "Title": "قانون جيب التمام",
+      "SortOrder": 111,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "36d8394328b72b8cae409f287344498bf20b072cd475eaf834b38319b87f7991",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L06:C112",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 6,
+      "Title": "الدوال الدائرية والدورية",
+      "SortOrder": 112,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "28170b0f34ecca2fbce918207b92a8389cc82efb2b18c886e425d093f18c7c59",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L07:C113",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 7,
+      "Title": "التمثيل البياني للدوال المثلثية",
+      "SortOrder": 113,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f0b1816740f82ad626b4aa662f29692cec9b8991381f713a34656bfffd04e011",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L08:C114",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 8,
+      "Title": "إزاحة التمثيلات البيانية للدوال المثلثية",
+      "SortOrder": 114,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ac6d254e2857a8493d69319947f5931bc697c66d94f717ead9e42f19e9c99080",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L09:C115",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 9,
+      "Title": "الدوال المثلثية العكسية",
+      "SortOrder": 115,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "de25909cfbca85f5e4266b9b9a69b679cdccdfd94f70742e606cd1cea0cfe520",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L10",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L10:C116",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 10,
+      "Title": "المتطابقات المثلثية",
+      "SortOrder": 116,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ce299836d62a68ae5d00af63139b26829a2751121edff356886aa6092608c8dc",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11:C117",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 11,
+      "Title": "إثبات المتطابقات المثلثية",
+      "SortOrder": 117,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "3c85ddf18c4af754e56eba66bfe64b18f29865a58ccaa3e4bfd6582e27c73e16",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L12",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L12:C118",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 12,
+      "Title": "متطابقات مجموع زاويتين والفرق بينهما",
+      "SortOrder": 118,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "67dd1466a7ea544a15752c706132cb82d2cb7967e0da23246f1d60526051baa5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L13",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L13:C119",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 13,
+      "Title": "متطابقات ضعف الزاوية ونصفها",
+      "SortOrder": 119,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "fe13f64674ef1d53613e089cf5caf59f52bbf347a5d2b1635bd4fc4b101ec12a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L14",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L14:C120",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 14,
+      "Title": "حل المعادلات المثلثية",
+      "SortOrder": 120,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "fcf501f80066badac06e6e43f268f11595f80fd89e1284b8ce851405604524ef",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L15",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L15:C121",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 15,
+      "Title": "الوسط الهندسي",
+      "SortOrder": 121,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "e4066e4edd0e86add4e16967100e951d31f623d128cf9165aa8171a6e81f5fcb",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L16",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L16:C122",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 16,
+      "Title": "نظرية فيثاغورس وعكسها",
+      "SortOrder": 122,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "db818b2d20493029410c3aa8fee287d9530ba3ec32957f10877ef9074d9b2d08",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L17",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L17:C123",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 17,
+      "Title": "زوايا الارتفاع والانخفاض",
+      "SortOrder": 123,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "fcdefeacb1137bd602a86b2944ace5bbf78b5b50aac5b6f8f8275f857c35f587",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L18",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L18:C124",
+      "UnitNumber": 14,
+      "UnitTitle": "المثلث القائم وحساب المثلثات",
+      "LessonNumber": 18,
+      "Title": "المثلثات القائمة الخاصة",
+      "SortOrder": 124,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "47b5ce5176f559e4da22a4ed056ad14b84db5477eecfc7f6b79d1d84c4320d59",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L01:C125",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 1,
+      "Title": "تمثيلات الأشكال ثلاثية الأبعاد",
+      "SortOrder": 125,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c457f73f4a81e1fa498853a2c16046a154d345b260304572f2779258713c164a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L02:C126",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 2,
+      "Title": "مساحة سطح المنشور والأسطوانة",
+      "SortOrder": 126,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "93e0ee72626608ed1298b8c0541c7e0c19736535a97fcf12a8e3427dac3f34ac",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03:C127",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 3,
+      "Title": "مساحة سطح الهرم والمخروط",
+      "SortOrder": 127,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5f1d2da3bb1e9b73ad7ae5569153830b9974dcf97c3affc5d69b28702d32e869",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L04:C128",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 4,
+      "Title": "مساحة سطح الأشكال الكروية وحجمها",
+      "SortOrder": 128,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "85106fcb5e5d7278352d5b108b1db8eaa0b18bbd3d4cc390fb975599a1bab764",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L05:C129",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 5,
+      "Title": "حجم المنشور والأسطوانة",
+      "SortOrder": 129,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7ba0dba7a0491abf85db5f2597bb11b5abc762a11d5fb3c42b3a508b084d09e3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L06:C130",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 6,
+      "Title": "حجم الأشكال الهرمية والمخروطية",
+      "SortOrder": 130,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "cc90a1db1099f245961c80eafa078b98f98b14ffe2e3525ce33dfd5a4b1b4636",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 7,
+      "Title": "الهندسة الفراغية",
+      "SortOrder": 131,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "9108a517007993418bcdb668f872ec92bfdef6f08b182f15bc78cab22f8d20c1",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L08:C132",
+      "UnitNumber": 15,
+      "UnitTitle": "الهندسة الفراغية والمجسمات",
+      "LessonNumber": 8,
+      "Title": "المجسمات المتطابقة والمتشابهة",
+      "SortOrder": 132,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "d10b625d0611af30eeda470fd3e3fbdf81947d171633ca2a9f3d6c59918660f3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01:C133",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 1,
+      "Title": "تمثيل فضاءات العينة",
+      "SortOrder": 133,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "dc0527e1e0eb3b5c6870aa6f9139118810a0943b9430c6811d5931d6a2f530c7",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02:C134",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 2,
+      "Title": "استخدام التباديل والتوافيق في الاحتمالات",
+      "SortOrder": 134,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8854aaf10330bd1d48ea2815fb71ab2df53f6c0a2bb5947413d2e6ed09b581f3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03:C135",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 3,
+      "Title": "الاحتمالات الهندسية",
+      "SortOrder": 135,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6f66b6a917353add5dc8b85924418a4d837610ffe056259911300be77cde2bd5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04:C136",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 4,
+      "Title": "المحاكاة",
+      "SortOrder": 136,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "48fe1c172e3b21282e00b1aafbea7c81d9caa11fa4b6f28b1d7e1d508832d236",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05:C137",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 5,
+      "Title": "الاحتمال والفرص",
+      "SortOrder": 137,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "d185263612c402dad9c049eaf4a71e3d936d80146e69f47e2dd4f61848973c0b",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 6,
+      "Title": "احتمالات الأحداث المستقلة وغير المستقلة",
+      "SortOrder": 138,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5183269a9ee310eccbc8e44e79031e3b7b40ce4cda9d45af18fbc76af08c00fd",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07:C139",
+      "UnitNumber": 16,
+      "UnitTitle": "الاحتمالات",
+      "LessonNumber": 7,
+      "Title": "احتمالات الأحداث المتنافية",
+      "SortOrder": 139,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "157dbd909d36842a59454345332b26dbef0d441adda5ef8554b7d80c00a22054",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01:C140",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 1,
+      "Title": "المتتاليات كدوال",
+      "SortOrder": 140,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "43ddc9d0bcbe73e5abf8fe4c6896709bae505f2b66a3bb7c1b0e712772abcef1",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02:C141",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 2,
+      "Title": "المتتاليات والمتسلسلات الحسابية",
+      "SortOrder": 141,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8b41e49e0a786ed50115fbcd8902edbbbd72360a55f740e0ecc1fbed652c4cbe",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03:C142",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 3,
+      "Title": "المتتاليات والمتسلسلات الهندسية",
+      "SortOrder": 142,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "b1e1ab35bae71ec53f82f5a95f3d71a7df5f1b189fa17b596286b1c9de7edea7",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04:C143",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 4,
+      "Title": "المتسلسلات الهندسية اللانهائية",
+      "SortOrder": 143,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "485432962b83f93cc322dfa9ffb09378ebfe3a10ebdf5110d7ea0d3b106d53f8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L05:C144",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 5,
+      "Title": "المتتاليات الهندسية بوصفها دوال أسية",
+      "SortOrder": 144,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f16b8b286d47cd767dd0d582fdf5ba87245148a60251db8df8ef4ef565fe1839",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L06:C145",
+      "UnitNumber": 17,
+      "UnitTitle": "المتتاليات والمتسلسلات",
+      "LessonNumber": 6,
+      "Title": "الصيغ التكرارية",
+      "SortOrder": 145,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "567b13a2631e4d91158a4221651b65d167871cf75371f8a9e78cb258e706ece1",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146",
+      "UnitNumber": 18,
+      "UnitTitle": "التبرير والبرهان",
+      "LessonNumber": 1,
+      "Title": "المسلمات والبراهين الحرة",
+      "SortOrder": 146,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "be2188674a9ee6d4ad704c2a2f2a835bb5e2fe1b817ce45ee661bd6a942a1960",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L02:C147",
+      "UnitNumber": 18,
+      "UnitTitle": "التبرير والبرهان",
+      "LessonNumber": 2,
+      "Title": "البرهان الجبري",
+      "SortOrder": 147,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "b7940d3431fbcc67679c6bb8106bb87185981f665ab123680d953e04b5121339",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148",
+      "UnitNumber": 18,
+      "UnitTitle": "التبرير والبرهان",
+      "LessonNumber": 3,
+      "Title": "إثبات العلاقات بين الزوايا",
+      "SortOrder": 148,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7b590bdb92c015f01a0234e453649a8f94239408ffdbbe1b8e7f8f490a1e4d94",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G10-GENERAL-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": null
     }
   ]
 }
