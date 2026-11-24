@@ -64,6 +64,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10NonmonicQuadraticResponse.FactorFamily,
             UaeG10NonmonicQuadraticResponse.RootsFamily,
             UaeG10NonmonicQuadraticResponse.PrimeFamily,
+            UaeG10DifferenceSquaresResponse.FactorFamily,
+            UaeG10DifferenceSquaresResponse.RootsFamily,
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
@@ -1172,6 +1174,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 return false;
             return (x==one&&y==two)||(x==two&&y==one);
         }
+
+        if (UaeG10DifferenceSquaresResponse.Supports(family))
+            return UaeG10DifferenceSquaresResponse.Verify(family,parameters,answer);
 
         if (UaeG10NonmonicQuadraticResponse.Supports(family))
             return UaeG10NonmonicQuadraticResponse.Verify(family,parameters,answer);
@@ -3581,6 +3586,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
                 AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
         }
+
+        if (UaeG10DifferenceSquaresResponse.Supports(family))
+            return BuildG10DifferenceSquares(family,random,difficulty);
 
         if (UaeG10NonmonicQuadraticResponse.Supports(family))
             return BuildG10NonmonicQuadratic(family,random,difficulty);
@@ -9695,6 +9703,9 @@ public sealed partial class ExactSkillContractQuestionEngine
         if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
             return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
                 .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (UaeG10DifferenceSquaresResponse.Supports(problem.Family))
+            return UaeG10DifferenceSquaresResponse.Format(problem.Family,p);
 
         if (UaeG10NonmonicQuadraticResponse.Supports(problem.Family))
             return UaeG10NonmonicQuadraticResponse.Format(problem.Family,p);
