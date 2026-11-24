@@ -1,68 +1,22 @@
 'use strict';
-
-// Authored against the local seven-book source ledger. Stage A–B–C must NOT run this
-// test or claim PASS; it belongs to later Stage D. The 156 candidate count remains
-// preliminary and MUST NOT be treated as final canonical lesson count.
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const root = path.resolve(__dirname, '..');
-const load = (filename) => JSON.parse(fs.readFileSync(path.join(root, filename), 'utf8'));
-
-const index = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-index-preliminary.json');
-const pack = load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
-const inventory = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-inventory.json');
-
-// Historical preliminary extraction; not the source-verified Arabic TOC.
-const preliminaryCandidate = [
-  ['جمع كثيرات الحدود وطرحها', 7],
-  ['ضرب كثيرة حدود في أحادية الحد', 14],
-  ['ضرب كثيرات الحدود', 22],
-  ['نواتج الضرب الخاصة', 28],
-  ['استخدام خاصية التوزيع', 36],
-  ['حل المعادلات التربيعية على الصورة x² + bx + c = 0', 45],
-  ['حل المعادلات التربيعية على الصورة ax² + bx + c = 0', 52],
-  ['الفرق بين مربعين', 58],
-  ['المربعات الكاملة', 64],
-];
-
-test('Grade10 Unit1 nine preliminary titles remain traceable without being mistaken for the verified book', () => {
-  assert.equal(preliminaryCandidate.length, 9);
-  assert.equal(new Set(preliminaryCandidate.map(x => x[0])).size, 9, 'unit lesson titles must be distinct');
-  for (let i = 0; i < preliminaryCandidate.length; i++) {
-    const row = index.rows[i];
-    assert.equal(row.candidateOrdinal, i + 1);
-    assert.equal(row.sourceLessonNumbersPreliminary, `1-${i+1}`);
-    assert.equal(row.titleArabicCandidate, preliminaryCandidate[i][0]);
-    assert.equal(row.bookPrintedOpeningPage, preliminaryCandidate[i][1]);
-    assert.equal(row.bookTocPhysicalPdfPage, 5);
-    assert.equal(row.bookSha256,
-      'd7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72');
-    assert.match(row.currentPositionLinkStatus, /GOAL_VERIFICATION_PENDING/);
-    assert.ok(pack.Lessons.some(lesson =>
-      lesson.LessonCode === row.currentGeneralPositionCandidate), 'existing lesson must be reused');
-  }
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const load=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const manifest=load('docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json');
+const inventory=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-inventory.json');
+const pack=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
+test('The first nine original General source headings are the same lessons in the approved 16-lesson unified Unit1',()=>{
+ const expected=['جمع كثيرات الحدود وطرحها','ضرب كثيرة حدود في أحادية حد','ضرب كثيرات الحدود','نواتج الضرب الخاصة','استخدام خاصية التوزيع','حل x² + bx + c = 0','حل ax² + bx + c = 0','الفرق بين مربعين','المربعات الكاملة'];
+ assert.equal(manifest.Units[0].ls.length,16);
+ assert.deepEqual(manifest.Units[0].ls.slice(0,9),expected);
+ assert.equal(pack.Lessons.length,48,'existing content pack is a partial implementation, not a competing canonical index');
+ assert.ok(pack.Lessons.some(x=>x.LessonCode.startsWith('PED:UAE-MOE-MATH:L10:GENERAL:01:01:')));
 });
-
-test('seven-book source hashes do not masquerade as semantic validation', () => {
-  assert.equal(inventory.fileCount, 7);
-  assert.equal(inventory.allSevenFileHashesMatched, true);
-  assert.equal(index.sourceLock, false, 'do not silently mark global source index approved');
-  assert.equal(inventory.sourceLock, false, 'book hashes are not proof of semantic coverage');
-});
-
-test('Source-verified General Volume1 TOC supersedes the preliminary 156-candidate title wording', () => {
-  const verified = load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/general-2025-volume1-48-verified-book-toc.json');
-  assert.equal(verified.sourceLessonCount,48);
-  assert.equal(verified.titleDifferenceFromEarlier156CandidateCount,14);
-  assert.equal(verified.lessons.length,48);
-  assert.equal(verified.lessons[1].titleArabicSourceToc,'ضرب كثيرة حدود في أحادية حد');
-  assert.notEqual(verified.lessons[1].titleArabicSourceToc,preliminaryCandidate[1][0]);
-  assert.equal(verified.lessons[5].titleArabicSourceToc,'حل x² + bx + c = 0');
-  assert.equal(verified.lessons[6].titleArabicSourceToc,'حل ax² + bx + c = 0');
-  assert.equal(verified.lessons[47].titleArabicSourceToc,'شبه المنحرف وشكل الطائرة الورقية');
-  assert.equal(verified.lessons[47].printedPageInOriginalToc,587);
-  assert.equal(verified.lessons[47].printedOpeningPageVerified,487);
-  assert.equal(verified.sourceLock,false,'48 verified headings do not establish whole seven-book semantic parity');
+test('Seven source files are still audited separately from the owner-approved 148-lesson index',()=>{
+ assert.equal(inventory.fileCount,7);
+ assert.equal(inventory.allSevenFileHashesMatched,true);
+ assert.equal(manifest.LessonCount,148);
+ assert.equal(manifest.CanonicalUnifiedIndexLocked,true);
+ assert.equal(manifest.FullLessonLevelSemanticAuditComplete,false);
+ assert.equal(inventory.sourceLock,false,'source-body coverage still requires academic verification');
 });
