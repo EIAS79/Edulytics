@@ -23,8 +23,8 @@ test('General volume1 lessons do not stand for complete annual General syllabus'
   assert.equal(s.authoritativeGeneralBook.annualLessonCount,null);
   assert.equal(cov.generalAnnualSourceComplete,false);
   assert.equal(s.authoritativeGeneralBook.all48AppLessonsVerified,false);
-  assert.equal(s.sourceScopeSemanticClosure,'PENDING');
-  assert.equal(s.canonicalLessonCount,null);
+  assert.equal(s.sourceScopeSemanticClosure,'PENDING_LESSON_LEVEL_REVIEW');
+  assert.equal(s.canonicalLessonCount,148);assert.equal(s.canonicalUnitCount,18);
   assert.equal(s.testsExecutionPolicy,'WRITTEN_NOT_RUN_FOR_STAGE_A_B_C');
 });
 
