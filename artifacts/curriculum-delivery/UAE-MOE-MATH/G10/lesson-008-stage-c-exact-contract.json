@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "canonicalCode": "G10-U01-L08",
+  "canonicalOrdinal": 8,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:08:DIFFERENCE-OF-TWO-SQUARES",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourcePdfPages": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+  ],
+  "sourcePrintedPages": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourceEdition": "UAE Grade10 General 2025–2026 Volume1",
+  "crossbookOverlap": "Advanced PDF132/printed115; Applied PDF50/printed233, crosswalk C11",
+  "primarySkills": [
+    "algebra.factor.difference_of_squares"
+  ],
+  "secondarySkills": [
+    "algebra.polynomial.factor_gcf",
+    "algebra.quadratic.zero_product",
+    "algebra.quadratic.rational_roots",
+    "algebra.polynomial.factor_repeated",
+    "algebra.geometry.area_difference"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l08.full_difference_squares_factor",
+    "uae.g10.general.u01.l08.difference_squares_rational_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l04.full_special_product",
+    "uae.g9.general.u07.l04.conjugate_product_coefficient",
+    "uae.g10.general.u01.l07.nonmonic_full_factor"
+  ],
+  "reusePolicy": "Extend shared ExactSkillContractQuestionEngine for source-exact inverse difference-of-squares; reuse established zero-product math and integer coefficient infrastructure, avoid duplicate Grade9 integer-roots questions. Separate U01L04 forward product and U01L09 perfect-square-trinomial semantics.",
+  "exactScope": "primitive a²x²−b², a=1..8, b=1..9, gcd(a,b)=1; full factors (ax−b)(ax+b), rational roots ±b/a. Higher power and GCF cases remain teacher-reviewed extensions.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10DifferenceSquares(family,random,difficulty)",
+  "independentVerifier": "UaeG10DifferenceSquaresResponse.Verify(family,parameters,answer)",
+  "parameterKeys": [
+    "a",
+    "b"
+  ],
+  "answerTypes": [
+    "complete two-binomial factorization",
+    "exact ordered or reversed rational root pair"
+  ],
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l08.full_difference_squares_factor",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined"
+    },
+    {
+      "family": "uae.g10.general.u01.l08.difference_squares_rational_roots",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined"
+    }
+  ],
+  "teacherReviewRequired": [
+    "multi-variable or higher-power fully factored expressions",
+    "GCF before conjugates and grouped four-term source examples",
+    "geometric frame and source sketch with dimension restrictions",
+    "higher-degree zero root and all sign possibilities",
+    "contextual open proofs and mistaken power analysis"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralDifferenceSquaresTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "validatedStudentPractice": false
+  },
+  "note": "READY_FOR_STAGE_D is only Stage A-B-C handoff after authored source/rubric tests. These tests are not executed until Stage D."
+}
