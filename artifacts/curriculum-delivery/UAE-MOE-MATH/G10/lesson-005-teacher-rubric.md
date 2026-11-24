@@ -1,6 +1,6 @@
 # Grade 10 General U01L05 — original teacher rubric: inverse distribution / factor and zero product
 
-**Owner-approved canonical scope:** «استخدام خاصية التوزيع» in «كثيرات الحدود والتحليل». **Book:** General `01.pdf` (2025–2026 Volume1), PDF pp49–54 / printed36–41. Physical PDF p55 is cumulative unit review, not part of this lesson's unique exercise denominator.
+**Owner-approved canonical scope:** «استخدام خاصية التوزيع» in «كثيرات الحدود والتحليل». **Book:** General `01.pdf` (2025–2026 Volume1), PDF pp48–54 / printed35–41 (includes preparatory algebra-tiles laboratory). Physical PDF p55 is cumulative unit review, not part of this lesson's unique exercise denominator.
 
 | Evidence | 2 = secure | 1 = partial | 0 = incorrect |
 |---|---|---|---|
@@ -22,3 +22,7 @@
 **Digital boundary:** two bounded first-party exact families cover canonical one-variable GCF factor expressions and integer zero-product roots. Four-term regrouping, rational/multivariable factorization, colored physical tiles, area diagrams, and contextual written proofs are **TEACHER_REVIEW_REQUIRED**. Do not claim automated verification of unsupported source goals.
 
 **Execution boundary:** Stage C regression tests are written but **not run**, `productionRouting=false` and `practiceReadiness=PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D`. Stage D alone may certify authenticated student grading and RTL.
+
+## Corrected PDF48 laboratory — signed algebra tiles and written comparison
+
+On printed page 35, the student-book lab teaches the inverse distributive law before the formal lesson. The original Edulytics extension models `٤س−١٢ = ٤(س−٣)` using four equal signed tile groups and `س²+٥س = س(س+٥)` with a square tile plus five strips. The learner must draw a labeled arrangement and verify by multiplication. Compare this with `٤س²+٧`, where the greatest common monomial factor over integer coefficients is 1. Score signed tiles, dimension labeling, decomposition, and explanation using the seven-point rubric above; do not claim that these are autograded by the bounded two exact families.
