@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 9,
+  "canonicalCode": "G10-U01-L09",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "المربعات الكاملة",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:09:PERFECT-SQUARES",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceEdition": "UAE General Grade10 2025–2026 Volume1",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sourcePrintedPages": [
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominator": 27,
+  "sourceElementsMapped": 27,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementsByStatus": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 6,
+    "TEACHER_REVIEW_REQUIRED": 10
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l09-ar.rich-lesson-v2.json",
+  "arabicWorkedExamplesCount": 11,
+  "originalVisualModelsCount": 6,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.factor.perfect_square_trinomial"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l09.full_perfect_square_factor",
+    "uae.g10.general.u01.l09.classify_perfect_square",
+    "uae.g10.general.u01.l09.shifted_square_two_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l04.full_special_product",
+    "uae.g10.general.u01.l08.full_difference_squares_factor"
+  ],
+  "exactGenerator": "BuildG10PerfectSquares",
+  "independentVerifier": "UaeG10PerfectSquaresResponse.Verify",
+  "rendererMatrix": {
+    "factor": "StructuredEntry",
+    "recognition": "StructuredEntry",
+    "shiftedRoots": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "irrational radical exact answers",
+    "source square-area diagram and full derivation",
+    "free-fall time physical admissibility",
+    "general mixed factoring proofs beyond bounded exact contract"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPerfectSquaresTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "contentReadyCommit": "f637bcf034eebc930775a8cea756101904461238",
+  "closedAtUtc": "2026-11-24T12:25:30Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "firstIncompleteLessonOrdinal": 10,
+  "nextEligibleLessonOrdinal": 10,
+  "closureBasis": "First-party Arabic 11 worked examples 6 visual models, scanned original UAE General PDF77–84 27 distinct source content/assessment categories, source-correct teacher rubric, bounded three-family perfect-square Stage C exact response verifier, written tests NOT RUN.",
+  "remainingStageDObligations": [
+    "Execute Node/.NET generated question tests, check factor acceptance, true/false near-miss and two roots",
+    "Authenticated student StructuredEntry with Arabic digits/RTL and persisted grading",
+    "Verify irrational-root teacher scoring/visual geometry manual pathway",
+    "Enable production routing only after Stage D; finish 148 lessons before full-grade publish"
+  ]
+}
