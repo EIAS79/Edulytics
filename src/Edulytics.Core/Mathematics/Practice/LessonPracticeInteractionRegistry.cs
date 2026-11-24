@@ -246,7 +246,8 @@ public static class LessonPracticeInteractionRegistry
             familyId=="uae.g10.general.u01.l08.difference_squares_rational_roots" ||
             familyId=="uae.g10.general.u01.l09.full_perfect_square_factor" ||
             familyId=="uae.g10.general.u01.l09.classify_perfect_square" ||
-            familyId=="uae.g10.general.u01.l09.shifted_square_two_roots"))
+            familyId=="uae.g10.general.u01.l09.shifted_square_two_roots" ||
+            familyId=="uae.g10.general.u01.l10.full_linear_divisor_quotient"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
