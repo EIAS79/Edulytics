@@ -27,10 +27,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Finish U01L01 runtime mapping and source-element closure without asserting tests passed",
-    "Do not move to U01L02 until U01L01 is READY_FOR_STAGE_D",
-    "For each later lesson, review body pages from approved source; book TOC alone does not establish pedagogical content",
-    "Complete per-lesson semantic source-body validation under approved 148-lesson canonical index, without claiming unavailable book body was reviewed"
+    "Map canonical 18-unit/148-lesson index to actual runtime Blueprint/Curriculum/Content without duplicating existing 48 LessonCodes or leaving empty student-facing lessons (48 preserved, 100 missing).",
+    "Finish U01L01 A–B–C source-element/teacher rubric exact practice boundaries and evidence; Stage D tests remain WRITTEN_NOT_RUN.",
+    "Do not advance to U01L02 until checkpoint READY_FOR_STAGE_D and its own GitHub closing commit."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -41,7 +40,7 @@
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
   "currentStageAtoCClosureCount": 0,
-  "continuationGate": "U01L01_EXACT_PRACTICE_AND_EVIDENCE_PENDING_WITH_OWNER_APPROVED_CANONICAL_148",
+  "continuationGate": "FIRST_LESSON_CANONICAL_TITLE_MATCHED_BUT_RUNTIME_INDEX_AND_STAGE_C_EVIDENCE_GAPS_PENDING",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -50,5 +49,9 @@
     "7495d14421e8a9c74ec69a7175a01914352e7792",
     "b7f0eea21c427410d3f9bfc741f344e49cb6747d"
   ],
-  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md"
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalIndexOwnerApproved": true,
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json"
 }
