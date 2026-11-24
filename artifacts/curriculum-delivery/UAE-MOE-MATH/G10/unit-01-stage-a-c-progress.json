@@ -12,11 +12,13 @@
   "sourceBodyVisuallyReviewedOrdinals": [
     1
   ],
-  "completedReadyForStageDOrdinals": [],
-  "firstIncompleteLessonOrdinal": 1,
-  "lessonCountInThisBookUnit": 9,
-  "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_SINGLE_REFERENCE",
-  "stageABCStatus": "IN_PROGRESS_NO_LESSON_CLOSED",
+  "completedReadyForStageDOrdinals": [
+    1
+  ],
+  "firstIncompleteLessonOrdinal": 2,
+  "lessonCountInThisBookUnit": 16,
+  "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
+  "stageABCStatus": "UNIT_01_PARTIAL_1_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -27,9 +29,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Map canonical 18-unit/148-lesson index to actual runtime Blueprint/Curriculum/Content without duplicating existing 48 LessonCodes or leaving empty student-facing lessons (48 preserved, 100 missing).",
-    "Finish U01L01 A–B–C source-element/teacher rubric exact practice boundaries and evidence; Stage D tests remain WRITTEN_NOT_RUN.",
-    "Do not advance to U01L02 until checkpoint READY_FOR_STAGE_D and its own GitHub closing commit."
+    "Next only: G10-U01-L02 «ضرب كثيرة حدود في أحادية حد»; inspect its original general source pages and advanced overlap, repair authored Arabic content, Stage C exact contract, write not-run tests, evidence/commit.",
+    "Do not skip or close U01L03 before U01L02 is READY_FOR_STAGE_D.",
+    "Other 100 canonical Blueprint entries require individually authored content; global Stage D and Neon production migration remain separate."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -39,8 +41,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 0,
-  "continuationGate": "FIRST_LESSON_CANONICAL_TITLE_MATCHED_BUT_RUNTIME_INDEX_AND_STAGE_C_EVIDENCE_GAPS_PENDING",
+  "currentStageAtoCClosureCount": 1,
+  "continuationGate": "U01L01_CLOSED_COMMIT_ef0cffd9f551c4ec299f98df0e235d7cf147d1c0; NEXT_U01L02_REQUIRED",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -53,5 +55,11 @@
   "canonicalIndexOwnerApproved": true,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
-  "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json"
+  "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
+  "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
+  "canonicalUnitNumber": 1,
+  "unitStageABCClosedCount": 1,
+  "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
+  "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
+  "stageDStatus": "NOT_STARTED"
 }
