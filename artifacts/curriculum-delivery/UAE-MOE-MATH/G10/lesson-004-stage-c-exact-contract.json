@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "canonicalCode": "G10-U01-L04",
+  "lessonOrdinal": 4,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:04:SPECIAL-PRODUCTS",
+  "sourcePdf": "01.pdf",
+  "sourcePages": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "printedPages": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "primarySkills": [
+    "algebra.polynomial.special_products"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u07.l04.square_binomial_coefficient",
+    "uae.g9.general.u07.l04.conjugate_product_coefficient",
+    "uae.g10.general.u01.l04.full_special_product"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product"
+  ],
+  "sourceMathScope": "Expand squares of sums/differences and conjugate products, establish square-area and cross-term cancellation identities; factorization of differences of squares separately in U01L08.",
+  "reusePolicy": "Reuse Grade9 exact single-coefficient special products and Grade10 bounded independent polynomial convolution parser; no unrestricted CAS.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10SpecialProduct(family,random,difficulty)",
+  "independentVerifier": "UaeG10SpecialProductsResponse.Verify delegates to UaeG10PolynomialProductResponse.Verify",
+  "bounds": {
+    "a": "1..7",
+    "b": "1..7",
+    "forms": [
+      "(aس+b)²",
+      "(aس−b)²",
+      "(aس+b)(aس−b)"
+    ],
+    "degree": "2"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g9.general.u07.l04.square_binomial_coefficient",
+      "kind": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g9.general.u07.l04.conjugate_product_coefficient",
+      "kind": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l04.full_special_product",
+      "kind": "StructuredEntry",
+      "stageD": "NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "visual algebra-tile models for a square of a sum/difference",
+    "geometric difference-of-squares model and positive dimensions",
+    "proof of cancellation of conjugate terms and double cross term",
+    "open ended original word problems"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralSpecialProductsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "provenanceNote": "2025–2026 owner-provided local General volume1 PDF and approved 2026–2027 target; full-year coverage status separate."
+}
