@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "lessonOrdinal": 2,
+  "canonicalCode": "G10-U01-L02",
+  "unitOrdinal": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "ضرب كثيرة حدود في أحادية حد",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:02:MULTIPLYING-A-POLYNOMIAL-BY-A-MONOMIAL",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerApprovedCanonicalLessonCount": 148,
+  "ownerApprovedCanonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourceEdition": "UAE General 2025–2026 Volume 1",
+  "sourcePdfPages": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "sourcePrintedPages": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "advancedCrosswalk": {
+    "book": "01متقدم_.pdf",
+    "pdfPages": [
+      196,
+      197,
+      198,
+      199,
+      200,
+      201
+    ],
+    "relatedGoalIds": [
+      "G10-ADV-U03L01-S4",
+      "G10-ADV-U03L01-S6"
+    ]
+  },
+  "sourceElementDenominatorForReviewedLesson": 22,
+  "sourceElementsIndexed": 22,
+  "sourceElementCoverageMapped": 22,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 8
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-teacher-rubric.md",
+  "sourceIndexLocked": true,
+  "sourceIndexLockMeaning": "Owner-approved unique lesson titles and 18-unit order; lesson2 source-page element/category mapping completed. Not a claim of all 148 Arabic bodies authored.",
+  "arabicContentEnhanced": true,
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l02-ar.rich-lesson-v2.json",
+  "arabicExamplesCount": 10,
+  "originalVisualModelsCount": 5,
+  "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.multiply_distribute"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product"
+  ],
+  "forbiddenFamily": "uae.g9.general.u07.l03.multiply_coefficient",
+  "engine": "ExactSkillContractQuestionEngine",
+  "independentVerifier": "UaeG10MonomialPolynomialResponse.Verify",
+  "rendererMatrix": {
+    "coefficient": "IntegerKeypad",
+    "polynomial": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "multivariable distributions",
+    "fractional/decimal model explanation",
+    "geometry area partition and diagrams",
+    "open student mathematical reasoning"
+  ],
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonomialPolynomialReuseTests.cs",
+    "tests/academic-uae-grade10-arabic-u01l02.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "blueprintRegisteredLessonCount": 148,
+  "studentContentPackCurrentLessonCount": 48,
+  "globalStudentContentComplete": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "firstIncompleteLessonOrdinal": 3,
+  "nextEligibleLessonOrdinal": 3,
+  "closedAtUtc": "2026-11-24T10:16:37Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "General original scanned lesson PDF27–32 and Advanced monomial overlap mapped; 22 source element/exercise-type categories, 10 Arabic original examples, 5 original visuals, source-scoped grader and tests written; no Stage D execution or release claim.",
+  "remainingStageDObligations": [
+    "execute C# and Node tests and verify Arabic/RTL renderer with authenticated student account",
+    "prove exact monomial polynomial question family generation/verifier and correct input UI",
+    "enable practice routing only after Stage D validated run",
+    "publish whole 148-lesson catalog only after 148 student lessons ready and safe student-link migration"
+  ]
+}
