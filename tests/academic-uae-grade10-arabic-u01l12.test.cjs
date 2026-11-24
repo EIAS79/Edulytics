@@ -74,5 +74,5 @@ test('One source-exact primary skill and three fail-closed graph answer families
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
  const verifier=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10GraphAnalysis.cs'),'utf8');
  assert.match(engine,/BuildG10GraphAnalysis/);
- assert.match(verifier,/UaeG10GraphAnalysisResponse.Verify/);
+ assert.match(verifier,/internal static bool Verify/);
 });
