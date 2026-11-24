@@ -238,7 +238,10 @@ public static class LessonPracticeInteractionRegistry
             familyId=="uae.g10.general.u01.l05.zero_product_roots" ||
             familyId=="uae.g10.general.u01.l06.monic_full_factor" ||
             familyId=="uae.g10.general.u01.l06.monic_integer_roots" ||
-            familyId=="uae.g10.general.u01.l06.monic_prime_over_integers"))
+            familyId=="uae.g10.general.u01.l06.monic_prime_over_integers" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_full_factor" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_rational_roots" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_prime_over_integers"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
