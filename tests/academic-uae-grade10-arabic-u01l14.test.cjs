@@ -50,7 +50,7 @@ test('Original Arabic models, ten complete examples and real quadratic graph are
  }
  assert.equal(2**3-3*(2**2)+2*2+5,5);
  assert.equal(1-6+11-6,0);
- assert.equal(2*(-1)**3-(-1)+7,6);
+ assert.equal(2*((-1)**3)-(-1)+7,6);
  for(const x of [-2,-1,0,1,2,3]){
    assert.equal((x-1)*(x**3+x*x-3*x-3),x**4-4*x*x+3);
  }
