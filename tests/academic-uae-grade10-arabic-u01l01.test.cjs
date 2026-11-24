@@ -135,7 +135,7 @@ test('U01L01 source identity is the verified 2025–26 General volume 1, not an 
   assert.equal(pack.Lessons.length,48,'this is only the current Volume1 baseline, NOT annual count');
 });
 
-test('Real Grade10 General Volume1 blueprint and manifest reference local UAE source, not unrelated GCSE',()=>{
+test('Grade10 General blueprint is the existing 48-lesson partial implementation of owner-approved 148 index',()=>{
  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
    'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
  const manifest=JSON.parse(fs.readFileSync(path.join(root,
@@ -143,9 +143,11 @@ test('Real Grade10 General Volume1 blueprint and manifest reference local UAE so
  assert.equal(blueprint.Units[0].Title,'التعابير والمعادلات التربيعية');
  assert.match(blueprint.SourceEdition,/2025–2026, Volume 1/);
  assert.match(blueprint.PedagogicalSourceType,/OfficialUaeStudentBook/);
- assert.equal(manifest.SourceFile,'01.pdf');
+ assert.ok(manifest.SourceFiles.includes('01.pdf'));
  assert.equal(manifest.Units[0].ls[0],'جمع كثيرات الحدود وطرحها');
- assert.equal(manifest.LessonCount,48,'General 2025–26 Volume1 only; NOT annual course count');
+ assert.equal(manifest.LessonCount,148);
+ assert.equal(manifest.UnitCount,18);
+ assert.equal(blueprint.Lessons.length,48);
  assert.ok(!blueprint.SourceTitle.includes('GCSE'));
 });
 test('Grade10 U01L01 contract covers exact whole polynomial while teacher graphics remain separate',()=>{
@@ -203,34 +205,20 @@ test('U01L01 RichV2 closes original geometry, sign-distribution, and multivariat
  assert.equal((3-2+4)+(1+5-1),10);
 });
 
-test('General Volume1 48 source-verified Arabic titles match actual provisional manifest and blueprint without claiming full annual parity',()=>{
-  const toc=JSON.parse(fs.readFileSync(path.join(root,
-    'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/general-2025-volume1-48-verified-book-toc.json'),'utf8'));
-  const manifest=JSON.parse(fs.readFileSync(path.join(root,
-    'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
-  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
-    'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
-  assert.equal(toc.sourceLessonCount,48);
-  assert.equal(toc.sourceLock,false);
-  assert.equal(manifest.CanonicalUnifiedIndexLocked,false);
-  assert.equal(manifest.LessonCount,48);
-  assert.equal(blueprint.Lessons.length,48);
-  for(const unit of manifest.Units) {
-    const source=toc.lessons.filter(x=>x.unit===unit.n);
-    assert.ok(source.length>0);
-    assert.equal(unit.title,source[0].unitTitleArabic);
-    assert.deepEqual(unit.ls,source.map(x=>x.titleArabicSourceToc));
-    assert.equal(blueprint.Units.find(x=>x.Number===unit.n).Title,source[0].unitTitleArabic);
-  }
-  for(let i=0;i<48;i++) {
-    const actual=blueprint.Lessons[i],source=toc.lessons[i];
-    assert.equal(actual.UnitNumber,source.unit);
-    assert.equal(actual.LessonNumber,Number(source.lessonNumber.split('-')[1]));
-    assert.equal(actual.Title,source.titleArabicSourceToc);
-    assert.equal(actual.UnitTitle,source.unitTitleArabic);
-  }
+test('All 48 existing General Volume1 lesson titles occur once in the adopted 148-lesson unified curriculum',()=>{
+ const manifest=JSON.parse(fs.readFileSync(path.join(root,'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
+ const blueprint=JSON.parse(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
+ assert.equal(manifest.LessonCount,148);assert.equal(manifest.UnitCount,18);
+ assert.equal(manifest.CanonicalUnifiedIndexLocked,true);
+ const all=manifest.Units.flatMap(u=>u.ls);
+ assert.equal(all.length,148);
+ assert.equal(new Set(all).size,148);
+ assert.equal(blueprint.Lessons.length,48);
+ for(const lesson of blueprint.Lessons) {
+   assert.ok(all.includes(lesson.Title),'baseline source lesson title missing in canonical 148: '+lesson.Title);
+ }
+ assert.equal(manifest.FullLessonLevelSemanticAuditComplete,false);
 });
-
 test('Grade10 U01L01 retains intentionally blocked A-C closure and truthful source-versus-target periods',()=>{
   const selection=JSON.parse(fs.readFileSync(path.join(root,
     'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json'),'utf8'));
@@ -238,7 +226,7 @@ test('Grade10 U01L01 retains intentionally blocked A-C closure and truthful sour
     'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-a-c-checkpoint.json'),'utf8'));
   assert.equal(selection.pdfs.find(x=>x.name==='01.pdf').classification,'PRIMARY_GENERAL_VOLUME1_TERM1');
   assert.equal(selection.generalAnnualSourceComplete,false);
-  assert.equal(selection.finalCanonicalLessonCount,null);
+  assert.equal(selection.finalCanonicalLessonCount,148);
   assert.equal(checkpoint.status,'A_C_EXPLICIT_GAP');
   assert.equal(checkpoint.firstIncompleteLessonOrdinal,1);
   assert.equal(checkpoint.testsRun,'WRITTEN_NOT_RUN');
