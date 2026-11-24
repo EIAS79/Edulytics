@@ -241,7 +241,9 @@ public static class LessonPracticeInteractionRegistry
             familyId=="uae.g10.general.u01.l06.monic_prime_over_integers" ||
             familyId=="uae.g10.general.u01.l07.nonmonic_full_factor" ||
             familyId=="uae.g10.general.u01.l07.nonmonic_rational_roots" ||
-            familyId=="uae.g10.general.u01.l07.nonmonic_prime_over_integers"))
+            familyId=="uae.g10.general.u01.l07.nonmonic_prime_over_integers" ||
+            familyId=="uae.g10.general.u01.l08.full_difference_squares_factor" ||
+            familyId=="uae.g10.general.u01.l08.difference_squares_rational_roots"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
