@@ -63,6 +63,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10GraphAnalysisResponse.Vertex,
             UaeG10GraphAnalysisResponse.Kind,
             UaeG10GraphAnalysisResponse.Intercepts,
+            UaeG10PolynomialEquationResponse.CubicFamily,
+            UaeG10PolynomialEquationResponse.BiquadraticFamily,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1204,6 +1206,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PolynomialEquationResponse.Supports(family))
+            return UaeG10PolynomialEquationResponse.Verify(family,parameters,answer);
 
         if (UaeG10GraphAnalysisResponse.Supports(family))
             return UaeG10GraphAnalysisResponse.Verify(family,parameters,answer);
@@ -3631,6 +3636,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10PolynomialEquationResponse.Supports(family))
+            return BuildG10PolynomialEquation(family,random,difficulty);
 
         if (UaeG10GraphAnalysisResponse.Supports(family))
             return BuildG10GraphAnalysis(family,random,difficulty);
@@ -9763,6 +9771,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10PolynomialEquationResponse.Supports(problem.Family))
+            return UaeG10PolynomialEquationResponse.Format(problem.Family,p);
 
         if (UaeG10GraphAnalysisResponse.Supports(problem.Family))
             return UaeG10GraphAnalysisResponse.Format(problem.Family,p);
