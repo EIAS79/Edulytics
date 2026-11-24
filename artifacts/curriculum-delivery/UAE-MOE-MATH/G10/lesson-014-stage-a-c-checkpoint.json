@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 14,
+  "canonicalCode": "G10-U01-L14",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "نظريتا الباقي والعامل",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L14:C014",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 Unit3 Lesson3-6 integrated in General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    243,
+    244,
+    245,
+    246,
+    247,
+    248
+  ],
+  "sourcePrintedPages": [
+    226,
+    227,
+    228,
+    229,
+    230,
+    231
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominator": 24,
+  "sourceElementsMapped": 24,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementCounts": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 10
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l14-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 10,
+  "originalVisualModels": 5,
+  "actualCartesianPlotCount": 1,
+  "contentPackCurrentLessonCount": 53,
+  "legacy48LessonCodesPreserved": true,
+  "globalArabicContentComplete": false,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.remainder_factor_theorems"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l14.remainder_theorem_value",
+    "uae.g10.general.u01.l14.factor_theorem_decision"
+  ],
+  "rendererMatrix": {
+    "remainder": "IntegerKeypad",
+    "factor": "StructuredEntry"
+  },
+  "independentVerifier": "UaeG10RemainderFactorResponse.Verify -> UaeG10PolynomialDivisionResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "complete manual synthetic table including absent-power zero coefficients",
+    "remainder/factor theorem mathematical proof",
+    "exact versus approximate graph evidence",
+    "context-dependent polynomial modeling and units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l14.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRemainderFactorTheoremsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "sourceContentReadyCommit": "a0c2b6f1fc07b40205335f10d6f44ce65633e197",
+  "closedAtUtc": "2026-11-24T20:06:47Z",
+  "closedAtUtcMeaning": "source-content readiness commit timestamp; checkpoint commit separate",
+  "firstIncompleteLessonOrdinal": 15,
+  "nextEligibleLessonOrdinal": 15,
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "Six owner scanned pages 243–248, 24 distinct source goals/assessment types mapped, 10 Arabic worked examples and 5 original visual models, source-matched remainder/factor theorem families by reuse of verified mathematical division design, independent grader, teacher rubric and tests written NOT RUN.",
+  "remainingStageDObligations": [
+    "execute .NET and Node tests and verify correct calculation of f(a) and factor flags",
+    "authenticate Arabic student input and RTL rendering",
+    "verify manual source questions are teacher-reviewed not auto-scored",
+    "finish all 148 source-based Arabic lessons before StageD full-grade and production publish"
+  ]
+}
