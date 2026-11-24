@@ -47,7 +47,7 @@ public sealed class UaeG10GeneralPolynomialGraphAnalysisTests
             {
                 var p=problem.Parameters;
                 Assert.Equal(7,p.Count);
-                Assert.Contains("النقاط",problem.Prompt);
+                Assert.Contains("منحنى",problem.Prompt);
                 Assert.Equal(AssessmentItemType.ShortAnswer,problem.ItemType);
                 Assert.NotEqual(0,p["a"]);
                 string expected;
