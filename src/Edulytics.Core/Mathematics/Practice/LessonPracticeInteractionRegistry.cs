@@ -235,7 +235,10 @@ public static class LessonPracticeInteractionRegistry
             familyId=="uae.g10.general.u01.l03.full_polynomial_product" ||
             familyId=="uae.g10.general.u01.l04.full_special_product" ||
             familyId=="uae.g10.general.u01.l05.gcf_complete_factor" ||
-            familyId=="uae.g10.general.u01.l05.zero_product_roots"))
+            familyId=="uae.g10.general.u01.l05.zero_product_roots" ||
+            familyId=="uae.g10.general.u01.l06.monic_full_factor" ||
+            familyId=="uae.g10.general.u01.l06.monic_integer_roots" ||
+            familyId=="uae.g10.general.u01.l06.monic_prime_over_integers"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
