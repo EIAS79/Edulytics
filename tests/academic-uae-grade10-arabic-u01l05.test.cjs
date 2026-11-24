@@ -23,7 +23,7 @@ test('Canonical G10 U01L05 matches approved index and accurately scoped Arabic s
  assert.equal(b.UnitTitle,'كثيرات الحدود والتحليل');
  const l=pack.Lessons.find(l=>l.LessonCode===lessonCode);
  assert.ok(l);
- assert.match(l.SourceLocator,/PDF pages 49–54.*printed pages 36–41/);
+ assert.match(l.SourceLocator,/PDF pages 48–54.*printed pages 35–41/);
  assert.equal(l.SourceSha256,'d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72');
  assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const ar=l.Translations.find(t=>t.CultureCode==='ar');
@@ -36,7 +36,7 @@ test('Canonical G10 U01L05 matches approved index and accurately scoped Arabic s
 test('Original Grade10 RichV2 provides inverse-distribution and zero-product with visuals',()=>{
  const r=rich.Lessons[0];assert.equal(r.LessonCode,lessonCode);
  assert.equal(r.WorkedExamples.length,10);
- assert.equal(r.Visuals.length,5);
+ assert.equal(r.Visuals.length,6);
  assert.ok(r.WorkedExamples.some(x=>x.Answer.includes('٦س(٢س+٣)')));
  assert.ok(r.WorkedExamples.some(x=>x.Answer.includes('٠ و٣')));
  assert.ok(r.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
@@ -47,10 +47,10 @@ test('Original Grade10 RichV2 provides inverse-distribution and zero-product wit
  }
  assert.equal(-16*1.25**2+20*1.25,0);
 });
-test('Unique source lesson has 24 atomic categories, excluding cumulative unit review',()=>{
- assert.deepEqual(source.sourcePdfPages,[49,50,51,52,53,54]);
- assert.equal(source.sourceElements.length,24);
- assert.equal(new Set(source.sourceElements.map(x=>x.elementId)).size,24);
+test('Unique source lesson has 28 atomic categories including source PDF48 signed algebra tiles, excluding cumulative unit review',()=>{
+ assert.deepEqual(source.sourcePdfPages,[48,49,50,51,52,53,54]);
+ assert.equal(source.sourceElements.length,28);
+ assert.equal(new Set(source.sourceElements.map(x=>x.elementId)).size,28);
  assert.equal(source.sourceElementDenominatorVerifiedForThisLesson,true);
  assert.equal(source.supportingSourceReview.pdfPage,55);
  assert.ok(source.sourceElements.every(x=>x.sourcePrintedPage===x.sourcePhysicalPage-13&&x.appLocation));
@@ -72,4 +72,10 @@ test('Practice families map to one registered GCF+zero-product skill, with disab
  const source=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10DistributiveFactor.cs'),'utf8');
  assert.match(engine,/BuildG10DistributiveFactor/);
  assert.match(source,/UaeG10DistributiveFactorResponse.Verify/);
+});
+
+test('PDF48 algebra-tiles discovery is counted and teacher-scored separately from exact GCF practice',()=>{
+ assert.equal(source.sourceElements.filter(x=>x.sourcePhysicalPage===48).length,4);
+ assert.ok(rich.Lessons[0].Visuals.some(v=>v.Title.includes('مختبر القطع الجبرية')));
+ assert.ok(source.sourceElements.filter(x=>x.sourcePhysicalPage===48).every(x=>x.appLocation&&x.coverageStatus));
 });
