@@ -15,7 +15,7 @@
   "completedReadyForStageDOrdinals": [],
   "firstIncompleteLessonOrdinal": 1,
   "lessonCountInThisBookUnit": 9,
-  "sourceIndexStatus": "PRELIMINARY_156_CANDIDATES_NOT_LOCKED",
+  "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_SINGLE_REFERENCE",
   "stageABCStatus": "IN_PROGRESS_NO_LESSON_CLOSED",
   "academicLanguageTarget": "ar",
   "testsWritten": [
@@ -30,19 +30,18 @@
     "Finish U01L01 runtime mapping and source-element closure without asserting tests passed",
     "Do not move to U01L02 until U01L01 is READY_FOR_STAGE_D",
     "For each later lesson, review body pages from approved source; book TOC alone does not establish pedagogical content",
-    "Global 7-book semantic deduplication and total canonicals remain pending"
+    "Complete per-lesson semantic source-body validation under approved 148-lesson canonical index, without claiming unavailable book body was reviewed"
   ],
   "progressIsNotCertification": true,
-  "sourceVerifiedTocArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/general-2025-volume1-48-verified-book-toc.json",
   "provisionalBookIndexArabicTitlesApplied": true,
   "provisionalBookIndexImplementationPaths": [
     "docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json",
     "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json"
   ],
-  "bookIndexTitleScope": "48 book-verified General Volume1 source headings; not final seven-book canonical count",
+  "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
   "currentStageAtoCClosureCount": 0,
-  "continuationGate": "FIRST_INCOMPLETE_U01L01_SOURCE_LOCK_AND_EXACT_SELECTED_PRACTICE_BOUNDARY_STILL_PENDING",
+  "continuationGate": "U01L01_EXACT_PRACTICE_AND_EVIDENCE_PENDING_WITH_OWNER_APPROVED_CANONICAL_148",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -50,5 +49,6 @@
     "a5acf21e04702b38c36af3e160dac2c1fad56eb0",
     "7495d14421e8a9c74ec69a7175a01914352e7792",
     "b7f0eea21c427410d3f9bfc741f344e49cb6747d"
-  ]
+  ],
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md"
 }
