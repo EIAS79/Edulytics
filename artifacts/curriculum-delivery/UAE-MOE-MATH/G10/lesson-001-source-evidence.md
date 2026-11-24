@@ -18,7 +18,7 @@
 - **Practice reuse candidate:** existing Grade 9 `algebra.polynomial.add_subtract` uses `uae.g9.general.u07.l01.add_coefficient` and `.subtract_coefficient` for numeric coefficient checks, but **it does not yet constitute an exact Grade 10 runtime SkillContract**. Do not silently route Grade10 to the wrong family. Full-expression/diagram grading needs review or suitable extension.
 
 ## Explicit gaps / no fake closure
-1. Canonical index and semantic overlap of all **seven** books remain `SOURCE_LOCK_PENDING`; 207 source entries / 156 candidate headings remain preliminary, not the final denominator.
+1. The owner approved **148 canonical lessons in 18 units** from seven books on 2026-11-24; full lesson-level content audit and mapping remain pending.
 2. Exact Grade 10 `SkillContract → question family → renderer → grader → independent verifier` runtime mapping is not confirmed. Separate addition/subtraction coefficient checks already exist for G9, but scope extension is not verified for G10.
 3. All drawings, student physical activity and open mathematical explanations require original teacher rubrics or separately proven digital support.
 4. The teacher-login Cool-down source was not available; the displayed Cool-down is `EDULYTICS_AUTHORED_SUBSTITUTE`, not claimed textbook-parity.
@@ -28,7 +28,7 @@
 
 ## Cross-book index discovery — Advanced 2025–2026
 
-The `01متقدم_.pdf` local file (SHA256 `0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815`), physical PDF page **7**, identifies Advanced Unit 3 lesson **3-1** as «العمليات على كثيرات الحدود», printed opening page **179**. Physical PDF page **196** (printed 179) confirms goals including simplifying expressions and adding/subtracting/multiplying/dividing polynomials. This creates a **candidate semantic overlap** with General U01L01 and adjacent lessons, not a proven duplicate. Further lesson-body visual review is pending. The preliminary 156-row source appendix incorrectly mapped Unit 3 lesson numbers/titles; rows 66–73 are corrected at the indexed-heading level, **not yet semantic closure**.
+The `01متقدم_.pdf` local file (SHA256 `0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815`), physical PDF page **7**, identifies Advanced Unit 3 lesson **3-1** as «العمليات على كثيرات الحدود», printed opening page **179**. Physical PDF page **196** (printed 179) confirms goals including simplifying expressions and adding/subtracting/multiplying/dividing polynomials. This creates a **candidate semantic overlap** with General U01L01 and adjacent lessons, not a proven duplicate. Further lesson-body visual review is pending. The earlier extraction had mismapped Advanced Unit 3 lesson headings. The owner-approved 148-lesson unified index supersedes that candidate appendix; **lesson-level semantic checking remains pending**.
 
 ## 2026-11-23 — Advanced 3-1 semantic overlap and partial Stage C
 Visual review of `01متقدم_.pdf` physical PDF pages 196–201 / printed 179–184 confirmed that Advanced 3-1 combines distinct skills rather than being a whole-lesson duplicate. Standard form/degree and add/sub overlap General U01L01; monomial/polynomial product objectives map toward General U01L02/U01L03; exponents toward General U02. Crosswalk: `artifacts/curriculum-delivery/UAE-MOE-MATH/G10/advanced-u03l01-semantic-crosswalk.json`.
