@@ -201,6 +201,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l07.nonmonic_full_factor",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_nonmonic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-nonmonic-full-integer-factor-coefficient-reconstruction-v1",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l07.nonmonic_rational_roots",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_nonmonic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-nonmonic-fractional-rational-roots-exact-crossproduct-v1",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l07.nonmonic_prime_over_integers",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_nonmonic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-nonmonic-integer-primality-divisor-enumeration-v1",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
