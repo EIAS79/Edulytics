@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L10",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L10:C010",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "Advanced 2025–2026 Volume1, uniquely merged into General",
+  "sourcePdfPages": [
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212
+  ],
+  "primarySkills": [
+    "algebra.polynomial.divide_long_synthetic"
+  ],
+  "exactScope": "Grade10 authored subset: monomial division yields exact single-variable quadratic quotient, monic linear long/synthetic division yields exact polynomial quotient (degree1 or2) and integer remainder. Source also teaches advanced rational/multivariable/nonmonic/CAS exercises handled with teacher review.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+    "uae.g10.general.u01.l10.linear_divisor_remainder",
+    "uae.g10.general.u01.l10.monomial_division_expression"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l03.full_polynomial_product",
+    "uae.g10.general.u01.l09.full_perfect_square_factor"
+  ],
+  "reusePolicy": "Existing UaeG10PolynomialDivisionResponse handles linear quotient and remainder; new UaeG10DivisionResponse covers monomial only. Extra duplicate linear division families removed.",
+  "parameterContracts": [
+    {
+      "family": "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+      "keys": [
+        "degree",
+        "q2",
+        "q1",
+        "q0",
+        "r",
+        "remainder"
+      ],
+      "divisor": "س−ر, monic, −4≤r≤4",
+      "quotientDegree": "1..2",
+      "expected": "canonical whole polynomial",
+      "renderer": "StructuredEntry"
+    },
+    {
+      "family": "uae.g10.general.u01.l10.linear_divisor_remainder",
+      "keys": [
+        "degree",
+        "q2",
+        "q1",
+        "q0",
+        "r",
+        "remainder"
+      ],
+      "expected": "integer remainder",
+      "renderer": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u01.l10.monomial_division_expression",
+      "keys": [
+        "m",
+        "k",
+        "q0",
+        "q1",
+        "q2"
+      ],
+      "divisor": "m س^k with m!=0,k=0..2",
+      "expected": "canonical whole quotient polynomial (degree2)",
+      "renderer": "StructuredEntry"
+    }
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "linearGenerator": "BuildG10PolynomialDivision",
+  "monomialGenerator": "BuildG10Division",
+  "independentVerifier": [
+    "UaeG10PolynomialDivisionResponse.Verify(family,parameters,answer)",
+    "UaeG10DivisionResponse.Verify(family,parameters,answer)"
+  ],
+  "mathVerification": "Independent quotient coefficients and remainder are calculated from bounded source parameters, not copied from generated answer string. Monomial quotient multiplied by divisor recovers all original terms; monic linear dividend=(س−ر)Q+R.",
+  "teacherReviewRequired": [
+    "monomial division with multiple variables or rational coefficients",
+    "division by arbitrary nonmonic or quadratic divisor",
+    "CAS quotient/remainder technology lab, graphical output",
+    "area-model proof and physical dimensions, written explanations"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l10.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialDivisionReuseTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "rendererMatrix": {
+    "monomial": "StructuredEntry",
+    "linearQuotient": "StructuredEntry",
+    "linearRemainder": "IntegerKeypad"
+  },
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "approvedStudentPractice": false
+  },
+  "note": "READY_FOR_STAGE_D is Stage A–B–C authoring/evidence only, not a CI pass or published live Practice."
+}
