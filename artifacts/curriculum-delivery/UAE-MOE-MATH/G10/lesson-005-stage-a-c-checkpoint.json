@@ -18,6 +18,7 @@
   "sourceEdition": "2025–2026 UAE Grade10 General Volume1",
   "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
   "sourcePdfPages": [
+    48,
     49,
     50,
     51,
@@ -26,6 +27,7 @@
     54
   ],
   "sourcePrintedPages": [
+    35,
     36,
     37,
     38,
@@ -35,20 +37,20 @@
   ],
   "cumulativeReviewSourcePdfPage": 55,
   "cumulativeReviewCountedAsUniqueLesson": false,
-  "sourceElementDenominatorForThisLesson": 24,
-  "sourceElementsMapped": 24,
+  "sourceElementDenominatorForThisLesson": 28,
+  "sourceElementsMapped": 28,
   "sourceElementDenominatorVerified": true,
   "coverageStatusCounts": {
-    "CONTENT_AUTHORED": 11,
+    "CONTENT_AUTHORED": 12,
     "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 3,
-    "TEACHER_REVIEW_REQUIRED": 10
+    "TEACHER_REVIEW_REQUIRED": 13
   },
   "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-source-elements.json",
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l05-ar.rich-lesson-v2.json",
   "arabicExamplesCount": 10,
-  "originalVisualModelsCount": 5,
+  "originalVisualModelsCount": 6,
   "primarySkills": [
     "algebra.polynomial.factor_gcf"
   ],
@@ -85,12 +87,14 @@
   "desktopCalls": 0,
   "githubCalls": null,
   "closeEvidenceCommit": "d22da2aa8d8d89dc61f4ac36425ef063910b434d",
-  "closureBasis": "Six original scanned pages direct visual check, 24 educational source categories mapped, first-party Arabic 10 examples and 5 originals visuals, bounded factor/zero-product grader and verifier, teacher rubric, exact tests written not run.",
+  "closureBasis": "Corrected original source seven PDF pages 48–54, 28 educational element types including preparatory lab. 10 Arabic worked examples and 6 original visual models, independent GCF/zero-product solver, teacher assessment rubric, Stage D tests WRITTEN_NOT_RUN.",
   "remainingStageDObligations": [
     "execute .NET and Node tests, compare independent mathematical oracle and parser boundaries",
     "verify the declared single primary skill and two registered family identities under Grade10 lesson Practice projection",
     "run authenticated Arabic RTL student-facing UI and grade persistence",
     "only enable production routing after Stage D acceptance",
     "complete all 148 lessons with safe migration/lesson link checks before production"
-  ]
+  ],
+  "sourceCoverageCorrectedAt": "2026-11-25",
+  "sourceCoverageCorrection": "Initial PDF49–54 inventory omitted PDF48/printed35 signed algebra-tiles lab; four goals mapped and a sixth Arabic original visual added with teacher rubric."
 }
