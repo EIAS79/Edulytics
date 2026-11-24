@@ -55,6 +55,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10MonomialPolynomialResponse.CoefficientFamily,
             UaeG10PolynomialProductResponse.WholeFamily,
             UaeG10PolynomialProductResponse.CoefficientFamily,
+            UaeG10SpecialProductsResponse.Family,
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
@@ -1163,6 +1164,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 return false;
             return (x==one&&y==two)||(x==two&&y==one);
         }
+
+        if (family==UaeG10SpecialProductsResponse.Family)
+            return UaeG10SpecialProductsResponse.Verify(parameters,answer);
 
         if (UaeG10PolynomialProductResponse.Supports(family))
             return UaeG10PolynomialProductResponse.Verify(family,parameters,answer);
@@ -3560,6 +3564,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
                 AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
         }
+
+        if (family==UaeG10SpecialProductsResponse.Family)
+            return BuildG10SpecialProduct(family,random,difficulty);
 
         if (UaeG10PolynomialProductResponse.Supports(family))
             return BuildG10PolynomialProduct(family,random,difficulty);
@@ -9662,6 +9669,9 @@ public sealed partial class ExactSkillContractQuestionEngine
         if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
             return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
                 .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (problem.Family==UaeG10SpecialProductsResponse.Family)
+            return UaeG10SpecialProductsResponse.Format(p);
 
         if (UaeG10PolynomialProductResponse.Supports(problem.Family))
             return problem.Family==UaeG10PolynomialProductResponse.WholeFamily
