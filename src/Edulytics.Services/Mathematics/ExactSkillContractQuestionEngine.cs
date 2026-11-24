@@ -60,6 +60,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10PolynomialFunctionResponse.EvaluateFamily,
             UaeG10PolynomialFunctionResponse.DegreeFamily,
             UaeG10PolynomialFunctionResponse.EndFamily,
+            UaeG10GraphAnalysisResponse.Vertex,
+            UaeG10GraphAnalysisResponse.Kind,
+            UaeG10GraphAnalysisResponse.Intercepts,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1201,6 +1204,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GraphAnalysisResponse.Supports(family))
+            return UaeG10GraphAnalysisResponse.Verify(family,parameters,answer);
 
         if (UaeG10PolynomialFunctionResponse.Supports(family))
             return UaeG10PolynomialFunctionResponse.Verify(family,parameters,answer);
@@ -3625,6 +3631,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10GraphAnalysisResponse.Supports(family))
+            return BuildG10GraphAnalysis(family,random,difficulty);
 
         if (UaeG10PolynomialFunctionResponse.Supports(family))
             return BuildG10PolynomialFunction(family,random,difficulty);
@@ -9754,6 +9763,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10GraphAnalysisResponse.Supports(problem.Family))
+            return UaeG10GraphAnalysisResponse.Format(problem.Family,p);
 
         if (UaeG10PolynomialFunctionResponse.Supports(problem.Family))
             return UaeG10PolynomialFunctionResponse.Format(problem.Family,p);
