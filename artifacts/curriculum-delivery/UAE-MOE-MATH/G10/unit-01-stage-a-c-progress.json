@@ -18,7 +18,8 @@
     6,
     7,
     8,
-    9
+    9,
+    10
   ],
   "completedReadyForStageDOrdinals": [
     1,
@@ -29,12 +30,13 @@
     6,
     7,
     8,
-    9
+    9,
+    10
   ],
-  "firstIncompleteLessonOrdinal": 10,
+  "firstIncompleteLessonOrdinal": 11,
   "lessonCountInThisBookUnit": 16,
   "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
-  "stageABCStatus": "UNIT_01_PARTIAL_9_OF_16_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_01_PARTIAL_10_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -45,9 +47,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Next ONLY canonical G10-U01-L10 (after visually verifying source lesson title/page bounds and approved 148 title), do not skip or duplicate earlier lessons.",
-    "Stage D/CI/Neon/production release strictly separate; tests WRITTEN_NOT_RUN under A-B-C.",
-    "Existing 48 original lesson PED identities preserved, other 100 canonical Blueprint catalog entries still need authored student content."
+    "Next ONLY canonical G10-U01-L11 «الدوال كثيرة الحدود»: original Advanced 3-3 pp213 onward, inspect exact source lesson boundaries and author genuine graphs and end behavior.",
+    "Do not treat polynomial division 3-2 as duplication of function graph 3-3; retain separate source goals.",
+    "Stage D/CI/authenticated RTL tests and Neon/production deployment remain NOT_STARTED and tests WRITTEN_NOT_RUN."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -57,8 +59,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 9,
-  "continuationGate": "G10_U01L01_TO_L09_READY_FOR_STAGE_D; NEXT_G10_U01L10",
+  "currentStageAtoCClosureCount": 10,
+  "continuationGate": "TEN_SEQUENTIAL_G10_U01L01_TO_L10_CLOSED_STAGE_ABC_ONLY; NEXT_G10_U01L11",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -74,7 +76,7 @@
   "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
   "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
   "canonicalUnitNumber": 1,
-  "unitStageABCClosedCount": 9,
+  "unitStageABCClosedCount": 10,
   "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
   "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
   "stageDStatus": "NOT_STARTED",
@@ -101,5 +103,8 @@
   "eighthClosedLessonCheckpointCommit": "b2a623ba14580cf1c40f376b19bc481cced9335a",
   "ninthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-stage-a-c-checkpoint.json",
   "ninthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-source-evidence.md",
-  "ninthClosedLessonCheckpointCommit": "9ef95f31cad5fb87533b3bff0754ea3144df116c"
+  "ninthClosedLessonCheckpointCommit": "9ef95f31cad5fb87533b3bff0754ea3144df116c",
+  "tenthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-source-evidence.md",
+  "tenthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-stage-a-c-checkpoint.json",
+  "tenthClosedLessonCheckpointCommit": "07f3d5881c87eed8466b69ab0d1fad109dc6d71e"
 }
