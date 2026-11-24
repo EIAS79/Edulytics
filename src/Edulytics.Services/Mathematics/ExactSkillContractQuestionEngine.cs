@@ -57,6 +57,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10PolynomialProductResponse.CoefficientFamily,
             UaeG10SpecialProductsResponse.Family,
             UaeG10DivisionResponse.MonomialFamily,
+            UaeG10PolynomialFunctionResponse.EvaluateFamily,
+            UaeG10PolynomialFunctionResponse.DegreeFamily,
+            UaeG10PolynomialFunctionResponse.EndFamily,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1198,6 +1201,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(family))
+            return UaeG10PolynomialFunctionResponse.Verify(family,parameters,answer);
 
         if (UaeG10DivisionResponse.Supports(family))
             return UaeG10DivisionResponse.Verify(family,parameters,answer);
@@ -3619,6 +3625,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(family))
+            return BuildG10PolynomialFunction(family,random,difficulty);
 
         if (UaeG10DivisionResponse.Supports(family))
             return BuildG10Division(family,random,difficulty);
@@ -9745,6 +9754,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(problem.Family))
+            return UaeG10PolynomialFunctionResponse.Format(problem.Family,p);
 
         if (UaeG10DivisionResponse.Supports(problem.Family))
             return UaeG10DivisionResponse.Format(problem.Family,p);
