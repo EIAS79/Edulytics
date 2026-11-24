@@ -57,8 +57,6 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10PolynomialProductResponse.CoefficientFamily,
             UaeG10SpecialProductsResponse.Family,
             UaeG10DivisionResponse.MonomialFamily,
-            UaeG10DivisionResponse.QuotientRemainderFamily,
-            UaeG10DivisionResponse.RemainderFamily,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
