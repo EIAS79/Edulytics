@@ -116,12 +116,14 @@ test('U01L01 original realistic polynomial area model has independently checked 
   assert.equal(areaFromGeometry(5),areaFromGeometry(15));
   assert.ok(widthByPerimeter(25)<0,'impossible geometric width excluded');
 });
-test('Grade10 U01L01 element ledger is source-page-grounded and never marks Stage D run', () => {
+test('Grade10 U01L01 25-element source audit is Stage C ready and Stage D tests remain unrun', () => {
   const ledger=JSON.parse(fs.readFileSync(path.join(root,
     'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-source-elements.json'),'utf8'));
   assert.equal(ledger.sourceElements.length,25);
   assert.equal(ledger.elementDenominatorForThisBook,25);
-  assert.equal(ledger.sourceIndexLocked,false);
+  assert.equal(ledger.sourceIndexLocked,true);
+  assert.equal(ledger.sourceElementDenominatorVerifiedForThisLesson,true);
+  assert.equal(ledger.sourceElementCoverageCount,25);
   assert.equal(ledger.testsRun,'WRITTEN_NOT_RUN');
   assert.ok(ledger.sourceElements.some(x=>x.goal.includes('fixed-perimeter')));
   assert.ok(ledger.sourceElements.some(x=>x.coverageStatus==='TEACHER_REVIEW_REQUIRED'));
