@@ -524,6 +524,66 @@
       "scopeDetail": "Boolean yes/no factor theorem iff f(a)=0"
     },
     {
+      "id": "uae.g10.general.u01.l15.descartes_variations",
+      "version": 1,
+      "skillId": "algebra.polynomial.roots_zeros_complex",
+      "answerType": "enum_text",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "verificationPolicy": "g10-u01l15-original-source-descartes-conjugates-multiplicity-independent-verifier-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "factored_form",
+        "root_count"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Upper bounds of positive and negative real zeros by Descartes sign changes, not asserted actual counts"
+    },
+    {
+      "id": "uae.g10.general.u01.l15.complex_conjugate_zero",
+      "version": 1,
+      "skillId": "algebra.polynomial.roots_zeros_complex",
+      "answerType": "enum_text",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "verificationPolicy": "g10-u01l15-original-source-descartes-conjugates-multiplicity-independent-verifier-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "factored_form",
+        "root_count"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Exact complex conjugate root with i of a real-coefficient polynomial"
+    },
+    {
+      "id": "uae.g10.general.u01.l15.total_roots_with_multiplicity",
+      "version": 1,
+      "skillId": "algebra.polynomial.roots_zeros_complex",
+      "answerType": "exact_integer",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "verificationPolicy": "g10-u01l15-original-source-descartes-conjugates-multiplicity-independent-verifier-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "factored_form",
+        "root_count"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Fundamental theorem of algebra root count equal to degree, including multiplicity"
+    },
+    {
       "id": "uae.g10.general.u01.l09.classify_perfect_square",
       "version": 1,
       "skillId": "algebra.factor.perfect_square_trinomial",
