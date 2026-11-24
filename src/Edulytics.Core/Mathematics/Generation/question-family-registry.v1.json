@@ -111,6 +111,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l05.gcf_complete_factor",
+      "version": 1,
+      "skillId": "algebra.polynomial.factor_gcf",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-u01l05-canonical-primitive-gcf-bounded-exact-stageD-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l05.zero_product_roots",
+      "version": 1,
+      "skillId": "algebra.equations.zero_product",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-u01l05-integer-zero-product-roots-independent-exact-stageD-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
