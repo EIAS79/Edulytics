@@ -135,19 +135,19 @@ test('U01L01 source identity is the verified 2025–26 General volume 1, not an 
   assert.equal(pack.Lessons.length,48,'this is only the current Volume1 baseline, NOT annual count');
 });
 
-test('Grade10 General blueprint is the existing 48-lesson partial implementation of owner-approved 148 index',()=>{
+test('Grade10 General blueprint registers 148 approved titles while the student content pack still has 48 source-volume lessons',()=>{
  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
    'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
  const manifest=JSON.parse(fs.readFileSync(path.join(root,
    'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
- assert.equal(blueprint.Units[0].Title,'التعابير والمعادلات التربيعية');
+ assert.equal(blueprint.Units[0].Title,'كثيرات الحدود والتحليل');
  assert.match(blueprint.SourceEdition,/2025–2026, Volume 1/);
  assert.match(blueprint.PedagogicalSourceType,/OfficialUaeStudentBook/);
  assert.ok(manifest.SourceFiles.includes('01.pdf'));
  assert.equal(manifest.Units[0].ls[0],'جمع كثيرات الحدود وطرحها');
  assert.equal(manifest.LessonCount,148);
  assert.equal(manifest.UnitCount,18);
- assert.equal(blueprint.Lessons.length,48);
+ assert.equal(blueprint.Lessons.length,148);
  assert.ok(!blueprint.SourceTitle.includes('GCSE'));
 });
 test('Grade10 U01L01 contract covers exact whole polynomial while teacher graphics remain separate',()=>{
@@ -213,7 +213,7 @@ test('All 48 existing General Volume1 lesson titles occur once in the adopted 14
  const all=manifest.Units.flatMap(u=>u.ls);
  assert.equal(all.length,148);
  assert.equal(new Set(all).size,148);
- assert.equal(blueprint.Lessons.length,48);
+ assert.equal(blueprint.Lessons.length,148);
  for(const lesson of blueprint.Lessons) {
    assert.ok(all.includes(lesson.Title),'baseline source lesson title missing in canonical 148: '+lesson.Title);
  }
