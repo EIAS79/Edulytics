@@ -444,6 +444,46 @@
       "sourceSpecificScope": "Distinct cubic zero abscissae from table points"
     },
     {
+      "id": "uae.g10.general.u01.l13.cubic_integer_roots",
+      "version": 1,
+      "skillId": "algebra.polynomial.solve_higher_degree",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g10-u01l13-owner-source-polynomial-equations-independent-horner-roots-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "factored_form",
+        "graph_context"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Cubic with 3 distinct integer roots"
+    },
+    {
+      "id": "uae.g10.general.u01.l13.biquadratic_integer_roots",
+      "version": 1,
+      "skillId": "algebra.polynomial.solve_higher_degree",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "g10-u01l13-owner-source-polynomial-equations-independent-horner-roots-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "factored_form",
+        "graph_context"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "scopeDetail": "Biquadratic quartic with 4 real integer roots"
+    },
+    {
       "id": "uae.g10.general.u01.l09.classify_perfect_square",
       "version": 1,
       "skillId": "algebra.factor.perfect_square_trinomial",
