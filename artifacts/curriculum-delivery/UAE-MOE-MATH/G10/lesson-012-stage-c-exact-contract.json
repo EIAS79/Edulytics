@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L12",
+  "lessonOrdinal": 12,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L12:C012",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "Advanced Arabic 2025–2026 Volume 1 lesson3-4 integrated into approved General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePages": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230
+  ],
+  "sourcePrintedPages": [
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213
+  ],
+  "primarySkills": [
+    "algebra.polynomial.graph_analysis"
+  ],
+  "exactScope": "Source-matched bounded analysis of actual sampled quadratic/cubic function graphs/tables: exact vertex coordinate, type of relative extremum and integer x-axis intercepts. Quartic curve sketches, arbitrary high-degree extrema, calculator regression and contextual data-model interpretation require teacher review.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l12.graph_vertex_pair",
+    "uae.g10.general.u01.l12.graph_extremum_kind",
+    "uae.g10.general.u01.l12.graph_x_intercepts"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+    "uae.g10.general.u01.l11.polynomial_degree_integer",
+    "uae.g10.general.u01.l11.polynomial_end_behavior"
+  ],
+  "parameters": [
+    "a",
+    "h",
+    "k",
+    "r1",
+    "r2",
+    "r3",
+    "mode"
+  ],
+  "bounds": {
+    "quadratics": "f(x)=a(x−h)^2+k, a in [-4,4]\\{0}, h in [-3,3], k in [-4,4], five points x=h−2..h+2, mode=1, roots fields=0",
+    "cubics": "f(x)=a(x−r1)(x−r2)(x−r3), a in [-3,3]\\{0}, -3<=r1<r2<r3<=3, x table -3..3, h=k=0, mode=2"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l12.graph_vertex_pair",
+      "answerType": "exact_ordered_pair",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l12.graph_extremum_kind",
+      "answerType": "enum_text",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l12.graph_x_intercepts",
+      "answerType": "enum_text",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    }
+  ],
+  "engine": "Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine",
+  "generator": "BuildG10GraphAnalysis(family,random,difficulty)",
+  "independentVerifier": "UaeG10GraphAnalysisResponse.Verify(family,parameters,response)",
+  "verificationPolicy": "Check exact generated parameter bounds and shape; quadratic vertex from independent parameter table and opening sign; cubic zero list independently recomputed by evaluating f(x) at every integer x=-3..3; responses normalized across Arabic/Western digits and comma glyphs. Do not trust generated CorrectAnswer as verifier oracle.",
+  "teacherReviewRequired": [
+    "sketch, label and interpret higher-degree Cartesian curves and turning points",
+    "approximate relative extrema from continuous arbitrary polynomial graph and selected calculator window",
+    "original graphing-calculator 3-4 activity with data entry, scatter plot, regression and model choice",
+    "real-world interpretations of time domain, historical growth and decline, units and error bounds",
+    "proof of local-versus-global extrema and correct monotonic intervals"
+  ],
+  "originalVisualModels": [
+    "CartesianPlot cubic three-intercept plot",
+    "CartesianPlot quadratic local maximum plot",
+    "CartesianPlot quartic four-intercept plot",
+    "relative-extremum analysis chain",
+    "original polynomial-regression data task chain"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l12.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialGraphAnalysisTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "studentPracticeActivation": false
+  },
+  "notes": "The source's lesson 3-4 real-graph reading and regression lab are not reduced to a calculator-value family or claimed fully auto-graded. Stage C is authored; Stage D only will prove runtime."
+}
