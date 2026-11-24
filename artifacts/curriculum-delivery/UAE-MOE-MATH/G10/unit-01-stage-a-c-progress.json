@@ -14,19 +14,21 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
   "completedReadyForStageDOrdinals": [
     1,
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
-  "firstIncompleteLessonOrdinal": 6,
+  "firstIncompleteLessonOrdinal": 7,
   "lessonCountInThisBookUnit": 16,
   "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
-  "stageABCStatus": "UNIT_01_PARTIAL_5_OF_16_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_01_PARTIAL_6_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -37,9 +39,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Next only canonical G10-U01-L06 «حل x²+bx+c=0». Original General 01.pdf next lesson starts physical PDF page56/printed43 with factoring trinomials, verify entire lesson's page interval before authorship and exact practice family selection.",
-    "Maintain first-party Arabic lesson, 1:1 source educational-element ledger, exact skill/family/independent verifier, teacher rubric, tests WRITTEN_NOT_RUN, separate commit/checkpoint.",
-    "Stage D and production routing remain NOT RUN/disabled."
+    "Next only Grade10 canonical G10-U01-L07 «حل ax² + bx + c = 0». General 01.pdf original begins PDF65 printed52; identify next L08 start, audit all source goals and crossbook advanced/applicable nonmonic extensions.",
+    "Build first-party Arabic plus source element crosswalk, exact nonmonic factoring/roots and independently verified computation, teacher rubric, written not-run tests; checkpoint and commit before advancing.",
+    "Do not run Stage D or enable routing, merge PR or deploy production in A–B–C."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -49,8 +51,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 5,
-  "continuationGate": "FIVE_SEQUENTIAL_G10_U01L01_THROUGH_L05_CLOSED; NEXT_FIRST_INCOMPLETE_G10_U01L06",
+  "currentStageAtoCClosureCount": 6,
+  "continuationGate": "SIX_CONSECUTIVE_G10_GENERAL_U01L01_THROUGH_L06_STAGE_ABC_CLOSED; NEXT_G10_U01L07",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -66,7 +68,7 @@
   "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
   "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
   "canonicalUnitNumber": 1,
-  "unitStageABCClosedCount": 5,
+  "unitStageABCClosedCount": 6,
   "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
   "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
   "stageDStatus": "NOT_STARTED",
@@ -81,5 +83,8 @@
   "fourthClosedLessonCheckpointCommit": "0fffced2a2274ccc31ae74a5e69aa721ddc76cc0",
   "fifthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-stage-a-c-checkpoint.json",
   "fifthClosedLessonCheckpointCommit": "bf5f9032fed064f792231b906d6a0ac62b4de875",
-  "fifthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-source-evidence.md"
+  "fifthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-005-source-evidence.md",
+  "sixthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-stage-a-c-checkpoint.json",
+  "sixthClosedLessonCheckpointCommit": "af512b41d2c03307b59d9bfafa88c17f2033f1fe",
+  "sixthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-source-evidence.md"
 }
