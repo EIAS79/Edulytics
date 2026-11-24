@@ -345,6 +345,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+      "version": 1,
+      "skillId": "algebra.polynomial.divide_long_synthetic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g10-u01l10-source-advanced-3-2-polynomial-long-synthetic-division-stage-d-not-run",
+      "representations": [
+        "symbolic",
+        "tabular"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l10.linear_divisor_remainder",
+      "version": 1,
+      "skillId": "algebra.polynomial.divide_long_synthetic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u01l10-source-advanced-3-2-polynomial-long-synthetic-division-stage-d-not-run",
+      "representations": [
+        "symbolic",
+        "tabular"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
