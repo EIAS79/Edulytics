@@ -10,15 +10,17 @@
   "sourceTocPhysicalPdfPage": 5,
   "sourceTocVerifiedLessonTitles": 9,
   "sourceBodyVisuallyReviewedOrdinals": [
-    1
+    1,
+    2
   ],
   "completedReadyForStageDOrdinals": [
-    1
+    1,
+    2
   ],
-  "firstIncompleteLessonOrdinal": 2,
+  "firstIncompleteLessonOrdinal": 3,
   "lessonCountInThisBookUnit": 16,
   "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
-  "stageABCStatus": "UNIT_01_PARTIAL_1_OF_16_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_01_PARTIAL_2_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -29,9 +31,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Next only: G10-U01-L02 «ضرب كثيرة حدود في أحادية حد»; inspect its original general source pages and advanced overlap, repair authored Arabic content, Stage C exact contract, write not-run tests, evidence/commit.",
-    "Do not skip or close U01L03 before U01L02 is READY_FOR_STAGE_D.",
-    "Other 100 canonical Blueprint entries require individually authored content; global Stage D and Neon production migration remain separate."
+    "Next ONLY canonical G10-U01-L03 «ضرب كثيرات الحدود»: original General source starts PDF33 / printed20, confirm last source page before opening of 1-4.",
+    "Do not reuse monomial×polynomial assessment alone for products of two polynomials; create or extend source-exact practice family with independent verifier and teacher rubric.",
+    "Stage D and production deployment remain separate; all tests WRITTEN_NOT_RUN during A–B–C."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -41,8 +43,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 1,
-  "continuationGate": "U01L01_CLOSED_COMMIT_ef0cffd9f551c4ec299f98df0e235d7cf147d1c0; NEXT_U01L02_REQUIRED",
+  "currentStageAtoCClosureCount": 2,
+  "continuationGate": "G10-U01L02_READY_FOR_STAGE_D_CLOSED_8d264ea964560bcace0a39fdb77510d3ab6499df; NEXT_FIRST_INCOMPLETE_G10_U01L03",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -58,8 +60,11 @@
   "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
   "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
   "canonicalUnitNumber": 1,
-  "unitStageABCClosedCount": 1,
+  "unitStageABCClosedCount": 2,
   "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
   "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
-  "stageDStatus": "NOT_STARTED"
+  "stageDStatus": "NOT_STARTED",
+  "secondClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-source-evidence.md",
+  "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-stage-a-c-checkpoint.json",
+  "secondClosedLessonCheckpointCommit": "8d264ea964560bcace0a39fdb77510d3ab6499df"
 }
