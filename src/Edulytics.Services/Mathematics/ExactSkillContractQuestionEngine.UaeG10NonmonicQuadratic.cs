@@ -196,22 +196,24 @@ internal static class UaeG10NonmonicQuadraticResponse
 
         // Bounded positive-leading integer factors. Reconstruct the coefficients,
         // never trust a generated correct-answer string as the math oracle.
-        const string term=@"\((?<lead>[1-9][0-9]*)?x(?<sign>[+-])(?<constant>[1-9][0-9]*)\)";
-        var match=Regex.Match(input,"^"+term+term+"$",RegexOptions.CultureInvariant);
+        const string term1=@"\((?<lead1>[1-9][0-9]*)?x(?<sign1>[+-])(?<constant1>[1-9][0-9]*)\)";
+        const string term2=@"\((?<lead2>[1-9][0-9]*)?x(?<sign2>[+-])(?<constant2>[1-9][0-9]*)\)";
+        var match=Regex.Match(input,"^"+term1+term2+"$",RegexOptions.CultureInvariant);
         if(!match.Success)return false;
-        var leads=match.Groups["lead"].Captures;
-        var signs=match.Groups["sign"].Captures;
-        var constants=match.Groups["constant"].Captures;
-        if(signs.Count!=2||constants.Count!=2)return false;
-        int[] factors=[1,1],constantsSigned=new int[2];
-        for(int i=0;i<2;i++)
-        {
-            if(i<leads.Count&&!int.TryParse(leads[i].Value,NumberStyles.None,
-                CultureInfo.InvariantCulture,out factors[i]))return false;
-            if(!int.TryParse(constants[i].Value,NumberStyles.None,
-                CultureInfo.InvariantCulture,out int value))return false;
-            constantsSigned[i]=signs[i].Value=="-"?-value:value;
-        }
+        int firstLead=1,secondLead=1,firstConst,secondConst;
+        if(match.Groups["lead1"].Success &&
+            !int.TryParse(match.Groups["lead1"].Value,NumberStyles.None,
+                CultureInfo.InvariantCulture,out firstLead))return false;
+        if(match.Groups["lead2"].Success &&
+            !int.TryParse(match.Groups["lead2"].Value,NumberStyles.None,
+                CultureInfo.InvariantCulture,out secondLead))return false;
+        if(!int.TryParse(match.Groups["constant1"].Value,NumberStyles.None,
+                CultureInfo.InvariantCulture,out firstConst)||
+           !int.TryParse(match.Groups["constant2"].Value,NumberStyles.None,
+                CultureInfo.InvariantCulture,out secondConst))return false;
+        if(match.Groups["sign1"].Value=="-")firstConst=-firstConst;
+        if(match.Groups["sign2"].Value=="-")secondConst=-secondConst;
+        int[] factors=[firstLead,secondLead],constantsSigned=[firstConst,secondConst];
         int a=u*w,b=u*z+w*v,c=v*z;
         return factors[0]*factors[1]==a &&
             factors[0]*constantsSigned[1]+factors[1]*constantsSigned[0]==b &&
