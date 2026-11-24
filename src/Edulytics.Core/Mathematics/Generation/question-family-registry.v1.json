@@ -147,6 +147,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l06.monic_full_factor",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_monic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-general-monic-factor-into-binomial-verification-with-rebuilt-coefficients",
+      "representations": [
+        "symbolic",
+        "area_model"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l06.monic_integer_roots",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_monic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-general-monic-roots-independent-zero-product-integer-pair",
+      "representations": [
+        "symbolic",
+        "area_model"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l06.monic_prime_over_integers",
+      "version": 1,
+      "skillId": "algebra.quadratic.factor_monic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-general-integer-prime-decision-via-divisor-enumeration",
+      "representations": [
+        "symbolic",
+        "factor_pair_table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
