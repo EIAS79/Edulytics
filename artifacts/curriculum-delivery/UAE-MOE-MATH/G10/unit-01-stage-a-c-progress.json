@@ -23,7 +23,8 @@
     11,
     12,
     13,
-    14
+    14,
+    15
   ],
   "completedReadyForStageDOrdinals": [
     1,
@@ -39,12 +40,13 @@
     11,
     12,
     13,
-    14
+    14,
+    15
   ],
-  "firstIncompleteLessonOrdinal": 15,
+  "firstIncompleteLessonOrdinal": 16,
   "lessonCountInThisBookUnit": 16,
   "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
-  "stageABCStatus": "UNIT_01_PARTIAL_14_OF_16_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_01_PARTIAL_15_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -55,9 +57,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Next only G10-U01-L15 «الجذور والأصفار», source Advanced 01متقدم_.pdf lesson3-7 begins PDF249 printed232; visually confirm last page and exercise types, especially complex versus real root and multiplicity.",
-    "Reuse factored polynomial root and evaluation/graph engines if exact source skill permits, not a generic incorrect family.",
-    "Do not execute StageD/CI/production or change Neon enrollment/student data in Stage A–B–C."
+    "Next only G10-U01-L16 «نظرية الصفر النسبي», source Advanced 01متقدم_.pdf Unit3 lesson3-8 starting PDF258 printed241; inspect original last page and any technology/cross-book overlap.",
+    "Keep relative distinction between prior U01L15 fundamental complex root/Descartes and U01L16 rational root candidate testing. Write exact rational-candidate and verifier tests without running Stage D.",
+    "No skipping U01L16, and no Stage D runtime/publish/Neon student data changes."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -67,8 +69,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 14,
-  "continuationGate": "FOURTEEN_SEQUENTIAL_G10_U01L01_TO_L14_CLOSED_NEXT_FIRST_INCOMPLETE_G10_U01L15",
+  "currentStageAtoCClosureCount": 15,
+  "continuationGate": "FIFTEEN_SEQUENTIAL_G10_U01L01_TO_L15_CLOSED_NEXT_FIRST_INCOMPLETE_G10_U01L16",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -84,7 +86,7 @@
   "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
   "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
   "canonicalUnitNumber": 1,
-  "unitStageABCClosedCount": 14,
+  "unitStageABCClosedCount": 15,
   "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
   "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
   "stageDStatus": "NOT_STARTED",
@@ -126,5 +128,8 @@
   "thirteenthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-source-evidence.md",
   "fourteenthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-stage-a-c-checkpoint.json",
   "fourteenthClosedLessonCheckpointCommit": "a300b39c04109022a94af5a20021316425ccf6c7",
-  "fourteenthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-source-evidence.md"
+  "fourteenthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-source-evidence.md",
+  "fifteenthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-stage-a-c-checkpoint.json",
+  "fifteenthClosedLessonCheckpointCommit": "5ee8ae1105837645a942a4ee6531bed4aab2548c",
+  "fifteenthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-source-evidence.md"
 }
