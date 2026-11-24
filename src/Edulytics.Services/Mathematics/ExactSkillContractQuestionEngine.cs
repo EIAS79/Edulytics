@@ -69,6 +69,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10PerfectSquaresResponse.FactorFamily,
             UaeG10PerfectSquaresResponse.RecognitionFamily,
             UaeG10PerfectSquaresResponse.ShiftRootsFamily,
+            UaeG10PolynomialDivisionResponse.QuotientFamily,
+            UaeG10PolynomialDivisionResponse.RemainderFamily,
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
@@ -1177,6 +1179,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 return false;
             return (x==one&&y==two)||(x==two&&y==one);
         }
+
+        if (UaeG10PolynomialDivisionResponse.Supports(family))
+            return UaeG10PolynomialDivisionResponse.Verify(family,parameters,answer);
 
         if (UaeG10PerfectSquaresResponse.Supports(family))
             return UaeG10PerfectSquaresResponse.Verify(family,parameters,answer);
@@ -3592,6 +3597,9 @@ public sealed partial class ExactSkillContractQuestionEngine
                 "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
                 AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
         }
+
+        if (UaeG10PolynomialDivisionResponse.Supports(family))
+            return BuildG10PolynomialDivision(family,random,difficulty);
 
         if (UaeG10PerfectSquaresResponse.Supports(family))
             return BuildG10PerfectSquares(family,random,difficulty);
@@ -9712,6 +9720,9 @@ public sealed partial class ExactSkillContractQuestionEngine
         if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
             return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
                 .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (UaeG10PolynomialDivisionResponse.Supports(problem.Family))
+            return UaeG10PolynomialDivisionResponse.Format(problem.Family,p);
 
         if (UaeG10PerfectSquaresResponse.Supports(problem.Family))
             return UaeG10PerfectSquaresResponse.Format(problem.Family,p);
