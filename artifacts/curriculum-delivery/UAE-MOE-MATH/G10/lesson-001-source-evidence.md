@@ -1,8 +1,8 @@
-# Grade 10 / General — U01L01 source-to-app audit (partial, NOT CLOSED)
+# Grade 10 / General — U01L01 source-to-app audit (A–B–C READY_FOR_STAGE_D)
 
 **LessonCode:** `PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS`
 **Student book:** `01.pdf`, printed pages 7–12, physical PDF pages 20–25. **Verified file SHA256:** `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`. 
-**Source snapshot:** `G10-SEVEN-BOOKS-SHA-2026-11-23`; **status:** `A_C_EXPLICIT_GAP`; **tests:** `WRITTEN_NOT_RUN`.
+**Source snapshot:** `G10-SEVEN-BOOKS-SHA-2026-11-23`; **status:** `READY_FOR_STAGE_D` (A–B–C only); **tests:** `WRITTEN_NOT_RUN`.
 
 ## Actual visual comparison with student pages
 - PDF 20–21: two learning goals are **standard form of polynomials** and **adding/subtracting polynomials**. Elements: polynomial/monomial terminology, monomial degree, polynomial degree, standard descending form, leading coefficient, classification, vertical/horizontal addition. The prior Arabic student content lacked explicit standard-form/leading-coefficient instruction and full classification.
@@ -65,4 +65,12 @@ Created real embedded Grade10 General U01L01 Rich V2 lesson content at `src/Edul
 - Canonical first row: `G10-U01-L01` «جمع كثيرات الحدود وطرحها», in unit «كثيرات الحدود والتحليل». Existing `LessonCode` `PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS` uniquely matches by exact Arabic title and ordinal; identity must be preserved for existing student links.
 - Runtime crosswalk: `artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json`. Of 148 canonical lessons, 48 existing textbook lesson titles have unique legacy codes; 100 new canonical lessons do **not** yet have ready student content, while reorganization affects legacy unit titles/orders. The existing first lesson Blueprint belongs to old unit title «التعابير والمعادلات التربيعية», not approved canonical unit name. Therefore actual in-app index migration is incomplete.
 - Original General 01.pdf SHA-256 was rechecked against the owner-uploaded 537-page PDF; matches `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`. Advanced 01متقدم_.pdf SHA-256 was rechecked against 353-page PDF and matches `0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815`.
-- **A–B–C status remains `A_C_EXPLICIT_GAP`**: canonical index identity approved, but actual app catalog alignment and individualized Stage C/teacher rubric evidence remain unclosed. Source-index approval alone must not change this checkpoint to READY_FOR_STAGE_D. Stage D tests remain WRITTEN_NOT_RUN.
+- **Later correction on 2026-11-24:** the approved 148-lesson Blueprint was registered with all 48 original lesson identities preserved; the element-level A–B–C evidence and exact skill contract have been completed for the first canonical lesson. READY_FOR_STAGE_D is therefore an A–B–C handoff only, with Stage D tests WRITTEN_NOT_RUN.
+
+## 2026-11-24 — U01L01 A–B–C closure and downstream boundary
+
+- Exact first canonical row `G10-U01-L01` matches the existing student-linked PED `LessonCode`; unit «كثيرات الحدود والتحليل», lesson «جمع كثيرات الحدود وطرحها».
+- Actual source Blueprint now registers **148 lessons across 18 units**; 48 old lesson identities retained, 100 new content bodies queued in sequential A–B–C. Blueprint commit `c4f97668be9233bbc16eca0b6d5f3b579bdf530a`.
+- `artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md` lists all **25 categorized source-goal/assessment element types** and crosswalks the **six Advanced source objectives** without repeating multiplication, division or exponent subgoals in this lesson.
+- Three exact question families have written generator/verifier contracts; 9 original Arabic worked examples, 8 visuals, and explicit teacher-reviewed assessment are authored. The Stage D tests are written but **not run**. `productionRouting=false` and `practiceReadiness` still fail-closed pending Stage D validation.
+- The **first lesson is ready to be handed to Stage D**; this is neither publication nor a claim of 100% full-grade Arabic content. First next target is **canonical G10-U01-L02** «ضرب كثيرة حدود في أحادية حد».
