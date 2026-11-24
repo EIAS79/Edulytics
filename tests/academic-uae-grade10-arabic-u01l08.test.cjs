@@ -65,6 +65,9 @@ test('Exact inverses are not duplicated forward special-products practice',()=>{
   assert.equal(f.productionRouting,false);assert.equal(f.lessonPracticeRouting,true);
  }
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10DifferenceSquares.cs'),'utf8');
- assert.match(engine,/UaeG10DifferenceSquaresResponse.Verify/);
+ assert.match(engine,/internal static bool Verify\(string family/);
  assert.match(engine,/FactorFamily/);
+ const dispatcher=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
+ assert.match(dispatcher,/UaeG10DifferenceSquaresResponse\.Verify\(family,parameters,answer\)/);
+ assert.match(dispatcher,/BuildG10DifferenceSquares\(family,random,difficulty\)/);
 });
