@@ -20,7 +20,8 @@
     8,
     9,
     10,
-    11
+    11,
+    12
   ],
   "completedReadyForStageDOrdinals": [
     1,
@@ -33,12 +34,13 @@
     8,
     9,
     10,
-    11
+    11,
+    12
   ],
-  "firstIncompleteLessonOrdinal": 12,
+  "firstIncompleteLessonOrdinal": 13,
   "lessonCountInThisBookUnit": 16,
   "sourceIndexStatus": "OWNER_APPROVED_CANONICAL_148_REGISTERED_IN_BLUEPRINT",
-  "stageABCStatus": "UNIT_01_PARTIAL_11_OF_16_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_01_PARTIAL_12_OF_16_READY_FOR_STAGE_D",
   "academicLanguageTarget": "ar",
   "testsWritten": [
     "tests/academic-uae-grade10-unit1-local-toc.test.cjs",
@@ -49,9 +51,9 @@
   "commitClosePerLessonRequired": true,
   "desktopCommander": "PAUSED_OWNER_REPORTED_89_PERCENT",
   "remainingRequirements": [
-    "Next ONLY Grade10 canonical G10-U01-L12 «تحليل التمثيلات البيانية للدوال كثيرة الحدود» sourced from Advanced Lesson 3-4 starting PDF221, validate exact page end and distinct graph-analysis goals.",
-    "Do not repeat L11 polynomial definition/evaluation/end behavior as L12 main goal; instead source-scope graph x-intercepts/multiplicities/turning points and transformations.",
-    "Stage D CI/.NET student E2E remain NOT RUN; do not publish or migrate Neon under A-B-C."
+    "Next ONLY canonical G10-U01-L13 «حل المعادلات كثيرة الحدود», based on Advanced 01متقدم_.pdf Unit3 Lesson3-5 beginning physical PDF233 printed216; verify end boundary in book before editing.",
+    "Reuse source-correct root-finding, factorization and zero-product solvers where they satisfy actual polynomial equations; do not route a quadratic-only family to a cubic or quartic root task.",
+    "Stage D .NET/Node/CI/E2E and production routing NOT RUN; do not claim deployment or 148 complete."
   ],
   "progressIsNotCertification": true,
   "provisionalBookIndexArabicTitlesApplied": true,
@@ -61,8 +63,8 @@
   ],
   "bookIndexTitleScope": "48 source-General Volume1 titles form an input subset of approved unified 148; existing content pack still 48 and not migrated",
   "provisionalSourceScopeMetadataCorrected": true,
-  "currentStageAtoCClosureCount": 11,
-  "continuationGate": "ELEVEN_SEQUENTIAL_U01L01_TO_L11_A_B_C_READY_FOR_STAGE_D; NEXT_U01L12",
+  "currentStageAtoCClosureCount": 12,
+  "continuationGate": "TWELVE_SEQUENTIAL_G10_U01L01_TO_L12_CLOSED_NEXT_FIRST_INCOMPLETE_G10_U01L13",
   "recentPreflightGitHubCommits": [
     "b3575b878d1e0120dcedd5e004d2ad7d9abeffba",
     "e412ddb514d6b5126b5552ff591a4cb233d8d438",
@@ -78,7 +80,7 @@
   "canonicalToRuntimeCrosswalkArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-approved-148-to-runtime-48-crosswalk.json",
   "canonicalUnitTitleArabic": "كثيرات الحدود والتحليل",
   "canonicalUnitNumber": 1,
-  "unitStageABCClosedCount": 11,
+  "unitStageABCClosedCount": 12,
   "firstClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-atomic-coverage.md",
   "firstClosedLessonCheckpointCommit": "ef0cffd9f551c4ec299f98df0e235d7cf147d1c0",
   "stageDStatus": "NOT_STARTED",
@@ -111,5 +113,8 @@
   "tenthClosedLessonCheckpointCommit": "07f3d5881c87eed8466b69ab0d1fad109dc6d71e",
   "eleventhClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-source-evidence.md",
   "eleventhClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-011-stage-a-c-checkpoint.json",
-  "eleventhClosedLessonCheckpointCommit": "5f5bdc72ac9e6d731d0084f24898e81c41cd581c"
+  "eleventhClosedLessonCheckpointCommit": "5f5bdc72ac9e6d731d0084f24898e81c41cd581c",
+  "twelfthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-012-stage-a-c-checkpoint.json",
+  "twelfthClosedLessonCheckpointCommit": "752859e926f16d767b03dbec67828b97921dddf7",
+  "twelfthClosedLessonEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-012-source-evidence.md"
 }
