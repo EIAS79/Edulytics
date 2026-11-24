@@ -232,7 +232,8 @@ public static class LessonPracticeInteractionRegistry
         if(answerType=="contract_defined" &&
            (familyId=="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression" ||
             familyId=="uae.g10.general.u01.l02.full_monomial_polynomial_product" ||
-            familyId=="uae.g10.general.u01.l03.full_polynomial_product"))
+            familyId=="uae.g10.general.u01.l03.full_polynomial_product" ||
+            familyId=="uae.g10.general.u01.l04.full_special_product"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Declared numeric answer type is authoritative. Families named compare*
