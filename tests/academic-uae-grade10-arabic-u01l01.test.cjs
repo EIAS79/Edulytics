@@ -28,7 +28,7 @@ test('Grade 10 Arabic U01L01 is an enhancement of the original lesson identity',
   assert.match(ar.Explanation, /الحدود المتشابهة/);
   assert.match(ar.CommonMistakes, /إشارة/);
   assert.match(ar.StepByStepSolutions, /التحقق|تحقق/);
-  assert.match(lesson.AdaptationStatus, /NOT A\/B\/C CLOSED/);
+  assert.match(lesson.AdaptationStatus, /READY_FOR_STAGE_D/);
   assert.ok(lesson.Translations.some(x => x.CultureCode === 'en'), 'retain existing English content until full Arabic cutover');
 });
 
@@ -66,7 +66,7 @@ test('U01L01 source-specified standard form, visual and original exit check are 
   assert.match(ar.Explanation, /المعامل الرئيس/);
   assert.match(ar.WorkedExamples, /الطريقة العمودية/);
   assert.match(ar.QuickSummary, /Cool-down/);
-  assert.match(lesson.AdaptationStatus, /A_C_EXPLICIT_GAP/);
+  assert.match(lesson.AdaptationStatus, /READY_FOR_STAGE_D/);
   const A = x => 2*x*x*x-x*x+5*x-4;
   const B = x => -x*x*x+3*x*x-2*x+9;
   const sum = x => x*x*x+2*x*x+3*x+5;
@@ -219,7 +219,7 @@ test('All 48 existing General Volume1 lesson titles occur once in the adopted 14
  }
  assert.equal(manifest.FullLessonLevelSemanticAuditComplete,false);
 });
-test('Grade10 U01L01 retains intentionally blocked A-C closure and truthful source-versus-target periods',()=>{
+test('Grade10 U01L01 is A-C ready with Stage D and source-period caveats retained',()=>{
   const selection=JSON.parse(fs.readFileSync(path.join(root,
     'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-selection.json'),'utf8'));
   const checkpoint=JSON.parse(fs.readFileSync(path.join(root,
@@ -227,8 +227,8 @@ test('Grade10 U01L01 retains intentionally blocked A-C closure and truthful sour
   assert.equal(selection.pdfs.find(x=>x.name==='01.pdf').classification,'PRIMARY_GENERAL_VOLUME1_TERM1');
   assert.equal(selection.generalAnnualSourceComplete,false);
   assert.equal(selection.finalCanonicalLessonCount,148);
-  assert.equal(checkpoint.status,'A_C_EXPLICIT_GAP');
-  assert.equal(checkpoint.firstIncompleteLessonOrdinal,1);
+  assert.equal(checkpoint.status,'READY_FOR_STAGE_D');
+  assert.equal(checkpoint.firstIncompleteLessonOrdinal,2);
   assert.equal(checkpoint.testsRun,'WRITTEN_NOT_RUN');
   assert.match(pack.SourceCurriculumPeriod,/2025-2026.*Volume 1/);
   assert.match(pack.TargetCurriculumPeriod,/2026-2027/);
