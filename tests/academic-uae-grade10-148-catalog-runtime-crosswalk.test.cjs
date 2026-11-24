@@ -15,8 +15,10 @@ test('Approved unified 148 index has a traceable collision-free crosswalk to all
  const old=cross.canonicals.filter(x=>x.legacyLessonCode);
  assert.equal(old.length,48);
  assert.equal(new Set(old.map(x=>x.legacyLessonCode)).size,48);
- assert.equal(blueprint.Lessons.length,48);
- for(const lesson of blueprint.Lessons){
+ assert.equal(blueprint.Lessons.length,148);
+ assert.equal(blueprint.Units.length,18);
+ assert.equal(new Set(blueprint.Lessons.map(x=>x.LessonCode)).size,148);
+ for(const lesson of blueprint.Lessons.filter(x=>!x.LessonCode.includes(':UNIFIED:'))){
    const row=old.find(x=>x.legacyLessonCode===lesson.LessonCode);
    assert.ok(row,'never orphan existing student-linked lesson code: '+lesson.LessonCode);
    assert.equal(row.title,lesson.Title);
@@ -27,6 +29,8 @@ test('Approved unified 148 index has a traceable collision-free crosswalk to all
  assert.equal(current.legacyLessonCode,'PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS');
 });
 test('Catalog alignment and individual lesson approval are separate from migration and Stage D',()=>{
+ assert.equal(cross.canonicalBlueprintAligned,true);
+ assert.equal(cross.contentPackAligned,false);
  assert.equal(cross.currentRuntimeCatalogAligned,false);
  assert.equal(cross.contentStageABCClosureCount,0);
  assert.equal(cross.testsRun,'WRITTEN_NOT_RUN');
