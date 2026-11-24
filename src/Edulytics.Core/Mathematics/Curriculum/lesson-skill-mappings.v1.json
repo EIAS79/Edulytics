@@ -13986,6 +13986,49 @@
         "noninteger solutions or irreducible integer factors beyond bounded exact families"
       ],
       "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:07:SOLVING-AX-BX-C-0",
+      "primarySkills": [
+        "algebra.quadratic.factor_nonmonic"
+      ],
+      "secondarySkills": [
+        "algebra.polynomial.factor_by_grouping",
+        "algebra.polynomial.ac_method",
+        "algebra.quadratic.zero_product",
+        "algebra.quadratic.rational_roots",
+        "algebra.quadratic.contextual_projectile",
+        "algebra.polynomial.prime_over_integers"
+      ],
+      "sourceType": "UAE_G10_GENERAL_2025_01_PDF_PHYSICAL_65_69_ADVANCED_131_137_APPLIED_49_55",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SOURCES_VISUALLY_REVIEWED_STAGE_C_ORIGINAL_AUTHORING_TESTS_WRITTEN_NOT_RUN",
+      "evidence": [
+        "General 01.pdf SHA d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72, lesson1-7 physical PDF pages65–69 / printed52–56, source ac split middle, regroup, negative a and b, integer/prime choices, graph root checks, applied projectile and area reasoning; page70 is a cumulative unit review, page71 starts U01L08.",
+        "Owner-approved Advanced 01متقدم_.pdf PDF131–137 printed114–120 and Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf PDF49–55 printed232–238 contain matching nonmonic/fractional/applications. See lesson-006-crossbook-semantic-crosswalk.json goal ids C08,C12,C13,C14,C15; semantic duplicate content unified into this General lesson.",
+        "Original source skill algebra.quadratic.factor_nonmonic is already registered in skill-registry and includes ac method, splitting the middle term, grouping, integer/rational roots. New C# bounded exact families reuse shared ExactSkillContractQuestionEngine; StageD tests and actual learner routing NOT_RUN."
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U01L07_NONMONIC_AX2_BX_C_FACTOR_AC_GROUPING_INTEGER_RATIONAL_ROOTS_PRIME_CASE",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u01.l07.nonmonic_full_factor",
+        "uae.g10.general.u01.l07.nonmonic_rational_roots",
+        "uae.g10.general.u01.l07.nonmonic_prime_over_integers"
+      ],
+      "forbiddenQuestionFamilies": [
+        "uae.g10.general.u01.l06.monic_full_factor",
+        "uae.g10.general.u01.l05.gcf_complete_factor",
+        "uae.g10.general.u01.l08.difference_squares_factor"
+      ],
+      "teacherReviewRequiredFor": [
+        "source examples with negative quadratic leading coefficient and GCF before splitting the middle term",
+        "general four-term grouping and proof of distributive-factor equivalence",
+        "manual parabola graph/source textbook calculator method and intercept verification",
+        "original projectile and falling-ball contextual time domain constraints",
+        "rectangle courtyard area/perimeter and variable positive dimensions",
+        "higher-degree or multivariable original extensions and explaining why polynomial is prime over integers"
+      ],
+      "officialOutcomeCodes": []
     }
   ]
 }
