@@ -309,6 +309,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u01.l10.monomial_division_expression",
+      "version": 1,
+      "skillId": "algebra.polynomial.divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-general-u01l10-owner-advanced-3-2-bounded-monic-linear-and-monomial-division-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l10.linear_quotient_remainder",
+      "version": 1,
+      "skillId": "algebra.polynomial.divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "quotient_and_remainder",
+      "verificationPolicy": "uae-g10-general-u01l10-owner-advanced-3-2-bounded-monic-linear-and-monomial-division-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u01.l10.linear_remainder_integer",
+      "version": 1,
+      "skillId": "algebra.polynomial.divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-general-u01l10-owner-advanced-3-2-bounded-monic-linear-and-monomial-division-stage-d-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l09.classify_perfect_square",
       "version": 1,
       "skillId": "algebra.factor.perfect_square_trinomial",
