@@ -1,0 +1,1 @@
+Lesson122 نظرية فيثاغورس وعكسها: source listed in canonical owner index as older General 02-2.pdf near PDF11. Source body not independently rechecked (authorized device offline). Six original problems and 3 visual aids. Stage D NOT_RUN.
