@@ -740,15 +740,18 @@
       "unitTitle": "الدوال الأسية واللوغاريتمية",
       "unitLessonNumber": 2,
       "title": "حل المعادلات والمتباينات الأسية",
-      "sourceProvenance": "01متقدم_.pdf (ص 12) ؛ 03.pdf + رياضيات كتاب الطالب تطبيقي 10 8.pdf (ص 10)",
+      "sourceProvenance": "01متقدم_.pdf (فهرس المتقدم الوحدة 8، الدرس 8-2، PDF12 فقط؛ متن الدرس غير موجود بالكتب السبعة). درس التطبيقي 5-2 من موضوع مختلف «الفروق المتتابعة» ولا يُدمج هنا",
       "legacyLessonCode": null,
       "legacySourceLessonCode": null,
       "legacyUnitNumber": null,
       "legacyLessonNumber": null,
-      "alignmentStatus": "MISSING_FROM_RUNTIME_CREATE_ONLY_WHEN_A_B_C_CONTENT_READY",
+      "alignmentStatus": "SOURCE_BODY_MISSING_CANONICAL_INDEX_OWNER_APPROVED_CONTENT_BLOCKED",
       "runtimeMigrationRequired": false,
       "studentContentStatus": "UNAUTHORED_OR_UNMAPPED_AWAITING_SEQUENTIAL_STAGE_A_B_C",
-      "runtimeReadiness": "BLUEPRINT_REGISTERED_CONTENT_STAGE_A_B_C_PENDING"
+      "runtimeReadiness": "CANONICAL_TITLE_REGISTERED_A_C_EXPLICIT_GAP_SOURCE_BODY_MISSING",
+      "sourceBodyAvailability": "MISSING_IN_ALL_SEVEN_APPROVED_PDFS",
+      "sourceTitleVerifiedLocation": "01متقدم_.pdf PDF12, Advanced Unit8 Lesson8-2 TOC",
+      "distinctNonmatchingAppliedSource": "Applied Volume2 PDF121, Unit5 Lesson5-2 «تحديد الدوال باستخدام الفروق المتتابعة»"
     },
     {
       "ordinal": 44,
@@ -2542,5 +2545,7 @@
   "blueprintRegisteredUnitCount": 18,
   "blueprintLegacyIdsPreserved": 48,
   "blueprintNewSourceEntries": 100,
-  "blueprintCommit": "c4f97668be9233bbc16eca0b6d5f3b579bdf530a"
+  "blueprintCommit": "c4f97668be9233bbc16eca0b6d5f3b579bdf530a",
+  "firstUnclosedBySourceAuditOrdinal": 43,
+  "firstUnclosedReason": "No lesson body for Advanced Unit8-2 in seven approved books. Applied 5-2 is a different lesson."
 }
