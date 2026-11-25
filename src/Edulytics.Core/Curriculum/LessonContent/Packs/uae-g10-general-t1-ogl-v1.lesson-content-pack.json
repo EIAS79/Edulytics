@@ -2836,6 +2836,39 @@
           "QuickSummary": "الربط بين الصور الأسية واللوغاريتمية.\nمراجعة شروط مجال كل مدخل.\nتطبيق الخواص على الضرب والقسمة والأسس لا على الجمع العشوائي.\nالتحقق الرياضي المستقل.\nهذا درس أصلي وفق فهرس معتمد، لا ادعاء بمطابقة متن غير متوفر."
         }
       ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleSourceReference": "01متقدم_.pdf PDF12 index Unit8 Lesson8-8 TITLE ONLY",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "01متقدم_.pdf PDF12 TOC only Advanced Unit8 Lesson8-8",
+      "SourceTitle": "UAE Advanced Grade10 2025–2026 annual index",
+      "SourcePublisher": "Index provenance; original Edulytics lesson body",
+      "SourceEdition": "Advanced 2025–2026 Volume1 TOC; General target 2026–2027",
+      "SourceRights": "Independent original Arabic text, examples and diagrams",
+      "SourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "CanonicalBodySha256": null,
+      "SourceVerifiedAtUtc": "2026-11-25T20:00:00Z",
+      "RetrievalUrl": "https://minhaji.moe.gov.ae/",
+      "RetrievalChannel": "User uploaded book, physical TOC verified",
+      "RetrievalTimestamp": "2026-11-25T20:00:00Z",
+      "AdaptationStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY — 12 worked examples and four original visuals; source-body not provided. Exact logarithm evaluation reuse limited, open problems teacher-scored; Stage D NOT_RUN.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "اللوغاريتمات الطبيعية",
+          "Explanation": "اللوغاريتم الطبيعي هو اللوغاريتم للأساس هـ (e)، حيث هـ≈٢٫٧١٨٢٨ وهو ثابت رياضي موجب لا يساوي ١. يُكتب لوغ_e(س) بصورة مختصرة لن(س) أو ln(س)، ويشترط س>٠.\n\nالدالة ص=ln(س) معكوس الدالة ص=e^س؛ لذلك ln(e^س)=س لكل س حقيقي، وe^(ln س)=س لكل س>٠. هذا التماثل ييسر حل المعادلات الأسية التي لم يسهل توحيد قاعدتها.\n\nخواص اللوغاريتم الطبيعي مماثلة لغيره: ln(م×ن)=ln م+ln ن وln(م/ن)=ln م−ln ن للمدخلات الموجبة. مثلًا ln(e⁴/e)=٣.\n\nفي النمو المستمر يستخدم النموذج أe^(ر ز). إذا عرفت القيمة الابتدائية والمعدل المستمر، تحسب قيمة المستقبل بالتعويض، وقد تحتاج إلى ln لعكس العلاقة وإيجاد الزمن.\n\nالمادة التعليمية هنا أصلية؛ يثبت الفهرس المتقدم عنوان الدرس 8-7، لكن متن كتاب المتقدم لهذا الدرس غير موجود في الملفات السبعة.",
+          "KeyConceptsAndRules": "اللوغاريتم الطبيعي هو اللوغاريتم للأساس هـ (e)، حيث هـ≈٢٫٧١٨٢٨ وهو ثابت رياضي موجب لا يساوي ١. يُكتب لوغ_e(س) بصورة مختصرة لن(س) أو ln(س)، ويشترط س>٠.\n\nالأساس أكبر من صفر ولا يساوي واحدًا، ومدخل اللوغاريتم موجب.\n\nالدالة ص=ln(س) معكوس الدالة ص=e^س؛ لذلك ln(e^س)=س لكل س حقيقي، وe^(ln س)=س لكل س>٠. هذا التماثل ييسر حل المعادلات الأسية التي لم يسهل توحيد قاعدتها.\n\nفي النمو المستمر يستخدم النموذج أe^(ر ز). إذا عرفت القيمة الابتدائية والمعدل المستمر، تحسب قيمة المستقبل بالتعويض، وقد تحتاج إلى ln لعكس العلاقة وإيجاد الزمن.",
+          "WorkedExamples": "ln(e) e¹=e الجواب: ١ الإجابة ١\n\nln(١) e⁰=١ الجواب: ٠ الإجابة ٠\n\nln(e³) ln(e³)=٣ الجواب: ٣ الإجابة ٣\n\ne^(ln ٥) عمليتان متعاكستان الجواب: ٥ الإجابة ٥\n\nln(e^(−٢)) الأس نفسه الجواب: −٢ الإجابة −٢\n\nln(e²×e³) ln(e⁵) الجواب: ٥ الإجابة ٥\n\nln(e⁴/e) ln(e³) الجواب: ٣ الإجابة ٣\n\nln(√e) ln(e^(١/٢)) الجواب: ١/٢ الإجابة ١/٢\n\nحل ln(س−١)=٢ س−١=e² مع س>١ الجواب: س=١+e² الإجابة س=١+e²\n\nln(e²)+ln(e³) ٢+٣ الجواب: ٥ الإجابة ٥\n\nحل e^س=٧ استخدم ln للطرفين الجواب: س=ln ٧ الإجابة س=ln ٧\n\nحدّد مجال ln(س+٤) س+٤>٠ الجواب: س>−٤ الإجابة س>−٤",
+          "StepByStepSolutions": "e¹=e الجواب: ١\n\ne⁰=١ الجواب: ٠\n\nln(e³)=٣ الجواب: ٣\n\nعمليتان متعاكستان الجواب: ٥\n\nالأس نفسه الجواب: −٢\n\nln(e⁵) الجواب: ٥\n\nln(e³) الجواب: ٣\n\nln(e^(١/٢)) الجواب: ١/٢\n\nس−١=e² مع س>١ الجواب: س=١+e²\n\n٢+٣ الجواب: ٥\n\nاستخدم ln للطرفين الجواب: س=ln ٧\n\nس+٤>٠ الجواب: س>−٤",
+          "CommonMistakes": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة.\nالنسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا.\nإسقاط الأساس من المعادلة.\nالتعامل مع خاصية القوة من دون مراعاة المجال.\nعدم التحقق بإعادة الأس في نهاية الحل.",
+          "QuickSummary": "الربط بين الصور الأسية واللوغاريتمية.\nمراجعة شروط مجال كل مدخل.\nتطبيق الخواص على الضرب والقسمة والأسس لا على الجمع العشوائي.\nالتحقق الرياضي المستقل.\nهذا درس أصلي وفق فهرس معتمد، لا ادعاء بمطابقة متن غير متوفر."
+        }
+      ]
     }
   ]
 }
