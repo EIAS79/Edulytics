@@ -1957,24 +1957,24 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
-      "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 10 General, Unit 6, Lesson 6-4",
+      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-4, PDF416–424",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 10 General / Unit 6 / Lesson 6-4",
-      "SourceTitle": "UAE Grade 10 General Mathematics Student Edition",
+      "SourceLocator": "Owner original 01.pdf, PDF416–424, printed403–411; opener + next source page visually inspected",
+      "SourceTitle": "UAE Mathematics Grade10 General 2025–2026 Volume1",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "UAE Edition",
-      "SourceRights": "Textbook used only for scope/title/order provenance; learner-facing text independently authored by Edulytics.",
+      "SourceEdition": "General 2025–2026 Volume1 (same lesson)",
+      "SourceRights": "Book used for lesson scope and theorems; Edulytics student material independently authored",
       "SourceSha256": "40b4d4261b43ec3fb5a8c04dd32b350da63a313002fef4d250daf53ff7f23082",
       "CanonicalBodySha256": "2a9982491c1b83e5be38aeddf98b326cacc4ff60867910560b12cc4a11a08893",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "READY_FOR_STAGE_D (A–B–C source-scoped) — source opening and following page visually inspected, 8 original Arabic examples, four original visual tables; no complete exercise parity claim; practice teacher-scored until exact Grade10 engine; Stage D NOT_RUN, productionRouting=false.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1985,6 +1985,16 @@
           "StepByStepSolutions": "Step 1: Identify knowns and unknowns. Step 2: State relevant conditions. Step 3: Select the appropriate rule, representation or theorem. Step 4: Apply it accurately. Step 5: Verify and interpret the result.",
           "CommonMistakes": "For Indirect Proof, avoid losing restrictions, signs, angle conditions or units, and do not accept an unchecked answer.",
           "QuickSummary": "Indirect Proof: identify the structure, apply the correct relationship, and verify the result."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "البرهان غير المباشر",
+          "Explanation": "في البرهان غير المباشر نبدأ بافتراض نفي المطلوب، ثم نستنتج من هذا الافتراض والمعطيات نتائج تقود إلى تناقض مع مسلمة أو حقيقة مثبتة. عندئذ يكون نفي المطلوب مستحيلًا، فيثبت المطلوب.\n\nلإثبات استحالة زاويتين قائمتين في مثلث، نفترض وجودهما، فيصبح مجموعهما ١٨٠° ولا يبقى قياس موجب للزاوية الثالثة، وهذا يخالف حقيقة أن زوايا المثلث الداخلية الثلاث موجبة ويبلغ مجموعها ١٨٠°.\n\nفي برهان متباينة ما، نفترض بديلها المنطقي بدقة. لنفي عبارة أ>ب يجب افتراض أ≤ب، لا مجرد أ<ب؛ لأن حالة المساواة جزء من النفي ويجب التعامل معها.\n\nليس كل استدلال بالمثال المضاد برهانًا غير مباشر لإثبات دعوى عامة؛ المثال المضاد ينفي الدعوى العامة، بينما البرهان غير المباشر يثبت الدعوى بإظهار استحالة نفيها. يجب ذكر موضع التناقض والقانون الذي ينتهكه.\n\nالمرجع: كتاب العام 2025–2026، الدرس 6-4، PDF416–424، المطبوع403–411؛ تمت معاينة الخطوات المقررة للبرهان غير المباشر ومثال التطبيق. الأمثلة التالية أصلية.",
+          "KeyConceptsAndRules": "في البرهان غير المباشر نبدأ بافتراض نفي المطلوب، ثم نستنتج من هذا الافتراض والمعطيات نتائج تقود إلى تناقض مع مسلمة أو حقيقة مثبتة. عندئذ يكون نفي المطلوب مستحيلًا، فيثبت المطلوب.\n\nلإثبات استحالة زاويتين قائمتين في مثلث، نفترض وجودهما، فيصبح مجموعهما ١٨٠° ولا يبقى قياس موجب للزاوية الثالثة، وهذا يخالف حقيقة أن زوايا المثلث الداخلية الثلاث موجبة ويبلغ مجموعها ١٨٠°.\n\nفي برهان متباينة ما، نفترض بديلها المنطقي بدقة. لنفي عبارة أ>ب يجب افتراض أ≤ب، لا مجرد أ<ب؛ لأن حالة المساواة جزء من النفي ويجب التعامل معها.\n\nليس كل استدلال بالمثال المضاد برهانًا غير مباشر لإثبات دعوى عامة؛ المثال المضاد ينفي الدعوى العامة، بينما البرهان غير المباشر يثبت الدعوى بإظهار استحالة نفيها. يجب ذكر موضع التناقض والقانون الذي ينتهكه.",
+          "WorkedExamples": "لإثبات أن س>٤، ما الفرض المنطقي للنفي؟ نفي أكبر من هو أصغر من أو يساوي. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: س≤٤\n\nافترض وجود مثلث بزاويتين قائمتين؛ ما التناقض؟ ٩٠+٩٠=١٨٠، فلا تبقى زاوية ثالثة موجبة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: تناقض مع مجموع زوايا المثلث\n\nإذا فرضنا أن العدد الصحيح ن زوجي، فما صورة ن؟ بحسب التعريف ن=٢ك لعدد صحيح ك. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ن=٢ك\n\nلإثبات أن أطوال ٣ و٤ و٨ لا تكون مثلثًا، ماذا نفترض؟ نفترض تكوّن مثلث، ثم نلاحظ ٣+٤≤٨. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: استحالة وجود مثلث\n\nما نفي العبارة س=٧؟ نفي المساواة هو عدم المساواة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: س≠٧\n\nما نفي س≥٣؟ أصغر من٣ دون مساواة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: س<٣\n\nما نفي «كل المثلثات متطابقة»؟ يوجد مثلثان على الأقل غير متطابقين. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: يوجد مثال مضاد\n\nإذا أدى افتراض النفي إلى ٥<٣، ماذا نخلص؟ هذه عبارة عددية باطلة، فيرفض افتراض النفي. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: إثبات المطلوب",
+          "StepByStepSolutions": "نفي أكبر من هو أصغر من أو يساوي. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٩٠+٩٠=١٨٠، فلا تبقى زاوية ثالثة موجبة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nبحسب التعريف ن=٢ك لعدد صحيح ك. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nنفترض تكوّن مثلث، ثم نلاحظ ٣+٤≤٨. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nنفي المساواة هو عدم المساواة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nأصغر من٣ دون مساواة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nيوجد مثلثان على الأقل غير متطابقين. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nهذه عبارة عددية باطلة، فيرفض افتراض النفي. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.",
+          "CommonMistakes": "استنتاج هندسي من رسم غير مضبوط.\nعدم التحقق من شروط النظرية المعينة.\nالخلط بين المفاهيم المتقاربة.\nعكس اتجاه التساوي أو المقارنة.\nإهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "QuickSummary": "تعرف الفرضية المناسبة قبل الحل.\nحافظ على ترتيب العناصر المتناظرة.\nاكتب مبرر كل مساواة أو متباينة.\nاختبر الحالات الحدية واستبعد غير المقبول.\nالأمثلة ورسوم Edulytics مستقلة عن نص المصدر."
         }
       ]
     },

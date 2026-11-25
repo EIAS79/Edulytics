@@ -1,0 +1,3 @@
+# UAE G10 lesson 82 — البرهان غير المباشر
+
+Original owner book: General 2025–2026 `01.pdf`, Unit6 Lesson6-4, PDF416–424, printed 403–411. Opening lesson plus the next page were visually examined (PDF416 and 417) without OCR. Original Edulytics Arabic 8 solved questions and 4 visual models; reused preexisting lesson identifier `PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF` and retained English. **Not certified**: complete per-exercise parity, full-source element denominator, CI/Stage D, student E2E and production routing. Exact Grade10 automated family unavailable for this lesson; scoring by teacher only.
