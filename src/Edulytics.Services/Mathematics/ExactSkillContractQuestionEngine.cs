@@ -101,6 +101,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CramerResponse.YFamily,
             UaeG10InverseMatrixResponse.EntryFamily,
             UaeG10InverseMatrixResponse.ExistsFamily,
+            UaeG10AugmentedMatrixResponse.RowFamily,
+            UaeG10AugmentedMatrixResponse.XFamily,
+            UaeG10AugmentedMatrixResponse.YFamily,
             UaeG10RadicalGraphResponse.Value,
             UaeG10RadicalGraphResponse.DomainStart,
             UaeG10RadicalOperationsResponse.Product,
@@ -1254,6 +1257,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(family))
+            return UaeG10AugmentedMatrixResponse.Verify(family,parameters,answer);
 
         if (UaeG10InverseMatrixResponse.Supports(family))
             return UaeG10InverseMatrixResponse.Verify(family,parameters,answer);
@@ -3741,6 +3747,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(family))
+            return BuildG10AugmentedMatrix(family,random,difficulty);
 
         if (UaeG10InverseMatrixResponse.Supports(family))
             return BuildG10InverseMatrix(family,random,difficulty);
@@ -9933,6 +9942,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(problem.Family))
+            return UaeG10AugmentedMatrixResponse.Format(problem.Family,p);
 
         if (UaeG10InverseMatrixResponse.Supports(problem.Family))
             return UaeG10InverseMatrixResponse.Format(problem.Family,p);
