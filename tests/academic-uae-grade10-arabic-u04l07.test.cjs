@@ -60,5 +60,7 @@ test('Four bounded vertex-form families exist with one primary skill but disable
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
  const grader=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10QuadraticTransforms.cs'),'utf8');
  assert.match(engine,/BuildG10QuadraticTransforms/);
- assert.match(grader,/UaeG10QuadraticTransformsResponse.Verify/);
+ assert.match(grader,/class\s+UaeG10QuadraticTransformsResponse\b/);
+ assert.match(grader,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10QuadraticTransformsResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
