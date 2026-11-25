@@ -15,7 +15,8 @@ const registry = fs.readFileSync(path.join(
 
 test('Grade 10 Arabic U01L01 is an enhancement of the original lesson identity', () => {
   assert.equal(pack.PackCode, 'UAE-MOE-MATH');
-  assert.equal(pack.Lessons.length, 48, 'do not create a duplicate lesson identity');
+  assert.equal(pack.Lessons.length, 148);
+  assert.equal(new Set(pack.Lessons.map(x=>x.LessonCode)).size,148,'do not create a duplicate lesson identity');
   const lesson = pack.Lessons.find(x => x.LessonCode.startsWith('PED:UAE-MOE-MATH:L10:GENERAL:01:01:'));
   assert.ok(lesson);
   const ar = lesson.Translations.find(x => x.CultureCode === 'ar');
@@ -32,9 +33,9 @@ test('Grade 10 Arabic U01L01 is an enhancement of the original lesson identity',
   assert.ok(lesson.Translations.some(x => x.CultureCode === 'en'), 'retain existing English content until full Arabic cutover');
 });
 
-test('Source-bound textbook content is not declared all-Arabic prematurely', () => {
-  assert.equal(pack.AcademicLanguage, 'en', 'only 1 of 48 lessons has been authored in Arabic; final switch is a separate gate');
-  assert.ok(pack.Lessons.some(x => !x.Translations.some(t => t.CultureCode === 'ar')));
+test('Arabic cutover requires one Arabic translation for every approved lesson', () => {
+  assert.equal(pack.AcademicLanguage, 'ar');
+  assert.ok(pack.Lessons.every(x => x.Translations.filter(t => t.CultureCode === 'ar').length === 1));
 });
 
 test('Original independent arithmetic oracle catches incorrect polynomial examples', () => {
@@ -134,10 +135,10 @@ test('U01L01 source identity is the verified 2025–26 General volume 1, not an 
   assert.match(lesson.SourceEdition,/2025–2026, Volume 1/);
   assert.match(lesson.SourceLocator,/PDF pages 20–25/);
   assert.match(lesson.RetrievalChannel,/Owner-uploaded/);
-  assert.equal(pack.Lessons.length,48,'this is only the current Volume1 baseline, NOT annual count');
+  assert.equal(pack.Lessons.length,148,'owner-approved unified catalog, not an independently verified annual textbook count');
 });
 
-test('Grade10 General blueprint registers 148 approved titles while the student content pack still has 48 source-volume lessons',()=>{
+test('Grade10 General blueprint registers 148 approved titles with a complete 148-entry student content pack',()=>{
  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
    'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json'),'utf8'));
  const manifest=JSON.parse(fs.readFileSync(path.join(root,
@@ -232,7 +233,8 @@ test('Grade10 U01L01 is A-C ready with Stage D and source-period caveats retaine
   assert.equal(checkpoint.status,'READY_FOR_STAGE_D');
   assert.equal(checkpoint.firstIncompleteLessonOrdinal,2);
   assert.equal(checkpoint.testsRun,'WRITTEN_NOT_RUN');
-  assert.match(pack.SourceCurriculumPeriod,/2025-2026.*Volume 1/);
+  assert.match(pack.SourceCurriculumPeriod,/2025[-–]2026.*Volume\s*1/);
   assert.match(pack.TargetCurriculumPeriod,/2026-2027/);
-  assert.equal(pack.AcademicLanguage,'en','untranslated lessons cannot claim Arabic cutover');
+  assert.equal(pack.AcademicLanguage,'ar');
+  assert.ok(pack.Lessons.every(x=>x.Translations.filter(t=>t.CultureCode==='ar').length===1));
 });
