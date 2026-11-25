@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 18,
+  "canonicalCode": "G10-U02-L02",
+  "unitNumber": 2,
+  "unitLessonNumber": 2,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "خواص قسمة الأسس",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:02:DIVISION-PROPERTIES-OF-EXPONENTS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01.pdf",
+  "sourceEdition": "UAE Arabic General 2025–2026 Volume1 Lesson2-2",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "sourcePrintedPages": [
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98
+  ],
+  "sourceCumulativeReviewPdf112Excluded": true,
+  "nextLessonPdf113": true,
+  "sourceElementDenominator": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 14
+  },
+  "sourceIndexLocked": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l02-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.exponent.quotient_rule"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l02.quotient_exponent_difference",
+    "uae.g10.general.u02.l02.negative_power_fraction",
+    "uae.g10.general.u02.l02.zero_exponent_value"
+  ],
+  "independentVerifier": "UaeG10ExponentQuotientResponse.Verify exact exponent subtraction and equivalent positive rational denominator",
+  "rendererMatrix": {
+    "quotientExponent": "IntegerKeypad",
+    "negativeReciprocal": "FractionEntry",
+    "zeroPower": "IntegerKeypad"
+  },
+  "teacherReviewRequiredFor": [
+    "full variable quotient symbolic proof and denominator restrictions",
+    "negative exponent and zero power explanations",
+    "geometry area model and music/finance/measurement contexts"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralExponentQuotientTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "globalCourseBlueprintRegisteredCount": 148,
+  "globalArabicBodiesAuthoredCount": 18,
+  "firstIncompleteGlobalOrdinal": 19,
+  "nextEligibleGlobalOrdinal": 19,
+  "closedAtUtc": "2026-11-25T00:18:29Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closingContentCommit": "dcd0649f1e09799c9180b600aa3fd6b09c6465e1",
+  "closureBasis": "7 scanned original book PDF105–111 pages; 29 source element types; 12 Arabic worked examples, five authored visuals, one primary registered skill, three bounded source-exact families with independent equivalent fraction check and teacher rubric; StageD tests written not run.",
+  "remainingStageDObligations": [
+    "run written .NET and Node tests with compiler and actual question generation",
+    "test Arabic FractionEntry and domain restrictions under authenticated student account",
+    "do not enable source family production routing until Stage D verified",
+    "complete remaining 130 Grade10 lessons and safe production release only after all gates"
+  ]
+}
