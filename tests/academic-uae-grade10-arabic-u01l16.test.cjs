@@ -65,7 +65,9 @@ test('Three distinct source rational-root families, new skill and production fai
  }
  const csharp=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10RationalZeros.cs'),'utf8');
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
- assert.match(csharp,/UaeG10RationalZerosResponse.Verify/);
+ assert.match(csharp,/class\s+UaeG10RationalZerosResponse\b/);
+ assert.match(csharp,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RationalZerosResponse\.Verify\(family,\s*parameters,\s*answer\)/);
  assert.match(csharp,/Gcd/);assert.match(csharp,/IsZero/);
  assert.match(engine,/BuildG10RationalZeros/);
 });
