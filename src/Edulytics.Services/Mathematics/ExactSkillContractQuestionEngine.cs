@@ -88,6 +88,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10GraphInequalitiesResponse.BoundaryFamily,
             UaeG10LinearProgrammingResponse.ValueFamily,
             UaeG10LinearProgrammingResponse.VertexFamily,
+            UaeG10ThreeVarSystemResponse.XFamily,
+            UaeG10ThreeVarSystemResponse.YFamily,
+            UaeG10ThreeVarSystemResponse.ZFamily,
             UaeG10RadicalGraphResponse.Value,
             UaeG10RadicalGraphResponse.DomainStart,
             UaeG10RadicalOperationsResponse.Product,
@@ -1241,6 +1244,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(family))
+            return UaeG10ThreeVarSystemResponse.Verify(family,parameters,answer);
 
         if (UaeG10LinearProgrammingResponse.Supports(family))
             return UaeG10LinearProgrammingResponse.Verify(family,parameters,answer);
@@ -3713,6 +3719,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(family))
+            return BuildG10ThreeVarSystem(family,random,difficulty);
 
         if (UaeG10LinearProgrammingResponse.Supports(family))
             return BuildG10LinearProgramming(family,random,difficulty);
@@ -9890,6 +9899,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(problem.Family))
+            return UaeG10ThreeVarSystemResponse.Format(problem.Family,p);
 
         if (UaeG10LinearProgrammingResponse.Supports(problem.Family))
             return UaeG10LinearProgrammingResponse.Format(problem.Family,p);
