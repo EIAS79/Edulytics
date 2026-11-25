@@ -49,7 +49,7 @@ test('Original Arabic example count, Descartes sign reasoning and Cartesian data
   assert.ok(y===f[i](x),plots[i].Title+' x='+x);
  }
  for(const x of [-3,-2,-1,0,1,2,3]){
-  assert.equal((x-1)*(x+2)*(x*x-4*x+5),x**4-3*x**3-x*x+13*x-10);
+  assert.equal((x-1)*(x+2)*(x*x-4*x+5)+0,x**4-3*x**3-x*x+13*x-10+0);
  }
  const sign=['+','-','+','-'];
  assert.equal(sign.slice(1).reduce((n,s,i)=>n+(s!==sign[i]?1:0),0),3);

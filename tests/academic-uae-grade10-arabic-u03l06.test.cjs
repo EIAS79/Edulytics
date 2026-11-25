@@ -22,5 +22,5 @@ test('Bounded exact Grade10 families are one-entry or dimension-only fail-closed
  assert.ok(m);assert.deepEqual(m.primarySkills,c.primarySkills);assert.deepEqual(m.allowedQuestionFamilies,c.allowedQuestionFamilies);
  assert.equal(c.testsRun,'WRITTEN_NOT_RUN');assert.equal(c.runtimeGate.productionRouting,false);
  const source=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10MatrixProduct.cs'),'utf8');
- assert.match(source,/UaeG10MatrixProductResponse/);assert.match(source,/result=p\\["a"\\+row\\+"1"\\]/);
+ assert.match(source,/UaeG10MatrixProductResponse/);assert.ok(source.includes('result=p["a"+row+"1"]*p["b"+"1"+col]+p["a"+row+"2"]*p["b"+"2"+col];'));
 });

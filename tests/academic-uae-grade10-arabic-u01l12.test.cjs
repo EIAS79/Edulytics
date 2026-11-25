@@ -53,7 +53,7 @@ test('First-party graph visuals use mathematically correct original coordinate s
    }
  }
  for(const x of [-2,-1,0,1,2,3]) {
-   assert.equal((x+2)*(x-1)*(x-3),x**3-2*x*x-5*x+6);
+   assert.equal((x+2)*(x-1)*(x-3)+0,x**3-2*x*x-5*x+6+0);
  }
  assert.equal(2*4*4+3*4+1,45);
 });

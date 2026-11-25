@@ -45,9 +45,9 @@ test('Original cubic and quartic visual models have numerically checked exact Ca
   assert.ok(y===polynomial[i](x),plots[i].Title+' x='+x);
  }
  for(const x of [-4,-3,-2,-1,0,1,2,3,4]){
-   assert.equal(x**3+x*x-6*x,x*(x+3)*(x-2));
-   assert.equal(x**3+2*x*x-9*x-18,(x+2)*(x-3)*(x+3));
-   assert.equal(x**4-13*x*x+36,(x*x-4)*(x*x-9));
+   assert.equal(x**3+x*x-6*x+0,x*(x+3)*(x-2)+0);
+   assert.equal(x**3+2*x*x-9*x-18+0,(x+2)*(x-3)*(x+3)+0);
+   assert.equal(x**4-13*x*x+36+0,(x*x-4)*(x*x-9)+0);
  }
  assert.equal(3*4*5,60);
 });

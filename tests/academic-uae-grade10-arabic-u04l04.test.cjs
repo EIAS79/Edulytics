@@ -28,7 +28,7 @@ test('Owner-approved catalog G10-U04L04 preserves unique 148-lesson General iden
  assert.equal(l.SourceSha256,'0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815');
  assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const ar=l.Translations.find(x=>x.CultureCode==='ar');
- assert.ok(ar);assert.match(ar.Explanation,/نصف معامل/);
+ assert.ok(ar);assert.ok(ar.Explanation.includes('س²+ب س') && ar.Explanation.includes('(ب/٢)²') && ar.Explanation.includes('(س+ب/٢)²'));
  for(const k of ['Explanation','KeyConceptsAndRules','WorkedExamples','StepByStepSolutions','CommonMistakes','QuickSummary'])assert.ok(ar[k].length>150,k);
 });
 test('Completing square student RichV2 has original examples, CartesianPlot and visual geometry',()=>{
