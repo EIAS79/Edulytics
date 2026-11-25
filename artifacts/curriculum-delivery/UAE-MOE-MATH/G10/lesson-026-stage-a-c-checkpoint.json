@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 26,
+  "canonicalCode": "G10-U03-L02",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "حل أنظمة المتباينات بالتمثيل البياني",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02:C026",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerApprovedCanonicalLessonCount": 148,
+  "ownerApprovedCanonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "book": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced 2025–2026 Arabic Volume1 Unit1 Lesson1-2 consolidated to General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "sourcePrintedPages": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "sourceSupplementaryLabPdfPage": 40,
+  "sourceNextLessonPdfPage": 41,
+  "sourceElementDenominatorForReviewedLesson": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 6,
+    "TEACHER_REVIEW_REQUIRED": 13
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l02-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 14,
+  "originalVisualModels": 6,
+  "cartesianPlotDataModels": 2,
+  "arabicContentAuthored": true,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.linear.inequalities.systems_two_variables"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l02.feasible_point_membership",
+    "uae.g10.general.u03.l02.boundary_point_membership"
+  ],
+  "independentVerifier": "UaeG10GraphInequalitiesResponse.Verify recomputes BOTH exact source comparisons and checks strict/weak boundaries",
+  "rendererMatrix": {
+    "feasiblePoint": "IntegerKeypad",
+    "boundaryPoint": "IntegerKeypad"
+  },
+  "teacherReviewRequiredFor": [
+    "actual Cartesian two-half-plane diagram with dashed and solid boundary line styles",
+    "correct shared shading including empty/unbounded regions",
+    "source calculator graphing lab",
+    "real-world constraints, nonnegative time, production volume, currency and units",
+    "mathematical writing and full proof"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralGraphInequalitiesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "staticSourceContentContractConsistencyReviewed": true,
+  "blueprintRegisteredLessonCount": 148,
+  "contentPackCurrentLessonCount": 59,
+  "globalArabicBodyCount": 26,
+  "all148ArabicBodiesReady": false,
+  "firstIncompleteGlobalOrdinal": 27,
+  "nextEligibleCanonicalCode": "G10-U03-L03",
+  "nextEligibleLessonTitle": "البرمجة الخطية",
+  "closedAtUtc": "2026-11-25T13:04:31Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closeEvidenceCommit": "473be1303097e14cf4b071374887b0f50b6e227c",
+  "closureBasis": "Seven original source pages + calculator technology supplement, 29 distinct teaching and assessment categories, 14 original Arabic worked examples, six visual data models, bounded exact 2-half-plane point and boundary verifier, teacher rubric, two written-not-run test files. Not a claim of actual Stage D graph rendering or published lesson.",
+  "remainingStageDObligations": [
+    "run written .NET and Node tests and verify fixed-seed generated point answers",
+    "authenticated learner RTL and real interactive graph rendering check",
+    "activate Practice routing only after proven correctness and UI checks",
+    "complete 148 authored Arabic lessons then safely migrate/deploy preserving student identifiers"
+  ]
+}
