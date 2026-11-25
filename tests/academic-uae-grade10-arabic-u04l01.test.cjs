@@ -50,5 +50,7 @@ test('Stage C bounded graph questions do not claim visual drawing or regression 
  const e=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
  assert.match(e,/BuildG10QuadraticGraph/);
  const ver=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10QuadraticGraph.cs'),'utf8');
- assert.match(ver,/UaeG10QuadraticGraphResponse.Verify/);
+ assert.match(ver,/class\s+UaeG10QuadraticGraphResponse\b/);
+ assert.match(ver,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10QuadraticGraphResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
