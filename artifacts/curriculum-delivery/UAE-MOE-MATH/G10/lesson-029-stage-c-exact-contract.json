@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 29,
+  "canonicalCode": "G10-U03-L05",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L05:C029",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePhysicalPdfPages": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.matrices.operations"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l05.matrix_sum_entry",
+    "uae.g10.general.u03.l05.matrix_difference_entry",
+    "uae.g10.general.u03.l05.matrix_scalar_entry"
+  ],
+  "forbiddenQuestionFamilies": [
+    "matrices.multiply.exact_rational",
+    "uae.g10.general.u03.l04.three_var_x"
+  ],
+  "sourceMathScope": "matrix order, entry/equality and compatible sum/difference and scalar multiplication; matrix-by-matrix product reserved to G10-U03L06",
+  "bounds": {
+    "arraySize": "2×2 for machine-graded entry",
+    "matrixEntries": "A,B each in [-8,8]",
+    "scalar": "nonzero integer [-4,4]",
+    "rowIndex": "1 or 2",
+    "colIndex": "1 or 2"
+  },
+  "independentVerifier": "UaeG10MatrixOperationsResponse.Verify recomputes A[row,col]±B[row,col] or k*A[row,col] directly from original parameters",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l05.matrix_sum_entry",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l05.matrix_difference_entry",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l05.matrix_scalar_entry",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "whole 3×4 data tables and row-column orientation",
+    "matrix equality with variable expressions",
+    "full matrix result, dimensional mismatches and proofs",
+    "contextual sales/quantities with correct labeling"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMatrixOperationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}
