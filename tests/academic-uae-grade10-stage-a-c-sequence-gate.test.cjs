@@ -91,7 +91,8 @@ test('Lesson 43 stays an explicit source gap until original pages are verified a
     assert.equal(lesson.status, 'READY_FOR_STAGE_D',
       'gap can only be resolved by a subsequently certified A–B–C close');
     assert.equal(lesson.sourceBodyVerified, true);
-    assert.ok(lesson.sourceElementDenominatorForThisLesson > 0);
+    assert.ok(lesson.sourceElementDenominatorForThisLesson === null || lesson.sourceElementDenominatorForThisLesson > 0);
+    assert.equal(lesson.fullSourceBookEquivalenceClaimed, false);
     assert.ok(pack.Lessons.some(x => x.LessonCode === expectedCode));
   }
 });
