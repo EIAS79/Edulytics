@@ -111,6 +111,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10QuadraticGraphRootsResponse.CountFamily,
             UaeG10QuadraticGraphRootsResponse.LeftFamily,
             UaeG10QuadraticGraphRootsResponse.RightFamily,
+            UaeG10QuadraticInequalityResponse.ProbeFamily,
+            UaeG10QuadraticInequalityResponse.MiddleFamily,
+            UaeG10QuadraticInequalityResponse.BoundaryFamily,
             UaeG10QuadraticFormulaResponse.DiscriminantFamily,
             UaeG10QuadraticFormulaResponse.RealCountFamily,
             UaeG10QuadraticFormulaResponse.RootsFamily,
@@ -1275,6 +1278,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(family))
+            return UaeG10QuadraticInequalityResponse.Verify(family,parameters,answer);
 
         if (UaeG10QuadraticFormulaResponse.Supports(family))
             return UaeG10QuadraticFormulaResponse.Verify(family,parameters,answer);
@@ -3780,6 +3786,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(family))
+            return BuildG10QuadraticInequality(family,random,difficulty);
 
         if (UaeG10QuadraticFormulaResponse.Supports(family))
             return BuildG10QuadraticFormula(family,random,difficulty);
@@ -9990,6 +9999,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(problem.Family))
+            return UaeG10QuadraticInequalityResponse.Format(problem.Family,p);
 
         if (UaeG10QuadraticFormulaResponse.Supports(problem.Family))
             return UaeG10QuadraticFormulaResponse.Format(problem.Family,p);
