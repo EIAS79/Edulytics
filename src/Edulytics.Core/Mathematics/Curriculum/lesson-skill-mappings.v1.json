@@ -15052,6 +15052,46 @@
         "inverse identity matrix and determinant-zero decision",
         "no unsupported automatic 3x3 grader"
       ]
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09:C033",
+      "primarySkills": [
+        "algebra.matrices.augmented_row_reduce"
+      ],
+      "secondarySkills": [
+        "algebra.matrices.augmented_system_setup",
+        "algebra.matrices.elementary_row_operations",
+        "algebra.matrices.rref",
+        "algebra.linear.system_consistency",
+        "algebra.linear.three_variable_systems"
+      ],
+      "sourceType": "G10_OWNER_ADVANCED_2025_VOL1_U01L09_SEPARATE_GRAPHING_TECHNOLOGY_LAB_PDF98_PRINTED81",
+      "officialOutcomeMapped": false,
+      "officialOutcomeCodes": [],
+      "mappingConfidence": "SOURCE_LAB_PAGE_VISUALLY_REVIEWED_SOURCE_MATH_EXTENDED_WITH_ORIGINAL_2X2_DIGITAL_SUBSET",
+      "evidence": [
+        "Owner original Arabic advanced student PDF 01متقدم_.pdf SHA256 0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815, physical PDF98 printed81, «مختبر تقنية التمثيل البياني: المصفوفات الموسعة» technology laboratory following original numbered lesson1-9, NOT a tenth numbered textbook lesson.",
+        "Source lab models 2س+ص+ع=1, 3س+2ص+3ع=12, 4س+ص+2ع=−1 using 3×4 augmented matrix, uses RREF, gives (س,ص,ع)=(-4,3,6), followed by six 2-variable/3-variable source question families. New canonical identity is owner-approved separate treatment of that lab, no duplicate inverse-matrix content.",
+        "StageC exact bounded subset: row operation in 2×3 augmented matrix and one variable after 2×2 RREF with integer solution; 3×4 calculator entry/source exercises remain teacher-reviewed and source-demonstrated, not falsely auto-graded."
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U03L09_SOURCE_AUGMENTED_MATRIX_LAB_RREF_ROW_OPERATIONS",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u03.l09.row_operation_entry",
+        "uae.g10.general.u03.l09.rref_solution_x",
+        "uae.g10.general.u03.l09.rref_solution_y"
+      ],
+      "forbiddenQuestionFamilies": [
+        "uae.g10.general.u03.l08.inverse2_entry",
+        "uae.g10.general.u03.l07.cramer_x"
+      ],
+      "teacherReviewRequiredFor": [
+        "3×4 matrix construction from three-variable systems",
+        "independently checking calculator rref and interpreting x y z",
+        "source six practice systems including nonunique and constrained cases",
+        "explaining elementary row operations and changes in rank",
+        "calculator-key sequence not suitable for automatic assessment without UI device simulation"
+      ]
     }
   ]
 }
