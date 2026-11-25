@@ -19,11 +19,13 @@
   "unit2LocalLessonCount": 8,
   "unit2StageABCClosedLocalOrdinals": [
     1,
-    2
+    2,
+    3
   ],
   "unit2StageABCClosedGlobalOrdinals": [
     17,
-    18
+    18,
+    19
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -43,30 +45,35 @@
     15,
     16,
     17,
-    18
+    18,
+    19
   ],
-  "unit2ClosedCount": 2,
-  "gradeClosedCount": 18,
-  "firstIncompleteGlobalOrdinal": 19,
-  "nextEligibleCanonicalCode": "G10-U02-L03",
-  "nextEligibleLessonTitle": "الأسس النسبية",
-  "stageABCStatus": "UNIT_02_PARTIAL_2_OF_8_READY_FOR_STAGE_D",
+  "unit2ClosedCount": 3,
+  "gradeClosedCount": 19,
+  "firstIncompleteGlobalOrdinal": 20,
+  "nextEligibleCanonicalCode": "G10-U02-L04",
+  "nextEligibleLessonTitle": "الترميز العلمي",
+  "stageABCStatus": "UNIT_02_PARTIAL_3_OF_8_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
     17,
-    18
+    18,
+    19
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "7b6b0ae9b1c8fcd06d8dcff8129f7e9092c833ea",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "U02L01_AND_U02L02_CLOSED_SEQUENTIALLY; NEXT_G10_U02L03_GLOBAL19",
+  "continuationGate": "G10_U02L01_L02_L03_ORDINAL17_18_19_CLOSED; NEXT_ONLY_GLOBAL20_U02L04",
   "remainingRequirements": [
-    "Next ONLY global19 G10-U02L03 «الأسس النسبية», compare 01.pdf General Lesson2-3 with Advanced 01متقدم_.pdf Unit4 related rational power content, deduplicate root teaching and preserve distinct later radical simplification lessons.",
-    "Author Arabic source-correct lesson and exact rational-power scorer, teacher proof/geometry rubric and tests written not run, then evidence/checkpoint/commit before global20.",
-    "No Stage D, no productionRouting activation, no Neon migration or publish during A–B–C."
+    "Next ONLY global20 G10-U02-L04 «الترميز العلمي». Inspect original General textbook pages and inherited grade10 code before authoring or modification.",
+    "Keep canonical 148-index, no CI or Stage D execution during A–B–C. Stage D tests WRITTEN_NOT_RUN.",
+    "Complete correct per-lesson Evidence, Checkpoint, Commit before advancing to ordinal21."
   ],
   "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-a-c-checkpoint.json",
   "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-evidence.md",
-  "secondClosedLessonCheckpointCommit": "bf0c2cb6b76d8fb704ee050b17fa38d05f4054a5"
+  "secondClosedLessonCheckpointCommit": "bf0c2cb6b76d8fb704ee050b17fa38d05f4054a5",
+  "thirdClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-a-c-checkpoint.json",
+  "thirdClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-source-evidence.md",
+  "thirdClosedLessonCheckpointCommit": "c7b4d0985ac35defd8a71fbc595acd6fb4a2b8e8"
 }
