@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 38,
+  "canonicalCode": "G10-U04-L05",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "القانون العام والمميز للمعادلة التربيعية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05:C038",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceBook": "01متقدم_.pdf",
+  "sourceEdition": "UAE Grade10 Advanced Arabic 2025–2026 Volume1 original Unit2 Lesson2-6",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164
+  ],
+  "sourcePrintedPages": [
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147
+  ],
+  "excludedCumulativeReviewPage": 165,
+  "relatedGraphTechnologyLabPdfPages": [
+    166,
+    167
+  ],
+  "relatedGraphTechnologyLabDestination": "G10-U04-L07",
+  "sourceElementCount": 24,
+  "sourceElementsMapped": 24,
+  "sourceElementsVerifiedAgainstOriginal": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-038-source-elements.json",
+  "sourceCoverageCounts": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 9
+  },
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-038-source-evidence.md",
+  "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-038-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l05-ar.rich-lesson-v2.json",
+  "arabicWorkedExamplesCount": 10,
+  "originalVisualModelsCount": 5,
+  "cartesianPlotsCount": 3,
+  "primarySkills": [
+    "algebra.quadratic.formula_discriminant"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-038-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l05.discriminant",
+    "uae.g10.general.u04.l05.real_root_count",
+    "uae.g10.general.u04.l05.integer_roots_formula"
+  ],
+  "verifier": "UaeG10QuadraticFormulaResponse.Verify independently recomputes discriminant, real-root count and exact distinct integer roots using 2a denominator",
+  "rendererMatrix": {
+    "discriminant": "IntegerKeypad",
+    "realRootCount": "IntegerKeypad",
+    "integerRootPair": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "simplified irrational and complex conjugate roots",
+    "source parabola graphs and root multiplicity",
+    "formal derivation using completing square",
+    "real-world context and physical constraints"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticFormulaTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "contentReadyCommit": "f3989102a6d1f11f11284b2697c05ce3ae77f17c",
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closedAtUtc": "2026-11-25T15:45:22.527Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "gradeClosedCountAfterThisLesson": 38,
+  "firstIncompleteGlobalOrdinal": 39,
+  "nextEligibleCanonicalCode": "G10-U04-L06",
+  "nextEligibleLessonTitle": "المتباينات التربيعية",
+  "remainingStageDObligations": [
+    "compile and execute .NET and Node tests (currently WRITTEN_NOT_RUN)",
+    "verify Arabic/RTL StructuredEntry with authenticated learner and exact grading",
+    "review natural-language and CartesianPlot layout with actual browser",
+    "enable productionRouting only after Stage D pass, all 148 lesson bodies and safe release migration"
+  ]
+}
