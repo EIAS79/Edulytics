@@ -111,6 +111,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10QuadraticGraphRootsResponse.CountFamily,
             UaeG10QuadraticGraphRootsResponse.LeftFamily,
             UaeG10QuadraticGraphRootsResponse.RightFamily,
+            UaeG10QuadraticFormulaResponse.DiscriminantFamily,
+            UaeG10QuadraticFormulaResponse.RealCountFamily,
+            UaeG10QuadraticFormulaResponse.RootsFamily,
             UaeG10CompletingSquareResponse.TermFamily,
             UaeG10CompletingSquareResponse.RootsFamily,
             UaeG10ComplexResponse.SumReal,
@@ -1272,6 +1275,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(family))
+            return UaeG10QuadraticFormulaResponse.Verify(family,parameters,answer);
 
         if (UaeG10CompletingSquareResponse.Supports(family))
             return UaeG10CompletingSquareResponse.Verify(family,parameters,answer);
@@ -3774,6 +3780,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(family))
+            return BuildG10QuadraticFormula(family,random,difficulty);
 
         if (UaeG10CompletingSquareResponse.Supports(family))
             return BuildG10CompletingSquare(family,random,difficulty);
@@ -9981,6 +9990,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(problem.Family))
+            return UaeG10QuadraticFormulaResponse.Format(problem.Family,p);
 
         if (UaeG10CompletingSquareResponse.Supports(problem.Family))
             return UaeG10CompletingSquareResponse.Format(problem.Family,p);
