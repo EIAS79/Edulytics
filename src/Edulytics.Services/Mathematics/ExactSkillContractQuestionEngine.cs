@@ -70,6 +70,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10RootsZerosResponse.Descartes,
             UaeG10RootsZerosResponse.Conjugate,
             UaeG10RootsZerosResponse.Multiplicity,
+            UaeG10RationalZerosResponse.CandidateCount,
+            UaeG10RationalZerosResponse.CandidateCheck,
+            UaeG10RationalZerosResponse.ActualZero,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1211,6 +1214,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalZerosResponse.Supports(family))
+            return UaeG10RationalZerosResponse.Verify(family,parameters,answer);
 
         if (UaeG10RootsZerosResponse.Supports(family))
             return UaeG10RootsZerosResponse.Verify(family,parameters,answer);
@@ -3647,6 +3653,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10RationalZerosResponse.Supports(family))
+            return BuildG10RationalZeros(family,random,difficulty);
 
         if (UaeG10RootsZerosResponse.Supports(family))
             return BuildG10RootsZeros(family,random,difficulty);
@@ -9788,6 +9797,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalZerosResponse.Supports(problem.Family))
+            return UaeG10RationalZerosResponse.Format(problem.Family,p);
 
         if (UaeG10RootsZerosResponse.Supports(problem.Family))
             return UaeG10RootsZerosResponse.Format(problem.Family,p);
