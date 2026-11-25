@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 40,
+  "canonicalCode": "G10-U04-L07",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L07:C040",
+  "sourceBook": "01متقدم_.pdf",
+  "sourcePdfPages": [
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172
+  ],
+  "sourcePrintedPages": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.quadratic.graph_features"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l07.vertex_h",
+    "uae.g10.general.u04.l07.vertex_k",
+    "uae.g10.general.u04.l07.opens_up",
+    "uae.g10.general.u04.l07.value_at_x"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l06.probe_truth",
+    "uae.g10.general.u04.l02.real_root_count"
+  ],
+  "parameterBounds": {
+    "a": "nonzero integer within [-4,4]",
+    "h": "integer within [-4,4]",
+    "k": "integer within [-7,7]",
+    "probe": "integer from h−2 to h+2",
+    "f": "a(probe−h)^2+k"
+  },
+  "generator": "BuildG10QuadraticTransforms(family,random,difficulty)",
+  "independentVerifier": "UaeG10QuadraticTransformsResponse.Verify recomputes h,k,sign(a),f(probe) from raw parameters and normalizes Arabic/Western digits",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l07.vertex_h",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l07.vertex_k",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l07.opens_up",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l07.value_at_x",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "graphing calculator technology lab for h,k,a comparisons",
+    "actual Cartesian plotting with labeled vertex and axis",
+    "fractional a, scale and horizontal vs vertical stretch",
+    "completion-of-square explanation and domain-limited real-world model",
+    "derive a from vertex and second point"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticTransformationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "productionRouting": false,
+    "StageD": "NOT_STARTED"
+  },
+  "visualRequirement": "three original CartesianPlot point-array diagrams and additional transformation chains; real graphing experiments teacher-reviewed",
+  "notes": "General canonical U04L01 graph-feature engine reused in mathematical approach but U04L07 has dedicated source-vertex-form parameter contract; no duplicate inequality or quadratic solving scope."
+}
