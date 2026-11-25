@@ -49,7 +49,7 @@ test('Arabic Grade10 original monomial lesson has source-correct examples and vi
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٦س³+٨س²+١٠س')));
  const P=x=>3*x*(2*x*x-5*x+4),A=x=>6*x*x*x-15*x*x+12*x;
  const Q=x=>-2*x*x*(3*x*x*x-4*x+5),B=x=>-6*x**5+8*x**3-10*x*x;
- for(const x of [-3,-1,0,1,2,5]){assert.equal(P(x),A(x));assert.equal(Q(x),B(x));}
+ for(const x of [-3,-1,0,1,2,5]){assert.ok(P(x)===A(x));assert.ok(Q(x)===B(x));}
 });
 
 test('Distinct U01L02 source elements and Advanced crosswalk remain traceable',()=>{
