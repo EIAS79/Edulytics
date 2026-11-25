@@ -72,7 +72,7 @@
   "firstIncompleteGlobalOrdinal": 43,
   "nextEligibleCanonicalCode": "G10-U05-L02",
   "nextEligibleLessonTitle": "حل المعادلات والمتباينات الأسية",
-  "stageABCStatus": "UNIT_05_PARTIAL_1_OF_9_READY_FOR_STAGE_D",
+  "stageABCStatus": "UNIT_05_PARTIAL_1_OF_9_READY_FOR_STAGE_D__NEXT_L02_EXPLICIT_SOURCE_BODY_GAP",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -84,8 +84,12 @@
   "desktopCommanderCalls": 0,
   "continuationGate": "42_SEQUENTIAL_CLOSED; NEXT_G10_U05_L02_SOURCE_READ_THEN_CONTENT_THEN_EXACT_SKILL_EVIDENCE_CHECKPOINT",
   "remainingRequirements": [
-    "Next G10-U05-L02 «حل المعادلات والمتباينات الأسية». Verify original Applied Unit5-2 scanned source physical pages and distinct Advanced TOC overlap before changing code.",
-    "Resolve equations and inequalities with positive bases including exponent transformations, solution checks and inequality reversal for bases 0<b<1.",
-    "Do not run Stage D tests during A-B-C; no production merge or Neon edits."
-  ]
+    "Need actual source-body of Advanced Unit8-2 «حل المعادلات والمتباينات الأسية» from owner-approved source, OR explicit owner authorization to change source criteria. The 148 index remains approved.",
+    "Do not produce false 43/148 READY_FOR_STAGE_D, and do not skip G10-U05-L02 to U05-L03.",
+    "After actual source available: source-page objective and exercise audit, original Arabic content, exact assessment families, tests written not run, evidence+checkpoint+commit."
+  ],
+  "blockedOrdinal": 43,
+  "blockedCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
+  "blockedEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
+  "blockingReason": "Advanced 2025-2026 Unit8-2 appears in TOC p12 of 01متقدم_.pdf but its lesson body is not in any of seven supplied books. Applied 2022-23 Unit5-2 PDF121 has unrelated finite-difference function identification; cannot relabel it as exponential equation/inequality content."
 }
