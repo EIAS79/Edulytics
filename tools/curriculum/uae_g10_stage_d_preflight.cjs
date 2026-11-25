@@ -33,7 +33,8 @@ for(let n=1;n<=148;n++){
  const cpPath=prefix+'lesson-'+String(n).padStart(3,'0')+'-stage-a-c-checkpoint.json';
  if(!exists(cpPath)){fail('MISSING_CHECKPOINT',n);continue;}
  const c=read(cpPath);counters.checked++;
- if((c.canonicalOrdinal??c.lessonOrdinal)!==n)fail('ORDINAL_MISMATCH',n);
+ const ordinals=[c.canonicalOrdinal,c.lessonOrdinal,c.globalOrdinal].filter(v=>v!=null);
+ if(!ordinals.length||ordinals.some(v=>v!==n))fail('ORDINAL_MISMATCH',n);
  if(c.lessonCode!==b.LessonCode)fail('LESSON_CODE_MISMATCH',n);
  if(!/^READY_FOR_STAGE_D(?:_|$)/.test(c.status||''))fail('A_B_C_INCOMPLETE',n);
  if(c.productionRouting===true)fail('PREMATURE_PRODUCTION_ROUTING',n);
@@ -44,9 +45,12 @@ for(let n=1;n<=148;n++){
   block('BODY_ABSENT_FIRST_PARTY_REVIEW_NEEDED',n);
  }
  if(c.fullSourceBookEquivalenceClaimed===true&&c.sourceElementDenominatorForThisLesson==null)fail('UNSUPPORTED_100_PERCENT_CLAIM',n);
- if(c.richV2Path&&!exists(c.richV2Path))fail('MISSING_RICH_LESSON',n);
- else if(c.richV2Path){
-  const x=read(c.richV2Path).Lessons?.find(v=>v.LessonCode===b.LessonCode);
+ const richPaths=[c.richV2Path,c.arabicRichV2Path,c.studentRichV2].filter(v=>v!=null);
+ if(new Set(richPaths).size>1)fail('RICH_PATH_CONFLICT',n);
+ const richPath=richPaths[0];
+ if(richPath&&!exists(richPath))fail('MISSING_RICH_LESSON',n);
+ else if(richPath){
+  const x=read(richPath).Lessons?.find(v=>v.LessonCode===b.LessonCode);
   if(!x||x.CultureCode!=='ar'||!x.WorkedExamples?.length||!x.Visuals?.length)fail('RICH_LESSON_INCOMPLETE',n);
   else counters.rich++;
  }else fail('RICH_PATH_MISSING',n);
