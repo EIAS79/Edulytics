@@ -1,0 +1,1 @@
+Lesson124 المثلثات القائمة الخاصة: source listed in canonical owner index as older General 02-2.pdf near PDF20. Source body not independently rechecked (authorized device offline). Six original problems and 3 visual aids. Stage D NOT_RUN.
