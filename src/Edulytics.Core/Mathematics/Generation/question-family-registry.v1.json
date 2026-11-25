@@ -1310,6 +1310,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u03.l09.row_operation_entry",
+      "version": 1,
+      "skillId": "algebra.matrices.augmented_row_reduce",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u03l09-first-party-augmented-matrix-rref-independent-coefficient-or-cramer-v1",
+      "representations": [
+        "matrix",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u03.l09.rref_solution_x",
+      "version": 1,
+      "skillId": "algebra.matrices.augmented_row_reduce",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u03l09-first-party-augmented-matrix-rref-independent-coefficient-or-cramer-v1",
+      "representations": [
+        "matrix",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u03.l09.rref_solution_y",
+      "version": 1,
+      "skillId": "algebra.matrices.augmented_row_reduce",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u03l09-first-party-augmented-matrix-rref-independent-coefficient-or-cramer-v1",
+      "representations": [
+        "matrix",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l15.descartes_variations",
       "version": 1,
       "skillId": "algebra.polynomial.roots_zeros_complex",
