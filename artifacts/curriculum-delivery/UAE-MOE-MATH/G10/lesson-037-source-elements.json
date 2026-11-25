@@ -28,13 +28,12 @@
   ],
   "sourceExcludedPages": [
     148,
-    155,
-    156
+    155
   ],
-  "sourceExcludedReason": "PDF148 is mid-unit exam; PDF155 cumulative review/practice not a new lesson; PDF156 is next 2-5 graphical calculator lab, handoff to teacher extension (not fully authored on this pass).",
+  "sourceExcludedReason": "PDF148 midunit examination, PDF155 cumulative review (no unique lesson goal). PDF156 extension lab reviewed separately with teacher-scored original protocol (no claim of runtime calculator widget).",
   "sourceMethod": "Direct visual inspection of local original PDF149–154 (scanned; no OCR), and PDF148/155/156 for boundaries. Identified distinct teaching goals, exercise families, graphs and modeling tasks; not copied original publisher examples.",
   "elementDenominatorForReviewedMainLesson": 24,
-  "sourceElementCount": 24,
+  "sourceElementCount": 25,
   "sourceElements": [
     {
       "elementId": "G10-ADV-U02L05-E01",
@@ -275,10 +274,24 @@
       "goal": "تبرير لماذا نضيف (ب/٢)² وطريقة التحقق من الجذور",
       "appLocation": "RichV2 SummaryPoints + teacher rubric",
       "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-ADV-U02L05-E25",
+      "sourcePhysicalPage": 156,
+      "sourcePrintedPage": 139,
+      "category": "technology_lab",
+      "sourceGoalType": "calculator_graph_check",
+      "goal": "استعمال حاسبة الرسم البياني لتقريب جذور تربيعية والتحقق من النتائج التي نحصل عليها بإكمال المربع، مع التمييز بين قراءة رسومية تقريبية والجذر الدقيق.",
+      "appLocation": "lesson-037-teacher-rubric.md: original graphing-lab protocol (table, axis intercept estimates, exact-radical crosscheck), TEACHER_REVIEW_REQUIRED; interactive calculator UI not claimed.",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
     }
   ],
   "testStatus": "WRITTEN_NOT_RUN",
   "ownerApprovedCanonicalIndex": true,
   "originalPublisherProseOrImagesCopied": false,
-  "note": "Canonical 37 course source remains the seven-book owner-approved unified index; this ledger covers original Advanced lesson2-5 main pages. Graphing-calculator lab PDF156 is not falsely certified as digitally implemented."
+  "note": "24 main source lesson element categories on PDF149–154 plus one original technology lab PDF156, totalling 25; manual teacher protocol is authored, actual graphing-calculator tool is NOT implemented/validated.",
+  "elementDenominatorIncludingTechnologyExtension": 25,
+  "sourceTechnologyLabPages": [
+    156
+  ]
 }
