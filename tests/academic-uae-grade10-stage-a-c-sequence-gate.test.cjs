@@ -39,7 +39,7 @@ test('READY_FOR_STAGE_D is a contiguous prefix; missing-source lessons block all
   let expectedOrdinal = 1;
   for (let ordinal = 1; ordinal <= 148; ordinal++) {
     const checkpoint = records.get(ordinal);
-    if (checkpoint?.status === 'READY_FOR_STAGE_D') {
+    if (checkpoint && /^READY_FOR_STAGE_D(?:_|$)/.test(checkpoint.status)) {
       assert.equal(ordinal, expectedOrdinal, 'cannot close lesson ' + ordinal + ' before lesson ' + expectedOrdinal);
       if (checkpoint.productionRouting !== undefined) {
         assert.equal(checkpoint.productionRouting, false, 'A–B–C closure must not enable production routing');
@@ -47,7 +47,11 @@ test('READY_FOR_STAGE_D is a contiguous prefix; missing-source lessons block all
       expectedOrdinal++;
     }
     if (checkpoint?.sourceBodyVerified === false) {
-      assert.notEqual(checkpoint.status, 'READY_FOR_STAGE_D', 'cannot close lesson ' + ordinal + ' with unverified source body');
+      if (/^READY_FOR_STAGE_D(?:_|$)/.test(checkpoint.status)) {
+        assert.equal(checkpoint.status, 'READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY');
+        assert.equal(checkpoint.ownerApprovedIndexOnlyAuthoring, true);
+        assert.equal(checkpoint.fullSourceBookEquivalenceClaimed, false);
+      }
     }
   }
   const firstIncomplete = records.get(expectedOrdinal);
@@ -77,6 +81,12 @@ test('Lesson 43 stays an explicit source gap until original pages are verified a
     const unit = read(evidence + 'unit-05-stage-a-c-progress.json');
     assert.equal(unit.gradeClosedCount, 42);
     assert.equal(unit.firstIncompleteGlobalOrdinal, 43);
+  } else if (lesson.status === 'READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY') {
+    assert.equal(lesson.ownerApprovedIndexOnlyAuthoring, true);
+    assert.equal(lesson.sourceBodyVerified, false);
+    assert.equal(lesson.fullSourceBookEquivalenceClaimed, false);
+    assert.equal(lesson.sourceElementDenominatorForThisLesson, null);
+    assert.ok(pack.Lessons.some(x => x.LessonCode === expectedCode));
   } else {
     assert.equal(lesson.status, 'READY_FOR_STAGE_D',
       'gap can only be resolved by a subsequently certified A–B–C close');

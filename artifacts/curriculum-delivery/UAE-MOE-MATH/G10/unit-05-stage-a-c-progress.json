@@ -18,10 +18,12 @@
   ],
   "unit5LocalLessonCount": 9,
   "unit5StageABCClosedLocalOrdinals": [
-    1
+    1,
+    2
   ],
   "unit5StageABCClosedGlobalOrdinals": [
-    42
+    42,
+    43
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -65,14 +67,15 @@
     39,
     40,
     41,
-    42
+    42,
+    43
   ],
-  "unit5ClosedCount": 1,
-  "gradeClosedCount": 42,
-  "firstIncompleteGlobalOrdinal": 43,
-  "nextEligibleCanonicalCode": "G10-U05-L02",
-  "nextEligibleLessonTitle": "حل المعادلات والمتباينات الأسية",
-  "stageABCStatus": "UNIT_05_PARTIAL_1_OF_9_READY_FOR_STAGE_D__NEXT_L02_EXPLICIT_SOURCE_BODY_GAP",
+  "unit5ClosedCount": 2,
+  "gradeClosedCount": 43,
+  "firstIncompleteGlobalOrdinal": 44,
+  "nextEligibleCanonicalCode": "G10-U05-L03",
+  "nextEligibleLessonTitle": "اللوغاريتمات والدوال اللوغاريتمية",
+  "stageABCStatus": "UNIT_05_PARTIAL_2_OF_9__LESSON43_OWNER_INDEX_ONLY_ORIGINAL_NO_BODY_PARITY__STAGE_D_NOT_RUN",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -82,14 +85,14 @@
   "stageDStatus": "NOT_STARTED",
   "productionRouting": false,
   "desktopCommanderCalls": 0,
-  "continuationGate": "42_SEQUENTIAL_CLOSED; NEXT_G10_U05_L02_SOURCE_READ_THEN_CONTENT_THEN_EXACT_SKILL_EVIDENCE_CHECKPOINT",
+  "continuationGate": "43_ORIGINAL_INDEX_SCOPE_HANDOFF_DOCUMENTED__NEXT_44",
   "remainingRequirements": [
-    "Need actual source-body of Advanced Unit8-2 «حل المعادلات والمتباينات الأسية» from owner-approved source, OR explicit owner authorization to change source criteria. The 148 index remains approved.",
-    "Do not produce false 43/148 READY_FOR_STAGE_D, and do not skip G10-U05-L02 to U05-L03.",
-    "After actual source available: source-page objective and exercise audit, original Arabic content, exact assessment families, tests written not run, evidence+checkpoint+commit."
+    "Lesson43 original content based on approved index only, not Advanced textbook-body semantic coverage; never claim 100%.",
+    "Stage D must test exact equation family, student Arabic RTL and manual inequality reasoning.",
+    "Continue sequentially with ordinal44; do not activate productionRouting."
   ],
-  "blockedOrdinal": 43,
-  "blockedCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
+  "blockedOrdinal": null,
+  "blockedCheckpoint": null,
   "blockedEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
   "blockingReason": "Advanced 2025-2026 Unit8-2 appears in TOC p12 of 01متقدم_.pdf but its lesson body is not in any of seven supplied books. Applied 2022-23 Unit5-2 PDF121 has unrelated finite-difference function identification; cannot relabel it as exponential equation/inequality content."
 }
