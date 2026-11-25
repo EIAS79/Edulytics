@@ -2000,24 +2000,24 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
-      "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 10 General, Unit 6, Lesson 6-5",
+      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-5, PDF425–431",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 10 General / Unit 6 / Lesson 6-5",
-      "SourceTitle": "UAE Grade 10 General Mathematics Student Edition",
+      "SourceLocator": "Owner original 01.pdf, PDF425–431, printed412–418; opener + next source page visually inspected",
+      "SourceTitle": "UAE Mathematics Grade10 General 2025–2026 Volume1",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "UAE Edition",
-      "SourceRights": "Textbook used only for scope/title/order provenance; learner-facing text independently authored by Edulytics.",
+      "SourceEdition": "General 2025–2026 Volume1 (same lesson)",
+      "SourceRights": "Book used for lesson scope and theorems; Edulytics student material independently authored",
       "SourceSha256": "0e4e3699d5e67eb7e2f7c8202b9bcb42b48bef6ddabd0ba8b5c65dbf5893fe52",
       "CanonicalBodySha256": "cbd232fac7f0c1e16b6cc4840aa60f560be3ac45b5b3c1f1e47fa3a3de74e3c0",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "READY_FOR_STAGE_D (A–B–C source-scoped) — source opening and following page visually inspected, 8 original Arabic examples, four original visual tables; no complete exercise parity claim; practice teacher-scored until exact Grade10 engine; Stage D NOT_RUN, productionRouting=false.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2028,6 +2028,16 @@
           "StepByStepSolutions": "Step 1: Identify knowns and unknowns. Step 2: State relevant conditions. Step 3: Select the appropriate rule, representation or theorem. Step 4: Apply it accurately. Step 5: Verify and interpret the result.",
           "CommonMistakes": "For Triangle Inequality, avoid losing restrictions, signs, angle conditions or units, and do not accept an unchecked answer.",
           "QuickSummary": "Triangle Inequality: identify the structure, apply the correct relationship, and verify the result."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "متباينة المثلث",
+          "Explanation": "تنص متباينة المثلث على أن مجموع طولي أي ضلعين في مثلث غير منعدم يجب أن يكون أكبر من طول الضلع الثالث، لا أكبر من أو مساويًا له. إذا كان طول ضلعين أ وب، فإن طول الضلع الثالث س يحقق |أ−ب|<س<أ+ب.\n\nلتحديد إمكان تكوين مثلث من ٣ و٥ و٨، نجد ٣+٥=٨، لذا لا يتكون مثلث حقيقي؛ لأن مساواة المجموع للضلع الأطول تنتج شكلًا مستقيمًا منعدم المساحة.\n\nإذا طُلب أطوال صحيحة للضلع الثالث عند وجود ضلعين ٣ و٧، يكون ٤<س<١٠، فيقبل س∈{٥،٦،٧،٨،٩}. يجب فحص حدّي الفترة وعدم إدخالهما.\n\nيمكن استعمال المتباينة في مسائل المسافة، وتصميم القضبان والإنشاءات الهندسية، لكن المقادير الواقعية والقياسات يجب أن تكون موجبة ومتسقة في وحداتها.\n\nالمصدر الأصلي: كتاب الصف العاشر العام 2025–2026، الدرس 6-5 PDF425–431 (المطبوع412–418)، مع أمثلة وجود المثلث والاختيار المتعدد. أمثلة Edulytics أصلية.",
+          "KeyConceptsAndRules": "تنص متباينة المثلث على أن مجموع طولي أي ضلعين في مثلث غير منعدم يجب أن يكون أكبر من طول الضلع الثالث، لا أكبر من أو مساويًا له. إذا كان طول ضلعين أ وب، فإن طول الضلع الثالث س يحقق |أ−ب|<س<أ+ب.\n\nلتحديد إمكان تكوين مثلث من ٣ و٥ و٨، نجد ٣+٥=٨، لذا لا يتكون مثلث حقيقي؛ لأن مساواة المجموع للضلع الأطول تنتج شكلًا مستقيمًا منعدم المساحة.\n\nإذا طُلب أطوال صحيحة للضلع الثالث عند وجود ضلعين ٣ و٧، يكون ٤<س<١٠، فيقبل س∈{٥،٦،٧،٨،٩}. يجب فحص حدّي الفترة وعدم إدخالهما.\n\nيمكن استعمال المتباينة في مسائل المسافة، وتصميم القضبان والإنشاءات الهندسية، لكن المقادير الواقعية والقياسات يجب أن تكون موجبة ومتسقة في وحداتها.",
+          "WorkedExamples": "هل ٣،٥،٨ أطوال أضلاع مثلث؟ ٣+٥=٨، وليس أكبر من٨. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: لا\n\nهل ٥،٧،١١ أطوال أضلاع مثلث؟ ٥+٧=١٢>١١، وسائر الشروط محققة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: نعم\n\nضلعان ٣ و٧؛ ما مجال طول الثالث س؟ |٧−٣|<س<٧+٣. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ٤<س<١٠\n\nضلعان ٣ و٧؛ كم طولًا صحيحًا ممكنًا للثالث؟ ٥،٦،٧،٨،٩. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ٥ أطوال\n\nضلعان ٤ و٩؛ ما أكبر طول صحيح للثالث؟ ٥<س<١٣؛ الأكبر هو١٢. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ١٢\n\nضلعان ٦ و١٠؛ ما أصغر طول صحيح للثالث؟ ٤<س<١٦؛ الأصغر هو٥. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ٥\n\nأضلاع ٧،٧،١٤؛ هل تشكل مثلثًا؟ ٧+٧=١٤، فلا يوجد مثلث غير منعدم. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: لا\n\nأضلاع ٥،٧،٩؛ ما المحيط؟ تكوّن مثلثًا لأن ٥+٧>٩؛ المحيط=٥+٧+٩. تحقق من الشروط الهندسية وربط النتيجة بالسؤال. الإجابة: ٢١",
+          "StepByStepSolutions": "٣+٥=٨، وليس أكبر من٨. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٥+٧=١٢>١١، وسائر الشروط محققة. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n|٧−٣|<س<٧+٣. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٥،٦،٧،٨،٩. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٥<س<١٣؛ الأكبر هو١٢. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٤<س<١٦؛ الأصغر هو٥. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\n٧+٧=١٤، فلا يوجد مثلث غير منعدم. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.\n\nتكوّن مثلثًا لأن ٥+٧>٩؛ المحيط=٥+٧+٩. تحقق من الشروط الهندسية وربط النتيجة بالسؤال.\nالتحقق: التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات.",
+          "CommonMistakes": "استنتاج هندسي من رسم غير مضبوط.\nعدم التحقق من شروط النظرية المعينة.\nالخلط بين المفاهيم المتقاربة.\nعكس اتجاه التساوي أو المقارنة.\nإهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "QuickSummary": "تعرف الفرضية المناسبة قبل الحل.\nحافظ على ترتيب العناصر المتناظرة.\nاكتب مبرر كل مساواة أو متباينة.\nاختبر الحالات الحدية واستبعد غير المقبول.\nالأمثلة ورسوم Edulytics مستقلة عن نص المصدر."
         }
       ]
     },

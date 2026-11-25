@@ -1,0 +1,3 @@
+# UAE G10 lesson 83 — متباينة المثلث
+
+Original owner book: General 2025–2026 `01.pdf`, Unit6 Lesson6-5, PDF425–431, printed 412–418. Opening lesson plus the next page were visually examined (PDF425 and 426) without OCR. Original Edulytics Arabic 8 solved questions and 4 visual models; reused preexisting lesson identifier `PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY` and retained English. **Not certified**: complete per-exercise parity, full-source element denominator, CI/Stage D, student E2E and production routing. Exact Grade10 automated family unavailable for this lesson; scoring by teacher only.
