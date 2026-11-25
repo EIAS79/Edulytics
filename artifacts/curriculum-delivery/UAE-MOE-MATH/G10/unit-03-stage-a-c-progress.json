@@ -19,11 +19,13 @@
   "unit3LocalLessonCount": 9,
   "unit3StageABCClosedLocalOrdinals": [
     1,
-    2
+    2,
+    3
   ],
   "unit3StageABCClosedGlobalOrdinals": [
     25,
-    26
+    26,
+    27
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -51,30 +53,33 @@
     23,
     24,
     25,
-    26
+    26,
+    27
   ],
-  "unit3ClosedCount": 2,
-  "gradeClosedCount": 26,
-  "firstIncompleteGlobalOrdinal": 27,
-  "nextEligibleCanonicalCode": "G10-U03-L03",
-  "nextEligibleLessonTitle": "البرمجة الخطية",
-  "stageABCStatus": "UNIT_03_PARTIAL_2_OF_9_READY_FOR_STAGE_D",
+  "unit3ClosedCount": 3,
+  "gradeClosedCount": 27,
+  "firstIncompleteGlobalOrdinal": 28,
+  "nextEligibleCanonicalCode": "G10-U03-L04",
+  "nextEligibleLessonTitle": "حل أنظمة المعادلات بثلاثة متغيرات",
+  "stageABCStatus": "UNIT_03_PARTIAL_3_OF_9_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
     25,
-    26
+    26,
+    27
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-025-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-025-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "d669f95b8ae48b2e805698d3daed0b98dddcdbba",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "G10_U03L02_CLOSED_CHECKPOINT_e019d755c9c53435ac71b0563ca8b222dd73ffff_NEXT_ONLY_CANONICAL_G10_U03L03",
+  "continuationGate": "G10_U03L03_CLOSED_READY_FOR_STAGE_D_NEXT_ONLY_G10_U03L04",
   "remainingRequirements": [
-    "Next ONLY G10-U03L03 «البرمجة الخطية»: Advanced lesson1-3 begins source PDF41 printed24. Verify last original source page before next original lesson1-4 and do not merge U03L02 feasible-region identification with objective optimization.",
-    "Repair/create only lesson 27, ensure source exact objective-function/extreme point skills and teacher-drawn graph rubric; tests written but not run.",
-    "Stage D, CI, live school authentication, Neon migration, branch merging and deployment are separate."
+    "Next only canonical G10-U03L04 «حل أنظمة المعادلات بثلاثة متغيرات»: Advanced source book lesson1-4 begins physical PDF48/printed31; verify next lesson boundary.",
+    "Continue strict A–B–C source reading, Arabic original content, precise triple-equation system verifier and written-not-run tests; no Stage D or CI."
   ],
   "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-stage-a-c-checkpoint.json",
   "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-source-evidence.md",
-  "secondClosedLessonCheckpointCommit": "e019d755c9c53435ac71b0563ca8b222dd73ffff"
+  "secondClosedLessonCheckpointCommit": "e019d755c9c53435ac71b0563ca8b222dd73ffff",
+  "thirdClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-stage-a-c-checkpoint.json",
+  "thirdClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-source-evidence.md"
 }

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 27,
+  "canonicalCode": "G10-U03-L03",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "البرمجة الخطية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L03:C027",
+  "status": "READY_FOR_STAGE_D",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Vol1",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "sourcePrintedPages": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementsMapped": 26,
+  "sourceElementDenominatorForReviewedLesson": 26,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l03-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "primarySkills": [
+    "algebra.linear.programming.optimize"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l03.optimal_objective_value",
+    "uae.g10.general.u03.l03.unique_optimal_vertex"
+  ],
+  "independentVerifier": "UaeG10LinearProgrammingResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-027-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralLinearProgrammingTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 28,
+  "nextEligibleCanonicalCode": "G10-U03-L04",
+  "closedAtUtc": null,
+  "sourceEvidenceCommit": "4d648d0295e14d7a2129a48d188f7775b384ee3d",
+  "closureBasis": "PDF41–47 source 26/26 educational categories mapped to original Arabic 12 examples, six visuals, bounded exact LP verifier and teacher-scored general-region cases; tests not run.",
+  "remainingStageDObligations": [
+    "Run .NET and Node authored tests + verify actual drawing/RTL student UI",
+    "Check independent feasible-vertex verifier and tied objective outcomes",
+    "Only enable production after StageD success and whole-course safe migration"
+  ]
+}
