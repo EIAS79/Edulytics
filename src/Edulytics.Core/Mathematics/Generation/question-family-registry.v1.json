@@ -1605,6 +1605,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u04.l04.square_constant",
+      "version": 1,
+      "skillId": "algebra.quadratic.complete_square",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-u04l04-source-half-linear-square-independent-integer-stageD-pending",
+      "representations": [
+        "symbolic",
+        "area_model"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u04.l04.completed_square_roots",
+      "version": 1,
+      "skillId": "algebra.quadratic.complete_square",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-u04l04-completing-square-independent-unordered-pair-stageD-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l15.descartes_variations",
       "version": 1,
       "skillId": "algebra.polynomial.roots_zeros_complex",
