@@ -62,6 +62,8 @@ test('All three exact families use graphical systems primary skill and fail clos
  assert.equal(contract.testsRun,'WRITTEN_NOT_RUN');
  assert.equal(contract.runtimeGate.productionRouting,false);
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10GraphSystems.cs'),'utf8');
- assert.match(engine,/UaeG10GraphSystemsResponse.Verify/);
+ assert.match(engine,/internal static bool Verify/);
  assert.match(engine,/Classification\(p\)/);
+ const shared=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
+ assert.match(shared,/UaeG10GraphSystemsResponse.Verify/);
 });
