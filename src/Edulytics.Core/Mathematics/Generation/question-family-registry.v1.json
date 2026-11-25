@@ -1641,6 +1641,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u04.l05.discriminant",
+      "version": 1,
+      "skillId": "algebra.quadratic.formula_discriminant",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-u04l05-discriminant-b2minus4ac-bounded-stageD-pending",
+      "representations": [
+        "symbolic",
+        "graphical"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u04.l05.real_root_count",
+      "version": 1,
+      "skillId": "algebra.quadratic.formula_discriminant",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g10-u04l05-real-root-count-delta-sign-stageD-pending",
+      "representations": [
+        "symbolic",
+        "graphical"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u04.l05.integer_roots_formula",
+      "version": 1,
+      "skillId": "algebra.quadratic.formula_discriminant",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g10-u04l05-two-exact-integer-roots-independent-quadratic-formula-stageD-pending",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l15.descartes_variations",
       "version": 1,
       "skillId": "algebra.polynomial.roots_zeros_complex",
