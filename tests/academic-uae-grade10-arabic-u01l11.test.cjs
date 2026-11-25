@@ -23,7 +23,8 @@ test('Canonical approved General row eleven has one newly authored Arabic conten
  assert.equal(bp.UnitNumber,1);assert.equal(bp.LessonNumber,11);
  assert.equal(bp.Title,'الدوال كثيرة الحدود');
  assert.equal(bp.UnitTitle,'كثيرات الحدود والتحليل');
- assert.equal(content.Lessons.length,50);
+ assert.equal(content.Lessons.length,148);
+ assert.equal(new Set(content.Lessons.map(x=>x.LessonCode)).size,148);
  const matched=content.Lessons.filter(x=>x.LessonCode===code);
  assert.equal(matched.length,1);
  const lesson=matched[0];
