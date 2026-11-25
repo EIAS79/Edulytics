@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "globalOrdinal": 26,
+  "canonicalCode": "G10-U03-L02",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02:C026",
+  "sourceBooks": [
+    {
+      "book": "01متقدم_.pdf",
+      "edition": "Advanced 2025–2026 Arabic Volume1 Unit1 Lesson1-2",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "pages": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "supplementalCalculatorGraphPage": 40
+    }
+  ],
+  "primarySkills": [
+    "algebra.linear.inequalities.systems_two_variables"
+  ],
+  "secondarySkills": [
+    "geometry.coordinate.halfplane_intersection",
+    "algebra.linear.inequality.strict_vs_weak",
+    "algebra.linear.inequality.graph_boundary"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l02.feasible_point_membership",
+    "uae.g10.general.u03.l02.boundary_point_membership"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l01.graph_intersection_x",
+    "uae.g10.general.u03.l01.graph_intersection_y",
+    "uae.g10.general.u03.l01.graph_solution_count"
+  ],
+  "reusePolicy": "Reuse existing Grade9 exact primary two-variable inequality-system skill; add bounded Grade10 membership and boundary checks to shared ExactSkillContractQuestionEngine; do not generate or autocorrect full shaded Cartesian region.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10GraphInequalities",
+  "independentVerifier": "UaeG10GraphInequalitiesResponse.Verify",
+  "parameterKeys": [
+    "m1",
+    "m2",
+    "b1",
+    "b2",
+    "t1",
+    "t2",
+    "x",
+    "y"
+  ],
+  "bounds": {
+    "slopes": "[-3,+3]",
+    "intercepts": "[-5,+5]",
+    "relations": "0: >, 1: >=, 2: <, 3: <=",
+    "x": "[-5,+5]",
+    "y": "[-20,+20]",
+    "sampledBoundary": "y=m1*x+b1 for boundary family"
+  },
+  "exactMethod": "Evaluate y versus m1*x+b1 and m2*x+b2 independently, using inclusive or exclusive comparison from source relation code; return 1 iff BOTH true; boundary family also validates that candidate is actually ON first boundary.",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l02.feasible_point_membership",
+      "interaction": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "allowedAnswers": [
+        0,
+        1
+      ]
+    },
+    {
+      "family": "uae.g10.general.u03.l02.boundary_point_membership",
+      "interaction": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "allowedAnswers": [
+        0,
+        1
+      ]
+    }
+  ],
+  "teacherReviewRequired": [
+    "draw each boundary as solid or dashed and label correct orientation",
+    "shade exact intersection of two half planes including empty/unbounded cases",
+    "real non-integer line graph/feasible region and axes scale",
+    "model constraints from source budgeting/production hours and interpret domain",
+    "calculator graph lab and open-ended mathematical reasoning"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralGraphInequalitiesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "stageCNotAnE2EClaim": true
+}
