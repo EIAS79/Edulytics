@@ -79,6 +79,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentQuotientResponse.Quotient,
             UaeG10ExponentQuotientResponse.Negative,
             UaeG10ExponentQuotientResponse.Zero,
+            UaeG10RadicalOperationsResponse.Product,
+            UaeG10RadicalOperationsResponse.Conjugate,
             UaeG10RadicalSimplificationResponse.Square,
             UaeG10RadicalSimplificationResponse.Nth,
             UaeG10ScientificExponentResponse.Normalize,
@@ -1228,6 +1230,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalOperationsResponse.Supports(family))
+            return UaeG10RadicalOperationsResponse.Verify(family,parameters,answer);
 
         if (UaeG10RadicalSimplificationResponse.Supports(family))
             return UaeG10RadicalSimplificationResponse.Verify(family,parameters,answer);
@@ -3682,6 +3687,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10RadicalOperationsResponse.Supports(family))
+            return BuildG10RadicalOperation(family,random,difficulty);
 
         if (UaeG10RadicalSimplificationResponse.Supports(family))
             return BuildG10RadicalCoefficient(family,random,difficulty);
@@ -9841,6 +9849,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalOperationsResponse.Supports(problem.Family))
+            return UaeG10RadicalOperationsResponse.Format(problem.Family,p);
 
         if (UaeG10RadicalSimplificationResponse.Supports(problem.Family))
             return UaeG10RadicalSimplificationResponse.Format(problem.Family,p);
