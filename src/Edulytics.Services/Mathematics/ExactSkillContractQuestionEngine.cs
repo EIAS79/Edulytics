@@ -79,6 +79,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentQuotientResponse.Quotient,
             UaeG10ExponentQuotientResponse.Negative,
             UaeG10ExponentQuotientResponse.Zero,
+            UaeG10RadicalSimplificationResponse.Square,
+            UaeG10RadicalSimplificationResponse.Nth,
             UaeG10ScientificExponentResponse.Normalize,
             UaeG10ScientificExponentResponse.Product,
             UaeG10ScientificExponentResponse.Quotient,
@@ -1226,6 +1228,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(family))
+            return UaeG10RadicalSimplificationResponse.Verify(family,parameters,answer);
 
         if (UaeG10ScientificExponentResponse.Supports(family))
             return UaeG10ScientificExponentResponse.Verify(family,parameters,answer);
@@ -3677,6 +3682,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(family))
+            return BuildG10RadicalCoefficient(family,random,difficulty);
 
         if (UaeG10ScientificExponentResponse.Supports(family))
             return BuildG10ScientificExponent(family,random,difficulty);
@@ -9833,6 +9841,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(problem.Family))
+            return UaeG10RadicalSimplificationResponse.Format(problem.Family,p);
 
         if (UaeG10ScientificExponentResponse.Supports(problem.Family))
             return UaeG10ScientificExponentResponse.Format(problem.Family,p);
