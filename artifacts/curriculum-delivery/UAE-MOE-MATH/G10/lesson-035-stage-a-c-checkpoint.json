@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "course": "UAE-MOE-MATH",
+  "canonicalOrdinal": 35,
+  "canonicalCode": "G10-U04-L02",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "حل المعادلات التربيعية بالتمثيل البياني",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02:C035",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129
+  ],
+  "sourcePrintedPages": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112
+  ],
+  "sourceCalculatorLabPage": 130,
+  "nextOriginalBookLessonBegins": 131,
+  "sourceElementDenominatorForReviewedLesson": 25,
+  "sourceElementsMapped": 25,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 9,
+    "TEACHER_REVIEW_REQUIRED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 5
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l02-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "CartesianPlots": 4,
+  "primarySkills": [
+    "algebra.quadratic.solve_by_graphing"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l02.real_root_count",
+    "uae.g10.general.u04.l02.left_intercept",
+    "uae.g10.general.u04.l02.right_intercept"
+  ],
+  "independentVerifier": "UaeG10QuadraticGraphRootsResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralQuadraticGraphRootsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "firstIncompleteGlobalOrdinal": 36,
+  "nextEligibleCanonicalCode": "G10-U04-L03",
+  "sourceEvidenceCommit": "6a72fcbe6a7b914f1e5d95be1085ed537f0992e3",
+  "contentCommit": "d7ad02b89f89c8197d9de1addf640268d42ccc4d",
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closedAtUtc": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "Original 8 source lesson pages and one graphing calculator lab, 25 evidence categories, 12 original Arabic examples four true coordinate plots, independent bounded root-count/root-location verifier, 2 deferred StageD test files, teacher graph and context rubric."
+}
