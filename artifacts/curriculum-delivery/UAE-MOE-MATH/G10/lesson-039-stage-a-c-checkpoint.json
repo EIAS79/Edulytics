@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 39,
+  "canonicalCode": "G10-U04-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06:C039",
+  "title": "المتباينات التربيعية",
+  "status": "READY_FOR_STAGE_D",
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceBook": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 UAE Advanced Arabic Volume1 Unit2 Lesson2-8",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "sourcePrintedPages": [
+    158,
+    159,
+    160,
+    161,
+    162,
+    163
+  ],
+  "excludedReviewPage": 181,
+  "sourceElementCount": 24,
+  "elementCoverage": {
+    "CONTENT_AUTHORED": 9,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 11
+  },
+  "ledger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-039-source-elements.json",
+  "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-039-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-039-teacher-rubric.md",
+  "studentRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l06-ar.rich-lesson-v2.json",
+  "workedExamples": 12,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.quadratic.inequality_sign_chart"
+  ],
+  "contract": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-039-stage-c-exact-contract.json",
+  "allowedFamilies": [
+    "uae.g10.general.u04.l06.probe_truth",
+    "uae.g10.general.u04.l06.between_roots_truth",
+    "uae.g10.general.u04.l06.roots_included"
+  ],
+  "verifier": "UaeG10QuadraticInequalityResponse.Verify",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticInequalityTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "staticArtifactsReviewed": true,
+  "contentReadyCommit": "ea3e421d2d90360d731eff68e7d1b108951854cc",
+  "closedAtUtc": "2026-11-25T16:00:40.069Z",
+  "gradeClosedCount": 39,
+  "firstIncompleteGlobalOrdinal": 40,
+  "nextEligibleCanonicalCode": "G10-U04-L07",
+  "nextEligibleLessonTitle": "العلاقات والدوال التربيعية وتحويلاتها",
+  "notes": "Stage A-B-C handoff only. No Stage D tests or CI/E2E/Neon/merge/production publication."
+}
