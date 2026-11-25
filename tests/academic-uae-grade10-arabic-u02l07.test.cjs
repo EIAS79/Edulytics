@@ -44,5 +44,7 @@ test('Exact bounded scalar-value/domain families registered and fail-closed',()=
  for(const id of x.allowedQuestionFamilies){const f=reg.families.find(q=>q.id===id);assert.ok(f);assert.equal(f.skillId,x.primarySkills[0]);assert.equal(f.answerType,'exact_integer');assert.equal(f.productionRouting,false);}
  assert.equal(contract.runtimeGate.productionRouting,false);assert.equal(contract.testsRun,'WRITTEN_NOT_RUN');
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10RadicalGraph.cs'),'utf8');
- assert.match(engine,/UaeG10RadicalGraphResponse.Verify/);
+ assert.match(engine,/class\s+UaeG10RadicalGraphResponse\b/);
+ assert.match(engine,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RadicalGraphResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
