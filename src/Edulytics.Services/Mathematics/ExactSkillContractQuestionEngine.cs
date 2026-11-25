@@ -104,6 +104,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10AugmentedMatrixResponse.RowFamily,
             UaeG10AugmentedMatrixResponse.XFamily,
             UaeG10AugmentedMatrixResponse.YFamily,
+            UaeG10QuadraticGraphResponse.VertexX,
+            UaeG10QuadraticGraphResponse.VertexY,
+            UaeG10QuadraticGraphResponse.Upward,
+            UaeG10QuadraticGraphResponse.Probe,
             UaeG10RadicalGraphResponse.Value,
             UaeG10RadicalGraphResponse.DomainStart,
             UaeG10RadicalOperationsResponse.Product,
@@ -1257,6 +1261,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticGraphResponse.Supports(family))
+            return UaeG10QuadraticGraphResponse.Verify(family,parameters,answer);
 
         if (UaeG10AugmentedMatrixResponse.Supports(family))
             return UaeG10AugmentedMatrixResponse.Verify(family,parameters,answer);
@@ -3747,6 +3754,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10QuadraticGraphResponse.Supports(family))
+            return BuildG10QuadraticGraph(family,random,difficulty);
 
         if (UaeG10AugmentedMatrixResponse.Supports(family))
             return BuildG10AugmentedMatrix(family,random,difficulty);
@@ -9942,6 +9952,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticGraphResponse.Supports(problem.Family))
+            return UaeG10QuadraticGraphResponse.Format(problem.Family,p);
 
         if (UaeG10AugmentedMatrixResponse.Supports(problem.Family))
             return UaeG10AugmentedMatrixResponse.Format(problem.Family,p);
