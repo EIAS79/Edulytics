@@ -7941,6 +7941,22 @@
         "uae.g4.u16.l06.triangle_missing_angle",
         "uae.g3.u13.l04.triangle_types"
       ]
+    },
+    {
+      "id": "algebra.polynomial.rational_zero_theorem",
+      "domain": "algebra",
+      "canonicalName": "نظرية الصفر النسبي واختبار الأصفار النسبية لكثيرات الحدود",
+      "semantics": "إذا كانت معاملات P(س) صحيحة وكان الكسر المختزل p/q صفرًا نسبيًا، فإن البسط p يقسم الحد الثابت والمقام الموجب q يقسم المعامل الرئيس. القائمة مرشحات محتملة وليست كلها أصفارًا فعلية؛ تحقق بالتعويض الدقيق أو القسمة التركيبية. الجذور الأخرى قد تكون غير نسبية أو مركبة ولا يجوز حذفها.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l16.rational_candidate_count",
+        "uae.g10.general.u01.l16.rational_candidate_membership",
+        "uae.g10.general.u01.l16.rational_actual_zero"
+      ]
     }
   ]
 }
