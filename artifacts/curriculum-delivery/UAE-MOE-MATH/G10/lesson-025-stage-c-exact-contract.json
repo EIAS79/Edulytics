@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "globalOrdinal": 25,
+  "canonicalCode": "G10-U03-L01",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L01:C025",
+  "sourceBooks": [
+    {
+      "book": "01متقدم_.pdf",
+      "edition": "2025–2026 Advanced Volume1 Unit1 Lesson1-1",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "pages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  ],
+  "primarySkills": [
+    "algebra.linear.system.graphical_solution"
+  ],
+  "secondarySkills": [
+    "geometry.coordinate.intersection",
+    "algebra.linear.system.classify_solutions",
+    "algebra.linear.system.substitution_crosscheck",
+    "algebra.linear.system.elimination_crosscheck"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l01.graph_intersection_x",
+    "uae.g10.general.u03.l01.graph_intersection_y",
+    "uae.g10.general.u03.l01.graph_solution_count"
+  ],
+  "forbiddenQuestionFamilies": [
+    "geometry.coordinate.evaluate_linear_rule",
+    "uae.g10.general.u02.l07.radical_graph_y_value"
+  ],
+  "reusePolicy": "Reuse existing UAE Grade9 graphical-system SkillID, extend shared ExactSkillContractQuestionEngine with bounded exact two-line graph intersection and solution classification. Never claim a learner's drawn graph is automatically scored.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10GraphSystems",
+  "independentVerifier": "UaeG10GraphSystemsResponse.Verify",
+  "bounds": {
+    "m1": "-4..4",
+    "m2": "-4..4",
+    "b1": "-30..30",
+    "b2": "-30..30",
+    "coordinateX": "-5..5",
+    "coordinateY": "-5..5",
+    "uniqueOnlyCoordinates": true,
+    "solutionCountCodes": {
+      "noSolution": 0,
+      "unique": 1,
+      "infinite": 2
+    }
+  },
+  "exactMethod": "For a unique system y=m1*x+b1 and y=m2*x+b2, x=(b2-b1)/(m1-m2) with integer divisibility and both equations checked; classification follows slope/intercept comparison.",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l01.graph_intersection_x",
+      "interaction": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u03.l01.graph_intersection_y",
+      "interaction": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u03.l01.graph_solution_count",
+      "interaction": "IntegerKeypad",
+      "answerType": "exact_integer"
+    }
+  ],
+  "teacherReviewRequired": [
+    "plot two lines on consistent axes and explain any crossing point",
+    "explain parallel and coincident graph conditions",
+    "justify algebraic solution via substitution/elimination",
+    "non-integer/approximate graph point and graph plot accuracy",
+    "applied AED travel/cost/geometry systems and units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralGraphSystemsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "sourceScopeWarning": "Original Advanced 1-1 source book scope combined into canonical General U03L01, not new Advanced pathway. Advanced 1-2 inequality systems are next lesson."
+}
