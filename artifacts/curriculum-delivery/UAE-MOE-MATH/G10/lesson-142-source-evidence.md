@@ -1,3 +1,5 @@
-# Grade 10 lesson 142 — المتتاليات والمتسلسلات الهندسية
+# Lesson 142: source-body verification corrected
 
-Original source reference: Advanced Volume1 2025–2026 TOC p16; older 03متقدم_.pdf sequence unit, body unverified. Source-body pages could NOT be reopened because Our-CS workstation was offline. Owner-approved 148-title index retained. Edulytics authored 8 new Arabic worked examples, 4 structured original visuals and 5 explanatory paragraphs. Exact textbook element denominator remains unknown, so source-body 100% parity is NOT certified. Compatible production autoscoring is disabled; Stage D tests written but NOT_RUN.
+Owner-uploaded `03متقدم_.pdf` (2018–2019 Advanced volume3, SHA-256 `cc6b74da11980d3b9fe1cc19d2131acdb081e3ab0b493b96b7a6b9623e397ea6`) contains Chapter12 Lesson12-3 «المتتابعات والمتسلسلات الهندسية», opener **PDF240** (printed **832**). This is the same mathematical skill as the approved canonical title, with «متتابعات»/«متتاليات» wording variation.
+
+Only the opening page and representative explanation were visually inspected. No complete exercise-by-exercise parity is claimed and no assumption that this older edition equals the newer Advanced curriculum in full. Stage D still NOT_RUN; productionRouting=false.
