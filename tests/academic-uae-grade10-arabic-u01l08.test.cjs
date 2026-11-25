@@ -38,9 +38,9 @@ test('Original Arabic teaching contains inverse factoring, GCF, repeat factoring
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٣س(٢س−١)(٢س+١)')));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٢(س+٣)(س−١)(س+١)')));
  for(const x of [-5,-2,-1,0,1,2,5]){
-  assert.equal(9*x*x-16,(3*x-4)*(3*x+4));
-  assert.equal(x**4-81,(x-3)*(x+3)*(x*x+9));
-  assert.equal(2*x**3+6*x*x-2*x-6,2*(x+3)*(x-1)*(x+1));
+  assert.ok(9*x*x-16===(3*x-4)*(3*x+4));
+  assert.ok(x**4-81===(x-3)*(x+3)*(x*x+9));
+  assert.ok(2*x**3+6*x*x-2*x-6===2*(x+3)*(x-1)*(x+1));
  }
 });
 test('All 26 book-source element types preserve original page provenance and boundaries',()=>{
