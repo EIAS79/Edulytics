@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U02-L01",
+  "globalOrdinal": 17,
+  "unitNumber": 2,
+  "unitLessonNumber": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:01:MULTIPLICATION-PROPERTIES-OF-EXPONENTS",
+  "sourceBook": "01.pdf",
+  "sourceEdition": "2025–2026 General Arabic Volume1 U02L01",
+  "sourcePdfPages": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+  ],
+  "sourcePrintedPages": [
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "primarySkills": [
+    "algebra.exponent.product_rule"
+  ],
+  "secondaryTeachingSkills": [
+    "algebra.exponent.power_of_power",
+    "algebra.exponent.power_of_product",
+    "algebra.exponent.monomial_simplify"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l01.same_base_exponent",
+    "uae.g10.general.u02.l01.power_of_power_exponent",
+    "uae.g10.general.u02.l01.power_of_product_coefficient"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.powers10.multiply",
+    "supporting.powers10.evaluate",
+    "uae.g10.general.u02.l02.quotient_of_powers"
+  ],
+  "generator": "BuildG10ExponentProduct(family,random,difficulty)",
+  "engine": "Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine",
+  "independentVerifier": "UaeG10ExponentProductResponse.Verify",
+  "exactBoundedScope": "Three integer-response source-equivalent subskills: product a^m a^n→result exponent m+n; (a^m)^n→result exponent m*n; (c x^m y^n)^p→result signed coefficient c^p. NOT all open full-expression or geometric unit tasks.",
+  "parameters": [
+    "base",
+    "a",
+    "b",
+    "coefficient",
+    "power"
+  ],
+  "bounds": {
+    "base": "2..9",
+    "a": "1..7",
+    "b": "1..7",
+    "coefficient": "-6..6 except 0",
+    "power": "2..3"
+  },
+  "answerTypes": [
+    "exact_integer",
+    "exact_integer",
+    "exact_integer"
+  ],
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l01.same_base_exponent",
+      "interaction": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u02.l01.power_of_power_exponent",
+      "interaction": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u02.l01.power_of_product_coefficient",
+      "interaction": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "monomial classification and counterexamples",
+    "full symbolic simplification with multiple variables, π, negative coefficients and units",
+    "circle/cube/cylinder/prism area and volume drawings",
+    "real-world contextual model explanation and scientific energy relationship",
+    "negative/zero exponent investigations extending into next Lesson2-2",
+    "graphs x,x²,x³, writing and exploratory proof"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralExponentProductsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "authenticatedStudentPractice": "NOT_TESTED"
+  },
+  "note": "Reuses existing legitimate primary skill from Grade9 but not powers-of-ten question families as a Grade10 substitute."
+}
