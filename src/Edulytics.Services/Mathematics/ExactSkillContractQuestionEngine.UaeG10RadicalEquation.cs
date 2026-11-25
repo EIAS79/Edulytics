@@ -13,9 +13,9 @@ public sealed partial class ExactSkillContractQuestionEngine
     {
         int a=random.Next(-8,9),c=random.Next(-5,6);
         int b=random.Next(1,difficulty==ExactSkillQuestionDifficulty.Challenge?8:7);
-        int negative=random.Next(0,2);
-        int solution=b*b-a;
         bool candidate=family==UaeG10RadicalEquationResponse.CheckCandidate;
+        int negative=candidate?random.Next(0,2):0;
+        int solution=b*b-a;
         string prompt=candidate
             ? $"بعد تربيع طرفي المعادلة √(س+({a}))=({negative==1?"−":""}{b}) ظهر الحل المرشح س={solution}. هل يحقق هذا المرشح المعادلة الأصلية؟ اكتب 1 إذا تحقق، أو 0 إذا كان حلاً دخيلاً."
             : $"حل المعادلة √(س+({a}))+({c})={b+c} في الأعداد الحقيقية. اعزل الجذر ثم ربّع، وتأكد من الناتج بالتعويض في المعادلة الأصلية. اكتب قيمة س الصحيحة.";
@@ -36,8 +36,19 @@ internal static class UaeG10RadicalEquationResponse
             p["a"] is >=-8 and <=8&&p["b"] is >=1 and <=7&&
             p["c"] is >=-5 and <=5&&p["negative"] is 0 or 1;
     }
-    private static int Expected(string family,IReadOnlyDictionary<string,int> p)=>
-        family==CheckCandidate?(p["negative"]==0?1:0):p["b"]*p["b"]-p["a"];
+    private static int Expected(string family,IReadOnlyDictionary<string,int> p)
+    {
+        int candidate=p["b"]*p["b"]-p["a"];
+        if(family==Solution)return candidate;
+
+        // Compare with the ORIGINAL principal-square-root equation, not
+        // the squared equation or the hidden generator's "negative" flag.
+        int radicand=candidate+p["a"];
+        int signedRightSide=p["negative"]==1?-p["b"]:p["b"];
+        if(radicand<0||signedRightSide<0)return 0;
+        int root=(int)Math.Sqrt(radicand);
+        return root*root==radicand&&root==signedRightSide?1:0;
+    }
     internal static string Format(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Supports(family)||!Valid(p))throw new InvalidOperationException("Invalid radical equation parameters.");
