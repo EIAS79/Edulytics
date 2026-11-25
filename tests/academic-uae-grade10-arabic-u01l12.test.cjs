@@ -49,7 +49,7 @@ test('First-party graph visuals use mathematically correct original coordinate s
  for(const [i,fun] of [[0,f],[1,q],[2,g]]) {
    for(const pt of plots[i].Rows){
      const x=Number(pt.Cells[0]),y=Number(pt.Cells[1]);
-     assert.equal(y,fun(x),plots[i].Title+' x='+x);
+     assert.ok(y===fun(x),plots[i].Title+' x='+x);
    }
  }
  for(const x of [-2,-1,0,1,2,3]) {
