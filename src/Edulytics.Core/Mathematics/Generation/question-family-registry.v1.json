@@ -1184,6 +1184,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u03.l06.matrix_product_entry",
+      "version": 1,
+      "skillId": "algebra.matrices.multiply",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u03l06-scalar_cell_row_column_inner_product_and_matrix_dims-stage-d-pending",
+      "representations": [
+        "matrix",
+        "table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u03.l06.matrix_product_compatible",
+      "version": 1,
+      "skillId": "algebra.matrices.multiply",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10-u03l06-scalar_cell_row_column_inner_product_and_matrix_dims-stage-d-pending",
+      "representations": [
+        "matrix",
+        "table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l15.descartes_variations",
       "version": 1,
       "skillId": "algebra.polynomial.roots_zeros_complex",
