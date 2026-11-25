@@ -25,7 +25,7 @@ test('Arabic source content includes distinct graph root cases, four CartesianPl
  assert.equal(rich.WorkedExamples.length,12);
  assert.equal(rich.Visuals.filter(x=>x.Kind==='CartesianPlot').length,4);
  assert.ok(rich.WorkedExamples.some(x=>x.Answer.includes('س=٣ أو س=٥')));
- for(const x of [-3,-2,0,1,3,4])assert.equal(x*x-x-6,(x+2)*(x-3));
+ for(const x of [-3,-2,0,1,3,4])assert.ok(x*x-x-6===(x+2)*(x-3));
  assert.equal(-16*5*5+64*5+80,0);
  assert.equal(-16*(-1)**2+64*(-1)+80,0);
 });
