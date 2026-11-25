@@ -104,6 +104,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10AugmentedMatrixResponse.RowFamily,
             UaeG10AugmentedMatrixResponse.XFamily,
             UaeG10AugmentedMatrixResponse.YFamily,
+            UaeG10QuadraticTransformsResponse.VertexX,
+            UaeG10QuadraticTransformsResponse.VertexY,
+            UaeG10QuadraticTransformsResponse.Opening,
+            UaeG10QuadraticTransformsResponse.Probe,
             UaeG10QuadraticGraphResponse.VertexX,
             UaeG10QuadraticGraphResponse.VertexY,
             UaeG10QuadraticGraphResponse.Upward,
@@ -1293,6 +1297,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(family))
+            return UaeG10QuadraticTransformsResponse.Verify(family,parameters,answer);
 
         if (UaeG10QuadraticGraphResponse.Supports(family))
             return UaeG10QuadraticGraphResponse.Verify(family,parameters,answer);
@@ -3801,6 +3808,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(family))
+            return BuildG10QuadraticTransforms(family,random,difficulty);
 
         if (UaeG10QuadraticGraphResponse.Supports(family))
             return BuildG10QuadraticGraph(family,random,difficulty);
@@ -10014,6 +10024,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(problem.Family))
+            return UaeG10QuadraticTransformsResponse.Format(problem.Family,p);
 
         if (UaeG10QuadraticGraphResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphResponse.Format(problem.Family,p);
