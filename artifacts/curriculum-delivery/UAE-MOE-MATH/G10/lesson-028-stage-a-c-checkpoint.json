@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 28,
+  "canonicalCode": "G10-U03-L04",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "حل أنظمة المعادلات بثلاثة متغيرات",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L04:C028",
+  "status": "READY_FOR_STAGE_D",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Vol1",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "sourcePrintedPages": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "sourceElementDenominatorForReviewedLesson": 28,
+  "sourceElementsMapped": 28,
+  "sourceIndexLocked": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-028-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-028-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-028-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l04-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "primarySkills": [
+    "algebra.linear.system.three_variables"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l04.three_var_x",
+    "uae.g10.general.u03.l04.three_var_y",
+    "uae.g10.general.u03.l04.three_var_z"
+  ],
+  "independentVerifier": "UaeG10ThreeVarSystemResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-028-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralThreeVarSystemTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 29,
+  "nextEligibleCanonicalCode": "G10-U03-L05",
+  "sourceEvidenceCommit": "51aed86b54822d4a8004625b82b6e3bda044be0e",
+  "closedAtUtc": null,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "blueprintRegisteredLessonCount": 148,
+  "contentPackRegisteredLessonCount": 61,
+  "closureBasis": "28 of 28 book learning/exercise types crosswalked, 12 Arabic original examples, six original visual models, unique 3x3 full-rank exact x/y/z families and independent Cramer verifier with teacher-scored cases; StageD not run."
+}
