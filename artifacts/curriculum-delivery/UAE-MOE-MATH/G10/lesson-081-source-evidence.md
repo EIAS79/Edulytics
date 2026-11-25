@@ -1,0 +1,3 @@
+# UAE G10 lesson 81 — المتباينات في مثلث واحد
+
+Original owner book: General 2025–2026 `01.pdf`, Unit6 Lesson6-3, PDF405–415, printed 392–402. Opening lesson plus the next page were visually examined (PDF405 and 406) without OCR. Original Edulytics Arabic 8 solved questions and 4 visual models; reused preexisting lesson identifier `PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE` and retained English. **Not certified**: complete per-exercise parity, full-source element denominator, CI/Stage D, student E2E and production routing. Exact Grade10 automated family unavailable for this lesson; scoring by teacher only.
