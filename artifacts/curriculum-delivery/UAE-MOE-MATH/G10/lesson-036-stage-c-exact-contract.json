@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 36,
+  "canonicalCode": "G10-U04-L03",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03:C036",
+  "sourceBook": "01متقدم_.pdf",
+  "sourceLessonPdfPages": [
+    139,
+    140,
+    141,
+    142,
+    143,
+    144
+  ],
+  "relatedPlaneLabPdfPages": [
+    146,
+    147
+  ],
+  "sourceExcludedReviewPage": 145,
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.complex.number_operations"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l03.sum_real",
+    "uae.g10.general.u04.l03.sum_imag",
+    "uae.g10.general.u04.l03.product_real",
+    "uae.g10.general.u04.l03.product_imag",
+    "uae.g10.general.u04.l03.i_power_real",
+    "uae.g10.general.u04.l03.modulus_squared"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l02.left_intercept",
+    "uae.g10.general.u04.l01.vertex_x"
+  ],
+  "generator": "BuildG10ComplexNumber(family,random,difficulty)",
+  "independentVerifier": "UaeG10ComplexResponse.Verify recomputes sum a+c, b+d; product ac−bd, ad+bc; i^n real part n mod4; modulus squared a²+b², no dependence on generated string",
+  "bounds": {
+    "a_b_c_d": "integers [-7,7]",
+    "n": "integer [0,28]",
+    "answerType": "integer component / modulus squared",
+    "fullComplexDivision": "manual"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l03.sum_real",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l03.sum_imag",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l03.product_real",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l03.product_imag",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l03.i_power_real",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l03.modulus_squared",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "simplifying full complex numbers of form a+bi",
+    "rationalizing division of complex numbers",
+    "source graphical complex plane points and vectors",
+    "proving imaginary roots in quadratic equations",
+    "engineering AC phasor contexts and units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralComplexNumbersTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED"
+  }
+}
