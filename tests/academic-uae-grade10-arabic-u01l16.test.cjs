@@ -36,9 +36,9 @@ test('Arabic source math correctly distinguishes candidate rational zeros from a
  assert.ok(l.Visuals.some(x=>x.Kind==='CartesianPlot'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('١/٣')));
  for(const x of [-3,-1,0,1,2,3]){
-  assert.equal((3*x-1)*(x*x+x+2),3*x*x*x+2*x*x+5*x-2);
-  assert.equal((x-2)*(2*x+1)*(x*x+4),2*x**4-3*x**3+6*x*x-12*x-8);
-  assert.equal((x-1)*(x-2)*(x-3),x**3-6*x*x+11*x-6);
+  assert.ok((3*x-1)*(x*x+x+2)===3*x*x*x+2*x*x+5*x-2);
+  assert.ok((x-2)*(2*x+1)*(x*x+4)===2*x**4-3*x**3+6*x*x-12*x-8);
+  assert.ok((x-1)*(x-2)*(x-3)===x**3-6*x*x+11*x-6);
  }
  assert.equal(6*1*1-5*1+1,2,'candidate 1 is not an actual zero');
  assert.equal(6*1*1-5*1*2+4,0,'candidate 1/2 is actual by numerator 1 denominator 2');
