@@ -1,0 +1,3 @@
+# Grade10 lesson 58: المستقيمات المتوازية والمتقاطعة
+
+Official General student-book source from owner: «01.pdf», 2025–2026 Volume1 Unit3 Lesson3-1 physical PDF154–160, printed141–147. Exact identity/body visible. Original Edulytics Arabic 12 worked examples and four visuals. Existing runtime blueprint LessonCode `PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES` **preserved**; existing English translation retained; Arabic content added without creating duplicate lesson identity. Teaching source categories reviewed, full exercise parity **not certified**. Stage D not executed and productionRouting=false.
