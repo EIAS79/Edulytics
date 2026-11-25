@@ -18,10 +18,12 @@
   ],
   "unit3LocalLessonCount": 9,
   "unit3StageABCClosedLocalOrdinals": [
-    1
+    1,
+    2
   ],
   "unit3StageABCClosedGlobalOrdinals": [
-    25
+    25,
+    26
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -48,26 +50,31 @@
     22,
     23,
     24,
-    25
+    25,
+    26
   ],
-  "unit3ClosedCount": 1,
-  "gradeClosedCount": 25,
-  "firstIncompleteGlobalOrdinal": 26,
-  "nextEligibleCanonicalCode": "G10-U03-L02",
-  "nextEligibleLessonTitle": "حل أنظمة المتباينات بالتمثيل البياني",
-  "stageABCStatus": "UNIT_03_PARTIAL_1_OF_9_READY_FOR_STAGE_D",
+  "unit3ClosedCount": 2,
+  "gradeClosedCount": 26,
+  "firstIncompleteGlobalOrdinal": 27,
+  "nextEligibleCanonicalCode": "G10-U03-L03",
+  "nextEligibleLessonTitle": "البرمجة الخطية",
+  "stageABCStatus": "UNIT_03_PARTIAL_2_OF_9_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
-    25
+    25,
+    26
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-025-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-025-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "d669f95b8ae48b2e805698d3daed0b98dddcdbba",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "U03L01_CLOSED_COMMIT_d669f95b8ae48b2e805698d3daed0b98dddcdbba_NEXT_ONLY_G10_U03L02",
+  "continuationGate": "G10_U03L02_CLOSED_CHECKPOINT_e019d755c9c53435ac71b0563ca8b222dd73ffff_NEXT_ONLY_CANONICAL_G10_U03L03",
   "remainingRequirements": [
-    "Next ONLY G10-U03L02 «حل أنظمة المتباينات بالتمثيل البياني», original Advanced1-2 source PDF33 onward / printed16 onward. Determine last lesson page by visual source check.",
-    "Do not confuse two-equation intersection with two-inequality feasible region; write source-specific shading, boundary/solid-dashed and exact assessment contracts.",
-    "Stage D and production publishing remain out of scope for A-B-C."
-  ]
+    "Next ONLY G10-U03L03 «البرمجة الخطية»: Advanced lesson1-3 begins source PDF41 printed24. Verify last original source page before next original lesson1-4 and do not merge U03L02 feasible-region identification with objective optimization.",
+    "Repair/create only lesson 27, ensure source exact objective-function/extreme point skills and teacher-drawn graph rubric; tests written but not run.",
+    "Stage D, CI, live school authentication, Neon migration, branch merging and deployment are separate."
+  ],
+  "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-stage-a-c-checkpoint.json",
+  "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-026-source-evidence.md",
+  "secondClosedLessonCheckpointCommit": "e019d755c9c53435ac71b0563ca8b222dd73ffff"
 }
