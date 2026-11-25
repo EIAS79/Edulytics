@@ -1,0 +1,1 @@
+Lesson 106 مساحة الدائرة والقطاع الدائري: approved canonical index based on 01متقدم_.pdf page 9 and Applied crosswalk page13. Textbook body not exhaustively audited. Original Edulytics Arabic explanation, six distinct worked cases and three visuals. No 100% source claim. Stage D tests written but not run; manual geometry review required.
