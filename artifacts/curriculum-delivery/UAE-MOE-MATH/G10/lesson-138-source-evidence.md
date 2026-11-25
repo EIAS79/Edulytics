@@ -1,8 +1,5 @@
-# Grade 10 lesson 138: احتمالات الأحداث المستقلة وغير المستقلة
+# Grade10 Lesson 138 source correction: actual book body exists
 
-- Approved curriculum identity: PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138.
-- Book/index reference: Older General excerpt 02-2.pdf p153, source body not re-opened this session.
-- Direct body inspection: NOT DONE in this run (authorized Our-CS device offline). The approved 148-title index is preserved.
-- Independently authored 8 worked Arabic examples, 4 educational visuals, 5 explanation paragraphs and a math-topic mapping.
-- Source exercise denominator and 100% original-book equivalence: **not claimed**.
-- No compatible exact Grade10 engine provisioned, teacher scoring only; Stage D tests written, **not run**. No production routing.
+**Corrected inaccurate INDEX_ONLY claim.** Opened the owner-uploaded `02-2.pdf` directly. The original source body has Chapter10 lesson 10-5 «احتمالات الأحداث المستقلة وغير المستقلة» on **PDF page 153** (printed **683**), file SHA-256 `d3bfcb3d23850934d8e8aec88f962e5020165f6fc13823ef42a93385abdd2e1d`.
+
+Verified directly: page title, objectives/opening concept and representative instructional example. **Not** an exhaustive audit of all pages or exercises. 100% source element coverage remains unclaimed; Stage D and practice integration have NOT passed. Keep teacher scoring and productionRouting=false.
