@@ -20,12 +20,14 @@
   "unit2StageABCClosedLocalOrdinals": [
     1,
     2,
-    3
+    3,
+    4
   ],
   "unit2StageABCClosedGlobalOrdinals": [
     17,
     18,
-    19
+    19,
+    20
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -46,34 +48,39 @@
     16,
     17,
     18,
-    19
+    19,
+    20
   ],
-  "unit2ClosedCount": 3,
-  "gradeClosedCount": 19,
-  "firstIncompleteGlobalOrdinal": 20,
-  "nextEligibleCanonicalCode": "G10-U02-L04",
-  "nextEligibleLessonTitle": "الترميز العلمي",
-  "stageABCStatus": "UNIT_02_PARTIAL_3_OF_8_READY_FOR_STAGE_D",
+  "unit2ClosedCount": 4,
+  "gradeClosedCount": 20,
+  "firstIncompleteGlobalOrdinal": 21,
+  "nextEligibleCanonicalCode": "G10-U02-L05",
+  "nextEligibleLessonTitle": "تبسيط التعابير الجذرية",
+  "stageABCStatus": "UNIT_02_PARTIAL_4_OF_8_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
     17,
     18,
-    19
+    19,
+    20
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "7b6b0ae9b1c8fcd06d8dcff8129f7e9092c833ea",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "G10_U02L01_L02_L03_ORDINAL17_18_19_CLOSED; NEXT_ONLY_GLOBAL20_U02L04",
+  "continuationGate": "GLOBAL19_AND_GLOBAL20_CLOSED_A_B_C; NEXT_ONLY_GLOBAL21_U02L05",
   "remainingRequirements": [
-    "Next ONLY global20 G10-U02-L04 «الترميز العلمي». Inspect original General textbook pages and inherited grade10 code before authoring or modification.",
-    "Keep canonical 148-index, no CI or Stage D execution during A–B–C. Stage D tests WRITTEN_NOT_RUN.",
-    "Complete correct per-lesson Evidence, Checkpoint, Commit before advancing to ordinal21."
+    "Next ONLY canonical G10-U02-L05 «تبسيط التعابير الجذرية»; inspect original General Lesson2-5 and Advanced 4-4/4-5 source overlap before writing content.",
+    "Preserve distinct operations lesson G10-U02-L06, no duplicate code or copying pre-existing 20 closures.",
+    "Stage D and all CI/E2E remain NOT RUN; do not enable production routing."
   ],
   "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-a-c-checkpoint.json",
   "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-evidence.md",
   "secondClosedLessonCheckpointCommit": "bf0c2cb6b76d8fb704ee050b17fa38d05f4054a5",
   "thirdClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-a-c-checkpoint.json",
   "thirdClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-source-evidence.md",
-  "thirdClosedLessonCheckpointCommit": "c7b4d0985ac35defd8a71fbc595acd6fb4a2b8e8"
+  "thirdClosedLessonCheckpointCommit": "c7b4d0985ac35defd8a71fbc595acd6fb4a2b8e8",
+  "fourthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-stage-a-c-checkpoint.json",
+  "fourthClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-source-evidence.md",
+  "fourthClosedLessonCheckpointCommit": "cbce3c272935de2e74f9603f6666f3439f059427"
 }
