@@ -42,7 +42,7 @@ test('Original cubic and quartic visual models have numerically checked exact Ca
  const polynomial=[x=>x*(x+3)*(x-2),x=>x**4-13*x*x+36];
  for(let i=0;i<plots.length;i++)for(const point of plots[i].Rows){
   const x=Number(point.Cells[0]),y=Number(point.Cells[1]);
-  assert.equal(y,polynomial[i](x),plots[i].Title+' x='+x);
+  assert.ok(y===polynomial[i](x),plots[i].Title+' x='+x);
  }
  for(const x of [-4,-3,-2,-1,0,1,2,3,4]){
    assert.equal(x**3+x*x-6*x,x*(x+3)*(x-2));
