@@ -73,6 +73,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10RationalZerosResponse.CandidateCount,
             UaeG10RationalZerosResponse.CandidateCheck,
             UaeG10RationalZerosResponse.ActualZero,
+            UaeG10ExponentProductResponse.SameBase,
+            UaeG10ExponentProductResponse.PowerOfPower,
+            UaeG10ExponentProductResponse.ProductCoefficient,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1214,6 +1217,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentProductResponse.Supports(family))
+            return UaeG10ExponentProductResponse.Verify(family,parameters,answer);
 
         if (UaeG10RationalZerosResponse.Supports(family))
             return UaeG10RationalZerosResponse.Verify(family,parameters,answer);
@@ -3653,6 +3659,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10ExponentProductResponse.Supports(family))
+            return BuildG10ExponentProduct(family,random,difficulty);
 
         if (UaeG10RationalZerosResponse.Supports(family))
             return BuildG10RationalZeros(family,random,difficulty);
@@ -9797,6 +9806,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentProductResponse.Supports(problem.Family))
+            return UaeG10ExponentProductResponse.Format(problem.Family,p);
 
         if (UaeG10RationalZerosResponse.Supports(problem.Family))
             return UaeG10RationalZerosResponse.Format(problem.Family,p);
