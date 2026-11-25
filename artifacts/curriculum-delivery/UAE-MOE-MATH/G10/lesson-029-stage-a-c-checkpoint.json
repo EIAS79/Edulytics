@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 29,
+  "canonicalCode": "G10-U03-L05",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "العمليات على المصفوفات",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L05:C029",
+  "status": "READY_FOR_STAGE_D",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Volume1",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourcePrintedPages": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "originalSourceSegments": [
+    {
+      "title": "المصفوفات",
+      "physicalPdfPages": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "title": "العمليات على المصفوفات",
+      "physicalPdfPages": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    }
+  ],
+  "sourceElementDenominatorForReviewedLesson": 37,
+  "sourceElementsMapped": 37,
+  "sourceIndexLocked": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-029-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-029-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-029-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l05-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "primarySkills": [
+    "algebra.matrices.operations"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l05.matrix_sum_entry",
+    "uae.g10.general.u03.l05.matrix_difference_entry",
+    "uae.g10.general.u03.l05.matrix_scalar_entry"
+  ],
+  "independentVerifier": "UaeG10MatrixOperationsResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-029-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMatrixOperationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 30,
+  "nextEligibleCanonicalCode": "G10-U03-L06",
+  "sourceEvidenceCommit": "b52d76d6994ac1549fcdf4d46ce8650ff1561edd",
+  "closedAtUtc": null,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closureBasis": "Two original matrix source lessons merged into a single approved index lesson: 37/37 source types, Arabic 12 examples, 6 originals, teacher rubric, exact bounded cell-sum/difference/scalar grader, tests written not run."
+}
