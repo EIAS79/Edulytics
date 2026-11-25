@@ -1,0 +1,1 @@
+Lesson114 إزاحة التمثيلات البيانية للدوال المثلثية: canonical Advanced index PDF14–15; full source-body coverage unverified; original Arabic six examples, three visuals. CI not executed; production routing disabled; teacher review required.
