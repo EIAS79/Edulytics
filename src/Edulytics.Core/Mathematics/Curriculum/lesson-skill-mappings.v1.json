@@ -15009,6 +15009,49 @@
         "3x3 Cramer proof and fractional answers",
         "real-world GPS/ticket modeling with units"
       ]
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+      "primarySkills": [
+        "algebra.matrices.inverse"
+      ],
+      "secondarySkills": [
+        "algebra.matrices.identity_matrix",
+        "algebra.matrices.determinant2",
+        "algebra.matrices.inverse2",
+        "algebra.linear.system.inverse_matrix_method",
+        "algebra.matrices.singular_matrix"
+      ],
+      "sourceType": "G10_OWNER_ADVANCED_AR_VOL1_U01L09_PDF91_97",
+      "officialOutcomeMapped": false,
+      "officialOutcomeCodes": [],
+      "mappingConfidence": "7_ORIGINAL_SOURCE_PAGES_23_ELEMENT_TYPES_VISUALLY_REVIEWED_A_B_C_STAGE_D_TESTS_NOT_RUN",
+      "evidence": [
+        "Original Arabic Advanced owner PDF 01متقدم_.pdf SHA256 0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815, Grade10 Advanced 2025–2026 Vol1 original Unit1 Lesson1-9, PDF91–97 / printed74–80. Inverse identity/invertibility/formula, solving AX=B, worked algebraic and real-context tasks visually reviewed; PDF98 is a distinct technology lab retained for next canonical lesson.",
+        "23 educational element/exercise-type categories crosswalked, 12 authored Arabic worked examples and six original visuals in RichV2; source-specific teacher-reviewed geometric, contextual and 3x3 inverse components.",
+        "Two existing Stage C authored exact 2x2 inverse matrix families: one rational matrix-inverse entry, one invertibility decision. Their independent verifier compares exact fraction numerators by BigInteger cross multiplication. Written not-run Node and C# tests."
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U03L08_INVERSE_MATRIX_2X2_RATIONAL_ENTRY_AND_EXISTENCE",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u03.l08.inverse2_entry",
+        "uae.g10.general.u03.l08.inverse2_exists"
+      ],
+      "forbiddenQuestionFamilies": [
+        "uae.g10.general.u03.l07.cramer_x",
+        "uae.g10.general.u03.l06.matrix_product_entry"
+      ],
+      "teacherReviewRequiredFor": [
+        "full 3x3 inverse calculation",
+        "real-world contextual model AX=B and solution interpretation",
+        "singular matrix and dependent/inconsistent-system classification",
+        "full matrix inverse verification and symbolic steps"
+      ],
+      "sourceGraphicalRequirements": [
+        "labeled 2×2 matrix cells",
+        "inverse identity matrix and determinant-zero decision",
+        "no unsupported automatic 3x3 grader"
+      ]
     }
   ]
 }
