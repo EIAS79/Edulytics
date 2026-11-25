@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 42,
+  "canonicalCode": "G10-U05-L01",
+  "unitNumber": 5,
+  "unitTitle": "الدوال الأسية واللوغاريتمية",
+  "lessonTitle": "تمثيل الدوال الأسية بيانيًا",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L01:C042",
+  "status": "READY_FOR_STAGE_D",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourceEdition": "UAE Grade10 Applied Arabic 2022–2023 Volume2 Unit5 Lesson5-1 «الدوال الأسية»",
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "sourcePdfPages": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117
+  ],
+  "sourcePrintedPages": [
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300
+  ],
+  "secondaryIndexOnlySource": {
+    "book": "01متقدم_.pdf",
+    "pdfPage": 12,
+    "sourceLesson": "8-1 «التمثيل البياني للدوال الأسية»",
+    "role": "INDEX_ONLY_SOURCE_BODY_ABSENT_IN_SUPPLIED_ADVANCED_VOLUME_1"
+  },
+  "sourceElementDenominatorForThisLesson": 25,
+  "sourceElementsMapped": 25,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-source-elements.json",
+  "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l01-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 15,
+  "originalVisualModels": 6,
+  "originalCartesianPlots": 3,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 9,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 12
+  },
+  "primarySkills": [
+    "algebra.exponential.graph_features"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l01.value_at_x",
+    "uae.g10.general.u05.l01.is_growth",
+    "uae.g10.general.u05.l01.horizontal_asymptote",
+    "uae.g10.general.u05.l01.value_at_shift"
+  ],
+  "independentVerifier": "UaeG10ExponentialGraphResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "draw full growth and decay graphs including fractional negative powers",
+    "compare domain,range and horizontal asymptote for shifted graphs",
+    "apply exponent models in original real contexts with units",
+    "explain h/k transformations and coefficient amplitude"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ExponentialGraphTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "contentPackCurrentLessonCount": 75,
+  "contentPackArabicLessonsCount": 42,
+  "gradeWideArabicComplete": false,
+  "firstIncompleteGlobalOrdinal": 43,
+  "nextEligibleCanonicalCode": "G10-U05-L02",
+  "closedAtUtc": "2026-11-25T19:48:16Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "contentCloseCommit": "af8c32789adc227ffdad15e23ac6ca71b31a1d34",
+  "closureBasis": "7 original Applied source pages / 25 element types individually mapped; 15 original Arabic worked examples and six visuals incl three Cartesian plotting models; exact bounded growth/decay/asymptote/value families and standalone numeric verifier; teacher-reviewed graph/real context; tests written but NOT RUN.",
+  "remainingStageDObligations": [
+    "execute .NET and Node source/contract tests with independent parameter oracles",
+    "test Arabic RTL plotting and Input/UI with authenticated student",
+    "guard routing before all practice families tested and grade content aligned",
+    "complete and safely deploy 148 lesson bodies with protected student references"
+  ]
+}
