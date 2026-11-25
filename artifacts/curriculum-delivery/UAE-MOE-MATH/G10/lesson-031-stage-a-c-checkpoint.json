@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 31,
+  "canonicalCode": "G10-U03-L07",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "قاعدة كرامر والمحددات",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07:C031",
+  "status": "READY_FOR_STAGE_D",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "Advanced 2025–2026 Arabic Vol1",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "sourcePrintedPages": [
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "sourceElementDenominatorForReviewedLesson": 25,
+  "sourceElementsMapped": 25,
+  "sourceIndexLocked": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-031-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-031-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-031-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l07-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "primarySkills": [
+    "algebra.matrices.cramer_determinants"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l07.determinant2",
+    "uae.g10.general.u03.l07.cramer_x",
+    "uae.g10.general.u03.l07.cramer_y"
+  ],
+  "independentVerifier": "UaeG10CramerResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-031-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralCramerDeterminantsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 32,
+  "nextEligibleCanonicalCode": "G10-U03-L08",
+  "sourceEvidenceCommit": "0c1f9dae6bb88b80ad07e6642262c57f7ee990b9",
+  "closedAtUtc": null,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closureBasis": "Source PDF82-90 25 goal types, 12 original Arabic examples and 6 visuals, Cramer/determinant exact bounded independent evaluator, teacher rubric, tests authored not run."
+}
