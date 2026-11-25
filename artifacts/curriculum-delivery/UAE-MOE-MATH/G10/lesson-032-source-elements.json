@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 32,
+  "canonicalCode": "G10-U03-L08",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+  "title": "حل أنظمة المعادلات باستخدام المصفوفات العكسية",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Vol1 original lesson1-9",
+  "sourcePhysicalPdfPages": [
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "sourcePrintedPages": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "nextOriginalUnitStartsPhysicalPage": 98,
+  "sourceElementCount": 23,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElements": [
+    {
+      "elementId": "G10-U03L08-E01",
+      "sourcePhysicalPage": 91,
+      "sourcePrintedPage": 74,
+      "category": "concept",
+      "goal": "matrix identity I and inverse product conditions",
+      "appLocation": "RichV2 original identity and inverse definitions",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E02",
+      "sourcePhysicalPage": 91,
+      "sourcePrintedPage": 74,
+      "category": "concept",
+      "goal": "matrix invertible only if determinant nonzero",
+      "appLocation": "RichV2 inverse condition and zero example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E03",
+      "sourcePhysicalPage": 91,
+      "sourcePrintedPage": 74,
+      "category": "context",
+      "goal": "matrix equation applied to meal/price bundles",
+      "appLocation": "RichV2 original shop quantities and human rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E04",
+      "sourcePhysicalPage": 92,
+      "sourcePrintedPage": 75,
+      "category": "worked_example",
+      "goal": "multiply proposed inverse both ways to verify identity",
+      "appLocation": "RichV2 two-sided check example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E05",
+      "sourcePhysicalPage": 92,
+      "sourcePrintedPage": 75,
+      "category": "definition",
+      "goal": "formula for inverse of 2x2 using determinant",
+      "appLocation": "RichV2 determinant, adjugate and fraction example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E06",
+      "sourcePhysicalPage": 92,
+      "sourcePrintedPage": 75,
+      "category": "assessment",
+      "goal": "determine whether a matrix is invertible",
+      "appLocation": "new inverse2_exists exact numeric family",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L08-E07",
+      "sourcePhysicalPage": 92,
+      "sourcePrintedPage": 75,
+      "category": "example",
+      "goal": "invertible 2x2 matrix with rational entries",
+      "appLocation": "RichV2 exact fraction example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E08",
+      "sourcePhysicalPage": 93,
+      "sourcePrintedPage": 76,
+      "category": "method",
+      "goal": "correct reversal of diagonal and sign of off-diagonal",
+      "appLocation": "RichV2 inverse calculation chain",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E09",
+      "sourcePhysicalPage": 93,
+      "sourcePrintedPage": 76,
+      "category": "worked_example",
+      "goal": "original 2x2 inverse exact rational result",
+      "appLocation": "RichV2 example [1,2;3,4] inverse",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E10",
+      "sourcePhysicalPage": 93,
+      "sourcePrintedPage": 76,
+      "category": "assessment",
+      "goal": "one exact rational entry of matrix inverse",
+      "appLocation": "new inverse2_entry exact family with BigInteger verifier",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L08-E11",
+      "sourcePhysicalPage": 94,
+      "sourcePrintedPage": 77,
+      "category": "concept",
+      "goal": "represent two equations as AX=B",
+      "appLocation": "RichV2 AX=B explanation and original system example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E12",
+      "sourcePhysicalPage": 94,
+      "sourcePrintedPage": 77,
+      "category": "method",
+      "goal": "solve X=A^-1 B by left multiplication in correct order",
+      "appLocation": "RichV2 linear system using 2x2 inverse",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E13",
+      "sourcePhysicalPage": 94,
+      "sourcePrintedPage": 77,
+      "category": "worked_example",
+      "goal": "recover solution of 2x2 system with fractions in inverse",
+      "appLocation": "RichV2 equation x+2y=5;3x+4y=11",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E14",
+      "sourcePhysicalPage": 94,
+      "sourcePrintedPage": 77,
+      "category": "reasoning",
+      "goal": "why B A^-1 not valid general solution of AX=B",
+      "appLocation": "RichV2 CommonMistakes and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E15",
+      "sourcePhysicalPage": 95,
+      "sourcePrintedPage": 78,
+      "category": "context",
+      "goal": "real meal deals, bundle charges, ticket count matrix methods",
+      "appLocation": "RichV2 original shop example",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E16",
+      "sourcePhysicalPage": 95,
+      "sourcePrintedPage": 78,
+      "category": "concept",
+      "goal": "solve 3x3 systems by matrix inversion only when determinant nonzero",
+      "appLocation": "RichV2 inverse3 concept, teacher scoring",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E17",
+      "sourcePhysicalPage": 95,
+      "sourcePrintedPage": 78,
+      "category": "practice",
+      "goal": "use 2x2 inverse to solve different numeric systems",
+      "appLocation": "RichV2 multiple original worked examples",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L08-E18",
+      "sourcePhysicalPage": 95,
+      "sourcePrintedPage": 78,
+      "category": "application",
+      "goal": "interpret negative or fractional answers as quantities",
+      "appLocation": "RichV2 original check plus teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E19",
+      "sourcePhysicalPage": 96,
+      "sourcePrintedPage": 79,
+      "category": "practice",
+      "goal": "evaluate system with singular coefficient matrix",
+      "appLocation": "RichV2 no-inverse and dependent system examples",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L08-E20",
+      "sourcePhysicalPage": 96,
+      "sourcePrintedPage": 79,
+      "category": "geometry",
+      "goal": "interpret inverse in graphics and transformation",
+      "appLocation": "RichV2 geometry/identity original models",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E21",
+      "sourcePhysicalPage": 96,
+      "sourcePrintedPage": 79,
+      "category": "reasoning",
+      "goal": "check solution by verifying both original equations",
+      "appLocation": "RichV2 explicit substitution checks",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L08-E22",
+      "sourcePhysicalPage": 97,
+      "sourcePrintedPage": 80,
+      "category": "assessment",
+      "goal": "mixed cumulative standard tests on inverse systems",
+      "appLocation": "RichV2 source-equivalent original problems, rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L08-E23",
+      "sourcePhysicalPage": 97,
+      "sourcePrintedPage": 80,
+      "category": "reflection",
+      "goal": "explain inverse method and when not to use it",
+      "appLocation": "RichV2 summary and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "scope": "23 original academic/assessment category types, including technical distinctions between inverse and singular; not verbatim publisher exercise reproduction."
+}
