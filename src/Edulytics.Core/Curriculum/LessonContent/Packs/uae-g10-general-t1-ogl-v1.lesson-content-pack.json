@@ -2737,6 +2737,39 @@
           "QuickSummary": "أثبت المجال قبل الحساب.\nتذكّر تحويل اللوغاريتم إلى أس والعكس.\nراعِ رتابة الأساس في المقارنة.\nتحقق بالتعويض في التعبير الأصلي.\nمحتوى عربي أصلي، مع توثيق حدود تغطية المصدر."
         }
       ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleSourceReference": "01متقدم_.pdf PDF12 Unit8 Lesson8-5 (TITLE ONLY)",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "01متقدم_.pdf physical PDF12 Unit8 Lesson8-5 (TOC only)",
+      "SourceTitle": "UAE Grade10 Advanced Volume1 2025–2026 annual TOC",
+      "SourcePublisher": "Book index only; first-party learner content",
+      "SourceEdition": "Advanced 2025–2026 Volume1 TOC; General 2026–2027 target",
+      "SourceRights": "Edulytics original examples/text/diagrams",
+      "SourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "CanonicalBodySha256": null,
+      "SourceVerifiedAtUtc": "2026-11-25T20:00:00Z",
+      "RetrievalUrl": "https://minhaji.moe.gov.ae/",
+      "RetrievalChannel": "Owner uploaded PDF physical TOC inspected; textbook lesson body unavailable",
+      "RetrievalTimestamp": "2026-11-25T20:00:00Z",
+      "AdaptationStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY: Edulytics Arabic original 12 worked examples, four visuals. Title attested only by owner-approved index. Full original Advanced textbook lesson unavailable. Exact logarithm evaluation family reused; broader tasks require teacher review. Stage D NOT_RUN; productionRouting=false.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المعادلات والمتباينات اللوغاريتمية",
+          "Explanation": "شرط كل لوغاريتم حقيقي أن تكون حجته موجبة. في لوغ₂(س−١)=٣ يجب بدء الحل من س>١ ثم التحويل إلى س−١=٢³، والحل س=٩.\n\nعندما يتساوى لوغاريتمان بالأساس نفسه وكانت الحجتان موجبتين، تتساوى الحجتان؛ لكن حل المعادلة الجبرية قد يكون خارج المجال. يلزم اختبار كل مرشح في التعبير الأصلي.\n\nإذا كان ب>١ فلا تنعكس علامة المتباينة عند حذف اللوغاريتم؛ وإذا كان ٠<ب<١ تنعكس. مثلًا لوغ_(١/٢) س>٢ تعطي ٠<س<١/٤.\n\nالمتباينة لوغ₂(س−٣)<٢ تقتضي أولًا س>٣، وبعد الحل س−٣<٤، أي ٣<س<٧؛ تجاهل حد المجال يجعل مجموعة الحل خاطئة.\n\nهذه المسائل أصلية وفق الدرس ٨-٤ المعتمد في فهرس كتاب المتقدم، بينما متن الوحدة ٨ غير مرفق؛ ليس هناك ادعاء أن الأمثلة مأخوذة من صفحات لم تُقدَّم.",
+          "KeyConceptsAndRules": "لوغ_b(س)=ص ⇔ ب^ص=س، حيث ب>٠، ب≠١، س>٠.\n\nضع كل حجة داخل اللوغاريتم أكبر من صفر.\n\nب>١ زيادة؛ ٠<ب<١ تناقص وعكس جهة المتباينة.\n\nعوّض المرشح في المدخل قبل قبوله.",
+          "WorkedExamples": "حل لوغ₂(س−١)=٣. س−١=٨ مع س>١ النتيجة: س=٩ الإجابة: س=٩\n\nحل لوغ₃(س+٢)=٢. س+٢=٩ النتيجة: س=٧ الإجابة: س=٧\n\nحل لوغ₅(س)+١=٢. لوغ₅س=١ النتيجة: س=٥ الإجابة: س=٥\n\nحل لوغ₂(س+١)=لوغ₂(٢س−٣). س+١=٢س−٣ مع س>٣/٢ النتيجة: س=٤ الإجابة: س=٤\n\nحل لوغ_(١/٢)(س)>٢. الأساس متناقص فـ٠<س<١/٤ النتيجة: ٠<س<١/٤ الإجابة: ٠<س<١/٤\n\nحل لوغ₃(س−٢)≥١. الأساس متزايد، س−٢≥٣ النتيجة: س≥٥ الإجابة: س≥٥\n\nحل لوغ₂(س−٣)<٢. س>٣ و س−٣<٤ النتيجة: ٣<س<٧ الإجابة: ٣<س<٧\n\nحل لوغ₃(س²−٤)=٠. س²−٤=١، مع |س|>٢ النتيجة: س=±√٥ الإجابة: س=±√٥\n\nحل لوغ₂(س−١)=لوغ₂(٣−س). ١<س<٣، س−١=٣−س النتيجة: س=٢ الإجابة: س=٢\n\nحل لوغ₇(س)=٠. س=٧⁰ النتيجة: س=١ الإجابة: س=١\n\nحل لوغ_(١/٣)(س−١)≤−١. الأساس متناقص؛ س−١≥٣ النتيجة: س≥٤ الإجابة: س≥٤\n\nحل لوغ₄(٢س−١)>١. الأساس متزايد؛ ٢س−١>٤ النتيجة: س>٥/٢ الإجابة: س>٥/٢",
+          "StepByStepSolutions": "س−١=٨ مع س>١ النتيجة: س=٩\n\nس+٢=٩ النتيجة: س=٧\n\nلوغ₅س=١ النتيجة: س=٥\n\nس+١=٢س−٣ مع س>٣/٢ النتيجة: س=٤\n\nالأساس متناقص فـ٠<س<١/٤ النتيجة: ٠<س<١/٤\n\nالأساس متزايد، س−٢≥٣ النتيجة: س≥٥\n\nس>٣ و س−٣<٤ النتيجة: ٣<س<٧\n\nس²−٤=١، مع |س|>٢ النتيجة: س=±√٥\n\n١<س<٣، س−١=٣−س النتيجة: س=٢\n\nس=٧⁰ النتيجة: س=١\n\nالأساس متناقص؛ س−١≥٣ النتيجة: س≥٤\n\nالأساس متزايد؛ ٢س−١>٤ النتيجة: س>٥/٢",
+          "CommonMistakes": "إهمال شرط الحجة الموجبة.\nالخلط بين الأس واللوغاريتم بوصفه قسمة.\nنسيان اختلاف اتجاه المتباينة عند الأساس بين صفر وواحد.\nقبول قيمة لا تحقق المجال.\nعدم الرجوع إلى صيغة السؤال الأصلية للتحقق.",
+          "QuickSummary": "أثبت المجال قبل الحساب.\nتذكّر تحويل اللوغاريتم إلى أس والعكس.\nراعِ رتابة الأساس في المقارنة.\nتحقق بالتعويض في التعبير الأصلي.\nمحتوى عربي أصلي، مع توثيق حدود تغطية المصدر."
+        }
+      ]
     }
   ]
 }
