@@ -1,0 +1,1 @@
+Lesson125: تمثيلات الأشكال ثلاثية الأبعاد. Source only indexed in owner-approved 02-2.pdf near PDF54; local device offline. Original Arabic text, six problems and three visuals. No source-body equivalence claimed. Stage D not run.
