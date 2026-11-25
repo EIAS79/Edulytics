@@ -1,0 +1,74 @@
+name: UAE Grade 10 General Stage D - fail-closed candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-grade10-general-stage-d.yml'
+      - 'tools/curriculum/uae_g10_stage_d_preflight.cjs'
+      - 'tests/academic-uae-grade10*.test.cjs'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-*'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-*'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/**'
+  push:
+    branches: [feat/uae-g10-unified-arabic-source-rebuild]
+    paths:
+      - '.github/workflows/uae-grade10-general-stage-d.yml'
+      - 'tools/curriculum/uae_g10_stage_d_preflight.cjs'
+      - 'tests/academic-uae-grade10*.test.cjs'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G10/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  g10-preflight-and-node-tests:
+    name: 148-lesson structural check and all prepared Node unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Structural, Arabic, provenance and exact identity audit
+        run: |
+          set -euo pipefail
+          node tools/curriculum/uae_g10_stage_d_preflight.cjs
+      - name: Run full UAE Grade10 prepared Node suite (fail on any test)
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find tests -maxdepth 1 -name 'academic-uae-grade10*.test.cjs' | sort)
+          test "${#files[@]}" -ge 148
+          node --test "${files[@]}" 2>&1 | tee g10-node-tests.log
+      - name: Upload audit and Node test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g10-structural-and-node-tests
+          path: |
+            artifacts/uae-g10-stage-d/g10-preflight.json
+            g10-node-tests.log
+          if-no-files-found: warn
+
+  g10-fail-closed-release-decision:
+    name: G10 NO_GO until lesson-level Stage D and student verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fail closed on unresolved first-party source and Stage D obligations
+        run: node tools/curriculum/uae_g10_stage_d_preflight.cjs --release
+      - name: Upload explicit release decision with blockers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g10-stage-d-no-go-evidence
+          path: artifacts/uae-g10-stage-d/g10-preflight.json
+          if-no-files-found: warn
