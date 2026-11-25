@@ -47,5 +47,7 @@ test('Exact grade10 radical families are mapped to registered skill with fail-cl
  assert.equal(contract.testsRun,'WRITTEN_NOT_RUN');
  assert.equal(contract.runtimeGate.productionRouting,false);
  const helper=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10RadicalSimplification.cs'),'utf8');
- assert.match(helper,/UaeG10RadicalSimplificationResponse.Verify/);
+ assert.match(helper,/class\s+UaeG10RadicalSimplificationResponse\b/);
+ assert.match(helper,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RadicalSimplificationResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
