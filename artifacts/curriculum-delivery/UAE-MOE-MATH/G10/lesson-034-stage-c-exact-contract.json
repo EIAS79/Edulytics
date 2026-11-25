@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 34,
+  "canonicalCode": "G10-U04-L01",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L01:C034",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceLessonPdfPages": [
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "technologyLabPdfPage": 121,
+  "sourceExcludedReviewPage": 120,
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.quadratic.graph_features"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l01.vertex_x",
+    "uae.g10.general.u04.l01.vertex_y",
+    "uae.g10.general.u04.l01.opens_up",
+    "uae.g10.general.u04.l01.value_at_x"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l02.graph_solve",
+    "uae.g10.general.u03.l09.rref_solution_x"
+  ],
+  "parameterBounds": {
+    "a": "nonzero integer in [-4,4]",
+    "vertexX": "h in [-4,4] via b=-2*a*h",
+    "vertexY": "k in [-8,8] via c=a*h*h+k",
+    "probe": "integer x in [-7,7]",
+    "maxMagnitudeC": 72
+  },
+  "independentVerifier": "UaeG10QuadraticGraphResponse.Verify recomputes vertex h=-b/(2a), k=c-a*h*h and function value from raw parameters, not generated answer string",
+  "generator": "BuildG10QuadraticGraph(family,random,difficulty)",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l01.vertex_x",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l01.vertex_y",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l01.opens_up",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l01.value_at_x",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "visualRequirements": [
+    "real CartesianPlot with x/y coordinate arrays",
+    "axis and vertex labelled",
+    "explicit domain/range"
+  ],
+  "teacherReviewRequiredFor": [
+    "open graph construction with scale and drawing",
+    "non-integer vertex and arbitrary quadratic intercepts",
+    "quadratic regression on time/measurement data from source lab",
+    "real profit/trajectory physical domains and interpretations"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralQuadraticGraphTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED"
+  }
+}
