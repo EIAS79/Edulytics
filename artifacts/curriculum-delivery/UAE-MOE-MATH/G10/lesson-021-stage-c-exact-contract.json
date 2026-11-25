@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "canonicalCode": "G10-U02-L05",
+  "globalOrdinal": 21,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:05:SIMPLIFYING-RADICAL-EXPRESSIONS",
+  "sourceBooks": [
+    {
+      "book": "01.pdf",
+      "pages": [
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "book": "01متقدم_.pdf",
+      "pages": [
+        296,
+        297,
+        298,
+        299,
+        300,
+        301
+      ]
+    }
+  ],
+  "primarySkills": [
+    "algebra.radical.simplify"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l05.square_root_extract_coefficient",
+    "uae.g10.general.u02.l05.nth_root_extract_coefficient"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u02.l03.rational_positive_perfect_power",
+    "uae.g9.general.u08.l06.like_radical_coefficient"
+  ],
+  "reusePolicy": "Reuse shared ExactSkillContractQuestionEngine and existing algebra.radical.simplify skill; add bounded perfect-factor extracted coefficient, not new symbolic CAS.",
+  "generator": "BuildG10RadicalCoefficient(family,random,difficulty)",
+  "independentVerifier": "UaeG10RadicalSimplificationResponse.Verify(family,p,answer)",
+  "bounds": {
+    "index": "2 for square family, 3 or 4 for nth",
+    "coefficient": "2..7",
+    "residual": "one of [2,3,5,6,7,10,11,13], never a perfect nth power",
+    "radicand": "coefficient^index times residual"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l05.square_root_extract_coefficient",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l05.nth_root_extract_coefficient",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full simplified root and variable domain restrictions",
+    "odd root of negative radicand and even root real domain",
+    "rationalizing denominator and equivalent fractions",
+    "geometric and real-number class proof"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalSimplificationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}
