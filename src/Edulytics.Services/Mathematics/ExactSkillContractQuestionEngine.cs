@@ -111,6 +111,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10QuadraticGraphRootsResponse.CountFamily,
             UaeG10QuadraticGraphRootsResponse.LeftFamily,
             UaeG10QuadraticGraphRootsResponse.RightFamily,
+            UaeG10CompletingSquareResponse.TermFamily,
+            UaeG10CompletingSquareResponse.RootsFamily,
             UaeG10ComplexResponse.SumReal,
             UaeG10ComplexResponse.SumImag,
             UaeG10ComplexResponse.ProductReal,
@@ -1270,6 +1272,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CompletingSquareResponse.Supports(family))
+            return UaeG10CompletingSquareResponse.Verify(family,parameters,answer);
 
         if (UaeG10ComplexResponse.Supports(family))
             return UaeG10ComplexResponse.Verify(family,parameters,answer);
@@ -3769,6 +3774,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10CompletingSquareResponse.Supports(family))
+            return BuildG10CompletingSquare(family,random,difficulty);
 
         if (UaeG10ComplexResponse.Supports(family))
             return BuildG10ComplexNumber(family,random,difficulty);
@@ -9973,6 +9981,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10CompletingSquareResponse.Supports(problem.Family))
+            return UaeG10CompletingSquareResponse.Format(problem.Family,p);
 
         if (UaeG10ComplexResponse.Supports(problem.Family))
             return UaeG10ComplexResponse.Format(problem.Family,p);
