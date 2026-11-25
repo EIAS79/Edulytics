@@ -1274,6 +1274,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g10.general.u03.l08.inverse2_entry",
+      "version": 1,
+      "skillId": "algebra.matrices.inverse",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "u03l08-2x2-inverse-rational-numeric-verification-written-not-run",
+      "representations": [
+        "matrix",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u03.l08.inverse2_exists",
+      "version": 1,
+      "skillId": "algebra.matrices.inverse",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "u03l08-2x2-inverse-rational-numeric-verification-written-not-run",
+      "representations": [
+        "matrix",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "uae.g10.general.u01.l15.descartes_variations",
       "version": 1,
       "skillId": "algebra.polynomial.roots_zeros_complex",

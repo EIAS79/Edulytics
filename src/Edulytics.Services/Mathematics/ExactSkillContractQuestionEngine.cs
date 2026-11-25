@@ -99,6 +99,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CramerResponse.DetFamily,
             UaeG10CramerResponse.XFamily,
             UaeG10CramerResponse.YFamily,
+            UaeG10InverseMatrixResponse.EntryFamily,
+            UaeG10InverseMatrixResponse.ExistsFamily,
             UaeG10RadicalGraphResponse.Value,
             UaeG10RadicalGraphResponse.DomainStart,
             UaeG10RadicalOperationsResponse.Product,
@@ -1252,6 +1254,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10InverseMatrixResponse.Supports(family))
+            return UaeG10InverseMatrixResponse.Verify(family,parameters,answer);
 
         if (UaeG10CramerResponse.Supports(family))
             return UaeG10CramerResponse.Verify(family,parameters,answer);
@@ -3736,6 +3741,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10InverseMatrixResponse.Supports(family))
+            return BuildG10InverseMatrix(family,random,difficulty);
 
         if (UaeG10CramerResponse.Supports(family))
             return BuildG10Cramer(family,random,difficulty);
@@ -9925,6 +9933,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10InverseMatrixResponse.Supports(problem.Family))
+            return UaeG10InverseMatrixResponse.Format(problem.Family,p);
 
         if (UaeG10CramerResponse.Supports(problem.Family))
             return UaeG10CramerResponse.Format(problem.Family,p);
