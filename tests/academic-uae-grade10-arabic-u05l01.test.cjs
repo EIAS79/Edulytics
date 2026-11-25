@@ -75,5 +75,7 @@ test('Exact bound is Grade10 exponential features, not quadratic rate or chart g
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
  const response=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10ExponentialGraph.cs'),'utf8');
  assert.match(engine,/BuildG10ExponentialGraph/);
- assert.match(response,/UaeG10ExponentialGraphResponse.Verify/);
+ assert.match(response,/class\s+UaeG10ExponentialGraphResponse\b/);
+ assert.match(response,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10ExponentialGraphResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
