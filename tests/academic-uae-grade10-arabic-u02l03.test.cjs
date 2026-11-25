@@ -47,5 +47,7 @@ test('Exact sources reuse existing primary skill and do not enable production ro
  assert.equal(contract.runtimeGate.productionRouting,false);
  for(const id of m.allowedQuestionFamilies){const r=registry.families.find(x=>x.id===id);assert.ok(r,id);assert.equal(r.skillId,m.primarySkills[0]);assert.equal(r.productionRouting,false);}
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10RationalExponents.cs'),'utf8');
- assert.match(engine,/UaeG10RationalExponentsResponse.Verify/);
+ assert.match(engine,/class\s+UaeG10RationalExponentsResponse\b/);
+ assert.match(engine,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RationalExponentsResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
