@@ -21,13 +21,15 @@
     1,
     2,
     3,
-    4
+    4,
+    5
   ],
   "unit2StageABCClosedGlobalOrdinals": [
     17,
     18,
     19,
-    20
+    20,
+    21
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -49,30 +51,32 @@
     17,
     18,
     19,
-    20
+    20,
+    21
   ],
-  "unit2ClosedCount": 4,
-  "gradeClosedCount": 20,
-  "firstIncompleteGlobalOrdinal": 21,
-  "nextEligibleCanonicalCode": "G10-U02-L05",
-  "nextEligibleLessonTitle": "تبسيط التعابير الجذرية",
-  "stageABCStatus": "UNIT_02_PARTIAL_4_OF_8_READY_FOR_STAGE_D",
+  "unit2ClosedCount": 5,
+  "gradeClosedCount": 21,
+  "firstIncompleteGlobalOrdinal": 22,
+  "nextEligibleCanonicalCode": "G10-U02-L06",
+  "nextEligibleLessonTitle": "العمليات على التعابير الجذرية",
+  "stageABCStatus": "UNIT_02_PARTIAL_5_OF_8_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
     17,
     18,
     19,
-    20
+    20,
+    21
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "7b6b0ae9b1c8fcd06d8dcff8129f7e9092c833ea",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "GLOBAL19_AND_GLOBAL20_CLOSED_A_B_C; NEXT_ONLY_GLOBAL21_U02L05",
+  "continuationGate": "TWENTY_ONE_SEQUENTIAL_CLOSED_NEXT_ONLY_22_G10_U02_L06",
   "remainingRequirements": [
-    "Next ONLY canonical G10-U02-L05 «تبسيط التعابير الجذرية»; inspect original General Lesson2-5 and Advanced 4-4/4-5 source overlap before writing content.",
-    "Preserve distinct operations lesson G10-U02-L06, no duplicate code or copying pre-existing 20 closures.",
-    "Stage D and all CI/E2E remain NOT RUN; do not enable production routing."
+    "Next ONLY G10-U02L06 «العمليات على التعابير الجذرية», general PDF137 onward and Advanced4-5 PDF304–310; identify source boundary before authoring.",
+    "Don't duplicate general radical simplification lesson21; focus combining like radicals, multiplication, division, conjugates and justified domains.",
+    "Stage D tests must remain WRITTEN_NOT_RUN; no production route or publish."
   ],
   "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-a-c-checkpoint.json",
   "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-evidence.md",
@@ -82,5 +86,8 @@
   "thirdClosedLessonCheckpointCommit": "c7b4d0985ac35defd8a71fbc595acd6fb4a2b8e8",
   "fourthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-stage-a-c-checkpoint.json",
   "fourthClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-source-evidence.md",
-  "fourthClosedLessonCheckpointCommit": "cbce3c272935de2e74f9603f6666f3439f059427"
+  "fourthClosedLessonCheckpointCommit": "cbce3c272935de2e74f9603f6666f3439f059427",
+  "fifthClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-stage-a-c-checkpoint.json",
+  "fifthClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-source-evidence.md",
+  "fifthClosedLessonCheckpointCommit": "4e5184d79d5079053477c6ffe046e8d97d5e1b8f"
 }
