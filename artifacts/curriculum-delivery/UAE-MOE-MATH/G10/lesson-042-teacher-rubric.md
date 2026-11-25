@@ -1,6 +1,6 @@
 # Grade 10 General G10-U05-L01 — Original exponential graphs teacher assessment
 
-**Primary original source:** Applied 2022–2023 Volume2 `رياضيات كتاب الطالب تطبيقي 10 8.pdf`, PDF pages111–117, printed294–300. The Advanced 2025–2026 Volume1 table of contents contains a unit5 heading only, **not the lesson body**. The Applied source's graphing content is fully within the seven owner-provided books.
+**Primary original source:** Applied 2022–2023 Volume2 `رياضيات كتاب الطالب تطبيقي 10 8.pdf`, PDF pages111–117, printed294–300. The Advanced 2025–2026 Volume1 table of contents contains a Unit8 Lesson8-1 heading only, **not the lesson body**. The Applied source's graphing content is fully within the seven owner-provided books.
 
 | Assessment area | 2 points | 1 point | 0 points |
 |---|---|---|---|
