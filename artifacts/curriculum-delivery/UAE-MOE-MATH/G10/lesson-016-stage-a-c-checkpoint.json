@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 16,
+  "canonicalCode": "G10-U01-L16",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "نظرية الصفر النسبي",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L16:C016",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "book": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 UAE Advanced Arabic Volume1 Unit3 Lesson3-8, consolidated into one General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    258,
+    259,
+    260,
+    261,
+    262,
+    263
+  ],
+  "sourcePrintedPages": [
+    241,
+    242,
+    243,
+    244,
+    245,
+    246
+  ],
+  "sourceElementDenominatorForThisLesson": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 7,
+    "TEACHER_REVIEW_REQUIRED": 12
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l16-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 10,
+  "originalVisualModels": 5,
+  "cartesianPlots": 1,
+  "primarySkills": [
+    "algebra.polynomial.rational_zero_theorem"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l16.rational_candidate_count",
+    "uae.g10.general.u01.l16.rational_candidate_membership",
+    "uae.g10.general.u01.l16.rational_actual_zero"
+  ],
+  "independentVerifier": "UaeG10RationalZerosResponse.Verify: candidate divisor/GCD sets and exact Horner-type rational evaluation",
+  "rendererMatrix": {
+    "candidateCount": "IntegerKeypad",
+    "membership": "StructuredEntry",
+    "actualZero": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "complete synthetic-division factorization proof",
+    "irrational and conjugate complex roots after finding a rational zero",
+    "coordinate graphs and technology accuracy",
+    "positive three-dimensional geometry and units",
+    "explaining why p/q divisibility is necessary but not sufficient"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l16.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalZerosTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "staticSourceContentContractConsistencyReviewed": true,
+  "globalStudentContentBodyCount": 55,
+  "globalBlueprintIdentityCount": 148,
+  "firstIncompleteLessonOrdinal": 17,
+  "nextEligibleLessonOrdinal": 17,
+  "closedAtUtc": "2026-11-25T00:04:49Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closeEvidenceCommit": "779982a7f2414ad5974906d90e4814c546a79ee6",
+  "closureBasis": "Original six scanned source pages PDF258–263, 29 educational categories, unique canonical ID, Arabic 10 worked examples, five source-aligned visuals, exact candidate and actual-zero discriminating families, independent integer verifier, human rubric and written-only StageD tests.",
+  "remainingStageDObligations": [
+    "execute written .NET and Node tests and verify exact evaluation of p/q as integer polynomial",
+    "authenticated student RTL StructuredEntry validation for Arabic نعم/لا and numeric candidate count",
+    "verify question-family source routing and stage D activation before any production use",
+    "finish all 148 authored General lessons and safe runtime/Neon deploy with student identity protection"
+  ]
+}
