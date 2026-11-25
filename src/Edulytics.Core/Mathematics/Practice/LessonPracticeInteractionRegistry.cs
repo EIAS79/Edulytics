@@ -231,7 +231,8 @@ public static class LessonPracticeInteractionRegistry
         // G10 U04L04 has an unordered pair of integer roots; it is not a
         // single numeric answer nor an arbitrary generic contract widget.
         if(answerType=="contract_defined" &&
-           familyId=="uae.g10.general.u04.l04.completed_square_roots")
+           (familyId=="uae.g10.general.u04.l04.completed_square_roots" ||
+            familyId=="uae.g10.general.u04.l05.integer_roots_formula"))
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // Whole polynomial is a symbolic structured response, not a numeric coefficient.
