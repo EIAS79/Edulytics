@@ -46,7 +46,7 @@ test('Original Arabic example count, Descartes sign reasoning and Cartesian data
  const f=[x=>((x-1)**2)*(x+2),x=>x**3-x*x-4*x+4];
  for(let i=0;i<plots.length;i++)for(const p of plots[i].Rows){
   const x=Number(p.Cells[0]),y=Number(p.Cells[1]);
-  assert.equal(y,f[i](x),plots[i].Title+' x='+x);
+  assert.ok(y===f[i](x),plots[i].Title+' x='+x);
  }
  for(const x of [-3,-2,-1,0,1,2,3]){
   assert.equal((x-1)*(x+2)*(x*x-4*x+5),x**4-3*x**3-x*x+13*x-10);
