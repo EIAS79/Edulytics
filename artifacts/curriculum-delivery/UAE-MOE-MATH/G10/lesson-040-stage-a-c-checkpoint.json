@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 40,
+  "canonicalCode": "G10-U04-L07",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "العلاقات والدوال التربيعية وتحويلاتها",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L07:C040",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Volume1 Unit2 Lesson2-7, consolidated General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceLessonPdfPages": [
+    168,
+    169,
+    170,
+    171,
+    172
+  ],
+  "sourceLessonPrintedPages": [
+    151,
+    152,
+    153,
+    154,
+    155
+  ],
+  "sourceTechLabPdfPages": [
+    166,
+    167
+  ],
+  "sourceTechLabPrintedPages": [
+    149,
+    150
+  ],
+  "excludedSourcePdfPage": 173,
+  "sourceElementDenominatorForReviewedLesson": 25,
+  "sourceElementsMapped": 25,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-040-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-040-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-040-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l07-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 14,
+  "originalVisualModels": 6,
+  "originalCartesianPlots": 3,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-040-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.quadratic.graph_features"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l07.vertex_h",
+    "uae.g10.general.u04.l07.vertex_k",
+    "uae.g10.general.u04.l07.opens_up",
+    "uae.g10.general.u04.l07.value_at_x"
+  ],
+  "independentVerifier": "UaeG10QuadraticTransformsResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "source graphing calculator lab, multiple plotted parabolas",
+    "signed horizontal/vertical shifts, a stretch/reflect including fractions",
+    "derive a from vertex and a second point",
+    "real-world maximum/minimum with physical domain and units",
+    "full written algebraic completion of square"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticTransformationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "contentCloseCommit": "ea3ca0edcea72c1e30d43dfc1bc1e60e00e2a83f",
+  "firstIncompleteGlobalOrdinal": 41,
+  "nextEligibleCanonicalCode": "G10-U04-L08",
+  "closedAtUtc": "2026-11-25T19:05:19Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "Seven scanned source book pages (lab+lesson) checked, 25 element types mapped, original Arabic RichV2 14 examples/6 visuals incl Cartesian charts, independent parameter verifier and four grade-correct families, Stage D tests written but not run. No production publication."
+}
