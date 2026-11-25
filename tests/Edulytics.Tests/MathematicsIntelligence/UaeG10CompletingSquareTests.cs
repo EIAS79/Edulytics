@@ -84,12 +84,8 @@ public sealed class UaeG10CompletingSquareTests
     {
         foreach(int x in new[]{1,-11})
             Assert.Equal(0,x*x+10*x-11);
-        foreach(int x in new[]{1,5})
-        {
-            if(x==5) continue; // the second nonmonic root is fractional, checked exactly below
-            Assert.Equal(0,2*x*x-7*x+5);
-        }
-        Assert.Equal(0,2*25-7*10+5*4); // x=5/2, multiply by denominator 4
+        Assert.Equal(0,2*1*1-7*1+5);
+        Assert.Equal(0,2*25-7*10+5*4); // x=5/2, multiply the polynomial by 4
         Assert.Equal(36,(1+5)*(1+5));
         Assert.Equal(36,(-11+5)*(-11+5));
     }
