@@ -46,7 +46,7 @@ test('Original Arabic models, ten complete examples and real quadratic graph are
  assert.ok(graph);
  for(const p of graph.Rows) {
    const x=Number(p.Cells[0]),y=Number(p.Cells[1]);
-   assert.equal(y,x*x-5*x+6,'point x='+x);
+   assert.ok(y===x*x-5*x+6,'point x='+x);
  }
  assert.equal(2**3-3*(2**2)+2*2+5,5);
  assert.equal(1-6+11-6,0);
