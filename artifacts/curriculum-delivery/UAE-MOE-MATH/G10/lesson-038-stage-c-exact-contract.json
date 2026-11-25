@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 38,
+  "canonicalCode": "G10-U04-L05",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05:C038",
+  "title": "القانون العام والمميز للمعادلة التربيعية",
+  "sourceBook": "01متقدم_.pdf",
+  "originalSourceEdition": "UAE Grade10 Advanced Arabic 2025–2026 Volume1, Unit2 Lesson2-6",
+  "sourceLessonPdfPages": [
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "dispositionOfTechGraphLab": {
+    "pdfPages": [
+      166,
+      167
+    ],
+    "canonicalDestination": "G10-U04-L07",
+    "reason": "parabola families and transformations are a separate canonical teaching goal"
+  },
+  "primarySkills": [
+    "algebra.quadratic.formula_discriminant"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l05.discriminant",
+    "uae.g10.general.u04.l05.real_root_count",
+    "uae.g10.general.u04.l05.integer_roots_formula"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l04.completed_square_roots",
+    "uae.g10.general.u04.l03.sum_real"
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10QuadraticFormula(family,random,difficulty)",
+  "independentVerifier": "UaeG10QuadraticFormulaResponse.Verify computes delta=b²−4ac from parameters; for integer roots confirms positive perfect-square delta, 2a integral division and both values, independent of generated answer string",
+  "parameters": {
+    "a": "nonzero integer [-4,4]",
+    "b": "[-48,48]",
+    "c": "[-144,144]",
+    "rootFamily": "two distinct integer roots [-6,6], derived from quadratic coefficients"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l05.discriminant",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l05.real_root_count",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l05.integer_roots_formula",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "format": "two integers comma separated, order unimportant; Arabic digits and Arabic comma accepted"
+    }
+  ],
+  "teacherReviewRequired": [
+    "precise irrational and complex root expressions",
+    "full symbolic proof from completing square",
+    "three graphs with tangency and x-intercepts",
+    "projectile constraints and physical units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticFormulaTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "stageD": "NOT_STARTED"
+}
