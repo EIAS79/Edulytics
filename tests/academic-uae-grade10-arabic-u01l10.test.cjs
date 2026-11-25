@@ -22,7 +22,8 @@ test('Grade10 canonical row ten is new unique General catalog identity, not Adva
  assert.equal(b.UnitNumber,1);assert.equal(b.LessonNumber,10);
  assert.equal(b.Title,'قسمة كثيرات الحدود');assert.equal(b.UnitTitle,'كثيرات الحدود والتحليل');
  assert.equal(pack.Lessons.filter(x=>x.LessonCode===lessonCode).length,1);
- assert.equal(pack.Lessons.length,49);
+ assert.equal(pack.Lessons.length,148);
+ assert.equal(new Set(pack.Lessons.map(x=>x.LessonCode)).size,148);
  const l=pack.Lessons.find(x=>x.LessonCode===lessonCode);
  assert.equal(l.OfficialReferenceCode,null);
  assert.ok(l.SourceLocator.includes('01متقدم_.pdf physical PDF pages 204–212'));
