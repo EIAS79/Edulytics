@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 21,
+  "canonicalCode": "G10-U02-L05",
+  "unitNumber": 2,
+  "unitLessonNumber": 5,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "تبسيط التعابير الجذرية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:05:SIMPLIFYING-RADICAL-EXPRESSIONS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136
+  ],
+  "sourcePrintedPages": [
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123
+  ],
+  "advancedSourceBook": "01متقدم_.pdf",
+  "advancedSourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "advancedSourcePages": [
+    296,
+    297,
+    298,
+    299,
+    300,
+    301
+  ],
+  "advancedPrintedPages": [
+    279,
+    280,
+    281,
+    282,
+    283,
+    284
+  ],
+  "sourceElementDenominator": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 14,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 3,
+    "TEACHER_REVIEW_REQUIRED": 12
+  },
+  "sourceElementDenominatorVerified": true,
+  "sourceIndexLocked": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l05-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.radical.simplify"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l05.square_root_extract_coefficient",
+    "uae.g10.general.u02.l05.nth_root_extract_coefficient"
+  ],
+  "independentVerifier": "UaeG10RadicalSimplificationResponse.Verify",
+  "rendererMatrix": {
+    "square": "IntegerKeypad",
+    "nth": "IntegerKeypad"
+  },
+  "teacherReviewRequiredFor": [
+    "variable absolute values",
+    "real even/odd root domain restrictions",
+    "rationalizing denominators",
+    "full radical symbolic forms and geometry"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalSimplificationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "gradeClosedCountAfterCheckpoint": 21,
+  "firstIncompleteGlobalOrdinal": 22,
+  "nextEligibleCanonicalCode": "G10-U02-L06",
+  "globalArabicBodiesAuthoredCount": 21,
+  "globalContentPackCurrentLessonCount": 55,
+  "closedAtUtc": "2026-11-25T01:18:45Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closingContentCommit": "bf1ee1143da966ba801652fd46516e521140fe1f",
+  "remainingStageDObligations": [
+    "run tests only during Stage D including real Student graded sample",
+    "full radical symbolic proof/teacher assessment boundary to be preserved",
+    "complete remaining Grade10 lessons sequentially before release"
+  ]
+}
