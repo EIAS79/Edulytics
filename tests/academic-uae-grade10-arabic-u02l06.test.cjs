@@ -46,5 +46,7 @@ test('Like radical coefficient reuse and two Grade10 integer exact families rout
  assert.equal(contract.testsRun,'WRITTEN_NOT_RUN');
  assert.equal(contract.runtimeGate.productionRouting,false);
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10RadicalOperations.cs'),'utf8');
- assert.match(engine,/UaeG10RadicalOperationsResponse.Verify/);
+ assert.match(engine,/class\s+UaeG10RadicalOperationsResponse\b/);
+ assert.match(engine,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RadicalOperationsResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
