@@ -71,7 +71,9 @@ test('Practice families map to one registered GCF+zero-product skill, with disab
  const engine=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
  const source=fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.UaeG10DistributiveFactor.cs'),'utf8');
  assert.match(engine,/BuildG10DistributiveFactor/);
- assert.match(source,/UaeG10DistributiveFactorResponse.Verify/);
+ assert.match(source,/class\s+UaeG10DistributiveFactorResponse\b/);
+ assert.match(source,/static\s+bool\s+Verify\s*\(/);
+ assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10DistributiveFactorResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
 
 test('PDF48 algebra-tiles discovery is counted and teacher-scored separately from exact GCF practice',()=>{
