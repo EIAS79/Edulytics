@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 20,
+  "canonicalCode": "G10-U02-L04",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:04:SCIENTIFIC-NOTATION",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourcePdfPages": [
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "primarySkills": [
+    "supporting.indices.roots_standard_form"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l04.scientific_normalize_exponent",
+    "uae.g10.general.u02.l04.scientific_product_exponent",
+    "uae.g10.general.u02.l04.scientific_quotient_exponent"
+  ],
+  "reusePolicy": "Keep existing supported standard-form skill and bounded ExactSkillContractQuestionEngine. New parameter-only integer exponent normalization family uses fixed decimal-tenths arithmetic; do NOT claim full decimal CAS or rounding.",
+  "generator": "BuildG10ScientificExponent(family,random,difficulty)",
+  "independentVerifier": "UaeG10ScientificExponentResponse.Verify(family,parameters,answer)",
+  "bounds": {
+    "raw": "1..999 = mantissaTenths / 10",
+    "a": "12..98 = a / 10",
+    "b": "12..98 = b / 10",
+    "e1": "-6..6",
+    "e2": "-6..6"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l04.scientific_normalize_exponent",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l04.scientific_product_exponent",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l04.scientific_quotient_exponent",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full decimal mantissa and exponent result in standard form",
+    "signed source numbers and significant figures rounding",
+    "sum/difference of scientific quantities",
+    "original contextual financial, astronomical, and measurement models including units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralScientificNotationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "productionRouting": false,
+    "StageD": "NOT_STARTED"
+  },
+  "sourceBoundary": "PDF128 Midunit Test and PDF129 journal not counted as distinct lessons; PDF130 begins radical lesson 2-5."
+}
