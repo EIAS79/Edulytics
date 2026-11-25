@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 31,
+  "canonicalCode": "G10-U03-L07",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07:C031",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePhysicalPdfPages": [
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.matrices.cramer_determinants"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l07.determinant2",
+    "uae.g10.general.u03.l07.cramer_x",
+    "uae.g10.general.u03.l07.cramer_y"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l06.matrix_product_entry",
+    "uae.g10.general.u03.l04.three_var_x"
+  ],
+  "generator": "BuildG10Cramer",
+  "independentVerifier": "UaeG10CramerResponse.Verify computes D,Dx,Dy, validates integrality, invertibility and both input equations",
+  "bounds": {
+    "matrix": "2x2 entries [-6,6] with determinant nonzero",
+    "rhs": "two ints within [-48,48] derived from integer unique solution",
+    "solutions": "x,y [-4,4]",
+    "unsupported": [
+      "3x3 machine-graded expansion",
+      "zero determinant solution classification",
+      "fractional solutions"
+    ]
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l07.determinant2",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l07.cramer_x",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l07.cramer_y",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "determinant3 expansion and geometric area",
+    "rank-deficient systems with zero or infinite solutions",
+    "3x3 Cramer proof and fractional answers",
+    "real-world GPS/ticket modeling with units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralCramerDeterminantsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}

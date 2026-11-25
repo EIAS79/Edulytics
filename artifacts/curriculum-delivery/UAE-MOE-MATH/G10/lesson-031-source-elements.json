@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 31,
+  "canonicalCode": "G10-U03-L07",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07:C031",
+  "title": "قاعدة كرامر والمحددات",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Vol1 original lesson1-8",
+  "sourcePhysicalPdfPages": [
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "sourcePrintedPages": [
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "nextOriginalSourceLessonStartsPage": 91,
+  "nextSourceLessonTitle": "حل أنظمة المعادلات باستخدام معكوس المصفوفات",
+  "sourceElementCount": 25,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElements": [
+    {
+      "elementId": "G10-U03L07-E01",
+      "sourcePhysicalPage": 82,
+      "sourcePrintedPage": 65,
+      "category": "definition",
+      "goal": "second-order determinant formula ad−bc, including signed entries",
+      "appLocation": "RichV2 KeyConcepts & first three examples",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E02",
+      "sourcePhysicalPage": 82,
+      "sourcePrintedPage": 65,
+      "category": "example",
+      "goal": "evaluate determinant2 with negative diagonal products",
+      "appLocation": "RichV2 determinant2 source-equivalent golden",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E03",
+      "sourcePhysicalPage": 82,
+      "sourcePrintedPage": 65,
+      "category": "practice",
+      "goal": "numeric determinant with arbitrary signed coefficients",
+      "appLocation": "new exact determinant2 family not run",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L07-E04",
+      "sourcePhysicalPage": 83,
+      "sourcePrintedPage": 66,
+      "category": "definition",
+      "goal": "third-order determinant determinant3 and diagonal rule",
+      "appLocation": "RichV2 third-order explanation and proof example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E05",
+      "sourcePhysicalPage": 83,
+      "sourcePrintedPage": 66,
+      "category": "method",
+      "goal": "cofactor expansion +−+ for 3x3",
+      "appLocation": "RichV2 determinant3 key concept and visual",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E06",
+      "sourcePhysicalPage": 83,
+      "sourcePrintedPage": 66,
+      "category": "worked_example",
+      "goal": "evaluate third-order determinant with all signs",
+      "appLocation": "RichV2 third-order 3x3 golden sample",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E07",
+      "sourcePhysicalPage": 84,
+      "sourcePrintedPage": 67,
+      "category": "context",
+      "goal": "geometry area and satellite/GPS coordinate reasoning with determinants",
+      "appLocation": "RichV2 original triangle-area example, teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E08",
+      "sourcePhysicalPage": 84,
+      "sourcePrintedPage": 67,
+      "category": "example",
+      "goal": "apply determinant in geometry problem",
+      "appLocation": "RichV2 triangle area source-shaped original",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E09",
+      "sourcePhysicalPage": 85,
+      "sourcePrintedPage": 68,
+      "category": "definition",
+      "goal": "Cramer's rule for unique linear solution when D!=0",
+      "appLocation": "RichV2 Cramer concept and original examples",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E10",
+      "sourcePhysicalPage": 85,
+      "sourcePrintedPage": 68,
+      "category": "method",
+      "goal": "replace one variable's column by RHS constants",
+      "appLocation": "RichV2 D/Dx/Dy grid visual",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E11",
+      "sourcePhysicalPage": 85,
+      "sourcePrintedPage": 68,
+      "category": "practice",
+      "goal": "find exact x using Cramer's rule",
+      "appLocation": "new exact cramer_x family, tests unrun",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L07-E12",
+      "sourcePhysicalPage": 85,
+      "sourcePrintedPage": 68,
+      "category": "practice",
+      "goal": "find exact y using Cramer's rule",
+      "appLocation": "new exact cramer_y family, tests unrun",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L07-E13",
+      "sourcePhysicalPage": 86,
+      "sourcePrintedPage": 69,
+      "category": "method",
+      "goal": "extend Cramer to 3x3 independent system with determinants",
+      "appLocation": "RichV2 Cramer3 example using D, Dx, Dy, Dz",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E14",
+      "sourcePhysicalPage": 86,
+      "sourcePrintedPage": 69,
+      "category": "worked_example",
+      "goal": "solve 3-variable linear equation system by Cramer",
+      "appLocation": "RichV2 3-variable original check and human rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E15",
+      "sourcePhysicalPage": 86,
+      "sourcePrintedPage": 69,
+      "category": "concept",
+      "goal": "nonzero determinant implies unique solution",
+      "appLocation": "RichV2 determinant criterion",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L07-E16",
+      "sourcePhysicalPage": 87,
+      "sourcePrintedPage": 70,
+      "category": "practice",
+      "goal": "identify determinant nonzero vs zero systems",
+      "appLocation": "RichV2 zero examples and matrix rank rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E17",
+      "sourcePhysicalPage": 87,
+      "sourcePrintedPage": 70,
+      "category": "reasoning",
+      "goal": "distinguish inconsistent system from infinite solutions when determinant=0",
+      "appLocation": "RichV2 pair of zero determinant examples",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E18",
+      "sourcePhysicalPage": 87,
+      "sourcePrintedPage": 70,
+      "category": "application",
+      "goal": "coordinates and geometry with signed determinant",
+      "appLocation": "RichV2 original triangle area geometric model",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E19",
+      "sourcePhysicalPage": 88,
+      "sourcePrintedPage": 71,
+      "category": "practice",
+      "goal": "calculate determinant2 and determinant3 for new coefficients",
+      "appLocation": "RichV2 examples1–6 and exact 2x2 subset",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L07-E20",
+      "sourcePhysicalPage": 88,
+      "sourcePrintedPage": 71,
+      "category": "application",
+      "goal": "Cramer's rule in contextual table/word problem",
+      "appLocation": "RichV2 original equations and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E21",
+      "sourcePhysicalPage": 89,
+      "sourcePrintedPage": 72,
+      "category": "assessment",
+      "goal": "mixed problems solving equations with Cramer and checking",
+      "appLocation": "RichV2 original Cramer examples and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E22",
+      "sourcePhysicalPage": 89,
+      "sourcePrintedPage": 72,
+      "category": "assessment",
+      "goal": "recognize cases with determinant zero",
+      "appLocation": "RichV2 no/inf pair and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E23",
+      "sourcePhysicalPage": 89,
+      "sourcePrintedPage": 72,
+      "category": "reasoning",
+      "goal": "explain why variable columns are replaced but not rows",
+      "appLocation": "RichV2 Cramer method and CommonMistakes",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E24",
+      "sourcePhysicalPage": 90,
+      "sourcePrintedPage": 73,
+      "category": "assessment",
+      "goal": "end-of-lesson Cramer reasoning and application checks",
+      "appLocation": "RichV2 final reflection and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L07-E25",
+      "sourcePhysicalPage": 90,
+      "sourcePrintedPage": 73,
+      "category": "boundary",
+      "goal": "inverse matrix solution is separate next source lesson 1-9",
+      "appLocation": "RichV2 Cramer / inverse distinction",
+      "coverageStatus": "CONTENT_AUTHORED"
+    }
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "scope": "Original source learning and assessment category types, not reproduction of publisher problems."
+}
