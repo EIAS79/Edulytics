@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "globalOrdinal": 23,
+  "canonicalCode": "G10-U02-L07",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L07:C023",
+  "sourceBooks": [
+    {
+      "book": "01متقدم_.pdf",
+      "pages": [
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295
+      ]
+    },
+    {
+      "book": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "pages": [
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176
+      ]
+    }
+  ],
+  "primarySkills": [
+    "functions.graph.sample.coordinates"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l07.radical_graph_y_value",
+    "uae.g10.general.u02.l07.radical_graph_domain_start"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u02.l06.same_root_product_integer",
+    "uae.g10.general.u02.l08.radical_equation_linear"
+  ],
+  "reusePolicy": "Use registered exact function-coordinate skill and bounded generator y=a√(x−h)+k with x=h+n² and integer a,h,k,n. No claim automatic graph-pixel scoring.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10RadicalGraph",
+  "independentVerifier": "UaeG10RadicalGraphResponse.Verify",
+  "bounds": {
+    "a": "±1..±3",
+    "h": "-4..4",
+    "k": "-4..4",
+    "n": "0..5",
+    "input": "x=h+n² (real and square root exact)"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l07.radical_graph_y_value",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l07.radical_graph_domain_start",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full graph with axes and valid curve",
+    "range for positive/negative multiplier and domain variants",
+    "root function inverses and transformations",
+    "applied science/geometry graph context and technology lab"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalGraphTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}
