@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 19,
+  "canonicalCode": "G10-U02-L03",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:03:RATIONAL-EXPONENTS",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBooks": [
+    {
+      "book": "01.pdf",
+      "pages": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "book": "01متقدم_.pdf",
+      "pages": [
+        311,
+        312,
+        313,
+        314,
+        315,
+        316
+      ]
+    }
+  ],
+  "primarySkills": [
+    "algebra.exponent.rational_power"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l03.rational_positive_perfect_power",
+    "uae.g10.general.u02.l03.rational_negative_fraction",
+    "uae.g10.general.u02.l03.exponential_same_base_equation"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.powers10.multiply",
+    "uae.g10.general.u02.l02.negative_power_fraction",
+    "uae.g10.general.u02.l05.nth_root_simplify"
+  ],
+  "existingEngine": "ExactSkillContractQuestionEngine",
+  "existingHelper": "UaeG10RationalExponentsResponse",
+  "generator": "BuildG10RationalExponents(family,random,difficulty)",
+  "independentVerifier": "UaeG10RationalExponentsResponse.Verify(family,p,answer)",
+  "bounds": {
+    "root": "2..6",
+    "denominator": "2..4",
+    "numerator": "1..4",
+    "base": "2..8",
+    "offset": "-2..2",
+    "target": "2..7",
+    "perfectPower": "root^denominator"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l03.rational_positive_perfect_power",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l03.rational_negative_fraction",
+      "interaction": "FractionEntry"
+    },
+    {
+      "family": "uae.g10.general.u02.l03.exponential_same_base_equation",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "even/odd real-domain sign proofs",
+    "nonperfect radicals and signed bases",
+    "variable-base rational exponents",
+    "geometry and real-world growth context"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalExponentTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "sourceReview": "General PDF113–119, Advanced PDF311–316; 120/317 reviews excluded"
+}
