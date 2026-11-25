@@ -18,10 +18,12 @@
   ],
   "unit4LocalLessonCount": 8,
   "unit4StageABCClosedLocalOrdinals": [
-    1
+    1,
+    2
   ],
   "unit4StageABCClosedGlobalOrdinals": [
-    34
+    34,
+    35
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -57,26 +59,31 @@
     31,
     32,
     33,
-    34
+    34,
+    35
   ],
-  "unit4ClosedCount": 1,
-  "gradeClosedCount": 34,
-  "firstIncompleteGlobalOrdinal": 35,
-  "nextEligibleCanonicalCode": "G10-U04-L02",
-  "nextEligibleLessonTitle": "حل المعادلات التربيعية بالتمثيل البياني",
-  "stageABCStatus": "UNIT_04_PARTIAL_1_OF_8_READY_FOR_STAGE_D",
+  "unit4ClosedCount": 2,
+  "gradeClosedCount": 35,
+  "firstIncompleteGlobalOrdinal": 36,
+  "nextEligibleCanonicalCode": "G10-U04-L03",
+  "nextEligibleLessonTitle": "الأعداد المركبة",
+  "stageABCStatus": "UNIT_04_PARTIAL_2_OF_8_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
-    34
+    34,
+    35
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-034-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-034-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "ab88071800e62658ea41fb864e00fe4377ac1b3c",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "G10_U04L01_READY_FOR_STAGE_D; NEXT_ONLY_G10_U04L02_GLOBAL_35",
+  "continuationGate": "G10_U04L02_CLOSED_READY_FOR_STAGE_D_NEXT_ONLY_G10_U04L03_ORDINAL36",
   "remainingRequirements": [
-    "Next canonical G10-U04-L02 «حل المعادلات التربيعية بالتمثيل البياني», original Advanced Arabic lesson2-2 starts PDF122, technology lab PDF130, next lesson2-3 begins PDF131; verify body pages before authoring.",
-    "Use same exact source-first element map, Arabic plots and independent x-intercept solution families, preserving distinct graph-solving goal vs previous graph-feature lesson.",
-    "StageD tests remain WRITTEN_NOT_RUN; not merged or deployed to production."
-  ]
+    "Next only canonical G10-U04-L03 «الأعداد المركبة», original Advanced Arabic 2025–2026 Vol1 Unit2 Lesson2-3 starts PDF131. Identify precise final page before next source 2-4.",
+    "Author source-correct Arabic complex number content (i, conjugates, real/imaginary, arithmetic), exact bounded independent grader and teacher rubric, never duplicate other quadratic lesson.",
+    "StageD tests WRITTEN_NOT_RUN; not deployed or merged."
+  ],
+  "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-stage-a-c-checkpoint.json",
+  "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-035-source-evidence.md",
+  "secondClosedLessonCheckpointCommit": "55240af647131d45eebb7823ad04f4daa0aa5c55"
 }
