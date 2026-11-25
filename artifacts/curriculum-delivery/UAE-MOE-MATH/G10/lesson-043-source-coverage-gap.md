@@ -25,3 +25,11 @@
 - `Stage D, CI, production routing, Neon`: not run or modified.
 
 **Exact missing evidence to unblock:** the student-book body pages covering Advanced Unit8 Lesson8-2 «حل المعادلات والمتباينات الأسية» from an approved original book edition, or an explicit owner-authorized source/scope change. The approved 148-lesson index remains unchanged. Do not skip G10-U05-L02 or mark G10-U05-L03 ready in violation of the strict sequential rule. No scheduled automation.
+
+## Follow-up local-source verification — 2026-11-25
+
+The connected **Our-CS** workstation was checked again at `C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_10` without internet book substitution. Under `01_Student_Books`, the seven previously inventoried PDF books are still present. The `01_Student_Books\\متقدم` subdirectory contains no additional visible book. Under `99_Duplicate_Copies`, three separately inventoried PDFs are listed as duplicate copies, not treated as new approved student-book parts.
+
+An exact-title UTF-8 search for «حل المعادلات والمتباينات الأسية» found no text match in the three available extracted summaries `GRADE10_ALL_LESSON_SOURCE_RECORDS.csv`, `03_goals_content_evidence.csv`, or `GRADE10_UNIFIED_AR_INDEX_CONTENT_OBJECTIVES.md`. This **negative text search is only supplementary evidence** (OCR could vary); the primary documented source-body gap above remains controlling.
+
+**Decision:** checkpoint 43 remains `A_C_EXPLICIT_GAP`, current certified prefix remains **42/148**. No lesson 44+ was advanced, no Stage D/CI run was triggered, and no production/Neon changes were made. The user's request to finish 43–148 does not itself provide the absent original student pages or approve a specific replacement source. Future work must not infer such approval from an instruction to continue.
