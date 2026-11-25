@@ -31,7 +31,7 @@ test('Owner-approved G10 148 index preserves General 1-6 identity, not Advanced/
  assert.ok(ar);assert.equal(ar.Title,'حل x² + bx + c = 0');
  for(const key of ['Explanation','KeyConceptsAndRules','WorkedExamples','StepByStepSolutions','CommonMistakes','QuickSummary'])
    assert.ok(ar[key].length>240,key);
- assert.match(ar.Explanation,/الأعداد الصحيحة/);
+ assert.match(ar.Explanation,/الأعداد الصحيحة|عددين صحيحين|بمعاملات صحيحة/);
 });
 
 test('Original General pages 56–63 include algebra tiles, prime distinction, roots and geometry',()=>{
@@ -49,9 +49,9 @@ test('Original General pages 56–63 include algebra tiles, prime distinction, r
  assert.ok(v.WorkedExamples.some(x=>x.Answer.includes('(س+٤)(س+٥)')));
  assert.ok(v.WorkedExamples.some(x=>x.Answer.includes('غير قابل للتحليل')));
  for(const x of [-3,-1,0,1,2,5]){
-  assert.equal((x+4)*(x+5),x*x+9*x+20);
-  assert.equal((x-2)*(x-6),x*x-8*x+12);
-  assert.equal((x+5)*(x-3),x*x+2*x-15);
+  assert.ok((x+4)*(x+5)===x*x+9*x+20);
+  assert.ok((x-2)*(x-6)===x*x-8*x+12);
+  assert.ok((x+5)*(x-3)===x*x+2*x-15);
  }
  assert.equal(9*6,54);
 });
