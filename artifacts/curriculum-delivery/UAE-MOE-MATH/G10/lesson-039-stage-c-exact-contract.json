@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 39,
+  "canonicalCode": "G10-U04-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06:C039",
+  "title": "المتباينات التربيعية",
+  "sourceBook": "01متقدم_.pdf",
+  "originalSource": "UAE Advanced Arabic 2025–2026 Vol1 Unit2 Lesson2-8",
+  "sourcePdfPages": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "sourcePrintedPages": [
+    158,
+    159,
+    160,
+    161,
+    162,
+    163
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.quadratic.inequality_sign_chart"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l06.probe_truth",
+    "uae.g10.general.u04.l06.between_roots_truth",
+    "uae.g10.general.u04.l06.roots_included"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l05.integer_roots_formula",
+    "uae.g10.general.u04.l04.completed_square_roots"
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10QuadraticInequality(family,random,difficulty)",
+  "independentVerifier": "UaeG10QuadraticInequalityResponse.Verify independently evaluates a(x-r1)(x-r2), sign on interval interior, and inclusive/strict root membership",
+  "parameterBounds": {
+    "a": "nonzero integer [-4,4]",
+    "r1": "integer [-8,8]",
+    "r2": "integer [-8,8], r1<r2",
+    "q": "0> 1≥ 2< 3≤",
+    "x": "integer probe [-9,9]"
+  },
+  "scope": "Answer 1=true,0=false for single point, all of open interior, or both boundary endpoints. Complete interval solution sets and freehand graphs are TEACHER_REVIEW_REQUIRED.",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l06.probe_truth",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u04.l06.between_roots_truth",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u04.l06.roots_included",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full open/closed interval notation and union of intervals",
+    "irrational quadratic formula endpoints and sign-table reasoning",
+    "freehand parabola graphs, shading and number-line plots",
+    "profit, area, physical domain constraints"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticInequalityTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "stageD": "NOT_STARTED"
+}
