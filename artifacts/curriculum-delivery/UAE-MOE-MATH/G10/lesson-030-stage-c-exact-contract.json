@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 30,
+  "canonicalCode": "G10-U03-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06:C030",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePhysicalPdfPages": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "sourceSupplementalLabPages": [
+    80,
+    81
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.matrices.multiply"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l06.matrix_product_entry",
+    "uae.g10.general.u03.l06.matrix_product_compatible"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l05.matrix_scalar_entry",
+    "uae.g10.general.u03.l05.matrix_sum_entry"
+  ],
+  "generator": "BuildG10MatrixProduct",
+  "independentVerifier": "UaeG10MatrixProductResponse.Verify checks row-column inner product or inner-dimension compatibility from original parameters",
+  "bounds": {
+    "product": "2×2 by 2×2; one requested integer entry, matrix values [-6,6]",
+    "size": "four 1..3 integer matrix size components; output 1 if compatible, else 0"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l06.matrix_product_entry",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l06.matrix_product_compatible",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "full non-square matrix multiplication",
+    "noncommutativity and identity proofs",
+    "technology calculator source activity",
+    "geometric matrix transformations and contextual sales/revenue units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMatrixProductTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}
