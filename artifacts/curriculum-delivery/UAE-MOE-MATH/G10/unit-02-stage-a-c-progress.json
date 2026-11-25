@@ -18,10 +18,12 @@
   ],
   "unit2LocalLessonCount": 8,
   "unit2StageABCClosedLocalOrdinals": [
-    1
+    1,
+    2
   ],
   "unit2StageABCClosedGlobalOrdinals": [
-    17
+    17,
+    18
   ],
   "closedGlobalOrdinalPrefix": [
     1,
@@ -40,26 +42,31 @@
     14,
     15,
     16,
-    17
+    17,
+    18
   ],
-  "unit2ClosedCount": 1,
-  "gradeClosedCount": 17,
-  "firstIncompleteGlobalOrdinal": 18,
-  "nextEligibleCanonicalCode": "G10-U02-L02",
-  "nextEligibleLessonTitle": "خواص قسمة الأسس",
-  "stageABCStatus": "UNIT_02_PARTIAL_1_OF_8_READY_FOR_STAGE_D",
+  "unit2ClosedCount": 2,
+  "gradeClosedCount": 18,
+  "firstIncompleteGlobalOrdinal": 19,
+  "nextEligibleCanonicalCode": "G10-U02-L03",
+  "nextEligibleLessonTitle": "الأسس النسبية",
+  "stageABCStatus": "UNIT_02_PARTIAL_2_OF_8_READY_FOR_STAGE_D",
   "sourceBodyReviewedGlobalOrdinals": [
-    17
+    17,
+    18
   ],
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-a-c-checkpoint.json",
   "firstClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
   "firstClosedLessonCheckpointCommit": "7b6b0ae9b1c8fcd06d8dcff8129f7e9092c833ea",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageDStatus": "NOT_STARTED",
-  "continuationGate": "FIRST_UNIT16_CLOSED_THEN_UNIT2_L01_GLOBAL17_CLOSED; NEXT_G10_U02L02_GLOBAL18",
+  "continuationGate": "U02L01_AND_U02L02_CLOSED_SEQUENTIALLY; NEXT_G10_U02L03_GLOBAL19",
   "remainingRequirements": [
-    "Next only U02L02 «خواص قسمة الأسس»: General Volume1 01.pdf printed page92 starts PDF105; confirm full source boundary through PDF112 / printed99 before Unit2 Lesson2-3 begins PDF113.",
-    "Distinguish quotient exponent subtraction and zero/negative exponents from prior product rules; author exact contract and human-scored source activities without unnecessary duplicate Grade9 engines.",
-    "No Stage D test execution/CI/Neon/deploy at A-B-C. Maintain strict sequential READY_FOR_STAGE_D checkpoint before next ordinal."
-  ]
+    "Next ONLY global19 G10-U02L03 «الأسس النسبية», compare 01.pdf General Lesson2-3 with Advanced 01متقدم_.pdf Unit4 related rational power content, deduplicate root teaching and preserve distinct later radical simplification lessons.",
+    "Author Arabic source-correct lesson and exact rational-power scorer, teacher proof/geometry rubric and tests written not run, then evidence/checkpoint/commit before global20.",
+    "No Stage D, no productionRouting activation, no Neon migration or publish during A–B–C."
+  ],
+  "secondClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-a-c-checkpoint.json",
+  "secondClosedLessonSourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-source-evidence.md",
+  "secondClosedLessonCheckpointCommit": "bf0c2cb6b76d8fb704ee050b17fa38d05f4054a5"
 }
