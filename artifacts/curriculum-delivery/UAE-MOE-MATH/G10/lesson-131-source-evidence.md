@@ -1,0 +1,1 @@
+G10 ordinal131 الهندسة الفراغية; 02-2.pdf indexed PDF101, actual pages not checked due disconnected desktop. Original Arabic six worked examples, 3 visuals; no full source parity claim; StageD not run.
