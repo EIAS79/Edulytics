@@ -79,6 +79,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentQuotientResponse.Quotient,
             UaeG10ExponentQuotientResponse.Negative,
             UaeG10ExponentQuotientResponse.Zero,
+            UaeG10RationalExponentsResponse.Positive,
+            UaeG10RationalExponentsResponse.Negative,
+            UaeG10RationalExponentsResponse.Equation,
             UaeG10DistributiveFactorResponse.CommonFamily,
             UaeG10DistributiveFactorResponse.RootsFamily,
             UaeG10MonicQuadraticResponse.FactorFamily,
@@ -1220,6 +1223,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalExponentsResponse.Supports(family))
+            return UaeG10RationalExponentsResponse.Verify(family,parameters,answer);
 
         if (UaeG10ExponentQuotientResponse.Supports(family))
             return UaeG10ExponentQuotientResponse.Verify(family,parameters,answer);
@@ -3665,6 +3671,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(family))
             return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10RationalExponentsResponse.Supports(family))
+            return BuildG10RationalExponents(family,random,difficulty);
 
         if (UaeG10ExponentQuotientResponse.Supports(family))
             return BuildG10ExponentQuotient(family,random,difficulty);
@@ -9815,6 +9824,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
             return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalExponentsResponse.Supports(problem.Family))
+            return UaeG10RationalExponentsResponse.Format(problem.Family,p);
 
         if (UaeG10ExponentQuotientResponse.Supports(problem.Family))
             return UaeG10ExponentQuotientResponse.Format(problem.Family,p);
