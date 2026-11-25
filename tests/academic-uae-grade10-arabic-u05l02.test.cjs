@@ -8,21 +8,23 @@ const cp=load(prefix+'lesson-043-stage-a-c-checkpoint.json');
 const pack=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
 const rich=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l02-ar.rich-lesson-v2.json');
 const code='PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043';
-test('Lesson43 has independently authored Arabic content while source-body mismatch stays explicit',()=>{
+test('Lesson43 has independently authored Arabic content while source body is verified using same-title Applied student book',()=>{
  assert.equal(cp.canonicalOrdinal,43);
  assert.equal(cp.sourceIndexTitleVerified,true);
- assert.equal(cp.sourceBodyVerified,false);
- assert.equal(cp.ownerApprovedIndexOnlyAuthoring,true);
+ assert.equal(cp.sourceBodyVerified,true);
+ assert.equal(cp.ownerApprovedIndexOnlyAuthoring,false);
  assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
+ assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),155);
  assert.equal(cp.productionRouting,false);
- assert.ok(cp.status.includes('ORIGINAL_INDEX_ONLY'));
+ assert.equal(cp.status,'READY_FOR_STAGE_D');
+ assert.equal(cp.sourceSha256,'96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e');
  const entry=pack.Lessons.find(x=>x.LessonCode===code);
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,12);
- assert.equal(rich.Lessons[0].Visuals.length,4);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,16);
+ assert.equal(rich.Lessons[0].Visuals.length,5);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
  for(const x of [-2,-1,0,1,2,3,4,5]){
