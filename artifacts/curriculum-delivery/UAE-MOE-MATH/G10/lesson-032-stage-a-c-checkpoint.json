@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 32,
+  "canonicalCode": "G10-U03-L08",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "حل أنظمة المعادلات باستخدام المصفوفات العكسية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Vol1 original U01L09 consolidated into General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "sourcePrintedPages": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "sourceElementDenominatorForReviewedLesson": 23,
+  "sourceElementsMapped": 23,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 11,
+    "TEACHER_REVIEW_REQUIRED": 8,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-032-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-032-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-032-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l08-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 12,
+  "originalVisualModels": 6,
+  "primarySkills": [
+    "algebra.matrices.inverse"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l08.inverse2_entry",
+    "uae.g10.general.u03.l08.inverse2_exists"
+  ],
+  "independentVerifier": "UaeG10InverseMatrixResponse.Verify with determinant condition and BigInteger exact fraction equivalence",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-032-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralInverseMatrixTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 33,
+  "nextEligibleCanonicalCode": "G10-U03-L09",
+  "sourceEvidenceCommit": "6445587a027925d5a20ad796393e67706fdf98b8",
+  "closedAtUtc": null,
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closureBasis": "7 source pages 23 distinct educational goal/assessment types; first-party Arabic 12 examples six visuals; exact matrix inverse rational entry and invertibility families with independent verifier; source technology augmented matrix lab is reserved for next canonical lesson33. Tests written but NOT run."
+}
