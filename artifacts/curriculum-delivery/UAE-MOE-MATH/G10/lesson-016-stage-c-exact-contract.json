@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L16",
+  "lessonOrdinal": 16,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L16:C016",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 Unit3 Lesson3-8 integrated into sole General",
+  "sourcePages": [
+    258,
+    259,
+    260,
+    261,
+    262,
+    263
+  ],
+  "sourcePrintedPages": [
+    241,
+    242,
+    243,
+    244,
+    245,
+    246
+  ],
+  "primarySkills": [
+    "algebra.polynomial.rational_zero_theorem"
+  ],
+  "secondaryTeachingSkills": [
+    "algebra.polynomial.synthetic_division",
+    "algebra.polynomial.roots_zeros_complex",
+    "algebra.polynomial.remainder_factor_theorems",
+    "algebra.polynomial.geometry_volume_model"
+  ],
+  "exactScope": "Nonzero-leading and nonzero-constant bounded cubic with integer coefficients generated from factor (q x-p)(a x²+b x+c). Evaluate candidate count after reducing ±numerators/denominators, membership of tested reduced rational candidate, actual polynomial zero via Horner integer equation sum(a_i*n^i*q^(3-i))=0. Does NOT assert all possible candidates are roots.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l16.rational_candidate_count",
+    "uae.g10.general.u01.l16.rational_candidate_membership",
+    "uae.g10.general.u01.l16.rational_actual_zero"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l15.descartes_variations",
+    "uae.g10.general.u01.l14.factor_theorem_decision",
+    "uae.g10.general.u01.l13.cubic_integer_roots"
+  ],
+  "generator": "BuildG10RationalZeros(family,random,difficulty)",
+  "grader": "ExactSkillContractQuestionEngine.Verify -> UaeG10RationalZerosResponse.Verify",
+  "independentVerifier": "UaeG10RationalZerosResponse.Verify: divisor/gcd reduced rational candidates and exact Horner-style integer substitution",
+  "engine": "ExactSkillContractQuestionEngine",
+  "parameters": [
+    "a3",
+    "a2",
+    "a1",
+    "a0",
+    "p",
+    "q"
+  ],
+  "bounds": {
+    "degree": 3,
+    "leading": "a3 nonzero, |a3|<=30",
+    "constant": "a0 nonzero, |a0|<=30",
+    "middleCoefficients": "|a2|,|a1|<=40",
+    "numerator": "p nonzero, |p|<=10",
+    "denominator": "1<=q<=5"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l16.rational_candidate_count",
+      "answerType": "exact_integer",
+      "interaction": "IntegerKeypad",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l16.rational_candidate_membership",
+      "answerType": "enum_text",
+      "interaction": "StructuredEntry",
+      "stageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l16.rational_actual_zero",
+      "answerType": "enum_text",
+      "interaction": "StructuredEntry",
+      "stageD": "NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "complete synthetic-division factorization and higher-degree root solving",
+    "finding irrational and nonreal complex remaining zeros",
+    "closed-form geometry and physically admissible length constraints",
+    "manual coordinate graph reading and technology lab",
+    "proof that divisibility by constant/leading coefficient gives necessary not sufficient rational root condition"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l16.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalZerosTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "studentPracticeActivated": false
+  },
+  "note": "Rational theorem membership and actual root verification are different skills; the independent grader never marks all possible candidates as confirmed zeros. Stage C authored only, no test execution during A-B-C."
+}
