@@ -1,0 +1,1 @@
+Lesson120 حل المعادلات المثلثية. Owner Advanced PDF15 index; body not fully mapped. Original Arabic six problems and three representations. Manual proof verification required; Stage D NOT_RUN, routing disabled.
