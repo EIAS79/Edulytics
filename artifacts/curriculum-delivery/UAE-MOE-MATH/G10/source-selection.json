@@ -105,5 +105,69 @@
   "generalVolume1LessonCount": 48,
   "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
   "ownerIndexApprovalDate": "2026-11-24",
-  "ownerIndexApprovalScope": "TITLES_AND_ORDINALS_ONLY; NOT CONTENT_OR_STAGE_D_PASS"
+  "ownerIndexApprovalScope": "TITLES_AND_ORDINALS_ONLY; NOT CONTENT_OR_STAGE_D_PASS",
+  "supplementalSourceSnapshotId": "G10-SUPPLEMENTAL-BOOKS-SHA-2026-11-26",
+  "supplementalSourceScope": {
+    "decisionDate": "2026-11-26",
+    "basis": "Owner provided five PDF supplements to resolve ten source-body exceptions and instructed continuation. Existing canonical index and source snapshot retained.",
+    "files": [
+      {
+        "name": "رياضيات الاحتمالات متقدم.pdf",
+        "pages": 77,
+        "sha256": "a94ef73f58c1860ac231b6ad4e8d617465fc0734108607e4bffcbaf37bfe86d3",
+        "targetOrdinals": [
+          137
+        ],
+        "edition": "Not independently established",
+        "scope": "Unit 7, lesson 7-5, PDF 36–41; printed 517–522"
+      },
+      {
+        "name": "رياضيات التحويلات الهندسية متقدم.pdf",
+        "pages": 66,
+        "sha256": "0448d2dcdbab64eea76f8ade1003aae1839b6ff15d2aab52360b15c8b555cc7b",
+        "targetOrdinals": [],
+        "edition": "Not independently established",
+        "scope": "Unit 6 transformations and symmetry; no missing target"
+      },
+      {
+        "name": "رياضيات المثلثات.pdf",
+        "pages": 64,
+        "sha256": "49d6da9228537d956177374385d78bdecdae2f5f8f8df6a23fb239ea981a11c9",
+        "targetOrdinals": [],
+        "edition": "Not independently established",
+        "scope": "Unit 7 right triangles and trigonometry; no missing target"
+      },
+      {
+        "name": "رياضيات الدوال متقدم.pdf",
+        "pages": 78,
+        "sha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+        "targetOrdinals": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "edition": "Chapter source Algebra 2 ©2014; UAE edition year not independently established",
+        "scope": "Unit 8 lessons 8-3 through 8-8, PDF 21–69 including labs; printed 572–620"
+      },
+      {
+        "name": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
+        "pages": 150,
+        "sha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
+        "targetOrdinals": [
+          146,
+          147,
+          148
+        ],
+        "edition": "2023–2024",
+        "scope": "Grade 10 Applied volume 1, unit 1, PDF 20–54; printed 5–39 excluding blank PDF37; TOC page numbers differ from body"
+      }
+    ],
+    "canonicalIndexChanges": false,
+    "sourceParity": "UNKNOWN",
+    "totalSourceFileCount": 12,
+    "totalPhysicalPages": 2328
+  }
 }
