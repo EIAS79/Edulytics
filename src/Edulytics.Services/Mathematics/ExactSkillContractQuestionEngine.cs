@@ -134,6 +134,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10LogarithmPropertiesResponse.Truth,
             UaeG10LogarithmPropertiesResponse.Equation,
             UaeG10LogarithmPropertiesResponse.RootSet,
+            UaeG10LogarithmPropertiesResponse.Fractional,
             UaeG10LogarithmPropertiesResponse.Ph,
             UaeG10LogarithmPropertiesResponse.Pressure,
             UaeG10LogarithmPropertiesResponse.Benford,
