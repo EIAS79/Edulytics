@@ -191,6 +191,14 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CircleResponse.AreaSectorApprox,
             UaeG10CircleResponse.AreaSegmentApprox,
             UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l09.principal_angle_degrees",
+            "uae.g10.general.u14.l09.principal_pi_coefficient",
+            "uae.g10.general.u14.l09.inverse_defined",
+            "uae.g10.general.u14.l09.inverse_of_trig_principal_degrees",
+            "uae.g10.general.u14.l09.composition_rational",
+            "uae.g10.general.u14.l09.rounded_angle_degrees",
+            "uae.g10.general.u14.l09.right_triangle_angle_degrees",
+            "uae.g10.general.u14.l09.reciprocal_equation_solution_count",
             "uae.g10.general.u14.l08.phase_shift_degrees",
             "uae.g10.general.u14.l08.vertical_shift",
             "uae.g10.general.u14.l08.amplitude",
@@ -1476,6 +1484,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10InverseTrigResponse.Supports(family))
+            return UaeG10InverseTrigResponse.Verify(family,parameters,answer);
 
         if (UaeG10TrigShiftsResponse.Supports(family))
             return UaeG10TrigShiftsResponse.Verify(family,parameters,answer);
@@ -4023,6 +4034,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10InverseTrigResponse.Supports(family))
+            return BuildG10InverseTrig(family,random,difficulty);
 
         if (UaeG10TrigShiftsResponse.Supports(family))
             return BuildG10TrigShifts(family,random,difficulty);
@@ -10275,6 +10289,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10InverseTrigResponse.Supports(problem.Family))
+            return UaeG10InverseTrigResponse.Format(problem.Family,p);
 
         if (UaeG10TrigShiftsResponse.Supports(problem.Family))
             return UaeG10TrigShiftsResponse.Format(problem.Family,p);
