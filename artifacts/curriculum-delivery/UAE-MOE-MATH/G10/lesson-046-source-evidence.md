@@ -1,3 +1,4 @@
-# Lesson 46 خواص اللوغاريتمات
-
-The owner-approved Advanced 2025–2026 book TOC page12 confirms the identity (8-6) only. The lesson body is absent. Edulytics independently wrote 12 Arabic solved examples, 4 visual models and 5 teaching paragraphs. No claim of 100% source element coverage; Stage D and CI not certified; productionRouting=false.
+# الدرس 46 — خواص اللوغاريتمات
+الهوية G10-U05-L05 / PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046. مصدر العنوان المعتمد Advanced Unit8 Lesson8-5. المصدر الإضافي الموافق «رياضيات الدوال متقدم.pdf»، SHA-256 2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c، PDF38–44 / مطبوع589–595. مقتطف Algebra 2؛ سنة الطبعة المدرسية والفصل غير مثبتين في الملف.
+تم فحص النص والرسوم، خواص الضرب والقسمة والقوة واشتقاقها، أمثلة وتدريبات تقريب بالقيم المعطاة، معادلات وقيود الحجج والجذور الدخيلة، pH والضغط وبنفورد والصوت ونسب السعات والتناقص وسداد الدين. 99 مدخلًا مختارًا و20 مدخل مراجعة منفصلًا، 36 مثالًا أصليًا و10 تمثيلات؛ 17 عائلة رقمية جديدة وواحدة معاد استخدامها من 45. تقويم المعلم للبرهان والرسم والنمذجة المفتوحة. تحقق بنيوي وحسابي مستقل: 10,736 حالة و16 نقطة رسم؛ لم تشغل اختبارات C# أو التكامل أو Stage D.
+لا ادعاء بمقام كامل لجميع الكتب والطبعات.
