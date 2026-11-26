@@ -27,7 +27,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             _=>throw new InvalidOperationException()
         };
         return Problem(family,prompt,"استخدم خاصية المساواة المناسبة مع شرط عدم القسمة على صفر، ثم تحقق بالتعويض. إثبات الخطوات كاملة يراجعه المعلم.",
-            AssessmentItemType.Numeric,("a",a),("b",b),("x",x),("k",k),("m",m),("t",t),("u",u),("v",v));
+            family==UaeG10AlgebraicProofResponse.Rational?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("a",a),("b",b),("x",x),("k",k),("m",m),("t",t),("u",u),("v",v));
     }
 }
 internal static class UaeG10AlgebraicProofResponse
