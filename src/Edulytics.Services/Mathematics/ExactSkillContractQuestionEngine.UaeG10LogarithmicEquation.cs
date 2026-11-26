@@ -19,11 +19,11 @@ public sealed partial class ExactSkillContractQuestionEngine
         string interval="اكتب فترة الحل بالأقواس، مثل (1/2,3] أو (−∞,3)، أو ∅ إذا لا حل. اكتب inf إذا لم تتوفر علامة اللانهاية.";
         string prompt=family switch{
             UaeG10LogarithmicEquationResponse.Direct=>$"حل لوغ_({basis})(س)={n}/{m}. اكتب عددًا صحيحًا أو كسرًا.",
-            UaeG10LogarithmicEquationResponse.Quadratic=>$"حل لوغ_{b}(س²+({a-r-s})س+({c+r*s}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام مفصولة بفاصلة، أو ∅ إن لم يوجد حل.",
+            UaeG10LogarithmicEquationResponse.Quadratic=>dir==1?$"حل لوغ_{b}(س²+({a-r-s})س+({c+r*s}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام مفصولة بفاصلة، أو ∅ إن لم يوجد حل.":$"حل لوغ_{b}(({a+1})س+({c-r}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام، أو ∅ إن لم يوجد حل.",
             UaeG10LogarithmicEquationResponse.OneSide=>$"حل لوغ_({parent})({left}) {rel} {n}. {interval}",
             UaeG10LogarithmicEquationResponse.TwoSides=>$"حل لوغ_({parent})({left}) {rel} لوغ_({parent})({right}). {interval}",
-            UaeG10LogarithmicEquationResponse.Wind=>$"في نموذج تدريبي ع={10*b}لوغ(م)+{10*m}، ع سرعة بالميل/ساعة وم مسافة بالأميال. إذا ع={10*b*z+10*m}، أوجد م.",
-            UaeG10LogarithmicEquationResponse.Ratio=>$"فرق قياسين لوغاريتميين للأساس 10 يساوي {z/10m:0.0}. كم تبلغ نسبة السعتين؟ قرّب إلى أقرب جزء من مائة.",
+            UaeG10LogarithmicEquationResponse.Wind=>dir==1?$"في نموذج تدريبي ع={10*b}لوغ(م)+{10*m}، ع سرعة بالميل/ساعة وم مسافة بالأميال. إذا ع={10*b*z+10*m}، أوجد م.":$"في النموذج التدريبي ع={10*b}لوغ(م)+{10*m}، احسب ع عندما م={10+13*z+7*Math.Abs(c)} ميلًا. قرّب إلى أقرب ميل/ساعة.",
+            UaeG10LogarithmicEquationResponse.Ratio=>$"فرق قياسين لوغاريتميين للأساس 10 يساوي {(dir==1?z/10m:m).ToString("0.0",CultureInfo.InvariantCulture)}. كم تبلغ نسبة السعتين؟ قرّب إلى أقرب جزء من مائة.",
             UaeG10LogarithmicEquationResponse.Music=>$"في نموذج تردد ت={25*b}×2^((ن−1)/12) هرتز. أوجد ن عندما ت={25*b*(1<<Math.Abs(n))} هرتز.",
             UaeG10LogarithmicEquationResponse.Sound=>$"في النموذج β=10 لوغ(I/10^(-12))، أوجد β بالديسيبل عندما I=10^({n-6}) واط/م².",
             _=>throw new InvalidOperationException("Unknown logarithmic equation family.")
@@ -153,18 +153,19 @@ internal static class UaeG10LogarithmicEquationResponse
     }
     private static bool RootHolds(int x,IReadOnlyDictionary<string,int> p)
     {
-        long left=(long)x*x+(p["a"]-p["r"]-p["s"])*(long)x+p["c"]+p["r"]*p["s"],right=p["a"]*(long)x+p["c"];
+        long right=p["a"]*(long)x+p["c"];
+        long left=p["dir"]==1?(long)x*x+(p["a"]-p["r"]-p["s"])*(long)x+p["c"]+p["r"]*p["s"]:(p["a"]+1)*(long)x+p["c"]-p["r"];
         return left>0&&right>0&&left==right;
     }
-    private static int[] Roots(IReadOnlyDictionary<string,int> p)=>new[]{p["r"],p["s"]}.Where(x=>p["a"]*x+p["c"]>0).OrderBy(x=>x).ToArray();
+    private static int[] Roots(IReadOnlyDictionary<string,int> p)=>(p["dir"]==1?new[]{p["r"],p["s"]}:new[]{p["r"]}).Where(x=>p["a"]*x+p["c"]>0).OrderBy(x=>x).ToArray();
     internal static string Format(string f,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded logarithm equation parameters.");
         if(f==Direct)return Power(p["b"],p["n"]*(p["dir"]==1?1:-1)).ToString();
         if(f==Quadratic){int[] roots=Roots(p);return roots.Length==0?"∅":string.Join(",",roots);}
         if(f is OneSide or TwoSides)return Solve(Conditions(f,p)).Text();
-        if(f==Ratio)return Math.Pow(10,p["z"]/10.0).ToString("0.00",CultureInfo.InvariantCulture);
-        int v=f switch{Wind=>Pow(10,p["z"]),Music=>12*Math.Abs(p["n"])+1,Sound=>10*(p["n"]+6),_=>throw new InvalidOperationException()};
+        if(f==Ratio)return Math.Pow(10,p["dir"]==1?p["z"]/10.0:p["m"]).ToString("0.00",CultureInfo.InvariantCulture);
+        int v=f switch{Wind=>p["dir"]==1?Pow(10,p["z"]):(int)Math.Round(10*p["b"]*Math.Log10(10+13*p["z"]+7*Math.Abs(p["c"]))+10*p["m"],MidpointRounding.AwayFromZero),Music=>12*Math.Abs(p["n"])+1,Sound=>10*(p["n"]+6),_=>throw new InvalidOperationException()};
         return v.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
@@ -187,12 +188,19 @@ internal static class UaeG10LogarithmicEquationResponse
         if(f is OneSide or TwoSides)return TryInterval(raw,out I candidate)&&VerifyInterval(candidate,Conditions(f,p));
         if(f==Ratio)
         {
-            if(!decimal.TryParse(raw,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal dec)||dec<1||dec>10||dec*100!=decimal.Truncate(dec*100))return false;
-            int k=(int)(dec*100);BigInteger actual=BigInteger.Pow(10,p["z"])*BigInteger.Pow(200,10);
+            if(!decimal.TryParse(raw,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal dec)||dec<1||dec>1000||dec*100!=decimal.Truncate(dec*100))return false;
+            int k=(int)(dec*100);BigInteger actual=BigInteger.Pow(10,p["dir"]==1?p["z"]:10*p["m"])*BigInteger.Pow(200,10);
             return BigInteger.Pow(2*k-1,10)<=actual&&actual<BigInteger.Pow(2*k+1,10);
         }
         if(!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int v))return false;
-        if(f==Wind)return v==Pow(10,p["z"]);
+        if(f==Wind)
+        {
+            if(p["dir"]==1)return v==Pow(10,p["z"]);
+            if(v<10*p["m"]+1||v>250)return false;
+            int a=10*p["b"],d=10+13*p["z"]+7*Math.Abs(p["c"]),k=2*(v-10*p["m"]);
+            BigInteger exact=BigInteger.Pow(d,2*a);
+            return BigInteger.Pow(10,k-1)<=exact&&exact<BigInteger.Pow(10,k+1);
+        }
         if(f==Music)return v>=1&&(v-1)%12==0&&(v-1)/12==Math.Abs(p["n"]);
         return f==Sound&&v%10==0&&v/10-12==p["n"]-6;
     }
