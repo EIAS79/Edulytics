@@ -8801,8 +8801,20 @@
       "domain": "geometry",
       "canonicalName": "المجسمات المتطابقة والمتشابهة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l08.box_similarity",
+        "uae.g10.general.u15.l08.scale_ratio",
+        "uae.g10.general.u15.l08.surface_area_ratio",
+        "uae.g10.general.u15.l08.volume_ratio",
+        "uae.g10.general.u15.l08.surface_area_scaled",
+        "uae.g10.general.u15.l08.volume_scaled",
+        "uae.g10.general.u15.l08.length_from_volume_ratio",
+        "uae.g10.general.u15.l08.length_from_area_ratio"
+      ]
     },
     {
       "id": "probability.sample_spaces",
