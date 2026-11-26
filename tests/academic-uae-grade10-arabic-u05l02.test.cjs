@@ -16,7 +16,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
  assert.equal(cp.selectedPrintedSourceItemsMapped,100);
- assert.equal(cp.allowedQuestionFamilies.length,12);
+ assert.equal(cp.allowedQuestionFamilies.length,17);
  assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),157);
  assert.equal(cp.productionRouting,false);
  assert.equal(cp.status,'A_C_EXPLICIT_GAP');
@@ -26,7 +26,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,25);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,26);
  assert.equal(rich.Lessons[0].Visuals.length,8);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
@@ -70,4 +70,11 @@ test('Selected-source approximate factor and cooling / compounding graph oracles
  assert.equal(Math.round(450*Math.pow(1.6,1.5)),911);
  assert.ok(Math.abs(50*Math.pow((88*.454)/20,1.3)-122.92241738622963)<1e-9);
  assert.ok(Math.abs(5000*Math.pow(1.02,4)-5412.1608)<1e-8);
+});
+
+test('General cooling uses the unrounded value for threshold decisions',()=>{
+ const t=x=>19+66*Math.pow(1.05,-x);
+ assert.equal(Math.round(t(12)*10)/10,55.8);
+ assert.equal(Math.round(t(24)*10)/10,39.5);
+ assert.ok(t(24)<40&&t(24)>19);
 });

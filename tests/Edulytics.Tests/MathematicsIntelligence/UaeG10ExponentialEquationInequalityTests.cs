@@ -23,6 +23,11 @@ public sealed class UaeG10ExponentialEquationInequalityTests
     [InlineData("like_power_sum",LessonPracticeInteractionKind.IntegerKeypad)]
     [InlineData("model_parameters",LessonPracticeInteractionKind.StructuredEntry)]
     [InlineData("power_law_coefficient",LessonPracticeInteractionKind.IntegerKeypad)]
+    [InlineData("cooling_rounded",LessonPracticeInteractionKind.NumericEntry)]
+    [InlineData("cooling_threshold_probe",LessonPracticeInteractionKind.IntegerKeypad)]
+    [InlineData("power_law_rounded_coefficient",LessonPracticeInteractionKind.NumericEntry)]
+    [InlineData("power_law_rounded_prediction",LessonPracticeInteractionKind.NumericEntry)]
+    [InlineData("equivalent_period_rounded",LessonPracticeInteractionKind.NumericEntry)]
     public void FamilyDispatchRendererAndIndependentAnswers(string suffix,LessonPracticeInteractionKind kind)
     {
         string family=Prefix+suffix;
@@ -80,6 +85,11 @@ public sealed class UaeG10ExponentialEquationInequalityTests
                         "cooling_threshold"=>p["step"]*p["period"],
                         "power_law_prediction"=>p["coeff"]*Math.Pow(p["b"],p["num"]),
                         "power_law_coefficient"=>p["coeff"],
+                        "cooling_rounded"=>Math.Round(p["ambient"]+p["delta"]*Math.Pow(1+p["rate"]/1000d,-p["time"]),1,MidpointRounding.AwayFromZero),
+                        "cooling_threshold_probe"=>p["ambient"]+p["delta"]*Math.Pow(1+p["rate"]/1000d,-p["time"])<=p["threshold"]?1:0,
+                        "power_law_rounded_coefficient"=>Math.Round(p["initial"]*Math.Pow(1d/p["m0"],(double)p["num"]/p["den"]),2,MidpointRounding.AwayFromZero),
+                        "power_law_rounded_prediction"=>Math.Round(p["initial"]*Math.Pow(p["m1"]*(p["convert"]==1?0.454:1d)/p["m0"],(double)p["num"]/p["den"]),2,MidpointRounding.AwayFromZero),
+                        "equivalent_period_rounded"=>Math.Round(Math.Pow(1+p["rate"]/10000d,p["direction"]==0?1d/p["periods"]:p["periods"]),4,MidpointRounding.AwayFromZero),
                         "like_power_sum"=>Math.Log(Math.Pow(p["base"],p["exponent"])*Math.Pow(p["base"],p["multiplicity"]),p["base"]),
                         _=>throw new InvalidOperationException()
                     };
@@ -117,6 +127,18 @@ public sealed class UaeG10ExponentialEquationInequalityTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"inequality_rational_boundary",rational,"x>3"));
         rational["baseDen"]=3;
         Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"inequality_rational_boundary",rational,"x<3"));
+    }
+    [Fact]
+    public void GeneralCoolingAndRoundedPeriodAreCheckedAgainstOriginalModel()
+    {
+        var cooling=new Dictionary<string,int>{{"ambient",19},{"delta",66},{"rate",50},{"time",24},{"threshold",40}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"cooling_rounded",cooling,"٣٩٫٥"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"cooling_rounded",cooling,"39.4"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"cooling_threshold_probe",cooling,"1"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"cooling_threshold_probe",cooling,"0"));
+        var annual=new Dictionary<string,int>{{"periods",12},{"direction",0},{"rate",600}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"equivalent_period_rounded",annual,"1.0049"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"equivalent_period_rounded",annual,"1.0050"));
     }
     [Fact]
     public void RoundingAndPeriodBoundaries()

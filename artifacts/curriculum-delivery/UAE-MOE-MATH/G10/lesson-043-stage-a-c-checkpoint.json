@@ -24,13 +24,13 @@
   "sourceLesson": "5-6",
   "sourceElementDenominatorForThisLesson": null,
   "sourceElementsMapped": 100,
-  "originalArabicWorkedExamples": 25,
+  "originalArabicWorkedExamples": 26,
   "originalVisualModels": 8,
   "authoredContentPackEntry": true,
   "arabicContentPackLessonCount": 43,
   "contentPackLessonCount": 76,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l02-ar.rich-lesson-v2.json",
-  "stageCStatus": "SHARED_ENGINE_EXTENDED_12_SOURCE_FAMILIES_AUTHORED_TESTS_NOT_RUN",
+  "stageCStatus": "SHARED_ENGINE_EXTENDED_17_SOURCE_FAMILIES_AUTHORED_TESTS_NOT_RUN",
   "primarySkills": [
     "exponentials.g10.equation_inequality.solve",
     "exponentials.g10.source_models"
@@ -47,7 +47,12 @@
     "uae.g10.general.u05.l02.power_law_prediction",
     "uae.g10.general.u05.l02.like_power_sum",
     "uae.g10.general.u05.l02.model_parameters",
-    "uae.g10.general.u05.l02.power_law_coefficient"
+    "uae.g10.general.u05.l02.power_law_coefficient",
+    "uae.g10.general.u05.l02.cooling_rounded",
+    "uae.g10.general.u05.l02.cooling_threshold_probe",
+    "uae.g10.general.u05.l02.power_law_rounded_coefficient",
+    "uae.g10.general.u05.l02.power_law_rounded_prediction",
+    "uae.g10.general.u05.l02.equivalent_period_rounded"
   ],
   "teacherReviewRequiredFor": [
     "student graph construction and interpretation",
@@ -64,7 +69,7 @@
   "stageD": "NOT_STARTED",
   "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
-  "closureBasis": "TARGETED_A_B_AND_EXTENDED_C_12_FAMILIES; A_C_EXPLICIT_GAP_REMAINS",
+  "closureBasis": "SELECTED_PRINTED_BODY_AND_LAB_REVIEWED_100_ITEM_MAP_17_FAMILIES_AUTHORED; FULL_SOURCE_ACCEPTANCE_NOT_CERTIFIED",
   "firstIncompleteGlobalOrdinal": 43,
   "nextEligibleCanonicalCode": "G10-U05-L02",
   "sourceLimitations": "Newest Advanced index contains the same title but its actual lesson body is absent from the supplied volume; selected older matching Applied body is accepted for observed objectives. No claim of unseen unique Advanced objectives or complete atomic parity.",
@@ -94,11 +99,14 @@
   "contentCorrectionCommit": "c675b029d93b1b991290c1fa22b024f51d212130",
   "evidenceUpdateCommit": "248aa671358b01b349b99d54eb0a4e31d83120e7",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-teacher-rubric.md",
-  "repairStatus": "MODEL_PARAMETER_AND_POWER_COEFFICIENT_GAPS_PATCHED_RATIONAL_BASES_ADDED",
+  "repairStatus": "SELECTED_PRINTED_BODY_REVIEWED_AND_DIGITAL_APPLICATION_FAMILIES_AUTHORED",
   "desktopCallsThisRepair": 0,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-c-exact-contract.json",
   "sourceElementDenominatorVerifiedForThisLesson": false,
   "selectedPrintedSourceItemsMapped": 100,
   "cumulativeReviewItemsCrosswalked": 23,
-  "remainingGap": "Selected printed source item map still requires final acceptance; non-perfect-power numerical cooling/power-law applications and general annual-to-period approximations not fully covered by digital families; no claim of unseen Advanced body. Stage D not run."
+  "remainingGap": "Selected printed source has been visually reviewed and mapped; final all-source academic acceptance remains open because the actual Advanced 8-2 body is not present and equivalence of any unique elements is unverified. Runtime/CI not run.",
+  "selectedPrintedSourceDenominator": 100,
+  "selectedPrintedSourceMapped": 100,
+  "selectedPrintedSourceReviewStatus": "PRINTED_ITEMS_VISUALLY_REVIEWED_AND_MAPPED_NOT_RUNTIME_CERTIFIED"
 }
