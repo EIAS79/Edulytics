@@ -9,7 +9,7 @@
   "unitTitle": "الدوال الأسية واللوغاريتمية",
   "lessonTitle": "حل المعادلات والمتباينات الأسية",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
   "sourceBodyVerified": true,
   "sourceVerificationScope": "APPLIED_2022_2023_BODY_150_155_PLUS_REVIEW_156_AND_EXTENSION_157_VISUALLY_REVIEWED",
@@ -69,10 +69,10 @@
   "stageD": "NOT_STARTED",
   "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
-  "closureBasis": "SELECTED_PRINTED_BODY_AND_LAB_REVIEWED_100_ITEM_MAP_17_FAMILIES_AUTHORED; FULL_SOURCE_ACCEPTANCE_NOT_CERTIFIED",
-  "firstIncompleteGlobalOrdinal": 43,
-  "nextEligibleCanonicalCode": "G10-U05-L02",
-  "sourceLimitations": "Newest Advanced index contains the same title but its actual lesson body is absent from the supplied volume; selected older matching Applied body is accepted for observed objectives. No claim of unseen unique Advanced objectives or complete atomic parity.",
+  "closureBasis": "SELECTED_MATCHING_APPLIED_PRINTED_BODY_LAB_REVIEWED_100_ITEM_MAP_26_EXAMPLES_8_VISUALS_17_FAMILIES_AUTHORED",
+  "firstIncompleteGlobalOrdinal": 44,
+  "nextEligibleCanonicalCode": "G10-U05-L03",
+  "sourceLimitations": "Selected matching Applied lesson 5-6 is sufficient under owner-approved repair scope. Advanced body not present, not a blocking dependency; no all-edition equivalence or runtime claim.",
   "sourcePdfPages": [
     150,
     151,
@@ -99,16 +99,16 @@
   "contentCorrectionCommit": "c675b029d93b1b991290c1fa22b024f51d212130",
   "evidenceUpdateCommit": "248aa671358b01b349b99d54eb0a4e31d83120e7",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-teacher-rubric.md",
-  "repairStatus": "SELECTED_PRINTED_BODY_REVIEWED_AND_DIGITAL_APPLICATION_FAMILIES_AUTHORED",
+  "repairStatus": "CLOSED_SELECTED_SOURCE_A_B_C",
   "desktopCallsThisRepair": 0,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-c-exact-contract.json",
   "sourceElementDenominatorVerifiedForThisLesson": false,
   "selectedPrintedSourceItemsMapped": 100,
   "cumulativeReviewItemsCrosswalked": 23,
-  "remainingGap": "Selected printed source has been visually reviewed and mapped; final all-source academic acceptance remains open because the actual Advanced 8-2 body is not present and equivalence of any unique elements is unverified. Runtime/CI not run.",
+  "remainingGap": null,
   "selectedPrintedSourceDenominator": 100,
   "selectedPrintedSourceMapped": 100,
-  "selectedPrintedSourceReviewStatus": "PRINTED_ITEMS_VISUALLY_REVIEWED_AND_MAPPED_NOT_RUNTIME_CERTIFIED",
+  "selectedPrintedSourceReviewStatus": "PRINTED_ITEMS_VISUALLY_REVIEWED_AND_MAPPED_SELECTED_SOURCE_ACCEPTED_STAGE_D_PENDING",
   "sourceAvailabilityVerification": {
     "checkedLocalAttachedBooks": 7,
     "allSevenSha256Match": true,
@@ -138,5 +138,6 @@
     "nextLesson44TocCorrectReference": "Advanced Unit8 lesson8-3, not 8-4; source preparation only; lesson44 not edited",
     "desktopCallsForSourceAvailabilityCheck": 2,
     "scope": "Observed source boundaries and missing volume; not proof of every page's absence in other hypothetical sources."
-  }
+  },
+  "scopeDecision": "OWNER_APPROVED_INDEX_REPAIR_ONLY_MATCHING_BODY_ONE_APPROVED_BOOK_SUFFICIENT_2026_11_26"
 }

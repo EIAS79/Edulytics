@@ -93,10 +93,10 @@
   ],
   "unit5ClosedCount": 9,
   "gradeClosedCount": 50,
-  "firstIncompleteGlobalOrdinal": 43,
-  "nextEligibleCanonicalCode": "G10-U05-L02",
-  "nextEligibleLessonTitle": "حل المعادلات والمتباينات الأسية",
-  "stageABCStatus": "UNIT_05_REPAIR_GATE_OPEN_043",
+  "firstIncompleteGlobalOrdinal": 44,
+  "nextEligibleCanonicalCode": "G10-U05-L03",
+  "nextEligibleLessonTitle": "اللوغاريتمات والدوال اللوغاريتمية",
+  "stageABCStatus": "UNIT_05_INDEX_ONLY_REPAIR_IN_PROGRESS",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -106,50 +106,22 @@
   "stageDStatus": "NOT_STARTED",
   "productionRouting": false,
   "desktopCommanderCalls": 0,
-  "continuationGate": "REPAIR_043_BEFORE_044",
+  "continuationGate": "REPAIR_INDEX_ONLY_IN_ORDER_RECORD_MISSING_BODY_EXCEPTION_THEN_CONTINUE",
   "remainingRequirements": [
-    "Advance from lesson43 to lesson44 in strict sequence.",
-    "Stage D tests not run; Grade10 production routing remains false.",
-    "Advanced 2025–2026 Volume2 body remains unavailable; Applied 2022–2023 Volume2 lesson 5-6 is verified source for lesson43."
+    "Review only index-only lessons, in order; record missing-body exceptions and continue.",
+    "Stage D tests not run; production routing remains false."
   ],
-  "blockedOrdinal": 43,
-  "blockedCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
+  "blockedOrdinal": null,
+  "blockedCheckpoint": null,
   "blockedEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
-  "blockingReason": "FULL_SOURCE_ACCEPTANCE_UNVERIFIED_ADVANCED_8_2_BODY_ABSENT",
+  "blockingReason": null,
   "repairValidation": {
-    "firstIncompleteGlobalOrdinal": 43,
-    "status": "A_C_EXPLICIT_GAP",
-    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
-    "reason": "FULL_SOURCE_ACCEPTANCE_UNVERIFIED_ADVANCED_8_2_BODY_ABSENT",
-    "sourceAvailabilityVerification": {
-      "checkedLocalAttachedBooks": 7,
-      "allSevenSha256Match": true,
-      "advanced2025_2026": {
-        "file": "01متقدم_.pdf",
-        "tocPage": 12,
-        "lastInstructionalUnit": 4,
-        "reviewPages": [
-          327,
-          330,
-          337,
-          342
-        ]
-      },
-      "advanced2018_2019": {
-        "file": "03متقدم_.pdf",
-        "tocPage": 18,
-        "firstBodyUnit": 9,
-        "firstBodyPdfPage": 25,
-        "firstBodyPrintedPage": 618,
-        "missingPrintedUnit8LessonStarts": {
-          "lesson8_2": 553,
-          "lesson8_3": 560
-        }
-      },
-      "localDeviceRecord": "Grade_10/_MISSING_ARABIC_PARTS.txt: Matching current Arabic Volume 2 not found/verified.",
-      "nextLesson44TocCorrectReference": "Advanced Unit8 lesson8-3, not 8-4; source preparation only; lesson44 not edited",
-      "desktopCallsForSourceAvailabilityCheck": 2,
-      "scope": "Observed source boundaries and missing volume; not proof of every page's absence in other hypothetical sources."
-    }
+    "scopeDecision": "OWNER_APPROVED_INDEX_REPAIR_ONLY_MATCHING_BODY_ONE_APPROVED_BOOK_SUFFICIENT_2026_11_26",
+    "status": "REPAIR_IN_PROGRESS",
+    "completedOrdinals": [
+      43
+    ],
+    "firstIncompleteGlobalOrdinal": 44,
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json"
   }
 }
