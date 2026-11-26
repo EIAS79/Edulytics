@@ -21,7 +21,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CommonLogarithmResponse.Change=>$"استعمل تغيير الأساس لحساب لوغ_{B}({v}/10^{k}). {round}",
             UaeG10CommonLogarithmResponse.Equation=>$"حل {B}^({m}س+({n}))={v}. {round}",
             UaeG10CommonLogarithmResponse.TwoBases=>$"حل {B}^({m}س+({n}))={c}^({p}س+({q})). {round}",
-            UaeG10CommonLogarithmResponse.Inequality=>$"حل {B}^({m}س+({n})) {rel} {c}^({p}س+({q})). اكتب فترة الحل بالحد التقريبي لأربع منازل؛ مثال (-∞,2.5000]، أو (2.5000,∞).",
+            UaeG10CommonLogarithmResponse.Inequality=>$"حل {B}^({m}س+({n})) {rel} {(k==0?v.ToString(CultureInfo.InvariantCulture):$"{c}^({p}س+({q}))")}. اكتب فترة الحل بالحد التقريبي لأربع منازل؛ مثال (-∞,2.5000]، أو (2.5000,∞).",
             UaeG10CommonLogarithmResponse.Quadratic=>$"حل {b}^(س²)={v}. اكتب الجذرين المرتبين بين قوسين (السالب، الموجب)، كل منهما إلى أربع منازل.",
             UaeG10CommonLogarithmResponse.Sound=>$"في L=10log(I/I₀)، إذا L={50+h} ديسيبل وI₀=10^(-12) W/m²، احسب I بوحدة µW/m² (1 µW=10^(-6) W). {round}",
             UaeG10CommonLogarithmResponse.SoundReduction=>$"انخفض مستوى الصوت {h} ديسيبل. احسب النقص المئوي في الشدة اعتمادًا على I₂/I₁=10^(-{h}/10). {round}",
@@ -54,13 +54,13 @@ internal static class UaeG10CommonLogarithmResponse
         a["b"] is 2 or 3 or 5 or 7&&a["c"] is 2 or 3 or 5 or 7&&a["b"]!=a["c"]&&a["m"] is >=1 and <=3&&a["p"] is >=1 and <=3&&a["n"] is >=-4 and <=4&&a["q"] is >=-4 and <=4&&a["k"] is >=0 and <=3&&a["v"] is >=2 and <=80&&a["op"] is >=0 and <=3&&a["dir"] is 0 or 1&&a["h"] is >=2 and <=9&&a["t"] is >=2 and <=6;
     private static string R(double x)=>Math.Round(x,4,MidpointRounding.AwayFromZero).ToString("0.0000",CultureInfo.InvariantCulture);
     private static double B(IReadOnlyDictionary<string,int> a)=>a["dir"]==0?a["b"]:1.0/a["b"];
-    private static double Slope(IReadOnlyDictionary<string,int> a)=>a["m"]*Math.Log(B(a))-a["p"]*Math.Log(a["c"]);
+    private static double Slope(IReadOnlyDictionary<string,int> a)=>a["m"]*Math.Log(B(a))-(a["k"]==0?0:a["p"]*Math.Log(a["c"]));
     private static double V(string f,IReadOnlyDictionary<string,int> a)
     {
         double b=B(a),c=a["c"],m=a["m"],p=a["p"],n=a["n"],q=a["q"],v=a["v"],h=a["h"],t=a["t"],arg=v/Math.Pow(10,a["k"]),ratio=(100*a["b"]+10*v)/(100*a["b"]);
         return f switch{
             Common=>Math.Log10(arg),Change=>Math.Log10(arg)/Math.Log10(b),Equation=>(Math.Log10(v)/Math.Log10(b)-n)/m,
-            TwoBases or Inequality=>(q*Math.Log10(c)-n*Math.Log10(b))/(m*Math.Log10(b)-p*Math.Log10(c)),
+            TwoBases=>(q*Math.Log10(c)-n*Math.Log10(b))/(m*Math.Log10(b)-p*Math.Log10(c)),Inequality=>a["k"]==0?(Math.Log10(v)/Math.Log10(b)-n)/m:(q*Math.Log10(c)-n*Math.Log10(b))/(m*Math.Log10(b)-p*Math.Log10(c)),
             Quadratic=>Math.Sqrt(Math.Log10(v)/Math.Log10(a["b"])),Sound=>Math.Pow(10,(50+h)/10-6),
             SoundReduction=>100*(1-Math.Pow(10,-h/10)),Energy=>Math.Pow(10,11.8+1.5*(3+h/10)-16),
             Pet=>10*a["b"]*Math.Log10(v+2)/Math.Log10(c),PetTime=>Math.Pow(c,h/2)-2,
@@ -96,7 +96,7 @@ internal static class UaeG10CommonLogarithmResponse
         double b=B(a),c=a["c"],m=a["m"],p=a["p"],n=a["n"],q=a["q"],v=a["v"],h=a["h"],t=a["t"],arg=v/Math.Pow(10,a["k"]),ratio=(100*a["b"]+10*v)/(100*a["b"]);
         double F(double z)=>f switch{
             Common=>z*Math.Log(10)-Math.Log(arg),Change=>z*Math.Log(b)-Math.Log(arg),
-            Equation=>(m*z+n)*Math.Log(b)-Math.Log(v),TwoBases or Inequality=>(m*z+n)*Math.Log(b)-(p*z+q)*Math.Log(c),
+            Equation=>(m*z+n)*Math.Log(b)-Math.Log(v),TwoBases=>(m*z+n)*Math.Log(b)-(p*z+q)*Math.Log(c),Inequality=>(m*z+n)*Math.Log(b)-(a["k"]==0?Math.Log(v):(p*z+q)*Math.Log(c)),
             Quadratic=>z*z*Math.Log(a["b"])-Math.Log(v),Sound=>z<=0?double.NegativeInfinity:Math.Log(z)+(6-(50+h)/10)*Math.Log(10),
             SoundReduction=>z>=100?double.NegativeInfinity:Math.Log(1-z/100)+h/10*Math.Log(10),
             Energy=>z<=0?double.NegativeInfinity:Math.Log(z)+(16-11.8-1.5*(3+h/10))*Math.Log(10),
@@ -123,7 +123,7 @@ internal static class UaeG10CommonLogarithmResponse
             return Num(t[0],out double z)&&z==1-a["h"]&&t[1]=="∞";
         }
         // Determine the direction from the original log-linear residual, not from formatted answer.
-        double residual0=a["n"]*Math.Log(B(a))-a["q"]*Math.Log(a["c"]),residual1=(a["m"]+a["n"])*Math.Log(B(a))-(a["p"]+a["q"])*Math.Log(a["c"]);
+        double residual0=a["n"]*Math.Log(B(a))-(a["k"]==0?Math.Log(a["v"]):a["q"]*Math.Log(a["c"])),residual1=(a["m"]+a["n"])*Math.Log(B(a))-(a["k"]==0?Math.Log(a["v"]):(a["p"]+a["q"])*Math.Log(a["c"]));
         int op=residual1<residual0?a["op"]^2:a["op"];bool closed=(op&1)==1;
         if(op<2)return raw[0]=='('&&raw[^1]==(closed?']':')')&&t[0]=="-∞"&&Num(t[1],out double upper)&&Bucket(f,a,upper);
         return raw[0]==(closed?'[':'(')&&raw[^1]==')'&&t[1]=="∞"&&Num(t[0],out double lower)&&Bucket(f,a,lower);
