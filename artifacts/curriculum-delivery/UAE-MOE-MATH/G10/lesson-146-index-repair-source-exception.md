@@ -1,5 +1,2 @@
-# Lesson 146 — missing matching source body
-
-Canonical G10-U18-L01 «المسلمات والبراهين الحرة» remains in the owner-approved 148-lesson index. The annual Applied TOC on physical PDF6 of `03.pdf` and `رياضيات كتاب الطالب تطبيقي 10 8.pdf` lists Unit1 lesson 1-1, printed start 6. Printed body range indicated by the TOC boundaries: 6–13 (not present in these supplied volumes). Direct visual check: Applied volume 2 physical PDF17 begins Unit4 quadratic functions; physical PDF20 printed203 begins 4-1; Applied volume 3 physical PDF17 begins Unit7 triangle relationships. The 2025–2026 General volume starts with quadratic expressions rather than the Applied reasoning/proof Unit1; related proof skills in other chapters do not establish this matching lesson body. The source index title is available but the matching body has not been located among the approved volumes.
-
-Preserve original existing 8 worked examples and 4 models without relabeling as body-reviewed. No source-element denominator, source equivalence, or Stage D pass is claimed. Required: the matching Applied volume 1 lesson pages, or explicit owner-approved equivalent source scope. Source parity UNKNOWN; productionRouting false.
+# الاستثناء التاريخي 146
+المتن كان غير متاح في 03.pdf بعد الفهرس. المصدر الإضافي رياضيات كتاب الطالب تطبيقي 10 29.pdf يتضمن الدرس المطابق PDF21–28 والاستكشاف PDF20، مطبوع5–13، SHA 9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66. عولج الاستثناء وفق نطاق مطابقة المتن المعتمد، وليس مقام SOURCE_100 لكل الطبعات. Stage D NOT_STARTED.
