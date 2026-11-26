@@ -24,7 +24,7 @@ public sealed partial class ExactSkillContractQuestionEngine
                 2=>$"حل لوغ_س({UaeG10LogarithmicEquationResponse.PowText(b,m)})={(dir==1?m:-m)}/{1+z%3}. اكتب الأساس الموجب المختلف عن 1 كعدد صحيح أو كسر.",
                 _=>$"احسب مجموع {string.Join(" + ",Enumerable.Range(1,5).Select(i=>$"لوغ_({UaeG10LogarithmicEquationResponse.PowText(b,dir==1?i:-i)})({UaeG10LogarithmicEquationResponse.PowText(b,n)})"))} كعدد صحيح أو كسر."
             },
-            UaeG10LogarithmicEquationResponse.Quadratic=>dir==1?$"حل لوغ_{b}(س²+({a-r-s})س+({c+r*s}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام مفصولة بفاصلة، أو ∅ إن لم يوجد حل.":$"حل لوغ_{b}(({a+1})س+({c-r}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام، أو ∅ إن لم يوجد حل.",
+            UaeG10LogarithmicEquationResponse.Quadratic=>dir==1?$"حل لوغ_{b}(({m})س²+({a-m*(r+s)})س+({c+m*r*s}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام مفصولة بفاصلة، أو ∅ إن لم يوجد حل.":$"حل لوغ_{b}(({a+1})س+({c-r}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام، أو ∅ إن لم يوجد حل.",
             UaeG10LogarithmicEquationResponse.OneSide=>$"حل لوغ_({parent})({left}) {rel} {n}. {interval}",
             UaeG10LogarithmicEquationResponse.TwoSides=>$"حل لوغ_({parent})({left}) {rel} لوغ_({parent})({right}). {interval}",
             UaeG10LogarithmicEquationResponse.Wind=>dir==1?$"في نموذج تدريبي ع={10*b}لوغ(م)+{10*m}، ع سرعة بالميل/ساعة وم مسافة بالأميال. إذا ع={10*b*z+10*m}، أوجد م.":$"في النموذج التدريبي ع={10*b}لوغ(م)+{10*m}، احسب ع عندما م={10+13*z+7*Math.Abs(c)} ميلًا. قرّب إلى أقرب ميل/ساعة.",
@@ -159,7 +159,7 @@ internal static class UaeG10LogarithmicEquationResponse
     private static bool RootHolds(int x,IReadOnlyDictionary<string,int> p)
     {
         long right=p["a"]*(long)x+p["c"];
-        long left=p["dir"]==1?(long)x*x+(p["a"]-p["r"]-p["s"])*(long)x+p["c"]+p["r"]*p["s"]:(p["a"]+1)*(long)x+p["c"]-p["r"];
+        long left=p["dir"]==1?p["m"]*(long)x*x+(p["a"]-p["m"]*(p["r"]+p["s"]))*(long)x+p["c"]+p["m"]*p["r"]*p["s"]:(p["a"]+1)*(long)x+p["c"]-p["r"];
         return left>0&&right>0&&left==right;
     }
     private static int[] Roots(IReadOnlyDictionary<string,int> p)=>(p["dir"]==1?new[]{p["r"],p["s"]}:new[]{p["r"]}).Where(x=>p["a"]*x+p["c"]>0).OrderBy(x=>x).ToArray();
