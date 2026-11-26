@@ -74,10 +74,10 @@
   ],
   "unit5ClosedCount": 3,
   "gradeClosedCount": 44,
-  "firstIncompleteGlobalOrdinal": 50,
-  "nextEligibleCanonicalCode": "G10-U05-L09",
-  "nextEligibleLessonTitle": "النمو والاضمحلال",
-  "stageABCStatus": "UNIT_05_INDEX_ONLY_REPAIR_IN_PROGRESS",
+  "firstIncompleteGlobalOrdinal": null,
+  "nextEligibleCanonicalCode": null,
+  "nextEligibleLessonTitle": null,
+  "stageABCStatus": "UNIT_05_INDEX_REPAIR_PROCESSED_2_REPAIRED_6_SOURCE_EXCEPTIONS",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -87,7 +87,7 @@
   "stageDStatus": "NOT_STARTED",
   "productionRouting": false,
   "desktopCommanderCalls": 0,
-  "continuationGate": "REPAIR_INDEX_ONLY_IN_ORDER_RECORD_MISSING_BODY_EXCEPTION_THEN_CONTINUE",
+  "continuationGate": "NEXT_INDEX_ONLY_CHECKPOINT_IN_CANONICAL_ORDER",
   "remainingRequirements": [
     "Review only index-only lessons, in order; record missing-body exceptions and continue.",
     "Stage D tests not run; production routing remains false."
@@ -98,11 +98,12 @@
   "blockingReason": null,
   "repairValidation": {
     "scopeDecision": "OWNER_APPROVED_INDEX_REPAIR_ONLY_MATCHING_BODY_ONE_APPROVED_BOOK_SUFFICIENT_2026_11_26",
-    "status": "REPAIR_IN_PROGRESS",
+    "status": "UNIT_05_INDEX_TARGETS_PROCESSED_WITH_6_SOURCE_EXCEPTIONS",
     "completedOrdinals": [
-      43
+      43,
+      50
     ],
-    "firstIncompleteGlobalOrdinal": 50,
+    "firstIncompleteGlobalOrdinal": null,
     "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
     "exceptions": [
       {

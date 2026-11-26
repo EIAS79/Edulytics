@@ -200,6 +200,25 @@ public sealed partial class ExactSkillContractQuestionEngine
                 :$"عامل النمو لكل فترة {factor}، وعدد الفترات في السنة {periods}. أوجد عامل النمو السنوي الفعلي إلى أقرب جزء من عشرة آلاف.";
             return Problem(family,prompt,hint,AssessmentItemType.ShortAnswer,("periods",periods),("direction",direction),("rate",rate));
         }
+        if(family is UaeG10ExponentialEquationResponse.GrowthValue or UaeG10ExponentialEquationResponse.Rate or UaeG10ExponentialEquationResponse.Mixed or UaeG10ExponentialEquationResponse.FirstPeriod)
+        {
+            int initial=100*random.Next(1,101),rate=random.Next(1,21),direction=random.Next(0,2),time=random.Next(1,13),linear=100*random.Next(1,11);
+            int factor=100+(direction==1?rate:-rate);
+            string prompt=family switch
+            {
+                UaeG10ExponentialEquationResponse.GrowthValue=>$"كمية ابتدائية {initial} {(direction==1?"تزداد":"تتناقص")} بنسبة {rate}٪ لكل فترة. احسب القيمة بعد {time} فترات إلى أقرب جزء من مائة.",
+                UaeG10ExponentialEquationResponse.Rate=>$"عامل التغير لكل فترة {(factor/100m).ToString("0.00",CultureInfo.InvariantCulture)}. أوجد نسبة {(direction==1?"النمو":"الاضمحلال")} المئوية؛ اكتب العدد دون علامة النسبة.",
+                UaeG10ExponentialEquationResponse.Mixed=>$"خزان فيه {initial} لترًا، ينقص الماء الأصلي بنسبة {rate}٪ في الساعة، ويضاف ماء بمعدل {linear} لترًا في الساعة (افترض أن الماء المضاف لا يخضع للفقد في النموذج). أوجد مجموع الكمية بعد {time} ساعات إلى أقرب جزء من مائة.",
+                _=>$"كمية ابتدائية {initial} {(direction==1?"تزداد":"تتناقص")} بنسبة {rate}٪ لكل فترة. ما أول عدد صحيح من الفترات حتى تصبح القيمة {(direction==1?"أكبر من أو تساوي":"أصغر من أو تساوي")} {(direction==1?initial+initial/4:initial-initial/4)}؟"
+            };
+            return Problem(family,prompt,hint,family is UaeG10ExponentialEquationResponse.Rate or UaeG10ExponentialEquationResponse.FirstPeriod?AssessmentItemType.Numeric:AssessmentItemType.ShortAnswer,
+                ("initial",initial),("rate",rate),("direction",family==UaeG10ExponentialEquationResponse.Mixed?0:direction),("time",time),("linear",linear));
+        }
+        if(family==UaeG10ExponentialEquationResponse.HalfLife)
+        {
+            int initial=random.Next(20,501),half=random.Next(2,21),time=random.Next(1,51);
+            return Problem(family,$"كتلة مادة {initial} غرامًا، وعمر النصف {half} سنة. أوجد الكتلة المتبقية بعد {time} سنة إلى أقرب جزء من مائة غرام.",hint,AssessmentItemType.ShortAnswer,("initial",initial),("half",half),("time",time));
+        }
         int baseNumber=random.Next(2,6),exponent=random.Next(2,7),multiplicity=random.Next(1,3);
         return Problem(family,$"جمعنا {UaeG10ExponentialEquationResponse.Pow(baseNumber,multiplicity)} حدًا متطابقًا، قيمة كل منها {baseNumber}^{exponent}. إذا كان المجموع {baseNumber}^س فأوجد س.",hint,
             AssessmentItemType.Numeric,("base",baseNumber),("exponent",exponent),("multiplicity",multiplicity));
@@ -213,6 +232,11 @@ internal static class UaeG10ExponentialEquationResponse
     internal const string Factor="uae.g10.general.u05.l02.model_factor_rounded";
     internal const string Model="uae.g10.general.u05.l02.model_parameters";
     internal const string PowerCoefficient="uae.g10.general.u05.l02.power_law_coefficient";
+    internal const string GrowthValue="uae.g10.general.u05.l09.growth_decay_value";
+    internal const string HalfLife="uae.g10.general.u05.l09.half_life_value";
+    internal const string Rate="uae.g10.general.u05.l09.rate_from_factor";
+    internal const string Mixed="uae.g10.general.u05.l09.mixed_linear_exponential_value";
+    internal const string FirstPeriod="uae.g10.general.u05.l09.first_target_period";
     internal const string RoundedCooling="uae.g10.general.u05.l02.cooling_rounded";
     internal const string CoolingProbe="uae.g10.general.u05.l02.cooling_threshold_probe";
     internal const string RoundedPowerCoefficient="uae.g10.general.u05.l02.power_law_rounded_coefficient";
@@ -225,7 +249,7 @@ internal static class UaeG10ExponentialEquationResponse
     internal const string Threshold="uae.g10.general.u05.l02.cooling_threshold";
     internal const string PowerLaw="uae.g10.general.u05.l02.power_law_prediction";
     internal const string Sum="uae.g10.general.u05.l02.like_power_sum";
-    internal static bool Supports(string? f)=>f is Equation or Inequality or Factor or Forecast or Model or Compound or Period or Cooling or Threshold or PowerLaw or PowerCoefficient or Sum or RoundedCooling or CoolingProbe or RoundedPowerCoefficient or RoundedPowerPrediction or RoundedPeriod;
+    internal static bool Supports(string? f)=>f is Equation or Inequality or Factor or Forecast or Model or Compound or Period or Cooling or Threshold or PowerLaw or PowerCoefficient or Sum or RoundedCooling or CoolingProbe or RoundedPowerCoefficient or RoundedPowerPrediction or RoundedPeriod or GrowthValue or HalfLife or Rate or Mixed or FirstPeriod;
     internal static string Relation(int op)=>op switch{0=>">",1=>"≥",2=>"<",3=>"≤",_=>throw new InvalidOperationException()};
     internal static int Pow(int b,int n){int result=1;for(int i=0;i<n;i++)result*=b;return result;}
     internal static string BaseText(int b,int denominator,int n)
@@ -259,6 +283,9 @@ internal static class UaeG10ExponentialEquationResponse
             In(p["m0"],10,60)&&In(p["initial"],50,200)&&In(p["m1"],20,150)&&In(p["convert"],0,1);
         if(f==RoundedPeriod)return Keys(p,"periods","direction","rate")&&(p["periods"] is 2 or 4 or 12)&&
             In(p["direction"],0,1)&&(p["direction"]==0?In(p["rate"],100,800):In(p["rate"],10,80));
+        if(f is GrowthValue or Rate or Mixed or FirstPeriod)return Keys(p,"initial","rate","direction","time","linear")&&
+            In(p["initial"],100,10000)&&p["initial"]%100==0&&In(p["rate"],1,20)&&In(p["direction"],0,1)&&In(p["time"],1,12)&&In(p["linear"],100,1000)&&p["linear"]%100==0&&(f!=Mixed||p["direction"]==0);
+        if(f==HalfLife)return Keys(p,"initial","half","time")&&In(p["initial"],20,500)&&In(p["half"],2,20)&&In(p["time"],1,50);
         return f==Sum&&Keys(p,"base","exponent","multiplicity")&&In(p["base"],2,5)&&In(p["exponent"],2,6)&&In(p["multiplicity"],1,2);
     }
     private static long Gcd(long a,long b){a=Math.Abs(a);b=Math.Abs(b);while(b!=0)(a,b)=(b,a%b);return a;}
@@ -356,6 +383,25 @@ internal static class UaeG10ExponentialEquationResponse
         }
         throw new InvalidOperationException("Unsupported rounded source family.");
     }
+    private static (BigInteger N,BigInteger D,int Root,double Approximate) GrowthSource(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(f==HalfLife)
+        {
+            int h=p["half"],t=p["time"];
+            return (BigInteger.Pow(p["initial"],h),BigInteger.Pow(2,t),h,p["initial"]*Math.Pow(0.5,(double)t/h));
+        }
+        int time=p["time"],factor=100+(p["direction"]==1?p["rate"]:-p["rate"]);
+        BigInteger d=BigInteger.Pow(100,time),n=p["initial"]*BigInteger.Pow(factor,time);
+        double approx=p["initial"]*Math.Pow(factor/100d,time);
+        if(f==Mixed){n+=p["linear"]*time*d;approx+=p["linear"]*time;}
+        return (n,d,1,approx);
+    }
+    private static bool TargetReached(IReadOnlyDictionary<string,int> p,int t)
+    {
+        int initial=p["initial"],factor=100+(p["direction"]==1?p["rate"]:-p["rate"]);
+        BigInteger n=initial*BigInteger.Pow(factor,t),d=BigInteger.Pow(100,t);
+        return p["direction"]==1?n>=(initial+initial/4)*d:n<=(initial-initial/4)*d;
+    }
     private static long RoundedCandidate(double approximate,Func<long,bool> bucket)
     {
         long k=(long)Math.Round(approximate,MidpointRounding.AwayFromZero);
@@ -381,6 +427,18 @@ internal static class UaeG10ExponentialEquationResponse
         if(family==Forecast)return RoundedCandidate(p["start"]*Math.Pow((double)p["end"]/p["start"],(double)p["target"]/p["observed"]),k=>ForecastBucket(k,p)).ToString(CultureInfo.InvariantCulture);
         if(family==Compound)return (CompoundCents(p)/100m).ToString("0.00",CultureInfo.InvariantCulture);
         if(family==Period)return Fraction(100+p["percent"],100);
+        if(family==Rate)return p["rate"].ToString(CultureInfo.InvariantCulture);
+        if(family==FirstPeriod)
+        {
+            for(int t=0;t<=100;t++)if(TargetReached(p,t))return t.ToString(CultureInfo.InvariantCulture);
+            throw new InvalidOperationException("Growth target outside bounded horizon.");
+        }
+        if(family is GrowthValue or HalfLife or Mixed)
+        {
+            var (n,d,root,approx)=GrowthSource(family,p);
+            long k=RoundedCandidate(approx*100,v=>RootBucket(n,d,root,100,v));
+            return (k/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        }
         if(family is RoundedCooling or CoolingProbe or RoundedPowerCoefficient or RoundedPowerPrediction or RoundedPeriod)
         {
             var (n,d,root,scale,approx)=RoundedSource(family,p);
@@ -429,6 +487,13 @@ internal static class UaeG10ExponentialEquationResponse
             var (rn,rd,root,scale,_)=RoundedSource(family,p);
             if(family==CoolingProbe)return n==(rn<=p["threshold"]*rd?1L:0L)*d;
             return n>=0&&n*scale%d==0&&RootBucket(rn,rd,root,scale,n*scale/d);
+        }
+        if(family==Rate)return n==p["rate"]*d;
+        if(family==FirstPeriod)return n%d==0&&n/d>=1&&n/d<=100&&TargetReached(p,(int)(n/d))&&!TargetReached(p,(int)(n/d)-1);
+        if(family is GrowthValue or HalfLife or Mixed)
+        {
+            var (rn,rd,root,_)=GrowthSource(family,p);
+            return n>=0&&n*100%d==0&&RootBucket(rn,rd,root,100,n*100/d);
         }
         if(family==Factor)return n*1000%d==0&&FactorBucket(n*1000/d,p);
         if(family==Forecast)return n%d==0&&ForecastBucket(n/d,p);

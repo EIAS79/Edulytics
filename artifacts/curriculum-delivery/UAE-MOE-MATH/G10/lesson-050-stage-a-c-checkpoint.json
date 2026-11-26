@@ -9,12 +9,12 @@
   "unitTitle": "الدوال الأسية واللوغاريتمية",
   "lessonTitle": "النمو والاضمحلال",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
-  "status": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
-  "sourceBodyVerified": false,
+  "sourceBodyVerified": true,
   "relatedBodySourceVerified": true,
-  "sourceVerificationScope": "APPROVED_INDEX_PLUS_RELATED_APPLIED_GROWTH_DECAY_BODY",
-  "ownerApprovedIndexOnlyAuthoring": true,
+  "sourceVerificationScope": "MATCHING_APPLIED_5_3_BODY_AND_LAB_VISUALLY_REVIEWED",
+  "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
@@ -22,29 +22,40 @@
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "sourcePdfIndexPage": 10,
   "sourceUnit": "5",
-  "sourceLesson": "5-1 related source",
+  "sourceLesson": "5-3",
   "sourceElementDenominatorForThisLesson": null,
-  "sourceElementsMapped": null,
-  "originalArabicWorkedExamples": 12,
-  "originalVisualModels": 4,
+  "sourceElementsMapped": 48,
+  "originalArabicWorkedExamples": 19,
+  "originalVisualModels": 7,
   "authoredContentPackEntry": true,
   "arabicContentPackLessonCount": 50,
   "contentPackLessonCount": 83,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l09-ar.rich-lesson-v2.json",
-  "stageCStatus": "PARTIAL_REUSE_ONLY_OPEN_COMPLEX_TASKS_TEACHER_ASSESSMENT",
+  "stageCStatus": "REUSE_4_EXTEND_5_SHARED_ENGINE_FAMILIES_AUTHORED_NOT_RUN",
   "primarySkills": [
+    "exponentials.g10.source_models",
     "algebra.exponential.graph_features"
   ],
   "allowedQuestionFamilies": [
-    "uae.g10.general.u05.l01.is_growth"
+    "uae.g10.general.u05.l01.is_growth",
+    "uae.g10.general.u05.l02.compound_balance",
+    "uae.g10.general.u05.l02.equivalent_period_factor",
+    "uae.g10.general.u05.l02.equivalent_period_rounded",
+    "uae.g10.general.u05.l09.growth_decay_value",
+    "uae.g10.general.u05.l09.half_life_value",
+    "uae.g10.general.u05.l09.rate_from_factor",
+    "uae.g10.general.u05.l09.mixed_linear_exponential_value",
+    "uae.g10.general.u05.l09.first_target_period"
   ],
   "teacherReviewRequiredFor": [
-    "financial interpretation and units",
-    "continuous models and logarithmic solves",
-    "real scenario domain"
+    "construct and justify exponential or mixed models from context",
+    "compare investment plans and explain decision",
+    "graph mixed model and find noninteger threshold",
+    "explain prediction assumptions and practical limits"
   ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u05l09.test.cjs"
+    "tests/academic-uae-grade10-arabic-u05l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GrowthDecayTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -52,6 +63,29 @@
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 51,
   "nextEligibleCanonicalCode": "G10-U06-L01",
-  "closureBasis": "EDULYTICS_ORIGINAL_12_EXAMPLES_4_MODELS_INDEX_APPROVED; SOURCE_SCOPING_EXPLICIT",
-  "sourceLimitations": "Applied related body not same canonical lesson title; no claim full exact book-element coverage."
+  "closureBasis": "MATCHING_BODY_AND_LAB_REVIEWED_CORRECTED_CONTENT_REUSE_EXTEND_TESTS_WRITTEN",
+  "sourceLimitations": "Selected matching source sufficient; printed objectives and exercises mapped by skill, no all-edition or runtime claim.",
+  "previousStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "sourcePdfPages": [
+    129,
+    130,
+    131,
+    132,
+    133,
+    134
+  ],
+  "sourcePrintedPages": [
+    312,
+    313,
+    314,
+    315,
+    316,
+    317
+  ],
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-050-source-elements.json",
+  "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-050-source-evidence.md",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-050-stage-c-exact-contract.json",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-050-teacher-rubric.md",
+  "repairStatus": "CLOSED_SELECTED_SOURCE_A_B_C",
+  "repairNextTargetOrdinal": null
 }
