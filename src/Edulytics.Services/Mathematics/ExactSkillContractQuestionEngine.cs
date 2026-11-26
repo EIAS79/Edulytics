@@ -221,6 +221,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l15.projection_from_leg",
             "uae.g10.general.u14.l16.triangle_classification",
             "uae.g10.general.u14.l16.coordinate_distance_squared",
+            "uae.g10.general.u14.l17.height_with_eye_rounded",
+            "uae.g10.general.u14.l17.two_station_height_rounded",
+            "uae.g10.general.u14.l17.line_of_sight_rounded",
+            "uae.g10.general.u14.l17.angle_from_rise_run_rounded",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1514,6 +1518,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ElevationResponse.Supports(family))
+            return UaeG10ElevationResponse.Verify(family,parameters,answer);
 
         if (UaeG10RightTriangleRepairResponse.Supports(family))
             return UaeG10RightTriangleRepairResponse.Verify(family,parameters,answer);
@@ -4082,6 +4089,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10ElevationResponse.Supports(family))
+            return BuildG10Elevation(family,random,difficulty);
 
         if (UaeG10RightTriangleRepairResponse.Supports(family))
             return BuildG10RightTriangleRepair(family,random,difficulty);
@@ -10355,6 +10365,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10ElevationResponse.Supports(problem.Family))
+            return UaeG10ElevationResponse.Format(problem.Family,p);
 
         if (UaeG10RightTriangleRepairResponse.Supports(problem.Family))
             return UaeG10RightTriangleRepairResponse.Format(problem.Family,p);

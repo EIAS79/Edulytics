@@ -8652,8 +8652,16 @@
       "domain": "geometry",
       "canonicalName": "زوايا الارتفاع والانخفاض",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l17.height_with_eye_rounded",
+        "uae.g10.general.u14.l17.two_station_height_rounded",
+        "uae.g10.general.u14.l17.line_of_sight_rounded",
+        "uae.g10.general.u14.l17.angle_from_rise_run_rounded"
+      ]
     },
     {
       "id": "geometry.right_triangle.special_30_60_90",
