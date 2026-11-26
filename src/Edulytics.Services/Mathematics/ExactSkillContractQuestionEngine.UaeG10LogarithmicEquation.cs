@@ -18,7 +18,12 @@ public sealed partial class ExactSkillContractQuestionEngine
         string left=$"({a})س+({c})",right=$"({d})س+({e})";
         string interval="اكتب فترة الحل بالأقواس، مثل (1/2,3] أو (−∞,3)، أو ∅ إذا لا حل. اكتب inf إذا لم تتوفر علامة اللانهاية.";
         string prompt=family switch{
-            UaeG10LogarithmicEquationResponse.Direct=>$"حل لوغ_({basis})(س)={n}/{m}. اكتب عددًا صحيحًا أو كسرًا.",
+            UaeG10LogarithmicEquationResponse.Direct=>op switch{
+                0=>$"حل لوغ_({basis})(س)={n}/{m}. اكتب عددًا صحيحًا أو كسرًا.",
+                1=>$"حل لوغ_({basis})({UaeG10LogarithmicEquationResponse.PowText(b,n)})=س. اكتب عددًا صحيحًا أو كسرًا.",
+                2=>$"حل لوغ_س({UaeG10LogarithmicEquationResponse.PowText(b,m)})={(dir==1?m:-m)}/{1+z%3}. اكتب الأساس الموجب المختلف عن 1 كعدد صحيح أو كسر.",
+                _=>$"احسب مجموع {string.Join(" + ",Enumerable.Range(1,5).Select(i=>$"لوغ_({UaeG10LogarithmicEquationResponse.PowText(b,dir==1?i:-i)})({UaeG10LogarithmicEquationResponse.PowText(b,n)})"))} كعدد صحيح أو كسر."
+            },
             UaeG10LogarithmicEquationResponse.Quadratic=>dir==1?$"حل لوغ_{b}(س²+({a-r-s})س+({c+r*s}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام مفصولة بفاصلة، أو ∅ إن لم يوجد حل.":$"حل لوغ_{b}(({a+1})س+({c-r}))=لوغ_{b}(({a})س+({c})). اكتب الجذور المقبولة بالأرقام، أو ∅ إن لم يوجد حل.",
             UaeG10LogarithmicEquationResponse.OneSide=>$"حل لوغ_({parent})({left}) {rel} {n}. {interval}",
             UaeG10LogarithmicEquationResponse.TwoSides=>$"حل لوغ_({parent})({left}) {rel} لوغ_({parent})({right}). {interval}",
@@ -161,7 +166,11 @@ internal static class UaeG10LogarithmicEquationResponse
     internal static string Format(string f,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded logarithm equation parameters.");
-        if(f==Direct)return Power(p["b"],p["n"]*(p["dir"]==1?1:-1)).ToString();
+        if(f==Direct)
+        {
+            int sign=p["dir"]==1?1:-1;
+            return (p["op"] switch{0=>Power(p["b"],p["n"]*sign),1=>Q.Make(p["n"]*sign,p["m"]),2=>Power(p["b"],(1+p["z"]%3)*sign),_=>Q.Make(137*p["n"]*sign,60)}).ToString();
+        }
         if(f==Quadratic){int[] roots=Roots(p);return roots.Length==0?"∅":string.Join(",",roots);}
         if(f is OneSide or TwoSides)return Solve(Conditions(f,p)).Text();
         if(f==Ratio)return Math.Pow(10,p["dir"]==1?p["z"]/10.0:p["m"]).ToString("0.00",CultureInfo.InvariantCulture);
@@ -173,8 +182,13 @@ internal static class UaeG10LogarithmicEquationResponse
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer))return false;string raw=Norm(answer);
         if(f==Direct)
         {
-            if(!TryQ(raw,out Q q)||q.N<=0)return false;
-            int k=p["n"]*(p["dir"]==1?1:-1);return k>=0?new BigInteger(q.N)==new BigInteger(q.D)*Pow(p["b"],k):new BigInteger(q.N)*Pow(p["b"],-k)==q.D;
+            if(!TryQ(raw,out Q q))return false;
+            int sign=p["dir"]==1?1:-1;
+            if(p["op"]==1)return new BigInteger(q.N)*p["m"]*sign==new BigInteger(q.D)*p["n"];
+            if(p["op"]==3){var sum=Q.Make(0);for(int i=1;i<=5;i++)sum=sum.Plus(Q.Make(p["n"]*sign,i));return q.CompareTo(sum)==0;}
+            if(q.N<=0)return false;
+            int k=(p["op"]==0?p["n"]:1+p["z"]%3)*sign;
+            return k>=0?new BigInteger(q.N)==new BigInteger(q.D)*Pow(p["b"],k):new BigInteger(q.N)*Pow(p["b"],-k)==q.D;
         }
         if(f==Quadratic)
         {
