@@ -8,6 +8,27 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsCircleEquation(family))
+        {
+            int h=random.Next(-8,9),k=random.Next(-8,9),m=random.Next(1,7),mode=random.Next(0,3),yes=random.Next(0,2);
+            int r=5*m,d=-2*h,e=-2*k,f=h*h+k*k-r*r,line=k+(mode==0?3*m:mode==1?r:r+1);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.EquationCenterX=>$"معادلة دائرة س²+ص²+({d})س+({e})ص+({f})=0. أوجد الإحداثي السيني للمركز.",
+                UaeG10CircleResponse.EquationCenterY=>$"معادلة دائرة س²+ص²+({d})س+({e})ص+({f})=0. أوجد الإحداثي الصادي للمركز.",
+                UaeG10CircleResponse.EquationRadius=>$"معادلة دائرة (س−({h}))²+(ص−({k}))²={r*r}. أوجد نصف قطرها.",
+                UaeG10CircleResponse.EquationPointRadiusSquared=>$"دائرة مركزها ({h}،{k}) وتمر بالنقطة ({h+3*m}،{k+4*m}). أوجد مربع نصف القطر.",
+                UaeG10CircleResponse.EquationGeneralRadius=>$"معادلة دائرة س²+ص²+({d})س+({e})ص+({f})=0. أوجد نصف القطر.",
+                UaeG10CircleResponse.EquationConstant=>$"دائرة مركزها ({h}،{k}) ونصف قطرها {r}. في المعادلة العامة س²+ص²+({d})س+({e})ص+ج=0، أوجد ج.",
+                UaeG10CircleResponse.EquationDiameterCenter=>$"طرفا قطر دائرة هما ({h-r}،{k}) و({h+r}،{k}). أوجد الإحداثي السيني للمركز.",
+                UaeG10CircleResponse.EquationPointTest=>$"دائرة مركزها ({h}،{k}) ونصف قطرها {r}. هل تقع النقطة ({h+3*m}،{k+4*m+1-yes}) على المحيط؟ اكتب 1 لنعم أو 0 للا.",
+                UaeG10CircleResponse.EquationLineCount=>$"دائرة (س−({h}))²+(ص−({k}))²={r*r} ومستقيم ص={line}. كم نقطة تقاطع؟",
+                UaeG10CircleResponse.EquationLineX=>$"دائرة (س−({h}))²+(ص−({k}))²={r*r} ومستقيم ص={k+3*m}. أوجد الإحداثي السيني لنقطة التقاطع اليمنى.",
+                UaeG10CircleResponse.EquationThreePoints=>$"دائرة تمر بالنقاط ({h-r}،{k}) و({h+r}،{k}) و({h}،{k+r}). أوجد نصف قطرها.",
+                _=>$"دائرة س²+ص²={2*m*m} ومستقيم ص=س. أوجد الإحداثي السيني الموجب لنقطة التقاطع."
+            };
+            return Problem(family,prompt,"استخدم الصيغة القياسية وقانون المسافة، وأكمل المربع أو حل المعادلتين بالتعويض.",AssessmentItemType.Numeric,("h",h),("k",k),("m",m),("mode",mode),("yes",yes));
+        }
         if(UaeG10CircleResponse.IsSpecialSegment(family))
         {
             int k=random.Next(1,9),x=random.Next(2,12),b=random.Next(2,10),e=random.Next(2,12),i=random.Next(2,16);
@@ -195,8 +216,23 @@ internal static class UaeG10CircleResponse
     internal const string SegmentSagitta="uae.g10.general.u13.l07.chord_sagitta_radius";
     internal const string SegmentApprox="uae.g10.general.u13.l07.tangent_rounded";
     internal static bool IsSpecialSegment(string? f)=>f is SegmentChord or SegmentChordAlgebra or SegmentSecantWhole or SegmentSecantInner or SegmentTangent or SegmentTangentExternal or SegmentTangentQuadratic or SegmentSagitta or SegmentApprox;
-    internal static bool Supports(string? f)=>IsSpecialSegment(f)||IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsSpecialSegment(f)?
+    internal const string EquationCenterX="uae.g10.general.u13.l08.center_x_from_general";
+    internal const string EquationCenterY="uae.g10.general.u13.l08.center_y_from_general";
+    internal const string EquationRadius="uae.g10.general.u13.l08.radius_from_standard";
+    internal const string EquationPointRadiusSquared="uae.g10.general.u13.l08.radius_squared_from_point";
+    internal const string EquationGeneralRadius="uae.g10.general.u13.l08.radius_from_general";
+    internal const string EquationConstant="uae.g10.general.u13.l08.general_constant";
+    internal const string EquationDiameterCenter="uae.g10.general.u13.l08.diameter_midpoint_x";
+    internal const string EquationPointTest="uae.g10.general.u13.l08.point_membership";
+    internal const string EquationLineCount="uae.g10.general.u13.l08.horizontal_line_intersection_count";
+    internal const string EquationLineX="uae.g10.general.u13.l08.right_intersection_x";
+    internal const string EquationThreePoints="uae.g10.general.u13.l08.three_point_radius";
+    internal const string EquationDiagonal="uae.g10.general.u13.l08.diagonal_positive_intersection";
+    internal static bool IsCircleEquation(string? f)=>f is EquationCenterX or EquationCenterY or EquationRadius or EquationPointRadiusSquared or EquationGeneralRadius or EquationConstant or EquationDiameterCenter or EquationPointTest or EquationLineCount or EquationLineX or EquationThreePoints or EquationDiagonal;
+    internal static bool Supports(string? f)=>IsCircleEquation(f)||IsSpecialSegment(f)||IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsCircleEquation(f)?
+        p.Count==5&&new[]{"h","k","m","mode","yes"}.All(p.ContainsKey)&&p["h"] is >=-8 and <=8&&p["k"] is >=-8 and <=8&&p["m"] is >=1 and <=6&&p["mode"] is >=0 and <=2&&p["yes"] is >=0 and <=1:
+        IsSpecialSegment(f)?
         p.Count==5&&new[]{"k","x","b","e","i"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=11&&p["b"] is >=2 and <=9&&p["e"] is >=2 and <=11&&p["i"] is >=2 and <=15:
         IsSecantAngle(f)?
         p.Count==5&&new[]{"a","b","v","x","k"}.All(p.ContainsKey)&&p["a"] is >=20 and <=120&&p["a"]%2==0&&p["b"] is >=20 and <=120&&p["b"]%2==0&&p["v"] is >=20 and <=160&&p["v"]%2==0&&p["x"] is >=4 and <=30&&p["x"]%2==0&&p["k"] is >=2 and <=4&&p["k"]*p["x"]+p["a"]+p["b"]<360&&p["k"]*p["x"]+2*p["a"]<360&&2*p["a"]+p["b"]<360:
@@ -213,6 +249,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsCircleEquation(f))
+        {
+            int h=p["h"],k=p["k"],m=p["m"],r=5*m;
+            return f switch{EquationCenterX or EquationDiameterCenter=>(h,1),EquationCenterY=>(k,1),EquationRadius or EquationGeneralRadius or EquationThreePoints=>(r,1),EquationPointRadiusSquared=>(r*r,1),EquationConstant=>(h*h+k*k-r*r,1),EquationPointTest=>(p["yes"],1),EquationLineCount=>(2-p["mode"],1),EquationLineX=>(h+4*m,1),EquationDiagonal=>(m,1),_=>throw new InvalidOperationException()};
+        }
         if(IsSpecialSegment(f))
         {
             int k=p["k"],x=p["x"],e=p["e"],i=p["i"];
@@ -258,6 +299,23 @@ internal static class UaeG10CircleResponse
     {
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(raw)||raw.Length>40)return false;
         string s=string.Concat(raw.Trim().Where(c=>!char.IsWhiteSpace(c)).Select(c=>c switch{>= '٠' and <= '٩'=>(char)('0'+c-'٠'),>= '۰' and <= '۹'=>(char)('0'+c-'۰'),'٫'=>'.','⁄'=>'/',_=>c}));
+        if(IsCircleEquation(f))
+        {
+            if(!decimal.TryParse(s.Replace('−','-'),NumberStyles.AllowLeadingSign|NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)||value!=decimal.Truncate(value)||value < -1000000||value > 1000000)return false;
+            long q=(long)value,h=p["h"],k=p["k"],m=p["m"],r=5*m,mode=p["mode"],yes=p["yes"];
+            if(f==EquationCenterX)return 2*q==2*h;
+            if(f==EquationCenterY)return 2*q==2*k;
+            if(f==EquationRadius)return q>0&&q*q==r*r;
+            if(f==EquationPointRadiusSquared)return q==9*m*m+16*m*m;
+            if(f==EquationGeneralRadius)return q>0&&q*q==h*h+k*k-(h*h+k*k-r*r);
+            if(f==EquationConstant)return h*h+k*k-q==r*r;
+            if(f==EquationDiameterCenter)return 2*q==(h-r)+(h+r);
+            if(f==EquationPointTest){long dy=4*m+1-yes;return q==(9*m*m+dy*dy==r*r?1:0);}
+            if(f==EquationLineCount){long dist=mode==0?3*m:mode==1?r:r+1;return q==(dist<r?2:dist==r?1:0);}
+            if(f==EquationLineX)return q>h&&(q-h)*(q-h)+9*m*m==r*r;
+            if(f==EquationThreePoints)return q>0&&q*q==((h+r)-(h-r))*((h+r)-(h-r))/4;
+            return f==EquationDiagonal&&q>0&&2*q*q==2*m*m;
+        }
         string[] pair=s.Split('/');
         long n,d=1;
         if(pair.Length==2){if(!long.TryParse(pair[0],NumberStyles.None,CultureInfo.InvariantCulture,out n)||!long.TryParse(pair[1],NumberStyles.None,CultureInfo.InvariantCulture,out d)||n>1000000||d<1||d>1000000)return false;}
