@@ -9,42 +9,50 @@
   "unitTitle": "الدوال الأسية واللوغاريتمية",
   "lessonTitle": "حل المعادلات والمتباينات اللوغاريتمية",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
-  "sourceBodyVerified": false,
-  "sourceVerificationScope": "OWNER_APPROVED_TITLE_INDEX_ORIGINAL_CONTENT",
+  "sourceBodyVerified": true,
+  "sourceVerificationScope": "OWNER_APPROVED_SELECTED_MATCHING_BODY",
   "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
-  "sourceBook": "01متقدم_.pdf",
-  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceBook": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
   "sourcePdfIndexPage": 12,
   "sourceUnit": "8",
   "sourceLesson": "8-4",
   "sourceElementDenominatorForThisLesson": null,
-  "sourceElementsMapped": null,
-  "originalArabicWorkedExamples": 12,
-  "originalVisualModels": 4,
+  "sourceElementsMapped": 76,
+  "originalArabicWorkedExamples": 30,
+  "originalVisualModels": 9,
   "authoredContentPackEntry": true,
   "arabicContentPackLessonCount": 45,
   "contentPackLessonCount": 78,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l04-ar.rich-lesson-v2.json",
-  "stageCStatus": "REUSED_LOG_EVALUATION_ONLY_OTHER_TASKS_TEACHER_SCORING",
+  "stageCStatus": "SELECTED_SOURCE_FAMILIES_AUTHORED_TESTS_WRITTEN_NOT_RUN",
   "primarySkills": [
-    "supporting.exponentials_logs"
+    "logarithms.g10.equations_inequalities_models"
   ],
   "allowedQuestionFamilies": [
-    "supporting.logarithms.evaluate"
+    "uae.g10.general.u05.l04.direct_rational",
+    "uae.g10.general.u05.l04.quadratic_root_set",
+    "uae.g10.general.u05.l04.one_side_interval",
+    "uae.g10.general.u05.l04.two_sides_interval",
+    "uae.g10.general.u05.l04.wind_distance",
+    "uae.g10.general.u05.l04.rounded_amplitude_ratio",
+    "uae.g10.general.u05.l04.music_key",
+    "uae.g10.general.u05.l04.sound_level"
   ],
   "teacherReviewRequiredFor": [
-    "domain justification",
-    "logarithmic graph construction",
-    "solving multi-step logarithmic inequalities",
-    "negative base exclusions"
+    "free proof and derivations",
+    "graph construction and analysis",
+    "general models outside bounded digital variants",
+    "open justification and critique"
   ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u05l04.test.cjs"
+    "tests/academic-uae-grade10-arabic-u05l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10LogarithmicEquationTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -52,11 +60,34 @@
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 46,
   "nextEligibleCanonicalCode": "G10-U05-L05",
-  "closureBasis": "EXCEPTION_NOT_A_B_C_CLOSURE",
-  "sourceLimitations": "The Advanced Unit 8 lesson is TOC-only in both supplied Advanced volumes. General/Applied and geometry excerpts contain no matching complete logarithmic lesson body; Applied exponential activities do not establish full logarithmic objectives.",
-  "previousStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
-  "repairStatus": "SOURCE_BODY_NOT_AVAILABLE_EXCEPTION_RECORDED",
-  "repairException": {
+  "closureBasis": "SELECTED_MATCHING_BODY_A_B_C_REPAIR_NOT_FULL_BOOK_PARITY",
+  "sourceLimitations": "Matching chapter excerpt; school edition year/term unverified; exhaustive all-edition denominator unknown; no runtime claim.",
+  "previousStatus": "A_C_EXPLICIT_GAP",
+  "repairStatus": "CLOSED_SELECTED_SOURCE_A_B_C",
+  "repairNextTargetOrdinal": 46,
+  "sourceCoverageGapEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md",
+  "sourcePdfPages": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "sourcePrintedPages": [
+    582,
+    583,
+    584,
+    585,
+    586,
+    587
+  ],
+  "originalTitleSource": "01متقدم_.pdf PDF12 Unit8 8-4",
+  "supplementalSourceSnapshotId": "G10-SUPPLEMENTAL-BOOKS-SHA-2026-11-26",
+  "sourceElementDenominatorVerifiedForThisLesson": false,
+  "selectedPrintedSourceItemsMapped": 76,
+  "cumulativeReviewItemsCrosswalked": 24,
+  "previousRepairException": {
     "code": "SOURCE_BODY_NOT_AVAILABLE",
     "scope": "SEVEN_APPROVED_BOOKS",
     "reason": "The Advanced Unit 8 lesson is TOC-only in both supplied Advanced volumes. General/Applied and geometry excerpts contain no matching complete logarithmic lesson body; Applied exponential activities do not establish full logarithmic objectives.",
@@ -64,6 +95,13 @@
     "contentUnchanged": true,
     "continueToNextTarget": true
   },
-  "repairNextTargetOrdinal": 46,
-  "sourceCoverageGapEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-source-elements.json",
+  "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-teacher-rubric.md",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-stage-c-exact-contract.json",
+  "contentCorrectionCommit": "c45632fd16b35c805b575cd5b11115e27de2b0a0",
+  "evidenceUpdateCommit": "07fcf43c75c761501f1936de21ab10862e6a8276",
+  "independentArithmeticCasesChecked": 49109,
+  "cartesianCoordinateChecks": 10,
+  "remainingGap": null
 }
