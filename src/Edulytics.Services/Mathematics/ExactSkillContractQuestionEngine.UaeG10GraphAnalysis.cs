@@ -27,10 +27,10 @@ public sealed partial class ExactSkillContractQuestionEngine
                 int y=leading*(x-roots[0])*(x-roots[1])*(x-roots[2]);
                 return $"({x}،{y})";
             }));
-            string prompt=$"يوضح الجدول نقاطًا من منحنى دالة تكعيبية كثيرة الحدود: {table}. " +
+            string interceptPrompt=$"يوضح الجدول نقاطًا من منحنى دالة تكعيبية كثيرة الحدود: {table}. " +
                           "حدد قيم س عند تقاطع منحنى الدالة مع محور س. " +
                           "اكتب الأصفار الثلاثة بترتيب تصاعدي مفصولة بفاصلة.";
-            return Problem(family,prompt,
+            return Problem(family,interceptPrompt,
                 "تكون النقطة على محور السينات إذا كان الإحداثي الصادي صفرًا. استخرج جميع النقاط ذات القيمة 0 ثم اكتب قيم س تصاعديًا.",
                 AssessmentItemType.ShortAnswer,
                 ("a",leading),("h",0),("k",0),("r1",roots[0]),

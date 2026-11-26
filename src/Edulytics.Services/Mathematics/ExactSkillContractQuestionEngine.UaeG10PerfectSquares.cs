@@ -104,8 +104,8 @@ internal static class UaeG10PerfectSquaresResponse
             if(parts.Length!=2||
                !int.TryParse(parts[0],NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int n1)||
                !int.TryParse(parts[1],NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int n2))return false;
-            int a=p["h"]-p["r"],b=p["h"]+p["r"];
-            return (n1==a&&n2==b)||(n1==b&&n2==a);
+            int lower=p["h"]-p["r"],upper=p["h"]+p["r"];
+            return (n1==lower&&n2==upper)||(n1==upper&&n2==lower);
         }
         var m=Regex.Match(text,@"^\((?<lead>[1-9][0-9]*)?x(?<sign>[+-])(?<constant>[1-9][0-9]*)\)\^2$",
             RegexOptions.CultureInvariant);

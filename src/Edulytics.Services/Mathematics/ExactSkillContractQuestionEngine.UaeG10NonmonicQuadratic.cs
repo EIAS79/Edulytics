@@ -20,12 +20,12 @@ public sealed partial class ExactSkillContractQuestionEngine
             int a,b,c;
             if(random.Next(0,2)==0)
             {
-                int u,w,v,z;
+                int pu,pw,pv,pz;
                 do
                 {
-                    u=random.Next(1,5);w=random.Next(1,5);
-                    v=random.Next(-5,6);z=random.Next(-5,6);
-                    a=u*w;b=u*z+w*v;c=v*z;
+                    pu=random.Next(1,5);pw=random.Next(1,5);
+                    pv=random.Next(-5,6);pz=random.Next(-5,6);
+                    a=pu*pw;b=pu*pz+pw*pv;c=pv*pz;
                 }
                 while(a<=1||a>8||b==0||Math.Abs(b)>14||c==0||Math.Abs(c)>20);
             }
@@ -139,7 +139,7 @@ internal static class UaeG10NonmonicQuadraticResponse
         if(family==FactorFamily)return Term(p["u"],p["v"])+Term(p["w"],p["z"]);
         if(family==RootsFamily)
         {
-            var r1=Fraction(-p["v"],p["u"]),r2=Fraction(-p["z"],p["w"]);
+            string r1=Fraction(-p["v"],p["u"]),r2=Fraction(-p["z"],p["w"]);
             // Lexical order is display-only; grading accepts either order.
             return string.Join(",",new[]{r1,r2}.OrderBy(x=>x,StringComparer.Ordinal));
         }

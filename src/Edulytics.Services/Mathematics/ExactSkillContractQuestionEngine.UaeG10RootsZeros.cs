@@ -32,13 +32,13 @@ public sealed partial class ExactSkillContractQuestionEngine
         }
         if(family==UaeG10RootsZerosResponse.Conjugate)
         {
-            int a=random.Next(-4,5);
-            int b=random.Next(1,5)*(random.Next(0,2)==0?1:-1);
-            string root=UaeG10RootsZerosResponse.FormatComplex(a,b);
+            int real=random.Next(-4,5);
+            int imaginary=random.Next(1,5)*(random.Next(0,2)==0?1:-1);
+            string root=UaeG10RootsZerosResponse.FormatComplex(real,imaginary);
             return Problem(family,
                 $"لِكثيرة حدود ذات معاملات حقيقية جذر مركب هو {root}. وفق نظرية المترافقين المركبين، اكتب الجذر المركب المرافق باستخدام i ورقمين صحيحين مثل 2-3i.",
                 "جذور المعادلات ذات المعاملات الحقيقية غير الحقيقية تأتي في أزواج مرافقات: أ+بi ↔ أ−بi.",
-                AssessmentItemType.ShortAnswer,("real",a),("imag",b));
+                AssessmentItemType.ShortAnswer,("real",real),("imag",imaginary));
         }
         int m=random.Next(1,5),n=random.Next(1,5);
         if(m+n>6)n=6-m;
