@@ -14,18 +14,18 @@
   "FallbackReason": "The owner-approved seven-book source index combines dated local source editions (including General/Advanced 2025–2026); exact 2026–2027 full-book publication is not asserted, with per-lesson SHA evidence.",
   "ReviewMethod": "Verified UAE Student Edition table-of-contents reconstruction; exact OfficialReference mapping; no invented OutcomeCodes.",
   "SourcePolicyVersion": 2,
-  "PedagogicalSourceType": "OpenEducationalResource",
-  "PedagogicalSourceTitle": "GCSE Mathematics subject content and assessment objectives",
-  "PedagogicalSourcePublisher": "UK Department for Education",
-  "PedagogicalSourceEdition": "GCSE Mathematics subject content / current GOV.UK publication",
-  "PedagogicalSourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
-  "PedagogicalSourceCheckedAtUtc": "2026-09-01T00:00:00Z",
-  "PedagogicalSourceSelectionReason": "Open government Mathematics material is used as pedagogical scaffolding so Edulytics can publish independently authored explanations without copying restricted official curriculum prose.",
-  "PedagogicalSourceSelectionEvidence": "40 source-policy-compliant lessons generated for exactly one curriculum level/pathway scope; zero unverified formal OutcomeCodes.",
-  "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
+  "PedagogicalSourceType": "OwnerSelectedLocalArabicStudentBookReference",
+  "PedagogicalSourceTitle": "Owner-selected seven UAE Grade 10 Arabic mathematics student books",
+  "PedagogicalSourcePublisher": "UAE Ministry of Education",
+  "PedagogicalSourceEdition": "Composite local editions; per-lesson provenance recorded",
+  "PedagogicalSourceUrl": "https://minhaji.moe.gov.ae/",
+  "PedagogicalSourceCheckedAtUtc": "2026-11-23T00:00:00Z",
+  "PedagogicalSourceSelectionReason": "Owner-approved seven-book unified General scope; original Edulytics Arabic content; exact source-element parity UNKNOWN.",
+  "PedagogicalSourceSelectionEvidence": "G10 canonical index and 148 A-C checkpoints",
+  "PedagogicalSourceRightsNote": "Lesson teaching content is represented as Edulytics authored; reference books used for topic and skill alignment only. No permission for protected textbook prose or artwork is asserted.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "The owner-approved canonical 148-lesson index is registered in the Blueprint; the first original Advanced-body lesson G10-U01-L10 has an authored Arabic content record. The existing legacy pack Published/en status does not certify all 148 lesson bodies or StageD. Earlier 48 General source headings remain part of a larger index.",
+  "ReviewEvidence": "148 authored Arabic lessons in 18 units, owner academic approval; technical Stage D and production deployment pending.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
@@ -925,7 +925,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L1 exact lesson body PDF154–160",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L01",
@@ -968,7 +968,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:02:ANGLES-AND-PARALLEL-LINES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L2 exact lesson body PDF161–168",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L02",
@@ -1011,7 +1011,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:03:SLOPE-OF-A-LINE",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L3 exact lesson body PDF169–178",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L03",
@@ -1054,7 +1054,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:04:EQUATIONS-OF-LINES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L4 exact lesson body PDF179–187",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L04",
@@ -1097,7 +1097,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:05:PROVING-LINES-PARALLEL",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L5 exact lesson body PDF188–195",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L05",
@@ -1140,7 +1140,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:06:PERPENDICULARS-AND-DISTANCE",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit3-L6 exact lesson body PDF196–205",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U03:L06",
@@ -1183,7 +1183,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:01:REFLECTIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-1 original body PDF218–226",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L01",
@@ -1226,7 +1226,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:02:TRANSLATIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-2 original body PDF227–234",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L02",
@@ -1269,7 +1269,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:03:ROTATIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-3 original body PDF235–245",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L03",
@@ -1312,7 +1312,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:04:COMPOSITIONS-OF-TRANSFORMATIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-4 original body PDF246–257",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L04",
@@ -1355,7 +1355,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:05:SYMMETRY",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-5 original body PDF258–268",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L05",
@@ -1398,7 +1398,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:06:DILATIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Unit4 Lesson4-6 original body PDF269–277",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U04:L06",
@@ -1441,7 +1441,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:01:CLASSIFYING-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General Grade10 Unit5 Lesson5-1, PDF288–296",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L01",
@@ -1484,7 +1484,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:02:ANGLES-OF-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General Grade10 Unit5 Lesson5-2, PDF297–305",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L02",
@@ -1527,7 +1527,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:03:CONGRUENT-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General Grade10 Unit5 Lesson5-3, PDF306–315",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L03",
@@ -1570,7 +1570,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:04:PROVING-CONGRUENCE-SSS-AND-SAS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 5-4 PDF316–325",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L04",
@@ -1613,7 +1613,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:05:PROVING-CONGRUENCE-ASA-AND-AAS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 5-5 PDF326–335",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L05",
@@ -1656,7 +1656,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:06:ISOSCELES-AND-EQUILATERAL-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 5-6 PDF336–346",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L06",
@@ -1699,7 +1699,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:07:CONGRUENCE-TRANSFORMATIONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General2025–2026 Unit5 Lesson5-7 PDF347–353",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L07",
@@ -1742,7 +1742,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:08:TRIANGLES-AND-COORDINATE-PROOF",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General2025–2026 Unit5 Lesson5-8 PDF354–363",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L08",
@@ -1785,7 +1785,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:09:AREA-OF-PARALLELOGRAMS-AND-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General2025–2026 Unit5 Lesson5-9 PDF364–376",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U05:L09",
@@ -1828,7 +1828,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:01:PERPENDICULAR-BISECTORS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-1, PDF385–395",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L01",
@@ -1871,7 +1871,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-2, PDF396–404",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L02",
@@ -1914,7 +1914,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-3, PDF405–415",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L03",
@@ -1957,7 +1957,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-4, PDF416–424",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L04",
@@ -2000,7 +2000,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-5, PDF425–431",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L05",
@@ -2043,7 +2043,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:06:INEQUALITIES-IN-TWO-TRIANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Volume1 Unit6 Lesson6-6, PDF432–441",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U06:L06",
@@ -2086,7 +2086,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:01:ANGLES-OF-POLYGONS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-1 «زوايا المضلعات»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L01",
@@ -2129,7 +2129,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-2 «متوازي الأضلاع»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L02",
@@ -2172,7 +2172,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:03:TESTS-FOR-PARALLELOGRAMS",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-3 «اختبارات متوازي الأضلاع»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L03",
@@ -2215,7 +2215,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:04:RECTANGLES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-4 «المستطيل»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L04",
@@ -2258,7 +2258,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:05:RHOMBI-AND-SQUARES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-5 «المعين والمربع»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L05",
@@ -2301,7 +2301,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:06:TRAPEZOIDS-AND-KITES",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "General 2025–2026 Vol1 Unit7 Lesson7-6 «شبه المنحرف وشكل الطائرة الورقية»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G10:GENERAL:ANNUAL:U07:L06",
@@ -2344,7 +2344,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L07:C023",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 Unified owner-approved ordinal23 — Advanced4-3 «دوال الجذر التربيعي والمتباينات» and Applied6-1 «دوال الجذر التربيعي»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2377,7 +2377,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08:C024",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Unified G10 owner-approved ordinal24 — Advanced 4-7 «حل المعادلات الجذرية والمتباينات» and Applied 6-2 «المعادلات الجذرية»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2410,7 +2410,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L01:C025",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical 25 — Advanced 2025–2026 Volume1 U01L01 «حل أنظمة المعادلات» (original graph/table/algebra methods), unified General U03L01",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2443,7 +2443,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02:C026",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 approved canonical ordinal26 — Advanced 2025–2026 Unit1 Lesson1-2 «حل أنظمة المتباينات بالتمثيل البياني»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2476,7 +2476,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L03:C027",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical ordinal27 — Advanced 2025–2026 Arabic Vol1 U01L03 «إيجاد الحل الأمثل بالبرمجة الخطية», unified General U03L03",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2509,7 +2509,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L04:C028",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 approved canonical 28 — Advanced 2025–2026 Vol1 U01L04 «أنظمة المعادلات بثلاثة متغيرات», unified General U03L04",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2542,7 +2542,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L05:C029",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical ordinal29: Advanced Arabic 2025-2026 Volume1 original 1-5 «المصفوفات» and 1-6 «العمليات على المصفوفات»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2575,7 +2575,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06:C030",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical #30 — Advanced original 2025–2026 Vol1 U01L07 «ضرب المصفوفات»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2608,7 +2608,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L07:C031",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical31 — source Advanced 2025–2026 Vol1 U01L08 «حل أنظمة المعادلات باستخدام قاعدة كرامر» (determinants)",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2641,7 +2641,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical32 — Advanced Arabic Volume1 Unit1 Lesson1-9 «حل أنظمة المعادلات باستخدام معكوس المصفوفات»",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2674,7 +2674,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09:C033",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical33 — source technology laboratory «مختبر تقنية التمثيل البياني 1-9: المصفوفات الموسعة» after Advanced U01L09, NOT a separate numbered book lesson",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2707,7 +2707,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L01:C034",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical34 — Advanced Arabic 2025–2026 Volume1 original U02L01 quadratic graph lesson PDF112–119 and related data-modeling technology lab PDF121",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2740,7 +2740,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02:C035",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical35 — original Advanced Arabic 2025–2026 Vol1 Unit2 Lesson2-2 solving quadratics graphically, PDF122–129 and calculator laboratory130",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2773,7 +2773,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03:C036",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "G10 canonical36 — original Advanced Arabic 2025–2026 Volume1 Unit2 Lesson2-4 «الأعداد المركبة» physical PDF139–144 with complex-plane lab PDF146–147",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2806,7 +2806,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04:C037",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 canonical37 — original Advanced Arabic 2025–2026 Volume1 Unit2 Lesson2-5 «إكمال المربع» PDF149–154 and graphing-calculator extension PDF156",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2839,7 +2839,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05:C038",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 owner canonical38 — original Advanced Arabic 2025–2026 Volume1 Unit2 Lesson2-6 «القانون العام والمميز», PDF157–164",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2872,7 +2872,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06:C039",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 owner canonical39 source Advanced Arabic 2025–2026 Volume1 Unit2 Lesson2-8 «المتباينات التربيعية» PDF175–180",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2905,7 +2905,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L07:C040",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UAE Grade10 Advanced 2025–2026 Volume1 Unit2 Lesson2-7 «تحويل التمثيلات البيانية للدوال التربيعية» original lab and lesson, consolidated General G10-U04-L07",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2938,7 +2938,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08:C041",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UAE Applied Arabic 2022–2023 Volume2 Unit4 Lesson4-1 algebra lab «معدل تغير الدالة التربيعية» page214",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -2971,7 +2971,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L01:C042",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UAE Applied 2022–2023 Grade10 Arabic Volume2 Unit5 Lesson5-1 «الدوال الأسية» PDF111–117 printed294–300; Advanced 2025–2026 Volume1 TOC Unit8 lesson8-1 only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3004,7 +3004,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UAE Applied 2022–2023 Volume2 Unit5 Lesson5-6 «حل المعادلات والمتباينات الأسية» printed333–338, PDF150–155 (EXACT TITLE/BODY); Advanced 2025–2026 Volume1 PDF12 title/index only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3037,7 +3037,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03:C044",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 Unit8 Lesson8-4 (TITLE ONLY)",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3070,7 +3070,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 Unit8 Lesson8-5 (TITLE ONLY)",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3103,7 +3103,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 index Unit8 Lesson8-6 TITLE ONLY",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3136,7 +3136,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 index Unit8 Lesson8-7 TITLE ONLY",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3169,7 +3169,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 index Unit8 Lesson8-8 TITLE ONLY",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3202,7 +3202,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf PDF12 Unit8-8 title only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3235,7 +3235,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "رياضيات كتاب الطالب تطبيقي 10 8.pdf PDF111–117 Unit5-L5-1 growth-decay concept overlapping, not same standalone lesson title",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3268,7 +3268,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L01:C051",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf Grade10 Advanced 2025–2026 Advanced Unit4 Lesson4-1; PDF274–281 printed257–264",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3301,7 +3301,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L02:C052",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "01متقدم_.pdf Grade10 Advanced 2025–2026 Advanced Unit4 Lesson4-2; PDF282–287 printed265–270",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3334,7 +3334,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L03:C053",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf Older Advanced 2018–2019 Unit9-L9-1 body PDF28–36 printed621–629",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3367,7 +3367,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L04:C054",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf Older Advanced 2018–2019 Unit9-L9-2 body PDF37–43 printed630–636",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3400,7 +3400,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L05:C055",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf Older Advanced 2018–2019 Unit9-L9-3 body PDF44–51 printed637–644",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3433,7 +3433,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L06:C056",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf Older Advanced 2018–2019 Unit9-L9-5 body PDF61–68 printed654–661",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3466,7 +3466,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L07:C057",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf Older Advanced 2018–2019 Unit9-L9-6 body PDF69–78 printed662–671",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3499,7 +3499,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01:C085",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-1 physical PDF4–11; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3532,7 +3532,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02:C086",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-2 physical PDF12–20; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3565,7 +3565,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03:C087",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-3 physical PDF21–32; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3598,7 +3598,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04:C088",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-4 physical PDF33–43; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3631,7 +3631,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05:C089",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-5 physical PDF44–53; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3664,7 +3664,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06:C090",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-6 physical PDF54–60; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3697,7 +3697,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07:C091",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-1.pdf Chapter6 Lesson6-7 physical PDF61–69; source pathway and edition not identifiable from excerpt",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3730,7 +3730,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01:C098",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
       "IsSupporting": false,
@@ -3760,7 +3760,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L02:C099",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
       "IsSupporting": false,
@@ -3790,7 +3790,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03:C100",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
       "IsSupporting": false,
@@ -3820,7 +3820,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04:C101",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
       "IsSupporting": false,
@@ -3850,7 +3850,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05:C102",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 Advanced 2025–2026 book index PDF9; Applied book index PDF13 crosswalk only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3881,7 +3881,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06:C103",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 Advanced 2025–2026 book index PDF9; Applied book index PDF13 crosswalk only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3912,7 +3912,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07:C104",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 Advanced 2025–2026 book index PDF9; Applied book index PDF13 crosswalk only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3943,7 +3943,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08:C105",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 Advanced 2025–2026 book index PDF9; Applied book index PDF13 crosswalk only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -3974,7 +3974,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09:C106",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Grade10 Advanced 2025–2026 book index PDF9; Applied book index PDF13 crosswalk only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4005,7 +4005,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L01:C107",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 PDF14/15 title, older 2018–2019 Volume3 body family and General older excerpt 02-2 index",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4035,7 +4035,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L02:C108",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 PDF14/15 title, older 2018–2019 Volume3 body family and General older excerpt 02-2 index",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4065,7 +4065,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L03:C109",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 PDF14/15 title, older 2018–2019 Volume3 body family and General older excerpt 02-2 index",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4095,7 +4095,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L04:C110",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 PDF14/15 title, older 2018–2019 Volume3 body family and General older excerpt 02-2 index",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4125,7 +4125,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L05:C111",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 PDF14/15 title, older 2018–2019 Volume3 body family and General older excerpt 02-2 index",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4155,7 +4155,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L06:C112",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 PDF14–15 annual TOC; old Advanced 2018–2019 Volume3 topic crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4185,7 +4185,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L07:C113",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 PDF14–15 annual TOC; old Advanced 2018–2019 Volume3 topic crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4215,7 +4215,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L08:C114",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 PDF14–15 annual TOC; old Advanced 2018–2019 Volume3 topic crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4245,7 +4245,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L09:C115",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 PDF14–15 annual TOC; old Advanced 2018–2019 Volume3 topic crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4275,7 +4275,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L10:C116",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 PDF14–15 annual TOC; old Advanced 2018–2019 Volume3 topic crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4305,7 +4305,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11:C117",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced2025–2026 Volume1 PDF15 index, 2018–2019 Volume3 similar-trig body crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4335,7 +4335,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L12:C118",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced2025–2026 Volume1 PDF15 index, 2018–2019 Volume3 similar-trig body crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4365,7 +4365,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L13:C119",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced2025–2026 Volume1 PDF15 index, 2018–2019 Volume3 similar-trig body crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4395,7 +4395,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L14:C120",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced2025–2026 Volume1 PDF15 index, 2018–2019 Volume3 similar-trig body crosswalk",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4425,7 +4425,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L15:C121",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf older General 2018–2019 chapter 8 excerpt index opener PDF2",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4455,7 +4455,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L16:C122",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf older General 2018–2019 chapter 8 excerpt index opener PDF11",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4485,7 +4485,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L17:C123",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf older General 2018–2019 chapter 8 excerpt index opener PDF40",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4515,7 +4515,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L18:C124",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf older General 2018–2019 chapter 8 excerpt index opener PDF20",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4545,7 +4545,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L01:C125",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf 2018–2019 General chapter9 excerpt index PDF54",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4575,7 +4575,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L02:C126",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf 2018–2019 General chapter9 excerpt index PDF60",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4605,7 +4605,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03:C127",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf 2018–2019 General chapter9 excerpt index PDF68",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4635,7 +4635,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L04:C128",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf 2018–2019 General chapter9 excerpt index PDF93",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4665,7 +4665,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L05:C129",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf Grade10 General older excerpt opener PDF77",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4695,7 +4695,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L06:C130",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf Grade10 General older excerpt opener PDF86",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4725,7 +4725,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf Grade10 General older excerpt opener PDF101",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4755,7 +4755,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L08:C132",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "02-2.pdf Grade10 General older excerpt opener PDF107",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4785,7 +4785,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01:C133",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-1 «تمثيل فضاءات العينة» body PDF121, printed651",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4815,7 +4815,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02:C134",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-2 «استخدام التباديل والتوافيق مع الاحتمالات» body PDF128, printed658",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4845,7 +4845,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03:C135",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-3 «الاحتمالات الهندسية» body PDF137, printed667",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4875,7 +4875,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04:C136",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-4 «المحاكاة» body PDF145, printed675",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4905,7 +4905,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05:C137",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Advanced 2025–2026 Volume1 TOC p11 — title only",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4938,7 +4938,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-5 «احتمالات الأحداث المستقلة وغير المستقلة» body PDF153, printed683",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -4971,7 +4971,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07:C139",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner book 02-2.pdf Unit10 lesson 10-6 «احتمالات الأحداث المنفصلة» body PDF160, printed692",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5004,7 +5004,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01:C140",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf older UAE Advanced 2018–2019 Chapter12 Lesson12-1 «المتتابعات كدوال» directly inspected",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5037,7 +5037,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02:C141",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf older UAE Advanced 2018–2019 Chapter12 Lesson12-2 «المتتابعات والمتسلسلات الحسابية» directly inspected",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5070,7 +5070,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03:C142",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf older UAE Advanced 2018–2019 Chapter12 Lesson12-3 «المتتابعات والمتسلسلات الهندسية» directly inspected",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5103,7 +5103,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04:C143",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03متقدم_.pdf older UAE Advanced 2018–2019 Chapter12 Lesson12-4 «المتسلسلات الهندسية اللانهائية» directly inspected",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5136,7 +5136,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L05:C144",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner approved Applied Grade10 index p10: المتتاليات الهندسية بوصفها دوال أسية",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5169,7 +5169,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L06:C145",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "Owner approved Applied Grade10 index p10: الصيغ التكرارية",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5202,7 +5202,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03.pdf and «رياضيات كتاب الطالب تطبيقي 10 8.pdf» PDF6 TOC Unit1-L1-1, title «المسلمات والبراهين الحرة»; book body begins later units",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5235,7 +5235,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L02:C147",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03.pdf and «رياضيات كتاب الطالب تطبيقي 10 8.pdf» PDF6 TOC Unit1-L1-2, title «البرهان الجبري»; book body begins later units",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
@@ -5268,7 +5268,7 @@
     },
     {
       "LessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148",
-      "TitleProvenance": "OwnerApprovedSevenBookCanonicalIndex",
+      "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "03.pdf and «رياضيات كتاب الطالب تطبيقي 10 8.pdf» PDF6 TOC Unit1-L1-3, title «إثبات العلاقات بين الزوايا»; book body begins later units",
       "OutcomeCodes": [],
       "OfficialReferenceCode": null,
