@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 49,
+  "canonicalCode": "G10-U05-L08",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourcePdfPages": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "sourcePrintedPages": [
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620
+  ],
+  "primarySkills": [
+    "exponentials.g10.continuous_logistic_models"
+  ],
+  "reusedQuestionFamilies": [
+    "uae.g10.general.u05.l07.cooling_constant",
+    "uae.g10.general.u05.l07.cooling_temperature",
+    "uae.g10.general.u05.l07.cooling_time"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l08.half_life_constant",
+    "uae.g10.general.u05.l08.half_life_amount",
+    "uae.g10.general.u05.l08.decay_age",
+    "uae.g10.general.u05.l08.half_life_from_loss",
+    "uae.g10.general.u05.l08.continuous_growth_rate",
+    "uae.g10.general.u05.l08.continuous_growth_forecast",
+    "uae.g10.general.u05.l08.continuous_growth_target",
+    "uae.g10.general.u05.l08.continuous_crossing",
+    "uae.g10.general.u05.l08.logistic_initial",
+    "uae.g10.general.u05.l08.logistic_limit",
+    "uae.g10.general.u05.l08.logistic_value",
+    "uae.g10.general.u05.l08.logistic_time",
+    "uae.g10.general.u05.l08.logistic_rate",
+    "uae.g10.general.u05.l08.logistic_reachable",
+    "uae.g10.general.u05.l08.exponential_logistic_relation",
+    "uae.g10.general.u05.l08.spreadsheet_balance",
+    "uae.g10.general.u05.l08.spreadsheet_interest",
+    "uae.g10.general.u05.l08.exponential_logistic_crossing",
+    "uae.g10.general.u05.l07.cooling_constant",
+    "uae.g10.general.u05.l07.cooling_temperature",
+    "uae.g10.general.u05.l07.cooling_time"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l04.quadratic_root_set"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10ExponentialLogisticModels plus existing natural-log cooling family generator",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10ExponentialLogisticResponse.Verify: original model residual signs at rounded bucket boundaries, exact capacity comparisons and BigInteger compound interest rounding; reused cooling verifier",
+  "parameterBounds": {
+    "models": "positive initial values and rates; H 200–1200, proportions 0.2–0.8; logistic capacity 1200–5000, rates 0.02–0.08; crossing positive and unique for r>q>0",
+    "finance": "500–25000 AED; 2.50–9.00% annual, 1–30 periods; no payments; nearest cent",
+    "rounding": "4 places, rate 6 or half-life constant 8, finance 2"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l08.half_life_constant",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.half_life_amount",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.decay_age",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.half_life_from_loss",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.continuous_growth_rate",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.continuous_growth_forecast",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.continuous_growth_target",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.continuous_crossing",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_initial",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_limit",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_value",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_rate",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.logistic_reachable",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.exponential_logistic_relation",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.spreadsheet_balance",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.spreadsheet_interest",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l08.exponential_logistic_crossing",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_constant",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_temperature",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/contextual numeric prompts; graphs and labs in Rich V2 and rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "free graph and comparison",
+    "continuous model interpretation",
+    "spreadsheet construction",
+    "data collection and regression lab"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ExponentialLogisticModelsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "A_C_IN_PROGRESS"
+  }
+}
