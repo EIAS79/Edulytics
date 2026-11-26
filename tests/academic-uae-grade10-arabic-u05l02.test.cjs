@@ -15,7 +15,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.equal(cp.ownerApprovedIndexOnlyAuthoring,false);
  assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
- assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),155);
+ assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),157);
  assert.equal(cp.productionRouting,false);
  assert.equal(cp.status,'A_C_EXPLICIT_GAP');
  assert.equal(cp.practiceReadiness,'PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D');
@@ -24,8 +24,8 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,18);
- assert.equal(rich.Lessons[0].Visuals.length,5);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,23);
+ assert.equal(rich.Lessons[0].Visuals.length,7);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
  for(const x of [-2,-1,0,1,2,3,4,5]){
@@ -48,4 +48,17 @@ test('Growth model and compounding examples have independent numerical checks',(
  assert.ok(Math.abs(1000*Math.pow(1.05,4)-1215.50625)<1e-8);
  assert.equal(200*Math.pow(2,3)>1600,false);
  assert.equal(200*Math.pow(2,4)>1600,true);
+});
+
+test('Original targeted source repair models and cooldown have independent numerical checks',()=>{
+ assert.equal(800*Math.pow(0.25,2),50);
+ assert.equal(18+64*Math.pow(0.5,1),50);
+ assert.equal(18+64*Math.pow(0.5,2),34);
+ assert.ok(Math.pow(1.005,12)>1.06);
+ assert.equal(1.5*Math.pow(81,0.75),40.5);
+ assert.equal(2*Math.pow(8,4),Math.pow(2,13));
+ assert.equal(2**5,32);assert.equal(0.02*32,0.64);
+ assert.equal(240*Math.pow(0.5,3),30);
+ assert.equal(Math.pow(4,3),Math.pow(8,2));
+ assert.equal(Math.pow(0.5,4)>1/16,false);
 });

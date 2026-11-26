@@ -93,10 +93,10 @@
   ],
   "unit5ClosedCount": 9,
   "gradeClosedCount": 50,
-  "firstIncompleteGlobalOrdinal": 51,
-  "nextEligibleCanonicalCode": "G10-U06-L01",
-  "nextEligibleLessonTitle": "العمليات على الدوال",
-  "stageABCStatus": "UNIT_05_ALL_9_READY_FOR_STAGE_D_WITH_APPROVED_INDEX_ONLY_LIMITATIONS",
+  "firstIncompleteGlobalOrdinal": 43,
+  "nextEligibleCanonicalCode": "G10-U05-L02",
+  "nextEligibleLessonTitle": "حل المعادلات والمتباينات الأسية",
+  "stageABCStatus": "UNIT_05_REPAIR_GATE_OPEN_043",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -106,14 +106,20 @@
   "stageDStatus": "NOT_STARTED",
   "productionRouting": false,
   "desktopCommanderCalls": 0,
-  "continuationGate": "43_ORIGINAL_INDEX_SCOPE_HANDOFF_DOCUMENTED__NEXT_44",
+  "continuationGate": "REPAIR_043_BEFORE_044",
   "remainingRequirements": [
     "Advance from lesson43 to lesson44 in strict sequence.",
     "Stage D tests not run; Grade10 production routing remains false.",
     "Advanced 2025–2026 Volume2 body remains unavailable; Applied 2022–2023 Volume2 lesson 5-6 is verified source for lesson43."
   ],
-  "blockedOrdinal": null,
-  "blockedCheckpoint": null,
+  "blockedOrdinal": 43,
+  "blockedCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
   "blockedEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
-  "blockingReason": null
+  "blockingReason": "DIGITAL_INEQUALITY_FAMILY_AND_ATOMIC_COVERAGE_PENDING",
+  "repairValidation": {
+    "firstIncompleteGlobalOrdinal": 43,
+    "status": "A_C_EXPLICIT_GAP",
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
+    "reason": "C043 checkpoint overrides historical unit authoring count; no subsequent lesson can be certified until repaired."
+  }
 }
