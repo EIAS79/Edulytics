@@ -278,6 +278,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u15.l08.volume_scaled",
             "uae.g10.general.u15.l08.length_from_volume_ratio",
             "uae.g10.general.u15.l08.length_from_area_ratio",
+            "uae.g10.general.u17.l05.identify_geometric",
+            "uae.g10.general.u17.l05.common_ratio",
+            "uae.g10.general.u17.l05.nth_term_signed",
+            "uae.g10.general.u17.l05.nth_term_decay",
+            "uae.g10.general.u17.l05.initial_term",
+            "uae.g10.general.u17.l05.average_rate",
+            "uae.g10.general.u17.l05.growth_model",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1571,6 +1578,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GeometricExponentialResponse.Supports(family))
+            return UaeG10GeometricExponentialResponse.Verify(family,parameters,answer);
 
         if (UaeG10SolidSimilarityResponse.Supports(family))
             return UaeG10SolidSimilarityResponse.Verify(family,parameters,answer);
@@ -4169,6 +4179,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10GeometricExponentialResponse.Supports(family))
+            return BuildG10GeometricExponential(family,random,difficulty);
 
         if (UaeG10SolidSimilarityResponse.Supports(family))
             return BuildG10SolidSimilarity(family,random,difficulty);
@@ -10472,6 +10485,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10GeometricExponentialResponse.Supports(problem.Family))
+            return UaeG10GeometricExponentialResponse.Format(problem.Family,p);
 
         if (UaeG10SolidSimilarityResponse.Supports(problem.Family))
             return UaeG10SolidSimilarityResponse.Format(problem.Family,p);
