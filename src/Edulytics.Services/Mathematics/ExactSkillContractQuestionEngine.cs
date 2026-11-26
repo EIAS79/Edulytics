@@ -199,6 +199,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l10.identity_numeric_constant",
             "uae.g10.general.u14.l10.cofunction_angle_degrees",
             "uae.g10.general.u14.l10.odd_even_multiplier",
+            "uae.g10.general.u14.l11.equivalent_expression_choice",
+            "uae.g10.general.u14.l11.proof_coefficient",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1492,6 +1494,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigProofResponse.Supports(family))
+            return UaeG10TrigProofResponse.Verify(family,parameters,answer);
 
         if (UaeG10TrigIdentitiesResponse.Supports(family))
             return UaeG10TrigIdentitiesResponse.Verify(family,parameters,answer);
@@ -4045,6 +4050,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10TrigProofResponse.Supports(family))
+            return BuildG10TrigProof(family,random,difficulty);
 
         if (UaeG10TrigIdentitiesResponse.Supports(family))
             return BuildG10TrigIdentities(family,random,difficulty);
@@ -10303,6 +10311,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigProofResponse.Supports(problem.Family))
+            return UaeG10TrigProofResponse.Format(problem.Family,p);
 
         if (UaeG10TrigIdentitiesResponse.Supports(problem.Family))
             return UaeG10TrigIdentitiesResponse.Format(problem.Family,p);

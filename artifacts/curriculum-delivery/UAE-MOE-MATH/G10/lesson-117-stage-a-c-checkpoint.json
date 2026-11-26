@@ -7,7 +7,7 @@
   "unitNumber": 14,
   "lessonTitle": "إثبات المتطابقات المثلثية",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11:C117",
-  "status": "A_B_SOURCE_REPAIRED_STAGE_C_PENDING",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
   "sourceBodyVerified": true,
   "sourceVerificationScope": "OWNER_APPROVED_ONE_MATCHING_SOURCE_BODY_REVIEWED",
@@ -23,18 +23,27 @@
   "originalVisualModels": 7,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l11-ar.rich-lesson-v2.json",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u14l11.test.cjs"
+    "tests/academic-uae-grade10-arabic-u14l11.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10TrigProofTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
-  "firstIncompleteGlobalOrdinal": 117,
-  "nextEligibleCanonicalCode": "G10-U14-L11",
-  "closureBasis": "CONTENT_REPAIRED_NOT_YET_CLOSED",
+  "firstIncompleteGlobalOrdinal": 118,
+  "nextEligibleCanonicalCode": "G10-U14-L12",
+  "closureBasis": "MATCHING_BODY_REVIEWED_EXISTING_CONTENT_REPAIRED_SOURCE_LINKED_STAGE_ABC",
   "priorStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
   "sourceLocator": "03متقدم_.pdf physical 184–189; printed 776–781; lesson 11-2",
-  "stageCStatus": "PENDING_PROOF_CONTRACT",
+  "stageCStatus": "EXACT_STEP_FAMILIES_AUTHORED_AND_TEACHER_PROOF_RUBRIC",
   "sourceElementLedgerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-117-source-elements.json",
-  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-117-source-evidence.md"
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-117-source-evidence.md",
+  "primarySkills": [
+    "trigonometry.identities.proof"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u14.l11.equivalent_expression_choice",
+    "uae.g10.general.u14.l11.proof_coefficient"
+  ],
+  "sourceLimitations": "One approved matching older body; page-level ledger, not exhaustive item denominator; runtime and Stage D not tested."
 }
