@@ -58516,6 +58516,82 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l15.mean_rounded",
+      "version": 1,
+      "skillId": "geometry.right_triangle.geometric_mean",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g10_right_triangle_repair_reconstruct_v1",
+      "representations": [
+        "symbolic",
+        "right_triangle",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l15.altitude_squared",
+      "version": 1,
+      "skillId": "geometry.right_triangle.geometric_mean",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10_right_triangle_repair_reconstruct_v1",
+      "representations": [
+        "symbolic",
+        "right_triangle",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l15.leg_squared",
+      "version": 1,
+      "skillId": "geometry.right_triangle.geometric_mean",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10_right_triangle_repair_reconstruct_v1",
+      "representations": [
+        "symbolic",
+        "right_triangle",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l15.projection_from_leg",
+      "version": 1,
+      "skillId": "geometry.right_triangle.geometric_mean",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g10_right_triangle_repair_reconstruct_v1",
+      "representations": [
+        "symbolic",
+        "right_triangle",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

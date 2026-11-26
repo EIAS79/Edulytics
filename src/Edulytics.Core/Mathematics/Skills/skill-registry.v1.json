@@ -8632,8 +8632,16 @@
       "domain": "geometry",
       "canonicalName": "الوسط الهندسي",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l15.mean_rounded",
+        "uae.g10.general.u14.l15.altitude_squared",
+        "uae.g10.general.u14.l15.leg_squared",
+        "uae.g10.general.u14.l15.projection_from_leg"
+      ]
     },
     {
       "id": "trigonometry.elevation_depression",
