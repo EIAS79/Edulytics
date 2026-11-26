@@ -205,6 +205,24 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialLogisticResponse.SpreadsheetBalance,
             UaeG10ExponentialLogisticResponse.SpreadsheetInterest,
             UaeG10ExponentialLogisticResponse.LogisticCrossing,
+            UaeG10ProbabilityOddsResponse.Single,
+            UaeG10ProbabilityOddsResponse.OddsCounts,
+            UaeG10ProbabilityOddsResponse.FromOdds,
+            UaeG10ProbabilityOddsResponse.FromDecimal,
+            UaeG10ProbabilityOddsResponse.ExactSample,
+            UaeG10ProbabilityOddsResponse.SampleOdds,
+            UaeG10ProbabilityOddsResponse.AtLeast,
+            UaeG10ProbabilityOddsResponse.Composition,
+            UaeG10ProbabilityOddsResponse.CompositionOdds,
+            UaeG10ProbabilityOddsResponse.DifferentPair,
+            UaeG10ProbabilityOddsResponse.SuitPattern,
+            UaeG10ProbabilityOddsResponse.Repeat,
+            UaeG10ProbabilityOddsResponse.Ordered,
+            UaeG10ProbabilityOddsResponse.OrderedOdds,
+            UaeG10ProbabilityOddsResponse.Conditional,
+            UaeG10ProbabilityOddsResponse.Cut,
+            UaeG10ProbabilityOddsResponse.Data,
+            UaeG10ProbabilityOddsResponse.DataOdds,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1680,6 +1698,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(family))
+            return UaeG10ProbabilityOddsResponse.Verify(family,parameters,answer);
 
         if (UaeG10ExponentialLogisticResponse.Supports(family))
             return UaeG10ExponentialLogisticResponse.Verify(family,parameters,answer);
@@ -4300,6 +4321,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(family))
+            return BuildG10ProbabilityOdds(family,random,difficulty);
 
         if (UaeG10ExponentialLogisticResponse.Supports(family))
             return BuildG10ExponentialLogisticModels(family,random,difficulty);
@@ -10625,6 +10649,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(problem.Family))
+            return UaeG10ProbabilityOddsResponse.Format(problem.Family,p);
 
         if (UaeG10ExponentialLogisticResponse.Supports(problem.Family))
             return UaeG10ExponentialLogisticResponse.Format(problem.Family,p);
