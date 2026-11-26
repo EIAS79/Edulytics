@@ -20,11 +20,23 @@
   "unit5StageABCClosedLocalOrdinals": [
     1,
     2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
     9
   ],
   "unit5StageABCClosedGlobalOrdinals": [
     42,
     43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
     50
   ],
   "closedGlobalOrdinalPrefix": [
@@ -70,14 +82,21 @@
     40,
     41,
     42,
-    43
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
   ],
-  "unit5ClosedCount": 3,
-  "gradeClosedCount": 44,
+  "unit5ClosedCount": 9,
+  "gradeClosedCount": 50,
   "firstIncompleteGlobalOrdinal": null,
   "nextEligibleCanonicalCode": null,
   "nextEligibleLessonTitle": null,
-  "stageABCStatus": "UNIT_05_INDEX_REPAIR_PROCESSED_2_REPAIRED_6_SOURCE_EXCEPTIONS",
+  "stageABCStatus": "UNIT05_9_OF_9_SELECTED_BODY_SCOPE_COMPLETE_STAGE_D_NOT_RUN",
   "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
   "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
   "firstClosedLessonCheckpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-042-stage-a-c-checkpoint.json",
@@ -87,61 +106,82 @@
   "stageDStatus": "NOT_STARTED",
   "productionRouting": false,
   "desktopCommanderCalls": 0,
-  "continuationGate": "NEXT_INDEX_ONLY_CHECKPOINT_IN_CANONICAL_ORDER",
+  "continuationGate": "UNIT05_SELECTED_BODY_REPAIR_COMPLETE",
   "remainingRequirements": [
-    "Review only index-only lessons, in order; record missing-body exceptions and continue.",
-    "Stage D tests not run; production routing remains false."
+    "Full all-source parity remains UNKNOWN; Stage D tests written and not run; production routing remains false."
   ],
   "blockedOrdinal": null,
   "blockedCheckpoint": null,
-  "blockedEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
+  "blockedEvidence": null,
   "blockingReason": null,
   "repairValidation": {
     "scopeDecision": "OWNER_APPROVED_INDEX_REPAIR_ONLY_MATCHING_BODY_ONE_APPROVED_BOOK_SUFFICIENT_2026_11_26",
-    "status": "UNIT_05_INDEX_TARGETS_PROCESSED_WITH_6_SOURCE_EXCEPTIONS",
+    "status": "UNIT05_ALL_INDEX_TARGETS_REPAIRED",
     "completedOrdinals": [
       43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
       50
     ],
     "firstIncompleteGlobalOrdinal": null,
-    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
-    "exceptions": [
+    "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-stage-a-c-checkpoint.json",
+    "exceptions": [],
+    "resolvedHistoricalExceptions": [
       {
         "ordinal": 44,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-044-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-044-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-044-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 45,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 46,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 47,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 48,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 49,
         "status": "A_C_EXPLICIT_GAP",
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-stage-a-c-checkpoint.json"
       }
     ]
-  }
+  },
+  "supplementalSourceBook": "رياضيات الدوال متقدم.pdf",
+  "supplementalSourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourceParity": "UNKNOWN"
 }
