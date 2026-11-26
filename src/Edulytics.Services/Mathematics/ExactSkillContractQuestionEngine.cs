@@ -191,6 +191,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CircleResponse.AreaSectorApprox,
             UaeG10CircleResponse.AreaSegmentApprox,
             UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l05.sas_side_rounded",
+            "uae.g10.general.u14.l05.sas_square_exact",
+            "uae.g10.general.u14.l05.sss_cosine_exact",
+            "uae.g10.general.u14.l05.sss_angle_rounded",
+            "uae.g10.general.u14.l05.triangle_type",
+            "uae.g10.general.u14.l05.choose_law",
+            "uae.g10.general.u14.l05.indirect_distance_rounded",
             "uae.g10.general.u14.l04.sas_area_rounded",
             "uae.g10.general.u14.l04.aas_side_rounded",
             "uae.g10.general.u14.l04.third_angle",
@@ -1446,6 +1453,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CosineRuleResponse.Supports(family))
+            return UaeG10CosineRuleResponse.Verify(family,parameters,answer);
 
         if (UaeG10SineRuleResponse.Supports(family))
             return UaeG10SineRuleResponse.Verify(family,parameters,answer);
@@ -3981,6 +3991,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10CosineRuleResponse.Supports(family))
+            return BuildG10CosineRule(family,random,difficulty);
 
         if (UaeG10SineRuleResponse.Supports(family))
             return BuildG10SineRule(family,random,difficulty);
@@ -10221,6 +10234,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10CosineRuleResponse.Supports(problem.Family))
+            return UaeG10CosineRuleResponse.Format(problem.Family,p);
 
         if (UaeG10SineRuleResponse.Supports(problem.Family))
             return UaeG10SineRuleResponse.Format(problem.Family,p);
