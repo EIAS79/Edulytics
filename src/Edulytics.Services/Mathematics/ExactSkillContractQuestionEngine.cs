@@ -120,6 +120,14 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10LogarithmicGraphResponse.InverseShift,
             UaeG10LogarithmicGraphResponse.ScaleRatio,
             UaeG10LogarithmicGraphResponse.ModelTime,
+            UaeG10LogarithmicEquationResponse.Direct,
+            UaeG10LogarithmicEquationResponse.Quadratic,
+            UaeG10LogarithmicEquationResponse.OneSide,
+            UaeG10LogarithmicEquationResponse.TwoSides,
+            UaeG10LogarithmicEquationResponse.Wind,
+            UaeG10LogarithmicEquationResponse.Ratio,
+            UaeG10LogarithmicEquationResponse.Music,
+            UaeG10LogarithmicEquationResponse.Sound,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1595,6 +1603,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(family))
+            return UaeG10LogarithmicEquationResponse.Verify(family,parameters,answer);
 
         if (UaeG10LogarithmicGraphResponse.Supports(family))
             return UaeG10LogarithmicGraphResponse.Verify(family,parameters,answer);
@@ -4202,6 +4213,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(family))
+            return BuildG10LogarithmicEquation(family,random,difficulty);
 
         if (UaeG10LogarithmicGraphResponse.Supports(family))
             return BuildG10LogarithmicGraph(family,random,difficulty);
@@ -10514,6 +10528,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(problem.Family))
+            return UaeG10LogarithmicEquationResponse.Format(problem.Family,p);
 
         if (UaeG10LogarithmicGraphResponse.Supports(problem.Family))
             return UaeG10LogarithmicGraphResponse.Format(problem.Family,p);
