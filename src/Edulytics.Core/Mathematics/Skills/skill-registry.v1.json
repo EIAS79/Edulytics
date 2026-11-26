@@ -8970,8 +8970,21 @@
       "domain": "geometry",
       "canonicalName": "المسلمات والبراهين الحرة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u18.l01.necessary_sufficient_threshold",
+        "uae.g10.general.u18.l01.incidence_postulate",
+        "uae.g10.general.u18.l01.always_sometimes_never",
+        "uae.g10.general.u18.l01.midpoint_total",
+        "uae.g10.general.u18.l01.shared_midpoint_half",
+        "uae.g10.general.u18.l01.unordered_pair_count",
+        "uae.g10.general.u18.l01.wheel_count_reasoning",
+        "uae.g10.general.u18.l01.travel_time_comparison",
+        "uae.g10.general.u18.l01.slope_requirement"
+      ]
     },
     {
       "id": "geometry.proofs.algebraic_equivalence",
