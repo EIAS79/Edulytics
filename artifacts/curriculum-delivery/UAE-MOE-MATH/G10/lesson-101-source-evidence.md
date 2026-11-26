@@ -1,3 +1,3 @@
-# Lesson 101 الزوايا المحيطية
+# Lesson 101 — source body
 
-Index provenance: Owner-approved 148-title index, Advanced Grade10 Volume1 `01متقدم_.pdf` PDF9 (circle unit titles), additional Applied TOC crosswalk `03.pdf` PDF13. These are **index references**, not verified source pages for every example. Edulytics original Arabic content: six worked mathematical examples, three original comparison/solution visuals. A–B–C handoff **index-only scope**, not 100% publisher lesson parity. Automated question routing disabled, teacher scoring required, tests written but not executed, production routing disabled.
+Actual 03.pdf lesson 8-4 physical 116–123, printed 505–512 visually reviewed. Six existing worked examples retained, eight added: algebra, three proof cases, cyclic quadrilaterals, right triangle and real geometry. Original Arabic adaptation. Selected body sufficient; no all-edition or exhaustive question parity claim. Stage D not run.

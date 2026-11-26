@@ -8244,8 +8244,20 @@
       "domain": "geometry",
       "canonicalName": "الزاوية المحيطية وعلاقتها بالقوس",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l04.angle_from_intercepted_arc",
+        "uae.g10.general.u13.l04.arc_from_inscribed_angle",
+        "uae.g10.general.u13.l04.equal_angles_same_arc",
+        "uae.g10.general.u13.l04.diameter_right_triangle_angle",
+        "uae.g10.general.u13.l04.cyclic_opposite_angle",
+        "uae.g10.general.u13.l04.same_arc_angle_expression",
+        "uae.g10.general.u13.l04.cyclic_opposite_expression",
+        "uae.g10.general.u13.l04.right_triangle_diameter"
+      ]
     },
     {
       "id": "geometry.circle.g10.tangents",

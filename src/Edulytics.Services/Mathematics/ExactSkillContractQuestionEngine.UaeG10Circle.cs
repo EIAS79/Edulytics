@@ -8,6 +8,22 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsInscribed(family))
+        {
+            int v=random.Next(20,81),x=random.Next(2,16),k=random.Next(1,9),a=random.Next(2,5),b=random.Next(1,6);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.InscribedHalf=>$"زاوية محيطية تحصر قوسًا قياسه {2*v}°. أوجد قياس الزاوية.",
+                UaeG10CircleResponse.InscribedDouble=>$"زاوية محيطية قياسها {v}°. أوجد قياس قوسها المحصور.",
+                UaeG10CircleResponse.InscribedEqual=>$"زاويتان محيطيتان تحصران القوس نفسه، قياس إحداهما {v}°. أوجد الأخرى.",
+                UaeG10CircleResponse.InscribedRight=>$"مثلث محاط بدائرة، أحد أضلاعه قطر، وقياس إحدى الزاويتين الحادتين {v}°. أوجد الحادة الأخرى.",
+                UaeG10CircleResponse.InscribedOpposite=>$"في رباعي محاط بدائرة قياس زاوية {2*v}°. أوجد قياس الزاوية المقابلة لها.",
+                UaeG10CircleResponse.InscribedAlgebra=>$"زاويتان محيطيتان تحصران القوس نفسه، قياسهما ({a}س+{b})° و({a*x+b})°. أوجد س.",
+                UaeG10CircleResponse.InscribedCyclicAlgebra=>$"زاويتان متقابلتان في رباعي دائري قياسهما ({a}س+{b})° و({180-a*x-b})°. أوجد س.",
+                _=>$"مثلث محاط بدائرة، وتره قطرها وطولا ضلعي الزاوية القائمة {3*k} و{4*k} سم. أوجد قطر الدائرة."
+            };
+            return Problem(family,prompt,"الزاوية المحيطية نصف القوس المحصور؛ زاوية القطر قائمة؛ الزاويتان المتقابلتان في الرباعي الدائري مجموعهما 180°.",AssessmentItemType.Numeric,("v",v),("x",x),("k",k),("a",a),("b",b));
+        }
         if(UaeG10CircleResponse.IsChord(family))
         {
             int k=random.Next(1,9), arc=2*random.Next(10,86), x=random.Next(2,21), a=random.Next(2,7), b=random.Next(1,10), radius=random.Next(6,31), half=random.Next(1,radius);
@@ -81,8 +97,19 @@ internal static class UaeG10CircleResponse
     internal const string ChordEqualDistance="uae.g10.general.u13.l03.equal_chords_equal_distances";
     internal const string ChordApprox="uae.g10.general.u13.l03.center_distance_rounded";
     internal static bool IsChord(string? f)=>f is ChordEqualArc or ChordHalfArc or ChordLength or ChordDistance or ChordAlgebra or ChordEqualDistance or ChordApprox;
-    internal static bool Supports(string? f)=>IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsChord(f)?
+    internal const string InscribedHalf="uae.g10.general.u13.l04.angle_from_intercepted_arc";
+    internal const string InscribedDouble="uae.g10.general.u13.l04.arc_from_inscribed_angle";
+    internal const string InscribedEqual="uae.g10.general.u13.l04.equal_angles_same_arc";
+    internal const string InscribedRight="uae.g10.general.u13.l04.diameter_right_triangle_angle";
+    internal const string InscribedOpposite="uae.g10.general.u13.l04.cyclic_opposite_angle";
+    internal const string InscribedAlgebra="uae.g10.general.u13.l04.same_arc_angle_expression";
+    internal const string InscribedCyclicAlgebra="uae.g10.general.u13.l04.cyclic_opposite_expression";
+    internal const string InscribedDiameter="uae.g10.general.u13.l04.right_triangle_diameter";
+    internal static bool IsInscribed(string? f)=>f is InscribedHalf or InscribedDouble or InscribedEqual or InscribedRight or InscribedOpposite or InscribedAlgebra or InscribedCyclicAlgebra or InscribedDiameter;
+    internal static bool Supports(string? f)=>IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsInscribed(f)?
+        p.Count==5&&new[]{"v","x","k","a","b"}.All(p.ContainsKey)&&p["v"] is >=20 and <=80&&p["x"] is >=2 and <=15&&p["k"] is >=1 and <=8&&p["a"] is >=2 and <=4&&p["b"] is >=1 and <=5:
+        IsChord(f)?
         p.Count==7&&new[]{"k","arc","x","a","b","radius","half"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["arc"] is >=20 and <=170&&p["arc"]%2==0&&p["x"] is >=2 and <=20&&p["a"] is >=2 and <=6&&p["b"] is >=1 and <=9&&p["radius"] is >=6 and <=30&&p["half"]>=1&&p["half"]<p["radius"]:
         IsArc(f)?
         p.Count==5&&new[]{"a1","a2","r","angle","percent"}.All(p.ContainsKey)&&p["a1"] is >=10 and <=170&&p["a2"] is >=10 and <=170&&p["r"] is >=2 and <=30&&p["angle"] is >=10 and <=350&&p["percent"] is >=5 and <=95&&p["percent"]%5==0:
@@ -91,6 +118,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsInscribed(f))
+        {
+            int v=p["v"],x=p["x"],k=p["k"];
+            return f switch{InscribedHalf or InscribedEqual=>(v,1),InscribedDouble=>(2*v,1),InscribedRight=>(90-v,1),InscribedOpposite=>(180-2*v,1),InscribedAlgebra or InscribedCyclicAlgebra=>(x,1),InscribedDiameter=>(5*k,1),_=>throw new InvalidOperationException()};
+        }
         if(IsChord(f))
         {
             int k=p["k"], arc=p["arc"], x=p["x"], r=p["radius"], h=p["half"];
@@ -122,6 +154,11 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsInscribed(f))
+        {
+            long v=p["v"],x=p["x"],k=p["k"],aa=p["a"],bb=p["b"];
+            return f switch{InscribedHalf=>2*n==2*v*d,InscribedEqual=>n==v*d,InscribedDouble=>n==2*v*d,InscribedRight=>n+v*d==90*d,InscribedOpposite=>n+2*v*d==180*d,InscribedAlgebra=>aa*n+bb*d==(aa*x+bb)*d,InscribedCyclicAlgebra=>aa*n+bb*d+(180-aa*x-bb)*d==180*d,InscribedDiameter=>n==5*k*d,_=>false};
+        }
         if(IsChord(f))
         {
             long k=p["k"],arc=p["arc"],x=p["x"],a0=p["a"],b0=p["b"],r=p["radius"],h=p["half"];

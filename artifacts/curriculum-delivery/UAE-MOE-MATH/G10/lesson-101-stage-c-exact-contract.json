@@ -1,0 +1,23 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04:C101",
+  "skillId": "geometry.circle.g10.inscribed_angles",
+  "familyIds": [
+    "uae.g10.general.u13.l04.angle_from_intercepted_arc",
+    "uae.g10.general.u13.l04.arc_from_inscribed_angle",
+    "uae.g10.general.u13.l04.equal_angles_same_arc",
+    "uae.g10.general.u13.l04.diameter_right_triangle_angle",
+    "uae.g10.general.u13.l04.cyclic_opposite_angle",
+    "uae.g10.general.u13.l04.same_arc_angle_expression",
+    "uae.g10.general.u13.l04.cyclic_opposite_expression",
+    "uae.g10.general.u13.l04.right_triangle_diameter"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "v=20..80; x=2..15; k=1..8; a=2..4; b=1..5; exact integers",
+  "teacherScoring": [
+    "proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}
