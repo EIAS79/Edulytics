@@ -211,6 +211,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l13.half_squared",
             "uae.g10.general.u14.l13.half_tangent",
             "uae.g10.general.u14.l13.half_exact_choice",
+            "uae.g10.general.u14.l14.bounded_root_count",
+            "uae.g10.general.u14.l14.bounded_root_by_rank",
+            "uae.g10.general.u14.l14.real_solution_exists",
+            "uae.g10.general.u14.l14.function_period_degrees",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1504,6 +1508,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigEquationsResponse.Supports(family))
+            return UaeG10TrigEquationsResponse.Verify(family,parameters,answer);
 
         if (UaeG10TrigDoubleHalfResponse.Supports(family))
             return UaeG10TrigDoubleHalfResponse.Verify(family,parameters,answer);
@@ -4066,6 +4073,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10TrigEquationsResponse.Supports(family))
+            return BuildG10TrigEquations(family,random,difficulty);
 
         if (UaeG10TrigDoubleHalfResponse.Supports(family))
             return BuildG10TrigDoubleHalf(family,random,difficulty);
@@ -10333,6 +10343,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigEquationsResponse.Supports(problem.Family))
+            return UaeG10TrigEquationsResponse.Format(problem.Family,p);
 
         if (UaeG10TrigDoubleHalfResponse.Supports(problem.Family))
             return UaeG10TrigDoubleHalfResponse.Format(problem.Family,p);
