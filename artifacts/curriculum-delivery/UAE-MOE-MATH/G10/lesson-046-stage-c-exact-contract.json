@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 46,
+  "canonicalCode": "G10-U05-L05",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourcePdfPages": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "sourcePrintedPages": [
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595
+  ],
+  "primarySkills": [
+    "logarithms.g10.properties_equations_models"
+  ],
+  "reusedQuestionFamilies": [
+    "uae.g10.general.u05.l04.rounded_amplitude_ratio"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l05.approx_from_given",
+    "uae.g10.general.u05.l05.expand_coefficients",
+    "uae.g10.general.u05.l05.condense_powers",
+    "uae.g10.general.u05.l05.property_truth",
+    "uae.g10.general.u05.l05.solve_property_equation",
+    "uae.g10.general.u05.l05.ph_concentration",
+    "uae.g10.general.u05.l05.pressure_rounded",
+    "uae.g10.general.u05.l05.benford_percent",
+    "uae.g10.general.u05.l05.benford_digit",
+    "uae.g10.general.u05.l05.first_decay_year",
+    "uae.g10.general.u05.l05.relative_sound",
+    "uae.g10.general.u05.l05.repayment_payment",
+    "uae.g10.general.u05.l05.repayment_possible",
+    "uae.g10.general.u05.l05.repayment_minimum",
+    "uae.g10.general.u05.l05.repayment_months",
+    "uae.g10.general.u05.l05.property_root_set",
+    "uae.g10.general.u05.l05.fractional_property_value",
+    "uae.g10.general.u05.l04.rounded_amplitude_ratio"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l03.graph_anchor",
+    "uae.g10.general.u05.l04.music_key"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10LogarithmProperties (shared engine extension); reuse selected source amplitude family",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10LogarithmPropertiesResponse.Verify: integer scaled arithmetic of supplied values, exponent vector checks, substitution and complete bounded root-set checks, exact power rounding buckets for pH/pressure/Benford, exact rational decay/loan residual tests and first crossing; reused UaeG10LogarithmicEquationResponse amplitude bucket",
+  "parameterBounds": {
+    "properties": "5 supplied base tables; signed exponents −3..3, positive variables; bounded log equations, roots, fractional coefficients",
+    "scientific": "pH 2.0..9.0; 12 decimal places; pressure at 1550*d metres, d1..9; Benford d1..9, nearest 0.1 percent; sound exact powers 10^2..10^12",
+    "decay": "annual 2..8 percent, threshold initial/(2..4), first integer year below",
+    "finance": "balance 1000..3000 AED increments100; monthly rate 0.5..2%; term 12/24/36 months, rounding cents, payment viability and first month settlement"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l05.approx_from_given",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.expand_coefficients",
+      "kind": "StructuredEntry",
+      "answerType": "exact_vector",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.condense_powers",
+      "kind": "StructuredEntry",
+      "answerType": "exact_vector",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.property_truth",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.solve_property_equation",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.ph_concentration",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.pressure_rounded",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.benford_percent",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.benford_digit",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.first_decay_year",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.relative_sound",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.repayment_payment",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.repayment_possible",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.repayment_minimum",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.repayment_months",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.property_root_set",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l05.fractional_property_value",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.rounded_amplitude_ratio",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/context prompt; actual source charts and teacher tasks in Rich V2 and rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "free proof, symbolic isolation, graph interpretation",
+    "debt table and total payments with explanation",
+    "open models beyond bounded digital variants"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10LogarithmPropertiesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "A_C_IN_PROGRESS"
+  }
+}
