@@ -50,7 +50,7 @@ public sealed class UaeG10CommonLogarithmTests
             }
             if(suffix=="exponential_inequality")
             {
-                double slope=m*Math.Log(b)-p*Math.Log(c),x=(q*Math.Log(c)-n*Math.Log(b))/slope;
+                double slope=m*Math.Log(b)-(a["k"]==0?0:p*Math.Log(c)),x=((a["k"]==0?Math.Log(v):q*Math.Log(c))-n*Math.Log(b))/slope;
                 var raw=task.CorrectAnswer;var parts=raw[1..^1].Split(',');int op=slope<0?a["op"]^2:a["op"];
                 Assert.Equal(x,Number(parts[op<2?1:0]),4);Assert.Equal(op<2?"-∞":"∞",parts[op<2?0:1]);
                 Assert.Equal(op%2==1?(op<2?']':'['):(op<2?')':'('),op<2?raw[^1]:raw[0]);continue;
