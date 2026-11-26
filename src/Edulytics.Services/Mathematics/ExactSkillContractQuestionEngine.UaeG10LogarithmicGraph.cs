@@ -15,22 +15,23 @@ public sealed partial class ExactSkillContractQuestionEngine
         string basis=UaeG10LogarithmicGraphResponse.PowerText(b,dir==0?-m:m);
         string arg=UaeG10LogarithmicGraphResponse.PowerText(b,n);
         string model=$"د(س)=({a})×لوغ_({basis})(س−({h}))+({k})";
-        int xProbe=h+UaeG10LogarithmicGraphResponse.Pow(b,Math.Abs(n));
-        int exactExponent=dir==0?-Math.Abs(n):Math.Abs(n);
+        int xNumerator=h*period+UaeG10LogarithmicGraphResponse.Pow(b,Math.Abs(n));
+        string xProbe=UaeG10LogarithmicGraphResponse.RationalText(xNumerator,period);
+        string exponent=UaeG10LogarithmicGraphResponse.RationalText(dir==1?n:-n,m);
         string prompt=family switch
         {
             UaeG10LogarithmicGraphResponse.Evaluate=>$"احسب لوغ_({basis})({arg}) في صورة عدد صحيح أو كسر مبسط.",
-            UaeG10LogarithmicGraphResponse.ToExponential=>$"حوّل لوغ_{b}({UaeG10LogarithmicGraphResponse.PowerText(b,n)})={n} إلى صيغة أسية. {UaeG10LogarithmicGraphResponse.Options(b,n,slot,true)}",
-            UaeG10LogarithmicGraphResponse.ToLogarithmic=>$"حوّل {b}^({n})={UaeG10LogarithmicGraphResponse.PowerText(b,n)} إلى صيغة لوغاريتمية. {UaeG10LogarithmicGraphResponse.Options(b,n,slot,false)}",
+            UaeG10LogarithmicGraphResponse.ToExponential=>$"حوّل لوغ_({basis})({arg})={exponent} إلى صيغة أسية. {UaeG10LogarithmicGraphResponse.Options(b,m,n,dir,slot,true)}",
+            UaeG10LogarithmicGraphResponse.ToLogarithmic=>$"حوّل ({basis})^({exponent})={arg} إلى صيغة لوغاريتمية. {UaeG10LogarithmicGraphResponse.Options(b,m,n,dir,slot,false)}",
             UaeG10LogarithmicGraphResponse.Domain=>$"في {model}، المجال س>هـ. اكتب الحد العددي هـ فقط.",
             UaeG10LogarithmicGraphResponse.DomainMember=>$"في {model}، هل س={h+n} ينتمي إلى المجال؟ اكتب 1 لنعم أو 0 للا.",
             UaeG10LogarithmicGraphResponse.Asymptote=>$"في {model}، اكتب قيمة س للمقارب الرأسي.",
             UaeG10LogarithmicGraphResponse.Monotonic=>$"في {model}، هل الدالة متزايدة على مجالها؟ اكتب 1 لنعم أو 0 للا.",
             UaeG10LogarithmicGraphResponse.GraphAnchor=>$"في {model}، عند ص={k} ما إحداثي س للنقطة المرجعية؟",
-            UaeG10LogarithmicGraphResponse.GraphValue=>$"لدالة د(س)=({a})×لوغ_({UaeG10LogarithmicGraphResponse.PowerText(b,dir==0?-1:1)})(س−({h}))+({k})، احسب د({xProbe}).",
+            UaeG10LogarithmicGraphResponse.GraphValue=>$"لدالة د(س)=({a})×لوغ_({UaeG10LogarithmicGraphResponse.PowerText(b,dir==0?-1:1)})({period}×(س−({h})))+({k})، احسب د({xProbe}).",
             UaeG10LogarithmicGraphResponse.InverseShift=>$"معكوس د(س)={b}^(س−({h})) هو لوغ_{b}(س)+ج. أوجد ج.",
-            UaeG10LogarithmicGraphResponse.ScaleRatio=>$"قياس لوغاريتمي للأساس {b} يزداد بمقدار {Math.Abs(n)} درجات. كم مرة تصبح الكمية الأصلية؟",
-            _=>$"عدد خلايا افتراضي يتضاعف كل {period} ساعات. إذا أصبحت الكمية {UaeG10LogarithmicGraphResponse.Pow(2,Math.Abs(n)+1)} أمثال البداية، فكم ساعة مرت؟"
+            UaeG10LogarithmicGraphResponse.ScaleRatio=>dir==1?$"قياس لوغاريتمي للأساس {b} يزداد بمقدار {Math.Abs(n)} درجات. كم مرة تصبح الكمية الأصلية؟":$"في نموذج تعويض الضوء ن=لوغ_2(1/ف)، إذا ن={Math.Abs(n)} فاكتب مقام نسبة الضوء ف=1/م.",
+            _=>dir==1?$"عدد خلايا افتراضي يتضاعف كل {period} ساعات. إذا أصبحت الكمية {UaeG10LogarithmicGraphResponse.Pow(2,Math.Abs(n)+1)} أمثال البداية، فكم ساعة مرت؟":$"زاد عدد خلايا افتراضي إلى {UaeG10LogarithmicGraphResponse.Pow(2,Math.Abs(n)+1)} أمثال البداية خلال {period*(Math.Abs(n)+1)} ساعات. ما زمن الجيل بالساعات؟"
         };
         return Problem(family,prompt,"تحقق من الحجة والأساس، ثم استعمل التكافؤ بين الصيغتين الأسية واللوغاريتمية وخصائص التحويل.",family==UaeG10LogarithmicGraphResponse.Evaluate?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,
             ("b",b),("m",m),("n",n),("h",h),("k",k),("a",a),("dir",dir),("slot",slot),("period",period));
@@ -46,13 +47,19 @@ internal static class UaeG10LogarithmicGraphResponse
     internal static bool Supports(string? f)=>f is Evaluate or ToExponential or ToLogarithmic or Domain or DomainMember or Asymptote or Monotonic or GraphAnchor or GraphValue or InverseShift or ScaleRatio or ModelTime;
     internal static int Pow(int b,int n){int v=1;for(int i=0;i<n;i++)v*=b;return v;}
     internal static string PowerText(int b,int n)=>n<0?$"1/{Pow(b,-n)}":Pow(b,n).ToString(CultureInfo.InvariantCulture);
-    internal static string Options(int b,int n,int slot,bool exponential)
+    internal static string RationalText(int num,int den)
     {
-        // Four distinct exponent choices; correct option position varies independently.
-        int[] offsets=[1,2,3];int j=0;
+        int g=Gcd(Math.Abs(num),den);num/=g;den/=g;
+        return den==1?num.ToString(CultureInfo.InvariantCulture):$"{num}/{den}";
+    }
+    private static int OptionNumerator(int correct,int slot,int i)=>
+        i==slot?correct:correct+(i<slot?i+1:i);
+    internal static string Options(int b,int m,int n,int dir,int slot,bool exponential)
+    {
+        string basis=PowerText(b,dir==1?m:-m),arg=PowerText(b,n);
         var options=Enumerable.Range(0,4).Select(i=>{
-            int e=i==slot?n:n+offsets[j++];
-            return exponential?$"{i+1}) {b}^({e})={PowerText(b,n)}":$"{i+1}) لوغ_{b}({PowerText(b,n)})={e}";
+            string e=RationalText(OptionNumerator(dir==1?n:-n,slot,i),m);
+            return exponential?$"{i+1}) ({basis})^({e})={arg}":$"{i+1}) لوغ_({basis})({arg})={e}";
         });
         return "اختر الرقم: "+string.Join("؛ ",options);
     }
@@ -68,8 +75,8 @@ internal static class UaeG10LogarithmicGraphResponse
         Monotonic=>(p["dir"]==1)==(p["a"]>0)?1:0,
         GraphAnchor=>p["h"]+1,
         GraphValue=>p["a"]*Math.Abs(p["n"])*(p["dir"]==1?1:-1)+p["k"],
-        ScaleRatio=>Pow(p["b"],Math.Abs(p["n"])),
-        ModelTime=>p["period"]*(Math.Abs(p["n"])+1),
+        ScaleRatio=>Pow(p["dir"]==1?p["b"]:2,Math.Abs(p["n"])),
+        ModelTime=>p["dir"]==1?p["period"]*(Math.Abs(p["n"])+1):p["period"],
         _=>throw new InvalidOperationException()
     };
     internal static string Format(string f,IReadOnlyDictionary<string,int> p)
@@ -99,15 +106,15 @@ internal static class UaeG10LogarithmicGraphResponse
         if(!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int v))return false;
         // Check the original source relation/constraint rather than comparing to a stored answer.
         return f switch{
-            ToExponential or ToLogarithmic=>v is >=1 and <=4&&v-1==p["slot"],
+            ToExponential or ToLogarithmic=>v is >=1 and <=4&&OptionNumerator(p["dir"]==1?p["n"]:-p["n"],p["slot"],v-1)*(p["dir"]==1?1:-1)==p["n"],
             Domain or Asymptote=>v-p["h"]==0,
             DomainMember=>v is 0 or 1&&(v==1)==(p["h"]+p["n"]>p["h"]),
             Monotonic=>v is 0 or 1&&(v==1)==(p["dir"]==1?p["a"]>0:p["a"]<0),
             GraphAnchor=>v-p["h"]==1,
             GraphValue=>(long)v-p["k"]==(long)p["a"]*(p["dir"]==1?Math.Abs(p["n"]):-Math.Abs(p["n"])),
             InverseShift=>v==p["h"],
-            ScaleRatio=>v==Pow(p["b"],Math.Abs(p["n"])),
-            ModelTime=>v>=0&&v%p["period"]==0&&v/p["period"]==Math.Abs(p["n"])+1,
+            ScaleRatio=>v==Pow(p["dir"]==1?p["b"]:2,Math.Abs(p["n"])),
+            ModelTime=>p["dir"]==1?v>=0&&v%p["period"]==0&&v/p["period"]==Math.Abs(p["n"])+1:v>0&&v*(long)(Math.Abs(p["n"])+1)==p["period"]*(long)(Math.Abs(p["n"])+1),
             _=>false
         };
     }
