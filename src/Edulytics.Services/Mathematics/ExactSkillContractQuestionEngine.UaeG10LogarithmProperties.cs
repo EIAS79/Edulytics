@@ -21,6 +21,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10LogarithmPropertiesResponse.Condense=>$"س،ص،ع موجبة. اختصر ({u})لوغ_{B}س + ({v})لوغ_{B}ص − {m}لوغ_{B}ع + ({w})لوغ_{B}س على صورة لوغ_{B}(س^أ×ص^ج×ع^د)، واكتب (أ،ج،د).",
             UaeG10LogarithmPropertiesResponse.Truth=>$"هل العبارة التالية صحيحة للأعداد الموجبة المعطاة؟ {UaeG10LogarithmPropertiesResponse.Identity(b,p,q,m,mode)}. اكتب 1 للصواب و0 للخطأ.",
             UaeG10LogarithmPropertiesResponse.Equation=>$"حل {UaeG10LogarithmPropertiesResponse.EquationText(b,p,q,m,mode)}، واكتب الحل الموجب بعد فحص المجال.",
+            UaeG10LogarithmPropertiesResponse.Fractional=>$"حل لوغ_{b}س=(1/{m+1})لوغ_{b}({UaeG10LogarithmPropertiesResponse.PowInt(p,m+1)})+({u})لوغ_{b}({q}). اكتب س كعدد صحيح أو كسر.",
             UaeG10LogarithmPropertiesResponse.RootSet=>$"حل {UaeG10LogarithmPropertiesResponse.RootSetText(b,p,q,m,u,mode)}. اكتب جميع الجذور الحقيقية المقبولة مفصولة بفاصلة، أو ∅ إن لم يوجد حل.",
             UaeG10LogarithmPropertiesResponse.Ph=>$"في النموذج pH=−لوغ_10([H⁺])، إذا pH={(ph/10m).ToString("0.0",CultureInfo.InvariantCulture)}، أوجد تركيز [H⁺] بالمول/لتر، مقربًا إلى 12 منزلة عشرية.",
             UaeG10LogarithmPropertiesResponse.Pressure=>$"في النموذج هـ=15500(5−لوغ_10 ض)، أوجد الضغط ض بالباسكال عند ارتفاع هـ={1550*digit} مترًا، إلى أقرب باسكال.",
@@ -42,10 +43,10 @@ public sealed partial class ExactSkillContractQuestionEngine
 internal static class UaeG10LogarithmPropertiesResponse
 {
     internal const string Prefix="uae.g10.general.u05.l05.";
-    internal const string Approx=Prefix+"approx_from_given",Expand=Prefix+"expand_coefficients",Condense=Prefix+"condense_powers",Truth=Prefix+"property_truth",Equation=Prefix+"solve_property_equation",RootSet=Prefix+"property_root_set",
+    internal const string Approx=Prefix+"approx_from_given",Expand=Prefix+"expand_coefficients",Condense=Prefix+"condense_powers",Truth=Prefix+"property_truth",Equation=Prefix+"solve_property_equation",RootSet=Prefix+"property_root_set",Fractional=Prefix+"fractional_property_value",
         Ph=Prefix+"ph_concentration",Pressure=Prefix+"pressure_rounded",Benford=Prefix+"benford_percent",BenfordInverse=Prefix+"benford_digit",Decay=Prefix+"first_decay_year",
         Sound=Prefix+"relative_sound",Payment=Prefix+"repayment_payment",Payable=Prefix+"repayment_possible",Minimum=Prefix+"repayment_minimum",Months=Prefix+"repayment_months";
-    internal static bool Supports(string? f)=>f is Approx or Expand or Condense or Truth or Equation or RootSet or Ph or Pressure or Benford or BenfordInverse or Decay or Sound or Payment or Payable or Minimum or Months;
+    internal static bool Supports(string? f)=>f is Approx or Expand or Condense or Truth or Equation or RootSet or Fractional or Ph or Pressure or Benford or BenfordInverse or Decay or Sound or Payment or Payable or Minimum or Months;
     internal static int PowInt(int b,int n){int r=1;for(int i=0;i<n;i++)r*=b;return r;}
     internal static string Identity(int b,int p,int q,int m,int mode)=>mode switch{
         0=>$"لوغ_{b}({p*q})=لوغ_{b}({p})+لوغ_{b}({q})",
@@ -154,6 +155,12 @@ internal static class UaeG10LogarithmPropertiesResponse
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded logarithm properties parameters.");
         if(f==Approx)return DecimalText(ApproxValue(p),4);
         if(f==RootSet){var xs=RootSetValues(p);return xs.Length==0?"∅":string.Join(",",xs);}
+        if(f==Fractional)
+        {
+            int u=p["u"],n=p["p"]*PowInt(p["q"],Math.Max(0,u)),d=PowInt(p["q"],Math.Max(0,-u));
+            int a=n,b=d;while(b!=0){int t=a%b;a=b;b=t;}n/=a;d/=a;
+            return d==1?n.ToString(CultureInfo.InvariantCulture):$"{n}/{d}";
+        }
         if(f==Sound)return (p["mode"]%3==1?new BigInteger(10*(p["m"]+p["digit"])):BigInteger.Pow(10,p["m"]+p["digit"])).ToString(CultureInfo.InvariantCulture);
         if(f is Expand or Condense)return $"({p["u"]+p["w"]},{p["v"]},{-p["m"]})";
         if(f==Ph)return DecimalText(RoundTenPower(-p["ph"],12),12);
@@ -168,6 +175,13 @@ internal static class UaeG10LogarithmPropertiesResponse
     {
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer))return false;string raw=Norm(answer);
         if(f==Approx)return TryScaled(raw,4,out long val)&&val==ApproxValue(p);
+        if(f==Fractional)
+        {
+            var t=raw.Split('/');
+            if(t.Length is <1 or >2||!BigInteger.TryParse(t[0],NumberStyles.None,CultureInfo.InvariantCulture,out BigInteger n)||n<=0)return false;
+            BigInteger d=1;if(t.Length==2&&(!BigInteger.TryParse(t[1],NumberStyles.None,CultureInfo.InvariantCulture,out d)||d<=0))return false;
+            int u=p["u"];return n*PowInt(p["q"],Math.Max(0,-u))==d*p["p"]*PowInt(p["q"],Math.Max(0,u));
+        }
         if(f==RootSet)
         {
             var expected=Enumerable.Range(-50,101).Where(x=>RootHolds(x,p)).ToArray();
