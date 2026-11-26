@@ -86,8 +86,8 @@ public sealed class UaeG10GeneralRadicalEquationTests
         // sqrt(x+5)=+4 -> x=11 is the unique real solution.
         Assert.Equal(4,Math.Sqrt(11+5));
         // sqrt(x+4)=x-2 -> x=0 is extraneous, x=5 is valid.
-        Assert.NotEqual(Math.Sqrt(0+4),0-2);
-        Assert.Equal(Math.Sqrt(5+4),5-2);
+        Assert.NotEqual(0-2,Math.Sqrt(0+4));
+        Assert.Equal(5-2,Math.Sqrt(5+4));
         // Radical inequality: sqrt(x+1)<3 requires -1<=x<8.
         foreach(int x in new[]{-1,0,1,7})
             Assert.True(x>=-1&&Math.Sqrt(x+1)<3);
