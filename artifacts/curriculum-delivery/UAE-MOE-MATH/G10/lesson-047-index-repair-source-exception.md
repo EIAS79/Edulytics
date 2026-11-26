@@ -1,3 +1,8 @@
 # استثناء إصلاح 47 — اللوغاريتمات العشرية
 
 الحالة السابقة: READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY. المرجع المعتمد: الفهرس ثابت، لا حذف أو إعادة ترتيب. المتقدم 2025–2026 PDF12 يذكر 8-6 ولكن المتن ينتهي بالوحدة الرابعة؛ المتقدم 2018–2019 PDF18 يذكر الوحدة الثامنة ولكن متن الجزء يبدأ بالوحدة التاسعة PDF25. فهرس التطبيقي PDF10 يتضمن الدوال والمعادلات الأسية لا درس اللوغاريتمات المطابق؛ بقية الكتب المتاحة في نطاقات الجبر والهندسة لا توفر متن هذا الدرس. لم يُثبت متن مطابق. لا تعديل للمحتوى الموجود من الفهرس، ولا إغلاق A–B–C أو Stage D. استثناء SOURCE_BODY_NOT_AVAILABLE، ثم الانتقال إلى المستهدف 48 وفق قرار المالك.
+
+
+## Supplemental repair — superseded
+
+The owner-approved matching body is present in رياضيات الدوال متقدم.pdf PDF45–53 / printed596–604. The original source-availability exception remains historical; the current selected scope is documented in lesson-047-source-evidence.md and lesson-047-source-elements.json.
