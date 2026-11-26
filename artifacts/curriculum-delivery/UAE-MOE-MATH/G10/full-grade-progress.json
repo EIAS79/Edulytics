@@ -1117,17 +1117,36 @@
         134,
         135,
         136,
-        137,
         138,
         139
       ],
-      "gradeClosedCount": 139,
+      "gradeClosedCount": 132,
       "firstIncompleteGlobalOrdinal": 140,
-      "stageABCStatus": "UNIT16_7_OF_7_ORIGINAL_CONTENT_WITH_SAMPLED_SOURCE_CORRECTIONS__STAGE_D_NOT_RUN",
+      "stageABCStatus": "UNIT16_6_BODY_REVIEWED_1_SOURCE_EXCEPTION_STAGE_D_NOT_RUN",
       "stageD": "NOT_STARTED",
       "productionRouting": false,
       "sourceScope": "OLDER_GENERAL_02_2_UNIT10_LESSON_OPENERS_133_136_138_139_DIRECTLY_VISUALLY_INSPECTED; L137_TOC_ONLY",
-      "nextEligibleCanonicalCode": "G10-U17-L01"
+      "nextEligibleCanonicalCode": "G10-U17-L01",
+      "repairValidation": {
+        "completedOrdinals": [],
+        "skippedAlreadyBodyReviewedOrdinals": [
+          133,
+          134,
+          135,
+          136,
+          138,
+          139
+        ],
+        "exceptions": [
+          {
+            "ordinal": 137,
+            "reason": "SOURCE_BODY_NOT_AVAILABLE",
+            "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-index-repair-source-exception.md"
+          }
+        ],
+        "firstIncompleteGlobalOrdinal": 140,
+        "status": "UNIT16_INDEX_ONLY_REPAIR_SCANNED_WITH_SOURCE_EXCEPTION"
+      }
     },
     {
       "file": "unit-17-stage-a-c-progress.json",
@@ -1146,18 +1165,32 @@
         140,
         141,
         142,
-        143,
-        144,
-        145
+        143
       ],
-      "gradeClosedCount": 145,
-      "firstIncompleteGlobalOrdinal": 146,
+      "gradeClosedCount": 136,
+      "firstIncompleteGlobalOrdinal": 144,
       "sourceBookScope": "OLDER_ADVANCED_2018_2019_VOL3_UNIT12_LESSONS_140_143_OPENERS_VERIFIED; APPLIED_144_145_TOC_ONLY",
-      "stageABCStatus": "UNIT17_6_OF_6_SOURCE_SAMPLED_FIRST4_AND_INDEX_ONLY_LAST2__STAGE_D_NOT_RUN",
+      "stageABCStatus": "UNIT17_INDEX_ONLY_REPAIR_IN_PROGRESS_4_BODY_REVIEWED_2_PENDING",
       "testsRun": "WRITTEN_NOT_RUN",
       "stageD": "NOT_STARTED",
       "productionRouting": false,
-      "nextEligibleCanonicalCode": "G10-U18-L01"
+      "nextEligibleCanonicalCode": "G10-U17-L05",
+      "historicalIndexOnlyAuthoredOrdinals": [
+        144,
+        145
+      ],
+      "repairValidation": {
+        "completedOrdinals": [],
+        "skippedAlreadyBodyReviewedOrdinals": [
+          140,
+          141,
+          142,
+          143
+        ],
+        "exceptions": [],
+        "firstIncompleteGlobalOrdinal": 144,
+        "status": "UNIT17_INDEX_ONLY_REPAIR_IN_PROGRESS"
+      }
     },
     {
       "file": "unit-18-stage-a-c-progress.json",
@@ -1233,8 +1266,8 @@
       131,
       132
     ],
-    "firstIncompleteGlobalOrdinal": 133,
-    "firstIncompleteCanonicalCode": "G10-U16-L01",
+    "firstIncompleteGlobalOrdinal": 144,
+    "firstIncompleteCanonicalCode": "G10-U17-L05",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
@@ -1268,12 +1301,27 @@
         "ordinal": 49,
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-index-repair-source-exception.md"
+      },
+      {
+        "ordinal": 137,
+        "reason": "SOURCE_BODY_NOT_AVAILABLE",
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-index-repair-source-exception.md"
       }
     ],
-    "scanNextOrdinal": 133,
+    "scanNextOrdinal": 144,
     "skippedAlreadyBodyReviewedOrdinals": [
       51,
-      97
+      97,
+      133,
+      134,
+      135,
+      136,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143
     ]
   }
 }

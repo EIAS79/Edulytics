@@ -1,0 +1,3 @@
+# Lesson 137 — missing matching source body
+
+Canonical G10-U16-L05 «الاحتمال والفرص» stays in the approved 148 index. Advanced 2025–2026 `01متقدم_.pdf` PDF11 lists 7-5; actual volume begins Unit1 at PDF19 and ends Unit4 review/back matter around PDF330–337. Older general `02-2.pdf` PDF145–152 is 10-4 Simulation, followed immediately by 10-5 independent/dependent events at PDF153; no standalone probability/odds body in that sequence. Advanced 2018–2019 volume 3 starts Unit9. The available matching title is index-only. Preserve existing original eight examples and four models; do not certify source repair or Stage D. Required: actual approved matching lesson body or explicit alternative source scope. Source parity UNKNOWN.

@@ -14,15 +14,34 @@
     134,
     135,
     136,
-    137,
     138,
     139
   ],
-  "gradeClosedCount": 139,
+  "gradeClosedCount": 132,
   "firstIncompleteGlobalOrdinal": 140,
-  "stageABCStatus": "UNIT16_7_OF_7_ORIGINAL_CONTENT_WITH_SAMPLED_SOURCE_CORRECTIONS__STAGE_D_NOT_RUN",
+  "stageABCStatus": "UNIT16_6_BODY_REVIEWED_1_SOURCE_EXCEPTION_STAGE_D_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
   "sourceScope": "OLDER_GENERAL_02_2_UNIT10_LESSON_OPENERS_133_136_138_139_DIRECTLY_VISUALLY_INSPECTED; L137_TOC_ONLY",
-  "nextEligibleCanonicalCode": "G10-U17-L01"
+  "nextEligibleCanonicalCode": "G10-U17-L01",
+  "repairValidation": {
+    "completedOrdinals": [],
+    "skippedAlreadyBodyReviewedOrdinals": [
+      133,
+      134,
+      135,
+      136,
+      138,
+      139
+    ],
+    "exceptions": [
+      {
+        "ordinal": 137,
+        "reason": "SOURCE_BODY_NOT_AVAILABLE",
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-index-repair-source-exception.md"
+      }
+    ],
+    "firstIncompleteGlobalOrdinal": 140,
+    "status": "UNIT16_INDEX_ONLY_REPAIR_SCANNED_WITH_SOURCE_EXCEPTION"
+  }
 }
