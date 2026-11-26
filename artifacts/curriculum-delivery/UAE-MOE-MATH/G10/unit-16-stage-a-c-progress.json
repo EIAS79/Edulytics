@@ -14,18 +14,21 @@
     134,
     135,
     136,
+    137,
     138,
     139
   ],
-  "gradeClosedCount": 132,
+  "gradeClosedCount": 139,
   "firstIncompleteGlobalOrdinal": 140,
-  "stageABCStatus": "UNIT16_6_BODY_REVIEWED_1_SOURCE_EXCEPTION_STAGE_D_NOT_RUN",
+  "stageABCStatus": "UNIT16_7_OF_7_SELECTED_BODY_SCOPE_COMPLETE_STAGE_D_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
-  "sourceScope": "OLDER_GENERAL_02_2_UNIT10_LESSON_OPENERS_133_136_138_139_DIRECTLY_VISUALLY_INSPECTED; L137_TOC_ONLY",
+  "sourceScope": "OLDER_GENERAL_02_2_UNIT10_LESSON_OPENERS_133_136_138_139_DIRECTLY_VISUALLY_INSPECTED; L137_SUPPLEMENTAL_ADVANCED_MATCHING_BODY_PDF36_41",
   "nextEligibleCanonicalCode": "G10-U17-L01",
   "repairValidation": {
-    "completedOrdinals": [],
+    "completedOrdinals": [
+      137
+    ],
     "skippedAlreadyBodyReviewedOrdinals": [
       133,
       134,
@@ -34,14 +37,21 @@
       138,
       139
     ],
-    "exceptions": [
+    "exceptions": [],
+    "firstIncompleteGlobalOrdinal": null,
+    "status": "UNIT16_INDEX_ONLY_REPAIR_COMPLETE",
+    "resolvedHistoricalExceptions": [
       {
         "ordinal": 137,
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-stage-a-c-checkpoint.json"
       }
-    ],
-    "firstIncompleteGlobalOrdinal": 140,
-    "status": "UNIT16_INDEX_ONLY_REPAIR_SCANNED_WITH_SOURCE_EXCEPTION"
-  }
+    ]
+  },
+  "supplementalSourceBook": "رياضيات الاحتمالات متقدم.pdf",
+  "supplementalSourceSha256": "a94ef73f58c1860ac231b6ad4e8d617465fc0734108607e4bffcbaf37bfe86d3",
+  "sourceParity": "UNKNOWN",
+  "testsRun": "WRITTEN_NOT_RUN"
 }
