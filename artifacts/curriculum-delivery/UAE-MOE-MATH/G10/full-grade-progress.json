@@ -644,7 +644,37 @@
         "firstIncompleteGlobalOrdinal": 43,
         "status": "A_C_EXPLICIT_GAP",
         "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
-        "reason": "FULL_SOURCE_ACCEPTANCE_UNVERIFIED_ADVANCED_8_2_BODY_ABSENT"
+        "reason": "FULL_SOURCE_ACCEPTANCE_UNVERIFIED_ADVANCED_8_2_BODY_ABSENT",
+        "sourceAvailabilityVerification": {
+          "checkedLocalAttachedBooks": 7,
+          "allSevenSha256Match": true,
+          "advanced2025_2026": {
+            "file": "01متقدم_.pdf",
+            "tocPage": 12,
+            "lastInstructionalUnit": 4,
+            "reviewPages": [
+              327,
+              330,
+              337,
+              342
+            ]
+          },
+          "advanced2018_2019": {
+            "file": "03متقدم_.pdf",
+            "tocPage": 18,
+            "firstBodyUnit": 9,
+            "firstBodyPdfPage": 25,
+            "firstBodyPrintedPage": 618,
+            "missingPrintedUnit8LessonStarts": {
+              "lesson8_2": 553,
+              "lesson8_3": 560
+            }
+          },
+          "localDeviceRecord": "Grade_10/_MISSING_ARABIC_PARTS.txt: Matching current Arabic Volume 2 not found/verified.",
+          "nextLesson44TocCorrectReference": "Advanced Unit8 lesson8-3, not 8-4; source preparation only; lesson44 not edited",
+          "desktopCallsForSourceAvailabilityCheck": 2,
+          "scope": "Observed source boundaries and missing volume; not proof of every page's absence in other hypothetical sources."
+        }
       }
     },
     {
@@ -1078,6 +1108,36 @@
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Read individual checkpoint; aggregate authoring is not semantic closure.",
-    "completedWork": "SELECTED_PRINTED_BODY_100_ITEM_MAP_26_EXAMPLES_8_VISUALS_17_FAMILIES_AUTHORED"
+    "completedWork": "SELECTED_PRINTED_BODY_100_ITEM_MAP_26_EXAMPLES_8_VISUALS_17_FAMILIES_AUTHORED",
+    "sourceAvailabilityVerification": {
+      "checkedLocalAttachedBooks": 7,
+      "allSevenSha256Match": true,
+      "advanced2025_2026": {
+        "file": "01متقدم_.pdf",
+        "tocPage": 12,
+        "lastInstructionalUnit": 4,
+        "reviewPages": [
+          327,
+          330,
+          337,
+          342
+        ]
+      },
+      "advanced2018_2019": {
+        "file": "03متقدم_.pdf",
+        "tocPage": 18,
+        "firstBodyUnit": 9,
+        "firstBodyPdfPage": 25,
+        "firstBodyPrintedPage": 618,
+        "missingPrintedUnit8LessonStarts": {
+          "lesson8_2": 553,
+          "lesson8_3": 560
+        }
+      },
+      "localDeviceRecord": "Grade_10/_MISSING_ARABIC_PARTS.txt: Matching current Arabic Volume 2 not found/verified.",
+      "nextLesson44TocCorrectReference": "Advanced Unit8 lesson8-3, not 8-4; source preparation only; lesson44 not edited",
+      "desktopCallsForSourceAvailabilityCheck": 2,
+      "scope": "Observed source boundaries and missing volume; not proof of every page's absence in other hypothetical sources."
+    }
   }
 }

@@ -108,5 +108,35 @@
   "remainingGap": "Selected printed source has been visually reviewed and mapped; final all-source academic acceptance remains open because the actual Advanced 8-2 body is not present and equivalence of any unique elements is unverified. Runtime/CI not run.",
   "selectedPrintedSourceDenominator": 100,
   "selectedPrintedSourceMapped": 100,
-  "selectedPrintedSourceReviewStatus": "PRINTED_ITEMS_VISUALLY_REVIEWED_AND_MAPPED_NOT_RUNTIME_CERTIFIED"
+  "selectedPrintedSourceReviewStatus": "PRINTED_ITEMS_VISUALLY_REVIEWED_AND_MAPPED_NOT_RUNTIME_CERTIFIED",
+  "sourceAvailabilityVerification": {
+    "checkedLocalAttachedBooks": 7,
+    "allSevenSha256Match": true,
+    "advanced2025_2026": {
+      "file": "01متقدم_.pdf",
+      "tocPage": 12,
+      "lastInstructionalUnit": 4,
+      "reviewPages": [
+        327,
+        330,
+        337,
+        342
+      ]
+    },
+    "advanced2018_2019": {
+      "file": "03متقدم_.pdf",
+      "tocPage": 18,
+      "firstBodyUnit": 9,
+      "firstBodyPdfPage": 25,
+      "firstBodyPrintedPage": 618,
+      "missingPrintedUnit8LessonStarts": {
+        "lesson8_2": 553,
+        "lesson8_3": 560
+      }
+    },
+    "localDeviceRecord": "Grade_10/_MISSING_ARABIC_PARTS.txt: Matching current Arabic Volume 2 not found/verified.",
+    "nextLesson44TocCorrectReference": "Advanced Unit8 lesson8-3, not 8-4; source preparation only; lesson44 not edited",
+    "desktopCallsForSourceAvailabilityCheck": 2,
+    "scope": "Observed source boundaries and missing volume; not proof of every page's absence in other hypothetical sources."
+  }
 }
