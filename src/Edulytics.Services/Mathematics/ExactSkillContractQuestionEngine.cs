@@ -204,6 +204,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialLogisticResponse.ModelRelation,
             UaeG10ExponentialLogisticResponse.SpreadsheetBalance,
             UaeG10ExponentialLogisticResponse.SpreadsheetInterest,
+            UaeG10ExponentialLogisticResponse.LogisticCrossing,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
