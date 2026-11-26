@@ -1,6 +1,2 @@
-# UAE G10 lesson 146: المسلمات والبراهين الحرة
-
-- Direct PDF evidence: owner-uploaded `03.pdf` PDF6 and `رياضيات كتاب الطالب تطبيقي 10 8.pdf` PDF6 list Unit1 lesson 1-1, exact Arabic title.
-- Source body: the supplied parts contain index but not Unit1 full student lesson body; no fabricated source page ranges or publisher example parity.
-- Authored scope: 8 independent Arabic worked examples, 4 original visual tables, 5 explanation paragraphs.
-- A–B–C handoff ONLY: not verified equal to the publisher's exercises; Stage D and CI unrun; no production routing, requires teacher scoring.
+# الدرس 146 — المسلمات والبراهين الحرة
+PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146. المصدر الموافق: رياضيات كتاب الطالب تطبيقي 10 29.pdf، SHA-256 9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66، PDF20–28 / مطبوع5–13، الطبعة 2023–2024، التطبيقي الجزء الأول؛ يتضمن استكشاف الشروط قبل 1-1. هوية النشر General محفوظة. 87 عنصرًا محددًا و21 عنصر مراجعة تراكمية؛ 28 مثالًا أصليًا، 9 تمثيلات تعليمية، رسم SVG أصلي منفصل، 9 عائلات دقيقة. 190982 حالة حسابية مستقلة في الاستلزام والعدّ والزمن والميل؛ لا اختبارات تشغيل. البراهين الحرة وتقويم الأشكال للمعلم. B_RUNTIME_UNVERIFIED؛ SOURCE parity UNKNOWN، tests WRITTEN_NOT_RUN، Stage D NOT_STARTED، productionRouting=false.
