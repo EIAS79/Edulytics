@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 148,
+  "canonicalCode": "G10-U18-L03",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
+  "sourceSha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
+  "sourcePdfPages": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "sourcePrintedPages": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "primarySkills": [
+    "geometry.proofs.angle_relationships"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u18.l03.protractor_difference",
+    "uae.g10.general.u18.l03.angle_addition",
+    "uae.g10.general.u18.l03.complementary_measure",
+    "uae.g10.general.u18.l03.supplementary_measure",
+    "uae.g10.general.u18.l03.equal_partition",
+    "uae.g10.general.u18.l03.adjacent_angle_equation",
+    "uae.g10.general.u18.l03.vertical_angle_equation",
+    "uae.g10.general.u18.l03.intersection_measure",
+    "uae.g10.general.u18.l03.same_reference_congruence",
+    "uae.g10.general.u18.l03.bisector_vertical",
+    "uae.g10.general.u18.l03.around_point",
+    "uae.g10.general.u18.l03.congruence_reason",
+    "uae.g10.general.u18.l03.perpendicular_sufficient",
+    "uae.g10.general.u18.l03.two_crossing_transfer"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.exponentials.solve_exponent"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10AngleRelationships",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10AngleRelationshipsResponse.Verify: exact original equation substitution, positive-angle constraints, additive/linear/vertical relation checks, same-reference congruence, bounded theorem premises and perpendicular sufficiency. Open proof teacher-scored.",
+  "parameterBounds": {
+    "a": "10..75 degrees",
+    "b": "5..60 degrees",
+    "x": "2..20",
+    "p": "0..30 degrees, protractor readings <=165",
+    "m": "2..4",
+    "mode": "1..8 theorem choices",
+    "variant": "0..3, whole angles <=180; around-point total 360"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u18.l03.protractor_difference",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.angle_addition",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.complementary_measure",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.supplementary_measure",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.equal_partition",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.adjacent_angle_equation",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.vertical_angle_equation",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.intersection_measure",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.same_reference_congruence",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.bisector_vertical",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.around_point",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.congruence_reason",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.perpendicular_sufficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    },
+    {
+      "family": "uae.g10.general.u18.l03.two_crossing_transfer",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices and textual geometry constraints; original diagrams, Rich V2 tables and teacher rubric for physical measurement/open proofs"
+    }
+  ],
+  "teacherReviewRequired": [
+    "open two-column/free proofs and validity of inference",
+    "physical protractor and constructions",
+    "diagram interpretation, conjecture and counterexample",
+    "geometric conditions in contextual modelling"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-148-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u18l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10AngleRelationshipsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "A_C_IN_PROGRESS"
+  }
+}
