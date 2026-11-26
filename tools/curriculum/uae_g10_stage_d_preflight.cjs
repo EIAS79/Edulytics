@@ -9,6 +9,8 @@ const bp=read('src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-gene
 const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
 const mappings=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json');
 const prefix='artifacts/curriculum-delivery/UAE-MOE-MATH/G10/';
+const sourceInventory=read(prefix+'source-inventory.json');
+const curriculum=read('src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json');
 const failures=[],releaseBlockers=[],warnings=[];
 const fail=(kind,n)=>failures.push({kind,ordinal:n});
 const block=(kind,n)=>releaseBlockers.push({kind,ordinal:n});
@@ -21,10 +23,26 @@ const ordered=[...bp.Lessons].sort((a,b)=>a.SortOrder-b.SortOrder);
 const content=new Map(),skills=new Map();
 for(const p of pack.Lessons){if(content.has(p.LessonCode))fail('DUPLICATE_PACK_CODE',0);content.set(p.LessonCode,p);}
 for(const m of mappings.mappings){if(!skills.has(m.lessonCode))skills.set(m.lessonCode,m);}
+// Owner approval and physical PDF hash/page reconciliation are not semantic coverage.
+const referenceNodes=new Map(curriculum.Nodes.map(n=>[n.Code,n]));
+const sourceGate={
+ sourceLock:sourceInventory.sourceLock===true,
+ denominator:sourceInventory.knownSourceElementDenominator??null,
+ coveragePercent:sourceInventory.sourceCoveragePercent??null
+};
+if(!sourceGate.sourceLock||!Number.isInteger(sourceGate.denominator)||sourceGate.denominator<=0||sourceGate.coveragePercent!==100)
+ block('SOURCE_ATOMIC_PARITY_UNPROVEN',0);
+// Keep early technical diagnostics runnable even while release blockers remain.
+const curriculumReferenceAudit={matched:0,missing:0,invalid:0};
 const unitCounts={};
 for(let n=1;n<=148;n++){
  const b=ordered[n-1];if(!b||b.SortOrder!==n){fail('BLUEPRINT_ORDER',n);continue;}
  unitCounts[b.UnitNumber]=(unitCounts[b.UnitNumber]||0)+1;
+ const ref=referenceNodes.get(b.OfficialReferenceCode);
+ if(!ref){curriculumReferenceAudit.missing++;block('MISSING_CANONICAL_CURRICULUM_REFERENCE',n);}
+ else if(ref.Kind!=='Reference'||ref.Pathway!=='General'||ref.LogicalLevelFrom!==10||ref.LogicalLevelTo!==10||ref.IsActive!==true){
+  curriculumReferenceAudit.invalid++;block('INVALID_CANONICAL_CURRICULUM_REFERENCE',n);
+ }else curriculumReferenceAudit.matched++;
  const p=content.get(b.LessonCode);
  if(!p){fail('MISSING_PACK_LESSON',n);continue;}
  const ars=(p.Translations||[]).filter(t=>t.CultureCode==='ar');
@@ -69,7 +87,7 @@ for(let u=1;u<=18;u++){
 const report={gate:'UAE_G10_148_STAGE_D_PREFLIGHT_V1',candidateSha:process.env.GITHUB_SHA||'LOCAL',
  structuralStatus:failures.length?'FAIL':'PASS',releaseDecision:failures.length||releaseBlockers.length?'NO_GO':'PASS',
  disclaimer:'Structural passing does not certify authored example correctness, textbook exercise parity, student E2E or release.',
- counters,unitCounts,failures,releaseBlockers,warnings};
+ counters,unitCounts,sourceGate,curriculumReferenceAudit,failures,releaseBlockers,warnings};
 const output=file('artifacts/uae-g10-stage-d/g10-preflight.json');
 fs.mkdirSync(path.dirname(output),{recursive:true});
 fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
