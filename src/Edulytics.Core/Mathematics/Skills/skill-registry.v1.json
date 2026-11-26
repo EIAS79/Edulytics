@@ -8928,8 +8928,20 @@
       "domain": "sequences",
       "canonicalName": "الصيغ التكرارية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l06.arithmetic_recurrence_term",
+        "uae.g10.general.u17.l06.geometric_recurrence_term",
+        "uae.g10.general.u17.l06.affine_recurrence_term",
+        "uae.g10.general.u17.l06.index_dependent_recurrence",
+        "uae.g10.general.u17.l06.two_initial_terms",
+        "uae.g10.general.u17.l06.difference_from_explicit",
+        "uae.g10.general.u17.l06.ratio_from_explicit",
+        "uae.g10.general.u17.l06.initial_value_from_arithmetic"
+      ]
     },
     {
       "id": "geometry.proofs.postulates_flow",

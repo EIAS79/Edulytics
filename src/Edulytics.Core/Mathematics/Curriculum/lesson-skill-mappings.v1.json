@@ -18409,24 +18409,32 @@
         "sequences.recursive_formulas"
       ],
       "secondarySkills": [],
-      "sourceType": "OWNER_APPROVED_APPLIED_SEQUENCE_INDEX",
+      "sourceType": "OWNER_APPROVED_MATCHING_SOURCE_BODY",
       "officialOutcomeMapped": false,
-      "mappingConfidence": "INDEX_ONLY_BODY_UNVERIFIED",
+      "mappingConfidence": "MATCHING_BODY_PAGE_LEVEL_REVIEW",
       "evidence": [
-        "Owner approved Grade10 Applied TOC p10 contains الصيغ التكرارية",
-        "Edulytics original content: 8 verified reasoning examples; four visual models.",
-        "Local book source could not be reopened with device offline; semantic equivalence to source text not asserted."
+        "رياضيات كتاب الطالب تطبيقي 10 8.pdf physical 142–147; printed 325–330; lesson 5-5",
+        "21 examples, eight educational models, eight bounded exact families"
       ],
-      "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
-      "practiceMechanic": "G10_U17_L06_TEACHER_ONLY",
-      "allowedQuestionFamilies": [],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U17_L06_RECURSION_EXACT_AND_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u17.l06.arithmetic_recurrence_term",
+        "uae.g10.general.u17.l06.geometric_recurrence_term",
+        "uae.g10.general.u17.l06.affine_recurrence_term",
+        "uae.g10.general.u17.l06.index_dependent_recurrence",
+        "uae.g10.general.u17.l06.two_initial_terms",
+        "uae.g10.general.u17.l06.difference_from_explicit",
+        "uae.g10.general.u17.l06.ratio_from_explicit",
+        "uae.g10.general.u17.l06.initial_value_from_arithmetic"
+      ],
       "forbiddenQuestionFamilies": [
         "supporting.exponentials.solve_exponent"
       ],
       "teacherReviewRequiredFor": [
-        "proof of recursive rules",
-        "sequence domain and interpretation",
-        "sequences with multiple possible continuations"
+        "Write recursive/explicit rule from a pattern: 1 point initial value, 2 rule and index, 1 verification.",
+        "Draw growing pattern: 1 point labels, 2 correct terms/structure, 1 explanation.",
+        "Model applications: 1 point units/initial value, 2 update rule and calculation, 1 interpretation."
       ],
       "officialOutcomeCodes": []
     },

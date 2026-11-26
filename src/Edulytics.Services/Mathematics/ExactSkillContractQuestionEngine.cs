@@ -285,6 +285,14 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u17.l05.initial_term",
             "uae.g10.general.u17.l05.average_rate",
             "uae.g10.general.u17.l05.growth_model",
+            "uae.g10.general.u17.l06.arithmetic_recurrence_term",
+            "uae.g10.general.u17.l06.geometric_recurrence_term",
+            "uae.g10.general.u17.l06.affine_recurrence_term",
+            "uae.g10.general.u17.l06.index_dependent_recurrence",
+            "uae.g10.general.u17.l06.two_initial_terms",
+            "uae.g10.general.u17.l06.difference_from_explicit",
+            "uae.g10.general.u17.l06.ratio_from_explicit",
+            "uae.g10.general.u17.l06.initial_value_from_arithmetic",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1578,6 +1586,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RecurrencesResponse.Supports(family))
+            return UaeG10RecurrencesResponse.Verify(family,parameters,answer);
 
         if (UaeG10GeometricExponentialResponse.Supports(family))
             return UaeG10GeometricExponentialResponse.Verify(family,parameters,answer);
@@ -4179,6 +4190,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10RecurrencesResponse.Supports(family))
+            return BuildG10Recurrences(family,random,difficulty);
 
         if (UaeG10GeometricExponentialResponse.Supports(family))
             return BuildG10GeometricExponential(family,random,difficulty);
@@ -10485,6 +10499,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10RecurrencesResponse.Supports(problem.Family))
+            return UaeG10RecurrencesResponse.Format(problem.Family,p);
 
         if (UaeG10GeometricExponentialResponse.Supports(problem.Family))
             return UaeG10GeometricExponentialResponse.Format(problem.Family,p);
