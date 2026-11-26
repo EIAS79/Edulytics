@@ -17,7 +17,8 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
  assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),155);
  assert.equal(cp.productionRouting,false);
- assert.equal(cp.status,'READY_FOR_STAGE_D');
+ assert.equal(cp.status,'A_C_EXPLICIT_GAP');
+ assert.equal(cp.practiceReadiness,'PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D');
  assert.equal(cp.sourceSha256,'96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e');
  const entry=pack.Lessons.find(x=>x.LessonCode===code);
  assert.ok(entry);
@@ -29,7 +30,8 @@ test('Lesson43 has independently authored Arabic content while source body is ve
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
  for(const x of [-2,-1,0,1,2,3,4,5]){
   assert.equal(Math.pow(2,x-1)>8,x>4);
-  assert.equal(Math.pow(1/3,x-2)>=9,x<=0);
+  // Compare exact powers of 3; reciprocal floating-point bases can misclassify equality.
+  assert.equal(Math.pow(3,2-x)>=9,x<=0);
   assert.equal(Math.pow(1/2,2*x-1)<8,x>-1);
   assert.equal(Math.pow(9,x)>27,x>1.5);
  }
