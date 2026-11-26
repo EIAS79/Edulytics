@@ -7,29 +7,47 @@
   "unitNumber": 15,
   "lessonTitle": "مساحة سطح الهرم والمخروط",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03:C127",
-  "status": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
-  "sourceBodyVerified": false,
-  "sourceVerificationScope": "INDEX_BOOK_EXCERPT_PENDING_BODY_RECHECK_OFFLINE_DEVICE",
-  "ownerApprovedIndexOnlyAuthoring": true,
+  "sourceBodyVerified": true,
+  "sourceVerificationScope": "OWNER_APPROVED_ONE_MATCHING_SOURCE_BODY_REVIEWED",
+  "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
   "sourceBook": "02-2.pdf",
   "sourcePdfIndexStart": 68,
   "sourceElementDenominatorForThisLesson": null,
-  "sourceElementsMapped": null,
-  "originalArabicWorkedExamples": 6,
-  "originalVisualModels": 3,
+  "sourceElementsMapped": 9,
+  "originalArabicWorkedExamples": 16,
+  "originalVisualModels": 8,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l03-ar.rich-lesson-v2.json",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u15l03.test.cjs"
+    "tests/academic-uae-grade10-arabic-u15l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10PyramidSurfaceTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 128,
   "nextEligibleCanonicalCode": "G10-U15-L04",
-  "closureBasis": "ORIGINAL_6_EXAMPLES_THREE_VISUALS_OWNER_INDEX_ONLY"
+  "closureBasis": "MATCHING_BODY_REVIEWED_EXISTING_CONTENT_REPAIRED_SOURCE_LINKED_STAGE_ABC",
+  "priorStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "sourceLocator": "02-2.pdf physical 68–76; printed 590–598; lesson 9-3",
+  "stageCStatus": "EXACT_FAMILIES_AUTHORED_AND_TEACHER_RUBRIC",
+  "primarySkills": [
+    "geometry.solids.surface_pyramid_cone"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u15.l03.square_pyramid_lateral",
+    "uae.g10.general.u15.l03.square_pyramid_total",
+    "uae.g10.general.u15.l03.square_pyramid_slant",
+    "uae.g10.general.u15.l03.cone_lateral_pi_coefficient",
+    "uae.g10.general.u15.l03.cone_total_pi_coefficient",
+    "uae.g10.general.u15.l03.cone_sector_angle"
+  ],
+  "sourceLimitations": "One approved matching older body; page-level ledger, not exhaustive item denominator; runtime and Stage D not tested.",
+  "sourceElementLedgerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-127-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-127-source-evidence.md"
 }

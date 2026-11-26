@@ -8718,8 +8718,18 @@
       "domain": "geometry",
       "canonicalName": "مساحة سطح الهرم والمخروط",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l03.square_pyramid_lateral",
+        "uae.g10.general.u15.l03.square_pyramid_total",
+        "uae.g10.general.u15.l03.square_pyramid_slant",
+        "uae.g10.general.u15.l03.cone_lateral_pi_coefficient",
+        "uae.g10.general.u15.l03.cone_total_pi_coefficient",
+        "uae.g10.general.u15.l03.cone_sector_angle"
+      ]
     },
     {
       "id": "geometry.solids.sphere_surface_volume",
