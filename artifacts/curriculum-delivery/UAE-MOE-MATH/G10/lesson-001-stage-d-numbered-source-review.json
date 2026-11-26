@@ -180,9 +180,10 @@
       "number": 19,
       "physicalPdfPage": 23,
       "printedPage": 10,
-      "representativeArtifactTitle": "تطبيق: نمو مبيعات مجموعتين",
+      "representativeArtifactTitle": "تقدير الجزء والكل في فترتين",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": true
+      "subpartsPendingSeparateAudit": true,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P023-Q20",
@@ -216,9 +217,10 @@
       "number": 23,
       "physicalPdfPage": 23,
       "printedPage": 10,
-      "representativeArtifactTitle": "تصنيف كثيرات الحدود وحالات الصفر",
+      "representativeArtifactTitle": "الفرق بين معامل متغير وأس متغير",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": false
+      "subpartsPendingSeparateAudit": false,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P023-Q24",
@@ -531,18 +533,20 @@
       "number": 58,
       "physicalPdfPage": 24,
       "printedPage": 11,
-      "representativeArtifactTitle": "طرح نموذجيْن تربيعيين بوحدات عددية",
+      "representativeArtifactTitle": "تقدير الفرق بين نموذجيْن تكعيبيين عشريين",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": false
+      "subpartsPendingSeparateAudit": false,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P025-Q59",
       "number": 59,
       "physicalPdfPage": 25,
       "printedPage": 12,
-      "representativeArtifactTitle": "نموذج تأجير متعدد الأيام وجمع كثيرتي تكلفة",
+      "representativeArtifactTitle": "نموذج أجرة يومية ومسافة يومية متكررة",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": true
+      "subpartsPendingSeparateAudit": true,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P025-Q60",
@@ -567,9 +571,10 @@
       "number": 62,
       "physicalPdfPage": 25,
       "printedPage": 12,
-      "representativeArtifactTitle": "استنتاج مجموع الأعداد الفردية المتتالية",
+      "representativeArtifactTitle": "تعليل الدرجة والترتيب والنمذجة",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": true
+      "subpartsPendingSeparateAudit": true,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P025-Q63",
@@ -585,9 +590,10 @@
       "number": 64,
       "physicalPdfPage": 25,
       "printedPage": 12,
-      "representativeArtifactTitle": "الطرح ومحاذاة الحدود",
+      "representativeArtifactTitle": "تعليل الدرجة والترتيب والنمذجة",
       "status": "REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE",
-      "subpartsPendingSeparateAudit": false
+      "subpartsPendingSeparateAudit": false,
+      "followup": "Dedicated original equivalent authored; individual subpart and runtime certification pending"
     },
     {
       "sourceElementId": "G10-GEN-2025-U01L01-P025-Q65",
@@ -602,15 +608,32 @@
   "page26ExistingEvidence": "lesson-001-stage-d-page-026-review.json",
   "newExamples": 7,
   "originalExampleCount": 20,
-  "currentExampleCount": 27,
+  "currentExampleCount": 32,
   "newVisualCount": 1,
   "repairedInvalidVisualCount": 3,
-  "canonicalBodySha256": "828dec84f927025249f819cfd17dbbb5700530f2d62eddd1ead0d72612388f0a",
+  "canonicalBodySha256": "16c502057e24f632664808441d6427a21c1102122f47d9dc2c1aa60ff4a63725",
   "coverage": "UNKNOWN",
   "openDefects": [
     "Numbered question entries are not the full atomic denominator; subparts, examples, diagrams, activities and advanced overlap need separate confirmation",
     "Representative many-to-one linkage is not source item parity",
     "Authenticated rendering and persisted learner practice not run"
   ],
-  "productionRouting": false
+  "productionRouting": false,
+  "followup": {
+    "sourcePages": [
+      23,
+      24,
+      25
+    ],
+    "dedicatedOriginalGroups": 5,
+    "sourceNumberedItems": [
+      19,
+      23,
+      58,
+      59,
+      62,
+      64
+    ],
+    "status": "AUTHORED_ARITHMETIC_PROBES_PASS_RUNTIME_PENDING"
+  }
 }
