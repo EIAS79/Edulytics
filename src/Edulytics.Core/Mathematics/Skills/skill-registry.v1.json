@@ -8853,8 +8853,30 @@
       "domain": "probability",
       "canonicalName": "الاحتمال والفرص",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l05.single_event_boundary",
+        "uae.g10.general.u16.l05.odds_from_counts",
+        "uae.g10.general.u16.l05.probability_from_odds",
+        "uae.g10.general.u16.l05.odds_from_decimal",
+        "uae.g10.general.u16.l05.hypergeometric_probability",
+        "uae.g10.general.u16.l05.hypergeometric_odds",
+        "uae.g10.general.u16.l05.at_least_one_probability",
+        "uae.g10.general.u16.l05.three_category_probability",
+        "uae.g10.general.u16.l05.three_category_odds",
+        "uae.g10.general.u16.l05.different_pair_odds",
+        "uae.g10.general.u16.l05.two_suit_pattern_odds",
+        "uae.g10.general.u16.l05.repeated_result_probability",
+        "uae.g10.general.u16.l05.ordered_pattern_probability",
+        "uae.g10.general.u16.l05.ordered_pattern_odds",
+        "uae.g10.general.u16.l05.conditional_independent_probability",
+        "uae.g10.general.u16.l05.uniform_cut_probability",
+        "uae.g10.general.u16.l05.data_union_probability",
+        "uae.g10.general.u16.l05.data_category_odds"
+      ]
     },
     {
       "id": "probability.events.independence_conditional",
