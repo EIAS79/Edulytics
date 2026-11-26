@@ -8,7 +8,7 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10ExponentialLogisticModels(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
-        int a=random.Next(2,9),b=random.Next(2,9),c=random.Next(12,51)*100,h=random.Next(2,13)*100,t=random.Next(2,13),v=random.Next(2,9),r=random.Next(2,9),q=random.Next(1,r),n=random.Next(1,11),rate=random.Next(250,901),p=random.Next(5,51)*100,mode=random.Next(4);
+        int a=random.Next(2,9),b=random.Next(2,9),c=random.Next(12,51)*100,h=random.Next(2,13)*100,t=random.Next(2,13),v=random.Next(2,9),r=random.Next(2,9),q=random.Next(1,r),n=random.Next(1,31),rate=random.Next(250,901),p=random.Next(5,251)*100,mode=random.Next(4);
         string R(int x)=>((decimal)x/100).ToString(CultureInfo.InvariantCulture);
         string ratePercent=((decimal)rate/100).ToString(CultureInfo.InvariantCulture),round="قرّب إلى أربعة أجزاء عشرية.";
         string model=$"P(t)={c}/(1+{a}e^(-{R(r)}t))";
@@ -29,6 +29,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialLogisticResponse.LogisticRate=>$"في P(t)={c}/(1+{a}e^(-kt)) وجدنا P({t})={c}×{v}/({v}+1). أوجد k إلى ست منازل عشرية.",
             UaeG10ExponentialLogisticResponse.LogisticReachable=>$"في {model} والمجال t≥0، هل يمكن بلوغ P={target} في زمن منتهٍ؟ اكتب 1 لنعم أو 0 للا.",
             UaeG10ExponentialLogisticResponse.ModelRelation=>$"من النموذجين A(t)=({c}/({a}+1))e^({R(r)}t) وL(t)={c}/(1+{a}e^(-{R(r)}t))، أيهما أكبر عند t={t}>0؟ اكتب 1 للأسي أو 2 للوجستي أو 0 للتساوي.",
+            UaeG10ExponentialLogisticResponse.LogisticCrossing=>$"قارن A(t)=({c}/({2*(a+1)}))e^({R(r)}t) وL(t)={c}/(1+{a}e^(-{R(q)}t)). أوجد زمن تقاطعهما للمجال t≥0 إلى أربعة أجزاء عشرية.",
             UaeG10ExponentialLogisticResponse.SpreadsheetBalance=>$"إيداع أو دين افتراضي بلا دفعات قدره {p} AED بمعدل {ratePercent}% مركب سنويًا مدة {n} سنوات. أوجد الرصيد بالدقة الكاملة ثم قرّب إلى فلس.",
             UaeG10ExponentialLogisticResponse.SpreadsheetInterest=>$"إيداع {p} AED بمعدل {ratePercent}% مركب سنويًا مدة {n} سنوات. أوجد الربح خلال السنة الأخيرة فقط، إلى أقرب فلس.",
             _=>throw new InvalidOperationException()
@@ -40,15 +41,28 @@ public sealed partial class ExactSkillContractQuestionEngine
 internal static class UaeG10ExponentialLogisticResponse
 {
     internal const string Prefix="uae.g10.general.u05.l08.";
-    internal const string HalfRate=Prefix+"half_life_constant",DecayAmount=Prefix+"half_life_amount",DecayAge=Prefix+"decay_age",HalfFromLoss=Prefix+"half_life_from_loss",GrowthRate=Prefix+"continuous_growth_rate",GrowthForecast=Prefix+"continuous_growth_forecast",GrowthTarget=Prefix+"continuous_growth_target",Crossing=Prefix+"continuous_crossing",LogisticInitial=Prefix+"logistic_initial",LogisticLimit=Prefix+"logistic_limit",LogisticValue=Prefix+"logistic_value",LogisticTime=Prefix+"logistic_time",LogisticRate=Prefix+"logistic_rate",LogisticReachable=Prefix+"logistic_reachable",ModelRelation=Prefix+"exponential_logistic_relation",SpreadsheetBalance=Prefix+"spreadsheet_balance",SpreadsheetInterest=Prefix+"spreadsheet_interest";
-    internal static bool Supports(string? f)=>f is HalfRate or DecayAmount or DecayAge or HalfFromLoss or GrowthRate or GrowthForecast or GrowthTarget or Crossing or LogisticInitial or LogisticLimit or LogisticValue or LogisticTime or LogisticRate or LogisticReachable or ModelRelation or SpreadsheetBalance or SpreadsheetInterest;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> a)=>Supports(f)&&a.Count==12&&new[]{"a","b","c","h","t","v","r","q","n","rate","p","mode"}.All(a.ContainsKey)&&a["a"] is >=2 and <=8&&a["b"] is >=2 and <=8&&a["c"] is >=1200 and <=5000&&a["c"]%100==0&&a["h"] is >=200 and <=1200&&a["h"]%100==0&&a["t"] is >=2 and <=12&&a["v"] is >=2 and <=8&&a["r"] is >=2 and <=8&&a["q"]>=1&&a["q"]<a["r"]&&a["n"] is >=1 and <=10&&a["rate"] is >=250 and <=900&&a["p"] is >=500 and <=5000&&a["p"]%100==0&&a["mode"] is >=0 and <=3;
+    internal const string HalfRate=Prefix+"half_life_constant",DecayAmount=Prefix+"half_life_amount",DecayAge=Prefix+"decay_age",HalfFromLoss=Prefix+"half_life_from_loss",GrowthRate=Prefix+"continuous_growth_rate",GrowthForecast=Prefix+"continuous_growth_forecast",GrowthTarget=Prefix+"continuous_growth_target",Crossing=Prefix+"continuous_crossing",LogisticInitial=Prefix+"logistic_initial",LogisticLimit=Prefix+"logistic_limit",LogisticValue=Prefix+"logistic_value",LogisticTime=Prefix+"logistic_time",LogisticRate=Prefix+"logistic_rate",LogisticReachable=Prefix+"logistic_reachable",ModelRelation=Prefix+"exponential_logistic_relation",SpreadsheetBalance=Prefix+"spreadsheet_balance",SpreadsheetInterest=Prefix+"spreadsheet_interest",LogisticCrossing=Prefix+"exponential_logistic_crossing";
+    internal static bool Supports(string? f)=>f is HalfRate or DecayAmount or DecayAge or HalfFromLoss or GrowthRate or GrowthForecast or GrowthTarget or Crossing or LogisticInitial or LogisticLimit or LogisticValue or LogisticTime or LogisticRate or LogisticReachable or ModelRelation or SpreadsheetBalance or SpreadsheetInterest or LogisticCrossing;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> a)=>Supports(f)&&a.Count==12&&new[]{"a","b","c","h","t","v","r","q","n","rate","p","mode"}.All(a.ContainsKey)&&a["a"] is >=2 and <=8&&a["b"] is >=2 and <=8&&a["c"] is >=1200 and <=5000&&a["c"]%100==0&&a["h"] is >=200 and <=1200&&a["h"]%100==0&&a["t"] is >=2 and <=12&&a["v"] is >=2 and <=8&&a["r"] is >=2 and <=8&&a["q"]>=1&&a["q"]<a["r"]&&a["n"] is >=1 and <=30&&a["rate"] is >=250 and <=900&&a["p"] is >=500 and <=25000&&a["p"]%100==0&&a["mode"] is >=0 and <=3;
     private static int D(string f)=>f==HalfRate?8:f is GrowthRate or LogisticRate?6:f is SpreadsheetBalance or SpreadsheetInterest?2:f is LogisticLimit or LogisticReachable or ModelRelation?0:4;
     private static double V(string f,IReadOnlyDictionary<string,int> x)
     {
         double a=x["a"],b=x["b"],c=x["c"],h=x["h"],t=x["t"],v=x["v"],r=x["r"]/100.0,q=x["q"]/100.0,n=x["n"],p=x["p"],ratio=(100*a+10*b)/(100*a),k=Math.Log(ratio)/t;
         return f switch{HalfRate=>Math.Log(2)/h,DecayAmount=>p*Math.Pow(.5,100*t/h),DecayAge=>-h*Math.Log(v/10)/Math.Log(2),HalfFromLoss=>-100*t*Math.Log(2)/Math.Log(v/10),GrowthRate=>k,GrowthForecast=>100*a*Math.Exp(k*(2*t+n)),GrowthTarget=>Math.Log(2*ratio)/k,Crossing=>Math.Log(ratio)/(r-q),
-            LogisticInitial=>c/(1+a),LogisticLimit=>c,LogisticValue=>c/(1+a*Math.Exp(-r*t)),LogisticTime=>Math.Log(a*v)/r,LogisticRate=>Math.Log(a*v)/t,LogisticReachable=>x["mode"]>=2?1:0,ModelRelation=>1,_=>throw new InvalidOperationException()};
+            LogisticInitial=>c/(1+a),LogisticLimit=>c,LogisticValue=>c/(1+a*Math.Exp(-r*t)),LogisticTime=>Math.Log(a*v)/r,LogisticRate=>Math.Log(a*v)/t,LogisticReachable=>x["mode"]>=2?1:0,ModelRelation=>1,LogisticCrossing=>CrossTime(a,r,q),_=>throw new InvalidOperationException()};
+    }
+    // A/L=(exp(rt)+a exp((r-q)t))/(2(a+1)) is strictly increasing for r>q>0.
+    // The ratio begins at 1/2, and tends to infinity. Bisection finds the unique crossing.
+    private static double CrossTime(double a,double r,double q)
+    {
+        double lo=0,hi=Math.Log(2*(a+1))/r;
+        for(int i=0;i<80;i++)
+        {
+            double mid=(lo+hi)/2;
+            if(Math.Exp(r*mid)+a*Math.Exp((r-q)*mid)<2*(a+1))lo=mid;
+            else hi=mid;
+        }
+        return (lo+hi)/2;
     }
     private static (BigInteger N,BigInteger D) Compound(string f,IReadOnlyDictionary<string,int> a)
     {
@@ -74,7 +88,8 @@ internal static class UaeG10ExponentialLogisticResponse
             GrowthForecast=>z<=0?double.NegativeInfinity:Math.Log(z/(100*a))-(2*t+n)*Math.Log(ratio)/t,
             GrowthTarget=>z*Math.Log(ratio)/t-Math.Log(2*ratio),Crossing=>(r-q)*z-Math.Log(ratio),
             LogisticInitial=>z*(1+a)-c,LogisticValue=>z*(1+a*Math.Exp(-r*t))-c,
-            LogisticTime=>a*Math.Exp(-r*z)-1/v,LogisticRate=>a*Math.Exp(-z*t)-1/v,_=>double.NaN};
+            LogisticTime=>a*Math.Exp(-r*z)-1/v,LogisticRate=>a*Math.Exp(-z*t)-1/v,
+            LogisticCrossing=>c*Math.Exp(r*z)/(2*(a+1))-c/(1+a*Math.Exp(-q*z)),_=>double.NaN};
         double e=.5/Math.Pow(10,D(f)),l=F(y-e),u=F(y+e);return (l<=0&&u>=0)||(l>=0&&u<=0);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> a,string? answer)
