@@ -3,7 +3,7 @@
   "subject": "mathematics",
   "pathway": "General",
   "stage": "D",
-  "auditedContentSha": "2d53f982c2551a7be8c954560ea76a5336921162",
+  "auditedContentSha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
   "pr": 655,
   "ownerAcademicApproval": {
     "status": "APPROVED",
@@ -21,7 +21,13 @@
     "coverage": "UNKNOWN",
     "lessonCheckpointsWithPositiveDocumentedElementCount": 41,
     "lessonCheckpointsWithoutPositiveDocumentedElementCount": 107,
-    "countsDoNotEstablishExhaustiveSemanticParity": true
+    "countsDoNotEstablishExhaustiveSemanticParity": true,
+    "attachmentReverified": {
+      "files": 12,
+      "pages": 2403,
+      "method": "SHA256 and PDF page count on directly supplied attachments; no Desktop Commander book access",
+      "semanticSourceLock": false
+    }
   },
   "staticAudit": {
     "lessons": 148,
@@ -50,18 +56,27 @@
     "primaryItems": 2,
     "cumulativeItems": 22,
     "workedExampleGroupsBefore": 9,
-    "workedExampleGroupsAfter": 20,
+    "workedExampleGroupsAfter": 62,
     "visualsBefore": 8,
-    "visualsAfter": 11,
-    "authoringArithmeticProbes": "PASS",
-    "runtimeVerification": "REGISTRY_LOAD_PASS_LEARNER_ROUTE_NOT_RUN",
+    "visualsAfter": 13,
+    "authoringArithmeticProbes": 2882,
+    "runtimeVerification": "TARGETED_TESTS_PASS_AUTHENTICATED_LEARNER_TEACHER_ROUTES_NOT_RUN",
     "status": "D_PENDING_A_C_EVIDENCE",
     "fallbackPackReconciliation": "SYNCED_PENDING_RUNTIME",
-    "crossSkillStandardizedItems": 2
+    "crossSkillStandardizedItems": 2,
+    "numberedGeneralSourceItems": 91,
+    "numberedGeneralItemsWithDedicatedAuthoredArtifact": 91,
+    "generalInstructionalRows": 45,
+    "advancedNumberedItemsRouted": 69,
+    "advancedNumberedItemsWithL001OriginalArtifacts": 15,
+    "advancedInstructionalRows": 19,
+    "advancedOtherLessonRoutesAwaitingAudit": 54,
+    "semanticParity": "UNKNOWN",
+    "canonicalBodySha256": "ffb95a5b502ca5783c45e457c17fcfece671f284521bc532f552ab2b3759116b"
   },
   "observedCI": {
-    "sha": "2d53f982c2551a7be8c954560ea76a5336921162",
-    "runId": 45902856574,
+    "sha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
+    "runId": 45906212068,
     "status": "queued",
     "conclusion": null
   },
@@ -78,7 +93,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Complete atomic source-element audit and remaining authored evidence, then verify per-lesson learner routes and teacher review, RTL/authenticated E2E, isolated database rehearsal and final same-SHA CI. Do not merge or publish while release blockers remain.",
+  "next": "Complete per-subpart and non-numbered source-element denominator, verify remaining Advanced routes, then audit remaining lessons in canonical order and complete independent digital, teacher, authenticated RTL, isolated database and final same-SHA CI gates. No merge or deploy before all release blockers are resolved.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -127,5 +142,38 @@
       "numericLabelsNormalized": 4,
       "academicCompletenessNotEstablished": true
     }
+  },
+  "latestExecution": {
+    "testedSha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
+    "toolchain": {
+      "dotnetSdk": "10.0.301",
+      "repositoryPinnedSdk": "10.0.200",
+      "temporaryLocalOverrideRestored": true
+    },
+    "preflight": {
+      "structuralStatus": "PASS",
+      "releaseDecision": "NO_GO",
+      "lessons": 148,
+      "sourceBodyVerified": 106,
+      "blockers": 149,
+      "stageDVerifiedLessons": 0,
+      "testReferences": 239
+    },
+    "node": {
+      "passed": 327,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnet": {
+      "scope": "Targeted Grade 7–10 UAE suites plus retired G10 Advanced seeder guards",
+      "passed": 935,
+      "failed": 0,
+      "skipped": 0
+    },
+    "retiredAdvancedGuard": "PASS_TARGETED_TESTS_ONLY",
+    "isolatedPostgresMigration": "NOT_RUN",
+    "authenticatedE2E": "NOT_RUN",
+    "arabicRtlVisual": "NOT_RUN",
+    "productionWrites": false
   }
 }

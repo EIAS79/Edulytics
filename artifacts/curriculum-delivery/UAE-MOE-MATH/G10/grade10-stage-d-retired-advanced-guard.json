@@ -19,8 +19,15 @@
     "SeederPreservesRetiredG10AdvancedButStillReconcilesOtherStaleUaeCanonicalContent",
     "SeederPreservesG10AdvancedPracticeReferencesAndReconcilesOtherRetiredUaeLessons"
   ],
-  "tests": "WRITTEN_NOT_RUN",
+  "tests": "PASS_TARGETED_DOTNET",
   "databaseWrites": false,
   "productionRouting": false,
-  "remaining": "Actual isolated PostgreSQL migration, historical adoption compatibility and cross-scope data integrity must still be verified."
+  "remaining": "Actual isolated PostgreSQL migration, historical adoption compatibility and cross-scope data integrity must still be verified.",
+  "testedSha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
+  "testEvidence": {
+    "passed": 935,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Combined targeted suite including three named guards; isolated database migration remains unverified"
+  }
 }

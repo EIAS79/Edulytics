@@ -39,7 +39,7 @@
     "newVisualSpecifications": 3
   },
   "candidateBaseSha": "784baf4b4ae2bffab6762259ebce6676edbb2fb8",
-  "unitTests": "NOT_RUN",
+  "unitTests": "PASS_TARGETED_NODE_AND_DOTNET",
   "mathVerifier": "AUTHORING_ARITHMETIC_PROBES_ONLY",
   "appIntegration": "NOT_RUN",
   "authenticatedE2E": "NOT_RUN",
@@ -68,5 +68,19 @@
     199,
     200,
     201
-  ]
+  ],
+  "testEvidence": {
+    "testedSha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
+    "node": {
+      "passed": 327,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnet": {
+      "passed": 935,
+      "failed": 0,
+      "skipped": 0
+    },
+    "scope": "Targeted grade-wide suites, not exhaustive academic or runtime certification"
+  }
 }
