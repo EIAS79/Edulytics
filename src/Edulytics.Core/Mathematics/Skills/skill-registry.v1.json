@@ -8572,6 +8572,40 @@
       "v2Status": "StageCAuthoredPendingD",
       "v2Capabilities": [],
       "v2QuestionFamilies": []
+    },
+    {
+      "id": "exponentials.g10.equation_inequality.solve",
+      "domain": "exponentials",
+      "canonicalName": "حل المعادلات والمتباينات الأسية بحدود كسرية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l02.equation_rational",
+        "uae.g10.general.u05.l02.inequality_rational_boundary",
+        "uae.g10.general.u05.l02.like_power_sum"
+      ]
+    },
+    {
+      "id": "exponentials.g10.source_models",
+      "domain": "exponentials",
+      "canonicalName": "النمذجة الأسية والنمو والتناقص والفائدة المركبة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l02.model_factor_rounded",
+        "uae.g10.general.u05.l02.model_forecast_rounded",
+        "uae.g10.general.u05.l02.compound_balance",
+        "uae.g10.general.u05.l02.equivalent_period_factor",
+        "uae.g10.general.u05.l02.cooling_value",
+        "uae.g10.general.u05.l02.cooling_threshold",
+        "uae.g10.general.u05.l02.power_law_prediction"
+      ]
     }
   ]
 }

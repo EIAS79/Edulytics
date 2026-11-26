@@ -23,38 +23,46 @@
   "sourceUnit": "5",
   "sourceLesson": "5-6",
   "sourceElementDenominatorForThisLesson": null,
-  "sourceElementsMapped": null,
-  "originalArabicWorkedExamples": 23,
-  "originalVisualModels": 7,
+  "sourceElementsMapped": 100,
+  "originalArabicWorkedExamples": 25,
+  "originalVisualModels": 8,
   "authoredContentPackEntry": true,
   "arabicContentPackLessonCount": 43,
   "contentPackLessonCount": 76,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l02-ar.rich-lesson-v2.json",
-  "stageCStatus": "REUSED_SAME_BASE_EQUATION_ENGINE__MORE_COMPOUND_AND_INEQUALITY_TEACHER_REVIEW",
+  "stageCStatus": "SHARED_ENGINE_EXTENDED_10_SOURCE_FAMILIES_AUTHORED_TESTS_NOT_RUN",
   "primarySkills": [
-    "exponentials.same_base.solve"
+    "exponentials.g10.equation_inequality.solve",
+    "exponentials.g10.source_models"
   ],
   "allowedQuestionFamilies": [
-    "exponentials.solve.same_base.integer_exponent"
+    "uae.g10.general.u05.l02.equation_rational",
+    "uae.g10.general.u05.l02.inequality_rational_boundary",
+    "uae.g10.general.u05.l02.model_factor_rounded",
+    "uae.g10.general.u05.l02.model_forecast_rounded",
+    "uae.g10.general.u05.l02.compound_balance",
+    "uae.g10.general.u05.l02.equivalent_period_factor",
+    "uae.g10.general.u05.l02.cooling_value",
+    "uae.g10.general.u05.l02.cooling_threshold",
+    "uae.g10.general.u05.l02.power_law_prediction",
+    "uae.g10.general.u05.l02.like_power_sum"
   ],
   "teacherReviewRequiredFor": [
-    "same-base inequality graph/domain and endpoints for increasing/decreasing bases",
-    "exponential substitution quadratic-equivalent derivations",
-    "negative targets and no-real-solution proof",
-    "student proof of reversing inequalities for bases 0<b<1",
-    "paper-cut model, table, thickness and physical limitations",
-    "financial period conversion and interpretation",
-    "explain cooling model and threshold, graph and proof"
+    "student graph construction and interpretation",
+    "physical paper activity and realistic limitations",
+    "open-ended comparisons and proof, critique, rate assumptions",
+    "unbounded real exponent numerical accuracy and contextual approximation beyond generator bounds"
   ],
   "sourceCoverageGapEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-coverage-gap.md",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u05l02.test.cjs"
+    "tests/academic-uae-grade10-arabic-u05l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ExponentialEquationInequalityTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
-  "closureBasis": "TARGETED_STAGE_A_B_CONTENT_CORRECTED; STAGE_C_DIGITAL_INEQUALITY_FAMILY_AND_REGISTRY_WIRING_PENDING",
+  "closureBasis": "TARGETED_A_B_AND_BOUNDED_C_IMPLEMENTED; FINAL_ATOMIC_PEDAGOGICAL_ACCEPTANCE_OPEN",
   "firstIncompleteGlobalOrdinal": 43,
   "nextEligibleCanonicalCode": "G10-U05-L02",
   "sourceLimitations": "Newest Advanced index contains the same title but its actual lesson body is absent from the supplied volume; selected older matching Applied body is accepted for observed objectives. No claim of unseen unique Advanced objectives or complete atomic parity.",
@@ -78,12 +86,17 @@
     339,
     340
   ],
-  "sourceElementCoverageMethod": "BODY_AND_EXTENSION_REVIEW_WITH_SPECIFIC_EXERCISE_GROUP_MAP; ATOMIC_AND_DIGITAL_DENOMINATOR_NOT_COMPLETE",
+  "sourceElementCoverageMethod": "SELECTED_PRINTED_SOURCE_ITEM_AND_SUBPART_MAP_WITH_REVIEW_ROUTES; NO FULL_DENOMINATOR_CLAIM",
   "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-evidence.md",
   "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-source-elements.json",
   "contentCorrectionCommit": "c675b029d93b1b991290c1fa22b024f51d212130",
   "evidenceUpdateCommit": "248aa671358b01b349b99d54eb0a4e31d83120e7",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-teacher-rubric.md",
-  "repairStatus": "CONTENT_PATCHED_A_C_GATE_STILL_OPEN",
-  "desktopCallsThisRepair": 0
+  "repairStatus": "CONTENT_PACK_AND_RICH_SYNCED_CORE_C_ENGINE_EXTENSION_AUTHORED_DETAILED_ITEM_MAP_PRESENT",
+  "desktopCallsThisRepair": 0,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-c-exact-contract.json",
+  "sourceElementDenominatorVerifiedForThisLesson": false,
+  "selectedPrintedSourceItemsMapped": 100,
+  "cumulativeReviewItemsCrosswalked": 23,
+  "remainingGap": "Selected printed source item map complete as draft, not independently accepted; unrestricted symbolic model construction and application coverage need review. No closure until A–B–C acceptance."
 }

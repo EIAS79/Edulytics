@@ -15459,37 +15459,46 @@
     {
       "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
       "primarySkills": [
-        "exponentials.same_base.solve"
+        "exponentials.g10.equation_inequality.solve",
+        "exponentials.g10.source_models"
       ],
       "secondarySkills": [
+        "exponentials.same_base.solve",
         "supporting.exponentials_logs"
       ],
       "sourceType": "OWNER_APPLIED_2022_2023_VOLUME2_UNIT5_LESSON5_6_EXPONENTIAL_EQUATIONS_PDF150_155",
       "officialOutcomeMapped": false,
-      "mappingConfidence": "APPLIED_BODY_AND_EXTENSION_VISUALLY_REVIEWED_STAGE_C_DIGITAL_GAP",
+      "mappingConfidence": "SELECTED_SOURCE_BODY_AND_EXTENSION_REVIEWED_EXACT_FAMILIES_AUTHORED_NOT_RUN_ATOMIC_GATE_OPEN",
       "evidence": [
         "Owner-uploaded Applied Grade10 Volume2 «رياضيات كتاب الطالب تطبيقي 10 8.pdf», physical PDF150–155 / printed333–338, SHA 96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e: same lesson title, goals solving exponential equations and inequalities, worked equations, applications with exponential growth and compound interest, guided and open exercises.",
         "Advanced 2025–2026 Volume1 PDF12 has same title Unit8 Lesson8-2 in TOC but its body is absent. Applied Unit5-6 IS same lesson and directly supplies verified body. Do not confuse with Applied Unit5-2 (finite differences).",
         "Original Edulytics Arabic content includes 16 worked examples and five visuals; bounded equation skill reused; broader inequality and real-world models teacher-reviewed; tests Stage D not run.",
-        "2026-11-26 direct local PDF150–157: original body and extension compared; 23 examples, 7 visuals, practical activity, cool-down; inequality digital family remains pending."
+        "2026-11-26 direct local PDF150–157: original body and extension compared; 23 examples, 7 visuals, practical activity, cool-down; inequality digital family remains pending.",
+        "Ten bounded source-specific families extend the existing ExactSkillContractQuestionEngine, including rational solutions, strict/weak inequality directions, models, financial rates and cooling; tests authored, NOT RUN; production routing false."
       ],
       "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
-      "practiceMechanic": "G10_U05L02_EXPONENTIAL_EQUATIONS_SAME_BASE__INEQUALITIES_TEACHER_REVIEW",
+      "practiceMechanic": "G10_U05L02_EXACT_EXPONENTIAL_EQUATIONS_INEQUALITIES_AND_MODELS",
       "allowedQuestionFamilies": [
-        "exponentials.solve.same_base.integer_exponent"
+        "uae.g10.general.u05.l02.equation_rational",
+        "uae.g10.general.u05.l02.inequality_rational_boundary",
+        "uae.g10.general.u05.l02.model_factor_rounded",
+        "uae.g10.general.u05.l02.model_forecast_rounded",
+        "uae.g10.general.u05.l02.compound_balance",
+        "uae.g10.general.u05.l02.equivalent_period_factor",
+        "uae.g10.general.u05.l02.cooling_value",
+        "uae.g10.general.u05.l02.cooling_threshold",
+        "uae.g10.general.u05.l02.power_law_prediction",
+        "uae.g10.general.u05.l02.like_power_sum"
       ],
       "forbiddenQuestionFamilies": [
         "uae.g10.general.u05.l01.is_growth",
         "uae.g10.general.u04.l08.average_rate"
       ],
       "teacherReviewRequiredFor": [
-        "same-base inequality graph/domain and endpoints for increasing/decreasing bases",
-        "exponential substitution quadratic-equivalent derivations",
-        "negative targets and no-real-solution proof",
-        "student proof of reversing inequalities for bases 0<b<1",
-        "paper-cut model, table, thickness and physical limitations",
-        "financial period conversion and interpretation",
-        "explain cooling model and threshold, graph and proof"
+        "student graph construction and interpretation",
+        "physical paper activity and realistic limitations",
+        "open-ended comparisons and proof, critique, rate assumptions",
+        "unbounded real exponent numerical accuracy and contextual approximation beyond generator bounds"
       ],
       "officialOutcomeCodes": []
     },

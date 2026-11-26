@@ -15,6 +15,8 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.equal(cp.ownerApprovedIndexOnlyAuthoring,false);
  assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
+ assert.equal(cp.selectedPrintedSourceItemsMapped,100);
+ assert.equal(cp.allowedQuestionFamilies.length,10);
  assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),157);
  assert.equal(cp.productionRouting,false);
  assert.equal(cp.status,'A_C_EXPLICIT_GAP');
@@ -24,8 +26,8 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,23);
- assert.equal(rich.Lessons[0].Visuals.length,7);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,25);
+ assert.equal(rich.Lessons[0].Visuals.length,8);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
  for(const x of [-2,-1,0,1,2,3,4,5]){
@@ -61,4 +63,11 @@ test('Original targeted source repair models and cooldown have independent numer
  assert.equal(240*Math.pow(0.5,3),30);
  assert.equal(Math.pow(4,3),Math.pow(8,2));
  assert.equal(Math.pow(0.5,4)>1/16,false);
+});
+
+test('Selected-source approximate factor and cooling / compounding graph oracles',()=>{
+ assert.ok(Math.abs(Math.pow(1.6,0.25)-1.1246826503806981)<1e-10);
+ assert.equal(Math.round(450*Math.pow(1.6,1.5)),911);
+ assert.ok(Math.abs(50*Math.pow((88*.454)/20,1.3)-122.92241738622963)<1e-9);
+ assert.ok(Math.abs(5000*Math.pow(1.02,4)-5412.1608)<1e-8);
 });

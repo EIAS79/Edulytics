@@ -108,6 +108,16 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialGraphResponse.Growth,
             UaeG10ExponentialGraphResponse.Asymptote,
             UaeG10ExponentialGraphResponse.ShiftAnchor,
+            UaeG10ExponentialEquationResponse.Equation,
+            UaeG10ExponentialEquationResponse.Inequality,
+            UaeG10ExponentialEquationResponse.Factor,
+            UaeG10ExponentialEquationResponse.Forecast,
+            UaeG10ExponentialEquationResponse.Compound,
+            UaeG10ExponentialEquationResponse.Period,
+            UaeG10ExponentialEquationResponse.Cooling,
+            UaeG10ExponentialEquationResponse.Threshold,
+            UaeG10ExponentialEquationResponse.PowerLaw,
+            UaeG10ExponentialEquationResponse.Sum,
             UaeG10QuadraticRatesResponse.Rate,
             UaeG10QuadraticRatesResponse.Positive,
             UaeG10QuadraticTransformsResponse.VertexX,
@@ -1306,6 +1316,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentialEquationResponse.Supports(family))
+            return UaeG10ExponentialEquationResponse.Verify(family,parameters,answer);
 
         if (UaeG10QuadraticRatesResponse.Supports(family))
             return UaeG10QuadraticRatesResponse.Verify(family,parameters,answer);
@@ -3823,6 +3836,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10ExponentialEquationResponse.Supports(family))
+            return BuildG10ExponentialEquation(family,random,difficulty);
 
         if (UaeG10QuadraticRatesResponse.Supports(family))
             return BuildG10QuadraticRates(family,random,difficulty);
@@ -10045,6 +10061,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentialEquationResponse.Supports(problem.Family))
+            return UaeG10ExponentialEquationResponse.Format(problem.Family,p);
 
         if (UaeG10QuadraticRatesResponse.Supports(problem.Family))
             return UaeG10QuadraticRatesResponse.Format(problem.Family,p);
