@@ -108,6 +108,18 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialGraphResponse.Growth,
             UaeG10ExponentialGraphResponse.Asymptote,
             UaeG10ExponentialGraphResponse.ShiftAnchor,
+            UaeG10LogarithmicGraphResponse.Evaluate,
+            UaeG10LogarithmicGraphResponse.ToExponential,
+            UaeG10LogarithmicGraphResponse.ToLogarithmic,
+            UaeG10LogarithmicGraphResponse.Domain,
+            UaeG10LogarithmicGraphResponse.DomainMember,
+            UaeG10LogarithmicGraphResponse.Asymptote,
+            UaeG10LogarithmicGraphResponse.Monotonic,
+            UaeG10LogarithmicGraphResponse.GraphAnchor,
+            UaeG10LogarithmicGraphResponse.GraphValue,
+            UaeG10LogarithmicGraphResponse.InverseShift,
+            UaeG10LogarithmicGraphResponse.ScaleRatio,
+            UaeG10LogarithmicGraphResponse.ModelTime,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1583,6 +1595,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(family))
+            return UaeG10LogarithmicGraphResponse.Verify(family,parameters,answer);
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
@@ -4187,6 +4202,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(family))
+            return BuildG10LogarithmicGraph(family,random,difficulty);
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
@@ -10496,6 +10514,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(problem.Family))
+            return UaeG10LogarithmicGraphResponse.Format(problem.Family,p);
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
