@@ -3,7 +3,7 @@
   "subject": "mathematics",
   "pathway": "General",
   "stage": "D",
-  "auditedContentSha": "d70dea7187f92793d9917d22ad4f48620ac6d3b9",
+  "auditedContentSha": "2d53f982c2551a7be8c954560ea76a5336921162",
   "pr": 655,
   "ownerAcademicApproval": {
     "status": "APPROVED",
@@ -18,7 +18,10 @@
     "totalPages": 2403,
     "sourceLock": false,
     "atomicDenominator": null,
-    "coverage": "UNKNOWN"
+    "coverage": "UNKNOWN",
+    "lessonCheckpointsWithPositiveDocumentedElementCount": 41,
+    "lessonCheckpointsWithoutPositiveDocumentedElementCount": 107,
+    "countsDoNotEstablishExhaustiveSemanticParity": true
   },
   "staticAudit": {
     "lessons": 148,
@@ -31,7 +34,13 @@
     "danglingOfficialReferences": 0,
     "practicePartial": 90,
     "teacherOnly": 58,
-    "runtimeVerifiedNotEstablished": true
+    "runtimeVerifiedNotEstablished": true,
+    "compiledArabicRichRegistryLoad": {
+      "status": "PASS",
+      "lessonCount": 148,
+      "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
+      "scope": "Compiled registry and contract test only, not authenticated browser or learner-route verification"
+    }
   },
   "lesson001": {
     "source": "01.pdf",
@@ -39,19 +48,20 @@
     "printedPage": 13,
     "reviewItems": 26,
     "primaryItems": 2,
-    "cumulativeItems": 24,
+    "cumulativeItems": 22,
     "workedExampleGroupsBefore": 9,
     "workedExampleGroupsAfter": 20,
     "visualsBefore": 8,
     "visualsAfter": 11,
     "authoringArithmeticProbes": "PASS",
-    "runtimeVerification": "NOT_RUN",
+    "runtimeVerification": "REGISTRY_LOAD_PASS_LEARNER_ROUTE_NOT_RUN",
     "status": "D_PENDING_A_C_EVIDENCE",
-    "fallbackPackReconciliation": "PENDING"
+    "fallbackPackReconciliation": "SYNCED_PENDING_RUNTIME",
+    "crossSkillStandardizedItems": 2
   },
   "observedCI": {
-    "sha": "d70dea7187f92793d9917d22ad4f48620ac6d3b9",
-    "runId": 45900217200,
+    "sha": "2d53f982c2551a7be8c954560ea76a5336921162",
+    "runId": 45902856574,
     "status": "queued",
     "conclusion": null
   },
@@ -61,12 +71,61 @@
     "productionRoutingEnabled": false,
     "deploymentPerformed": false,
     "blockers": [
-      "Exhaustive atomic source mapping and denominator not established",
-      "Lesson 001 canonical fallback pack reconciliation pending",
+      "Exhaustive atomic source mapping and denominator not established (107 lesson checkpoints without positive documented denominator; remaining counts are not exhaustive parity evidence)",
+      "Full independent authoring and rights review incomplete; 611 structured mistake entries need review for missing explanation/correction",
       "Per-lesson digital eligibility, runtime and teacher-review routes not fully verified",
       "Arabic RTL and authenticated E2E not verified",
-      "Final CI and rights review incomplete"
+      "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Complete lesson 001 source audit and fallback alignment, then execute per-lesson checks and repair subsequent lessons without fabricating official reference codes."
+  "next": "Complete atomic source-element audit and remaining authored evidence, then verify per-lesson learner routes and teacher review, RTL/authenticated E2E, isolated database rehearsal and final same-SHA CI. Do not merge or publish while release blockers remain.",
+  "localExecution": {
+    "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
+    "toolchain": {
+      "dotnetSdk": "10.0.301",
+      "repositoryPinnedSdk": "10.0.200",
+      "temporaryLocalOverrideRestored": true
+    },
+    "preflight": {
+      "status": "PASS",
+      "lessons": 148,
+      "blockers": 149,
+      "stageDVerifiedLessons": 0,
+      "testReferences": 239
+    },
+    "node": {
+      "testFiles": 156,
+      "passed": 315,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnet": {
+      "scope": "UAE Grade 7-10 targeted suites, including strict grade10 rich registry contract",
+      "passed": 930,
+      "failed": 0,
+      "skipped": 0
+    },
+    "intermediateFailures": [
+      {
+        "sha": "80ab6c289c5d7e04faa03e5f0db46f96a1e175db",
+        "passed": 927,
+        "failed": 3,
+        "total": 930,
+        "causes": [
+          "Seven missing titles",
+          "Four numeric row labels in a string field"
+        ],
+        "resolvedAt": "2d53f982c2551a7be8c954560ea76a5336921162"
+      }
+    ],
+    "richSchemaRepairs": {
+      "affectedRichFiles": 125,
+      "workedExamplesNormalized": 1555,
+      "comparisonTablesSupported": 340,
+      "commonMistakeStringsConverted": 611,
+      "missingTitlesRestored": 7,
+      "numericLabelsNormalized": 4,
+      "academicCompletenessNotEstablished": true
+    }
+  }
 }
