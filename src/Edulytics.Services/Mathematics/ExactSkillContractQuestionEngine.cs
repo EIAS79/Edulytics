@@ -191,6 +191,17 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CircleResponse.AreaSectorApprox,
             UaeG10CircleResponse.AreaSegmentApprox,
             UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l02.principal_degree",
+            "uae.g10.general.u14.l02.coterminal_degree",
+            "uae.g10.general.u14.l02.degree_to_pi_coefficient",
+            "uae.g10.general.u14.l02.pi_coefficient_to_degree",
+            "uae.g10.general.u14.l02.principal_radian_pi_coefficient",
+            "uae.g10.general.u14.l02.arc_pi_coefficient",
+            "uae.g10.general.u14.l02.arc_from_radians",
+            "uae.g10.general.u14.l02.radians_from_arc",
+            "uae.g10.general.u14.l02.radius_from_arc",
+            "uae.g10.general.u14.l02.parallelogram_area_exact",
+            "uae.g10.general.u14.l02.wheel_arc_pi_coefficient",
             "uae.g10.general.u14.l01.ratio_six_exact",
             "uae.g10.general.u14.l01.side_opposite_exact",
             "uae.g10.general.u14.l01.side_adjacent_exact",
@@ -1421,6 +1432,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AngleMeasureResponse.Supports(family))
+            return UaeG10AngleMeasureResponse.Verify(family,parameters,answer);
 
         if (UaeG10TrigResponse.Supports(family))
             return UaeG10TrigResponse.Verify(family,parameters,answer);
@@ -3947,6 +3961,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10AngleMeasureResponse.Supports(family))
+            return BuildG10AngleMeasure(family,random,difficulty);
 
         if (UaeG10TrigResponse.Supports(family))
             return BuildG10Trig(family,random,difficulty);
@@ -10178,6 +10195,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10AngleMeasureResponse.Supports(problem.Family))
+            return UaeG10AngleMeasureResponse.Format(problem.Family,p);
 
         if (UaeG10TrigResponse.Supports(problem.Family))
             return UaeG10TrigResponse.Format(problem.Family,p);
