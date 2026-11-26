@@ -9,11 +9,11 @@
   "unitTitle": "الدوال الأسية واللوغاريتمية",
   "lessonTitle": "حل المعادلات والمتباينات اللوغاريتمية",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
-  "status": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "status": "A_C_EXPLICIT_GAP",
   "sourceIndexTitleVerified": true,
   "sourceBodyVerified": false,
   "sourceVerificationScope": "OWNER_APPROVED_TITLE_INDEX_ORIGINAL_CONTENT",
-  "ownerApprovedIndexOnlyAuthoring": true,
+  "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
@@ -21,7 +21,7 @@
   "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
   "sourcePdfIndexPage": 12,
   "sourceUnit": "8",
-  "sourceLesson": "8-5",
+  "sourceLesson": "8-4",
   "sourceElementDenominatorForThisLesson": null,
   "sourceElementsMapped": null,
   "originalArabicWorkedExamples": 12,
@@ -52,6 +52,18 @@
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 46,
   "nextEligibleCanonicalCode": "G10-U05-L05",
-  "closureBasis": "ORIGINAL_ARABIC_12_WORKED_EXAMPLES_4_MODELS_OWNER_INDEX_ONLY",
-  "sourceLimitations": "Book's source body absent; textbook semantic equivalence and all exercise parity not certified."
+  "closureBasis": "EXCEPTION_NOT_A_B_C_CLOSURE",
+  "sourceLimitations": "The Advanced Unit 8 lesson is TOC-only in both supplied Advanced volumes. General/Applied and geometry excerpts contain no matching complete logarithmic lesson body; Applied exponential activities do not establish full logarithmic objectives.",
+  "previousStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "repairStatus": "SOURCE_BODY_NOT_AVAILABLE_EXCEPTION_RECORDED",
+  "repairException": {
+    "code": "SOURCE_BODY_NOT_AVAILABLE",
+    "scope": "SEVEN_APPROVED_BOOKS",
+    "reason": "The Advanced Unit 8 lesson is TOC-only in both supplied Advanced volumes. General/Applied and geometry excerpts contain no matching complete logarithmic lesson body; Applied exponential activities do not establish full logarithmic objectives.",
+    "sourceEvidence": "Advanced 2025–2026 PDF12 TOC, body ends Unit4; Advanced 2018–2019 PDF18 TOC, body begins Unit9 PDF25. Applied PDF10 Unit5 TOC contains exponential lessons only; 02-1 text search and geometry excerpt review.",
+    "contentUnchanged": true,
+    "continueToNextTarget": true
+  },
+  "repairNextTargetOrdinal": 46,
+  "sourceCoverageGapEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
 }
