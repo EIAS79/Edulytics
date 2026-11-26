@@ -1,0 +1,24 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05:C102",
+  "skillId": "geometry.circle.g10.tangents",
+  "familyIds": [
+    "uae.g10.general.u13.l05.common_tangent_count",
+    "uae.g10.general.u13.l05.tangent_right_triangle_check",
+    "uae.g10.general.u13.l05.tangent_length",
+    "uae.g10.general.u13.l05.radius_from_external_segment",
+    "uae.g10.general.u13.l05.center_distance",
+    "uae.g10.general.u13.l05.equal_tangent_length",
+    "uae.g10.general.u13.l05.equal_tangent_expression",
+    "uae.g10.general.u13.l05.circumscribed_triangle_perimeter",
+    "uae.g10.general.u13.l05.circumscribed_quadrilateral_side"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "k 1..8; x 2..15; a 2..9; b-a 2..6; c 2..11; mode 0..4; yes 0..1; exact nonnegative integers",
+  "teacherScoring": [
+    "proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}

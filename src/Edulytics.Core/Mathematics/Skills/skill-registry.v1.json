@@ -8264,8 +8264,21 @@
       "domain": "geometry",
       "canonicalName": "المماس ونصف القطر",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l05.common_tangent_count",
+        "uae.g10.general.u13.l05.tangent_right_triangle_check",
+        "uae.g10.general.u13.l05.tangent_length",
+        "uae.g10.general.u13.l05.radius_from_external_segment",
+        "uae.g10.general.u13.l05.center_distance",
+        "uae.g10.general.u13.l05.equal_tangent_length",
+        "uae.g10.general.u13.l05.equal_tangent_expression",
+        "uae.g10.general.u13.l05.circumscribed_triangle_perimeter",
+        "uae.g10.general.u13.l05.circumscribed_quadrilateral_side"
+      ]
     },
     {
       "id": "geometry.circle.g10.secant_angles",

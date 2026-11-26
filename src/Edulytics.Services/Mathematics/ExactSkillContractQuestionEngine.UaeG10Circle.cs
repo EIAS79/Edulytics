@@ -8,6 +8,24 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsTangent(family))
+        {
+            int k=random.Next(1,9),x=random.Next(2,16),a=random.Next(2,10),b=a+random.Next(2,7),c=random.Next(2,12),mode=random.Next(0,5),yes=random.Next(0,2);
+            int distance=mode switch{0=>a+b+1,1=>a+b,2=>b,3=>b-a,_=>b-a-1};
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.TangentCount=>$"دائرتان مختلفتان نصفا قطريهما {a} و{b} سم والمسافة بين مركزيهما {distance} سم. كم مماسًا مشتركًا لهما؟",
+                UaeG10CircleResponse.TangentCheck=>$"T نقطة على دائرة مركزها O. إذا كان OT={3*k} وPT={4*k} وOP={5*k+(1-yes)} سم، فهل PT مماس؟ اكتب 1 لنعم أو 0 للا.",
+                UaeG10CircleResponse.TangentLength=>$"نصف قطر دائرة {3*k} سم وبُعد نقطة خارجية عن المركز {5*k} سم. أوجد طول قطعة المماس.",
+                UaeG10CircleResponse.TangentRadius=>$"مماس طوله {4*k} سم من P خارج دائرة. يمر OP بأقرب نقطة A من الدائرة، وPA={2*k} سم. أوجد نصف القطر.",
+                UaeG10CircleResponse.TangentCenter=>$"طول المماس من P إلى دائرة {4*k} سم ونصف قطرها {3*k} سم. أوجد بُعد P عن المركز.",
+                UaeG10CircleResponse.TangentEqual=>$"قطعتان مماستان من نقطة خارج دائرة، طول إحداهما {a*k} سم. أوجد طول الأخرى.",
+                UaeG10CircleResponse.TangentExpression=>$"طولا مماسين من النقطة الخارجية نفسها هما {a}س+{c} و{a*x+c}. أوجد س.",
+                UaeG10CircleResponse.TangentPerimeter=>$"مثلث محيط بدائرة؛ أطوال قطع المماس من رؤوسه الثلاثة إلى نقاط التماس المجاورة {a} و{b} و{c} سم. أوجد محيط المثلث.",
+                _=>$"رباعي محيط بدائرة ABCD حيث AB={a+b} وBC={b+c} وCD={c+k} سم. أوجد DA."
+            };
+            return Problem(family,prompt,"المماس عمودي على نصف القطر عند التماس؛ القطعتان من نقطة خارجية واحدة متساويتان؛ اجمع قطع المماس المتساوية للمحيط.",AssessmentItemType.Numeric,("k",k),("x",x),("a",a),("b",b),("c",c),("mode",mode),("yes",yes));
+        }
         if(UaeG10CircleResponse.IsInscribed(family))
         {
             int v=random.Next(20,81),x=random.Next(2,16),k=random.Next(1,9),a=random.Next(2,5),b=random.Next(1,6);
@@ -106,8 +124,20 @@ internal static class UaeG10CircleResponse
     internal const string InscribedCyclicAlgebra="uae.g10.general.u13.l04.cyclic_opposite_expression";
     internal const string InscribedDiameter="uae.g10.general.u13.l04.right_triangle_diameter";
     internal static bool IsInscribed(string? f)=>f is InscribedHalf or InscribedDouble or InscribedEqual or InscribedRight or InscribedOpposite or InscribedAlgebra or InscribedCyclicAlgebra or InscribedDiameter;
-    internal static bool Supports(string? f)=>IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsInscribed(f)?
+    internal const string TangentCount="uae.g10.general.u13.l05.common_tangent_count";
+    internal const string TangentCheck="uae.g10.general.u13.l05.tangent_right_triangle_check";
+    internal const string TangentLength="uae.g10.general.u13.l05.tangent_length";
+    internal const string TangentRadius="uae.g10.general.u13.l05.radius_from_external_segment";
+    internal const string TangentCenter="uae.g10.general.u13.l05.center_distance";
+    internal const string TangentEqual="uae.g10.general.u13.l05.equal_tangent_length";
+    internal const string TangentExpression="uae.g10.general.u13.l05.equal_tangent_expression";
+    internal const string TangentPerimeter="uae.g10.general.u13.l05.circumscribed_triangle_perimeter";
+    internal const string TangentQuad="uae.g10.general.u13.l05.circumscribed_quadrilateral_side";
+    internal static bool IsTangent(string? f)=>f is TangentCount or TangentCheck or TangentLength or TangentRadius or TangentCenter or TangentEqual or TangentExpression or TangentPerimeter or TangentQuad;
+    internal static bool Supports(string? f)=>IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsTangent(f)?
+        p.Count==7&&new[]{"k","x","a","b","c","mode","yes"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=15&&p["a"] is >=2 and <=9&&p["b"]-p["a"] is >=2 and <=6&&p["c"] is >=2 and <=11&&p["mode"] is >=0 and <=4&&p["yes"] is >=0 and <=1:
+        IsInscribed(f)?
         p.Count==5&&new[]{"v","x","k","a","b"}.All(p.ContainsKey)&&p["v"] is >=20 and <=80&&p["x"] is >=2 and <=15&&p["k"] is >=1 and <=8&&p["a"] is >=2 and <=4&&p["b"] is >=1 and <=5:
         IsChord(f)?
         p.Count==7&&new[]{"k","arc","x","a","b","radius","half"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["arc"] is >=20 and <=170&&p["arc"]%2==0&&p["x"] is >=2 and <=20&&p["a"] is >=2 and <=6&&p["b"] is >=1 and <=9&&p["radius"] is >=6 and <=30&&p["half"]>=1&&p["half"]<p["radius"]:
@@ -118,6 +148,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsTangent(f))
+        {
+            int k=p["k"],x=p["x"],a=p["a"],b=p["b"],c=p["c"];
+            return f switch{TangentCount=>(4-p["mode"],1),TangentCheck=>(p["yes"],1),TangentLength=>(4*k,1),TangentRadius=>(3*k,1),TangentCenter=>(5*k,1),TangentEqual=>(a*k,1),TangentExpression=>(x,1),TangentPerimeter=>(2*(a+b+c),1),TangentQuad=>(a+k,1),_=>throw new InvalidOperationException()};
+        }
         if(IsInscribed(f))
         {
             int v=p["v"],x=p["x"],k=p["k"];
@@ -154,6 +189,19 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsTangent(f))
+        {
+            long k=p["k"],x=p["x"],a=p["a"],b=p["b"],c=p["c"],mode=p["mode"],yes=p["yes"];
+            if(f==TangentCount){long dist=mode switch{0=>a+b+1,1=>a+b,2=>b,3=>b-a,_=>b-a-1};long count=dist>a+b?4:dist==a+b?3:dist>b-a?2:dist==b-a?1:0;return n==count*d;}
+            if(f==TangentCheck){long op=5*k+1-yes;bool tangent=op*op==25*k*k;return n==(tangent?1:0)*d;}
+            if(f==TangentLength)return n*n==16*k*k*d*d;
+            if(f==TangentRadius)return 4*k*n==12*k*k*d;
+            if(f==TangentCenter)return n*n==25*k*k*d*d;
+            if(f==TangentEqual)return n==a*k*d;
+            if(f==TangentExpression)return a*n+c*d==(a*x+c)*d;
+            if(f==TangentPerimeter)return n==((a+b)+(b+c)+(c+a))*d;
+            return f==TangentQuad&&n+(b+c)*d==((a+b)+(c+k))*d;
+        }
         if(IsInscribed(f))
         {
             long v=p["v"],x=p["x"],k=p["k"],aa=p["a"],bb=p["b"];
