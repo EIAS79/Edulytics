@@ -914,6 +914,25 @@
         106
       ],
       "closedGlobalOrdinals": [
+        98
+      ],
+      "gradeClosedCount": 92,
+      "firstIncompleteGlobalOrdinal": 99,
+      "stageABCStatus": "UNIT13_INDEX_REPAIR_IN_PROGRESS",
+      "stageD": "NOT_STARTED",
+      "testsRun": "NOT_RUN",
+      "productionRouting": false,
+      "sourceScope": "OWNER_APPROVED_INDEX_ORIGINAL_ARABIC_CONTENT_SOURCE_BODY_NOT_FULLY_AUDITED",
+      "nextEligibleCanonicalCode": "G10-U13-L02",
+      "repairValidation": {
+        "completedOrdinals": [
+          98
+        ],
+        "exceptions": [],
+        "firstIncompleteGlobalOrdinal": 99,
+        "status": "INDEX_ONLY_REPAIR_IN_PROGRESS"
+      },
+      "historicalIndexOnlyAuthoredOrdinals": [
         98,
         99,
         100,
@@ -923,15 +942,7 @@
         104,
         105,
         106
-      ],
-      "gradeClosedCount": 106,
-      "firstIncompleteGlobalOrdinal": 107,
-      "stageABCStatus": "UNIT13_9_OF_9_ORIGINAL_INDEX_ONLY__STAGE_D_NOT_RUN",
-      "stageD": "NOT_STARTED",
-      "testsRun": "NOT_RUN",
-      "productionRouting": false,
-      "sourceScope": "OWNER_APPROVED_INDEX_ORIGINAL_ARABIC_CONTENT_SOURCE_BODY_NOT_FULLY_AUDITED",
-      "nextEligibleCanonicalCode": "G10-U14-L01"
+      ]
     },
     {
       "file": "unit-14-stage-a-c-progress.json",
@@ -1098,10 +1109,11 @@
     "status": "INDEX_ONLY_REPAIR_IN_PROGRESS",
     "completedOrdinals": [
       43,
-      50
+      50,
+      98
     ],
-    "firstIncompleteGlobalOrdinal": null,
-    "firstIncompleteCanonicalCode": null,
+    "firstIncompleteGlobalOrdinal": 99,
+    "firstIncompleteCanonicalCode": "G10-U13-L02",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
@@ -1137,6 +1149,10 @@
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-index-repair-source-exception.md"
       }
     ],
-    "scanNextOrdinal": 51
+    "scanNextOrdinal": 99,
+    "skippedAlreadyBodyReviewedOrdinals": [
+      51,
+      97
+    ]
   }
 }

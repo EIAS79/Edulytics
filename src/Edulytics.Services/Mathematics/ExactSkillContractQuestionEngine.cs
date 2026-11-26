@@ -108,6 +108,14 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialGraphResponse.Growth,
             UaeG10ExponentialGraphResponse.Asymptote,
             UaeG10ExponentialGraphResponse.ShiftAnchor,
+            UaeG10CircleResponse.Diameter,
+            UaeG10CircleResponse.Radius,
+            UaeG10CircleResponse.Circumference,
+            UaeG10CircleResponse.Approx,
+            UaeG10CircleResponse.Overlap,
+            UaeG10CircleResponse.Intersection,
+            UaeG10CircleResponse.Rectangle,
+            UaeG10CircleResponse.Inverse,
             UaeG10ExponentialEquationResponse.Equation,
             UaeG10ExponentialEquationResponse.Inequality,
             UaeG10ExponentialEquationResponse.Factor,
@@ -1328,6 +1336,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CircleResponse.Supports(family))
+            return UaeG10CircleResponse.Verify(family,parameters,answer);
 
         if (UaeG10ExponentialEquationResponse.Supports(family))
             return UaeG10ExponentialEquationResponse.Verify(family,parameters,answer);
@@ -3848,6 +3859,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10CircleResponse.Supports(family))
+            return BuildG10Circle(family,random,difficulty);
 
         if (UaeG10ExponentialEquationResponse.Supports(family))
             return BuildG10ExponentialEquation(family,random,difficulty);
@@ -10073,6 +10087,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10CircleResponse.Supports(problem.Family))
+            return UaeG10CircleResponse.Format(problem.Family,p);
 
         if (UaeG10ExponentialEquationResponse.Supports(problem.Family))
             return UaeG10ExponentialEquationResponse.Format(problem.Family,p);
