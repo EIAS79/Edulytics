@@ -9,14 +9,14 @@ public sealed partial class ExactSkillContractQuestionEngine
     private static ExactProblem BuildG10ProbabilityOdds(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
         int a=random.Next(2,9),b=random.Next(2,9),c=random.Next(2,9);
-        int r=random.Next(2,6),u=random.Next(0,Math.Min(a,r)+1),v=random.Next(0,Math.Min(b,r-u)+1);
+        int r=random.Next(2,Math.Min(5,a+b)+1),u=random.Next(0,Math.Min(a,r)+1),v=random.Next(0,Math.Min(b,r-u)+1);
         // Ensure the selected composition is feasible, including zeros and boundary events.
         while(r-u-v>c){u=random.Next(0,Math.Min(a,r)+1);v=random.Next(0,Math.Min(b,r-u)+1);}
-        int k=random.Next(0,r+1),dir=random.Next(2),mode=random.Next(4),pct=random.Next(0,1001),n=random.Next(4,11);
+        int k=random.Next(0,r+1),dir=random.Next(2),mode=random.Next(6),pct=random.Next(0,1001),n=random.Next(4,11);
         string odds="اكتب النسبة بالترتيب المطلوب أ:ب، في أبسط صورة.";
         string prob="اكتب الاحتمال كعدد صحيح أو كسر.";
         string side=dir==0?"لصالح":"ضد";
-        string single=mode switch{0=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء. ما احتمال سحب حمراء أو خضراء؟",1=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء. ما احتمال ألا تكون الكرة المسحوبة زرقاء؟",2=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء. ما احتمال سحب صفراء؟",_=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء. ما احتمال سحب كرة من الألوان الثلاثة؟"};
+        string single=mode switch{0=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء؛ نسحب كرة بانتظام. ما احتمال حمراء أو خضراء؟",1=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء؛ نسحب كرة بانتظام. ما احتمال ألا تكون زرقاء؟",2=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء؛ نسحب كرة بانتظام. ما احتمال صفراء؟",3=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء؛ نسحب كرة بانتظام. ما احتمال أن تكون من أحد الألوان الثلاثة المذكورة؟",4=>$"كيس به {a} حمراء و{b} زرقاء و{c} خضراء؛ نسحب كرة بانتظام. ما احتمال حمراء؟",_=>$"نختار عينة عشوائية بسيطة من {100*a} أسرة من مجتمع عدده {100*(a+b+c)}. ما احتمال أن تضم العينة أسرة محددة مسبقًا؟"};
         string prompt=family switch{
             UaeG10ProbabilityOddsResponse.Single=>$"{single} {prob}",
             UaeG10ProbabilityOddsResponse.OddsCounts=>$"فضاء عينة متساوي الاحتمال يضم {(mode==2?0:a)} نواتج ملائمة و{(mode==3?0:b)} غير ملائمة. احسب الفرص {side} الحدث. {odds}",
@@ -29,7 +29,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ProbabilityOddsResponse.CompositionOdds=>$"من {a} حمراء و{b} زرقاء و{c} خضراء اختر {r} دون إرجاع بانتظام. ما الفرص {side} اختيار {u} حمراء و{v} زرقاء و{r-u-v} خضراء بالضبط؟ {odds}",
             UaeG10ProbabilityOddsResponse.DifferentPair=>$"من {a} حمراء و{b} زرقاء و{c} خضراء اختر كرتين دون إرجاع بانتظام. ما الفرص {side} اختيار لونين مختلفين؟ {odds}",
             UaeG10ProbabilityOddsResponse.SuitPattern=>$"رزمة تعليمية بها {3+c%3} مجموعات منفصلة متساوية، كل مجموعة {n+3} بطاقات مميزة. نسحب 5 دون إرجاع بانتظام. أوجد الفرص {side} وجود 3 من مجموعة واحدة و2 من مجموعة أخرى. {odds}",
-            UaeG10ProbabilityOddsResponse.Repeat=>$"مكعب تعليمي عادل ذو {n} نواتج متساوية يرمى {2+mode%2} مرات مستقلة. ما احتمال ظهور ناتج محدد في كل مرة؟ {prob}",
+            UaeG10ProbabilityOddsResponse.Repeat=>$"قرص دوار تعليمي مقسم إلى {n} قطاعات متساوية يدار {2+mode%2} مرات مستقلة. ما احتمال ظهور ناتج محدد في كل مرة؟ {prob}",
             UaeG10ProbabilityOddsResponse.Ordered=>$"نختار ترتيبًا من ثلاث خانات باستعمال {n} رموز متساوية الاحتمال، {(mode%2==0?"دون تكرار":"مع السماح بالتكرار")}. ما احتمال مطابقة ترتيب محدد من ثلاثة رموز مختلفة؟ {prob}",
             UaeG10ProbabilityOddsResponse.OrderedOdds=>$"نختار ترتيبًا من ثلاث خانات باستعمال {n} رموز متساوية الاحتمال، {(mode%2==0?"دون تكرار":"مع السماح بالتكرار")}. ما الفرص {side} مطابقة ترتيب محدد من ثلاثة رموز مختلفة؟ {odds}",
             UaeG10ProbabilityOddsResponse.Conditional=>$"تجربتان مستقلتان؛ في كل تجربة {a} نواتج نجاح و{b} فشل متساوية الاحتمال. ما احتمال نجاح التجربتين {(dir==0?"معًا؟":"إذا عُلم أن الأولى نجحت؟")} {prob}",
@@ -49,7 +49,7 @@ internal static class UaeG10ProbabilityOddsResponse
     internal static bool Supports(string? f)=>f is Single or OddsCounts or FromOdds or FromDecimal or ExactSample or SampleOdds or AtLeast or Composition or CompositionOdds or DifferentPair or SuitPattern or Repeat or Ordered or OrderedOdds or Conditional or Cut or Data or DataOdds;
     internal static bool IsOdds(string f)=>f is OddsCounts or FromDecimal or SampleOdds or CompositionOdds or DifferentPair or SuitPattern or OrderedOdds or DataOdds;
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>Supports(f)&&p.Count==11&&new[]{"a","b","c","r","u","v","k","dir","mode","pct","n"}.All(p.ContainsKey)&&
-        p["a"] is >=2 and <=8&&p["b"] is >=2 and <=8&&p["c"] is >=2 and <=8&&p["r"] is >=2 and <=5&&p["r"]<=p["a"]+p["b"]&&p["u"]>=0&&p["u"]<=Math.Min(p["a"],p["r"])&&p["v"]>=0&&p["v"]<=Math.Min(p["b"],p["r"]-p["u"])&&p["r"]-p["u"]-p["v"]<=p["c"]&&p["k"]>=0&&p["k"]<=p["r"]&&p["dir"] is 0 or 1&&p["mode"] is >=0 and <=3&&p["pct"] is >=0 and <=1000&&p["n"] is >=4 and <=10;
+        p["a"] is >=2 and <=8&&p["b"] is >=2 and <=8&&p["c"] is >=2 and <=8&&p["r"] is >=2 and <=5&&p["r"]<=p["a"]+p["b"]&&p["u"]>=0&&p["u"]<=Math.Min(p["a"],p["r"])&&p["v"]>=0&&p["v"]<=Math.Min(p["b"],p["r"]-p["u"])&&p["r"]-p["u"]-p["v"]<=p["c"]&&p["k"]>=0&&p["k"]<=p["r"]&&p["dir"] is 0 or 1&&p["mode"] is >=0 and <=5&&p["pct"] is >=0 and <=1000&&p["n"] is >=4 and <=10;
     private static BigInteger Choose(int n,int k)
     {
         if(k<0||k>n)return 0;BigInteger result=1;
@@ -71,7 +71,7 @@ internal static class UaeG10ProbabilityOddsResponse
         Func<int,int,BigInteger> choose=independent?Pascal:Choose;
         switch(f)
         {
-            case Single:t=a+b+c;s=mode switch{0=>a+c,1=>a+c,2=>0,_=>a+b+c};break;
+            case Single:t=a+b+c;s=mode switch{0=>a+c,1=>a+c,2=>0,3=>a+b+c,_=>a};break;
             case OddsCounts:case FromOdds:s=mode==2?0:a;t=s+(mode==3?0:b);break;
             case FromDecimal:s=p["pct"];t=1000;break;
             case ExactSample:case SampleOdds:t=choose(a+b,r);s=choose(a,k)*choose(b,r-k);break;
