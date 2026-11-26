@@ -246,6 +246,20 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10AlgebraicProofResponse.Cube,
             UaeG10AlgebraicProofResponse.Pythagoras,
             UaeG10AlgebraicProofResponse.Equivalence,
+            UaeG10AngleRelationshipsResponse.Protractor,
+            UaeG10AngleRelationshipsResponse.Addition,
+            UaeG10AngleRelationshipsResponse.Complement,
+            UaeG10AngleRelationshipsResponse.Supplement,
+            UaeG10AngleRelationshipsResponse.RightPartition,
+            UaeG10AngleRelationshipsResponse.Linear,
+            UaeG10AngleRelationshipsResponse.VerticalEquation,
+            UaeG10AngleRelationshipsResponse.VerticalMeasure,
+            UaeG10AngleRelationshipsResponse.SameReference,
+            UaeG10AngleRelationshipsResponse.Bisector,
+            UaeG10AngleRelationshipsResponse.AroundPoint,
+            UaeG10AngleRelationshipsResponse.Reason,
+            UaeG10AngleRelationshipsResponse.Perpendicular,
+            UaeG10AngleRelationshipsResponse.Transfer,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1721,6 +1735,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(family))
+            return UaeG10AngleRelationshipsResponse.Verify(family,parameters,answer);
 
         if (UaeG10AlgebraicProofResponse.Supports(family))
             return UaeG10AlgebraicProofResponse.Verify(family,parameters,answer);
@@ -4350,6 +4367,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(family))
+            return BuildG10AngleRelationships(family,random,difficulty);
 
         if (UaeG10AlgebraicProofResponse.Supports(family))
             return BuildG10AlgebraicProof(family,random,difficulty);
@@ -10684,6 +10704,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(problem.Family))
+            return UaeG10AngleRelationshipsResponse.Format(problem.Family,p);
 
         if (UaeG10AlgebraicProofResponse.Supports(problem.Family))
             return UaeG10AlgebraicProofResponse.Format(problem.Family,p);
