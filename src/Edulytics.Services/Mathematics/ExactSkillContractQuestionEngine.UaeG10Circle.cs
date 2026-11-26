@@ -152,21 +152,23 @@ public sealed partial class ExactSkillContractQuestionEngine
             };
             return Problem(family,prompt,"مجموع دورة كاملة 360°؛ طول القوس = (قياسه/360)×2π×نصف القطر، والقياس الزاوي يختلف عن الطول.",family is UaeG10CircleResponse.ArcCoeff or UaeG10CircleResponse.ArcApprox?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("a1",a1),("a2",a2),("r",r),("angle",angle),("percent",percent));
         }
-        int a=random.Next(2,31),b=random.Next(2,31),distance=random.Next(0,61),k=random.Next(1,11);
-        if(family==UaeG10CircleResponse.Intersection&&distance==0&&a==b)distance=1;
-        if(family==UaeG10CircleResponse.Overlap)distance=random.Next(Math.Abs(a-b)+1,a+b);
-        string prompt=family switch
         {
-            UaeG10CircleResponse.Diameter=>$"نصف قطر دائرة {a} سم. أوجد قطرها بالسنتيمتر.",
-            UaeG10CircleResponse.Radius=>$"قطر دائرة {a} سم. أوجد نصف قطرها، واكتب عددًا صحيحًا أو كسرًا.",
-            UaeG10CircleResponse.Circumference=>$"نصف قطر دائرة {a} سم. إذا كان محيطها م×π سم، فأوجد المعامل م.",
-            UaeG10CircleResponse.Approx=>$"قطر دائرة {a} سم. أوجد محيطها بالسنتيمتر باستخدام π، مقربًا إلى أقرب جزء من مائة.",
-            UaeG10CircleResponse.Overlap=>$"دائرتان نصفا قطريهما {a} و{b} سم والمسافة بين مركزيهما {distance} سم. أوجد طول الجزء المشترك من خط المركزين بالسنتيمتر.",
-            UaeG10CircleResponse.Intersection=>$"دائرتان مختلفتان نصفا قطريهما {a} و{b} سم والمسافة بين مركزيهما {distance} سم. كم نقطة تقاطع مشتركة على المحيطين؟",
-            UaeG10CircleResponse.Rectangle=>$"مستطيل ضلعاه {3*k} و{4*k} سم، رؤوسه الأربعة على دائرة. إذا كان محيط الدائرة م×π سم، فأوجد م.",
-            _=>$"محيط دائرة {a}π سم. أوجد نصف قطرها، واكتب عددًا صحيحًا أو كسرًا."
-        };
-        return Problem(family,prompt,"حدد نصف القطر والقطر. المحيط π×القطر. قارن مسافة المركزين بمجموع نصفي القطرين والفرق بينهما؛ قطر الدائرة المحيطة بمستطيل يساوي قطر المستطيل.",family is UaeG10CircleResponse.Radius or UaeG10CircleResponse.Inverse or UaeG10CircleResponse.Approx?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("a",a),("b",b),("distance",distance),("k",k));
+            int a=random.Next(2,31),b=random.Next(2,31),distance=random.Next(0,61),k=random.Next(1,11);
+            if(family==UaeG10CircleResponse.Intersection&&distance==0&&a==b)distance=1;
+            if(family==UaeG10CircleResponse.Overlap)distance=random.Next(Math.Abs(a-b)+1,a+b);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.Diameter=>$"نصف قطر دائرة {a} سم. أوجد قطرها بالسنتيمتر.",
+                UaeG10CircleResponse.Radius=>$"قطر دائرة {a} سم. أوجد نصف قطرها، واكتب عددًا صحيحًا أو كسرًا.",
+                UaeG10CircleResponse.Circumference=>$"نصف قطر دائرة {a} سم. إذا كان محيطها م×π سم، فأوجد المعامل م.",
+                UaeG10CircleResponse.Approx=>$"قطر دائرة {a} سم. أوجد محيطها بالسنتيمتر باستخدام π، مقربًا إلى أقرب جزء من مائة.",
+                UaeG10CircleResponse.Overlap=>$"دائرتان نصفا قطريهما {a} و{b} سم والمسافة بين مركزيهما {distance} سم. أوجد طول الجزء المشترك من خط المركزين بالسنتيمتر.",
+                UaeG10CircleResponse.Intersection=>$"دائرتان مختلفتان نصفا قطريهما {a} و{b} سم والمسافة بين مركزيهما {distance} سم. كم نقطة تقاطع مشتركة على المحيطين؟",
+                UaeG10CircleResponse.Rectangle=>$"مستطيل ضلعاه {3*k} و{4*k} سم، رؤوسه الأربعة على دائرة. إذا كان محيط الدائرة م×π سم، فأوجد م.",
+                _=>$"محيط دائرة {a}π سم. أوجد نصف قطرها، واكتب عددًا صحيحًا أو كسرًا."
+            };
+            return Problem(family,prompt,"حدد نصف القطر والقطر. المحيط π×القطر. قارن مسافة المركزين بمجموع نصفي القطرين والفرق بينهما؛ قطر الدائرة المحيطة بمستطيل يساوي قطر المستطيل.",family is UaeG10CircleResponse.Radius or UaeG10CircleResponse.Inverse or UaeG10CircleResponse.Approx?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("a",a),("b",b),("distance",distance),("k",k));
+        }
     }
 }
 internal static class UaeG10CircleResponse
@@ -325,8 +327,10 @@ internal static class UaeG10CircleResponse
             int a1=p["a1"],a2=p["a2"],r=p["r"],angle=p["angle"],percent=p["percent"];
             return f switch{Central=>(360-a1-a2,1),Major=>(360-a1,1),Pie or ArcInverse=>(percent*18/5,1),ArcSum=>(a1+a2,1),ArcCoeff=>(r*angle,180),ArcApprox=>((long)Math.Round(r*angle*Math.PI/180*100,MidpointRounding.AwayFromZero),100),_=>throw new InvalidOperationException()};
         }
-        int a=p["a"],b=p["b"],d=p["distance"],k=p["k"];
-        return f switch {Diameter=>(2*a,1),Radius or Inverse=>(a,2),Circumference=>(2*a,1),Approx=>((long)Math.Round(a*Math.PI*100,MidpointRounding.AwayFromZero),100),Overlap=>(a+b-d,1),Intersection=>(Count(a,b,d),1),Rectangle=>(5*k,1),_=>throw new InvalidOperationException()};
+        {
+            int a=p["a"],b=p["b"],d=p["distance"],k=p["k"];
+            return f switch {Diameter=>(2*a,1),Radius or Inverse=>(a,2),Circumference=>(2*a,1),Approx=>((long)Math.Round(a*Math.PI*100,MidpointRounding.AwayFromZero),100),Overlap=>(a+b-d,1),Intersection=>(Count(a,b,d),1),Rectangle=>(5*k,1),_=>throw new InvalidOperationException()};
+        }
     }
     internal static string Format(string f,IReadOnlyDictionary<string,int> p)
     {
@@ -342,8 +346,8 @@ internal static class UaeG10CircleResponse
         string s=string.Concat(raw.Trim().Where(c=>!char.IsWhiteSpace(c)).Select(c=>c switch{>= '٠' and <= '٩'=>(char)('0'+c-'٠'),>= '۰' and <= '۹'=>(char)('0'+c-'۰'),'٫'=>'.','⁄'=>'/',_=>c}));
         if(IsCircleEquation(f))
         {
-            if(!decimal.TryParse(s.Replace('−','-'),NumberStyles.AllowLeadingSign|NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)||value!=decimal.Truncate(value)||value < -1000000||value > 1000000)return false;
-            long q=(long)value,h=p["h"],k=p["k"],m=p["m"],r=5*m,mode=p["mode"],yes=p["yes"];
+            if(!decimal.TryParse(s.Replace('−','-'),NumberStyles.AllowLeadingSign|NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal signedValue)||signedValue!=decimal.Truncate(signedValue)||signedValue < -1000000||signedValue > 1000000)return false;
+            long q=(long)signedValue,h=p["h"],k=p["k"],m=p["m"],r=5*m,mode=p["mode"],yes=p["yes"];
             if(f==EquationCenterX)return 2*q==2*h;
             if(f==EquationCenterY)return 2*q==2*k;
             if(f==EquationRadius)return q>0&&q*q==r*r;
@@ -435,12 +439,14 @@ internal static class UaeG10CircleResponse
             double actual=r*angle*Math.PI/180;
             return f==ArcApprox&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
         }
-        long a=p["a"],b=p["b"],distance=p["distance"],k=p["k"];
-        if(f is Radius or Inverse)return 2*n==a*d;
-        if(f is Diameter or Circumference)return n==2*a*d;
-        if(f==Approx)return n*100%d==0&&((double)n/d-0.005)<=a*Math.PI&&a*Math.PI<((double)n/d+0.005);
-        if(f==Overlap)return n+d*distance==d*(a+b);
-        if(f==Intersection)return n==Count((int)a,(int)b,(int)distance)*d;
-        return f==Rectangle&&n==5*k*d&& (5*k)*(5*k)==(3*k)*(3*k)+(4*k)*(4*k);
+        {
+            long a=p["a"],b=p["b"],distance=p["distance"],k=p["k"];
+            if(f is Radius or Inverse)return 2*n==a*d;
+            if(f is Diameter or Circumference)return n==2*a*d;
+            if(f==Approx)return n*100%d==0&&((double)n/d-0.005)<=a*Math.PI&&a*Math.PI<((double)n/d+0.005);
+            if(f==Overlap)return n+d*distance==d*(a+b);
+            if(f==Intersection)return n==Count((int)a,(int)b,(int)distance)*d;
+            return f==Rectangle&&n==5*k*d&& (5*k)*(5*k)==(3*k)*(3*k)+(4*k)*(4*k);
+        }
     }
 }
