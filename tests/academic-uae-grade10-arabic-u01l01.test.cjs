@@ -145,7 +145,9 @@ test('Grade10 General blueprint registers 148 approved titles with a complete 14
    'docs/curriculum/UAE_G10_GENERAL_OFFICIAL_MANIFEST.json'),'utf8'));
  assert.equal(blueprint.Units[0].Title,'كثيرات الحدود والتحليل');
  assert.match(blueprint.SourceEdition,/2025–2026, Volume 1/);
- assert.match(blueprint.PedagogicalSourceType,/OfficialUaeStudentBook/);
+ assert.equal(blueprint.PedagogicalSourceType,'SchoolAdoptedTextbook');
+ assert.match(blueprint.SourceLicense,/Reference-only local copyrighted student text/);
+ assert.match(blueprint.SourceSelectionReason,/seven local student-book sources/);
  assert.ok(manifest.SourceFiles.includes('01.pdf'));
  assert.equal(manifest.Units[0].ls[0],'جمع كثيرات الحدود وطرحها');
  assert.equal(manifest.LessonCount,148);
