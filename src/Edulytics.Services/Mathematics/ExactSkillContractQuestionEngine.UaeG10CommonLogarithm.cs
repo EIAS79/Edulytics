@@ -11,7 +11,7 @@ public sealed partial class ExactSkillContractQuestionEngine
         int b=bases[random.Next(bases.Length)],c;do c=bases[random.Next(bases.Length)];while(c==b);
         int m=random.Next(1,4),p=random.Next(1,4),n=random.Next(-4,5),q=random.Next(-4,5);
         int k=random.Next(0,4),v=random.Next(2,81),op=random.Next(4),dir=random.Next(2);
-        int h=random.Next(1,10),t=random.Next(2,7);
+        int h=random.Next(2,10),t=random.Next(2,7);
         // Keep the entire bounded domain away from floating-point ambiguity at the half-unit.
         // Numeric answers are explicitly rounded; teacher tasks preserve the exact symbolic boundary.
         var data=new Dictionary<string,int>{{"b",b},{"c",c},{"m",m},{"p",p},{"n",n},{"q",q},{"k",k},{"v",v},{"op",op},{"dir",dir},{"h",h},{"t",t}};
@@ -25,15 +25,15 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CommonLogarithmResponse.Quadratic=>$"حل {b}^(س²)={v}. اكتب الجذرين المرتبين بين قوسين (السالب، الموجب)، كل منهما إلى أربع منازل.",
             UaeG10CommonLogarithmResponse.Sound=>$"في L=10log(I/I₀)، إذا L={50+h} ديسيبل وI₀=10^(-12) W/m²، احسب I بوحدة µW/m² (1 µW=10^(-6) W). {round}",
             UaeG10CommonLogarithmResponse.SoundReduction=>$"انخفض مستوى الصوت {h} ديسيبل. احسب النقص المئوي في الشدة اعتمادًا على I₂/I₁=10^(-{h}/10). {round}",
-            UaeG10CommonLogarithmResponse.Energy=>$"في النموذج log E=11.8+1.5M، إذا M={3+h/10m}، احسب E مقسومًا على 10^16 بوحدة النموذج. {round}",
+            UaeG10CommonLogarithmResponse.Energy=>$"في النموذج log E=11.8+1.5M، إذا M={(3+h/10m).ToString(CultureInfo.InvariantCulture)}، احسب E مقسومًا على 10^16 بوحدة النموذج. {round}",
             UaeG10CommonLogarithmResponse.Pet=>$"في النموذج ن={10*b}لوغ_{c}(ز+2) بالألف، احسب ن عند ز={v} سنة. {round}",
-            UaeG10CommonLogarithmResponse.PetTime=>$"في النموذج ن={10*b}لوغ_{c}(ز+2) بالألف، عند أي زمن يصل ن إلى {10*b*h/2m} ألفًا؟ {round}",
+            UaeG10CommonLogarithmResponse.PetTime=>$"في النموذج ن={10*b}لوغ_{c}(ز+2) بالألف، عند أي زمن يصل ن إلى {(10*b*h/2m).ToString(CultureInfo.InvariantCulture)} ألفًا؟ {round}",
             UaeG10CommonLogarithmResponse.GrowthRate=>$"زاد عدد من {100*b} إلى {100*b+10*v} خلال {t} سنوات بمعدل ثابت. احسب المعدل السنوي المئوي. {round}",
             UaeG10CommonLogarithmResponse.GrowthTime=>$"زاد عدد من {100*b} إلى {100*b+10*v} خلال {t} سنوات بمعدل ثابت. كم سنة من المشاهدة الأخيرة حتى يبلغ {200*b+20*v}؟ {round}",
             UaeG10CommonLogarithmResponse.Cents=>$"احسب الفترة بالسنت عند الانتقال من {100*b} Hz إلى {100*b+v} Hz باستعمال C=1200log₂(f₂/f₁). {round}",
-            UaeG10CommonLogarithmResponse.Frequency=>$"إذا كان التردد الابتدائي {100*b} Hz والفترة {dir==0?h*25:-h*25} سنت، احسب التردد النهائي باستعمال C=1200log₂(f₂/f₁). {round}",
+            UaeG10CommonLogarithmResponse.Frequency=>$"إذا كان التردد الابتدائي {100*b} Hz والفترة {(dir==0?h*25:-h*25)} سنت، احسب التردد النهائي باستعمال C=1200log₂(f₂/f₁). {round}",
             UaeG10CommonLogarithmResponse.Ph=>$"احسب pH=-log([H⁺]) عندما [H⁺]={v}×10^(-{h+3}) mol/L. {round}",
-            UaeG10CommonLogarithmResponse.Ppm=>$"عينة رياضية كتلتها {t} kg تحتوي {v/100m} mg من مادة. احسب التركيز mg/kg (ppm). {round}",
+            UaeG10CommonLogarithmResponse.Ppm=>$"عينة رياضية كتلتها {t} kg تحتوي {(v/100m).ToString(CultureInfo.InvariantCulture)} mg من مادة. احسب التركيز mg/kg (ppm). {round}",
             UaeG10CommonLogarithmResponse.LabEq=>$"حل بيانيًا ثم جبريًا: log_{b}({b}(س+{h}))=log_{c}({c}(س+{h})). اكتب إحداثي س للتقاطع. {round}",
             UaeG10CommonLogarithmResponse.LabIneq=>$"حدّد مجال حل log_{b}({b}(س+{h})) < log_{c}({c}(س+{h})). اكتب الفترة، مع استبعاد نقاط عدم التعريف والمساواة.",
             _=>throw new InvalidOperationException("Unknown common log family.")
@@ -51,7 +51,7 @@ internal static class UaeG10CommonLogarithmResponse
     internal static bool Supports(string? f)=>f is Common or Change or Equation or TwoBases or Inequality or Quadratic or Sound or SoundReduction or Energy or Pet or PetTime or GrowthRate or GrowthTime or Cents or Frequency or Ph or Ppm or LabEq or LabIneq;
     internal static string Relation(int op)=>op switch{0=>"<",1=>"≤",2=>">",_=>"≥"};
     private static bool Valid(string f,IReadOnlyDictionary<string,int> a)=>Supports(f)&&a.Count==12&&new[]{"b","c","m","p","n","q","k","v","op","dir","h","t"}.All(a.ContainsKey)&&
-        a["b"] is 2 or 3 or 5 or 7&&a["c"] is 2 or 3 or 5 or 7&&a["b"]!=a["c"]&&a["m"] is >=1 and <=3&&a["p"] is >=1 and <=3&&a["n"] is >=-4 and <=4&&a["q"] is >=-4 and <=4&&a["k"] is >=0 and <=3&&a["v"] is >=2 and <=80&&a["op"] is >=0 and <=3&&a["dir"] is 0 or 1&&a["h"] is >=1 and <=9&&a["t"] is >=2 and <=6;
+        a["b"] is 2 or 3 or 5 or 7&&a["c"] is 2 or 3 or 5 or 7&&a["b"]!=a["c"]&&a["m"] is >=1 and <=3&&a["p"] is >=1 and <=3&&a["n"] is >=-4 and <=4&&a["q"] is >=-4 and <=4&&a["k"] is >=0 and <=3&&a["v"] is >=2 and <=80&&a["op"] is >=0 and <=3&&a["dir"] is 0 or 1&&a["h"] is >=2 and <=9&&a["t"] is >=2 and <=6;
     private static string R(double x)=>Math.Round(x,4,MidpointRounding.AwayFromZero).ToString("0.0000",CultureInfo.InvariantCulture);
     private static double B(IReadOnlyDictionary<string,int> a)=>a["dir"]==0?a["b"]:1.0/a["b"];
     private static double Slope(IReadOnlyDictionary<string,int> a)=>a["m"]*Math.Log(B(a))-a["p"]*Math.Log(a["c"]);
@@ -98,7 +98,7 @@ internal static class UaeG10CommonLogarithmResponse
             Common=>z*Math.Log(10)-Math.Log(arg),Change=>z*Math.Log(b)-Math.Log(arg),
             Equation=>(m*z+n)*Math.Log(b)-Math.Log(v),TwoBases or Inequality=>(m*z+n)*Math.Log(b)-(p*z+q)*Math.Log(c),
             Quadratic=>z*z*Math.Log(a["b"])-Math.Log(v),Sound=>z<=0?double.NegativeInfinity:Math.Log(z)+(6-(50+h)/10)*Math.Log(10),
-            SoundReduction=>z>=100?double.PositiveInfinity:Math.Log(1-z/100)+h/10*Math.Log(10),
+            SoundReduction=>z>=100?double.NegativeInfinity:Math.Log(1-z/100)+h/10*Math.Log(10),
             Energy=>z<=0?double.NegativeInfinity:Math.Log(z)+(16-11.8-1.5*(3+h/10))*Math.Log(10),
             Pet=>z*Math.Log(c)/(10*a["b"])-Math.Log(v+2),PetTime=>z<=-2?double.NegativeInfinity:Math.Log(z+2)-h/2*Math.Log(c),
             GrowthRate=>z<=-100?double.NegativeInfinity:t*Math.Log(1+z/100)-Math.Log(ratio),GrowthTime=>z*Math.Log(ratio)-t*Math.Log(2),
@@ -107,6 +107,8 @@ internal static class UaeG10CommonLogarithmResponse
             Ph=>(z-h-3)*Math.Log(10)+Math.Log(v),Ppm=>z*100*t-v,LabEq=>z+h-1,_=>double.NaN
         };
         if(f==Quadratic&&x<=0)return false;
+        if(f==SoundReduction&&(x<0||x>=100))return false;
+        if(f==PetTime&&x<0)return false;
         double l=F(x-.00005),u=F(x+.00005);
         return (l<=0&&u>=0)||(l>=0&&u<=0);
     }
