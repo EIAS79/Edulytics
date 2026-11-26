@@ -8,6 +8,21 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsChord(family))
+        {
+            int k=random.Next(1,9), arc=2*random.Next(10,86), x=random.Next(2,21), a=random.Next(2,7), b=random.Next(1,10), radius=random.Next(6,31), half=random.Next(1,radius);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.ChordEqualArc=>$"في دائرة، وتران متطابقان. قياس القوس الأصغر المقابل للأول {arc}°. أوجد قياس القوس الأصغر المقابل للثاني.",
+                UaeG10CircleResponse.ChordHalfArc=>$"قطر عمودي على وتر ينصف القوس الأصغر المقابل له، الذي قياسه {arc}°. أوجد قياس نصف القوس.",
+                UaeG10CircleResponse.ChordLength=>$"نصف قطر دائرة {5*k} سم، والمسافة العمودية من المركز إلى وتر {3*k} سم. أوجد طول الوتر.",
+                UaeG10CircleResponse.ChordDistance=>$"نصف قطر دائرة {5*k} سم وطول وتر فيها {8*k} سم. أوجد بعد الوتر عن المركز.",
+                UaeG10CircleResponse.ChordAlgebra=>$"وتران متطابقان في دائرة، طول أحدهما {a}س + {b} وطول الآخر {a*x+b}. أوجد س.",
+                UaeG10CircleResponse.ChordEqualDistance=>$"وتران متطابقان في دائرة. بعد الوتر الأول عن المركز {3*k} سم. أوجد بعد الثاني عن المركز.",
+                _=>$"نصف قطر دائرة {radius} سم، وطول وتر فيها {2*half} سم. أوجد البعد العمودي للوتر عن المركز مقربًا لأقرب جزء من مائة."
+            };
+            return Problem(family,prompt,"الأوتار المتطابقة تقابل أقواسًا متطابقة وتبعد المسافة نفسها عن المركز. العمود من المركز ينصف الوتر والقوس؛ استخدم فيثاغورس.",family==UaeG10CircleResponse.ChordApprox?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("k",k),("arc",arc),("x",x),("a",a),("b",b),("radius",radius),("half",half));
+        }
         if(UaeG10CircleResponse.IsArc(family))
         {
             int a1=random.Next(10,171),a2=random.Next(10,171),r=random.Next(2,31),angle=random.Next(10,351),percent=5*random.Next(1,20);
@@ -58,14 +73,29 @@ internal static class UaeG10CircleResponse
     internal const string ArcApprox="uae.g10.general.u13.l02.arc_length_rounded";
     internal const string ArcInverse="uae.g10.general.u13.l02.angle_from_arc_fraction";
     internal static bool IsArc(string? f)=>f is Central or Major or Pie or ArcSum or ArcCoeff or ArcApprox or ArcInverse;
-    internal static bool Supports(string? f)=>IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsArc(f)?
+    internal const string ChordEqualArc="uae.g10.general.u13.l03.equal_chord_arc";
+    internal const string ChordHalfArc="uae.g10.general.u13.l03.perpendicular_bisects_arc";
+    internal const string ChordLength="uae.g10.general.u13.l03.chord_length_from_radius_distance";
+    internal const string ChordDistance="uae.g10.general.u13.l03.center_distance_from_chord";
+    internal const string ChordAlgebra="uae.g10.general.u13.l03.equal_chord_expression";
+    internal const string ChordEqualDistance="uae.g10.general.u13.l03.equal_chords_equal_distances";
+    internal const string ChordApprox="uae.g10.general.u13.l03.center_distance_rounded";
+    internal static bool IsChord(string? f)=>f is ChordEqualArc or ChordHalfArc or ChordLength or ChordDistance or ChordAlgebra or ChordEqualDistance or ChordApprox;
+    internal static bool Supports(string? f)=>IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsChord(f)?
+        p.Count==7&&new[]{"k","arc","x","a","b","radius","half"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["arc"] is >=20 and <=170&&p["arc"]%2==0&&p["x"] is >=2 and <=20&&p["a"] is >=2 and <=6&&p["b"] is >=1 and <=9&&p["radius"] is >=6 and <=30&&p["half"]>=1&&p["half"]<p["radius"]:
+        IsArc(f)?
         p.Count==5&&new[]{"a1","a2","r","angle","percent"}.All(p.ContainsKey)&&p["a1"] is >=10 and <=170&&p["a2"] is >=10 and <=170&&p["r"] is >=2 and <=30&&p["angle"] is >=10 and <=350&&p["percent"] is >=5 and <=95&&p["percent"]%5==0:
         Supports(f)&&p.Count==4&&new[]{"a","b","distance","k"}.All(p.ContainsKey)&&p["a"] is >=2 and <=30&&p["b"] is >=2 and <=30&&p["distance"] is >=0 and <=60&&p["k"] is >=1 and <=10&&
         (f!=Intersection||p["distance"]!=0||p["a"]!=p["b"])&&(f!=Overlap||p["distance"]>Math.Abs(p["a"]-p["b"])&&p["distance"]<p["a"]+p["b"]);
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsChord(f))
+        {
+            int k=p["k"], arc=p["arc"], x=p["x"], r=p["radius"], h=p["half"];
+            return f switch{ChordEqualArc=>(arc,1),ChordHalfArc=>(arc/2,1),ChordLength=>(8*k,1),ChordDistance or ChordEqualDistance=>(3*k,1),ChordAlgebra=>(x,1),ChordApprox=>((long)Math.Round(Math.Sqrt(r*r-h*h)*100,MidpointRounding.AwayFromZero),100),_=>throw new InvalidOperationException()};
+        }
         if(IsArc(f))
         {
             int a1=p["a1"],a2=p["a2"],r=p["r"],angle=p["angle"],percent=p["percent"];
@@ -78,7 +108,7 @@ internal static class UaeG10CircleResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid G10 circle parameters");
         var(n,d)=Answer(f,p);
-        if(f is Approx or ArcApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        if(f is Approx or ArcApprox or ChordApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
         if(f==ArcCoeff){long a=n,b=d;while(b!=0)(a,b)=(b,a%b);n/=a;d/=a;}
         return n%d==0?(n/d).ToString(CultureInfo.InvariantCulture):n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
@@ -92,6 +122,17 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsChord(f))
+        {
+            long k=p["k"],arc=p["arc"],x=p["x"],a0=p["a"],b0=p["b"],r=p["radius"],h=p["half"];
+            if(f==ChordEqualArc)return n==arc*d;
+            if(f==ChordHalfArc)return 2*n==arc*d;
+            if(f==ChordLength)return n==8*k*d;
+            if(f is ChordDistance or ChordEqualDistance)return n==3*k*d;
+            if(f==ChordAlgebra)return a0*n+b0*d==(a0*x+b0)*d;
+            double actual=Math.Sqrt(r*r-h*h);
+            return f==ChordApprox&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
+        }
         if(IsArc(f))
         {
             long a1=p["a1"],a2=p["a2"],r=p["r"],angle=p["angle"],percent=p["percent"];

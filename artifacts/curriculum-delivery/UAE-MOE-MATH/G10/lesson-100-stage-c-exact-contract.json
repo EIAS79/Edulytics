@@ -1,0 +1,22 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03:C100",
+  "skillId": "geometry.circle.g10.chords",
+  "familyIds": [
+    "uae.g10.general.u13.l03.equal_chord_arc",
+    "uae.g10.general.u13.l03.perpendicular_bisects_arc",
+    "uae.g10.general.u13.l03.chord_length_from_radius_distance",
+    "uae.g10.general.u13.l03.center_distance_from_chord",
+    "uae.g10.general.u13.l03.equal_chord_expression",
+    "uae.g10.general.u13.l03.equal_chords_equal_distances",
+    "uae.g10.general.u13.l03.center_distance_rounded"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "k=1..8; arc even 20..170; x=2..20; radius=6..30; half=1..radius-1; exact integer or rounded decimal",
+  "teacherScoring": [
+    "proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}
