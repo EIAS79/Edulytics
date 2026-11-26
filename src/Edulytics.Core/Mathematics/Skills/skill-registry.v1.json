@@ -8736,8 +8736,19 @@
       "domain": "geometry",
       "canonicalName": "مساحة سطح الأشكال الكروية وحجمها",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l04.surface_pi_coefficient",
+        "uae.g10.general.u15.l04.volume_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_total_surface_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_volume_pi_coefficient",
+        "uae.g10.general.u15.l04.radius_from_surface",
+        "uae.g10.general.u15.l04.radius_from_volume",
+        "uae.g10.general.u15.l04.radius_from_great_circle"
+      ]
     },
     {
       "id": "geometry.solids.volume_prism_cylinder",

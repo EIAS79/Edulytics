@@ -17924,21 +17924,30 @@
         "geometry.solids.sphere_surface_volume"
       ],
       "secondarySkills": [],
-      "sourceType": "OWNER_INDEX_02_2_GENERAL_2018_EXCERPT",
+      "sourceType": "OWNER_APPROVED_MATCHING_SOURCE_BODY",
       "officialOutcomeMapped": false,
-      "mappingConfidence": "TITLE_INDEX_ONLY_NO_FULL_BODY_MATCH",
+      "mappingConfidence": "MATCHING_BODY_PAGE_LEVEL_REVIEW",
       "evidence": [
-        "Owner canonical index points to older 02-2.pdf PDF93 for مساحة سطح الأشكال الكروية وحجمها; workstation temporarily offline.",
-        "Six original mathematical worked cases and three visuals."
+        "02-2.pdf physical 93–100; printed 616–623; lesson 9-6",
+        "16 original examples, 8 models, seven exact families"
       ],
-      "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
-      "practiceMechanic": "G10_U15_L04_TEACHER_ONLY",
-      "allowedQuestionFamilies": [],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U15_L04_EXACT_SPHERE_AND_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u15.l04.surface_pi_coefficient",
+        "uae.g10.general.u15.l04.volume_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_total_surface_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_volume_pi_coefficient",
+        "uae.g10.general.u15.l04.radius_from_surface",
+        "uae.g10.general.u15.l04.radius_from_volume",
+        "uae.g10.general.u15.l04.radius_from_great_circle"
+      ],
       "forbiddenQuestionFamilies": [
         "supporting.exponentials.solve_exponent"
       ],
       "teacherReviewRequiredFor": [
-        "3D net correctness, missing faces, complex solids"
+        "Composite solid or model: correct surface/volume decomposition 2 points, formula and dimensions 1, unit and rounding 1.",
+        "Great circle or non-central section drawing: identify center and plane, justified radius relation and sketch."
       ],
       "officialOutcomeCodes": []
     },

@@ -245,6 +245,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u15.l03.cone_lateral_pi_coefficient",
             "uae.g10.general.u15.l03.cone_total_pi_coefficient",
             "uae.g10.general.u15.l03.cone_sector_angle",
+            "uae.g10.general.u15.l04.surface_pi_coefficient",
+            "uae.g10.general.u15.l04.volume_pi_coefficient",
+            "uae.g10.general.u15.l04.hemisphere_total_surface_pi_coefficient",
+            "uae.g10.general.u15.l04.hemisphere_volume_pi_coefficient",
+            "uae.g10.general.u15.l04.radius_from_surface",
+            "uae.g10.general.u15.l04.radius_from_volume",
+            "uae.g10.general.u15.l04.radius_from_great_circle",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1538,6 +1545,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SphereResponse.Supports(family))
+            return UaeG10SphereResponse.Verify(family,parameters,answer);
 
         if (UaeG10PyramidSurfaceResponse.Supports(family))
             return UaeG10PyramidSurfaceResponse.Verify(family,parameters,answer);
@@ -4121,6 +4131,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10SphereResponse.Supports(family))
+            return BuildG10Sphere(family,random,difficulty);
 
         if (UaeG10PyramidSurfaceResponse.Supports(family))
             return BuildG10PyramidSurface(family,random,difficulty);
@@ -10409,6 +10422,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10SphereResponse.Supports(problem.Family))
+            return UaeG10SphereResponse.Format(problem.Family,p);
 
         if (UaeG10PyramidSurfaceResponse.Supports(problem.Family))
             return UaeG10PyramidSurfaceResponse.Format(problem.Family,p);
