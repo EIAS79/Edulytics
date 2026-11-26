@@ -16,17 +16,18 @@ public sealed partial class ExactSkillContractQuestionEngine
         string pay=UaeG10LogarithmPropertiesResponse.DecimalText(balance*rate/100+5000+1000*digit,2);
         string offered=UaeG10LogarithmPropertiesResponse.DecimalText(balance*rate/100+10*u,2);
         string prompt=family switch{
-            UaeG10LogarithmPropertiesResponse.Approx=>$"باستعمال لوغ_4(2)=0.5، لوغ_4(3)≈0.7925، لوغ_4(5)≈1.1610، احسب لوغ_4(2^({u})×3^({v})×5^({w})) باستعمال القيم المعطاة، إلى أربع منازل عشرية.",
+            UaeG10LogarithmPropertiesResponse.Approx=>UaeG10LogarithmPropertiesResponse.ApproxPrompt(mode,u,v,w),
             UaeG10LogarithmPropertiesResponse.Expand=>$"س،ص،ع موجبة. وسّع لوغ_{B}(س^({u})×ص^({v})) + لوغ_{B}(س^({w})/ع^{m}) على صورة أ لوغ_{B}س + ج لوغ_{B}ص + د لوغ_{B}ع. اكتب (أ،ج،د) بالأرقام.",
             UaeG10LogarithmPropertiesResponse.Condense=>$"س،ص،ع موجبة. اختصر ({u})لوغ_{B}س + ({v})لوغ_{B}ص − {m}لوغ_{B}ع + ({w})لوغ_{B}س على صورة لوغ_{B}(س^أ×ص^ج×ع^د)، واكتب (أ،ج،د).",
             UaeG10LogarithmPropertiesResponse.Truth=>$"هل العبارة التالية صحيحة للأعداد الموجبة المعطاة؟ {UaeG10LogarithmPropertiesResponse.Identity(b,p,q,m,mode)}. اكتب 1 للصواب و0 للخطأ.",
             UaeG10LogarithmPropertiesResponse.Equation=>$"حل {UaeG10LogarithmPropertiesResponse.EquationText(b,p,q,m,mode)}، واكتب الحل الموجب بعد فحص المجال.",
+            UaeG10LogarithmPropertiesResponse.RootSet=>$"حل {UaeG10LogarithmPropertiesResponse.RootSetText(b,p,q,m,u,mode)}. اكتب جميع الجذور الحقيقية المقبولة مفصولة بفاصلة، أو ∅ إن لم يوجد حل.",
             UaeG10LogarithmPropertiesResponse.Ph=>$"في النموذج pH=−لوغ_10([H⁺])، إذا pH={(ph/10m).ToString("0.0",CultureInfo.InvariantCulture)}، أوجد تركيز [H⁺] بالمول/لتر، مقربًا إلى 12 منزلة عشرية.",
             UaeG10LogarithmPropertiesResponse.Pressure=>$"في النموذج هـ=15500(5−لوغ_10 ض)، أوجد الضغط ض بالباسكال عند ارتفاع هـ={1550*digit} مترًا، إلى أقرب باسكال.",
             UaeG10LogarithmPropertiesResponse.Benford=>$"حسب قانون بنفورد P(د)=لوغ_10(1+1/د)، أوجد احتمال الرقم الأول {digit} كنسبة مئوية مقربة إلى أقرب عُشر بالمئة. اكتب العدد دون ٪.",
-            UaeG10LogarithmPropertiesResponse.BenfordInverse=>$"وفق قانون بنفورد P(د)=لوغ_10(1+1/د)، إذا كان الاحتمال {UaeG10LogarithmPropertiesResponse.BenfordTenths(digit)/10m:0.0}٪ إلى أقرب عُشر، فما الرقم الأول د من 1 إلى 9؟",
+            UaeG10LogarithmPropertiesResponse.BenfordInverse=>$"وفق قانون بنفورد P(د)=لوغ_10(1+1/د)، إذا كان الاحتمال {(UaeG10LogarithmPropertiesResponse.BenfordTenths(digit)/10m).ToString("0.0",CultureInfo.InvariantCulture)}٪ إلى أقرب عُشر، فما الرقم الأول د من 1 إلى 9؟",
             UaeG10LogarithmPropertiesResponse.Decay=>$"كمية ابتدائية {balance} تتناقص {decay}٪ سنويًا. ما أول سنة صحيحة تقل عندها الكمية عن {balance}/{m+1} من وحدات الكمية؟ لا تقرّب قبل المقارنة.",
-            UaeG10LogarithmPropertiesResponse.Sound=>mode%2==0?$"إذا تغير مستوى الصوت بمقدار {10*m} ديسيبل في ل=10لوغ_10 ن، كم مرة تضاعفت الشدة النسبية؟":$"إذا ازدادت الشدة النسبية {UaeG10LogarithmPropertiesResponse.PowInt(10,m)} مرة، فما زيادة الديسيبل؟",
+            UaeG10LogarithmPropertiesResponse.Sound=>mode%3==0?$"إذا زاد مستوى الصوت بمقدار {10*(m+digit)} ديسيبل في ل=10لوغ_10 ن، كم مرة أصبحت الشدة النسبية؟":mode%3==1?$"إذا ازدادت الشدة النسبية {BigInteger.Pow(10,m+digit)} مرة، فما زيادة الديسيبل؟":$"في ل=10لوغ_10 ن، أوجد الشدة النسبية ن عندما ل={10*(m+digit)} ديسيبل.",
             UaeG10LogarithmPropertiesResponse.Payment=>$"دين افتراضي {balance} درهم، معدل شهري {(rate/100m).ToString("0.00",CultureInfo.InvariantCulture)}٪، يسدد بدفعات شهرية متساوية في {12*m} شهرًا دون رسوم. أوجد القسط إلى أقرب 0.01 درهم.",
             UaeG10LogarithmPropertiesResponse.Payable=>$"دين افتراضي {balance} درهم، معدل شهري {(rate/100m).ToString("0.00",CultureInfo.InvariantCulture)}٪، ودفعة شهرية {offered} درهم دون رسوم. هل ينخفض الرصيد بالدفع؟ 1 لنعم أو 0 للا.",
             UaeG10LogarithmPropertiesResponse.Minimum=>$"دين افتراضي {balance} درهم، معدل شهري {(rate/100m).ToString("0.00",CultureInfo.InvariantCulture)}٪. ما أصغر قسط شهري بأجزاء 0.01 درهم يخفض الرصيد، دون رسوم أو قيود تعاقدية؟",
@@ -41,10 +42,10 @@ public sealed partial class ExactSkillContractQuestionEngine
 internal static class UaeG10LogarithmPropertiesResponse
 {
     internal const string Prefix="uae.g10.general.u05.l05.";
-    internal const string Approx=Prefix+"approx_from_given",Expand=Prefix+"expand_coefficients",Condense=Prefix+"condense_powers",Truth=Prefix+"property_truth",Equation=Prefix+"solve_property_equation",
+    internal const string Approx=Prefix+"approx_from_given",Expand=Prefix+"expand_coefficients",Condense=Prefix+"condense_powers",Truth=Prefix+"property_truth",Equation=Prefix+"solve_property_equation",RootSet=Prefix+"property_root_set",
         Ph=Prefix+"ph_concentration",Pressure=Prefix+"pressure_rounded",Benford=Prefix+"benford_percent",BenfordInverse=Prefix+"benford_digit",Decay=Prefix+"first_decay_year",
         Sound=Prefix+"relative_sound",Payment=Prefix+"repayment_payment",Payable=Prefix+"repayment_possible",Minimum=Prefix+"repayment_minimum",Months=Prefix+"repayment_months";
-    internal static bool Supports(string? f)=>f is Approx or Expand or Condense or Truth or Equation or Ph or Pressure or Benford or BenfordInverse or Decay or Sound or Payment or Payable or Minimum or Months;
+    internal static bool Supports(string? f)=>f is Approx or Expand or Condense or Truth or Equation or RootSet or Ph or Pressure or Benford or BenfordInverse or Decay or Sound or Payment or Payable or Minimum or Months;
     internal static int PowInt(int b,int n){int r=1;for(int i=0;i<n;i++)r*=b;return r;}
     internal static string Identity(int b,int p,int q,int m,int mode)=>mode switch{
         0=>$"لوغ_{b}({p*q})=لوغ_{b}({p})+لوغ_{b}({q})",
@@ -60,6 +61,45 @@ internal static class UaeG10LogarithmPropertiesResponse
         3=>$"لوغ_{b}({q}س)+لوغ_{b}({m+1})=لوغ_{b}({p*q*(m+1)})",
         _=>$"{m}لوغ_{b}({q})+{m}لوغ_{b}س=لوغ_{b}({PowInt(p*q,m)})"
     };
+    internal static string ApproxPrompt(int mode,int u,int v,int w)
+    {
+        (int b,int a,int c,int d,int av,int cv,int dv)=mode switch{
+            0=>(4,2,3,5,5000,7925,11610),1=>(5,3,4,5,6826,8614,10000),
+            2=>(6,8,6,36,11606,10000,20000),3=>(7,9,7,49,11292,10000,20000),
+            _=>(3,5,3,9,14650,10000,20000)};
+        return $"باستعمال لوغ_{b}({a})≈{DecimalText(av,4)}، لوغ_{b}({c})≈{DecimalText(cv,4)}، لوغ_{b}({d})≈{DecimalText(dv,4)}، احسب لوغ_{b}({a}^({u})×{c}^({v})×{d}^({w})) بالقيم المعطاة، إلى أربع منازل عشرية.";
+    }
+    private static long ApproxValue(IReadOnlyDictionary<string,int> p)
+    {
+        (int a,int c,int d)=p["mode"] switch{0=>(5000,7925,11610),1=>(6826,8614,10000),2=>(11606,10000,20000),3=>(11292,10000,20000),_=>(14650,10000,20000)};
+        return (long)a*p["u"]+(long)c*p["v"]+(long)d*p["w"];
+    }
+    internal static string RootSetText(int b,int p,int q,int m,int u,int mode)
+    {
+        int r=p,s=-q;
+        return mode switch{
+            0=>$"لوغ_{b}(س²+{m})+لوغ_{b}({q})=لوغ_{b}({(p*p+m)*q})",
+            1=>$"لوغ_{b}(({m+1})س+({-p-q*u}))−لوغ_{b}(س+({u}))=لوغ_{b}({m})",
+            2=>$"لوغ_{b}(س²+({m-r-s})س+({m*u+r*s}))−لوغ_{b}(س+({u}))=لوغ_{b}({m})",
+            3=>$"لوغ_{b}(س−{p})−لوغ_{b}({p*p}−س²)=لوغ_{b}({q})",
+            _=>$"لوغ_{b}س+لوغ_{b}(س+({q-p}))=لوغ_{b}({p*q})"
+        };
+    }
+    private static bool RootHolds(int x,IReadOnlyDictionary<string,int> p)
+    {
+        int a=p["p"],q=p["q"],m=p["m"],u=p["u"];
+        if(p["mode"]==0)return x*x+m>0&&(x*x+m)*q==(a*a+m)*q;
+        if(p["mode"]==1){int left=(m+1)*x-a-q*u,right=x+u;return left>0&&right>0&&left==m*right;}
+        if(p["mode"]==2){int left=x*x+(m-a+q)*x+m*u-a*q,right=x+u;return left>0&&right>0&&left==m*right;}
+        if(p["mode"]==3)return false;
+        return x>0&&x+q-a>0&&x*(x+q-a)==a*q;
+    }
+    private static int[] RootSetValues(IReadOnlyDictionary<string,int> p)
+    {
+        int a=p["p"],q=p["q"],u=p["u"],m=p["m"];
+        int[] candidates=p["mode"] switch{0=>[-a,a],1=>[a+(m+q)*u],2=>[-q,a],3=>[],_=>[a,-q]};
+        return candidates.Where(x=>RootHolds(x,p)).OrderBy(x=>x).ToArray();
+    }
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>Supports(f)&&p.Count==13&&
         new[]{"b","u","v","w","mode","p","q","m","ph","digit","rate","balance","decay"}.All(p.ContainsKey)&&
         p["b"] is >=2 and <=5&&p["u"] is >=-3 and <=3&&p["v"] is >=-3 and <=3&&p["w"] is >=-3 and <=3&&p["mode"] is >=0 and <=4&&
@@ -112,20 +152,31 @@ internal static class UaeG10LogarithmPropertiesResponse
     internal static string Format(string f,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded logarithm properties parameters.");
-        if(f==Approx)return DecimalText(5000L*p["u"]+7925L*p["v"]+11610L*p["w"],4);
+        if(f==Approx)return DecimalText(ApproxValue(p),4);
+        if(f==RootSet){var xs=RootSetValues(p);return xs.Length==0?"∅":string.Join(",",xs);}
+        if(f==Sound)return (p["mode"]%3==1?new BigInteger(10*(p["m"]+p["digit"])):BigInteger.Pow(10,p["m"]+p["digit"])).ToString(CultureInfo.InvariantCulture);
         if(f is Expand or Condense)return $"({p["u"]+p["w"]},{p["v"]},{-p["m"]})";
         if(f==Ph)return DecimalText(RoundTenPower(-p["ph"],12),12);
         if(f==Pressure)return RoundTenPower(50-p["digit"],0).ToString(CultureInfo.InvariantCulture);
         if(f==Benford)return DecimalText(BenfordTenths(p["digit"]),1);
         if(f==Payment){var (n,d)=ExactPayment(p);return DecimalText((long)((2*n+d)/(2*d)),2);}
         if(f==Minimum)return DecimalText(InterestCents(p)+1,2);
-        int value=f switch{Truth=>TruthValue(p)?1:0,Equation=>p["p"],BenfordInverse=>p["digit"],Decay=>DecayYears(p),Sound=>p["mode"]%2==0?PowInt(10,p["m"]):10*p["m"],Payable=>OfferCents(p)>InterestCents(p)?1:0,Months=>MonthsNeeded(p),_=>throw new InvalidOperationException()};
+        int value=f switch{Truth=>TruthValue(p)?1:0,Equation=>p["p"],BenfordInverse=>p["digit"],Decay=>DecayYears(p),Payable=>OfferCents(p)>InterestCents(p)?1:0,Months=>MonthsNeeded(p),_=>throw new InvalidOperationException()};
         return value.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer))return false;string raw=Norm(answer);
-        if(f==Approx)return TryScaled(raw,4,out long val)&&val==5000L*p["u"]+7925L*p["v"]+11610L*p["w"];
+        if(f==Approx)return TryScaled(raw,4,out long val)&&val==ApproxValue(p);
+        if(f==RootSet)
+        {
+            var expected=Enumerable.Range(-50,101).Where(x=>RootHolds(x,p)).ToArray();
+            if(raw is "∅" or "{}" or "empty")return expected.Length==0;
+            raw=raw.Trim('{','}');var parts=raw.Split(',');if(parts.Length is <1 or >2)return false;
+            var actual=new List<int>();foreach(var part in parts){if(!int.TryParse(part,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int root)||root is <-50 or >50||!RootHolds(root,p))return false;actual.Add(root);}
+            return actual.Distinct().Count()==actual.Count&&actual.OrderBy(x=>x).SequenceEqual(expected);
+        }
+        if(f==Sound)return BigInteger.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out BigInteger sound)&&(p["mode"]%3==1?sound==10*(p["m"]+p["digit"]):sound==BigInteger.Pow(10,p["m"]+p["digit"]));
         if(f is Expand or Condense)
         {
             raw=raw.Trim('(',')');var parts=raw.Split(',');if(parts.Length!=3)return false;
@@ -147,7 +198,6 @@ internal static class UaeG10LogarithmPropertiesResponse
         if(f==Truth)return x is 0 or 1&&(x==1)==TruthValue(p);
         if(f==BenfordInverse)return x is >=1 and <=9&&BenfordBucket(x,BenfordTenths(p["digit"]));
         if(f==Decay)return x is >=1 and <=200&&Below(p,x)&&!Below(p,x-1);
-        if(f==Sound)return p["mode"]%2==0?x==PowInt(10,p["m"]):x==10*p["m"];
         if(f==Payable)return x is 0 or 1&&(x==1)==(OfferCents(p)>InterestCents(p));
         return f==Months&&x is >=1 and <=240&&Residual(p,PaymentCents(p),x)<=0&&Residual(p,PaymentCents(p),x-1)>0;
     }
