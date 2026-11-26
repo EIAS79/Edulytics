@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 45,
+  "canonicalCode": "G10-U05-L04",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourcePdfPages": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "sourcePrintedPages": [
+    582,
+    583,
+    584,
+    585,
+    586,
+    587
+  ],
+  "primarySkills": [
+    "logarithms.g10.equations_inequalities_models"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l04.direct_rational",
+    "uae.g10.general.u05.l04.quadratic_root_set",
+    "uae.g10.general.u05.l04.one_side_interval",
+    "uae.g10.general.u05.l04.two_sides_interval",
+    "uae.g10.general.u05.l04.wind_distance",
+    "uae.g10.general.u05.l04.rounded_amplitude_ratio",
+    "uae.g10.general.u05.l04.music_key",
+    "uae.g10.general.u05.l04.sound_level"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l03.graph_anchor",
+    "uae.g10.general.u05.l01.is_growth"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10LogarithmicEquation (shared engine extension)",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10LogarithmicEquationResponse.Verify: exact rational exponents and powers, complete root enumeration with original positive-argument checks, interval cell and boundary membership across critical rational points, exact BigInteger half-unit rounding inequalities for amplitude and wind, original integer model equations",
+  "parameterBounds": {
+    "base": "2–5; powers 1–3; reciprocal or increasing; integer/related rational exponents; unknown base with nonzero exponent",
+    "equation": "linear or non-monic quadratic with constructed distinct integer roots -5..5; reject any nonpositive original argument",
+    "inequality": "nonzero signed slopes -3..3, offsets -8..8, strict/weak; empty and unbounded intervals included",
+    "models": "wind forward integer rounding or inverse exact powers; amplitude ratios integer/tenth differences, cent rounding; music exact octaves; sound exact powers of ten"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l04.direct_rational",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.quadratic_root_set",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.one_side_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.two_sides_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.wind_distance",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.rounded_amplitude_ratio",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.music_key",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l04.sound_level",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic/textual prompt; actual graphs in Rich V2 and teacher rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "free proof and derivations",
+    "graph construction and analysis",
+    "general models outside bounded digital variants",
+    "open justification and critique"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10LogarithmicEquationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "A_C_IN_PROGRESS"
+  }
+}
