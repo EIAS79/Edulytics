@@ -544,7 +544,6 @@
       "unit5StageABCClosedLocalOrdinals": [
         1,
         2,
-        5,
         6,
         7,
         8,
@@ -553,7 +552,6 @@
       "unit5StageABCClosedGlobalOrdinals": [
         42,
         43,
-        46,
         47,
         48,
         49,
@@ -604,11 +602,11 @@
         42,
         43
       ],
-      "unit5ClosedCount": 7,
-      "gradeClosedCount": 48,
-      "firstIncompleteGlobalOrdinal": 46,
-      "nextEligibleCanonicalCode": "G10-U05-L05",
-      "nextEligibleLessonTitle": "خواص اللوغاريتمات",
+      "unit5ClosedCount": 6,
+      "gradeClosedCount": 47,
+      "firstIncompleteGlobalOrdinal": 47,
+      "nextEligibleCanonicalCode": "G10-U05-L06",
+      "nextEligibleLessonTitle": "اللوغاريتمات العشرية",
       "stageABCStatus": "UNIT_05_INDEX_ONLY_REPAIR_IN_PROGRESS",
       "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
       "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
@@ -634,7 +632,7 @@
         "completedOrdinals": [
           43
         ],
-        "firstIncompleteGlobalOrdinal": 46,
+        "firstIncompleteGlobalOrdinal": 47,
         "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-043-stage-a-c-checkpoint.json",
         "exceptions": [
           {
@@ -648,6 +646,12 @@
             "status": "A_C_EXPLICIT_GAP",
             "reason": "SOURCE_BODY_NOT_AVAILABLE",
             "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
+          },
+          {
+            "ordinal": 46,
+            "status": "A_C_EXPLICIT_GAP",
+            "reason": "SOURCE_BODY_NOT_AVAILABLE",
+            "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md"
           }
         ]
       }
@@ -1082,8 +1086,8 @@
     "completedOrdinals": [
       43
     ],
-    "firstIncompleteGlobalOrdinal": 46,
-    "firstIncompleteCanonicalCode": "G10-U05-L05",
+    "firstIncompleteGlobalOrdinal": 47,
+    "firstIncompleteCanonicalCode": "G10-U05-L06",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
@@ -1097,6 +1101,11 @@
         "ordinal": 45,
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
+      },
+      {
+        "ordinal": 46,
+        "reason": "SOURCE_BODY_NOT_AVAILABLE",
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md"
       }
     ]
   }
