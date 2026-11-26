@@ -437,7 +437,7 @@ public static class PedagogicalLessonBlueprintContract
             "No publisher prose or artwork embedded. Provenance recorded privately.",
             StringComparison.Ordinal) &&
         string.Equals(document.SourceRightsNote,
-            "All learner-facing explanations and exercises are represented as first-party Edulytics authorship. Owner approval does not grant publisher illustration, page-copy or QR/linked-resource rights; publisher-specific assets must remain excluded.",
+            "Learner-facing explanations and exercises are represented as first-party Edulytics authorship. Owner approval does not grant publisher illustration, page-copy or linked-resource rights; publisher-specific assets must remain excluded.",
             StringComparison.Ordinal) &&
         document.Units is { Count: 18 } &&
         document.Lessons is { Count: 148 } &&
