@@ -8285,8 +8285,23 @@
       "domain": "geometry",
       "canonicalName": "زوايا المماس والقاطع",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l06.inside_angle",
+        "uae.g10.general.u13.l06.inside_missing_arc",
+        "uae.g10.general.u13.l06.inside_adjacent_angle",
+        "uae.g10.general.u13.l06.tangent_chord_angle",
+        "uae.g10.general.u13.l06.tangent_chord_arc",
+        "uae.g10.general.u13.l06.outside_angle",
+        "uae.g10.general.u13.l06.outside_missing_far_arc",
+        "uae.g10.general.u13.l06.two_tangent_angle",
+        "uae.g10.general.u13.l06.two_tangent_minor_arc",
+        "uae.g10.general.u13.l06.inside_arc_expression",
+        "uae.g10.general.u13.l06.outside_arc_expression"
+      ]
     },
     {
       "id": "geometry.circle.g10.segment_products",

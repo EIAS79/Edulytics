@@ -8,6 +8,27 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsSecantAngle(family))
+        {
+            int a=2*random.Next(10,61),b=2*random.Next(10,61),v=2*random.Next(10,81),x=2*random.Next(2,16),k=random.Next(2,5);
+            if(k*x+a+b>=360||k*x+2*a>=360||2*a+b>=360){a=60;b=60;}
+            int far=a+b,near=a;
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.SecantInside=>$"وتران يتقاطعان داخل دائرة؛ القوسان المحصوران بالزاوية ومقابلتها بالرأس {a}° و{b}°. أوجد قياس الزاوية.",
+                UaeG10CircleResponse.SecantInsideArc=>$"زاوية بين وترين داخل دائرة قياسها {(a+b)/2}°؛ أحد القوسين المحصورين {a}°. أوجد القوس الآخر.",
+                UaeG10CircleResponse.SecantAdjacent=>$"قوسا زاوية داخلية ومقابلتها بالرأس {a}° و{b}°. أوجد قياس الزاوية المجاورة.",
+                UaeG10CircleResponse.SecantOn=>$"مماس ووتر عند نقطة التماس يحصران قوسًا قياسه {v}°. أوجد الزاوية.",
+                UaeG10CircleResponse.SecantOnArc=>$"زاوية مماس ووتر عند التماس قياسها {v/2}°. أوجد القوس المحصور.",
+                UaeG10CircleResponse.SecantOutside=>$"قاطعان من نقطة خارج دائرة، القوس البعيد {far}° والقريب {near}°. أوجد قياس الزاوية.",
+                UaeG10CircleResponse.SecantOutsideArc=>$"زاوية خارجية بين قاطع ومماس قياسها {b/2}°، والقوس القريب {near}°. أوجد القوس البعيد.",
+                UaeG10CircleResponse.SecantTwoTangents=>$"مماسان من نقطة خارج دائرة؛ قياس القوس الأصغر بين نقطتي التماس {v}°. أوجد الزاوية بين المماسين.",
+                UaeG10CircleResponse.SecantTangentArc=>$"زاوية مماسين من نقطة خارج دائرة قياسها {180-v}°. أوجد قياس القوس الأصغر.",
+                UaeG10CircleResponse.SecantInsideAlgebra=>$"القوسان المحصوران بزاوية داخلية ومقابلتها قياسهما ({k}س+{a})° و{b}°، وقياس الزاوية {(k*x+a+b)/2}°. أوجد س.",
+                _=>$"القوس البعيد لزاوية خارجية ({k}س+{a})° والقريب {a}°؛ قياس الزاوية {k*x/2}°. أوجد س."
+            };
+            return Problem(family,prompt,"حدد موضع الرأس: على المحيط نصف القوس، داخل الدائرة نصف المجموع، خارجها نصف الفرق.",AssessmentItemType.Numeric,("a",a),("b",b),("v",v),("x",x),("k",k));
+        }
         if(UaeG10CircleResponse.IsTangent(family))
         {
             int k=random.Next(1,9),x=random.Next(2,16),a=random.Next(2,10),b=a+random.Next(2,7),c=random.Next(2,12),mode=random.Next(0,5),yes=random.Next(0,2);
@@ -134,8 +155,22 @@ internal static class UaeG10CircleResponse
     internal const string TangentPerimeter="uae.g10.general.u13.l05.circumscribed_triangle_perimeter";
     internal const string TangentQuad="uae.g10.general.u13.l05.circumscribed_quadrilateral_side";
     internal static bool IsTangent(string? f)=>f is TangentCount or TangentCheck or TangentLength or TangentRadius or TangentCenter or TangentEqual or TangentExpression or TangentPerimeter or TangentQuad;
-    internal static bool Supports(string? f)=>IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsTangent(f)?
+    internal const string SecantInside="uae.g10.general.u13.l06.inside_angle";
+    internal const string SecantInsideArc="uae.g10.general.u13.l06.inside_missing_arc";
+    internal const string SecantAdjacent="uae.g10.general.u13.l06.inside_adjacent_angle";
+    internal const string SecantOn="uae.g10.general.u13.l06.tangent_chord_angle";
+    internal const string SecantOnArc="uae.g10.general.u13.l06.tangent_chord_arc";
+    internal const string SecantOutside="uae.g10.general.u13.l06.outside_angle";
+    internal const string SecantOutsideArc="uae.g10.general.u13.l06.outside_missing_far_arc";
+    internal const string SecantTwoTangents="uae.g10.general.u13.l06.two_tangent_angle";
+    internal const string SecantTangentArc="uae.g10.general.u13.l06.two_tangent_minor_arc";
+    internal const string SecantInsideAlgebra="uae.g10.general.u13.l06.inside_arc_expression";
+    internal const string SecantOutsideAlgebra="uae.g10.general.u13.l06.outside_arc_expression";
+    internal static bool IsSecantAngle(string? f)=>f is SecantInside or SecantInsideArc or SecantAdjacent or SecantOn or SecantOnArc or SecantOutside or SecantOutsideArc or SecantTwoTangents or SecantTangentArc or SecantInsideAlgebra or SecantOutsideAlgebra;
+    internal static bool Supports(string? f)=>IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsSecantAngle(f)?
+        p.Count==5&&new[]{"a","b","v","x","k"}.All(p.ContainsKey)&&p["a"] is >=20 and <=120&&p["a"]%2==0&&p["b"] is >=20 and <=120&&p["b"]%2==0&&p["v"] is >=20 and <=160&&p["v"]%2==0&&p["x"] is >=4 and <=30&&p["x"]%2==0&&p["k"] is >=2 and <=4&&p["k"]*p["x"]+p["a"]+p["b"]<360&&p["k"]*p["x"]+2*p["a"]<360&&2*p["a"]+p["b"]<360:
+        IsTangent(f)?
         p.Count==7&&new[]{"k","x","a","b","c","mode","yes"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=15&&p["a"] is >=2 and <=9&&p["b"]-p["a"] is >=2 and <=6&&p["c"] is >=2 and <=11&&p["mode"] is >=0 and <=4&&p["yes"] is >=0 and <=1:
         IsInscribed(f)?
         p.Count==5&&new[]{"v","x","k","a","b"}.All(p.ContainsKey)&&p["v"] is >=20 and <=80&&p["x"] is >=2 and <=15&&p["k"] is >=1 and <=8&&p["a"] is >=2 and <=4&&p["b"] is >=1 and <=5:
@@ -148,6 +183,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsSecantAngle(f))
+        {
+            int a=p["a"],b=p["b"],v=p["v"],x=p["x"];
+            return f switch{SecantInside=>((a+b)/2,1),SecantInsideArc=>(b,1),SecantAdjacent=>(180-(a+b)/2,1),SecantOn=>(v/2,1),SecantOnArc=>(v,1),SecantOutside=>(b/2,1),SecantOutsideArc=>(a+b,1),SecantTwoTangents=>(180-v,1),SecantTangentArc=>(v,1),SecantInsideAlgebra or SecantOutsideAlgebra=>(x,1),_=>throw new InvalidOperationException()};
+        }
         if(IsTangent(f))
         {
             int k=p["k"],x=p["x"],a=p["a"],b=p["b"],c=p["c"];
@@ -189,6 +229,11 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsSecantAngle(f))
+        {
+            long a=p["a"],b=p["b"],v=p["v"],x=p["x"],k=p["k"];
+            return f switch{SecantInside=>2*n==(a+b)*d,SecantInsideArc=>n+a*d==(a+b)*d,SecantAdjacent=>2*n+(a+b)*d==360*d,SecantOn=>2*n==v*d,SecantOnArc=>n==2*(v/2)*d,SecantOutside=>2*n==((a+b)-a)*d,SecantOutsideArc=>n-a*d==b*d,SecantTwoTangents=>n+v*d==180*d,SecantTangentArc=>n+(180-v)*d==180*d,SecantInsideAlgebra=>k*n+(a+b)*d==(k*x+a+b)*d,SecantOutsideAlgebra=>k*n+a*d-a*d==k*x*d,_=>false};
+        }
         if(IsTangent(f))
         {
             long k=p["k"],x=p["x"],a=p["a"],b=p["b"],c=p["c"],mode=p["mode"],yes=p["yes"];
