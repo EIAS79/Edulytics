@@ -219,6 +219,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l15.altitude_squared",
             "uae.g10.general.u14.l15.leg_squared",
             "uae.g10.general.u14.l15.projection_from_leg",
+            "uae.g10.general.u14.l16.triangle_classification",
+            "uae.g10.general.u14.l16.coordinate_distance_squared",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
