@@ -191,6 +191,16 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CircleResponse.AreaSectorApprox,
             UaeG10CircleResponse.AreaSegmentApprox,
             UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l01.ratio_six_exact",
+            "uae.g10.general.u14.l01.side_opposite_exact",
+            "uae.g10.general.u14.l01.side_adjacent_exact",
+            "uae.g10.general.u14.l01.side_hypotenuse_exact",
+            "uae.g10.general.u14.l01.angle_inverse_sine_rounded",
+            "uae.g10.general.u14.l01.angle_inverse_cosine_rounded",
+            "uae.g10.general.u14.l01.angle_inverse_tangent_rounded",
+            "uae.g10.general.u14.l01.special_angle_exact",
+            "uae.g10.general.u14.l01.elevation_height_rounded",
+            "uae.g10.general.u14.l01.depression_distance_rounded",
             UaeG10ExponentialEquationResponse.Equation,
             UaeG10ExponentialEquationResponse.Inequality,
             UaeG10ExponentialEquationResponse.Factor,
@@ -1411,6 +1421,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigResponse.Supports(family))
+            return UaeG10TrigResponse.Verify(family,parameters,answer);
 
         if (UaeG10CircleResponse.Supports(family))
             return UaeG10CircleResponse.Verify(family,parameters,answer);
@@ -3934,6 +3947,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10TrigResponse.Supports(family))
+            return BuildG10Trig(family,random,difficulty);
 
         if (UaeG10CircleResponse.Supports(family))
             return BuildG10Circle(family,random,difficulty);
@@ -10162,6 +10178,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigResponse.Supports(problem.Family))
+            return UaeG10TrigResponse.Format(problem.Family,p);
 
         if (UaeG10CircleResponse.Supports(problem.Family))
             return UaeG10CircleResponse.Format(problem.Family,p);
