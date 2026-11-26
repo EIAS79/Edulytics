@@ -259,6 +259,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u15.l05.cylinder_radius",
             "uae.g10.general.u15.l05.equal_volume_prism_height",
             "uae.g10.general.u15.l05.removed_rectangular_volume",
+            "uae.g10.general.u15.l06.rectangular_pyramid_volume",
+            "uae.g10.general.u15.l06.cone_volume_pi_coefficient",
+            "uae.g10.general.u15.l06.cone_volume_from_slant_pi_coefficient",
+            "uae.g10.general.u15.l06.square_pyramid_volume_from_slant",
+            "uae.g10.general.u15.l06.cone_height",
+            "uae.g10.general.u15.l06.cone_radius",
+            "uae.g10.general.u15.l06.composite_cylinder_cone_pi_coefficient",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1552,6 +1559,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PyramidVolumeResponse.Supports(family))
+            return UaeG10PyramidVolumeResponse.Verify(family,parameters,answer);
 
         if (UaeG10PrismVolumeResponse.Supports(family))
             return UaeG10PrismVolumeResponse.Verify(family,parameters,answer);
@@ -4141,6 +4151,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10PyramidVolumeResponse.Supports(family))
+            return BuildG10PyramidVolume(family,random,difficulty);
 
         if (UaeG10PrismVolumeResponse.Supports(family))
             return BuildG10PrismVolume(family,random,difficulty);
@@ -10435,6 +10448,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10PyramidVolumeResponse.Supports(problem.Family))
+            return UaeG10PyramidVolumeResponse.Format(problem.Family,p);
 
         if (UaeG10PrismVolumeResponse.Supports(problem.Family))
             return UaeG10PrismVolumeResponse.Format(problem.Family,p);

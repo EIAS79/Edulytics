@@ -8774,8 +8774,19 @@
       "domain": "geometry",
       "canonicalName": "حجم الأشكال الهرمية والمخروطية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l06.rectangular_pyramid_volume",
+        "uae.g10.general.u15.l06.cone_volume_pi_coefficient",
+        "uae.g10.general.u15.l06.cone_volume_from_slant_pi_coefficient",
+        "uae.g10.general.u15.l06.square_pyramid_volume_from_slant",
+        "uae.g10.general.u15.l06.cone_height",
+        "uae.g10.general.u15.l06.cone_radius",
+        "uae.g10.general.u15.l06.composite_cylinder_cone_pi_coefficient"
+      ]
     },
     {
       "id": "geometry.spatial.points_lines_planes",
