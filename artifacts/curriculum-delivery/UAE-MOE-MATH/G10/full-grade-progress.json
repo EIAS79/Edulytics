@@ -1250,7 +1250,7 @@
     }
   ],
   "sourceParity": "UNKNOWN",
-  "stageABCFinalHandoff": "SUPPLEMENTAL_REPAIR_IN_PROGRESS_140_BODY_REVIEWED_8_REPAIRS_PENDING_STAGE_D_NOT_STARTED",
+  "stageABCFinalHandoff": "SUPPLEMENTAL_REPAIR_IN_PROGRESS_141_BODY_REVIEWED_7_REPAIRS_PENDING_STAGE_D_NOT_STARTED",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
   "repairValidation": {
@@ -1260,6 +1260,7 @@
       43,
       44,
       45,
+      46,
       50,
       98,
       99,
@@ -1299,17 +1300,12 @@
       144,
       145
     ],
-    "firstIncompleteGlobalOrdinal": 46,
-    "firstIncompleteCanonicalCode": "G10-U05-L05",
+    "firstIncompleteGlobalOrdinal": 47,
+    "firstIncompleteCanonicalCode": "G10-U05-L06",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
     "exceptions": [
-      {
-        "ordinal": 46,
-        "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md"
-      },
       {
         "ordinal": 47,
         "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
@@ -1362,8 +1358,8 @@
       143
     ],
     "lastScannedOrdinal": 148,
-    "gradeClosedCount": 140,
-    "unresolvedSourceGapCount": 8,
+    "gradeClosedCount": 141,
+    "unresolvedSourceGapCount": 7,
     "sourceReverification": {
       "date": "2026-11-26",
       "uploadedFiles": 7,
@@ -1389,7 +1385,7 @@
       "testsRun": "WRITTEN_NOT_RUN",
       "stageD": "NOT_STARTED"
     },
-    "unresolvedRepairCount": 8,
+    "unresolvedRepairCount": 7,
     "missingMatchingSourceBodyCount": 0,
     "resolvedHistoricalExceptions": [
       {
@@ -1401,6 +1397,11 @@
         "ordinal": 45,
         "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-045-index-repair-source-exception.md"
+      },
+      {
+        "ordinal": 46,
+        "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-046-index-repair-source-exception.md"
       }
     ],
     "supplementalSourceRepair": {
@@ -1419,10 +1420,10 @@
       ],
       "completedOrdinals": [
         44,
-        45
+        45,
+        46
       ],
       "remainingOrdinals": [
-        46,
         47,
         48,
         49,
@@ -1431,7 +1432,7 @@
         147,
         148
       ],
-      "checkpointCommit": "78d8cd656115f77c90321f7e77780944f0e64654",
+      "checkpointCommit": "151d1f674645cd636f3da9f7b215cd63d1adda96",
       "inventoryCommit": "e5e0c63a5a390c6f5f54a86a096de4b1187d8069",
       "scope": "SELECTED_MATCHING_BODY_REPAIR_NOT_FULL_BOOK_PARITY",
       "stageD": "NOT_STARTED"
