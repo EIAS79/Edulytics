@@ -1,3 +1,8 @@
 # استثناء إصلاح 48 — اللوغاريتمات الطبيعية
 
 الحالة السابقة: READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY. المتقدم 2025–2026 PDF12 يذكر 8-7 ولكن المتن ينتهي بالوحدة الرابعة؛ المتقدم 2018–2019 PDF18 يذكر الوحدة الثامنة ولكن متن الجزء يبدأ بالوحدة التاسعة PDF25. فهرس التطبيقي PDF10 يتضمن الدوال والمعادلات الأسية لا درس اللوغاريتمات المطابق؛ بقية الكتب المتاحة في نطاقات الجبر والهندسة لا توفر متن هذا الدرس. لم يُثبت متن مطابق. لا تعديل للمحتوى الموجود من الفهرس، ولا إغلاق A–B–C أو Stage D. استثناء SOURCE_BODY_NOT_AVAILABLE، ثم الانتقال إلى المستهدف 49 وفق قرار المالك.
+
+
+## Supplemental repair — superseded
+
+The owner-approved matching body is present in رياضيات الدوال متقدم.pdf PDF54–60 / printed605–611. Prior source availability exception is historical; current selected scope is documented in lesson-048-source-evidence.md and lesson-048-source-elements.json.
