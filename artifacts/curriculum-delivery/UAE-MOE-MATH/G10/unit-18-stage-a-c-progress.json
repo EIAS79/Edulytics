@@ -11,16 +11,18 @@
   "ownerApprovedLessonCount": 148,
   "ownerApprovedUnitCount": 18,
   "closedGlobalOrdinals": [
-    146
+    146,
+    147,
+    148
   ],
-  "gradeClosedCount": 146,
-  "firstIncompleteGlobalOrdinal": 147,
+  "gradeClosedCount": 148,
+  "firstIncompleteGlobalOrdinal": null,
   "sourceBookScope": "SUPPLEMENTAL_APPLIED_2023_2024_PART1_MATCHING_BODIES_PDF20_46",
-  "stageABCStatus": "UNIT18_1_BODY_REVIEWED_2_REPAIRS_PENDING_STAGE_D_NOT_RUN",
+  "stageABCStatus": "UNIT18_3_OF_3_SELECTED_BODY_SCOPE_COMPLETE_STAGE_D_NOT_RUN",
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
-  "nextEligibleCanonicalCode": "G10-U18-L02",
+  "nextEligibleCanonicalCode": null,
   "historicalIndexOnlyAuthoredOrdinals": [
     146,
     147,
@@ -28,22 +30,30 @@
   ],
   "repairValidation": {
     "completedOrdinals": [
-      146
+      146,
+      147,
+      148
     ],
     "skippedAlreadyBodyReviewedOrdinals": [],
-    "exceptions": [
+    "exceptions": [],
+    "firstIncompleteGlobalOrdinal": null,
+    "status": "SUPPLEMENTAL_SELECTED_BODY_REPAIR_COMPLETE",
+    "resolvedHistoricalExceptions": [
       {
         "ordinal": 147,
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-147-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-147-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-147-stage-a-c-checkpoint.json"
       },
       {
         "ordinal": 148,
         "reason": "SOURCE_BODY_NOT_AVAILABLE",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-148-index-repair-source-exception.md"
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-148-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpoint": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-148-stage-a-c-checkpoint.json"
       }
-    ],
-    "firstIncompleteGlobalOrdinal": 147,
-    "status": "SUPPLEMENTAL_SOURCE_REPAIR_IN_PROGRESS"
-  }
+    ]
+  },
+  "sourceParity": "UNKNOWN"
 }
