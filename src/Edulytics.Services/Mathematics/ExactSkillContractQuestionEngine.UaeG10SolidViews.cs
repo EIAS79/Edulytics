@@ -14,7 +14,7 @@ internal static class UaeG10SolidViewsResponse {
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>Supports(f)&&p.Count==5&&p.TryGetValue("a",out int a)&&a>=1&&a<=4&&p.TryGetValue("b",out int b)&&b>=0&&b<=4&&p.TryGetValue("c",out int c)&&c>=0&&c<=4&&p.TryGetValue("d",out int d)&&d>=0&&d<=4&&p.TryGetValue("k",out int k)&&k>=0&&k<6;
     internal static string CrossPrompt(int k){
         string q=k switch{0=>"منشور ثلاثي قائم، قطع موازٍ للقاعدة",1=>"أسطوانة قائمة، قطع عمودي على المحور",2=>"أسطوانة قائمة، قطع عبر المحور",3=>"هرم قاعدته مربعة، قطع موازٍ للقاعدة",4=>"كرة، قطع يمر بالمركز",_=>"هرم رباعي، قطع يمر بالرأس ويقطع القاعدة في قطعة مستقيمة داخلها"};
-        return $"{q}. اختر نوع المقطع: 1) مثلث، 2) دائرة، 3) مستطيل غير ملزم أن يكون مربعًا، 4) مربع. اختر الأكثر تحديدًا؛ للأسطوانة عبر المحور اختر 3.";
+        return $"{q}. اختر نوع المقطع: 1) مثلث، 2) دائرة، 3) مستطيل، 4) مربع. اختر الشكل الذي تضمنه المعطيات دون افتراض تساوي أضلاع إضافية.";
     }
     internal static string Format(string f,IReadOnlyDictionary<string,int> p){
         if(!Valid(f,p))throw new InvalidOperationException("Invalid solid-view parameters");
