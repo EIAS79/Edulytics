@@ -37,7 +37,8 @@ public enum RichLessonVisualKind
     VennDiagram = 17,
     CoordinatePlane = 18,
     // Independently authored comparison rows; stable existing enum IDs are unchanged.
-    ComparisonTable = 19
+    ComparisonTable = 19,
+    ClosedCoordinatePolygon = 20
 }
 
 public sealed class RichLessonContentV2Document
