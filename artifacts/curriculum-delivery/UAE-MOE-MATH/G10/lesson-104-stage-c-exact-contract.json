@@ -1,0 +1,24 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07:C104",
+  "skillId": "geometry.circle.g10.segment_products",
+  "familyIds": [
+    "uae.g10.general.u13.l07.intersecting_chord_missing",
+    "uae.g10.general.u13.l07.intersecting_chord_quadratic",
+    "uae.g10.general.u13.l07.two_secants_whole",
+    "uae.g10.general.u13.l07.two_secants_inner",
+    "uae.g10.general.u13.l07.tangent_length",
+    "uae.g10.general.u13.l07.tangent_external",
+    "uae.g10.general.u13.l07.tangent_secant_quadratic",
+    "uae.g10.general.u13.l07.chord_sagitta_radius",
+    "uae.g10.general.u13.l07.tangent_rounded"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "k 1..8; x 2..11; b 2..9; e 2..11; i 2..15; lengths positive; whole>external; rounded tangent 2dp",
+  "teacherScoring": [
+    "proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}

@@ -8,6 +8,24 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsSpecialSegment(family))
+        {
+            int k=random.Next(1,9),x=random.Next(2,12),b=random.Next(2,10),e=random.Next(2,12),i=random.Next(2,16);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.SegmentChord=>$"وتران يتقاطعان داخل دائرة؛ جزآ الأول {3*k} و{8*k} سم، وأحد جزأي الثاني {4*k} سم. أوجد الجزء الآخر.",
+                UaeG10CircleResponse.SegmentChordAlgebra=>$"جزآ وتر متقاطع طولهما س و(س+{b}) سم، وجزآ الآخر {x} و{x+b} سم. أوجد قيمة س الموجبة.",
+                UaeG10CircleResponse.SegmentSecantWhole=>$"قاطع من نقطة خارج دائرة، خارجيه {3*k} وطوله الكامل {12*k} سم. قاطع ثانٍ خارجيه {4*k} سم. أوجد طوله الكامل.",
+                UaeG10CircleResponse.SegmentSecantInner=>$"قاطع خارجيه {3*k} وطوله الداخلي {9*k} سم. قاطع آخر من النقطة نفسها خارجيه {4*k} سم. أوجد طوله الداخلي.",
+                UaeG10CircleResponse.SegmentTangent=>$"قاطع خارجيه {4*k} وطوله الكامل {9*k} سم، ومماس من النقطة نفسها. أوجد طول المماس.",
+                UaeG10CircleResponse.SegmentTangentExternal=>$"مماس طوله {6*k} سم، وقاطع من النقطة نفسها طوله الكامل {9*k} سم. أوجد الجزء الخارجي.",
+                UaeG10CircleResponse.SegmentTangentQuadratic=>$"مماس طوله {6*k} سم، والجزء الداخلي لقاطع من النقطة نفسها {9*k} سم. أوجد طول الجزء الخارجي.",
+                UaeG10CircleResponse.SegmentSagitta=>$"قوس دائري فوق وتر طوله {18*k} سم. ارتفاع القوس فوق منتصف الوتر {3*k} سم. أوجد نصف قطر الدائرة.",
+                _=>$"قاطع من نقطة خارج دائرة خارجيه {e} سم وداخليه {i} سم. أوجد طول المماس من النقطة نفسها مقربًا لأقرب جزء من مائة."
+            };
+            // 6k tangent and inner 9k imply e=3k, since 3k*(3k+9k)=36k².
+            return Problem(family,prompt,"وتران داخل: جزء×جزء؛ قاطعان خارج: خارجي×كامل؛ مماس وقاطع: مربع المماس=خارجي×كامل.",family==UaeG10CircleResponse.SegmentApprox?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("k",k),("x",x),("b",b),("e",e),("i",i));
+        }
         if(UaeG10CircleResponse.IsSecantAngle(family))
         {
             int a=2*random.Next(10,61),b=2*random.Next(10,61),v=2*random.Next(10,81),x=2*random.Next(2,16),k=random.Next(2,5);
@@ -167,8 +185,20 @@ internal static class UaeG10CircleResponse
     internal const string SecantInsideAlgebra="uae.g10.general.u13.l06.inside_arc_expression";
     internal const string SecantOutsideAlgebra="uae.g10.general.u13.l06.outside_arc_expression";
     internal static bool IsSecantAngle(string? f)=>f is SecantInside or SecantInsideArc or SecantAdjacent or SecantOn or SecantOnArc or SecantOutside or SecantOutsideArc or SecantTwoTangents or SecantTangentArc or SecantInsideAlgebra or SecantOutsideAlgebra;
-    internal static bool Supports(string? f)=>IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsSecantAngle(f)?
+    internal const string SegmentChord="uae.g10.general.u13.l07.intersecting_chord_missing";
+    internal const string SegmentChordAlgebra="uae.g10.general.u13.l07.intersecting_chord_quadratic";
+    internal const string SegmentSecantWhole="uae.g10.general.u13.l07.two_secants_whole";
+    internal const string SegmentSecantInner="uae.g10.general.u13.l07.two_secants_inner";
+    internal const string SegmentTangent="uae.g10.general.u13.l07.tangent_length";
+    internal const string SegmentTangentExternal="uae.g10.general.u13.l07.tangent_external";
+    internal const string SegmentTangentQuadratic="uae.g10.general.u13.l07.tangent_secant_quadratic";
+    internal const string SegmentSagitta="uae.g10.general.u13.l07.chord_sagitta_radius";
+    internal const string SegmentApprox="uae.g10.general.u13.l07.tangent_rounded";
+    internal static bool IsSpecialSegment(string? f)=>f is SegmentChord or SegmentChordAlgebra or SegmentSecantWhole or SegmentSecantInner or SegmentTangent or SegmentTangentExternal or SegmentTangentQuadratic or SegmentSagitta or SegmentApprox;
+    internal static bool Supports(string? f)=>IsSpecialSegment(f)||IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsSpecialSegment(f)?
+        p.Count==5&&new[]{"k","x","b","e","i"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=11&&p["b"] is >=2 and <=9&&p["e"] is >=2 and <=11&&p["i"] is >=2 and <=15:
+        IsSecantAngle(f)?
         p.Count==5&&new[]{"a","b","v","x","k"}.All(p.ContainsKey)&&p["a"] is >=20 and <=120&&p["a"]%2==0&&p["b"] is >=20 and <=120&&p["b"]%2==0&&p["v"] is >=20 and <=160&&p["v"]%2==0&&p["x"] is >=4 and <=30&&p["x"]%2==0&&p["k"] is >=2 and <=4&&p["k"]*p["x"]+p["a"]+p["b"]<360&&p["k"]*p["x"]+2*p["a"]<360&&2*p["a"]+p["b"]<360:
         IsTangent(f)?
         p.Count==7&&new[]{"k","x","a","b","c","mode","yes"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=15&&p["a"] is >=2 and <=9&&p["b"]-p["a"] is >=2 and <=6&&p["c"] is >=2 and <=11&&p["mode"] is >=0 and <=4&&p["yes"] is >=0 and <=1:
@@ -183,6 +213,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsSpecialSegment(f))
+        {
+            int k=p["k"],x=p["x"],e=p["e"],i=p["i"];
+            return f switch{SegmentChord=>(6*k,1),SegmentChordAlgebra=>(x,1),SegmentSecantWhole=>(9*k,1),SegmentSecantInner=>(5*k,1),SegmentTangent=>(6*k,1),SegmentTangentExternal=>(4*k,1),SegmentTangentQuadratic=>(3*k,1),SegmentSagitta=>(15*k,1),SegmentApprox=>((long)Math.Round(Math.Sqrt(e*(e+i))*100,MidpointRounding.AwayFromZero),100),_=>throw new InvalidOperationException()};
+        }
         if(IsSecantAngle(f))
         {
             int a=p["a"],b=p["b"],v=p["v"],x=p["x"];
@@ -215,7 +250,7 @@ internal static class UaeG10CircleResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid G10 circle parameters");
         var(n,d)=Answer(f,p);
-        if(f is Approx or ArcApprox or ChordApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        if(f is Approx or ArcApprox or ChordApprox or SegmentApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
         if(f==ArcCoeff){long a=n,b=d;while(b!=0)(a,b)=(b,a%b);n/=a;d/=a;}
         return n%d==0?(n/d).ToString(CultureInfo.InvariantCulture):n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
@@ -229,6 +264,21 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsSpecialSegment(f))
+        {
+            long k=p["k"],x=p["x"],b=p["b"],e=p["e"],i=p["i"];
+            if(n<=0)return false;
+            if(f==SegmentChord)return 4*k*n==24*k*k*d;
+            if(f==SegmentChordAlgebra)return n*(n+b*d)==x*(x+b)*d*d;
+            if(f==SegmentSecantWhole)return 4*k*n==36*k*k*d&&n>4*k*d;
+            if(f==SegmentSecantInner)return 4*k*(4*k*d+n)==36*k*k*d;
+            if(f==SegmentTangent)return n*n==36*k*k*d*d;
+            if(f==SegmentTangentExternal)return 9*k*n==36*k*k*d&&n<9*k*d;
+            if(f==SegmentTangentQuadratic)return n*(n+9*k*d)==36*k*k*d*d;
+            if(f==SegmentSagitta)return 3*k*(2*n-3*k*d)==81*k*k*d;
+            double actual=Math.Sqrt(e*(e+i));
+            return f==SegmentApprox&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
+        }
         if(IsSecantAngle(f))
         {
             long a=p["a"],b=p["b"],v=p["v"],x=p["x"],k=p["k"];

@@ -8308,8 +8308,21 @@
       "domain": "geometry",
       "canonicalName": "جداءات قطعتَي الأوتار والقواطع",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l07.intersecting_chord_missing",
+        "uae.g10.general.u13.l07.intersecting_chord_quadratic",
+        "uae.g10.general.u13.l07.two_secants_whole",
+        "uae.g10.general.u13.l07.two_secants_inner",
+        "uae.g10.general.u13.l07.tangent_length",
+        "uae.g10.general.u13.l07.tangent_external",
+        "uae.g10.general.u13.l07.tangent_secant_quadratic",
+        "uae.g10.general.u13.l07.chord_sagitta_radius",
+        "uae.g10.general.u13.l07.tangent_rounded"
+      ]
     },
     {
       "id": "geometry.circle.g10.equations",

@@ -1,1 +1,3 @@
-Lesson 104 القطع الخاصة في الدائرة: approved canonical index based on 01متقدم_.pdf page 9 and Applied crosswalk page13. Textbook body not exhaustively audited. Original Edulytics Arabic explanation, six distinct worked cases and three visuals. No 100% source claim. Stage D tests written but not run; manual geometry review required.
+# Lesson 104 — matching source body
+
+03.pdf SHA-256 0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b, physical 143–149 printed 532–538 lesson 8-7 visually reviewed. Six existing worked examples kept, thirteen new originals address complete secant length, all three product theorems, quadratic and radical solutions, circular arc modeling, similarity proofs, and error analysis. Four new representations and nine exact/rounded bounded families. Teacher review for proofs and construction. Stage D not run. No exhaustive item parity.
