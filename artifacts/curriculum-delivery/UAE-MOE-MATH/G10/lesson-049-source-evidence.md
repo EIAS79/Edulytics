@@ -1,5 +1,6 @@
-# Lesson49 استخدام الدوال الأسية واللوغاريتمية
-
-Title only: Advanced 2025–2026 `01متقدم_.pdf` PDF12 Unit8 Lesson8-8, body missing.
-
-Owner approved canonical index and available seven books. Edulytics original 12 worked examples, 4 visuals and 5 explanations. No 100% source-equivalence claim, teacher assessment needed, Stage D NOT_RUN and productionRouting=false.
+# الدرس 49 — استخدام الدوال الأسية واللوغاريتمية
+الهوية الثابتة G10-U05-L08 / PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049. المصدر الموافق رياضيات الدوال متقدم.pdf، SHA-256 2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c، PDF61–69 / مطبوع612–620، الدرس 8-8 مع مختبر المرابحة قبل الدرس ومختبر التبريد بعده. فُحص متن الأمثلة والتمارين والرسوم والأنشطة. سنة الإصدار المدرسية والفصل غير مثبتين في المقتطف؛ الفهرس الأصلي يحتفظ بالترتيب نفسه. 
+- 84 عنصرًا محددًا في سجل المصدر المختار، 16 عنصر مراجعة تراكمية منفصلة. 38 مثالًا عربيًا أصليًا، 14 تمثيلًا منها 8 رسوم CartesianPlot، و21 عائلة رقمية (18 جديدة و3 معاد استخدامها من التبريد).
+- الأهداف: النمو والاضمحلال المستمران، عمر النصف، التقدير الزمني، المقارنة والتقاطع، اللوجستي وحد الاستيعاب، المختبران والبيانات.
+- نتائج الفحص البنيوي وتزامن المحتوى والسجلات: ناجحة؛ 75 نقطة و24,801 حالة تحقق حسابي مستقلة ضمن النطاق الموثق. لا تعتبر اختبارات تشغيل.
+- تقويم المعلم للرسم الحر والمختبرات والنمذجة المفتوحة. full source parity UNKNOWN; tests WRITTEN_NOT_RUN; Stage D NOT_STARTED; productionRouting=false.
