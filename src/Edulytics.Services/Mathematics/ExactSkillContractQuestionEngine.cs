@@ -266,6 +266,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u15.l06.cone_height",
             "uae.g10.general.u15.l06.cone_radius",
             "uae.g10.general.u15.l06.composite_cylinder_cone_pi_coefficient",
+            "uae.g10.general.u15.l07.great_circle_classification",
+            "uae.g10.general.u15.l07.great_circle_intersections",
+            "uae.g10.general.u15.l07.great_circle_uniqueness",
+            "uae.g10.general.u15.l07.arc_length_pi_coefficient",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1559,6 +1563,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SphericalGeometryResponse.Supports(family))
+            return UaeG10SphericalGeometryResponse.Verify(family,parameters,answer);
 
         if (UaeG10PyramidVolumeResponse.Supports(family))
             return UaeG10PyramidVolumeResponse.Verify(family,parameters,answer);
@@ -4151,6 +4158,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10SphericalGeometryResponse.Supports(family))
+            return BuildG10SphericalGeometry(family,random,difficulty);
 
         if (UaeG10PyramidVolumeResponse.Supports(family))
             return BuildG10PyramidVolume(family,random,difficulty);
@@ -10448,6 +10458,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10SphericalGeometryResponse.Supports(problem.Family))
+            return UaeG10SphericalGeometryResponse.Format(problem.Family,p);
 
         if (UaeG10PyramidVolumeResponse.Supports(problem.Family))
             return UaeG10PyramidVolumeResponse.Format(problem.Family,p);

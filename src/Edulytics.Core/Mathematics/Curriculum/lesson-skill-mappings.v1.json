@@ -18020,24 +18020,33 @@
     {
       "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
       "primarySkills": [
+        "geometry.spatial.spherical_geometry"
+      ],
+      "secondarySkills": [
         "geometry.spatial.points_lines_planes"
       ],
-      "secondarySkills": [],
-      "sourceType": "OWNER_INDEX_02_2_GENERAL_SOLIDS_EXCERPT",
+      "sourceType": "OWNER_APPROVED_MATCHING_SOURCE_BODY",
       "officialOutcomeMapped": false,
-      "mappingConfidence": "INDEX_ONLY_NO_FULL_BODY_PARITY",
+      "mappingConfidence": "MATCHING_BODY_PAGE_LEVEL_REVIEW",
       "evidence": [
-        "Approved index maps الهندسة الفراغية to older 02-2.pdf PDF101.",
-        "Six original examples and 3 didactic visuals; exact source lesson not audited during device disconnection."
+        "02-2.pdf physical 101–106; printed 625–630; lesson 9-7",
+        "Corrected core mismatch: spherical not Cartesian geometry; 19 examples, seven tables/chains, four exact families"
       ],
-      "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
-      "practiceMechanic": "G10_U15_L07_TEACHER_ONLY",
-      "allowedQuestionFamilies": [],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U15_L07_SPHERICAL_GEOMETRY_EXACT_AND_TEACHER_REVIEW",
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u15.l07.great_circle_classification",
+        "uae.g10.general.u15.l07.great_circle_intersections",
+        "uae.g10.general.u15.l07.great_circle_uniqueness",
+        "uae.g10.general.u15.l07.arc_length_pi_coefficient"
+      ],
       "forbiddenQuestionFamilies": [
         "supporting.exponentials.solve_exponent"
       ],
       "teacherReviewRequiredFor": [
-        "3D geometric reasoning and hand sketches"
+        "Draw and identify great circles, short arcs and spherical triangles: 1 point center/points, 2 correct arcs/labels, 1 explanation.",
+        "Compare Euclidean and spherical axioms: 1 correct claim, 2 justification/counterexample, 1 domain distinction.",
+        "Real-world globe measurement: 1 assumptions, 2 calculation, 1 unit and interpretation."
       ],
       "officialOutcomeCodes": []
     },

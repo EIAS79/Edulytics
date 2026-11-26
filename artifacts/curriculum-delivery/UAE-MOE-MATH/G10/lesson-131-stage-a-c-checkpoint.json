@@ -7,29 +7,45 @@
   "unitNumber": 15,
   "lessonTitle": "الهندسة الفراغية",
   "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
-  "status": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
-  "sourceBodyVerified": false,
-  "sourceVerificationScope": "APPROVED_INDEX_ONLY_BODY_UNVERIFIED_DEVICE_OFFLINE",
-  "ownerApprovedIndexOnlyAuthoring": true,
+  "sourceBodyVerified": true,
+  "sourceVerificationScope": "OWNER_APPROVED_ONE_MATCHING_SOURCE_BODY_REVIEWED",
+  "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
   "canonicalUnitCount": 18,
   "sourceBook": "02-2.pdf",
   "sourcePdfIndexStart": 101,
   "sourceElementDenominatorForThisLesson": null,
-  "sourceElementsMapped": null,
-  "originalArabicWorkedExamples": 6,
-  "originalVisualModels": 3,
+  "sourceElementsMapped": 6,
+  "originalArabicWorkedExamples": 19,
+  "originalVisualModels": 7,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l07-ar.rich-lesson-v2.json",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u15l07.test.cjs"
+    "tests/academic-uae-grade10-arabic-u15l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10SphericalGeometryTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_G10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 132,
   "nextEligibleCanonicalCode": "G10-U15-L08",
-  "closureBasis": "INDEX_APPROVED_AND_ORIGINAL_MATH_SIX_WORKED_EXAMPLES_THREE_VISUALS"
+  "closureBasis": "MATCHING_BODY_REVIEWED_EXISTING_CONTENT_REPAIRED_SOURCE_LINKED_STAGE_ABC",
+  "priorStatus": "READY_FOR_STAGE_D_ORIGINAL_INDEX_ONLY",
+  "sourceLocator": "02-2.pdf physical 101–106; printed 625–630; lesson 9-7",
+  "stageCStatus": "EXACT_FAMILIES_AUTHORED_AND_TEACHER_RUBRIC",
+  "primarySkills": [
+    "geometry.spatial.spherical_geometry"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u15.l07.great_circle_classification",
+    "uae.g10.general.u15.l07.great_circle_intersections",
+    "uae.g10.general.u15.l07.great_circle_uniqueness",
+    "uae.g10.general.u15.l07.arc_length_pi_coefficient"
+  ],
+  "sourceLimitations": "One approved matching older body; page-level ledger, not exhaustive item denominator; spherical drawings teacher reviewed; runtime and Stage D not tested.",
+  "sourceElementLedgerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-131-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-131-source-evidence.md"
 }
