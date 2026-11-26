@@ -8353,8 +8353,24 @@
       "domain": "geometry",
       "canonicalName": "مساحات الأقراص والقطاعات",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l09.disk_pi_coefficient",
+        "uae.g10.general.u13.l09.disk_from_diameter",
+        "uae.g10.general.u13.l09.radius_from_area",
+        "uae.g10.general.u13.l09.area_from_circumference",
+        "uae.g10.general.u13.l09.sector_pi_coefficient",
+        "uae.g10.general.u13.l09.sector_central_angle",
+        "uae.g10.general.u13.l09.sector_radius",
+        "uae.g10.general.u13.l09.annulus_pi_coefficient",
+        "uae.g10.general.u13.l09.disk_rounded",
+        "uae.g10.general.u13.l09.sector_rounded",
+        "uae.g10.general.u13.l09.quarter_segment_rounded",
+        "uae.g10.general.u13.l09.square_outside_disk_rounded"
+      ]
     },
     {
       "id": "trigonometry.angle_measure_degrees_radians",

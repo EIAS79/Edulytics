@@ -1,1 +1,3 @@
-Lesson 106 مساحة الدائرة والقطاع الدائري: approved canonical index based on 01متقدم_.pdf page 9 and Applied crosswalk page13. Textbook body not exhaustively audited. Original Edulytics Arabic explanation, six distinct worked cases and three visuals. No 100% source claim. Stage D tests written but not run; manual geometry review required.
+# Lesson 106 — matching source body
+
+03.pdf SHA-256 0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b, physical 159–165 printed 548–554 lesson 8-9 visually reviewed. Six existing worked examples kept, fifteen new originals cover derivation of area, inverse radius/diameter, sector angles and radii, percent, circular segment, annulus and composite shaded area, application, error analysis, and construction. Four new representations and twelve bounded exact/rounded families. Open diagrams, constructions and general composite modeling teacher-scored. No exhaustive item equivalence or Stage D run.

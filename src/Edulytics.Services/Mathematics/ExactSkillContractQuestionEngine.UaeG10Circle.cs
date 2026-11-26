@@ -8,6 +8,26 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsCircleArea(family))
+        {
+            int k=random.Next(1,7),r=6*k,angle=30*random.Next(1,12),inner=random.Next(1,r),s=r*r*angle/360;
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.AreaDisk=>$"دائرة نصف قطرها {r} سم. اكتب معامل π في مساحتها.",
+                UaeG10CircleResponse.AreaDiameter=>$"دائرة قطرها {2*r} سم. اكتب معامل π في مساحتها.",
+                UaeG10CircleResponse.AreaRadius=>$"مساحة دائرة {r*r}π سم². أوجد نصف قطرها.",
+                UaeG10CircleResponse.AreaCircumference=>$"محيط دائرة {2*r}π سم. اكتب معامل π في مساحتها.",
+                UaeG10CircleResponse.AreaSector=>$"قطاع دائري نصف قطره {r} سم وزاويته {angle}°. اكتب معامل π في مساحته.",
+                UaeG10CircleResponse.AreaSectorAngle=>$"مساحة قرص {r*r}π سم² ومساحة قطاع منه {s}π سم². أوجد زاوية القطاع بالدرجات.",
+                UaeG10CircleResponse.AreaSectorRadius=>$"مساحة قطاع زاويته {angle}° تساوي {s}π سم². أوجد نصف قطره.",
+                UaeG10CircleResponse.AreaAnnulus=>$"دائرتان متحدتا المركز نصفا قطريهما {r} و{inner} سم. اكتب معامل π في مساحة المنطقة بينهما.",
+                UaeG10CircleResponse.AreaDiskApprox=>$"دائرة نصف قطرها {r} سم. أوجد المساحة مقربة لأقرب جزء من مائة.",
+                UaeG10CircleResponse.AreaSectorApprox=>$"قطاع نصف قطره {r} سم وزاويته {angle}°. أوجد المساحة لأقرب جزء من مائة.",
+                UaeG10CircleResponse.AreaSegmentApprox=>$"وتر في دائرة نصف قطرها {r} سم يقابل زاوية مركزية 90°. أوجد مساحة القطعة الدائرية الصغرى لأقرب جزء من مائة.",
+                _=>$"دائرة تمس أضلاع مربع ضلعه {2*r} سم. أوجد مساحة المربع خارج الدائرة لأقرب جزء من مائة."
+            };
+            return Problem(family,prompt,"مساحة الدائرة πr²؛ القطاع نسبة زاويته إلى 360 من مساحة الدائرة؛ القطعة الصغرى قطاع ناقص مثلث.",UaeG10CircleResponse.IsAreaApprox(family)?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("k",k),("angle",angle),("inner",inner));
+        }
         if(UaeG10CircleResponse.IsCircleEquation(family))
         {
             int h=random.Next(-8,9),k=random.Next(-8,9),m=random.Next(1,7),mode=random.Next(0,3),yes=random.Next(0,2);
@@ -229,8 +249,24 @@ internal static class UaeG10CircleResponse
     internal const string EquationThreePoints="uae.g10.general.u13.l08.three_point_radius";
     internal const string EquationDiagonal="uae.g10.general.u13.l08.diagonal_positive_intersection";
     internal static bool IsCircleEquation(string? f)=>f is EquationCenterX or EquationCenterY or EquationRadius or EquationPointRadiusSquared or EquationGeneralRadius or EquationConstant or EquationDiameterCenter or EquationPointTest or EquationLineCount or EquationLineX or EquationThreePoints or EquationDiagonal;
-    internal static bool Supports(string? f)=>IsCircleEquation(f)||IsSpecialSegment(f)||IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsCircleEquation(f)?
+    internal const string AreaDisk="uae.g10.general.u13.l09.disk_pi_coefficient";
+    internal const string AreaDiameter="uae.g10.general.u13.l09.disk_from_diameter";
+    internal const string AreaRadius="uae.g10.general.u13.l09.radius_from_area";
+    internal const string AreaCircumference="uae.g10.general.u13.l09.area_from_circumference";
+    internal const string AreaSector="uae.g10.general.u13.l09.sector_pi_coefficient";
+    internal const string AreaSectorAngle="uae.g10.general.u13.l09.sector_central_angle";
+    internal const string AreaSectorRadius="uae.g10.general.u13.l09.sector_radius";
+    internal const string AreaAnnulus="uae.g10.general.u13.l09.annulus_pi_coefficient";
+    internal const string AreaDiskApprox="uae.g10.general.u13.l09.disk_rounded";
+    internal const string AreaSectorApprox="uae.g10.general.u13.l09.sector_rounded";
+    internal const string AreaSegmentApprox="uae.g10.general.u13.l09.quarter_segment_rounded";
+    internal const string AreaCompositeApprox="uae.g10.general.u13.l09.square_outside_disk_rounded";
+    internal static bool IsCircleArea(string? f)=>f is AreaDisk or AreaDiameter or AreaRadius or AreaCircumference or AreaSector or AreaSectorAngle or AreaSectorRadius or AreaAnnulus or AreaDiskApprox or AreaSectorApprox or AreaSegmentApprox or AreaCompositeApprox;
+    internal static bool IsAreaApprox(string? f)=>f is AreaDiskApprox or AreaSectorApprox or AreaSegmentApprox or AreaCompositeApprox;
+    internal static bool Supports(string? f)=>IsCircleArea(f)||IsCircleEquation(f)||IsSpecialSegment(f)||IsSecantAngle(f)||IsTangent(f)||IsInscribed(f)||IsChord(f)||IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsCircleArea(f)?
+        p.Count==3&&new[]{"k","angle","inner"}.All(p.ContainsKey)&&p["k"] is >=1 and <=6&&p["angle"] is >=30 and <=330&&p["angle"]%30==0&&p["inner"]>=1&&p["inner"]<6*p["k"]:
+        IsCircleEquation(f)?
         p.Count==5&&new[]{"h","k","m","mode","yes"}.All(p.ContainsKey)&&p["h"] is >=-8 and <=8&&p["k"] is >=-8 and <=8&&p["m"] is >=1 and <=6&&p["mode"] is >=0 and <=2&&p["yes"] is >=0 and <=1:
         IsSpecialSegment(f)?
         p.Count==5&&new[]{"k","x","b","e","i"}.All(p.ContainsKey)&&p["k"] is >=1 and <=8&&p["x"] is >=2 and <=11&&p["b"] is >=2 and <=9&&p["e"] is >=2 and <=11&&p["i"] is >=2 and <=15:
@@ -249,6 +285,11 @@ internal static class UaeG10CircleResponse
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsCircleArea(f))
+        {
+            int r=6*p["k"],angle=p["angle"],inner=p["inner"],sq=r*r,s=sq*angle/360;
+            return f switch{AreaDisk or AreaDiameter or AreaCircumference=>(sq,1),AreaRadius or AreaSectorRadius=>(r,1),AreaSector=>(s,1),AreaSectorAngle=>(angle,1),AreaAnnulus=>(sq-inner*inner,1),AreaDiskApprox=>((long)Math.Round(sq*Math.PI*100,MidpointRounding.AwayFromZero),100),AreaSectorApprox=>((long)Math.Round(s*Math.PI*100,MidpointRounding.AwayFromZero),100),AreaSegmentApprox=>((long)Math.Round((sq*Math.PI/4-sq/2.0)*100,MidpointRounding.AwayFromZero),100),AreaCompositeApprox=>((long)Math.Round((4*sq-sq*Math.PI)*100,MidpointRounding.AwayFromZero),100),_=>throw new InvalidOperationException()};
+        }
         if(IsCircleEquation(f))
         {
             int h=p["h"],k=p["k"],m=p["m"],r=5*m;
@@ -291,7 +332,7 @@ internal static class UaeG10CircleResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid G10 circle parameters");
         var(n,d)=Answer(f,p);
-        if(f is Approx or ArcApprox or ChordApprox or SegmentApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        if((f is Approx or ArcApprox or ChordApprox or SegmentApprox)||IsAreaApprox(f))return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
         if(f==ArcCoeff){long a=n,b=d;while(b!=0)(a,b)=(b,a%b);n/=a;d/=a;}
         return n%d==0?(n/d).ToString(CultureInfo.InvariantCulture):n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
@@ -322,6 +363,18 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsCircleArea(f))
+        {
+            long r=6*p["k"],angle=p["angle"],inner=p["inner"],sq=r*r,s=sq*angle/360;
+            if(f is AreaDisk or AreaDiameter or AreaCircumference)return n==sq*d;
+            if(f==AreaRadius)return n>0&&n*n==sq*d*d;
+            if(f==AreaSector)return 360*n==sq*angle*d;
+            if(f==AreaSectorAngle)return n*sq==360*s*d;
+            if(f==AreaSectorRadius)return n>0&&angle*n*n==360*s*d*d;
+            if(f==AreaAnnulus)return n+inner*inner*d==sq*d;
+            double actual=f switch{AreaDiskApprox=>sq*Math.PI,AreaSectorApprox=>sq*angle*Math.PI/360,AreaSegmentApprox=>sq*(Math.PI-2)/4,AreaCompositeApprox=>sq*(4-Math.PI),_=>double.NaN};
+            return IsAreaApprox(f)&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
+        }
         if(IsSpecialSegment(f))
         {
             long k=p["k"],x=p["x"],b=p["b"],e=p["e"],i=p["i"];
