@@ -225,6 +225,10 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l17.two_station_height_rounded",
             "uae.g10.general.u14.l17.line_of_sight_rounded",
             "uae.g10.general.u14.l17.angle_from_rise_run_rounded",
+            "uae.g10.general.u14.l18.special_length_squared",
+            "uae.g10.general.u14.l18.special_exact_choice",
+            "uae.g10.general.u14.l18.equilateral_altitude_squared",
+            "uae.g10.general.u14.l18.square_diagonal_squared",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1518,6 +1522,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SpecialRightResponse.Supports(family))
+            return UaeG10SpecialRightResponse.Verify(family,parameters,answer);
 
         if (UaeG10ElevationResponse.Supports(family))
             return UaeG10ElevationResponse.Verify(family,parameters,answer);
@@ -4089,6 +4096,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10SpecialRightResponse.Supports(family))
+            return BuildG10SpecialRight(family,random,difficulty);
 
         if (UaeG10ElevationResponse.Supports(family))
             return BuildG10Elevation(family,random,difficulty);
@@ -10365,6 +10375,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10SpecialRightResponse.Supports(problem.Family))
+            return UaeG10SpecialRightResponse.Format(problem.Family,p);
 
         if (UaeG10ElevationResponse.Supports(problem.Family))
             return UaeG10ElevationResponse.Format(problem.Family,p);
