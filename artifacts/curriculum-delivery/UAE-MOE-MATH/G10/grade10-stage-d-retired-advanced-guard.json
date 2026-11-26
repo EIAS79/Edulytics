@@ -1,0 +1,26 @@
+{
+  "grade": 10,
+  "pathway": "General",
+  "sourceCandidateSha": "19dd4dca662840c97deb1846d7d424f2f245056c",
+  "legacyFilesRetainedInGit": [
+    {
+      "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-advanced-t1-ogl-v1.lesson-blueprint.json",
+      "lessons": 52
+    },
+    {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-advanced-t1-ogl-v1.lesson-content-pack.json",
+      "lessons": 52
+    }
+  ],
+  "finding": "Legacy standalone Advanced files remained eligible for embedding despite owner-approved General-only topology.",
+  "repair": "Exclude two exact legacy resources from active assembly; retain original Git files; exclude stale L10 Advanced rows from ordinary global cleanup; preserve historical canonical content and assessment item links. Source books remain included in unified General academic scope.",
+  "newTests": [
+    "G10_active_embedded_catalogue_is_Arabic_General_only",
+    "SeederPreservesRetiredG10AdvancedButStillReconcilesOtherStaleUaeCanonicalContent",
+    "SeederPreservesG10AdvancedPracticeReferencesAndReconcilesOtherRetiredUaeLessons"
+  ],
+  "tests": "WRITTEN_NOT_RUN",
+  "databaseWrites": false,
+  "productionRouting": false,
+  "remaining": "Actual isolated PostgreSQL migration, historical adoption compatibility and cross-scope data integrity must still be verified."
+}

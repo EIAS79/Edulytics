@@ -766,8 +766,10 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
             code => Assert.Contains(code, pedagogicalCodes));
     }
 
-    [Fact]
-    public async Task SeederRetiresUaeCanonicalContentOnlyWhenCodeWasRemovedFromCurrentPacks()
+    [Theory]
+    [InlineData(10, "PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM", true)]
+    [InlineData(11, "PED:UAE-MOE-MATH:L11:ADVANCED:99:98:RETIRED-CANONICAL-TEST", false)]
+    public async Task SeederPreservesRetiredG10AdvancedButStillReconcilesOtherStaleUaeCanonicalContent(int grade, string retiredCode, bool preserve)
     {
         await using var db = CreateDb();
 
@@ -781,8 +783,6 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
             .SingleAsync();
 
         var staleId = Guid.NewGuid();
-        const string retiredCode =
-            "PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM";
 
         Assert.DoesNotContain(
             MathematicsCanonicalLessonContentSeeder
@@ -802,9 +802,9 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                 UnitKey = "legacy-uae",
                 UnitTitle = "Legacy UAE",
                 Title = "Pythagoras theorem — advanced reasoning",
-                LogicalLevelFrom = 10,
-                LogicalLevelTo = 10,
-                NativeLevel = "Grade 10",
+                LogicalLevelFrom = grade,
+                LogicalLevelTo = grade,
+                NativeLevel = $"Grade {grade}",
                 Pathway = "Advanced",
                 SortOrder = 999,
                 CreatedAtUtc = DateTime.UtcNow,
@@ -828,12 +828,14 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         await db.SaveChangesAsync();
         await seeder.SeedAsync();
 
-        Assert.False(await db.CurriculumLessonContents.AnyAsync(x => x.Id == contentId));
-        Assert.False(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+        Assert.Equal(preserve, await db.CurriculumLessonContents.AnyAsync(x => x.Id == contentId));
+        Assert.Equal(preserve, await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
     }
 
-    [Fact]
-    public async Task SeederDetachesPracticeReferencesBeforeRetiringRemovedUaeLesson()
+    [Theory]
+    [InlineData(10, true)]
+    [InlineData(11, false)]
+    public async Task SeederPreservesG10AdvancedPracticeReferencesAndReconcilesOtherRetiredUaeLessons(int grade, bool preserve)
     {
         await using var db = CreateDb();
 
@@ -853,13 +855,13 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                 Id = staleId,
                 FrameworkVersionId = uaeVersionId,
                 OfficialLessonNodeId = staleId,
-                Code = "PED:UAE-MOE-MATH:L10:ADVANCED:99:99:RETIRED-PRACTICE-TARGET",
+                Code = $"PED:UAE-MOE-MATH:L{grade}:ADVANCED:99:99:RETIRED-PRACTICE-TARGET",
                 UnitKey = "legacy-uae",
                 UnitTitle = "Legacy UAE",
                 Title = "Retired practice target",
-                LogicalLevelFrom = 10,
-                LogicalLevelTo = 10,
-                NativeLevel = "Grade 10",
+                LogicalLevelFrom = grade,
+                LogicalLevelTo = grade,
+                NativeLevel = $"Grade {grade}",
                 Pathway = "Advanced",
                 SortOrder = 999,
                 CreatedAtUtc = DateTime.UtcNow,
@@ -886,8 +888,8 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         await db.SaveChangesAsync();
         await seeder.SeedAsync();
 
-        Assert.Null(item.CurriculumPedagogicalLessonId);
-        Assert.False(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+        Assert.Equal(preserve ? (Guid?)staleId : null, item.CurriculumPedagogicalLessonId);
+        Assert.Equal(preserve, await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
     }
 
     [Fact]

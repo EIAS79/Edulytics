@@ -1845,9 +1845,15 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // separate, explicitly scoped production transaction.
         const string retiredGrade8AdvancedPrefix =
             "PED:UAE-MOE-MATH:L8:ADVANCED:";
+        // G10 Advanced is no longer an offered catalogue. Preserve historical
+        // records, assessments and learner links until the explicit G10 migration
+        // is rehearsed and approved; removing an embedded resource is not a DB deletion token.
+        const string retiredGrade10AdvancedPrefix = "PED:UAE-MOE-MATH:L10:ADVANCED:";
         var stale = allExisting
             .Where(x => !expectedIds.Contains(x.Id) &&
                 !x.Code.StartsWith(retiredGrade8AdvancedPrefix,
+                    StringComparison.Ordinal) &&
+                !x.Code.StartsWith(retiredGrade10AdvancedPrefix,
                     StringComparison.Ordinal) &&
                 // Scoped Grade9 records are never purged by ordinary
                 // maintenance after the explicit owner-approved cutover.

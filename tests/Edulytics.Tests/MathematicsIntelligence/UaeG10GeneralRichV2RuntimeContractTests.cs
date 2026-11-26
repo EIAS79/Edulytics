@@ -1,9 +1,25 @@
 using Edulytics.Core.Curriculum;
+using Edulytics.Data.Seeding;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UaeG10GeneralRichV2RuntimeContractTests
 {
+    [Fact]
+    public void G10_active_embedded_catalogue_is_Arabic_General_only()
+    {
+        var blueprints = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .Where(d => d.PackCode == "UAE-MOE-MATH" && d.LogicalLevel == 10).ToArray();
+        Assert.Equal("General", Assert.Single(blueprints).Pathway);
+        var docs = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d => d.PackCode == "UAE-MOE-MATH" && d.Lessons.Any(l =>
+                l.LessonCode.StartsWith("PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal))).ToArray();
+        var doc = Assert.Single(docs);
+        Assert.Equal("ar", doc.AcademicLanguage);
+        Assert.Equal(148, doc.Lessons.Count);
+        Assert.All(doc.Lessons, l => Assert.StartsWith("PED:UAE-MOE-MATH:L10:GENERAL:", l.LessonCode));
+    }
+
     [Fact]
     public void All_148_grade10_Arabic_lessons_load_through_strict_compiled_registry()
     {
