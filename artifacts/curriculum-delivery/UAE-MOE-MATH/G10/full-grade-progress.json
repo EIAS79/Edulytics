@@ -1299,19 +1299,15 @@
       132,
       144,
       145,
-      47
+      47,
+      48
     ],
-    "firstIncompleteGlobalOrdinal": 48,
-    "firstIncompleteCanonicalCode": "G10-U05-L07",
+    "firstIncompleteGlobalOrdinal": 49,
+    "firstIncompleteCanonicalCode": "G10-U05-L08",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
     "exceptions": [
-      {
-        "ordinal": 48,
-        "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
-        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-index-repair-source-exception.md"
-      },
       {
         "ordinal": 49,
         "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
@@ -1354,8 +1350,8 @@
       143
     ],
     "lastScannedOrdinal": 148,
-    "gradeClosedCount": 142,
-    "unresolvedSourceGapCount": 6,
+    "gradeClosedCount": 143,
+    "unresolvedSourceGapCount": 5,
     "sourceReverification": {
       "date": "2026-11-26",
       "uploadedFiles": 7,
@@ -1381,7 +1377,7 @@
       "testsRun": "WRITTEN_NOT_RUN",
       "stageD": "NOT_STARTED"
     },
-    "unresolvedRepairCount": 6,
+    "unresolvedRepairCount": 5,
     "missingMatchingSourceBodyCount": 0,
     "resolvedHistoricalExceptions": [
       {
@@ -1405,6 +1401,13 @@
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-index-repair-source-exception.md",
         "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
         "checkpointCommit": "ddf63ea4474864338cd5e8bdff77831cc0266289"
+      },
+      {
+        "ordinal": 48,
+        "reason": "HISTORICAL_SOURCE_GAP_MATCHING_BODY_NOW_LOCATED_REPAIR_PENDING",
+        "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-index-repair-source-exception.md",
+        "resolution": "MATCHING_BODY_REPAIR_COMPLETE",
+        "checkpointCommit": "ef6a2a47f21cb21a7c37eb2f870c90cbd7ee5fd2"
       }
     ],
     "supplementalSourceRepair": {
@@ -1425,17 +1428,17 @@
         44,
         45,
         46,
-        47
+        47,
+        48
       ],
       "remainingOrdinals": [
-        48,
         49,
         137,
         146,
         147,
         148
       ],
-      "checkpointCommit": "ddf63ea4474864338cd5e8bdff77831cc0266289",
+      "checkpointCommit": "ef6a2a47f21cb21a7c37eb2f870c90cbd7ee5fd2",
       "inventoryCommit": "e5e0c63a5a390c6f5f54a86a096de4b1187d8069",
       "scope": "SELECTED_MATCHING_BODY_REPAIR_NOT_FULL_BOOK_PARITY",
       "stageD": "NOT_STARTED"
