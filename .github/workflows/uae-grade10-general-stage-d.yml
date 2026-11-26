@@ -72,3 +72,42 @@ jobs:
           name: uae-g10-stage-d-no-go-evidence
           path: artifacts/uae-g10-stage-d/g10-preflight.json
           if-no-files-found: warn
+
+  g10-compiled-math-tests:
+    name: G10 compiled mathematical contracts and shared regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build once
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+      - name: Execute compiled Grade 10 contracts
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter "FullyQualifiedName~UaeG10|FullyQualifiedName~UaeGrade10" --logger "trx;LogFileName=g10-contracts.trx" --results-directory "${{ runner.temp }}/g10-test-results"
+      - name: Require actual executed tests and no failures
+        run: |
+          python3 - <<'PY'
+          import pathlib, os, xml.etree.ElementTree as ET
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'g10-test-results'/'g10-contracts.trx'
+          root=ET.parse(p).getroot()
+          ns={'t':'http://microsoft.com/schemas/VisualStudio/TeamTest/2010'}
+          c=root.find('.//t:Counters',ns)
+          assert c is not None and int(c.attrib['executed'])>0
+          assert int(c.attrib['failed'])==0 and int(c.attrib['passed'])==int(c.attrib['executed'])
+          print('G10_COMPILED_CONTRACTS_PASS',c.attrib)
+          PY
+      - name: Run shared Grade 7 through Grade 9 contract regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter "FullyQualifiedName~UaeG7|FullyQualifiedName~UaeG8|FullyQualifiedName~UaeG9|FullyQualifiedName~UaeGrade7|FullyQualifiedName~UaeGrade8|FullyQualifiedName~UaeGrade9" --logger "trx;LogFileName=g7-g9-regression.trx" --results-directory "${{ runner.temp }}/g10-test-results"
+      - name: Upload actual compiled test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g10-compiled-math-test-results
+          path: ${{ runner.temp }}/g10-test-results/*.trx
+          if-no-files-found: error
