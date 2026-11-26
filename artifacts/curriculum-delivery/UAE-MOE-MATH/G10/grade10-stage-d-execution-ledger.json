@@ -1,0 +1,72 @@
+{
+  "grade": 10,
+  "subject": "mathematics",
+  "pathway": "General",
+  "stage": "D",
+  "auditedContentSha": "d70dea7187f92793d9917d22ad4f48620ac6d3b9",
+  "pr": 655,
+  "ownerAcademicApproval": {
+    "status": "APPROVED",
+    "basis": "Explicit program-owner instruction in current conversation, including authorization to publish after passing release gates.",
+    "technicalGateWaiver": false,
+    "thirdPartyRightsWaiver": false
+  },
+  "sourceInventory": {
+    "filesVerifiedBySHA256": 12,
+    "originalPages": 1893,
+    "supplementalPages": 510,
+    "totalPages": 2403,
+    "sourceLock": false,
+    "atomicDenominator": null,
+    "coverage": "UNKNOWN"
+  },
+  "staticAudit": {
+    "lessons": 148,
+    "units": 18,
+    "uniqueLessonCodes": 148,
+    "arabicTranslations": 148,
+    "alignedBlueprintTitles": 148,
+    "officialReferencesResolved": 48,
+    "pedagogicalOnlyWithSourceProvenance": 100,
+    "danglingOfficialReferences": 0,
+    "practicePartial": 90,
+    "teacherOnly": 58,
+    "runtimeVerifiedNotEstablished": true
+  },
+  "lesson001": {
+    "source": "01.pdf",
+    "omittedPhysicalPage": 26,
+    "printedPage": 13,
+    "reviewItems": 26,
+    "primaryItems": 2,
+    "cumulativeItems": 24,
+    "workedExampleGroupsBefore": 9,
+    "workedExampleGroupsAfter": 20,
+    "visualsBefore": 8,
+    "visualsAfter": 11,
+    "authoringArithmeticProbes": "PASS",
+    "runtimeVerification": "NOT_RUN",
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "fallbackPackReconciliation": "PENDING"
+  },
+  "observedCI": {
+    "sha": "d70dea7187f92793d9917d22ad4f48620ac6d3b9",
+    "runId": 45900217200,
+    "status": "queued",
+    "conclusion": null
+  },
+  "release": {
+    "status": "NO_GO_SOURCE_100",
+    "mergePerformed": false,
+    "productionRoutingEnabled": false,
+    "deploymentPerformed": false,
+    "blockers": [
+      "Exhaustive atomic source mapping and denominator not established",
+      "Lesson 001 canonical fallback pack reconciliation pending",
+      "Per-lesson digital eligibility, runtime and teacher-review routes not fully verified",
+      "Arabic RTL and authenticated E2E not verified",
+      "Final CI and rights review incomplete"
+    ]
+  },
+  "next": "Complete lesson 001 source audit and fallback alignment, then execute per-lesson checks and repair subsequent lessons without fabricating official reference codes."
+}
