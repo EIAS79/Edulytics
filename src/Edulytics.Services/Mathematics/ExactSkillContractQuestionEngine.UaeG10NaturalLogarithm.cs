@@ -10,9 +10,9 @@ public sealed partial class ExactSkillContractQuestionEngine
         int b=random.Next(2,8),c=random.Next(2,9),m=random.Next(1,4)*(random.Next(2)==0?1:-1),n=random.Next(-4,5),h=random.Next(0,5),op=random.Next(4),dir=random.Next(2);
         int p=random.Next(10,51)*100,v=random.Next(2,8),r=random.Next(2,9),t=random.Next(3,13),z=random.Next(1,5);
         string rel=UaeG10NaturalLogarithmResponse.Relation(op),round="قرّب إلى أقرب جزء من عشرة آلاف.",money="قرّب إلى أقرب 0.01 AED.";
-        int u=20+10*b,ambient=20,delta=u-ambient,first=ambient+delta/2;
+        int u=20+10*b,ambient=20,delta=u-ambient,first=ambient+delta*z/5;
         string prompt=family switch{
-            UaeG10NaturalLogarithmResponse.Convert=>dir==0?$"حوّل e^{m}={v} إلى الصيغة اللوغاريتمية المكافئة (تحويل رمزي فقط، لا تتحقق من صحة المساواة العددية). اكتب بالشكل ln({v})={m}.":$"حوّل ln({v})={m} إلى الصيغة الأسية المكافئة (تحويل رمزي فقط). اكتب بالشكل e^({m})={v}.",
+            UaeG10NaturalLogarithmResponse.Convert=>dir==0?$"حوّل e^({m}x)={v} إلى الصيغة اللوغاريتمية المكافئة. اكتب ln(الحجة)=الأس باستعمال x.":$"حوّل ln(x)={m} إلى الصيغة الأسية المكافئة. اكتب e^(الأس)=x.",
             UaeG10NaturalLogarithmResponse.Identity=>dir==0?$"احسب ln(e^({m})) بالضبط.":$"احسب e^(ln {v}) بالضبط.",
             UaeG10NaturalLogarithmResponse.Value=>$"احسب ln({v}/{b}). {round}",
             UaeG10NaturalLogarithmResponse.Condense=>$"اكتب {Math.Abs(m)}ln({b})+ln({c})−ln({v}) على صورة ln(A). اكتب A كعدد صحيح أو كسر.",
@@ -61,10 +61,10 @@ internal static class UaeG10NaturalLogarithmResponse
     private static string Fraction(int n,int d){int a=n,b=d;while(b!=0){int t=a%b;a=b;b=t;}return d/a==1?(n/a).ToString(CultureInfo.InvariantCulture):$"{n/a}/{d/a}";}
     private static double V(string f,IReadOnlyDictionary<string,int> a)
     {
-        double b=a["b"],m=a["m"],n=a["n"],h=a["h"],p=a["p"],v=a["v"],r=a["r"]/100.0,t=a["t"],z=a["z"],k=Math.Log(2)/t;
+        double b=a["b"],m=a["m"],n=a["n"],h=a["h"],p=a["p"],v=a["v"],r=a["r"]/100.0,t=a["t"],z=a["z"],k=-Math.Log(z/5)/t;
         return f switch{Identity=>a["dir"]==0?m:v,Value=>Math.Log(v/b),Equation or ExpIneq=>Math.Log(v)/m,Possible=>a["dir"]==0?1:0,LogEq or LogIneq=>Math.Exp(n/m)/b-h,Even=>Math.Exp(v/(2*z)),Reciprocal=>h+Math.Exp(-b/a["c"]),Balance=>p*Math.Exp(r*t),Principal=>p*v*Math.Exp(-r*t),Time=>Math.Log(v)/r,Rate=>100*Math.Log(v)/t,Decay=>5*p*Math.Exp(-r*z/2),Half=>Math.Log(2)/r,Threshold=>Math.Log(5)/r,CoolingK=>k,CoolingTemp=>20+10*b*Math.Exp(-k*(2*t+z)),CoolingTime=>Math.Log(v+2)/k,Substitution=>Math.Log(v)/Math.Log(b),_=>throw new InvalidOperationException()};
     }
-    private static string ConvertText(IReadOnlyDictionary<string,int> a)=>a["dir"]==0?$"ln({a["v"]})={a["m"]}":$"e^({a["m"]})={a["v"]}";
+    private static string ConvertText(IReadOnlyDictionary<string,int> a)=>a["dir"]==0?$"ln({a["v"]})={a["m"]}x":$"e^({a["m"]})=x";
     private static string Interval(string f,IReadOnlyDictionary<string,int> a)
     {
         string e=R(V(f,a));int op=a["m"]<0?a["op"]^2:a["op"];int h=a["h"];
@@ -86,15 +86,15 @@ internal static class UaeG10NaturalLogarithmResponse
     // Independent residual signs in original model, evaluated at rounding bucket edges.
     private static bool Bucket(string f,IReadOnlyDictionary<string,int> a,double x)
     {
-        double b=a["b"],m=a["m"],n=a["n"],h=a["h"],p=a["p"],v=a["v"],r=a["r"]/100.0,t=a["t"],z=a["z"],k=-Math.Log(.5)/t;
+        double b=a["b"],m=a["m"],n=a["n"],h=a["h"],p=a["p"],v=a["v"],r=a["r"]/100.0,t=a["t"],z=a["z"],k=-Math.Log(z/5)/t;
         double F(double q)=>f switch{
             Value=>Math.Exp(q)*b-v,Equation or ExpIneq=>m*q-Math.Log(v),
             LogEq or LogIneq=>q<=-h?double.NegativeInfinity:m>0?Math.Log(b*(q+h))*m-n:n-Math.Log(b*(q+h))*m,
             Even=>q<=0?double.NegativeInfinity:2*z*Math.Log(q)-v,Reciprocal=>q<=h?double.NegativeInfinity:a["c"]*Math.Log(q-h)+b,
             Balance=>q<=0?double.NegativeInfinity:Math.Log(q/p)-r*t,Principal=>q<=0?double.NegativeInfinity:Math.Log(q/(p*v))+r*t,
             Time=>r*q-Math.Log(v),Rate=>q*t/100-Math.Log(v),Decay=>q<=0?double.NegativeInfinity:Math.Log(q/(5*p))+r*z/2,
-            Half=>r*q-Math.Log(2),Threshold=>r*q-Math.Log(5),CoolingK=>Math.Exp(-q*t)-.5,
-            CoolingTemp=>q-20-10*b*Math.Pow(.5,(2*t+z)/t),CoolingTime=>q*k-Math.Log(v+2),
+            Half=>r*q-Math.Log(2),Threshold=>r*q-Math.Log(5),CoolingK=>Math.Exp(-q*t)-z/5,
+            CoolingTemp=>q-20-10*b*Math.Pow(z/5,(2*t+z)/t),CoolingTime=>q*k-Math.Log(v+2),
             Substitution=>q*Math.Log(b)-Math.Log(v),_=>double.NaN};
         double e=.5/Math.Pow(10,D(f)),l=F(x-e),u=F(x+e);return (l<=0&&u>=0)||(l>=0&&u<=0);
     }
@@ -122,7 +122,7 @@ internal static class UaeG10NaturalLogarithmResponse
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> a,string? answer)
     {
         if(!Valid(f,a)||string.IsNullOrWhiteSpace(answer))return false;string raw=Norm(answer);
-        if(f==Convert){var sides=raw.Split('=');if(sides.Length!=2)return false;string exp=a["dir"]==0?$"ln({a["v"]})":$"e^({a["m"]})",other=a["dir"]==0?a["m"].ToString(CultureInfo.InvariantCulture):a["v"].ToString(CultureInfo.InvariantCulture);return sides[0]==exp&&sides[1]==other||sides[1]==exp&&sides[0]==other;}
+        if(f==Convert){var sides=raw.Split('=');if(sides.Length!=2)return false;string exp=a["dir"]==0?$"ln({a["v"]})":$"e^({a["m"]})",other=a["dir"]==0?$"{a["m"]}x":"x";return sides[0]==exp&&sides[1]==other||sides[1]==exp&&sides[0]==other;}
         if(f==Condense){var s=raw.Split('/');if(s.Length is <1 or >2||!long.TryParse(s[0],out long n)||n<=0||n>1000000)return false;long d=1;if(s.Length==2&&(!long.TryParse(s[1],out d)||d<=0||d>1000000))return false;return n*a["v"]==d*IntPow(a["b"],Math.Abs(a["m"]))*a["c"];}
         if(f==Expand){if(raw.Length<5||raw[0]!='('||raw[^1]!=')')return false;var s=raw[1..^1].Split(',');return s.Length==3&&Num(s[0],0,out double x)&&x==1&&Num(s[1],0,out double y)&&y==Math.Abs(a["m"])&&Num(s[2],0,out double z)&&z==-a["z"];}
         if(f is ExpIneq or LogIneq or Even or Reciprocal)return VerifyInterval(f,a,raw);
