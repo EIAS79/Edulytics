@@ -1057,6 +1057,16 @@
       ],
       "ownerApprovedLessonCount": 148,
       "closedGlobalOrdinals": [
+        125
+      ],
+      "gradeClosedCount": 119,
+      "firstIncompleteGlobalOrdinal": 126,
+      "stageABCStatus": "UNIT15_INDEX_ONLY_REPAIR_IN_PROGRESS_1_OF_8",
+      "stageD": "NOT_STARTED",
+      "productionRouting": false,
+      "sourceStatus": "MATCHING_BODY_REPAIR_IN_PROGRESS",
+      "nextEligibleCanonicalCode": "G10-U15-L02",
+      "historicalIndexOnlyAuthoredOrdinals": [
         125,
         126,
         127,
@@ -1066,13 +1076,15 @@
         131,
         132
       ],
-      "gradeClosedCount": 132,
-      "firstIncompleteGlobalOrdinal": 133,
-      "stageABCStatus": "UNIT15_8_OF_8_ORIGINAL_INDEX_SCOPE_STAGE_D_NOT_RUN",
-      "stageD": "NOT_STARTED",
-      "productionRouting": false,
-      "sourceStatus": "APPROVED_INDEX_BODY_NOT_RECHECKED_DESKTOP_OFFLINE",
-      "nextEligibleCanonicalCode": "G10-U16-L01"
+      "testsRun": "WRITTEN_NOT_RUN",
+      "repairValidation": {
+        "completedOrdinals": [
+          125
+        ],
+        "exceptions": [],
+        "firstIncompleteGlobalOrdinal": 126,
+        "status": "UNIT15_INDEX_ONLY_REPAIR_IN_PROGRESS"
+      }
     },
     {
       "file": "unit-16-stage-a-c-progress.json",
@@ -1197,10 +1209,11 @@
       121,
       122,
       123,
-      124
+      124,
+      125
     ],
-    "firstIncompleteGlobalOrdinal": 125,
-    "firstIncompleteCanonicalCode": "G10-U15-L01",
+    "firstIncompleteGlobalOrdinal": 126,
+    "firstIncompleteCanonicalCode": "G10-U15-L02",
     "historicalAuthoredLessonCount": 148,
     "sourceParity": "UNKNOWN",
     "rule": "Only index-only checkpoints targeted; one matching approved source body sufficient; missing-body exception documented and continue.",
@@ -1236,7 +1249,7 @@
         "evidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-049-index-repair-source-exception.md"
       }
     ],
-    "scanNextOrdinal": 125,
+    "scanNextOrdinal": 126,
     "skippedAlreadyBodyReviewedOrdinals": [
       51,
       97
