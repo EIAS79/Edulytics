@@ -1,6 +1,7 @@
-# UAE G10 lesson 148: إثبات العلاقات بين الزوايا
-
-- Direct PDF evidence: owner-uploaded `03.pdf` PDF6 and `رياضيات كتاب الطالب تطبيقي 10 8.pdf` PDF6 list Unit1 lesson 1-3, exact Arabic title.
-- Source body: the supplied parts contain index but not Unit1 full student lesson body; no fabricated source page ranges or publisher example parity.
-- Authored scope: 8 independent Arabic worked examples, 4 original visual tables, 5 explanation paragraphs.
-- A–B–C handoff ONLY: not verified equal to the publisher's exercises; Stage D and CI unrun; no production routing, requires teacher scoring.
+# الدرس 148 — إثبات العلاقات بين الزوايا
+G10-U18-L03 / PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148؛ العام؛ الموضع المعتمد 148 من 148.
+المصدر المطابق: رياضيات كتاب الطالب تطبيقي 10 29.pdf (2023–2024 Applied part 1)، physical PDF38–46، printed23–31. SHA256 9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66. فُحصت الصفحات بصريًا؛ عنوان المصدر السابق من 03.pdf PDF6 Unit1 1-3.
+- 88 موضعًا/عنصرًا مختارًا موثقًا في lesson-148-source-elements.json، و17 عنصر مراجعة تراكمية. لا ادعاء بمقام شامل لكل الإصدارات.
+- حفظ المحتوى الصحيح وإصلاح مسلمة المنقلة 1.10، جمع الزوايا 1.11، النظريات 1.3–1.13، التتامي والتكامل والتطابق، التقابل بالرأس، التعامد، المنصف، التطبيقات والبرهان. 39 مثالًا أصليًا، 12 تمثيلًا داخل Rich V2، وستة رسوم هندسية أصلية في lesson-148-original-angle-diagrams.svg؛ عرض التطبيق غير متحقق.
+- 14 عائلة رقمية محددة، ربط بمحرك الرياضيات المشترك، تصحيح القيود الأصلية، ومبررات البرهان الكامل والقياس والرسم في rubric المعلم.
+- لا نقل لصورة أو نص الناشر؛ الاختبارات مكتوبة ولم تشغل؛ Stage D NOT_STARTED؛ productionRouting=false؛ runtime unverified.
