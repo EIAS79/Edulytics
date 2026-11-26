@@ -1,3 +1,5 @@
-# Lesson 45: حل المعادلات والمتباينات اللوغاريتمية
-
-Advanced 2025–2026 uploaded book `01متقدم_.pdf`, physical PDF12, Unit8 Lesson8-5 provides TITLE ONLY. Owner approved the 148-title index and seven books. Full textbook lesson body absent. This Edulytics first-party Arabic lesson has 12 worked examples, 4 original visuals and 5 explanation paragraphs. Source-body 100% match **not claimed**; open-ended tasks require teacher assessment. CI/Stage D NOT_RUN, productionRouting=false.
+# الدرس 45 — حل المعادلات والمتباينات اللوغاريتمية
+الهوية الثابتة G10-U05-L04 / PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045. مصدر العنوان المعتمد Advanced Unit8 Lesson8-4، والمصدر الإضافي الموافق «رياضيات الدوال متقدم.pdf»، SHA-256 2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c، PDF31–36 / مطبوع582–587. فصل Algebra 2 ©2014؛ سنة الطبعة المدرسية والفصل غير مثبتين في المقتطف.
+تم فحص النص والصور: هدفان، خاصية المساواة وخاصيتا التباين، الأمثلة 1–4 والتدريبات الموجهة، التحقق والتمرين 1–44 بأجزائه، ومراجعة 45–68. مصدر المراجعة التراكمية ليس أهدافًا جديدة للدرس.
+تم الاحتفاظ بالأمثلة الصحيحة الـ12، وإضافة 18 مثالًا أصليًا و5 تمثيلات؛ الإجمالي 30 مثالًا و9 تمثيلات، مع نماذج السرعة والسعة والتردد والصوت والرسم والمجال والجذور الدخيلة. ثماني عائلات رقمية مقيدة بمعاملات قابلة للتحقق، ورسم حر وبرهان ونقد بتقويم المعلم.
+سجل العناصر: 76 مدخلًا مختارًا و24 مدخل مراجعة منفصلًا. لا ادعاء بمقام كامل لجميع الكتب والطبعات. نجح فحص حسابي مستقل لـ49,109 حالة ونقاط الرسم العشر ومطابقة JSON والروابط؛ لم تُشغّل اختبارات C# أو التكامل أو Stage D.
