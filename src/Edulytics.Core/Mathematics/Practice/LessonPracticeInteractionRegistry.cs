@@ -261,7 +261,7 @@ public static class LessonPracticeInteractionRegistry
 
         // Declared numeric answer type is authoritative. Families named compare*
         // may ask for a numerical gap, not a <, =, > relation.
-        if (familyId=="uae.g10.general.u05.l04.quadratic_root_set" && answerType=="contract_defined")
+        if ((familyId=="uae.g10.general.u05.l04.quadratic_root_set" || familyId=="uae.g10.general.u05.l05.property_root_set") && answerType=="contract_defined")
             return LessonPracticeInteractionKind.StructuredEntry;
 
         if (answerType=="exact_integer")
