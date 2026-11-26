@@ -191,6 +191,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CircleResponse.AreaSectorApprox,
             UaeG10CircleResponse.AreaSegmentApprox,
             UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l06.unit_circle_coordinate",
+            "uae.g10.general.u14.l06.period_from_peaks",
+            "uae.g10.general.u14.l06.periodic_value",
+            "uae.g10.general.u14.l06.cycle_count",
+            "uae.g10.general.u14.l06.axis_trig_value",
+            "uae.g10.general.u14.l06.special_sin_cos_rational",
+            "uae.g10.general.u14.l06.period_pi_coefficient",
             "uae.g10.general.u14.l05.sas_side_rounded",
             "uae.g10.general.u14.l05.sas_square_exact",
             "uae.g10.general.u14.l05.sss_cosine_exact",
@@ -1453,6 +1460,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PeriodicResponse.Supports(family))
+            return UaeG10PeriodicResponse.Verify(family,parameters,answer);
 
         if (UaeG10CosineRuleResponse.Supports(family))
             return UaeG10CosineRuleResponse.Verify(family,parameters,answer);
@@ -3991,6 +4001,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10PeriodicResponse.Supports(family))
+            return BuildG10Periodic(family,random,difficulty);
 
         if (UaeG10CosineRuleResponse.Supports(family))
             return BuildG10CosineRule(family,random,difficulty);
@@ -10234,6 +10247,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10PeriodicResponse.Supports(problem.Family))
+            return UaeG10PeriodicResponse.Format(problem.Family,p);
 
         if (UaeG10CosineRuleResponse.Supports(problem.Family))
             return UaeG10CosineRuleResponse.Format(problem.Family,p);
