@@ -106,28 +106,30 @@ public sealed partial class ExactSkillContractQuestionEngine
         const string hint="وحّد الأساس الموجب، وقارن الأسين مع عكس جهة المتباينة عند الحاجة؛ تحقق من الحد والاتجاه. في النمذجة استعمل عامل الفترة ولا تقرّب قبل النهاية.";
         if(family is UaeG10ExponentialEquationResponse.Equation or UaeG10ExponentialEquationResponse.Inequality)
         {
-            int b=random.Next(2,6),lp,rp,m,r,n=random.Next(-8,9),s=random.Next(-8,9);
+            int b=random.Next(2,6),denominator=random.Next(1,b),lp,rp,m,r,n=random.Next(-8,9),s=random.Next(-8,9);
             int nz(){int v;do v=random.Next(-8,9);while(v==0);return v;}
             do{lp=nz();rp=nz();m=nz();r=random.Next(-8,9);}while(lp*m==rp*r);
             int op=random.Next(0,4);
-            string left=$"{UaeG10ExponentialEquationResponse.BaseText(b,lp)}^(({m})س+({n}))";
-            string right=$"{UaeG10ExponentialEquationResponse.BaseText(b,rp)}^(({r})س+({s}))";
+            string left=$"{UaeG10ExponentialEquationResponse.BaseText(b,denominator,lp)}^(({m})س+({n}))";
+            string right=$"{UaeG10ExponentialEquationResponse.BaseText(b,denominator,rp)}^(({r})س+({s}))";
             string relation=family==UaeG10ExponentialEquationResponse.Equation?"=":UaeG10ExponentialEquationResponse.Relation(op);
             string instruction=family==UaeG10ExponentialEquationResponse.Equation
                 ?"اكتب قيمة س على هيئة عدد صحيح أو كسر."
                 :"اكتب الحل في صورة س ثم رمز المتباينة ثم الحد العددي، ويمكن أن يكون الحد كسرًا.";
             return Problem(family,$"حل {left} {relation} {right}. {instruction}",hint,
-                AssessmentItemType.ShortAnswer,("base",b),("lp",lp),("rp",rp),("m",m),("r",r),("n",n),("s",s),("op",op));
+                AssessmentItemType.ShortAnswer,("base",b),("baseDen",denominator),("lp",lp),("rp",rp),("m",m),("r",r),("n",n),("s",s),("op",op));
         }
-        if(family is UaeG10ExponentialEquationResponse.Factor or UaeG10ExponentialEquationResponse.Forecast)
+        if(family is UaeG10ExponentialEquationResponse.Factor or UaeG10ExponentialEquationResponse.Forecast or UaeG10ExponentialEquationResponse.Model)
         {
             int start=random.Next(100,1001),end;
             do end=random.Next(50,1501);while(end==start);
             int observed=random.Next(2,7),target=random.Next(observed+1,observed+5);
-            string prompt=family==UaeG10ExponentialEquationResponse.Factor
+            string prompt=family==UaeG10ExponentialEquationResponse.Model
+                ?$"كمية تتغير أسيًا من {start} عند ز=0 إلى {end} عند ز={observed}. اكتب معاملي النموذج د(ز)=أ×ب^ز، في زوج مرتب (أ،ب)، قرّب ب إلى أقرب جزء من ألف."
+                :family==UaeG10ExponentialEquationResponse.Factor
                 ?$"كمية تتغير أسيًا من {start} إلى {end} خلال {observed} فترات. أوجد عامل التغير لكل فترة مقربًا إلى أقرب جزء من ألف."
                 :$"كمية تتغير أسيًا من {start} إلى {end} خلال {observed} فترات. توقع الكمية بعد {target} فترات من البداية، إلى أقرب عدد صحيح. لا تقرب عامل التغير مبكرًا.";
-            return Problem(family,prompt,hint,family==UaeG10ExponentialEquationResponse.Factor?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,
+            return Problem(family,prompt,hint,family is UaeG10ExponentialEquationResponse.Factor or UaeG10ExponentialEquationResponse.Model?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,
                 ("start",start),("end",end),("observed",observed),("target",target));
         }
         if(family==UaeG10ExponentialEquationResponse.Compound)
@@ -154,12 +156,15 @@ public sealed partial class ExactSkillContractQuestionEngine
             return Problem(family,prompt,hint,AssessmentItemType.Numeric,
                 ("ambient",ambient),("delta",delta),("period",period),("step",step));
         }
-        if(family==UaeG10ExponentialEquationResponse.PowerLaw)
+        if(family is UaeG10ExponentialEquationResponse.PowerLaw or UaeG10ExponentialEquationResponse.PowerCoefficient)
         {
             int den=random.Next(2,4),num,a=random.Next(2,7),b,coeff=random.Next(1,7);
             do num=random.Next(1,5);while(num==den);
             do b=random.Next(2,7);while(b==a);
-            return Problem(family,$"كمية ك تتناسب طرديًا مع م^({num}/{den}). إذا كانت ك={coeff*UaeG10ExponentialEquationResponse.Pow(a,num)} عند م={UaeG10ExponentialEquationResponse.Pow(a,den)}، أوجد ك عند م={UaeG10ExponentialEquationResponse.Pow(b,den)}.",hint,
+            string prompt=family==UaeG10ExponentialEquationResponse.PowerCoefficient
+                ?$"كمية ك تتناسب طرديًا مع م^({num}/{den})؛ ك={coeff*UaeG10ExponentialEquationResponse.Pow(a,num)} عند م={UaeG10ExponentialEquationResponse.Pow(a,den)}. أوجد ثابت التناسب ث في ك=ث×م^({num}/{den})."
+                :$"كمية ك تتناسب طرديًا مع م^({num}/{den}). إذا كانت ك={coeff*UaeG10ExponentialEquationResponse.Pow(a,num)} عند م={UaeG10ExponentialEquationResponse.Pow(a,den)}، أوجد ك عند م={UaeG10ExponentialEquationResponse.Pow(b,den)}.";
+            return Problem(family,prompt,hint,
                 AssessmentItemType.Numeric,("den",den),("num",num),("a",a),("b",b),("coeff",coeff));
         }
         int baseNumber=random.Next(2,6),exponent=random.Next(2,7),multiplicity=random.Next(1,3);
@@ -173,6 +178,8 @@ internal static class UaeG10ExponentialEquationResponse
     internal const string Equation="uae.g10.general.u05.l02.equation_rational";
     internal const string Inequality="uae.g10.general.u05.l02.inequality_rational_boundary";
     internal const string Factor="uae.g10.general.u05.l02.model_factor_rounded";
+    internal const string Model="uae.g10.general.u05.l02.model_parameters";
+    internal const string PowerCoefficient="uae.g10.general.u05.l02.power_law_coefficient";
     internal const string Forecast="uae.g10.general.u05.l02.model_forecast_rounded";
     internal const string Compound="uae.g10.general.u05.l02.compound_balance";
     internal const string Period="uae.g10.general.u05.l02.equivalent_period_factor";
@@ -180,26 +187,33 @@ internal static class UaeG10ExponentialEquationResponse
     internal const string Threshold="uae.g10.general.u05.l02.cooling_threshold";
     internal const string PowerLaw="uae.g10.general.u05.l02.power_law_prediction";
     internal const string Sum="uae.g10.general.u05.l02.like_power_sum";
-    internal static bool Supports(string? f)=>f is Equation or Inequality or Factor or Forecast or Compound or Period or Cooling or Threshold or PowerLaw or Sum;
+    internal static bool Supports(string? f)=>f is Equation or Inequality or Factor or Forecast or Model or Compound or Period or Cooling or Threshold or PowerLaw or PowerCoefficient or Sum;
     internal static string Relation(int op)=>op switch{0=>">",1=>"≥",2=>"<",3=>"≤",_=>throw new InvalidOperationException()};
     internal static int Pow(int b,int n){int result=1;for(int i=0;i<n;i++)result*=b;return result;}
-    internal static string BaseText(int b,int n)=>n>0?Pow(b,n).ToString(CultureInfo.InvariantCulture):"(1/"+Pow(b,-n).ToString(CultureInfo.InvariantCulture)+")";
+    internal static string BaseText(int b,int denominator,int n)
+    {
+        int a=Pow(n>0?b:denominator,Math.Abs(n)),d=Pow(n>0?denominator:b,Math.Abs(n));
+        string f=Fraction(a,d);
+        return f.Contains('/')?"("+f+")":f;
+    }
     private static bool Keys(IReadOnlyDictionary<string,int> p,params string[] keys)=>p.Count==keys.Length&&keys.All(p.ContainsKey);
     private static bool In(int value,int lo,int hi)=>value>=lo&&value<=hi;
     private static bool NonZero(int value)=>In(value,-8,8)&&value!=0;
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p)
     {
-        if(f is Equation or Inequality)return Keys(p,"base","lp","rp","m","r","n","s","op")&&
+        if(f is Equation or Inequality)return
+            (Keys(p,"base","lp","rp","m","r","n","s","op") ||
+            (Keys(p,"base","baseDen","lp","rp","m","r","n","s","op")&&In(p["baseDen"],1,p["base"]-1)))&&
             In(p["base"],2,5)&&NonZero(p["lp"])&&NonZero(p["rp"])&&NonZero(p["m"])&&In(p["r"],-8,8)&&
             In(p["n"],-8,8)&&In(p["s"],-8,8)&&In(p["op"],0,3)&&p["lp"]*p["m"]!=p["rp"]*p["r"];
-        if(f is Factor or Forecast)return Keys(p,"start","end","observed","target")&&In(p["start"],100,1000)&&
+        if(f is Factor or Forecast or Model)return Keys(p,"start","end","observed","target")&&In(p["start"],100,1000)&&
             In(p["end"],50,1500)&&p["start"]!=p["end"]&&In(p["observed"],2,6)&&In(p["target"],p["observed"]+1,p["observed"]+4);
         if(f==Compound)return Keys(p,"initial","rate","frequency","years")&&In(p["initial"],100,2000)&&p["initial"]%100==0&&
             In(p["rate"],100,800)&&(p["frequency"] is 1 or 2 or 4 or 6 or 12 or 26 or 52)&&In(p["years"],1,20);
         if(f==Period)return Keys(p,"percent","periods")&&In(p["percent"],1,5)&&(p["periods"] is 2 or 4 or 12);
         if(f is Cooling or Threshold)return Keys(p,"ambient","delta","period","step")&&In(p["ambient"],16,25)&&In(p["delta"],32,80)&&
             p["delta"]%16==0&&In(p["period"],5,12)&&In(p["step"],1,4);
-        if(f==PowerLaw)return Keys(p,"den","num","a","b","coeff")&&In(p["den"],2,3)&&In(p["num"],1,4)&&p["num"]!=p["den"]&&
+        if(f is PowerLaw or PowerCoefficient)return Keys(p,"den","num","a","b","coeff")&&In(p["den"],2,3)&&In(p["num"],1,4)&&p["num"]!=p["den"]&&
             In(p["a"],2,6)&&In(p["b"],2,6)&&p["a"]!=p["b"]&&In(p["coeff"],1,6);
         return f==Sum&&Keys(p,"base","exponent","multiplicity")&&In(p["base"],2,5)&&In(p["exponent"],2,6)&&In(p["multiplicity"],1,2);
     }
@@ -213,7 +227,7 @@ internal static class UaeG10ExponentialEquationResponse
     {
         >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
         >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
-        '−' or '–'=>'-', '⁄'=>'/', '٫'=>'.','س'=>'x','X'=>'x',_=>c
+        '−' or '–'=>'-', '⁄'=>'/', '٫'=>'.','،'=>',','س'=>'x','X'=>'x',_=>c
     })).Replace(">=","≥",StringComparison.Ordinal).Replace("<=","≤",StringComparison.Ordinal);
     private static bool ParseNumber(string s,out long n,out long d)
     {
@@ -280,18 +294,29 @@ internal static class UaeG10ExponentialEquationResponse
             string boundary=Fraction(n,d);
             return family==Equation?boundary:"x"+Relation(d>0?p["op"]:p["op"]^2)+boundary;
         }
-        if(family==Factor)return (RoundedCandidate(1000*Math.Pow((double)p["end"]/p["start"],1d/p["observed"]),k=>FactorBucket(k,p))/1000m).ToString("0.000",CultureInfo.InvariantCulture);
+        if(family is Factor or Model)
+        {
+            string b=(RoundedCandidate(1000*Math.Pow((double)p["end"]/p["start"],1d/p["observed"]),k=>FactorBucket(k,p))/1000m).ToString("0.000",CultureInfo.InvariantCulture);
+            return family==Model?$"({p["start"]},{b})":b;
+        }
         if(family==Forecast)return RoundedCandidate(p["start"]*Math.Pow((double)p["end"]/p["start"],(double)p["target"]/p["observed"]),k=>ForecastBucket(k,p)).ToString(CultureInfo.InvariantCulture);
         if(family==Compound)return (CompoundCents(p)/100m).ToString("0.00",CultureInfo.InvariantCulture);
         if(family==Period)return Fraction(100+p["percent"],100);
         long value=family switch{Cooling=>p["ambient"]+p["delta"]/(1<<p["step"]),Threshold=>p["period"]*p["step"],
-            PowerLaw=>p["coeff"]*Pow(p["b"],p["num"]),Sum=>p["exponent"]+p["multiplicity"],_=>throw new InvalidOperationException()};
+            PowerLaw=>p["coeff"]*Pow(p["b"],p["num"]),PowerCoefficient=>p["coeff"],Sum=>p["exponent"]+p["multiplicity"],_=>throw new InvalidOperationException()};
         return value.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>64)return false;
         string raw=Normalize(answer);int relation=-1;
+        if(family==Model)
+        {
+            if(raw.Length<5||raw[0]!='('||raw[^1]!=')')return false;
+            string[] pair=raw[1..^1].Split(',');
+            return pair.Length==2&&ParseNumber(pair[0],out long an,out long ad)&&an==(long)p["start"]*ad&&
+                ParseNumber(pair[1],out long bn,out long bd)&&bn*1000%bd==0&&FactorBucket(bn*1000/bd,p);
+        }
         if(family==Equation&&raw.StartsWith("x=",StringComparison.Ordinal))raw=raw[2..];
         if(family==Inequality)
         {
@@ -331,9 +356,11 @@ internal static class UaeG10ExponentialEquationResponse
         long value=n/d;
         if(family==Cooling)return (value-p["ambient"])*(1<<p["step"])==p["delta"];
         if(family==Threshold)return value>=0&&value%p["period"]==0&&value/p["period"]==p["step"];
-        if(family==PowerLaw)
+        if(family is PowerLaw or PowerCoefficient)
         {
             if(value<=0||value>1000000)return false;
+            if(family==PowerCoefficient)
+                return value*Pow(p["a"],p["num"])==(long)p["coeff"]*Pow(p["a"],p["num"]);
             int den=p["den"],num=p["num"];
             int initial=p["coeff"]*Pow(p["a"],num),m0=Pow(p["a"],den),m1=Pow(p["b"],den);
             return BigInteger.Pow(value,den)*BigInteger.Pow(m0,num)==BigInteger.Pow(initial,den)*BigInteger.Pow(m1,num);

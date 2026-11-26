@@ -21,6 +21,8 @@ public sealed class UaeG10ExponentialEquationInequalityTests
     [InlineData("cooling_threshold",LessonPracticeInteractionKind.IntegerKeypad)]
     [InlineData("power_law_prediction",LessonPracticeInteractionKind.IntegerKeypad)]
     [InlineData("like_power_sum",LessonPracticeInteractionKind.IntegerKeypad)]
+    [InlineData("model_parameters",LessonPracticeInteractionKind.StructuredEntry)]
+    [InlineData("power_law_coefficient",LessonPracticeInteractionKind.IntegerKeypad)]
     public void FamilyDispatchRendererAndIndependentAnswers(string suffix,LessonPracticeInteractionKind kind)
     {
         string family=Prefix+suffix;
@@ -58,6 +60,14 @@ public sealed class UaeG10ExponentialEquationInequalityTests
                     var invalid=p.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
                     invalid["base"]=1;Assert.False(ExactSkillContractQuestionEngine.Verify(family,invalid,task.CorrectAnswer));
                 }
+                else if(suffix=="model_parameters")
+                {
+                    string[] pair=task.CorrectAnswer.Trim('(',')').Split(',');
+                    Assert.Equal(2,pair.Length);
+                    Assert.Equal((double)p["start"],Number(pair[0]));
+                    Assert.Equal(Math.Round(Math.Pow((double)p["end"]/p["start"],1d/p["observed"]),3,MidpointRounding.AwayFromZero),Number(pair[1]),7);
+                    Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,$"({p["start"]+1},{pair[1]})"));
+                }
                 else
                 {
                     double expected=suffix switch
@@ -69,6 +79,7 @@ public sealed class UaeG10ExponentialEquationInequalityTests
                         "cooling_value"=>p["ambient"]+p["delta"]*Math.Pow(0.5,p["step"]),
                         "cooling_threshold"=>p["step"]*p["period"],
                         "power_law_prediction"=>p["coeff"]*Math.Pow(p["b"],p["num"]),
+                        "power_law_coefficient"=>p["coeff"],
                         "like_power_sum"=>Math.Log(Math.Pow(p["base"],p["exponent"])*Math.Pow(p["base"],p["multiplicity"]),p["base"]),
                         _=>throw new InvalidOperationException()
                     };
@@ -93,6 +104,19 @@ public sealed class UaeG10ExponentialEquationInequalityTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"x<=3"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"x>3"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"x<4"));
+    }
+    [Fact]
+    public void ModelPairAndNonUnitRationalBase()
+    {
+        var model=new Dictionary<string,int>{{"start",400},{"end",900},{"observed",2},{"target",3}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"model_parameters",model,"(٤٠٠،١٫٥٠٠)"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"model_parameters",model,"(400,1.499)"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"model_parameters",model,"(401,1.5)"));
+        var rational=new Dictionary<string,int>{{"base",3},{"baseDen",2},{"lp",-1},{"rp",1},{"m",1},{"r",0},{"n",1},{"s",-4},{"op",0}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"inequality_rational_boundary",rational,"x<3"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"inequality_rational_boundary",rational,"x>3"));
+        rational["baseDen"]=3;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"inequality_rational_boundary",rational,"x<3"));
     }
     [Fact]
     public void RoundingAndPeriodBoundaries()

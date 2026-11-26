@@ -29,7 +29,9 @@
     "uae.g10.general.u05.l02.cooling_value",
     "uae.g10.general.u05.l02.cooling_threshold",
     "uae.g10.general.u05.l02.power_law_prediction",
-    "uae.g10.general.u05.l02.like_power_sum"
+    "uae.g10.general.u05.l02.like_power_sum",
+    "uae.g10.general.u05.l02.model_parameters",
+    "uae.g10.general.u05.l02.power_law_coefficient"
   ],
   "forbiddenQuestionFamilies": [
     "uae.g10.general.u05.l01.is_growth",
@@ -37,9 +39,9 @@
   ],
   "generator": "ExactSkillContractQuestionEngine.BuildG10ExponentialEquation (existing engine extension)",
   "grader": "ExactSkillContractQuestionEngine.Verify",
-  "independentVerifier": "UaeG10ExponentialEquationResponse.Verify: original exponent equality and left/boundary/right sign probes, exact integer-powered rounding buckets for growth/decay, compound rational rounding and model arithmetic",
+  "independentVerifier": "UaeG10ExponentialEquationResponse.Verify: original exponent equality and left/boundary/right sign probes, exact integer-powered rounding buckets for growth/decay, compound rational rounding and model arithmetic; model pair verifies initial value and exact rounding bucket separately; power coefficient checks original measured value",
   "parameterBounds": {
-    "base": "2..5, signed nonzero base powers −8..8",
+    "base": "common rational base b/d>1; b 2..5, d 1..b-1, nonzero signed powers −8..8; legacy integer-base parameters accepted",
     "linearExponent": "left nonzero slope −8..8, right slope −8..8, offsets −8..8, unequal resulting slopes",
     "inequality": "strict and weak, increasing/reciprocal bases, rational boundary",
     "model": "start 100..1000, observed 50..1500, 2..6 periods; forecast beyond observed",
@@ -47,7 +49,9 @@
     "period": "1..5% per period, 2,4,12 periods/year",
     "cooling": "ambient 16..25, delta 32..80 multiple of 16, period 5..12, step 1..4",
     "powerLaw": "denominator 2..3, numerator 1..4 different from denominator, perfect-power measurements",
-    "sum": "base 2..5, exponent 2..6, multiplicity power 1..2"
+    "sum": "base 2..5, exponent 2..6, multiplicity power 1..2",
+    "modelParameters": "same bounds as model; ordered pair (initial value, base rounded to nearest thousandth) with exact rounding-bucket verification",
+    "powerCoefficient": "positive integer coefficient, given perfect-power measurement; independently check substitution"
   },
   "rendererMatrix": [
     {
@@ -99,6 +103,16 @@
       "family": "uae.g10.general.u05.l02.like_power_sum",
       "kind": "IntegerKeypad",
       "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.model_parameters",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_pair"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.power_law_coefficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
     }
   ],
   "teacherReviewRequired": [
@@ -117,5 +131,5 @@
     "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
     "StageD": "NOT_STARTED"
   },
-  "scopeStatement": "Selected older matching printed body and extension; bounded digital families authored, not tested. No certification of whole-source atomic completeness."
+  "scopeStatement": "Selected printed body and extension; bounded digital families authored, not tested. Non-perfect-power approximate cooling and power-law coverage and complete source acceptance remain pending."
 }

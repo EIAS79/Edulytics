@@ -111,6 +111,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialEquationResponse.Equation,
             UaeG10ExponentialEquationResponse.Inequality,
             UaeG10ExponentialEquationResponse.Factor,
+            UaeG10ExponentialEquationResponse.Model,
+            UaeG10ExponentialEquationResponse.PowerCoefficient,
             UaeG10ExponentialEquationResponse.Forecast,
             UaeG10ExponentialEquationResponse.Compound,
             UaeG10ExponentialEquationResponse.Period,

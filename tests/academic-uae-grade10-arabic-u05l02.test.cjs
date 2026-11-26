@@ -16,7 +16,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
  assert.equal(cp.sourceElementDenominatorForThisLesson,null);
  assert.equal(cp.selectedPrintedSourceItemsMapped,100);
- assert.equal(cp.allowedQuestionFamilies.length,10);
+ assert.equal(cp.allowedQuestionFamilies.length,12);
  assert.equal(cp.sourcePdfPages[0],150);assert.equal(cp.sourcePdfPages.at(-1),157);
  assert.equal(cp.productionRouting,false);
  assert.equal(cp.status,'A_C_EXPLICIT_GAP');
