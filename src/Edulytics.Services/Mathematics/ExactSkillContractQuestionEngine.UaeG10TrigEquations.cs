@@ -26,7 +26,7 @@ internal static class UaeG10TrigEquationsResponse {
     private static int[] BaseRoots(int fn,int j)=>fn switch{
         0=>j switch{0=>new[]{270},1=>new[]{210,330},2=>new[]{0,180},3=>new[]{30,150},_=>new[]{90}},
         1=>j switch{0=>new[]{180},1=>new[]{120,240},2=>new[]{90,270},3=>new[]{60,300},_=>new[]{0}},
-        _=>j%3 switch{0=>new[]{135,315},1=>new[]{0,180},_=>new[]{45,225}}
+        _=>(j%3) switch{0=>new[]{135,315},1=>new[]{0,180},_=>new[]{45,225}}
     };
     internal static int[] Roots(int k,int fn,int j){
         var b=BaseRoots(fn,j);

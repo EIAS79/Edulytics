@@ -10,7 +10,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             var (expression, options)=UaeG10TrigProofResponse.Item(kind);
             prompt=$"اختر رقم التعبير المكافئ لـ {expression} على المجال المشترك: 1) {options[(0+shift)%3]}؛ 2) {options[(1+shift)%3]}؛ 3) {options[(2+shift)%3]}.";
         }else{
-            prompt=kind%3 switch {
+            prompt=(kind%3) switch {
                 0=>$"أوجد العدد k بحيث {scale}(sin θ+cos θ)²−{scale}=k sin θ cos θ متطابقة.",
                 1=>$"أوجد العدد k بحيث {scale}(1−cos²θ)=k sin²θ متطابقة.",
                 _=>$"أوجد العدد k بحيث {scale}(sec²θ−tan²θ)=k حيث cos θ≠0."
@@ -43,7 +43,7 @@ internal static class UaeG10TrigProofResponse
         if(f==Coefficient){
             // Evaluate at a nonzero exact Pythagorean ratio, independently from the coefficient formatter.
             const double s=3.0/5,c=4.0/5;
-            double n=k%3 switch {0=>(scale*Math.Pow(s+c,2)-scale)/(s*c),1=>scale*(1-c*c)/(s*s),_=>scale*(1/(c*c)-s*s/(c*c))};
+            double n=(k%3) switch {0=>(scale*Math.Pow(s+c,2)-scale)/(s*c),1=>scale*(1-c*c)/(s*s),_=>scale*(1/(c*c)-s*s/(c*c))};
             return UaeG10TrigScalar.Matches((long)Math.Round(n),1,raw);
         }
         // Each authored choice identity is symbolic; independent evaluation distinguishes the three bounded options.

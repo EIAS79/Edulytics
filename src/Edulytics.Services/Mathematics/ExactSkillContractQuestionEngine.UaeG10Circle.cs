@@ -369,12 +369,12 @@ internal static class UaeG10CircleResponse
         else return false;
         if(IsCircleArea(f))
         {
-            long r=6*p["k"],angle=p["angle"],inner=p["inner"],sq=r*r,s=sq*angle/360;
+            long r=6*p["k"],angle=p["angle"],inner=p["inner"],sq=r*r,sectorCoefficient=sq*angle/360;
             if(f is AreaDisk or AreaDiameter or AreaCircumference)return n==sq*d;
             if(f==AreaRadius)return n>0&&n*n==sq*d*d;
             if(f==AreaSector)return 360*n==sq*angle*d;
-            if(f==AreaSectorAngle)return n*sq==360*s*d;
-            if(f==AreaSectorRadius)return n>0&&angle*n*n==360*s*d*d;
+            if(f==AreaSectorAngle)return n*sq==360*sectorCoefficient*d;
+            if(f==AreaSectorRadius)return n>0&&angle*n*n==360*sectorCoefficient*d*d;
             if(f==AreaAnnulus)return n+inner*inner*d==sq*d;
             double actual=f switch{AreaDiskApprox=>sq*Math.PI,AreaSectorApprox=>sq*angle*Math.PI/360,AreaSegmentApprox=>sq*(Math.PI-2)/4,AreaCompositeApprox=>sq*(4-Math.PI),_=>double.NaN};
             return IsAreaApprox(f)&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
