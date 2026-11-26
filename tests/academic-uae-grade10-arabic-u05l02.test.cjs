@@ -23,7 +23,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,16);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,18);
  assert.equal(rich.Lessons[0].Visuals.length,5);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{
@@ -36,4 +36,14 @@ test('Independent algebra oracles preserve equation and inequality directions',(
  for(const x of [0,2])assert.equal(Math.pow(2,2*x)-5*Math.pow(2,x)+4,0);
  assert.equal(Math.pow(4,1.5),8);
  assert.equal(Math.pow(3,3),27);
+});
+
+test('Growth model and compounding examples have independent numerical checks',()=>{
+ assert.equal(640*Math.pow(1.25,3),1250);
+ assert.ok(Math.abs(5000*Math.pow(1.02,4)-5412.1608)<1e-8);
+ assert.equal(75*Math.pow(2,2),300);
+ assert.equal(75*Math.pow(2,4),1200);
+ assert.ok(Math.abs(1000*Math.pow(1.05,4)-1215.50625)<1e-8);
+ assert.equal(200*Math.pow(2,3)>1600,false);
+ assert.equal(200*Math.pow(2,4)>1600,true);
 });
