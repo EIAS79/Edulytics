@@ -7,11 +7,12 @@ public sealed partial class ExactSkillContractQuestionEngine
     {
         int a=random.Next(2,7),b=random.Next(1,10),x=random.Next(1,16),k=random.Next(2,11),m=random.Next(1,10);
         int t=2*random.Next(1,7),u=random.Next(2,21),v=random.Next(2,21);
+        int signed=m%2==0?x:-x;
         string choices="اكتب رقم الخاصية: 1=الجمع، 2=الطرح، 3=الضرب، 4=القسمة، 5=الانعكاس، 6=التماثل، 7=التعدي، 8=التعويض، 9=التوزيع.";
         string prompt=family switch{
             UaeG10AlgebraicProofResponse.Property=>$"{UaeG10AlgebraicProofResponse.PropertyStatement(m,a,b)} {choices}",
-            UaeG10AlgebraicProofResponse.Linear=>$"حل {a}(س+{b})={a*(x+b)}. أوجد س؛ برر بالخطوات في البرهان الذي يراجعه المعلم.",
-            UaeG10AlgebraicProofResponse.Rational=>$"حل س/{a}+{b}={x+b}. أوجد س.",
+            UaeG10AlgebraicProofResponse.Linear=>$"حل {a}(س+{b})={a*(signed+b)}. أوجد س؛ برر بالخطوات في البرهان الذي يراجعه المعلم.",
+            UaeG10AlgebraicProofResponse.Rational=>$"حل س/{a}+{b}={signed+b}. أوجد س.",
             UaeG10AlgebraicProofResponse.Segment=>$"أ ب≅ج د، أ ب={a+1}س+{b} وج د={a}س+{b+x}. أوجد س.",
             UaeG10AlgebraicProofResponse.Angle=>$"∠أ≅∠ب، قياس أ=({a+1}س+{b})° وقياس ب=({a}س+{b+x})°. أوجد س.",
             UaeG10AlgebraicProofResponse.Temperature=>$"C=5(F−32)/9. إذا C={5*x} درجة مئوية، أوجد F بالفهرنهايت.",
@@ -43,19 +44,19 @@ internal static class UaeG10AlgebraicProofResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded algebraic proof parameters.");
         int a=p["a"],x=p["x"],m=p["m"],k=p["k"];
-        int value=f switch{Property=>m,Linear or Segment or Angle or Acceleration=>x,Rational=>a*x,Temperature=>9*x+32,Motion=>p["u"],Heart=>4*x,Gas=>200+10*x,Voltage=>m%2==0?x:4*x,Cube=>k*k*k,Pythagoras=>4*k,Equivalence=>m is 1 or 6 or 7 or 9?1:0,_=>throw new InvalidOperationException()};
+        int value=f switch{Property=>m,Linear=>m%2==0?x:-x,Segment or Angle or Acceleration=>x,Rational=>a*(m%2==0?x:-x),Temperature=>9*x+32,Motion=>p["u"],Heart=>4*x,Gas=>200+10*x,Voltage=>m%2==0?x:4*x,Cube=>k*k*k,Pythagoras=>4*k,Equivalence=>m is 1 or 6 or 7 or 9?1:0,_=>throw new InvalidOperationException()};
         return value.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
-        string raw=string.Concat(answer.Trim().Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c));
-        if(!int.TryParse(raw,NumberStyles.None,CultureInfo.InvariantCulture,out int z)||z>1000)return false;
+        string raw=string.Concat(answer.Trim().Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c is '−' or '–'?'-':c));
+        if(!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int z)||z is <-1000 or >1000)return false;
         int a=p["a"],b=p["b"],x=p["x"],k=p["k"],m=p["m"],t=p["t"],u=p["u"],v=p["v"];
         return f switch{
             Property=>z is >=1 and <=9&&PropertyStatement(z,a,b)==PropertyStatement(m,a,b),
-            Linear=>a*(z+b)==a*(x+b),
-            Rational=>z+a*b==a*(x+b),
+            Linear=>a*(z+b)==a*((m%2==0?x:-x)+b),
+            Rational=>z+a*b==a*((m%2==0?x:-x)+b),
             Segment or Angle=>(a+1)*z+b==a*z+b+x,
             Temperature=>5*(z-32)==45*x,
             Motion=>(z+v)*t==(u+v)*t,
