@@ -164,6 +164,29 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10CommonLogarithmResponse.Ppm,
             UaeG10CommonLogarithmResponse.LabEq,
             UaeG10CommonLogarithmResponse.LabIneq,
+            UaeG10NaturalLogarithmResponse.Convert,
+            UaeG10NaturalLogarithmResponse.Identity,
+            UaeG10NaturalLogarithmResponse.Value,
+            UaeG10NaturalLogarithmResponse.Condense,
+            UaeG10NaturalLogarithmResponse.Expand,
+            UaeG10NaturalLogarithmResponse.Equation,
+            UaeG10NaturalLogarithmResponse.Possible,
+            UaeG10NaturalLogarithmResponse.LogEq,
+            UaeG10NaturalLogarithmResponse.ExpIneq,
+            UaeG10NaturalLogarithmResponse.LogIneq,
+            UaeG10NaturalLogarithmResponse.Even,
+            UaeG10NaturalLogarithmResponse.Reciprocal,
+            UaeG10NaturalLogarithmResponse.Balance,
+            UaeG10NaturalLogarithmResponse.Principal,
+            UaeG10NaturalLogarithmResponse.Time,
+            UaeG10NaturalLogarithmResponse.Rate,
+            UaeG10NaturalLogarithmResponse.Decay,
+            UaeG10NaturalLogarithmResponse.Half,
+            UaeG10NaturalLogarithmResponse.Threshold,
+            UaeG10NaturalLogarithmResponse.CoolingK,
+            UaeG10NaturalLogarithmResponse.CoolingTemp,
+            UaeG10NaturalLogarithmResponse.CoolingTime,
+            UaeG10NaturalLogarithmResponse.Substitution,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1640,6 +1663,8 @@ public sealed partial class ExactSkillContractQuestionEngine
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
 
+        if (UaeG10NaturalLogarithmResponse.Supports(family))
+            return UaeG10NaturalLogarithmResponse.Verify(family,parameters,answer);
         if (UaeG10CommonLogarithmResponse.Supports(family))
             return UaeG10CommonLogarithmResponse.Verify(family,parameters,answer);
         if (UaeG10LogarithmPropertiesResponse.Supports(family))
@@ -4255,6 +4280,8 @@ public sealed partial class ExactSkillContractQuestionEngine
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
 
+        if (UaeG10NaturalLogarithmResponse.Supports(family))
+            return BuildG10NaturalLogarithm(family,random,difficulty);
         if (UaeG10CommonLogarithmResponse.Supports(family))
             return BuildG10CommonLogarithm(family,random,difficulty);
         if (UaeG10LogarithmPropertiesResponse.Supports(family))
@@ -10575,6 +10602,8 @@ public sealed partial class ExactSkillContractQuestionEngine
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
 
+        if (UaeG10NaturalLogarithmResponse.Supports(problem.Family))
+            return UaeG10NaturalLogarithmResponse.Format(problem.Family,p);
         if (UaeG10CommonLogarithmResponse.Supports(problem.Family))
             return UaeG10CommonLogarithmResponse.Format(problem.Family,p);
         if (UaeG10LogarithmPropertiesResponse.Supports(problem.Family))
