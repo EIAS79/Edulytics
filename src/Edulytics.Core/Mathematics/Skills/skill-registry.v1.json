@@ -8582,8 +8582,16 @@
       "domain": "trigonometry",
       "canonicalName": "متطابقات مجموع زاويتين والفرق بينهما",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l12.special_angle_exact_choice",
+        "uae.g10.general.u14.l12.sine_sum_difference",
+        "uae.g10.general.u14.l12.cosine_sum_difference",
+        "uae.g10.general.u14.l12.tangent_sum_difference"
+      ]
     },
     {
       "id": "trigonometry.identities.double_half_angle",

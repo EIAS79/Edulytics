@@ -58278,6 +58278,74 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l12.special_angle_exact_choice",
+      "version": 1,
+      "skillId": "trigonometry.identities.angle_sum_difference",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g10_trig_angle_sum_reconstruct_v1",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l12.sine_sum_difference",
+      "version": 1,
+      "skillId": "trigonometry.identities.angle_sum_difference",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g10_trig_angle_sum_reconstruct_v1",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l12.cosine_sum_difference",
+      "version": 1,
+      "skillId": "trigonometry.identities.angle_sum_difference",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g10_trig_angle_sum_reconstruct_v1",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g10.general.u14.l12.tangent_sum_difference",
+      "version": 1,
+      "skillId": "trigonometry.identities.angle_sum_difference",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g10_trig_angle_sum_reconstruct_v1",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
