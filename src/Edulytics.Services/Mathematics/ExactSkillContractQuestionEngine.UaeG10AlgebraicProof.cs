@@ -11,8 +11,8 @@ public sealed partial class ExactSkillContractQuestionEngine
         string choices="اكتب رقم الخاصية: 1=الجمع، 2=الطرح، 3=الضرب، 4=القسمة، 5=الانعكاس، 6=التماثل، 7=التعدي، 8=التعويض، 9=التوزيع.";
         string prompt=family switch{
             UaeG10AlgebraicProofResponse.Property=>$"{UaeG10AlgebraicProofResponse.PropertyStatement(m,a,b)} {choices}",
-            UaeG10AlgebraicProofResponse.Linear=>$"حل {a}(س+{b})={a*(signed+b)}. أوجد س؛ برر بالخطوات في البرهان الذي يراجعه المعلم.",
-            UaeG10AlgebraicProofResponse.Rational=>$"حل س/{a}+{b}={signed+b}. أوجد س.",
+            UaeG10AlgebraicProofResponse.Linear=>k%2==0?$"حل {a}(س+{b})={a*(signed+b)}. أوجد س؛ برر بالخطوات في البرهان الذي يراجعه المعلم.":$"حل {a+1}س+{b}={a}س+({b+signed}). أوجد س؛ برر بالخطوات في البرهان الذي يراجعه المعلم.",
+            UaeG10AlgebraicProofResponse.Rational=>k%2==0?$"حل س/{a}+{b}={signed+b}. اكتب س كعدد صحيح أو كسر.":$"حل {a}س+{b}=({signed+b}). اكتب س كعدد صحيح أو كسر.",
             UaeG10AlgebraicProofResponse.Segment=>$"أ ب≅ج د، أ ب={a+1}س+{b} وج د={a}س+{b+x}. أوجد س.",
             UaeG10AlgebraicProofResponse.Angle=>$"∠أ≅∠ب، قياس أ=({a+1}س+{b})° وقياس ب=({a}س+{b+x})°. أوجد س.",
             UaeG10AlgebraicProofResponse.Temperature=>$"C=5(F−32)/9. إذا C={5*x} درجة مئوية، أوجد F بالفهرنهايت.",
@@ -44,19 +44,34 @@ internal static class UaeG10AlgebraicProofResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded algebraic proof parameters.");
         int a=p["a"],x=p["x"],m=p["m"],k=p["k"];
-        int value=f switch{Property=>m,Linear=>m%2==0?x:-x,Segment or Angle or Acceleration=>x,Rational=>a*(m%2==0?x:-x),Temperature=>9*x+32,Motion=>p["u"],Heart=>4*x,Gas=>200+10*x,Voltage=>m%2==0?x:4*x,Cube=>k*k*k,Pythagoras=>4*k,Equivalence=>m is 1 or 6 or 7 or 9?1:0,_=>throw new InvalidOperationException()};
+        if(f==Rational)
+        {
+            int num=(m%2==0?x:-x)*(k%2==0?a:1),den=k%2==0?1:a;
+            int g=Gcd(Math.Abs(num),den);num/=g;den/=g;
+            return den==1?num.ToString(CultureInfo.InvariantCulture):$"{num}/{den}";
+        }
+        int value=f switch{Property=>m,Linear=>m%2==0?x:-x,Segment or Angle or Acceleration=>x,Temperature=>9*x+32,Motion=>p["u"],Heart=>4*x,Gas=>200+10*x,Voltage=>m%2==0?x:4*x,Cube=>k*k*k,Pythagoras=>4*k,Equivalence=>m is 1 or 6 or 7 or 9?1:0,_=>throw new InvalidOperationException()};
         return value.ToString(CultureInfo.InvariantCulture);
     }
+    private static int Gcd(int a,int b){while(b!=0){int t=a%b;a=b;b=t;}return a;}
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
         string raw=string.Concat(answer.Trim().Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c is '−' or '–'?'-':c));
+        if(f==Rational)
+        {
+            var parts=raw.Split('/');
+            if(parts.Length is <1 or >2||!int.TryParse(parts[0],NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int num)||num is <-1000000 or >1000000)return false;
+            int den=1;
+            if(parts.Length==2&&(!int.TryParse(parts[1],NumberStyles.None,CultureInfo.InvariantCulture,out den)||den is <1 or >1000000))return false;
+            int signed=p["m"]%2==0?p["x"]:-p["x"];
+            return p["k"]%2==0?(long)num==(long)p["a"]*signed*den:(long)p["a"]*num==(long)signed*den;
+        }
         if(!int.TryParse(raw,NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int z)||z is <-1000 or >1000)return false;
         int a=p["a"],b=p["b"],x=p["x"],k=p["k"],m=p["m"],t=p["t"],u=p["u"],v=p["v"];
         return f switch{
             Property=>z is >=1 and <=9&&PropertyStatement(z,a,b)==PropertyStatement(m,a,b),
-            Linear=>a*(z+b)==a*((m%2==0?x:-x)+b),
-            Rational=>z+a*b==a*((m%2==0?x:-x)+b),
+            Linear=>k%2==0?a*(z+b)==a*((m%2==0?x:-x)+b):(a+1)*z+b==a*z+b+(m%2==0?x:-x),
             Segment or Angle=>(a+1)*z+b==a*z+b+x,
             Temperature=>5*(z-32)==45*x,
             Motion=>(z+v)*t==(u+v)*t,
