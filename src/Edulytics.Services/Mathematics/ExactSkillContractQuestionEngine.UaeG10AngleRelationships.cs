@@ -15,13 +15,18 @@ public sealed partial class ExactSkillContractQuestionEngine
         string choices="اكتب رقم المبرر: 1=انعكاس التطابق، 2=تماثل التطابق، 3=تعدي التطابق، 4=التقابل بالرأس، 5=تطابق المكملتين، 6=تطابق المتممتين، 7=تطابق الزوايا القائمة، 8=زوج خطي متطابق.";
         string prompt=family switch{
             UaeG10AngleRelationshipsResponse.Protractor=>$"على التدريج نفسه في نصف المستوى، قراءتا الشعاعين {(variant%2==0?p:p+a+b)}° و{(variant%2==0?p+a+b:p)}°. ما قياس الزاوية بينهما بالدرجات؟",
-            UaeG10AngleRelationshipsResponse.Addition=>variant%2==0?$"الشعاع BD داخل ∠ABC، وقياس ∠ABD={a}° و∠DBC={b}°. أوجد قياس ∠ABC.":$"الشعاع BD داخل ∠ABC وقياس ∠ABC={a+b}° و∠ABD={a}°. أوجد قياس ∠DBC.",
+            UaeG10AngleRelationshipsResponse.Addition=>variant switch{
+                0=>$"الشعاع BD داخل ∠ABC، وقياس ∠ABD={a}° و∠DBC={b}°. أوجد قياس ∠ABC.",
+                1=>$"الشعاع BD داخل ∠ABC وقياس ∠ABC={a+b}° و∠ABD={a}°. أوجد قياس ∠DBC.",
+                2=>$"ثلاث زوايا متجاورة تقسم زاوية مقدارها {92+a%40+b%40}°. الزاوية الوسطى قائمة والأولى {1+a%40}°. أوجد الثالثة.",
+                _=>$"ثلاث زوايا متجاورة غير متداخلة، قياساتها {1+a%40}° و90° و{1+b%40}°. أوجد قياس الزاوية الكلية."
+            },
             UaeG10AngleRelationshipsResponse.Complement=>variant%2==0?$"زاويتان متتامتان إحداهما {a}°. أوجد الأخرى بالدرجات.":$"في الربع نفسه يصنع خط النظر {a}° مع العمودي؛ الأفقي متعامد مع العمودي. ما زاويته مع الأفقي بالدرجات؟",
             UaeG10AngleRelationshipsResponse.Supplement=>$"زاويتان تشكلان زوجًا خطيًا. قياس إحداهما {(variant%2==0?a:180-a)}°. أوجد الأخرى.",
             UaeG10AngleRelationshipsResponse.RightPartition=>variant%2==0?$"ثلاث زوايا متجاورة تكوّن زاوية مستقيمة. الطرفيتان متطابقتان والوسطى {180-2*a}°. ما قياس كل طرفية؟":$"ثلاث زوايا متجاورة على مستقيم؛ الوسطى قائمة والطرفيتان متطابقتان. أوجد قياس كل طرفية.",
             UaeG10AngleRelationshipsResponse.Linear=>$"زاويتان متجاورتان تشكلان زاوية {(total==90?"قائمة":"مستقيمة")}. قياساهما ({m}س+({left}))° و({m+1}س+({right}))°. أوجد س.",
             UaeG10AngleRelationshipsResponse.VerticalEquation=>$"زاويتان متقابلتان بالرأس قياساهما ({m}س+({first}))° و({m+1}س+({second}))°. أوجد {(variant%2==0?"س":"قياس كل زاوية بالدرجات")}.",
-            UaeG10AngleRelationshipsResponse.VerticalMeasure=>$"يتقاطع مستقيمان، وقياس ∠1={angle}°، والزوايا 1،2،3،4 متتابعة حول التقاطع. أوجد قياس ∠{(variant%2==0?3:2)}.",
+            UaeG10AngleRelationshipsResponse.VerticalMeasure=>variant==2?$"يتقاطع مستقيمان. قياس ∠1={angle}°، والزاوية المقابلة لها بالرأس يقسمها شعاع داخلي إلى جزأين، أحدهما {b}°. أوجد الآخر.":$"يتقاطع مستقيمان، وقياس ∠1={angle}°، والزوايا 1،2،3،4 متتابعة حول التقاطع. أوجد قياس ∠{(variant%2==0?3:2)}.",
             UaeG10AngleRelationshipsResponse.SameReference=>variant<2?$"الزاويتان أ وب {(total==90?"متممتان":"مكملتان")} للزاوية ج التي قياسها {a}°. أوجد قياس ب.":$"∠أ و∠ب {(total==90?"متممتان":"مكملتان")} لزاويتين متطابقتين، على الترتيب. قياس ∠أ={a}°. أوجد قياس ∠ب.",
             UaeG10AngleRelationshipsResponse.Bisector=>variant switch{0=>$"زاوية قياسها {2*a}° ينصفها شعاع. أوجد قياس أحد النصفين.",1=>$"شعاع ينصف زاوية وقياس أحد النصفين {a}°. أوجد قياس الزاوية الكلية.",2=>$"زاوية قياسها {2*a}° ينصفها شعاع، والزاوية 3 تقابل أحد النصفين بالرأس. أوجد قياس 3.",_=>$"في نموذج ذراع مهتز، زاوية الحركة 90° والشعاع الوسطي منصف. أوجد قياس كل نصف."},
             UaeG10AngleRelationshipsResponse.AroundPoint=>$"أربع زوايا متتابعة حول نقطة، قياسات ثلاث منها {a}° و{90+b}° و{90-a}°. أوجد الرابعة.",
@@ -73,9 +78,9 @@ internal static class UaeG10AngleRelationshipsResponse
         if(!Valid(f,p))throw new InvalidOperationException("Invalid bounded geometry angle parameters.");
         int a=p["a"],b=p["b"],x=p["x"],v=p["variant"],t=v%2==0?90:180;
         int result=f switch{
-            Protractor=>a+b,Addition=>v%2==0?a+b:b,Complement=>90-a,Supplement=>v%2==0?180-a:a,
+            Protractor=>a+b,Addition=>v switch{0=>a+b,1=>b,2=>1+b%40,_=>92+a%40+b%40},Complement=>90-a,Supplement=>v%2==0?180-a:a,
             RightPartition=>v%2==0?a:45,Linear=>x,VerticalEquation=>v%2==0?x:a+b,
-            VerticalMeasure or Transfer=>v%2==0?a+b:180-a-b,SameReference=>v<2?t-a:a,
+            VerticalMeasure=>v==2?a:v%2==0?a+b:180-a-b,Transfer=>v%2==0?a+b:180-a-b,SameReference=>v<2?t-a:a,
             Bisector=>v switch{0 or 2=>a,1=>2*a,_=>45},AroundPoint=>180-b,
             Reason=>p["mode"],Perpendicular=>v<2?1:0,_=>throw new InvalidOperationException()
         };
@@ -113,11 +118,12 @@ internal static class UaeG10AngleRelationshipsResponse
         if(z<=0)return false;
         return f switch{
             Protractor=>z==Math.Abs(start-(start+a+b)),
-            Addition=>v%2==0?z-a==b:a+z==a+b,
+            Addition=>v switch{0=>z-a==b,1=>a+z==a+b,2=>z+90+1+a%40==92+a%40+b%40,_=>z-(1+a%40)-90==1+b%40},
             Complement=>a+z==90,
             Supplement=>z+(v%2==0?a:180-a)==180,
             RightPartition=>2*z+(v%2==0?180-2*a:90)==180,
-            VerticalMeasure or Transfer=>v%2==0?z+a+b+2*(180-a-b)==360:z+a+b==180,
+            VerticalMeasure=>v==2?z+b==a+b:v%2==0?z+a+b+2*(180-a-b)==360:z+a+b==180,
+            Transfer=>v%2==0?z+a+b+2*(180-a-b)==360:z+a+b==180,
             SameReference=>v<2?z+a==t:z+(t-a)==t,
             Bisector=>v switch{0 or 2=>2*z==2*a,1=>z==a+a,_=>2*z==90},
             AroundPoint=>z+a+(90+b)+(90-a)==360,
