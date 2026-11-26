@@ -70,7 +70,7 @@ public sealed class UaeG10GeneralQuadraticGraphTests
             Assert.Equal(y,(4-x)*(4-x)-4*(4-x)+3);
             Assert.Equal(-1,2*2-4*2+3);
             Assert.Equal(5,-2*2*2+8*2-3);
-            Assert.Equal(-2,(-1)*(-1)+4*(-1)-3);
+            Assert.Equal(-6,(-1)*(-1)+4*(-1)-3);
         }
         Assert.Equal(550,-10*5*5+100*5+300);
     }

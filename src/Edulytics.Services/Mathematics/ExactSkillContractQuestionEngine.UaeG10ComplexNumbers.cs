@@ -63,7 +63,7 @@ internal static class UaeG10ComplexResponse
             SumImag=>b+d,
             ProductReal=>a*c-b*d,
             ProductImag=>a*d+b*c,
-            PowerReal=>n%4 switch{0=>1,2=>-1,_=>0},
+            PowerReal=>(n%4) switch{0=>1,2=>-1,_=>0},
             _=>a*a+b*b
         };
         return true;

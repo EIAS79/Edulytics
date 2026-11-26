@@ -40,7 +40,7 @@ public sealed class UaeG10GeneralComplexNumbersTests
                         "uae.g10.general.u04.l03.sum_imag"=>b+d,
                         "uae.g10.general.u04.l03.product_real"=>a*c-b*d,
                         "uae.g10.general.u04.l03.product_imag"=>a*d+b*c,
-                        "uae.g10.general.u04.l03.i_power_real"=>n%4 switch {0=>1,2=>-1,_=>0},
+                        "uae.g10.general.u04.l03.i_power_real"=>new[]{1,0,-1,0}[n%4],
                         _=>a*a+b*b
                     };
                     Assert.Equal(expected.ToString(CultureInfo.InvariantCulture),q.CorrectAnswer);
