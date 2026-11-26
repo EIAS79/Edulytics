@@ -205,6 +205,12 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u14.l12.sine_sum_difference",
             "uae.g10.general.u14.l12.cosine_sum_difference",
             "uae.g10.general.u14.l12.tangent_sum_difference",
+            "uae.g10.general.u14.l13.double_sine",
+            "uae.g10.general.u14.l13.double_cosine",
+            "uae.g10.general.u14.l13.double_tangent",
+            "uae.g10.general.u14.l13.half_squared",
+            "uae.g10.general.u14.l13.half_tangent",
+            "uae.g10.general.u14.l13.half_exact_choice",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1498,6 +1504,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(family))
+            return UaeG10TrigDoubleHalfResponse.Verify(family,parameters,answer);
 
         if (UaeG10TrigAngleSumResponse.Supports(family))
             return UaeG10TrigAngleSumResponse.Verify(family,parameters,answer);
@@ -4057,6 +4066,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(family))
+            return BuildG10TrigDoubleHalf(family,random,difficulty);
 
         if (UaeG10TrigAngleSumResponse.Supports(family))
             return BuildG10TrigAngleSum(family,random,difficulty);
@@ -10321,6 +10333,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(problem.Family))
+            return UaeG10TrigDoubleHalfResponse.Format(problem.Family,p);
 
         if (UaeG10TrigAngleSumResponse.Supports(problem.Family))
             return UaeG10TrigAngleSumResponse.Format(problem.Family,p);
