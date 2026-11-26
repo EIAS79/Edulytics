@@ -223,6 +223,15 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ProbabilityOddsResponse.Cut,
             UaeG10ProbabilityOddsResponse.Data,
             UaeG10ProbabilityOddsResponse.DataOdds,
+            UaeG10PostulatesResponse.Necessary,
+            UaeG10PostulatesResponse.Postulate,
+            UaeG10PostulatesResponse.Classify,
+            UaeG10PostulatesResponse.Midpoint,
+            UaeG10PostulatesResponse.SharedMidpoint,
+            UaeG10PostulatesResponse.Pairs,
+            UaeG10PostulatesResponse.Wheels,
+            UaeG10PostulatesResponse.Travel,
+            UaeG10PostulatesResponse.Slope,
             UaeG10CircleResponse.Diameter,
             UaeG10CircleResponse.Radius,
             UaeG10CircleResponse.Circumference,
@@ -1698,6 +1707,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PostulatesResponse.Supports(family))
+            return UaeG10PostulatesResponse.Verify(family,parameters,answer);
 
         if (UaeG10ProbabilityOddsResponse.Supports(family))
             return UaeG10ProbabilityOddsResponse.Verify(family,parameters,answer);
@@ -4321,6 +4333,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(family))
             return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10PostulatesResponse.Supports(family))
+            return BuildG10Postulates(family,random,difficulty);
 
         if (UaeG10ProbabilityOddsResponse.Supports(family))
             return BuildG10ProbabilityOdds(family,random,difficulty);
@@ -10649,6 +10664,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
             return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10PostulatesResponse.Supports(problem.Family))
+            return UaeG10PostulatesResponse.Format(problem.Family,p);
 
         if (UaeG10ProbabilityOddsResponse.Supports(problem.Family))
             return UaeG10ProbabilityOddsResponse.Format(problem.Family,p);
