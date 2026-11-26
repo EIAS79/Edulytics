@@ -14,7 +14,8 @@ test('G10 L001 numbered inventory is traceable, but not atomic parity',()=>{
  assert.deepEqual(evidence.page23to25Rows.map(x=>x.number),Array.from({length:65},(_,i)=>i+1));
  assert.equal(new Set(evidence.page23to25Rows.map(x=>x.sourceElementId)).size,65);
  for(const row of evidence.page23to25Rows){
-   assert.equal(row.status,'REPRESENTATIVE_ALIGNMENT_NOT_ATOMIC_EQUIVALENCE');
+   assert.equal(row.status,'DEDICATED_ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED');
+   assert.ok(row.originalArtifact && row.originalArtifact.workedExampleTitle===row.representativeArtifactTitle);
    assert.ok(rich.WorkedExamples.some(e=>e.Title===row.representativeArtifactTitle));
  }
  const p26=read(base+'lesson-001-stage-d-page-026-review.json');

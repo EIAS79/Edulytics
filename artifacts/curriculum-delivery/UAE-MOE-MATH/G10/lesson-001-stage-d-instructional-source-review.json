@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "physicalPages": [
+    20,
+    21,
+    22
+  ],
+  "directVisualReview": true,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
+  "rows": [
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-GOAL-1",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "goal",
+      "goal": "standard form and leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "المعامل الرئيس",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-GOAL-2",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "goal",
+      "goal": "addition and subtraction of polynomials",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "طرح كثيرة حدود",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-INTRO",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "context",
+      "goal": "interpret polynomial model in a bounded context",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "مدخل: نموذج تربيعي للقياس المتغير",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-POLY",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "polynomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "كثيرة الحدود والدرجة",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-BINOMIAL",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "binomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "عدد الحدود وتصنيفها",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-TRINOMIAL",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "trinomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "عدد الحدود وتصنيفها",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-MONOMIAL-DEG",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "degree of monomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "درجة متعددة المتغيرات",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-POLY-DEG",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "degree of polynomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "كثيرة الحدود والدرجة",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-STANDARD",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "standard form",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "كثيرة الحدود والدرجة",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-VOC-LEADING",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "vocabulary",
+      "goal": "leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "المعامل الرئيس",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-0",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 0",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٠"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-1",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 1",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "١"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-2",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 2",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٢"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-3",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 3",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٣"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-4",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 4",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٤"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-5",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 5",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٥"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-DEGREE-6",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "table row",
+      "goal": "degree name row 6+",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "خريطة أسماء درجات كثيرات الحدود",
+        "subpart": "٦ فأكثر"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-EX1-1",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "worked subpart",
+      "goal": "binomial multivariable",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "أمثلة تصنيف: ثابت عشري وحدود تُختزل",
+        "subpart": "1"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-G1-1",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "guided exercise",
+      "goal": "linear monomial",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: شروط التعريف والدرجة",
+        "subpart": "1"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-EX1-2",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "worked subpart",
+      "goal": "negative decimal constant",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "أمثلة تصنيف: ثابت عشري وحدود تُختزل",
+        "subpart": "2"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-G1-2",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "guided exercise",
+      "goal": "combine like terms before classifying",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: شروط التعريف والدرجة",
+        "subpart": "2"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-EX1-3",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "worked subpart",
+      "goal": "negative exponent rejection",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "أمثلة تصنيف: ثابت عشري وحدود تُختزل",
+        "subpart": "3"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-G1-3",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "guided exercise",
+      "goal": "multivariate total degree",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: شروط التعريف والدرجة",
+        "subpart": "3"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-EX1-4",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "worked subpart",
+      "goal": "simplify like terms before classifying",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "أمثلة تصنيف: ثابت عشري وحدود تُختزل",
+        "subpart": "4"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-G1-4",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "guided exercise",
+      "goal": "negative and variable exponents",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: شروط التعريف والدرجة",
+        "subpart": "4"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-LEADING-ANNOTATION",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "diagram",
+      "goal": "identify highest degree and leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "الصيغة القياسية والدرجة",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-EX2-A",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "worked subpart",
+      "goal": "standard form positive leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "الصيغة القياسية والدرجة",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-EX2-B",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "worked subpart",
+      "goal": "standard form negative leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "الصيغة القياسية مع معامل رئيس سالب وكسري",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-G2-1",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "guided exercise",
+      "goal": "reorder and leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: ترتيب القوى المتباعدة",
+        "subpart": "1"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-G2-2",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "guided exercise",
+      "goal": "reorder and leading coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: ترتيب القوى المتباعدة",
+        "subpart": "2"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-EX3-A",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "worked subpart",
+      "goal": "horizontal sum",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "الجمع بالطريقة الأفقية",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-EX3-B",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "worked subpart",
+      "goal": "vertical sum with missing degree",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "نشاط كتابة: مقارنة الجمع والطرح الأفقي والرأسي",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-TIP-ZERO",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "study tip",
+      "goal": "insert zero placeholder for missing degree",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "CommonMistakes",
+        "title": "نقل الثابت إلى عمود س أو س² في الطريقة الرأسية.",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-G3-1",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "guided exercise",
+      "goal": "sum using aligned coefficient slots",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: جمع الحدود أفقيًا ورأسيًا",
+        "subpart": "1"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P21-G3-2",
+      "physicalPdfPage": 21,
+      "printedPage": 8,
+      "kind": "guided exercise",
+      "goal": "sum using aligned coefficient slots",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: جمع الحدود أفقيًا ورأسيًا",
+        "subpart": "2"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-ADDITIVE-INVERSE",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "definition and visual example",
+      "goal": "negate every coefficient",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "Visuals",
+        "title": "تحقيق إشارة كل حد في المطروح",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-EX4-A",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "worked subpart",
+      "goal": "horizontal subtraction",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "كشف خطأ قلب الإشارات في طرح كثيرة حدود",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-EX4-B",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "worked subpart",
+      "goal": "vertical subtraction with missing power",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "الطرح ومحاذاة الحدود",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-TIP-INVERSE",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "study tip",
+      "goal": "multiply every subtracted term by minus one",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "طرح كثيرة حدود",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-G4-1",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "guided exercise",
+      "goal": "subtraction and full sign inversion",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: الطرح مع قوى مفقودة",
+        "subpart": "1"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-G4-2",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "guided exercise",
+      "goal": "subtraction and full sign inversion",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: الطرح مع قوى مفقودة",
+        "subpart": "2"
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-CLOSURE",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "concept",
+      "goal": "addition and subtraction closed on polynomials",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "KeyConcepts",
+        "title": "انغلاق الجمع والطرح",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-EX5",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "worked example",
+      "goal": "sum two linear contextual models and evaluate",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "مجموع نموذجين خطيين وتقديره",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P22-G5",
+      "physicalPdfPage": 22,
+      "printedPage": 9,
+      "kind": "guided exercise",
+      "goal": "difference of monthly models and evaluate",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "تمرين موجه: فرق نموذجين شهريين",
+        "subpart": null
+      },
+      "status": "ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    {
+      "sourceElementId": "G10-GEN-2025-U01L01-P20-MATH-PRACTICE",
+      "physicalPdfPage": 20,
+      "printedPage": 7,
+      "kind": "open mathematical practice",
+      "goal": "construct arguments and critique reasoning",
+      "originalArtifact": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json",
+        "field": "WorkedExamples",
+        "title": "كشف خطأ قلب الإشارات في طرح كثيرة حدود",
+        "subpart": null
+      },
+      "status": "ORIGINAL_TEACHER_REVIEW_AUTHORED_RUNTIME_PENDING"
+    }
+  ],
+  "excludedNonInstructional": [
+    {
+      "page": 20,
+      "kind": "decorative photograph",
+      "reason": "Original model example replaces pedagogical context; photograph not reproduced."
+    },
+    {
+      "page": 22,
+      "kind": "decorative photograph and historical sales statistic",
+      "reason": "Original contextual model replaces mathematical purpose; historical factual claim not reproduced."
+    }
+  ],
+  "unresolvedExternalResources": [
+    {
+      "page": 20,
+      "kind": "two printed QR references",
+      "status": "EXTERNAL_RESOURCE_NOT_INSPECTED; no parity claim"
+    }
+  ],
+  "scope": "Explicitly identified instructional rows only; not a certified all-book atomic denominator. Source item subparts and other edition overlaps remain separate.",
+  "coverage": "UNKNOWN",
+  "productionRouting": false
+}
