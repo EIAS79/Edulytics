@@ -133,7 +133,7 @@ test('U01L01 source identity is the verified 2025–26 General volume 1, not an 
   const lesson=pack.Lessons.find(x=>x.LessonCode==='PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS');
   assert.equal(lesson.SourceSha256,'d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72');
   assert.match(lesson.SourceEdition,/2025–2026, Volume 1/);
-  assert.match(lesson.SourceLocator,/PDF pages 20–25/);
+  assert.match(lesson.SourceLocator,/PDF pages 20–26/);
   assert.match(lesson.RetrievalChannel,/Owner-uploaded/);
   assert.equal(pack.Lessons.length,148,'owner-approved unified catalog, not an independently verified annual textbook count');
 });
@@ -203,10 +203,10 @@ test('U01L01 RichV2 closes original geometry, sign-distribution, and multivariat
  'src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l01-ar.rich-lesson-v2.json'),'utf8'));
  const item=rich.Lessons[0];
  assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('٥س+٧')));
- assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('−س²−٤س+٢')));
+ assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('٦س²−٥س−٢')));
  assert.ok(item.WorkedExamples.some(e=>e.Answer.includes('٤س²ص+٣سص+٣')));
  assert.equal((12*1+18)-(4*1+6)-(3*1+5),12);
- assert.equal((2-1)-(3+3-2),-3);
+ assert.equal((4*4+2*2-5)-(-2*4+7*2-3),12);
  assert.equal((3-2+4)+(1+5-1),10);
 });
 

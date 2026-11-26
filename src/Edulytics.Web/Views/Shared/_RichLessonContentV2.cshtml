@@ -242,8 +242,14 @@
         {
             <article class="rich-mistake-card">
                 <p class="rich-mistake-card__mistake">@mistake.Mistake</p>
-                <p><strong>@whyWrongLabel:</strong> @mistake.WhyWrong</p>
-                <p><strong>@correctionLabel:</strong> @mistake.Correction</p>
+                @if (!string.IsNullOrWhiteSpace(mistake.WhyWrong))
+                {
+                    <p><strong>@whyWrongLabel:</strong> @mistake.WhyWrong</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(mistake.Correction))
+                {
+                    <p><strong>@correctionLabel:</strong> @mistake.Correction</p>
+                }
             </article>
         }
     </div>
