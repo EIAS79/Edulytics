@@ -1,5 +1,3 @@
-# Lesson 147 — missing matching source body
-
-Canonical G10-U18-L02 «البرهان الجبري» remains in the owner-approved 148-lesson index. The annual Applied TOC on physical PDF6 of `03.pdf` and `رياضيات كتاب الطالب تطبيقي 10 8.pdf` lists Unit1 lesson 1-2, printed start 14. Printed body range indicated by the TOC boundaries: 14–28 (not present in these supplied volumes). Direct visual check: Applied volume 2 physical PDF17 begins Unit4 quadratic functions; physical PDF20 printed203 begins 4-1; Applied volume 3 physical PDF17 begins Unit7 triangle relationships. The 2025–2026 General volume starts with quadratic expressions rather than the Applied reasoning/proof Unit1; related proof skills in other chapters do not establish this matching lesson body. The source index title is available but the matching body has not been located among the approved volumes.
-
-Preserve original existing 8 worked examples and 4 models without relabeling as body-reviewed. No source-element denominator, source equivalence, or Stage D pass is claimed. Required: the matching Applied volume 1 lesson pages, or explicit owner-approved equivalent source scope. Source parity UNKNOWN; productionRouting false.
+# استثناء إصلاح 147 — البرهان الجبري
+سجل تاريخي: كان 03.pdf PDF6 وفهرس التطبيقي يذكران الدرس 1-2 دون متن في الكتب السبعة الأولية.
+تحديث 2026-11-26: ظهر المتن المطابق في كتاب المالك الإضافي «رياضيات كتاب الطالب تطبيقي 10 29.pdf»، إصدار 2023–2024 الجزء الأول، PDF29–36 مطبوع14–21، SHA256 9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66. استثناء غياب المتن تاريخي بعد العثور على الصفحات. راجع lesson-147-source-evidence.md وlesson-147-source-elements.json وcheckpoint للحالة النهائية. Stage D NOT_STARTED.
