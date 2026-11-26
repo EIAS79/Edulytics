@@ -33,17 +33,23 @@ const sourceGate={
 if(!sourceGate.sourceLock||!Number.isInteger(sourceGate.denominator)||sourceGate.denominator<=0||sourceGate.coveragePercent!==100)
  block('SOURCE_ATOMIC_PARITY_UNPROVEN',0);
 // Keep early technical diagnostics runnable even while release blockers remain.
-const curriculumReferenceAudit={matched:0,missing:0,invalid:0};
+const curriculumReferenceAudit={matched:0,missing:0,invalid:0,pedagogicalOnly:0};
 const unitCounts={};
 for(let n=1;n<=148;n++){
  const b=ordered[n-1];if(!b||b.SortOrder!==n){fail('BLUEPRINT_ORDER',n);continue;}
  unitCounts[b.UnitNumber]=(unitCounts[b.UnitNumber]||0)+1;
- const ref=referenceNodes.get(b.OfficialReferenceCode);
- if(!ref){curriculumReferenceAudit.missing++;block('MISSING_CANONICAL_CURRICULUM_REFERENCE',n);}
- else if(ref.Kind!=='Reference'||ref.Pathway!=='General'||ref.LogicalLevelFrom!==10||ref.LogicalLevelTo!==10||ref.IsActive!==true){
-  curriculumReferenceAudit.invalid++;block('INVALID_CANONICAL_CURRICULUM_REFERENCE',n);
- }else curriculumReferenceAudit.matched++;
  const p=content.get(b.LessonCode);
+ // New unified first-party lessons have pedagogical provenance but no fabricated official reference.
+ if(b.OfficialReferenceCode){
+  const ref=referenceNodes.get(b.OfficialReferenceCode);
+  if(!ref){curriculumReferenceAudit.missing++;block('DANGLING_OFFICIAL_CURRICULUM_REFERENCE',n);}
+  else if(ref.Kind!=='Reference'||ref.Pathway!=='General'||ref.LogicalLevelFrom!==10||ref.LogicalLevelTo!==10||ref.IsActive!==true){
+   curriculumReferenceAudit.invalid++;block('INVALID_OFFICIAL_CURRICULUM_REFERENCE',n);
+  }else curriculumReferenceAudit.matched++;
+  if(p&&p.OfficialReferenceCode!==b.OfficialReferenceCode)block('CONTENT_OFFICIAL_REFERENCE_MISMATCH',n);
+ }else if(p&&p.OfficialReferenceCode==null&&p.SourceLocator&&p.SourceSha256&&p.TitleProvenance==='PedagogicalSource'){
+  curriculumReferenceAudit.pedagogicalOnly++;
+ }else block('PEDAGOGICAL_PROVENANCE_INCOMPLETE',n);
  if(!p){fail('MISSING_PACK_LESSON',n);continue;}
  const ars=(p.Translations||[]).filter(t=>t.CultureCode==='ar');
  if(ars.length!==1||!ars[0].Title||!ars[0].Explanation||ars[0].Explanation.length<50)fail('ARABIC_TRANSLATION_MISSING',n);
