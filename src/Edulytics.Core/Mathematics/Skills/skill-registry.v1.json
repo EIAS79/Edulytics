@@ -8755,8 +8755,19 @@
       "domain": "geometry",
       "canonicalName": "حجم المنشور والأسطوانة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l05.triangular_prism_volume",
+        "uae.g10.general.u15.l05.oblique_prism_volume",
+        "uae.g10.general.u15.l05.cylinder_volume_pi_coefficient",
+        "uae.g10.general.u15.l05.cylinder_height",
+        "uae.g10.general.u15.l05.cylinder_radius",
+        "uae.g10.general.u15.l05.equal_volume_prism_height",
+        "uae.g10.general.u15.l05.removed_rectangular_volume"
+      ]
     },
     {
       "id": "geometry.solids.volume_pyramid_cone",

@@ -252,6 +252,13 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u15.l04.radius_from_surface",
             "uae.g10.general.u15.l04.radius_from_volume",
             "uae.g10.general.u15.l04.radius_from_great_circle",
+            "uae.g10.general.u15.l05.triangular_prism_volume",
+            "uae.g10.general.u15.l05.oblique_prism_volume",
+            "uae.g10.general.u15.l05.cylinder_volume_pi_coefficient",
+            "uae.g10.general.u15.l05.cylinder_height",
+            "uae.g10.general.u15.l05.cylinder_radius",
+            "uae.g10.general.u15.l05.equal_volume_prism_height",
+            "uae.g10.general.u15.l05.removed_rectangular_volume",
             "uae.g10.general.u14.l09.principal_angle_degrees",
             "uae.g10.general.u14.l09.principal_pi_coefficient",
             "uae.g10.general.u14.l09.inverse_defined",
@@ -1545,6 +1552,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PrismVolumeResponse.Supports(family))
+            return UaeG10PrismVolumeResponse.Verify(family,parameters,answer);
 
         if (UaeG10SphereResponse.Supports(family))
             return UaeG10SphereResponse.Verify(family,parameters,answer);
@@ -4131,6 +4141,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(family))
             return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10PrismVolumeResponse.Supports(family))
+            return BuildG10PrismVolume(family,random,difficulty);
 
         if (UaeG10SphereResponse.Supports(family))
             return BuildG10Sphere(family,random,difficulty);
@@ -10422,6 +10435,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
             return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10PrismVolumeResponse.Supports(problem.Family))
+            return UaeG10PrismVolumeResponse.Format(problem.Family,p);
 
         if (UaeG10SphereResponse.Supports(problem.Family))
             return UaeG10SphereResponse.Format(problem.Family,p);
