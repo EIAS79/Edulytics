@@ -8,6 +8,21 @@ public sealed partial class ExactSkillContractQuestionEngine
 {
     private static ExactProblem BuildG10Circle(string family,Random random,ExactSkillQuestionDifficulty difficulty)
     {
+        if(UaeG10CircleResponse.IsArc(family))
+        {
+            int a1=random.Next(10,171),a2=random.Next(10,171),r=random.Next(2,31),angle=random.Next(10,351),percent=5*random.Next(1,20);
+            string prompt=family switch
+            {
+                UaeG10CircleResponse.Central=>$"ثلاث زوايا مركزية غير متداخلة تكمل دورة. قياس اثنتين {a1}° و{a2}°. أوجد الثالثة بالدرجات.",
+                UaeG10CircleResponse.Major=>$"قوس صغير قياسه {a1}°. أوجد قياس القوس الكبير المتمم للدورة بالدرجات.",
+                UaeG10CircleResponse.Pie=>$"قطاع يمثل {percent}٪ من بيانات مخطط دائري. أوجد قياس زاويته المركزية بالدرجات.",
+                UaeG10CircleResponse.ArcSum=>$"قوسان متجاوران غير متداخلين قياساهما {a1}° و{a2}°. أوجد قياس القوس المكون منهما.",
+                UaeG10CircleResponse.ArcCoeff=>$"دائرة نصف قطرها {r} سم، وقوس قياسه {angle}°. اكتب معامل π في طول القوس (عددًا أو كسرًا).",
+                UaeG10CircleResponse.ArcApprox=>$"دائرة نصف قطرها {r} سم، وقوس قياسه {angle}°. أوجد طول القوس بالسنتيمتر مقربًا لأقرب جزء من مائة.",
+                _=>$"قوس طوله {percent}/100 من محيط الدائرة. أوجد قياس القوس بالدرجات."
+            };
+            return Problem(family,prompt,"مجموع دورة كاملة 360°؛ طول القوس = (قياسه/360)×2π×نصف القطر، والقياس الزاوي يختلف عن الطول.",family is UaeG10CircleResponse.ArcCoeff or UaeG10CircleResponse.ArcApprox?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,("a1",a1),("a2",a2),("r",r),("angle",angle),("percent",percent));
+        }
         int a=random.Next(2,31),b=random.Next(2,31),distance=random.Next(0,61),k=random.Next(1,11);
         if(family==UaeG10CircleResponse.Intersection&&distance==0&&a==b)distance=1;
         if(family==UaeG10CircleResponse.Overlap)distance=random.Next(Math.Abs(a-b)+1,a+b);
@@ -35,12 +50,27 @@ internal static class UaeG10CircleResponse
     internal const string Intersection="uae.g10.general.u13.l01.intersection_count";
     internal const string Rectangle="uae.g10.general.u13.l01.circumscribed_rectangle_pi_coefficient";
     internal const string Inverse="uae.g10.general.u13.l01.radius_from_circumference_pi";
-    internal static bool Supports(string? f)=>f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
-    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>Supports(f)&&p.Count==4&&new[]{"a","b","distance","k"}.All(p.ContainsKey)&&p["a"] is >=2 and <=30&&p["b"] is >=2 and <=30&&p["distance"] is >=0 and <=60&&p["k"] is >=1 and <=10&&
+    internal const string Central="uae.g10.general.u13.l02.central_remaining";
+    internal const string Major="uae.g10.general.u13.l02.major_arc";
+    internal const string Pie="uae.g10.general.u13.l02.pie_angle";
+    internal const string ArcSum="uae.g10.general.u13.l02.adjacent_arc_sum";
+    internal const string ArcCoeff="uae.g10.general.u13.l02.arc_length_pi_coefficient";
+    internal const string ArcApprox="uae.g10.general.u13.l02.arc_length_rounded";
+    internal const string ArcInverse="uae.g10.general.u13.l02.angle_from_arc_fraction";
+    internal static bool IsArc(string? f)=>f is Central or Major or Pie or ArcSum or ArcCoeff or ArcApprox or ArcInverse;
+    internal static bool Supports(string? f)=>IsArc(f)||f is Diameter or Radius or Circumference or Approx or Overlap or Intersection or Rectangle or Inverse;
+    private static bool Valid(string f,IReadOnlyDictionary<string,int> p)=>IsArc(f)?
+        p.Count==5&&new[]{"a1","a2","r","angle","percent"}.All(p.ContainsKey)&&p["a1"] is >=10 and <=170&&p["a2"] is >=10 and <=170&&p["r"] is >=2 and <=30&&p["angle"] is >=10 and <=350&&p["percent"] is >=5 and <=95&&p["percent"]%5==0:
+        Supports(f)&&p.Count==4&&new[]{"a","b","distance","k"}.All(p.ContainsKey)&&p["a"] is >=2 and <=30&&p["b"] is >=2 and <=30&&p["distance"] is >=0 and <=60&&p["k"] is >=1 and <=10&&
         (f!=Intersection||p["distance"]!=0||p["a"]!=p["b"])&&(f!=Overlap||p["distance"]>Math.Abs(p["a"]-p["b"])&&p["distance"]<p["a"]+p["b"]);
     private static int Count(int a,int b,int d)=>d>a+b||d<Math.Abs(a-b)?0:d==a+b||d==Math.Abs(a-b)?1:2;
     private static (long N,long D) Answer(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsArc(f))
+        {
+            int a1=p["a1"],a2=p["a2"],r=p["r"],angle=p["angle"],percent=p["percent"];
+            return f switch{Central=>(360-a1-a2,1),Major=>(360-a1,1),Pie or ArcInverse=>(percent*18/5,1),ArcSum=>(a1+a2,1),ArcCoeff=>(r*angle,180),ArcApprox=>((long)Math.Round(r*angle*Math.PI/180*100,MidpointRounding.AwayFromZero),100),_=>throw new InvalidOperationException()};
+        }
         int a=p["a"],b=p["b"],d=p["distance"],k=p["k"];
         return f switch {Diameter=>(2*a,1),Radius or Inverse=>(a,2),Circumference=>(2*a,1),Approx=>((long)Math.Round(a*Math.PI*100,MidpointRounding.AwayFromZero),100),Overlap=>(a+b-d,1),Intersection=>(Count(a,b,d),1),Rectangle=>(5*k,1),_=>throw new InvalidOperationException()};
     }
@@ -48,7 +78,8 @@ internal static class UaeG10CircleResponse
     {
         if(!Valid(f,p))throw new InvalidOperationException("Invalid G10 circle parameters");
         var(n,d)=Answer(f,p);
-        if(f==Approx)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        if(f is Approx or ArcApprox)return (n/100m).ToString("0.00",CultureInfo.InvariantCulture);
+        if(f==ArcCoeff){long a=n,b=d;while(b!=0)(a,b)=(b,a%b);n/=a;d/=a;}
         return n%d==0?(n/d).ToString(CultureInfo.InvariantCulture):n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? raw)
@@ -61,6 +92,17 @@ internal static class UaeG10CircleResponse
         else if(pair.Length==1&&decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal value)&&value>=0&&value<=1000000)
         {decimal scaled=value;while(scaled!=decimal.Truncate(scaled)&&d<10000){scaled*=10;d*=10;}if(scaled!=decimal.Truncate(scaled))return false;n=(long)scaled;}
         else return false;
+        if(IsArc(f))
+        {
+            long a1=p["a1"],a2=p["a2"],r=p["r"],angle=p["angle"],percent=p["percent"];
+            if(f==Central)return n+d*(a1+a2)==360*d;
+            if(f==Major)return n+a1*d==360*d;
+            if(f is Pie or ArcInverse)return 100*n==360*percent*d;
+            if(f==ArcSum)return n==(a1+a2)*d;
+            if(f==ArcCoeff)return 180*n==r*angle*d;
+            double actual=r*angle*Math.PI/180;
+            return f==ArcApprox&&n*100%d==0&&(double)n/d-0.005<=actual&&actual<(double)n/d+0.005;
+        }
         long a=p["a"],b=p["b"],distance=p["distance"],k=p["k"];
         if(f is Radius or Inverse)return 2*n==a*d;
         if(f is Diameter or Circumference)return n==2*a*d;

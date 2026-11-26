@@ -8206,8 +8206,19 @@
       "domain": "geometry",
       "canonicalName": "الزاوية المركزية وقياس القوس ومجموع الأقواس",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l02.central_remaining",
+        "uae.g10.general.u13.l02.major_arc",
+        "uae.g10.general.u13.l02.pie_angle",
+        "uae.g10.general.u13.l02.adjacent_arc_sum",
+        "uae.g10.general.u13.l02.arc_length_pi_coefficient",
+        "uae.g10.general.u13.l02.arc_length_rounded",
+        "uae.g10.general.u13.l02.angle_from_arc_fraction"
+      ]
     },
     {
       "id": "geometry.circle.g10.chords",
