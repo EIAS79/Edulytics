@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Stage D.3 diagnostic: real four-role HTTPS and all 148 G10 pages, disposable only.
-Probe declared digital candidates without promoting pending families to production.
+Probe declared digital candidates in isolated diagnostic or explicit release-token mode.
 No source parity, rights, teacher rubric or complete digital eligibility claim.
 """
 import hashlib, html, json, os, re, sys, urllib.error
@@ -92,6 +92,9 @@ def validate_html(page,code,title):
 
 def run():
     required_environment()
+    release_mode = os.environ.get("EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE") == "CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE"
+    diagnostic_mode = os.environ.get("EDULYTICS_G10_CI_PRACTICE_REHEARSAL") == "EXERCISE_97_DECLARED_CANDIDATES_ONLY"
+    assert release_mode != diagnostic_mode, "G10 requires exactly one explicit Practice mode"
     pairs,expected=check_catalogue()
     adoption,key=school_adoption()
     mappings={x["lessonCode"]:x for x in json.loads(MAPPINGS.read_text(encoding="utf-8-sig"))["mappings"]
@@ -133,7 +136,7 @@ def run():
             print("G10_PAGE_FAILURE",ordinal,row["pageErrorType"],row["pageErrorDetail"],flush=True)
         if families:
             # Exercise only declared G10 candidate contracts via the real
-            # runtime in isolated CI. No production release token is provided.
+            # runtime in isolated CI. Release-token mode is tested separately.
             # Generation/QA denial remains a blocker, not a passed attempt.
             for field,mode,required in (
                 ("correct","correct","SELF_CONSISTENT_GRADE_PERSISTED"),
@@ -172,6 +175,7 @@ def run():
        "grade":10,"pathway":"General","academicLanguage":"ar",
        "roleLogins":{"student":True,"teacher":True,"supervisor":True,"admin":True,"foreign":True},
        "sourceLiteralParity":"UNKNOWN","teacherReviewExecution":"NOT_CERTIFIED",
+       "releaseTokenMode":release_mode,
        "crossSchoolAccessDenied":foreign_denied,"adoptionKey":key,"checkedLessons":len(records),
        "lessonPageCount":pages,"negativeEnglishFallbackChecks":language,
        "declaredDigitalCandidateLessons":total,
