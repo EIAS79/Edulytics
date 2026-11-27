@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
@@ -9,10 +10,9 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
-    // 5,110 prior included 93 legacy G4, 59 legacy G6 and 62 legacy G7.
-    // Exact owner-approved deltas: G4 +39, G12 +73, G6 +69, G7 +16.
-    // Adaptive V2 must cover all 5,307 actual canonical lesson contracts.
-    private const int ExpectedLessonCount = 5009; // 77 owner-retired UAE Grade 8 Advanced lessons
+    // Certify the release candidate, including all 148 replacement G10 routes.
+    // Prior 5,009 routes minus 100 legacy G10 routes plus 148 new G10 routes.
+    private const int ExpectedLessonCount = 5009 - 100 + 148;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
@@ -38,6 +38,16 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         Assert.Equal(
             ExpectedLessonCount,
             contracts.Length);
+        const string g10Prefix = "PED:UAE-MOE-MATH:L10:";
+        var g10Blueprint = Assert.Single(PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments(),
+            x => x.PackCode == "UAE-MOE-MATH" && x.LogicalLevel == 10 && x.Pathway == "General");
+        var approvedG10 = g10Blueprint.Lessons.Select(x => x.LessonCode).ToHashSet(StringComparer.Ordinal);
+        var actualG10 = contracts.Where(x => x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal))
+            .Select(x => x.LessonCode).ToArray();
+        Assert.Equal(148, approvedG10.Count);
+        Assert.Equal(148, actualG10.Length);
+        Assert.True(approvedG10.SetEquals(actualG10));
+        Assert.Equal(4909, contracts.Count(x => !x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal)));
 
         var pairs =
             contracts
