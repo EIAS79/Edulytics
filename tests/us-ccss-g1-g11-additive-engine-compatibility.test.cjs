@@ -253,8 +253,8 @@ test('UAE G10 additive engine preserves every pinned released line and routes on
   assert.equal(i,before.length,'Released engine source lines must survive in order');
   if(added.length===0)return; // historic released G9 snapshot
   const hash=git('rev-parse','HEAD:'+engine);
-  assert.ok(['05a9ad87b9674a60aa3063318aaf79d8ce64b4c6','bba658ea67ad9acaf7889b082d7ea359ae7776b4'].includes(hash));
-  assert.equal(added.length,hash==='bba658ea67ad9acaf7889b082d7ea359ae7776b4'?1330:1309);
+  assert.ok(['05a9ad87b9674a60aa3063318aaf79d8ce64b4c6','bba658ea67ad9acaf7889b082d7ea359ae7776b4','5e3291a7924a80a9c365e12b3343cdca3d84d046'].includes(hash));
+  assert.equal(added.length,hash==='5e3291a7924a80a9c365e12b3343cdca3d84d046'?1467:hash==='bba658ea67ad9acaf7889b082d7ea359ae7776b4'?1330:1309);
   // All historical lines and the exact prior G10 engine are still
   // checked in order; the only additional edit is the known normalization.
   if(hash==='bba658ea67ad9acaf7889b082d7ea359ae7776b4'){

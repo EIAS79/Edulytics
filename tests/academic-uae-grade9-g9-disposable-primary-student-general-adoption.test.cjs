@@ -19,7 +19,7 @@ test('G9 disposable secondary login selects exact General adoption without chang
   '"edulytics_clean_ci"',
   '? "General"'
  ]) assert.ok(block.includes(expected),expected);
- const envScoped=source.split('var activeSchools = isUaeG9Ci')[1]?.split(': isUaeG8Ci')[0];
+ const envScoped=source.split(/(?:var activeSchools = |:\s*)isUaeG9Ci\s*\?/)[1]?.split(': isUaeG8Ci')[0];
  assert.ok(envScoped?.includes('PrimaryLoginLogicalLevel = 9'));
  assert.ok(envScoped?.includes('DefaultCulture = "ar"'));
  assert.ok(envScoped?.includes('SecondaryLoginPathway = "General"'));

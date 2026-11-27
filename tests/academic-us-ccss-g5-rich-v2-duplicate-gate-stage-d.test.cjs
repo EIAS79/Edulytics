@@ -256,8 +256,21 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
    f.status==='ShadowVerified' &&
    f.productionRouting===false);
   assert.equal(matching.length,count,'Expected source-specific question families: '+skillId);
+  // G10 pending families are not members of this historical shadow cohort.
+  // Check their exact identity and nonactivation, not a blanket prefix exemption.
+  const g10Expected=skillId==='geometry.similarity.scale_factor' ? [
+   'uae.g10.general.u11.l02.similar_polygon_side',
+   'uae.g10.general.u11.l02.similar_polygon_perimeter'
+  ] : [];
+  const g10Pending=families.filter(f=>f.skillId===skillId && f.id?.startsWith('uae.g10.'));
+  assert.deepEqual(new Set(g10Pending.map(f=>f.id)),new Set(g10Expected));
+  for(const f of g10Pending){
+   assert.equal(f.status,'StageCAuthoredPendingD');
+   assert.equal(f.productionRouting,false);
+   for(const cap of f.requiredCapabilities||[])assert.ok(skill.v2Capabilities.includes(cap));
+  }
   assert.deepEqual(new Set(skill.v2QuestionFamilies),
-   new Set(matching.map(f=>f.id)),'Two-way skill/family mapping mismatch: '+skillId);
+   new Set([...matching.map(f=>f.id),...g10Expected]),'Two-way skill/family mapping mismatch: '+skillId);
   for(const family of matching){
    assert.equal(family.status,'ShadowVerified');
    assert.equal(family.productionRouting,false,'Never activate shadow family '+family.id);

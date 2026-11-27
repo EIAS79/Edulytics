@@ -28,7 +28,7 @@ G10_PACK = "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1
 G10_BLUEPRINT = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json"
 G10_BASELINE = "83c31a13ffc173c7be9d1d85b24f4fa83c222aee"
 G10_LOCKED = {
-    G10_PACK: ("73de5cfb25f5a4789079ffa643e613221b83a165", "a6adf2e79f722e7817a933b5b540e3a93d3f7029"),
+    G10_PACK: ("73de5cfb25f5a4789079ffa643e613221b83a165", "d26d17071ba0f38f66a760bfc073160dae04d121"),
     G10_BLUEPRINT: ("71664b045efa59fc50178626a951b7958a51d7bd", "90916a5144a099d56efaefe0634ac785615dbd16"),
 }
 
