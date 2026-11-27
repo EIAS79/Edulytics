@@ -36,8 +36,8 @@ test('Arabic 10 worked examples and original 5 visuals cover division goals',()=
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,lessonCode);
- assert.equal(l.WorkedExamples.length,10);
- assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,21);
+ assert.equal(l.Visuals.length,8);
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  for(const x of [-3,-1,0,1,2,4]){

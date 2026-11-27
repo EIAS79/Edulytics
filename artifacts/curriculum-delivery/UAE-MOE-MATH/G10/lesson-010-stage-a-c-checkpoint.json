@@ -52,8 +52,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-source-evidence.md",
   "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-teacher-rubric.md",
   "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l10-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 10,
-  "originalVisualModels": 5,
+  "arabicWorkedExamples": 21,
+  "originalVisualModels": 8,
   "newCanonicalContentPackEntryCreated": true,
   "newContentPackLessonCodeCount": 49,
   "original48LessonCodesPreserved": true,
@@ -85,7 +85,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l10.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialDivisionReuseTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialDivisionReuseTests.cs",
+    "tests/academic-uae-grade10-u01l10-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -106,5 +107,11 @@
     "Inspect RTL structured expression response and integer remainder as authenticated student, persist grading without PII exposure",
     "Verify CAS and nonmonic/quadratic teacher-only boundaries are not routed to exact families",
     "Enable production Practice only after CI/E2E Stage D verification and full-grade source-content readiness"
-  ]
+  ],
+  "stageDFollowup": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-010-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }
