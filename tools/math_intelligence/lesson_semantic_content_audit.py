@@ -23,6 +23,13 @@ CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SIGNATURES = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/semantic-content-signatures.v1.json"
 REPORT = ROOT / "artifacts/math-intelligence/lesson-semantic-content-audit.json"
 EFFECTIVE_SNAPSHOT = ROOT / "artifacts/math-intelligence/effective-lesson-content-snapshot.json"
+G10_PREFIX = "PED:UAE-MOE-MATH:L10:"
+G10_GENERAL = G10_PREFIX + "GENERAL:"
+G10_ADVANCED = G10_PREFIX + "ADVANCED:"
+G10_LEGACY_SCOPE = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json"
+G10_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json"
+G10_RETIRED_CONTENT = CONTENT_DIR / "uae-g10-advanced-t1-ogl-v1.lesson-content-pack.json"
+G10_CORE_PROJECT = ROOT / "src/Edulytics.Core/Edulytics.Core.csproj"
 G12_CODE_PREFIX="PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
 G12_LEDGER=ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-stage-d-execution-ledger.json"
 G12_APPROVAL=ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-owner-academic-release-authorization-20261107.md"
@@ -189,6 +196,37 @@ def short(text: str, limit: int = 260) -> str:
     return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
 
 
+def g10_archival_scope() -> tuple[set[str], set[str], list[str]]:
+    """Distinguish retained audit files from embedded learner-facing content."""
+    import xml.etree.ElementTree as ET
+    try:
+        scope = read_json(G10_LEGACY_SCOPE)
+        legacy_rows = scope["legacyLessons"]
+        legacy_codes = {row["code"] for row in legacy_rows}
+        retired = {code for code in legacy_codes if code.startswith(G10_ADVANCED)}
+        old_general = {code for code in legacy_codes if code.startswith(G10_GENERAL)}
+        archival_rows = read_json(G10_RETIRED_CONTENT)["Lessons"]
+        archival = {row["LessonCode"] for row in archival_rows}
+        blueprint = read_json(G10_BLUEPRINT)
+        rows = blueprint["Lessons"]
+        candidate = {row["LessonCode"] for row in rows}
+        removed = {element.get("Remove") for element in
+                   ET.parse(G10_CORE_PROJECT).iter("EmbeddedResource")}
+        if (scope.get("replacementPolicy") != "DELETE_ALL_LEGACY_THEN_INSERT_APPROVED_CANDIDATE"
+                or len(legacy_rows) != 100 or len(legacy_codes) != 100
+                or len(retired) != 52 or len(old_general) != 48
+                or len(archival_rows) != 52 or retired != archival
+                or len(rows) != 148 or len(candidate) != 148 or len(blueprint["Units"]) != 18
+                or not all(code.startswith(G10_GENERAL) for code in candidate)
+                or retired & candidate
+                or not {"Curriculum/LessonContent/Packs/uae-g10-advanced-t1-ogl-v1.lesson-content-pack.json",
+                        "Curriculum/LessonBlueprints/Packs/uae-g10-advanced-t1-ogl-v1.lesson-blueprint.json"} <= removed):
+            return set(), set(), ["G10 archival scope does not match the exact 100-to-148 replacement and project resource exclusions."]
+        return retired, candidate, []
+    except (OSError, KeyError, ValueError, TypeError, ET.ParseError) as exc:
+        return set(), set(), [f"G10 archival scope could not be verified: {exc}"]
+
+
 def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     if not EFFECTIVE_SNAPSHOT.exists():
         return {}, [
@@ -231,33 +269,38 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     grade7_replacement = {code for code in by_code if code.startswith(grade7)}
     grade8_replacement = {code for code in by_code if code.startswith(grade8)}
     grade9_first_party = {code for code in by_code if code.startswith(grade9)}
+    retired_g10, candidate_g10, g10_errors = g10_archival_scope()
+    errors.extend(g10_errors)
+    actual_g10 = {code for code in by_code if code.startswith(G10_PREFIX)}
+    if actual_g10 != candidate_g10 or retired_g10 & set(by_code):
+        errors.append("Effective learner snapshot G10 identities differ from the approved 148 General blueprint or contain retired identities.")
     untouched_base = (set(by_code) - supplemental -
                       grade4_replacement - grade6_replacement -
                       grade7_replacement - grade8_replacement -
-                      grade9_first_party)
+                      grade9_first_party - actual_g10)
     # Preserve the 5,009 pre-G9 embedded identities and make the new G9
     # owner-authored 82 an explicit independent scope. Do not treat these as
     # 82 additional old-programme lessons or certify third-party item parity.
     # The Grade9 source/structural, 80-digital/2-teacher and authenticated
     # release gates remain separate and mandatory.
-    if (len(by_code) != 5091 or len(supplemental) != 73 or
+    if (len(by_code) != 5139 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
         len(grade8_replacement) != 76 or
-        len(grade9_first_party) != 82 or len(untouched_base) != 4522):
+        len(grade9_first_party) != 82 or len(untouched_base) != 4422 or len(actual_g10) != 148):
         errors.append(
-            "Effective learner snapshot requires 4,522 unaffected lessons, "
+            "Effective learner snapshot requires 4,422 unaffected lessons, "
             "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
             "76 Arabic G8 General, 73 independently certified G12, "
-            "and 82 owner-authored Grade9 General Arabic lessons, "
-            "totaling exactly 5,091; "
+            "82 owner-authored Grade9 General Arabic lessons and 148 G10 General Arabic candidates, "
+            "totaling exactly 5,139; "
             f"got {len(untouched_base)} unaffected, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "
             f"{len(grade7_replacement)} G7, "
             f"{len(grade8_replacement)} G8, "
-            f"{len(grade9_first_party)} G9, "
+            f"{len(grade9_first_party)} G9, {len(actual_g10)} G10, "
             f"{len(supplemental)} G12, {len(by_code)} total."
         )
 
@@ -272,6 +315,8 @@ def audit() -> dict[str, Any]:
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
     effective_by_code, effective_errors = load_effective_snapshot()
+    retired_g10, _, archival_errors = g10_archival_scope()
+    blockers.extend(archival_errors)
     certified_g12=independently_certified_g12()
     # The exact owner acceptance is separately checked against 128 canonical
     # lessons, contract families, source/blueprint JSON fingerprints, and the
@@ -296,6 +341,10 @@ def audit() -> dict[str, Any]:
     solution_groups: dict[str, list[int]] = defaultdict(list)
 
     for path in sorted(CONTENT_DIR.glob("*.lesson-content-pack.json")):
+        # Only the exact resource excluded from the compiled catalogue may be
+        # omitted. An unexpected missing active lesson is still a blocker.
+        if path == G10_RETIRED_CONTENT and len(retired_g10) == 52:
+            continue
         doc = read_json(path)
         pack_code = str(get_case(doc, "PackCode", "packCode", default="") or "").strip()
         content_version = str(get_case(doc, "ContentVersion", "contentVersion", default="") or "").strip()
@@ -690,6 +739,10 @@ def audit() -> dict[str, Any]:
         }:
             weak_targets[lesson["baseTitle"]] += 1
 
+    summary["archivedRetiredG10LessonCount"] = len(retired_g10)
+    summary["activeG10LessonCount"] = sum(row["lessonCode"].startswith(G10_GENERAL) for row in lessons)
+    if len(lessons) != len(effective_by_code) or {row["lessonCode"] for row in lessons} != set(effective_by_code):
+        blockers.append("Semantic audit active identity set differs from effective learner snapshot.")
     summary["ownerReviewedAdvancedLessonCount"] = sum(
         bool(row["ownerReviewedAdvanced"]) for row in lessons)
     if certified_g12 and summary["ownerReviewedAdvancedLessonCount"]!=73:
