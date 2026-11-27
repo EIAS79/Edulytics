@@ -132,23 +132,46 @@
     "fallbackSynchronizationEvidence": "grade10-stage-d-common-mistake-repair.json"
   },
   "observedCI": {
-    "sha": "a4d4bef54672596cc583bc8e8584de8a4c15d508",
-    "runId": 45936217147,
+    "sha": "d96d55cf11ffe14571c8d6f81bdf69a0ffddbdb7",
+    "testedMergeSha": "5943dcea1e43c29a33ade60419371a982d3a685f",
+    "testedRefKind": "PR merge-ref",
+    "baseSha": "83c31a13ffc173c7be9d1d85b24f4fa83c222aee",
+    "runId": 45942891151,
     "status": "completed",
     "conclusion": "failure",
     "structural": {
       "passed": 148,
-      "total": 148
+      "total": 148,
+      "arabic": 148,
+      "rich": 148,
+      "sourceBodyVerified": 106,
+      "indexOnly": 0,
+      "teacherScored": 148,
+      "jobId": 140320952981
     },
     "node": {
-      "passed": 367,
-      "failed": 1,
+      "passed": 509,
+      "failed": 0,
       "skipped": 0
     },
     "dotnetJob": "success",
+    "compiledGrade10": {
+      "passed": 664,
+      "failed": 0,
+      "skipped": 0,
+      "jobId": 140320953313,
+      "sdk": "10.0.200",
+      "restoreBuild": "PASS"
+    },
+    "sharedGrade7Through9": {
+      "passed": 273,
+      "failed": 0,
+      "skipped": 0
+    },
     "releaseBlockers": 149,
     "stageDVerified": 0,
-    "scope": "Prior candidate; L015 duplicate declaration fixed and syntax checked in new candidate, CI pending."
+    "releaseJobId": 140320953240,
+    "scope": "Actual GitHub Actions results for the tested PR merge ref, not for future commits; no D.3 runtime certification."
   },
   "release": {
     "status": "NO_GO_SOURCE_100",
@@ -161,9 +184,15 @@
       "Per-lesson digital eligibility, runtime and teacher-review routes not fully verified",
       "Arabic RTL and authenticated E2E not verified",
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
+    ],
+    "latestObservedAdditionalBlockers": [
+      "Live catalogue DB mismatch: 100 General identities missing, 52 legacy Advanced identities remain, 0 of 48 matched General catalogue titles match approved Arabic titles.",
+      "Current merge-ref shared original data parity and US G1 negative-control jobs failed.",
+      "Source lock not established; no full seven-book atomic denominator; expected edition-diff.json path absent.",
+      "API/DOM Arabic pathway guard, four-role isolated runtime/RTL, database rehearsal and final CI not complete."
     ]
   },
-  "next": "Run full current candidate tests including bounded equation contract and shared interaction baseline. Finish L001 secondary-source and all other source, teacher, authenticated RTL, isolated DB and same-SHA release gates. No merge or deploy.",
+  "next": "Continue the existing Stage D plan in order: D.1 handoff/source, live-catalogue and pathway guard defects; D.2 real math family checks; D.3 isolated authenticated runtime, RTL and DB; D.4 targeted root-cause fixes and affected regression; Final CI. No release without plan gates.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -2204,5 +2233,66 @@
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
     "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "stageD1": {
+    "candidateSha": "d96d55cf11ffe14571c8d6f81bdf69a0ffddbdb7",
+    "baseSha": "83c31a13ffc173c7be9d1d85b24f4fa83c222aee",
+    "testedRefKind": "PR merge-ref",
+    "testedMergeSha": "5943dcea1e43c29a33ade60419371a982d3a685f",
+    "observedAtUtc": "2026-11-27T05:09:30.983Z",
+    "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+    "handoffGate": "D_PENDING_A_C_EVIDENCE",
+    "sourceLock": false,
+    "sourceParity": "UNKNOWN",
+    "sevenFileHashMatches": "RECORDED_7_OF_7_NOT_RECOMPUTED_THIS_SESSION",
+    "allPageSemanticAudit": "NOT_ESTABLISHED",
+    "sourceEditionDiffExpectedPath": "NOT_FOUND_AT_CANDIDATE_SHA",
+    "canonicalIndex": {
+      "lessons": 148,
+      "units": 18,
+      "uniqueMappedBlueprintCodes": 148,
+      "blueprintTitleMismatches": 0,
+      "ownerApproved": true
+    },
+    "staticStructure": "PASS",
+    "liveDatabaseReadOnly": {
+      "branchName": "production",
+      "versionCode": "MOE-2026-2027-T1",
+      "generalLessons": 48,
+      "generalUnits": 7,
+      "generalIdentityMatches": 48,
+      "generalMissing": 100,
+      "generalUnexpected": 0,
+      "advancedLegacyLessons": 52,
+      "advancedUnits": 9,
+      "appliedLessons": 0,
+      "duplicateGeneralCodes": 0,
+      "duplicateAdvancedCodes": 0,
+      "matchedExactArabicTitleCount": 0,
+      "appCatalogueIndexParity": "FAIL_DB_ONLY",
+      "apiDomVerification": "NOT_RUN",
+      "latestMigrationObserved": "20261106193000_Grade12PrecalculusTeacherRubric",
+      "productionWrites": false
+    },
+    "sharedRegressionFailures": [
+      {
+        "category": "CONTENT",
+        "runId": 45942891319,
+        "jobId": 140320953994,
+        "observed": "V2 original data parity guard reports changed G10 blueprint, 48 changed original teaching bodies without registered authorization, and lesson metadata changes. Root-cause and exact owner-authorized delta reconciliation pending; guard not weakened."
+      },
+      {
+        "category": "CURRICULUM_FAMILY",
+        "runId": 45942891064,
+        "jobId": 140320952767,
+        "observed": "US G1 negative control failed historical shared-engine deletion assertions; causality not yet established. No unrelated code changed in this audit."
+      }
+    ],
+    "pathwayGuard": "NOT_RUN_API_DOM",
+    "authenticatedE2E": "NOT_RUN",
+    "arabicRtlVisual": "NOT_RUN",
+    "isolatedDatabaseRehearsal": "NOT_RUN",
+    "status": "D_BLOCKED",
+    "firstIncompleteLessonOrdinal": 1
   }
 }
