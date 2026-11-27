@@ -64,8 +64,8 @@
   "sourceIndexLockMeaning": "Owner-approved unique lesson titles and 18-unit order; lesson2 source-page element/category mapping completed. Not a claim of all 148 Arabic bodies authored.",
   "arabicContentEnhanced": true,
   "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l02-ar.rich-lesson-v2.json",
-  "arabicExamplesCount": 10,
-  "originalVisualModelsCount": 5,
+  "arabicExamplesCount": 39,
+  "originalVisualModelsCount": 8,
   "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-stage-c-exact-contract.json",
   "primarySkills": [
     "algebra.polynomial.multiply_distribute"
@@ -113,7 +113,7 @@
     "enable practice routing only after Stage D validated run",
     "publish whole 148-lesson catalog only after 148 student lessons ready and safe student-link migration"
   ],
-  "arabicWorkedExamples": 13,
+  "arabicWorkedExamples": 39,
   "stageDFollowup": {
     "reason": "Cross-target original exercises from advanced composite lesson source",
     "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-distribution-products.json",
@@ -122,5 +122,15 @@
     "sourceDenominatorUnchanged": "Historical scoped source denominator; cross-target supplement not full source closure.",
     "tests": "WRITTEN_NOT_RUN",
     "stageDVerified": false
-  }
+  },
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-stage-d-numbered-source-review.json",
+    "numberedParents": 71,
+    "numberedExerciseSlots": 77,
+    "guidedParts": 8,
+    "sourceParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "sourceElementDenominatorScopeClarification": "22 is historical categorized review only; explicit numbered source slots are separately indexed; exhaustive all-source denominator remains unknown."
 }

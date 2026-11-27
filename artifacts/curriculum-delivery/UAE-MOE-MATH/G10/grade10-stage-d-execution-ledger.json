@@ -149,7 +149,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "All 54 routed numbered Advanced parents now have target authoring evidence; continue secondary-target and nonnumbered source review, then canonical sequential per-lesson acceptance. Test affected candidates before closure.",
+  "next": "Finish L001 secondary/unnumbered and runtime gates; L002 direct General source review now has 77 explicit numbered slots plus guided entries, unresolved source and digital equation gate. Continue canonical order without marking early D_VERIFIED.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -231,5 +231,27 @@
     "authenticatedE2E": "NOT_RUN",
     "arabicRtlVisual": "NOT_RUN",
     "productionWrites": false
+  },
+  "lesson002": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourcePdf": "01.pdf",
+    "numberedParents": 71,
+    "numberedExerciseSlots": 77,
+    "guidedParts": 8,
+    "instructionalRows": 14,
+    "workedExampleGroupsBefore": 13,
+    "workedExampleGroupsAfter": 39,
+    "visualsAfter": 8,
+    "authoringArithmeticProbes": 1638,
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-002-stage-d-numbered-source-review.json",
+    "canonicalBodySha256": "1cee1cef3736558a7554b56157b4720d1ec3478ab95093f6c95bcf02f554b628",
+    "digitalGap": {
+      "sourceObjective": "solve equations containing monomial×polynomial products",
+      "currentExactContract": "only coefficient and single-variable polynomial product, not equation solving",
+      "status": "DIGITAL_ELIGIBILITY_REVIEW_AND_EXACT_FAMILY_REQUIRED",
+      "teacherFallback": "Original equation worked examples and teacher rubric pending authenticated testing; do not route equations to product-only graders."
+    },
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false
   }
 }

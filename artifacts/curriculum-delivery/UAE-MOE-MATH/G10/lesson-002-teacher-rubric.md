@@ -22,3 +22,14 @@ Simplify `−٢س(٣س²−٤س+٥)`. The correct simplified result is `−٦س�
 **Assessment boundary:** automatic exact scoring covers the new bounded integer-coefficient and whole-result single-variable monomial×polynomial families. Multi-variable expansion, fractional or decimal coefficient proof, geometry/physical algebra-tiles and open written reasoning remain `TEACHER_REVIEW_REQUIRED` until separate exact families and UI validation exist. Teacher rubric is authored, not claimed authenticated or run.
 
 **Tests:** `tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonomialPolynomialReuseTests.cs` — `WRITTEN_NOT_RUN`; Stage D must execute generator/answer/verifier and renderer/RTL checks before routing `READY_VERIFIED`.
+
+
+## Stage D additional source-objective rubric (authored, runtime pending)
+
+| Criterion | Secure | Partial | Incorrect |
+|---|---|---|---|
+| معادلة بالتوزيع | يوزع كل جداء على الطرفين، يجمع المتشابهات، يعزل المجهول ويتحقق في الأصل | خطأ حسابي منفرد | حذف حدود غير متساوية أو حل لا يحقق المعادلة |
+| مساحة شبه المنحرف والإطار | صيغة صحيحة، أبعاد موجبة، وحدات مربعة، فصل المحيط عن المساحة | سهو وحدة أو حساب | صيغة أو مجال غير صحيح |
+| درجة الجداء والتحدي | جدول أمثلة وتبرير جمع الدرجات للعاملين غير الصفريين؛ حفظ شرط عدم الصفر للأس السالب | أمثلة صحيحة دون تعليل كاف | قاعدة غير صحيحة أو تجاهل مجال التعبير |
+
+Equation-solving exact family is not supplied by the existing product-only contract. Teacher review and additional digital-eligibility work are required; do not route these tasks to a product grader.

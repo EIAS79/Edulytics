@@ -81,7 +81,9 @@
     "multivariate monomial multiplication with two variables",
     "fractional/decimal arithmetic and its explanatory justification",
     "area-partition diagrams and dimensions",
-    "open-ended model interpretation and signed-product proofs"
+    "open-ended model interpretation and signed-product proofs",
+    "solve distributed polynomial equations until an exact independently verified equation family is implemented",
+    "trapezoid and perimeter applications, symbolic degree table and cumulative cross-skill tasks"
   ],
   "visuals": [
     "CalculationChain",
@@ -100,5 +102,11 @@
     "StageD": "NOT_STARTED",
     "approvedStudentPractice": false
   },
-  "note": "READY_FOR_STAGE_D on A-B-C checkpoint only after source and content closing evidence, never claim active Practice or passed CI."
+  "note": "READY_FOR_STAGE_D on A-B-C checkpoint only after source and content closing evidence, never claim active Practice or passed CI.",
+  "stageDIdentifiedDigitalGap": {
+    "sourceObjective": "solve equations containing monomial×polynomial products",
+    "currentExactContract": "only coefficient and single-variable polynomial product, not equation solving",
+    "status": "DIGITAL_ELIGIBILITY_REVIEW_AND_EXACT_FAMILY_REQUIRED",
+    "teacherFallback": "Original equation worked examples and teacher rubric pending authenticated testing; do not route equations to product-only graders."
+  }
 }
