@@ -300,8 +300,56 @@ def audit() -> dict[str, Any]:
                 "digital contracts and 2 evidenced teacher-only lessons; "
                 f"found {len(digital_rows)} digital / {len(teacher_rows)} teacher"
             )
+    # UAE Grade10 replaces exactly 48 General + 52 Advanced legacy rows
+    # with 148 owner-approved General identities. Use the independent
+    # blueprint and legacy-scope manifests, not the observed global total.
+    # This accounts for a +48 catalogue delta without weakening the Polish
+    # 1,569 lesson / 306 Outcome invariants or permitting partial migrations.
+    g10_prefix = "PED:UAE-MOE-MATH:L10:"
+    g10_rows = [
+        row for row in rows
+        if str(row.get("lessonCode") or "").startswith(g10_prefix)
+    ]
+    g10_codes = {str(row.get("lessonCode") or "") for row in g10_rows}
+    g10_legacy = read_json(
+        ROOT / "src/Edulytics.Data/Seeding/Grade10/legacy-scope.json"
+    )
+    g10_blueprint = read_json(
+        ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs"
+        / "uae-g10-general-t1-ogl-v1.lesson-blueprint.json"
+    )
+    g10_legacy_codes = {row["code"] for row in g10_legacy["legacyLessons"]}
+    g10_candidate_codes = {row["LessonCode"] for row in g10_blueprint["Lessons"]}
+    g10_delta = 0
+    if (
+        len(g10_legacy["legacyLessons"]) != 100
+        or len(g10_legacy_codes) != 100
+        or sum(code.startswith(g10_prefix + "GENERAL:") for code in g10_legacy_codes) != 48
+        or sum(code.startswith(g10_prefix + "ADVANCED:") for code in g10_legacy_codes) != 52
+    ):
+        blockers.append("Grade10 legacy scope must contain the exact 48 General + 52 Advanced identities")
+    if len(g10_rows) == 100 and g10_codes == g10_legacy_codes:
+        pass
+    elif (
+        len(g10_blueprint["Lessons"]) == 148
+        and len(g10_candidate_codes) == 148
+        and all(code.startswith(g10_prefix + "GENERAL:") for code in g10_candidate_codes)
+        and len(g10_candidate_codes & g10_legacy_codes) == 48
+        and len(g10_rows) == 148
+        and g10_codes == g10_candidate_codes
+        and all(
+            row.get("independentG10FirstPartyExactContractPendingRuntime") is True
+            and row.get("practiceEligibility") == "PRACTICE_ELIGIBLE"
+            and row.get("terminalPracticeStatus") == "READY_VERIFIED"
+            for row in g10_rows
+        )
+    ):
+        g10_delta = 148 - 100
+    else:
+        blockers.append("Grade10 catalogue must match either the exact legacy identities or all 148 owner-scoped General contracts")
+
     expected_catalogue_count = (
-        5110 - 93 + grade4_count + grade12_count
+        5110 - 93 + grade4_count + grade12_count + g10_delta
         - 59 + grade6_count - 62 + grade7_count
         - 77 + grade8_general_count - (77 - grade8_advanced_count)
         - 220 + grade9_general_count
