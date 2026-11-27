@@ -6,7 +6,8 @@ namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
 /// Stage D candidate evaluation on the disposable local PostgreSQL only.
-/// This is NOT a production release option or a persisted readiness change.
+/// Diagnostic evaluation remains disposable-only; a separate exact release token
+/// is required for the owner-directed first-party release.
 /// All ordinary runtime routes retain their authorization, lesson alignment,
 /// verifier, session QA, renderer and grading checks.
 /// </summary>
@@ -15,6 +16,8 @@ internal static class UaeG10StageDRehearsalContracts
     internal const string ScopePrefix = "PED:UAE-MOE-MATH:L10:";
     private const string GeneralPrefix = ScopePrefix + "GENERAL:";
     private const string Flag = "EDULYTICS_G10_CI_PRACTICE_REHEARSAL";
+    private const string ReleaseFlag = "EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE";
+    private const string ReleaseToken = "CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE";
 
     private static bool IsDisposableConnection(string variable)
     {
@@ -61,7 +64,12 @@ internal static class UaeG10StageDRehearsalContracts
 
     internal static IReadOnlyList<LessonPracticeContract> Load()
     {
-        if (!Enabled())
+        var requested = Environment.GetEnvironmentVariable(ReleaseFlag);
+        var release = string.Equals(requested, ReleaseToken, StringComparison.Ordinal);
+        var diagnostic = Enabled();
+        if (release && diagnostic)
+            throw new InvalidOperationException("G10 release and diagnostic modes must be tested separately.");
+        if (!release && !diagnostic)
             return [];
 
         using var mappingDoc = Read("Edulytics.Core.Mathematics.Curriculum.lesson-skill-mappings.v1.json");
@@ -110,10 +118,11 @@ internal static class UaeG10StageDRehearsalContracts
             var mechanic = row.GetProperty("practiceMechanic").GetString();
             if (string.IsNullOrWhiteSpace(mechanic))
                 throw new InvalidOperationException("G10 rehearsal missing mechanic: " + code);
-            // Adapt to the existing READY_VERIFIED-only runtime during this
-            // isolated test. The on-disk mapping status is deliberately unchanged.
+            // Only the explicit release token or the isolated diagnostics permit
+            // these exact contracts. A Published pack alone does not grant routing.
             results.Add(new LessonPracticeContract(code, primary[0], mechanic, allowed,
-                "G10_DISPOSABLE_CI_DIAGNOSTIC_ONLY", "READY_VERIFIED", "g10-stage-d-rehearsal-v1")
+                release ? "G10_FIRST_PARTY_EXACT_RELEASE_TOKEN" : "G10_DISPOSABLE_CI_DIAGNOSTIC_ONLY",
+                "READY_VERIFIED", release ? "g10-first-party-release-v1" : "g10-stage-d-rehearsal-v1")
             {
                 SkillIds = primary.Concat(familySkills).Distinct(StringComparer.Ordinal).ToArray()
             });
