@@ -1,7 +1,7 @@
 # Grade10 General — canonical lesson G10-U04-L07 A–B–C source-to-app evidence
 
-**Canonical owner-approved index:** 148 lessons in 18 units.  
-**Source lesson:** «تحويل التمثيلات البيانية للدوال التربيعية», Advanced Arabic 2025–2026 Volume1 Unit2 L2-7; independent Edulytics title «العلاقات والدوال التربيعية وتحويلاتها».  
+**Canonical owner-approved index:** 148 lessons in 18 units.\
+**Source lesson:** «تحويل التمثيلات البيانية للدوال التربيعية», Advanced Arabic 2025–2026 Volume1 Unit2 L2-7; independent Edulytics title «العلاقات والدوال التربيعية وتحويلاتها».\
 **Original source:** `01متقدم_.pdf` SHA256 `0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815`; technology lab physical PDF **166–167**, printed **149–150**; main lesson PDF **168–172**, printed **151–155**. PDF173 is a chapter review and is excluded from the lesson denominator. The source was visually inspected directly from owner-uploaded scanned pages, not translated from an old GitHub placeholder.
 
 ## Stage A — 25 identified source instructional/assessment elements

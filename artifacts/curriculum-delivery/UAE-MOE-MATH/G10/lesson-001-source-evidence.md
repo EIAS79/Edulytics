@@ -1,7 +1,7 @@
 # Grade 10 / General — U01L01 source-to-app audit (A–B–C READY_FOR_STAGE_D)
 
 **LessonCode:** `PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS`
-**Student book:** `01.pdf`, printed pages 7–12, physical PDF pages 20–25. **Verified file SHA256:** `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`. 
+**Student book:** `01.pdf`, printed pages 7–12, physical PDF pages 20–25. **Verified file SHA256:** `d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72`.
 **Source snapshot:** `G10-SEVEN-BOOKS-SHA-2026-11-23`; **status:** `READY_FOR_STAGE_D` (A–B–C only); **tests:** `WRITTEN_NOT_RUN`.
 
 ## Actual visual comparison with student pages

@@ -1,7 +1,7 @@
 # Grade 10 General — A/B/C element-level closing evidence for canonical lesson G10-U01-L01
 
-**Canonical course:** 18 units / 148 owner-approved lessons. **Unit:** «كثيرات الحدود والتحليل». **Lesson:** «جمع كثيرات الحدود وطرحها».  
-**Preserved LessonCode:** `PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS`. **Target:** `UAE-MOE-MATH / Grade 10 / General / ar`.  
+**Canonical course:** 18 units / 148 owner-approved lessons. **Unit:** «كثيرات الحدود والتحليل». **Lesson:** «جمع كثيرات الحدود وطرحها».\
+**Preserved LessonCode:** `PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS`. **Target:** `UAE-MOE-MATH / Grade 10 / General / ar`.\
 **Current course Blueprint:** 148 identities with 48 existing identities preserved; the remaining 100 need student content in sequence, and are **not** certified published lessons.
 
 ## Source provenance and denominator
@@ -9,7 +9,7 @@
 - Advanced source `01متقدم_.pdf`, 2025–2026 Volume 1, lesson 3-1 «العمليات على كثيرات الحدود», physical PDF pp196–201 / printed pp179–184: composite topic; the crosswalk retains advanced-only multiplication/division/exponent goals in **other lessons**, not as redundant copies in U01L01.
 - This review covers **25 individually identified learning-goal/representation/exercise-type elements**, not a claim that every numbered textbook exercise has a separately reproduced answer; equivalent original exercises and teacher rubrics cover the educational purpose.
 - Original copyrighted problems and artwork are not copied to GitHub.
- 
+
 ## Stage A: atomic General-source content mappings
 
 | ID | Physical PDF page | Category | Academic objective / exercise type | Edulytics location | Assessment boundary |

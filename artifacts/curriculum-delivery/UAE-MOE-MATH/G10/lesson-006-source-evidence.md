@@ -1,6 +1,6 @@
 # Grade 10 UAE General — G10-U01-L06 Stage A–B–C source audit and closing evidence
 
-**Approved canonical lesson:** «حل x² + bx + c = 0» in Unit 1 «كثيرات الحدود والتحليل».  
+**Approved canonical lesson:** «حل x² + bx + c = 0» in Unit 1 «كثيرات الحدود والتحليل».\
 **Preserved identity:** `PED:UAE-MOE-MATH:L10:GENERAL:01:06:SOLVING-X-BX-C-0`. **Approved catalog:** 18 units / 148 lessons. No separate Advanced or Applied course created.
 
 ## A — Actual three-book physical-page source comparison

@@ -1,10 +1,10 @@
 # EDULYTICS — UAE MOE MATHEMATICS — GRADE 10 — STAGE D + FINAL CI
 ## خطة مستقلة للاختبار والإغلاق والنشر: منهج عربي واحد، إنهاء المسار المتقدم، وحماية كل المستخدمين والمحركات
 
-**الإعداد:** 22 نوفمبر 2026  
-**المستودع:** `EIAS79/Edulytics`  
-**المنهج:** `UAE-MOE-MATH`، **الصف:** `Grade 10`، **الواجهة:** منهج واحد بلا قائمة مسارات، **توافق تخزيني مرحلي:** `General` فقط، **اللغة:** `ar/RTL`، **الهدف:** العام الدراسي 2026–2027.  
-**المدخل:** Handoff حقيقي من `EDULYTICS_UAE_GRADE_10_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md`.  
+**الإعداد:** 22 نوفمبر 2026\
+**المستودع:** `EIAS79/Edulytics`\
+**المنهج:** `UAE-MOE-MATH`، **الصف:** `Grade 10`، **الواجهة:** منهج واحد بلا قائمة مسارات، **توافق تخزيني مرحلي:** `General` فقط، **اللغة:** `ar/RTL`، **الهدف:** العام الدراسي 2026–2027.\
+**المدخل:** Handoff حقيقي من `EDULYTICS_UAE_GRADE_10_STAGE_A_B_C_100_PERCENT_EXECUTION_PLAN.md`.\
 **طبيعة الوثيقة:** خطة Gate وتشغيل، **لا تدعي CI ناجحًا أو حذف بيانات أو نشرًا قبل تحقق الأدلة**.
 
 > **مبدأ المالك:** نُبقي كل الرياضيات الصحيحة والمحركات والطلاب والمدارس والمناهج الأخرى؛ نحذف فقط هوية Grade 10 Advanced وتبعياتها الحصرية بعد دمج المحتوى الدراسي الفريد. لا يُسمح بتكرار درس، سقوط مهارة أو حذف اشتراك/نتيجة مشتركة.
@@ -110,7 +110,7 @@
 
 ## 9. D.4 — إصلاح محدد وإعادة اختبار الأثر
 
-صنّف الفشل إلى `SOURCE`, `CONTENT`, `ARABIC`, `DUPLICATE`, `QUESTION_FAMILY`, `GRADER`, `ENGINE`, `MIGRATION`, `AUTH`, `BILLING`, `RIGHTS`, `CI_INFRA`.  
+صنّف الفشل إلى `SOURCE`, `CONTENT`, `ARABIC`, `DUPLICATE`, `QUESTION_FAMILY`, `GRADER`, `ENGINE`, `MIGRATION`, `AUTH`, `BILLING`, `RIGHTS`, `CI_INFRA`.\
 لكل خلل وثّق `CommitSha/CaseId/LessonCode/SourcePage/Expected/Actual/RootCause/Fix/Retest`. لا تعتبر إصلاح CI بديلاً عن تصحيح الدرس. لا تنقل الدرس التالي إلى `D_VERIFIED` إذا كان الحالي بلا أدلة.
 
 ## 10. Ledger/checkpoint وحذف الإنتاج المنضبط
