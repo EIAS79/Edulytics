@@ -771,9 +771,11 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
     /// <summary>
     /// Stage D isolated rehearsal only, against the exact pre-G10 clean
-    /// catalogue. Never called by production startup. Existing General
-    /// deterministic lesson IDs survive; legacy Advanced is retired inside
-    /// the same transaction. The real tenant/adoption migration is separate.
+    /// catalogue. Never called by production startup. Delete every legacy
+    /// General and Advanced lesson and its metadata, assert zero remaining,
+    /// then insert the complete approved catalogue in the same transaction.
+    /// Deterministic IDs may recur, but no legacy lesson row is retained.
+    /// The tenant/adoption migration must be rehearsed separately.
     /// </summary>
     public async Task RehearseUaeGrade10CatalogueReplacementAsync(
         IReadOnlyDictionary<string, string> legacyTitles,
@@ -869,6 +871,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         var alreadyReplaced = existing.Length == 148 &&
             existing.Select(x => x.Code).ToHashSet(StringComparer.Ordinal).SetEquals(byCode.Keys);
+        var deletedLegacyLessons = 0;
+        var deletedLegacyMetadata = 0;
         if (alreadyReplaced)
         {
             foreach (var row in existing)
@@ -887,18 +891,27 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     .Any(x => x.Id != byCode[x.Code].Id))
                 throw new InvalidOperationException("G10 exact legacy baseline mismatch; transaction not changed.");
 
-            var retired = existing.Where(x => x.Code.StartsWith(advanced, StringComparison.Ordinal)).ToArray();
-            var retiredIds = retired.Select(x => x.Id).ToArray();
-            // The test fixture contains only canonical metadata, not learner
-            // bodies. Any unforeseen restrictive foreign key aborts the transaction.
+            // Owner explicitly requires deletion of ALL 100 legacy rows,
+            // including the 48 General rows that share deterministic codes.
+            // No in-place update or retained teaching metadata is permitted.
             _db.CurriculumLessonContents.RemoveRange(metadata);
             await _db.SaveChangesAsync(ct);
+            deletedLegacyMetadata = metadata.Length;
             var retiredMappings = await _db.CurriculumPedagogicalLessonOutcomes
-                .Where(x => retiredIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+                .Where(x => currentIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
             _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(retiredMappings);
-            _db.CurriculumPedagogicalLessons.RemoveRange(retired);
+            _db.CurriculumPedagogicalLessons.RemoveRange(existing);
             await _db.SaveChangesAsync(ct);
-            await UpsertLessonsAsync(expected, ct);
+            deletedLegacyLessons = existing.Length;
+            if (deletedLegacyLessons != 100 || deletedLegacyMetadata != 100 ||
+                await _db.CurriculumPedagogicalLessons.AnyAsync(x => x.Code.StartsWith(prefix), ct) ||
+                await _db.CurriculumLessonContents.AnyAsync(x => currentIds.Contains(x.PedagogicalLessonId), ct) ||
+                await _db.CurriculumPedagogicalLessonOutcomes.AnyAsync(x => currentIds.Contains(x.PedagogicalLessonId), ct))
+                throw new InvalidOperationException("G10 all-legacy deletion did not reach zero before import.");
+            Console.WriteLine("UAE_G10_ISOLATED_ZERO_LEGACY_BEFORE_IMPORT deletedLessons=100 deletedMetadata=100");
+            // Insert every approved row afresh, not UpsertLessonsAsync.
+            _db.CurriculumPedagogicalLessons.AddRange(expected);
+            await _db.SaveChangesAsync(ct);
             await UpsertMappingsAsync(expected, mappings, ct);
         }
 
@@ -925,7 +938,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         await tx.CommitAsync(ct);
         Console.WriteLine("UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS " +
-            $"replay={alreadyReplaced} otherLessons={otherLessons} otherMetadata={otherMetadata}");
+            $"replay={alreadyReplaced} deletedLegacyLessons={deletedLegacyLessons} deletedLegacyMetadata={deletedLegacyMetadata} otherLessons={otherLessons} otherMetadata={otherMetadata}");
     }
 
     private async Task BuildUaeAsync(

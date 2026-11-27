@@ -311,6 +311,12 @@ jobs:
           for n in 1 2; do
             dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-build -- --uae-g10-rehearse artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json | tee "/tmp/g10-rehearsal-$n.log"
             grep -q 'UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS' "/tmp/g10-rehearsal-$n.log"
+            if [ "$n" = 1 ]; then
+              grep -q 'UAE_G10_ISOLATED_ZERO_LEGACY_BEFORE_IMPORT deletedLessons=100 deletedMetadata=100' "/tmp/g10-rehearsal-$n.log"
+              grep -q 'replay=False deletedLegacyLessons=100 deletedLegacyMetadata=100' "/tmp/g10-rehearsal-$n.log"
+            else
+              grep -q 'replay=True deletedLegacyLessons=0 deletedLegacyMetadata=0' "/tmp/g10-rehearsal-$n.log"
+            fi
             python3 tools/curriculum/uae_g10_stage_d_rehearsal_snapshot.py after "/tmp/g10-catalogue-after-$n.json" /tmp/g10-catalogue-before.json
           done
           python3 tools/curriculum/uae_g10_stage_d_rehearsal_snapshot.py replay /tmp/g10-catalogue-after-1.json /tmp/g10-catalogue-after-2.json

@@ -21,14 +21,16 @@
         "approvedLessons": 148,
         "approvedUnits": 18
       },
-      "legacyCatalogue": "REPLACE_WITH_APPROVED_CANDIDATE",
-      "legacyAdvanced": "REMOVE",
+      "legacyCatalogue": "DELETE_ALL_100_LEGACY_ROWS_THEN_INSERT_148_APPROVED_ROWS",
+      "legacyAdvanced": "DELETE_ALL_52",
       "legacyApplied": "REMOVE_IF_PRESENT",
       "experimentalGrade10ProgressResults": "DELETE_DURING_REPLACEMENT",
       "preserveGrade10ExperimentalProgressResults": false,
       "otherCurriculaGradesSubjectsAndSharedAccounts": "UNCHANGED",
       "technicalGateWaiver": false,
-      "productionDeletionExecuted": false
+      "productionDeletionExecuted": false,
+      "legacyGeneral": "DELETE_ALL_48_NOT_UPGRADE",
+      "explicitReconfirmation": "Owner clarified that any old lesson, including General with matching identity, must be deleted, not upgraded in place."
     },
     "confirmedOriginalMathAuthoring": {
       "ownerConfirmed": true,
@@ -2363,8 +2365,9 @@
       "initialFixCommit": "3edab59f6c1c1f6880f40316816f5170f38d4917",
       "observedPassed": 2,
       "observedFailed": 0,
-      "exactBlobPinRetest": "PENDING",
-      "currentAuthenticatedEvidence": "PENDING"
+      "exactBlobPinRetest": "PASS",
+      "currentAuthenticatedEvidence": "NOT_VERIFIED",
+      "runId": 45945578940
     },
     "digitalScope": {
       "lessonsWithDeclaredFamilies": 97,
@@ -2383,7 +2386,15 @@
       "declaredCandidatePracticeDiagnostics": 97,
       "productionRoutingEnabled": false
     },
-    "replacementRehearsal": "NOT_RUN",
-    "productionWrites": false
+    "replacementRehearsal": "FULL_CATALOGUE_DELETE_AND_REIMPORT_PREPARED_NOT_RUN",
+    "productionWrites": false,
+    "tenantMigration": "NOT_RUN",
+    "lastRuntimeFailure": {
+      "runId": 45945136823,
+      "jobId": 140327996939,
+      "cleanCatalogueAndMetadataStep": "PASS",
+      "authenticatedPageAndRtl": "FAIL",
+      "failureDetail": "HTTP aggregate and browser RTL assertions failed; original probe omitted specific exception details."
+    }
   }
 }

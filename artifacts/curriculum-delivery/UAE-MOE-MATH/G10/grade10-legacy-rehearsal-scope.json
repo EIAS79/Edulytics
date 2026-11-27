@@ -4,7 +4,7 @@
     "71664b045efa59fc50178626a951b7958a51d7bd",
     "f4ef1d204fbc4b14025bb14489a24b49c44eb78c"
   ],
-  "scope": "UAE Grade 10 mathematics only; isolated rehearsal of 48 General + 52 Advanced to 148 General",
+  "scope": "UAE Grade 10 mathematics only; delete all 100 legacy lesson rows and metadata before importing 148 approved General rows in isolated PostgreSQL",
   "legacyLessons": [
     {
       "code": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
@@ -607,5 +607,9 @@
       "blueprintCode": "UAE-G10-ADVANCED-T1-OGL-V1:OGL-V1"
     }
   ],
-  "productionWritten": false
+  "productionWritten": false,
+  "replacementPolicy": "DELETE_ALL_LEGACY_THEN_INSERT_APPROVED_CANDIDATE",
+  "legacyGeneralRowsToDelete": 48,
+  "legacyAdvancedRowsToDelete": 52,
+  "zeroLegacyBeforeImportRequired": true
 }

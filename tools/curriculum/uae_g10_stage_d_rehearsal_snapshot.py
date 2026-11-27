@@ -13,8 +13,8 @@ def sql(query):
 def rows(query):
     return json.loads(sql("SELECT COALESCE(json_agg(row_to_json(q)),'[]') FROM ("+query+") q"))
 def snapshot():
-    target=rows('SELECT "Id"::text AS id,"Code" AS code,"Title" AS title,"Pathway" AS pathway,"SortOrder" AS ordinal,"UnitKey" AS unit FROM "CurriculumPedagogicalLessons" WHERE "Code" LIKE \''+SCOPE+'\' ORDER BY "Code"')
-    meta=rows('SELECT c."Id"::text AS id,p."Code" AS code,c."Status" AS status,c."ContentVersion" AS version FROM "CurriculumLessonContents" c JOIN "CurriculumPedagogicalLessons" p ON p."Id"=c."LessonNodeId" WHERE p."Code" LIKE \''+SCOPE+'\' ORDER BY p."Code"')
+    target=rows('SELECT "Id"::text AS id,"Code" AS code,"Title" AS title,"Pathway" AS pathway,"SortOrder" AS ordinal,"UnitKey" AS unit,"CreatedAtUtc"::text AS created FROM "CurriculumPedagogicalLessons" WHERE "Code" LIKE \''+SCOPE+'\' ORDER BY "Code"')
+    meta=rows('SELECT c."Id"::text AS id,p."Code" AS code,c."Status" AS status,c."ContentVersion" AS version,c."CreatedAtUtc"::text AS created FROM "CurriculumLessonContents" c JOIN "CurriculumPedagogicalLessons" p ON p."Id"=c."LessonNodeId" WHERE p."Code" LIKE \''+SCOPE+'\' ORDER BY p."Code"')
     unrelated={}
     for table,where in [
       ("CurriculumPedagogicalLessons",'"Code" NOT LIKE \''+SCOPE+'\''),
@@ -51,7 +51,12 @@ elif mode=="after":
     assert len(actual)==len(expected)==148 and set(actual)==set(expected)
     assert len({x["unit"] for x in actual.values()})==18
     assert all(x["pathway"]=="General" and x["title"]==expected[k]["Title"] and x["ordinal"]==expected[k]["SortOrder"] for k,x in actual.items())
-    assert all(actual[x["code"]]["id"]==x["id"] for x in before["target"] if x["pathway"]=="General")
+    # The deterministic key may recur after a fresh INSERT; this is not
+    # a retained row. Fresh creation timestamps must differ for every
+    # shared legacy identity, and CI also asserts the zero-row boundary.
+    old={x["code"]:x for x in before["target"]}
+    assert all(x["created"]!=old[k]["created"] for k,x in actual.items() if k in old)
+    assert all(x["created"]!=m["created"] for x in report["metadata"] for m in before["metadata"] if x["code"]==m["code"])
     assert report["unrelated"]==before["unrelated"],"Unrelated curriculum reference records changed"
 else:
     raise ValueError("Invalid snapshot phase")

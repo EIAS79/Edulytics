@@ -106,7 +106,9 @@ def run():
                             result["status"]="PASS"
                         except Exception as exc:
                             result={"ordinal":n,"lessonCode":code,"width":width,
-                                    "status":"FAIL","errorType":type(exc).__name__}
+                                    "status":"FAIL","errorType":type(exc).__name__,
+                                    "errorDetail":str(exc)[:500]}
+                            print("G10_BROWSER_FAILURE",n,width,result["errorDetail"],flush=True)
                             try:
                                 dest=OUT/f"uae-g10-failed-{n:03d}-{width}px.png"
                                 page.screenshot(path=str(dest),full_page=False,timeout=10000)

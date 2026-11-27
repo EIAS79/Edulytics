@@ -129,6 +129,8 @@ def run():
             row["englishRequestStatus"]="PASS"
         except (AssertionError,ValueError,urllib.error.URLError,TimeoutError) as exc:
             row["pageErrorType"]=type(exc).__name__
+            row["pageErrorDetail"]=str(exc)[:350]
+            print("G10_PAGE_FAILURE",ordinal,row["pageErrorType"],row["pageErrorDetail"],flush=True)
         if families:
             # Exercise the actual current route, without a release token. A
             # generation denial is recorded as a blocker, not as success.
