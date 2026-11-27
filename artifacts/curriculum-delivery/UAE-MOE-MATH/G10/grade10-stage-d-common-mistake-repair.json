@@ -1,0 +1,4095 @@
+{
+  "schemaVersion": 1,
+  "baseCandidateSha": "82b8ded5b335a57d3854e9bb2459cf0c2b7ef19f",
+  "scope": "Repair existing incomplete common-mistake explanations and corrections only; no new curriculum objectives or release criteria. Mathematical explanations authored from each existing mistake and lesson context. Not a source-parity or runtime certification.",
+  "originalInventorySha256": "72bc6dc7bbfa483fd29d63f3649e51ef978f072eaa08e7e745663ca69fcc7559",
+  "lessonsInspected": 148,
+  "affectedLessons": 105,
+  "repairedMistakes": 603,
+  "distinctOriginalMistakes": 318,
+  "remainingIncompleteMistakes": 0,
+  "sourceParity": "UNKNOWN",
+  "productionRouting": false,
+  "lessons": [
+    {
+      "lessonOrdinal": 44,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03:C044",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l03-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ac3438a4e5a85bc4fdb32dd69f1012f74da2bd062ff48579b6568e482ee6a0bf",
+      "rules": [
+        {
+          "rule": 1,
+          "titleBefore": "إهمال شرط الحجة الموجبة.",
+          "titleAfter": "إهمال شرط الحجة الموجبة."
+        },
+        {
+          "rule": 2,
+          "titleBefore": "الخلط بين الأس واللوغاريتم بوصفه قسمة.",
+          "titleAfter": "الخلط بين الأس واللوغاريتم بوصفه قسمة."
+        },
+        {
+          "rule": 3,
+          "titleBefore": "نسيان اختلاف اتجاه المتباينة عند الأساس بين صفر وواحد.",
+          "titleAfter": "نسيان اختلاف اتجاه المتباينة عند الأساس بين صفر وواحد."
+        },
+        {
+          "rule": 4,
+          "titleBefore": "قبول قيمة لا تحقق المجال.",
+          "titleAfter": "قبول قيمة لا تحقق المجال."
+        },
+        {
+          "rule": 5,
+          "titleBefore": "عدم الرجوع إلى صيغة السؤال الأصلية للتحقق.",
+          "titleAfter": "عدم الرجوع إلى صيغة السؤال الأصلية للتحقق."
+        },
+        {
+          "rule": 6,
+          "titleBefore": "تغيير الأساس عند التحويل بين الصيغتين.",
+          "titleAfter": "تغيير الأساس عند التحويل بين الصيغتين."
+        },
+        {
+          "rule": 7,
+          "titleBefore": "اعتبار (١،٠) نقطة ثابتة لكل تحويل، أو رسم المنحنى عبر المقارب.",
+          "titleAfter": "اعتبار (١،٠) نقطة ثابتة لكل تحويل، أو رسم المنحنى عبر المقارب."
+        },
+        {
+          "rule": 8,
+          "titleBefore": "المقارنة بين نماذج الانحدار دون توحيد مقياس البواقي أو فحص المجال الواقعي.",
+          "titleAfter": "المقارنة بين نماذج الانحدار دون توحيد مقياس البواقي أو فحص المجال الواقعي."
+        },
+        {
+          "rule": 9,
+          "titleBefore": "إهمال معامل س داخل حجة اللوغاريتم عند إيجاد المجال والمقارب.",
+          "titleAfter": "إهمال معامل س داخل حجة اللوغاريتم عند إيجاد المجال والمقارب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 45,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l04-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "da8ae2b6f597f9895e25d6299ff33410de4034c57596003ea498397c7e74791a",
+      "rules": [
+        {
+          "rule": 1,
+          "titleBefore": "إهمال شرط الحجة الموجبة.",
+          "titleAfter": "إهمال شرط الحجة الموجبة."
+        },
+        {
+          "rule": 2,
+          "titleBefore": "الخلط بين الأس واللوغاريتم بوصفه قسمة.",
+          "titleAfter": "الخلط بين الأس واللوغاريتم بوصفه قسمة."
+        },
+        {
+          "rule": 3,
+          "titleBefore": "نسيان اختلاف اتجاه المتباينة عند الأساس بين صفر وواحد.",
+          "titleAfter": "نسيان اختلاف اتجاه المتباينة عند الأساس بين صفر وواحد."
+        },
+        {
+          "rule": 4,
+          "titleBefore": "قبول قيمة لا تحقق المجال.",
+          "titleAfter": "قبول قيمة لا تحقق المجال."
+        },
+        {
+          "rule": 5,
+          "titleBefore": "عدم الرجوع إلى صيغة السؤال الأصلية للتحقق.",
+          "titleAfter": "عدم الرجوع إلى صيغة السؤال الأصلية للتحقق."
+        },
+        {
+          "rule": 10,
+          "titleBefore": "قبول الجذر الجبري دون اختبار الحجتين الأصليتين.",
+          "titleAfter": "قبول الجذر الجبري دون اختبار الحجتين الأصليتين."
+        },
+        {
+          "rule": 11,
+          "titleBefore": "نسيان أن حد المجال لا يُضم حتى إذا كانت علامة التباين غير صارمة.",
+          "titleAfter": "نسيان أن حد المجال لا يُضم حتى إذا كانت علامة التباين غير صارمة."
+        },
+        {
+          "rule": 12,
+          "titleBefore": "الخلط بين النسبة الفيزيائية وفرق القياس اللوغاريتمي.",
+          "titleAfter": "الخلط بين النسبة الفيزيائية وفرق القياس اللوغاريتمي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 46,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l05-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f603baf6b2863e39b8fc5ee45e06bba52f282dc436eac6bdfcde460aabd784bd",
+      "rules": [
+        {
+          "rule": 13,
+          "titleBefore": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة.",
+          "titleAfter": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة."
+        },
+        {
+          "rule": 14,
+          "titleBefore": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا.",
+          "titleAfter": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا."
+        },
+        {
+          "rule": 15,
+          "titleBefore": "إسقاط الأساس من المعادلة.",
+          "titleAfter": "إسقاط الأساس من المعادلة."
+        },
+        {
+          "rule": 16,
+          "titleBefore": "التعامل مع خاصية القوة من دون مراعاة المجال.",
+          "titleAfter": "س"
+        },
+        {
+          "rule": 17,
+          "titleBefore": "عدم التحقق بإعادة الأس في نهاية الحل.",
+          "titleAfter": "عدم التحقق بإعادة الأس في نهاية الحل."
+        },
+        {
+          "rule": 18,
+          "titleBefore": "إسقاط مجال الحجج الفردية عند دمج اللوغاريتمات.",
+          "titleAfter": "إسقاط مجال الحجج الفردية عند دمج اللوغاريتمات."
+        },
+        {
+          "rule": 19,
+          "titleBefore": "استخدام لوغ(م+ن)=لوغ م+لوغ ن.",
+          "titleAfter": "استخدام لوغ(م+ن)=لوغ م+لوغ ن."
+        },
+        {
+          "rule": 20,
+          "titleBefore": "اعتبار دفع فائدة الشهر وحدها سدادًا للدين.",
+          "titleAfter": "اعتبار دفع فائدة الشهر وحدها سدادًا للدين."
+        },
+        {
+          "rule": 21,
+          "titleBefore": "التقريب قبل نهاية الحساب أو الخلط بين الاحتمال والنسبة المئوية.",
+          "titleAfter": "التقريب قبل نهاية الحساب أو الخلط بين الاحتمال والنسبة المئوية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 47,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l06-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "5557f69f740a16e03f232a10e17d7606c7a2839eb9d73f57d5047f92d174c651",
+      "rules": [
+        {
+          "rule": 13,
+          "titleBefore": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة.",
+          "titleAfter": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة."
+        },
+        {
+          "rule": 14,
+          "titleBefore": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا.",
+          "titleAfter": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا."
+        },
+        {
+          "rule": 15,
+          "titleBefore": "إسقاط الأساس من المعادلة.",
+          "titleAfter": "إسقاط الأساس من المعادلة."
+        },
+        {
+          "rule": 16,
+          "titleBefore": "التعامل مع خاصية القوة من دون مراعاة المجال.",
+          "titleAfter": "س"
+        },
+        {
+          "rule": 17,
+          "titleBefore": "عدم التحقق بإعادة الأس في نهاية الحل.",
+          "titleAfter": "عدم التحقق بإعادة الأس في نهاية الحل."
+        },
+        {
+          "rule": 22,
+          "titleBefore": "تقريب اللوغاريتمين قبل القسمة.",
+          "titleAfter": "تقريب اللوغاريتمين قبل القسمة."
+        },
+        {
+          "rule": 23,
+          "titleBefore": "نسيان عكس المتباينة عند القسمة على معامل سالب.",
+          "titleAfter": "نسيان عكس المتباينة عند القسمة على معامل سالب."
+        },
+        {
+          "rule": 24,
+          "titleBefore": "إدخال حجة غير موجبة في المختبر.",
+          "titleAfter": "إدخال حجة غير موجبة في المختبر."
+        },
+        {
+          "rule": 25,
+          "titleBefore": "اعتبار pH دليلًا مباشرًا على تركيز الزرنيخ.",
+          "titleAfter": "اعتبار pH دليلًا مباشرًا على تركيز الزرنيخ."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 48,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l07-ar.rich-lesson-v2.json",
+      "count": 10,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "6b01142d6991eb442f3f1ecc94964f7aa1bcb96ea6166d1dc6c420a451c0b0c5",
+      "rules": [
+        {
+          "rule": 13,
+          "titleBefore": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة.",
+          "titleAfter": "كتابة لوغ(م+ن) على أنه لوغ م+لوغ ن من دون قاعدة صحيحة."
+        },
+        {
+          "rule": 14,
+          "titleBefore": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا.",
+          "titleAfter": "النسيان أن مدخل اللوغاريتم الحقيقي يجب أن يكون موجبًا."
+        },
+        {
+          "rule": 15,
+          "titleBefore": "إسقاط الأساس من المعادلة.",
+          "titleAfter": "إسقاط الأساس من المعادلة."
+        },
+        {
+          "rule": 16,
+          "titleBefore": "التعامل مع خاصية القوة من دون مراعاة المجال.",
+          "titleAfter": "س"
+        },
+        {
+          "rule": 17,
+          "titleBefore": "عدم التحقق بإعادة الأس في نهاية الحل.",
+          "titleAfter": "عدم التحقق بإعادة الأس في نهاية الحل."
+        },
+        {
+          "rule": 26,
+          "titleBefore": "أخذ ln لطرف غير موجب قبل عزل e.",
+          "titleAfter": "أخذ ln لطرف غير موجب قبل عزل e."
+        },
+        {
+          "rule": 27,
+          "titleBefore": "نسيان القيمة المطلقة في ln(x²).",
+          "titleAfter": "س"
+        },
+        {
+          "rule": 28,
+          "titleBefore": "ضرب متباينة في ln مجهول الإشارة دون تقسيم المجال.",
+          "titleAfter": "ضرب متباينة في ln مجهول الإشارة دون تقسيم المجال."
+        },
+        {
+          "rule": 29,
+          "titleBefore": "استعمال المعدل المئوي كعدد كامل أو الأشهر بدل السنوات.",
+          "titleAfter": "استعمال المعدل المئوي كعدد كامل أو الأشهر بدل السنوات."
+        },
+        {
+          "rule": 30,
+          "titleBefore": "تقريب ثابت التبريد قبل استخدامه.",
+          "titleAfter": "تقريب ثابت التبريد قبل استخدامه."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 49,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l08-ar.rich-lesson-v2.json",
+      "count": 10,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "9eec9ca7bee4d87a2944e4b75f2e1b9e621d66703212091392de57d0d7336770",
+      "rules": [
+        {
+          "rule": 31,
+          "titleBefore": "جمع نسب النمو بدل تركيبها بالضرب.",
+          "titleAfter": "جمع نسب النمو بدل تركيبها بالضرب."
+        },
+        {
+          "rule": 32,
+          "titleBefore": "استخدام ١+ر في مسألة اضمحلال.",
+          "titleAfter": "استخدام ١+ر في مسألة اضمحلال."
+        },
+        {
+          "rule": 33,
+          "titleBefore": "الخلط بين زمن مستمر وأعداد سنوات صحيحة.",
+          "titleAfter": "الخلط بين زمن مستمر وأعداد سنوات صحيحة."
+        },
+        {
+          "rule": 34,
+          "titleBefore": "إهمال القيمة الابتدائية أ.",
+          "titleAfter": "إهمال القيمة الابتدائية أ."
+        },
+        {
+          "rule": 35,
+          "titleBefore": "عدم كتابة وحدة الكمية أو الزمن.",
+          "titleAfter": "عدم كتابة وحدة الكمية أو الزمن."
+        },
+        {
+          "rule": 36,
+          "titleBefore": "خلط النسبة التي اضمحلت مع المتبقية.",
+          "titleAfter": "خلط النسبة التي اضمحلت مع المتبقية."
+        },
+        {
+          "rule": 37,
+          "titleBefore": "خلط النمو النسبي السنوي بالمعدل المستمر k.",
+          "titleAfter": "خلط النمو النسبي السنوي بالمعدل المستمر k."
+        },
+        {
+          "rule": 38,
+          "titleBefore": "اعتبار حد النمو اللوجستي قيمة تصلها الدالة في زمن منتهٍ.",
+          "titleAfter": "اعتبار حد النمو اللوجستي قيمة تصلها الدالة في زمن منتهٍ."
+        },
+        {
+          "rule": 39,
+          "titleBefore": "الاعتماد على النموذج الرياضي وحده في استنتاجات السلامة أو التنبؤ الواقعي.",
+          "titleAfter": "الاعتماد على النموذج الرياضي وحده في استنتاجات السلامة أو التنبؤ الواقعي."
+        },
+        {
+          "rule": 40,
+          "titleBefore": "تقريب الرصيد أو k في كل خطوة بدل آخر خطوة.",
+          "titleAfter": "تقريب الرصيد أو k في كل خطوة بدل آخر خطوة."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 50,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l09-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a9ab272b701f392e9cec0df0f47540200a383aa308fea722b64b09d045656435",
+      "rules": [
+        {
+          "rule": 31,
+          "titleBefore": "جمع نسب النمو بدل تركيبها بالضرب.",
+          "titleAfter": "جمع نسب النمو بدل تركيبها بالضرب."
+        },
+        {
+          "rule": 32,
+          "titleBefore": "استخدام ١+ر في مسألة اضمحلال.",
+          "titleAfter": "استخدام ١+ر في مسألة اضمحلال."
+        },
+        {
+          "rule": 33,
+          "titleBefore": "الخلط بين زمن مستمر وأعداد سنوات صحيحة.",
+          "titleAfter": "الخلط بين زمن مستمر وأعداد سنوات صحيحة."
+        },
+        {
+          "rule": 34,
+          "titleBefore": "إهمال القيمة الابتدائية أ.",
+          "titleAfter": "إهمال القيمة الابتدائية أ."
+        },
+        {
+          "rule": 35,
+          "titleBefore": "عدم كتابة وحدة الكمية أو الزمن.",
+          "titleAfter": "عدم كتابة وحدة الكمية أو الزمن."
+        },
+        {
+          "rule": 41,
+          "titleBefore": "استعمال المعدل السنوي كاملًا في كل شهر بدل قسمته على عدد فترات التركيب.",
+          "titleAfter": "استعمال المعدل السنوي كاملًا في كل شهر بدل قسمته على عدد فترات التركيب."
+        },
+        {
+          "rule": 42,
+          "titleBefore": "تقريب عدد أنصاف الأعمار إلى عدد صحيح.",
+          "titleAfter": "تقريب عدد أنصاف الأعمار إلى عدد صحيح."
+        },
+        {
+          "rule": 43,
+          "titleBefore": "جمع قيم بوحدات مختلفة أو إغفال فرضيات النموذج المركب.",
+          "titleAfter": "جمع قيم بوحدات مختلفة أو إغفال فرضيات النموذج المركب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 51,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L01:C051",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a59439449cb27f3dc419b96909c8a7b887b5ad98956a856a5324f4df3e47c87c",
+      "rules": [
+        {
+          "rule": 44,
+          "titleBefore": "الخلط بين جمع الدوال وتركيبها.",
+          "titleAfter": "الخلط بين جمع الدوال وتركيبها."
+        },
+        {
+          "rule": 45,
+          "titleBefore": "نسيان طرح الأقواس كاملة.",
+          "titleAfter": "نسيان طرح الأقواس كاملة."
+        },
+        {
+          "rule": 46,
+          "titleBefore": "القسمة على دالة صفرية عند بعض المدخلات.",
+          "titleAfter": "القسمة على دالة صفرية عند بعض المدخلات."
+        },
+        {
+          "rule": 47,
+          "titleBefore": "الاعتقاد أن د∘هـ=هـ∘د دائمًا.",
+          "titleAfter": "الاعتقاد أن د∘هـ=هـ∘د دائمًا."
+        },
+        {
+          "rule": 48,
+          "titleBefore": "إهمال مجال الصورة الداخلية في تركيب الدوال.",
+          "titleAfter": "إهمال مجال الصورة الداخلية في تركيب الدوال."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 52,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L02:C052",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a96e5270731b2da8337261ec5c0704d2042412aa527d9528002ab0337e1c48eb",
+      "rules": [
+        {
+          "rule": 49,
+          "titleBefore": "اعتبار العكس مقلوب الدالة لا تبادل س وص.",
+          "titleAfter": "اعتبار العكس مقلوب الدالة لا تبادل س وص."
+        },
+        {
+          "rule": 50,
+          "titleBefore": "عدم تطبيق اختبار واحد لواحد.",
+          "titleAfter": "عدم تطبيق اختبار واحد لواحد."
+        },
+        {
+          "rule": 51,
+          "titleBefore": "نسيان تبديل المجال والمدى.",
+          "titleAfter": "نسيان تبديل المجال والمدى."
+        },
+        {
+          "rule": 52,
+          "titleBefore": "إهمال القيود عند عكس دالة تربيعية.",
+          "titleAfter": "إهمال القيود عند عكس دالة تربيعية."
+        },
+        {
+          "rule": 53,
+          "titleBefore": "القبول بعكس غير دالي دون توضيح.",
+          "titleAfter": "القبول بعكس غير دالي دون توضيح."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 53,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L03:C053",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ff5e543552c1debe462cfd7b648db48a4a691563fd45f65f0112bab2e8dcd694",
+      "rules": [
+        {
+          "rule": 54,
+          "titleBefore": "اختصار حدود جمع لا عوامل مضروبة.",
+          "titleAfter": "اختصار حدود جمع لا عوامل مضروبة."
+        },
+        {
+          "rule": 55,
+          "titleBefore": "نسيان قيود المجال الأصلية بعد الاختصار.",
+          "titleAfter": "نسيان قيود المجال الأصلية بعد الاختصار."
+        },
+        {
+          "rule": 56,
+          "titleBefore": "تجاهل المقام الذي يساوي الصفر.",
+          "titleAfter": "تجاهل المقام الذي يساوي الصفر."
+        },
+        {
+          "rule": 57,
+          "titleBefore": "إهمال التحقق المستقل من جواب المعادلة.",
+          "titleAfter": "إهمال التحقق المستقل من جواب المعادلة."
+        },
+        {
+          "rule": 58,
+          "titleBefore": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها.",
+          "titleAfter": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 54,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L04:C054",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "246e46df3b9ffb3f2c26ef82d2b9b94cf88d09b064ae10683aa101da74ed79e4",
+      "rules": [
+        {
+          "rule": 54,
+          "titleBefore": "اختصار حدود جمع لا عوامل مضروبة.",
+          "titleAfter": "اختصار حدود جمع لا عوامل مضروبة."
+        },
+        {
+          "rule": 55,
+          "titleBefore": "نسيان قيود المجال الأصلية بعد الاختصار.",
+          "titleAfter": "نسيان قيود المجال الأصلية بعد الاختصار."
+        },
+        {
+          "rule": 56,
+          "titleBefore": "تجاهل المقام الذي يساوي الصفر.",
+          "titleAfter": "تجاهل المقام الذي يساوي الصفر."
+        },
+        {
+          "rule": 57,
+          "titleBefore": "إهمال التحقق المستقل من جواب المعادلة.",
+          "titleAfter": "إهمال التحقق المستقل من جواب المعادلة."
+        },
+        {
+          "rule": 58,
+          "titleBefore": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها.",
+          "titleAfter": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 55,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L05:C055",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "d885867b807b143eb853f30622eca17b01792bf4479a245c1f9fd62fc243289f",
+      "rules": [
+        {
+          "rule": 54,
+          "titleBefore": "اختصار حدود جمع لا عوامل مضروبة.",
+          "titleAfter": "اختصار حدود جمع لا عوامل مضروبة."
+        },
+        {
+          "rule": 55,
+          "titleBefore": "نسيان قيود المجال الأصلية بعد الاختصار.",
+          "titleAfter": "نسيان قيود المجال الأصلية بعد الاختصار."
+        },
+        {
+          "rule": 56,
+          "titleBefore": "تجاهل المقام الذي يساوي الصفر.",
+          "titleAfter": "تجاهل المقام الذي يساوي الصفر."
+        },
+        {
+          "rule": 57,
+          "titleBefore": "إهمال التحقق المستقل من جواب المعادلة.",
+          "titleAfter": "إهمال التحقق المستقل من جواب المعادلة."
+        },
+        {
+          "rule": 58,
+          "titleBefore": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها.",
+          "titleAfter": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 56,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L06:C056",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "cf36f184b940b104ff62845519bcc5cd935c36e7f62d98a3d3d0118ac7c67ee0",
+      "rules": [
+        {
+          "rule": 54,
+          "titleBefore": "اختصار حدود جمع لا عوامل مضروبة.",
+          "titleAfter": "اختصار حدود جمع لا عوامل مضروبة."
+        },
+        {
+          "rule": 55,
+          "titleBefore": "نسيان قيود المجال الأصلية بعد الاختصار.",
+          "titleAfter": "نسيان قيود المجال الأصلية بعد الاختصار."
+        },
+        {
+          "rule": 56,
+          "titleBefore": "تجاهل المقام الذي يساوي الصفر.",
+          "titleAfter": "تجاهل المقام الذي يساوي الصفر."
+        },
+        {
+          "rule": 57,
+          "titleBefore": "إهمال التحقق المستقل من جواب المعادلة.",
+          "titleAfter": "إهمال التحقق المستقل من جواب المعادلة."
+        },
+        {
+          "rule": 58,
+          "titleBefore": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها.",
+          "titleAfter": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 57,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L07:C057",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l07-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "d8f57878051ea3b6e793de272c33d55639007293322c31ae4bc125a5e3e31c6c",
+      "rules": [
+        {
+          "rule": 54,
+          "titleBefore": "اختصار حدود جمع لا عوامل مضروبة.",
+          "titleAfter": "اختصار حدود جمع لا عوامل مضروبة."
+        },
+        {
+          "rule": 55,
+          "titleBefore": "نسيان قيود المجال الأصلية بعد الاختصار.",
+          "titleAfter": "نسيان قيود المجال الأصلية بعد الاختصار."
+        },
+        {
+          "rule": 56,
+          "titleBefore": "تجاهل المقام الذي يساوي الصفر.",
+          "titleAfter": "تجاهل المقام الذي يساوي الصفر."
+        },
+        {
+          "rule": 57,
+          "titleBefore": "إهمال التحقق المستقل من جواب المعادلة.",
+          "titleAfter": "إهمال التحقق المستقل من جواب المعادلة."
+        },
+        {
+          "rule": 58,
+          "titleBefore": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها.",
+          "titleAfter": "عدم التفريق بين القاعدة الصحيحة وشرط استعمالها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 58,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "3ef034e9a43c1b87bf7ea93dcd312b6a79235c76ff070a24908a56779223b09b",
+      "canonicalBodySha256": "4c91a9cbb802557871121cd268328168a31d15f3657f75721dcedddee83631ba",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 59,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:02:ANGLES-AND-PARALLEL-LINES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "74473afd969d941e80d54d809e53b880653bee82d92a9d614770274daf9590c4",
+      "canonicalBodySha256": "3bf74f082ca7248166f73cc9e0596d2edca1f895b6d0627384f54d6c4f2d5c65",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 60,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:03:SLOPE-OF-A-LINE",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "4c8ef4fc61b73df318757398c04742726cc963af3fda04a00285bc36f830214f",
+      "canonicalBodySha256": "406fc1cea16df7870bfd28b720d4a29200f65d0b49ef1f3c63400145db0af774",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 61,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:04:EQUATIONS-OF-LINES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "b05b102f95bfcd85cf19f8d2866c1e11814b4016373d88e06800a87f00b52e28",
+      "canonicalBodySha256": "603a7bd13dc3766bb18dae90cf3e932b62a209a60bdb5fb01fd797ca5f91900d",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 62,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:05:PROVING-LINES-PARALLEL",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "d1a8b8d3237db9d693ac5f7a367c27045e9be25fec5412be40318a748f03597a",
+      "canonicalBodySha256": "cc68275126554525850a7c9a773fba36634ff03b629bda88c58f370fd1b3bf21",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 63,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:06:PERPENDICULARS-AND-DISTANCE",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "282ea949ebf404eca9425b659917f684c3f3350e2f0c2cb26e22180fab30b156",
+      "canonicalBodySha256": "fcefc6704fe232715cffe2491686a88c1bbb21be1ba4760c1b4b201ae3f9f5bb",
+      "rules": [
+        {
+          "rule": 59,
+          "titleBefore": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا.",
+          "titleAfter": "اختيار علاقة غير مناسبة بين المستقيمات والزوايا."
+        },
+        {
+          "rule": 60,
+          "titleBefore": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال.",
+          "titleAfter": "نسيان فحص حالة المستقيم الرأسي أو نقاط المجال."
+        },
+        {
+          "rule": 61,
+          "titleBefore": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر.",
+          "titleAfter": "حذف سبب خطوة برهان أو الاستنتاج من دون مبرر."
+        },
+        {
+          "rule": 62,
+          "titleBefore": "عكس ترتيب طرح الإحداثيات في البسط دون المقام.",
+          "titleAfter": "عكس ترتيب طرح الإحداثيات في البسط دون المقام."
+        },
+        {
+          "rule": 63,
+          "titleBefore": "إهمال تفسير النتيجة والرسم بالمقياس المناسب.",
+          "titleAfter": "إهمال تفسير النتيجة والرسم بالمقياس المناسب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 64,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:01:REFLECTIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l01-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "578500bf59608b2fec7e3804f00cd11ae2fd16c0a2993d235dd18cff1379ccaf",
+      "canonicalBodySha256": "2042ae45da2dfec4ddd27c716772db407182a3b8bacc069ad7e206402acc9d4a",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 65,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:02:TRANSLATIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l02-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "869b1b8072dfec6345f8d263b4b2f30f0ae12d3c8213e300607ddf4c1b699c6e",
+      "canonicalBodySha256": "1182dce258600e670b2895bf33cec73e8a39fe1e1062eebe86fd8648f72821e9",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 66,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:03:ROTATIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l03-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "ba8117313129ec0eea769c300c3ec8664a1d309deabef012757654a0e42d9e7d",
+      "canonicalBodySha256": "c77b17cf036feb169d1dd1973749f3feab182b16c960e7d63f6ff2c6f915f426",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 67,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:04:COMPOSITIONS-OF-TRANSFORMATIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l04-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "1b2a27250cdc5e898374173e68d2d4931541d69afdf1c24f67d0db8dba6c2428",
+      "canonicalBodySha256": "3b26446132f938fd7883341f26b9c3aca4461e1a6606cf387985e3f1d523302b",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 68,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:05:SYMMETRY",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l05-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "a4beb9a57356e97b2ce4eec1056286aebb03248dec6f38138d10fa38a5d06f60",
+      "canonicalBodySha256": "4999800add4ce0c4855938b310deac8f79efd780d6f983eaa105470fd73e5be7",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 69,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:06:DILATIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l06-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "812f6bbce5d2af013934a94966aab7137be5f5cfd9afa3774cc523eca1d0f9c4",
+      "canonicalBodySha256": "cf0f1bc12c003f40f5978ede169967f26427ae53c01de878bb810c637d28c816",
+      "rules": [
+        {
+          "rule": 64,
+          "titleBefore": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة.",
+          "titleAfter": "الخلط بين التحويلات المتشابهة في الشكل والمختلفة في الصيغة."
+        },
+        {
+          "rule": 65,
+          "titleBefore": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل.",
+          "titleAfter": "نسيان مركز التحويل أو اتجاه الدوران أو إشارة المعامل."
+        },
+        {
+          "rule": 66,
+          "titleBefore": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع.",
+          "titleAfter": "تطبيق القاعدة على نقطة واحدة وترك بقية رؤوس المضلع."
+        },
+        {
+          "rule": 67,
+          "titleBefore": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل.",
+          "titleAfter": "إهمال التحقق من خواص التطابق أو التشابه التي يحفظها التحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 70,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:01:CLASSIFYING-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l01-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "5b08bc15de35128014c04b261453817c52c24d60713cce8339b1e6ee3129c379",
+      "canonicalBodySha256": "18ec2fce8e25e2512ce541fdc5f4b226dbdc75fac44254d053eefa12365f6a8d",
+      "rules": [
+        {
+          "rule": 68,
+          "titleBefore": "الاعتماد على الرسم من دون تحقق رياضي.",
+          "titleAfter": "الاعتماد على الرسم من دون تحقق رياضي."
+        },
+        {
+          "rule": 69,
+          "titleBefore": "اختيار معيار غير مناسب للمعطيات.",
+          "titleAfter": "اختيار معيار غير مناسب للمعطيات."
+        },
+        {
+          "rule": 70,
+          "titleBefore": "الخلط بين الزوايا المتناظرة وغير المتناظرة.",
+          "titleAfter": "الخلط بين الزوايا المتناظرة وغير المتناظرة."
+        },
+        {
+          "rule": 71,
+          "titleBefore": "عدم ذكر سبب الخطوات الهندسية.",
+          "titleAfter": "عدم ذكر سبب الخطوات الهندسية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 71,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:02:ANGLES-OF-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l02-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "0fb62c80b9c3296f57d99f67b63bd60647ee098f1c2510319ed6035d5957bdf9",
+      "canonicalBodySha256": "f9613b61420d087b0d5f7d57fba00b62827a4ac838467495eeafbc7a759e2e11",
+      "rules": [
+        {
+          "rule": 68,
+          "titleBefore": "الاعتماد على الرسم من دون تحقق رياضي.",
+          "titleAfter": "الاعتماد على الرسم من دون تحقق رياضي."
+        },
+        {
+          "rule": 69,
+          "titleBefore": "اختيار معيار غير مناسب للمعطيات.",
+          "titleAfter": "اختيار معيار غير مناسب للمعطيات."
+        },
+        {
+          "rule": 70,
+          "titleBefore": "الخلط بين الزوايا المتناظرة وغير المتناظرة.",
+          "titleAfter": "الخلط بين الزوايا المتناظرة وغير المتناظرة."
+        },
+        {
+          "rule": 71,
+          "titleBefore": "عدم ذكر سبب الخطوات الهندسية.",
+          "titleAfter": "عدم ذكر سبب الخطوات الهندسية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 72,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:03:CONGRUENT-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l03-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "c15e0e955e4465e83b54da1452f900c57f02694b6949b292d5c0d057a89f1d81",
+      "canonicalBodySha256": "a2556b9aed86aa08d0e60436120a1227ab8b8e04c7b2d7fec57838200812e65b",
+      "rules": [
+        {
+          "rule": 68,
+          "titleBefore": "الاعتماد على الرسم من دون تحقق رياضي.",
+          "titleAfter": "الاعتماد على الرسم من دون تحقق رياضي."
+        },
+        {
+          "rule": 69,
+          "titleBefore": "اختيار معيار غير مناسب للمعطيات.",
+          "titleAfter": "اختيار معيار غير مناسب للمعطيات."
+        },
+        {
+          "rule": 70,
+          "titleBefore": "الخلط بين الزوايا المتناظرة وغير المتناظرة.",
+          "titleAfter": "الخلط بين الزوايا المتناظرة وغير المتناظرة."
+        },
+        {
+          "rule": 71,
+          "titleBefore": "عدم ذكر سبب الخطوات الهندسية.",
+          "titleAfter": "عدم ذكر سبب الخطوات الهندسية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 73,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:04:PROVING-CONGRUENCE-SSS-AND-SAS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l04-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "01edf49d8017a066201af2e4a10b764d54b626f0cfe307b3240f21bc5209365a",
+      "canonicalBodySha256": "2bdba31f5c0f0eceea70e2d4f5d8d4ef7a2382a9f4aa940e05bbf07c6aae677d",
+      "rules": [
+        {
+          "rule": 72,
+          "titleBefore": "عدم تمييز الزاوية المحصورة من غير المحصورة.",
+          "titleAfter": "عدم تمييز الزاوية المحصورة من غير المحصورة."
+        },
+        {
+          "rule": 73,
+          "titleBefore": "اختيار معيار غير كافٍ لإثبات التطابق.",
+          "titleAfter": "اختيار معيار غير كافٍ لإثبات التطابق."
+        },
+        {
+          "rule": 74,
+          "titleBefore": "إهمال ترتيب الرؤوس المتناظرة.",
+          "titleAfter": "إهمال ترتيب الرؤوس المتناظرة."
+        },
+        {
+          "rule": 75,
+          "titleBefore": "تجاوز مجموع زوايا المثلث عند الحساب.",
+          "titleAfter": "تجاوز مجموع زوايا المثلث عند الحساب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:05:PROVING-CONGRUENCE-ASA-AND-AAS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l05-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "834b9d336edf73cd2a51a45e34301247f26ad5fae3f9fb32a9fdc15a1588f53f",
+      "canonicalBodySha256": "086b2b6709c37422c4f38a30ea33e80d7aaeed619c05e677be9eb7b4e96d15b7",
+      "rules": [
+        {
+          "rule": 72,
+          "titleBefore": "عدم تمييز الزاوية المحصورة من غير المحصورة.",
+          "titleAfter": "عدم تمييز الزاوية المحصورة من غير المحصورة."
+        },
+        {
+          "rule": 73,
+          "titleBefore": "اختيار معيار غير كافٍ لإثبات التطابق.",
+          "titleAfter": "اختيار معيار غير كافٍ لإثبات التطابق."
+        },
+        {
+          "rule": 74,
+          "titleBefore": "إهمال ترتيب الرؤوس المتناظرة.",
+          "titleAfter": "إهمال ترتيب الرؤوس المتناظرة."
+        },
+        {
+          "rule": 75,
+          "titleBefore": "تجاوز مجموع زوايا المثلث عند الحساب.",
+          "titleAfter": "تجاوز مجموع زوايا المثلث عند الحساب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:06:ISOSCELES-AND-EQUILATERAL-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l06-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "6074817ca76fc9991c4893f7b88d1b2da031e185fbfdde8101ccbf4b1c9a9e12",
+      "canonicalBodySha256": "5f88714a7a94fe0326bf8438b69e2fafb9215a8c9dfe3ee65b49f8823dc4b165",
+      "rules": [
+        {
+          "rule": 72,
+          "titleBefore": "عدم تمييز الزاوية المحصورة من غير المحصورة.",
+          "titleAfter": "عدم تمييز الزاوية المحصورة من غير المحصورة."
+        },
+        {
+          "rule": 73,
+          "titleBefore": "اختيار معيار غير كافٍ لإثبات التطابق.",
+          "titleAfter": "اختيار معيار غير كافٍ لإثبات التطابق."
+        },
+        {
+          "rule": 74,
+          "titleBefore": "إهمال ترتيب الرؤوس المتناظرة.",
+          "titleAfter": "إهمال ترتيب الرؤوس المتناظرة."
+        },
+        {
+          "rule": 75,
+          "titleBefore": "تجاوز مجموع زوايا المثلث عند الحساب.",
+          "titleAfter": "تجاوز مجموع زوايا المثلث عند الحساب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:07:CONGRUENCE-TRANSFORMATIONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l07-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "de36a0a822ba015f97ac26367d27c2ab81caeaab25f6aecd008646a1de8e2f4a",
+      "canonicalBodySha256": "e2f3e0e82d488910778d617b58bb32a2a13762dce9e35bd1031c6fd2bc22d5b9",
+      "rules": [
+        {
+          "rule": 76,
+          "titleBefore": "إهمال الشروط الضرورية للتطابق.",
+          "titleAfter": "إهمال الشروط الضرورية للتطابق."
+        },
+        {
+          "rule": 77,
+          "titleBefore": "إساءة ترتيب الإحداثيات أو مراكز التحويل.",
+          "titleAfter": "إساءة ترتيب الإحداثيات أو مراكز التحويل."
+        },
+        {
+          "rule": 78,
+          "titleBefore": "استخدام ارتفاع غير عمودي عند حساب المساحة.",
+          "titleAfter": "استخدام ارتفاع غير عمودي عند حساب المساحة."
+        },
+        {
+          "rule": 79,
+          "titleBefore": "عدم التحقق من النتيجة.",
+          "titleAfter": "عدم التحقق من النتيجة."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 77,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:08:TRIANGLES-AND-COORDINATE-PROOF",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l08-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "d59b319eb6595abedfc0cb6178aa7019b5e3848017ea3eecffe0a8a7ce44906c",
+      "canonicalBodySha256": "765ee3d788f7ca72d249b0f4b40fd153eb5d2bdfeeb685624b2879c7f880ede0",
+      "rules": [
+        {
+          "rule": 76,
+          "titleBefore": "إهمال الشروط الضرورية للتطابق.",
+          "titleAfter": "إهمال الشروط الضرورية للتطابق."
+        },
+        {
+          "rule": 77,
+          "titleBefore": "إساءة ترتيب الإحداثيات أو مراكز التحويل.",
+          "titleAfter": "إساءة ترتيب الإحداثيات أو مراكز التحويل."
+        },
+        {
+          "rule": 78,
+          "titleBefore": "استخدام ارتفاع غير عمودي عند حساب المساحة.",
+          "titleAfter": "استخدام ارتفاع غير عمودي عند حساب المساحة."
+        },
+        {
+          "rule": 79,
+          "titleBefore": "عدم التحقق من النتيجة.",
+          "titleAfter": "عدم التحقق من النتيجة."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 78,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:09:AREA-OF-PARALLELOGRAMS-AND-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l09-ar.rich-lesson-v2.json",
+      "count": 4,
+      "previousCanonicalBodySha256": "82f1a7330056e52c7d437f56fdc0e37f261166bad16a1efabe675a518e16cb42",
+      "canonicalBodySha256": "5f6f4d56aa0e96202b3eac7d8d12cc410fc3b5eb3ead6fe0a05215c0139ab5ce",
+      "rules": [
+        {
+          "rule": 76,
+          "titleBefore": "إهمال الشروط الضرورية للتطابق.",
+          "titleAfter": "إهمال الشروط الضرورية للتطابق."
+        },
+        {
+          "rule": 77,
+          "titleBefore": "إساءة ترتيب الإحداثيات أو مراكز التحويل.",
+          "titleAfter": "إساءة ترتيب الإحداثيات أو مراكز التحويل."
+        },
+        {
+          "rule": 78,
+          "titleBefore": "استخدام ارتفاع غير عمودي عند حساب المساحة.",
+          "titleAfter": "استخدام ارتفاع غير عمودي عند حساب المساحة."
+        },
+        {
+          "rule": 79,
+          "titleBefore": "عدم التحقق من النتيجة.",
+          "titleAfter": "عدم التحقق من النتيجة."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 79,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:01:PERPENDICULAR-BISECTORS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "1f307566cd88c2be1743acc378439ebc8d519752e024a805c19457795a6234e9",
+      "canonicalBodySha256": "c647f97d423d43ccaf925bbcf4ad9d3b225c0cf4d34dcb5f17b3e6c868b893b7",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 80,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "22f5cae31cb23d23ecc8be885a72238f0caa5bda995bb49927420f61e315abc0",
+      "canonicalBodySha256": "f23c5197645566173d2fcc80d0fc7f7e04577ad690a4c9b578cfebfc4b7ffaa3",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 81,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "c96ecacf752234e86751bc1a8938b0a7c2750388fd55c4387d0bc152979abc5f",
+      "canonicalBodySha256": "50a8fc41123f2fd93247f9b9f796bbd1b9837a803c406c488071a2a2e7acf3a8",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 82,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "2a9982491c1b83e5be38aeddf98b326cacc4ff60867910560b12cc4a11a08893",
+      "canonicalBodySha256": "c04d0855f0914b9adbe5643187b2feb279c6e56817c7c9c6914e3c6fdfa06f9b",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 83,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "cbd232fac7f0c1e16b6cc4840aa60f560be3ac45b5b3c1f1e47fa3a3de74e3c0",
+      "canonicalBodySha256": "e1fe36a8d8b29013d065444f8fdad55410ef16186d9554919e8b94c4fc088480",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 84,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:06:INEQUALITIES-IN-TWO-TRIANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u10-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "50f41176557156d7f37c6e07f5afbee805377c13df628aded566495494fa2d51",
+      "canonicalBodySha256": "a66bc23a6eaaf55cdc89f2725e1618b06e496b26aedd8e79aefe13754819d115",
+      "rules": [
+        {
+          "rule": 80,
+          "titleBefore": "استنتاج هندسي من رسم غير مضبوط.",
+          "titleAfter": "استنتاج هندسي من رسم غير مضبوط."
+        },
+        {
+          "rule": 81,
+          "titleBefore": "عدم التحقق من شروط النظرية المعينة.",
+          "titleAfter": "عدم التحقق من شروط النظرية المعينة."
+        },
+        {
+          "rule": 82,
+          "titleBefore": "الخلط بين المفاهيم المتقاربة.",
+          "titleAfter": "الخلط بين المفاهيم المتقاربة."
+        },
+        {
+          "rule": 83,
+          "titleBefore": "عكس اتجاه التساوي أو المقارنة.",
+          "titleAfter": "عكس اتجاه المتباينة دون مبرر، أو اعتبار اتجاه كتابة المساواة مؤثرًا."
+        },
+        {
+          "rule": 84,
+          "titleBefore": "إهمال صيغة المسألة الأصلية عند اختبار الحل.",
+          "titleAfter": "إهمال صيغة المسألة الأصلية عند اختبار الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 85,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01:C085",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a3127cf7c94349ed65f500c1573cc753a9b1c16fd5d6d5ff2ea9b6dd27463fda",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 86,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02:C086",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "beb62db4f33ee8455dc6408f80b0af2c394e36b2fed5f76153b0ffc798f168ea",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 87,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03:C087",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "5f46a2b2b9b713a29b855d8445c734f697a4449c5dabfc635f151e2b3009d2fb",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 88,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04:C088",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ee33acddcffc1ff7361fdb8006b7944540cfd288876e3ebe8c27d8135130de4c",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 89,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05:C089",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "9462744ebd752f2c17d9f26e932938d51e3872d02f331d70695e69126e53b841",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 90,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06:C090",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "73385eb3c0f206762fec15c6e86a6e56de358ce5ae6458715f5e88974f3818a3",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 91,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07:C091",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l07-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "27b77ed7cd0bb9606f37a2b0cc4a55f898eda5861c7d176f892a4ce480fa430a",
+      "rules": [
+        {
+          "rule": 85,
+          "titleBefore": "إهمال ترتيب الأجزاء المتناظرة في التناسب.",
+          "titleAfter": "إهمال ترتيب الأجزاء المتناظرة في التناسب."
+        },
+        {
+          "rule": 86,
+          "titleBefore": "الخلط بين النسبة الخطية ونسبة المساحات.",
+          "titleAfter": "الخلط بين النسبة الخطية ونسبة المساحات."
+        },
+        {
+          "rule": 87,
+          "titleBefore": "عدم توحيد وحدات القياس.",
+          "titleAfter": "عدم توحيد وحدات القياس."
+        },
+        {
+          "rule": 88,
+          "titleBefore": "الاستدلال من شكل تقريبي دون إثبات الشروط.",
+          "titleAfter": "الاستدلال من شكل تقريبي دون إثبات الشروط."
+        },
+        {
+          "rule": 89,
+          "titleBefore": "الاعتماد على تحويل جبرية تؤدي إلى مقام صفر.",
+          "titleAfter": "الاعتماد على تحويل جبري يؤدي إلى مقام صفري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 92,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:01:ANGLES-OF-POLYGONS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "37cb3494b8811066a3253a367d7557d3509929c5da8485cbd09b1fbfbcf94cf4",
+      "canonicalBodySha256": "ae3e8ec5e3719701fc5df84318c26765136edf28962d31a5d79d78fbf2cb13c8",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 93,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "ef4adeecc7d100c99f0e6d203e7af00be4d518ca670bfaf9d134111e826bcf70",
+      "canonicalBodySha256": "99f062c850b522f5b474137312a8234aa22c3f8fba24576efd3eab302f83711f",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 94,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:03:TESTS-FOR-PARALLELOGRAMS",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "57ff29c505cee136d0ad6627ef8de560c424c43bb20e73794205bf7b5d6e6bd3",
+      "canonicalBodySha256": "113ca0287027a0a2e5dc6d2743c00a3ef93f360eeb83a9e0006e8443a4409f90",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 95,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:04:RECTANGLES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "ffd9d0caf94fd9cfda8387a89187c52183069777a6fb98be76d756b62842b303",
+      "canonicalBodySha256": "1414b3a03dd687f93938e38ce3f103ca4ea68b3e3703036c2db8ddec6223cb7d",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 96,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:05:RHOMBI-AND-SQUARES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "aa08455d73944e8253ce18e51f6325d38317f272d98ab78df41f7b82d32f20f4",
+      "canonicalBodySha256": "2023ea165e0ab65c32da1213cd4b8eb5531179cc017c6dff870e6bad2fe5d416",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 97,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:06:TRAPEZOIDS-AND-KITES",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u12-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": "d63dcfa81ab079a9c9065e55980c5073e145481dbf906bef8d8e494f87eb8f0c",
+      "canonicalBodySha256": "fcdc73617678df695b6a960abe1ea9677a005636c0ab5f2d4d0ad71ff75742fb",
+      "rules": [
+        {
+          "rule": 90,
+          "titleBefore": "تطبيق نظرية قبل التحقق من شروط الشكل.",
+          "titleAfter": "تطبيق نظرية قبل التحقق من شروط الشكل."
+        },
+        {
+          "rule": 91,
+          "titleBefore": "الخلط بين التشابه والتطابق.",
+          "titleAfter": "الخلط بين التشابه والتطابق."
+        },
+        {
+          "rule": 92,
+          "titleBefore": "الاعتماد على رسم غير مضبوط كمصدر للقياس.",
+          "titleAfter": "الاعتماد على رسم غير مضبوط كمصدر للقياس."
+        },
+        {
+          "rule": 93,
+          "titleBefore": "إهمال التحقق من الوحدات وأصفار المقامات.",
+          "titleAfter": "إهمال التحقق من الوحدات وأصفار المقامات."
+        },
+        {
+          "rule": 94,
+          "titleBefore": "الخلط بين القطعة المتوسطة والقطر والارتفاع.",
+          "titleAfter": "الخلط بين القطعة المتوسطة والقطر والارتفاع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 98,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01:C098",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l01-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "e6d42bd30e05661dfa382526546e701b0db3828d322d5fa64af9eece56b783c6",
+      "rules": [
+        {
+          "rule": 95,
+          "titleBefore": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية.",
+          "titleAfter": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية."
+        },
+        {
+          "rule": 96,
+          "titleBefore": "استخدام علاقة نصف القطر مع مقدار يمثل القطر.",
+          "titleAfter": "استخدام علاقة نصف القطر مع مقدار يمثل القطر."
+        },
+        {
+          "rule": 97,
+          "titleBefore": "حذف π دون مبرر من حساب محيط أو مساحة.",
+          "titleAfter": "حذف π دون مبرر من حساب محيط أو مساحة."
+        },
+        {
+          "rule": 98,
+          "titleBefore": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها.",
+          "titleAfter": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها."
+        },
+        {
+          "rule": 99,
+          "titleBefore": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة.",
+          "titleAfter": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة."
+        },
+        {
+          "rule": 100,
+          "titleBefore": "اعتبار كل وتر قطرًا، أو اعتبار كل دائرتين متشابهتين متطابقتين.",
+          "titleAfter": "اعتبار كل وتر قطرًا، أو اعتبار كل دائرتين متشابهتين متطابقتين."
+        },
+        {
+          "rule": 101,
+          "titleBefore": "استخدام نصف قطر واحد بدل مجموع نصفي القطرين عند فحص التقاطع.",
+          "titleAfter": "ر١−ر٢"
+        },
+        {
+          "rule": 102,
+          "titleBefore": "تقريب π مبكرًا أو استخدام ضلع المستطيل بدل قطره.",
+          "titleAfter": "تقريب π مبكرًا أو استخدام ضلع المستطيل بدل قطره."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 99,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L02:C099",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l02-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "935a5f7f272f445964d1bf895b748aa066eeef3694e3d60292679127fe9b568f",
+      "rules": [
+        {
+          "rule": 95,
+          "titleBefore": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية.",
+          "titleAfter": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية."
+        },
+        {
+          "rule": 96,
+          "titleBefore": "استخدام علاقة نصف القطر مع مقدار يمثل القطر.",
+          "titleAfter": "استخدام علاقة نصف القطر مع مقدار يمثل القطر."
+        },
+        {
+          "rule": 97,
+          "titleBefore": "حذف π دون مبرر من حساب محيط أو مساحة.",
+          "titleAfter": "حذف π دون مبرر من حساب محيط أو مساحة."
+        },
+        {
+          "rule": 98,
+          "titleBefore": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها.",
+          "titleAfter": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها."
+        },
+        {
+          "rule": 99,
+          "titleBefore": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة.",
+          "titleAfter": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة."
+        },
+        {
+          "rule": 103,
+          "titleBefore": "الخلط بين قياس القوس بالدرجات وطوله بوحدات طول.",
+          "titleAfter": "الخلط بين قياس القوس بالدرجات وطوله بوحدات طول."
+        },
+        {
+          "rule": 104,
+          "titleBefore": "اعتبار كل قوسين متساويي القياس متطابقين رغم اختلاف نصف القطر.",
+          "titleAfter": "اعتبار كل قوسين متساويي القياس متطابقين رغم اختلاف نصف القطر."
+        },
+        {
+          "rule": 105,
+          "titleBefore": "استعمال صيغة الراديان مع زاوية بالدرجات دون تحويل.",
+          "titleAfter": "استعمال صيغة الراديان مع زاوية بالدرجات دون تحويل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 100,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03:C100",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l03-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "69395879006624a3bb87ec1e7c8accf86843f9ed2307885589c007886eb54295",
+      "rules": [
+        {
+          "rule": 95,
+          "titleBefore": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية.",
+          "titleAfter": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية."
+        },
+        {
+          "rule": 96,
+          "titleBefore": "استخدام علاقة نصف القطر مع مقدار يمثل القطر.",
+          "titleAfter": "استخدام علاقة نصف القطر مع مقدار يمثل القطر."
+        },
+        {
+          "rule": 97,
+          "titleBefore": "حذف π دون مبرر من حساب محيط أو مساحة.",
+          "titleAfter": "حذف π دون مبرر من حساب محيط أو مساحة."
+        },
+        {
+          "rule": 98,
+          "titleBefore": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها.",
+          "titleAfter": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها."
+        },
+        {
+          "rule": 99,
+          "titleBefore": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة.",
+          "titleAfter": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة."
+        },
+        {
+          "rule": 106,
+          "titleBefore": "تطبيق تكافؤ الأوتار والأقواس في دائرتين مختلفتي نصف القطر.",
+          "titleAfter": "تطبيق تكافؤ الأوتار والأقواس في دائرتين مختلفتي نصف القطر."
+        },
+        {
+          "rule": 107,
+          "titleBefore": "استخدام طول الوتر كله بدل نصفه في فيثاغورس.",
+          "titleAfter": "استخدام طول الوتر كله بدل نصفه في فيثاغورس."
+        },
+        {
+          "rule": 108,
+          "titleBefore": "افتراض أن أي مستقيم يمر بالمركز ينصف وترًا دون شرط التعامد.",
+          "titleAfter": "افتراض أن أي مستقيم يمر بالمركز ينصف وترًا دون شرط التعامد."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 101,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04:C101",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l04-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "0e640c45dd90ea9e1871633412292e37f3288f95dd2c8461531ab8031f24ad7a",
+      "rules": [
+        {
+          "rule": 95,
+          "titleBefore": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية.",
+          "titleAfter": "الخلط بين الوتر والقطر أو بين القياس الخطي وقياس الزاوية."
+        },
+        {
+          "rule": 96,
+          "titleBefore": "استخدام علاقة نصف القطر مع مقدار يمثل القطر.",
+          "titleAfter": "استخدام علاقة نصف القطر مع مقدار يمثل القطر."
+        },
+        {
+          "rule": 97,
+          "titleBefore": "حذف π دون مبرر من حساب محيط أو مساحة.",
+          "titleAfter": "حذف π دون مبرر من حساب محيط أو مساحة."
+        },
+        {
+          "rule": 98,
+          "titleBefore": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها.",
+          "titleAfter": "نسيان شرط وقوع نقطة أو قطعة داخل الدائرة أو خارجها."
+        },
+        {
+          "rule": 99,
+          "titleBefore": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة.",
+          "titleAfter": "اعتبار الرسم تقريبيًا مصدرًا للقياسات دون نص المسألة."
+        },
+        {
+          "rule": 109,
+          "titleBefore": "اختيار القوس الذي يحتوي على رأس الزاوية بدل القوس المحصور.",
+          "titleAfter": "اختيار القوس الذي يحتوي على رأس الزاوية بدل القوس المحصور."
+        },
+        {
+          "rule": 110,
+          "titleBefore": "الخلط بين المركزية والمحيطية؛ المحيطية نصف القوس.",
+          "titleAfter": "الخلط بين المركزية والمحيطية؛ المحيطية نصف القوس."
+        },
+        {
+          "rule": 111,
+          "titleBefore": "اعتبار الزاويتين المتجاورتين في أي رباعي دائري متكاملتين.",
+          "titleAfter": "اعتبار الزاويتين المتجاورتين في أي رباعي دائري متكاملتين."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 102,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05:C102",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l05-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "5a1112ca20372e3ed10150f30f8f41d007010b9f814cbb79674139d0169324c1",
+      "rules": [
+        {
+          "rule": 112,
+          "titleBefore": "عدّ نقاط التقاطع بدل عدد المماسات المشتركة.",
+          "titleAfter": "عدّ نقاط التقاطع بدل عدد المماسات المشتركة."
+        },
+        {
+          "rule": 113,
+          "titleBefore": "تطبيق فيثاغورس دون إثبات التعامد عند نقطة التماس.",
+          "titleAfter": "تطبيق فيثاغورس دون إثبات التعامد عند نقطة التماس."
+        },
+        {
+          "rule": 114,
+          "titleBefore": "الخلط بين OP وPA أو بين نصف القطر والقطر.",
+          "titleAfter": "الخلط بين OP وPA أو بين نصف القطر والقطر."
+        },
+        {
+          "rule": 115,
+          "titleBefore": "مساواة قطعتين مماستين لا تنطلقان من النقطة الخارجية نفسها.",
+          "titleAfter": "مساواة قطعتين مماستين لا تنطلقان من النقطة الخارجية نفسها."
+        },
+        {
+          "rule": 116,
+          "titleBefore": "افتراض أن وجود دائرة داخل مضلع يعني أنها تمس كل ضلع.",
+          "titleAfter": "افتراض أن وجود دائرة داخل مضلع يعني أنها تمس كل ضلع."
+        },
+        {
+          "rule": 117,
+          "titleBefore": "الاعتماد على مظهر الرسم بدل الفرضيات.",
+          "titleAfter": "الاعتماد على مظهر الرسم بدل الفرضيات."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 103,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06:C103",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f633dc493a7fbe9ab66e5abfb3a098fb4f379ad5d352c4511a076aa2a1db4c13",
+      "rules": [
+        {
+          "rule": 118,
+          "titleBefore": "الخلط بين نصف مجموع القوسين للداخل ونصف الفرق للخارج.",
+          "titleAfter": "الخلط بين نصف مجموع القوسين للداخل ونصف الفرق للخارج."
+        },
+        {
+          "rule": 119,
+          "titleBefore": "اختيار قوس لا تحصره الزاوية أو مقابلتها بالرأس.",
+          "titleAfter": "اختيار قوس لا تحصره الزاوية أو مقابلتها بالرأس."
+        },
+        {
+          "rule": 120,
+          "titleBefore": "نسيان أن المماسين يحصران قوسين مجموعهما 360°.",
+          "titleAfter": "نسيان أن المماسين يحصران قوسين مجموعهما 360°."
+        },
+        {
+          "rule": 121,
+          "titleBefore": "التعامل مع قياس القوس كأنه طول خطي.",
+          "titleAfter": "التعامل مع قياس القوس كأنه طول خطي."
+        },
+        {
+          "rule": 122,
+          "titleBefore": "اعتبار رسم تقريبي دليلًا على القياس.",
+          "titleAfter": "اعتبار رسم تقريبي دليلًا على القياس."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 104,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07:C104",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l07-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ec4d6d90ffa384a6cead9d9045ba3a761039b7360d9b43e6a409a74b53d7e678",
+      "rules": [
+        {
+          "rule": 123,
+          "titleBefore": "ضرب الجزء الخارجي في الجزء الداخلي بدل طول القاطع الكامل.",
+          "titleAfter": "ضرب الجزء الخارجي في الجزء الداخلي بدل طول القاطع الكامل."
+        },
+        {
+          "rule": 124,
+          "titleBefore": "استعمال صيغة القاطع الخارجي في حالة تقاطع وترين داخل الدائرة.",
+          "titleAfter": "استعمال صيغة القاطع الخارجي في حالة تقاطع وترين داخل الدائرة."
+        },
+        {
+          "rule": 125,
+          "titleBefore": "قبول جذر سالب أو صفر لطول قطعة غير منعدمة.",
+          "titleAfter": "قبول جذر سالب أو صفر لطول قطعة غير منعدمة."
+        },
+        {
+          "rule": 126,
+          "titleBefore": "الخلط بين طول المماس ومربعه.",
+          "titleAfter": "الخلط بين طول المماس ومربعه."
+        },
+        {
+          "rule": 127,
+          "titleBefore": "تقريب الأطوال في منتصف الحل.",
+          "titleAfter": "تقريب الأطوال في منتصف الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 105,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08:C105",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l08-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "64f67842574e1280e7f6f58a41d7337319bd37422cf896e3c7ecb95c9c0b4e33",
+      "rules": [
+        {
+          "rule": 128,
+          "titleBefore": "قراءة إشارة المركز داخل القوس بدل عكسها.",
+          "titleAfter": "قراءة إشارة المركز داخل القوس بدل عكسها."
+        },
+        {
+          "rule": 129,
+          "titleBefore": "استعمال الطرف الأيمن على أنه نصف القطر بدل مربعه.",
+          "titleAfter": "استعمال الطرف الأيمن على أنه نصف القطر بدل مربعه."
+        },
+        {
+          "rule": 130,
+          "titleBefore": "إكمال المربع دون إضافة المقدار نفسه للطرفين.",
+          "titleAfter": "إكمال المربع دون إضافة المقدار نفسه للطرفين."
+        },
+        {
+          "rule": 131,
+          "titleBefore": "إهمال حالة الطرف الأيمن صفرًا أو سالبًا.",
+          "titleAfter": "إهمال حالة الطرف الأيمن صفرًا أو سالبًا."
+        },
+        {
+          "rule": 132,
+          "titleBefore": "رسم دائرة بتدريجين مختلفين للمحورين.",
+          "titleAfter": "رسم دائرة بتدريجين مختلفين للمحورين."
+        },
+        {
+          "rule": 133,
+          "titleBefore": "عدم التحقق من تقاطع المعادلتين أو من عدم استقامة النقاط الثلاث.",
+          "titleAfter": "عدم التحقق من تقاطع المعادلتين أو من عدم استقامة النقاط الثلاث."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 106,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09:C106",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u13-l09-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "bb13919aafeb0c0bdd56a4c7e7b7911c7fdad048968493cc26ff91b36f1fadce",
+      "rules": [
+        {
+          "rule": 134,
+          "titleBefore": "استعمال القطر بدل نصف القطر في A=πr².",
+          "titleAfter": "استعمال القطر بدل نصف القطر في A=πr²."
+        },
+        {
+          "rule": 135,
+          "titleBefore": "استعمال طول القوس بدل مساحة القطاع.",
+          "titleAfter": "استعمال طول القوس بدل مساحة القطاع."
+        },
+        {
+          "rule": 136,
+          "titleBefore": "عدم طرح مساحة المثلث لإيجاد القطعة الصغرى.",
+          "titleAfter": "عدم طرح مساحة المثلث لإيجاد القطعة الصغرى."
+        },
+        {
+          "rule": 137,
+          "titleBefore": "تربيع فرق نصفي القطر بدل فرق مربعيهما.",
+          "titleAfter": "تربيع فرق نصفي القطر بدل فرق مربعيهما."
+        },
+        {
+          "rule": 138,
+          "titleBefore": "نسيان تحويل وحدات المساحة أو التقريب في الخطوة الأخيرة.",
+          "titleAfter": "نسيان تحويل وحدات المساحة أو التقريب في الخطوة الأخيرة."
+        },
+        {
+          "rule": 139,
+          "titleBefore": "عدّ منطقة مشتركة مرتين في شكل مركب.",
+          "titleAfter": "عدّ منطقة مشتركة مرتين في شكل مركب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 107,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L01:C107",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "981bbb31b06a70c074bd28d1e37ee7216e55cebf05660e64980b7024b5c4b58d",
+      "rules": [
+        {
+          "rule": 140,
+          "titleBefore": "تعيين الوتر بالنسبة للزاوية القائمة لا للزاوية الحادة.",
+          "titleAfter": "تعيين الوتر بالنسبة للزاوية الحادة بدل الزاوية القائمة."
+        },
+        {
+          "rule": 141,
+          "titleBefore": "تبديل المقابل والمجاور عند تغيير الزاوية.",
+          "titleAfter": "تبديل المقابل والمجاور عند تغيير الزاوية."
+        },
+        {
+          "rule": 142,
+          "titleBefore": "الخلط بين sin⁻¹ θ و1/sin θ.",
+          "titleAfter": "الخلط بين sin⁻¹ θ و1/sin θ."
+        },
+        {
+          "rule": 143,
+          "titleBefore": "ضبط الآلة على RAD عند طلب الدرجات.",
+          "titleAfter": "ضبط الآلة على RAD عند طلب الدرجات."
+        },
+        {
+          "rule": 144,
+          "titleBefore": "نسيان ارتفاع عين الراصد والتقريب المبكر.",
+          "titleAfter": "نسيان ارتفاع عين الراصد والتقريب المبكر."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 108,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L02:C108",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "057817effb608ad0239e95374931ff2fb70ac277c9a2da2fafd0166add18fa99",
+      "rules": [
+        {
+          "rule": 145,
+          "titleBefore": "اعتبار الاتجاه السالب خطأً بدل دوران مع عقارب الساعة.",
+          "titleAfter": "اعتبار الاتجاه السالب خطأً بدل دوران مع عقارب الساعة."
+        },
+        {
+          "rule": 146,
+          "titleBefore": "الخلط بين الزوايا المتساوية قياسًا والمشتركة في ضلع الانتهاء.",
+          "titleAfter": "الخلط بين الزوايا المتساوية قياسًا والمشتركة في ضلع الانتهاء."
+        },
+        {
+          "rule": 147,
+          "titleBefore": "استخدام s=rθ دون تحويل θ من الدرجات للراديان.",
+          "titleAfter": "استخدام s=rθ دون تحويل θ من الدرجات للراديان."
+        },
+        {
+          "rule": 148,
+          "titleBefore": "نسيان أن طول القوس غير سالب حتى لو كان الدوران سالبًا.",
+          "titleAfter": "θ"
+        },
+        {
+          "rule": 149,
+          "titleBefore": "استعمال جيب التمام بدل الجيب لحساب الارتفاع المتعامد.",
+          "titleAfter": "استعمال جيب التمام بدل الجيب لحساب الارتفاع المتعامد."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 109,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L03:C109",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l03-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "10499feed4de482773b99083bc3d07b3b74933083f7a80a36175dd328d8f21eb",
+      "rules": [
+        {
+          "rule": 150,
+          "titleBefore": "الخلط بين الزوايا المقاسة بالدرجات والراديان.",
+          "titleAfter": "الخلط بين الزوايا المقاسة بالدرجات والراديان."
+        },
+        {
+          "rule": 151,
+          "titleBefore": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة.",
+          "titleAfter": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة."
+        },
+        {
+          "rule": 152,
+          "titleBefore": "التقريب المبكر لقيمة جذرية أو مثلثية.",
+          "titleAfter": "التقريب المبكر لقيمة جذرية أو مثلثية."
+        },
+        {
+          "rule": 153,
+          "titleBefore": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث.",
+          "titleAfter": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث."
+        },
+        {
+          "rule": 154,
+          "titleBefore": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة.",
+          "titleAfter": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة."
+        },
+        {
+          "rule": 155,
+          "titleBefore": "اعتبار النسبة غير المعرفة مساوية للصفر؛ افحص المقام.",
+          "titleAfter": "اعتبار النسبة غير المعرفة مساوية للصفر؛ افحص المقام."
+        },
+        {
+          "rule": 156,
+          "titleBefore": "إهمال إشارة الإزاحة الرأسية في تطبيق الدوران.",
+          "titleAfter": "إهمال إشارة الإزاحة الرأسية في تطبيق الدوران."
+        },
+        {
+          "rule": 157,
+          "titleBefore": "استعمال الزاوية نفسها بدل زاوية المرجع للربع الثاني أو الثالث أو الرابع.",
+          "titleAfter": "استعمال الزاوية نفسها بدل زاوية المرجع للربع الثاني أو الثالث أو الرابع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 110,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L04:C110",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l04-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f836146c6c2fbdbfccb1f73b7a28520db51bc01196166ec088886d430e205b9b",
+      "rules": [
+        {
+          "rule": 150,
+          "titleBefore": "الخلط بين الزوايا المقاسة بالدرجات والراديان.",
+          "titleAfter": "الخلط بين الزوايا المقاسة بالدرجات والراديان."
+        },
+        {
+          "rule": 151,
+          "titleBefore": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة.",
+          "titleAfter": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة."
+        },
+        {
+          "rule": 152,
+          "titleBefore": "التقريب المبكر لقيمة جذرية أو مثلثية.",
+          "titleAfter": "التقريب المبكر لقيمة جذرية أو مثلثية."
+        },
+        {
+          "rule": 153,
+          "titleBefore": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث.",
+          "titleAfter": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث."
+        },
+        {
+          "rule": 154,
+          "titleBefore": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة.",
+          "titleAfter": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة."
+        },
+        {
+          "rule": 158,
+          "titleBefore": "قبول زاويتين مجموعهما 180°؛ لا يتكون مثلث.",
+          "titleAfter": "قبول زاويتين مجموعهما 180°؛ لا يتكون مثلث."
+        },
+        {
+          "rule": 159,
+          "titleBefore": "استعمال زاوية غير محصورة في قانون المساحة.",
+          "titleAfter": "استعمال زاوية غير محصورة في قانون المساحة."
+        },
+        {
+          "rule": 160,
+          "titleBefore": "نسيان الحل المكمل للجيب في SSA أو قبول حل يجعـل C≤0.",
+          "titleAfter": "نسيان الحل المكمل للجيب في SSA أو قبول حل يجعـل C≤0."
+        },
+        {
+          "rule": 161,
+          "titleBefore": "تقريب sin B قبل فحص الحالة المبهمة.",
+          "titleAfter": "تقريب sin B قبل فحص الحالة المبهمة."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 111,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L05:C111",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l05-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ee8207b15e75ce391eb5fe2386eca302226922879010083555d5624dcc9a2503",
+      "rules": [
+        {
+          "rule": 150,
+          "titleBefore": "الخلط بين الزوايا المقاسة بالدرجات والراديان.",
+          "titleAfter": "الخلط بين الزوايا المقاسة بالدرجات والراديان."
+        },
+        {
+          "rule": 151,
+          "titleBefore": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة.",
+          "titleAfter": "استخدام القانون دون تحديد الزاوية والضلع أو النقطة المقابلة."
+        },
+        {
+          "rule": 152,
+          "titleBefore": "التقريب المبكر لقيمة جذرية أو مثلثية.",
+          "titleAfter": "التقريب المبكر لقيمة جذرية أو مثلثية."
+        },
+        {
+          "rule": 153,
+          "titleBefore": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث.",
+          "titleAfter": "قبول حل يخالف نطاق الزاوية أو قابلية إنشاء المثلث."
+        },
+        {
+          "rule": 154,
+          "titleBefore": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة.",
+          "titleAfter": "عدم فحص علاقة الجيب والتمام والظل المتناسبة مع الحالة."
+        },
+        {
+          "rule": 162,
+          "titleBefore": "استخدام زاوية غير محصورة في صيغة SAS.",
+          "titleAfter": "استخدام زاوية غير محصورة في صيغة SAS."
+        },
+        {
+          "rule": 163,
+          "titleBefore": "رفض جيب التمام السالب؛ يدل على زاوية منفرجة لا خطأ.",
+          "titleAfter": "رفض جيب التمام السالب؛ يدل على زاوية منفرجة لا خطأ."
+        },
+        {
+          "rule": 164,
+          "titleBefore": "قبول أطوال لا تحقق متباينة المثلث.",
+          "titleAfter": "قبول أطوال لا تحقق متباينة المثلث."
+        },
+        {
+          "rule": 165,
+          "titleBefore": "استخدام قانون الجيب لإيجاد زاوية دون فحص الحل المكمل.",
+          "titleAfter": "استخدام قانون الجيب لإيجاد زاوية دون فحص الحل المكمل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 112,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L06:C112",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l06-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "971e28bf334131dd89bc28c5438f287a8faab691e092140bd358b42661e44a6f",
+      "rules": [
+        {
+          "rule": 166,
+          "titleBefore": "الخلط بين الدرجات والراديان في الحساب.",
+          "titleAfter": "الخلط بين الدرجات والراديان في الحساب."
+        },
+        {
+          "rule": 167,
+          "titleBefore": "تفسير القيمة العكسية وكأنها ١/الدالة.",
+          "titleAfter": "تفسير القيمة العكسية وكأنها ١/الدالة."
+        },
+        {
+          "rule": 168,
+          "titleBefore": "عدم التفريق بين الدور والسعة والإزاحة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 169,
+          "titleBefore": "افتراض تساوي كل القيم دون قيد المجال.",
+          "titleAfter": "افتراض تساوي كل القيم دون قيد المجال."
+        },
+        {
+          "rule": 170,
+          "titleBefore": "حذف شرط جتا س≠٠ من علاقات الظل.",
+          "titleAfter": "حذف شرط جتا س≠٠ من علاقات الظل."
+        },
+        {
+          "rule": 171,
+          "titleBefore": "الخلط بين الفرق الرأسي والأفقي عند قراءة الدور.",
+          "titleAfter": "الخلط بين الفرق الرأسي والأفقي عند قراءة الدور."
+        },
+        {
+          "rule": 172,
+          "titleBefore": "اعتبار أي نقطتين لهما القيمة نفسها بداية ونهاية دورة.",
+          "titleAfter": "اعتبار أي نقطتين لهما القيمة نفسها بداية ونهاية دورة."
+        },
+        {
+          "rule": 173,
+          "titleBefore": "اعتبار كل مضاعف للدور هو الدور الأساسي.",
+          "titleAfter": "اعتبار كل مضاعف للدور هو الدور الأساسي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 113,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L07:C113",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l07-ar.rich-lesson-v2.json",
+      "count": 8,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "42314b42f99cda4221163910ec80eaf2bbed7d6345130719f462754756fc5049",
+      "rules": [
+        {
+          "rule": 166,
+          "titleBefore": "الخلط بين الدرجات والراديان في الحساب.",
+          "titleAfter": "الخلط بين الدرجات والراديان في الحساب."
+        },
+        {
+          "rule": 167,
+          "titleBefore": "تفسير القيمة العكسية وكأنها ١/الدالة.",
+          "titleAfter": "تفسير القيمة العكسية وكأنها ١/الدالة."
+        },
+        {
+          "rule": 168,
+          "titleBefore": "عدم التفريق بين الدور والسعة والإزاحة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 169,
+          "titleBefore": "افتراض تساوي كل القيم دون قيد المجال.",
+          "titleAfter": "افتراض تساوي كل القيم دون قيد المجال."
+        },
+        {
+          "rule": 170,
+          "titleBefore": "حذف شرط جتا س≠٠ من علاقات الظل.",
+          "titleAfter": "حذف شرط جتا س≠٠ من علاقات الظل."
+        },
+        {
+          "rule": 174,
+          "titleBefore": "إعطاء سعة سالبة أو تعيين سعة للظل والقاطع.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 175,
+          "titleBefore": "اعتبار التردد الزاوي b هو التردد بالهرتز.",
+          "titleAfter": "ب"
+        },
+        {
+          "rule": 176,
+          "titleBefore": "وصل فرعين عبر خط تقارب أو تضمين قيم المقام الصفري في المجال.",
+          "titleAfter": "وصل فرعين عبر خط تقارب أو تضمين قيم المقام الصفري في المجال."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 114,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L08:C114",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l08-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "fb1c76b7275c0620b36a3b460425ff8e51dee669e4c448e49d54b0bb05276ae9",
+      "rules": [
+        {
+          "rule": 166,
+          "titleBefore": "الخلط بين الدرجات والراديان في الحساب.",
+          "titleAfter": "الخلط بين الدرجات والراديان في الحساب."
+        },
+        {
+          "rule": 167,
+          "titleBefore": "تفسير القيمة العكسية وكأنها ١/الدالة.",
+          "titleAfter": "تفسير القيمة العكسية وكأنها ١/الدالة."
+        },
+        {
+          "rule": 168,
+          "titleBefore": "عدم التفريق بين الدور والسعة والإزاحة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 169,
+          "titleBefore": "افتراض تساوي كل القيم دون قيد المجال.",
+          "titleAfter": "افتراض تساوي كل القيم دون قيد المجال."
+        },
+        {
+          "rule": 170,
+          "titleBefore": "حذف شرط جتا س≠٠ من علاقات الظل.",
+          "titleAfter": "حذف شرط جتا س≠٠ من علاقات الظل."
+        },
+        {
+          "rule": 177,
+          "titleBefore": "أخذ c نفسه كإزاحة أفقية دون القسمة على b.",
+          "titleAfter": "أخذ c نفسه كإزاحة أفقية دون القسمة على b."
+        },
+        {
+          "rule": 178,
+          "titleBefore": "تبديل إشارة h أو اعتبار k سعة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 179,
+          "titleBefore": "استعمال 360° للظل بدل 180°، أو وصل الرسم عبر التقارب.",
+          "titleAfter": "ب"
+        },
+        {
+          "rule": 180,
+          "titleBefore": "اعتبار معادلة الرسم فريدة رغم التكافؤ الدوري.",
+          "titleAfter": "اعتبار معادلة الرسم فريدة رغم التكافؤ الدوري."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 115,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L09:C115",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l09-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "1931cc541d27dc03e82b6afabc37c4417719a49d956aeb82e6567fd968b813d9",
+      "rules": [
+        {
+          "rule": 166,
+          "titleBefore": "الخلط بين الدرجات والراديان في الحساب.",
+          "titleAfter": "الخلط بين الدرجات والراديان في الحساب."
+        },
+        {
+          "rule": 167,
+          "titleBefore": "تفسير القيمة العكسية وكأنها ١/الدالة.",
+          "titleAfter": "تفسير القيمة العكسية وكأنها ١/الدالة."
+        },
+        {
+          "rule": 168,
+          "titleBefore": "عدم التفريق بين الدور والسعة والإزاحة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 169,
+          "titleBefore": "افتراض تساوي كل القيم دون قيد المجال.",
+          "titleAfter": "افتراض تساوي كل القيم دون قيد المجال."
+        },
+        {
+          "rule": 170,
+          "titleBefore": "حذف شرط جتا س≠٠ من علاقات الظل.",
+          "titleAfter": "حذف شرط جتا س≠٠ من علاقات الظل."
+        },
+        {
+          "rule": 181,
+          "titleBefore": "قبول مدخل خارج [−1,1] للجيب وجيب التمام العكسيين.",
+          "titleAfter": "قبول مدخل خارج [−1,1] للجيب وجيب التمام العكسيين."
+        },
+        {
+          "rule": 182,
+          "titleBefore": "إلغاء arcsin(sin θ) دون تحقق من الفترة الرئيسية.",
+          "titleAfter": "إلغاء arcsin(sin θ) دون تحقق من الفترة الرئيسية."
+        },
+        {
+          "rule": 183,
+          "titleBefore": "اعتبار القيمة الرئيسية جميع حلول معادلة دورية.",
+          "titleAfter": "اعتبار القيمة الرئيسية جميع حلول معادلة دورية."
+        },
+        {
+          "rule": 184,
+          "titleBefore": "تقريب النسبة قبل حساب الزاوية أو استخدام وضع RAD بدل DEG.",
+          "titleAfter": "تقريب النسبة قبل حساب الزاوية أو استخدام وضع RAD بدل DEG."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 116,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L10:C116",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l10-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f9c089179c3cc0d80a29d2cda7ea1a984d407f970e0d15f1b33e4065e4a7d3ff",
+      "rules": [
+        {
+          "rule": 166,
+          "titleBefore": "الخلط بين الدرجات والراديان في الحساب.",
+          "titleAfter": "الخلط بين الدرجات والراديان في الحساب."
+        },
+        {
+          "rule": 167,
+          "titleBefore": "تفسير القيمة العكسية وكأنها ١/الدالة.",
+          "titleAfter": "تفسير القيمة العكسية وكأنها ١/الدالة."
+        },
+        {
+          "rule": 168,
+          "titleBefore": "عدم التفريق بين الدور والسعة والإزاحة.",
+          "titleAfter": "أ"
+        },
+        {
+          "rule": 169,
+          "titleBefore": "افتراض تساوي كل القيم دون قيد المجال.",
+          "titleAfter": "افتراض تساوي كل القيم دون قيد المجال."
+        },
+        {
+          "rule": 170,
+          "titleBefore": "حذف شرط جتا س≠٠ من علاقات الظل.",
+          "titleAfter": "حذف شرط جتا س≠٠ من علاقات الظل."
+        },
+        {
+          "rule": 185,
+          "titleBefore": "أخذ الجذر الموجب دائمًا دون مراعاة الربع.",
+          "titleAfter": "أخذ الجذر الموجب دائمًا دون مراعاة الربع."
+        },
+        {
+          "rule": 186,
+          "titleBefore": "حذف تربيع إحدى النسب في متطابقة فيثاغورس.",
+          "titleAfter": "حذف تربيع إحدى النسب في متطابقة فيثاغورس."
+        },
+        {
+          "rule": 187,
+          "titleBefore": "نسيان شروط المقام بعد الاختصار.",
+          "titleAfter": "نسيان شروط المقام بعد الاختصار."
+        },
+        {
+          "rule": 188,
+          "titleBefore": "الخلط بين التتمة ومجرد تغيير إشارة الزاوية.",
+          "titleAfter": "الخلط بين التتمة ومجرد تغيير إشارة الزاوية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 117,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11:C117",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l11-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "61e16b9ecbb599a87703537201e9364402b97578453f124aff4b8588eb87abe2",
+      "rules": [
+        {
+          "rule": 189,
+          "titleBefore": "اعتبار فحص مثال عددي إثباتًا عامًا.",
+          "titleAfter": "اعتبار فحص مثال عددي إثباتًا عامًا."
+        },
+        {
+          "rule": 190,
+          "titleBefore": "البدء بالمطلوب بوصفه فرضًا صحيحًا دون تبرير.",
+          "titleAfter": "البدء بالمطلوب بوصفه فرضًا صحيحًا دون تبرير."
+        },
+        {
+          "rule": 191,
+          "titleBefore": "نسيان قيد عدم صفر المقام قبل الاختصار.",
+          "titleAfter": "نسيان قيد عدم صفر المقام قبل الاختصار."
+        },
+        {
+          "rule": 192,
+          "titleBefore": "اعتبار الجذر التربيعي الرئيسي موجبًا أو سالبًا دون قيمة مطلقة.",
+          "titleAfter": " لا ±س."
+        },
+        {
+          "rule": 193,
+          "titleBefore": "توزيع مربع مجموع دون الحد الأوسط.",
+          "titleAfter": "توزيع مربع مجموع دون الحد الأوسط."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 118,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L12:C118",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l12-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "5fc542075f52a62f25536ae45fc8801b4cfc5f38b131343d99c7a56d125e7e93",
+      "rules": [
+        {
+          "rule": 194,
+          "titleBefore": "استعمال إشارة الجمع في جيب تمام المجموع.",
+          "titleAfter": "استعمال إشارة الجمع في جيب تمام المجموع."
+        },
+        {
+          "rule": 195,
+          "titleBefore": "نسيان المقام في قانون الظل أو قسمة على صفر.",
+          "titleAfter": "نسيان المقام في قانون الظل أو قسمة على صفر."
+        },
+        {
+          "rule": 196,
+          "titleBefore": "جمع قيم الدالة مباشرة بدل تطبيق القانون.",
+          "titleAfter": "جمع قيم الدالة مباشرة بدل تطبيق القانون."
+        },
+        {
+          "rule": 197,
+          "titleBefore": "خلط الدرجات والراديان.",
+          "titleAfter": "خلط الدرجات والراديان."
+        },
+        {
+          "rule": 198,
+          "titleBefore": "تقريب الجذور قبل نهاية الحل.",
+          "titleAfter": "تقريب الجذور قبل نهاية الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 119,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L13:C119",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l13-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "fa1a731ae2ba1df2bc153b09bfb8acb488c58f2fc6e6720a25854af44ccc8681",
+      "rules": [
+        {
+          "rule": 199,
+          "titleBefore": "نسيان عامل ٢ أو جيب التمام في ضعف الجيب.",
+          "titleAfter": "نسيان عامل ٢ أو جيب التمام في ضعف الجيب."
+        },
+        {
+          "rule": 200,
+          "titleBefore": "استعمال إشارة ربع س بدل ربع س/٢.",
+          "titleAfter": "استعمال إشارة ربع س بدل ربع س/٢."
+        },
+        {
+          "rule": 201,
+          "titleBefore": "إغفال شرط عدم صفر مقام الظل.",
+          "titleAfter": "إغفال شرط عدم صفر مقام الظل."
+        },
+        {
+          "rule": 202,
+          "titleBefore": "إسقاط الجذر عند حساب قيمة النصف بدل مربعها.",
+          "titleAfter": "إسقاط الجذر عند حساب قيمة النصف بدل مربعها."
+        },
+        {
+          "rule": 203,
+          "titleBefore": "الخلط بين درجات وراديان.",
+          "titleAfter": "الخلط بين درجات وراديان."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 120,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L14:C120",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l14-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f70580f53430f90cca287f80db686ca58bb17868cda464c908374ea1eded37c2",
+      "rules": [
+        {
+          "rule": 204,
+          "titleBefore": "القسمة على عامل قد يساوي صفرًا.",
+          "titleAfter": "القسمة على عامل قد يساوي صفرًا."
+        },
+        {
+          "rule": 205,
+          "titleBefore": "نسيان فرع الزاوية أو تضييق الفترة عند حل ٢س.",
+          "titleAfter": "نسيان فرع الزاوية أو تضييق الفترة عند حل ٢س."
+        },
+        {
+          "rule": 206,
+          "titleBefore": "قبول قيمة جا أو جتا خارج [−١،١].",
+          "titleAfter": "قبول قيمة جا أو جتا خارج [−١،١]."
+        },
+        {
+          "rule": 207,
+          "titleBefore": "الخلط بين الدور بالدرجات والراديان.",
+          "titleAfter": "الخلط بين الدور بالدرجات والراديان."
+        },
+        {
+          "rule": 208,
+          "titleBefore": "احتساب نقطة عدم التعريف أو الطرف المستبعد جذرًا.",
+          "titleAfter": "احتساب نقطة عدم التعريف أو الطرف المستبعد جذرًا."
+        },
+        {
+          "rule": 209,
+          "titleBefore": "الاكتفاء بتغير الإشارة وفقد جذور التماس.",
+          "titleAfter": "الاكتفاء بتغير الإشارة وفقد جذور التماس."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 121,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L15:C121",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l15-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "43e7f14091b9a4d47a1bed4e856edf3eb3c1004d154235a61f91d7ead3ad3c63",
+      "rules": [
+        {
+          "rule": 210,
+          "titleBefore": "الخلط بين الوسط الهندسي والحسابي.",
+          "titleAfter": "الخلط بين الوسط الهندسي والحسابي."
+        },
+        {
+          "rule": 211,
+          "titleBefore": "تبديل الساق وإسقاطها.",
+          "titleAfter": "تبديل الساق وإسقاطها."
+        },
+        {
+          "rule": 212,
+          "titleBefore": "اختيار الجذر السالب لطول.",
+          "titleAfter": "اختيار الجذر السالب لطول."
+        },
+        {
+          "rule": 213,
+          "titleBefore": "افتراض التشابه دون شرط التعامد.",
+          "titleAfter": "افتراض التشابه دون شرط التعامد."
+        },
+        {
+          "rule": 214,
+          "titleBefore": "تقريب الجذر قبل نهاية الحل.",
+          "titleAfter": "تقريب الجذر قبل نهاية الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 122,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L16:C122",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l16-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "db2b9533db98b0d2a366aec351c9478b6eb65e4b9898b054e9a66c6f96ce3aad",
+      "rules": [
+        {
+          "rule": 215,
+          "titleBefore": "اعتبار أي ضلع وترًا.",
+          "titleAfter": "اعتبار أي ضلع وترًا."
+        },
+        {
+          "rule": 216,
+          "titleBefore": "جمع الأطوال بدل مربعاتها.",
+          "titleAfter": "جمع الأطوال بدل مربعاتها."
+        },
+        {
+          "rule": 217,
+          "titleBefore": "عدم اختبار متباينة المثلث.",
+          "titleAfter": "عدم اختبار متباينة المثلث."
+        },
+        {
+          "rule": 218,
+          "titleBefore": "الخلط بين الحاد والمنفرج عند المقارنة.",
+          "titleAfter": "الخلط بين الحاد والمنفرج عند المقارنة."
+        },
+        {
+          "rule": 219,
+          "titleBefore": "إسقاط الوحدات أو تقريب الجذور مبكرًا.",
+          "titleAfter": "إسقاط الوحدات أو تقريب الجذور مبكرًا."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 123,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L17:C123",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l17-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "617410c44aafcccb0c905cffa8a06e6d67084fb8f02d681cfb056244e9ddc75a",
+      "rules": [
+        {
+          "rule": 220,
+          "titleBefore": "قياس الزاوية من الرأسي بدل الأفقي.",
+          "titleAfter": "قياس الزاوية من الرأسي بدل الأفقي."
+        },
+        {
+          "rule": 221,
+          "titleBefore": "اعتبار خط النظر مسافة أفقية.",
+          "titleAfter": "اعتبار خط النظر مسافة أفقية."
+        },
+        {
+          "rule": 222,
+          "titleBefore": "إهمال ارتفاع العين.",
+          "titleAfter": "إهمال ارتفاع العين."
+        },
+        {
+          "rule": 223,
+          "titleBefore": "تبديل الزاوية القريبة والبعيدة.",
+          "titleAfter": "تبديل الزاوية القريبة والبعيدة."
+        },
+        {
+          "rule": 224,
+          "titleBefore": "تطبيق نموذج الجهة نفسها على نقطتين متعاكستين.",
+          "titleAfter": "تطبيق نموذج الجهة نفسها على نقطتين متعاكستين."
+        },
+        {
+          "rule": 225,
+          "titleBefore": "التقريب قبل نهاية الحل.",
+          "titleAfter": "التقريب قبل نهاية الحل."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 124,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L18:C124",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u14-l18-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f46a68c2dabe663d64264a249355e94e3d56a00920aa48ac198f7f030be269de",
+      "rules": [
+        {
+          "rule": 226,
+          "titleBefore": "تبديل الضلع المقابل لـ٣٠° مع المقابل لـ٦٠°.",
+          "titleAfter": "تبديل الضلع المقابل لـ٣٠° مع المقابل لـ٦٠°."
+        },
+        {
+          "rule": 227,
+          "titleBefore": "ضرب الوتر في √٢ بدل القسمة لإيجاد الساق.",
+          "titleAfter": "ضرب الوتر في √٢ بدل القسمة لإيجاد الساق."
+        },
+        {
+          "rule": 228,
+          "titleBefore": "ترك جذر غير صحيح بعد ترشيد المقام.",
+          "titleAfter": "ترك جذر غير صحيح بعد ترشيد المقام."
+        },
+        {
+          "rule": 229,
+          "titleBefore": "اعتبار كل مثلث قائم مثلثًا خاصًا.",
+          "titleAfter": "اعتبار كل مثلث قائم مثلثًا خاصًا."
+        },
+        {
+          "rule": 230,
+          "titleBefore": "استعمال طول من شكل مركب دون تحديد الضلع المشترك.",
+          "titleAfter": "استعمال طول من شكل مركب دون تحديد الضلع المشترك."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 125,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L01:C125",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "05733faa800cdbafa631c71edbfa69928722ac13a71b4b27cee02c07d1eaf2fe",
+      "rules": [
+        {
+          "rule": 231,
+          "titleBefore": "الخلط بين المنظر المتساوي القياس والمنظر المتعامد.",
+          "titleAfter": "الخلط بين المنظر المتساوي القياس والمنظر المتعامد."
+        },
+        {
+          "rule": 232,
+          "titleBefore": "عد كل المكعبات الظاهرة من الأعلى باعتبارها مجموع المكعبات.",
+          "titleAfter": "عد كل المكعبات الظاهرة من الأعلى باعتبارها مجموع المكعبات."
+        },
+        {
+          "rule": 233,
+          "titleBefore": "جمع ارتفاعات الأعمدة بدل أخذ الأكبر عند الإسقاط.",
+          "titleAfter": "جمع ارتفاعات الأعمدة بدل أخذ الأكبر عند الإسقاط."
+        },
+        {
+          "rule": 234,
+          "titleBefore": "اعتبار كل مقطع في أسطوانة دائرة.",
+          "titleAfter": "اعتبار كل مقطع في أسطوانة دائرة."
+        },
+        {
+          "rule": 235,
+          "titleBefore": "إهمال اتجاه مستوى القطع وموقعه.",
+          "titleAfter": "إهمال اتجاه مستوى القطع وموقعه."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 126,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L02:C126",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "55f659b130b6e7f6268785c567e9594b9a2aa3619edd86c9d844023cd38053fd",
+      "rules": [
+        {
+          "rule": 236,
+          "titleBefore": "استخدام مساحة القاعدة بدل محيطها في Ph.",
+          "titleAfter": "استخدام مساحة القاعدة بدل محيطها في Ph."
+        },
+        {
+          "rule": 237,
+          "titleBefore": "إغفال إحدى القاعدتين أو إضافتها رغم أن المجسم مفتوح.",
+          "titleAfter": "إغفال إحدى القاعدتين أو إضافتها رغم أن المجسم مفتوح."
+        },
+        {
+          "rule": 238,
+          "titleBefore": "الخلط بين نصف القطر والقطر.",
+          "titleAfter": "الخلط بين نصف القطر والقطر."
+        },
+        {
+          "rule": 239,
+          "titleBefore": "استخدام قانون الحجم لحساب المساحة.",
+          "titleAfter": "استخدام قانون الحجم لحساب المساحة."
+        },
+        {
+          "rule": 240,
+          "titleBefore": "التقريب المبكر أو عد الأوجه الداخلية.",
+          "titleAfter": "التقريب المبكر أو عد الأوجه الداخلية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 127,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03:C127",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "95cb9b8dfcdfcd47472c78de122e925dfa3ae5ca830bf82a59413a93fad215fb",
+      "rules": [
+        {
+          "rule": 241,
+          "titleBefore": "استخدام الارتفاع العمودي بدل ارتفاع الوجه.",
+          "titleAfter": "استخدام الارتفاع العمودي بدل ارتفاع الوجه."
+        },
+        {
+          "rule": 242,
+          "titleBefore": "الخلط بين ارتفاع الوجه والحرف الجانبي.",
+          "titleAfter": "الخلط بين ارتفاع الوجه والحرف الجانبي."
+        },
+        {
+          "rule": 243,
+          "titleBefore": "نسيان عامل النصف في مساحة المثلثات.",
+          "titleAfter": "نسيان عامل النصف في مساحة المثلثات."
+        },
+        {
+          "rule": 244,
+          "titleBefore": "الخلط بين قطر المخروط ونصف قطره.",
+          "titleAfter": "الخلط بين قطر المخروط ونصف قطره."
+        },
+        {
+          "rule": 245,
+          "titleBefore": "عد قاعدة داخلية أو تقريب مبكر.",
+          "titleAfter": "عد قاعدة داخلية أو تقريب مبكر."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 128,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L04:C128",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "c8cbe7324faa6b6b24b15ef8c2706bf22cdde54cd1680617f733d7b5429fc461",
+      "rules": [
+        {
+          "rule": 246,
+          "titleBefore": "الخلط بين قطر الكرة ونصف قطرها.",
+          "titleAfter": "الخلط بين قطر الكرة ونصف قطرها."
+        },
+        {
+          "rule": 247,
+          "titleBefore": "نسيان القرص المستوي عند طلب كامل سطح نصف الكرة.",
+          "titleAfter": "نسيان القرص المستوي عند طلب كامل سطح نصف الكرة."
+        },
+        {
+          "rule": 248,
+          "titleBefore": "استعمال قانون المساحة لحساب الحجم.",
+          "titleAfter": "استعمال قانون المساحة لحساب الحجم."
+        },
+        {
+          "rule": 249,
+          "titleBefore": "استعمال الجذر التربيعي بدل التكعيبي لعكس الحجم.",
+          "titleAfter": "استعمال الجذر التربيعي بدل التكعيبي لعكس الحجم."
+        },
+        {
+          "rule": 250,
+          "titleBefore": "عد السطح المشترك أو التقريب قبل النهاية.",
+          "titleAfter": "عد السطح المشترك أو التقريب قبل النهاية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 129,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L05:C129",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l05-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "52c771b73f9291f9abe28e1c4fa86e5146a9030080ca717b112f20a23ea55237",
+      "rules": [
+        {
+          "rule": 251,
+          "titleBefore": "استخدام طول الحرف المائل بدل الارتفاع العمودي.",
+          "titleAfter": "استخدام طول الحرف المائل بدل الارتفاع العمودي."
+        },
+        {
+          "rule": 252,
+          "titleBefore": "استخدام محيط القاعدة بدل مساحتها.",
+          "titleAfter": "استخدام محيط القاعدة بدل مساحتها."
+        },
+        {
+          "rule": 253,
+          "titleBefore": "عدم تربيع نصف القطر.",
+          "titleAfter": "عدم تربيع نصف القطر."
+        },
+        {
+          "rule": 254,
+          "titleBefore": "الخلط بين اللتر والسنتيمتر المكعب.",
+          "titleAfter": "الخلط بين اللتر والسنتيمتر المكعب."
+        },
+        {
+          "rule": 255,
+          "titleBefore": "إضافة أحجام متداخلة أو تقريب مبكر.",
+          "titleAfter": "إضافة أحجام متداخلة أو تقريب مبكر."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 130,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L06:C130",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "6669efbf8d899d57b43719ed54089e07766cafd96e44e52bd4fed2ee8df107fe",
+      "rules": [
+        {
+          "rule": 256,
+          "titleBefore": "نسيان عامل الثلث.",
+          "titleAfter": "نسيان عامل الثلث."
+        },
+        {
+          "rule": 257,
+          "titleBefore": "الخلط بين ارتفاع الوجه أو الحرف المائل والارتفاع العمودي.",
+          "titleAfter": "الخلط بين ارتفاع الوجه أو الحرف المائل والارتفاع العمودي."
+        },
+        {
+          "rule": 252,
+          "titleBefore": "استخدام محيط القاعدة بدل مساحتها.",
+          "titleAfter": "استخدام محيط القاعدة بدل مساحتها."
+        },
+        {
+          "rule": 258,
+          "titleBefore": "تطبيق فيثاغورس لمخروط مائل دون تحقق.",
+          "titleAfter": "تطبيق فيثاغورس لمخروط مائل دون تحقق."
+        },
+        {
+          "rule": 259,
+          "titleBefore": "عد حجوم متداخلة أو تقريب مبكر.",
+          "titleAfter": "عد حجوم متداخلة أو تقريب مبكر."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 131,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l07-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "2fa9eec87fe4a74c0df514042d913c7f163478f1ba4e749b73ae10c70f27ebe7",
+      "rules": [
+        {
+          "rule": 260,
+          "titleBefore": "اعتبار كل دائرة على سطح الكرة مستقيمًا كرويًا.",
+          "titleAfter": "اعتبار كل دائرة على سطح الكرة مستقيمًا كرويًا."
+        },
+        {
+          "rule": 261,
+          "titleBefore": "اعتبار خطي طول متقابلين مستقيمين كاملين منفصلين.",
+          "titleAfter": "اعتبار خطي طول متقابلين مستقيمين كاملين منفصلين."
+        },
+        {
+          "rule": 262,
+          "titleBefore": "افتراض التوازي أو تفرد المسار عند نقطتين متقابلتين.",
+          "titleAfter": "افتراض التوازي أو تفرد المسار عند نقطتين متقابلتين."
+        },
+        {
+          "rule": 263,
+          "titleBefore": "استعمال الوتر داخل الكرة بدل القوس على سطحها.",
+          "titleAfter": "استعمال الوتر داخل الكرة بدل القوس على سطحها."
+        },
+        {
+          "rule": 264,
+          "titleBefore": "فرض مجموع زوايا ١٨٠° على المثلث الكروي.",
+          "titleAfter": "فرض مجموع زوايا ١٨٠° على المثلث الكروي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 132,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L08:C132",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u15-l08-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "0609497fe1237edec7191e37bdc2edd91b171989ba6c7b9117b895cf0afd670d",
+      "rules": [
+        {
+          "rule": 265,
+          "titleBefore": "فحص بُعد واحد فقط لإثبات التشابه.",
+          "titleAfter": "فحص بُعد واحد فقط لإثبات التشابه."
+        },
+        {
+          "rule": 266,
+          "titleBefore": "تربيع معامل الحجم أو تكعيب معامل المساحة.",
+          "titleAfter": "تربيع معامل الحجم أو تكعيب معامل المساحة."
+        },
+        {
+          "rule": 267,
+          "titleBefore": "عكس نسبة المرجع والهدف أثناء الحل.",
+          "titleAfter": "عكس نسبة المرجع والهدف أثناء الحل."
+        },
+        {
+          "rule": 268,
+          "titleBefore": "مقارنة قياسات بوحدات مختلفة.",
+          "titleAfter": "مقارنة قياسات بوحدات مختلفة."
+        },
+        {
+          "rule": 269,
+          "titleBefore": "اعتبار تساوي الحجم دليلًا على التطابق.",
+          "titleAfter": "اعتبار تساوي الحجم دليلًا على التطابق."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 133,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01:C133",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "d0792c81d46acd1c1638d29d13fc86a4ffca92708f6eb72633b31e1b22152985",
+      "rules": [
+        {
+          "rule": 270,
+          "titleBefore": "استخدام التباديل بدل التوافيق دون تمييز الترتيب.",
+          "titleAfter": "استخدام التباديل بدل التوافيق دون تمييز الترتيب."
+        },
+        {
+          "rule": 271,
+          "titleBefore": "العد المكرر أو إهمال نواتج ممكنة.",
+          "titleAfter": "العد المكرر أو إهمال نواتج ممكنة."
+        },
+        {
+          "rule": 272,
+          "titleBefore": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة.",
+          "titleAfter": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة."
+        },
+        {
+          "rule": 273,
+          "titleBefore": "تجاهل شرط التوزيع المنتظم في احتمال هندسي.",
+          "titleAfter": "تجاهل شرط التوزيع المنتظم في احتمال هندسي."
+        },
+        {
+          "rule": 274,
+          "titleBefore": "قبول احتمال أكبر من ١ أو سالب.",
+          "titleAfter": "قبول احتمال أكبر من ١ أو سالب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 134,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02:C134",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "8e7a0c07343eb8895ad8f2420e8c530c157be9e35fce48394da65ccdd4c261fe",
+      "rules": [
+        {
+          "rule": 270,
+          "titleBefore": "استخدام التباديل بدل التوافيق دون تمييز الترتيب.",
+          "titleAfter": "استخدام التباديل بدل التوافيق دون تمييز الترتيب."
+        },
+        {
+          "rule": 271,
+          "titleBefore": "العد المكرر أو إهمال نواتج ممكنة.",
+          "titleAfter": "العد المكرر أو إهمال نواتج ممكنة."
+        },
+        {
+          "rule": 272,
+          "titleBefore": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة.",
+          "titleAfter": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة."
+        },
+        {
+          "rule": 273,
+          "titleBefore": "تجاهل شرط التوزيع المنتظم في احتمال هندسي.",
+          "titleAfter": "تجاهل شرط التوزيع المنتظم في احتمال هندسي."
+        },
+        {
+          "rule": 274,
+          "titleBefore": "قبول احتمال أكبر من ١ أو سالب.",
+          "titleAfter": "قبول احتمال أكبر من ١ أو سالب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 135,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03:C135",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "ca30e160ef9507047ffdd0312d9651e29ef157bd7888b312c4867d163394f52a",
+      "rules": [
+        {
+          "rule": 270,
+          "titleBefore": "استخدام التباديل بدل التوافيق دون تمييز الترتيب.",
+          "titleAfter": "استخدام التباديل بدل التوافيق دون تمييز الترتيب."
+        },
+        {
+          "rule": 271,
+          "titleBefore": "العد المكرر أو إهمال نواتج ممكنة.",
+          "titleAfter": "العد المكرر أو إهمال نواتج ممكنة."
+        },
+        {
+          "rule": 272,
+          "titleBefore": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة.",
+          "titleAfter": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة."
+        },
+        {
+          "rule": 273,
+          "titleBefore": "تجاهل شرط التوزيع المنتظم في احتمال هندسي.",
+          "titleAfter": "تجاهل شرط التوزيع المنتظم في احتمال هندسي."
+        },
+        {
+          "rule": 274,
+          "titleBefore": "قبول احتمال أكبر من ١ أو سالب.",
+          "titleAfter": "قبول احتمال أكبر من ١ أو سالب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 136,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04:C136",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "953adddf3aed8ae5cf473a04d87176913df6dc68504d6560bc13443a84debfff",
+      "rules": [
+        {
+          "rule": 270,
+          "titleBefore": "استخدام التباديل بدل التوافيق دون تمييز الترتيب.",
+          "titleAfter": "استخدام التباديل بدل التوافيق دون تمييز الترتيب."
+        },
+        {
+          "rule": 271,
+          "titleBefore": "العد المكرر أو إهمال نواتج ممكنة.",
+          "titleAfter": "العد المكرر أو إهمال نواتج ممكنة."
+        },
+        {
+          "rule": 272,
+          "titleBefore": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة.",
+          "titleAfter": "اعتبار التكرار التجريبي مساويًا تمامًا للنظري في كل عينة."
+        },
+        {
+          "rule": 273,
+          "titleBefore": "تجاهل شرط التوزيع المنتظم في احتمال هندسي.",
+          "titleAfter": "تجاهل شرط التوزيع المنتظم في احتمال هندسي."
+        },
+        {
+          "rule": 274,
+          "titleBefore": "قبول احتمال أكبر من ١ أو سالب.",
+          "titleAfter": "قبول احتمال أكبر من ١ أو سالب."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 137,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05:C137",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l05-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "3b823e8bbe3e14a8e2e2e2b23541012b8b3a182d88f7c6150904def764997ed9",
+      "rules": [
+        {
+          "rule": 275,
+          "titleBefore": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه.",
+          "titleAfter": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه."
+        },
+        {
+          "rule": 276,
+          "titleBefore": "استخدام قانون الاستقلال في سحب دون إرجاع.",
+          "titleAfter": "أ) مع تحديث عدد العناصر بعد كل سحب."
+        },
+        {
+          "rule": 277,
+          "titleBefore": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا.",
+          "titleAfter": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا."
+        },
+        {
+          "rule": 278,
+          "titleBefore": "نسيان أن احتمال أي حدث بين الصفر والواحد.",
+          "titleAfter": "نسيان أن احتمال أي حدث بين الصفر والواحد."
+        },
+        {
+          "rule": 279,
+          "titleBefore": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها.",
+          "titleAfter": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها."
+        },
+        {
+          "rule": 280,
+          "titleBefore": "استعمال C(n,r) في مسألة ترتيب أو n^r عند منع التكرار.",
+          "titleAfter": "استعمال C(n,r) في مسألة ترتيب أو n^r عند منع التكرار."
+        },
+        {
+          "rule": 281,
+          "titleBefore": "اعتبار «واحد على الأقل» مساويًا «واحد فقط».",
+          "titleAfter": "اعتبار «واحد على الأقل» مساويًا «واحد فقط»."
+        },
+        {
+          "rule": 282,
+          "titleBefore": "القسمة على احتمال الفشل صفرًا بدل عرض النسبة ١:٠.",
+          "titleAfter": "القسمة على احتمال الفشل صفرًا بدل عرض النسبة ١:٠."
+        },
+        {
+          "rule": 283,
+          "titleBefore": "استنتاج الاستقلال من تساوي الاحتمالات الهامشية.",
+          "titleAfter": "استنتاج الاستقلال من تساوي الاحتمالات الهامشية."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 138,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a81c9b7fa05b4e5301925c3fe1cdf5889b9e2d947370f1808b192c8b17eb83bc",
+      "rules": [
+        {
+          "rule": 275,
+          "titleBefore": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه.",
+          "titleAfter": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه."
+        },
+        {
+          "rule": 276,
+          "titleBefore": "استخدام قانون الاستقلال في سحب دون إرجاع.",
+          "titleAfter": "أ) مع تحديث عدد العناصر بعد كل سحب."
+        },
+        {
+          "rule": 277,
+          "titleBefore": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا.",
+          "titleAfter": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا."
+        },
+        {
+          "rule": 278,
+          "titleBefore": "نسيان أن احتمال أي حدث بين الصفر والواحد.",
+          "titleAfter": "نسيان أن احتمال أي حدث بين الصفر والواحد."
+        },
+        {
+          "rule": 279,
+          "titleBefore": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها.",
+          "titleAfter": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 139,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07:C139",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u16-l07-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "28712e94fb3f25f06a04bc4d14070399bc536eb05803b94405057ab03ed4f45a",
+      "rules": [
+        {
+          "rule": 275,
+          "titleBefore": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه.",
+          "titleAfter": "الخلط بين احتمال الحدث وعدد أو نسبة الفرص لصالحه."
+        },
+        {
+          "rule": 276,
+          "titleBefore": "استخدام قانون الاستقلال في سحب دون إرجاع.",
+          "titleAfter": "أ) مع تحديث عدد العناصر بعد كل سحب."
+        },
+        {
+          "rule": 277,
+          "titleBefore": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا.",
+          "titleAfter": "جمع الاحتمالات دون طرح التقاطع إذا أمكن وقوع الحدثين معًا."
+        },
+        {
+          "rule": 278,
+          "titleBefore": "نسيان أن احتمال أي حدث بين الصفر والواحد.",
+          "titleAfter": "نسيان أن احتمال أي حدث بين الصفر والواحد."
+        },
+        {
+          "rule": 279,
+          "titleBefore": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها.",
+          "titleAfter": "اعتماد عدد حالات متساوية الاحتمال من دون التحقق من تكافؤها."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 140,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01:C140",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l01-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "f148fe5cfef93946b75267fe655ce3eaf2a50d6df6645370b9a3c4a3fb431a4b",
+      "rules": [
+        {
+          "rule": 284,
+          "titleBefore": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠.",
+          "titleAfter": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠."
+        },
+        {
+          "rule": 285,
+          "titleBefore": "حساب المجموع بدل الحد النوني أو العكس.",
+          "titleAfter": "حساب المجموع بدل الحد النوني أو العكس."
+        },
+        {
+          "rule": 286,
+          "titleBefore": "نسيان شروط المجال أو نسبة المتتالية الهندسية.",
+          "titleAfter": "نسيان شروط المجال أو نسبة المتتالية الهندسية."
+        },
+        {
+          "rule": 287,
+          "titleBefore": "تطبيق قانون التقارب دون اختبار القيمة المطلقة للنسبة.",
+          "titleAfter": "<١."
+        },
+        {
+          "rule": 288,
+          "titleBefore": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي.",
+          "titleAfter": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 141,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02:C141",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l02-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "0f715b3a1d8c9b373d9301d68bacc13d1c19b75d9ef4427d2530008a8586c8a8",
+      "rules": [
+        {
+          "rule": 284,
+          "titleBefore": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠.",
+          "titleAfter": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠."
+        },
+        {
+          "rule": 285,
+          "titleBefore": "حساب المجموع بدل الحد النوني أو العكس.",
+          "titleAfter": "حساب المجموع بدل الحد النوني أو العكس."
+        },
+        {
+          "rule": 286,
+          "titleBefore": "نسيان شروط المجال أو نسبة المتتالية الهندسية.",
+          "titleAfter": "نسيان شروط المجال أو نسبة المتتالية الهندسية."
+        },
+        {
+          "rule": 287,
+          "titleBefore": "تطبيق قانون التقارب دون اختبار القيمة المطلقة للنسبة.",
+          "titleAfter": "<١."
+        },
+        {
+          "rule": 288,
+          "titleBefore": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي.",
+          "titleAfter": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 142,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03:C142",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l03-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "c76812454955eb7e3306a7951ebadeac10938e64ed09180ea541b6265d97023b",
+      "rules": [
+        {
+          "rule": 284,
+          "titleBefore": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠.",
+          "titleAfter": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠."
+        },
+        {
+          "rule": 285,
+          "titleBefore": "حساب المجموع بدل الحد النوني أو العكس.",
+          "titleAfter": "حساب المجموع بدل الحد النوني أو العكس."
+        },
+        {
+          "rule": 286,
+          "titleBefore": "نسيان شروط المجال أو نسبة المتتالية الهندسية.",
+          "titleAfter": "نسيان شروط المجال أو نسبة المتتالية الهندسية."
+        },
+        {
+          "rule": 287,
+          "titleBefore": "تطبيق قانون التقارب دون اختبار القيمة المطلقة للنسبة.",
+          "titleAfter": "<١."
+        },
+        {
+          "rule": 288,
+          "titleBefore": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي.",
+          "titleAfter": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 143,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04:C143",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l04-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "4a82da514573fe014158519e173c02aa4940713b7bfaf615141c5bdb3681e645",
+      "rules": [
+        {
+          "rule": 284,
+          "titleBefore": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠.",
+          "titleAfter": "الخلط بين فهرسة الحد الأول بن=١ والفهرسة بن=٠."
+        },
+        {
+          "rule": 285,
+          "titleBefore": "حساب المجموع بدل الحد النوني أو العكس.",
+          "titleAfter": "حساب المجموع بدل الحد النوني أو العكس."
+        },
+        {
+          "rule": 286,
+          "titleBefore": "نسيان شروط المجال أو نسبة المتتالية الهندسية.",
+          "titleAfter": "نسيان شروط المجال أو نسبة المتتالية الهندسية."
+        },
+        {
+          "rule": 287,
+          "titleBefore": "تطبيق قانون التقارب دون اختبار القيمة المطلقة للنسبة.",
+          "titleAfter": "<١."
+        },
+        {
+          "rule": 288,
+          "titleBefore": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي.",
+          "titleAfter": "الاعتماد على حدّين فقط لإثبات نمط وحيد دون فرض إضافي."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 144,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L05:C144",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l05-ar.rich-lesson-v2.json",
+      "count": 6,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "677e6765496a00b8759d8391ea5fa6329217b84f1a57ab9f25b183773ce4e329",
+      "rules": [
+        {
+          "rule": 289,
+          "titleBefore": "استعمال فرق ثابت بدل نسبة ثابتة.",
+          "titleAfter": "استعمال فرق ثابت بدل نسبة ثابتة."
+        },
+        {
+          "rule": 290,
+          "titleBefore": "نسيان أن الأس n−1 عندما يبدأ الترقيم من ١.",
+          "titleAfter": "نسيان أن الأس n−1 عندما يبدأ الترقيم من ١."
+        },
+        {
+          "rule": 291,
+          "titleBefore": "إهمال إشارة النسبة السالبة.",
+          "titleAfter": "إهمال إشارة النسبة السالبة."
+        },
+        {
+          "rule": 292,
+          "titleBefore": "وصف النسبة ١ بأنها نمو أو اضمحلال.",
+          "titleAfter": "وصف النسبة ١ بأنها نمو أو اضمحلال."
+        },
+        {
+          "rule": 293,
+          "titleBefore": "وصل النقاط المنفصلة دون تمييز المجال.",
+          "titleAfter": "وصل النقاط المنفصلة دون تمييز المجال."
+        },
+        {
+          "rule": 294,
+          "titleBefore": "حذف فرق الزمن في متوسط معدل التغير.",
+          "titleAfter": "حذف فرق الزمن في متوسط معدل التغير."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 145,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L06:C145",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u17-l06-ar.rich-lesson-v2.json",
+      "count": 5,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "11da89fdb754ab99181886cac5806fb73ce2d992f64c3466aba1e1d10f97dbf0",
+      "rules": [
+        {
+          "rule": 295,
+          "titleBefore": "حذف القيمة الابتدائية أو شرط رقم الحد.",
+          "titleAfter": "حذف القيمة الابتدائية أو شرط رقم الحد."
+        },
+        {
+          "rule": 296,
+          "titleBefore": "الخلط بين n وn−1 عند التعويض.",
+          "titleAfter": "الخلط بين n وn−1 عند التعويض."
+        },
+        {
+          "rule": 297,
+          "titleBefore": "استعمال الصيغة الصريحة الحسابية لقاعدة ليست حسابية.",
+          "titleAfter": "استعمال الصيغة الصريحة الحسابية لقاعدة ليست حسابية."
+        },
+        {
+          "rule": 298,
+          "titleBefore": "إهمال قيمة بداية ثانية عند اعتماد القاعدة على حدين.",
+          "titleAfter": "إهمال قيمة بداية ثانية عند اعتماد القاعدة على حدين."
+        },
+        {
+          "rule": 299,
+          "titleBefore": "تغيير ترتيب الزيادة النسبية والإضافة في النموذج.",
+          "titleAfter": "تغيير ترتيب الزيادة النسبية والإضافة في النموذج."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 146,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u18-l01-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "d5f838c8839991d51a660932fcc80357f234fd0cc882b96126c2c1c21e2cd76f",
+      "rules": [
+        {
+          "rule": 300,
+          "titleBefore": "اعتبار الرسم التقريبي برهانًا عامًا.",
+          "titleAfter": "اعتبار الرسم التقريبي برهانًا عامًا."
+        },
+        {
+          "rule": 301,
+          "titleBefore": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها.",
+          "titleAfter": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها."
+        },
+        {
+          "rule": 302,
+          "titleBefore": "تطبيق قاعدة هندسية دون التحقق من شروطها.",
+          "titleAfter": "تطبيق قاعدة هندسية دون التحقق من شروطها."
+        },
+        {
+          "rule": 303,
+          "titleBefore": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية.",
+          "titleAfter": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية."
+        },
+        {
+          "rule": 304,
+          "titleBefore": "الخلط بين المعطى والمطلوب إثباته.",
+          "titleAfter": "الخلط بين المعطى والمطلوب إثباته."
+        },
+        {
+          "rule": 305,
+          "titleBefore": "عكس الاستلزام دون مبرر.",
+          "titleAfter": "عكس الاستلزام دون مبرر."
+        },
+        {
+          "rule": 306,
+          "titleBefore": "الاعتقاد أن ثلاث نقاط مستقيمة تعين مستوى وحيدًا.",
+          "titleAfter": "الاعتقاد أن ثلاث نقاط مستقيمة تعين مستوى وحيدًا."
+        },
+        {
+          "rule": 307,
+          "titleBefore": "عد كل مباراة مرتين.",
+          "titleAfter": "عد كل مباراة مرتين."
+        },
+        {
+          "rule": 308,
+          "titleBefore": "افتراض أن القطعتين المتطابقتين تتطابقان في الموضع.",
+          "titleAfter": "افتراض أن القطعتين المتطابقتين تتطابقان في الموضع."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 147,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L02:C147",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u18-l02-ar.rich-lesson-v2.json",
+      "count": 11,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "3f3a6455fc19b48c678e555f0e9e4ab4b9a96dc47bd85546b5fec61a7758553a",
+      "rules": [
+        {
+          "rule": 300,
+          "titleBefore": "اعتبار الرسم التقريبي برهانًا عامًا.",
+          "titleAfter": "اعتبار الرسم التقريبي برهانًا عامًا."
+        },
+        {
+          "rule": 301,
+          "titleBefore": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها.",
+          "titleAfter": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها."
+        },
+        {
+          "rule": 302,
+          "titleBefore": "تطبيق قاعدة هندسية دون التحقق من شروطها.",
+          "titleAfter": "تطبيق قاعدة هندسية دون التحقق من شروطها."
+        },
+        {
+          "rule": 303,
+          "titleBefore": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية.",
+          "titleAfter": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية."
+        },
+        {
+          "rule": 304,
+          "titleBefore": "الخلط بين المعطى والمطلوب إثباته.",
+          "titleAfter": "الخلط بين المعطى والمطلوب إثباته."
+        },
+        {
+          "rule": 309,
+          "titleBefore": "القسمة على مقدار قد يساوي صفرًا.",
+          "titleAfter": "القسمة على مقدار قد يساوي صفرًا."
+        },
+        {
+          "rule": 310,
+          "titleBefore": "أخذ الجذر الموجب وحده من معادلة عامة دون شرط إشارة.",
+          "titleAfter": "أخذ الجذر الموجب وحده من معادلة عامة دون شرط إشارة."
+        },
+        {
+          "rule": 311,
+          "titleBefore": "اعتبار التماثل وحده كافيًا للتكافؤ.",
+          "titleAfter": "اعتبار التماثل وحده كافيًا للتكافؤ."
+        },
+        {
+          "rule": 312,
+          "titleBefore": "اعتبار المثال العددي برهانًا لجميع الأعداد.",
+          "titleAfter": "اعتبار المثال العددي برهانًا لجميع الأعداد."
+        },
+        {
+          "rule": 313,
+          "titleBefore": "إسقاط الإشارة السالبة أو تقريب حل كسري دقيق قبل التحقق.",
+          "titleAfter": "إسقاط الإشارة السالبة أو تقريب حل كسري دقيق قبل التحقق."
+        },
+        {
+          "rule": 314,
+          "titleBefore": "إثبات خاصية علاقة بمثال واحد دون التحقق من الشروط الثلاثة على المجال.",
+          "titleAfter": "إثبات خاصية علاقة بمثال واحد دون التحقق من الشروط الثلاثة على المجال."
+        }
+      ]
+    },
+    {
+      "lessonOrdinal": 148,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148",
+      "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u18-l03-ar.rich-lesson-v2.json",
+      "count": 9,
+      "previousCanonicalBodySha256": null,
+      "canonicalBodySha256": "a5899f7c5154a3e668b2155d8791edbb8a83807229669198a23afeb9c1bd0b23",
+      "rules": [
+        {
+          "rule": 300,
+          "titleBefore": "اعتبار الرسم التقريبي برهانًا عامًا.",
+          "titleAfter": "اعتبار الرسم التقريبي برهانًا عامًا."
+        },
+        {
+          "rule": 301,
+          "titleBefore": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها.",
+          "titleAfter": "ذكر النتيجة المطلوبة باعتبارها أحد مبرراتها."
+        },
+        {
+          "rule": 302,
+          "titleBefore": "تطبيق قاعدة هندسية دون التحقق من شروطها.",
+          "titleAfter": "تطبيق قاعدة هندسية دون التحقق من شروطها."
+        },
+        {
+          "rule": 303,
+          "titleBefore": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية.",
+          "titleAfter": "القفز على خطوات المعادلة أو التعويض دون ذكر الخاصية."
+        },
+        {
+          "rule": 304,
+          "titleBefore": "الخلط بين المعطى والمطلوب إثباته.",
+          "titleAfter": "الخلط بين المعطى والمطلوب إثباته."
+        },
+        {
+          "rule": 315,
+          "titleBefore": "قراءة تدريجين متعاكسين للمنقلة، أو عدم محاذاة الصفر مع ضلع البداية.",
+          "titleAfter": "قراءة تدريجين متعاكسين للمنقلة، أو عدم محاذاة الصفر مع ضلع البداية."
+        },
+        {
+          "rule": 316,
+          "titleBefore": "جمع قياسي زاويتين دون التأكد من أن الشعاع داخلي في الزاوية الكلية.",
+          "titleAfter": "جمع قياسي زاويتين دون التأكد من أن الشعاع داخلي في الزاوية الكلية."
+        },
+        {
+          "rule": 317,
+          "titleBefore": "اعتبار كل زاويتين متكاملتين متجاورتين، أو اعتبار كل زاويتين متطابقتين قائمتين.",
+          "titleAfter": "اعتبار كل زاويتين متكاملتين متجاورتين، أو اعتبار كل زاويتين متطابقتين قائمتين."
+        },
+        {
+          "rule": 318,
+          "titleBefore": "اعتبار كل الزوايا عند تقاطع مستقيمين حادة أو متطابقة دون إثبات التعامد.",
+          "titleAfter": "اعتبار كل الزوايا عند تقاطع مستقيمين حادة أو متطابقة دون إثبات التعامد."
+        }
+      ]
+    }
+  ],
+  "fallbackOnlySynchronization": {
+    "lessonOrdinal": 1,
+    "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
+    "count": 6,
+    "previousCanonicalBodySha256": "80b3342ca826d93f6ced25e4223bead862bd4ea942858f5561a62b01a316caa6",
+    "canonicalBodySha256": "d7e9c8d2f930952e52f2098a6de5fa57c3f79f0bf481dd63205996767fdc4a52",
+    "titles": [
+      "جمع ٢س² و٣س في حد واحد ٥س³.",
+      "تغيير إشارة حد واحد فقط في كثيرة الحدود المطروحة.",
+      "اعتبار درجة كثيرة حدود مساوية لعدد حدودها.",
+      "نقل الثابت إلى عمود س أو س² في الطريقة الرأسية.",
+      "قبول طول ٢٥ سم لمستطيل محيطه ٤٠ سم.",
+      "ضرب رسم يوم واحد في عدد الأيام ثم ضرب التكلفة المقطوعة على المسافة في عدد الأيام مرة ثانية."
+    ]
+  }
+}

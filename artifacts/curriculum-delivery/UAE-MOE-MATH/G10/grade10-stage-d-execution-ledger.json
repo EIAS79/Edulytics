@@ -72,7 +72,7 @@
     "advancedInstructionalRows": 19,
     "advancedOtherLessonRoutesAwaitingAudit": 54,
     "semanticParity": "UNKNOWN",
-    "canonicalBodySha256": "80b3342ca826d93f6ced25e4223bead862bd4ea942858f5561a62b01a316caa6",
+    "canonicalBodySha256": "d7e9c8d2f930952e52f2098a6de5fa57c3f79f0bf481dd63205996767fdc4a52",
     "explicitSubpartReview": {
       "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-subpart-review.json",
       "parentItems": 7,
@@ -128,7 +128,8 @@
       "parentsWithTargetAuthoringEvidence": 54,
       "unmappedParents": [],
       "scope": "At least one target authored artifact per routed parent; remaining secondary-target, instructional, rights, teacher and runtime gates are not certified."
-    }
+    },
+    "fallbackSynchronizationEvidence": "grade10-stage-d-common-mistake-repair.json"
   },
   "observedCI": {
     "sha": "a4d4bef54672596cc583bc8e8584de8a4c15d508",
@@ -573,5 +574,16 @@
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
     "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "commonMistakeRepair": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-stage-d-common-mistake-repair.json",
+    "baseCandidateSha": "82b8ded5b335a57d3854e9bb2459cf0c2b7ef19f",
+    "lessonsInspected": 148,
+    "affectedLessons": 105,
+    "repairedMistakes": 603,
+    "remainingIncompleteMistakes": 0,
+    "sourceParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "productionRouting": false
   }
 }
