@@ -23,7 +23,7 @@ test('Grade10 ordinal20 retained in canonical approved 148/18 and authored Arabi
 });
 test('Arabic scientific notation examples and diagrams are original and correct',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,13);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,16);assert.equal(l.Visuals.length,5);
  assert.equal(7.25e6,7250000);
  assert.ok(Math.abs(8.3e-5-0.000083)<1e-15);
  assert.equal(8e-2*5e3,400);
@@ -51,3 +51,5 @@ test('Bounded independent scientific exponent contracts are source-matched and f
 });
 
 test('Stage D advanced cross-target original astronomy context has exact units and bounded teacher route',()=>{const l=rich.Lessons[0],e=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json'),p=pack.Lessons.find(x=>x.LessonCode===code),a=p.Translations.find(t=>t.CultureCode==='ar');assert.ok(l.WorkedExamples.some(x=>x.Title==='تطبيق فلكي: زمن انتقال الضوء بين مسافتين'));assert.ok(a.WorkedExamples.includes('تطبيق فلكي: زمن انتقال الضوء بين مسافتين'));assert.equal(4.5e16/3e8,1.5e8);assert.equal(7.2e11/3e8,2400);assert.equal(2400/60,40);assert.ok(Math.abs(1.5e8/(365*24*3600)-4.7564687976)<1e-8);assert.equal(e.rows.length,9);assert.equal(e.numberedExerciseSlotsCountingExplicitSubparts,74);assert.equal(e.semanticParity,'UNKNOWN');assert.equal(e.productionRouting,false);assert.equal(contract.runtimeGate.productionRouting,false);});
+
+ test('G10 L020 primary-source repair examples and arithmetic',()=>{const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));const e=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-stage-d-source-review.json'),l=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l04-ar.rich-lesson-v2.json').Lessons[0],p=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json').Lessons.find(x=>x.LessonCode===l.LessonCode),a=p.Translations.find(t=>t.CultureCode==='ar');for(const row of e.rows){assert.ok(l.WorkedExamples.some(x=>x.Title===row.originalWorkedExampleTitle&&x.Answer===row.expectedAnswer));assert.ok(a.WorkedExamples.includes(row.originalWorkedExampleTitle));assert.ok(a.StepByStepSolutions.includes(row.originalWorkedExampleTitle));}assert.equal(p.CanonicalBodySha256,crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.keys(a).sort().map(k=>[k,a[k]])))).digest('hex'));let count=0;const eq=(x,y)=>{assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-10*Math.max(1,Math.abs(x),Math.abs(y)));count++;};eq(15*8e5,1.2e7);eq(1.5e8-1.2e8,3e7);eq((1.5e8-1.2e8)/1.2e8,.25);eq(240*365,8.76e4);eq(240*365*1000,8.76e7);assert.equal(count,e.arithmeticProbes);});

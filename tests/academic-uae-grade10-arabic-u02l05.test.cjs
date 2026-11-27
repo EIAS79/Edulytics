@@ -23,7 +23,7 @@ test('Owner 148 index preserves original canonical U02L05 identity and Arabic le
 });
 test('Arabic 12 original worked examples distinguish square roots, nth roots and real domain',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,16);assert.equal(l.Visuals.length,5);
  assert.ok(l.WorkedExamples.some(x=>x.Answer==='٦√٢'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('|س|')));
  for(const [a,b,r] of [[72,6,2],[50,5,2],[48,4,3]])assert.equal(a,b*b*r);
@@ -51,3 +51,5 @@ test('Exact grade10 radical families are mapped to registered skill with fail-cl
  assert.match(helper,/static\s+bool\s+Verify\s*\(/);
  assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RadicalSimplificationResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
+
+ test('G10 L021 primary-source repair examples and arithmetic',()=>{const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));const e=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-021-stage-d-source-review.json'),l=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l05-ar.rich-lesson-v2.json').Lessons[0],p=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json').Lessons.find(x=>x.LessonCode===l.LessonCode),a=p.Translations.find(t=>t.CultureCode==='ar');for(const row of e.rows){assert.ok(l.WorkedExamples.some(x=>x.Title===row.originalWorkedExampleTitle&&x.Answer===row.expectedAnswer));assert.ok(a.WorkedExamples.includes(row.originalWorkedExampleTitle));assert.ok(a.StepByStepSolutions.includes(row.originalWorkedExampleTitle));}assert.equal(p.CanonicalBodySha256,crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.keys(a).sort().map(k=>[k,a[k]])))).digest('hex'));let count=0;const eq=(x,y)=>{assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-10*Math.max(1,Math.abs(x),Math.abs(y)));count++;};eq((3*Math.sqrt(70)/14)**2,45/14);eq(4/(3+Math.sqrt(5)),3-Math.sqrt(5));eq(Math.sqrt(96/6),4);eq(Math.sqrt(2*126/7),6);eq(Math.sqrt(3)-Math.sqrt(3),0);eq(Math.sqrt(3)**2,3);assert.equal(count,e.arithmeticProbes);});
