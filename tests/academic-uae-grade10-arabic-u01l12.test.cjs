@@ -40,10 +40,10 @@ test('Source PDF 221..230 covers 34 mapped original goal/assessment types includ
 test('First-party graph visuals use mathematically correct original coordinate sets',()=>{
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
- assert.equal(l.WorkedExamples.length,10);
- assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,19);
+ assert.equal(l.Visuals.length,7);
  const plots=l.Visuals.filter(v=>v.Kind==='CartesianPlot');
- assert.equal(plots.length,3);
+ assert.equal(plots.length,5);
  assert.ok(plots.every(v=>v.Rows.length>=5));
  const f=x=>x**3-4*x,g=x=>x**4-5*x*x+4,q=x=>-((x-1)**2)+4;
  for(const [i,fun] of [[0,f],[1,q],[2,g]]) {

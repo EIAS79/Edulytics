@@ -41,10 +41,10 @@ test('First-party Arabic polynomial functions include actual points not merely d
  const l=rich.Lessons[0];
  assert.equal(rich.Lessons.length,1);
  assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,11);
- assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,19);
+ assert.equal(l.Visuals.length,7);
  const graphs=l.Visuals.filter(x=>x.Kind==='CartesianPlot');
- assert.equal(graphs.length,2);
+ assert.equal(graphs.length,4);
  assert.equal(graphs[0].Rows.length,5);
  assert.equal(graphs[1].Rows.length,5);
  for(const graph of graphs)
