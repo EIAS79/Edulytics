@@ -131,10 +131,33 @@
     }
   },
   "observedCI": {
-    "sha": "fec78403bea9fcbca2212d41a07c756d6a73a52f",
-    "runId": 45918111550,
-    "status": "queued",
-    "conclusion": null
+    "sha": "9e5e39275467fa745827eb29b4ea72a570737ea5",
+    "mergeRef": "9f57510b17c2bf2cc714f643805efa62a58af36b",
+    "runId": 45919722779,
+    "status": "completed",
+    "conclusion": "failure",
+    "structural": {
+      "passed": 148,
+      "total": 148
+    },
+    "node": {
+      "passed": 337,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnetGrade10": {
+      "passed": 664,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnetGrade7To9": {
+      "passed": 273,
+      "failed": 0,
+      "skipped": 0
+    },
+    "releaseBlockers": 149,
+    "stageDVerified": 0,
+    "scope": "Prior tested candidate; not new repair candidate"
   },
   "release": {
     "status": "NO_GO_SOURCE_100",
@@ -302,5 +325,17 @@
     "isolatedWorktree": true,
     "productionWrites": false,
     "scope": "previous candidate, not latest SHA"
+  },
+  "lesson003": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-stage-d-source-review.json",
+    "workedExampleGroupsBefore": 11,
+    "workedExampleGroupsAfter": 23,
+    "visualsAfter": 9,
+    "authoringArithmeticProbes": 295,
+    "canonicalBodySha256": "b1b5e73c9e1d0789096bab58ac7d43dd7a6af6af3d0500f8480fb37d1fc70ad4",
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false,
+    "technicalTests": "WRITTEN_NOT_RUN"
   }
 }

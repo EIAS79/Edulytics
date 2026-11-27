@@ -67,8 +67,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-teacher-rubric.md",
   "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l03-ar.rich-lesson-v2.json",
-  "arabicExamplesCount": 9,
-  "originalVisualModelsCount": 5,
+  "arabicExamplesCount": 23,
+  "originalVisualModelsCount": 9,
   "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-stage-c-exact-contract.json",
   "primarySkills": [
     "algebra.polynomial.multiply_distribute"
@@ -95,7 +95,8 @@
   ],
   "testsWritten": [
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialProductTests.cs",
-    "tests/academic-uae-grade10-arabic-u01l03.test.cjs"
+    "tests/academic-uae-grade10-arabic-u01l03.test.cjs",
+    "tests/academic-uae-grade10-u01l03-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -120,13 +121,19 @@
     "verify source-bounded question correctness and activation before routing",
     "finish all 148 Arabic lessons with safe existing school/student references before production publish"
   ],
-  "arabicWorkedExamples": 11,
+  "arabicWorkedExamples": 23,
   "stageDFollowup": {
     "reason": "Cross-target original exercises from advanced composite lesson source",
     "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-distribution-products.json",
     "addedWorkedExampleGroups": 2,
     "numberedParents": 7,
     "sourceDenominatorUnchanged": "Historical scoped source denominator; cross-target supplement not full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
     "tests": "WRITTEN_NOT_RUN",
     "stageDVerified": false
   }
