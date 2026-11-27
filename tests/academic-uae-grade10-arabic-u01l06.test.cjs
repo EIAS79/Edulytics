@@ -43,7 +43,7 @@ test('Original General pages 56–63 include algebra tiles, prime distinction, r
  assert.equal(ledger.testsRun,'WRITTEN_NOT_RUN');
  const v=rich.Lessons[0];
  assert.equal(v.LessonCode,code);assert.equal(v.CultureCode,'ar');
- assert.equal(v.WorkedExamples.length,11);assert.equal(v.Visuals.length,6);
+ assert.equal(v.WorkedExamples.length,22);assert.equal(v.Visuals.length,8);
  assert.ok(v.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  assert.ok(v.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(v.WorkedExamples.some(x=>x.Answer.includes('(س+٤)(س+٥)')));

@@ -51,8 +51,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-teacher-rubric.md",
   "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l07-ar.rich-lesson-v2.json",
-  "arabicWorkedExamplesCount": 12,
-  "originalVisualModelsCount": 7,
+  "arabicWorkedExamplesCount": 21,
+  "originalVisualModelsCount": 9,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-stage-c-exact-contract.json",
   "primarySkills": [
     "algebra.quadratic.factor_nonmonic"
@@ -77,7 +77,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l07.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralNonmonicQuadraticTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralNonmonicQuadraticTests.cs",
+    "tests/academic-uae-grade10-u01l07-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -98,5 +99,11 @@
     "Run Arabic RTL student practice and graph/teacher review boundaries",
     "Enable production routes only after Stage D",
     "Complete all 148 canonical lesson bodies before publishing entire grade"
-  ]
+  ],
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

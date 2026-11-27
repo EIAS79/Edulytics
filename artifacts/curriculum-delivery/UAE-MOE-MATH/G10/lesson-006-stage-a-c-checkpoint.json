@@ -88,8 +88,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l06-ar.rich-lesson-v2.json",
-  "arabicExamplesCount": 11,
-  "originalVisualModelsCount": 6,
+  "arabicExamplesCount": 22,
+  "originalVisualModelsCount": 8,
   "primarySkills": [
     "algebra.quadratic.factor_monic"
   ],
@@ -110,7 +110,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l06.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonicQuadraticTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonicQuadraticTests.cs",
+    "tests/academic-uae-grade10-u01l06-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -136,5 +137,11 @@
     "authenticated student Arabic RTL Practice with exact family/renderer/grade persistence checks",
     "only enable productionRouting after StageD real pass",
     "finish remaining canonical lessons before production release and perform non-destructive student reference migration"
-  ]
+  ],
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

@@ -36,8 +36,8 @@ test('Canonical approved 148-title General U01L07 preserves original PED lesson 
 test('Original Arabic nonmonic worked examples and signed/rational/geometry source math stay correct',()=>{
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);
- assert.equal(l.Visuals.length,7);
+ assert.equal(l.WorkedExamples.length,21);
+ assert.equal(l.Visuals.length,9);
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  for(const x of [-3,-1,0,1,2,6]){
