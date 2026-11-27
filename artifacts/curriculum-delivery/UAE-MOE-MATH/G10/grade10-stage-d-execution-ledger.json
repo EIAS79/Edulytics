@@ -72,7 +72,19 @@
     "advancedInstructionalRows": 19,
     "advancedOtherLessonRoutesAwaitingAudit": 54,
     "semanticParity": "UNKNOWN",
-    "canonicalBodySha256": "ffb95a5b502ca5783c45e457c17fcfece671f284521bc532f552ab2b3759116b"
+    "canonicalBodySha256": "80b3342ca826d93f6ced25e4223bead862bd4ea942858f5561a62b01a316caa6",
+    "explicitSubpartReview": {
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-subpart-review.json",
+      "parentItems": 7,
+      "subparts": 19,
+      "numberedExerciseSlots": 103,
+      "semanticParity": "UNKNOWN"
+    },
+    "pendingCandidateChanges": {
+      "scope": "Four original examples amended in RichV2 and fallback pack; subpart crosswalk added",
+      "tests": "WRITTEN_NOT_RUN",
+      "previousTestEvidenceRetained": true
+    }
   },
   "observedCI": {
     "sha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
@@ -93,7 +105,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Complete per-subpart and non-numbered source-element denominator, verify remaining Advanced routes, then audit remaining lessons in canonical order and complete independent digital, teacher, authenticated RTL, isolated database and final same-SHA CI gates. No merge or deploy before all release blockers are resolved.",
+  "next": "Continue Lesson 001 unnumbered instructional and advanced routed target evidence; then sequential lesson closure, authenticated RTL and isolated DB, and final same-SHA CI. Four example amendments and explicit subpart mapping require re-test; no production routing.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
