@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 105,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08:C105",
+  "sourcePdf": "03.pdf",
+  "sourceSha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+  "reviewedPhysicalPages": [
+    150
+  ],
+  "scope": "Targeted comparison of visually inspected source opening page, selected examples only. No full-page-set or atomic coverage claim.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 150,
+      "sourcePrintedPage": 539,
+      "sourceLocator": "Selected existing authored example aligned to the inspected lesson opening objectives; not a claim that the exact original exercise appeared on this page.",
+      "originalWorkedExampleTitle": "مركز ونقطة على المحيط",
+      "expectedAnswer": "(x−3)²+(y+2)²=25",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 150,
+      "sourcePrintedPage": 539,
+      "sourceLocator": "Selected existing authored example aligned to the inspected lesson opening objectives; not a claim that the exact original exercise appeared on this page.",
+      "originalWorkedExampleTitle": "إكمال المربع",
+      "expectedAnswer": "(x−3)²+(y+2)²=25؛ O=(3,−2)، r=5",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "إكمال المربع",
+      "before": {
+        "Title": "إكمال المربع",
+        "Question": "اكتب x²+y²−6x+4y−12=0 بالصيغة القياسية، ثم أوجد المركز ونصف القطر.",
+        "Method": "المسافة والصيغة القياسية والتمثيل الإحداثي",
+        "Steps": [
+          "x²−6x+y²+4y=12",
+          "أضف 9 و4 إلى الطرفين",
+          "(x−3)²+(y+2)²=25"
+        ],
+        "Answer": "O=(3,−2)، r=5",
+        "Check": "25=12+9+4."
+      },
+      "after": {
+        "Title": "إكمال المربع",
+        "Question": "اكتب x²+y²−6x+4y−12=0 بالصيغة القياسية، ثم أوجد المركز ونصف القطر.",
+        "Method": "المسافة والصيغة القياسية والتمثيل الإحداثي",
+        "Steps": [
+          "x²−6x+y²+4y=12",
+          "أضف 9 و4 إلى الطرفين",
+          "(x−3)²+(y+2)²=25"
+        ],
+        "Answer": "(x−3)²+(y+2)²=25؛ O=(3,−2)، r=5",
+        "Check": "25=12+9+4."
+      }
+    }
+  ],
+  "fallbackReconciled": [],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

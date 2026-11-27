@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-general-u12-l05-arabic-20261125-v1",
+  "ContentVersion": "g10-general-u12-l05-arabic-20261125-v1-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -130,6 +130,18 @@
           ],
           "Answer": "٦٠",
           "Check": "تحقق من نوع الشكل والوحدات والفرضيات الهندسية."
+        },
+        {
+          "Title": "تنصيف زوايا المعين بواسطة القطر",
+          "Question": "في معين ABCD قياس ∠A=١١٦°. أوجد قياس ∠BAC و∠ABD إذا كان القطران AC وBD مرسومين.",
+          "Method": "زاويتان متتاليتان متكاملتان، وكل قطر ينصف زاويتي الرأسين اللذين يصلهما.",
+          "Steps": [
+            "∠B=١٨٠−١١٦=٦٤°.",
+            "AC ينصف ∠A، إذن ∠BAC=٥٨°.",
+            "BD ينصف ∠B، إذن ∠ABD=٣٢°."
+          ],
+          "Answer": "٥٨°،٣٢°",
+          "Check": "٢×٥٨+٢×٣٢=١٨٠°؛ القطران متعامدان."
         }
       ],
       "CommonMistakes": [
