@@ -46,8 +46,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l04-ar.rich-lesson-v2.json",
-  "arabicExamplesCount": 9,
-  "originalVisualModelsCount": 5,
+  "arabicExamplesCount": 24,
+  "originalVisualModelsCount": 10,
   "primarySkills": [
     "algebra.polynomial.special_products"
   ],
@@ -70,7 +70,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l04.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralSpecialProductsTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralSpecialProductsTests.cs",
+    "tests/academic-uae-grade10-u01l04-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -95,13 +96,19 @@
     "enable production routing only if tests pass and exact skill matched",
     "finish 148 Arabic bodies then run safe release/migration gates"
   ],
-  "arabicWorkedExamples": 11,
+  "arabicWorkedExamples": 24,
   "stageDFollowup": {
     "reason": "Cross-target original exercises from advanced composite lesson source",
     "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-distribution-products.json",
     "addedWorkedExampleGroups": 2,
     "numberedParents": 4,
     "sourceDenominatorUnchanged": "Historical scoped source denominator; cross-target supplement not full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
     "tests": "WRITTEN_NOT_RUN",
     "stageDVerified": false
   }
