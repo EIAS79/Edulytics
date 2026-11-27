@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/uae-grade10-general-stage-d.yml'
       - 'tools/curriculum/uae_g10_stage_d_preflight.cjs'
+      - 'tools/curriculum/uae_g10_stage_d_*.py'
+      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tests/academic-uae-grade10*.test.cjs'
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-*'
       - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-*'
@@ -111,3 +113,117 @@ jobs:
           name: g10-compiled-math-test-results
           path: ${{ runner.temp }}/g10-test-results/*.trx
           if-no-files-found: error
+
+  g10-authenticated-runtime:
+    name: G10 isolated four-role HTTPS, all 148 Arabic pages and actual Practice diagnostics
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      CI: 'true'
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G10
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compile checks and build clean disposable PostgreSQL 18
+        run: |
+          set -euo pipefail
+          python3 -m py_compile tools/curriculum/uae_g10_stage_d_authenticated_https.py tools/curriculum/uae_g10_stage_d_browser_rtl.py
+          node tools/curriculum/uae_g10_stage_d_preflight.cjs
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore -o /tmp/g10-web-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Verify exact 148 Published G10 General Arabic DB identities
+        run: |
+          set -euo pipefail
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons" WHERE "Code" LIKE '"'"'PED:UAE-MOE-MATH:L10:GENERAL:%'"'"'')" = 148
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents" c JOIN "CurriculumPedagogicalLessons" p ON p."Id"=c."LessonNodeId" WHERE p."Code" LIKE '"'"'PED:UAE-MOE-MATH:L10:GENERAL:%'"'"' AND c."Status"=3')" = 148
+      - name: Authenticate disposable G10 General student, teacher, supervisor, school admin; test all lessons
+        env:
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          RENDER_SERVICE_ID: ci-disposable
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+          export Edulytics__MeetingDemo__Password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$Edulytics__MeetingDemo__Password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g10-fixture.log 2>&1; then
+            tail -n 80 /tmp/g10-fixture.log | grep -Eiv 'password|credential|secret|connection' || true
+            exit 1
+          fi
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g10-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 -keyout /tmp/g10-key.pem -out /tmp/g10-cert.pem -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g10-identity.pfx -inkey /tmp/g10-key.pem -in /tmp/g10-cert.pem -passout pass:local-test-tls >/dev/null 2>&1
+          cp /tmp/g10-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g10-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          export ASPNETCORE_CONTENTROOT=/tmp/g10-web-publish
+          dotnet /tmp/g10-web-publish/Edulytics.Web.dll >/tmp/g10-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then ready=true; break; fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then break; fi
+            sleep 3
+          done
+          if [ "$ready" != true ]; then
+            tail -n 80 /tmp/g10-web.log | grep -Eiv 'password|credential|secret|connection' || true
+            exit 1
+          fi
+          auth_rc=0
+          rtl_rc=0
+          python3 tools/curriculum/uae_g10_stage_d_authenticated_https.py || auth_rc=$?
+          python3 tools/curriculum/uae_g10_stage_d_browser_rtl.py || rtl_rc=$?
+          test "$auth_rc" -eq 0 && test "$rtl_rc" -eq 0
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade9-authenticated-e2e-and-rtl
+          path: |
+            /tmp/uae-g10-stage-d-authenticated-148-lessons.json
+            /tmp/uae-g10-stage-d-browser-rtl/report.json
+            /tmp/uae-g10-stage-d-browser-rtl/*.png
+          if-no-files-found: warn
+          retention-days: 30
+
