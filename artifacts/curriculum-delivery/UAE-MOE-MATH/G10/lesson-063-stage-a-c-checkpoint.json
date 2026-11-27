@@ -54,18 +54,22 @@
   "arabicTranslationAddedWithoutRemovingEnglish": true,
   "authoredContentPackEntry": true,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u07-l06-ar.rich-lesson-v2.json",
-  "stageCStatus": "BOUNDED_EXISTING_SKILL_REUSE_COMPLEX_GEOMETRY_TEACHER_REVIEW",
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
   "primarySkills": [
     "geometry.distance.perpendicular_point_line"
   ],
-  "allowedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u07.l06.perpendicular_point_line_distance",
+    "uae.g10.general.u07.l06.perpendicular_slope"
+  ],
   "teacherReviewRequiredFor": [
     "geometric diagrams and spatial straight lines",
     "angle and coordinate proof steps",
     "ruler-construction and explanation tasks"
   ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u07l06.test.cjs"
+    "tests/academic-uae-grade10-arabic-u07l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -74,5 +78,10 @@
   "firstIncompleteGlobalOrdinal": 64,
   "nextEligibleCanonicalCode": "G10-U08-L01",
   "closureBasis": "GENERAL_2025_2026_BODY_VERIFIED_REUSED_EXISTING_ID_12_ARABIC_EXAMPLES_4_VISUALS_NO_STAGE_D",
-  "sourceLimitations": "No exercise-by-exercise 100% textbook coverage claim; E2E RTL and exact skill family Stage D pending."
+  "sourceLimitations": "No exercise-by-exercise 100% textbook coverage claim; E2E RTL and exact skill family Stage D pending.",
+  "stageCReconciliation": "Original bounded closed-response candidates; open proof/visual tasks remain teacher-reviewed; no full source parity or production route.",
+  "sourcePagesScreenedForNewDigitalFamilies": [
+    196,
+    197
+  ]
 }

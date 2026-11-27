@@ -34,19 +34,29 @@
   "originalVisualModels": 4,
   "legacyLessonIdentifierPreserved": true,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u08-l01-ar.rich-lesson-v2.json",
-  "stageCStatus": "NO_EXACT_ENGINE_TEACHER_SCORING",
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
   "primarySkills": [
     "geometry.transformations.reflection"
   ],
-  "allowedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u08.l01.reflection_vertical_x",
+    "uae.g10.general.u08.l01.reflection_horizontal_y",
+    "uae.g10.general.u08.l01.reflection_diagonal_y"
+  ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u08l01.test.cjs"
+    "tests/academic-uae-grade10-arabic-u08l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_GRADE10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "firstIncompleteGlobalOrdinal": 65,
   "nextEligibleCanonicalCode": "G10-U08-L02",
-  "sourceLimitations": "No exhaustive source exercise comparison or Stage D authenticated student confirmation."
+  "sourceLimitations": "No exhaustive source exercise comparison or Stage D authenticated student confirmation.",
+  "stageCReconciliation": "Original bounded closed-response candidates; open proof/visual tasks remain teacher-reviewed; no full source parity or production route.",
+  "sourcePagesScreenedForNewDigitalFamilies": [
+    218,
+    219
+  ]
 }
