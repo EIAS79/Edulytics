@@ -162,6 +162,24 @@ function assertOriginalLinesUnchanged(ref,file){
     'Deleted/edited a previously released engine/contract line: '+file);
   return added;
 }
+// Git's hunk alignment is not a reliable deletion detector when a large
+// additive dispatch block repeats existing braces and return statements.
+// Check actual historical line multiplicities AND ordered subsequence instead.
+// The only permitted lost historical lines remain the exact three below.
+function assertExactHistoricalEngineRetirement(ref){
+  const before=priorLines(ref,engine), after=nowLines(engine);
+  const remaining=new Map();
+  for(const line of after)remaining.set(line,(remaining.get(line)||0)+1);
+  const lost=[];
+  for(const line of before){
+    const count=remaining.get(line)||0;
+    if(count)remaining.set(line,count-1);
+    else lost.push(line);
+  }
+  assert.deepEqual(lost,[oldEngineClass,oldSharedIntegerParser,oldRegroupVerifierLine],
+    'Only the three pinned historical engine lines may be retired');
+  assertOriginalLinesUnchanged(ref,engine);
+}
 test('Original G1 family semantics and G11 routes are preserved after authorized G6 additions',()=>{
   assert.equal(git('merge-base','--is-ancestor',g1Proof,'HEAD'),'');
   assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
@@ -186,13 +204,7 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
       assert.ok(Number(removed)>=retiredG7GeneralContractBlock.length,
         'The owner-approved G8 code replacement may delete only its pinned legacy declarations');
     }else{
-      const deleted=git('diff','--unified=0',preG5,'HEAD','--',engine)
-        .split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
-      assert.deepEqual(deleted,[
-        '-'+oldEngineClass,
-        '-'+oldSharedIntegerParser,
-        '-'+oldRegroupVerifierLine
-      ],'Historical engine deletions must be only the G9 partial/parser and proven G1 correction');
+      assertExactHistoricalEngineRetirement(preG5);
     }
     assert.ok(Number(added)>0);
   }
@@ -218,18 +230,12 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
   assert.ok(probe.includes('answer=syntactically_valid_wrong_answer(answer,family)'),
     'The independent default/US negative control must not be replaced');
   for(const file of [engine,contracts]){
-    const changes=git('diff','--unified=0',preG5,'HEAD','--',file);
-    const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
     if(file===contracts)
       assert.equal(nowLines(contracts).filter(x=>x.includes(
         'byLesson["PED:UAE-MOE-MATH:L9:GENERAL:') &&
         x.includes('= new LessonPracticeContract(')).length,80,
         'G9 may add 80 independent digital declarations without changing older contracts');
     else
-      assert.deepEqual(deleted,[
-        '-'+oldEngineClass,
-        '-'+oldSharedIntegerParser,
-        '-'+oldRegroupVerifierLine
-      ],'No unrelated historical G1/G11 shared engine lines may be deleted');
+      assertExactHistoricalEngineRetirement(preG5);
   }
 });
