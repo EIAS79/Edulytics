@@ -206,6 +206,102 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialLogisticResponse.SpreadsheetBalance,
             UaeG10ExponentialLogisticResponse.SpreadsheetInterest,
             UaeG10ExponentialLogisticResponse.LogisticCrossing,
+            UaeG10RemainingResponse.L58_line_pair_type,
+            UaeG10RemainingResponse.L58_plane_pair_type,
+            UaeG10RemainingResponse.L63_perpendicular_point_line_distance,
+            UaeG10RemainingResponse.L63_perpendicular_slope,
+            UaeG10RemainingResponse.L64_reflection_vertical_x,
+            UaeG10RemainingResponse.L64_reflection_horizontal_y,
+            UaeG10RemainingResponse.L64_reflection_diagonal_y,
+            UaeG10RemainingResponse.L65_translation_x,
+            UaeG10RemainingResponse.L65_translation_y,
+            UaeG10RemainingResponse.L66_rotation_90_x,
+            UaeG10RemainingResponse.L66_rotation_180_y,
+            UaeG10RemainingResponse.L66_rotation_270_y,
+            UaeG10RemainingResponse.L67_reflect_then_translate_x,
+            UaeG10RemainingResponse.L67_translate_then_reflect_x,
+            UaeG10RemainingResponse.L68_regular_polygon_symmetry_axes,
+            UaeG10RemainingResponse.L68_least_rotation_angle,
+            UaeG10RemainingResponse.L69_dilation_origin_x,
+            UaeG10RemainingResponse.L69_dilation_side_length,
+            UaeG10RemainingResponse.L70_classify_triangle_sides,
+            UaeG10RemainingResponse.L70_classify_triangle_angles,
+            UaeG10RemainingResponse.L71_third_triangle_angle,
+            UaeG10RemainingResponse.L71_exterior_triangle_angle,
+            UaeG10RemainingResponse.L72_corresponding_side_length,
+            UaeG10RemainingResponse.L72_corresponding_side_equation,
+            UaeG10RemainingResponse.L73_sss_match_condition,
+            UaeG10RemainingResponse.L73_sas_included_angle,
+            UaeG10RemainingResponse.L74_asa_included_side,
+            UaeG10RemainingResponse.L74_aas_remaining_angle,
+            UaeG10RemainingResponse.L75_isosceles_base_angle,
+            UaeG10RemainingResponse.L75_equilateral_perimeter,
+            UaeG10RemainingResponse.L76_rigid_image_side_length,
+            UaeG10RemainingResponse.L76_rigid_image_angle,
+            UaeG10RemainingResponse.L77_coordinate_side_square,
+            UaeG10RemainingResponse.L77_coordinate_midpoint_x,
+            UaeG10RemainingResponse.L78_parallelogram_area,
+            UaeG10RemainingResponse.L78_triangle_area,
+            UaeG10RemainingResponse.L79_perpendicular_bisector_distance,
+            UaeG10RemainingResponse.L79_angle_bisector_equidistance,
+            UaeG10RemainingResponse.L80_centroid_vertex_segment,
+            UaeG10RemainingResponse.L80_centroid_midpoint_segment,
+            UaeG10RemainingResponse.L81_largest_opposite_angle,
+            UaeG10RemainingResponse.L81_exterior_angle_bound,
+            UaeG10RemainingResponse.L82_negated_inequality_membership,
+            UaeG10RemainingResponse.L82_contradiction_upper_bound,
+            UaeG10RemainingResponse.L83_triangle_third_side_min_integer,
+            UaeG10RemainingResponse.L83_triangle_third_side_max_integer,
+            UaeG10RemainingResponse.L84_hinge_opposite_side_relation,
+            UaeG10RemainingResponse.L84_hinge_converse_angle_relation,
+            UaeG10RemainingResponse.L85_proportion_missing_term,
+            UaeG10RemainingResponse.L85_partition_by_ratio,
+            UaeG10RemainingResponse.L86_similar_polygon_side,
+            UaeG10RemainingResponse.L86_similar_polygon_perimeter,
+            UaeG10RemainingResponse.L87_similar_triangle_aa_angle,
+            UaeG10RemainingResponse.L87_similar_triangle_corresponding_side,
+            UaeG10RemainingResponse.L88_parallel_segment_proportion,
+            UaeG10RemainingResponse.L88_triangle_midsegment_length,
+            UaeG10RemainingResponse.L89_similar_triangle_altitude,
+            UaeG10RemainingResponse.L89_similar_triangle_median,
+            UaeG10RemainingResponse.L90_similarity_dilation_translation_x,
+            UaeG10RemainingResponse.L90_similarity_transformed_length,
+            UaeG10RemainingResponse.L91_map_actual_distance_km,
+            UaeG10RemainingResponse.L91_model_scale_length_cm,
+            UaeG10RemainingResponse.L92_polygon_interior_sum,
+            UaeG10RemainingResponse.L92_regular_polygon_exterior_angle,
+            UaeG10RemainingResponse.L93_parallelogram_adjacent_angle,
+            UaeG10RemainingResponse.L93_parallelogram_diagonal_half,
+            UaeG10RemainingResponse.L94_parallelogram_sufficient_condition,
+            UaeG10RemainingResponse.L94_parallelogram_diagonals_test,
+            UaeG10RemainingResponse.L95_rectangle_equal_diagonals,
+            UaeG10RemainingResponse.L95_rectangle_diagonal_length,
+            UaeG10RemainingResponse.L96_rhombus_side_from_diagonals,
+            UaeG10RemainingResponse.L96_square_perimeter,
+            UaeG10RemainingResponse.L97_trapezoid_midsegment,
+            UaeG10RemainingResponse.L97_kite_perimeter,
+            UaeG10RemainingResponse.L133_sample_space_product_count,
+            UaeG10RemainingResponse.L133_sample_space_three_stages,
+            UaeG10RemainingResponse.L134_permutations_two_positions,
+            UaeG10RemainingResponse.L134_combinations_two_members,
+            UaeG10RemainingResponse.L134_combination_probability,
+            UaeG10RemainingResponse.L135_geometric_segment_probability,
+            UaeG10RemainingResponse.L135_geometric_rectangle_probability,
+            UaeG10RemainingResponse.L136_simulation_relative_frequency,
+            UaeG10RemainingResponse.L136_simulation_expected_count,
+            UaeG10RemainingResponse.L138_independent_two_events,
+            UaeG10RemainingResponse.L138_dependent_without_replacement,
+            UaeG10RemainingResponse.L139_mutually_exclusive_union,
+            UaeG10RemainingResponse.L139_overlapping_union,
+            UaeG10RemainingResponse.L140_sequence_function_term,
+            UaeG10RemainingResponse.L140_sequence_common_difference,
+            UaeG10RemainingResponse.L141_arithmetic_nth_term,
+            UaeG10RemainingResponse.L141_arithmetic_finite_sum,
+            UaeG10RemainingResponse.L142_geometric_nth_term,
+            UaeG10RemainingResponse.L142_geometric_finite_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_alternating_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_convergence,
             UaeG10RationalUnitResponse.ProductConstant,
             UaeG10RationalUnitResponse.DivisionConstant,
             UaeG10RationalUnitResponse.Excluded,
@@ -1789,6 +1885,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(family))
             return UaeG10PostulatesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RemainingResponse.Supports(family))
+            return UaeG10RemainingResponse.Verify(family,parameters,answer);
 
         if (UaeG10RationalUnitResponse.Supports(family))
             return UaeG10RationalUnitResponse.Verify(family,parameters,answer);
@@ -4427,6 +4526,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(family))
             return BuildG10Postulates(family,random,difficulty);
+
+        if (UaeG10RemainingResponse.Supports(family))
+            return BuildG10Remaining(family,random,difficulty);
 
         if (UaeG10RationalUnitResponse.Supports(family))
             return BuildG10RationalUnit(family,random,difficulty);
@@ -10770,6 +10872,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(problem.Family))
             return UaeG10PostulatesResponse.Format(problem.Family,p);
+
+        if (UaeG10RemainingResponse.Supports(problem.Family))
+            return UaeG10RemainingResponse.Format(problem.Family,p);
 
         if (UaeG10RationalUnitResponse.Supports(problem.Family))
             return UaeG10RationalUnitResponse.Format(problem.Family,p);

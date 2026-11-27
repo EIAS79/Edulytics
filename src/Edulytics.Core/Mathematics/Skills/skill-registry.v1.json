@@ -904,11 +904,15 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
         "geometry.trigonometry.exact_generation",
-        "geometry.trigonometry.independent_verification"
+        "geometry.trigonometry.independent_verification",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "geometry.similarity.find_missing_length",
-        "geometry.similarity.scale_factor"
+        "geometry.similarity.scale_factor",
+        "uae.g10.general.u11.l03.similar_triangle_aa_angle",
+        "uae.g10.general.u11.l03.similar_triangle_corresponding_side"
       ]
     },
     {
@@ -1112,12 +1116,16 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
         "geometry.polygons.exact",
-        "geometry.verify.polygons"
+        "geometry.verify.polygons",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "geometry.polygons.interior_angle_sum",
         "geometry.polygons.missing_interior_angle",
-        "geometry.polygons.regular_interior_angle"
+        "geometry.polygons.regular_interior_angle",
+        "uae.g10.general.u12.l01.polygon_interior_sum",
+        "uae.g10.general.u12.l01.regular_polygon_exterior_angle"
       ]
     },
     {
@@ -2351,7 +2359,9 @@
         "usccss.g7.u01.l03.multiplicative_vs_additive",
         "usccss.g7.u01.l04.hidden_corresponding_distance",
         "usccss.g7.u01.l04.angle_and_distance_scaling",
-        "usccss.g7.u01.l05.factor_size_and_reciprocal"
+        "usccss.g7.u01.l05.factor_size_and_reciprocal",
+        "uae.g10.general.u11.l02.similar_polygon_side",
+        "uae.g10.general.u11.l02.similar_polygon_perimeter"
       ]
     },
     {
@@ -2405,7 +2415,9 @@
         "usccss.g7.u01.l08.map_route_rate_time",
         "usccss.g7.u01.l09.create_drawing_scale_lengths",
         "usccss.g7.u01.l10.change_scale_length_and_area",
-        "usccss.g7.u01.l11.unitless_scale_and_conversions"
+        "usccss.g7.u01.l11.unitless_scale_and_conversions",
+        "uae.g10.general.u11.l07.map_actual_distance_km",
+        "uae.g10.general.u11.l07.model_scale_length_cm"
       ]
     },
     {
@@ -2724,7 +2736,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "uae.g3.u13.l04.triangle_types"
+        "uae.g3.u13.l04.triangle_types",
+        "uae.g10.general.u09.l01.classify_triangle_sides",
+        "uae.g10.general.u09.l01.classify_triangle_angles"
       ]
     },
     {
@@ -7242,7 +7256,9 @@
         "ratio.unit_rate.equivalent_ratio",
         "ratio.unit_rate.direct",
         "ratio.unit_rate.divide_total",
-        "uae.g9.general.u02.l06.two_sided_proportion"
+        "uae.g9.general.u02.l06.two_sided_proportion",
+        "uae.g10.general.u11.l01.proportion_missing_term",
+        "uae.g10.general.u11.l01.partition_by_ratio"
       ]
     },
     {
@@ -7809,7 +7825,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+        "uae.g10.general.u07.l01.line_pair_type",
+        "uae.g10.general.u07.l01.plane_pair_type"
       ]
     },
     {
@@ -7869,7 +7887,9 @@
       ],
       "v2QuestionFamilies": [
         "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
-        "geometry.coordinate.gradient_between_points"
+        "geometry.coordinate.gradient_between_points",
+        "uae.g10.general.u07.l06.perpendicular_point_line_distance",
+        "uae.g10.general.u07.l06.perpendicular_slope"
       ]
     },
     {
@@ -7898,7 +7918,9 @@
       ],
       "v2QuestionFamilies": [
         "uae.g4.u16.l06.triangle_missing_angle",
-        "geometry.angles.supplementary"
+        "geometry.angles.supplementary",
+        "uae.g10.general.u09.l02.third_triangle_angle",
+        "uae.g10.general.u09.l02.exterior_triangle_angle"
       ]
     },
     {
@@ -7926,7 +7948,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "geometry.congruence.identify_criterion"
+        "geometry.congruence.identify_criterion",
+        "uae.g10.general.u09.l04.sss_match_condition",
+        "uae.g10.general.u09.l04.sas_included_angle"
       ]
     },
     {
@@ -7940,7 +7964,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "geometry.congruence.identify_criterion"
+        "geometry.congruence.identify_criterion",
+        "uae.g10.general.u09.l05.asa_included_side",
+        "uae.g10.general.u09.l05.aas_remaining_angle"
       ]
     },
     {
@@ -7955,7 +7981,9 @@
       ],
       "v2QuestionFamilies": [
         "uae.g4.u16.l06.triangle_missing_angle",
-        "uae.g3.u13.l04.triangle_types"
+        "uae.g3.u13.l04.triangle_types",
+        "uae.g10.general.u09.l06.isosceles_base_angle",
+        "uae.g10.general.u09.l06.equilateral_perimeter"
       ]
     },
     {
@@ -8077,168 +8105,298 @@
       "domain": "geometry",
       "canonicalName": "الانعكاس",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l01.reflection_vertical_x",
+        "uae.g10.general.u08.l01.reflection_horizontal_y",
+        "uae.g10.general.u08.l01.reflection_diagonal_y"
+      ]
     },
     {
       "id": "geometry.transformations.translation",
       "domain": "geometry",
       "canonicalName": "الإزاحة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l02.translation_x",
+        "uae.g10.general.u08.l02.translation_y"
+      ]
     },
     {
       "id": "geometry.transformations.rotation",
       "domain": "geometry",
       "canonicalName": "الدوران",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l03.rotation_90_x",
+        "uae.g10.general.u08.l03.rotation_180_y",
+        "uae.g10.general.u08.l03.rotation_270_y"
+      ]
     },
     {
       "id": "geometry.transformations.composition",
       "domain": "geometry",
       "canonicalName": "تركيب التحويلات",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l04.reflect_then_translate_x",
+        "uae.g10.general.u08.l04.translate_then_reflect_x"
+      ]
     },
     {
       "id": "geometry.transformations.symmetry",
       "domain": "geometry",
       "canonicalName": "التناظر",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l05.regular_polygon_symmetry_axes",
+        "uae.g10.general.u08.l05.least_rotation_angle"
+      ]
     },
     {
       "id": "geometry.transformations.dilation",
       "domain": "geometry",
       "canonicalName": "عمليات تغيير الأبعاد (التمدد)",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l06.dilation_origin_x",
+        "uae.g10.general.u08.l06.dilation_side_length",
+        "uae.g10.general.u11.l06.similarity_dilation_translation_x",
+        "uae.g10.general.u11.l06.similarity_transformed_length"
+      ]
     },
     {
       "id": "geometry.triangles.congruence_concept",
       "domain": "geometry",
       "canonicalName": "المثلثات المتطابقة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l03.corresponding_side_length",
+        "uae.g10.general.u09.l03.corresponding_side_equation"
+      ]
     },
     {
       "id": "geometry.transformations.congruence",
       "domain": "geometry",
       "canonicalName": "تحويلات التطابق",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l07.rigid_image_side_length",
+        "uae.g10.general.u09.l07.rigid_image_angle"
+      ]
     },
     {
       "id": "geometry.coordinate.triangle_proofs",
       "domain": "geometry",
       "canonicalName": "المثلثات والبرهان الإحداثي",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l08.coordinate_side_square",
+        "uae.g10.general.u09.l08.coordinate_midpoint_x"
+      ]
     },
     {
       "id": "geometry.area.triangle_parallelogram",
       "domain": "geometry",
       "canonicalName": "مساحة متوازي الأضلاع والمثلث",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l09.parallelogram_area",
+        "uae.g10.general.u09.l09.triangle_area"
+      ]
     },
     {
       "id": "geometry.triangles.bisectors_centers",
       "domain": "geometry",
       "canonicalName": "منصفات المثلثات",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l01.perpendicular_bisector_distance",
+        "uae.g10.general.u10.l01.angle_bisector_equidistance"
+      ]
     },
     {
       "id": "geometry.triangles.centroid_orthocenter",
       "domain": "geometry",
       "canonicalName": "متوسطات المثلثات وارتفاعاتها",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l02.centroid_vertex_segment",
+        "uae.g10.general.u10.l02.centroid_midpoint_segment"
+      ]
     },
     {
       "id": "geometry.triangles.side_angle_order",
       "domain": "geometry",
       "canonicalName": "المتباينات في مثلث واحد",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l03.largest_opposite_angle",
+        "uae.g10.general.u10.l03.exterior_angle_bound"
+      ]
     },
     {
       "id": "geometry.proofs.indirect_contradiction",
       "domain": "geometry",
       "canonicalName": "البرهان غير المباشر",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l04.negated_inequality_membership",
+        "uae.g10.general.u10.l04.contradiction_upper_bound"
+      ]
     },
     {
       "id": "geometry.triangles.triangle_inequality_exact",
       "domain": "geometry",
       "canonicalName": "متباينة المثلث",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l05.triangle_third_side_min_integer",
+        "uae.g10.general.u10.l05.triangle_third_side_max_integer"
+      ]
     },
     {
       "id": "geometry.triangles.hinge_theorem_converse",
       "domain": "geometry",
       "canonicalName": "المتباينات في مثلثين",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l06.hinge_opposite_side_relation",
+        "uae.g10.general.u10.l06.hinge_converse_angle_relation"
+      ]
     },
     {
       "id": "geometry.quadrilaterals.parallelogram_properties",
       "domain": "geometry",
       "canonicalName": "متوازي الأضلاع",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l02.parallelogram_adjacent_angle",
+        "uae.g10.general.u12.l02.parallelogram_diagonal_half"
+      ]
     },
     {
       "id": "geometry.quadrilaterals.parallelogram_tests",
       "domain": "geometry",
       "canonicalName": "اختبارات متوازي الأضلاع",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l03.parallelogram_sufficient_condition",
+        "uae.g10.general.u12.l03.parallelogram_diagonals_test"
+      ]
     },
     {
       "id": "geometry.quadrilaterals.rectangle_properties",
       "domain": "geometry",
       "canonicalName": "المستطيل",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l04.rectangle_equal_diagonals",
+        "uae.g10.general.u12.l04.rectangle_diagonal_length"
+      ]
     },
     {
       "id": "geometry.quadrilaterals.rhombus_square",
       "domain": "geometry",
       "canonicalName": "المعين والمربع",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l05.rhombus_side_from_diagonals",
+        "uae.g10.general.u12.l05.square_perimeter"
+      ]
     },
     {
       "id": "geometry.quadrilaterals.trapezoid_kite",
       "domain": "geometry",
       "canonicalName": "شبه المنحرف وشكل الطائرة الورقية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l06.trapezoid_midsegment",
+        "uae.g10.general.u12.l06.kite_perimeter"
+      ]
     },
     {
       "id": "geometry.circle.g10.circumference",
@@ -8864,32 +9022,57 @@
       "domain": "probability",
       "canonicalName": "تمثيل فضاءات العينة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l01.sample_space_product_count",
+        "uae.g10.general.u16.l01.sample_space_three_stages"
+      ]
     },
     {
       "id": "probability.permutations_combinations",
       "domain": "probability",
       "canonicalName": "استخدام التباديل والتوافيق في الاحتمالات",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l02.permutations_two_positions",
+        "uae.g10.general.u16.l02.combinations_two_members",
+        "uae.g10.general.u16.l02.combination_probability"
+      ]
     },
     {
       "id": "probability.geometric_measure",
       "domain": "probability",
       "canonicalName": "الاحتمالات الهندسية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l03.geometric_segment_probability",
+        "uae.g10.general.u16.l03.geometric_rectangle_probability"
+      ]
     },
     {
       "id": "probability.simulation_frequencies",
       "domain": "probability",
       "canonicalName": "المحاكاة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l04.simulation_relative_frequency",
+        "uae.g10.general.u16.l04.simulation_expected_count"
+      ]
     },
     {
       "id": "probability.odds.favorable_against",
@@ -8926,48 +9109,85 @@
       "domain": "probability",
       "canonicalName": "احتمالات الأحداث المستقلة وغير المستقلة",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l06.independent_two_events",
+        "uae.g10.general.u16.l06.dependent_without_replacement"
+      ]
     },
     {
       "id": "probability.events.mutually_exclusive",
       "domain": "probability",
       "canonicalName": "احتمالات الأحداث المتنافية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l07.mutually_exclusive_union",
+        "uae.g10.general.u16.l07.overlapping_union"
+      ]
     },
     {
       "id": "sequences.discrete_function_model",
       "domain": "sequences",
       "canonicalName": "المتتاليات كدوال",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l01.sequence_function_term",
+        "uae.g10.general.u17.l01.sequence_common_difference"
+      ]
     },
     {
       "id": "sequences.arithmetic.series",
       "domain": "sequences",
       "canonicalName": "المتتاليات والمتسلسلات الحسابية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l02.arithmetic_nth_term",
+        "uae.g10.general.u17.l02.arithmetic_finite_sum"
+      ]
     },
     {
       "id": "sequences.geometric.finite_series",
       "domain": "sequences",
       "canonicalName": "المتتاليات والمتسلسلات الهندسية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l03.geometric_nth_term",
+        "uae.g10.general.u17.l03.geometric_finite_sum"
+      ]
     },
     {
       "id": "sequences.geometric.infinite_convergence",
       "domain": "sequences",
       "canonicalName": "المتسلسلات الهندسية اللانهائية",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l04.geometric_infinite_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_alternating_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_convergence"
+      ]
     },
     {
       "id": "sequences.geometric.exponential_model",
@@ -11136,16 +11356,28 @@
       "domain": "geometry",
       "canonicalName": "Geometry / Triangles / Parallel Proportional Segments",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u11.l04.parallel_segment_proportion",
+        "uae.g10.general.u11.l04.triangle_midsegment_length"
+      ]
     },
     {
       "id": "geometry.triangles.similar_medians_altitudes_bisectors",
       "domain": "geometry",
       "canonicalName": "Geometry / Triangles / Similar Medians Altitudes Bisectors",
       "v2Status": "StageCAuthoredPendingD",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u11.l05.similar_triangle_altitude",
+        "uae.g10.general.u11.l05.similar_triangle_median"
+      ]
     },
     {
       "id": "supporting.powers10",
