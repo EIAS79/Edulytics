@@ -40,6 +40,52 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
     public MathematicsPedagogicalLessonSeeder(EdulyticsDbContext db) => _db = db;
 
+    // The historical G6/G7 production inventories include 48 General + 52
+    // Advanced G10 lessons. The clean candidate fixture instead includes the
+    // exact 148 General lessons (+48). Never relax the real production guard.
+    private async Task<int> GetG10CandidateFixtureDeltaAsync(
+        IReadOnlyCollection<CurriculumPedagogicalLesson> expectedLessons,
+        string programme, CancellationToken ct)
+    {
+        if (Environment.GetEnvironmentVariable("GITHUB_ACTIONS") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") != programme ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") != "edulytics_clean_ci" ||
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Staging")
+            return 0;
+
+        var connection = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        if (!_db.Database.IsNpgsql() ||
+            connection.Host != "127.0.0.1" ||
+            connection.Database != "edulytics_clean_ci")
+            throw new InvalidOperationException("G10 fixture delta requires disposable local PostgreSQL.");
+
+        const string prefix = "PED:UAE-MOE-MATH:L10:";
+        const string general = prefix + "GENERAL:";
+        var expected = expectedLessons.Where(x =>
+            x.Code.StartsWith(prefix, StringComparison.Ordinal))
+            .ToDictionary(x => x.Code, StringComparer.Ordinal);
+        var actual = await _db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        if (expected.Count != 148 || actual.Length != 148 ||
+            expected.Keys.Any(x => !x.StartsWith(general, StringComparison.Ordinal)) ||
+            actual.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 148 ||
+            actual.Any(x => !expected.TryGetValue(x.Code, out var target) ||
+                x.Id != target.Id || x.FrameworkVersionId != target.FrameworkVersionId ||
+                x.Pathway != "General" || x.LogicalLevelFrom != 10 || x.LogicalLevelTo != 10))
+            throw new InvalidOperationException("G10 fixture delta refused: exact 148 General identities required.");
+
+        var ids = actual.Select(x => x.Id).ToArray();
+        var contentIds = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x => ids.Contains(x.PedagogicalLessonId))
+            .Select(x => x.PedagogicalLessonId).ToArrayAsync(ct);
+        if (contentIds.Length != 148 || !contentIds.ToHashSet().SetEquals(ids))
+            throw new InvalidOperationException("G10 fixture delta refused: exact metadata coverage required.");
+
+        return 148 - (48 + 52);
+    }
+
     public async Task SeedAsync(CancellationToken ct = default)
     {
         MathematicsCurriculumPackRegistry.Validate();
@@ -257,9 +303,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // The retired Grade8 Advanced cohort is exactly 77 records.
         // Both the historical full inventory and the retired clean inventory
         // have exact pinned totals; reject partial/ad-hoc deletions.
+        var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G6", ct);
         var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
             historicUnrelatedBaseline >= 0
-            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
             : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
@@ -388,9 +435,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
         var historicG7Unrelated = g8GeneralCount == 77 ? 5156 :
             g8GeneralCount == 76 ? 5155 : -1;
+        var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G7", ct);
         var g7UnrelatedBaseline =
             (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
-                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220
+                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
                 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
