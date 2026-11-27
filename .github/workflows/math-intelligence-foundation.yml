@@ -247,6 +247,8 @@ jobs:
       - name: Run lesson objective/content alignment certification
         env:
           EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION: "1"
+          # Test the explicit G10 production-eligible route only in this isolated test process.
+          EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release \
