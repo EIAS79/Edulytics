@@ -275,7 +275,8 @@ public sealed class StudentPrivatePracticeServiceTests
             ids.Adoption);
 
         var option = Assert.Single(workspace.Lessons);
-        Assert.Empty(option.SupportedDifficulties);
+        Assert.NotNull(option.SupportedDifficulties);
+        Assert.Empty(option.SupportedDifficulties!);
 
         var result = await service.GenerateAsync(
             ids.User,
