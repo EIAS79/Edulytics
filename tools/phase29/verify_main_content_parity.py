@@ -23,8 +23,83 @@ def identities(doc):
     return [(str(doc.get("PackCode") or doc.get("packCode") or ""), str(x.get("LessonCode") or x.get("lessonCode") or ""), x)
             for x in (doc.get("Lessons") or doc.get("lessons") or [])]
 
+# Exact owner-approved G10 General replacement, not a textbook-parity or release certificate.
+G10_PACK = "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json"
+G10_BLUEPRINT = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json"
+G10_BASELINE = "83c31a13ffc173c7be9d1d85b24f4fa83c222aee"
+G10_LOCKED = {
+    G10_PACK: ("73de5cfb25f5a4789079ffa643e613221b83a165", "a6adf2e79f722e7817a933b5b540e3a93d3f7029"),
+    G10_BLUEPRINT: ("71664b045efa59fc50178626a951b7958a51d7bd", "90916a5144a099d56efaefe0634ac785615dbd16"),
+}
+
+def validate_g10_owner_replacement():
+    def git(*args):
+        return subprocess.check_output(["git", *args], cwd=ROOT, text=True, encoding="utf-8").strip()
+
+    actual = {p: git("hash-object", p) for p in G10_LOCKED}
+    main = {p: git("rev-parse", "origin/main:" + p) for p in G10_LOCKED}
+    if actual == main:
+        return False, set(), set()
+    for p, (old, approved) in G10_LOCKED.items():
+        if (git("rev-parse", G10_BASELINE + ":" + p) != old or
+                main[p] not in (old, approved) or actual[p] != approved or
+                git("rev-parse", "HEAD:" + p) != approved):
+            raise ValueError("G10 unapproved exact-blob replacement: " + p)
+    evidence = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G10"
+    ledger = json.loads((evidence / "grade10-stage-d-execution-ledger.json").read_text(encoding="utf-8-sig"))
+    approval = ledger.get("ownerAcademicApproval", {})
+    decision = approval.get("grade10ReplacementDecision", {})
+    if not (approval.get("status") == "APPROVED" and
+            decision.get("status") == "APPROVED" and
+            decision.get("scope") == {"curriculum": "UAE-MOE-MATH", "grade": 10,
+                                     "subject": "mathematics", "finalPathway": "General",
+                                     "approvedLessons": 148, "approvedUnits": 18} and
+            approval.get("technicalGateWaiver") is False and
+            approval.get("thirdPartyRightsWaiver") is False):
+        raise ValueError("G10 owner authorization absent or outside approved scope")
+    pack = json.loads((ROOT / G10_PACK).read_text(encoding="utf-8-sig"))
+    bp = json.loads((ROOT / G10_BLUEPRINT).read_text(encoding="utf-8-sig"))
+    index = json.loads((evidence / "source-index.json").read_text(encoding="utf-8-sig"))
+    rows = {x["LessonCode"]: x for x in pack["Lessons"]}
+    ordered = sorted(bp["Lessons"], key=lambda x: x["SortOrder"])
+    codes = [x["LessonCode"] for x in ordered]
+    if not (pack.get("PackCode") == bp.get("PackCode") == "UAE-MOE-MATH" and
+            pack.get("AcademicLanguage") == "ar" and bp.get("LogicalLevel") == 10 and
+            bp.get("Pathway") == "General" and len(bp["Units"]) == 18 and
+            len(pack["Lessons"]) == len(rows) == len(codes) == len(set(codes)) == 148 and
+            set(rows) == set(codes) and index.get("ownerApprovedIndex") is True and
+            len(index["lessons"]) == 148 and
+            [x["SortOrder"] for x in ordered] == list(range(1, 149)) and
+            all(x.startswith("PED:UAE-MOE-MATH:L10:GENERAL:") for x in codes)):
+        raise ValueError("G10 owner-approved scope, identity or language drift")
+    for x, target in zip(ordered, index["lessons"]):
+        arabic = [t for t in rows[x["LessonCode"]]["Translations"] if t.get("CultureCode") == "ar"]
+        if not (target["ordinal"] == x["SortOrder"] and target["title"] == x["Title"] and
+                target["canonicalCode"] == f"G10-U{x['UnitNumber']:02d}-L{x['LessonNumber']:02d}" and
+                len(arabic) == 1 and arabic[0].get("Title") == x["Title"] and
+                arabic[0].get("Explanation")):
+            raise ValueError("G10 canonical Arabic lesson mismatch: " + x["LessonCode"])
+    original = load_main(G10_PACK)
+    old_rows = {x["LessonCode"]: x for x in original["Lessons"]}
+    if len(old_rows) not in (48, 148) or not set(old_rows).issubset(rows):
+        raise ValueError("G10 original General identity inventory changed unexpectedly")
+    body_changes = {("UAE-MOE-MATH", code) for code, old in old_rows.items()
+                    if old.get("Translations") != rows[code].get("Translations")}
+    metadata_changes = {("UAE-MOE-MATH", code) for code, old in old_rows.items()
+                        if old != rows[code]}
+    if main[G10_PACK] == G10_LOCKED[G10_PACK][0] and len(body_changes) != 48:
+        raise ValueError("G10 approved 48 original teaching-body transitions missing")
+    print("G10_OWNER_EXACT_BLOB_REPLACEMENT", "lessons=148", "units=18",
+          f"changedBodies={len(body_changes)}", "sourceParity=UNKNOWN", "releaseApprovalByThisCheck=False")
+    return True, body_changes, metadata_changes
+
 def run():
     baseline, candidate, errors = {}, {}, []
+    g10_authorized, g10_body_changes, g10_metadata_changes = False, set(), set()
+    try:
+        g10_authorized, g10_body_changes, g10_metadata_changes = validate_g10_owner_replacement()
+    except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"G10 exact owner replacement invalid: {exc}")
     # One strictly pinned owner-asserted FIRST-PARTY Grade 4 authoring revision.
     # This is not publisher-source parity, academic signoff or release approval.
     # The standalone validator compares both Git blobs, every lesson identity,
@@ -317,6 +392,7 @@ def run():
             uae_g5_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g5-general-t1-ogl-v1.lesson-blueprint.json"
             if not (
                 uae_g4_exact or
+                (g10_authorized and path == G10_BLUEPRINT) or
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
                 (path == g1_blueprint and len(g1_owner_content) == 102) or
                 (path == g2_blueprint and len(g2_owner_content) == 99) or
@@ -550,11 +626,11 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | uae_g5_owner_content | (g4_changed if g4_replacement_authorized else set()) | (g8_retirement["changedKeys"] if g8_retirement else set())
+    expected_changes = g10_body_changes | changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | uae_g5_owner_content | (g4_changed if g4_replacement_authorized else set()) | (g8_retirement["changedKeys"] if g8_retirement else set())
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
-                           if key not in approved and key not in g4_owner_authored
+                           if key not in g10_metadata_changes and key not in approved and key not in g4_owner_authored
                            and (not g4_replacement_authorized or key not in g4_changed)
                            and key not in g5_owner_content and key not in g6_first_party
                            and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and key not in uae_g5_owner_content and (not g8_retirement or key not in g8_retirement["changedKeys"]) and baseline[key] != candidate[key]]
