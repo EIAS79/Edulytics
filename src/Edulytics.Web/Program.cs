@@ -433,6 +433,21 @@ if (g9ScopedRelease && (runStartupDataMaintenance || !readCanonicalJson))
     throw new InvalidOperationException(
         "Grade9 scoped import requires JSON delivery and disabled global maintenance.");
 
+// Grade10 has its own one-time scoped atomic catalogue + adoption cutover.
+// Never combine with global maintenance, bootstrap or another scoped release.
+var g10RequestedToken = Environment.GetEnvironmentVariable("EDULYTICS_G10_SCOPED_RELEASE");
+var g10ScopedRelease = string.Equals(g10RequestedToken,
+    Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder.Grade10ScopedReleaseToken,
+    StringComparison.Ordinal);
+if (!string.IsNullOrEmpty(g10RequestedToken) && !g10ScopedRelease)
+    throw new InvalidOperationException("Invalid Grade10 scoped production release token.");
+if (g10ScopedRelease && (g6ScopedRelease || g7ScopedRelease || g8ScopedRelease ||
+    g9ScopedRelease || runStartupDataMaintenance || cleanBootstrap || !readCanonicalJson ||
+    app.Configuration.GetValue<bool>("Edulytics:Deployment:SeedCurriculum") ||
+    app.Configuration.GetValue<bool>("Edulytics:MeetingDemo:ResetAndSeed") ||
+    app.Configuration.GetValue<bool>("Edulytics:PresentationDemo:Provision")))
+    throw new InvalidOperationException("Grade10 scoped release requires isolated JSON delivery without other seed/provisioning modes.");
+
 // // Owner-approved Grade 4 replacement cannot be a silent no-op when production
 // maintenance is disabled. The exact migration token is checked again inside
 // the pedagogical seeder, before any existing lesson/content can be removed.
@@ -503,6 +518,12 @@ using (var scope =
         var g9Seeder = scope.ServiceProvider.GetRequiredService<
             Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
         await g9Seeder.SeedOnlyApprovedUaeGrade9Async();
+    }
+    else if (g10ScopedRelease)
+    {
+        var g10Seeder = scope.ServiceProvider.GetRequiredService<
+            Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+        await g10Seeder.SeedOnlyApprovedUaeGrade10Async();
     }
     else if (runStartupDataMaintenance)
     {

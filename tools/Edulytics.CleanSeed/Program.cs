@@ -73,6 +73,18 @@ if (migrations.Any())
         "Apply all reviewed EF Core migrations before running clean seed.");
 }
 
+// Dedicated tenant cutover rehearsal is allowed only on the exact local CI
+// database; the seeder repeats all environment checks. This is not a remote
+// migration or an exception to the ordinary clean-seed preflight.
+if (args.Length == 1 && args[0] is ("--uae-g10-rehearse-tenant-cutover" or "--uae-g10-rehearse-tenant-rollback"))
+{
+    if (!isLocalCi)
+        throw new InvalidOperationException("G10 full cutover rehearsal refuses remote databases.");
+    await new MathematicsPedagogicalLessonSeeder(db)
+        .RehearseUaeGrade10FullCutoverAsync(args[0].EndsWith("-rollback", StringComparison.Ordinal));
+    return;
+}
+
 // Database-wide fail-closed preflight: a fresh target may contain only
 // migration history or platform role definitions. Repeated seed executions may
 // contain the exact set of shared curriculum-reference tables shown below.

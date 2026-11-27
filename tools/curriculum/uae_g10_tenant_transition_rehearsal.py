@@ -8,7 +8,10 @@ import re
 import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-MIGRATION = ROOT / "tools/curriculum/uae_g10_tenant_transition.sql"
+MIGRATION = ROOT / "src/Edulytics.Data/Seeding/Grade10/tenant-transition.sql"
+LEGACY = ROOT / "src/Edulytics.Data/Seeding/Grade10/legacy-scope.json"
+CATALOGUE_SCOPE = '"Code" LIKE \'PED:UAE-MOE-MATH:L10:%\''
+CATALOGUE_IDS = 'SELECT "Id" FROM "CurriculumPedagogicalLessons" WHERE ' + CATALOGUE_SCOPE
 OUT = pathlib.Path("/tmp/grade10-tenant-transition.json")
 PSQL = ["psql", "-X", "-h", "127.0.0.1", "-U", "postgres",
         "-d", "edulytics_clean_ci", "-Atq", "-v", "ON_ERROR_STOP=1"]
@@ -79,7 +82,13 @@ def stable_snapshot(before):
         "CurriculumPedagogicalLessons", "CurriculumLessonContents",
         "CurriculumPedagogicalLessonOutcomes", *modified,
     ]
-    return {t: digest(t, '"Id" NOT IN (' + ids_sql(modified[t]) + ')' if t in modified else "true")
+    catalogue_exclusions = {
+        "CurriculumPedagogicalLessons": "NOT (" + CATALOGUE_SCOPE + ")",
+        "CurriculumLessonContents": '"LessonNodeId" NOT IN (' + CATALOGUE_IDS + ')',
+        "CurriculumPedagogicalLessonOutcomes": '"PedagogicalLessonId" NOT IN (' + CATALOGUE_IDS + ')',
+    }
+    return {t: digest(t, '"Id" NOT IN (' + ids_sql(modified[t]) + ')' if t in modified
+                      else catalogue_exclusions.get(t, "true"))
             for t in tables}
 
 
@@ -90,33 +99,51 @@ def all_snapshot(before):
         "classes": digest("ClassGroups"),
         "topics": digest("CurriculumTopics"),
         "outcomes": digest("LearningOutcomes"),
+        "catalogue": digest("CurriculumPedagogicalLessons"),
+        "metadata": digest("CurriculumLessonContents"),
+        "mappings": digest("CurriculumPedagogicalLessonOutcomes"),
     }
 
 
 def apply(*, bad_placeholder=False, fail_after=False):
-    args = PSQL + ["-1", "-c", "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE",
-                   "-c", "SET LOCAL edulytics.g10_transition_scope='UAE-MOE-MATH:L10:ADVANCED_TO_GENERAL:2'"]
-    if bad_placeholder:
-        args += ["-c", 'UPDATE "CurriculumTopics" SET "Name"=\'G10_REHEARSAL_NEGATIVE_CONTROL\' WHERE "Id"=(SELECT t."Id" FROM "CurriculumTopics" t JOIN "SchoolCurriculumAdoptions" a ON a."Id"=t."CurriculumAdoptionId" AND a."SchoolId"=t."SchoolId" WHERE a."CurriculumLevelKey"=\'' + ADV + '\' ORDER BY t."Id" LIMIT 1)']
-    args += ["-f", str(MIGRATION)]
-    if fail_after:
-        args += ["-c", "DO $$ BEGIN RAISE EXCEPTION 'G10_ROLLBACK_NEGATIVE_CONTROL'; END $$;"]
-    result = subprocess.run(args, text=True, capture_output=True)
+    mode = "--uae-g10-rehearse-tenant-rollback" if fail_after else "--uae-g10-rehearse-tenant-cutover"
+    args = ["dotnet", "run", "--project", "tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj",
+            "-c", "Release", "--no-build", "--", mode]
+    result = subprocess.run(args, cwd=ROOT, text=True, capture_output=True)
     if bad_placeholder or fail_after:
         assert result.returncode != 0, "Negative control did not fail closed"
-        expected = "not the exact unused historical placeholders" if bad_placeholder else "G10_ROLLBACK_NEGATIVE_CONTROL"
+        expected = "not the exact unused historical placeholders" if bad_placeholder else "G10_FULL_CUTOVER_ROLLBACK_NEGATIVE_CONTROL"
         assert expected in result.stderr, result.stderr[-1500:]
     else:
         assert result.returncode == 0, result.stderr[-1500:]
+        assert "UAE_G10_ATOMIC_TENANT_CATALOGUE_CUTOVER_PASS" in result.stdout
 
+
+def check_catalogue():
+    target = rows('SELECT "Code" AS code,"Title" AS title,"Pathway" AS pathway FROM "CurriculumPedagogicalLessons" WHERE ' + CATALOGUE_SCOPE + ' ORDER BY "Code"')
+    meta = rows('SELECT p."Code" AS code,c."Status" AS status FROM "CurriculumLessonContents" c JOIN "CurriculumPedagogicalLessons" p ON p."Id"=c."LessonNodeId" WHERE p."Id" IN (' + CATALOGUE_IDS + ') ORDER BY p."Code"')
+    return target, meta
 
 def run():
     guard()
     before = scope()
     stable_before = stable_snapshot(before)
     initial = all_snapshot(before)
+    assert MIGRATION.read_bytes() == (ROOT / "tools/curriculum/uae_g10_tenant_transition.sql").read_bytes()
+    assert LEGACY.read_bytes() == (ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json").read_bytes()
+    target, meta = check_catalogue()
+    expected_old = {r["code"]: r["title"] for r in json.loads(LEGACY.read_text())["legacyLessons"]}
+    assert len(target) == len(meta) == 100 and {r["code"]: r["title"] for r in target} == expected_old
+    # Deliberately invalidate a synthetic placeholder BEFORE invoking the
+    # shared cutover; it must roll back even after the catalogue swap started.
+    topic_id = before["topics"][0]["Id"]
+    topic_name = before["topics"][0]["Name"]
+    scalar('UPDATE "CurriculumTopics" SET "Name"=\'G10_REHEARSAL_NEGATIVE_CONTROL\' WHERE "Id"=' + ids_sql([topic_id]))
+    invalid = all_snapshot(before)
     apply(bad_placeholder=True)
-    assert all_snapshot(before) == initial, "Bad placeholder attempt changed the DB"
+    assert all_snapshot(before) == invalid, "Bad placeholder changed catalogue or tenant rows"
+    scalar('UPDATE "CurriculumTopics" SET "Name"=\'' + topic_name.replace("'", "''") + '\' WHERE "Id"=' + ids_sql([topic_id]))
+    assert all_snapshot(before) == initial, "Negative fixture did not restore exactly"
     apply(fail_after=True)
     assert all_snapshot(before) == initial, "Rollback after DML did not restore the DB"
     apply()
@@ -130,6 +157,12 @@ def run():
     enrollments = int(scalar('SELECT count(*) FROM "StudentEnrollments" WHERE "ClassGroupId" IN (' + ids_sql(class_ids) + ')'))
     teachers = int(scalar('SELECT count(*) FROM "TeacherAssignments" WHERE "ClassGroupId" IN (' + ids_sql(class_ids) + ')'))
     assert enrollments == 50 and teachers == 2
+    target, meta = check_catalogue()
+    blueprint = json.loads((ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-t1-ogl-v1.lesson-blueprint.json").read_text(encoding="utf-8-sig"))
+    expected = {r["LessonCode"]: r["Title"] for r in blueprint["Lessons"]}
+    assert len(target) == len(meta) == len(expected) == 148
+    assert {r["code"]: r["title"] for r in target} == expected and all(r["pathway"] == "General" for r in target)
+    assert {r["code"] for r in meta} == set(expected) and all(r["status"] == 3 for r in meta)
     stable_after = stable_snapshot(before)
     assert stable_before == stable_after, "Unexpected unrelated or preserved rows changed"
     after = all_snapshot(before)
@@ -147,6 +180,8 @@ def run():
         "historicalOfficialNodesPreserved": stable_before["CurriculumPackContentNodes"] == stable_after["CurriculumPackContentNodes"],
         "unrelatedRowsPreserved": stable_before == stable_after,
         "rollbackNegativeControlPassed": True, "idempotentReplayPassed": True,
+        "atomicCatalogueAndTenantCutover": True, "legacyLessonsBefore": 100,
+        "generalLessonsAfter": len(target), "publishedMetadataAfter": len(meta),
         "before": before, "afterClasses": moved, "preservedTableDigests": stable_after,
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

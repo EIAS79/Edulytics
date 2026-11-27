@@ -252,7 +252,11 @@ def final():
             tenant.get("historicalOfficialNodesPreserved") is True and
             tenant.get("unrelatedRowsPreserved") is True and
             tenant.get("rollbackNegativeControlPassed") is True and
-            tenant.get("idempotentReplayPassed") is True,
+            tenant.get("idempotentReplayPassed") is True and
+            tenant.get("atomicCatalogueAndTenantCutover") is True and
+            tenant.get("legacyLessonsBefore") == 100 and
+            tenant.get("generalLessonsAfter") == N and
+            tenant.get("publishedMetadataAfter") == N,
             "TENANT_MIGRATION_NOT_VERIFIED")
     trx = list((artifacts / "compiled").rglob("g10-contracts.trx"))
     require(len(trx) == 1, "MISSING_COMPILED_TEST_PROOF")

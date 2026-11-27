@@ -12,6 +12,9 @@ on:
       - 'tools/curriculum/uae_g10_stage_d_*.py'
       - 'tools/Edulytics.CleanSeed/Program.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsPedagogicalLessonSeeder.cs'
+      - 'src/Edulytics.Data/Seeding/Grade10/**'
+      - 'src/Edulytics.Data/Edulytics.Data.csproj'
+      - 'src/Edulytics.Web/Program.cs'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tests/academic-uae-grade10*.test.cjs'
       - 'tests/Edulytics.Tests/**/UaeG10*.cs'
@@ -470,6 +473,9 @@ jobs:
         env:
           EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G10
         run: |
+          set -euo pipefail
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
           python3 -m py_compile tools/curriculum/uae_g10_tenant_transition_rehearsal.py
           python3 tools/curriculum/uae_g10_tenant_transition_rehearsal.py
       - if: always()

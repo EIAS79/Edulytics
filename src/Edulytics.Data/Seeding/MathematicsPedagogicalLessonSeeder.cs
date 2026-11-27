@@ -817,33 +817,83 @@ public sealed class MathematicsPedagogicalLessonSeeder
             $"otherCurriculaUntouched=true advanced={advancedCount} publishedArabicMetadata=76");
     }
 
-    /// <summary>
-    /// Stage D isolated rehearsal only, against the exact pre-G10 clean
-    /// catalogue. Never called by production startup. Delete every legacy
-    /// General and Advanced lesson and its metadata, assert zero remaining,
-    /// then insert the complete approved catalogue in the same transaction.
-    /// Deterministic IDs may recur, but no legacy lesson row is retained.
-    /// The tenant/adoption migration must be rehearsed separately.
-    /// </summary>
+    public const string Grade10ScopedReleaseToken =
+        "CONFIRM_REPLACE_UAE_GRADE10_LEGACY_100_WITH_GENERAL_AR148";
+
+    private bool IsGrade10DisposableCi()
+    {
+        if (!_db.Database.IsNpgsql()) return false;
+        var target = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        return target.Host == "127.0.0.1" && target.Port == 5432 &&
+            target.Database == "edulytics_clean_ci" &&
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") == "true" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") == "true" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") == "UAE-G10" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") == "edulytics_clean_ci" &&
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Staging";
+    }
+
+    private static System.IO.Stream OpenGrade10ReleaseResource(string name) =>
+        typeof(MathematicsPedagogicalLessonSeeder).Assembly.GetManifestResourceStream(
+            "Edulytics.Data.Grade10." + name) ??
+        throw new InvalidOperationException("Missing embedded G10 release resource: " + name);
+
+    private static IReadOnlyDictionary<string, string> ReadGrade10Predecessor()
+    {
+        using var stream = OpenGrade10ReleaseResource("LegacyScope");
+        using var document = System.Text.Json.JsonDocument.Parse(stream);
+        if (document.RootElement.GetProperty("baselineSha").GetString() !=
+            "83c31a13ffc173c7be9d1d85b24f4fa83c222aee")
+            throw new InvalidOperationException("G10 predecessor baseline SHA drift.");
+        return document.RootElement.GetProperty("legacyLessons").EnumerateArray()
+            .ToDictionary(x => x.GetProperty("code").GetString()!,
+                          x => x.GetProperty("title").GetString()!, StringComparer.Ordinal);
+    }
+
+    // Production is opt-in only, host/database pinned, with an independently
+    // verified backup reference. No ordinary seed path calls this method.
+    public async Task SeedOnlyApprovedUaeGrade10Async(CancellationToken ct = default)
+    {
+        if (!_db.Database.IsNpgsql() ||
+            Environment.GetEnvironmentVariable("EDULYTICS_G10_SCOPED_RELEASE") != Grade10ScopedReleaseToken ||
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Production" ||
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") == "true" ||
+            string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("EDULYTICS_G10_BACKUP_REFERENCE")))
+            throw new InvalidOperationException("G10 production cutover requires explicit scoped release and backup reference.");
+        var target = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        if (string.IsNullOrWhiteSpace(target.Host) || string.IsNullOrWhiteSpace(target.Database) ||
+            !string.Equals(target.Host, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_HOST"), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(target.Database, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_NAME"), StringComparison.Ordinal))
+            throw new InvalidOperationException("G10 production target is not the independently approved host/database.");
+        await ReplaceUaeGrade10Async(ReadGrade10Predecessor(), true, false, ct);
+    }
+
+    // Exact same transaction and embedded SQL as production; never remote.
+    public async Task RehearseUaeGrade10FullCutoverAsync(bool forceRollback, CancellationToken ct = default)
+    {
+        if (!IsGrade10DisposableCi())
+            throw new InvalidOperationException("G10 tenant cutover rehearsal requires disposable local GitHub PostgreSQL.");
+        await ReplaceUaeGrade10Async(ReadGrade10Predecessor(), true, forceRollback, ct);
+    }
+
+    // Retain the original catalogue-only negative isolation boundary.
     public async Task RehearseUaeGrade10CatalogueReplacementAsync(
-        IReadOnlyDictionary<string, string> legacyTitles,
-        CancellationToken ct = default)
+        IReadOnlyDictionary<string, string> legacyTitles, CancellationToken ct = default)
+    {
+        if (!IsGrade10DisposableCi())
+            throw new InvalidOperationException("G10 catalogue rehearsal requires disposable local GitHub PostgreSQL.");
+        await ReplaceUaeGrade10Async(legacyTitles, false, false, ct);
+    }
+
+    private async Task ReplaceUaeGrade10Async(
+        IReadOnlyDictionary<string, string> legacyTitles, bool includeTenants,
+        bool forceRollback, CancellationToken ct)
     {
         const string prefix = "PED:UAE-MOE-MATH:L10:";
         const string general = prefix + "GENERAL:";
         const string advanced = prefix + "ADVANCED:";
-        var target = new Npgsql.NpgsqlConnectionStringBuilder(
-            _db.Database.GetDbConnection().ConnectionString);
-        if (!_db.Database.IsNpgsql() ||
-            target.Host != "127.0.0.1" ||
-            target.Database != "edulytics_clean_ci" ||
-            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") != "true" ||
-            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") != "true" ||
-            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") != "UAE-G10" ||
-            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") != "edulytics_clean_ci" ||
-            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Staging")
-            throw new InvalidOperationException("G10 catalogue rehearsal requires disposable local GitHub PostgreSQL.");
-
         if (legacyTitles.Count != 100 ||
             legacyTitles.Keys.Count(x => x.StartsWith(general, StringComparison.Ordinal)) != 48 ||
             legacyTitles.Keys.Count(x => x.StartsWith(advanced, StringComparison.Ordinal)) != 52)
@@ -894,11 +944,11 @@ public sealed class MathematicsPedagogicalLessonSeeder
         await _db.Database.ExecuteSqlRawAsync("SELECT pg_advisory_xact_lock(27500029);", ct);
         // This is a catalogue-only rehearsal. It refuses any tenant, student,
         // saved assessment or practice records rather than deleting them.
-        if (await _db.Users.AnyAsync(ct) || await _db.Schools.AnyAsync(ct) ||
+        if (!includeTenants && (await _db.Users.AnyAsync(ct) || await _db.Schools.AnyAsync(ct) ||
             await _db.StudentProfiles.AnyAsync(ct) || await _db.DirectStudentProfiles.AnyAsync(ct) ||
             await _db.SchoolCurriculumAdoptions.AnyAsync(ct) ||
             await _db.AssessmentAttempts.AnyAsync(ct) || await _db.PracticeAttempts.AnyAsync(ct) ||
-            await _db.AssessmentItems.AnyAsync(ct))
+            await _db.AssessmentItems.AnyAsync(ct)))
             throw new InvalidOperationException("G10 clean catalogue rehearsal refuses tenant/learner data.");
 
         var existing = await _db.CurriculumPedagogicalLessons
@@ -938,6 +988,19 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 existing.Where(x => x.Code.StartsWith(general, StringComparison.Ordinal))
                     .Any(x => x.Id != byCode[x.Code].Id))
                 throw new InvalidOperationException("G10 exact legacy baseline mismatch; transaction not changed.");
+
+            // Refuse rather than null, delete or reassign any saved learner evidence.
+            // Other RESTRICT foreign keys (including teacher rubrics) remain a
+            // further database-enforced safety boundary inside this transaction.
+            if (await _db.AssessmentItems.AnyAsync(x => x.CurriculumPedagogicalLessonId.HasValue &&
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+                await _db.PracticeAttempts.AnyAsync(x => x.CurriculumPedagogicalLessonId.HasValue &&
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+                await _db.AdaptivePracticeSessions.AnyAsync(x =>
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId), ct) ||
+                await _db.AdaptivePracticeShadowObservations.AnyAsync(x =>
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId), ct))
+                throw new InvalidOperationException("G10 legacy learner evidence exists; refusing cutover.");
 
             // Owner explicitly requires deletion of ALL 100 legacy rows,
             // including the 48 General rows that share deterministic codes.
@@ -984,7 +1047,20 @@ public sealed class MathematicsPedagogicalLessonSeeder
             EnsureLessonMatches(row, targetRow);
         }
 
+        if (includeTenants)
+        {
+            await _db.Database.ExecuteSqlRawAsync(
+                "SET LOCAL edulytics.g10_transition_scope='UAE-MOE-MATH:L10:ADVANCED_TO_GENERAL:2';", ct);
+            using var stream = OpenGrade10ReleaseResource("TenantTransition");
+            using var reader = new System.IO.StreamReader(stream);
+            var transitionSql = await reader.ReadToEndAsync(ct);
+            await _db.Database.ExecuteSqlRawAsync(transitionSql, ct);
+            if (forceRollback)
+                throw new InvalidOperationException("G10_FULL_CUTOVER_ROLLBACK_NEGATIVE_CONTROL");
+        }
         await tx.CommitAsync(ct);
+        if (includeTenants)
+            Console.WriteLine("UAE_G10_ATOMIC_TENANT_CATALOGUE_CUTOVER_PASS");
         Console.WriteLine("UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS " +
             $"replay={alreadyReplaced} deletedLegacyLessons={deletedLegacyLessons} deletedLegacyMetadata={deletedLegacyMetadata} otherLessons={otherLessons} otherMetadata={otherMetadata}");
     }
