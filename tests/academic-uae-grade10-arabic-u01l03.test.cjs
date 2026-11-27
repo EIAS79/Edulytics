@@ -33,7 +33,7 @@ test('Original Arabic RichV2 retains general polynomial and area grids with inde
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,9);
+ assert.equal(l.WorkedExamples.length,11);
  assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));

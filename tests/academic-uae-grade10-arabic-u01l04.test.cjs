@@ -33,7 +33,7 @@ test('Special-product RichV2 covers squared sum/difference, conjugates and origi
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,9);
+ assert.equal(l.WorkedExamples.length,11);
  assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));

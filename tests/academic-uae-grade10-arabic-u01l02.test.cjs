@@ -40,7 +40,7 @@ test('Arabic Grade10 original monomial lesson has source-correct examples and vi
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,lessonCode);
  assert.equal(l.CultureCode,'ar');
- assert.equal(l.WorkedExamples.length,10);
+ assert.equal(l.WorkedExamples.length,13);
  assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.every(x=>x.Items.length>=3));
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
