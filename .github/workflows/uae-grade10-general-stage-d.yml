@@ -63,6 +63,7 @@ jobs:
           set -euo pipefail
           node tools/curriculum/uae_g10_stage_d_preflight.cjs
           python3 tools/math_intelligence/test_g10_semantic_archival_scope.py
+          python3 tools/math_intelligence/test_g10_arabic_semantic_signatures.py
       - name: Run full UAE Grade10 prepared Node suite (fail on any test)
         run: |
           set -euo pipefail

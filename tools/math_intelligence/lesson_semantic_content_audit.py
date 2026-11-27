@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from polish_practice_map import load_polish_outcome_mappings
+from g10_arabic_semantic_signatures import arabic_translation, load_g10_rules, match_g10_rule
 from typing import Any
 
 from supporting_practice_rules import (
@@ -318,6 +319,11 @@ def audit() -> dict[str, Any]:
     retired_g10, _, archival_errors = g10_archival_scope()
     blockers.extend(archival_errors)
     certified_g12=independently_certified_g12()
+    try:
+        g10_rules = load_g10_rules()
+    except (OSError, KeyError, ValueError, TypeError, re.error) as exc:
+        blockers.append(f"G10 Arabic semantic rules are invalid: {exc}")
+        g10_rules = {}
     # The exact owner acceptance is separately checked against 128 canonical
     # lessons, contract families, source/blueprint JSON fingerprints, and the
     # 2026-11-15 approval manifest. Do not re-label it "official source parity".
@@ -361,7 +367,8 @@ def audit() -> dict[str, Any]:
             lesson_code = str(get_case(lesson, "LessonCode", "lessonCode", default="") or "").strip()
             if not lesson_code:
                 continue
-            source_translation = choose_translation(lesson)
+            is_g10 = lesson_code.startswith(G10_GENERAL)
+            source_translation = arabic_translation(lesson) if is_g10 else choose_translation(lesson)
             effective_row = effective_by_code.get(lesson_code)
             if effective_row is None:
                 blockers.append(
@@ -373,7 +380,7 @@ def audit() -> dict[str, Any]:
             else:
                 effective_translations = effective_row.get("translations") or []
                 effective_lesson = {"translations": effective_translations}
-                translation = choose_translation(effective_lesson)
+                translation = arabic_translation(effective_lesson) if is_g10 else choose_translation(effective_lesson)
                 effective_content_version = normalize_space(
                     effective_row.get("contentVersion")
                 )
@@ -457,6 +464,23 @@ def audit() -> dict[str, Any]:
                     "explanationEvidencePatterns": explanation_hits,
                     "keyConceptEvidencePatterns": key_hits,
                 })
+
+            if is_g10:
+                rule = g10_rules.get(lesson_code)
+                if rule is None or not source_translation or not translation or academic_language != "ar":
+                    blockers.append(f"G10 exact Arabic materialized semantic scope missing: {lesson_code}")
+                else:
+                    passed, missing = match_g10_rule(rule, title, worked)
+                    if not passed:
+                        blockers.append(f"G10 Arabic semantic target missing: {lesson_code}; titleMatch={title == rule[0]}; missing={missing}")
+                    matched_rules.append({
+                        "ruleId": "g10-arabic-exact-target-" + lesson_code,
+                        "titlePatterns": [rule[0]] if title == rule[0] else [],
+                        "workedExamplePatterns": [p.pattern for p in rule[1]] if passed else [],
+                        "missingWorkedPatterns": missing,
+                        "explanationEvidencePatterns": [],
+                        "keyConceptEvidencePatterns": [],
+                    })
 
             reviewed_official_disposition = bool(
                 source_type == "OfficialMapped"
