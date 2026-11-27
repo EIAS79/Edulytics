@@ -215,9 +215,11 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ],
     "latestObservedAdditionalBlockers": [
-      "Full catalogue deletion/reimport and tenant-scoped reset rehearsal not verified; no production mutation.",
-      "Latest Arabic runtime and aligned Practice fixes await new exact-candidate CI; previous isolated runtime 0/148 pages, 0/296 RTL views, 0/97 aligned Practice attempts.",
-      "Full source-element denominator and semantic merge audit incomplete despite the physical edition-diff evidence."
+      "Exact source atomic semantic denominator and final rights/teacher review remain incomplete.",
+      "Legacy replacement rehearsal failed before deletion because historical CleanSeed was not built; explicit tool build added.",
+      "148/148 HTTPS and 296/296 RTL now confirmed on prior candidate; Practice persisted aligned attempts not verified.",
+      "Latest math 10 failures in shared numeric Arabic digit normalization; exact additive fix prepared and regression required.",
+      "Shared full-product regression failed 26/18766; audit remaining root causes."
     ]
   },
   "next": "Existing Stage D plan: finish exact-candidate runtime/RTL, full scoped replacement rehearsal with tenant data, source-element evidence, and final CI. Owner approval and all-legacy deletion authorization recorded. No production writes before gates.",
@@ -2429,5 +2431,47 @@
     "currentG10CandidateRun": 45946517789,
     "sourceEditionDiff": "PARTIAL_EVIDENCE",
     "sourceLock": false
+  },
+  "latestStageDObservation": {
+    "candidateSha": "c1e567d943230d60806256db670a44ae95280173",
+    "runId": 45947291942,
+    "structural": "PASS",
+    "sourceBodyVerified": 106,
+    "stageDCertified": 0,
+    "releaseBlockers": 149,
+    "math": {
+      "jobId": 140334798881,
+      "passed": 1231,
+      "failed": 10,
+      "executed": 1241,
+      "skipped": 0,
+      "rootCause": "Eight reused numerical families reject Arabic digits in ten lesson-family cases."
+    },
+    "authenticated": {
+      "jobId": 140334798866,
+      "roleLogins": 4,
+      "arabicPagesPassed": 148,
+      "englishRequestChecksPassed": 148,
+      "foreignTenantDenied": true,
+      "rtlDesktopPassed": 148,
+      "rtlMobilePassed": 148,
+      "practice": "FAILED_DECLARED_DIGITAL_PERSISTENCE_GATE"
+    },
+    "catalogueRehearsal": {
+      "jobId": 140334798896,
+      "status": "CI_INFRA_FAILED_BEFORE_DELETION",
+      "rootCause": "Pinned legacy CleanSeed project executable not built by solution build."
+    },
+    "shared": {
+      "originalContentParity": "PASS",
+      "originalContentRunId": 45947292147,
+      "usFullGradeGate": "PASS",
+      "usGateRunId": 45947292210,
+      "usAuthenticated": "PASS",
+      "usAuthenticatedRunId": 45947291971,
+      "fullRegression": "FAIL_26_OF_18766",
+      "fullRegressionRunId": 45947292153
+    },
+    "productionWritten": false
   }
 }

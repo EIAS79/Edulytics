@@ -252,8 +252,16 @@ test('UAE G10 additive engine preserves every pinned released line and routes on
   }
   assert.equal(i,before.length,'Released engine source lines must survive in order');
   if(added.length===0)return; // historic released G9 snapshot
-  assert.equal(git('rev-parse','HEAD:'+engine),'05a9ad87b9674a60aa3063318aaf79d8ce64b4c6');
-  assert.equal(added.length,1309);
+  const hash=git('rev-parse','HEAD:'+engine);
+  assert.ok(['05a9ad87b9674a60aa3063318aaf79d8ce64b4c6','bba658ea67ad9acaf7889b082d7ea359ae7776b4'].includes(hash));
+  assert.equal(added.length,hash==='bba658ea67ad9acaf7889b082d7ea359ae7776b4'?1330:1309);
+  // All historical lines and the exact prior G10 engine are still
+  // checked in order; the only additional edit is the known normalization.
+  if(hash==='bba658ea67ad9acaf7889b082d7ea359ae7776b4'){
+    const prior=priorLines('c1e567d943230d60806256db670a44ae95280173',engine).join('\n');
+    const exactNewBlock="        // G10 D.2: these eight reused numeric families rejected Arabic\n        // digits in ten declared lesson/family cases. Normalize digits only,\n        // retaining the original parser, parameter bounds and math verifier.\n        if (family is \"geometry.coordinate.gradient_between_points\" or\n            \"geometry.angles.parallel_lines\" or\n            \"geometry.coordinate.evaluate_linear_rule\" or\n            \"geometry.right_triangle.pythagorean.exact\" or\n            \"geometry.right_triangle.pythagorean.find_leg_exact\" or\n            \"supporting.functions.inverse_linear\" or\n            \"supporting.functions.evaluate\" or\n            \"supporting.functions.composite\")\n        {\n            answer = string.Concat((answer ?? string.Empty).Select(ch => ch switch\n            {\n                >= '٠' and <= '٩' => (char)('0' + ch - '٠'),\n                >= '۰' and <= '۹' => (char)('0' + ch - '۰'),\n                '−' => '-',\n                _ => ch\n            }));\n        }\n\n";
+    assert.equal(after.join('\n'),prior.replace("        if (family==\"uae.g9.general.u07.l03.multiply_coefficient\")",exactNewBlock+"        if (family==\"uae.g9.general.u07.l03.multiply_coefficient\")"));
+  }
   assert.ok(added.every(line=>!(/USCCSS|UsCcss|usccss|UaeG[1-9](?![0-9])/.test(line))));
   assert.ok(added.filter(line=>/Supports\(|family ==/.test(line)).every(line=>/G10|g10/.test(line)));
 });

@@ -318,6 +318,7 @@ jobs:
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln -c Release --no-restore
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-build
       - name: Snapshot legacy target and non-target curriculum reference rows
         run: |
@@ -328,6 +329,7 @@ jobs:
           set -euo pipefail
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln -c Release --no-restore
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release
           for n in 1 2; do
             dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-build -- --uae-g10-rehearse artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json | tee "/tmp/g10-rehearsal-$n.log"
             grep -q 'UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS' "/tmp/g10-rehearsal-$n.log"

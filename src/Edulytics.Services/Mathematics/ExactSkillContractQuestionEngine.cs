@@ -1648,6 +1648,27 @@ public sealed partial class ExactSkillContractQuestionEngine
         string answer)
     {
 
+        // G10 D.2: these eight reused numeric families rejected Arabic
+        // digits in ten declared lesson/family cases. Normalize digits only,
+        // retaining the original parser, parameter bounds and math verifier.
+        if (family is "geometry.coordinate.gradient_between_points" or
+            "geometry.angles.parallel_lines" or
+            "geometry.coordinate.evaluate_linear_rule" or
+            "geometry.right_triangle.pythagorean.exact" or
+            "geometry.right_triangle.pythagorean.find_leg_exact" or
+            "supporting.functions.inverse_linear" or
+            "supporting.functions.evaluate" or
+            "supporting.functions.composite")
+        {
+            answer = string.Concat((answer ?? string.Empty).Select(ch => ch switch
+            {
+                >= '٠' and <= '٩' => (char)('0' + ch - '٠'),
+                >= '۰' and <= '۹' => (char)('0' + ch - '۰'),
+                '−' => '-',
+                _ => ch
+            }));
+        }
+
         if (family=="uae.g9.general.u07.l03.multiply_coefficient")
         {
             var required=new[]{"a2","a1","a0","b2","b1","b0","degree"};
