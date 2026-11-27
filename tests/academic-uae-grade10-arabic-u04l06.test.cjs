@@ -28,7 +28,7 @@ test('Owner approved canonical 148 index and U04L06 learner identity have exact 
 });
 test('Original Arabic inequality instruction includes graphical and interval examples',()=>{
  const x=rich.Lessons[0];
- assert.equal(x.WorkedExamples.length,12);assert.equal(x.Visuals.length,5);
+ assert.equal(x.WorkedExamples.length,14);assert.equal(x.Visuals.length,5);
  assert.equal(x.Visuals.filter(y=>y.Kind==='CartesianPlot').length,3);
  assert.ok(x.WorkedExamples.some(y=>y.Answer.includes('−٢<س<٤')));
  for(const t of [-5,-3,0,1,4,5]){

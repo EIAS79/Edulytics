@@ -35,7 +35,7 @@ test('Completing square student RichV2 has original examples, CartesianPlot and 
  assert.equal(rich.Lessons.length,1);
  const x=rich.Lessons[0];
  assert.equal(x.LessonCode,lessonCode);
- assert.equal(x.WorkedExamples.length,11);
+ assert.equal(x.WorkedExamples.length,12);
  assert.equal(x.Visuals.length,5);
  assert.ok(x.Visuals.some(v=>v.Kind==='CartesianPlot'));
  assert.ok(x.Visuals.some(v=>v.Kind==='ExpressionStripBars'));

@@ -26,7 +26,7 @@ test('Original Arabic student explanation includes real coordinate plots, vertex
  const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);
  assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  assert.equal(l.Translations.filter(t=>t.CultureCode==='ar').length,1);
- assert.equal(rich.WorkedExamples.length,12);
+ assert.equal(rich.WorkedExamples.length,13);
  assert.equal(rich.Visuals.length,6);
  assert.equal(rich.Visuals.filter(v=>v.Kind==='CartesianPlot').length,3);
  for(const x of [-2,-1,0,1,2,3,4,5]){

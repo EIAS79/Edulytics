@@ -22,7 +22,7 @@ test('Arabic source content includes distinct graph root cases, four CartesianPl
  const l=c.Lessons.find(x=>x.LessonCode===code);assert.ok(l);
  assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const rich=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l02-ar.rich-lesson-v2.json').Lessons[0];
- assert.equal(rich.WorkedExamples.length,12);
+ assert.equal(rich.WorkedExamples.length,13);
  assert.equal(rich.Visuals.filter(x=>x.Kind==='CartesianPlot').length,4);
  assert.ok(rich.WorkedExamples.some(x=>x.Answer.includes('س=٣ أو س=٥')));
  for(const x of [-3,-2,0,1,3,4])assert.ok(x*x-x-6===(x+2)*(x-3));

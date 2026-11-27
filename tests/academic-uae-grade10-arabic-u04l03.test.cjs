@@ -19,7 +19,7 @@ test('Original Arabic complex lesson has 13 worked examples, true plane plots, c
  assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  assert.equal(l.Translations.filter(x=>x.CultureCode==='ar').length,1);
  const rich=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l03-ar.rich-lesson-v2.json').Lessons[0];
- assert.equal(rich.WorkedExamples.length,13);assert.equal(rich.Visuals.length,6);
+ assert.equal(rich.WorkedExamples.length,15);assert.equal(rich.Visuals.length,6);
  assert.equal(rich.Visuals.filter(x=>x.Kind==='CartesianPlot').length,2);
  assert.equal(2*4-3*(-2),14);assert.equal(2*(-2)+3*4,8);
  assert.equal((-5)**2+12**2,169);

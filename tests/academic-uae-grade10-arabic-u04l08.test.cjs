@@ -36,7 +36,7 @@ test('Original source exercise categories are individually linked and not falsel
 test('Rocket, x-squared and freefall numeric graph data are mathematically independent and valid',()=>{
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,14);
+ assert.equal(l.WorkedExamples.length,15);
  assert.equal(l.Visuals.length,6);
  assert.equal(l.Visuals.filter(x=>x.Kind==='CartesianPlot').length,3);
  const rocket=t=>-16*t*t+144*t;

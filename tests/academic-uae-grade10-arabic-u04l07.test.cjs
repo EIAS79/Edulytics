@@ -34,7 +34,7 @@ test('Source element denominator includes original lab and lesson without chapte
 test('Original Arabic content and plotted point arrays prove distinct vertex transformations',()=>{
  const a=rich.Lessons[0];
  assert.equal(a.LessonCode,code);
- assert.equal(a.WorkedExamples.length,14);
+ assert.equal(a.WorkedExamples.length,15);
  assert.equal(a.Visuals.length,6);
  const plots=a.Visuals.filter(x=>x.Kind==='CartesianPlot');
  assert.equal(plots.length,3);

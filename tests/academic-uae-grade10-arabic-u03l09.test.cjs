@@ -27,7 +27,7 @@ test('Original first-party Arabic augmented lesson covers 3x4 source and clear 2
  const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);
  assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  assert.equal(l.Translations.filter(x=>x.CultureCode==='ar').length,1);
- const r=rich.Lessons[0];assert.equal(r.WorkedExamples.length,10);
+ const r=rich.Lessons[0];assert.equal(r.WorkedExamples.length,11);
  assert.equal(r.Visuals.length,5);
  assert.match(r.ExplanationParagraphs.join(' '),/RREF/);
  assert.ok(r.WorkedExamples.some(x=>x.Answer.includes('−٤')));

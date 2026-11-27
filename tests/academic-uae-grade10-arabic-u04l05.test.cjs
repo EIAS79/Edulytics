@@ -31,7 +31,7 @@ test('Approved G10 148 lesson index retains unique canonical38 and student conte
 test('First-party quadratic formula RichV2 contains 10 solved examples and 3 original graphs',()=>{
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,10);
+ assert.equal(l.WorkedExamples.length,11);
  assert.equal(l.Visuals.length,5);
  assert.equal(l.Visuals.filter(x=>x.Kind==='CartesianPlot').length,3);
  for(const x of [11,-1])assert.equal(x*x-10*x-11,0);
