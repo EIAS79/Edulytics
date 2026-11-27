@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 44,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03:C044",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "reviewedPhysicalPages": [
+    21,
+    22
+  ],
+  "scope": "Selected source-page comparison and correction only; not exhaustive atomic mapping or complete source parity. Exact-answer precision fixes are independent mathematical corrections.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 21,
+      "sourcePrintedPage": 572,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "من لوغاريتمي إلى أسي",
+      "expectedAnswer": "٩^(٣/٢)=٢٧",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 22,
+      "sourcePrintedPage": 573,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "لوغاريتم كسري",
+      "expectedAnswer": "٢/٣",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 22,
+      "sourcePrintedPage": 573,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "رسم الدالة المتناقصة",
+      "expectedAnswer": "النقاط (١/٩،٢)، (١/٣،١)، (١،٠)، (٣،−١)، (٩،−٢)؛ منحنى متناقص، مقارب س=٠، ومداه جميع الأعداد الحقيقية.",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "رسم الدالة المتناقصة",
+      "field": "Answer",
+      "before": "منحنى متناقص، مقارب س=٠ ومداه جميع الأعداد الحقيقية.",
+      "after": "النقاط (١/٩،٢)، (١/٣،١)، (١،٠)، (٣،−١)، (٩،−٢)؛ منحنى متناقص، مقارب س=٠، ومداه جميع الأعداد الحقيقية."
+    },
+    {
+      "title": "تحويل وتمدد وانعكاس",
+      "field": "Answer",
+      "before": "المجال س>٤، المقارب س=٤، متناقصة، المدى جميع الأعداد الحقيقية.",
+      "after": "المجال س>٤، المقارب س=٤، متناقصة، المدى جميع الأعداد الحقيقية؛ النقاط (١٣/٣،٣)،(٥،١)،(٧،−١)."
+    }
+  ],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

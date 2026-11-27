@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 48,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "reviewedPhysicalPages": [
+    54,
+    55
+  ],
+  "scope": "Selected source-page comparison and correction only; not exhaustive atomic mapping or complete source parity. Exact-answer precision fixes are independent mathematical corrections.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 54,
+      "sourcePrintedPage": 605,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "تحويل أسي إلى لوغاريتمي",
+      "expectedAnswer": "ln 9=2x−1",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 55,
+      "sourcePrintedPage": 606,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "دمج حدود طبيعية",
+      "expectedAnswer": "ln(45/2)",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 55,
+      "sourcePrintedPage": 606,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "توسيع مع مجال",
+      "expectedAnswer": "ln3+2ln2+2ln|x|",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "متباينة أسية",
+      "field": "Answer",
+      "before": "x<-1.3863",
+      "after": "x<−ln 4؛ الحد ≈−1.3863."
+    },
+    {
+      "title": "متباينة بحجة فردية",
+      "field": "Answer",
+      "before": "x>8.3891",
+      "after": "x>1+e²؛ الحد ≈8.3891."
+    },
+    {
+      "title": "متباينة بحجة زوجية",
+      "field": "Answer",
+      "before": "(-7.3891,0)∪(0,7.3891)",
+      "after": "(−e²,0)∪(0,e²)؛ e²≈7.3891."
+    },
+    {
+      "title": "متباينة خارج فترة",
+      "field": "Answer",
+      "before": "x<−6.2134 أو x>6.2134",
+      "after": "x<−(e⁸/2)^(1/4) أو x>(e⁸/2)^(1/4)؛ مقدار الحد ≈6.2134."
+    },
+    {
+      "title": "مقلوب اللوغاريتم",
+      "field": "Answer",
+      "before": "(2,2.6065]∪(3,∞)",
+      "after": "(2,2+e^(−1/2)]∪(3,∞)؛ الحد الأول ≈2.6065."
+    }
+  ],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}
