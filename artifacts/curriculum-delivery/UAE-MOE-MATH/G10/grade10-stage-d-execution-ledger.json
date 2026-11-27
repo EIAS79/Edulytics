@@ -209,18 +209,18 @@
     "deploymentPerformed": false,
     "blockers": [
       "Exhaustive atomic source mapping and denominator not established (107 lesson checkpoints without positive documented denominator; remaining counts are not exhaustive parity evidence)",
-      "Full independent authoring and rights review incomplete; 611 structured mistake entries need review for missing explanation/correction",
+      "Independent authoring/rights review and full semantic source audit incomplete; previous common-mistake repair artifact records 603 repairs and zero remaining incomplete fields, not source parity.",
       "Per-lesson digital eligibility, runtime and teacher-review routes not fully verified",
       "Arabic RTL and authenticated E2E not verified",
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ],
     "latestObservedAdditionalBlockers": [
-      "Live catalogue mismatch remains 48 General and 52 Advanced instead of approved 148 General; replacement not rehearsed or executed.",
-      "Seven-book full source atomic denominator and edition-diff evidence remain incomplete.",
-      "Current-head G1 exact compatibility pin, G10 E2E/RTL, scoped replacement rehearsal and final CI not verified."
+      "Full catalogue deletion/reimport and tenant-scoped reset rehearsal not verified; no production mutation.",
+      "Latest Arabic runtime and aligned Practice fixes await new exact-candidate CI; previous isolated runtime 0/148 pages, 0/296 RTL views, 0/97 aligned Practice attempts.",
+      "Full source-element denominator and semantic merge audit incomplete despite the physical edition-diff evidence."
     ]
   },
-  "next": "Existing Stage D plan: close D.1 source evidence, D.2 family eligibility and grading, D.3 real authenticated runtime and replacement rehearsal, D.4 final regression, final CI and release. Owner approval recorded; no production writes before gates.",
+  "next": "Existing Stage D plan: finish exact-candidate runtime/RTL, full scoped replacement rehearsal with tenant data, source-element evidence, and final CI. Owner approval and all-legacy deletion authorization recorded. No production writes before gates.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -2274,7 +2274,7 @@
     "sourceParity": "UNKNOWN",
     "sevenFileHashMatches": "RECOMPUTED_7_OF_7_MATCH",
     "allPageSemanticAudit": "NOT_ESTABLISHED",
-    "sourceEditionDiffExpectedPath": "NOT_FOUND_AT_CANDIDATE_SHA",
+    "sourceEditionDiffExpectedPath": "PARTIAL_PHYSICAL_EDITION_AND_VOLUME_DIFF_WRITTEN",
     "canonicalIndex": {
       "lessons": 148,
       "units": 18,
@@ -2351,7 +2351,8 @@
       "allHashesMatch": true,
       "sourceLock": false,
       "semanticAuditComplete": false
-    }
+    },
+    "editionDiffArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/edition-diff.json"
   },
   "currentSessionExecution": {
     "baseSha": "83c31a13ffc173c7be9d1d85b24f4fa83c222aee",
@@ -2395,6 +2396,38 @@
       "cleanCatalogueAndMetadataStep": "PASS",
       "authenticatedPageAndRtl": "FAIL",
       "failureDetail": "HTTP aggregate and browser RTL assertions failed; original probe omitted specific exception details."
-    }
+    },
+    "previousRuntimeEvidence": {
+      "candidateSha": "f250f43cc1b3fc0c8a8cafcadd374cfecb40cf7c",
+      "testedMergeSha": "b1e262b7421f27fbd20f97b07c28ec10357421ea",
+      "runId": 45945136823,
+      "jobId": 140327996939,
+      "artifactId": 15174474038,
+      "roleLogins": 4,
+      "foreignTenantDenied": true,
+      "cleanCatalogue": 148,
+      "cleanMetadata": 148,
+      "lessonPagesPassed": 0,
+      "englishFallbackChecksPassed": 0,
+      "rtlDesktopPassed": 0,
+      "rtlMobilePassed": 0,
+      "actualScreenshots": 296,
+      "declaredPracticeCandidateLessons": 97,
+      "correctAlignedAttempts": 0,
+      "wrongAlignedAttempts": 0,
+      "malformedAlignedAttempts": 0,
+      "rootCause": "UAE default academic language English selected for shared legacy identities; unaligned Supporting lessons hidden; generic Practice fallback generated unrelated families.",
+      "fixCommit": "9da88e120f1df285acf4ebc9073ddbf39a467cae",
+      "fixRetest": "PENDING"
+    },
+    "fullCatalogueReset": {
+      "commit": "f6674607ca2f2763927b96fc590b141173ad88dd",
+      "scope": "DELETE_100_BEFORE_INSERT_148",
+      "rehearsal": "PENDING",
+      "productionWritten": false
+    },
+    "currentG10CandidateRun": 45946517789,
+    "sourceEditionDiff": "PARTIAL_EVIDENCE",
+    "sourceLock": false
   }
 }

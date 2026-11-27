@@ -48,9 +48,9 @@
       "pages": 264,
       "pathway": "Applied",
       "edition": "2022–2023 interior, 2023–2024 cover",
-      "classification": "APPLIED_VARIANT_A",
+      "classification": "APPLIED_VOLUME_3_DISTINCT_BODY",
       "sha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
-      "notes": "Nine units listed; overlapping content with companion Applied PDF but not byte-identical"
+      "notes": "Physical pages 2–3 identify Volume 3 (Units 7–9). Cover 2023–2024 / interior 2022–2023. Shared annual TOC with Volume 2 is not duplicate teaching body."
     },
     {
       "name": "03متقدم_.pdf",
@@ -66,9 +66,9 @@
       "pages": 225,
       "pathway": "Applied",
       "edition": "2022–2023 interior, 2023–2024 cover",
-      "classification": "APPLIED_VARIANT_B_OVERLAP",
+      "classification": "APPLIED_VOLUME_2_DISTINCT_BODY",
       "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
-      "notes": "Nine-unit table of contents largely overlaps 03.pdf, with page-level changes; not independently counted as nine more units"
+      "notes": "Physical pages 2–3 identify Volume 2 (Units 4–6). Cover 2023–2024 / interior 2022–2023. Preserve body goals; shared TOC with Volume 3."
     }
   ],
   "duplicateGuard": {
@@ -76,15 +76,16 @@
       "03.pdf",
       "رياضيات كتاب الطالب تطبيقي 10 8.pdf"
     ],
-    "evidence": "First TOC pages and matching original PDF page thumbnails are highly overlapping; not byte-identical; two editions must not double-count lessons",
-    "status": "CANDIDATE_OVERLAP_NOT_COMPLETE_PAGE_LEVEL_DUPLICATE_PROOF"
+    "evidence": "edition-diff.json: visual cover/title/copyright/TOC and body inspection proves distinct volumes; raster candidate review does not certify semantic duplicates.",
+    "status": "DISTINCT_APPLIED_VOLUMES_SHARED_ANNUAL_TOC_SEMANTIC_MERGE_NOT_COMPLETE",
+    "supplementalAppliedVolume1": "رياضيات كتاب الطالب تطبيقي 10 29.pdf"
   },
   "finalCanonicalLessonCount": 148,
   "finalCanonicalUnitCount": 18,
   "existingGeneralBaseline": 48,
   "existingAdvancedBaseline": 52,
   "appliedProductionLessonBaseline": 0,
-  "safeMigrationPolicy": "Reuse General existing lesson identity on exact/partial compatible skill; preserve Advanced old identity/links until Stage D cohort, adoption, enrollment and grade references migrated and verified. Unique Advanced/Applied lesson belongs to General with a distinct Arabic title. Never delete Neon student data in Stage A-C.",
+  "safeMigrationPolicy": "Owner-confirmed Stage D full reset: delete all 100 old G10 lesson rows and linked experimental G10 progress/results before fresh import of exact approved 148 General lessons. Delete non-General G10 pathway adoptions only after scoped class/adoption rehearsal. Other grades, curricula, and shared accounts unchanged. No production mutation before release gates.",
   "completeLessonClosureAllowedBeforeSourceLock": true,
   "sourceTocCoverageArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-toc-and-body-coverage.json",
   "sourceTocVerifiedFamilyLessonCount": 193,
@@ -154,7 +155,7 @@
       },
       {
         "name": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
-        "pages": 150,
+        "pages": 225,
         "sha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
         "targetOrdinals": [
           146,
@@ -168,6 +169,7 @@
     "canonicalIndexChanges": false,
     "sourceParity": "UNKNOWN",
     "totalSourceFileCount": 12,
-    "totalPhysicalPages": 2328
-  }
+    "totalPhysicalPages": 2403
+  },
+  "editionDiffArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/edition-diff.json"
 }

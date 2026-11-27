@@ -20,7 +20,7 @@ The cumulative repair ledger records 148/148 accepted scoped closures; zero pend
 | 148 | 39 | 12 | 14 | 88 | 187408 |
 | Total | 340 | 107 | 157 | 949 | 675014 |
 
-Counts describe the resulting ten lessons (including retained examples/models), 152 distinct family IDs, 20 written test paths. Arithmetic checks are authoring-time checks recorded in contracts; not runtime or integration tests. Source inventory: 12 PDFs, 2,328 physical PDF pages (7 original and 5 supplemental). Selected source entry counts are not a complete source-element denominator.
+Counts describe the resulting ten lessons (including retained examples/models), 152 distinct family IDs, 20 written test paths. Arithmetic checks are authoring-time checks recorded in contracts; not runtime or integration tests. Source inventory (corrected by Stage D physical PDF re-verification on 2026-11-27): 12 PDFs, 2,403 physical PDF pages (1,893 original and 510 supplemental). The prior 2,328 count understated Applied Volume 1 by 75 pages. See edition-diff.json; full semantic audit remains incomplete. Selected source entry counts are not a complete source-element denominator.
 
 ## Final evidence
 
