@@ -219,7 +219,7 @@ jobs:
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: grade9-authenticated-e2e-and-rtl
+          name: grade10-authenticated-e2e-and-rtl
           path: |
             /tmp/uae-g10-stage-d-authenticated-148-lessons.json
             /tmp/uae-g10-stage-d-browser-rtl/report.json

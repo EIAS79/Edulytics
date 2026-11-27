@@ -29,6 +29,13 @@
       "otherCurriculaGradesSubjectsAndSharedAccounts": "UNCHANGED",
       "technicalGateWaiver": false,
       "productionDeletionExecuted": false
+    },
+    "confirmedOriginalMathAuthoring": {
+      "ownerConfirmed": true,
+      "learnerFacingPublisherBranding": "NOT_INCLUDED_IN_ORIGINAL_AUTHORING",
+      "sourceProvenanceRetained": true,
+      "thirdPartyRightsWaiver": false,
+      "sourceParityWaiver": false
     }
   },
   "sourceInventory": {
@@ -206,13 +213,12 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ],
     "latestObservedAdditionalBlockers": [
-      "Live catalogue DB mismatch: 100 General identities missing, 52 legacy Advanced identities remain, 0 of 48 matched General catalogue titles match approved Arabic titles.",
-      "Current merge-ref shared original data parity and US G1 negative-control jobs failed.",
-      "Source lock not established; no full seven-book atomic denominator; expected edition-diff.json path absent.",
-      "API/DOM Arabic pathway guard, four-role isolated runtime/RTL, database rehearsal and final CI not complete."
+      "Live catalogue mismatch remains 48 General and 52 Advanced instead of approved 148 General; replacement not rehearsed or executed.",
+      "Seven-book full source atomic denominator and edition-diff evidence remain incomplete.",
+      "Current-head G1 exact compatibility pin, G10 E2E/RTL, scoped replacement rehearsal and final CI not verified."
     ]
   },
-  "next": "Continue the existing Stage D plan in order: D.1 handoff/source, live-catalogue and pathway guard defects; D.2 real math family checks; D.3 isolated authenticated runtime, RTL and DB; D.4 targeted root-cause fixes and affected regression; Final CI. No release without plan gates.",
+  "next": "Existing Stage D plan: close D.1 source evidence, D.2 family eligibility and grading, D.3 real authenticated runtime and replacement rehearsal, D.4 final regression, final CI and release. Owner approval recorded; no production writes before gates.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -2264,7 +2270,7 @@
     "handoffGate": "D_PENDING_A_C_EVIDENCE",
     "sourceLock": false,
     "sourceParity": "UNKNOWN",
-    "sevenFileHashMatches": "RECORDED_7_OF_7_NOT_RECOMPUTED_THIS_SESSION",
+    "sevenFileHashMatches": "RECOMPUTED_7_OF_7_MATCH",
     "allPageSemanticAudit": "NOT_ESTABLISHED",
     "sourceEditionDiffExpectedPath": "NOT_FOUND_AT_CANDIDATE_SHA",
     "canonicalIndex": {
@@ -2292,7 +2298,21 @@
       "appCatalogueIndexParity": "FAIL_DB_ONLY",
       "apiDomVerification": "NOT_RUN",
       "latestMigrationObserved": "20261106193000_Grade12PrecalculusTeacherRubric",
-      "productionWrites": false
+      "productionWrites": false,
+      "legacyDependencyAudit": {
+        "legacyLessons": 100,
+        "legacyContentMetadata": 100,
+        "directPracticeAttempts": 0,
+        "directAssessmentItems": 0,
+        "advancedAdoptions": 2,
+        "generalAdoptions": 2,
+        "advancedClassGroups": 2,
+        "advancedAdoptionsWithExactlyOneMatchingGeneralAdoption": 2,
+        "advancedTopics": 2,
+        "advancedOutcomes": 2,
+        "linkedTopicOutcomeChildRows": 0,
+        "productionWrites": false
+      }
     },
     "sharedRegressionFailures": [
       {
@@ -2306,6 +2326,11 @@
         "runId": 45942891064,
         "jobId": 140320952767,
         "observed": "US G1 negative control failed historical shared-engine deletion assertions; causality not yet established. No unrelated code changed in this audit."
+      },
+      {
+        "category": "CURRICULUM_FAMILY",
+        "runId": 45944857774,
+        "observed": "Original G1/G11 additive test passed 2/2; next G1 gate passed 19/21 with stale exact shared-engine blob evidence. All 124 affected paths compared to PR file list; only shared engine changed. Base lines 11098 retained in order, 1309 additions exclusively Grade 10 family dispatch/build/format/verify. Narrow exact blob allowance and additional regression prepared; CI required."
       }
     ],
     "pathwayGuard": "NOT_RUN_API_DOM",
@@ -2313,6 +2338,52 @@
     "arabicRtlVisual": "NOT_RUN",
     "isolatedDatabaseRehearsal": "NOT_RUN",
     "status": "D_BLOCKED",
-    "firstIncompleteLessonOrdinal": 1
+    "firstIncompleteLessonOrdinal": 1,
+    "currentSessionSourceInventory": {
+      "requiredFiles": 7,
+      "requiredPages": 1893,
+      "supplementalFiles": 5,
+      "supplementalPages": 510,
+      "totalFiles": 12,
+      "totalPages": 2403,
+      "allHashesMatch": true,
+      "sourceLock": false,
+      "semanticAuditComplete": false
+    }
+  },
+  "currentSessionExecution": {
+    "baseSha": "83c31a13ffc173c7be9d1d85b24f4fa83c222aee",
+    "priorCandidateSha": "f250f43cc1b3fc0c8a8cafcadd374cfecb40cf7c",
+    "contentParity": {
+      "status": "PASS",
+      "runId": 45945136429,
+      "scope": "Exact owner-authorized G10 pack and blueprint delta; no broader exception"
+    },
+    "g1Compatibility": {
+      "initialFixCommit": "3edab59f6c1c1f6880f40316816f5170f38d4917",
+      "observedPassed": 2,
+      "observedFailed": 0,
+      "exactBlobPinRetest": "PENDING",
+      "currentAuthenticatedEvidence": "PENDING"
+    },
+    "digitalScope": {
+      "lessonsWithDeclaredFamilies": 97,
+      "distinctDeclaredFamilies": 559,
+      "lessonsWithoutDeclaredFamilies": 51,
+      "readyVerified": 0,
+      "teacherOnlyEligibilityFullyVerified": false
+    },
+    "d3": {
+      "workflowRunId": 45945136823,
+      "status": "QUEUED_AT_OBSERVATION",
+      "preparedAuthenticatedRoles": 4,
+      "foreignTenantNegativeControl": true,
+      "expectedArabicLessonPages": 148,
+      "expectedBrowserViews": 296,
+      "declaredCandidatePracticeDiagnostics": 97,
+      "productionRoutingEnabled": false
+    },
+    "replacementRehearsal": "NOT_RUN",
+    "productionWrites": false
   }
 }

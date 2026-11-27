@@ -239,3 +239,21 @@ test('Other grades and cross-school Practice negative-answer profiles remain exp
       assertExactHistoricalEngineRetirement(preG5);
   }
 });
+
+test('UAE G10 additive engine preserves every pinned released line and routes only G10 families',()=>{
+  const base='83c31a13ffc173c7be9d1d85b24f4fa83c222aee';
+  assert.equal(git('rev-parse',base+':'+engine),'fa4d40a57669f766e4cf2ce69ed6d573c6736d24');
+  const before=priorLines(base,engine), after=nowLines(engine);
+  const added=[];
+  let i=0;
+  for(const line of after){
+    if(i<before.length && line===before[i]) i++;
+    else added.push(line);
+  }
+  assert.equal(i,before.length,'Released engine source lines must survive in order');
+  if(added.length===0)return; // historic released G9 snapshot
+  assert.equal(git('rev-parse','HEAD:'+engine),'05a9ad87b9674a60aa3063318aaf79d8ce64b4c6');
+  assert.equal(added.length,1309);
+  assert.ok(added.every(line=>!(/USCCSS|UsCcss|usccss|UaeG[1-9](?![0-9])/.test(line))));
+  assert.ok(added.filter(line=>/Supports\(|family ==/.test(line)).every(line=>/G10|g10/.test(line)));
+});
