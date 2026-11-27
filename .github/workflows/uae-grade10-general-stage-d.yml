@@ -7,6 +7,8 @@ on:
       - '.github/workflows/uae-grade10-general-stage-d.yml'
       - 'tools/curriculum/uae_g10_stage_d_preflight.cjs'
       - 'tools/curriculum/uae_g10_stage_d_*.py'
+      - 'tools/Edulytics.CleanSeed/Program.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsPedagogicalLessonSeeder.cs'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tests/academic-uae-grade10*.test.cjs'
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-general-*'
@@ -227,3 +229,97 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+  g10-isolated-catalogue-replacement:
+    name: G10 isolated legacy 48+52 to 148 catalogue replacement and replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      CI: 'true'
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G10
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate candidate structure and pin the legacy fixture
+        run: |
+          set -euo pipefail
+          node tools/curriculum/uae_g10_stage_d_preflight.cjs
+          git worktree add --detach /tmp/g10-legacy 83c31a13ffc173c7be9d1d85b24f4fa83c222aee
+          python3 - <<'PY'
+          import json, pathlib, subprocess
+          scope=json.loads(pathlib.Path('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json').read_text())
+          assert scope['baselineSha']=='83c31a13ffc173c7be9d1d85b24f4fa83c222aee'
+          assert len(scope['legacyLessons'])==100
+          expected=[]
+          for pathway,n,sha in zip(('general','advanced'),(48,52),scope['blueprintBlobs']):
+              rel='src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g10-'+pathway+'-t1-ogl-v1.lesson-blueprint.json'
+              assert subprocess.check_output(['git','-C','/tmp/g10-legacy','rev-parse','HEAD:'+rel],text=True).strip()==sha
+              doc=json.loads((pathlib.Path('/tmp/g10-legacy')/rel).read_text(encoding='utf-8-sig'))
+              assert len(doc['Lessons'])==n
+              expected.extend(dict(code=x['LessonCode'],title=x['Title'],sourceLessonCode=x['SourceLessonCode'],blueprintCode=doc['BlueprintCode']) for x in doc['Lessons'])
+          assert expected==scope['legacyLessons']
+          PY
+      - name: Seed original pinned legacy catalogue in empty disposable PostgreSQL
+        run: |
+          set -euo pipefail
+          cd /tmp/g10-legacy
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-build
+      - name: Snapshot legacy target and non-target curriculum reference rows
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/uae_g10_stage_d_rehearsal_snapshot.py before /tmp/g10-catalogue-before.json
+      - name: Build candidate and execute scoped replacement twice
+        run: |
+          set -euo pipefail
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+          for n in 1 2; do
+            dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-build -- --uae-g10-rehearse artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-legacy-rehearsal-scope.json | tee "/tmp/g10-rehearsal-$n.log"
+            grep -q 'UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS' "/tmp/g10-rehearsal-$n.log"
+            python3 tools/curriculum/uae_g10_stage_d_rehearsal_snapshot.py after "/tmp/g10-catalogue-after-$n.json" /tmp/g10-catalogue-before.json
+          done
+          python3 tools/curriculum/uae_g10_stage_d_rehearsal_snapshot.py replay /tmp/g10-catalogue-after-1.json /tmp/g10-catalogue-after-2.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade10-isolated-legacy-catalogue-replacement
+          path: |
+            /tmp/g10-catalogue-before.json
+            /tmp/g10-catalogue-after-*.json
+            /tmp/g10-rehearsal-*.log
+          if-no-files-found: warn

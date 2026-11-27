@@ -769,6 +769,165 @@ public sealed class MathematicsPedagogicalLessonSeeder
             $"otherCurriculaUntouched=true advanced={advancedCount} publishedArabicMetadata=76");
     }
 
+    /// <summary>
+    /// Stage D isolated rehearsal only, against the exact pre-G10 clean
+    /// catalogue. Never called by production startup. Existing General
+    /// deterministic lesson IDs survive; legacy Advanced is retired inside
+    /// the same transaction. The real tenant/adoption migration is separate.
+    /// </summary>
+    public async Task RehearseUaeGrade10CatalogueReplacementAsync(
+        IReadOnlyDictionary<string, string> legacyTitles,
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L10:";
+        const string general = prefix + "GENERAL:";
+        const string advanced = prefix + "ADVANCED:";
+        var target = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        if (!_db.Database.IsNpgsql() ||
+            target.Host != "127.0.0.1" ||
+            target.Database != "edulytics_clean_ci" ||
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") != "UAE-G10" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") != "edulytics_clean_ci" ||
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Staging")
+            throw new InvalidOperationException("G10 catalogue rehearsal requires disposable local GitHub PostgreSQL.");
+
+        if (legacyTitles.Count != 100 ||
+            legacyTitles.Keys.Count(x => x.StartsWith(general, StringComparison.Ordinal)) != 48 ||
+            legacyTitles.Keys.Count(x => x.StartsWith(advanced, StringComparison.Ordinal)) != 52)
+            throw new InvalidOperationException("G10 exact 48+52 predecessor inventory required.");
+
+        MathematicsCurriculumPackRegistry.Validate();
+        var state = await _db.CurriculumPackImportStates.AsNoTracking()
+            .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.VersionCode == "MOE-2026-2027-T1" && x.IsComplete, ct);
+        var documents = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.LogicalLevel == 10).ToArray();
+        if (documents.Length != 1 || documents[0].Pathway != "General" ||
+            documents[0].BlueprintCode != "UAE-G10-GENERAL-T1-OGL-V1:OGL-V1" ||
+            documents[0].Units.Count != 18 || documents[0].Lessons.Count != 148)
+            throw new InvalidOperationException("G10 requires exact unified 148/18 General blueprint.");
+
+        var expected = new List<CurriculumPedagogicalLesson>();
+        var mappings = new List<CurriculumPedagogicalLessonOutcome>();
+        var ids = new HashSet<Guid>();
+        await BuildBlueprintLessonsAsync(
+            new Dictionary<string, CurriculumPackImportState>
+            { [MathematicsCurriculumPackRegistry.UaeCode] = state },
+            documents, expected, mappings, ids, ct);
+        ValidateExpectedGraph(expected, mappings, ids);
+        var byCode = expected.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        if (byCode.Count != 148 || expected.Any(x =>
+            !x.Code.StartsWith(general, StringComparison.Ordinal) ||
+            x.Pathway != "General" || x.LogicalLevelFrom != 10 ||
+            x.LogicalLevelTo != 10 || !x.Title.Any(c => c is >= '\u0600' and <= '\u06ff')) ||
+            !legacyTitles.Keys.Where(x => x.StartsWith(general, StringComparison.Ordinal)).All(byCode.ContainsKey))
+            throw new InvalidOperationException("G10 canonical target or legacy General identity drift.");
+
+        var contentDocuments = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(x => x.Lessons.Any(y => y.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+        if (contentDocuments.Length != 1 ||
+            contentDocuments[0].PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            contentDocuments[0].AcademicLanguage != "ar" ||
+            contentDocuments[0].Status != Edulytics.Core.Enums.CanonicalLessonContentStatus.Published ||
+            contentDocuments[0].Lessons.Count != 148 ||
+            !contentDocuments[0].Lessons.Select(x => x.LessonCode).ToHashSet(StringComparer.Ordinal)
+                .SetEquals(byCode.Keys))
+            throw new InvalidOperationException("G10 exact Arabic Published metadata candidate required.");
+
+        await using var tx = await _db.Database.BeginTransactionAsync(
+            System.Data.IsolationLevel.Serializable, ct);
+        await _db.Database.ExecuteSqlRawAsync("SELECT pg_advisory_xact_lock(27500029);", ct);
+        // This is a catalogue-only rehearsal. It refuses any tenant, student,
+        // saved assessment or practice records rather than deleting them.
+        if (await _db.Users.AnyAsync(ct) || await _db.Schools.AnyAsync(ct) ||
+            await _db.StudentProfiles.AnyAsync(ct) || await _db.DirectStudentProfiles.AnyAsync(ct) ||
+            await _db.SchoolCurriculumAdoptions.AnyAsync(ct) ||
+            await _db.AssessmentAttempts.AnyAsync(ct) || await _db.PracticeAttempts.AnyAsync(ct) ||
+            await _db.AssessmentItems.AnyAsync(ct))
+            throw new InvalidOperationException("G10 clean catalogue rehearsal refuses tenant/learner data.");
+
+        var existing = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var currentIds = existing.Select(x => x.Id).ToArray();
+        var metadata = await _db.CurriculumLessonContents
+            .Where(x => currentIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+        var metadataIds = metadata.Select(x => x.Id).ToArray();
+        var otherLessons = await _db.CurriculumPedagogicalLessons.CountAsync(ct) - existing.Length;
+        var otherMetadata = await _db.CurriculumLessonContents.CountAsync(ct) - metadata.Length;
+        if (metadata.Length != existing.Length ||
+            metadata.Select(x => x.PedagogicalLessonId).Distinct().Count() != existing.Length ||
+            existing.Any(x => x.FrameworkVersionId != state.FrameworkVersionId) ||
+            metadata.Any(x => x.FrameworkVersionId != state.FrameworkVersionId || (int)x.Status != 3) ||
+            await _db.CurriculumLessonContentTranslations.AnyAsync(
+                x => metadataIds.Contains(x.CurriculumLessonContentId), ct))
+            throw new InvalidOperationException("G10 predecessor metadata mismatch or stored prose.");
+
+        var alreadyReplaced = existing.Length == 148 &&
+            existing.Select(x => x.Code).ToHashSet(StringComparer.Ordinal).SetEquals(byCode.Keys);
+        if (alreadyReplaced)
+        {
+            foreach (var row in existing)
+            {
+                if (row.Id != byCode[row.Code].Id)
+                    throw new InvalidOperationException("G10 replay identity drift.");
+                EnsureLessonMatches(row, byCode[row.Code]);
+            }
+        }
+        else
+        {
+            if (existing.Length != 100 ||
+                !existing.Select(x => x.Code).ToHashSet(StringComparer.Ordinal).SetEquals(legacyTitles.Keys) ||
+                existing.Any(x => x.Title != legacyTitles[x.Code]) ||
+                existing.Where(x => x.Code.StartsWith(general, StringComparison.Ordinal))
+                    .Any(x => x.Id != byCode[x.Code].Id))
+                throw new InvalidOperationException("G10 exact legacy baseline mismatch; transaction not changed.");
+
+            var retired = existing.Where(x => x.Code.StartsWith(advanced, StringComparison.Ordinal)).ToArray();
+            var retiredIds = retired.Select(x => x.Id).ToArray();
+            // The test fixture contains only canonical metadata, not learner
+            // bodies. Any unforeseen restrictive foreign key aborts the transaction.
+            _db.CurriculumLessonContents.RemoveRange(metadata);
+            await _db.SaveChangesAsync(ct);
+            var retiredMappings = await _db.CurriculumPedagogicalLessonOutcomes
+                .Where(x => retiredIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+            _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(retiredMappings);
+            _db.CurriculumPedagogicalLessons.RemoveRange(retired);
+            await _db.SaveChangesAsync(ct);
+            await UpsertLessonsAsync(expected, ct);
+            await UpsertMappingsAsync(expected, mappings, ct);
+        }
+
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedDocumentsAsync(contentDocuments, ct, metadataOnly: true);
+
+        var after = await _db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var afterIds = after.Select(x => x.Id).ToArray();
+        var afterMetadata = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x => afterIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+        if (after.Length != 148 || afterMetadata.Length != 148 ||
+            afterMetadata.Select(x => x.PedagogicalLessonId).Distinct().Count() != 148 ||
+            afterMetadata.Any(x => (int)x.Status != 3) ||
+            await _db.CurriculumPedagogicalLessons.CountAsync(ct) != otherLessons + 148 ||
+            await _db.CurriculumLessonContents.CountAsync(ct) != otherMetadata + 148)
+            throw new InvalidOperationException("G10 scoped replacement postcondition failure; rollback.");
+        foreach (var row in after)
+        {
+            if (!byCode.TryGetValue(row.Code, out var targetRow) || row.Id != targetRow.Id)
+                throw new InvalidOperationException("G10 target identity drift; rollback.");
+            EnsureLessonMatches(row, targetRow);
+        }
+
+        await tx.CommitAsync(ct);
+        Console.WriteLine("UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS " +
+            $"replay={alreadyReplaced} otherLessons={otherLessons} otherMetadata={otherMetadata}");
+    }
+
     private async Task BuildUaeAsync(
         CurriculumPackImportState state,
         ICollection<CurriculumPedagogicalLesson> expectedLessons,
