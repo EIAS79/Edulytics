@@ -7,7 +7,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from lesson_semantic_content_audit import audit as semantic_audit, independently_certified_g12
+from lesson_semantic_content_audit import audit as semantic_audit, independently_certified_g12, g10_archival_scope
 from lesson_skill_resolution_audit import (
     audit as skill_resolution_audit,
     separately_certified_g4_practice,
@@ -64,15 +64,22 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
         if code:
             result[code] = row
 
+    retired_g10, _, archival_errors = g10_archival_scope()
     content_dir = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
     official, errors = load_reviewed_official_rule_mappings(content_dir)
+    errors.extend(archival_errors)
+    # Archived Advanced content remains on disk for provenance, not runtime.
+    # Exclude only the exact independently validated 52 retired identities.
+    official = {code: row for code, row in official.items() if code not in retired_g10}
+    result = {code: row for code, row in result.items() if code not in retired_g10}
     for code, row in official.items():
         result.setdefault(code, row)
 
     supporting, unmatched, supporting_errors = load_supporting_rule_mappings(content_dir)
     errors.extend(supporting_errors)
     for code, row in supporting.items():
-        result.setdefault(code, row)
+        if code not in retired_g10:
+            result.setdefault(code, row)
 
     explicit_codes = {
         str(row.get("lessonCode") or "").strip()
@@ -225,7 +232,8 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
-        if row["lessonCode"] not in covered_by_non_supporting_mapping
+        if row["lessonCode"] not in retired_g10
+        and row["lessonCode"] not in covered_by_non_supporting_mapping
         and row["lessonCode"] not in specialist_g12
         and row["lessonCode"] not in specialist_g4
         and row["lessonCode"] not in specialist_g6
@@ -415,6 +423,51 @@ def decide(
     return "SOLVER_CAPABILITY_MISSING", ["Approved skill lacks sufficient generation/solver capability."]
 
 
+def g10_exact_first_party_contracts(mappings, skills, families):
+    """Match the exact C# release-token loader, not generic primary-only routing.
+    Do not promote production status or assert complete textbook parity.
+    The separate Stage D tests still exercise each of 691 lesson/family pairs.
+    """
+    _, canonical, errors = g10_archival_scope()
+    owner = read_json(ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/grade10-owner-first-party-release-scope.json")
+    if (owner.get("releaseScope") != "FIRST_PARTY_ORIGINAL_EDUCATIONAL_EQUIVALENCE_WITH_DISCLOSED_SOURCE_LIMITATIONS"
+            or owner.get("ownerPermissionToProceedToReleaseGates") is not True
+            or owner.get("originalPublisherElementParity") != "UNKNOWN_NOT_CERTIFIED"):
+        errors.append("G10 first-party release scope not recorded")
+    exact = {code: row for code, row in mappings.items()
+             if code.startswith("PED:UAE-MOE-MATH:L10:GENERAL:")}
+    if len(canonical) != 148 or set(exact) != canonical:
+        errors.append("G10 exact 148 lesson registry mismatch")
+    found = set()
+    count = 0
+    distinct = set()
+    for code, row in exact.items():
+        primary = clean_list(row.get("primarySkills"))
+        allowed = clean_list(row.get("allowedQuestionFamilies"))
+        forbidden = set(clean_list(row.get("forbiddenQuestionFamilies")))
+        if (not primary or any(x not in skills for x in primary)
+                or not allowed or len(allowed) != len(set(allowed))
+                or forbidden.intersection(allowed)
+                or not row.get("practiceMechanic") or not row.get("evidence")):
+            errors.append("G10 incomplete explicit source/contract mapping: " + code)
+            continue
+        invalid = [f for f in allowed if f not in families or
+                   families[f].get("lessonPracticeRouting") is not True or
+                   not str(families[f].get("verificationPolicy") or "").strip() or
+                   families[f].get("skillId") not in skills]
+        if invalid:
+            errors.append("G10 missing or unroutable exact families: " + code + ": " + ", ".join(invalid))
+            continue
+        # The C# token loader checks the same registration policy and
+        # explicitly includes the registered skill of each allowed family.
+        found.add(code)
+        count += len(allowed)
+        distinct.update(allowed)
+    if count != 691 or len(distinct) != 678 or found != canonical:
+        errors.append("G10 exact 691 assignments / 678 distinct family inventory drift")
+    return found, errors
+
+
 def audit() -> dict[str, Any]:
     skill_report = skill_resolution_audit()
     semantic_report = semantic_audit()
@@ -433,7 +486,8 @@ def audit() -> dict[str, Any]:
     specialist_g8=owner_approved_g8_declared_practice()
     specialist_g9, g9_teacher_only = owner_approved_g9_declared_practice()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
-    blockers: list[str] = list(mapping_blockers)
+    specialist_g10, g10_errors = g10_exact_first_party_contracts(mappings, skills, families)
+    blockers: list[str] = list(mapping_blockers) + g10_errors
     if set(skill_by_code) != set(semantic_by_code):
         missing_skill = sorted(set(semantic_by_code) - set(skill_by_code))
         missing_semantic = sorted(set(skill_by_code) - set(semantic_by_code))
@@ -621,6 +675,28 @@ def audit() -> dict[str, Any]:
                 "by source, RTL, four-role E2E and production feature token."
             ]
 
+        specialist_g10_ready = bool(
+            len(specialist_g10) == 148 and code in specialist_g10
+            and semantic.get("academicLanguage") == "ar"
+            and semantic_status in {"PASS_TARGETED", "PASS_WITH_WARNINGS", "PASS_REVIEWED_OFFICIAL"}
+            and skill_status not in {"CONFLICT", "AMBIGUOUS", "UNRESOLVED", "ONTOLOGY_GAP"}
+            and not semantic.get("studentFacingDefects")
+            and any(rule.get("ruleId") == "g10-arabic-exact-target-" + code
+                    and rule.get("workedExamplePatterns")
+                    and not rule.get("missingWorkedPatterns")
+                    for rule in semantic.get("matchedRules", []))
+        )
+        if specialist_g10_ready:
+            readiness = "READY_CONTEXTUAL"
+            has_family = True
+            has_contextual = True
+            reasons = [
+                "G10 exact first-party declared family/skill adapter scope matches "
+                "the release-token loader and Arabic semantic signature. "
+                "Not a production activation, source parity claim or substitute "
+                "for the 691 pair and authenticated current-SHA runtime tests."
+            ]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -659,7 +735,8 @@ def audit() -> dict[str, Any]:
             "specialistGrade8OwnerScopedContractPendingRuntime": specialist_g8_ready,
             "specialistGrade9OwnerScopedDigitalContractPendingRuntime": specialist_g9_ready,
             "grade9TeacherReviewOnlyIndependentlyRecorded": code in g9_teacher_only,
-            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready or specialist_g9_ready) else capability_reasons),
+            "specialistGrade10FirstPartyExactContractPendingRuntime": specialist_g10_ready,
+            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready or specialist_g9_ready or specialist_g10_ready) else capability_reasons),
         })
 
     summary["grade4SpecialistExactPracticeCount"] = sum(
@@ -699,6 +776,9 @@ def audit() -> dict[str, Any]:
     if grade12_seen and (len(grade12_seen)!=73 or
         summary["grade12SpecialistVerifiedLessonCount"]!=73):
         blockers.append("G12 source-specific 73 real Practice routes not completely certified")
+    summary["grade10FirstPartyPendingRuntimeCount"] = sum(r["specialistGrade10FirstPartyExactContractPendingRuntime"] for r in rows)
+    if summary["grade10FirstPartyPendingRuntimeCount"] != 148:
+        blockers.append("G10 exact 148 Arabic first-party contract scope not validated")
     summary["skillRegistryCount"] = len(skills)
     summary["capabilityRegistryCount"] = len(capabilities)
     summary["questionFamilyRegistryCount"] = len(families)
@@ -736,6 +816,11 @@ def main() -> int:
 
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
     if args.strict and report["summary"]["blockerCount"]:
+        print(json.dumps({"blockers": report["blockers"],
+                          "generationBlockedLessons": [
+                              {"lessonCode": x["lessonCode"], "readiness": x["generationReadiness"], "reasons": x["reasons"]}
+                              for x in report["lessons"] if x["generationReadiness"] not in READY]},
+                         ensure_ascii=False, indent=2))
         return 2
     return 0
 
