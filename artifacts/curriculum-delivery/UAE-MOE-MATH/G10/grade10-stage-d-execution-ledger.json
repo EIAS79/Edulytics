@@ -84,11 +84,24 @@
       "scope": "Four original examples amended in RichV2 and fallback pack; subpart crosswalk added",
       "tests": "WRITTEN_NOT_RUN",
       "previousTestEvidenceRetained": true
+    },
+    "advancedExplicitSubpartReview": {
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "parents": 4,
+      "subparts": 9,
+      "numberedExerciseSlots": 74,
+      "semanticParity": "UNKNOWN"
+    },
+    "advancedCrossTargetRepair": {
+      "targetOrdinal": 20,
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "tests": "WRITTEN_NOT_RUN",
+      "lessonAccepted": false
     }
   },
   "observedCI": {
-    "sha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
-    "runId": 45906212068,
+    "sha": "fec78403bea9fcbca2212d41a07c756d6a73a52f",
+    "runId": 45918111550,
     "status": "queued",
     "conclusion": null
   },
@@ -105,7 +118,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Continue Lesson 001 unnumbered instructional and advanced routed target evidence; then sequential lesson closure, authenticated RTL and isolated DB, and final same-SHA CI. Four example amendments and explicit subpart mapping require re-test; no production routing.",
+  "next": "Continue L001 remaining advanced cross-target items and unnumbered source mapping, then sequential Stage D acceptance. L020 context repair is a dependency fix, not early closure. Re-run all affected tests, authenticated RTL, isolated DB and same-SHA Final CI.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {

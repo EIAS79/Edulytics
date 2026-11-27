@@ -53,7 +53,7 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l04-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 12,
+  "arabicWorkedExamples": 13,
   "originalVisualModels": 5,
   "primarySkills": [
     "supporting.indices.roots_standard_form"
@@ -99,5 +99,13 @@
   "remainingStageDObligations": [
     "run authored C# and Node math tests plus actual authenticated student input in Stage D",
     "prove full Grade10 Arabic lesson coverage and maintain correct source/teacher rubric boundaries before publish"
-  ]
+  ],
+  "stageDFollowup": {
+    "reason": "Cross-target gap from L001 advanced source review: explicit contextual astronomical calculation and interpretation",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+    "exampleTitle": "تطبيق فلكي: زمن انتقال الضوء بين مسافتين",
+    "sourceElementDenominatorScopeUnchanged": "Historical selected General source count only; additional advanced source review not an exhaustive denominator",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

@@ -23,7 +23,7 @@ test('Grade10 ordinal20 retained in canonical approved 148/18 and authored Arabi
 });
 test('Arabic scientific notation examples and diagrams are original and correct',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,13);assert.equal(l.Visuals.length,5);
  assert.equal(7.25e6,7250000);
  assert.ok(Math.abs(8.3e-5-0.000083)<1e-15);
  assert.equal(8e-2*5e3,400);
@@ -49,3 +49,5 @@ test('Bounded independent scientific exponent contracts are source-matched and f
  assert.match(engine,/static\s+bool\s+Verify\s*\(/);
  assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10ScientificExponentResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
+
+test('Stage D advanced cross-target original astronomy context has exact units and bounded teacher route',()=>{const l=rich.Lessons[0],e=read('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json'),p=pack.Lessons.find(x=>x.LessonCode===code),a=p.Translations.find(t=>t.CultureCode==='ar');assert.ok(l.WorkedExamples.some(x=>x.Title==='تطبيق فلكي: زمن انتقال الضوء بين مسافتين'));assert.ok(a.WorkedExamples.includes('تطبيق فلكي: زمن انتقال الضوء بين مسافتين'));assert.equal(4.5e16/3e8,1.5e8);assert.equal(7.2e11/3e8,2400);assert.equal(2400/60,40);assert.ok(Math.abs(1.5e8/(365*24*3600)-4.7564687976)<1e-8);assert.equal(e.rows.length,9);assert.equal(e.numberedExerciseSlotsCountingExplicitSubparts,74);assert.equal(e.semanticParity,'UNKNOWN');assert.equal(e.productionRouting,false);assert.equal(contract.runtimeGate.productionRouting,false);});

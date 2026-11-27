@@ -698,7 +698,10 @@
         "subpart": null
       },
       "status": "L001_ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED",
-      "crossTargetStatus": "U01L02 distribution audit pending"
+      "crossTargetStatus": "U01L02 distribution audit pending",
+      "explicitSubpartEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "explicitSubpartsReviewed": 2,
+      "subpartAuditScope": "Author-level cross-target mapping; existing routing status and runtime blockers retained."
     },
     {
       "sourceElementId": "G10-ADV-U03L01-P201-Q41",
@@ -862,7 +865,10 @@
           "title": "خواص قسمة الأسس"
         }
       ],
-      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT"
+      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT",
+      "explicitSubpartEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "explicitSubpartsReviewed": 2,
+      "subpartAuditScope": "Author-level cross-target mapping; existing routing status and runtime blockers retained."
     },
     {
       "sourceElementId": "G10-ADV-U03L01-P201-Q52",
@@ -1037,7 +1043,10 @@
         "workedExampleTitle": "امتداد متقدم: مجموع وفرق نموذجيْن تربيعيين عشريين",
         "subpart": null
       },
-      "status": "L001_ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+      "status": "L001_ORIGINAL_EQUIVALENT_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "explicitSubpartEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "explicitSubpartsReviewed": 2,
+      "subpartAuditScope": "Author-level cross-target mapping; existing routing status and runtime blockers retained."
     },
     {
       "sourceElementId": "G10-ADV-U03L01-P201-Q62",
@@ -1094,7 +1103,10 @@
           "title": "نواتج الضرب الخاصة"
         }
       ],
-      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT"
+      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT",
+      "explicitSubpartEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+      "explicitSubpartsReviewed": 3,
+      "subpartAuditScope": "Author-level cross-target mapping; existing routing status and runtime blockers retained."
     },
     {
       "sourceElementId": "G10-ADV-U03L01-P201-Q65",
@@ -1179,7 +1191,13 @@
           "title": "خواص قسمة الأسس"
         }
       ],
-      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT"
+      "status": "ROUTED_BY_SOURCE_SKILL_PENDING_TARGET_CONTENT_AUDIT",
+      "contextualTargetEvidence": {
+        "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l04-ar.rich-lesson-v2.json",
+        "title": "تطبيق فلكي: زمن انتقال الضوء بين مسافتين",
+        "originalArtifactPart": "c",
+        "status": "ORIGINAL_EXPLANATION_AUTHORED_TEACHER_AND_RUNTIME_PENDING"
+      }
     }
   ],
   "instructionalRows": [
@@ -1505,5 +1523,12 @@
   ],
   "scope": "Each numbered item routed to exact approved canonical lesson(s); grouped non-numbered rows require finer atomic audit. Other target content not certified. L001 originals preserve source-specific classification, domain, operations and complementary-variable contexts.",
   "semanticParity": "UNKNOWN",
-  "productionRouting": false
+  "productionRouting": false,
+  "explicitSubpartReview": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+    "parents": 4,
+    "subparts": 9,
+    "numberedExerciseSlots": 74,
+    "semanticParity": "UNKNOWN"
+  }
 }
