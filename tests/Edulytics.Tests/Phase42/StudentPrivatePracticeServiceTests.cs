@@ -234,19 +234,12 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Quadratic_lesson_exposes_only_truthfully_supported_standard_difficulties()
+    public async Task Retired_UaeG10_Advanced_quadratic_lesson_cannot_generate_or_advertise_practice()
     {
         const string lessonCode =
             "PED:UAE-MOE-MATH:L10:ADVANCED:01:04:SOLVING-QUADRATIC-EQUATIONS-BY-FACTORING";
 
-        Assert.True(
-            LessonPracticeContractRegistry.TryResolve(
-                lessonCode,
-                out var contract));
-        Assert.NotNull(contract);
-        Assert.Equal(
-            new[] { "supporting.algebra.quadratic_larger_root" },
-            contract!.AllowedQuestionFamilies);
+        Assert.False(LessonPracticeContractRegistry.TryResolve(lessonCode, out _));
 
         var ids = Ids.Create();
         var lessonId = Guid.NewGuid();
@@ -258,8 +251,8 @@ public sealed class StudentPrivatePracticeServiceTests
                     ids.Adoption,
                     ids.Class,
                     ids.Year,
-                    "Grade 11 Advanced",
-                    "11A")
+                    "Grade 10 Advanced (retired)",
+                    "10A")
             ],
             Context = BuildContext(
                 ids,
@@ -282,13 +275,7 @@ public sealed class StudentPrivatePracticeServiceTests
             ids.Adoption);
 
         var option = Assert.Single(workspace.Lessons);
-        Assert.Equal(
-            new[]
-            {
-                StudentPrivatePracticeDifficulty.MyLevel,
-                StudentPrivatePracticeDifficulty.AtClassLevel
-            },
-            option.SupportedDifficulties);
+        Assert.Empty(option.SupportedDifficulties);
 
         var result = await service.GenerateAsync(
             ids.User,
@@ -302,7 +289,7 @@ public sealed class StudentPrivatePracticeServiceTests
                 20261001));
 
         Assert.Equal(
-            StudentPrivatePracticeError.UnsupportedDifficulty,
+            StudentPrivatePracticeError.NoSupportedOutcomes,
             result.Error);
         Assert.Null(repo.SavedAttempt);
     }

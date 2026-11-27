@@ -84,6 +84,13 @@ public sealed class UaeOfficialReferenceCoverageTests
             x.LogicalLevel == 6 &&
             string.Equals(x.Pathway, "General", StringComparison.OrdinalIgnoreCase));
         Assert.Equal(128, grade6General.Lessons.Count);
+        var grade10 = Assert.Single(blueprints, x => x.LogicalLevel == 10);
+        Assert.Equal("General", grade10.Pathway);
+        Assert.Equal(148, grade10.Lessons.Count);
+        Assert.Equal(18, grade10.Units.Count);
+        Assert.Equal(48, grade10.Lessons.Count(x => !string.IsNullOrWhiteSpace(x.OfficialReferenceCode)));
+        Assert.Equal(100, grade10.Lessons.Count(x => string.IsNullOrWhiteSpace(x.OfficialReferenceCode)));
+
         foreach (var blueprint in blueprints)
         {
             Assert.All(
@@ -126,6 +133,17 @@ public sealed class UaeOfficialReferenceCoverageTests
                         return;
                     }
                     Assert.False(isSupporting);
+
+                    // The exact G10 148-item candidate includes 100 original
+                    // lessons with no accepted official textbook reference.
+                    // Preserve the absence of fabricated official mappings.
+                    if (blueprint == grade10 && string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode))
+                    {
+                        Assert.StartsWith("PED:UAE-MOE-MATH:L10:GENERAL:", lesson.LessonCode, StringComparison.Ordinal);
+                        Assert.Empty(lesson.OutcomeCodes);
+                        Assert.Empty(lesson.Alignments);
+                        return;
+                    }
 
                     // The G4 owner-authored source audit explicitly records
                     // 49 lessons without an accepted official reference node.

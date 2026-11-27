@@ -7,6 +7,22 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class LessonPracticeRuntimeClosureTests
 {
     [Fact]
+    public void PendingG10DoesNotRestoreAnyRetiredOrUnverifiedPracticeContract()
+    {
+        var g10 = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(x => x.Lessons)
+            .Where(x => x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal)).ToArray();
+        Assert.Equal(148, g10.Length);
+        Assert.All(g10, x =>
+        {
+            Assert.StartsWith("PED:UAE-MOE-MATH:L10:GENERAL:", x.LessonCode, StringComparison.Ordinal);
+            Assert.False(LessonPracticeCapabilityResolver.TryResolve(x.LessonCode, out _));
+        });
+        Assert.DoesNotContain(LessonPracticeContractRegistry.All,
+            x => x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void EveryCanonicalLearnerLessonResolvesVerifiedRuntimePracticeCapability()
     {
         var lessons = MathematicsCanonicalLessonContentSeeder
@@ -18,6 +34,10 @@ public sealed class LessonPracticeRuntimeClosureTests
             // Their exact 80+2 evidence is covered by G9 Stage D and E2E.
             .Where(lesson => !lesson.LessonCode.StartsWith(
                 "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
+            // G10 is not a released digital cohort: exact 97 candidates
+            // have their own D.2 and authenticated D.3 release gates.
+            .Where(lesson => !lesson.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal))
             .GroupBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
             .Select(group => group.First())
             .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
@@ -55,6 +75,10 @@ public sealed class LessonPracticeRuntimeClosureTests
             // Their exact 80+2 evidence is covered by G9 Stage D and E2E.
             .Where(lesson => !lesson.LessonCode.StartsWith(
                 "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal))
+            // G10 is not a released digital cohort: exact 97 candidates
+            // have their own D.2 and authenticated D.3 release gates.
+            .Where(lesson => !lesson.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal))
             .GroupBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
             .Select(group => group.First())
             .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)

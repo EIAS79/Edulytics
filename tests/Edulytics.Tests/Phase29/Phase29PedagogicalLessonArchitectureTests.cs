@@ -389,7 +389,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         // Owner-retired UAE Grade9 removes 96 Advanced + 82 General
         // old reference-linked lessons and 42 official-linked lessons.
         Assert.Equal(
-            1373 - 10 - 59 - 62 - 1 - 77 - 96 - 82,
+            1373 - 10 - 59 - 62 - 1 - 77 - 96 - 82 - 52,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>
