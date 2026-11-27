@@ -9268,6 +9268,337 @@
         "uae.g10.general.u05.l08.spreadsheet_interest",
         "uae.g10.general.u05.l08.exponential_logistic_crossing"
       ]
+    },
+    {
+      "id": "algebra.polynomial.functions",
+      "domain": "algebra",
+      "canonicalName": "الدوال كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+        "uae.g10.general.u01.l11.polynomial_degree_integer",
+        "uae.g10.general.u01.l11.polynomial_end_behavior"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.graph_analysis",
+      "domain": "algebra",
+      "canonicalName": "تحليل التمثيلات البيانية للدوال كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l12.graph_vertex_pair",
+        "uae.g10.general.u01.l12.graph_extremum_kind",
+        "uae.g10.general.u01.l12.graph_x_intercepts"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.solve_higher_degree",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l13.cubic_integer_roots",
+        "uae.g10.general.u01.l13.biquadratic_integer_roots"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.remainder_factor_theorems",
+      "domain": "algebra",
+      "canonicalName": "نظريتا الباقي والعامل",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l14.remainder_theorem_value",
+        "uae.g10.general.u01.l14.factor_theorem_decision"
+      ]
+    },
+    {
+      "id": "algebra.linear.system.graphical_solution",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات الخطية بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l01.graph_intersection_x",
+        "uae.g10.general.u03.l01.graph_intersection_y",
+        "uae.g10.general.u03.l01.graph_solution_count"
+      ]
+    },
+    {
+      "id": "algebra.linear.inequalities.systems_two_variables",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المتباينات بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l02.feasible_point_membership",
+        "uae.g10.general.u03.l02.boundary_point_membership"
+      ]
+    },
+    {
+      "id": "algebra.linear.programming.optimize",
+      "domain": "algebra",
+      "canonicalName": "البرمجة الخطية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l03.optimal_objective_value",
+        "uae.g10.general.u03.l03.unique_optimal_vertex"
+      ]
+    },
+    {
+      "id": "algebra.linear.system.three_variables",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات بثلاثة متغيرات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l04.three_var_x",
+        "uae.g10.general.u03.l04.three_var_y",
+        "uae.g10.general.u03.l04.three_var_z"
+      ]
+    },
+    {
+      "id": "algebra.matrices.operations",
+      "domain": "algebra",
+      "canonicalName": "العمليات على المصفوفات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l05.matrix_sum_entry",
+        "uae.g10.general.u03.l05.matrix_difference_entry",
+        "uae.g10.general.u03.l05.matrix_scalar_entry"
+      ]
+    },
+    {
+      "id": "algebra.matrices.multiply",
+      "domain": "algebra",
+      "canonicalName": "ضرب المصفوفات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l06.matrix_product_entry",
+        "uae.g10.general.u03.l06.matrix_product_compatible"
+      ]
+    },
+    {
+      "id": "algebra.matrices.cramer_determinants",
+      "domain": "algebra",
+      "canonicalName": "قاعدة كرامر والمحددات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l07.determinant2",
+        "uae.g10.general.u03.l07.cramer_x",
+        "uae.g10.general.u03.l07.cramer_y"
+      ]
+    },
+    {
+      "id": "algebra.matrices.inverse",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات باستخدام المصفوفات العكسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l08.inverse2_entry",
+        "uae.g10.general.u03.l08.inverse2_exists"
+      ]
+    },
+    {
+      "id": "algebra.matrices.augmented_row_reduce",
+      "domain": "algebra",
+      "canonicalName": "المصفوفات الموسعة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l09.row_operation_entry",
+        "uae.g10.general.u03.l09.rref_solution_x",
+        "uae.g10.general.u03.l09.rref_solution_y"
+      ]
+    },
+    {
+      "id": "algebra.exponential.graph_features",
+      "domain": "algebra",
+      "canonicalName": "تمثيل الدوال الأسية بيانيًا / النمو والاضمحلال",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l01.value_at_x",
+        "uae.g10.general.u05.l01.is_growth",
+        "uae.g10.general.u05.l01.horizontal_asymptote",
+        "uae.g10.general.u05.l01.value_at_shift"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.rate_of_change",
+      "domain": "algebra",
+      "canonicalName": "معدل تغير الدالة التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l08.average_rate",
+        "uae.g10.general.u04.l08.rate_is_positive"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.graph_features",
+      "domain": "algebra",
+      "canonicalName": "تمثيل الدوال التربيعية بيانيًا / العلاقات والدوال التربيعية وتحويلاتها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l07.vertex_h",
+        "uae.g10.general.u04.l07.vertex_k",
+        "uae.g10.general.u04.l07.opens_up",
+        "uae.g10.general.u04.l07.value_at_x",
+        "uae.g10.general.u04.l01.vertex_x",
+        "uae.g10.general.u04.l01.vertex_y",
+        "uae.g10.general.u04.l01.opens_up",
+        "uae.g10.general.u04.l01.value_at_x"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.solve_by_graphing",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات التربيعية بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l02.real_root_count",
+        "uae.g10.general.u04.l02.left_intercept",
+        "uae.g10.general.u04.l02.right_intercept"
+      ]
+    },
+    {
+      "id": "algebra.complex.number_operations",
+      "domain": "algebra",
+      "canonicalName": "الأعداد المركبة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l03.sum_real",
+        "uae.g10.general.u04.l03.sum_imag",
+        "uae.g10.general.u04.l03.product_real",
+        "uae.g10.general.u04.l03.product_imag",
+        "uae.g10.general.u04.l03.i_power_real",
+        "uae.g10.general.u04.l03.modulus_squared"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.complete_square",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات التربيعية بإكمال المربع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l04.square_constant",
+        "uae.g10.general.u04.l04.completed_square_roots"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.formula_discriminant",
+      "domain": "algebra",
+      "canonicalName": "القانون العام والمميز للمعادلة التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l05.discriminant",
+        "uae.g10.general.u04.l05.real_root_count",
+        "uae.g10.general.u04.l05.integer_roots_formula"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.inequality_sign_chart",
+      "domain": "algebra",
+      "canonicalName": "المتباينات التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l06.probe_truth",
+        "uae.g10.general.u04.l06.between_roots_truth",
+        "uae.g10.general.u04.l06.roots_included"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.roots_zeros_complex",
+      "domain": "algebra",
+      "canonicalName": "الجذور والأصفار",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l15.descartes_variations",
+        "uae.g10.general.u01.l15.complex_conjugate_zero",
+        "uae.g10.general.u01.l15.total_roots_with_multiplicity"
+      ]
     }
   ]
 }
