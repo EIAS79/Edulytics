@@ -17,7 +17,7 @@ public static partial class PracticeMathVisualRenderer
         string name = family[prefix.Length..];
         int N(string key, int low, int high)
         {
-            if (!p.TryGetProperty(key, out var value) || !value.TryGetInt32(out int n) || n < low || n > high)
+            if (!p.TryGetProperty(key, out var value) || value.ValueKind != JsonValueKind.Number || !value.TryGetInt32(out int n) || n < low || n > high)
                 throw new JsonException("Invalid G10 diagram parameter: " + key);
             return n;
         }
