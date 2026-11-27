@@ -34,12 +34,26 @@
   "originalVisualModels": 4,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u09-l05-ar.rich-lesson-v2.json",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u09l05.test.cjs"
+    "tests/academic-uae-grade10-arabic-u09l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 75,
   "nextEligibleCanonicalCode": "G10-U09-L06",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_GRADE10_ENGINE_YET"
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "primarySkills": [
+    "geometry.triangle_congruence.asa"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u09.l05.asa_included_side",
+    "uae.g10.general.u09.l05.aas_remaining_angle"
+  ],
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
+  "stageCReconciliation": "Original bounded closed-response candidates; open proof/visual tasks remain teacher-reviewed; no full source parity or production route.",
+  "sourcePagesScreenedForNewDigitalFamilies": [
+    326,
+    327
+  ]
 }
