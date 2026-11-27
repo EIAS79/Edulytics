@@ -14,6 +14,7 @@ const curriculum=read('src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curricul
 const failures=[],releaseBlockers=[],warnings=[];
 const fail=(kind,n)=>failures.push({kind,ordinal:n});
 const block=(kind,n)=>releaseBlockers.push({kind,ordinal:n});
+const authoringLeak=/\b(?:Stage\s*[A-D]|Grade10|PDF\s*\d|WRITTEN_NOT_RUN|Our-CS|rubric|EDULYTICS_AUTHORED_SUBSTITUTE)\b|\.pdf\b/i;
 const counters={checked:0,arabic:0,rich:0,sourceBodyVerified:0,indexOnly:0,teacherScored:0,stageDCertified:0,testsDeclared:0};
 if(bp.Units.length!==18)fail('EXPECTED_18_UNITS',0);
 if(bp.Lessons.length!==148)fail('EXPECTED_148_BLUEPRINT_LESSONS',0);
@@ -53,7 +54,7 @@ for(let n=1;n<=148;n++){
  if(!p){fail('MISSING_PACK_LESSON',n);continue;}
  const ars=(p.Translations||[]).filter(t=>t.CultureCode==='ar');
  if(ars.length!==1||!ars[0].Title||!ars[0].Explanation||ars[0].Explanation.length<50)fail('ARABIC_TRANSLATION_MISSING',n);
- else {counters.arabic++;if(ars[0].Title!==b.Title)warnings.push({kind:'ARABIC_TITLE_VARIANCE',ordinal:n});}
+ else {if(authoringLeak.test(JSON.stringify(ars[0])))fail('STUDENT_INTERNAL_AUTHORING_TEXT',n);counters.arabic++;if(ars[0].Title!==b.Title)warnings.push({kind:'ARABIC_TITLE_VARIANCE',ordinal:n});}
  const cpPath=prefix+'lesson-'+String(n).padStart(3,'0')+'-stage-a-c-checkpoint.json';
  if(!exists(cpPath)){fail('MISSING_CHECKPOINT',n);continue;}
  const c=read(cpPath);counters.checked++;
@@ -76,7 +77,7 @@ for(let n=1;n<=148;n++){
  else if(richPath){
   const x=read(richPath).Lessons?.find(v=>v.LessonCode===b.LessonCode);
   if(!x||x.CultureCode!=='ar'||!x.WorkedExamples?.length||!x.Visuals?.length)fail('RICH_LESSON_INCOMPLETE',n);
-  else counters.rich++;
+  else {if(authoringLeak.test(JSON.stringify([x.ExplanationParagraphs,x.SummaryPoints,x.KeyConcepts,x.WorkedExamples,x.Visuals,x.CommonMistakes])))fail('RICH_INTERNAL_AUTHORING_TEXT',n);counters.rich++;}
  }else fail('RICH_PATH_MISSING',n);
  const m=skills.get(b.LessonCode);
  if(!m||!m.primarySkills?.length)fail('MISSING_MATH_SKILL_MAPPING',n);
