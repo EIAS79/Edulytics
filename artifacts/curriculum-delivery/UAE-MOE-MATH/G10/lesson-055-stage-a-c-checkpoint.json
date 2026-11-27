@@ -12,7 +12,7 @@
   "status": "READY_FOR_STAGE_D",
   "sourceIndexTitleVerified": true,
   "sourceBodyVerified": true,
-  "sourceVerificationScope": "OLDER_2018_2019_ADVANCED_SAME_TOPIC_BODY_NOT_2025_2026_EQUIVALENCE",
+  "sourceVerificationScope": "OLDER_ADVANCED_2018_2019_PDF44_60_GRAPH_TOPIC_PAGES_VISUALLY_SCREENED_NOT_EXHAUSTIVE_ATOMIC_PARITY",
   "ownerApprovedIndexOnlyAuthoring": false,
   "fullSourceBookEquivalenceClaimed": false,
   "canonicalLessonCount": 148,
@@ -27,7 +27,16 @@
     48,
     49,
     50,
-    51
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
   ],
   "sourcePrintedPages": [
     637,
@@ -37,10 +46,19 @@
     641,
     642,
     643,
-    644
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653
   ],
   "sourceUnit": "9",
-  "sourceLesson": "9-3",
+  "sourceLesson": "9-3 and 9-4",
   "sourceElementDenominatorForThisLesson": null,
   "sourceElementsMapped": null,
   "sourceElementCoverageMethod": "TOPIC_LEVEL_SOURCE_MAPPED_NOT_EXHAUSTIVE_QUESTION_CHECK",
@@ -50,11 +68,18 @@
   "arabicContentPackLessonCount": 55,
   "contentPackLessonCount": 88,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l05-ar.rich-lesson-v2.json",
-  "stageCStatus": "NO_EXACT_ENGINE_TEACHER_SCORING",
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
   "primarySkills": [
     "algebra.rational.graph_features"
   ],
-  "allowedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u06.l05.reciprocal_vertical_asymptote",
+    "uae.g10.general.u06.l05.reciprocal_horizontal_asymptote",
+    "uae.g10.general.u06.l05.reciprocal_graph_value",
+    "uae.g10.general.u06.l05.removable_hole_x",
+    "uae.g10.general.u06.l05.removable_hole_y",
+    "uae.g10.general.u06.l05.oblique_asymptote_intercept"
+  ],
   "teacherReviewRequiredFor": [
     "rational domain restrictions",
     "exact symbolic simplification and graph reasoning",
@@ -62,15 +87,16 @@
     "nonlinear inequalities and equivalence proofs"
   ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u06l05.test.cjs"
+    "tests/academic-uae-grade10-arabic-u06l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RationalUnitCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_GRADE10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 56,
   "nextEligibleCanonicalCode": "G10-U06-L06",
   "closureBasis": "OLDER_ADVANCED_SAME_TOPIC_BODY_INSPECTED_ORIGINAL_12_EXAMPLES_4_MODELS_LIMITED_C",
   "sourceLimitations": "Original source from 2018–2019, not full proof of 2025–2026 current Advanced unit; teacher-scored symbolic exercises require Stage D.",
-  "stageCReconciliation": "Exact semantic mapping synchronized with existing lesson-skill registry; no automated family or Stage D pass claimed."
+  "stageCReconciliation": "Bounded original question families, separate verifier and tests; full symbolic/open tasks remain teacher-reviewed; no Stage D certification."
 }

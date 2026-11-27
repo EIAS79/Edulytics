@@ -206,6 +206,29 @@ public sealed partial class ExactSkillContractQuestionEngine
             UaeG10ExponentialLogisticResponse.SpreadsheetBalance,
             UaeG10ExponentialLogisticResponse.SpreadsheetInterest,
             UaeG10ExponentialLogisticResponse.LogisticCrossing,
+            UaeG10RationalUnitResponse.ProductConstant,
+            UaeG10RationalUnitResponse.DivisionConstant,
+            UaeG10RationalUnitResponse.Excluded,
+            UaeG10RationalUnitResponse.ComplexFraction,
+            UaeG10RationalUnitResponse.SumNumerator,
+            UaeG10RationalUnitResponse.DifferenceNumerator,
+            UaeG10RationalUnitResponse.UnlikeCoefficient,
+            UaeG10RationalUnitResponse.UnlikeConstant,
+            UaeG10RationalUnitResponse.ComplexSum,
+            UaeG10RationalUnitResponse.Vertical,
+            UaeG10RationalUnitResponse.Horizontal,
+            UaeG10RationalUnitResponse.GraphValue,
+            UaeG10RationalUnitResponse.HoleX,
+            UaeG10RationalUnitResponse.HoleY,
+            UaeG10RationalUnitResponse.Oblique,
+            UaeG10RationalUnitResponse.Direct,
+            UaeG10RationalUnitResponse.Inverse,
+            UaeG10RationalUnitResponse.Joint,
+            UaeG10RationalUnitResponse.Combined,
+            UaeG10RationalUnitResponse.Equation,
+            UaeG10RationalUnitResponse.Extraneous,
+            UaeG10RationalUnitResponse.Inequality,
+            UaeG10RationalUnitResponse.WorkRate,
             UaeG10ProbabilityOddsResponse.Single,
             UaeG10ProbabilityOddsResponse.OddsCounts,
             UaeG10ProbabilityOddsResponse.FromOdds,
@@ -1766,6 +1789,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(family))
             return UaeG10PostulatesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalUnitResponse.Supports(family))
+            return UaeG10RationalUnitResponse.Verify(family,parameters,answer);
 
         if (UaeG10ProbabilityOddsResponse.Supports(family))
             return UaeG10ProbabilityOddsResponse.Verify(family,parameters,answer);
@@ -4401,6 +4427,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(family))
             return BuildG10Postulates(family,random,difficulty);
+
+        if (UaeG10RationalUnitResponse.Supports(family))
+            return BuildG10RationalUnit(family,random,difficulty);
 
         if (UaeG10ProbabilityOddsResponse.Supports(family))
             return BuildG10ProbabilityOdds(family,random,difficulty);
@@ -10741,6 +10770,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PostulatesResponse.Supports(problem.Family))
             return UaeG10PostulatesResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalUnitResponse.Supports(problem.Family))
+            return UaeG10RationalUnitResponse.Format(problem.Family,p);
 
         if (UaeG10ProbabilityOddsResponse.Supports(problem.Family))
             return UaeG10ProbabilityOddsResponse.Format(problem.Family,p);

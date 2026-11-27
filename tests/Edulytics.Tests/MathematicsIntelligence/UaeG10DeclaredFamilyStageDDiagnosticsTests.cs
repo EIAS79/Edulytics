@@ -37,10 +37,10 @@ public sealed class UaeG10DeclaredFamilyStageDDiagnosticsTests
         Assert.Equal(148, mappings.Length);
         Assert.True(canonical.Lessons.Select(x => x.LessonCode).ToHashSet(StringComparer.Ordinal)
             .SetEquals(mappings.Select(x => x.GetProperty("lessonCode").GetString()!)));
-        Assert.Equal(97, mappings.Count(x => Values(x, "allowedQuestionFamilies").Length != 0));
-        Assert.Equal(51, mappings.Count(x => Values(x, "allowedQuestionFamilies").Length == 0));
-        Assert.Equal(572, mappings.Sum(x => Values(x, "allowedQuestionFamilies").Length));
-        Assert.Equal(559, mappings.SelectMany(x => Values(x, "allowedQuestionFamilies")).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(102, mappings.Count(x => Values(x, "allowedQuestionFamilies").Length != 0));
+        Assert.Equal(46, mappings.Count(x => Values(x, "allowedQuestionFamilies").Length == 0));
+        Assert.Equal(595, mappings.Sum(x => Values(x, "allowedQuestionFamilies").Length));
+        Assert.Equal(582, mappings.SelectMany(x => Values(x, "allowedQuestionFamilies")).Distinct(StringComparer.Ordinal).Count());
         foreach (var row in mappings)
         {
             var allowed = Values(row, "allowedQuestionFamilies");

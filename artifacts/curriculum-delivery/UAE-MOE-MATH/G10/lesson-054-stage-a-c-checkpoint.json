@@ -48,11 +48,17 @@
   "arabicContentPackLessonCount": 54,
   "contentPackLessonCount": 87,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u06-l04-ar.rich-lesson-v2.json",
-  "stageCStatus": "NO_EXACT_ENGINE_TEACHER_SCORING",
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
   "primarySkills": [
     "algebra.rational.add_subtract"
   ],
-  "allowedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u06.l04.like_denominator_sum_numerator",
+    "uae.g10.general.u06.l04.like_denominator_difference_numerator",
+    "uae.g10.general.u06.l04.unlike_denominator_linear_coefficient",
+    "uae.g10.general.u06.l04.unlike_denominator_constant",
+    "uae.g10.general.u06.l04.complex_fraction_sum"
+  ],
   "teacherReviewRequiredFor": [
     "rational domain restrictions",
     "exact symbolic simplification and graph reasoning",
@@ -60,15 +66,16 @@
     "nonlinear inequalities and equivalence proofs"
   ],
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u06l04.test.cjs"
+    "tests/academic-uae-grade10-arabic-u06l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RationalUnitCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_GRADE10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "productionRouting": false,
   "firstIncompleteGlobalOrdinal": 55,
   "nextEligibleCanonicalCode": "G10-U06-L05",
   "closureBasis": "OLDER_ADVANCED_SAME_TOPIC_BODY_INSPECTED_ORIGINAL_12_EXAMPLES_4_MODELS_LIMITED_C",
   "sourceLimitations": "Original source from 2018–2019, not full proof of 2025–2026 current Advanced unit; teacher-scored symbolic exercises require Stage D.",
-  "stageCReconciliation": "Exact semantic mapping synchronized with existing lesson-skill registry; no automated family or Stage D pass claimed."
+  "stageCReconciliation": "Bounded original question families, separate verifier and tests; full symbolic/open tasks remain teacher-reviewed; no Stage D certification."
 }

@@ -118,9 +118,9 @@ internal static class UaeG10StageDRehearsalContracts
                 SkillIds = primary.Concat(familySkills).Distinct(StringComparer.Ordinal).ToArray()
             });
         }
-        if (results.Count != 97 ||
-            results.Sum(x => x.AllowedQuestionFamilies.Count) != 572 ||
-            results.SelectMany(x => x.AllowedQuestionFamilies).Distinct(StringComparer.Ordinal).Count() != 559)
+        if (results.Count != 102 ||
+            results.Sum(x => x.AllowedQuestionFamilies.Count) != 595 ||
+            results.SelectMany(x => x.AllowedQuestionFamilies).Distinct(StringComparer.Ordinal).Count() != 582)
             throw new InvalidOperationException("G10 declared digital candidate denominator drift.");
         return results;
     }
