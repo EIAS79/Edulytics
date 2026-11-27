@@ -69,3 +69,5 @@ test('Exact special products reuse correct Grade9 coefficient families and a bou
  assert.match(engine,/BuildG10SpecialProduct/);
  assert.match(specific,/UaeG10PolynomialProductResponse.Verify/);
 });
+
+ test('Every worked example satisfies the existing compiled RichV2 three-step contract',()=>{assert.ok(rich.Lessons[0].WorkedExamples.every(x=>x.Steps.length>=3));});

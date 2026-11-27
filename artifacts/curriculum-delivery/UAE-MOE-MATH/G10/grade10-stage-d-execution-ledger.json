@@ -131,9 +131,8 @@
     }
   },
   "observedCI": {
-    "sha": "9e5e39275467fa745827eb29b4ea72a570737ea5",
-    "mergeRef": "9f57510b17c2bf2cc714f643805efa62a58af36b",
-    "runId": 45919722779,
+    "sha": "a4a4fe349cb350d4fb1ee714d956b01047035a9f",
+    "runId": 45931903024,
     "status": "completed",
     "conclusion": "failure",
     "structural": {
@@ -141,23 +140,19 @@
       "total": 148
     },
     "node": {
-      "passed": 337,
+      "passed": 341,
       "failed": 0,
       "skipped": 0
     },
     "dotnetGrade10": {
-      "passed": 664,
-      "failed": 0,
+      "passed": 663,
+      "failed": 1,
       "skipped": 0
     },
-    "dotnetGrade7To9": {
-      "passed": 273,
-      "failed": 0,
-      "skipped": 0
-    },
+    "dotnetGrade7To9": "NOT_RUN",
     "releaseBlockers": 149,
     "stageDVerified": 0,
-    "scope": "Prior tested candidate; not new repair candidate"
+    "scope": "Prior candidate; L004 strict compiled registry rejected an example with two steps. Corrected in subsequent candidate, not yet tested."
   },
   "release": {
     "status": "NO_GO_SOURCE_100",
@@ -345,10 +340,15 @@
     "workedExampleGroupsAfter": 24,
     "visualsAfter": 10,
     "authoringArithmeticProbes": 2448,
-    "canonicalBodySha256": "fba8586a68732a450ad356bf2e56cc7e9e669e4d90a6a9f94738fe888e228f41",
+    "canonicalBodySha256": "0d446d28c3c86e5c4c7635ecb61de8514fcaee1d92c6c4f3deff4115d5dd6406",
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
-    "technicalTests": "WRITTEN_NOT_RUN"
+    "technicalTests": "WRITTEN_NOT_RUN",
+    "runtimeSchemaCorrection": {
+      "cause": "Existing compiled registry requires three explicit steps per worked example",
+      "title": "ضرب مربع ثنائية في مرافقها",
+      "technicalTests": "WRITTEN_NOT_RUN"
+    }
   },
   "lesson005": {
     "status": "D_PENDING_A_C_EVIDENCE",
@@ -357,9 +357,14 @@
     "workedExampleGroupsAfter": 18,
     "visualsAfter": 9,
     "authoringArithmeticProbes": 1232,
-    "canonicalBodySha256": "633268947fb13fbac9aa826ce1cf36d97e4cdc5a9407edbbc567019ab70d8454",
+    "canonicalBodySha256": "b09930804de8fde161bba5937c4a09194819bda802f073de3fc1f1a2d4d807c1",
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
-    "technicalTests": "WRITTEN_NOT_RUN"
+    "technicalTests": "WRITTEN_NOT_RUN",
+    "runtimeSchemaCorrection": {
+      "cause": "Existing compiled registry requires three explicit steps per worked example",
+      "title": "أكبر عامل مشترك بثلاثة حدود",
+      "technicalTests": "WRITTEN_NOT_RUN"
+    }
   }
 }

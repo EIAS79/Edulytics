@@ -81,3 +81,5 @@ test('PDF48 algebra-tiles discovery is counted and teacher-scored separately fro
  assert.ok(rich.Lessons[0].Visuals.some(v=>v.Title.includes('مختبر القطع الجبرية')));
  assert.ok(source.sourceElements.filter(x=>x.sourcePhysicalPage===48).every(x=>x.appLocation&&x.coverageStatus));
 });
+
+ test('Every worked example satisfies the existing compiled RichV2 three-step contract',()=>{assert.ok(rich.Lessons[0].WorkedExamples.every(x=>x.Steps.length>=3));});

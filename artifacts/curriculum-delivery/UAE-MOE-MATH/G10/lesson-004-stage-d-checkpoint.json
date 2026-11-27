@@ -21,7 +21,7 @@
   "semanticParity": "UNKNOWN",
   "sourceElementCount": null,
   "verifiedEquivalentCount": null,
-  "canonicalBodySha256": "fba8586a68732a450ad356bf2e56cc7e9e669e4d90a6a9f94738fe888e228f41",
+  "canonicalBodySha256": "0d446d28c3c86e5c4c7635ecb61de8514fcaee1d92c6c4f3deff4115d5dd6406",
   "repair": {
     "newOriginalExampleGroups": 13,
     "newVisualSpecifications": 5,
@@ -33,5 +33,10 @@
   "authenticatedE2E": "NOT_RUN",
   "arabicRtlVisual": "NOT_RUN",
   "productionRouting": false,
-  "note": "Repairs only; sequential acceptance remains open."
+  "note": "Repairs only; sequential acceptance remains open.",
+  "runtimeSchemaCorrection": {
+    "cause": "Existing compiled registry requires three explicit steps per worked example",
+    "title": "ضرب مربع ثنائية في مرافقها",
+    "technicalTests": "WRITTEN_NOT_RUN"
+  }
 }

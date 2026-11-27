@@ -22,7 +22,7 @@
   "semanticParity": "UNKNOWN",
   "sourceElementCount": null,
   "verifiedEquivalentCount": null,
-  "canonicalBodySha256": "633268947fb13fbac9aa826ce1cf36d97e4cdc5a9407edbbc567019ab70d8454",
+  "canonicalBodySha256": "b09930804de8fde161bba5937c4a09194819bda802f073de3fc1f1a2d4d807c1",
   "repair": {
     "newOriginalExampleGroups": 8,
     "newVisualSpecifications": 3,
@@ -34,5 +34,10 @@
   "authenticatedE2E": "NOT_RUN",
   "arabicRtlVisual": "NOT_RUN",
   "productionRouting": false,
-  "note": "Repairs only; sequential acceptance remains open."
+  "note": "Repairs only; sequential acceptance remains open.",
+  "runtimeSchemaCorrection": {
+    "cause": "Existing compiled registry requires three explicit steps per worked example",
+    "title": "أكبر عامل مشترك بثلاثة حدود",
+    "technicalTests": "WRITTEN_NOT_RUN"
+  }
 }
