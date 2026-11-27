@@ -163,6 +163,12 @@ public sealed class LessonContentService : ILessonContentService
                 var items = lessons
                     .Where(x => MatchesContext(x, context))
                     .Where(x =>
+                        !LessonContentPolicy.IsUaeGrade10Scope(context.FrameworkCode, x.Code) ||
+                        (LessonContentPolicy.IsUaeG10ArabicLesson(context.FrameworkCode, x.Code) &&
+                         contentByLesson.TryGetValue(x.Id, out var g10Content) &&
+                         LessonContentPolicy.CanExposeCanonicalBody(g10Content.Status) &&
+                         SelectAcademicContent(g10Content.Translations, context.FrameworkCode, x.Code) is not null))
+                    .Where(x =>
                         !LessonContentPolicy.IsUaeGrade7GeneralScope(
                             context.FrameworkCode, x.Code) ||
                         LessonContentPolicy.IsUaeG7ArabicLesson(
@@ -491,6 +497,8 @@ public sealed class LessonContentService : ILessonContentService
         var context = resolvableContexts.FirstOrDefault(x =>
             MatchesContext(lesson, x));
         if (context is null ||
+            (LessonContentPolicy.IsUaeGrade10Scope(context.FrameworkCode, lesson.Code) &&
+             !LessonContentPolicy.IsUaeG10ArabicLesson(context.FrameworkCode, lesson.Code)) ||
             (LessonContentPolicy.IsUaeGrade7GeneralScope(
                  context.FrameworkCode, lesson.Code) &&
              !LessonContentPolicy.IsUaeG7ArabicLesson(
@@ -522,6 +530,11 @@ public sealed class LessonContentService : ILessonContentService
             lesson.FrameworkVersionId,
             lesson.Id,
             cancellationToken);
+
+        if (LessonContentPolicy.IsUaeGrade10Scope(context.FrameworkCode, lesson.Code) &&
+            body is null)
+            return LessonContentQueryResult<CanonicalLessonDetail>.Failure(
+                LessonContentErrorCode.LessonNotFound);
 
         return LessonContentQueryResult<CanonicalLessonDetail>.Success(
             new CanonicalLessonDetail(
@@ -795,6 +808,20 @@ public sealed class LessonContentService : ILessonContentService
         string frameworkCode,
         string lessonCode)
     {
+        // Never consult the English UAE framework default for G10.
+        // Both the exact authored Arabic body and exact Arabic Rich V2
+        // must exist. Find can normally fallback to en, so verify culture.
+        if (LessonContentPolicy.IsUaeGrade10Scope(frameworkCode, lessonCode))
+        {
+            if (!LessonContentPolicy.IsUaeG10ArabicLesson(frameworkCode, lessonCode))
+                return null;
+            var arabic = translations.SingleOrDefault(x => NormalizeCulture(x.CultureCode) == "ar");
+            var rich = RichLessonContentV2Registry.Find(lessonCode, "ar");
+            return arabic is not null && rich is not null &&
+                NormalizeCulture(rich.CultureCode) == "ar" &&
+                string.Equals(rich.LessonCode, lessonCode, StringComparison.Ordinal)
+                ? arabic : null;
+        }
         var grade2Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal);
         var grade3Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
