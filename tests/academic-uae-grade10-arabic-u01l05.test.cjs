@@ -35,8 +35,8 @@ test('Canonical G10 U01L05 matches approved index and accurately scoped Arabic s
 });
 test('Original Grade10 RichV2 provides inverse-distribution and zero-product with visuals',()=>{
  const r=rich.Lessons[0];assert.equal(r.LessonCode,lessonCode);
- assert.equal(r.WorkedExamples.length,10);
- assert.equal(r.Visuals.length,6);
+ assert.equal(r.WorkedExamples.length,18);
+ assert.equal(r.Visuals.length,9);
  assert.ok(r.WorkedExamples.some(x=>x.Answer.includes('٦س(٢س+٣)')));
  assert.ok(r.WorkedExamples.some(x=>x.Answer.includes('٠ و٣')));
  assert.ok(r.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
