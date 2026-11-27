@@ -62,7 +62,7 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l03-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 12,
+  "arabicWorkedExamples": 16,
   "originalVisualModels": 5,
   "primarySkills": [
     "algebra.exponent.rational_power"
@@ -104,5 +104,11 @@
     "Run authored C# and Node tests only during Stage D, including FractionEntry equivalent fraction and RTL display",
     "Authenticate student Practice before any activation",
     "Finish remaining sequential Grade10 lessons then validate production release separately"
-  ]
+  ],
+  "stageDPrimaryGeneralSupplement": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

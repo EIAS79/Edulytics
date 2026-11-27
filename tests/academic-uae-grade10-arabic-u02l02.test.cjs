@@ -29,7 +29,7 @@ test('Approved canonical 148/18 Blueprint preserves existing General U02L02 iden
 });
 test('Arabic source lesson includes zero/negative/quotient rules and original visual representation',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,17);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,20);assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('١/١٦')));
  for(const a of [2,3,4]){
@@ -67,3 +67,5 @@ test('Exact grader uses Grade10 proper quotient family and mathematically equiva
  assert.match(engine,/UaeG10ExponentQuotientResponse.Verify/);
  assert.match(verifier,/Denominator/);
 });
+
+ test('G10 L018 primary-source repair examples and arithmetic',()=>{const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));const e=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-018-stage-d-source-review.json'),l=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l02-ar.rich-lesson-v2.json').Lessons[0],p=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json').Lessons.find(x=>x.LessonCode===l.LessonCode),a=p.Translations.find(t=>t.CultureCode==='ar');for(const row of e.rows){assert.ok(l.WorkedExamples.some(x=>x.Title===row.originalWorkedExampleTitle&&x.Answer===row.expectedAnswer));assert.ok(a.WorkedExamples.includes(row.originalWorkedExampleTitle));assert.ok(a.StepByStepSolutions.includes(row.originalWorkedExampleTitle));}assert.equal(p.CanonicalBodySha256,crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.keys(a).sort().map(k=>[k,a[k]])))).digest('hex'));let count=0;const eq=(x,y)=>{assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-10*Math.max(1,Math.abs(x),Math.abs(y)));count++;};eq(2.4/.003,800);eq(Math.round(Math.log10(2.4))-Math.round(Math.log10(.003)),3);for(const r of [1,2,3,7])eq(Math.PI*r*r/(2*r)**2,Math.PI/4);eq((1/6)**3/(1/6)**5,36);assert.equal(count,e.arithmeticProbes);});

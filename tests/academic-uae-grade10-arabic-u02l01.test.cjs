@@ -35,7 +35,7 @@ test('Owner-approved 148/18 canonical index keeps existing General U02L01 lesson
 test('Original Arabic instructional content covers three exponent product laws and human geometry',()=>{
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,lesson);
- assert.equal(l.WorkedExamples.length,12);
+ assert.equal(l.WorkedExamples.length,16);
  assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='CalculationChain'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
@@ -78,3 +78,5 @@ test('Bounded three exact families reuse actual registered skill but never subst
  assert.match(core,/UaeG10ExponentProductResponse.Verify/);
  assert.match(helper,/internal static bool Verify/);
 });
+
+ test('G10 L017 primary-source repair examples and arithmetic',()=>{const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));const e=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-d-source-review.json'),l=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l01-ar.rich-lesson-v2.json').Lessons[0],p=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json').Lessons.find(x=>x.LessonCode===l.LessonCode),a=p.Translations.find(t=>t.CultureCode==='ar');for(const row of e.rows){assert.ok(l.WorkedExamples.some(x=>x.Title===row.originalWorkedExampleTitle&&x.Answer===row.expectedAnswer));assert.ok(a.WorkedExamples.includes(row.originalWorkedExampleTitle));assert.ok(a.StepByStepSolutions.includes(row.originalWorkedExampleTitle));}assert.equal(p.CanonicalBodySha256,crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.keys(a).sort().map(k=>[k,a[k]])))).digest('hex'));let count=0;const eq=(x,y)=>{assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-10*Math.max(1,Math.abs(x),Math.abs(y)));count++;};for(const x of [1,2,3])for(const y of [1,2,3]){eq(.5*6*x*x*y*5*x*y**3,15*x**3*y**4);eq(150*x*.04*2*x,12*x*x);eq(Math.PI*(3*x*x)**2*4*x,36*Math.PI*x**5);eq(Math.PI*(3*x*x)**2*8*x,72*Math.PI*x**5);}eq(348,300+48);assert.equal(count,e.arithmeticProbes);});

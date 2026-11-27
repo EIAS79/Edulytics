@@ -24,7 +24,7 @@ test('Rational exponents retain Grade10 owner-approved canonical identity',()=>{
 });
 test('Original Arabic rational powers include source-specific real domains and checks',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,16);assert.equal(l.Visuals.length,5);
  assert.ok(l.WorkedExamples.some(x=>x.Answer==='١/٢٥'));
  assert.ok(l.ExplanationParagraphs.some(x=>x.includes('س²')));
  const nums=[[27,2,3,9],[16,3,4,8],[125,-2,3,1/25],[32,2,5,4],[9,3,2,27]];
@@ -51,3 +51,5 @@ test('Exact sources reuse existing primary skill and do not enable production ro
  assert.match(engine,/static\s+bool\s+Verify\s*\(/);
  assert.match(fs.readFileSync(path.join(root,'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8'),/return\s+UaeG10RationalExponentsResponse\.Verify\(family,\s*parameters,\s*answer\)/);
 });
+
+ test('G10 L019 primary-source repair examples and arithmetic',()=>{const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));const e=load('artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-d-source-review.json'),l=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l03-ar.rich-lesson-v2.json').Lessons[0],p=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json').Lessons.find(x=>x.LessonCode===l.LessonCode),a=p.Translations.find(t=>t.CultureCode==='ar');for(const row of e.rows){assert.ok(l.WorkedExamples.some(x=>x.Title===row.originalWorkedExampleTitle&&x.Answer===row.expectedAnswer));assert.ok(a.WorkedExamples.includes(row.originalWorkedExampleTitle));assert.ok(a.StepByStepSolutions.includes(row.originalWorkedExampleTitle));}assert.equal(p.CanonicalBodySha256,crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.keys(a).sort().map(k=>[k,a[k]])))).digest('hex'));let count=0;const eq=(x,y)=>{assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-10*Math.max(1,Math.abs(x),Math.abs(y)));count++;};for(const x of [0,1,4,9])eq(7*x**.5,7*Math.sqrt(x));for(const y of [-3,-2,0,1,4])eq(Math.cbrt(8*y*y),2*Math.cbrt(y*y));eq(8**(2*1.75-1),4**(1.75+2));eq(7**4,2401);const vals=[1/9,1/3,1,3,9,27,81];for(let i=0;i<vals.length;i++)eq(9**(-1+i/2),vals[i]);assert.equal(count,e.arithmeticProbes);});
