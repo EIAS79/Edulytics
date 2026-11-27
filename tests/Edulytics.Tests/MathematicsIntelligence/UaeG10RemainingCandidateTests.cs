@@ -6,6 +6,21 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UaeG10RemainingCandidateTests
 {
     [Theory]
+    [InlineData(3, "1")]
+    [InlineData(4, "2")]
+    [InlineData(5, "3")]
+    public void TriangleClassificationAndLargestAngleCoverAllCases(int a, string answer)
+    {
+        var p=new Dictionary<string,int>{{"a",a},{"b",4},{"c",5},{"d",6},{"e",2},{"f",7}};
+        foreach(var family in new[]{"uae.g10.general.u09.l01.classify_triangle_sides", "uae.g10.general.u10.l03.largest_opposite_angle"})
+        {
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,answer));
+            foreach(var wrong in new[]{"1","2","3"}.Where(x=>x!=answer))
+                Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,wrong));
+        }
+    }
+
+    [Theory]
     [InlineData("uae.g10.general.u07.l01.line_pair_type", "1")]
     [InlineData("uae.g10.general.u07.l01.plane_pair_type", "2")]
     [InlineData("uae.g10.general.u07.l06.perpendicular_point_line_distance", "6")]

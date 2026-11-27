@@ -121,7 +121,8 @@ public sealed class LessonPracticeInteractionRegistryTests
         Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, grade10DistributedEquation[0].InteractionKind);
         var grade10 = LessonPracticeInteractionRegistry.All.Where(x =>
             x.FamilyId.StartsWith("uae.g10.general.", StringComparison.Ordinal)).ToArray();
-        Assert.Equal(545, grade10.Length);
+        // 545 previously registered interactions plus 23 rational and 96 remaining G10 candidate families.
+        Assert.Equal(664, grade10.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count - grade10.Length -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
