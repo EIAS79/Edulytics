@@ -44,13 +44,27 @@
   "originalVisualModels": 4,
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u11-l03-ar.rich-lesson-v2.json",
   "testsWritten": [
-    "tests/academic-uae-grade10-arabic-u11l03.test.cjs"
+    "tests/academic-uae-grade10-arabic-u11l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
   "productionRouting": false,
-  "practiceReadiness": "TEACHER_SCORING_ONLY__NO_EXACT_GRADE10_ENGINE_YET",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
   "firstIncompleteGlobalOrdinal": 88,
   "nextEligibleCanonicalCode": "G10-U11-L04",
-  "closureBasis": "OWNER_APPROVED_TITLE_AND_02_1_SOURCE_BODY_OPENER_SAMPLED__AUTHOR_ORIGINAL_ONLY"
+  "closureBasis": "OWNER_APPROVED_TITLE_AND_02_1_SOURCE_BODY_OPENER_SAMPLED__AUTHOR_ORIGINAL_ONLY",
+  "primarySkills": [
+    "geometry.similarity"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u11.l03.similar_triangle_aa_angle",
+    "uae.g10.general.u11.l03.similar_triangle_corresponding_side"
+  ],
+  "stageCStatus": "PARTIAL_EXACT_FAMILIES_AUTHORED_PENDING_D",
+  "stageCReconciliation": "Original bounded closed-response candidates; open proof/visual tasks remain teacher-reviewed; no full source parity or production route.",
+  "sourcePagesScreenedForNewDigitalFamilies": [
+    21,
+    22
+  ]
 }
