@@ -48,7 +48,7 @@ test('RichV2 creates original growth, decay and shifted Cartesian graphics with 
  const r=rich.Lessons[0];
  assert.equal(r.LessonCode,code);
  assert.equal(r.CultureCode,'ar');
- assert.equal(r.WorkedExamples.length,15);
+ assert.equal(r.WorkedExamples.length,16);
  assert.equal(r.Visuals.length,6);
  assert.equal(r.Visuals.filter(x=>x.Kind==='CartesianPlot').length,3);
  const xs=[-2,-1,0,1,2],up=[1/9,1/3,1,3,9],down=[9,3,1,1/3,1/9];

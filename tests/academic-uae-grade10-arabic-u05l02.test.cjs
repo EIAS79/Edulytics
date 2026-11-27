@@ -26,7 +26,7 @@ test('Lesson43 has independently authored Arabic content while source body is ve
  assert.ok(entry);
  assert.equal(entry.Translations.find(x=>x.CultureCode==='ar').Title,cp.lessonTitle);
  assert.ok(entry.Translations.find(x=>x.CultureCode==='ar').Explanation.length>1000);
- assert.equal(rich.Lessons[0].WorkedExamples.length,26);
+ assert.equal(rich.Lessons[0].WorkedExamples.length,27);
  assert.equal(rich.Lessons[0].Visuals.length,8);
 });
 test('Independent algebra oracles preserve equation and inequality directions',()=>{

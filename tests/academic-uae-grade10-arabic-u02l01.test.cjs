@@ -35,7 +35,7 @@ test('Owner-approved 148/18 canonical index keeps existing General U02L01 lesson
 test('Original Arabic instructional content covers three exponent product laws and human geometry',()=>{
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,lesson);
- assert.equal(l.WorkedExamples.length,11);
+ assert.equal(l.WorkedExamples.length,12);
  assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='CalculationChain'));
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));

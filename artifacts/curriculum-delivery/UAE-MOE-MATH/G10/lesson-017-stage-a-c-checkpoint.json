@@ -50,7 +50,7 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l01-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 11,
+  "arabicWorkedExamples": 12,
   "originalVisualModels": 5,
   "primarySkills": [
     "algebra.exponent.product_rule"
@@ -101,5 +101,14 @@
     "authenticated RTL student numeric input and grade persistence tests",
     "enable Practice only after verified Stage D passes",
     "complete remaining 131 sequential curriculum lesson source/body audits before production release"
-  ]
+  ],
+  "stageDFollowup": {
+    "reason": "Cross-target advanced source exponent/equation dependency repair",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-exponent-routes.json",
+    "addedWorkedExampleGroups": 1,
+    "numberedParents": 4,
+    "sourceDenominatorUnchanged": "Historical scoped primary-source count only; no full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

@@ -29,7 +29,7 @@ test('Approved canonical 148/18 Blueprint preserves existing General U02L02 iden
 });
 test('Arabic source lesson includes zero/negative/quotient rules and original visual representation',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,17);assert.equal(l.Visuals.length,5);
  assert.ok(l.Visuals.some(x=>x.Kind==='ShapeDecomposition'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('١/١٦')));
  for(const a of [2,3,4]){

@@ -108,6 +108,26 @@
       ],
       "arithmeticProbes": 828,
       "status": "AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    "advancedExponentFollowup": {
+      "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-exponent-routes.json",
+      "numberedParents": 28,
+      "affectedTargetOrdinals": [
+        17,
+        18,
+        42,
+        43
+      ],
+      "arithmeticProbes": 792,
+      "conceptualArithmeticProbes": 41,
+      "misconceptionsRepaired": 8,
+      "status": "AUTHORED_NOT_RUNTIME_VERIFIED"
+    },
+    "advancedRoutedParentAuthoringSummary": {
+      "routedParents": 54,
+      "parentsWithTargetAuthoringEvidence": 54,
+      "unmappedParents": [],
+      "scope": "At least one target authored artifact per routed parent; remaining secondary-target, instructional, rights, teacher and runtime gates are not certified."
     }
   },
   "observedCI": {
@@ -129,7 +149,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Continue remaining advanced exponent and equation routes, complete per-element audits in canonical sequence; source parity UNKNOWN and no runtime certification.",
+  "next": "All 54 routed numbered Advanced parents now have target authoring evidence; continue secondary-target and nonnumbered source review, then canonical sequential per-lesson acceptance. Test affected candidates before closure.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
