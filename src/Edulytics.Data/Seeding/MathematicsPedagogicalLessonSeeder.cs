@@ -867,6 +867,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             !string.Equals(target.Host, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_HOST"), StringComparison.OrdinalIgnoreCase) ||
             !string.Equals(target.Database, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_NAME"), StringComparison.Ordinal))
             throw new InvalidOperationException("G10 production target is not the independently approved host/database.");
+        if ((await _db.Database.GetPendingMigrationsAsync(ct)).Any())
+            throw new InvalidOperationException("G10 scoped release requires all reviewed schema migrations to be applied first.");
         await ReplaceUaeGrade10Async(ReadGrade10Predecessor(), true, false, ct);
     }
 

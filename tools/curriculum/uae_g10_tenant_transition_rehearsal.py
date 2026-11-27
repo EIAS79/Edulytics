@@ -136,6 +136,7 @@ def run():
     assert len(target) == len(meta) == 100 and {r["code"]: r["title"] for r in target} == expected_old
     # Deliberately invalidate a synthetic placeholder BEFORE invoking the
     # shared cutover; it must roll back even after the catalogue swap started.
+    # This fixture is isolated and does not contain production learner records.
     topic_id = before["topics"][0]["Id"]
     topic_name = before["topics"][0]["Name"]
     scalar('UPDATE "CurriculumTopics" SET "Name"=\'G10_REHEARSAL_NEGATIVE_CONTROL\' WHERE "Id"=' + ids_sql([topic_id]))

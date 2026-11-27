@@ -442,7 +442,9 @@ var g10ScopedRelease = string.Equals(g10RequestedToken,
 if (!string.IsNullOrEmpty(g10RequestedToken) && !g10ScopedRelease)
     throw new InvalidOperationException("Invalid Grade10 scoped production release token.");
 if (g10ScopedRelease && (g6ScopedRelease || g7ScopedRelease || g8ScopedRelease ||
-    g9ScopedRelease || runStartupDataMaintenance || cleanBootstrap || !readCanonicalJson ||
+    g9ScopedRelease || runStartupDataMaintenance || !readCanonicalJson ||
+    app.Configuration.GetValue<bool>("Edulytics:Deployment:RunStartupMigrations") ||
+    app.Configuration.GetValue<bool>("Edulytics:Deployment:RunCleanSeedOnStartup") ||
     app.Configuration.GetValue<bool>("Edulytics:Deployment:SeedCurriculum") ||
     app.Configuration.GetValue<bool>("Edulytics:MeetingDemo:ResetAndSeed") ||
     app.Configuration.GetValue<bool>("Edulytics:PresentationDemo:Provision")))
@@ -480,8 +482,13 @@ using (var scope =
             .GetRequiredService<
                 EdulyticsDatabaseBootstrapper>();
 
-    await bootstrapper
-        .InitializeAsync();
+    // This existing production database already has its role/account baseline.
+    // The scoped Grade10 transaction must not create unrelated accounts or
+    // invoke optional bootstrapping before the cutover's own guards succeed.
+    if (!g10ScopedRelease)
+        await bootstrapper.InitializeAsync();
+    else
+        Console.WriteLine("STARTUP_BOOTSTRAP_SKIPPED_FOR_G10_SCOPED_CUTOVER");
 
     bootstrapTimer.Stop();
 
