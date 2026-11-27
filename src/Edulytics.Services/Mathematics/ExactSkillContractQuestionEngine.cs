@@ -53,6 +53,7 @@ public sealed partial class ExactSkillContractQuestionEngine
             "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
             UaeG10MonomialPolynomialResponse.WholeFamily,
             UaeG10MonomialPolynomialResponse.CoefficientFamily,
+            UaeG10DistributedEquationResponse.Family,
             UaeG10PolynomialProductResponse.WholeFamily,
             UaeG10PolynomialProductResponse.CoefficientFamily,
             UaeG10SpecialProductsResponse.Family,
@@ -1940,6 +1941,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PolynomialProductResponse.Supports(family))
             return UaeG10PolynomialProductResponse.Verify(family,parameters,answer);
+
+        if (family == UaeG10DistributedEquationResponse.Family)
+            return UaeG10DistributedEquationResponse.Verify(parameters, answer);
 
         if (UaeG10MonomialPolynomialResponse.Supports(family))
             return UaeG10MonomialPolynomialResponse.Verify(family,parameters,answer);
@@ -4572,6 +4576,9 @@ public sealed partial class ExactSkillContractQuestionEngine
 
         if (UaeG10PolynomialProductResponse.Supports(family))
             return BuildG10PolynomialProduct(family,random,difficulty);
+
+        if (family == UaeG10DistributedEquationResponse.Family)
+            return BuildG10DistributedEquation(family, random, difficulty);
 
         if (UaeG10MonomialPolynomialResponse.Supports(family))
             return BuildG10MonomialPolynomial(family,random,difficulty);
@@ -10911,6 +10918,9 @@ public sealed partial class ExactSkillContractQuestionEngine
             return problem.Family==UaeG10PolynomialProductResponse.WholeFamily
                 ? UaeG10PolynomialProductResponse.Format(p)
                 : UaeG10PolynomialProductResponse.NumericCoefficient(p);
+
+        if (problem.Family == UaeG10DistributedEquationResponse.Family)
+            return UaeG10DistributedEquationResponse.CorrectAnswer(p);
 
         if (UaeG10MonomialPolynomialResponse.Supports(problem.Family))
             return problem.Family==UaeG10MonomialPolynomialResponse.WholeFamily

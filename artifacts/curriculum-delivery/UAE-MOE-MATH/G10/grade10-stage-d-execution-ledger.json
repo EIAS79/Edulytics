@@ -149,7 +149,7 @@
       "Final pinned-SDK CI not green; isolated database and release rehearsal not completed"
     ]
   },
-  "next": "Finish L001 secondary/unnumbered and runtime gates; L002 direct General source review now has 77 explicit numbered slots plus guided entries, unresolved source and digital equation gate. Continue canonical order without marking early D_VERIFIED.",
+  "next": "Run full current candidate tests including bounded equation contract and shared interaction baseline. Finish L001 secondary-source and all other source, teacher, authenticated RTL, isolated DB and same-SHA release gates. No merge or deploy.",
   "localExecution": {
     "testedSha": "2d53f982c2551a7be8c954560ea76a5336921162",
     "toolchain": {
@@ -247,11 +247,60 @@
     "canonicalBodySha256": "1cee1cef3736558a7554b56157b4720d1ec3478ab95093f6c95bcf02f554b628",
     "digitalGap": {
       "sourceObjective": "solve equations containing monomial×polynomial products",
-      "currentExactContract": "only coefficient and single-variable polynomial product, not equation solving",
-      "status": "DIGITAL_ELIGIBILITY_REVIEW_AND_EXACT_FAMILY_REQUIRED",
-      "teacherFallback": "Original equation worked examples and teacher rubric pending authenticated testing; do not route equations to product-only graders."
+      "status": "BOUNDED_INTEGER_ROOT_FAMILY_AUTHORED_NOT_RUN",
+      "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+      "parameterKeys": [
+        "mode",
+        "a",
+        "b",
+        "d",
+        "g",
+        "c",
+        "e"
+      ],
+      "generator": "BuildG10DistributedEquation",
+      "independentVerifier": "UaeG10DistributedEquationResponse.Verify",
+      "scope": "mode=0: a(x+b)+c=d(x+g)+e, a≠d; mode=1: ax(x+b)+c=dx(x+g)+e, a=d and b≠g, so quadratic terms cancel. Unique integer root in [-8,8]. Exact keys and bounds validated. No production routing.",
+      "remainingTeacherReview": "fractional roots, more complex equations, written reasoning and all source/runtime coverage outside bounded family"
     },
     "semanticParity": "UNKNOWN",
-    "productionRouting": false
+    "productionRouting": false,
+    "equationContractTests": "WRITTEN_NOT_RUN",
+    "equationContractAuthoringProbes": {
+      "probes": 53100,
+      "modeCounts": [
+        49500,
+        3600
+      ],
+      "maxAbsRightConstant": 692,
+      "status": "PASS_IN_MEMORY_JAVASCRIPT_AUTHORING_ONLY"
+    }
+  },
+  "pinnedSdkExecution": {
+    "testedSha": "2f3a334c665f8cd9338135d93a2c046ad98a8f5f",
+    "dotnetSdk": "10.0.200",
+    "nodeVersion": "24.21.0",
+    "preflight": {
+      "status": "PASS",
+      "lessons": 148,
+      "sourceBodyVerified": 106,
+      "blockers": 149,
+      "stageDVerifiedLessons": 0
+    },
+    "node": {
+      "testFiles": 165,
+      "exitCode": 0,
+      "exactTestCount": "NOT_CAPTURED_IN_PROCESS_SUMMARY"
+    },
+    "dotnet": {
+      "passed": 935,
+      "failed": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "scope": "targeted Grade 7–10 and retired Advanced guards"
+    },
+    "isolatedWorktree": true,
+    "productionWrites": false,
+    "scope": "previous candidate, not latest SHA"
   }
 }

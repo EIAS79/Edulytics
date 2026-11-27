@@ -113,8 +113,14 @@ public sealed class LessonPracticeInteractionRegistryTests
             }, contract.InteractionKind);
             Assert.False(contract.HasVisualRepresentation);
         });
+        // G10 U01L02 adds exactly one bounded distribution-equation family.
+        var grade10DistributedEquation = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId == "uae.g10.general.u01.l02.distributed_linear_equation_integer_root")
+            .ToArray();
+        Assert.Single(grade10DistributedEquation);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, grade10DistributedEquation[0].InteractionKind);
         Assert.Equal(1691,
-            LessonPracticeInteractionRegistry.All.Count -
+            LessonPracticeInteractionRegistry.All.Count - grade10DistributedEquation.Length -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
             uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length -
             uaeGrade6.Length - uaeGrade7.Length - uaeGrade8.Length -

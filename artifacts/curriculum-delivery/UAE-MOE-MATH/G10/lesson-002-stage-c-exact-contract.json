@@ -46,7 +46,8 @@
   },
   "allowedQuestionFamilies": [
     "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
-    "uae.g10.general.u01.l02.full_monomial_polynomial_product"
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+    "uae.g10.general.u01.l02.distributed_linear_equation_integer_root"
   ],
   "forbiddenQuestionFamilies": [
     "uae.g9.general.u07.l03.multiply_coefficient",
@@ -69,6 +70,12 @@
       "kind": "StructuredEntry",
       "answerType": "contract_defined",
       "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
     }
   ],
   "answerFormats": [
@@ -82,8 +89,8 @@
     "fractional/decimal arithmetic and its explanatory justification",
     "area-partition diagrams and dimensions",
     "open-ended model interpretation and signed-product proofs",
-    "solve distributed polynomial equations until an exact independently verified equation family is implemented",
-    "trapezoid and perimeter applications, symbolic degree table and cumulative cross-skill tasks"
+    "trapezoid and perimeter applications, symbolic degree table and cumulative cross-skill tasks",
+    "distributed equations outside unique integer-root family and complete written derivations"
   ],
   "visuals": [
     "CalculationChain",
@@ -92,7 +99,9 @@
   ],
   "testsWritten": [
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonomialPolynomialReuseTests.cs",
-    "tests/academic-uae-grade10-arabic-u01l02.test.cjs"
+    "tests/academic-uae-grade10-arabic-u01l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10DistributedEquationTests.cs",
+    "tests/academic-uae-grade10-u01l02-stage-d-equation-contract.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "runtimeGate": {
@@ -105,8 +114,20 @@
   "note": "READY_FOR_STAGE_D on A-B-C checkpoint only after source and content closing evidence, never claim active Practice or passed CI.",
   "stageDIdentifiedDigitalGap": {
     "sourceObjective": "solve equations containing monomial×polynomial products",
-    "currentExactContract": "only coefficient and single-variable polynomial product, not equation solving",
-    "status": "DIGITAL_ELIGIBILITY_REVIEW_AND_EXACT_FAMILY_REQUIRED",
-    "teacherFallback": "Original equation worked examples and teacher rubric pending authenticated testing; do not route equations to product-only graders."
+    "status": "BOUNDED_INTEGER_ROOT_FAMILY_AUTHORED_NOT_RUN",
+    "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+    "parameterKeys": [
+      "mode",
+      "a",
+      "b",
+      "d",
+      "g",
+      "c",
+      "e"
+    ],
+    "generator": "BuildG10DistributedEquation",
+    "independentVerifier": "UaeG10DistributedEquationResponse.Verify",
+    "scope": "mode=0: a(x+b)+c=d(x+g)+e, a≠d; mode=1: ax(x+b)+c=dx(x+g)+e, a=d and b≠g, so quadratic terms cancel. Unique integer root in [-8,8]. Exact keys and bounds validated. No production routing.",
+    "remainingTeacherReview": "fractional roots, more complex equations, written reasoning and all source/runtime coverage outside bounded family"
   }
 }

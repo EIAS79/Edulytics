@@ -72,14 +72,16 @@
   ],
   "allowedQuestionFamilies": [
     "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
-    "uae.g10.general.u01.l02.full_monomial_polynomial_product"
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+    "uae.g10.general.u01.l02.distributed_linear_equation_integer_root"
   ],
   "forbiddenFamily": "uae.g9.general.u07.l03.multiply_coefficient",
   "engine": "ExactSkillContractQuestionEngine",
   "independentVerifier": "UaeG10MonomialPolynomialResponse.Verify",
   "rendererMatrix": {
     "coefficient": "IntegerKeypad",
-    "polynomial": "StructuredEntry"
+    "polynomial": "StructuredEntry",
+    "distributedEquation": "IntegerKeypad"
   },
   "teacherReviewRequiredFor": [
     "multivariable distributions",
@@ -89,7 +91,9 @@
   ],
   "testsWritten": [
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonomialPolynomialReuseTests.cs",
-    "tests/academic-uae-grade10-arabic-u01l02.test.cjs"
+    "tests/academic-uae-grade10-arabic-u01l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10DistributedEquationTests.cs",
+    "tests/academic-uae-grade10-u01l02-stage-d-equation-contract.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -132,5 +136,10 @@
     "tests": "WRITTEN_NOT_RUN",
     "stageDVerified": false
   },
-  "sourceElementDenominatorScopeClarification": "22 is historical categorized review only; explicit numbered source slots are separately indexed; exhaustive all-source denominator remains unknown."
+  "sourceElementDenominatorScopeClarification": "22 is historical categorized review only; explicit numbered source slots are separately indexed; exhaustive all-source denominator remains unknown.",
+  "stageDEquationContract": {
+    "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+    "status": "WRITTEN_NOT_RUN",
+    "productionRouting": false
+  }
 }

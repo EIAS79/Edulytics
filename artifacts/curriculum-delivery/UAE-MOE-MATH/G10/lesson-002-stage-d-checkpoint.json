@@ -37,8 +37,26 @@
   "productionRouting": false,
   "openDefects": [
     "GLOBAL_AND_LESSON_ATOMIC_DENOMINATOR_UNPROVEN",
-    "EQUATION_SOLVING_DIGITAL_CONTRACT_MISSING",
-    "VISUAL_TEACHER_AND_RUNTIME_NOT_VERIFIED"
+    "VISUAL_TEACHER_AND_RUNTIME_NOT_VERIFIED",
+    "BOUNDED_EQUATION_SOLVING_FAMILY_WRITTEN_NOT_RUN_OTHER_ELIGIBLE_CASES_REVIEW_PENDING"
   ],
-  "note": "Dependency repair and first-party General source review progressed; canonical acceptance remains sequential; L001 has not been Stage D verified."
+  "note": "Dependency repair and first-party General source review progressed; canonical acceptance remains sequential; L001 has not been Stage D verified.",
+  "equationDigitalContract": {
+    "sourceObjective": "solve equations containing monomial×polynomial products",
+    "status": "BOUNDED_INTEGER_ROOT_FAMILY_AUTHORED_NOT_RUN",
+    "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+    "parameterKeys": [
+      "mode",
+      "a",
+      "b",
+      "d",
+      "g",
+      "c",
+      "e"
+    ],
+    "generator": "BuildG10DistributedEquation",
+    "independentVerifier": "UaeG10DistributedEquationResponse.Verify",
+    "scope": "mode=0: a(x+b)+c=d(x+g)+e, a≠d; mode=1: ax(x+b)+c=dx(x+g)+e, a=d and b≠g, so quadratic terms cancel. Unique integer root in [-8,8]. Exact keys and bounds validated. No production routing.",
+    "remainingTeacherReview": "fractional roots, more complex equations, written reasoning and all source/runtime coverage outside bounded family"
+  }
 }
