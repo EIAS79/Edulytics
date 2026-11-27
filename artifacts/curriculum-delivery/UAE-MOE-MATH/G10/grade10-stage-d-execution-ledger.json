@@ -9,7 +9,27 @@
     "status": "APPROVED",
     "basis": "Explicit program-owner instruction in current conversation, including authorization to publish after passing release gates.",
     "technicalGateWaiver": false,
-    "thirdPartyRightsWaiver": false
+    "thirdPartyRightsWaiver": false,
+    "grade10ReplacementDecision": {
+      "status": "APPROVED",
+      "basis": "Explicit program-owner instruction: delete legacy and out-of-index lessons/pathways and discard existing experimental Grade 10 UAE Ministry mathematics learner progress/results instead of preserving them during replacement.",
+      "scope": {
+        "curriculum": "UAE-MOE-MATH",
+        "grade": 10,
+        "subject": "mathematics",
+        "finalPathway": "General",
+        "approvedLessons": 148,
+        "approvedUnits": 18
+      },
+      "legacyCatalogue": "REPLACE_WITH_APPROVED_CANDIDATE",
+      "legacyAdvanced": "REMOVE",
+      "legacyApplied": "REMOVE_IF_PRESENT",
+      "experimentalGrade10ProgressResults": "DELETE_DURING_REPLACEMENT",
+      "preserveGrade10ExperimentalProgressResults": false,
+      "otherCurriculaGradesSubjectsAndSharedAccounts": "UNCHANGED",
+      "technicalGateWaiver": false,
+      "productionDeletionExecuted": false
+    }
   },
   "sourceInventory": {
     "filesVerifiedBySHA256": 12,
