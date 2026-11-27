@@ -13,7 +13,7 @@ test('Arabic lesson covers unique, inconsistent, free-variable, contextual syste
 const p=get('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
 const l=p.Lessons.find(x=>x.LessonCode===code);assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
 const r=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l04-ar.rich-lesson-v2.json').Lessons[0];
-assert.equal(r.WorkedExamples.length,12);assert.equal(r.Visuals.length,6);
+assert.equal(r.WorkedExamples.length,15);assert.equal(r.Visuals.length,6);
 assert.ok(r.WorkedExamples.some(x=>x.Question.includes('نوع حل')));
 });
 test('Exact 3x3 question families never pretend to solve singular or rational cases',()=>{

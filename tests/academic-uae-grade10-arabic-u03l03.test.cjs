@@ -17,7 +17,7 @@ const lesson=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(lesson);
 assert.match(lesson.AdaptationStatus,/READY_FOR_STAGE_D/);
 assert.ok(lesson.Translations.some(t=>t.CultureCode==='ar'));
 const rich=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l03-ar.rich-lesson-v2.json').Lessons[0];
-assert.equal(rich.WorkedExamples.length,12);assert.ok(rich.Visuals.length>=5);
+assert.equal(rich.WorkedExamples.length,15);assert.ok(rich.Visuals.length>=5);
 assert.ok(rich.WorkedExamples.some(x=>x.Question.includes('غير محدودة')));
 assert.ok(rich.WorkedExamples.some(x=>x.Question.includes('متناقضة')));
 });

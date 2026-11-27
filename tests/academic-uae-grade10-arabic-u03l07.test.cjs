@@ -10,7 +10,7 @@ test('Arabic determinant Cramer content and independently sound sample math',()=
  const pack=get('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
  const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const rich=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l07-ar.rich-lesson-v2.json').Lessons[0];
- assert.equal(rich.WorkedExamples.length,12);assert.equal(rich.Visuals.length,6);
+ assert.equal(rich.WorkedExamples.length,15);assert.equal(rich.Visuals.length,6);
  assert.equal(4*6-5*(-3),39);
  const D=2*(-1)-1*1,Dx=7*(-1)-1*(-1),Dy=2*(-1)-7*1;
  assert.deepEqual([D,Dx,Dy,Dx/D,Dy/D],[-3,-6,-9,2,3]);

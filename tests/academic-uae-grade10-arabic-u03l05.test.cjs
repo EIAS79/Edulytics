@@ -16,7 +16,7 @@ const pack=get('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-genera
 const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
 const ar=l.Translations.find(x=>x.CultureCode==='ar');assert.ok(ar);
 const rich=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l05-ar.rich-lesson-v2.json').Lessons[0];
-assert.equal(rich.WorkedExamples.length,12);assert.equal(rich.Visuals.length,6);
+assert.equal(rich.WorkedExamples.length,15);assert.equal(rich.Visuals.length,6);
 assert.ok(rich.SummaryPoints.some(x=>x.includes('ضرب مصفوفتين')));
 });
 test('Bounded source-exact matrix cell families are independent and fail closed pending D',()=>{

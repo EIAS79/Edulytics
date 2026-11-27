@@ -41,7 +41,7 @@ test('Original page source ledger covers 29 separate teaching/assessment element
 });
 test('Original Arabic RichV2 distinguishes overlap, dashed/solid boundaries and graphing',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,14);assert.equal(l.Visuals.length,6);
+ assert.equal(l.WorkedExamples.length,17);assert.equal(l.Visuals.length,7);
  assert.equal(l.Visuals.filter(x=>x.Kind==='CartesianPlot').length,2);
  assert.ok(l.ExplanationParagraphs.some(x=>x.includes('متقطع')));
  assert.ok(l.ExplanationParagraphs.some(x=>x.includes('متصل')));

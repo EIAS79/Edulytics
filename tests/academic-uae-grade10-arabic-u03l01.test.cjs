@@ -39,7 +39,7 @@ test('Arabic source lesson contains 14 independently correct worked examples and
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
  assert.equal(l.LessonCode,code);assert.equal(l.CultureCode,'ar');
- assert.equal(l.WorkedExamples.length,14);
+ assert.equal(l.WorkedExamples.length,17);
  assert.equal(l.Visuals.length,6);
  assert.equal(l.Visuals.filter(x=>x.Kind==='CartesianPlot').length,2);
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));

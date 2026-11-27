@@ -11,7 +11,7 @@ test('Original Arabic row×column and dimensions are independently correct',()=>
  const pack=get('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
  const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const r=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l06-ar.rich-lesson-v2.json').Lessons[0];
- assert.equal(r.WorkedExamples.length,12);assert.equal(r.Visuals.length,6);
+ assert.equal(r.WorkedExamples.length,15);assert.equal(r.Visuals.length,6);
  const A=[[1,2],[3,4]],B=[[5,-1],[2,0]];
  const mul=(a,b)=>a.map(row=>b[0].map((_,j)=>row.reduce((sum,v,k)=>sum+v*b[k][j],0)));
  assert.deepEqual(mul(A,B),[[9,-1],[23,-3]]);assert.deepEqual(mul(B,A),[[2,6],[2,4]]);

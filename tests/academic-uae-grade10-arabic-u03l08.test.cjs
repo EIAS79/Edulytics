@@ -10,7 +10,7 @@ test('Arabic inverse matrix examples use exact rational and correctly ordered AX
  const pack=get('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
  const l=pack.Lessons.find(x=>x.LessonCode===code);assert.ok(l);assert.match(l.AdaptationStatus,/READY_FOR_STAGE_D/);
  const rich=get('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l08-ar.rich-lesson-v2.json').Lessons[0];
- assert.equal(rich.WorkedExamples.length,12);assert.equal(rich.Visuals.length,6);
+ assert.equal(rich.WorkedExamples.length,15);assert.equal(rich.Visuals.length,6);
  assert.ok(rich.WorkedExamples.some(x=>x.Answer.includes('٣/٢')));
  const a=[[1,2],[3,4]],inverse=[[-2,1],[1.5,-0.5]];
  assert.equal(a[0][0]*inverse[0][0]+a[0][1]*inverse[1][0],1);
