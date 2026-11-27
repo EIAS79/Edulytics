@@ -485,9 +485,23 @@ def audit() -> dict[str, Any]:
     specialist_g7=owner_approved_g7_declared_practice()
     specialist_g8=owner_approved_g8_declared_practice()
     specialist_g9, g9_teacher_only = owner_approved_g9_declared_practice()
+    # Retain historical skill audit evidence separately from the active join.
+    # Require exact agreement with the verified retired pack and embedded
+    # resource exclusions; any unexpected identity remains a hard blocker.
+    retired_g10, candidate_g10, scope_errors = g10_archival_scope()
+    archive_rows = []
+    archive_blockers = list(scope_errors)
+    g10_prefix = "PED:UAE-MOE-MATH:L10:"
+    skill_g10 = {code for code in skill_by_code if code.startswith(g10_prefix)}
+    semantic_g10 = {code for code in semantic_by_code if code.startswith(g10_prefix)}
+    if (len(retired_g10) != 52 or len(candidate_g10) != 148 or
+            skill_g10 != retired_g10 | candidate_g10 or semantic_g10 != candidate_g10):
+        archive_blockers.append("Exact G10 archived and active audit identity partition mismatch")
+    elif not archive_blockers:
+        archive_rows = [skill_by_code.pop(code) for code in sorted(retired_g10)]
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     specialist_g10, g10_errors = g10_exact_first_party_contracts(mappings, skills, families)
-    blockers: list[str] = list(mapping_blockers) + g10_errors
+    blockers: list[str] = list(mapping_blockers) + g10_errors + archive_blockers
     if set(skill_by_code) != set(semantic_by_code):
         missing_skill = sorted(set(semantic_by_code) - set(skill_by_code))
         missing_semantic = sorted(set(skill_by_code) - set(semantic_by_code))
@@ -779,6 +793,7 @@ def audit() -> dict[str, Any]:
     summary["grade10FirstPartyPendingRuntimeCount"] = sum(r["specialistGrade10FirstPartyExactContractPendingRuntime"] for r in rows)
     if summary["grade10FirstPartyPendingRuntimeCount"] != 148:
         blockers.append("G10 exact 148 Arabic first-party contract scope not validated")
+    summary["archivedRetiredG10SkillLessonCount"] = len(archive_rows)
     summary["skillRegistryCount"] = len(skills)
     summary["capabilityRegistryCount"] = len(capabilities)
     summary["questionFamilyRegistryCount"] = len(families)
@@ -797,6 +812,7 @@ def audit() -> dict[str, Any]:
         "bySourceType": {key: dict(value) for key, value in sorted(by_source.items())},
         "byPack": {key: dict(value) for key, value in sorted(by_pack.items())},
         "lessons": rows,
+        "archivedRetiredG10SkillLessons": archive_rows,
     }
 
 
