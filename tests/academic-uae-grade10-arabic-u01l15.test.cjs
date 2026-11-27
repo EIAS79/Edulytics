@@ -40,10 +40,10 @@ test('Advanced original roots/zeros lesson and calculator lab have 38 auditable 
 });
 test('Original Arabic example count, Descartes sign reasoning and Cartesian data are mathematically sound',()=>{
  const lesson=rich.Lessons[0];
- assert.equal(lesson.LessonCode,code);assert.equal(lesson.WorkedExamples.length,10);assert.equal(lesson.Visuals.length,5);
+ assert.equal(lesson.LessonCode,code);assert.equal(lesson.WorkedExamples.length,18);assert.equal(lesson.Visuals.length,8);
  const plots=lesson.Visuals.filter(v=>v.Kind==='CartesianPlot');
- assert.equal(plots.length,2);
- const f=[x=>((x-1)**2)*(x+2),x=>x**3-x*x-4*x+4];
+ assert.equal(plots.length,3);
+ const f=[x=>((x-1)**2)*(x+2),x=>x**3-x*x-4*x+4,x=>(x*x-4)**2-9];
  for(let i=0;i<plots.length;i++)for(const p of plots[i].Rows){
   const x=Number(p.Cells[0]),y=Number(p.Cells[1]);
   assert.ok(y===f[i](x),plots[i].Title+' x='+x);

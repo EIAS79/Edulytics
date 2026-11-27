@@ -32,7 +32,7 @@ test('Owner-approved 148 lesson catalog registers source-correct U01L16 single G
 });
 test('Arabic source math correctly distinguishes candidate rational zeros from actual zeros',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,10);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,19);assert.equal(l.Visuals.length,8);
  assert.ok(l.Visuals.some(x=>x.Kind==='CartesianPlot'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('١/٣')));
  for(const x of [-3,-1,0,1,2,3]){

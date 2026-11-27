@@ -52,9 +52,9 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l15-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 10,
-  "originalVisualModels": 5,
-  "verifiedCartesianPlots": 2,
+  "arabicWorkedExamples": 18,
+  "originalVisualModels": 8,
+  "verifiedCartesianPlots": 3,
   "contentPackCurrentLessonCount": 54,
   "globalArabicContentComplete": false,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-stage-c-exact-contract.json",
@@ -80,7 +80,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l15.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRootsZerosTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRootsZerosTests.cs",
+    "tests/academic-uae-grade10-u01l15-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -102,5 +103,11 @@
     "authenticate real Arabic student Practice screens and check RTL graph/structured answer renderer",
     "verify actual root count and complex conjugates without overclaiming Descartes bounds",
     "complete 148 lessons and Stage D gates before enabling any production practice or publishing"
-  ]
+  ],
+  "stageDFollowup": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-015-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

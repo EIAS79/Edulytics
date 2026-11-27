@@ -46,8 +46,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-source-evidence.md",
   "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l16-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 10,
-  "originalVisualModels": 5,
+  "arabicWorkedExamples": 19,
+  "originalVisualModels": 8,
   "cartesianPlots": 1,
   "primarySkills": [
     "algebra.polynomial.rational_zero_theorem"
@@ -73,7 +73,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l16.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalZerosTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalZerosTests.cs",
+    "tests/academic-uae-grade10-u01l16-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -96,5 +97,11 @@
     "authenticated student RTL StructuredEntry validation for Arabic نعم/لا and numeric candidate count",
     "verify question-family source routing and stage D activation before any production use",
     "finish all 148 authored General lessons and safe runtime/Neon deploy with student identity protection"
-  ]
+  ],
+  "stageDFollowup": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-016-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }
