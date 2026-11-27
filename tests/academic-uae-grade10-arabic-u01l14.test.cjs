@@ -41,7 +41,7 @@ test('All six original source pages and twenty-four assessment types have an aut
 });
 test('Original Arabic models, ten complete examples and real quadratic graph are correct',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,10);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,18);assert.equal(l.Visuals.length,7);
  const graph=l.Visuals.find(v=>v.Kind==='CartesianPlot');
  assert.ok(graph);
  for(const p of graph.Rows) {

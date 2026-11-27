@@ -36,7 +36,7 @@ test('Visually audited original lesson3-5 source includes 32 distinct mapped tar
 });
 test('Original cubic and quartic visual models have numerically checked exact Cartesian values',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,10);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,20);assert.equal(l.Visuals.length,8);
  const plots=l.Visuals.filter(v=>v.Kind==='CartesianPlot');
  assert.equal(plots.length,2);
  const polynomial=[x=>x*(x+3)*(x-2),x=>x**4-13*x*x+36];

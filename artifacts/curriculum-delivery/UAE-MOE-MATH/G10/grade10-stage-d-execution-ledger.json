@@ -131,8 +131,8 @@
     }
   },
   "observedCI": {
-    "sha": "433178a9d93c0e2742f59b93b7e77aed8892351f",
-    "runId": 45932420180,
+    "sha": "adce3268bde3e8d40005c3f1dd46f0149a236b0d",
+    "runId": 45934200967,
     "status": "completed",
     "conclusion": "failure",
     "structural": {
@@ -140,8 +140,8 @@
       "total": 148
     },
     "node": {
-      "passed": 345,
-      "failed": 0,
+      "passed": 360,
+      "failed": 1,
       "skipped": 0
     },
     "dotnetGrade10": {
@@ -156,7 +156,7 @@
     },
     "releaseBlockers": 149,
     "stageDVerified": 0,
-    "scope": "Prior tested candidate; not current candidate."
+    "scope": "Previous candidate; L011 graph test failed on signed-zero representation. Corrected with finite exact numerical equality; new candidate CI not yet executed."
   },
   "release": {
     "status": "NO_GO_SOURCE_100",
@@ -441,7 +441,13 @@
     "canonicalBodySha256": "23efd64fdf8519050b2b6d990cfb2728159aa6de0a75804147bd69831cf13dcc",
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
-    "technicalTests": "WRITTEN_NOT_RUN"
+    "technicalTests": "WRITTEN_NOT_RUN",
+    "runtimeTestCorrection": {
+      "cause": "Node strictEqual distinguishes 0 and -0 although both are identical mathematical coordinates",
+      "test": "tests/academic-uae-grade10-u01l11-stage-d-source-review.test.cjs",
+      "runId": 45934200967,
+      "status": "FIX_WRITTEN_NOT_RUN"
+    }
   },
   "lesson012": {
     "status": "D_PENDING_A_C_EVIDENCE",
@@ -451,6 +457,30 @@
     "visualsAfter": 7,
     "authoringArithmeticProbes": 60,
     "canonicalBodySha256": "9ff7d0cabb1e9c0d8510b04d3af70881a706111865ab3ea51b5d274b5f390b89",
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false,
+    "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "lesson013": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-stage-d-source-review.json",
+    "workedExampleGroupsBefore": 10,
+    "workedExampleGroupsAfter": 20,
+    "visualsAfter": 8,
+    "authoringArithmeticProbes": 693,
+    "canonicalBodySha256": "8a9a98f083c52d65091d93ec32096a7b83b534c6730445e6add58070f728e9c2",
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false,
+    "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "lesson014": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-014-stage-d-source-review.json",
+    "workedExampleGroupsBefore": 10,
+    "workedExampleGroupsAfter": 18,
+    "visualsAfter": 7,
+    "authoringArithmeticProbes": 462,
+    "canonicalBodySha256": "a3e51c3c98f4954c5ef232a6b7ff474209fa3357172c02705175ebd58cc8e7ab",
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
     "technicalTests": "WRITTEN_NOT_RUN"

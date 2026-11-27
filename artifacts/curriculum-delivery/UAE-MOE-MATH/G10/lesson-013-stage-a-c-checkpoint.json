@@ -54,8 +54,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l13-ar.rich-lesson-v2.json",
-  "arabicWorkedExamples": 10,
-  "originalVisualModels": 5,
+  "arabicWorkedExamples": 20,
+  "originalVisualModels": 8,
   "actualCartesianPlotCount": 2,
   "contentPackCurrentLessonCount": 52,
   "legacy48LessonCodesPreserved": true,
@@ -81,7 +81,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l13.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialEquationsTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialEquationsTests.cs",
+    "tests/academic-uae-grade10-u01l13-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -103,5 +104,11 @@
     "verify structured root entry, Arabic digits and grade handling in authenticated RTL student UI",
     "verify graph and calculator manual rubric are not marked auto-scored",
     "complete all 148 Grade10 General lessons and Stage D/CI gates before production publication"
-  ]
+  ],
+  "stageDFollowup": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }
