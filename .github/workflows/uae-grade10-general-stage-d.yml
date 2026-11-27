@@ -476,6 +476,7 @@ jobs:
           set -euo pipefail
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln -c Release --no-restore
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release
           python3 -m py_compile tools/curriculum/uae_g10_tenant_transition_rehearsal.py
           python3 tools/curriculum/uae_g10_tenant_transition_rehearsal.py
       - if: always()
