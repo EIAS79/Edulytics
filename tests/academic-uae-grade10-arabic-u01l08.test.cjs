@@ -32,8 +32,8 @@ test('Canonical U01L08 identity preserves original PED and evidence PDF71–76',
 test('Original Arabic teaching contains inverse factoring, GCF, repeat factoring and frame area',()=>{
  assert.equal(rich.Lessons.length,1);
  const l=rich.Lessons[0];
- assert.equal(l.WorkedExamples.length,11);
- assert.equal(l.Visuals.length,6);
+ assert.equal(l.WorkedExamples.length,21);
+ assert.equal(l.Visuals.length,8);
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٣س(٢س−١)(٢س+١)')));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٢(س+٣)(س−١)(س+١)')));

@@ -48,8 +48,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-teacher-rubric.md",
   "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l08-ar.rich-lesson-v2.json",
-  "arabicWorkedExamplesCount": 11,
-  "originalVisualModelsCount": 6,
+  "arabicWorkedExamplesCount": 21,
+  "originalVisualModelsCount": 8,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-stage-c-exact-contract.json",
   "primarySkills": [
     "algebra.factor.difference_of_squares"
@@ -77,7 +77,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l08.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralDifferenceSquaresTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralDifferenceSquaresTests.cs",
+    "tests/academic-uae-grade10-u01l08-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -99,5 +100,11 @@
     "Authenticated student Arabic/RTL StructuredEntry interaction and score persistence",
     "Only activate production question-family routing if Stage D succeeds",
     "Complete all Grade10 Arabic lesson bodies before production migration/publish"
-  ]
+  ],
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }

@@ -30,7 +30,7 @@ test('Owner-approved 148/18 catalogue keeps grade10 lesson9 legacy identity and 
 test('Arabic source-authored RichV2 has square, near miss, rational/irrational roots and fall context',()=>{
  const l=rich.Lessons[0];
  assert.equal(rich.Lessons.length,1);assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,11);assert.equal(l.Visuals.length,6);
+ assert.equal(l.WorkedExamples.length,22);assert.equal(l.Visuals.length,9);
  assert.ok(l.Visuals.some(x=>x.Kind==='ExpressionStripBars'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer==='(٤س+٣)²'));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('٢√٣')));

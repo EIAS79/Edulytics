@@ -131,8 +131,8 @@
     }
   },
   "observedCI": {
-    "sha": "a4a4fe349cb350d4fb1ee714d956b01047035a9f",
-    "runId": 45931903024,
+    "sha": "433178a9d93c0e2742f59b93b7e77aed8892351f",
+    "runId": 45932420180,
     "status": "completed",
     "conclusion": "failure",
     "structural": {
@@ -140,19 +140,23 @@
       "total": 148
     },
     "node": {
-      "passed": 341,
+      "passed": 345,
       "failed": 0,
       "skipped": 0
     },
     "dotnetGrade10": {
-      "passed": 663,
-      "failed": 1,
+      "passed": 664,
+      "failed": 0,
       "skipped": 0
     },
-    "dotnetGrade7To9": "NOT_RUN",
+    "dotnetGrade7To9": {
+      "passed": 273,
+      "failed": 0,
+      "skipped": 0
+    },
     "releaseBlockers": 149,
     "stageDVerified": 0,
-    "scope": "Prior candidate; L004 strict compiled registry rejected an example with two steps. Corrected in subsequent candidate, not yet tested."
+    "scope": "Prior tested candidate; not current candidate."
   },
   "release": {
     "status": "NO_GO_SOURCE_100",
@@ -387,6 +391,30 @@
     "visualsAfter": 9,
     "authoringArithmeticProbes": 840,
     "canonicalBodySha256": "627281d3f29f0a9fcbf552f688625fb51a142c9f6a3a6727ca9e427777a7b40b",
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false,
+    "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "lesson008": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-008-stage-d-source-review.json",
+    "workedExampleGroupsBefore": 11,
+    "workedExampleGroupsAfter": 21,
+    "visualsAfter": 8,
+    "authoringArithmeticProbes": 945,
+    "canonicalBodySha256": "8038ba528d55779371dfc4475914d6f4addc5d84048daf6bf19cfa834812a9de",
+    "semanticParity": "UNKNOWN",
+    "productionRouting": false,
+    "technicalTests": "WRITTEN_NOT_RUN"
+  },
+  "lesson009": {
+    "status": "D_PENDING_A_C_EVIDENCE",
+    "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-stage-d-source-review.json",
+    "workedExampleGroupsBefore": 11,
+    "workedExampleGroupsAfter": 22,
+    "visualsAfter": 9,
+    "authoringArithmeticProbes": 945,
+    "canonicalBodySha256": "b3a4d4f739726d7bbab93a658e3fa13e22554d9384576e2c7afef90bba4c3c63",
     "semanticParity": "UNKNOWN",
     "productionRouting": false,
     "technicalTests": "WRITTEN_NOT_RUN"

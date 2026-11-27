@@ -50,8 +50,8 @@
   "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-source-evidence.md",
   "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-teacher-rubric.md",
   "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l09-ar.rich-lesson-v2.json",
-  "arabicWorkedExamplesCount": 11,
-  "originalVisualModelsCount": 6,
+  "arabicWorkedExamplesCount": 22,
+  "originalVisualModelsCount": 9,
   "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-stage-c-exact-contract.json",
   "primarySkills": [
     "algebra.factor.perfect_square_trinomial"
@@ -80,7 +80,8 @@
   ],
   "testsWritten": [
     "tests/academic-uae-grade10-arabic-u01l09.test.cjs",
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPerfectSquaresTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPerfectSquaresTests.cs",
+    "tests/academic-uae-grade10-u01l09-stage-d-source-review.test.cjs"
   ],
   "testsRun": "WRITTEN_NOT_RUN",
   "stageD": "NOT_STARTED",
@@ -101,5 +102,11 @@
     "Authenticated student StructuredEntry with Arabic digits/RTL and persisted grading",
     "Verify irrational-root teacher scoring/visual geometry manual pathway",
     "Enable production routing only after Stage D; finish 148 lessons before full-grade publish"
-  ]
+  ],
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-009-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
 }
