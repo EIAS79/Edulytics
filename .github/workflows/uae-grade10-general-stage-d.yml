@@ -155,6 +155,7 @@ jobs:
       CI: 'true'
       EDULYTICS_CI_REHEARSAL: 'true'
       EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G10
+      EDULYTICS_G10_CI_PRACTICE_REHEARSAL: EXERCISE_97_DECLARED_CANDIDATES_ONLY
       EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
       EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
       ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'

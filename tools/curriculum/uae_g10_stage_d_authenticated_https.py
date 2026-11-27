@@ -132,8 +132,9 @@ def run():
             row["pageErrorDetail"]=str(exc)[:350]
             print("G10_PAGE_FAILURE",ordinal,row["pageErrorType"],row["pageErrorDetail"],flush=True)
         if families:
-            # Exercise the actual current route, without a release token. A
-            # generation denial is recorded as a blocker, not as success.
+            # Exercise only declared G10 candidate contracts via the real
+            # runtime in isolated CI. No production release token is provided.
+            # Generation/QA denial remains a blocker, not a passed attempt.
             for field,mode,required in (
                 ("correct","correct","SELF_CONSISTENT_GRADE_PERSISTED"),
                 ("wrong","well_formed_wrong","WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED"),
@@ -149,8 +150,11 @@ def run():
                         answer_mode=mode,wrong_answer_profile="uae-g9" if mode=="well_formed_wrong" else None)
                     row[field]=result
                     row[field+"Passed"]=(result.get("status")==required and result.get("family") in families)
+                    if not row[field+"Passed"]:
+                        print("G10_PRACTICE_FAILURE",ordinal,field,result.get("status"),result.get("family"),flush=True)
                 except (AssertionError,ValueError,urllib.error.URLError,TimeoutError) as exc:
-                    row[field]={"status":"PROBE_FAILED","errorType":type(exc).__name__}
+                    row[field]={"status":"PROBE_FAILED","errorType":type(exc).__name__,"detail":str(exc)[:300]}
+                    print("G10_PRACTICE_FAILURE",ordinal,field,type(exc).__name__,str(exc)[:300],flush=True)
                     row[field+"Passed"]=False
             row["practiceStatus"]="PASS" if all(row.get(k+"Passed") for k in ("correct","wrong","malformed")) else "FAIL"
         else:

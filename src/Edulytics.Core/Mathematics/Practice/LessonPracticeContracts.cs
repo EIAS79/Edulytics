@@ -11757,6 +11757,15 @@ public static class LessonPracticeContractRegistry
                 $"{grade9Prepared.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count()}, " +
                 $"alreadyReady={grade9Prepared.Count(x => string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal))}.");
 
+        // Owner-retired all historical UAE G10 Practice routes, including
+        // General identities reused by the new course. Never allow broad
+        // official/supporting projection to restore an obsolete contract.
+        foreach (var key in byLesson.Keys.Where(x => x.StartsWith(
+            UaeG10StageDRehearsalContracts.ScopePrefix, StringComparison.Ordinal)).ToArray())
+            byLesson.Remove(key);
+        foreach (var candidate in UaeG10StageDRehearsalContracts.Load())
+            byLesson.Add(candidate.LessonCode, candidate);
+
         return byLesson.Values
             .Where(x =>
                 x.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal)

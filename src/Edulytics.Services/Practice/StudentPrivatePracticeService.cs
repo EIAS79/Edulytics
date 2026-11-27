@@ -520,6 +520,11 @@ public sealed class StudentPrivatePracticeService(
             return SupportedDifficulties(contract);
         }
 
+        // Do not advertise a difficulty selector for an unreleased or
+        // retired UAE G10 lesson when its exact contract cannot resolve.
+        if (lessonCode.StartsWith("PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal))
+            return [];
+
         if (Stage18PracticeSkillContracts.TryResolve(lessonCode, out var legacy) &&
             legacy is not null)
         {
