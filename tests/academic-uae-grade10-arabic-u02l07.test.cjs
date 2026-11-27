@@ -31,7 +31,7 @@ test('Source map keeps Advanced4-3 and Applied6-1 merged without duplicate lesso
 });
 test('Original Arabic graphical table and transformation golden points remain correct',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,12);assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,19);assert.equal(l.Visuals.length,7);
  assert.equal(2*Math.sqrt(2-1)-3,-1);
  assert.equal(2*Math.sqrt(5-1)-3,1);
  assert.equal(-3*Math.sqrt(2-1)+2,-1);

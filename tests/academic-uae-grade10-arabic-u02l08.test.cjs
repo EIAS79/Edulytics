@@ -41,8 +41,8 @@ test('All 29 source elements have individual advanced/applied book and teaching 
 });
 test('Arabic lesson distinguishes valid, extraneous and no-real-root cases and inequalities',()=>{
  const l=rich.Lessons[0];assert.equal(l.LessonCode,code);
- assert.equal(l.WorkedExamples.length,14);
- assert.equal(l.Visuals.length,5);
+ assert.equal(l.WorkedExamples.length,23);
+ assert.equal(l.Visuals.length,6);
  assert.ok(l.WorkedExamples.some(x=>x.Question.includes('√(س+٥)=٤')));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('لا يوجد حل')));
  assert.ok(l.WorkedExamples.some(x=>x.Answer.includes('−١≤س<٨')));
