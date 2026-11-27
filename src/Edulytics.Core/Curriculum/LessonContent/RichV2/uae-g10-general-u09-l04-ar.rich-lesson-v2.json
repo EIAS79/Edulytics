@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10u09l04-20261125",
+  "ContentVersion": "g10u09l04-20261125-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "لا",
           "Check": "تأكد من ترتيب العناصر المتناظرة أو مجموع الزوايا ووجود جميع شروط المعيار."
+        },
+        {
+          "Title": "إثبات SSS باستخدام الإحداثيات",
+          "Question": "A(٠،٠)، B(٤،٠)، C(٠،٣) وD(٢،١)، E(٢،٥)، F(−١،١). أثبت تطابق المثلثين.",
+          "Method": "احسب الأطوال المناظرة بقانون المسافة.",
+          "Steps": [
+            "AB=٤ وDE=٤.",
+            "AC=٣ وDF=٣.",
+            "BC=٥ وEF=٥؛ الأضلاع الثلاثة المناظرة متساوية."
+          ],
+          "Answer": "ΔABC≅ΔDEF وفق SSS",
+          "Check": "٤²+٣²=٥² في المثلثين."
         }
       ],
       "CommonMistakes": [
@@ -269,6 +281,76 @@
               "Cells": [
                 "هل تساوي ضلعين في مثلثين كاف وحده؟",
                 "لا"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ClosedCoordinatePolygon",
+          "Title": "المثلث ABC",
+          "Description": "المثلث الأول.",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(0,0)",
+            "(4,0)",
+            "(0,3)"
+          ],
+          "Rows": [
+            {
+              "Label": "1",
+              "Cells": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "Label": "2",
+              "Cells": [
+                "4",
+                "0"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "0",
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ClosedCoordinatePolygon",
+          "Title": "المثلث DEF",
+          "Description": "المثلث المناظر.",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(2,1)",
+            "(2,5)",
+            "(-1,1)"
+          ],
+          "Rows": [
+            {
+              "Label": "1",
+              "Cells": [
+                "2",
+                "1"
+              ]
+            },
+            {
+              "Label": "2",
+              "Cells": [
+                "2",
+                "5"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "-1",
+                "1"
               ]
             }
           ]

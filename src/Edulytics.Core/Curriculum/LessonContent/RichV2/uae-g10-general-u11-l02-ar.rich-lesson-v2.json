@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-general-u11-l02-ar-owner-original-20261125-v1",
+  "ContentVersion": "g10-general-u11-l02-ar-owner-original-20261125-v1-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "نعم",
           "Check": "أعد التعويض واختبر تطابق النسب واتساق الوحدات."
+        },
+        {
+          "Title": "مطابقة الرؤوس والأضلاع في مضلعين متشابهين",
+          "Question": "ABCD∼PQRS، وكان AB=٦ وPQ=٩ وBC=٨ وCD=١٠. أوجد QR وRS ونظير ∠D.",
+          "Method": "احفظ ترتيب الرؤوس واستعمل عامل التشابه من ABCD إلى PQRS.",
+          "Steps": [
+            "عامل التشابه=٩/٦=٣/٢.",
+            "QR=(٣/٢)×٨=١٢، وRS=(٣/٢)×١٠=١٥.",
+            "D↔S، إذن ∠D≅∠S."
+          ],
+          "Answer": "QR=١٢، RS=١٥، ونظير ∠D هو ∠S",
+          "Check": "٩/٦=١٢/٨=١٥/١٠."
         }
       ],
       "CommonMistakes": [

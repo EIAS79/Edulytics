@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-u09-l03-ar-20261125",
+  "ContentVersion": "g10-u09-l03-ar-20261125-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "Y",
           "Check": "تحقق من مجموع الزوايا أو ترتيب الرؤوس أو قياسات الأضلاع حسب الحالة."
+        },
+        {
+          "Title": "كتابة عبارة تطابق بترتيب صحيح",
+          "Question": "إذا AB=PQ وBC=QR وAC=PR، وكانت الزوايا المناظرة متطابقة، فاكتب عبارة التطابق وحدد نظير ∠BAC وAC.",
+          "Method": "عيّن الرؤوس من الأضلاع التي تتقابل ثم احفظ ترتيبها.",
+          "Steps": [
+            "الرأس A مشترك في AB وAC، ونظيره P مشترك في PQ وPR.",
+            "B↔Q وC↔R؛ إذن ΔABC≅ΔPQR.",
+            "نظير ∠BAC هو ∠QPR، ونظير AC هو PR."
+          ],
+          "Answer": "ΔABC≅ΔPQR؛ ∠QPR؛ PR",
+          "Check": "ترتيب الحروف يحدد كل ضلع وزاوية مناظرين."
         }
       ],
       "CommonMistakes": [

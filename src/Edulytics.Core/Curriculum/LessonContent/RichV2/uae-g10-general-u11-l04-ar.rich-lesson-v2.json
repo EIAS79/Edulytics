@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-general-u11-l04-ar-owner-original-20261125-v1",
+  "ContentVersion": "g10-general-u11-l04-ar-owner-original-20261125-v1-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "يوازي الضلع الثالث",
           "Check": "أعد التعويض واختبر تطابق النسب واتساق الوحدات."
+        },
+        {
+          "Title": "عكس نظرية تناسب المثلث",
+          "Question": "في مثلث ABC، D على AB وE على AC. إذا AD=٦ وDB=٩ وAE=٨ وEC=١٢، فهل DE∥BC؟",
+          "Method": "قارن نسبتي الجزأين على الضلعين.",
+          "Steps": [
+            "AD/DB=٦/٩=٢/٣.",
+            "AE/EC=٨/١٢=٢/٣.",
+            "بما أن النسبتين متساويتان، فإن DE∥BC بعكس نظرية تناسب المثلث."
+          ],
+          "Answer": "نعم؛ DE∥BC",
+          "Check": "AD/AB=٦/١٥=٨/٢٠=AE/AC."
         }
       ],
       "CommonMistakes": [
@@ -275,6 +287,68 @@
               "Cells": [
                 "إذا قطع مستقيم ضلعين بنسبة واحدة، فماذا نستنتج بالعكس؟",
                 "يوازي الضلع الثالث"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ClosedCoordinatePolygon",
+          "Title": "أجزاء متناسبة في مثلث",
+          "Description": "نموذج إحداثي للنسب ٢:٣ على الضلعين؛ القطعة الداخلية موازية للقاعدة.",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(0,0)",
+            "(15,0)",
+            "(0,20)"
+          ],
+          "Rows": [
+            {
+              "Label": "1",
+              "Cells": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "Label": "2",
+              "Cells": [
+                "15",
+                "0"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "0",
+                "20"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "CartesianPlot",
+          "Title": "القطعة الداخلية DE",
+          "Description": "D(٦،٠)، E(٠،٨)؛ ميلها يساوي ميل BC.",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(0,8)",
+            "(6,0)"
+          ],
+          "Rows": [
+            {
+              "Label": "f",
+              "Cells": [
+                "0",
+                "8"
+              ]
+            },
+            {
+              "Label": "f",
+              "Cells": [
+                "6",
+                "0"
               ]
             }
           ]

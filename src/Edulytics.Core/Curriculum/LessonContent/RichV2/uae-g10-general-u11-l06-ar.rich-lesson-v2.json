@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-general-u11-l06-ar-owner-original-20261125-v1",
+  "ContentVersion": "g10-general-u11-l06-ar-owner-original-20261125-v1-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "٣",
           "Check": "أعد التعويض واختبر تطابق النسب واتساق الوحدات."
+        },
+        {
+          "Title": "تحديد معامل تمدد من صورتين متناظرتين",
+          "Question": "مركز التمدد O(١،٢)، P(٣،٦)، P′(٤،٨). أوجد المعامل وصورة Q(−١،٤).",
+          "Method": "قارن متجهي OP وOP′ ثم طبق المعامل على OQ.",
+          "Steps": [
+            "OP=(٢،٤) وOP′=(٣،٦).",
+            "ك=٣/٢، وهو تكبير.",
+            "OQ=(−٢،٢) ⇒ OQ′=(−٣،٣) ⇒ Q′=(−٢،٥)."
+          ],
+          "Answer": "ك=٣/٢؛ Q′(−٢،٥)",
+          "Check": "المتجهان OP وOP′ متوازيان وفي الاتجاه نفسه، ونسبة طوليْهما ٣/٢."
         }
       ],
       "CommonMistakes": [

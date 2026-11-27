@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g10-general-u08-l02-ar-source-20261125-v1",
+  "ContentVersion": "g10-general-u08-l02-ar-source-20261125-v1-stage-d-source-repair-20261127",
   "PackCode": "UAE-MOE-MATH",
   "Lessons": [
     {
@@ -129,6 +129,18 @@
           ],
           "Answer": "٦",
           "Check": "راجع الصورة مع المركز أو المحور والمعامل وثبات الخصائص الهندسية المطلوبة."
+        },
+        {
+          "Title": "إزاحة شكل كامل من متجه معلوم",
+          "Question": "مثلث A(−١،٢)، B(٢،٢)، C(٠،٥). إذا انتقلت A إلى A′(٣،−١)، أوجد صورتي B وC.",
+          "Method": "استنتج متجه الإزاحة من زوج متناظر وطبقه على كل رأس.",
+          "Steps": [
+            "المتجه (٣−(−١)،−١−٢)=(٤،−٣).",
+            "B′=(٢+٤،٢−٣)=(٦،−١).",
+            "C′=(٠+٤،٥−٣)=(٤،٢)."
+          ],
+          "Answer": "B′(٦،−١)، C′(٤،٢)",
+          "Check": "فرق الإحداثيات بين كل نقطة وصورتها (٤،−٣)."
         }
       ],
       "CommonMistakes": [
@@ -270,6 +282,76 @@
               "Cells": [
                 "صورة ضلع طوله ٦ تحت إزاحة",
                 "٦"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ClosedCoordinatePolygon",
+          "Title": "المثلث قبل الإزاحة",
+          "Description": "الرؤوس الأصلية.",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(-1,2)",
+            "(2,2)",
+            "(0,5)"
+          ],
+          "Rows": [
+            {
+              "Label": "1",
+              "Cells": [
+                "-1",
+                "2"
+              ]
+            },
+            {
+              "Label": "2",
+              "Cells": [
+                "2",
+                "2"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "0",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ClosedCoordinatePolygon",
+          "Title": "المثلث بعد الإزاحة",
+          "Description": "المتجه (٤،−٣).",
+          "PrimaryLabel": "س",
+          "SecondaryLabel": "ص",
+          "Items": [
+            "(3,-1)",
+            "(6,-1)",
+            "(4,2)"
+          ],
+          "Rows": [
+            {
+              "Label": "1",
+              "Cells": [
+                "3",
+                "-1"
+              ]
+            },
+            {
+              "Label": "2",
+              "Cells": [
+                "6",
+                "-1"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "4",
+                "2"
               ]
             }
           ]
