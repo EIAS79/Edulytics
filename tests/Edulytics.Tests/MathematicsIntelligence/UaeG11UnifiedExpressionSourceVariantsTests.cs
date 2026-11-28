@@ -33,6 +33,11 @@ public sealed class UaeG11UnifiedExpressionSourceVariantsTests
     [InlineData(Rounded,3,1,2,3,1,"6")]
     [InlineData(Formula,0,4,1,5,1,"30")]
     [InlineData(Formula,20,2,3,4,12,"5")]
+    [InlineData(Expression,29,15,20,1,1,"19/6")]
+    [InlineData(Expression,30,10,20,1,30,"7/3")]
+    [InlineData(Expression,31,20,10,1,1,"17/3")]
+    [InlineData(Formula,23,4,1,5,1,"3/10")]
+    [InlineData(Rounded,3,1,2,4,1,"7.5")]
     public void IndependentGoldens(string family,int mode,int a,int b,int c,int d,string expected)
     {
         var p=P(mode,a,b,c,d);
@@ -41,6 +46,16 @@ public sealed class UaeG11UnifiedExpressionSourceVariantsTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(family,p,"999999"));
         string ar=string.Concat(expected.Select(ch=>ch is >= '0' and <= '9'?(char)('٠'+ch-'0'):ch=='.'?'٫':ch=='-'?'−':ch));
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,p,ar));
+    }
+
+    [Theory]
+    [InlineData(Expression,LessonPracticeInteractionKind.FractionEntry)]
+    [InlineData(Formula,LessonPracticeInteractionKind.FractionEntry)]
+    [InlineData(Rounded,LessonPracticeInteractionKind.NumericEntry)]
+    public void SourceVariantRegistryResolvesExactInteraction(string family,LessonPracticeInteractionKind kind)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out var interaction));
+        Assert.Equal(kind,interaction!.InteractionKind);
     }
 
     [Fact]
@@ -53,8 +68,8 @@ public sealed class UaeG11UnifiedExpressionSourceVariantsTests
     }
 
     [Theory]
-    [InlineData(Expression,29)]
-    [InlineData(Formula,23)]
+    [InlineData(Expression,32)]
+    [InlineData(Formula,24)]
     [InlineData(Rounded,4)]
     public void FixedSeedsCoverEveryBoundedSourceVariant(string family,int count)
     {

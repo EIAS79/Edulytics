@@ -41,3 +41,7 @@ Original source-shaped digital variants were extended for net rate, four-input n
 ## Source-variant registry continuation
 
 Registered the three implemented source families in the family registry, existing expression skill, and exact lesson mapping (29 expression, 23 formula, 4 rounded modes). Production routing remains false. Corrected source ledger Q26 to formula mode 4, Q38 to rounded mode 1, Q41 to rounded mode 0. General Heron Q40 still requires independent equivalence audit; rounded general-triangle mode exists but cannot replace the exact task without an explicit rounding instruction. T2 PDF pp.21–23 and G1 pp.30–32 directly reviewed. No Stage D or CI deliberately run. Status remains A_C_EXPLICIT_GAP; next eligible lesson remains G11-001.
+
+## Source fidelity corrections
+
+Directly compared both student-book source pages (T2 18–23 and G1 27–32). Added exact mixed-third substitution variants (modes 29–31), a defined-operation prompt (mode 27) and an exact net-rate fraction variant (formula mode 23). Updated source actions Q10a/b, Q11, Q15, Q16; fixed native concept/visual ledger pointers. Existing interaction registry recognizes symbolic and contextual as nonvisual; corrected two new family representation tags accordingly. Added independent goldens and interaction-registry specifications, WRITTEN_NOT_RUN. General Heron exact example and structured-response audit remain open; no premature closure.

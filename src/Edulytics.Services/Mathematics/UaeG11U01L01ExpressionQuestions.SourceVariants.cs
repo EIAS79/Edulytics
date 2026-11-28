@@ -14,8 +14,8 @@ internal static partial class UaeG11U01L01ExpressionQuestions
     internal const string SourceFormula = "uae.g11.unified.u01.l01.source_formula";
     internal const string RoundedFormula = "uae.g11.unified.u01.l01.rounded_formula";
 
-    private const int ExpressionModes = 29;
-    private const int FormulaModes = 23;
+    private const int ExpressionModes = 32;
+    private const int FormulaModes = 24;
     private const int RoundedModes = 4;
 
     private static bool IsSourceVariant(string? family) =>
@@ -72,6 +72,10 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         26 => (d*a+b*c,d*a-b*c),
         27 => (3*a-b-2*c,c-b-a),
         28 => (a*a*a*a-200*b*c,10*c*c*c+2000*b),
+        // In modes 29–31, c is a numerator over 3, not tenths.
+        29 => (3*(a+b)-10*c,30),
+        30 => (70*c-9*b+6*d,30),
+        31 => (9*a-40*c+3*b,30),
         _ => (0,0)
     };
 
@@ -102,6 +106,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         20 => (c+1,1),                               // first table month
         21 => (90+a,1),                              // angle bisectors
         22 => (100*a+100*b*c-10*b*c,1),               // linear height at t=c
+        23 => (a-b,a+b+c),                          // net rate as exact fraction
         _ => (0,0)
     };
 
@@ -146,6 +151,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         20=>$"عدد العملاء في الشهر 1 هو {a*10}، والزيادة الشهرية ثابتة {b*10}. في أي شهر يصل العدد أول مرة إلى {a*10+b*10*c-((d-1)%(b*10))} على الأقل؟",
         21=>$"زاوية رأس مثلث {2*a}°. أوجد الزاوية بين منصفَي زاويتي القاعدة.",
         22=>$"ارتفاع البداية {100*a+100*b*c} م، والهبوط {10*b} م/ث. احسب h(t)=h₀−vt بعد {c} ثوان.",
+        23=>$"سجّل فريق {a} نجاحًا و{b} أخطاء من {a+b+c} محاولة. احسب المعدل الصافي A=(s−e)/n على صورة كسر أو عدد صحيح.",
         _=>throw new InvalidOperationException("Unknown source formula variant.")
     };
 
@@ -156,6 +162,15 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         2=>$"مدار نصف قطره {a} مليون كم وسرعته {b*1000} كم/ساعة. احسب زمن الدورة بالأيام T=2πr/(24v) وقرّب لأقرب عُشر.",
         3=>$"مثلث أضلاعه {a+b} و{b+c} و{c+a}. احسب مساحته بصيغة هيرون وقرّب لأقرب عُشر.",
         _=>throw new InvalidOperationException("Unknown rounded source formula.")
+    };
+
+    private static string SourceExpressionPrompt(int m,long a,long b,long c,long d) => m switch
+    {
+        27=>$"عرّف العملية F(أ،ب،ج)=(3أ−ب−2ج)/(ج−ب−أ) عندما لا يساوي المقام صفرًا. احسب F({Number(a/10m)}، {Number(b/10m)}، {Number(c/10m)}).",
+        29=>$"إذا كان أ={Number(a/10m)}، ب={Number(b/10m)}، ج=({c}/3)، أوجد قيمة أ+ب−ج.",
+        30=>$"إذا كان ج=({c}/3)، ب={Number(b/10m)}، د={Number(d/10m)}، أوجد قيمة 7ج−3ب+2د.",
+        31=>$"إذا كان أ={Number(a/10m)}، ج=({c}/3)، ب={Number(b/10m)}، أوجد قيمة 3أ−4ج+ب.",
+        _=>$"إذا كان أ={Number(a/10m)}، ب={Number(b/10m)}، ج={Number(c/10m)}، د={Number(d/10m)}، أوجد قيمة {ExpressionText(m)}."
     };
 
     private static Item BuildSourceVariant(string family,Random random)
@@ -171,7 +186,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         }
         var p=new Dictionary<string,int>{{"mode",m},{"a",a},{"b",b},{"c",c},{"d",d}};
         string prompt=family==SourceExpression
-            ? $"إذا كان أ={Number(a/10m)}، ب={Number(b/10m)}، ج={Number(c/10m)}، د={Number(d/10m)}، أوجد قيمة {ExpressionText(m)}."
+            ? SourceExpressionPrompt(m,a,b,c,d)
             : family==SourceFormula?FormulaText(m,a,b,c,d):RoundedText(m,a,b,c,d);
         return new Item(family,prompt+(family==RoundedFormula?" اكتب الناتج العشري.":" اكتب عددًا صحيحًا أو كسرًا دقيقًا."),
             "حدّد الصيغة، عوّض بالقيم، طبّق ترتيب العمليات، وافحص المقام والوحدات. لا تقرّب إلا عند الطلب.",
@@ -239,7 +254,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         15=>(3*a*4*a,2),16=>(3*a,1),17=>(a*a*b,1),
         18=>(a*d+c*b,2*b*d),19=>((a*b)*(a*b),1),
         20=>(1+decimal.Ceiling((10*b*c-((d-1)%(10*b)))/(10*b)),1),21=>(180-(180-2*a)/2,1),
-        22=>(100*a+90*b*c,1),_ => (0,0)
+        22=>(100*a+90*b*c,1),23=>(a-b,a+b+c),_ => (0,0)
     };
 
     // Independent expansion of each of the four normalized ratios;
@@ -285,7 +300,15 @@ internal static partial class UaeG11U01L01ExpressionQuestions
             };
             return answer==decimal.Round(actual,1,MidpointRounding.AwayFromZero);
         }
-        var pair=family==SourceExpression?VerifyExpression(m,a/10m,b/10m,c/10m,d/10m):VerifyFormula(m,a,b,c,d);
+        // Avoid approximating thirds as finite decimals; scale the algebraic
+        // expression by 3 before exact cross multiplication.
+        (decimal N, decimal D) pair=family==SourceExpression && m>=29 ? m switch
+        {
+            29=>(3m*(a/10m+b/10m)-c,3m),
+            30=>(7m*c+3m*(-3m*b/10m+2m*d/10m),3m),
+            31=>(3m*(3m*a/10m+b/10m)-4m*c,3m),
+            _=>(0m,0m)
+        } : family==SourceExpression?VerifyExpression(m,a/10m,b/10m,c/10m,d/10m):VerifyFormula(m,a,b,c,d);
         if(pair.D==0)return false;
         // Exact scale includes every finite decimal in these bounded formulas.
         const decimal scale=100000m;

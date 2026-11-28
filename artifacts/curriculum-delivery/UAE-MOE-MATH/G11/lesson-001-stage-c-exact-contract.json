@@ -147,8 +147,8 @@
       "families": [
         {
           "family": "uae.g11.unified.u01.l01.source_expression",
-          "modes": 29,
-          "ranges": "a,b,c,d integer tenths -40..40; nonzero denominators",
+          "modes": 32,
+          "ranges": "a,b,c,d integers -40..40; tenths except c/3 in modes 29–31; nonzero denominators",
           "answerType": "exact_rational",
           "rendererCandidate": "FractionEntry",
           "grader": "ExactSkillContractQuestionEngine.Verify",
@@ -156,7 +156,7 @@
         },
         {
           "family": "uae.g11.unified.u01.l01.source_formula",
-          "modes": 23,
+          "modes": 24,
           "ranges": "a,b,c,d integers 1..12",
           "answerType": "exact_rational",
           "rendererCandidate": "FractionEntry",
