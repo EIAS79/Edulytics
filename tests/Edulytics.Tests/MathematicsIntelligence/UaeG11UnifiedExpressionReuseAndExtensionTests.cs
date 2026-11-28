@@ -5,7 +5,7 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UaeG11UnifiedExpressionReuseAndExtensionTests
 {
-    private const string Scope = "PED:UAE-MOE-MATH:L11:GENERAL:06:01:EXPRESSIONS-AND-FORMULAS";
+    private const string Scope = "PED:UAE-MOE-MATH:L11:UNIFIED:01:01";
     private const string Signed = "uae.g11.unified.u01.l01.signed_substitution";
     private const string Decimal = "uae.g11.unified.u01.l01.decimal_substitution";
     private const string Rational = "uae.g11.unified.u01.l01.rational_substitution";

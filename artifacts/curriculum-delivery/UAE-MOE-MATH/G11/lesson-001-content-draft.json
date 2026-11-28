@@ -3,8 +3,6 @@
   "course": "UAE-MOE-MATH",
   "grade": 11,
   "indexCode": "G11-001",
-  "historicalLessonCode": "PED:UAE-MOE-MATH:L11:GENERAL:06:01:EXPRESSIONS-AND-FORMULAS",
-  "historicalSourceLessonCode": "EDU:UAE-MOE-MATH:L11:GENERAL:U06:L01",
   "academicLanguage": "ar",
   "direction": "rtl",
   "status": "DRAFT_NOT_ROUTED",
@@ -360,6 +358,197 @@
       ],
       "answer": "z−x+y−(yz)/z=6 بشرط z≠0",
       "check": "التعبير يستخدم جميع العمليات الأربع وقيمته المحددة 6."
+    },
+    {
+      "id": "E31",
+      "skill": "decimal_linear",
+      "prompt": "إذا كان a=−3 وb=2 وc=1.5، احسب a−2b+3c.",
+      "steps": [
+        "−3−4+4.5",
+        "−7+4.5=−2.5"
+      ],
+      "answer": "−2.5",
+      "check": "جمع −7 و4.5."
+    },
+    {
+      "id": "E32",
+      "skill": "linear_fraction_sum",
+      "prompt": "إذا كان w=−2 وx=3 وy=5/2، أوجد w−2x+y/2.",
+      "steps": [
+        "−2−6+5/4",
+        "−8+5/4=−27/4"
+      ],
+      "answer": "−27/4",
+      "check": "يساوي −6.75."
+    },
+    {
+      "id": "E33",
+      "skill": "multiple_brackets",
+      "prompt": "إذا كان a=−1 وb=4 وc=2، احسب 6c−3[(b−a)+c].",
+      "steps": [
+        "b−a=5؛ (b−a)+c=7",
+        "12−21=−9"
+      ],
+      "answer": "−9",
+      "check": "نحسب داخل الأقواس أولًا."
+    },
+    {
+      "id": "E34",
+      "skill": "fractional_product",
+      "prompt": "إذا كان a=−3 وb=−1/2 وc=4 وd=1/3، احسب (a−b)/(bd).",
+      "steps": [
+        "البسط −5/2؛ المقام −1/6",
+        "(−5/2)×(−6)=15"
+      ],
+      "answer": "15",
+      "check": "15×(−1/6)=−5/2."
+    },
+    {
+      "id": "E35",
+      "skill": "nonlinear_ratio",
+      "prompt": "إذا كان x=2 وy=−3 وz=1/2 وw=4، احسب (xw+yz)/(xw−yz).",
+      "steps": [
+        "xw=8 وyz=−3/2",
+        "(13/2)/(19/2)=13/19"
+      ],
+      "answer": "13/19",
+      "check": "المقام 19/2 لا يساوي صفرًا."
+    },
+    {
+      "id": "E36",
+      "skill": "power_sum",
+      "prompt": "إذا كان x=3 وy=−2، أوجد x³+3y⁴.",
+      "steps": [
+        "27+3×16",
+        "27+48=75"
+      ],
+      "answer": "75",
+      "check": "الأس الزوجي يجعل القوة موجبة."
+    },
+    {
+      "id": "E37",
+      "skill": "temperature_range",
+      "prompt": "حوّل مجال الحرارة من 59°F إلى 86°F إلى مئوية، ثم قارن 39°C مع 98.6°F.",
+      "steps": [
+        "C(59)=15؛ C(86)=30",
+        "C(98.6)=37؛ 39>37"
+      ],
+      "answer": "15–30°C؛ 39°C أعلى من 37°C",
+      "check": "الصيغة متزايدة لأن معامل F موجب."
+    },
+    {
+      "id": "E38",
+      "skill": "radius_from_diameter",
+      "prompt": "مخروط قطر قاعدته 8x وارتفاعه 3x؛ x>0. عبّر عن حجمه.",
+      "steps": [
+        "r=4x",
+        "V=π(4x)²(3x)/3=16πx³"
+      ],
+      "answer": "16πx³",
+      "check": "عند x=1 نصف القطر 4 والارتفاع 3."
+    },
+    {
+      "id": "E39",
+      "skill": "rounding_radical",
+      "prompt": "أوجد √(49(1−4/9)) إلى أقرب عُشر.",
+      "steps": [
+        "49×5/9=245/9",
+        "√245/3≈5.217"
+      ],
+      "answer": "5.2",
+      "check": "5.15²<245/9<5.25²."
+    },
+    {
+      "id": "E40",
+      "skill": "midpoint_general",
+      "prompt": "اكتب تعبير منتصف المسافة بين a/b وc/d، حيث b,d≠0.",
+      "steps": [
+        "M=(a/b+c/d)/2",
+        "وحّد المقام ثم اقسم على 2"
+      ],
+      "answer": "(ad+bc)/(2bd)",
+      "check": "إذا a/b=1/2 وc/d=3/4، فالمنتصف 5/8."
+    },
+    {
+      "id": "E41",
+      "skill": "model_max",
+      "prompt": "قارن الصور −2t²+4t+6 و−2t(t−2)+6 و−2(t−3)(t+1) عندما t≥0. أوجد أقصى ارتفاع.",
+      "steps": [
+        "الصور متكافئة بالتوزيع",
+        "−2t²+4t+6=−2(t−1)²+8",
+        "المربع غير سالب"
+      ],
+      "answer": "8 عند t=1",
+      "check": "تعطي الصور الثلاث 8 عندما t=1."
+    },
+    {
+      "id": "E42",
+      "skill": "year_estimation",
+      "prompt": "مدار دائري افتراضي نصف قطره 70 مليون km وسرعة الجسم 50000 km/h. أوجد زمن الدورة وقدّره بالأيام.",
+      "steps": [
+        "C=140000000π km",
+        "T=C/v=2800π h",
+        "T/24≈366.5 يوم"
+      ],
+      "answer": "نحو 367 يومًا",
+      "check": "قارن التقدير مع 365 يومًا دون ادعاء تطابق دقيق."
+    },
+    {
+      "id": "E43",
+      "skill": "rational_error",
+      "prompt": "طالبان يحسبان (−3d−4c)/(2ab) عند a=−1,b=−2,c=3,d=2. الأول حصل على −18/4 والثاني 6/4. أيهما صحيح؟",
+      "steps": [
+        "البسط −6−12=−18",
+        "المقام 2×(−1)×(−2)=4"
+      ],
+      "answer": "الأول؛ −9/2",
+      "check": "−9/2×4=−18."
+    },
+    {
+      "id": "E44",
+      "skill": "two_models",
+      "prompt": "يصف P(t)=0.1t²+0.3t+2 وQ(t)=0.05t³−0.2t²+0.8t+2 تكلفة افتراضية. احسب القيم عند t=1,2,3 وقارن.",
+      "steps": [
+        "P(1)=2.4 وQ(1)=2.65",
+        "P(2)=3 وQ(2)=3.2",
+        "P(3)=3.8 وQ(3)=3.95"
+      ],
+      "answer": "Q أكبر في المدخلات الثلاث",
+      "check": "لا نستنتج ترتيب النموذجين لكل القيم من ثلاث حالات."
+    },
+    {
+      "id": "E45",
+      "skill": "three_input_operator",
+      "prompt": "عرّف F(a,b,c)=(2a−b−c)/(c−b−a) عندما المقام غير صفر. أوجد F(−1,−2,5).",
+      "steps": [
+        "البسط −2+2−5=−5",
+        "المقام 5+2+1=8"
+      ],
+      "answer": "−5/8",
+      "check": "تحقق من ترتيب المدخلات الثلاثة."
+    },
+    {
+      "id": "E46",
+      "skill": "formula_writing",
+      "prompt": "صِغ تكلفة رحلة بسيارة أجرة: رسم بداية 7 دراهم و2.5 درهم لكل كيلومتر. احسب تكلفة 8 km واشرح أثر نسيان الرسم.",
+      "steps": [
+        "C(d)=7+2.5d",
+        "C(8)=27",
+        "حذف الرسم يخفض الناتج 7 دراهم"
+      ],
+      "answer": "27 درهمًا",
+      "check": "عند d=0 تكون التكلفة 7."
+    },
+    {
+      "id": "E47",
+      "skill": "percent_general",
+      "prompt": "لماذا صيغة النسبة المئوية P=100p/n (n>0) أعمّ من جدول جاهز؟ مثال p=17,n=23.",
+      "steps": [
+        "يمكن تغيير كلا المدخلين",
+        "100×17/23≈73.91"
+      ],
+      "answer": "نحو 73.91%",
+      "check": "الجدول المحدود لا يحتوي كل زوج ممكن."
     }
   ],
   "visuals": [
@@ -474,5 +663,7 @@
     "Original first-party draft, not a loaded runtime content pack",
     "Not every numbered exercise subpart or original visual has yet been independently mapped"
   ],
-  "nativeRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g11-unified-u01-l01-ar.rich-lesson-v2.json"
+  "nativeRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g11-unified-u01-l01-ar.rich-lesson-v2.json",
+  "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
+  "sourceLessonCode": "EDU:UAE-MOE-MATH:L11:UNIFIED:U01:L01"
 }
