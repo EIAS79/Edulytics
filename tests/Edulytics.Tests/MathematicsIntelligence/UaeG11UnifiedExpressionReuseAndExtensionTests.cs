@@ -43,6 +43,16 @@ public sealed class UaeG11UnifiedExpressionReuseAndExtensionTests
         }
     }
 
+    [Theory]
+    [InlineData(Signed, Edulytics.Core.Mathematics.Practice.LessonPracticeInteractionKind.IntegerKeypad)]
+    [InlineData(Decimal, Edulytics.Core.Mathematics.Practice.LessonPracticeInteractionKind.NumericEntry)]
+    [InlineData(Rational, Edulytics.Core.Mathematics.Practice.LessonPracticeInteractionKind.FractionEntry)]
+    public void ExactAnswerTypeSelectsMatchingInteraction(string family, Edulytics.Core.Mathematics.Practice.LessonPracticeInteractionKind kind)
+    {
+        Assert.True(Edulytics.Core.Mathematics.Practice.LessonPracticeInteractionRegistry.TryResolve(family, out var interaction));
+        Assert.Equal(kind, interaction!.InteractionKind);
+    }
+
     [Fact]
     public void BoundaryAndInvalidParametersFailClosed()
     {

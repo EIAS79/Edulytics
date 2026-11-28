@@ -64802,6 +64802,57 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g11.unified.u01.l01.signed_substitution",
+      "version": 1,
+      "skillId": "algebra.variables.evaluate_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g11-unified-original-bounded-independent-cross-multiplication-stage-c",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g11.unified.u01.l01.decimal_substitution",
+      "version": 1,
+      "skillId": "algebra.variables.evaluate_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g11-unified-original-bounded-independent-cross-multiplication-stage-c",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g11.unified.u01.l01.rational_substitution",
+      "version": 1,
+      "skillId": "algebra.variables.evaluate_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "g11-unified-original-bounded-independent-cross-multiplication-stage-c",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -31,3 +31,5 @@ New code assigned from V2; no prior grade content is retained or required. Revie
 ## Native V2 authoring
 
 Read T2 pages 18–19 directly. Added 26 instructional source-action candidates and six first-party examples (E48–E53). Native blueprint has 130 new distinct lesson identities, 19 units; native Arabic canonical content contains G11-001 only. Both remain explicitly excluded from embedding until the new single-course scope is wired. No tests/CI run, no retired curriculum used, no Desktop Commander.
+
+Registered 3 exact bounded families under the existing expression-evaluation skill and 4 matching existing families in the draft lesson mapping. Production readiness remains fail-closed. Tests authored, not run.

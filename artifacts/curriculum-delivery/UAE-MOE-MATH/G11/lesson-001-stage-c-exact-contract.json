@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "indexCode": "G11-001",
-  "status": "STAGE_C_ENGINE_EXTENSION_AUTHORED_NOT_REGISTERED",
+  "status": "STAGE_C_BOUNDED_FAMILIES_REGISTERED_PENDING_COMPLETE_LESSON_COVERAGE",
   "productionRouting": false,
   "reuseCandidates": [
     {
@@ -85,14 +85,22 @@
       "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
     }
   ],
-  "allowedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g6.u06.l04.two_variable_expression",
+    "uae.g6.u06.l04.fraction_squared",
+    "uae.g6.u06.l04.substitute_difference",
+    "uae.g6.u06.l04.substitute_linear",
+    "uae.g11.unified.u01.l01.signed_substitution",
+    "uae.g11.unified.u01.l01.decimal_substitution",
+    "uae.g11.unified.u01.l01.rational_substitution"
+  ],
   "forbiddenQuestionFamilies": [
     "unbounded symbolic substitution using Grade6 templates",
     "unverified family or fabricated outcome code"
   ],
   "pendingExtensions": [
-    "formula-specific family coverage and skill registry/renderer/lesson mapping review",
-    "remaining source exercises and teacher-scored rubrics"
+    "formula-specific and remaining source-exercise exact coverage",
+    "original required visual and teacher-assessment linkage"
   ],
   "teacherReviewRequired": [
     "open formula modeling",
@@ -110,20 +118,23 @@
       {
         "family": "uae.g11.unified.u01.l01.signed_substitution",
         "ranges": "a,b,c -9..9",
-        "answerType": "integer",
-        "rendererCandidate": "IntegerKeypad"
+        "answerType": "exact_integer",
+        "rendererCandidate": "IntegerKeypad",
+        "registryStatus": "StageCAuthoredPendingD"
       },
       {
         "family": "uae.g11.unified.u01.l01.decimal_substitution",
         "ranges": "a,c -50..50 tenths; b -5..5",
-        "answerType": "exact decimal",
-        "rendererCandidate": "NumericEntry"
+        "answerType": "exact_decimal",
+        "rendererCandidate": "NumericEntry",
+        "registryStatus": "StageCAuthoredPendingD"
       },
       {
         "family": "uae.g11.unified.u01.l01.rational_substitution",
         "ranges": "a,b,c -9..9; c != a",
-        "answerType": "exact fraction or exact decimal",
-        "rendererCandidate": "StructuredEntry"
+        "answerType": "exact_rational",
+        "rendererCandidate": "FractionEntry",
+        "registryStatus": "StageCAuthoredPendingD"
       }
     ],
     "verifier": "separate algebraic expansions and exact cross multiplication; generator does not store answer",
@@ -133,5 +144,19 @@
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionReuseAndExtensionTests.cs"
   ],
   "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
-  "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G11/lesson-001-teacher-rubric.json"
+  "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G11/lesson-001-teacher-rubric.json",
+  "primarySkills": [
+    "algebra.variables.evaluate_expressions"
+  ],
+  "reuseRegistered": [
+    "uae.g6.u06.l04.two_variable_expression",
+    "uae.g6.u06.l04.fraction_squared",
+    "uae.g6.u06.l04.substitute_difference",
+    "uae.g6.u06.l04.substitute_linear"
+  ],
+  "registryFiles": [
+    "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json",
+    "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
+  ]
 }
