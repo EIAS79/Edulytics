@@ -24,7 +24,7 @@ public sealed class PracticeSessionDiversityCertificationTests
         // CI; none are silently counted as previously certified contracts.
         Assert.DoesNotContain(contracts, x => x.LessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal));
-        Assert.Equal(5110 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 - 100, contracts.Count(x => !x.LessonCode.StartsWith(
+        Assert.Equal(5110 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 - 100 - 123, contracts.Count(x => !x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)));
         Assert.InRange(contracts.Count(x => x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)), 21, 73);

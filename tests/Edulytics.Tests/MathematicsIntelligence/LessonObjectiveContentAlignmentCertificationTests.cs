@@ -15,7 +15,7 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
     // 5,110 + 39 + 73 + 69 + 16 = 5,307 canonical lessons.
     // After owner-retirement of the 77 English Grade 8 Advanced lessons.
     // G10 scoped replacement: 100 legacy lessons -> 148 Arabic lessons (+48).
-    private const int ExpectedLessonCount = 5057;
+    private const int ExpectedLessonCount = 5057 - 123;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION";
 

@@ -60,7 +60,8 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
         var levels = CurriculumLevelIdentityRegistry.ForPack(
             MathematicsCurriculumPackRegistry.UaeCode);
 
-        Assert.Equal(17, levels.Count);
+        Assert.Equal(15, levels.Count);
+        Assert.DoesNotContain(levels, x => x.LogicalLevel == 11);
 
         foreach (var logicalLevel in Enumerable.Range(1, 4))
         {
@@ -70,7 +71,7 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
             Assert.Equal("Common", level.Pathway);
         }
 
-        foreach (var logicalLevel in Enumerable.Range(5, 8))
+        foreach (var logicalLevel in Enumerable.Range(5, 8).Where(level => level != 11))
         {
             var levelPathways = levels
                 .Where(x => x.LogicalLevel == logicalLevel)

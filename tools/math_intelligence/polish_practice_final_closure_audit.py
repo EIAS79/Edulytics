@@ -348,8 +348,10 @@ def audit() -> dict[str, Any]:
     else:
         blockers.append("Grade10 catalogue must match either the exact legacy identities or all 148 owner-scoped General contracts")
 
+    if any(str(row.get("lessonCode") or "").startswith("PED:UAE-MOE-MATH:L11:") for row in rows):
+        blockers.append("Owner-retired UAE Grade11 must have zero active lessons")
     expected_catalogue_count = (
-        5110 - 93 + grade4_count + grade12_count + g10_delta
+        5110 - 93 + grade4_count + grade12_count + g10_delta - 123
         - 59 + grade6_count - 62 + grade7_count
         - 77 + grade8_general_count - (77 - grade8_advanced_count)
         - 220 + grade9_general_count

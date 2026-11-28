@@ -135,8 +135,8 @@ public sealed partial class MathematicsCurriculumPackSeeder
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 1234 ||
-                d.OfficialNodeCount != 1180 ||
+                d.NodeCount != 1105 ||
+                d.OfficialNodeCount != 1057 ||
                 d.UnitCount != 0 ||
                 d.LessonCount != 0 ||
                 d.LinkCount != 0 ||
@@ -145,7 +145,8 @@ public sealed partial class MathematicsCurriculumPackSeeder
                 throw new InvalidOperationException(
                     "UAE verified 2025-2026 target-coverage contract failed.");
             }
-            if (d.Nodes.Any(x => x.LogicalLevelTo > 12) || d.Nodes.Any(x => x.Code.StartsWith("EDU:", StringComparison.Ordinal)))
+            if (d.Nodes.Any(x => x.LogicalLevelTo > 12) || d.Nodes.Any(x => x.Code.StartsWith("EDU:", StringComparison.Ordinal)) ||
+                d.Nodes.Any(x => x.LogicalLevelFrom == 11 && x.LogicalLevelTo == 11 && x.Kind is "Reference" or "SourceCatalog" or "Lesson" or "Unit" or "TermScope"))
                 throw new InvalidOperationException("UAE grade/synthetic-node guard failed.");
             var lessons = d.Nodes.Where(x => x.Kind == "Lesson").Select(x => x.Code).ToHashSet(StringComparer.Ordinal);
             var linked = d.Links.Where(x => x.LinkKind == "LessonStandardAlignment").Select(x => x.FromCode).ToHashSet(StringComparer.Ordinal);
@@ -428,8 +429,8 @@ public sealed partial class MathematicsCurriculumPackSeeder
                     "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" &&
                 state.ContentDigest ==
                     "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372" &&
-                d.NodeCount == 1234 &&
-                d.OfficialNodeCount == 1180 &&
+                d.NodeCount == 1105 &&
+                d.OfficialNodeCount == 1057 &&
                 d.LessonCount == 0 &&
                 d.LinkCount == 0)
             {

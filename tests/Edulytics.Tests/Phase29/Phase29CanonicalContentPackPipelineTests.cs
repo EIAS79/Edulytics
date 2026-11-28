@@ -607,8 +607,8 @@ public sealed class Phase29CanonicalContentPackPipelineTests
         var state = await db.CurriculumPackImportStates
             .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
 
-        Assert.Equal(1234, state.NodeCount);
-        Assert.Equal(1180, state.OfficialNodeCount);
+        Assert.Equal(1105, state.NodeCount);
+        Assert.Equal(1057, state.OfficialNodeCount);
         Assert.Equal(0, state.LessonCount);
         Assert.Equal(0, state.LinkCount);
         Assert.DoesNotContain(await db.CurriculumPedagogicalLessons
@@ -633,7 +633,7 @@ public sealed class Phase29CanonicalContentPackPipelineTests
             .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
 
         // Production metadata before direct no-backup retirement. The in-memory
-        // curriculum nodes have already been reduced to the accepted 1234
+        // curriculum nodes have already been reduced to the accepted 1105
         // non-Grade9 set, exactly like the production post-deletion inventory.
         state.NodeCount = 1532;
         state.OfficialNodeCount = 1420;
@@ -649,12 +649,12 @@ public sealed class Phase29CanonicalContentPackPipelineTests
         await seeder.SeedAsync();
         await seeder.SeedAsync();
 
-        Assert.Equal(1234, state.NodeCount);
-        Assert.Equal(1180, state.OfficialNodeCount);
+        Assert.Equal(1105, state.NodeCount);
+        Assert.Equal(1057, state.OfficialNodeCount);
         Assert.Equal(0, state.UnitCount);
         Assert.Equal(0, state.LessonCount);
         Assert.Equal(0, state.LinkCount);
-        Assert.Equal(1234, await db.CurriculumPackContentNodes
+        Assert.Equal(1105, await db.CurriculumPackContentNodes
             .CountAsync(x => x.FrameworkVersionId == state.FrameworkVersionId));
         Assert.Empty(await db.CurriculumPackNodeLinks
             .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)

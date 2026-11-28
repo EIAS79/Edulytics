@@ -44,7 +44,7 @@ public sealed class PracticeV2FullCatalogueCertificationTests
         Assert.Equal(148, approvedG10.Count);
         Assert.Equal(148, actualG10.Length);
         Assert.True(approvedG10.SetEquals(actualG10));
-        Assert.Equal(4909, contracts.Count(x => !x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal)));
+        Assert.Equal(4909 - 123, contracts.Count(x => !x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal)));
 
         var engine = new Stage18SkillContractPracticeEngine();
         var validator = new PracticeSessionQualityValidator();

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 from __future__ import annotations
 
 import argparse
@@ -284,18 +284,18 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     # 82 additional old-programme lessons or certify third-party item parity.
     # The Grade9 source/structural, 80-digital/2-teacher and authenticated
     # release gates remain separate and mandatory.
-    if (len(by_code) != 5139 or len(supplemental) != 73 or
+    if (len(by_code) != 5016 or any(code.startswith("PED:UAE-MOE-MATH:L11:") for code in by_code) or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or
         len(grade8_replacement) != 76 or
-        len(grade9_first_party) != 82 or len(untouched_base) != 4422 or len(actual_g10) != 148):
+        len(grade9_first_party) != 82 or len(untouched_base) != 4299 or len(actual_g10) != 148):
         errors.append(
-            "Effective learner snapshot requires 4,422 unaffected lessons, "
+            "Effective learner snapshot requires 4,299 unaffected lessons, "
             "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
             "76 Arabic G8 General, 73 independently certified G12, "
             "82 owner-authored Grade9 General Arabic lessons and 148 G10 General Arabic candidates, "
-            "totaling exactly 5,139; "
+            "totaling exactly 5,016; "
             f"got {len(untouched_base)} unaffected, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "

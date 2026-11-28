@@ -68,7 +68,7 @@ public class RehearsalLessonGenerationTests
         "PED:CAMBRIDGE-INTL-MATH:L12:", "PED:CAMBRIDGE-INTL-MATH:L13:",
         "PED:UAE-MOE-MATH:L3:COMMON:", "PED:UAE-MOE-MATH:L4:COMMON:",
         "PED:UAE-MOE-MATH:L7:ADVANCED:",
-        "PED:UAE-MOE-MATH:L11:ADVANCED:", "PED:UAE-MOE-MATH:L12:ADVANCED:"
+        "PED:UAE-MOE-MATH:L12:ADVANCED:"
     }.Any(prefix => code.StartsWith(prefix, StringComparison.Ordinal));
 
     [Fact]
@@ -117,9 +117,9 @@ public class RehearsalLessonGenerationTests
             .ToDictionaryAsync(x => x.Code, x => x.Id, StringComparer.Ordinal);
 
         Assert.Equal(state.FrameworkVersionId, current.FrameworkVersionId);
-        Assert.Equal(1234, current.NodeCount);
-        Assert.Equal(1180, current.OfficialNodeCount);
-        Assert.Equal(1133, second.Keys.Count(x =>
+        Assert.Equal(1105, current.NodeCount);
+        Assert.Equal(1057, current.OfficialNodeCount);
+        Assert.Equal(1010, second.Keys.Count(x =>
             x.StartsWith("UAE:REF:TEXTBOOK:", StringComparison.Ordinal)));
         Assert.Equal(first, second);
         Assert.Equal(
@@ -144,9 +144,9 @@ public class RehearsalLessonGenerationTests
             .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
             .ToArrayAsync();
 
-        Assert.Equal(1234, nodes.Length);
+        Assert.Equal(1105, nodes.Length);
         Assert.Equal(
-            1133,
+            1010,
             nodes.Count(x =>
                 x.NodeKind == "Reference" &&
                 x.IsOfficial &&

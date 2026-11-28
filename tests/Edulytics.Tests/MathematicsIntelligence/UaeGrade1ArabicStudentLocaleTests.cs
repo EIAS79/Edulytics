@@ -92,7 +92,7 @@ public sealed class UaeGrade1ArabicStudentLocaleTests
     }
 
     [Theory]
-    [InlineData("PED:UAE-MOE-MATH:L11:ADVANCED:05:01:MULTIVARIABLE-LINEAR-SYSTEMS-AND-ELEMENTARY-ROW-OPERATIONS")]
+    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:01:06:RATES-AND-UNIT-RATES")]
     public void OtherUaeGrades_KeepExistingEnglishDefault(string code)
     {
         var chosen = Choose(MathematicsCurriculumPackRegistry.UaeCode,

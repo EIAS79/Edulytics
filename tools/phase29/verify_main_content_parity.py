@@ -275,6 +275,13 @@ def run():
             subprocess.CalledProcessError) as exc:
         errors.append(f"Grade8 Advanced 77-lesson retirement invalid: {exc}")
 
+    g11_retirement = None
+    try:
+        from verify_uae_g11_retirement_delta import verify as verify_g11
+        g11_retirement = verify_g11(ROOT)
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
+        errors.append(f"UAE Grade11 exact owner-retirement invalid: {exc}")
+
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -299,6 +306,8 @@ def run():
                     baseline[key] = lesson
                 continue
             if g9_retirement and path in g9_retirement["oldContentPaths"]:
+                continue
+            if g11_retirement and path in g11_retirement["oldContentPaths"]:
                 continue
             errors.append(f"missing original content pack: {path}")
             continue
@@ -351,6 +360,9 @@ def run():
                 verified_blueprints += 1
                 continue
             if g8_advanced and path == g8_advanced["oldBlueprintPath"]:
+                verified_blueprints += 1
+                continue
+            if g11_retirement and path in g11_retirement["oldBlueprintPaths"]:
                 verified_blueprints += 1
                 continue
             if g9_retirement and path in g9_retirement["oldBlueprintPaths"]:

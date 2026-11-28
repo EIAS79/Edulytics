@@ -172,30 +172,15 @@ public sealed class UaeOfficialReferenceCoverageTests
 
 
     [Fact]
-    public void UaeAdvancedUnit5_UsesReviewedTopicSpecificPracticeContracts()
+    public void RetiredUaeGrade11CannotResolveAnyActiveLessonOrPracticeContract()
     {
-        var expected = new Dictionary<string, (string Mechanic, string Family)>
-        {
-            ["PED:UAE-MOE-MATH:L11:ADVANCED:05:01:MULTIVARIABLE-LINEAR-SYSTEMS-AND-ELEMENTARY-ROW-OPERATIONS"] =
-                ("SIMULTANEOUS", "supporting.algebra.simultaneous"),
-            ["PED:UAE-MOE-MATH:L11:ADVANCED:05:03:SOLVING-LINEAR-SYSTEMS-USING-INVERSES-AND-CRAMER-S-RULE"] =
-                ("SIMULTANEOUS", "supporting.algebra.simultaneous"),
-            ["PED:UAE-MOE-MATH:L11:ADVANCED:05:04:PARTIAL-FRACTIONS"] =
-                ("ALGEBRAIC_FRACTION", "supporting.algebra.algebraic_fraction"),
-            ["PED:UAE-MOE-MATH:L11:ADVANCED:05:05:LINEAR-PROGRAMMING"] =
-                ("LINEAR_PROGRAMMING", "supporting.algebra.linear_programming.vertex_optimum")
-        };
-
-        foreach (var (lessonCode, target) in expected)
-        {
-            Assert.True(LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract));
-            Assert.NotNull(contract);
-            Assert.Equal(target.Mechanic, contract!.Mechanic);
-            Assert.Contains(target.Family, contract.AllowedQuestionFamilies);
-            Assert.DoesNotContain(
-                "supporting.algebra.expressions.mixed",
-                contract.AllowedQuestionFamilies);
-        }
+        const string prefix = "PED:UAE-MOE-MATH:L11:";
+        Assert.DoesNotContain(PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .SelectMany(x => x.Lessons), x => x.LessonCode.StartsWith(prefix, StringComparison.Ordinal));
+        Assert.False(LessonPracticeContractRegistry.TryResolve(prefix + "ADVANCED:05:04:PARTIAL-FRACTIONS", out _));
+        Assert.False(LessonPracticeContractRegistry.TryResolve(prefix + "GENERAL:01:06:RATES-AND-UNIT-RATES", out _));
+        Assert.Contains(MathematicsCurriculumPackRegistry.All.Single(x => x.Code == MathematicsCurriculumPackRegistry.UaeCode).Levels,
+            x => x.LogicalLevel == 12 && x.Pathway == "General");
     }
 
 }

@@ -128,7 +128,7 @@ jobs:
         run: |
           set -euo pipefail
           other_count="$(cat /tmp/g9-other-lesson-count)"
-          test "$other_count" -ge 4800
+          test "$other_count" -ge 4677
           for n in 1 2; do
             dotnet run --project src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-build --no-launch-profile -- --urls http://127.0.0.1:18419 >"/tmp/g9-scoped-$n.log" 2>&1 &
             pid=$!
