@@ -15,3 +15,11 @@ Read source: T2 physical PDF 18–23 (printed 217–222), G1 physical PDF 27–3
 | 23/32 | 50–53 standardized formula/model questions and 54–67 review | pending numbered subpart review and separate prerequisite classification |
 
 Status: source body observed, categorized coverage partial, atomic denominator UNKNOWN. No READY_FOR_STAGE_D assertion. No source-specific full exercise-equivalence claim. The original teacher Cool-down is not accessible; original substitute authored with rubric. No tests or CI intentionally run. No production modification.
+
+## Continuation: native content and bounded exact engine
+
+The four missing local supplements now have verified SHA-256 and physical page counts; all 13 distinct source files and three aliases are identified. This does not certify their body content or edition equivalence.
+
+Added original E13–E30: prism, profit per share, circumference/period, pyramid, symbolic cone, ranking and temperature models, multi-input rate, radical formula, cylinder comparison, defined operation, equivalent quadratic models, midpoint of fractions, area scaling, table extrapolation, angle-bisector review, linear height and authoring a multistep expression. Native RichV2 file: `src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g11-unified-u01-l01-ar.rich-lesson-v2.json` (not embedded or routed). The first-party substitute Cool-down is retained. The final T2 page contains standardized questions 50–53 (area scaling, table extrapolation, angle bisectors, linear height) and review 54–67 (right-triangle classification, hypotenuse, scale, factoring, expansion, number modeling, roots); the review is explicitly prerequisite, not silently counted as new lesson objectives.
+
+Three bounded substitution families extend the existing ExactSkillContractQuestionEngine; no new engine or active G11 route. Independent test specifications written, not executed. Source denominator and READY_FOR_STAGE_D remain open pending atomic mapping and real catalogue integration.

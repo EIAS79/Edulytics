@@ -1015,6 +1015,7 @@ public sealed partial class ExactSkillContractQuestionEngine
           UaeG6U6L01ExpressionStructureQuestions.Supports(family.Trim()) ||
           UaeG6U6L02PowersQuestions.Supports(family.Trim()) ||
           UaeG6U6L03NumericalExpressionsQuestions.Supports(family.Trim()) ||
+          UaeG11U01L01ExpressionQuestions.Supports(family.Trim()) ||
           UaeG6U6L04VariableExpressionsQuestions.Supports(family.Trim()) ||
           UaeG6U6L05WriteExpressionsQuestions.Supports(family.Trim()) ||
           UaeG6U6L06WriteExpressionsQuestions.Supports(family.Trim()) ||
@@ -2264,6 +2265,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             return UaeG6U6L02PowersQuestions.Verify(family,parameters,answer);
         if (UaeG6U6L03NumericalExpressionsQuestions.Supports(family))
             return UaeG6U6L03NumericalExpressionsQuestions.Verify(family,parameters,answer);
+        if (UaeG11U01L01ExpressionQuestions.Supports(family))
+            return UaeG11U01L01ExpressionQuestions.Verify(family, parameters, answer);
         if (UaeG6U6L04VariableExpressionsQuestions.Supports(family))
             return UaeG6U6L04VariableExpressionsQuestions.Verify(family,parameters,answer);
         if (UaeG6U6L05WriteExpressionsQuestions.Supports(family))
@@ -6021,6 +6024,11 @@ public sealed partial class ExactSkillContractQuestionEngine
         {
             var q=UaeG6U6L03NumericalExpressionsQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG11U01L01ExpressionQuestions.Supports(family))
+        {
+            var q = UaeG11U01L01ExpressionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeG6U6L04VariableExpressionsQuestions.Supports(family))
         {
@@ -11221,6 +11229,8 @@ public sealed partial class ExactSkillContractQuestionEngine
             return UaeG6U6L02PowersQuestions.Solve(problem.Family,p);
         if (UaeG6U6L03NumericalExpressionsQuestions.Supports(problem.Family))
             return UaeG6U6L03NumericalExpressionsQuestions.Solve(problem.Family,p);
+        if (UaeG11U01L01ExpressionQuestions.Supports(problem.Family))
+            return UaeG11U01L01ExpressionQuestions.Solve(problem.Family, p);
         if (UaeG6U6L04VariableExpressionsQuestions.Supports(problem.Family))
             return UaeG6U6L04VariableExpressionsQuestions.Solve(problem.Family,p);
         if (UaeG6U6L05WriteExpressionsQuestions.Supports(problem.Family))

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "indexCode": "G11-001",
   "historicalLessonCode": "PED:UAE-MOE-MATH:L11:GENERAL:06:01:EXPRESSIONS-AND-FORMULAS",
-  "status": "STAGE_C_PARTIAL_REUSE_CANDIDATES",
+  "status": "STAGE_C_ENGINE_EXTENSION_AUTHORED_NOT_REGISTERED",
   "productionRouting": false,
   "reuseCandidates": [
     {
@@ -92,9 +92,8 @@
     "unverified family or fabricated outcome code"
   ],
   "pendingExtensions": [
-    "signed and decimal substitution with grouped powers",
-    "rational multi-variable formula and nonzero denominator",
-    "geometric and applied multi-step formulas with exact or declared rounding rules"
+    "formula-specific family coverage and skill registry/renderer/lesson mapping review",
+    "remaining source exercises and teacher-scored rubrics"
   ],
   "teacherReviewRequired": [
     "open formula modeling",
@@ -102,6 +101,36 @@
     "drawing and comparing cylinders",
     "interpreting tables and model differences"
   ],
-  "testsRun": "NOT_RUN",
-  "newEngineCreated": false
+  "testsRun": "WRITTEN_NOT_RUN",
+  "newEngineCreated": false,
+  "engineExtension": {
+    "engine": "ExactSkillContractQuestionEngine",
+    "helper": "UaeG11U01L01ExpressionQuestions",
+    "sourcePath": "src/Edulytics.Services/Mathematics/UaeG11U01L01ExpressionQuestions.cs",
+    "families": [
+      {
+        "family": "uae.g11.unified.u01.l01.signed_substitution",
+        "ranges": "a,b,c -9..9",
+        "answerType": "integer",
+        "rendererCandidate": "IntegerKeypad"
+      },
+      {
+        "family": "uae.g11.unified.u01.l01.decimal_substitution",
+        "ranges": "a,c -50..50 tenths; b -5..5",
+        "answerType": "exact decimal",
+        "rendererCandidate": "NumericEntry"
+      },
+      {
+        "family": "uae.g11.unified.u01.l01.rational_substitution",
+        "ranges": "a,b,c -9..9; c != a",
+        "answerType": "exact fraction or exact decimal",
+        "rendererCandidate": "StructuredEntry"
+      }
+    ],
+    "verifier": "separate algebraic expansions and exact cross multiplication; generator does not store answer",
+    "productionRouting": false
+  },
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionReuseAndExtensionTests.cs"
+  ]
 }

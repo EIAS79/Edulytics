@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceSnapshotId": "G11-UNIFIED-V2-20261128-PARTIAL-SOURCE-LOCK",
+  "sourceSnapshotId": "G11-UNIFIED-V2-20261128-13-BOOKS-SHA",
   "books": [
     {
       "id": "G1",
@@ -100,35 +100,80 @@
       "language": "ar",
       "access": "OWNER_UPLOADED_LOCAL_PDF",
       "type": "Student Book"
-    }
-  ],
-  "missing": [
+    },
     {
       "id": "M4",
       "file": "01-1.pdf",
-      "status": "NOT_IN_CURRENT_UPLOAD; VERIFY_OWNER_LOCAL_WHEN_REQUIRED"
+      "pdfPages": 365,
+      "sha256": "53016335296b8e9150825cabffca50ceabaf50b307dc85a08b20055a371694cc",
+      "edition": "2025–2026",
+      "pathway": "Advanced",
+      "bytes": 184996360,
+      "language": "ar",
+      "access": "OWNER_LOCAL_OUR_CS_01_STUDENT_BOOKS_HASH_AND_PAGE_COUNT_VERIFIED",
+      "type": "Student Book or source supplement",
+      "visualBodyReview": "PENDING_WHEN_REACHED"
     },
     {
       "id": "G4",
       "file": "03-1.pdf",
-      "status": "NOT_IN_CURRENT_UPLOAD; VERIFY_OWNER_LOCAL_WHEN_REQUIRED"
+      "pdfPages": 70,
+      "sha256": "f7c0fd2343bb8106dbf57e705356dfac2bdc05f0ab3420f161088e39fe59cb29",
+      "edition": "edition pending cover review",
+      "pathway": "General",
+      "bytes": 18641710,
+      "language": "ar",
+      "access": "OWNER_LOCAL_OUR_CS_01_STUDENT_BOOKS_HASH_AND_PAGE_COUNT_VERIFIED",
+      "type": "Student Book or source supplement",
+      "visualBodyReview": "PENDING_WHEN_REACHED"
     },
     {
       "id": "G5",
       "file": "الوحده 10 عام.pdf",
-      "status": "NOT_IN_CURRENT_UPLOAD; VERIFY_OWNER_LOCAL_WHEN_REQUIRED"
+      "pdfPages": 84,
+      "sha256": "8cab622113e50c41a2f00c1a3a73778b636ac69b022596d4db0f3d32a0ca6b3b",
+      "edition": "edition pending cover review",
+      "pathway": "General",
+      "bytes": 31078655,
+      "language": "ar",
+      "access": "OWNER_LOCAL_OUR_CS_01_STUDENT_BOOKS_HASH_AND_PAGE_COUNT_VERIFIED",
+      "type": "Student Book or source supplement",
+      "visualBodyReview": "PENDING_WHEN_REACHED"
     },
     {
       "id": "G6",
       "file": "الوحده 11 عام.pdf",
-      "status": "NOT_IN_CURRENT_UPLOAD; VERIFY_OWNER_LOCAL_WHEN_REQUIRED"
+      "pdfPages": 46,
+      "sha256": "1ce877297aa817a7ea96f1b9335eb63ce9dd3c76c86288e38fec387291c6e777",
+      "edition": "edition pending cover review",
+      "pathway": "General",
+      "bytes": 18830093,
+      "language": "ar",
+      "access": "OWNER_LOCAL_OUR_CS_01_STUDENT_BOOKS_HASH_AND_PAGE_COUNT_VERIFIED",
+      "type": "Student Book or source supplement",
+      "visualBodyReview": "PENDING_WHEN_REACHED"
     }
   ],
-  "duplicateAliasesFromIndexUnrechecked": [
-    "01 متقدم .pdf = 01-1.pdf",
-    "01متقدم -1.pdf = 01.pdf",
-    "الوحده 9 عام.pdf = 03-1.pdf"
+  "missing": [],
+  "verifiedUniqueBooks": 13,
+  "expectedUniqueBooks": 13,
+  "duplicateAliasesVerified": [
+    {
+      "alias": "01 متقدم .pdf",
+      "matches": "01-1.pdf",
+      "sha256": "53016335296b8e9150825cabffca50ceabaf50b307dc85a08b20055a371694cc"
+    },
+    {
+      "alias": "01متقدم -1.pdf",
+      "matches": "01.pdf",
+      "sha256": "96dfd4721dc0c35c386ccbf31eb827e0d87a7ccd30396d2ec084ec99608a03b9"
+    },
+    {
+      "alias": "الوحده 9 عام.pdf",
+      "matches": "03-1.pdf",
+      "sha256": "f7c0fd2343bb8106dbf57e705356dfac2bdc05f0ab3420f161088e39fe59cb29"
+    }
   ],
-  "verifiedUniqueBooks": 9,
-  "expectedUniqueBooks": 13
+  "verifiedFilesIncludingAliases": 16,
+  "inventoryStatus": "FILE_IDENTITY_HASH_AND_PAGE_COUNT_COMPLETE; SOURCE_ELEMENT_REVIEW_NOT_COMPLETE"
 }
