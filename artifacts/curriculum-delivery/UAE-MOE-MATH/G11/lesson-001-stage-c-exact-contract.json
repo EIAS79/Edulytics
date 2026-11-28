@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "indexCode": "G11-001",
+  "status": "STAGE_C_SOURCE_VARIANTS_REGISTERED_PENDING_ATOMIC_AUDIT",
+  "productionRouting": false,
+  "reuseCandidates": [
+    {
+      "family": "uae.g6.u06.l03.sum_sub_left_right",
+      "ranges": "a,b,c ∈ [1,50]",
+      "answerType": "signed integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.division_multiplication_left_right",
+      "ranges": "q 1..20; b,c 2..12",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.parenthesis_first",
+      "ranges": "a 1..25,b 1..12,c 3..20,d 1..19,c>d",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.exponent_then_multiply",
+      "ranges": "a 1..20,b 2..8,e 2..4,m 1..5",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.two_variable_expression",
+      "ranges": "x,y 1..40,cx,cy 1..12",
+      "answerType": "integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.fraction_squared",
+      "ranges": "n 1..5,d 2..10,n<d",
+      "answerType": "reduced fraction or accepted exact decimal",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.substitute_difference",
+      "ranges": "x,y 0..100",
+      "answerType": "signed integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.substitute_linear",
+      "ranges": "x 0..30,a 2..12,b 1..25",
+      "answerType": "integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    }
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g6.u06.l04.two_variable_expression",
+    "uae.g6.u06.l04.fraction_squared",
+    "uae.g6.u06.l04.substitute_difference",
+    "uae.g6.u06.l04.substitute_linear",
+    "uae.g11.unified.u01.l01.signed_substitution",
+    "uae.g11.unified.u01.l01.decimal_substitution",
+    "uae.g11.unified.u01.l01.rational_substitution",
+    "uae.g11.unified.u01.l01.source_expression",
+    "uae.g11.unified.u01.l01.source_formula",
+    "uae.g11.unified.u01.l01.rounded_formula"
+  ],
+  "forbiddenQuestionFamilies": [
+    "unbounded symbolic substitution using Grade6 templates",
+    "unverified family or fabricated outcome code"
+  ],
+  "pendingExtensions": [
+    "Confirm complete atomic source equivalence, including general Heron area without assumed rounding and distinct symbolic or multi-response parts",
+    "Confirm exact representation/assessment linkage and teacher rubric for every non-numeric target"
+  ],
+  "teacherReviewRequired": [
+    "open formula modeling",
+    "error analysis and justification",
+    "drawing and comparing cylinders",
+    "interpreting tables and model differences"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "newEngineCreated": false,
+  "engineExtension": {
+    "engine": "ExactSkillContractQuestionEngine",
+    "helper": "UaeG11U01L01ExpressionQuestions",
+    "sourcePath": "src/Edulytics.Services/Mathematics/UaeG11U01L01ExpressionQuestions.cs",
+    "families": [
+      {
+        "family": "uae.g11.unified.u01.l01.signed_substitution",
+        "ranges": "a,b,c -9..9",
+        "answerType": "exact_integer",
+        "rendererCandidate": "IntegerKeypad",
+        "registryStatus": "StageCAuthoredPendingD"
+      },
+      {
+        "family": "uae.g11.unified.u01.l01.decimal_substitution",
+        "ranges": "a,c -50..50 tenths; b -5..5",
+        "answerType": "exact_decimal",
+        "rendererCandidate": "NumericEntry",
+        "registryStatus": "StageCAuthoredPendingD"
+      },
+      {
+        "family": "uae.g11.unified.u01.l01.rational_substitution",
+        "ranges": "a,b,c -9..9; c != a",
+        "answerType": "exact_rational",
+        "rendererCandidate": "FractionEntry",
+        "registryStatus": "StageCAuthoredPendingD"
+      }
+    ],
+    "verifier": "separate algebraic expansions and exact cross multiplication; generator does not store answer",
+    "productionRouting": false,
+    "sourceVariants": {
+      "sourcePath": "src/Edulytics.Services/Mathematics/UaeG11U01L01ExpressionQuestions.SourceVariants.cs",
+      "families": [
+        {
+          "family": "uae.g11.unified.u01.l01.source_expression",
+          "modes": 32,
+          "ranges": "a,b,c,d integers -40..40; tenths except c/3 in modes 29–31; nonzero denominators",
+          "answerType": "exact_rational",
+          "rendererCandidate": "FractionEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "VerifyExpression decimal numerator/denominator and exact cross multiplication"
+        },
+        {
+          "family": "uae.g11.unified.u01.l01.source_formula",
+          "modes": 24,
+          "ranges": "a,b,c,d integers 1..12",
+          "answerType": "exact_rational",
+          "rendererCandidate": "FractionEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "VerifyFormula independently expanded expressions and geometry"
+        },
+        {
+          "family": "uae.g11.unified.u01.l01.rounded_formula",
+          "modes": 4,
+          "ranges": "a,b,c,d integers 1..12; nearest tenth",
+          "answerType": "exact_decimal",
+          "rendererCandidate": "NumericEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "independent radical, rate, period and Heron squared intervals"
+        }
+      ],
+      "productionRouting": false
+    }
+  },
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionReuseAndExtensionTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionSourceVariantsTests.cs"
+  ],
+  "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
+  "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G11/lesson-001-teacher-rubric.json",
+  "primarySkills": [
+    "algebra.variables.evaluate_expressions"
+  ],
+  "reuseRegistered": [
+    "uae.g6.u06.l04.two_variable_expression",
+    "uae.g6.u06.l04.fraction_squared",
+    "uae.g6.u06.l04.substitute_difference",
+    "uae.g6.u06.l04.substitute_linear"
+  ],
+  "registryFiles": [
+    "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json",
+    "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "status": "WRITTEN_NOT_RUN",
+  "note": "Independent expected values for future targeted verification; no test runner executed.",
+  "cases": [
+    {
+      "id": "F01",
+      "family": "uae.g6.u06.l03.sum_sub_left_right",
+      "parameters": {
+        "a": 4,
+        "b": 9,
+        "c": 2
+      },
+      "expected": "-3",
+      "wrong": "3"
+    },
+    {
+      "id": "F02",
+      "family": "uae.g6.u06.l03.division_multiplication_left_right",
+      "parameters": {
+        "q": 4,
+        "b": 3,
+        "c": 5
+      },
+      "expected": "20",
+      "wrong": "2"
+    },
+    {
+      "id": "F03",
+      "family": "uae.g6.u06.l03.parenthesis_first",
+      "parameters": {
+        "a": 6,
+        "b": 3,
+        "c": 9,
+        "d": 5
+      },
+      "expected": "18",
+      "wrong": "30"
+    },
+    {
+      "id": "F04",
+      "family": "uae.g6.u06.l03.exponent_then_multiply",
+      "parameters": {
+        "a": 5,
+        "b": 3,
+        "e": 2,
+        "m": 4
+      },
+      "expected": "41",
+      "wrong": "149"
+    },
+    {
+      "id": "F05",
+      "family": "uae.g6.u06.l04.two_variable_expression",
+      "parameters": {
+        "x": 4,
+        "y": 3,
+        "cx": 2,
+        "cy": 5
+      },
+      "expected": "23",
+      "wrong": "11"
+    },
+    {
+      "id": "F06",
+      "family": "uae.g6.u06.l04.fraction_squared",
+      "parameters": {
+        "n": 2,
+        "d": 5
+      },
+      "expected": "16/25",
+      "wrong": "4/25"
+    },
+    {
+      "id": "F07",
+      "family": "uae.g6.u06.l04.substitute_difference",
+      "parameters": {
+        "x": 2,
+        "y": 7
+      },
+      "expected": "-5",
+      "wrong": "5"
+    },
+    {
+      "id": "F08",
+      "family": "uae.g6.u06.l04.substitute_linear",
+      "parameters": {
+        "x": 0,
+        "a": 7,
+        "b": 9
+      },
+      "expected": "9",
+      "wrong": "0"
+    }
+  ],
+  "invalidParameters": [
+    {
+      "family": "uae.g6.u06.l03.parenthesis_first",
+      "parameters": {
+        "a": 6,
+        "b": 3,
+        "c": 5,
+        "d": 5
+      }
+    },
+    {
+      "family": "uae.g6.u06.l04.fraction_squared",
+      "parameters": {
+        "n": 2,
+        "d": 0
+      }
+    }
+  ]
+}

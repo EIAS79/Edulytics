@@ -444,6 +444,26 @@ public static class PedagogicalLessonBlueprintContract
         document.Lessons.All(x => x.LessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison.Ordinal));
 
+    private static bool IsUaeG11UnifiedOriginalFirstPartyWithReferenceOnlySource(
+        PedagogicalLessonBlueprintDocument document) =>
+        document.SchemaVersion == 1 &&
+        document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+        document.LogicalLevel == 11 &&
+        document.Pathway == "Unified" &&
+        document.BlueprintCode == "UAE-G11-UNIFIED-AR-V2:FIRST-PARTY" &&
+        document.SourceLicense ==
+            "Reference-only local copyrighted student text; original Edulytics content, no reuse license presumed" &&
+        document.RequiredDigitalAttribution ==
+            "No publisher prose or artwork embedded. Provenance recorded privately." &&
+        document.SourceRightsNote ==
+            "Learner-facing explanations and exercises are first-party Edulytics authorship; reference-only source, no third-party reproduction license asserted." &&
+        document.Units is { Count: 19 } &&
+        document.Lessons is { Count: 130 } &&
+        document.Lessons.All(x => x.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L11:UNIFIED:", StringComparison.Ordinal) &&
+            x.OfficialReferenceCode is null && x.OutcomeCodes.Count == 0 &&
+            x.Alignments.Count == 0);
+
     public static void Validate(
         PedagogicalLessonBlueprintDocument document)
     {
@@ -498,7 +518,8 @@ public static class PedagogicalLessonBlueprintContract
         if (!IsUaeG7OriginalFirstPartyWithReferenceOnlySource(document) &&
             !IsUaeG8OriginalFirstPartyWithReferenceOnlySource(document) &&
             !IsUaeG9OriginalFirstPartyWithReferenceOnlySource(document) &&
-            !IsUaeG10OriginalFirstPartyWithReferenceOnlySource(document))
+            !IsUaeG10OriginalFirstPartyWithReferenceOnlySource(document) &&
+            !IsUaeG11UnifiedOriginalFirstPartyWithReferenceOnlySource(document))
         {
             PedagogicalSourceLicensePolicy.Validate(document.SourceLicense);
         }

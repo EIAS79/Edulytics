@@ -129,6 +129,34 @@ public static class LessonContentPolicy
         IsUaeGrade10Scope(frameworkCode, lessonCode) &&
         UaeG10CanonicalCodes.Value.Contains(lessonCode!);
 
+    // New Grade 11 V2 identities, exact catalogue membership, no foreign fallback.
+    private static readonly Lazy<HashSet<string>> UaeG11CanonicalCodes = new(() =>
+    {
+        var documents = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.LogicalLevel == 11 && x.Pathway == "Unified" &&
+                x.BlueprintCode == "UAE-G11-UNIFIED-AR-V2:FIRST-PARTY").ToArray();
+        if (documents.Length != 1 || documents[0].Units.Count != 19 ||
+            documents[0].Lessons.Count != 130)
+            throw new InvalidOperationException("G11 exact unified catalogue unavailable.");
+        var codes = documents[0].Lessons.Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        if (codes.Count != 130 || codes.Any(x => !x.StartsWith(
+            "PED:UAE-MOE-MATH:L11:UNIFIED:", StringComparison.Ordinal)))
+            throw new InvalidOperationException("G11 canonical identity scope drift.");
+        return codes;
+    });
+
+    public static bool IsUaeGrade11Scope(string frameworkCode, string? lessonCode) =>
+        string.Equals(frameworkCode, MathematicsCurriculumPackRegistry.UaeCode,
+            StringComparison.Ordinal) &&
+        lessonCode is not null && lessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L11:", StringComparison.Ordinal);
+
+    public static bool IsUaeG11ArabicLesson(string frameworkCode, string? lessonCode) =>
+        IsUaeGrade11Scope(frameworkCode, lessonCode) &&
+        UaeG11CanonicalCodes.Value.Contains(lessonCode!);
+
     // Owner-approved UAE G6 General Arabic (128 lessons) is independently
     // authored and published without invented formal outcome mappings.
     // The general UAE/Cambridge Supporting-lesson exclusion stays in force.
@@ -138,7 +166,9 @@ public static class LessonContentPolicy
         string frameworkCode,
         bool isSupporting,
         string? lessonCode = null) =>
-        (IsUaeGrade10Scope(frameworkCode, lessonCode)
+        (IsUaeGrade11Scope(frameworkCode, lessonCode)
+            ? IsUaeG11ArabicLesson(frameworkCode, lessonCode)
+            : IsUaeGrade10Scope(frameworkCode, lessonCode)
             ? IsUaeG10ArabicLesson(frameworkCode, lessonCode)
             : IsUaeGrade7GeneralScope(frameworkCode, lessonCode)
             ? IsUaeG7ArabicLesson(frameworkCode, lessonCode)

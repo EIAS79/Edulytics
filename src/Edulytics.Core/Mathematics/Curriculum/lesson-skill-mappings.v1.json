@@ -13774,7 +13774,7 @@
         "Existing ExactSkillContractQuestionEngine numeric-only Grade9 coefficient family is reused. Full polynomial expressions and diagrams still teacher-reviewed; selected G10 Practice not tested.",
         "Existing exact engine extended for complete degree≤2 polynomial expression via independent bounded parser. Added C# tests; StageD not run."
       ],
-      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceReadiness": "PARTIAL_SOURCE_VARIANTS_REGISTERED_NOT_READY_FOR_STAGE_D",
       "practiceMechanic": "G10_U01L01_REUSE_G9_NUMERIC_COEFFICIENT_ONLY_WITH_TEACHER_FULL_EXPRESSION",
       "allowedQuestionFamilies": [
         "uae.g9.general.u07.l01.add_coefficient",
@@ -18915,6 +18915,34 @@
         "physical protractor and constructions",
         "diagram interpretation, conjecture and counterexample",
         "geometric conditions in contextual modelling"
+      ],
+      "officialOutcomeCodes": []
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
+      "primarySkills": [
+        "algebra.variables.evaluate_expressions"
+      ],
+      "sourceType": "UAEGrade11UnifiedLocalArabicFirstParty",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "SourceScopedDraft",
+      "evidence": [
+        "V2 G11-001, T2 PDF pages 18–23 and G1 pages 27–32. Bounded exact expression and formula variants plus rounded numerical targets; open symbolic modelling and reasoning retain separate teacher review.",
+        "Stage C authored, tests not run; production routing false."
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "ALGEBRA_EXPRESSION_EVALUATION",
+      "allowedQuestionFamilies": [
+        "uae.g6.u06.l04.two_variable_expression",
+        "uae.g6.u06.l04.fraction_squared",
+        "uae.g6.u06.l04.substitute_difference",
+        "uae.g6.u06.l04.substitute_linear",
+        "uae.g11.unified.u01.l01.signed_substitution",
+        "uae.g11.unified.u01.l01.decimal_substitution",
+        "uae.g11.unified.u01.l01.rational_substitution",
+        "uae.g11.unified.u01.l01.source_expression",
+        "uae.g11.unified.u01.l01.source_formula",
+        "uae.g11.unified.u01.l01.rounded_formula"
       ],
       "officialOutcomeCodes": []
     }

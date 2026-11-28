@@ -1,0 +1,7 @@
+# Grade 11 A–B–C execution instructions
+
+The owner-approved V2 Arabic unified index is the sole curriculum sequence: 130 lessons, 19 units. Grade 11 is a new unified course. Do not recover, compare or map retired Grade 11 lessons or their codes; no legacy migration is a prerequisite to authoring. Assign fresh identities from the approved index, one scope, Arabic RTL. Preserve work already authored for this new V2 course only. Use existing Edulytics engines and rendering infrastructure (Reuse → Extend → New Engine only when necessary).
+
+Read attached PDF pages directly, newest applicable source first then older source for additional skills. Reuse the completed 13-book source inventory; do not hash or download again unless files change. No Desktop Commander for pages available in attachments; no TinyFish. Author original content, source evidence, skill contracts, teacher rubrics and targeted test specifications. Unavailable teacher-only Cool-down: independently author the equivalent. Do not run full build, tests or CI during A–B–C. Maintain true checkpoints and commit one completed lesson before moving to the next. Report at unit boundaries. No new conditions beyond the approved plan, no production deployment or database modification during A–B–C.
+
+Owner clarified on 2026-11-28 that deletion of the previous catalog was deliberate and must not be treated as an obstacle. New code space UNIFIED is separate from previous catalogue; native runtime selection still must be wired for the new course, not a legacy recovery task.
