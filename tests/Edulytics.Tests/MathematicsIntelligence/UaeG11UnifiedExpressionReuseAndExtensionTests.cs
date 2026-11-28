@@ -57,6 +57,11 @@ public sealed class UaeG11UnifiedExpressionReuseAndExtensionTests
         Assert.True(ExactSkillContractQuestionEngine.Verify(Rational, rational, "-4/10"));
         Assert.True(ExactSkillContractQuestionEngine.Verify(Rational, rational, "-0.4"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Rational, rational, "-2/0"));
+        var third = new Dictionary<string, int> { ["a"]=1, ["b"]=0, ["c"]=4 };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Rational, third, "2/6"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Rational, third, "0.33333333"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Rational, third, "0.333333333333333333333333333333333333"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Signed, signed, "33.000000000000000000000000000000001"));
         rational["c"]=-2;
         Assert.False(ExactSkillContractQuestionEngine.Verify(Rational, rational, "0"));
         signed["b"]=10;

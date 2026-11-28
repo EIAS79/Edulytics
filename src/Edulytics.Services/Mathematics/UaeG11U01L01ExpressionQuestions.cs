@@ -92,11 +92,10 @@ internal static class UaeG11U01L01ExpressionQuestions
         return sb.ToString();
     }
 
-    private static bool TryResponse(string response, bool fractions, out decimal n, out decimal den)
+    private static bool TryResponse(string response, bool fractions, out long n, out long den)
     {
         n = 0; den = 1;
         string s = Normalize(response);
-        const NumberStyles numeric = NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint;
         if (s.Contains('/'))
         {
             if (!fractions) return false;
@@ -109,23 +108,34 @@ internal static class UaeG11U01L01ExpressionQuestions
             n = num; den = divisor;
             return true;
         }
-        if (!decimal.TryParse(s, numeric, CultureInfo.InvariantCulture, out decimal val)
-            || val is < -1000000000m or > 1000000000m) return false;
-        n = val; return true;
+        // Parse finite decimals as integer ratios: never round an input.
+        bool negative = s.StartsWith("-");
+        if (negative || s.StartsWith("+")) s = s[1..];
+        string[] fields = s.Split('.');
+        if (fields.Length > 2 || fields[0].Length > 9 ||
+            (fields.Length == 2 && fields[1].Length > 8)) return false;
+        string whole = fields[0], fraction = fields.Length == 2 ? fields[1] : "";
+        if (whole.Length + fraction.Length == 0 ||
+            (whole + fraction).Any(ch => ch is < '0' or > '9')) return false;
+        if (!long.TryParse(whole + fraction, NumberStyles.None,
+            CultureInfo.InvariantCulture, out n)) return false;
+        for (int i = 0; i < fraction.Length; i++) den *= 10;
+        if (negative) n = -n;
+        return true;
     }
 
     internal static bool Verify(string family, IReadOnlyDictionary<string, int> p, string? response)
     {
         if (!TryParameters(family, p, out int a, out int b, out int c) ||
             string.IsNullOrWhiteSpace(response) || response.Length > 40 ||
-            !TryResponse(response, family == Rational, out decimal n, out decimal den)) return false;
+            !TryResponse(response, family == Rational, out long n, out long den)) return false;
         // Independent algebraic evaluation: expand the square and distribute
         // the product instead of calling Solve; compare the rational value by
         // cross multiplication without rounded or stored expected answers.
         return family switch
         {
-            Signed => n == a + b*b - 2*b*c + c*c,
-            Decimal => 10*n == a*(1-b*b) + c*b*b,
+            Signed => n == den*(a + b*b - 2*b*c + c*c),
+            Decimal => 10*n == den*(a*(1-b*b) + c*b*b),
             _ => n*(c-a) == den*(a*a-2*b)
         };
     }
