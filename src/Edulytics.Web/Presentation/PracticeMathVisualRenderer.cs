@@ -211,39 +211,7 @@ public static partial class PracticeMathVisualRenderer
                 "supporting.trigonometry.bearing" or
                 "supporting.trigonometry.cosine_rule_square" or
                 "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
-                "uae.g10.general.u02.l07.radical_graph_y_value" or
-                "uae.g10.general.u02.l07.radical_graph_domain_start" or
-                "uae.g10.general.u04.l01.vertex_x" or
-                "uae.g10.general.u04.l01.vertex_y" or
-                "uae.g10.general.u04.l01.opens_up" or
-                "uae.g10.general.u04.l01.value_at_x" or
-                "uae.g10.general.u04.l02.real_root_count" or
-                "uae.g10.general.u04.l02.left_intercept" or
-                "uae.g10.general.u04.l02.right_intercept" or
-                "uae.g10.general.u14.l01.ratio_six_exact" or
-                "uae.g10.general.u14.l01.side_opposite_exact" or
-                "uae.g10.general.u14.l01.side_adjacent_exact" or
-                "uae.g10.general.u14.l01.side_hypotenuse_exact" or
-                "uae.g10.general.u14.l01.angle_inverse_sine_rounded" or
-                "uae.g10.general.u14.l01.angle_inverse_cosine_rounded" or
-                "uae.g10.general.u14.l01.angle_inverse_tangent_rounded" or
-                "uae.g10.general.u14.l01.special_angle_exact" or
-                "uae.g10.general.u14.l01.elevation_height_rounded" or
-                "uae.g10.general.u14.l01.depression_distance_rounded" or
-                "uae.g10.general.u14.l15.mean_rounded" or
-                "uae.g10.general.u14.l15.altitude_squared" or
-                "uae.g10.general.u14.l15.leg_squared" or
-                "uae.g10.general.u14.l15.projection_from_leg" or
-                "uae.g10.general.u14.l16.triangle_classification" or
-                "uae.g10.general.u14.l16.coordinate_distance_squared" or
-                "uae.g10.general.u14.l17.height_with_eye_rounded" or
-                "uae.g10.general.u14.l17.two_station_height_rounded" or
-                "uae.g10.general.u14.l17.line_of_sight_rounded" or
-                "uae.g10.general.u14.l17.angle_from_rise_run_rounded" or
-                "uae.g10.general.u14.l18.special_length_squared" or
-                "uae.g10.general.u14.l18.special_exact_choice" or
-                "uae.g10.general.u14.l18.equilateral_altitude_squared" or
-                "uae.g10.general.u14.l18.square_diagonal_squared" => UaeG10Visual(family, parameters),
+                _ when family.StartsWith("uae.g10.general.", StringComparison.Ordinal) => UaeG10Visual(family, parameters),
                 _ => null
             };
 

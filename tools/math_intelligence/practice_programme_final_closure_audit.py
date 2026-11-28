@@ -264,6 +264,314 @@ def audit() -> dict[str, Any]:
             if representations & VISUAL_REPRESENTATIONS:
                 visual_family_ids.add(str(family_id))
 
+    # G10 delegates its deterministic visuals to a separate partial renderer.
+    # Require the actual dispatch and exact case labels rather than treating
+    # every family sharing a prefix as rendered. The compiled G10 visual
+    # tests independently execute all registered visual families across seeds.
+    g10_prefix = "uae.g10.general."
+    g10_required = {family for family in visual_family_ids if family.startswith(g10_prefix)}
+    if g10_required:
+        g10_renderer = VISUAL_RENDERER.with_name("PracticeMathVisualRenderer.UaeG10.cs")
+        g10_dispatch = (
+            '_ when family.StartsWith("uae.g10.general.", StringComparison.Ordinal)'
+            ' => UaeG10Visual(family, parameters),'
+        )
+        if switch_match and g10_dispatch in switch_match.group("body") and g10_renderer.is_file():
+            g10_source = g10_renderer.read_text(encoding="utf-8")
+            g10_switch = re.search(
+                r'switch\s*\(name\)\s*\{(?P<body>.*?)\n\s*return null;\s*\n\s*\}',
+                g10_source,
+                flags=re.DOTALL,
+            )
+            if (
+                'const string prefix = "uae.g10.general.";' in g10_source
+                and 'string name = family[prefix.Length..];' in g10_source
+                and g10_switch
+            ):
+                g10_cases = re.findall(
+                    r'^\s*case "(u\d{2}\.l\d{2}\.[a-z0-9_]+)":\s*
+    visual_blockers.extend(
+        f"visual Practice family has no deterministic renderer: {family_id}"
+        for family_id in missing_renderers
+    )
+
+    solver_blockers: list[str] = []
+    for row in eligible:
+        code = str(row.get("lessonCode") or "")
+        # Do not report a missing generic solver as missing runtime capability
+        # when the *exact same* independently verified G9 C# digital contract
+        # is present. Keep the original generic solver/verifier diagnostic
+        # counts below; no unchecked candidate is promoted here.
+        has_scoped_g9_solver = code in g9_verified_digital_codes
+        if not bool(row.get("solverReady")) and not has_scoped_g9_solver:
+            solver_blockers.append(f"{code}: solver not ready")
+        if not bool(row.get("verifierReady")) and not has_scoped_g9_solver:
+            solver_blockers.append(f"{code}: verifier not ready")
+
+    level_blockers: list[str] = []
+    level_rows: defaultdict[str, list[dict[str, Any]]] = defaultdict(list)
+    stage_rows: defaultdict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in eligible:
+        level, stage = classify_level(str(row.get("lessonCode") or ""))
+        if stage == "UNCLASSIFIED":
+            level_blockers.append(
+                f"{row.get('lessonCode')}: curriculum level could not be classified"
+            )
+        level_rows[level].append(row)
+        stage_rows[stage].append(row)
+
+    readiness_blockers: list[str] = []
+    for row in eligible:
+        if row.get("terminalPracticeStatus") != "READY_VERIFIED":
+            readiness_blockers.append(
+                f"{row.get('lessonCode')}: {row.get('terminalPracticeStatus')}"
+            )
+
+    geometry_trig_vector = [
+        row for row in eligible
+        if {"geometry", "trigonometry", "vectors"} & set(row.get("domains") or [])
+    ]
+    advanced = [
+        row for row in eligible
+        if ADVANCED_DOMAINS & set(row.get("domains") or [])
+    ]
+    domain_closure_blockers = [
+        f"{row.get('lessonCode')}: advanced/domain Practice not ready"
+        for row in geometry_trig_vector + advanced
+        if row.get("terminalPracticeStatus") != "READY_VERIFIED"
+    ]
+
+    by_curriculum: dict[str, Any] = {}
+    for pack in sorted({str(row.get("packCode") or "UNKNOWN") for row in rows}):
+        pack_rows = [row for row in rows if str(row.get("packCode") or "UNKNOWN") == pack]
+        pack_eligible = [row for row in pack_rows if row.get("practiceEligibility") == "PRACTICE_ELIGIBLE"]
+        by_curriculum[pack] = {
+            "catalogueLessonCount": len(pack_rows),
+            "practiceEligibleLessonCount": len(pack_eligible),
+            "readyVerifiedCount": sum(
+                row.get("terminalPracticeStatus") == "READY_VERIFIED"
+                for row in pack_eligible
+            ),
+            "nonStandaloneWithEvidenceCount": sum(
+                row.get("practiceEligibility") == "NON_STANDALONE_WITH_EVIDENCE"
+                for row in pack_rows
+            ),
+            "statuses": status_counter(pack_eligible),
+        }
+
+    by_domain: dict[str, Any] = {}
+    domain_names = sorted({
+        str(domain)
+        for row in eligible
+        for domain in row.get("domains") or []
+    })
+    for domain in domain_names:
+        domain_rows = [row for row in eligible if domain in (row.get("domains") or [])]
+        by_domain[domain] = {
+            "lessonCount": len(domain_rows),
+            "readyVerifiedCount": sum(
+                row.get("terminalPracticeStatus") == "READY_VERIFIED"
+                for row in domain_rows
+            ),
+            "visualRequiredCount": sum(bool(row.get("visualRequired")) for row in domain_rows),
+            "solverReadyCount": sum(bool(row.get("solverReady")) for row in domain_rows),
+            "verifierReadyCount": sum(bool(row.get("verifierReady")) for row in domain_rows),
+            "uniqueQuestionFamilyCount": len(family_by_domain.get(domain, set())),
+        }
+
+    by_level: dict[str, Any] = {}
+    for level, level_group in sorted(level_rows.items(), key=lambda pair: pair[0]):
+        _, stage = classify_level(str(level_group[0].get("lessonCode") or ""))
+        by_level[level] = {
+            "difficultyStage": stage,
+            "lessonCount": len(level_group),
+            "readyVerifiedCount": sum(
+                row.get("terminalPracticeStatus") == "READY_VERIFIED"
+                for row in level_group
+            ),
+            "visualRequiredCount": sum(bool(row.get("visualRequired")) for row in level_group),
+        }
+
+    content_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "contentPassCount": len(eligible) - len({
+            blocker.split(":", 1)[0] for blocker in content_blockers
+        }),
+        "blockers": content_blockers,
+    }
+    mapping_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "approvedMappingCount": sum(bool(row.get("approvedMapping")) for row in eligible),
+        "primarySkillMappedCount": sum(bool(row.get("primarySkills")) for row in eligible),
+        "blockers": mapping_blockers,
+    }
+    family_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "registryFamilyCount": len(family_registry),
+        "usedFamilyCount": len(used_families),
+        "familyCountDistribution": dict(sorted(family_count_distribution.items())),
+        "blockers": family_blockers,
+    }
+    visual_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "visualRequiredLessonCount": len(visual_required),
+        "readyMetadataCount": sum(
+            row.get("visualStatus") == "READY_METADATA"
+            for row in visual_required
+        ),
+        "visualFamilyCount": len(visual_family_ids),
+        "rendererBackedFamilyCount": len(visual_family_ids & rendered_families),
+        "missingRendererFamilies": missing_renderers,
+        "blockers": visual_blockers,
+    }
+    solver_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "solverReadyCount": sum(bool(row.get("solverReady")) for row in eligible),
+        "verifierReadyCount": sum(bool(row.get("verifierReady")) for row in eligible),
+        "grade9IndependentDigitalRuntimeVerifiedCount": len(g9_verified_digital_codes),
+        "effectiveSolverReadyCount": sum(
+            bool(row.get("solverReady")) or
+            str(row.get("lessonCode") or "") in g9_verified_digital_codes
+            for row in eligible
+        ),
+        "effectiveVerifierReadyCount": sum(
+            bool(row.get("verifierReady")) or
+            str(row.get("lessonCode") or "") in g9_verified_digital_codes
+            for row in eligible
+        ),
+        "blockers": solver_blockers,
+    }
+    difficulty_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "runtimePolicy": "GradeAwareExactDifficultyPolicy",
+        "practiceEligibleLessonCount": len(eligible),
+        "classifiedLessonCount": len(eligible) - len(level_blockers),
+        "byStage": {
+            stage: len(stage_group)
+            for stage, stage_group in sorted(stage_rows.items())
+        },
+        "blockers": level_blockers,
+    }
+    curriculum_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "curricula": by_curriculum,
+    }
+    domain_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "domains": by_domain,
+    }
+    level_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "levels": by_level,
+    }
+
+    blockers = sorted(set(
+        content_blockers
+        + mapping_blockers
+        + family_blockers
+        + visual_blockers
+        + solver_blockers
+        + level_blockers
+        + readiness_blockers
+        + domain_closure_blockers
+    ))
+    closure = {
+        "schemaVersion": 1,
+        "audit": "Mathematics Practice programme final closure",
+        "commitSha": commit_sha(),
+        "catalogueLessonCount": len(rows),
+        "practiceEligibleLessonCount": len(eligible),
+        "readyVerifiedCount": sum(
+            row.get("terminalPracticeStatus") == "READY_VERIFIED"
+            for row in eligible
+        ),
+        "nonStandaloneWithEvidenceCount": len(non_standalone),
+        "grade9DigitalSpecialistRuntimeVerifiedCount": len(g9_verified_digital_codes),
+        "grade9TeacherReviewedCount": len(g9_teacher_rows) if g9_complete else 0,
+        "geometryTrigVectorLessonCount": len({
+            str(row.get("lessonCode"))
+            for row in geometry_trig_vector
+        }),
+        "advancedDomainLessonCount": len({
+            str(row.get("lessonCode"))
+            for row in advanced
+        }),
+        "visualRequiredLessonCount": len(visual_required),
+        "usedQuestionFamilyCount": len(used_families),
+        "difficultyClassifiedLessonCount": len(eligible) - len(level_blockers),
+        "blockerCount": len(blockers),
+        "blockers": blockers,
+    }
+
+    return {
+        "content": content_report,
+        "mapping": mapping_report,
+        "family": family_report,
+        "visual": visual_report,
+        "solver": solver_report,
+        "difficulty": difficulty_report,
+        "curriculum": curriculum_report,
+        "domain": domain_report,
+        "level": level_report,
+        "closure": closure,
+    }
+
+
+def write_reports(reports: dict[str, Any]) -> None:
+    ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
+    for key, path in OUTPUTS.items():
+        path.write_text(
+            json.dumps(reports[key], indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--strict", action="store_true")
+    parser.add_argument("--write-report", action="store_true")
+    args = parser.parse_args()
+
+    reports = audit()
+    if args.write_report:
+        write_reports(reports)
+
+    closure = reports["closure"]
+    print(json.dumps(closure, indent=2, sort_keys=True))
+    if args.strict and closure["blockerCount"]:
+        return 2
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+,
+                    g10_switch.group("body"),
+                    flags=re.MULTILINE,
+                )
+                g10_implemented = {g10_prefix + case for case in g10_cases}
+                if len(g10_cases) == len(g10_implemented) == 33 and g10_implemented == g10_required:
+                    rendered_families.update(g10_implemented)
+                else:
+                    visual_blockers.append("G10 visual dispatch must match all 33 exact registered visual cases")
+            else:
+                visual_blockers.append("G10 visual case dispatch could not be verified")
+        else:
+            visual_blockers.append("G10 specialized renderer is missing its exact main dispatch")
+
     missing_renderers = sorted(visual_family_ids - rendered_families)
     visual_blockers.extend(
         f"visual Practice family has no deterministic renderer: {family_id}"
