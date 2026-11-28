@@ -7,7 +7,7 @@ namespace Edulytics.Services.Mathematics;
 /// <summary>Bounded Grade 11 extension of the existing exact substitution
 /// mechanism; no new engine or production routing. No general CAS.
 /// All parameters are integers (decimal values are stored as tenths).</summary>
-internal static class UaeG11U01L01ExpressionQuestions
+internal static partial class UaeG11U01L01ExpressionQuestions
 {
     internal const string Signed = "uae.g11.unified.u01.l01.signed_substitution";
     internal const string Decimal = "uae.g11.unified.u01.l01.decimal_substitution";
@@ -16,7 +16,7 @@ internal static class UaeG11U01L01ExpressionQuestions
     internal sealed record Item(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
-    internal static bool Supports(string? family) => family is Signed or Decimal or Rational;
+    internal static bool Supports(string? family) => family is Signed or Decimal or Rational or SourceExpression or SourceFormula or RoundedFormula;
 
     private static bool TryParameters(string family, IReadOnlyDictionary<string, int>? p,
         out int a, out int b, out int c)
@@ -44,6 +44,7 @@ internal static class UaeG11U01L01ExpressionQuestions
     {
         if (!Supports(family)) throw new InvalidOperationException("Unsupported G11 expression family.");
         ArgumentNullException.ThrowIfNull(random);
+        if (IsSourceVariant(family)) return BuildSourceVariant(family, random);
         int a, b, c;
         if (family == Decimal)
         {
@@ -68,6 +69,7 @@ internal static class UaeG11U01L01ExpressionQuestions
 
     internal static string Solve(string family, IReadOnlyDictionary<string, int> p)
     {
+        if (IsSourceVariant(family)) return SolveSourceVariant(family, p);
         if (!TryParameters(family, p, out int a, out int b, out int c))
             throw new InvalidOperationException("Invalid bounded G11 substitution parameters.");
         if (family == Signed) return Number(a + (b-c)*(b-c));
@@ -126,6 +128,7 @@ internal static class UaeG11U01L01ExpressionQuestions
 
     internal static bool Verify(string family, IReadOnlyDictionary<string, int> p, string? response)
     {
+        if (IsSourceVariant(family)) return VerifySourceVariant(family, p, response);
         if (!TryParameters(family, p, out int a, out int b, out int c) ||
             string.IsNullOrWhiteSpace(response) || response.Length > 40 ||
             !TryResponse(response, family == Rational, out long n, out long den)) return false;
