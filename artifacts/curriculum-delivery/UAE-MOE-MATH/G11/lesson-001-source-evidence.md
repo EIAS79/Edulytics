@@ -27,3 +27,7 @@ Three bounded substitution families extend the existing ExactSkillContractQuesti
 ## Source action review and owner clarification
 
 New code assigned from V2; no prior grade content is retained or required. Reviewed attached T2 pages 20–23 and corresponding G1 pages 29–31, using existing source inventory and previous page review. Indexed 77 numbered item/subpart candidates across 67 numbered questions with page locators, including prerequisite review. E31–E47 provide additional original alternatives; teacher rubric authored for multi-representation and reasoning. Candidate mapping is not proof of full atomic equivalence. No Desktop Commander or CI in this continuation.
+
+## Native V2 authoring
+
+Read T2 pages 18–19 directly. Added 26 instructional source-action candidates and six first-party examples (E48–E53). Native blueprint has 130 new distinct lesson identities, 19 units; native Arabic canonical content contains G11-001 only. Both remain explicitly excluded from embedding until the new single-course scope is wired. No tests/CI run, no retired curriculum used, no Desktop Commander.

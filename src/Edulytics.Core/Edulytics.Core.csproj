@@ -17,6 +17,8 @@
     <EmbeddedResource Include="Curriculum/LessonBlueprints/Packs/*.lesson-blueprint.json" />
     <!-- G11 unified A-C draft: no active catalogue after PR #656. Embed only after deliberate candidate integration. -->
     <EmbeddedResource Remove="Curriculum/LessonContent/RichV2/uae-g11-unified-u01-l01-ar.rich-lesson-v2.json" />
+    <EmbeddedResource Remove="Curriculum/LessonBlueprints/Packs/uae-g11-unified-ar-v2.lesson-blueprint.json" />
+    <EmbeddedResource Remove="Curriculum/LessonContent/Packs/uae-g11-unified-ar-v2.lesson-content-pack.json" />
     <!-- Owner-approved G10 General-only candidate. Keep legacy source files in Git,
          but never publish the retired separate Advanced catalogue from these resources. -->
     <EmbeddedResource Remove="Curriculum/LessonBlueprints/Packs/uae-g10-advanced-t1-ogl-v1.lesson-blueprint.json" />
