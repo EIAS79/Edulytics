@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "indexCode": "G11-001",
-  "status": "STAGE_C_BOUNDED_FAMILIES_REGISTERED_PENDING_COMPLETE_LESSON_COVERAGE",
+  "status": "STAGE_C_SOURCE_VARIANTS_REGISTERED_PENDING_ATOMIC_AUDIT",
   "productionRouting": false,
   "reuseCandidates": [
     {
@@ -92,15 +92,18 @@
     "uae.g6.u06.l04.substitute_linear",
     "uae.g11.unified.u01.l01.signed_substitution",
     "uae.g11.unified.u01.l01.decimal_substitution",
-    "uae.g11.unified.u01.l01.rational_substitution"
+    "uae.g11.unified.u01.l01.rational_substitution",
+    "uae.g11.unified.u01.l01.source_expression",
+    "uae.g11.unified.u01.l01.source_formula",
+    "uae.g11.unified.u01.l01.rounded_formula"
   ],
   "forbiddenQuestionFamilies": [
     "unbounded symbolic substitution using Grade6 templates",
     "unverified family or fabricated outcome code"
   ],
   "pendingExtensions": [
-    "formula-specific and remaining source-exercise exact coverage",
-    "original required visual and teacher-assessment linkage"
+    "Confirm complete atomic source equivalence, including general Heron area without assumed rounding and distinct symbolic or multi-response parts",
+    "Confirm exact representation/assessment linkage and teacher rubric for every non-numeric target"
   ],
   "teacherReviewRequired": [
     "open formula modeling",
@@ -138,10 +141,44 @@
       }
     ],
     "verifier": "separate algebraic expansions and exact cross multiplication; generator does not store answer",
-    "productionRouting": false
+    "productionRouting": false,
+    "sourceVariants": {
+      "sourcePath": "src/Edulytics.Services/Mathematics/UaeG11U01L01ExpressionQuestions.SourceVariants.cs",
+      "families": [
+        {
+          "family": "uae.g11.unified.u01.l01.source_expression",
+          "modes": 29,
+          "ranges": "a,b,c,d integer tenths -40..40; nonzero denominators",
+          "answerType": "exact_rational",
+          "rendererCandidate": "FractionEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "VerifyExpression decimal numerator/denominator and exact cross multiplication"
+        },
+        {
+          "family": "uae.g11.unified.u01.l01.source_formula",
+          "modes": 23,
+          "ranges": "a,b,c,d integers 1..12",
+          "answerType": "exact_rational",
+          "rendererCandidate": "FractionEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "VerifyFormula independently expanded expressions and geometry"
+        },
+        {
+          "family": "uae.g11.unified.u01.l01.rounded_formula",
+          "modes": 4,
+          "ranges": "a,b,c,d integers 1..12; nearest tenth",
+          "answerType": "exact_decimal",
+          "rendererCandidate": "NumericEntry",
+          "grader": "ExactSkillContractQuestionEngine.Verify",
+          "independentVerifier": "independent radical, rate, period and Heron squared intervals"
+        }
+      ],
+      "productionRouting": false
+    }
   },
   "testsWritten": [
-    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionReuseAndExtensionTests.cs"
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionReuseAndExtensionTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG11UnifiedExpressionSourceVariantsTests.cs"
   ],
   "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
   "teacherRubricPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G11/lesson-001-teacher-rubric.json",

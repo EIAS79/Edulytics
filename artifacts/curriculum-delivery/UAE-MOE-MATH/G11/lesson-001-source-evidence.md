@@ -37,3 +37,7 @@ Registered 3 exact bounded families under the existing expression-evaluation ski
 Native course integration authored using the existing blueprint registry and lesson-content selection policy: one Unified grade-11 scope, 130 exact new identities, Arabic-only body and RichV2 selection, and no fabricated official outcome or reference. The G11 canonical pack is Draft. No database or production import, and no Stage D tests run.
 
 Original source-shaped digital variants were extended for net rate, four-input normalized ratios, threshold extrapolation, and rounded Heron area; all use existing exact engine. Added original dimensioned diagrams and tables in native RichV2 renderer, and 14 original prerequisite review tasks. RichV2 minimum step and summary requirements addressed. Numeric and open-response routes are distinguished per source action. Tests written not run.
+
+## Source-variant registry continuation
+
+Registered the three implemented source families in the family registry, existing expression skill, and exact lesson mapping (29 expression, 23 formula, 4 rounded modes). Production routing remains false. Corrected source ledger Q26 to formula mode 4, Q38 to rounded mode 1, Q41 to rounded mode 0. General Heron Q40 still requires independent equivalence audit; rounded general-triangle mode exists but cannot replace the exact task without an explicit rounding instruction. T2 PDF pp.21–23 and G1 pp.30–32 directly reviewed. No Stage D or CI deliberately run. Status remains A_C_EXPLICIT_GAP; next eligible lesson remains G11-001.
