@@ -306,7 +306,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G6", ct);
         var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
             historicUnrelatedBaseline >= 0
-            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220 + g10FixtureDelta - 123
             : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
@@ -438,7 +438,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G7", ct);
         var g7UnrelatedBaseline =
             (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
-                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
+                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220 + g10FixtureDelta - 123
                 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
@@ -611,8 +611,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             g7General != 78 || g8General != 76 ||
             g8Advanced != 0 || g9Advanced != 0 ||
             translations != 0 ||
-            (!isCiRehearsal && unrelated != 4936) ||
-            (isCiRehearsal && unrelated < 4800))
+            (!isCiRehearsal && unrelated != 4936 - 123) ||
+            (isCiRehearsal && unrelated < 4800 - 123))
             throw new InvalidOperationException(
                 "Grade9 scoped release refused: unexpected production/isolated DB baseline. " +
                 "No unrelated grade or historical identity is eligible for replacement.");
@@ -749,8 +749,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             existing.Where(x => x.Code != retired).Count() != 76 ||
             !scope.All(x => actualByCode.TryGetValue(x.Code, out var live) &&
                 live.Id == x.Id && live.FrameworkVersionId == x.FrameworkVersionId) ||
-            (!isIsolatedRehearsal && unrelatedBefore != (advancedCount == 0 ? 4860 : 4937)) ||
-            (isIsolatedRehearsal && unrelatedBefore < 4780) ||
+            (!isIsolatedRehearsal && unrelatedBefore != (advancedCount == 0 ? 4860 : 4937) - 123) ||
+            (isIsolatedRehearsal && unrelatedBefore < 4780 - 123) ||
             contentCount != allCount ||
             (advancedCount != 0 && advancedCount != 77) || translationCount != 0)
             throw new InvalidOperationException(

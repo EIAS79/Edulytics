@@ -51,14 +51,15 @@ const retiredGrade9ContractBlocks=['ADVANCED','GENERAL'].map(pathway=>[
   '            "READY_VERIFIED",',
   '            Version),'
 ]);
+const retiredUaeGrade11ContractBlocks = retiredGrade9ContractBlocks.map(block => block.map(line => line.replace('UAE-MOE-MATH:L9:', 'UAE-MOE-MATH:L11:')));
 function stripOnlyRetiredGrade9Contracts(lines){
   let result=lines;
-  for(const block of retiredGrade9ContractBlocks){
+  for(const block of [...retiredGrade9ContractBlocks, ...retiredUaeGrade11ContractBlocks]){
     const start=result.findIndex((line,i)=>
       block.every((expected,offset)=>result[i+offset]===expected));
-    assert.ok(start>=0,'Expected old UAE Grade9 contract missing from pinned original baseline');
+    assert.ok(start>=0,'Expected old UAE Grade9 or Grade11 contract missing from pinned original baseline');
     assert.equal(result.filter(x=>x===block[1]).length,1,
-      'Retired Grade9 contract declaration must occur exactly once');
+      'Retired UAE Grade9 or Grade11 contract declaration must occur exactly once');
     result=[...result.slice(0,start),...result.slice(start+block.length)];
   }
   return result;
@@ -148,9 +149,9 @@ function assertOriginalLinesUnchanged(ref,file){
       'Retired English G7 contract accidentally reinstated');
     assert.ok(!current.includes(retiredG8AdvancedContractBlock[1]),
       'Retired English G8 Advanced contract accidentally reinstated');
-    for(const block of retiredGrade9ContractBlocks)
+    for(const block of [...retiredGrade9ContractBlocks, ...retiredUaeGrade11ContractBlocks])
       assert.ok(!current.includes(block[1]),
-        'Owner-retired UAE Grade9 contract accidentally reinstated');
+        'Owner-retired UAE Grade9 or Grade11 contract accidentally reinstated');
   }
   let originalIndex=0;
   const added=[];

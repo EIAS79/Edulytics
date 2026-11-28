@@ -52,12 +52,12 @@ test('Original independent arithmetic oracle catches incorrect polynomial exampl
   }
 });
 
-test('Only UAE Grade 10 Advanced selection is removed; other levels preserved', () => {
+test('UAE Grade 10 Advanced and Grade 11 pathways are retired; adjacent levels preserved', () => {
   assert.doesNotMatch(registry, /new\(10,"Grade 10","Secondary","Advanced",true\)/);
   assert.match(registry, /new\(10,"Grade 10","Secondary","General",true\)/);
-  assert.match(registry, /new\(11,"Grade 11","Secondary","Advanced",true\)/);
+  assert.doesNotMatch(registry, /new\(11,"Grade 11","Secondary","(?:General|Advanced)",true\)/);
   assert.match(registry, /new\(12,"Grade 12","Secondary","Advanced",true\)/);
-  assert.match(registry, /uae\.Levels\.Count != 17/);
+  assert.match(registry, /uae\.Levels\.Count != 15/);
 });
 
 test('U01L01 source-specified standard form, visual and original exit check are authored (not executed here)', () => {

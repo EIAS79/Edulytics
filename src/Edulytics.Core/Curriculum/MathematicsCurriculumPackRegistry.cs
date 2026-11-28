@@ -233,8 +233,6 @@ public static class MathematicsCurriculumPackRegistry
                 new(8,"Grade 8","Cycle 2","General",true),
                 new(9,"Grade 9","Secondary","General",true),
                 new(10,"Grade 10","Secondary","General",true),
-                new(11,"Grade 11","Secondary","General",true),
-                new(11,"Grade 11","Secondary","Advanced",true),
                 new(12,"Grade 12","Secondary","General",true),
                 new(12,"Grade 12","Secondary","Advanced",true)
             ]),
@@ -347,15 +345,16 @@ public static class MathematicsCurriculumPackRegistry
         var uae = All.Single(x => x.Code == UaeCode);
         if (uae.Levels.Max(x => x.LogicalLevel) != 12 ||
             uae.Levels.Any(x => x.LogicalLevel == 13) ||
-            // Product owner retired UAE Grade 8, 9 and 10 Advanced selections.
+            // Product owner retired UAE Grades 8, 9 and 10 Advanced and all Grade 11 selections.
             // Mathematical engines and all other grade pathways remain unchanged.
-            uae.Levels.Count != 17 ||
+            uae.Levels.Count != 15 ||
+            uae.Levels.Any(x => x.LogicalLevel == 11) ||
             uae.Levels.Any(x => x.LogicalLevel is 8 or 9 or 10 && x.Pathway == "Advanced") ||
             Enumerable.Range(1, 4).Any(level =>
                 !uae.Levels.Any(x =>
                     x.LogicalLevel == level &&
                     x.Pathway == "Common")) ||
-            Enumerable.Range(5, 8).Any(level =>
+            Enumerable.Range(5, 8).Where(level => level != 11).Any(level =>
                 !uae.Levels.Any(x =>
                     x.LogicalLevel == level &&
                     x.Pathway == "General") ||
@@ -364,7 +363,7 @@ public static class MathematicsCurriculumPackRegistry
                     x.Pathway == "Advanced"))))
         {
             throw new InvalidOperationException(
-                "UAE topology must keep Grades 1-4 Common and Grades 5-12 General, Advanced except owner-retired Grades 8, 9 and 10.");
+                "UAE topology must keep Grades 1-4 Common, Grades 5-10 and 12 General, Advanced only at 5, 6, 7 and 12; Grade 11 is retired.");
         }
 
         var cambridgePack =

@@ -11,8 +11,9 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
     // Certify the release candidate, including all 148 replacement G10 routes.
-    // Prior 5,009 routes minus 100 legacy G10 routes plus 148 new G10 routes.
-    private const int ExpectedLessonCount = 5009 - 100 + 148;
+    // Prior 5,009 routes minus 100 legacy G10 routes plus 148 new G10 routes,
+    // minus the 123 owner-retired UAE G11 routes.
+    private const int ExpectedLessonCount = 5009 - 100 + 148 - 123;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
@@ -39,6 +40,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             ExpectedLessonCount,
             contracts.Length);
         const string g10Prefix = "PED:UAE-MOE-MATH:L10:";
+        Assert.DoesNotContain(contracts, x => x.LessonCode.StartsWith("PED:UAE-MOE-MATH:L11:", StringComparison.Ordinal));
         var g10Blueprint = Assert.Single(PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments(),
             x => x.PackCode == "UAE-MOE-MATH" && x.LogicalLevel == 10 && x.Pathway == "General");
         var approvedG10 = g10Blueprint.Lessons.Select(x => x.LessonCode).ToHashSet(StringComparer.Ordinal);
@@ -47,7 +49,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         Assert.Equal(148, approvedG10.Count);
         Assert.Equal(148, actualG10.Length);
         Assert.True(approvedG10.SetEquals(actualG10));
-        Assert.Equal(4909, contracts.Count(x => !x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal)));
+        Assert.Equal(4909 - 123, contracts.Count(x => !x.LessonCode.StartsWith(g10Prefix, StringComparison.Ordinal)));
 
         var pairs =
             contracts

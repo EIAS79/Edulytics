@@ -27,7 +27,7 @@ OLD_OTHER_PATHS=(
 )
 ALL_OLD=OLD_CONTENT_PATHS+OLD_BLUEPRINT_PATHS+OLD_OTHER_PATHS
 SOURCE_DIGEST="fc15730084f266a4384265c5382697edfaa52b5333bee70a69a52b757aa311d6"
-CONTENT_DIGEST="51eddf58a55de58b6a1861b618ec7d6dc1ceb8a08f3f04a2ccb5d78d8f94768b"
+CONTENT_DIGEST="e9ea360836a934efbeeb253fa1c0403da51d4a3e10359483f8b79508f3013be6"
 RETIRED_KINDS=frozenset({"Reference","SourceCatalog","Lesson","Unit","TermScope"})
 
 def target(node):
@@ -43,14 +43,16 @@ def _main(root,path):
 
 def verify(root):
     root=Path(root)
+    from verify_uae_g11_retirement_delta import verify as verify_g11, target as target_g11
+    verify_g11(root)
     for path in ALL_OLD:
         if (root/path).exists():
             raise ValueError("Owner-retired UAE Grade9 asset reintroduced: "+path)
     pack=json.loads((root/CORE_PACK).read_text(encoding="utf-8-sig"))
     remaining=pack["Nodes"]
     if (pack["PackCode"]!="UAE-MOE-MATH" or
-        pack["NodeCount"]!=len(remaining) or len(remaining)!=1234 or
-        pack["OfficialNodeCount"]!=1180 or
+        pack["NodeCount"]!=len(remaining) or len(remaining)!=1105 or
+        pack["OfficialNodeCount"]!=1057 or
         pack["UnitCount"]!=0 or pack["LessonCount"]!=0 or
         pack["LinkCount"]!=0 or pack["Links"] or
         pack["SourceDigest"]!=SOURCE_DIGEST or
@@ -59,12 +61,12 @@ def verify(root):
     if any(target(node) for node in remaining):
         raise ValueError("Old UAE Grade9 catalog, reference, unit or Lesson remains")
     if sum(x["IsOfficial"] and x["Kind"] in ("Standard","Outcome","Reference")
-           for x in remaining)!=1180:
+           for x in remaining)!=1057:
         raise ValueError("Unrelated official UAE standard/reference content drift")
-    if sum(x["Kind"]=="Reference" for x in remaining)!=1133:
+    if sum(x["Kind"]=="Reference" for x in remaining)!=1010:
         raise ValueError("Unrelated UAE textbook reference count drift")
     codes={x["Code"] for x in remaining}
-    if len(codes)!=1234 or any(x.get("ParentCode") not in (None,*codes) for x in remaining):
+    if len(codes)!=1105 or any(x.get("ParentCode") not in (None,*codes) for x in remaining):
         raise ValueError("Duplicate UAE nodes or broken non-G9 parent")
     before=_main(root,CORE_PACK)
     if before is not None:
@@ -77,7 +79,7 @@ def verify(root):
                 sum(x["Kind"]=="Unit" for x in removed)!=6 or
                 sum(x["Kind"]=="SourceCatalog" for x in removed)!=6 or
                 sum(x["Kind"]=="TermScope" for x in removed)!=1 or
-                remaining!=[x for x in before["Nodes"] if not target(x)]):
+                remaining!=[x for x in before["Nodes"] if not target(x) and not target_g11(x)]):
                 raise ValueError("UAE Grade9 removal changed unrelated node data/order")
             removed_codes={x["Code"] for x in removed}
             if not all(x["FromCode"] in removed_codes or x["ToCode"] in removed_codes
@@ -89,8 +91,8 @@ def verify(root):
             if set(before)!=set(pack) or any(before[k]!=pack[k]
                     for k in before if k not in allowed):
                 raise ValueError("UAE Grade9 deletion altered unrelated core-pack metadata")
-        elif before!=pack:
-            raise ValueError("Retired UAE core pack unexpectedly changed after merge")
+        elif before!=pack and remaining != [x for x in before["Nodes"] if not target_g11(x)]:
+            raise ValueError("Retired UAE core pack unexpectedly changed outside exact G11 removal")
     for path in ALL_OLD:
         # A baseline may already be retired once the PR is merged.
         baseline=_main(root,path)
@@ -103,7 +105,7 @@ def verify(root):
       "corePackPath":CORE_PACK,
       "removedGrade9Nodes":233,
       "removedGrade9Links":48,
-      "remainingNonGrade9UaeNodes":1234
+      "remainingNonGrade9UaeNodes":1105
     }
 
 if __name__=="__main__":

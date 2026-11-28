@@ -238,7 +238,7 @@ internal static class MeetingDemoProvisioner
             "secondary",
             9,
             12,
-            11,
+            10,
             12,
             "Advanced"),
 
@@ -386,7 +386,7 @@ internal static class MeetingDemoProvisioner
                     {
                         DefaultCulture = "ar",
                         PrimaryLoginLogicalLevel = 10,
-                        SecondaryLoginLogicalLevel = 11,
+                        SecondaryLoginLogicalLevel = 12,
                         SecondaryLoginPathway = "General"
                     }
                     : s).ToArray()

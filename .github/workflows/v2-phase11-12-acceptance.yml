@@ -86,7 +86,7 @@ jobs:
           # 16 identities: 5,307 canonical lesson/metadata records, and the
           # independent 5,751 official outcome mappings remain unchanged.
           # G10 replaces 100 legacy lessons with 148, net +48; official outcomes unchanged.
-          expected = (4,5057,5703,5057,0,0,0)
+          expected = (4,4934,5703,4934,0,0,0)
           print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected, flush=True)
           assert data == expected, 'Database invariant failure'
           PY

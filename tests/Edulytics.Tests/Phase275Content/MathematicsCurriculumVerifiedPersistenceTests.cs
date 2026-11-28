@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Edulytics.Core.Curriculum;
@@ -106,9 +106,9 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
 
         var uae = states.Single(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
         Assert.Equal("MOE-2026-2027-T1", uae.VersionCode);
-        Assert.Equal(1180, uae.OfficialNodeCount);
+        Assert.Equal(1057, uae.OfficialNodeCount);
         Assert.Equal(
-            1133,
+            1010,
             await db.CurriculumPackContentNodes.CountAsync(x =>
                 x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
                 x.NodeKind == "Reference" &&

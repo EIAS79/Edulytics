@@ -1580,8 +1580,8 @@ await using (var db = await NewDbAsync())
     // lessons and G9 official lesson/reference catalogues were removed.
     // Other UAE grade mathematics references remain available.
     if (uae.VersionCode != "MOE-2026-2027-T1" ||
-        uae.NodeCount != 1234 ||
-        uae.OfficialNodeCount != 1180 ||
+        uae.NodeCount != 1105 ||
+        uae.OfficialNodeCount != 1057 ||
         uae.UnitCount != 0 ||
         uae.LessonCount != 0 ||
         uae.LinkCount != 0)
@@ -1596,7 +1596,12 @@ await using (var db = await NewDbAsync())
                 x.IsOfficial &&
                 x.Code.StartsWith("UAE:REF:TEXTBOOK:"));
 
-    if (textbookReferenceCount != 1133)
+    if (await db.CurriculumPackContentNodes.AsNoTracking().AnyAsync(x =>
+            x.FrameworkVersionId == uae.FrameworkVersionId && x.LogicalLevelFrom == 11 && x.LogicalLevelTo == 11 &&
+            (x.NodeKind == "Reference" || x.NodeKind == "SourceCatalog")))
+        throw new Exception("Owner-retired UAE Grade11 reference or source catalogue reintroduced.");
+
+    if (textbookReferenceCount != 1010)
         throw new Exception("Phase27.5 PostgreSQL UAE textbook-reference count failed.");
 
     var lessons = await db.CurriculumPackContentNodes

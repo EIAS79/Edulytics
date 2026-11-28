@@ -250,6 +250,12 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     return oldFile.status===0 && newFile.status===0 &&
       oldFile.stdout.trim()===hashes[0] && (newFile.stdout.trim()===hashes[1] ||
       newFile.stdout.trim()===auditedG10Compatibility.get(p) ||
+      // Owner-retired UAE G11: exact G10-pinned contract blob minus precisely
+      // the two UAE L11 General/Advanced unit-rate declarations (16 lines).
+      // Verified all other source lines identical; no new G1 academic proof.
+      (p==='src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs' &&
+       auditedG10Compatibility.get(p)==='8dd85b770eddae78580d7ad7e3cf48cb8f091ebf' &&
+       newFile.stdout.trim()==='602ca84ab52550579fc4e958566e0a4323f1aa4d') ||
       // UAE G10 only: exact additive engine blob, independently compared
       // against pinned base 83c31a13. All 11,098 baseline lines (including
       // trailing split line) remain in order; 1,309 original G10 additions; the second exact blob also normalizes Arabic digits in eight reused numerical families (ten observed failures).

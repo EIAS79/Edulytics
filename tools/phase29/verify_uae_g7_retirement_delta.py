@@ -85,6 +85,7 @@ def verify(root: Path):
     if all_current_content != [Path(NEW_CONTENT).name] or all_current_blueprints != [Path(NEW_BLUEPRINT).name]:
         raise ValueError("extra G7 General content/blueprint remains")
 
+    from verify_uae_g11_retirement_delta import target as obsolete_g11
     from verify_uae_g9_retirement_delta import verify as verify_g9
     grade9_retirement = verify_g9(root)
     if not grade9_retirement:
@@ -106,7 +107,7 @@ def verify(root: Path):
     def obsolete_g9(x):
         return (x["LogicalLevelFrom"] == 9 and x["LogicalLevelTo"] == 9
                 and x["Kind"] in ("Lesson","Reference","Unit","TermScope","SourceCatalog"))
-    if after["Nodes"] != [x for x in old_nodes if not obsolete(x) and not obsolete_g9(x)]:
+    if after["Nodes"] != [x for x in old_nodes if not obsolete(x) and not obsolete_g9(x) and not obsolete_g11(x)]:
         raise ValueError("unrelated official nodes, positions or source definitions modified")
     for key in before:
         if key in ("Nodes", "Links", "NodeCount", "OfficialNodeCount",
@@ -120,8 +121,8 @@ def verify(root: Path):
         raise ValueError("core-pack metadata keys altered")
     actual_official = sum(bool(x.get("IsOfficial")) and x.get("Kind") in
                           ("Standard", "Outcome", "Reference") for x in after["Nodes"])
-    if not (len(after["Nodes"]) == after["NodeCount"] == 1234
-            and after["OfficialNodeCount"] == actual_official == 1180
+    if not (len(after["Nodes"]) == after["NodeCount"] == 1105
+            and after["OfficialNodeCount"] == actual_official == 1057
             and len(after["Links"]) == after["LinkCount"] == 0):
         raise ValueError("Grade7 English reference retirement pack counts drift")
     return {

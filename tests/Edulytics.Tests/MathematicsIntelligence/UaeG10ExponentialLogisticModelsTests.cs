@@ -94,5 +94,10 @@ public sealed class UaeG10ExponentialLogisticModelsTests
         Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"exponential_logistic_crossing",p,"12.4128"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"exponential_logistic_crossing",p,"12.4129"));
         Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"spreadsheet_balance",p,"201253.14"));
+        // 100 * 25000 * 900 exceeds Int32.MaxValue before compounding.
+        p["p"]=25000;p["rate"]=900;
+        Assert.Equal("27387.41",UaeG10ExponentialLogisticResponse.Format(Prefix+"spreadsheet_interest",p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Prefix+"spreadsheet_interest",p,"27387.41"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Prefix+"spreadsheet_interest",p,"27387.42"));
     }
 }

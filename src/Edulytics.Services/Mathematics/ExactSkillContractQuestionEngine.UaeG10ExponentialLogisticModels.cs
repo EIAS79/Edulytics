@@ -67,7 +67,9 @@ internal static class UaeG10ExponentialLogisticResponse
     private static (BigInteger N,BigInteger D) Compound(string f,IReadOnlyDictionary<string,int> a)
     {
         int n=a["n"],p=a["p"],rate=a["rate"];BigInteger factor=10000+rate;
-        return f==SpreadsheetBalance?(100*p*BigInteger.Pow(factor,n),BigInteger.Pow(10000,n)):(100*p*rate*BigInteger.Pow(factor,n-1),BigInteger.Pow(10000,n));
+        // Promote the principal to BigInteger before multiplying by the basis-point rate.
+        BigInteger cents=100*(BigInteger)p;
+        return f==SpreadsheetBalance?(cents*BigInteger.Pow(factor,n),BigInteger.Pow(10000,n)):(cents*rate*BigInteger.Pow(factor,n-1),BigInteger.Pow(10000,n));
     }
     private static string R(double x,int d)=>Math.Round(x,d,MidpointRounding.AwayFromZero).ToString("F"+d,CultureInfo.InvariantCulture);
     private static string Norm(string answer)=>string.Concat(answer.Trim().Select(ch=>ch switch{>= '٠' and <= '٩'=>(char)('0'+ch-'٠'),>= '۰' and <= '۹'=>(char)('0'+ch-'۰'),'−' or '–'=>'-','٫'=>'.',_=>ch})).Replace(" ","");

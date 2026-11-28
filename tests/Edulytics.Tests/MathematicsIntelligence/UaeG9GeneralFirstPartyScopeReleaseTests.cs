@@ -17,7 +17,8 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
         var uae = Assert.Single(MathematicsCurriculumPackRegistry.All,
             x => x.Code == MathematicsCurriculumPackRegistry.UaeCode);
 
-        Assert.Equal(17, uae.Levels.Count);
+        Assert.Equal(15, uae.Levels.Count);
+        Assert.DoesNotContain(uae.Levels, x => x.LogicalLevel == 11);
         Assert.Contains(uae.Levels, x =>
             x.LogicalLevel == 9 && x.Pathway == "General");
         Assert.DoesNotContain(uae.Levels, x =>
@@ -26,7 +27,7 @@ public sealed class UaeG9GeneralFirstPartyScopeReleaseTests
             x.LogicalLevel == 8 && x.Pathway == "Advanced");
         Assert.Contains(uae.Levels, x => x.LogicalLevel == 10 && x.Pathway == "General");
         Assert.DoesNotContain(uae.Levels, x => x.LogicalLevel == 10 && x.Pathway == "Advanced");
-        foreach (var grade in new[] { 5, 6, 7, 11, 12 })
+        foreach (var grade in new[] { 5, 6, 7, 12 })
         {
             Assert.Contains(uae.Levels, x =>
                 x.LogicalLevel == grade && x.Pathway == "General");
