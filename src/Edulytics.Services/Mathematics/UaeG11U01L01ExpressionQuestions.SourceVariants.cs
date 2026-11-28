@@ -16,7 +16,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
 
     private const int ExpressionModes = 29;
     private const int FormulaModes = 23;
-    private const int RoundedModes = 3;
+    private const int RoundedModes = 4;
 
     private static bool IsSourceVariant(string? family) =>
         family is SourceExpression or SourceFormula or RoundedFormula;
@@ -79,7 +79,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
     // and ask for one numerical target, using coefficients of pi where noted.
     private static (long N,long D) FormulaRatio(int m,long a,long b,long c,long d) => m switch
     {
-        0 => (100*a, a+b+c),                         // percentage
+        0 => (100*(a-b), a+b+c),                     // net percentage
         1 => (a*(10*b+c),10),                        // fuel distance
         2 => (5*(40+5*a-32),9),                      // F to C
         3 => (a*(a+b),1),                            // triangle
@@ -91,7 +91,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         9 => (a*a*c,3),                              // cone from diameter / pi
         10 => (20+8*a,100),                          // weighted score
         11 => (60+a,5),                             // rate model
-        12 => (100*(4*a+2*c+d-3*b),12*(a+b+c+d)),     // multi-input rate
+        12 => (100*(5*(4*a+2*c+10*d-20*b)+3*(a+b+c+d)),30*(a+b+c+d)), // four scaled rate terms
         13 => (a*a+12*a+500,200),                    // quadratic model
         14 => (a*a*a-20*a*a+300*a+3000,1000),        // cubic model
         15 => ((long)Math.Sqrt(6*a*3*a*2*a*a),1),      // Heron s=6a, sides 3a,4a,5a
@@ -123,7 +123,7 @@ internal static partial class UaeG11U01L01ExpressionQuestions
 
     private static string FormulaText(int m,long a,long b,long c,long d) => m switch
     {
-        0=>$"من {a+b+c} محاولة نجحت {a} محاولة. احسب النسبة المئوية P=100s/n.",
+        0=>$"نجح لاعب في {a} محاولة وارتكب {b} أخطاء من {a+b+c} محاولة. احسب النسبة الصافية P=100(s−e)/n.",
         1=>$"كفاءة المركبة {a} كم/لتر، والوقود {Number(b+c/10m)} لتر. احسب المسافة D=FL.",
         2=>$"حوّل {40+5*a}°F إلى مئوية باستخدام C=5(F−32)/9.",
         3=>$"مثلث ارتفاعه {2*a} وقاعدته {a}+{b}. احسب A=bh/2.",
@@ -135,15 +135,15 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         9=>$"مخروط قطره {2*a} وارتفاعه {c}. احسب معامل π في V=πr²h/3.",
         10=>$"احسب المؤشر I=0.2+0.8L عندما L={Number(a/10m)}.",
         11=>$"نموذج تجريبي للحرارة T=12+n/5. احسب T عند n={a}.",
-        12=>$"مؤشر افتراضي I=100(4g+2p+q−3e)/(12(g+p+q+e)). احسبه عند g={a}، e={b}، p={c}، q={d}.",
+        12=>$"مؤشر أداء افتراضي: I=( (C/A−0.25)/0.25 + (Y/A−2)/5 + (T/A)/0.1 + (0.1−E/A)/0.05 )×100/6. احسبه عند A={a+b+c+d}، C={a}، Y={10*c}، T={d}، E={b}.",
         13=>$"احسب P(t)=t²/200+3t/50+2.5 عند t={a}.",
         14=>$"احسب Q(t)=t³/1000−t²/50+3t/10+3 عند t={a}.",
         15=>$"مثلث أضلاعه {3*a}، {4*a}، {5*a}. احسب مساحته بصيغة هيرون A=√[s(s−x)(s−y)(s−z)].",
         16=>$"احسب √[r²(1−x²/h²)] عند r={5*a}، x=4، h=5.",
         17=>$"أسطوانة نصف قطرها {a} وارتفاعها {b}. احسب معامل π في V=πr²h.",
         18=>$"أوجد منتصف المسافة بين {a}/{b} و{c}/{d}.",
-        19=>$"مربع طول ضلعه {a}؛ أصبح الضلع {b} أمثال الضلع الأول. احسب المساحة الجديدة.",
-        20=>$"عدد العملاء في الشهر 1 هو {a*10}، والزيادة الشهرية ثابتة {b*10}. في أي شهر يصل أول مرة إلى {a*10+b*10*c}؟",
+        19=>$"مساحة مربع {a*a}، وطول ضلع مربع آخر يساوي {b} أمثال ضلع الأول. احسب المساحة الجديدة.",
+        20=>$"عدد العملاء في الشهر 1 هو {a*10}، والزيادة الشهرية ثابتة {b*10}. في أي شهر يصل العدد أول مرة إلى {a*10+b*10*c-((d-1)%(b*10))} على الأقل؟",
         21=>$"زاوية رأس مثلث {2*a}°. أوجد الزاوية بين منصفَي زاويتي القاعدة.",
         22=>$"ارتفاع البداية {100*a+100*b*c} م، والهبوط {10*b} م/ث. احسب h(t)=h₀−vt بعد {c} ثوان.",
         _=>throw new InvalidOperationException("Unknown source formula variant.")
@@ -152,8 +152,9 @@ internal static partial class UaeG11U01L01ExpressionQuestions
     private static string RoundedText(int m,long a,long b,long c,long d) => m switch
     {
         0=>$"احسب √[r²(1−x²/h²)] عند r={a+4}، x={b}، h={b+c}، وقرّب لأقرب عُشر.",
-        1=>$"احسب 100(4g+2p+q−3e)/(12(g+p+q+e)) عند g={a}، e={b}، p={c}، q={d}، وقرّب لأقرب عُشر.",
+        1=>FormulaText(12,a,b,c,d)+" قرّب لأقرب عُشر.",
         2=>$"مدار نصف قطره {a} مليون كم وسرعته {b*1000} كم/ساعة. احسب زمن الدورة بالأيام T=2πr/(24v) وقرّب لأقرب عُشر.",
+        3=>$"مثلث أضلاعه {a+b} و{b+c} و{c+a}. احسب مساحته بصيغة هيرون وقرّب لأقرب عُشر.",
         _=>throw new InvalidOperationException("Unknown rounded source formula.")
     };
 
@@ -190,8 +191,9 @@ internal static partial class UaeG11U01L01ExpressionQuestions
     private static decimal RoundedValue(int m,long a,long b,long c,long d) => m switch
     {
         0=>RoundTenth((decimal)Math.Sqrt((double)((a+4)*(a+4)*(1m-(decimal)(b*b)/((b+c)*(b+c)))))),
-        1=>RoundTenth(100m*(4*a+2*c+d-3*b)/(12*(a+b+c+d))),
+        1=>RoundTenth(100m*(5*(4*a+2*c+10*d-20*b)+3*(a+b+c+d))/(30*(a+b+c+d))),
         2=>RoundTenth((decimal)(2*Math.PI)*a*1000/(24*b)),
+        3=>RoundTenth((decimal)Math.Sqrt((a+b+c)*a*b*c)),
         _=>throw new InvalidOperationException("Invalid rounded mode.")
     };
 
@@ -227,18 +229,35 @@ internal static partial class UaeG11U01L01ExpressionQuestions
 
     private static (decimal N,decimal D) VerifyFormula(int m,decimal a,decimal b,decimal c,decimal d) => m switch
     {
-        0=>(a*100,a+b+c),1=>(a*(b+c/10),1),
+        0=>((a-b)*100,a+b+c),1=>(a*(b+c/10),1),
         2=>(5*(8+5*a),9),3=>((2*a)*(a+b),2),4=>(10*a,b),
         5=>(a+a,1),6=>(2*a,b),7=>(a*b,1),8=>(a*b*c,3),
         9=>((2*a/2)*(2*a/2)*c,3),10=>(0.2m+0.8m*a/10,1),
-        11=>(12+a/5,1),12=>(100*(4*a+2*c+d-3*b),12*(a+b+c+d)),
+        11=>(12+a/5,1),12=>FourRateRatio(a,b,c,d),
         13=>(a*a/200+3*a/50+2.5m,1),14=>(a*a*a/1000-a*a/50+3*a/10+3,1),
         // independent geometry: 3a,4a,5a is a right triangle.
         15=>(3*a*4*a,2),16=>(3*a,1),17=>(a*a*b,1),
         18=>(a*d+c*b,2*b*d),19=>((a*b)*(a*b),1),
-        20=>(1+c,1),21=>(180-(180-2*a)/2,1),
+        20=>(1+decimal.Ceiling((10*b*c-((d-1)%(10*b)))/(10*b)),1),21=>(180-(180-2*a)/2,1),
         22=>(100*a+90*b*c,1),_ => (0,0)
     };
+
+    // Independent expansion of each of the four normalized ratios;
+    // all quantities are exact before the final division by the total.
+    private static (decimal N,decimal D) FourRateRatio(decimal a,decimal b,decimal c,decimal d)
+    {
+        decimal s=a+b+c+d;
+        decimal n=(a-0.25m*s)/0.25m+(10*c-2*s)/5+
+            d/0.1m+(0.1m*s-b)/0.05m;
+        return (100*n,6*s);
+    }
+
+    private static decimal IndependentHeronSquared(decimal a,decimal b,decimal c)
+    {
+        decimal x=a+b,y=b+c,z=c+a;
+        decimal xx=x*x,yy=y*y,zz=z*z;
+        return (2*(xx*yy+yy*zz+zz*xx)-(xx*xx+yy*yy+zz*zz))/16;
+    }
 
     private static bool VerifySourceVariant(string family,IReadOnlyDictionary<string,int> p,string? response)
     {
@@ -249,10 +268,18 @@ internal static partial class UaeG11U01L01ExpressionQuestions
         {
             decimal answer=(decimal)n/den;
             if(answer*10!=decimal.Truncate(answer*10))return false;
+            if(m==3)
+            {
+                if(answer<0)return false;
+                decimal square=IndependentHeronSquared(a,b,c);
+                decimal low=Math.Max(0m,answer-0.05m), high=answer+0.05m;
+                return square>=low*low && square<high*high;
+            }
+            var rate=FourRateRatio(a,b,c,d);
             decimal actual=m switch
             {
                 0=>(a+4)*(decimal)Math.Sqrt((double)((2*b*c+c*c)/(decimal)((b+c)*(b+c)))),
-                1=>(100m/12)*(4*a+2*c+d-3*b)/(a+b+c+d),
+                1=>rate.N/rate.D,
                 2=>(decimal)Math.PI*a*1000/(12*b),
                 _=>throw new InvalidOperationException("Invalid rounded mode.")
             };

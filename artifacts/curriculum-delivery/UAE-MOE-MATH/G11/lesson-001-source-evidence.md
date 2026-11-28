@@ -35,3 +35,5 @@ Read T2 pages 18–19 directly. Added 26 instructional source-action candidates 
 Registered 3 exact bounded families under the existing expression-evaluation skill and 4 matching existing families in the draft lesson mapping. Production readiness remains fail-closed. Tests authored, not run.
 
 Native course integration authored using the existing blueprint registry and lesson-content selection policy: one Unified grade-11 scope, 130 exact new identities, Arabic-only body and RichV2 selection, and no fabricated official outcome or reference. The G11 canonical pack is Draft. No database or production import, and no Stage D tests run.
+
+Original source-shaped digital variants were extended for net rate, four-input normalized ratios, threshold extrapolation, and rounded Heron area; all use existing exact engine. Added original dimensioned diagrams and tables in native RichV2 renderer, and 14 original prerequisite review tasks. RichV2 minimum step and summary requirements addressed. Numeric and open-response routes are distinguished per source action. Tests written not run.

@@ -47,6 +47,9 @@ public sealed class UaeG11UnifiedArabicScopeTests
         Assert.NotNull(rich);
         Assert.Equal("ar", rich!.CultureCode);
         Assert.Equal(Lesson, rich.LessonCode);
+        Assert.Null(RichLessonContentV2Registry.Find(Lesson, "en"));
+        Assert.Null(RichLessonContentV2Registry.Find("PED:UAE-MOE-MATH:L11:UNIFIED:99:99", "ar"));
+        Assert.Contains(rich.Visuals, x => x.Kind == RichLessonVisualKind.DimensionedGeometry && x.PrimaryLabel == "cone");
         Assert.False(LessonContentPolicy.CanExposeCanonicalBody(pack.Status));
     }
 }

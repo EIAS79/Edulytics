@@ -30,6 +30,9 @@ public sealed class UaeG11UnifiedExpressionSourceVariantsTests
     [InlineData(Formula,21,6,1,1,1,"96")]
     [InlineData(Formula,22,2,3,4,1,"1280")]
     [InlineData(Rounded,0,1,3,1,1,"3.3")]
+    [InlineData(Rounded,3,1,2,3,1,"6")]
+    [InlineData(Formula,0,4,1,5,1,"30")]
+    [InlineData(Formula,20,2,3,4,12,"5")]
     public void IndependentGoldens(string family,int mode,int a,int b,int c,int d,string expected)
     {
         var p=P(mode,a,b,c,d);
@@ -52,7 +55,7 @@ public sealed class UaeG11UnifiedExpressionSourceVariantsTests
     [Theory]
     [InlineData(Expression,29)]
     [InlineData(Formula,23)]
-    [InlineData(Rounded,3)]
+    [InlineData(Rounded,4)]
     public void FixedSeedsCoverEveryBoundedSourceVariant(string family,int count)
     {
         var modes=new HashSet<int>();

@@ -607,6 +607,71 @@
             </ul>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.DimensionedGeometry)
+    {
+        // Original bounded mathematical geometry templates. Labels are
+        // encoded by Razor; no raw SVG or publisher artwork is accepted.
+        var shape = Model.PrimaryLabel;
+        var labels = Model.Items;
+        string Label(int i) => i < labels.Count ? labels[i] : "";
+        <div class="rich-lesson-cartesian" dir="ltr">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260"
+                 role="img" aria-label="@Model.Description"
+                 style="width:100%;height:auto;max-width:500px">
+                @if (shape == "cone")
+                {
+                    <ellipse cx="250" cy="205" rx="125" ry="27" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <path d="M125 205 L250 32 L375 205" fill="#dbeafe" fill-opacity=".4" stroke="#1d4ed8" stroke-width="2"/>
+                    <line x1="250" y1="32" x2="250" y2="205" stroke="#334155" stroke-dasharray="6 5" stroke-width="2"/>
+                    <line x1="250" y1="205" x2="375" y2="205" stroke="#0f766e" stroke-width="3"/>
+                    <text x="260" y="115" fill="currentColor" font-size="17">@Label(1)</text>
+                    <text x="300" y="198" fill="currentColor" font-size="17">@Label(0)</text>
+                }
+                else if (shape == "triangle")
+                {
+                    <polygon points="85,210 415,210 210,40" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <line x1="210" y1="40" x2="210" y2="210" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
+                    <path d="M210 197 H223 V210" fill="none" stroke="#334155" stroke-width="2"/>
+                    <text x="245" y="236" fill="currentColor" font-size="18">@Label(0)</text>
+                    <text x="218" y="128" fill="currentColor" font-size="18">@Label(1)</text>
+                }
+                else if (shape == "heron")
+                {
+                    <polygon points="100,210 400,210 250,85" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <text x="240" y="236" fill="currentColor" font-size="18">@Label(0)</text>
+                    <text x="155" y="135" fill="currentColor" font-size="18">@Label(1)</text>
+                    <text x="335" y="135" fill="currentColor" font-size="18">@Label(2)</text>
+                }
+                else if (shape == "cylinders")
+                {
+                    <rect x="55" y="45" width="112" height="164" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <ellipse cx="111" cy="45" rx="56" ry="16" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+                    <ellipse cx="111" cy="209" rx="56" ry="16" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <line x1="111" y1="45" x2="167" y2="45" stroke="#0f766e" stroke-width="3"/>
+                    <rect x="300" y="102" width="168" height="107" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <ellipse cx="384" cy="102" rx="84" ry="20" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+                    <ellipse cx="384" cy="209" rx="84" ry="20" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                    <line x1="384" y1="102" x2="468" y2="102" stroke="#0f766e" stroke-width="3"/>
+                    <text x="90" y="28" fill="currentColor" font-size="16">@Label(0)</text>
+                    <text x="173" y="130" fill="currentColor" font-size="16">@Label(1)</text>
+                    <text x="362" y="82" fill="currentColor" font-size="16">@Label(2)</text>
+                    <text x="250" y="160" fill="currentColor" font-size="16">@Label(3)</text>
+                }
+                else if (shape == "bisectors")
+                {
+                    <polygon points="100,215 400,215 250,30" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+                    <path d="M100 215 L250 150 L400 215" fill="none" stroke="#0f766e" stroke-width="2.5"/>
+                    <circle cx="250" cy="150" r="4" fill="#0f766e"/>
+                    <text x="245" y="20" fill="currentColor" font-size="17">A</text>
+                    <text x="80" y="235" fill="currentColor" font-size="17">B</text>
+                    <text x="405" y="235" fill="currentColor" font-size="17">C</text>
+                    <text x="258" y="143" fill="currentColor" font-size="17">I</text>
+                    <text x="259" y="62" fill="currentColor" font-size="17">@Label(0)</text>
+                    <text x="237" y="175" fill="currentColor" font-size="17">?</text>
+                }
+            </svg>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

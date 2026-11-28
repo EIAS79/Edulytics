@@ -696,6 +696,62 @@
           "36"
         ]
       ]
+    },
+    {
+      "kind": "DimensionedGeometry",
+      "title": "نصف قطر المخروط وارتفاعه",
+      "description": "رسم تخطيطي أصلي لمخروط نصف قطره 3 وارتفاعه 8، الخط المتقطع عمودي",
+      "richVisualIndex": 3,
+      "original": true
+    },
+    {
+      "kind": "DimensionedGeometry",
+      "title": "قاعدة وارتفاع المثلث",
+      "description": "قاعدة المثلث x+5 وارتفاعه العمودي 3x؛ علامة الزاوية القائمة",
+      "richVisualIndex": 4,
+      "original": true
+    },
+    {
+      "kind": "DimensionedGeometry",
+      "title": "المثلث في صيغة هيرون",
+      "description": "مثلث متساوي الساقين طولا ساقيه 5 وطول قاعدته 6",
+      "richVisualIndex": 5,
+      "original": true
+    },
+    {
+      "kind": "DimensionedGeometry",
+      "title": "مقارنة أسطوانتين",
+      "description": "الأسطوانتان في النشاط: الأولى r=2,h=9 والثانية r=3,h=4، الرسم ليس مقياسًا دقيقًا",
+      "richVisualIndex": 6,
+      "original": true
+    },
+    {
+      "kind": "DimensionedGeometry",
+      "title": "منصفا زاويتي القاعدة",
+      "description": "مثلث ABC، زاوية الرأس A تساوي 50 درجة، والمنصفان من B وC يلتقيان في I؛ الرسم تخطيطي",
+      "richVisualIndex": 7,
+      "original": true
+    },
+    {
+      "kind": "ComparisonTable",
+      "title": "بيانات مؤشر أداء افتراضي",
+      "description": "بديل أصلي لبطاقة الإحصاءات في سؤال الصيغ المركبة",
+      "richVisualIndex": 8,
+      "original": true
+    },
+    {
+      "kind": "ComparisonTable",
+      "title": "استقراء جدول عملاء",
+      "description": "عدد العملاء يزداد بمقدار 45 في كل شهر",
+      "richVisualIndex": 9,
+      "original": true
+    },
+    {
+      "kind": "ComparisonTable",
+      "title": "النسبة من مجموعات متعددة",
+      "description": "بيانات أصلية لحساب نسبة النجاح من عدة مجموعات",
+      "richVisualIndex": 10,
+      "original": true
     }
   ],
   "commonMistakes": [
@@ -734,5 +790,175 @@
   ],
   "nativeRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g11-unified-u01-l01-ar.rich-lesson-v2.json",
   "lessonCode": "PED:UAE-MOE-MATH:L11:UNIFIED:01:01",
-  "sourceLessonCode": "EDU:UAE-MOE-MATH:L11:UNIFIED:U01:L01"
+  "sourceLessonCode": "EDU:UAE-MOE-MATH:L11:UNIFIED:U01:L01",
+  "prerequisiteReview": [
+    {
+      "id": "R54",
+      "skill": "pythagorean_classification",
+      "prompt": "هل المثلث ذو الأضلاع 7 و9 و12 قائم الزاوية؟",
+      "steps": [
+        "قارن مربع الضلع الأطول بمجموع المربعين الآخرين",
+        "12²=144",
+        "7²+9²=130≠144"
+      ],
+      "answer": "ليس قائم الزاوية",
+      "check": "عكس نظرية فيثاغورس."
+    },
+    {
+      "id": "R55",
+      "skill": "hypotenuse",
+      "prompt": "ضلعان قائمان 9 و12 سم. أوجد الوتر.",
+      "steps": [
+        "c²=9²+12²",
+        "c²=81+144=225",
+        "c=15"
+      ],
+      "answer": "15 سم",
+      "check": "9²+12²=15²."
+    },
+    {
+      "id": "R56",
+      "skill": "map_scale",
+      "prompt": "يمثل 4 سم على خريطة مسافة 80 كم. كم تمثل مسافة 150 كم؟",
+      "steps": [
+        "المقياس 80/4=20 كم لكل سم",
+        "150/20=7.5",
+        "وحدة الناتج سم على الخريطة"
+      ],
+      "answer": "7.5 سم",
+      "check": "7.5×20=150."
+    },
+    {
+      "id": "R57",
+      "skill": "factor",
+      "prompt": "حلّل 8x²+12x.",
+      "steps": [
+        "العامل المشترك 4x",
+        "8x²/(4x)=2x و12x/(4x)=3",
+        "4x(2x+3)"
+      ],
+      "answer": "4x(2x+3)",
+      "check": "التوزيع يعيد المقدار."
+    },
+    {
+      "id": "R58",
+      "skill": "expand",
+      "prompt": "أوجد حاصل ضرب (x+3)(2x−5).",
+      "steps": [
+        "2x²−5x+6x−15",
+        "اجمع الحدين المتشابهين",
+        "2x²+x−15"
+      ],
+      "answer": "2x²+x−15",
+      "check": "عند x=1 كلا الطرفين −12."
+    },
+    {
+      "id": "R59",
+      "skill": "two_integer_model",
+      "prompt": "عددان أحدهما x−3 والآخر 2x+2 ومجموعهما 17. أوجدهما.",
+      "steps": [
+        "x−3+2x+2=17",
+        "3x−1=17 إذن x=6",
+        "العددان 3 و14"
+      ],
+      "answer": "3 و14",
+      "check": "3+14=17."
+    },
+    {
+      "id": "R60",
+      "skill": "square_root_review",
+      "prompt": "أوجد √9.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 9",
+        "الجذر الرئيس 3",
+        "أبقِ الجذر الرئيس موجبًا"
+      ],
+      "answer": "3",
+      "check": "3²=9."
+    },
+    {
+      "id": "R61",
+      "skill": "square_root_review",
+      "prompt": "أوجد √36.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 36",
+        "الجذر الرئيس 6",
+        "أبقِ الجذر الرئيس موجبًا"
+      ],
+      "answer": "6",
+      "check": "6²=36."
+    },
+    {
+      "id": "R62",
+      "skill": "square_root_review",
+      "prompt": "أوجد √64.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 64",
+        "الجذر الرئيس 8",
+        "أبقِ الجذر الرئيس موجبًا"
+      ],
+      "answer": "8",
+      "check": "8²=64."
+    },
+    {
+      "id": "R63",
+      "skill": "square_root_review",
+      "prompt": "أوجد √144.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 144",
+        "الجذر الرئيس 12",
+        "أبقِ الجذر الرئيس موجبًا"
+      ],
+      "answer": "12",
+      "check": "12²=144."
+    },
+    {
+      "id": "R64",
+      "skill": "square_root_review",
+      "prompt": "أوجد −√25.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 25",
+        "الجذر الرئيس 5",
+        "ضع الإشارة السالبة خارج الجذر"
+      ],
+      "answer": "-5",
+      "check": "5²=25."
+    },
+    {
+      "id": "R65",
+      "skill": "square_root_review",
+      "prompt": "أوجد −√49.",
+      "steps": [
+        "ابحث عن عدد غير سالب مربعه 49",
+        "الجذر الرئيس 7",
+        "ضع الإشارة السالبة خارج الجذر"
+      ],
+      "answer": "-7",
+      "check": "7²=49."
+    },
+    {
+      "id": "R66",
+      "skill": "fraction_root",
+      "prompt": "أوجد √(16/81).",
+      "steps": [
+        "√16=4",
+        "√81=9",
+        "الجذر الرئيس موجب"
+      ],
+      "answer": "4/9",
+      "check": "(4/9)²=16/81."
+    },
+    {
+      "id": "R67",
+      "skill": "fraction_root",
+      "prompt": "أوجد √(49/121).",
+      "steps": [
+        "√49=7",
+        "√121=11",
+        "نقسم الجذرين"
+      ],
+      "answer": "7/11",
+      "check": "(7/11)²=49/121."
+    }
+  ]
 }

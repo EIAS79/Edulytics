@@ -38,7 +38,8 @@ public enum RichLessonVisualKind
     CoordinatePlane = 18,
     // Independently authored comparison rows; stable existing enum IDs are unchanged.
     ComparisonTable = 19,
-    ClosedCoordinatePolygon = 20
+    ClosedCoordinatePolygon = 20,
+    DimensionedGeometry = 21
 }
 
 public sealed class RichLessonContentV2Document
@@ -155,6 +156,9 @@ public static class RichLessonContentV2Registry
             return null;
 
         var normalizedCulture = NormalizeCulture(cultureCode);
+        var g11 = lessonCode.StartsWith("PED:UAE-MOE-MATH:L11:", StringComparison.Ordinal);
+        if (g11 && (!lessonCode.StartsWith("PED:UAE-MOE-MATH:L11:UNIFIED:", StringComparison.Ordinal) ||
+            normalizedCulture != "ar")) return null;
 
         if (DirectLessonDocuments.Value.TryGetValue(
                 Key(lessonCode, normalizedCulture),
@@ -165,7 +169,7 @@ public static class RichLessonContentV2Registry
                 Key(x.LessonCode, x.CultureCode) == Key(lessonCode, normalizedCulture));
         }
 
-        if (normalizedCulture != "en" &&
+        if (!g11 && normalizedCulture != "en" &&
             DirectLessonDocuments.Value.TryGetValue(Key(lessonCode, "en"), out var english))
         {
             Validate(english.Document, english.ResourceName);
