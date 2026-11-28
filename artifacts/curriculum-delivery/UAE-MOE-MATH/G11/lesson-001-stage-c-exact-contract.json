@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "indexCode": "G11-001",
+  "historicalLessonCode": "PED:UAE-MOE-MATH:L11:GENERAL:06:01:EXPRESSIONS-AND-FORMULAS",
+  "status": "STAGE_C_PARTIAL_REUSE_CANDIDATES",
+  "productionRouting": false,
+  "reuseCandidates": [
+    {
+      "family": "uae.g6.u06.l03.sum_sub_left_right",
+      "ranges": "a,b,c ∈ [1,50]",
+      "answerType": "signed integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.division_multiplication_left_right",
+      "ranges": "q 1..20; b,c 2..12",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.parenthesis_first",
+      "ranges": "a 1..25,b 1..12,c 3..20,d 1..19,c>d",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l03.exponent_then_multiply",
+      "ranges": "a 1..20,b 2..8,e 2..4,m 1..5",
+      "answerType": "integer",
+      "engine": "UaeG6U6L03NumericalExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.two_variable_expression",
+      "ranges": "x,y 1..40,cx,cy 1..12",
+      "answerType": "integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.fraction_squared",
+      "ranges": "n 1..5,d 2..10,n<d",
+      "answerType": "reduced fraction or accepted exact decimal",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.substitute_difference",
+      "ranges": "x,y 0..100",
+      "answerType": "signed integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    },
+    {
+      "family": "uae.g6.u06.l04.substitute_linear",
+      "ranges": "x 0..30,a 2..12,b 1..25",
+      "answerType": "integer",
+      "engine": "UaeG6U6L04VariableExpressionsQuestions",
+      "generator": "Build",
+      "grader": "Verify",
+      "verifier": "recomputes expected from parameters, same internal expected-value routine as Solve; independent test oracle not yet executed",
+      "status": "REUSE_CANDIDATE_IMPLEMENTATION_INSPECTED_NOT_ROUTED"
+    }
+  ],
+  "allowedQuestionFamilies": [],
+  "forbiddenQuestionFamilies": [
+    "unbounded symbolic substitution using Grade6 templates",
+    "unverified family or fabricated outcome code"
+  ],
+  "pendingExtensions": [
+    "signed and decimal substitution with grouped powers",
+    "rational multi-variable formula and nonzero denominator",
+    "geometric and applied multi-step formulas with exact or declared rounding rules"
+  ],
+  "teacherReviewRequired": [
+    "open formula modeling",
+    "error analysis and justification",
+    "drawing and comparing cylinders",
+    "interpreting tables and model differences"
+  ],
+  "testsRun": "NOT_RUN",
+  "newEngineCreated": false
+}

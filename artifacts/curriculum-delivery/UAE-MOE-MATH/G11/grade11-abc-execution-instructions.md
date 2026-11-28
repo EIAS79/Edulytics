@@ -1,0 +1,7 @@
+# Grade 11 A–B–C execution instructions
+
+Canonical index: approved owner-supplied V2, exactly 130 lessons and 19 units. Use newest relevant edition first within each canonical lesson; older relevant editions supplement unique skills. Do not change index ordering or use an English catalogue. Source primary: supplied Arabic UAE student books; owner-local Grade_11 folder under emirates for missing files only. Teacher-only unavailable Cool-down: independently author an equivalent and record that it is an Edulytics substitute.
+
+Read local → compare current and historical lesson → fix gaps only → original Arabic RTL content → Reuse, then Extend, New Engine only when necessary → write targeted tests and independent evidence without running CI/Stage D → checkpoint/commit → next lesson only if actual A–B–C acceptance. No broad build or repeated reads; no multiple commits per lesson unless needed. Report by unit, not after each lesson. Record actual timestamps and call counts when observable; never invent. No new backup, production migration, merge, or deploy in A–B–C. Source rights and formal source completeness remain distinct from owner approval.
+
+Latest main 1c3db842b210ac33ad3a5e309f4779d0c9734c6d; retirement PR #656 merged; start ordinal 1 because no prior verified Grade 11 Arabic closure was found. New Draft branch, not the retirement branch. Missing four unique PDF sources to verify locally when their canonical lessons require them; don't claim 13/13 inventory or 100% source parity.
