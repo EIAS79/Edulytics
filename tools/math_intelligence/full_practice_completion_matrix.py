@@ -238,6 +238,15 @@ def audit() -> dict[str, Any]:
             and primary_skills == [approved_g9[code]]
             and not semantic_row.get("studentFacingDefects")
         )
+        is_owner_scoped_g10 = (
+            code.startswith("PED:UAE-MOE-MATH:L10:GENERAL:")
+            and row.get("specialistGrade10FirstPartyExactContractPendingRuntime") is True
+            and row.get("generationReadiness") == "READY_CONTEXTUAL"
+            and row.get("approvedMapping") is True
+            and bool(primary_skills)
+            and all(skill_id in skills for skill_id in primary_skills)
+            and not semantic_row.get("studentFacingDefects")
+        )
         for family_id in question_families:
             family = families.get(family_id)
             if family is None:
@@ -290,6 +299,15 @@ def audit() -> dict[str, Any]:
                         "targetGrade9SkillId": approved_g9[code],
                         "reuseEvidence":
                             "exact-owner-approved-g9-digital-csharp-contract-with-registered-family",
+                    })
+                elif (is_owner_scoped_g10 and original_skill in skills
+                      and family.get("lessonPracticeRouting") is True):
+                    cross_grade_family_adapters.append({
+                        "family": family_id,
+                        "originalSkillId": original_skill,
+                        "targetGrade10SkillId": primary_skills[0],
+                        "reuseEvidence":
+                            "exact-owner-scoped-g10-registered-family-contract",
                     })
                 else:
                     internal_blockers.append(
@@ -365,11 +383,18 @@ def audit() -> dict[str, Any]:
                     families[f].get("lessonPracticeRouting") is True
                     for f in question_families)
         )
+        specialist_g10_ready = bool(
+            is_owner_scoped_g10
+            and bool(question_families)
+            and all(f in families and families[f].get("lessonPracticeRouting") is True
+                    and str(families[f].get("skillId") or "") in skills
+                    for f in question_families)
+        )
         # Contract readiness here is independent of persisted HTTPS/RTL Stage D.
         # Those run as mandatory separate same-SHA CI release gates.
         runtime_contract_ready = (specialist_g12_ready or specialist_g4_ready
             or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready
-            or specialist_g9_ready) or (
+            or specialist_g9_ready or specialist_g10_ready) or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -446,8 +471,8 @@ def audit() -> dict[str, Any]:
             "representations": sorted(representations),
             "visualRequired": visual_required,
             "visualStatus": visual_status,
-            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready,
-            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready,
+            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready or specialist_g10_ready,
+            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready or specialist_g10_ready,
             "independentG12SpecialistContractVerified": specialist_g12_ready,
             "independentG4ExactPracticeContractVerified": specialist_g4_ready,
             "independentG6OwnerScopedExactPracticeContractVerified": specialist_g6_ready,
@@ -456,6 +481,7 @@ def audit() -> dict[str, Any]:
             "crossGradeExactFamilyReuse": cross_grade_family_adapters,
             "independentG9OwnerScopedDigitalContractVerified": specialist_g9_ready,
             "grade9TeacherReviewOnlyWithEvidence": teacher_only_route,
+            "independentG10FirstPartyExactContractPendingRuntime": specialist_g10_ready,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
@@ -540,6 +566,18 @@ def audit() -> dict[str, Any]:
             "Grade9 General requires exactly 80 registered, routable first-party "
             "digital C# contracts and two independently evidenced teacher-only "
             "routes. Neither digital readiness nor teacher grading may be invented.")
+    g10_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L10:GENERAL:")]
+    summary["grade10FirstPartyExactContractCount"] = sum(
+        row["independentG10FirstPartyExactContractPendingRuntime"] for row in g10_rows)
+    if g10_rows and (len(g10_rows) != 148 or
+        summary["grade10FirstPartyExactContractCount"] != 148 or
+        sum(len(row["questionFamilies"]) for row in g10_rows) != 691 or
+        len({family for row in g10_rows for family in row["questionFamilies"]}) != 678):
+        internal_blockers.append(
+            "Grade10 first-party contract matrix must contain the exact 148 lessons, "
+            "691 declared assignments and 678 distinct registered families; "
+            "runtime release remains separately gated.")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(

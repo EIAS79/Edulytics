@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "globalOrdinal": 22,
+  "canonicalCode": "G10-U02-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:06:OPERATIONS-WITH-RADICAL-EXPRESSIONS",
+  "sourceBooks": [
+    {
+      "book": "01.pdf",
+      "pages": [
+        137,
+        138,
+        139,
+        140,
+        141,
+        142
+      ]
+    },
+    {
+      "book": "01متقدم_.pdf",
+      "pages": [
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310
+      ]
+    }
+  ],
+  "primarySkills": [
+    "algebra.radical.combine_like_terms"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u08.l06.like_radical_coefficient",
+    "uae.g10.general.u02.l06.same_root_product_integer",
+    "uae.g10.general.u02.l06.radical_conjugate_integer"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u02.l05.square_root_extract_coefficient",
+    "uae.g10.general.u02.l03.rational_positive_perfect_power"
+  ],
+  "reusePolicy": "Reuse existing Grade9 exact same-radical coefficient family plus shared Grade10 exact family engine extension for integer product/conjugate. No generic CAS.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10RadicalOperation(family,random,difficulty)",
+  "independentVerifier": "UaeG10RadicalOperationsResponse.Verify(family,parameters,answer)",
+  "bounds": {
+    "a": "integer 2..7",
+    "b": "integer 2..7",
+    "radicand": "one of 2,3,5,6,7,10,11",
+    "conjugate": "a² radicand−b²",
+    "product": "a b radicand"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g9.general.u08.l06.like_radical_coefficient",
+      "interaction": "ContractDriven from existing Grade9 registry, validate StageD"
+    },
+    {
+      "family": "uae.g10.general.u02.l06.same_root_product_integer",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l06.radical_conjugate_integer",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "compound radicals and nonidentical nth roots",
+    "rationalization full fraction forms",
+    "symbolic variable domain and restrictions",
+    "geometry/drawings and written proof"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalOperationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 47,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "reviewedPhysicalPages": [
+    45,
+    46
+  ],
+  "scope": "Selected source-page comparison and correction only; not exhaustive atomic mapping or complete source parity. Exact-answer precision fixes are independent mathematical corrections.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 45,
+      "sourcePrintedPage": 596,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "قيمة عشرية تقريبية",
+      "expectedAnswer": "0.8573",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 46,
+      "sourcePrintedPage": 597,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "حل معادلة أسية",
+      "expectedAnswer": "1.9482",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 46,
+      "sourcePrintedPage": 597,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "شدة الصوت",
+      "expectedAnswer": "1.995262e-6 W/m²",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "متباينة بمعامل سالب",
+      "field": "Answer",
+      "before": "x>0.8742",
+      "after": "x>(log 7+2log 3)/(3log 7−log 3)؛ الحد ≈0.8742."
+    },
+    {
+      "title": "متباينة بأساس مقلوب",
+      "field": "Answer",
+      "before": "x≤-1.5850",
+      "after": "x≤log(9)/log(1/4)؛ الحد ≈−1.5850."
+    }
+  ],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

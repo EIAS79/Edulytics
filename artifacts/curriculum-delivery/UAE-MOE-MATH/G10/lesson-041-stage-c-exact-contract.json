@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 41,
+  "canonicalCode": "G10-U04-L08",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08:C041",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourcePdfPages": [
+    31
+  ],
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "primarySkills": [
+    "algebra.quadratic.rate_of_change"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l08.average_rate",
+    "uae.g10.general.u04.l08.rate_is_positive"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l07.vertex_h",
+    "uae.g10.general.u04.l06.probe_truth"
+  ],
+  "generator": "BuildG10QuadraticRates",
+  "independentVerifier": "UaeG10QuadraticRatesResponse.Verify recomputes average slope a*(u+v)+b from raw a,b,start2,step2; not a generated answer",
+  "parameters": {
+    "a": "even nonzero integer [-16,16]",
+    "b": "integer [-150,150]",
+    "c": "integer [0,100]",
+    "start2": "integer [-8,16], start time=start2/2",
+    "step2": "integer [1,4], interval length=step2/2"
+  },
+  "scoring": {
+    "average_rate": "integer slope y-units per time unit, may be negative",
+    "positive": "1 iff average rate is strictly positive, 0 otherwise"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l08.average_rate",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l08.rate_is_positive",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "visualRequirements": [
+    "original CartesianPlot rocket height at half second and numeric table",
+    "x² symmetric graph and signed rates",
+    "freefall height model with ground time domain"
+  ],
+  "teacherReviewRequired": [
+    "original graph at half-second intervals and scale, units",
+    "explanation of increasing/decreasing and instantaneous versus average velocity",
+    "x² negative-time to positive-time comparison and hand-created rate table",
+    "physical freefall, rocket ground constraint and graph interpretation"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticRatesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "note": "Half-step exact digital auto-scoring restricts a to even values; unrestricted real rate explanations remain in teacher rubric, avoiding false coverage of all source numeric cases."
+}

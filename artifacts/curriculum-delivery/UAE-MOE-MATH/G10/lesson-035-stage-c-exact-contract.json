@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 35,
+  "canonicalCode": "G10-U04-L02",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02:C035",
+  "sourceBook": "01متقدم_.pdf",
+  "sourceLessonPdfPages": [
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129
+  ],
+  "sourceTechnologyLabPdfPage": 130,
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.quadratic.solve_by_graphing"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l02.real_root_count",
+    "uae.g10.general.u04.l02.left_intercept",
+    "uae.g10.general.u04.l02.right_intercept"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l01.vertex_x",
+    "uae.g10.general.u04.l01.vertex_y"
+  ],
+  "sourceSpecialCases": [
+    "two distinct real roots",
+    "one tangent repeated root",
+    "no real roots",
+    "noninteger approximations teacher reviewed"
+  ],
+  "generator": "BuildG10QuadraticGraphRoots(family,random,difficulty)",
+  "independentVerifier": "UaeG10QuadraticGraphRootsResponse.Verify reconstructs independent polynomial coefficients and discriminant, checks integer root bounds and mode, no generator string trust",
+  "bounds": {
+    "a": "nonzero signed [-4,4]",
+    "r1r2": "[-5,5]",
+    "h": "[-4,4]",
+    "k": "positive [1,6]",
+    "mode": "0 two,1 tangent,2 no real"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l02.real_root_count",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l02.left_intercept",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u04.l02.right_intercept",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "freehand graph axes and plotting",
+    "fractional and irrational roots approximation tolerance",
+    "calculator Y1 and Y2 intersection mode",
+    "trajectory and real-domain restriction",
+    "explain no real roots and repeated root"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralQuadraticGraphRootsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED"
+  }
+}

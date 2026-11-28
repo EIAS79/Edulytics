@@ -150,6 +150,23 @@ public sealed class StudentPrivatePracticeService(
                 StudentPrivatePracticeError.NoSupportedOutcomes);
         }
 
+        // G10 diagnostics found unrelated CurriculumContextCheck and quadratic
+        // fallback questions on polynomial lessons. Do not silently generate
+        // questions outside the exact approved G10 contract. Broader G10
+        // scopes remain blocked until the course-wide eligibility is proven.
+        const string g10Prefix = "PED:UAE-MOE-MATH:L10:";
+        var g10Selection = request.Scope == StudentPrivatePracticeScope.Lesson
+            ? scoped.LessonId.HasValue && context.Lessons.Any(x =>
+                x.Id == scoped.LessonId.Value && x.Code.StartsWith(g10Prefix, StringComparison.Ordinal))
+            : context.Lessons.Any(x => x.Code.StartsWith(g10Prefix, StringComparison.Ordinal));
+        if (g10Selection && !(request.Scope == StudentPrivatePracticeScope.Lesson &&
+            scoped.LessonId.HasValue && context.Lessons.Any(x =>
+                x.Id == scoped.LessonId.Value &&
+                x.Code.StartsWith(g10Prefix + "GENERAL:", StringComparison.Ordinal) &&
+                LessonPracticeContractRegistry.TryResolve(x.Code, out var g10Contract) &&
+                g10Contract is not null && g10Contract.Readiness == "READY_VERIFIED")))
+            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.NoSupportedOutcomes);
+
         // General lesson Practice contracts are authoritative for READY_VERIFIED
         // lesson-scoped Practice. Supporting lessons do not need an official
         // OutcomeCode to use the exact solver/verifier path. Once a contract
@@ -502,6 +519,11 @@ public sealed class StudentPrivatePracticeService(
         {
             return SupportedDifficulties(contract);
         }
+
+        // Do not advertise a difficulty selector for an unreleased or
+        // retired UAE G10 lesson when its exact contract cannot resolve.
+        if (lessonCode.StartsWith("PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal))
+            return [];
 
         if (Stage18PracticeSkillContracts.TryResolve(lessonCode, out var legacy) &&
             legacy is not null)

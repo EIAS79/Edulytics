@@ -50,6 +50,670 @@ public sealed partial class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
+            UaeG10MonomialPolynomialResponse.WholeFamily,
+            UaeG10MonomialPolynomialResponse.CoefficientFamily,
+            UaeG10DistributedEquationResponse.Family,
+            UaeG10PolynomialProductResponse.WholeFamily,
+            UaeG10PolynomialProductResponse.CoefficientFamily,
+            UaeG10SpecialProductsResponse.Family,
+            UaeG10DivisionResponse.MonomialFamily,
+            UaeG10PolynomialFunctionResponse.EvaluateFamily,
+            UaeG10PolynomialFunctionResponse.DegreeFamily,
+            UaeG10PolynomialFunctionResponse.EndFamily,
+            UaeG10GraphAnalysisResponse.Vertex,
+            UaeG10GraphAnalysisResponse.Kind,
+            UaeG10GraphAnalysisResponse.Intercepts,
+            UaeG10PolynomialEquationResponse.CubicFamily,
+            UaeG10PolynomialEquationResponse.BiquadraticFamily,
+            UaeG10RemainderFactorResponse.Remainder,
+            UaeG10RemainderFactorResponse.Factor,
+            UaeG10RootsZerosResponse.Descartes,
+            UaeG10RootsZerosResponse.Conjugate,
+            UaeG10RootsZerosResponse.Multiplicity,
+            UaeG10RationalZerosResponse.CandidateCount,
+            UaeG10RationalZerosResponse.CandidateCheck,
+            UaeG10RationalZerosResponse.ActualZero,
+            UaeG10ExponentProductResponse.SameBase,
+            UaeG10ExponentProductResponse.PowerOfPower,
+            UaeG10ExponentProductResponse.ProductCoefficient,
+            UaeG10ExponentQuotientResponse.Quotient,
+            UaeG10ExponentQuotientResponse.Negative,
+            UaeG10ExponentQuotientResponse.Zero,
+            UaeG10RadicalEquationResponse.Solution,
+            UaeG10RadicalEquationResponse.CheckCandidate,
+            UaeG10GraphSystemsResponse.XFamily,
+            UaeG10GraphSystemsResponse.YFamily,
+            UaeG10GraphSystemsResponse.CountFamily,
+            UaeG10GraphInequalitiesResponse.PointFamily,
+            UaeG10GraphInequalitiesResponse.BoundaryFamily,
+            UaeG10LinearProgrammingResponse.ValueFamily,
+            UaeG10LinearProgrammingResponse.VertexFamily,
+            UaeG10ThreeVarSystemResponse.XFamily,
+            UaeG10ThreeVarSystemResponse.YFamily,
+            UaeG10ThreeVarSystemResponse.ZFamily,
+            UaeG10MatrixOperationsResponse.SumFamily,
+            UaeG10MatrixOperationsResponse.DiffFamily,
+            UaeG10MatrixOperationsResponse.ScalarFamily,
+            UaeG10MatrixProductResponse.EntryFamily,
+            UaeG10MatrixProductResponse.ShapeFamily,
+            UaeG10CramerResponse.DetFamily,
+            UaeG10CramerResponse.XFamily,
+            UaeG10CramerResponse.YFamily,
+            UaeG10InverseMatrixResponse.EntryFamily,
+            UaeG10InverseMatrixResponse.ExistsFamily,
+            UaeG10AugmentedMatrixResponse.RowFamily,
+            UaeG10AugmentedMatrixResponse.XFamily,
+            UaeG10AugmentedMatrixResponse.YFamily,
+            UaeG10ExponentialGraphResponse.Value,
+            UaeG10ExponentialGraphResponse.Growth,
+            UaeG10ExponentialGraphResponse.Asymptote,
+            UaeG10ExponentialGraphResponse.ShiftAnchor,
+            UaeG10LogarithmicGraphResponse.Evaluate,
+            UaeG10LogarithmicGraphResponse.ToExponential,
+            UaeG10LogarithmicGraphResponse.ToLogarithmic,
+            UaeG10LogarithmicGraphResponse.Domain,
+            UaeG10LogarithmicGraphResponse.DomainMember,
+            UaeG10LogarithmicGraphResponse.Asymptote,
+            UaeG10LogarithmicGraphResponse.Monotonic,
+            UaeG10LogarithmicGraphResponse.GraphAnchor,
+            UaeG10LogarithmicGraphResponse.GraphValue,
+            UaeG10LogarithmicGraphResponse.InverseShift,
+            UaeG10LogarithmicGraphResponse.ScaleRatio,
+            UaeG10LogarithmicGraphResponse.ModelTime,
+            UaeG10LogarithmicEquationResponse.Direct,
+            UaeG10LogarithmicEquationResponse.Quadratic,
+            UaeG10LogarithmicEquationResponse.OneSide,
+            UaeG10LogarithmicEquationResponse.TwoSides,
+            UaeG10LogarithmicEquationResponse.Wind,
+            UaeG10LogarithmicEquationResponse.Ratio,
+            UaeG10LogarithmicEquationResponse.Music,
+            UaeG10LogarithmicEquationResponse.Sound,
+            UaeG10LogarithmPropertiesResponse.Approx,
+            UaeG10LogarithmPropertiesResponse.Expand,
+            UaeG10LogarithmPropertiesResponse.Condense,
+            UaeG10LogarithmPropertiesResponse.Truth,
+            UaeG10LogarithmPropertiesResponse.Equation,
+            UaeG10LogarithmPropertiesResponse.RootSet,
+            UaeG10LogarithmPropertiesResponse.Fractional,
+            UaeG10LogarithmPropertiesResponse.Ph,
+            UaeG10LogarithmPropertiesResponse.Pressure,
+            UaeG10LogarithmPropertiesResponse.Benford,
+            UaeG10LogarithmPropertiesResponse.BenfordInverse,
+            UaeG10LogarithmPropertiesResponse.Decay,
+            UaeG10LogarithmPropertiesResponse.Sound,
+            UaeG10LogarithmPropertiesResponse.Payment,
+            UaeG10LogarithmPropertiesResponse.Payable,
+            UaeG10LogarithmPropertiesResponse.Minimum,
+            UaeG10LogarithmPropertiesResponse.Months,
+            UaeG10CommonLogarithmResponse.Common,
+            UaeG10CommonLogarithmResponse.Change,
+            UaeG10CommonLogarithmResponse.Equation,
+            UaeG10CommonLogarithmResponse.TwoBases,
+            UaeG10CommonLogarithmResponse.Inequality,
+            UaeG10CommonLogarithmResponse.Quadratic,
+            UaeG10CommonLogarithmResponse.Sound,
+            UaeG10CommonLogarithmResponse.SoundReduction,
+            UaeG10CommonLogarithmResponse.Energy,
+            UaeG10CommonLogarithmResponse.Pet,
+            UaeG10CommonLogarithmResponse.PetTime,
+            UaeG10CommonLogarithmResponse.GrowthRate,
+            UaeG10CommonLogarithmResponse.GrowthTime,
+            UaeG10CommonLogarithmResponse.Cents,
+            UaeG10CommonLogarithmResponse.Frequency,
+            UaeG10CommonLogarithmResponse.Ph,
+            UaeG10CommonLogarithmResponse.Ppm,
+            UaeG10CommonLogarithmResponse.LabEq,
+            UaeG10CommonLogarithmResponse.LabIneq,
+            UaeG10NaturalLogarithmResponse.Convert,
+            UaeG10NaturalLogarithmResponse.Identity,
+            UaeG10NaturalLogarithmResponse.Value,
+            UaeG10NaturalLogarithmResponse.Condense,
+            UaeG10NaturalLogarithmResponse.Expand,
+            UaeG10NaturalLogarithmResponse.Equation,
+            UaeG10NaturalLogarithmResponse.Possible,
+            UaeG10NaturalLogarithmResponse.LogEq,
+            UaeG10NaturalLogarithmResponse.ExpIneq,
+            UaeG10NaturalLogarithmResponse.LogIneq,
+            UaeG10NaturalLogarithmResponse.Even,
+            UaeG10NaturalLogarithmResponse.Reciprocal,
+            UaeG10NaturalLogarithmResponse.Balance,
+            UaeG10NaturalLogarithmResponse.Principal,
+            UaeG10NaturalLogarithmResponse.Time,
+            UaeG10NaturalLogarithmResponse.Rate,
+            UaeG10NaturalLogarithmResponse.Decay,
+            UaeG10NaturalLogarithmResponse.Half,
+            UaeG10NaturalLogarithmResponse.Threshold,
+            UaeG10NaturalLogarithmResponse.CoolingK,
+            UaeG10NaturalLogarithmResponse.CoolingTemp,
+            UaeG10NaturalLogarithmResponse.CoolingTime,
+            UaeG10NaturalLogarithmResponse.Substitution,
+            UaeG10ExponentialLogisticResponse.HalfRate,
+            UaeG10ExponentialLogisticResponse.DecayAmount,
+            UaeG10ExponentialLogisticResponse.DecayAge,
+            UaeG10ExponentialLogisticResponse.HalfFromLoss,
+            UaeG10ExponentialLogisticResponse.GrowthRate,
+            UaeG10ExponentialLogisticResponse.GrowthForecast,
+            UaeG10ExponentialLogisticResponse.GrowthTarget,
+            UaeG10ExponentialLogisticResponse.Crossing,
+            UaeG10ExponentialLogisticResponse.LogisticInitial,
+            UaeG10ExponentialLogisticResponse.LogisticLimit,
+            UaeG10ExponentialLogisticResponse.LogisticValue,
+            UaeG10ExponentialLogisticResponse.LogisticTime,
+            UaeG10ExponentialLogisticResponse.LogisticRate,
+            UaeG10ExponentialLogisticResponse.LogisticReachable,
+            UaeG10ExponentialLogisticResponse.ModelRelation,
+            UaeG10ExponentialLogisticResponse.SpreadsheetBalance,
+            UaeG10ExponentialLogisticResponse.SpreadsheetInterest,
+            UaeG10ExponentialLogisticResponse.LogisticCrossing,
+            UaeG10RemainingResponse.L58_line_pair_type,
+            UaeG10RemainingResponse.L58_plane_pair_type,
+            UaeG10RemainingResponse.L63_perpendicular_point_line_distance,
+            UaeG10RemainingResponse.L63_perpendicular_slope,
+            UaeG10RemainingResponse.L64_reflection_vertical_x,
+            UaeG10RemainingResponse.L64_reflection_horizontal_y,
+            UaeG10RemainingResponse.L64_reflection_diagonal_y,
+            UaeG10RemainingResponse.L65_translation_x,
+            UaeG10RemainingResponse.L65_translation_y,
+            UaeG10RemainingResponse.L66_rotation_90_x,
+            UaeG10RemainingResponse.L66_rotation_180_y,
+            UaeG10RemainingResponse.L66_rotation_270_y,
+            UaeG10RemainingResponse.L67_reflect_then_translate_x,
+            UaeG10RemainingResponse.L67_translate_then_reflect_x,
+            UaeG10RemainingResponse.L68_regular_polygon_symmetry_axes,
+            UaeG10RemainingResponse.L68_least_rotation_angle,
+            UaeG10RemainingResponse.L69_dilation_origin_x,
+            UaeG10RemainingResponse.L69_dilation_side_length,
+            UaeG10RemainingResponse.L70_classify_triangle_sides,
+            UaeG10RemainingResponse.L70_classify_triangle_angles,
+            UaeG10RemainingResponse.L71_third_triangle_angle,
+            UaeG10RemainingResponse.L71_exterior_triangle_angle,
+            UaeG10RemainingResponse.L72_corresponding_side_length,
+            UaeG10RemainingResponse.L72_corresponding_side_equation,
+            UaeG10RemainingResponse.L73_sss_match_condition,
+            UaeG10RemainingResponse.L73_sas_included_angle,
+            UaeG10RemainingResponse.L74_asa_included_side,
+            UaeG10RemainingResponse.L74_aas_remaining_angle,
+            UaeG10RemainingResponse.L75_isosceles_base_angle,
+            UaeG10RemainingResponse.L75_equilateral_perimeter,
+            UaeG10RemainingResponse.L76_rigid_image_side_length,
+            UaeG10RemainingResponse.L76_rigid_image_angle,
+            UaeG10RemainingResponse.L77_coordinate_side_square,
+            UaeG10RemainingResponse.L77_coordinate_midpoint_x,
+            UaeG10RemainingResponse.L78_parallelogram_area,
+            UaeG10RemainingResponse.L78_triangle_area,
+            UaeG10RemainingResponse.L79_perpendicular_bisector_distance,
+            UaeG10RemainingResponse.L79_angle_bisector_equidistance,
+            UaeG10RemainingResponse.L80_centroid_vertex_segment,
+            UaeG10RemainingResponse.L80_centroid_midpoint_segment,
+            UaeG10RemainingResponse.L81_largest_opposite_angle,
+            UaeG10RemainingResponse.L81_exterior_angle_bound,
+            UaeG10RemainingResponse.L82_negated_inequality_membership,
+            UaeG10RemainingResponse.L82_contradiction_upper_bound,
+            UaeG10RemainingResponse.L83_triangle_third_side_min_integer,
+            UaeG10RemainingResponse.L83_triangle_third_side_max_integer,
+            UaeG10RemainingResponse.L84_hinge_opposite_side_relation,
+            UaeG10RemainingResponse.L84_hinge_converse_angle_relation,
+            UaeG10RemainingResponse.L85_proportion_missing_term,
+            UaeG10RemainingResponse.L85_partition_by_ratio,
+            UaeG10RemainingResponse.L86_similar_polygon_side,
+            UaeG10RemainingResponse.L86_similar_polygon_perimeter,
+            UaeG10RemainingResponse.L87_similar_triangle_aa_angle,
+            UaeG10RemainingResponse.L87_similar_triangle_corresponding_side,
+            UaeG10RemainingResponse.L88_parallel_segment_proportion,
+            UaeG10RemainingResponse.L88_triangle_midsegment_length,
+            UaeG10RemainingResponse.L89_similar_triangle_altitude,
+            UaeG10RemainingResponse.L89_similar_triangle_median,
+            UaeG10RemainingResponse.L90_similarity_dilation_translation_x,
+            UaeG10RemainingResponse.L90_similarity_transformed_length,
+            UaeG10RemainingResponse.L91_map_actual_distance_km,
+            UaeG10RemainingResponse.L91_model_scale_length_cm,
+            UaeG10RemainingResponse.L92_polygon_interior_sum,
+            UaeG10RemainingResponse.L92_regular_polygon_exterior_angle,
+            UaeG10RemainingResponse.L93_parallelogram_adjacent_angle,
+            UaeG10RemainingResponse.L93_parallelogram_diagonal_half,
+            UaeG10RemainingResponse.L94_parallelogram_sufficient_condition,
+            UaeG10RemainingResponse.L94_parallelogram_diagonals_test,
+            UaeG10RemainingResponse.L95_rectangle_equal_diagonals,
+            UaeG10RemainingResponse.L95_rectangle_diagonal_length,
+            UaeG10RemainingResponse.L96_rhombus_side_from_diagonals,
+            UaeG10RemainingResponse.L96_square_perimeter,
+            UaeG10RemainingResponse.L97_trapezoid_midsegment,
+            UaeG10RemainingResponse.L97_kite_perimeter,
+            UaeG10RemainingResponse.L133_sample_space_product_count,
+            UaeG10RemainingResponse.L133_sample_space_three_stages,
+            UaeG10RemainingResponse.L134_permutations_two_positions,
+            UaeG10RemainingResponse.L134_combinations_two_members,
+            UaeG10RemainingResponse.L134_combination_probability,
+            UaeG10RemainingResponse.L135_geometric_segment_probability,
+            UaeG10RemainingResponse.L135_geometric_rectangle_probability,
+            UaeG10RemainingResponse.L136_simulation_relative_frequency,
+            UaeG10RemainingResponse.L136_simulation_expected_count,
+            UaeG10RemainingResponse.L138_independent_two_events,
+            UaeG10RemainingResponse.L138_dependent_without_replacement,
+            UaeG10RemainingResponse.L139_mutually_exclusive_union,
+            UaeG10RemainingResponse.L139_overlapping_union,
+            UaeG10RemainingResponse.L140_sequence_function_term,
+            UaeG10RemainingResponse.L140_sequence_common_difference,
+            UaeG10RemainingResponse.L141_arithmetic_nth_term,
+            UaeG10RemainingResponse.L141_arithmetic_finite_sum,
+            UaeG10RemainingResponse.L142_geometric_nth_term,
+            UaeG10RemainingResponse.L142_geometric_finite_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_alternating_sum,
+            UaeG10RemainingResponse.L143_geometric_infinite_convergence,
+            UaeG10RationalUnitResponse.ProductConstant,
+            UaeG10RationalUnitResponse.DivisionConstant,
+            UaeG10RationalUnitResponse.Excluded,
+            UaeG10RationalUnitResponse.ComplexFraction,
+            UaeG10RationalUnitResponse.SumNumerator,
+            UaeG10RationalUnitResponse.DifferenceNumerator,
+            UaeG10RationalUnitResponse.UnlikeCoefficient,
+            UaeG10RationalUnitResponse.UnlikeConstant,
+            UaeG10RationalUnitResponse.ComplexSum,
+            UaeG10RationalUnitResponse.Vertical,
+            UaeG10RationalUnitResponse.Horizontal,
+            UaeG10RationalUnitResponse.GraphValue,
+            UaeG10RationalUnitResponse.HoleX,
+            UaeG10RationalUnitResponse.HoleY,
+            UaeG10RationalUnitResponse.Oblique,
+            UaeG10RationalUnitResponse.Direct,
+            UaeG10RationalUnitResponse.Inverse,
+            UaeG10RationalUnitResponse.Joint,
+            UaeG10RationalUnitResponse.Combined,
+            UaeG10RationalUnitResponse.Equation,
+            UaeG10RationalUnitResponse.Extraneous,
+            UaeG10RationalUnitResponse.Inequality,
+            UaeG10RationalUnitResponse.WorkRate,
+            UaeG10ProbabilityOddsResponse.Single,
+            UaeG10ProbabilityOddsResponse.OddsCounts,
+            UaeG10ProbabilityOddsResponse.FromOdds,
+            UaeG10ProbabilityOddsResponse.FromDecimal,
+            UaeG10ProbabilityOddsResponse.ExactSample,
+            UaeG10ProbabilityOddsResponse.SampleOdds,
+            UaeG10ProbabilityOddsResponse.AtLeast,
+            UaeG10ProbabilityOddsResponse.Composition,
+            UaeG10ProbabilityOddsResponse.CompositionOdds,
+            UaeG10ProbabilityOddsResponse.DifferentPair,
+            UaeG10ProbabilityOddsResponse.SuitPattern,
+            UaeG10ProbabilityOddsResponse.Repeat,
+            UaeG10ProbabilityOddsResponse.Ordered,
+            UaeG10ProbabilityOddsResponse.OrderedOdds,
+            UaeG10ProbabilityOddsResponse.Conditional,
+            UaeG10ProbabilityOddsResponse.Cut,
+            UaeG10ProbabilityOddsResponse.Data,
+            UaeG10ProbabilityOddsResponse.DataOdds,
+            UaeG10PostulatesResponse.Necessary,
+            UaeG10PostulatesResponse.Postulate,
+            UaeG10PostulatesResponse.Classify,
+            UaeG10PostulatesResponse.Midpoint,
+            UaeG10PostulatesResponse.SharedMidpoint,
+            UaeG10PostulatesResponse.Pairs,
+            UaeG10PostulatesResponse.Wheels,
+            UaeG10PostulatesResponse.Travel,
+            UaeG10PostulatesResponse.Slope,
+            UaeG10AlgebraicProofResponse.Property,
+            UaeG10AlgebraicProofResponse.Linear,
+            UaeG10AlgebraicProofResponse.Rational,
+            UaeG10AlgebraicProofResponse.Segment,
+            UaeG10AlgebraicProofResponse.Angle,
+            UaeG10AlgebraicProofResponse.Temperature,
+            UaeG10AlgebraicProofResponse.Motion,
+            UaeG10AlgebraicProofResponse.Acceleration,
+            UaeG10AlgebraicProofResponse.Heart,
+            UaeG10AlgebraicProofResponse.Gas,
+            UaeG10AlgebraicProofResponse.Voltage,
+            UaeG10AlgebraicProofResponse.Cube,
+            UaeG10AlgebraicProofResponse.Pythagoras,
+            UaeG10AlgebraicProofResponse.Equivalence,
+            UaeG10AngleRelationshipsResponse.Protractor,
+            UaeG10AngleRelationshipsResponse.Addition,
+            UaeG10AngleRelationshipsResponse.Complement,
+            UaeG10AngleRelationshipsResponse.Supplement,
+            UaeG10AngleRelationshipsResponse.RightPartition,
+            UaeG10AngleRelationshipsResponse.Linear,
+            UaeG10AngleRelationshipsResponse.VerticalEquation,
+            UaeG10AngleRelationshipsResponse.VerticalMeasure,
+            UaeG10AngleRelationshipsResponse.SameReference,
+            UaeG10AngleRelationshipsResponse.Bisector,
+            UaeG10AngleRelationshipsResponse.AroundPoint,
+            UaeG10AngleRelationshipsResponse.Reason,
+            UaeG10AngleRelationshipsResponse.Perpendicular,
+            UaeG10AngleRelationshipsResponse.Transfer,
+            UaeG10CircleResponse.Diameter,
+            UaeG10CircleResponse.Radius,
+            UaeG10CircleResponse.Circumference,
+            UaeG10CircleResponse.Approx,
+            UaeG10CircleResponse.Overlap,
+            UaeG10CircleResponse.Intersection,
+            UaeG10CircleResponse.Rectangle,
+            UaeG10CircleResponse.Inverse,
+            UaeG10CircleResponse.Central,
+            UaeG10CircleResponse.Major,
+            UaeG10CircleResponse.Pie,
+            UaeG10CircleResponse.ArcSum,
+            UaeG10CircleResponse.ArcCoeff,
+            UaeG10CircleResponse.ArcApprox,
+            UaeG10CircleResponse.ArcInverse,
+            UaeG10CircleResponse.ChordEqualArc,
+            UaeG10CircleResponse.ChordHalfArc,
+            UaeG10CircleResponse.ChordLength,
+            UaeG10CircleResponse.ChordDistance,
+            UaeG10CircleResponse.ChordAlgebra,
+            UaeG10CircleResponse.ChordEqualDistance,
+            UaeG10CircleResponse.ChordApprox,
+            UaeG10CircleResponse.InscribedHalf,
+            UaeG10CircleResponse.InscribedDouble,
+            UaeG10CircleResponse.InscribedEqual,
+            UaeG10CircleResponse.InscribedRight,
+            UaeG10CircleResponse.InscribedOpposite,
+            UaeG10CircleResponse.InscribedAlgebra,
+            UaeG10CircleResponse.InscribedCyclicAlgebra,
+            UaeG10CircleResponse.InscribedDiameter,
+            UaeG10CircleResponse.TangentCount,
+            UaeG10CircleResponse.TangentCheck,
+            UaeG10CircleResponse.TangentLength,
+            UaeG10CircleResponse.TangentRadius,
+            UaeG10CircleResponse.TangentCenter,
+            UaeG10CircleResponse.TangentEqual,
+            UaeG10CircleResponse.TangentExpression,
+            UaeG10CircleResponse.TangentPerimeter,
+            UaeG10CircleResponse.TangentQuad,
+            UaeG10CircleResponse.SecantInside,
+            UaeG10CircleResponse.SecantInsideArc,
+            UaeG10CircleResponse.SecantAdjacent,
+            UaeG10CircleResponse.SecantOn,
+            UaeG10CircleResponse.SecantOnArc,
+            UaeG10CircleResponse.SecantOutside,
+            UaeG10CircleResponse.SecantOutsideArc,
+            UaeG10CircleResponse.SecantTwoTangents,
+            UaeG10CircleResponse.SecantTangentArc,
+            UaeG10CircleResponse.SecantInsideAlgebra,
+            UaeG10CircleResponse.SecantOutsideAlgebra,
+            UaeG10CircleResponse.SegmentChord,
+            UaeG10CircleResponse.SegmentChordAlgebra,
+            UaeG10CircleResponse.SegmentSecantWhole,
+            UaeG10CircleResponse.SegmentSecantInner,
+            UaeG10CircleResponse.SegmentTangent,
+            UaeG10CircleResponse.SegmentTangentExternal,
+            UaeG10CircleResponse.SegmentTangentQuadratic,
+            UaeG10CircleResponse.SegmentSagitta,
+            UaeG10CircleResponse.SegmentApprox,
+            UaeG10CircleResponse.EquationCenterX,
+            UaeG10CircleResponse.EquationCenterY,
+            UaeG10CircleResponse.EquationRadius,
+            UaeG10CircleResponse.EquationPointRadiusSquared,
+            UaeG10CircleResponse.EquationGeneralRadius,
+            UaeG10CircleResponse.EquationConstant,
+            UaeG10CircleResponse.EquationDiameterCenter,
+            UaeG10CircleResponse.EquationPointTest,
+            UaeG10CircleResponse.EquationLineCount,
+            UaeG10CircleResponse.EquationLineX,
+            UaeG10CircleResponse.EquationThreePoints,
+            UaeG10CircleResponse.EquationDiagonal,
+            UaeG10CircleResponse.AreaDisk,
+            UaeG10CircleResponse.AreaDiameter,
+            UaeG10CircleResponse.AreaRadius,
+            UaeG10CircleResponse.AreaCircumference,
+            UaeG10CircleResponse.AreaSector,
+            UaeG10CircleResponse.AreaSectorAngle,
+            UaeG10CircleResponse.AreaSectorRadius,
+            UaeG10CircleResponse.AreaAnnulus,
+            UaeG10CircleResponse.AreaDiskApprox,
+            UaeG10CircleResponse.AreaSectorApprox,
+            UaeG10CircleResponse.AreaSegmentApprox,
+            UaeG10CircleResponse.AreaCompositeApprox,
+            "uae.g10.general.u14.l10.cos_from_sin_quadrant",
+            "uae.g10.general.u14.l10.sin_from_cos_quadrant",
+            "uae.g10.general.u14.l10.sec_from_tan_quadrant",
+            "uae.g10.general.u14.l10.csc_from_cot_quadrant",
+            "uae.g10.general.u14.l10.quotient_from_pair",
+            "uae.g10.general.u14.l10.identity_numeric_constant",
+            "uae.g10.general.u14.l10.cofunction_angle_degrees",
+            "uae.g10.general.u14.l10.odd_even_multiplier",
+            "uae.g10.general.u14.l11.equivalent_expression_choice",
+            "uae.g10.general.u14.l11.proof_coefficient",
+            "uae.g10.general.u14.l12.special_angle_exact_choice",
+            "uae.g10.general.u14.l12.sine_sum_difference",
+            "uae.g10.general.u14.l12.cosine_sum_difference",
+            "uae.g10.general.u14.l12.tangent_sum_difference",
+            "uae.g10.general.u14.l13.double_sine",
+            "uae.g10.general.u14.l13.double_cosine",
+            "uae.g10.general.u14.l13.double_tangent",
+            "uae.g10.general.u14.l13.half_squared",
+            "uae.g10.general.u14.l13.half_tangent",
+            "uae.g10.general.u14.l13.half_exact_choice",
+            "uae.g10.general.u14.l14.bounded_root_count",
+            "uae.g10.general.u14.l14.bounded_root_by_rank",
+            "uae.g10.general.u14.l14.real_solution_exists",
+            "uae.g10.general.u14.l14.function_period_degrees",
+            "uae.g10.general.u14.l15.mean_rounded",
+            "uae.g10.general.u14.l15.altitude_squared",
+            "uae.g10.general.u14.l15.leg_squared",
+            "uae.g10.general.u14.l15.projection_from_leg",
+            "uae.g10.general.u14.l16.triangle_classification",
+            "uae.g10.general.u14.l16.coordinate_distance_squared",
+            "uae.g10.general.u14.l17.height_with_eye_rounded",
+            "uae.g10.general.u14.l17.two_station_height_rounded",
+            "uae.g10.general.u14.l17.line_of_sight_rounded",
+            "uae.g10.general.u14.l17.angle_from_rise_run_rounded",
+            "uae.g10.general.u14.l18.special_length_squared",
+            "uae.g10.general.u14.l18.special_exact_choice",
+            "uae.g10.general.u14.l18.equilateral_altitude_squared",
+            "uae.g10.general.u14.l18.square_diagonal_squared",
+            "uae.g10.general.u15.l01.front_view_count",
+            "uae.g10.general.u15.l01.side_view_count",
+            "uae.g10.general.u15.l01.top_view_count",
+            "uae.g10.general.u15.l01.cross_section_choice",
+            "uae.g10.general.u15.l02.rectangular_prism_lateral",
+            "uae.g10.general.u15.l02.rectangular_prism_total",
+            "uae.g10.general.u15.l02.cylinder_lateral_pi_coefficient",
+            "uae.g10.general.u15.l02.cylinder_total_pi_coefficient",
+            "uae.g10.general.u15.l02.cylinder_height_from_lateral",
+            "uae.g10.general.u15.l02.open_cylinder_surface_pi_coefficient",
+            "uae.g10.general.u15.l03.square_pyramid_lateral",
+            "uae.g10.general.u15.l03.square_pyramid_total",
+            "uae.g10.general.u15.l03.square_pyramid_slant",
+            "uae.g10.general.u15.l03.cone_lateral_pi_coefficient",
+            "uae.g10.general.u15.l03.cone_total_pi_coefficient",
+            "uae.g10.general.u15.l03.cone_sector_angle",
+            "uae.g10.general.u15.l04.surface_pi_coefficient",
+            "uae.g10.general.u15.l04.volume_pi_coefficient",
+            "uae.g10.general.u15.l04.hemisphere_total_surface_pi_coefficient",
+            "uae.g10.general.u15.l04.hemisphere_volume_pi_coefficient",
+            "uae.g10.general.u15.l04.radius_from_surface",
+            "uae.g10.general.u15.l04.radius_from_volume",
+            "uae.g10.general.u15.l04.radius_from_great_circle",
+            "uae.g10.general.u15.l05.triangular_prism_volume",
+            "uae.g10.general.u15.l05.oblique_prism_volume",
+            "uae.g10.general.u15.l05.cylinder_volume_pi_coefficient",
+            "uae.g10.general.u15.l05.cylinder_height",
+            "uae.g10.general.u15.l05.cylinder_radius",
+            "uae.g10.general.u15.l05.equal_volume_prism_height",
+            "uae.g10.general.u15.l05.removed_rectangular_volume",
+            "uae.g10.general.u15.l06.rectangular_pyramid_volume",
+            "uae.g10.general.u15.l06.cone_volume_pi_coefficient",
+            "uae.g10.general.u15.l06.cone_volume_from_slant_pi_coefficient",
+            "uae.g10.general.u15.l06.square_pyramid_volume_from_slant",
+            "uae.g10.general.u15.l06.cone_height",
+            "uae.g10.general.u15.l06.cone_radius",
+            "uae.g10.general.u15.l06.composite_cylinder_cone_pi_coefficient",
+            "uae.g10.general.u15.l07.great_circle_classification",
+            "uae.g10.general.u15.l07.great_circle_intersections",
+            "uae.g10.general.u15.l07.great_circle_uniqueness",
+            "uae.g10.general.u15.l07.arc_length_pi_coefficient",
+            "uae.g10.general.u15.l08.box_similarity",
+            "uae.g10.general.u15.l08.scale_ratio",
+            "uae.g10.general.u15.l08.surface_area_ratio",
+            "uae.g10.general.u15.l08.volume_ratio",
+            "uae.g10.general.u15.l08.surface_area_scaled",
+            "uae.g10.general.u15.l08.volume_scaled",
+            "uae.g10.general.u15.l08.length_from_volume_ratio",
+            "uae.g10.general.u15.l08.length_from_area_ratio",
+            "uae.g10.general.u17.l05.identify_geometric",
+            "uae.g10.general.u17.l05.common_ratio",
+            "uae.g10.general.u17.l05.nth_term_signed",
+            "uae.g10.general.u17.l05.nth_term_decay",
+            "uae.g10.general.u17.l05.initial_term",
+            "uae.g10.general.u17.l05.average_rate",
+            "uae.g10.general.u17.l05.growth_model",
+            "uae.g10.general.u17.l06.arithmetic_recurrence_term",
+            "uae.g10.general.u17.l06.geometric_recurrence_term",
+            "uae.g10.general.u17.l06.affine_recurrence_term",
+            "uae.g10.general.u17.l06.index_dependent_recurrence",
+            "uae.g10.general.u17.l06.two_initial_terms",
+            "uae.g10.general.u17.l06.difference_from_explicit",
+            "uae.g10.general.u17.l06.ratio_from_explicit",
+            "uae.g10.general.u17.l06.initial_value_from_arithmetic",
+            "uae.g10.general.u14.l09.principal_angle_degrees",
+            "uae.g10.general.u14.l09.principal_pi_coefficient",
+            "uae.g10.general.u14.l09.inverse_defined",
+            "uae.g10.general.u14.l09.inverse_of_trig_principal_degrees",
+            "uae.g10.general.u14.l09.composition_rational",
+            "uae.g10.general.u14.l09.rounded_angle_degrees",
+            "uae.g10.general.u14.l09.right_triangle_angle_degrees",
+            "uae.g10.general.u14.l09.reciprocal_equation_solution_count",
+            "uae.g10.general.u14.l08.phase_shift_degrees",
+            "uae.g10.general.u14.l08.vertical_shift",
+            "uae.g10.general.u14.l08.amplitude",
+            "uae.g10.general.u14.l08.period_degrees",
+            "uae.g10.general.u14.l08.range_extreme",
+            "uae.g10.general.u14.l08.quarter_cycle_value",
+            "uae.g10.general.u14.l08.midline_from_extrema",
+            "uae.g10.general.u14.l08.amplitude_from_extrema",
+            "uae.g10.general.u14.l08.coefficient_from_period",
+            "uae.g10.general.u14.l07.amplitude",
+            "uae.g10.general.u14.l07.period_pi_coefficient",
+            "uae.g10.general.u14.l07.quarter_cycle_value",
+            "uae.g10.general.u14.l07.frequency_hz",
+            "uae.g10.general.u14.l07.range_extreme",
+            "uae.g10.general.u14.l07.first_positive_asymptote_degree",
+            "uae.g10.general.u14.l07.reciprocal_range_boundary",
+            "uae.g10.general.u14.l06.unit_circle_coordinate",
+            "uae.g10.general.u14.l06.period_from_peaks",
+            "uae.g10.general.u14.l06.periodic_value",
+            "uae.g10.general.u14.l06.cycle_count",
+            "uae.g10.general.u14.l06.axis_trig_value",
+            "uae.g10.general.u14.l06.special_sin_cos_rational",
+            "uae.g10.general.u14.l06.period_pi_coefficient",
+            "uae.g10.general.u14.l05.sas_side_rounded",
+            "uae.g10.general.u14.l05.sas_square_exact",
+            "uae.g10.general.u14.l05.sss_cosine_exact",
+            "uae.g10.general.u14.l05.sss_angle_rounded",
+            "uae.g10.general.u14.l05.triangle_type",
+            "uae.g10.general.u14.l05.choose_law",
+            "uae.g10.general.u14.l05.indirect_distance_rounded",
+            "uae.g10.general.u14.l04.sas_area_rounded",
+            "uae.g10.general.u14.l04.aas_side_rounded",
+            "uae.g10.general.u14.l04.third_angle",
+            "uae.g10.general.u14.l04.ssa_triangle_count",
+            "uae.g10.general.u14.l04.ssa_acute_solution_angle_rounded",
+            "uae.g10.general.u14.l04.regular_polygon_area_rounded",
+            "uae.g10.general.u14.l04.survey_distance_rounded",
+            "uae.g10.general.u14.l03.coordinate_ratio",
+            "uae.g10.general.u14.l03.reference_degree",
+            "uae.g10.general.u14.l03.reference_radian_pi_coefficient",
+            "uae.g10.general.u14.l03.quadrant_from_angle",
+            "uae.g10.general.u14.l03.quadrant_from_signs",
+            "uae.g10.general.u14.l03.axis_defined",
+            "uae.g10.general.u14.l03.axis_value",
+            "uae.g10.general.u14.l02.principal_degree",
+            "uae.g10.general.u14.l02.coterminal_degree",
+            "uae.g10.general.u14.l02.degree_to_pi_coefficient",
+            "uae.g10.general.u14.l02.pi_coefficient_to_degree",
+            "uae.g10.general.u14.l02.principal_radian_pi_coefficient",
+            "uae.g10.general.u14.l02.arc_pi_coefficient",
+            "uae.g10.general.u14.l02.arc_from_radians",
+            "uae.g10.general.u14.l02.radians_from_arc",
+            "uae.g10.general.u14.l02.radius_from_arc",
+            "uae.g10.general.u14.l02.parallelogram_area_exact",
+            "uae.g10.general.u14.l02.wheel_arc_pi_coefficient",
+            "uae.g10.general.u14.l01.ratio_six_exact",
+            "uae.g10.general.u14.l01.side_opposite_exact",
+            "uae.g10.general.u14.l01.side_adjacent_exact",
+            "uae.g10.general.u14.l01.side_hypotenuse_exact",
+            "uae.g10.general.u14.l01.angle_inverse_sine_rounded",
+            "uae.g10.general.u14.l01.angle_inverse_cosine_rounded",
+            "uae.g10.general.u14.l01.angle_inverse_tangent_rounded",
+            "uae.g10.general.u14.l01.special_angle_exact",
+            "uae.g10.general.u14.l01.elevation_height_rounded",
+            "uae.g10.general.u14.l01.depression_distance_rounded",
+            UaeG10ExponentialEquationResponse.Equation,
+            UaeG10ExponentialEquationResponse.Inequality,
+            UaeG10ExponentialEquationResponse.Factor,
+            UaeG10ExponentialEquationResponse.Model,
+            UaeG10ExponentialEquationResponse.PowerCoefficient,
+            UaeG10ExponentialEquationResponse.GrowthValue,
+            UaeG10ExponentialEquationResponse.HalfLife,
+            UaeG10ExponentialEquationResponse.Rate,
+            UaeG10ExponentialEquationResponse.Mixed,
+            UaeG10ExponentialEquationResponse.FirstPeriod,
+            UaeG10ExponentialEquationResponse.RoundedCooling,
+            UaeG10ExponentialEquationResponse.CoolingProbe,
+            UaeG10ExponentialEquationResponse.RoundedPowerCoefficient,
+            UaeG10ExponentialEquationResponse.RoundedPowerPrediction,
+            UaeG10ExponentialEquationResponse.RoundedPeriod,
+            UaeG10ExponentialEquationResponse.Forecast,
+            UaeG10ExponentialEquationResponse.Compound,
+            UaeG10ExponentialEquationResponse.Period,
+            UaeG10ExponentialEquationResponse.Cooling,
+            UaeG10ExponentialEquationResponse.Threshold,
+            UaeG10ExponentialEquationResponse.PowerLaw,
+            UaeG10ExponentialEquationResponse.Sum,
+            UaeG10QuadraticRatesResponse.Rate,
+            UaeG10QuadraticRatesResponse.Positive,
+            UaeG10QuadraticTransformsResponse.VertexX,
+            UaeG10QuadraticTransformsResponse.VertexY,
+            UaeG10QuadraticTransformsResponse.Opening,
+            UaeG10QuadraticTransformsResponse.Probe,
+            UaeG10QuadraticGraphResponse.VertexX,
+            UaeG10QuadraticGraphResponse.VertexY,
+            UaeG10QuadraticGraphResponse.Upward,
+            UaeG10QuadraticGraphResponse.Probe,
+            UaeG10QuadraticGraphRootsResponse.CountFamily,
+            UaeG10QuadraticGraphRootsResponse.LeftFamily,
+            UaeG10QuadraticGraphRootsResponse.RightFamily,
+            UaeG10QuadraticInequalityResponse.ProbeFamily,
+            UaeG10QuadraticInequalityResponse.MiddleFamily,
+            UaeG10QuadraticInequalityResponse.BoundaryFamily,
+            UaeG10QuadraticFormulaResponse.DiscriminantFamily,
+            UaeG10QuadraticFormulaResponse.RealCountFamily,
+            UaeG10QuadraticFormulaResponse.RootsFamily,
+            UaeG10CompletingSquareResponse.TermFamily,
+            UaeG10CompletingSquareResponse.RootsFamily,
+            UaeG10ComplexResponse.SumReal,
+            UaeG10ComplexResponse.SumImag,
+            UaeG10ComplexResponse.ProductReal,
+            UaeG10ComplexResponse.ProductImag,
+            UaeG10ComplexResponse.PowerReal,
+            UaeG10ComplexResponse.ModulusSquared,
+            UaeG10RadicalGraphResponse.Value,
+            UaeG10RadicalGraphResponse.DomainStart,
+            UaeG10RadicalOperationsResponse.Product,
+            UaeG10RadicalOperationsResponse.Conjugate,
+            UaeG10RadicalSimplificationResponse.Square,
+            UaeG10RadicalSimplificationResponse.Nth,
+            UaeG10ScientificExponentResponse.Normalize,
+            UaeG10ScientificExponentResponse.Product,
+            UaeG10ScientificExponentResponse.Quotient,
+            UaeG10RationalExponentsResponse.Positive,
+            UaeG10RationalExponentsResponse.Negative,
+            UaeG10RationalExponentsResponse.Equation,
+            UaeG10DistributiveFactorResponse.CommonFamily,
+            UaeG10DistributiveFactorResponse.RootsFamily,
+            UaeG10MonicQuadraticResponse.FactorFamily,
+            UaeG10MonicQuadraticResponse.RootsFamily,
+            UaeG10MonicQuadraticResponse.PrimeFamily,
+            UaeG10NonmonicQuadraticResponse.FactorFamily,
+            UaeG10NonmonicQuadraticResponse.RootsFamily,
+            UaeG10NonmonicQuadraticResponse.PrimeFamily,
+            UaeG10DifferenceSquaresResponse.FactorFamily,
+            UaeG10DifferenceSquaresResponse.RootsFamily,
+            UaeG10PerfectSquaresResponse.FactorFamily,
+            UaeG10PerfectSquaresResponse.RecognitionFamily,
+            UaeG10PerfectSquaresResponse.ShiftRootsFamily,
+            UaeG10PolynomialDivisionResponse.QuotientFamily,
+            UaeG10PolynomialDivisionResponse.RemainderFamily,
             "uae.g9.general.u07.l01.add_coefficient",
             "uae.g9.general.u07.l01.subtract_coefficient",
             "uae.g9.general.u07.l03.multiply_coefficient",
@@ -1103,6 +1767,27 @@ public sealed partial class ExactSkillContractQuestionEngine
         string answer)
     {
 
+        // G10 D.2: these eight reused numeric families rejected Arabic
+        // digits in ten declared lesson/family cases. Normalize digits only,
+        // retaining the original parser, parameter bounds and math verifier.
+        if (family is "geometry.coordinate.gradient_between_points" or
+            "geometry.angles.parallel_lines" or
+            "geometry.coordinate.evaluate_linear_rule" or
+            "geometry.right_triangle.pythagorean.exact" or
+            "geometry.right_triangle.pythagorean.find_leg_exact" or
+            "supporting.functions.inverse_linear" or
+            "supporting.functions.evaluate" or
+            "supporting.functions.composite")
+        {
+            answer = string.Concat((answer ?? string.Empty).Select(ch => ch switch
+            {
+                >= '٠' and <= '٩' => (char)('0' + ch - '٠'),
+                >= '۰' and <= '۹' => (char)('0' + ch - '۰'),
+                '−' => '-',
+                _ => ch
+            }));
+        }
+
         if (family=="uae.g9.general.u07.l03.multiply_coefficient")
         {
             var required=new[]{"a2","a1","a0","b2","b1","b0","degree"};
@@ -1158,6 +1843,259 @@ public sealed partial class ExactSkillContractQuestionEngine
                 return false;
             return (x==one&&y==two)||(x==two&&y==one);
         }
+
+        if (UaeG10PolynomialDivisionResponse.Supports(family))
+            return UaeG10PolynomialDivisionResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PerfectSquaresResponse.Supports(family))
+            return UaeG10PerfectSquaresResponse.Verify(family,parameters,answer);
+
+        if (UaeG10DifferenceSquaresResponse.Supports(family))
+            return UaeG10DifferenceSquaresResponse.Verify(family,parameters,answer);
+
+        if (UaeG10NonmonicQuadraticResponse.Supports(family))
+            return UaeG10NonmonicQuadraticResponse.Verify(family,parameters,answer);
+
+        if (UaeG10MonicQuadraticResponse.Supports(family))
+            return UaeG10MonicQuadraticResponse.Verify(family,parameters,answer);
+
+        if (UaeG10DistributiveFactorResponse.Supports(family))
+            return UaeG10DistributiveFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(family))
+            return UaeG10QuadraticInequalityResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(family))
+            return UaeG10QuadraticFormulaResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CompletingSquareResponse.Supports(family))
+            return UaeG10CompletingSquareResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ComplexResponse.Supports(family))
+            return UaeG10ComplexResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticGraphRootsResponse.Supports(family))
+            return UaeG10QuadraticGraphRootsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(family))
+            return UaeG10AngleRelationshipsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AlgebraicProofResponse.Supports(family))
+            return UaeG10AlgebraicProofResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PostulatesResponse.Supports(family))
+            return UaeG10PostulatesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RemainingResponse.Supports(family))
+            return UaeG10RemainingResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalUnitResponse.Supports(family))
+            return UaeG10RationalUnitResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(family))
+            return UaeG10ProbabilityOddsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentialLogisticResponse.Supports(family))
+            return UaeG10ExponentialLogisticResponse.Verify(family,parameters,answer);
+
+        if (UaeG10NaturalLogarithmResponse.Supports(family))
+            return UaeG10NaturalLogarithmResponse.Verify(family,parameters,answer);
+        if (UaeG10CommonLogarithmResponse.Supports(family))
+            return UaeG10CommonLogarithmResponse.Verify(family,parameters,answer);
+        if (UaeG10LogarithmPropertiesResponse.Supports(family))
+            return UaeG10LogarithmPropertiesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(family))
+            return UaeG10LogarithmicEquationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(family))
+            return UaeG10LogarithmicGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentialGraphResponse.Supports(family))
+            return UaeG10ExponentialGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RecurrencesResponse.Supports(family))
+            return UaeG10RecurrencesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GeometricExponentialResponse.Supports(family))
+            return UaeG10GeometricExponentialResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SolidSimilarityResponse.Supports(family))
+            return UaeG10SolidSimilarityResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SphericalGeometryResponse.Supports(family))
+            return UaeG10SphericalGeometryResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PyramidVolumeResponse.Supports(family))
+            return UaeG10PyramidVolumeResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PrismVolumeResponse.Supports(family))
+            return UaeG10PrismVolumeResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SphereResponse.Supports(family))
+            return UaeG10SphereResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PyramidSurfaceResponse.Supports(family))
+            return UaeG10PyramidSurfaceResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SolidSurfaceResponse.Supports(family))
+            return UaeG10SolidSurfaceResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SolidViewsResponse.Supports(family))
+            return UaeG10SolidViewsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SpecialRightResponse.Supports(family))
+            return UaeG10SpecialRightResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ElevationResponse.Supports(family))
+            return UaeG10ElevationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RightTriangleRepairResponse.Supports(family))
+            return UaeG10RightTriangleRepairResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigEquationsResponse.Supports(family))
+            return UaeG10TrigEquationsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(family))
+            return UaeG10TrigDoubleHalfResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigAngleSumResponse.Supports(family))
+            return UaeG10TrigAngleSumResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigProofResponse.Supports(family))
+            return UaeG10TrigProofResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigIdentitiesResponse.Supports(family))
+            return UaeG10TrigIdentitiesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10InverseTrigResponse.Supports(family))
+            return UaeG10InverseTrigResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigShiftsResponse.Supports(family))
+            return UaeG10TrigShiftsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigGraphsResponse.Supports(family))
+            return UaeG10TrigGraphsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PeriodicResponse.Supports(family))
+            return UaeG10PeriodicResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CosineRuleResponse.Supports(family))
+            return UaeG10CosineRuleResponse.Verify(family,parameters,answer);
+
+        if (UaeG10SineRuleResponse.Supports(family))
+            return UaeG10SineRuleResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GeneralAnglesResponse.Supports(family))
+            return UaeG10GeneralAnglesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AngleMeasureResponse.Supports(family))
+            return UaeG10AngleMeasureResponse.Verify(family,parameters,answer);
+
+        if (UaeG10TrigResponse.Supports(family))
+            return UaeG10TrigResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CircleResponse.Supports(family))
+            return UaeG10CircleResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentialEquationResponse.Supports(family))
+            return UaeG10ExponentialEquationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticRatesResponse.Supports(family))
+            return UaeG10QuadraticRatesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(family))
+            return UaeG10QuadraticTransformsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10QuadraticGraphResponse.Supports(family))
+            return UaeG10QuadraticGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(family))
+            return UaeG10AugmentedMatrixResponse.Verify(family,parameters,answer);
+
+        if (UaeG10InverseMatrixResponse.Supports(family))
+            return UaeG10InverseMatrixResponse.Verify(family,parameters,answer);
+
+        if (UaeG10CramerResponse.Supports(family))
+            return UaeG10CramerResponse.Verify(family,parameters,answer);
+
+        if (UaeG10MatrixProductResponse.Supports(family))
+            return UaeG10MatrixProductResponse.Verify(family,parameters,answer);
+
+        if (UaeG10MatrixOperationsResponse.Supports(family))
+            return UaeG10MatrixOperationsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(family))
+            return UaeG10ThreeVarSystemResponse.Verify(family,parameters,answer);
+
+        if (UaeG10LinearProgrammingResponse.Supports(family))
+            return UaeG10LinearProgrammingResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GraphInequalitiesResponse.Supports(family))
+            return UaeG10GraphInequalitiesResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GraphSystemsResponse.Supports(family))
+            return UaeG10GraphSystemsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalEquationResponse.Supports(family))
+            return UaeG10RadicalEquationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalGraphResponse.Supports(family))
+            return UaeG10RadicalGraphResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalOperationsResponse.Supports(family))
+            return UaeG10RadicalOperationsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(family))
+            return UaeG10RadicalSimplificationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ScientificExponentResponse.Supports(family))
+            return UaeG10ScientificExponentResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalExponentsResponse.Supports(family))
+            return UaeG10RationalExponentsResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentQuotientResponse.Supports(family))
+            return UaeG10ExponentQuotientResponse.Verify(family,parameters,answer);
+
+        if (UaeG10ExponentProductResponse.Supports(family))
+            return UaeG10ExponentProductResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RationalZerosResponse.Supports(family))
+            return UaeG10RationalZerosResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RootsZerosResponse.Supports(family))
+            return UaeG10RootsZerosResponse.Verify(family,parameters,answer);
+
+        if (UaeG10RemainderFactorResponse.Supports(family))
+            return UaeG10RemainderFactorResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PolynomialEquationResponse.Supports(family))
+            return UaeG10PolynomialEquationResponse.Verify(family,parameters,answer);
+
+        if (UaeG10GraphAnalysisResponse.Supports(family))
+            return UaeG10GraphAnalysisResponse.Verify(family,parameters,answer);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(family))
+            return UaeG10PolynomialFunctionResponse.Verify(family,parameters,answer);
+
+        if (UaeG10DivisionResponse.Supports(family))
+            return UaeG10DivisionResponse.Verify(family,parameters,answer);
+
+        if (family==UaeG10SpecialProductsResponse.Family)
+            return UaeG10SpecialProductsResponse.Verify(parameters,answer);
+
+        if (UaeG10PolynomialProductResponse.Supports(family))
+            return UaeG10PolynomialProductResponse.Verify(family,parameters,answer);
+
+        if (family == UaeG10DistributedEquationResponse.Family)
+            return UaeG10DistributedEquationResponse.Verify(parameters, answer);
+
+        if (UaeG10MonomialPolynomialResponse.Supports(family))
+            return UaeG10MonomialPolynomialResponse.Verify(family,parameters,answer);
+
+        if (family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
+            return UaeG10PolynomialResponse.Verify(parameters,answer);
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {
@@ -3545,6 +4483,278 @@ public sealed partial class ExactSkillContractQuestionEngine
                 $"حل المعادلة {a}س²+({middle})س+({constant})=٠ بتحليل كثيرة الحدود إلى عوامل وتطبيق خاصية الضرب الصفري. اكتب الجذرين مفصولين بفاصلة.",
                 "نبحث عن عاملين يحققان المعامل والحد الثابت؛ بعد التحليل نساوي كل عامل بالصفر ونتحقق من الجذرين بالتعويض.",
                 AssessmentItemType.ShortAnswer,("a",a),("r1",one),("r2",two));
+        }
+
+        if (UaeG10PolynomialDivisionResponse.Supports(family))
+            return BuildG10PolynomialDivision(family,random,difficulty);
+
+        if (UaeG10PerfectSquaresResponse.Supports(family))
+            return BuildG10PerfectSquares(family,random,difficulty);
+
+        if (UaeG10DifferenceSquaresResponse.Supports(family))
+            return BuildG10DifferenceSquares(family,random,difficulty);
+
+        if (UaeG10NonmonicQuadraticResponse.Supports(family))
+            return BuildG10NonmonicQuadratic(family,random,difficulty);
+
+        if (UaeG10MonicQuadraticResponse.Supports(family))
+            return BuildG10MonicQuadratic(family,random,difficulty);
+
+        if (UaeG10DistributiveFactorResponse.Supports(family))
+            return BuildG10DistributiveFactor(family,random,difficulty);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(family))
+            return BuildG10QuadraticInequality(family,random,difficulty);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(family))
+            return BuildG10QuadraticFormula(family,random,difficulty);
+
+        if (UaeG10CompletingSquareResponse.Supports(family))
+            return BuildG10CompletingSquare(family,random,difficulty);
+
+        if (UaeG10ComplexResponse.Supports(family))
+            return BuildG10ComplexNumber(family,random,difficulty);
+
+        if (UaeG10QuadraticGraphRootsResponse.Supports(family))
+            return BuildG10QuadraticGraphRoots(family,random,difficulty);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(family))
+            return BuildG10AngleRelationships(family,random,difficulty);
+
+        if (UaeG10AlgebraicProofResponse.Supports(family))
+            return BuildG10AlgebraicProof(family,random,difficulty);
+
+        if (UaeG10PostulatesResponse.Supports(family))
+            return BuildG10Postulates(family,random,difficulty);
+
+        if (UaeG10RemainingResponse.Supports(family))
+            return BuildG10Remaining(family,random,difficulty);
+
+        if (UaeG10RationalUnitResponse.Supports(family))
+            return BuildG10RationalUnit(family,random,difficulty);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(family))
+            return BuildG10ProbabilityOdds(family,random,difficulty);
+
+        if (UaeG10ExponentialLogisticResponse.Supports(family))
+            return BuildG10ExponentialLogisticModels(family,random,difficulty);
+
+        if (UaeG10NaturalLogarithmResponse.Supports(family))
+            return BuildG10NaturalLogarithm(family,random,difficulty);
+        if (UaeG10CommonLogarithmResponse.Supports(family))
+            return BuildG10CommonLogarithm(family,random,difficulty);
+        if (UaeG10LogarithmPropertiesResponse.Supports(family))
+            return BuildG10LogarithmProperties(family,random,difficulty);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(family))
+            return BuildG10LogarithmicEquation(family,random,difficulty);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(family))
+            return BuildG10LogarithmicGraph(family,random,difficulty);
+
+        if (UaeG10ExponentialGraphResponse.Supports(family))
+            return BuildG10ExponentialGraph(family,random,difficulty);
+
+        if (UaeG10RecurrencesResponse.Supports(family))
+            return BuildG10Recurrences(family,random,difficulty);
+
+        if (UaeG10GeometricExponentialResponse.Supports(family))
+            return BuildG10GeometricExponential(family,random,difficulty);
+
+        if (UaeG10SolidSimilarityResponse.Supports(family))
+            return BuildG10SolidSimilarity(family,random,difficulty);
+
+        if (UaeG10SphericalGeometryResponse.Supports(family))
+            return BuildG10SphericalGeometry(family,random,difficulty);
+
+        if (UaeG10PyramidVolumeResponse.Supports(family))
+            return BuildG10PyramidVolume(family,random,difficulty);
+
+        if (UaeG10PrismVolumeResponse.Supports(family))
+            return BuildG10PrismVolume(family,random,difficulty);
+
+        if (UaeG10SphereResponse.Supports(family))
+            return BuildG10Sphere(family,random,difficulty);
+
+        if (UaeG10PyramidSurfaceResponse.Supports(family))
+            return BuildG10PyramidSurface(family,random,difficulty);
+
+        if (UaeG10SolidSurfaceResponse.Supports(family))
+            return BuildG10SolidSurface(family,random,difficulty);
+
+        if (UaeG10SolidViewsResponse.Supports(family))
+            return BuildG10SolidViews(family,random,difficulty);
+
+        if (UaeG10SpecialRightResponse.Supports(family))
+            return BuildG10SpecialRight(family,random,difficulty);
+
+        if (UaeG10ElevationResponse.Supports(family))
+            return BuildG10Elevation(family,random,difficulty);
+
+        if (UaeG10RightTriangleRepairResponse.Supports(family))
+            return BuildG10RightTriangleRepair(family,random,difficulty);
+
+        if (UaeG10TrigEquationsResponse.Supports(family))
+            return BuildG10TrigEquations(family,random,difficulty);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(family))
+            return BuildG10TrigDoubleHalf(family,random,difficulty);
+
+        if (UaeG10TrigAngleSumResponse.Supports(family))
+            return BuildG10TrigAngleSum(family,random,difficulty);
+
+        if (UaeG10TrigProofResponse.Supports(family))
+            return BuildG10TrigProof(family,random,difficulty);
+
+        if (UaeG10TrigIdentitiesResponse.Supports(family))
+            return BuildG10TrigIdentities(family,random,difficulty);
+
+        if (UaeG10InverseTrigResponse.Supports(family))
+            return BuildG10InverseTrig(family,random,difficulty);
+
+        if (UaeG10TrigShiftsResponse.Supports(family))
+            return BuildG10TrigShifts(family,random,difficulty);
+
+        if (UaeG10TrigGraphsResponse.Supports(family))
+            return BuildG10TrigGraphs(family,random,difficulty);
+
+        if (UaeG10PeriodicResponse.Supports(family))
+            return BuildG10Periodic(family,random,difficulty);
+
+        if (UaeG10CosineRuleResponse.Supports(family))
+            return BuildG10CosineRule(family,random,difficulty);
+
+        if (UaeG10SineRuleResponse.Supports(family))
+            return BuildG10SineRule(family,random,difficulty);
+
+        if (UaeG10GeneralAnglesResponse.Supports(family))
+            return BuildG10GeneralAngles(family,random,difficulty);
+
+        if (UaeG10AngleMeasureResponse.Supports(family))
+            return BuildG10AngleMeasure(family,random,difficulty);
+
+        if (UaeG10TrigResponse.Supports(family))
+            return BuildG10Trig(family,random,difficulty);
+
+        if (UaeG10CircleResponse.Supports(family))
+            return BuildG10Circle(family,random,difficulty);
+
+        if (UaeG10ExponentialEquationResponse.Supports(family))
+            return BuildG10ExponentialEquation(family,random,difficulty);
+
+        if (UaeG10QuadraticRatesResponse.Supports(family))
+            return BuildG10QuadraticRates(family,random,difficulty);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(family))
+            return BuildG10QuadraticTransforms(family,random,difficulty);
+
+        if (UaeG10QuadraticGraphResponse.Supports(family))
+            return BuildG10QuadraticGraph(family,random,difficulty);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(family))
+            return BuildG10AugmentedMatrix(family,random,difficulty);
+
+        if (UaeG10InverseMatrixResponse.Supports(family))
+            return BuildG10InverseMatrix(family,random,difficulty);
+
+        if (UaeG10CramerResponse.Supports(family))
+            return BuildG10Cramer(family,random,difficulty);
+
+        if (UaeG10MatrixProductResponse.Supports(family))
+            return BuildG10MatrixProduct(family,random,difficulty);
+
+        if (UaeG10MatrixOperationsResponse.Supports(family))
+            return BuildG10MatrixEntryOperation(family,random,difficulty);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(family))
+            return BuildG10ThreeVarSystem(family,random,difficulty);
+
+        if (UaeG10LinearProgrammingResponse.Supports(family))
+            return BuildG10LinearProgramming(family,random,difficulty);
+
+        if (UaeG10GraphInequalitiesResponse.Supports(family))
+            return BuildG10GraphInequalities(family,random,difficulty);
+
+        if (UaeG10GraphSystemsResponse.Supports(family))
+            return BuildG10GraphSystems(family,random,difficulty);
+
+        if (UaeG10RadicalEquationResponse.Supports(family))
+            return BuildG10RadicalEquation(family,random,difficulty);
+
+        if (UaeG10RadicalGraphResponse.Supports(family))
+            return BuildG10RadicalGraph(family,random,difficulty);
+
+        if (UaeG10RadicalOperationsResponse.Supports(family))
+            return BuildG10RadicalOperation(family,random,difficulty);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(family))
+            return BuildG10RadicalCoefficient(family,random,difficulty);
+
+        if (UaeG10ScientificExponentResponse.Supports(family))
+            return BuildG10ScientificExponent(family,random,difficulty);
+
+        if (UaeG10RationalExponentsResponse.Supports(family))
+            return BuildG10RationalExponents(family,random,difficulty);
+
+        if (UaeG10ExponentQuotientResponse.Supports(family))
+            return BuildG10ExponentQuotient(family,random,difficulty);
+
+        if (UaeG10ExponentProductResponse.Supports(family))
+            return BuildG10ExponentProduct(family,random,difficulty);
+
+        if (UaeG10RationalZerosResponse.Supports(family))
+            return BuildG10RationalZeros(family,random,difficulty);
+
+        if (UaeG10RootsZerosResponse.Supports(family))
+            return BuildG10RootsZeros(family,random,difficulty);
+
+        if (UaeG10RemainderFactorResponse.Supports(family))
+            return BuildG10RemainderFactor(family,random,difficulty);
+
+        if (UaeG10PolynomialEquationResponse.Supports(family))
+            return BuildG10PolynomialEquation(family,random,difficulty);
+
+        if (UaeG10GraphAnalysisResponse.Supports(family))
+            return BuildG10GraphAnalysis(family,random,difficulty);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(family))
+            return BuildG10PolynomialFunction(family,random,difficulty);
+
+        if (UaeG10DivisionResponse.Supports(family))
+            return BuildG10Division(family,random,difficulty);
+
+        if (family==UaeG10SpecialProductsResponse.Family)
+            return BuildG10SpecialProduct(family,random,difficulty);
+
+        if (UaeG10PolynomialProductResponse.Supports(family))
+            return BuildG10PolynomialProduct(family,random,difficulty);
+
+        if (family == UaeG10DistributedEquationResponse.Family)
+            return BuildG10DistributedEquation(family, random, difficulty);
+
+        if (UaeG10MonomialPolynomialResponse.Supports(family))
+            return BuildG10MonomialPolynomial(family,random,difficulty);
+
+        if (family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
+        {
+            int bnd = difficulty switch
+            {
+                ExactSkillQuestionDifficulty.Stretch => 7,
+                ExactSkillQuestionDifficulty.Challenge => 9,
+                _ => 5
+            };
+            int a2 = random.Next(-bnd,bnd+1), a1 = random.Next(-bnd,bnd+1),
+                a0 = random.Next(-bnd,bnd+1), b2 = random.Next(-bnd,bnd+1),
+                b1 = random.Next(-bnd,bnd+1), b0 = random.Next(-bnd,bnd+1);
+            int subtract = random.Next(2);
+            string operation = subtract == 1 ? "−" : "+";
+            return Problem(family,
+                $"بسّط ({a2}س²+({a1})س+({a0})) {operation} ({b2}س²+({b1})س+({b0})). " +
+                "اكتب كثيرة الحدود الناتجة كاملة في صورة قياسية، مثل: ٢س²−٣س+٤.",
+                "اجمع معاملات القوى المتشابهة؛ وإذا كانت العملية طرحًا فاعكس إشارة كل حد في المطروح.",
+                AssessmentItemType.ShortAnswer,
+                ("a2",a2),("a1",a1),("a0",a0),
+                ("b2",b2),("b1",b1),("b0",b0),("subtract",subtract));
         }
 
         if (family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
@@ -9620,6 +10830,263 @@ public sealed partial class ExactSkillContractQuestionEngine
         if(problem.Family is "uae.g9.general.u07.l06.monic_quadratic_roots" or "uae.g9.general.u07.l07.nonmonic_quadratic_roots")
             return string.Join(",",new[]{p["r1"],p["r2"]}.OrderBy(x=>x)
                 .Select(x=>x.ToString(CultureInfo.InvariantCulture)));
+
+        if (UaeG10PolynomialDivisionResponse.Supports(problem.Family))
+            return UaeG10PolynomialDivisionResponse.Format(problem.Family,p);
+
+        if (UaeG10PerfectSquaresResponse.Supports(problem.Family))
+            return UaeG10PerfectSquaresResponse.Format(problem.Family,p);
+
+        if (UaeG10DifferenceSquaresResponse.Supports(problem.Family))
+            return UaeG10DifferenceSquaresResponse.Format(problem.Family,p);
+
+        if (UaeG10NonmonicQuadraticResponse.Supports(problem.Family))
+            return UaeG10NonmonicQuadraticResponse.Format(problem.Family,p);
+
+        if (UaeG10MonicQuadraticResponse.Supports(problem.Family))
+            return UaeG10MonicQuadraticResponse.Format(problem.Family,p);
+
+        if (UaeG10DistributiveFactorResponse.Supports(problem.Family))
+            return UaeG10DistributiveFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticInequalityResponse.Supports(problem.Family))
+            return UaeG10QuadraticInequalityResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticFormulaResponse.Supports(problem.Family))
+            return UaeG10QuadraticFormulaResponse.Format(problem.Family,p);
+
+        if (UaeG10CompletingSquareResponse.Supports(problem.Family))
+            return UaeG10CompletingSquareResponse.Format(problem.Family,p);
+
+        if (UaeG10ComplexResponse.Supports(problem.Family))
+            return UaeG10ComplexResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticGraphRootsResponse.Supports(problem.Family))
+            return UaeG10QuadraticGraphRootsResponse.Format(problem.Family,p);
+
+        if (UaeG10AngleRelationshipsResponse.Supports(problem.Family))
+            return UaeG10AngleRelationshipsResponse.Format(problem.Family,p);
+
+        if (UaeG10AlgebraicProofResponse.Supports(problem.Family))
+            return UaeG10AlgebraicProofResponse.Format(problem.Family,p);
+
+        if (UaeG10PostulatesResponse.Supports(problem.Family))
+            return UaeG10PostulatesResponse.Format(problem.Family,p);
+
+        if (UaeG10RemainingResponse.Supports(problem.Family))
+            return UaeG10RemainingResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalUnitResponse.Supports(problem.Family))
+            return UaeG10RationalUnitResponse.Format(problem.Family,p);
+
+        if (UaeG10ProbabilityOddsResponse.Supports(problem.Family))
+            return UaeG10ProbabilityOddsResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentialLogisticResponse.Supports(problem.Family))
+            return UaeG10ExponentialLogisticResponse.Format(problem.Family,p);
+
+        if (UaeG10NaturalLogarithmResponse.Supports(problem.Family))
+            return UaeG10NaturalLogarithmResponse.Format(problem.Family,p);
+        if (UaeG10CommonLogarithmResponse.Supports(problem.Family))
+            return UaeG10CommonLogarithmResponse.Format(problem.Family,p);
+        if (UaeG10LogarithmPropertiesResponse.Supports(problem.Family))
+            return UaeG10LogarithmPropertiesResponse.Format(problem.Family,p);
+
+        if (UaeG10LogarithmicEquationResponse.Supports(problem.Family))
+            return UaeG10LogarithmicEquationResponse.Format(problem.Family,p);
+
+        if (UaeG10LogarithmicGraphResponse.Supports(problem.Family))
+            return UaeG10LogarithmicGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentialGraphResponse.Supports(problem.Family))
+            return UaeG10ExponentialGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10RecurrencesResponse.Supports(problem.Family))
+            return UaeG10RecurrencesResponse.Format(problem.Family,p);
+
+        if (UaeG10GeometricExponentialResponse.Supports(problem.Family))
+            return UaeG10GeometricExponentialResponse.Format(problem.Family,p);
+
+        if (UaeG10SolidSimilarityResponse.Supports(problem.Family))
+            return UaeG10SolidSimilarityResponse.Format(problem.Family,p);
+
+        if (UaeG10SphericalGeometryResponse.Supports(problem.Family))
+            return UaeG10SphericalGeometryResponse.Format(problem.Family,p);
+
+        if (UaeG10PyramidVolumeResponse.Supports(problem.Family))
+            return UaeG10PyramidVolumeResponse.Format(problem.Family,p);
+
+        if (UaeG10PrismVolumeResponse.Supports(problem.Family))
+            return UaeG10PrismVolumeResponse.Format(problem.Family,p);
+
+        if (UaeG10SphereResponse.Supports(problem.Family))
+            return UaeG10SphereResponse.Format(problem.Family,p);
+
+        if (UaeG10PyramidSurfaceResponse.Supports(problem.Family))
+            return UaeG10PyramidSurfaceResponse.Format(problem.Family,p);
+
+        if (UaeG10SolidSurfaceResponse.Supports(problem.Family))
+            return UaeG10SolidSurfaceResponse.Format(problem.Family,p);
+
+        if (UaeG10SolidViewsResponse.Supports(problem.Family))
+            return UaeG10SolidViewsResponse.Format(problem.Family,p);
+
+        if (UaeG10SpecialRightResponse.Supports(problem.Family))
+            return UaeG10SpecialRightResponse.Format(problem.Family,p);
+
+        if (UaeG10ElevationResponse.Supports(problem.Family))
+            return UaeG10ElevationResponse.Format(problem.Family,p);
+
+        if (UaeG10RightTriangleRepairResponse.Supports(problem.Family))
+            return UaeG10RightTriangleRepairResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigEquationsResponse.Supports(problem.Family))
+            return UaeG10TrigEquationsResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigDoubleHalfResponse.Supports(problem.Family))
+            return UaeG10TrigDoubleHalfResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigAngleSumResponse.Supports(problem.Family))
+            return UaeG10TrigAngleSumResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigProofResponse.Supports(problem.Family))
+            return UaeG10TrigProofResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigIdentitiesResponse.Supports(problem.Family))
+            return UaeG10TrigIdentitiesResponse.Format(problem.Family,p);
+
+        if (UaeG10InverseTrigResponse.Supports(problem.Family))
+            return UaeG10InverseTrigResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigShiftsResponse.Supports(problem.Family))
+            return UaeG10TrigShiftsResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigGraphsResponse.Supports(problem.Family))
+            return UaeG10TrigGraphsResponse.Format(problem.Family,p);
+
+        if (UaeG10PeriodicResponse.Supports(problem.Family))
+            return UaeG10PeriodicResponse.Format(problem.Family,p);
+
+        if (UaeG10CosineRuleResponse.Supports(problem.Family))
+            return UaeG10CosineRuleResponse.Format(problem.Family,p);
+
+        if (UaeG10SineRuleResponse.Supports(problem.Family))
+            return UaeG10SineRuleResponse.Format(problem.Family,p);
+
+        if (UaeG10GeneralAnglesResponse.Supports(problem.Family))
+            return UaeG10GeneralAnglesResponse.Format(problem.Family,p);
+
+        if (UaeG10AngleMeasureResponse.Supports(problem.Family))
+            return UaeG10AngleMeasureResponse.Format(problem.Family,p);
+
+        if (UaeG10TrigResponse.Supports(problem.Family))
+            return UaeG10TrigResponse.Format(problem.Family,p);
+
+        if (UaeG10CircleResponse.Supports(problem.Family))
+            return UaeG10CircleResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentialEquationResponse.Supports(problem.Family))
+            return UaeG10ExponentialEquationResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticRatesResponse.Supports(problem.Family))
+            return UaeG10QuadraticRatesResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticTransformsResponse.Supports(problem.Family))
+            return UaeG10QuadraticTransformsResponse.Format(problem.Family,p);
+
+        if (UaeG10QuadraticGraphResponse.Supports(problem.Family))
+            return UaeG10QuadraticGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10AugmentedMatrixResponse.Supports(problem.Family))
+            return UaeG10AugmentedMatrixResponse.Format(problem.Family,p);
+
+        if (UaeG10InverseMatrixResponse.Supports(problem.Family))
+            return UaeG10InverseMatrixResponse.Format(problem.Family,p);
+
+        if (UaeG10CramerResponse.Supports(problem.Family))
+            return UaeG10CramerResponse.Format(problem.Family,p);
+
+        if (UaeG10MatrixProductResponse.Supports(problem.Family))
+            return UaeG10MatrixProductResponse.Format(problem.Family,p);
+
+        if (UaeG10MatrixOperationsResponse.Supports(problem.Family))
+            return UaeG10MatrixOperationsResponse.Format(problem.Family,p);
+
+        if (UaeG10ThreeVarSystemResponse.Supports(problem.Family))
+            return UaeG10ThreeVarSystemResponse.Format(problem.Family,p);
+
+        if (UaeG10LinearProgrammingResponse.Supports(problem.Family))
+            return UaeG10LinearProgrammingResponse.Format(problem.Family,p);
+
+        if (UaeG10GraphInequalitiesResponse.Supports(problem.Family))
+            return UaeG10GraphInequalitiesResponse.Format(problem.Family,p);
+
+        if (UaeG10GraphSystemsResponse.Supports(problem.Family))
+            return UaeG10GraphSystemsResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalEquationResponse.Supports(problem.Family))
+            return UaeG10RadicalEquationResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalGraphResponse.Supports(problem.Family))
+            return UaeG10RadicalGraphResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalOperationsResponse.Supports(problem.Family))
+            return UaeG10RadicalOperationsResponse.Format(problem.Family,p);
+
+        if (UaeG10RadicalSimplificationResponse.Supports(problem.Family))
+            return UaeG10RadicalSimplificationResponse.Format(problem.Family,p);
+
+        if (UaeG10ScientificExponentResponse.Supports(problem.Family))
+            return UaeG10ScientificExponentResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalExponentsResponse.Supports(problem.Family))
+            return UaeG10RationalExponentsResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentQuotientResponse.Supports(problem.Family))
+            return UaeG10ExponentQuotientResponse.Format(problem.Family,p);
+
+        if (UaeG10ExponentProductResponse.Supports(problem.Family))
+            return UaeG10ExponentProductResponse.Format(problem.Family,p);
+
+        if (UaeG10RationalZerosResponse.Supports(problem.Family))
+            return UaeG10RationalZerosResponse.Format(problem.Family,p);
+
+        if (UaeG10RootsZerosResponse.Supports(problem.Family))
+            return UaeG10RootsZerosResponse.Format(problem.Family,p);
+
+        if (UaeG10RemainderFactorResponse.Supports(problem.Family))
+            return UaeG10RemainderFactorResponse.Format(problem.Family,p);
+
+        if (UaeG10PolynomialEquationResponse.Supports(problem.Family))
+            return UaeG10PolynomialEquationResponse.Format(problem.Family,p);
+
+        if (UaeG10GraphAnalysisResponse.Supports(problem.Family))
+            return UaeG10GraphAnalysisResponse.Format(problem.Family,p);
+
+        if (UaeG10PolynomialFunctionResponse.Supports(problem.Family))
+            return UaeG10PolynomialFunctionResponse.Format(problem.Family,p);
+
+        if (UaeG10DivisionResponse.Supports(problem.Family))
+            return UaeG10DivisionResponse.Format(problem.Family,p);
+
+        if (problem.Family==UaeG10SpecialProductsResponse.Family)
+            return UaeG10SpecialProductsResponse.Format(p);
+
+        if (UaeG10PolynomialProductResponse.Supports(problem.Family))
+            return problem.Family==UaeG10PolynomialProductResponse.WholeFamily
+                ? UaeG10PolynomialProductResponse.Format(p)
+                : UaeG10PolynomialProductResponse.NumericCoefficient(p);
+
+        if (problem.Family == UaeG10DistributedEquationResponse.Family)
+            return UaeG10DistributedEquationResponse.CorrectAnswer(p);
+
+        if (UaeG10MonomialPolynomialResponse.Supports(problem.Family))
+            return problem.Family==UaeG10MonomialPolynomialResponse.WholeFamily
+                ? UaeG10MonomialPolynomialResponse.Format(p)
+                : UaeG10MonomialPolynomialResponse.NumericCoefficient(p);
+
+        if (problem.Family == "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression")
+            return UaeG10PolynomialResponse.Format(problem.Parameters);
 
         if (problem.Family is "uae.g9.general.u07.l01.add_coefficient" or "uae.g9.general.u07.l01.subtract_coefficient")
         {

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 6,
+  "canonicalCode": "G10-U01-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:06:SOLVING-X-BX-C-0",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "primarySource": "01.pdf",
+  "primarySourcePdfPages": [
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "primarySourcePrintedPages": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "primarySkills": [
+    "algebra.quadratic.factor_monic"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l06.monic_full_factor",
+    "uae.g10.general.u01.l06.monic_integer_roots",
+    "uae.g10.general.u01.l06.monic_prime_over_integers"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l05.gcf_complete_factor",
+    "uae.g9.general.u07.l07.nonmonic_quadratic_roots"
+  ],
+  "reusePolicy": "Extend the existing ExactSkillContractQuestionEngine and registered monic-factor skill; implement bounded full binomial factoring, integer roots and integer-prime decision, no unrestricted CAS.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10MonicQuadratic(family,random,difficulty)",
+  "independentVerifier": "UaeG10MonicQuadraticResponse.Verify(family,parameters,answer)",
+  "boundaries": {
+    "factor": "r1,r2 integers in [-6,6] excluding zero, r1+r2 !=0 (true three-term polynomial), repeated factors permitted; accept two binomials in any order or a squared binomial",
+    "roots": "r1,r2 distinct nonzero integers in [-6,6], nonzero sum; accept pair in either order in Western/Arabic-Indic digits",
+    "integerPrime": "b in [-9,9] excluding zero, c in [-20,20] excluding zero; integer divisors enumerate possible factor pair; return Arabic نعم or لا; not a statement about real-root existence"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l06.monic_full_factor",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "StageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l06.monic_integer_roots",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "StageD": "NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l06.monic_prime_over_integers",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "StageD": "NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "physical positive and negative algebra tiles",
+    "coordinate graph drawing verifying zeros",
+    "multivariable trinomial factors",
+    "negative dimensions ruled out in a geometry context",
+    "explain prime over integers versus real roots",
+    "nonmonic ax²+bx+c fully covered in G10-U01L07"
+  ],
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonicQuadraticTests.cs",
+    "tests/academic-uae-grade10-arabic-u01l06.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "sourceCoverageCaveat": "Actual General (PDF56–63), Advanced (PDF131–137) and Applied (PDF49–55) student-book topics visually inspected; 29 General source elements and 17 crossbook goal categories mapped; other relevant future Grade10 lessons are not certified. The 03.pdf TOC alone is not counted as additional lesson-body coverage.",
+  "crossBookSemanticCrosswalk": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-crossbook-semantic-crosswalk.json",
+  "crossBookReviewedDirectBodies": 3,
+  "crossBookUniqueGoalCategories": 17
+}

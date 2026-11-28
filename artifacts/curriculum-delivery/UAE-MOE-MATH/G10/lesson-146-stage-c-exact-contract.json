@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 146,
+  "canonicalCode": "G10-U18-L01",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
+  "sourceSha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
+  "sourcePdfPages": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "sourcePrintedPages": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "primarySkills": [
+    "geometry.proofs.postulates_flow"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u18.l01.necessary_sufficient_threshold",
+    "uae.g10.general.u18.l01.incidence_postulate",
+    "uae.g10.general.u18.l01.always_sometimes_never",
+    "uae.g10.general.u18.l01.midpoint_total",
+    "uae.g10.general.u18.l01.shared_midpoint_half",
+    "uae.g10.general.u18.l01.unordered_pair_count",
+    "uae.g10.general.u18.l01.wheel_count_reasoning",
+    "uae.g10.general.u18.l01.travel_time_comparison",
+    "uae.g10.general.u18.l01.slope_requirement"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.exponentials.solve_exponent"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10Postulates",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10PostulatesResponse.Verify: implication witnesses across thresholds; incidence axiom and classification mapping; midpoint and wheel constraints; pair enumeration; time quotient; slope inequality.",
+  "parameterBounds": {
+    "thresholds": "2..30",
+    "postulate": "1..7; classification 7 fixed mathematical propositions",
+    "midpoint": "half 2..30",
+    "pairs": "3..12; wheel count with 1..n-1 boards",
+    "travel": "distances 2..30, speeds 10..80",
+    "slope": "rise and run 2..30; 4 cm/m minimum"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u18.l01.necessary_sufficient_threshold",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.incidence_postulate",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.always_sometimes_never",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.midpoint_total",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.shared_midpoint_half",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.unordered_pair_count",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.wheel_count_reasoning",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.travel_time_comparison",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    },
+    {
+      "family": "uae.g10.general.u18.l01.slope_requirement",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Explicit Arabic numeric choices or values; original geometry diagrams and open proof rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "open free proofs",
+    "diagram interpretation and counterexamples",
+    "general implication proof and design reasoning"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-146-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u18l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10PostulatesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "READY_FOR_STAGE_D"
+  },
+  "scopeStatement": "Owner-approved matching-body repair, not full source denominator or runtime certification; open proofs and diagrams teacher-reviewed.",
+  "authoringChecks": {
+    "independentArithmeticCases": 190982,
+    "result": "PASS_STATIC_AUTHORING_ONLY",
+    "visualTableTotalsChecked": true,
+    "testsRun": "WRITTEN_NOT_RUN"
+  }
+}

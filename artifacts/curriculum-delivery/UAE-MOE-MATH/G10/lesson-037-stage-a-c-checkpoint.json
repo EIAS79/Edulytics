@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 37,
+  "canonicalCode": "G10-U04-L04",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "حل المعادلات التربيعية بإكمال المربع",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04:C037",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerApprovedCanonicalLessonCount": 148,
+  "ownerApprovedCanonicalUnitCount": 18,
+  "sourceBook": "01متقدم_.pdf",
+  "sourceEdition": "UAE Advanced Arabic 2025–2026 Volume1, Unit2 Lesson2-5",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+  ],
+  "sourcePrintedPages": [
+    132,
+    133,
+    134,
+    135,
+    136,
+    137
+  ],
+  "sourceGraphingTechnologyLabPage": 156,
+  "sourceExcludedReviewPage": 155,
+  "sourceExcludedExamPage": 148,
+  "sourceIndexLocked": true,
+  "sourceElementDenominatorForReviewedLessonIncludingLab": 25,
+  "sourceElementsMapped": 25,
+  "sourceElementTypesVerifiedAgainstOriginal": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-037-source-elements.json",
+  "sourceElementCoverageCounts": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 3,
+    "TEACHER_REVIEW_REQUIRED": 11
+  },
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-037-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-037-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l04-ar.rich-lesson-v2.json",
+  "arabicExamplesCount": 11,
+  "originalVisualModelsCount": 5,
+  "primarySkills": [
+    "algebra.quadratic.complete_square"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-037-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l04.square_constant",
+    "uae.g10.general.u04.l04.completed_square_roots"
+  ],
+  "independentVerifier": "UaeG10CompletingSquareResponse.Verify — independently computes p² and unordered pair (−p±r)",
+  "rendererMatrix": {
+    "squareConstant": "IntegerKeypad",
+    "twoRoots": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "fractional, irrational, complex roots and written mathematical justification",
+    "physical/graphical square-area and vertex interpretation",
+    "real-world projectile domain restrictions and units",
+    "graphing-calculator extension original PDF156, no claim of implemented calculator UI"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10CompletingSquareTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closedAtUtc": "2026-11-25T15:37:29.719Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "lastContentReadyCommit": "464a93a726108808408c5509475e399f1f037e71",
+  "gradeClosedCountAfterThisLesson": 37,
+  "firstIncompleteGlobalOrdinal": 38,
+  "nextEligibleCanonicalCode": "G10-U04-L05",
+  "nextEligibleLessonTitle": "القانون العام والمميز للمعادلة التربيعية",
+  "remainingStageDObligations": [
+    "run written .NET/Node tests; compile verifier and validate positive, negative, numeric, Arabic root inputs",
+    "verify authenticated RTL StructuredEntry and effective question family routing",
+    "confirm correct usage of teacher rubric for complex and irrational roots, area and graphing-lab",
+    "perform separate Stage D full-grade CI/E2E and safe production migration only after all 148 lesson bodies complete"
+  ]
+}

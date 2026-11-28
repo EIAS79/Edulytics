@@ -374,7 +374,23 @@ internal static class MeetingDemoProvisioner
         // The permanent school fixture remains unchanged.
         var isUaeG9Ci = disposableCi &&
             string.Equals(ciProgramme, "UAE-G9", StringComparison.Ordinal);
-        var activeSchools = isUaeG9Ci
+        var isUaeG10Ci = disposableCi &&
+            string.Equals(ciProgramme, "UAE-G10", StringComparison.Ordinal) &&
+            string.Equals(new NpgsqlConnectionStringBuilder(
+                db.Database.GetDbConnection().ConnectionString).Host,
+                "127.0.0.1", StringComparison.Ordinal);
+        var activeSchools = isUaeG10Ci
+            ? Schools.Where(s => s.Key is "uae-secondary" or "commoncore-secondary")
+                .Select(s => s.Key == "uae-secondary"
+                    ? s with
+                    {
+                        DefaultCulture = "ar",
+                        PrimaryLoginLogicalLevel = 10,
+                        SecondaryLoginLogicalLevel = 11,
+                        SecondaryLoginPathway = "General"
+                    }
+                    : s).ToArray()
+            : isUaeG9Ci
             ? Schools.Where(s => s.Key is "uae-secondary" or "commoncore-secondary")
                 .Select(s => s.Key == "uae-secondary"
                     ? s with
@@ -1378,8 +1394,13 @@ DELETE FROM "Schools";
                string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
                   "UAE-G7", StringComparison.Ordinal))) ||
              (definition.Key == "uae-secondary" &&
-              string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                  "UAE-G9", StringComparison.Ordinal))) &&
+              (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                  "UAE-G9", StringComparison.Ordinal) ||
+               (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                   "UAE-G10", StringComparison.Ordinal) &&
+                string.Equals(new NpgsqlConnectionStringBuilder(
+                    db.Database.GetDbConnection().ConnectionString).Host,
+                    "127.0.0.1", StringComparison.Ordinal))))) &&
             string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 "Staging", StringComparison.Ordinal) &&
             string.Equals(db.Database.GetDbConnection().Database,

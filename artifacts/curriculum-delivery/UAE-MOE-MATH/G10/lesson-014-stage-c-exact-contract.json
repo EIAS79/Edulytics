@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L14",
+  "lessonOrdinal": 14,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L14:C014",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 Unit3 Lesson3-6 merged into General only",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePages": [
+    243,
+    244,
+    245,
+    246,
+    247,
+    248
+  ],
+  "sourcePrintedPages": [
+    226,
+    227,
+    228,
+    229,
+    230,
+    231
+  ],
+  "primarySkills": [
+    "algebra.polynomial.remainder_factor_theorems"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l14.remainder_theorem_value",
+    "uae.g10.general.u01.l14.factor_theorem_decision"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+    "uae.g10.general.u01.l13.cubic_integer_roots"
+  ],
+  "exactScope": "R=f(a) and x−a is a factor iff f(a)=0 for the existing bounded Grade10 polynomial dividend divided by monic linear x−a; the full manual division algorithm and graphs have distinct assessment purposes.",
+  "reusePolicy": "Reuse the existing source-verified Grade10 U01L10 monic-linear polynomial division generator, coefficient bounds, quotient/remainder identity and independent verifier. Only add two thin source-specific question prompts, answer formatting and theorem checks.",
+  "parameters": [
+    "degree",
+    "q2",
+    "q1",
+    "q0",
+    "r",
+    "remainder"
+  ],
+  "bounds": {
+    "degree": "1 or 2 for quotient, dividend degree2..3",
+    "q": "q2,q1,q0 in [-6,6], leading nonzero",
+    "rootCandidate": "r in [-4,4]",
+    "remainder": "in [-6,6], factor family balances 0 and nonzero"
+  },
+  "answerFormats": [
+    "exact signed integer coefficient remainder with Western/Arabic-Indic digits",
+    "Arabic نعم/لا factor test"
+  ],
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l14.remainder_theorem_value",
+      "answerType": "exact_integer",
+      "renderer": "IntegerKeypad",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l14.factor_theorem_decision",
+      "answerType": "enum_text",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    }
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10RemainderFactor(family,random,difficulty)",
+  "independentVerifier": "UaeG10RemainderFactorResponse.Verify(family,p,response) -> UaeG10PolynomialDivisionResponse.Verify/ValidatedParameters",
+  "mathVerification": "Independently reconstruct f(x)=(x−r)Q(x)+R, recompute f(r) via Horner in regression tests, check remainder equals the parameter R, and return yes iff R=0. No use of generated CorrectAnswer as verification oracle.",
+  "teacherReviewRequired": [
+    "manual synthetic division columns including coefficients zero for missing powers",
+    "algebraic proof of remainder and factor theorems",
+    "nonmonic or quadratic divisors and rational-parameter expressions beyond bounded exact families",
+    "Cartesian graph and exact versus approximate real zeros",
+    "contextual student-generated polynomial factors and dimensional restrictions"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l14.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRemainderFactorTheoremsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "note": "Owner-approved sole Grade10 General 148-lesson index. This is A–B–C authoring handoff only, never Stage D pass or deployed student Practice."
+}

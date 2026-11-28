@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "globalOrdinal": 24,
+  "canonicalCode": "G10-U02-L08",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08:C024",
+  "sourceBooks": [
+    {
+      "book": "01متقدم_.pdf",
+      "pages": [
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ]
+    },
+    {
+      "book": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "pages": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ]
+    }
+  ],
+  "primarySkills": [
+    "algebra.radical.solve_equation"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l08.radical_equation_integer_solution",
+    "uae.g10.general.u02.l08.squared_candidate_is_valid"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u02.l07.radical_graph_y_value",
+    "uae.g10.general.u02.l05.square_root_extract_coefficient"
+  ],
+  "reusePolicy": "Use shared ExactSkillContractQuestionEngine with scoped new exact semantic skill for isolated principal square roots and candidate proof; teacher-score compounded equations and inequalities.",
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10RadicalEquation",
+  "independentVerifier": "UaeG10RadicalEquationResponse.Verify",
+  "bounds": {
+    "a": "-8..8",
+    "b": "1..7 (isolated positive root)",
+    "c": "-5..5",
+    "negative": "0 or 1 for candidate right-side sign",
+    "answer": "solution x=b²−a or check indicator 0/1"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l08.radical_equation_integer_solution",
+      "interaction": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u02.l08.squared_candidate_is_valid",
+      "interaction": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "multiple radicals, variable RHS and nontrivial extraneous checks",
+    "inequality solution intervals and domain conditions",
+    "graphical intersections and inequality shading",
+    "applied geometric/physical word problems with units"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalEquationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}

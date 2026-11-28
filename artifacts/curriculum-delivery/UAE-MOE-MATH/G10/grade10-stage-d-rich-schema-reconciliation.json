@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "baseCandidateSha": "05bb8d0e8dff6e08724e6325c8e8949f98c25b21",
+  "scope": "RichV2 data-shape compatibility repair; original mathematical content retained, existing checks/methods surfaced as explicit instructional actions. Not an academic or runtime certification.",
+  "counts": {
+    "existingAuthoredStepsReconciled": 1555,
+    "specificNegativeExponentCheck": 1,
+    "legacyMistakeTextStructured": 611,
+    "comparisonTablesPreserved": 340
+  },
+  "affectedLessons": [
+    {
+      "file": "uae-g10-general-u01-l11-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L11:C011",
+      "existingAuthoredStepsReconciled": 1
+    },
+    {
+      "file": "uae-g10-general-u01-l16-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L16:C016",
+      "existingAuthoredStepsReconciled": 10
+    },
+    {
+      "file": "uae-g10-general-u02-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:01:MULTIPLICATION-PROPERTIES-OF-EXPONENTS",
+      "existingAuthoredStepsReconciled": 3
+    },
+    {
+      "file": "uae-g10-general-u02-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:02:DIVISION-PROPERTIES-OF-EXPONENTS",
+      "existingAuthoredStepsReconciled": 11,
+      "specificNegativeExponentCheck": 1
+    },
+    {
+      "file": "uae-g10-general-u02-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:03:RATIONAL-EXPONENTS",
+      "existingAuthoredStepsReconciled": 12
+    },
+    {
+      "file": "uae-g10-general-u02-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:04:SCIENTIFIC-NOTATION",
+      "existingAuthoredStepsReconciled": 12
+    },
+    {
+      "file": "uae-g10-general-u02-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:05:SIMPLIFYING-RADICAL-EXPRESSIONS",
+      "existingAuthoredStepsReconciled": 7
+    },
+    {
+      "file": "uae-g10-general-u02-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:06:OPERATIONS-WITH-RADICAL-EXPRESSIONS",
+      "existingAuthoredStepsReconciled": 7
+    },
+    {
+      "file": "uae-g10-general-u02-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L07:C023",
+      "existingAuthoredStepsReconciled": 5
+    },
+    {
+      "file": "uae-g10-general-u02-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08:C024",
+      "existingAuthoredStepsReconciled": 4
+    },
+    {
+      "file": "uae-g10-general-u03-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06:C030",
+      "existingAuthoredStepsReconciled": 2
+    },
+    {
+      "file": "uae-g10-general-u03-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+      "existingAuthoredStepsReconciled": 4
+    },
+    {
+      "file": "uae-g10-general-u04-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L01:C034",
+      "existingAuthoredStepsReconciled": 12
+    },
+    {
+      "file": "uae-g10-general-u04-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L02:C035",
+      "existingAuthoredStepsReconciled": 12
+    },
+    {
+      "file": "uae-g10-general-u04-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03:C036",
+      "existingAuthoredStepsReconciled": 13
+    },
+    {
+      "file": "uae-g10-general-u04-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04:C037",
+      "existingAuthoredStepsReconciled": 1
+    },
+    {
+      "file": "uae-g10-general-u04-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L05:C038",
+      "existingAuthoredStepsReconciled": 1
+    },
+    {
+      "file": "uae-g10-general-u04-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L06:C039",
+      "existingAuthoredStepsReconciled": 2
+    },
+    {
+      "file": "uae-g10-general-u04-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08:C041",
+      "existingAuthoredStepsReconciled": 2
+    },
+    {
+      "file": "uae-g10-general-u05-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u05-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L03:C044",
+      "existingAuthoredStepsReconciled": 27,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u05-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+      "existingAuthoredStepsReconciled": 30,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u05-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L05:C046",
+      "existingAuthoredStepsReconciled": 36,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u05-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
+      "existingAuthoredStepsReconciled": 41,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u05-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+      "existingAuthoredStepsReconciled": 40,
+      "legacyMistakeTextStructured": 10,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u05-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L08:C049",
+      "existingAuthoredStepsReconciled": 37,
+      "legacyMistakeTextStructured": 10,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u05-l09-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L01:C051",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L02:C052",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L03:C053",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L04:C054",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L05:C055",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L06:C056",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u06-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U06:L07:C057",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:02:ANGLES-AND-PARALLEL-LINES",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:03:SLOPE-OF-A-LINE",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:04:EQUATIONS-OF-LINES",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:05:PROVING-LINES-PARALLEL",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u07-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:06:PERPENDICULARS-AND-DISTANCE",
+      "existingAuthoredStepsReconciled": 12,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:01:REFLECTIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:02:TRANSLATIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:03:ROTATIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:04:COMPOSITIONS-OF-TRANSFORMATIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:05:SYMMETRY",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u08-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:06:DILATIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u09-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:01:CLASSIFYING-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u09-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:02:ANGLES-OF-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u09-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:03:CONGRUENT-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u09-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:04:PROVING-CONGRUENCE-SSS-AND-SAS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u09-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:05:PROVING-CONGRUENCE-ASA-AND-AAS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u09-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:06:ISOSCELES-AND-EQUILATERAL-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u09-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:07:CONGRUENCE-TRANSFORMATIONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u09-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:08:TRIANGLES-AND-COORDINATE-PROOF",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u09-l09-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:09:AREA-OF-PARALLELOGRAMS-AND-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 4,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u10-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:01:PERPENDICULAR-BISECTORS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u10-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u10-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u10-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u10-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u10-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:06:INEQUALITIES-IN-TWO-TRIANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01:C085",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02:C086",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03:C087",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04:C088",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05:C089",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06:C090",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u11-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07:C091",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u12-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:01:ANGLES-OF-POLYGONS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u12-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u12-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:03:TESTS-FOR-PARALLELOGRAMS",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u12-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:04:RECTANGLES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u12-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:05:RHOMBI-AND-SQUARES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u12-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:06:TRAPEZOIDS-AND-KITES",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u13-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01:C098",
+      "existingAuthoredStepsReconciled": 13,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u13-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L02:C099",
+      "existingAuthoredStepsReconciled": 13,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u13-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L03:C100",
+      "existingAuthoredStepsReconciled": 10,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u13-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L04:C101",
+      "existingAuthoredStepsReconciled": 9,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u13-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L05:C102",
+      "existingAuthoredStepsReconciled": 11,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u13-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06:C103",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u13-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L07:C104",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u13-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L08:C105",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 2
+    },
+    {
+      "file": "uae-g10-general-u13-l09-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09:C106",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L01:C107",
+      "existingAuthoredStepsReconciled": 13,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L02:C108",
+      "existingAuthoredStepsReconciled": 19,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L03:C109",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L04:C110",
+      "existingAuthoredStepsReconciled": 13,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L05:C111",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L06:C112",
+      "existingAuthoredStepsReconciled": 17,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L07:C113",
+      "existingAuthoredStepsReconciled": 20,
+      "legacyMistakeTextStructured": 8,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L08:C114",
+      "existingAuthoredStepsReconciled": 20,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l09-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L09:C115",
+      "existingAuthoredStepsReconciled": 21,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l10-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L10:C116",
+      "existingAuthoredStepsReconciled": 21,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 6
+    },
+    {
+      "file": "uae-g10-general-u14-l11-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L11:C117",
+      "existingAuthoredStepsReconciled": 18,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l12-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L12:C118",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l13-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L13:C119",
+      "existingAuthoredStepsReconciled": 19,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u14-l14-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L14:C120",
+      "existingAuthoredStepsReconciled": 18,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l15-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L15:C121",
+      "existingAuthoredStepsReconciled": 14,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u14-l16-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L16:C122",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u14-l17-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L17:C123",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u14-l18-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U14:L18:C124",
+      "existingAuthoredStepsReconciled": 17,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u15-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L01:C125",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u15-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L02:C126",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u15-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L03:C127",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 3
+    },
+    {
+      "file": "uae-g10-general-u15-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L04:C128",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u15-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L05:C129",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u15-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L06:C130",
+      "existingAuthoredStepsReconciled": 16,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u15-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L07:C131",
+      "existingAuthoredStepsReconciled": 19,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u15-l08-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U15:L08:C132",
+      "existingAuthoredStepsReconciled": 19,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u16-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01:C133",
+      "existingAuthoredStepsReconciled": 6,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u16-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02:C134",
+      "existingAuthoredStepsReconciled": 6,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u16-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03:C135",
+      "existingAuthoredStepsReconciled": 6,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u16-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04:C136",
+      "existingAuthoredStepsReconciled": 6,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u16-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05:C137",
+      "existingAuthoredStepsReconciled": 26,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 10
+    },
+    {
+      "file": "uae-g10-general-u16-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u16-l07-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07:C139",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 4
+    },
+    {
+      "file": "uae-g10-general-u17-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01:C140",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u17-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02:C141",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u17-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03:C142",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u17-l04-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04:C143",
+      "existingAuthoredStepsReconciled": 8,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 1
+    },
+    {
+      "file": "uae-g10-general-u17-l05-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L05:C144",
+      "existingAuthoredStepsReconciled": 20,
+      "legacyMistakeTextStructured": 6,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u17-l06-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L06:C145",
+      "existingAuthoredStepsReconciled": 21,
+      "legacyMistakeTextStructured": 5,
+      "comparisonTablesPreserved": 5
+    },
+    {
+      "file": "uae-g10-general-u18-l01-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L01:C146",
+      "existingAuthoredStepsReconciled": 27,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 6
+    },
+    {
+      "file": "uae-g10-general-u18-l02-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L02:C147",
+      "existingAuthoredStepsReconciled": 27,
+      "legacyMistakeTextStructured": 11,
+      "comparisonTablesPreserved": 7
+    },
+    {
+      "file": "uae-g10-general-u18-l03-ar.rich-lesson-v2.json",
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U18:L03:C148",
+      "existingAuthoredStepsReconciled": 38,
+      "legacyMistakeTextStructured": 9,
+      "comparisonTablesPreserved": 9
+    }
+  ],
+  "openDefects": [
+    "611 preserved mistake notices still require individual reason/correction academic review when absent",
+    "Existing example checks and method content still require per-example mathematical/source verification",
+    "All authenticated rendering, grading, source parity and migration gates remain independent."
+  ],
+  "productionRouting": false
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 24,
+  "canonicalCode": "G10-U02-L08",
+  "unitNumber": 2,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "حل المعادلات الجذرية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U02:L08:C024",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerApprovedCanonicalLessonCount": 148,
+  "ownerApprovedCanonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBooks": [
+    {
+      "book": "01متقدم_.pdf",
+      "edition": "Advanced 2025–2026 Volume1",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "sourcePdfPages": [
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "sourcePrintedPages": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307
+      ]
+    },
+    {
+      "book": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "edition": "Applied 2022–2023 Volume2",
+      "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+      "sourcePdfPages": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "sourcePrintedPages": [
+        360,
+        361,
+        362,
+        363,
+        364
+      ]
+    }
+  ],
+  "sourceElementDenominatorForReviewedLesson": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 5,
+    "TEACHER_REVIEW_REQUIRED": 13
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-024-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-024-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-024-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l08-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 14,
+  "originalVisualModels": 5,
+  "arabicContentAuthored": true,
+  "primarySkills": [
+    "algebra.radical.solve_equation"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l08.radical_equation_integer_solution",
+    "uae.g10.general.u02.l08.squared_candidate_is_valid"
+  ],
+  "independentVerifier": "UaeG10RadicalEquationResponse.Verify checks principal square root against original signed RHS; not just the squared equation",
+  "rendererMatrix": {
+    "solution": "IntegerKeypad",
+    "candidateValidity": "IntegerKeypad"
+  },
+  "teacherReviewRequiredFor": [
+    "multiple radicals and repeated squaring",
+    "radical inequalities and intervals",
+    "graph intersections and shaded regions",
+    "physical and geometric context with unit constraints"
+  ],
+  "stageCContract": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-024-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRadicalEquationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "blueprintRegisteredLessonCount": 148,
+  "contentPackCurrentLessonCount": 57,
+  "studentContentAll148Complete": false,
+  "firstIncompleteGlobalOrdinal": 25,
+  "nextEligibleCanonicalCode": "G10-U03-L01",
+  "nextEligibleLessonTitle": "حل أنظمة المعادلات الخطية بالتمثيل البياني",
+  "closedAtUtc": "2026-11-25T12:46:40Z",
+  "contentClosureCommit": "e196366a218d66c112ed248ff8d147efb393ee49",
+  "closureBasis": "12 original scanned source pages from Advanced and Applied, 29 source teaching/assessment categories, 14 Arabic worked examples, 5 visual models, bounded exact family verifier checks the original equation, tests written but NOT RUN, teacher rubric for non-automated objectives",
+  "remainingStageDObligations": [
+    "run .NET and Node test suites, authenticated RTL and student Practice smoke tests",
+    "verify generated root and extraneous candidate answers against original equations",
+    "enable production routing only after Stage D proof",
+    "migrate and deploy entire 148-lesson course safely, preserving student-linked identities"
+  ]
+}

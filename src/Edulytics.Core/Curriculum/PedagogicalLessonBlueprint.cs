@@ -421,6 +421,29 @@ public static class PedagogicalLessonBlueprintContract
         document.Lessons.All(x => x.LessonCode.StartsWith(
             "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal));
 
+    private static bool IsUaeG10OriginalFirstPartyWithReferenceOnlySource(
+        PedagogicalLessonBlueprintDocument document) =>
+        document.SchemaVersion == 1 &&
+        document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+        document.LogicalLevel == 10 &&
+        string.Equals(document.Pathway, "General", StringComparison.Ordinal) &&
+        string.Equals(document.BlueprintCode,
+            "UAE-G10-GENERAL-T1-OGL-V1:OGL-V1",
+            StringComparison.Ordinal) &&
+        string.Equals(document.SourceLicense,
+            "Reference-only local copyrighted student text; original Edulytics content, no reuse license presumed",
+            StringComparison.Ordinal) &&
+        string.Equals(document.RequiredDigitalAttribution,
+            "No publisher prose or artwork embedded. Provenance recorded privately.",
+            StringComparison.Ordinal) &&
+        string.Equals(document.SourceRightsNote,
+            "Learner-facing explanations and exercises are represented as first-party Edulytics authorship. Owner approval does not grant publisher illustration, page-copy or linked-resource rights; publisher-specific assets must remain excluded.",
+            StringComparison.Ordinal) &&
+        document.Units is { Count: 18 } &&
+        document.Lessons is { Count: 148 } &&
+        document.Lessons.All(x => x.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison.Ordinal));
+
     public static void Validate(
         PedagogicalLessonBlueprintDocument document)
     {
@@ -474,7 +497,8 @@ public static class PedagogicalLessonBlueprintContract
         // unrelated courses, arbitrary G7 files, or copied illustrations.
         if (!IsUaeG7OriginalFirstPartyWithReferenceOnlySource(document) &&
             !IsUaeG8OriginalFirstPartyWithReferenceOnlySource(document) &&
-            !IsUaeG9OriginalFirstPartyWithReferenceOnlySource(document))
+            !IsUaeG9OriginalFirstPartyWithReferenceOnlySource(document) &&
+            !IsUaeG10OriginalFirstPartyWithReferenceOnlySource(document))
         {
             PedagogicalSourceLicensePolicy.Validate(document.SourceLicense);
         }

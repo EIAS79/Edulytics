@@ -1,0 +1,9 @@
+const test=require("node:test");const assert=require("node:assert/strict");const fs=require("node:fs");const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
+test("G10 lesson 47 matching source, content, scoped contracts and plots",()=>{
+ const l=read("src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l06-ar.rich-lesson-v2.json").Lessons[0],c=read("artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-stage-a-c-checkpoint.json"),s=read("artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-source-elements.json"),k=read("artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-stage-c-exact-contract.json"),r=read("src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"),m=read("src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json").mappings.find(x=>x.lessonCode===l.LessonCode);
+ assert.equal(l.WorkedExamples.length,41);assert.equal(l.Visuals.length,11);assert.equal(c.status,"READY_FOR_STAGE_D");assert.equal(c.stageD,"NOT_STARTED");assert.equal(c.testsRun,"WRITTEN_NOT_RUN");assert.equal(c.productionRouting,false);assert.equal(c.sourceBodyVerified,true);assert.equal(s.sourceElements.length,120);assert.deepEqual(m.allowedQuestionFamilies,k.allowedQuestionFamilies);assert.equal(k.allowedQuestionFamilies.length,19);
+ for(const id of k.allowedQuestionFamilies)assert.equal(r.families.filter(x=>x.id===id&&x.productionRouting===false).length,1);
+ for(const e of s.sourceElements)if(e.questionFamily)assert.ok(k.allowedQuestionFamilies.includes(e.questionFamily));
+ const functions=[x=>3**x,()=>14,x=>Math.log(2*x+2)/Math.log(2),x=>Math.log(3*x+3)/Math.log(3),x=>Math.log(2*x+2)/Math.log(2),x=>Math.log(3*x+6)/Math.log(3)];
+ l.Visuals.filter(x=>x.Kind==="CartesianPlot").forEach((v,i)=>v.Rows.forEach(row=>assert.ok(Math.abs(Number(row.Cells[1])-functions[i](Number(row.Cells[0])))<1e-7)));
+});

@@ -217,8 +217,53 @@ public static class LessonPracticeInteractionRegistry
             answerType == "contract_defined")
             return LessonPracticeInteractionKind.ContractDriven;
 
+        // G9/G10 original coefficient-only arithmetic has a single signed
+        // integer answer. The two exact solver/verifier families are shared;
+        // their registry still declares contract_defined for general routing.
+        // Render an integer keypad instead of a free-text/structured widget.
+        // This does NOT authorize Practice; capability remains fail-closed
+        // until Stage D explicitly certifies the exact lesson mapping.
+        if (answerType == "contract_defined" &&
+            familyId is "uae.g9.general.u07.l01.add_coefficient" or
+                        "uae.g9.general.u07.l01.subtract_coefficient")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+
+        // G10 U04L04 has an unordered pair of integer roots; it is not a
+        // single numeric answer nor an arbitrary generic contract widget.
+        if(answerType=="contract_defined" &&
+           (familyId=="uae.g10.general.u04.l04.completed_square_roots" ||
+            familyId=="uae.g10.general.u04.l05.integer_roots_formula"))
+            return LessonPracticeInteractionKind.StructuredEntry;
+
+        // Whole polynomial is a symbolic structured response, not a numeric coefficient.
+        if(answerType=="contract_defined" &&
+           (familyId=="uae.g10.general.u01.l01.full_polynomial_add_subtract_expression" ||
+            familyId=="uae.g10.general.u01.l02.full_monomial_polynomial_product" ||
+            familyId=="uae.g10.general.u01.l03.full_polynomial_product" ||
+            familyId=="uae.g10.general.u01.l04.full_special_product" ||
+            familyId=="uae.g10.general.u03.l08.inverse2_entry" ||
+            familyId=="uae.g10.general.u01.l10.monomial_division_expression" ||
+            familyId=="uae.g10.general.u01.l05.gcf_complete_factor" ||
+            familyId=="uae.g10.general.u01.l05.zero_product_roots" ||
+            familyId=="uae.g10.general.u01.l06.monic_full_factor" ||
+            familyId=="uae.g10.general.u01.l06.monic_integer_roots" ||
+            familyId=="uae.g10.general.u01.l06.monic_prime_over_integers" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_full_factor" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_rational_roots" ||
+            familyId=="uae.g10.general.u01.l07.nonmonic_prime_over_integers" ||
+            familyId=="uae.g10.general.u01.l08.full_difference_squares_factor" ||
+            familyId=="uae.g10.general.u01.l08.difference_squares_rational_roots" ||
+            familyId=="uae.g10.general.u01.l09.full_perfect_square_factor" ||
+            familyId=="uae.g10.general.u01.l09.classify_perfect_square" ||
+            familyId=="uae.g10.general.u01.l09.shifted_square_two_roots" ||
+            familyId=="uae.g10.general.u01.l10.full_linear_divisor_quotient"))
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         // Declared numeric answer type is authoritative. Families named compare*
         // may ask for a numerical gap, not a <, =, > relation.
+        if ((familyId=="uae.g10.general.u05.l04.quadratic_root_set" || familyId=="uae.g10.general.u05.l05.property_root_set") && answerType=="contract_defined")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         if (answerType=="exact_integer")
             return LessonPracticeInteractionKind.IntegerKeypad;
 

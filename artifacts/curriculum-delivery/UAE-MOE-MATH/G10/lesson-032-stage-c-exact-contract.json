@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 32,
+  "canonicalCode": "G10-U03-L08",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L08:C032",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePhysicalPdfPages": [
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.matrices.inverse"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l08.inverse2_entry",
+    "uae.g10.general.u03.l08.inverse2_exists"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l07.cramer_x",
+    "uae.g10.general.u03.l06.matrix_product_entry"
+  ],
+  "generator": "BuildG10InverseMatrix",
+  "independentVerifier": "UaeG10InverseMatrixResponse.Verify checks determinant and exact rational entry by BigInteger cross multiplication; 0/1 existence independent of symbolic generated answer",
+  "bounds": {
+    "matrix": "2×2 integer entries [-5,5]",
+    "entry": "row,col 1..2; nonzero determinant; rational fraction exact",
+    "exists": "determinant=0 or nonzero, numeric answer 0/1"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l08.inverse2_entry",
+      "kind": "StructuredEntry"
+    },
+    {
+      "family": "uae.g10.general.u03.l08.inverse2_exists",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "3×3 inverse and solving three variable systems",
+    "full matrix inverse AX=B with exact fractions",
+    "singular matrix consistent/inconsistent system classification",
+    "real-world food/ticket and geometry context"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralInverseMatrixTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}

@@ -35,7 +35,10 @@ public enum RichLessonVisualKind
     // Retain stable persisted enum ids and add the diagram kinds used by
     // Grade 9 authored sidecars. Do not translate these to unrelated visuals.
     VennDiagram = 17,
-    CoordinatePlane = 18
+    CoordinatePlane = 18,
+    // Independently authored comparison rows; stable existing enum IDs are unchanged.
+    ComparisonTable = 19,
+    ClosedCoordinatePolygon = 20
 }
 
 public sealed class RichLessonContentV2Document

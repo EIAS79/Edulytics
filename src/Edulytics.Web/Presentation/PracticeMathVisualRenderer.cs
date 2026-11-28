@@ -211,6 +211,7 @@ public static partial class PracticeMathVisualRenderer
                 "supporting.trigonometry.bearing" or
                 "supporting.trigonometry.cosine_rule_square" or
                 "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
+                _ when family.StartsWith("uae.g10.general.", StringComparison.Ordinal) => UaeG10Visual(family, parameters),
                 _ => null
             };
 

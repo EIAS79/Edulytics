@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 36,
+  "canonicalCode": "G10-U04-L03",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "الأعداد المركبة",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L03:C036",
+  "status": "READY_FOR_STAGE_D",
+  "approvedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceLessonPdfPages": [
+    139,
+    140,
+    141,
+    142,
+    143,
+    144
+  ],
+  "sourceRelatedComplexPlaneLabPages": [
+    146,
+    147
+  ],
+  "sourceExcludedReviewPage": 145,
+  "sourceExcludedHalfUnitTestPage": 148,
+  "sourcePrintedPages": [
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    129,
+    130
+  ],
+  "sourceElementDenominatorForReviewedLesson": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 13,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 6,
+    "TEACHER_REVIEW_REQUIRED": 10
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-036-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-036-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-036-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l03-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 13,
+  "originalVisualModels": 6,
+  "CartesianPlots": 2,
+  "primarySkills": [
+    "algebra.complex.number_operations"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l03.sum_real",
+    "uae.g10.general.u04.l03.sum_imag",
+    "uae.g10.general.u04.l03.product_real",
+    "uae.g10.general.u04.l03.product_imag",
+    "uae.g10.general.u04.l03.i_power_real",
+    "uae.g10.general.u04.l03.modulus_squared"
+  ],
+  "independentVerifier": "UaeG10ComplexResponse.Verify",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-036-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralComplexNumbersTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "firstIncompleteGlobalOrdinal": 37,
+  "nextEligibleCanonicalCode": "G10-U04-L04",
+  "sourceEvidenceCommit": "0bd3baf83252ab2af52d440de1081d76aa7ac3b0",
+  "contentCommit": "94a99585d2fcae01cdffeaf9de34d5edf9536910",
+  "staticSourceContentContractConsistencyReviewed": true,
+  "closedAtUtc": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "original complex Lesson2-4 and related complex plane lab, 29 distinct source categories, 13 first-party Arabic examples and two plane plots, six bounded independently verified exact numeric subskills, human complex division/plane proof; written Stage D tests not run."
+}

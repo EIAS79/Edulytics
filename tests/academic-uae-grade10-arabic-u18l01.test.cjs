@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));
+test('G10 146 selected source and practice mapping',()=>{const r=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u18-l01-ar.rich-lesson-v2.json').Lessons[0],root='artifacts/curriculum-delivery/UAE-MOE-MATH/G10/',cp=load(root+'lesson-146-stage-a-c-checkpoint.json'),l=load(root+'lesson-146-source-elements.json'),c=load(root+'lesson-146-stage-c-exact-contract.json');
+assert.equal(cp.sourceSha256,'9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66');assert.equal(cp.stageD,'NOT_STARTED');assert.equal(cp.testsRun,'WRITTEN_NOT_RUN');assert.equal(cp.productionRouting,false);assert.equal(r.WorkedExamples.length,28);assert.equal(r.Visuals.length,9);assert.equal(l.sourceElementCount,l.sourceElements.length);assert.equal(new Set(l.sourceElements.map(x=>x.elementId)).size,l.sourceElementCount);assert.equal(c.allowedQuestionFamilies.length,9);
+const m=load('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json').mappings.find(x=>x.lessonCode===r.LessonCode);assert.deepEqual(m.allowedQuestionFamilies,c.allowedQuestionFamilies);
+const reg=load('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json').families;for(const id of c.allowedQuestionFamilies)assert.equal(reg.filter(x=>x.id===id&&x.productionRouting===false).length,1);
+const table=r.Visuals.find(x=>x.Title==='جدول شبكة كاملة');assert.deepEqual(table.Rows.map(x=>Number(x.Cells[0])),[1,3,6,10,15,36]);});

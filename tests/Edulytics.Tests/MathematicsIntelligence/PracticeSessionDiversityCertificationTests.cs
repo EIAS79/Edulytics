@@ -19,7 +19,12 @@ public sealed class PracticeSessionDiversityCertificationTests
         // Grade12 verified-subskill cohort; every new entry must still generate
         // 10 varied questions and pass the same verification below.
         const string grade12Prefix = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
-        Assert.Equal(5110 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220, contracts.Count(x => !x.LessonCode.StartsWith(
+        // All 48 General and 52 Advanced legacy G10 contracts are retired.
+        // The 97 declared new candidates are exercised only in isolated G10
+        // CI; none are silently counted as previously certified contracts.
+        Assert.DoesNotContain(contracts, x => x.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal));
+        Assert.Equal(5110 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 - 100, contracts.Count(x => !x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)));
         Assert.InRange(contracts.Count(x => x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)), 21, 73);

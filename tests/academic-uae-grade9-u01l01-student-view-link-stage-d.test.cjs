@@ -5,10 +5,11 @@ const fs=require('node:fs');
 const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 
-test('Student lesson view localizes only UAE MOE Grade 9 General alongside existing UAE grades',()=>{
+test('Student lesson view preserves UAE MOE Grade 9 General localization alongside explicitly scoped Grade 10 and existing UAE grades',()=>{
  const view=fs.readFileSync(path.join(root,'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'),'utf8');
  assert.match(view,/var isUaeGrade9Arabic\s*=\s*Model\.LessonCode\.StartsWith\("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison\.Ordinal\)/);
- assert.match(view,/isUaeGrade7Arabic \|\| isUaeGrade8Arabic \|\| isUaeGrade9Arabic;/);
+ assert.match(view,/var isUaeGrade10Arabic\s*=\s*Model\.LessonCode\.StartsWith\("PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison\.Ordinal\)/);
+ assert.match(view,/var isUaePrimaryArabic\s*=\s*Model\.LessonCode\.StartsWith\("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison\.Ordinal\)\s*\|\|\s*Model\.LessonCode\.StartsWith\("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison\.Ordinal\)\s*\|\|\s*isUaeGrade3Arabic\s*\|\|\s*isUaeGrade4Arabic\s*\|\|\s*isUaeGrade5Arabic\s*\|\|\s*isUaeGrade6Arabic\s*\|\|\s*isUaeGrade7Arabic\s*\|\|\s*isUaeGrade8Arabic\s*\|\|\s*isUaeGrade9Arabic\s*\|\|\s*isUaeGrade10Arabic;/);
  assert.match(view,/var lessonNavTitle = isUaePrimaryArabic/);
  assert.match(view,/ViewData\["UseYouTubeStudioV2"\] = !isUaePrimaryArabic/);
  assert.doesNotMatch(view,/PED:US-CCSS-MATH:L9:GENERAL:/);

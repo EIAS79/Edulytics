@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L11",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L11:C011",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Volume1 lesson3-3 integrated into General",
+  "sourcePages": [
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220
+  ],
+  "primarySkills": [
+    "algebra.polynomial.functions"
+  ],
+  "exactScope": "Bounded one-variable integer-coefficient polynomial functions, degree 1..5; degree, integer evaluation at x=-3..3 and end-direction classification, only source-matching digital subsets.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+    "uae.g10.general.u01.l11.polynomial_degree_integer",
+    "uae.g10.general.u01.l11.polynomial_end_behavior"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l09.full_perfect_square_factor",
+    "uae.g10.general.u01.l10.full_linear_divisor_quotient"
+  ],
+  "answerTypes": [
+    "exact_integer",
+    "exact_integer",
+    "enum_text"
+  ],
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+      "kind": "IntegerKeypad",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l11.polynomial_degree_integer",
+      "kind": "IntegerKeypad",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l11.polynomial_end_behavior",
+      "kind": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    }
+  ],
+  "parameters": [
+    "a0",
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "degree",
+    "x"
+  ],
+  "bounds": {
+    "coefficients": "-5..5",
+    "degree": "1..5, leading coefficient nonzero",
+    "x": "-3..3",
+    "higherCoefficients": "all zero beyond selected degree"
+  },
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10PolynomialFunction(family,random,difficulty)",
+  "independentVerifier": "UaeG10PolynomialFunctionResponse.Verify(family,parameters,answer)",
+  "mathVerification": "Degree from highest nonzero coefficient; evaluate with Horner arithmetic from validated parameters; end directions from degree parity and leading sign, not from generated answer.",
+  "endBehaviorAnswerFormat": "أعلى,أعلى | أسفل,أسفل | أسفل,أعلى | أعلى,أسفل; accept Arabic comma.",
+  "teacherReviewRequired": [
+    "draw and label actual smooth Cartesian graph and turning points",
+    "nonpolynomial classification proof and x-intercept multiplicity",
+    "algebraic substitution such as f(3c−4)−5f(c)",
+    "physics model validity interval and original explanatory reasoning"
+  ],
+  "originalVisualModels": [
+    "CartesianPlot for cubic exact coordinates",
+    "CartesianPlot for quartic exact coordinates",
+    "end-behavior decision chain",
+    "degree reference examples",
+    "substitution chain"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l11.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialFunctionsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "notes": "This is Stage C source-specific authoring, NOT a verified/activated student Practice family or production deployment."
+}

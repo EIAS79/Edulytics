@@ -99,6 +99,36 @@ public static class LessonContentPolicy
              Environment.GetEnvironmentVariable(
                  "EDULYTICS_G9_DIGITAL_PRACTICE_RELEASE")));
 
+    // G10 uses the owner-approved exact 148-item unified General blueprint.
+    // Supporting lessons belong in the catalogue even without invented
+    // official alignment. No old Advanced/Applied or unknown General IDs.
+    private static readonly Lazy<HashSet<string>> UaeG10CanonicalCodes = new(() =>
+    {
+        var documents = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.LogicalLevel == 10 && x.Pathway == "General" &&
+                x.BlueprintCode == "UAE-G10-GENERAL-T1-OGL-V1:OGL-V1").ToArray();
+        if (documents.Length != 1 || documents[0].Units.Count != 18 ||
+            documents[0].Lessons.Count != 148)
+            throw new InvalidOperationException("G10 exact unified catalogue unavailable.");
+        var codes = documents[0].Lessons.Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        if (codes.Count != 148 || codes.Any(x => !x.StartsWith(
+            "PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison.Ordinal)))
+            throw new InvalidOperationException("G10 canonical identity scope drift.");
+        return codes;
+    });
+
+    public static bool IsUaeGrade10Scope(string frameworkCode, string? lessonCode) =>
+        string.Equals(frameworkCode, MathematicsCurriculumPackRegistry.UaeCode,
+            StringComparison.Ordinal) &&
+        lessonCode is not null && lessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L10:", StringComparison.Ordinal);
+
+    public static bool IsUaeG10ArabicLesson(string frameworkCode, string? lessonCode) =>
+        IsUaeGrade10Scope(frameworkCode, lessonCode) &&
+        UaeG10CanonicalCodes.Value.Contains(lessonCode!);
+
     // Owner-approved UAE G6 General Arabic (128 lessons) is independently
     // authored and published without invented formal outcome mappings.
     // The general UAE/Cambridge Supporting-lesson exclusion stays in force.
@@ -108,7 +138,9 @@ public static class LessonContentPolicy
         string frameworkCode,
         bool isSupporting,
         string? lessonCode = null) =>
-        (IsUaeGrade7GeneralScope(frameworkCode, lessonCode)
+        (IsUaeGrade10Scope(frameworkCode, lessonCode)
+            ? IsUaeG10ArabicLesson(frameworkCode, lessonCode)
+            : IsUaeGrade7GeneralScope(frameworkCode, lessonCode)
             ? IsUaeG7ArabicLesson(frameworkCode, lessonCode)
             : IsUaeGrade9GeneralScope(frameworkCode, lessonCode)
                 ? IsUaeG9ArabicLesson(frameworkCode, lessonCode)

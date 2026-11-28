@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 33,
+  "canonicalCode": "G10-U03-L09",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09:C033",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePages": [
+    98
+  ],
+  "printedPages": [
+    81
+  ],
+  "sourceKind": "GRAPHING_CALCULATOR_LAB_1_9",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "primarySkills": [
+    "algebra.matrices.augmented_row_reduce"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l09.row_operation_entry",
+    "uae.g10.general.u03.l09.rref_solution_x",
+    "uae.g10.general.u03.l09.rref_solution_y"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l08.inverse2_entry",
+    "uae.g10.general.u03.l07.cramer_x"
+  ],
+  "bounds": {
+    "coefficient": "a,b,c,d integers in [-5,5], det != 0",
+    "solution": "x,y independently drawn in [-5,5]",
+    "rhs": "r1,r2 in [-50,50]",
+    "rowScale": "k [-3,3] excluding 0",
+    "column": "1..3",
+    "digitalDimension": "2×3",
+    "sourceTeacherDimension": "3×4"
+  },
+  "generator": "BuildG10AugmentedMatrix(family,random,difficulty)",
+  "independentVerifier": "UaeG10AugmentedMatrixResponse.Verify calculates full-row results and exact Cramer numerator divided by determinant; independent of generated answer strings.",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u03.l09.row_operation_entry",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l09.rref_solution_x",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u03.l09.rref_solution_y",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequiredFor": [
+    "3x4 matrix setup and RREF from source",
+    "calculator keyboard operations and authentic screen reasoning",
+    "full three-variable systems in original exercises",
+    "independently explaining consistency and arbitrary free variables"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralAugmentedMatricesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED"
+  }
+}

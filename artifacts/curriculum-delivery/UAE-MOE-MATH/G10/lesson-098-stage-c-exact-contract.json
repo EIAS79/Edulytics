@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 98,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L01:C098",
+  "sourcePdf": "03.pdf",
+  "sourcePdfPages": [
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98
+  ],
+  "sourceSha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+  "primarySkills": [
+    "geometry.circle.g10.circumference"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u13.l01.diameter_from_radius",
+    "uae.g10.general.u13.l01.radius_from_diameter",
+    "uae.g10.general.u13.l01.circumference_pi_coefficient",
+    "uae.g10.general.u13.l01.circumference_rounded",
+    "uae.g10.general.u13.l01.center_line_overlap",
+    "uae.g10.general.u13.l01.intersection_count",
+    "uae.g10.general.u13.l01.circumscribed_rectangle_pi_coefficient",
+    "uae.g10.general.u13.l01.radius_from_circumference_pi"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l09.growth_decay_value"
+  ],
+  "generator": "Existing ExactSkillContractQuestionEngine, UaeG10Circle partial extension",
+  "independentVerifier": "radius and circumference algebra, intersection conditions, overlap identity, squared rectangle diagonal, π approximation rounding bucket",
+  "parameterBounds": {
+    "radius": "2..30",
+    "diameter": "2..30",
+    "centerDistance": "0..60; distinct circles; strict partial overlap for overlap family",
+    "rectangle": "3k and 4k; k 1..10",
+    "approx": "nearest hundredth using π"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u13.l01.diameter_from_radius",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.radius_from_diameter",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.circumference_pi_coefficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.circumference_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.center_line_overlap",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.intersection_count",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.circumscribed_rectangle_pi_coefficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u13.l01.radius_from_circumference_pi",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational"
+    }
+  ],
+  "teacherReviewRequired": [
+    "identify named segments in labeled diagram",
+    "construct inscribed and circumscribed polygons, prove similarity",
+    "investigate pi by measuring and comparing perimeters",
+    "general radical circumference and multi-step open modeling"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u13l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10CircleTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "StageABC": "READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "productionRouting": false
+  }
+}

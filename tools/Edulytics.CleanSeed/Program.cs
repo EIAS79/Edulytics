@@ -73,6 +73,18 @@ if (migrations.Any())
         "Apply all reviewed EF Core migrations before running clean seed.");
 }
 
+// Dedicated tenant cutover rehearsal is allowed only on the exact local CI
+// database; the seeder repeats all environment checks. This is not a remote
+// migration or an exception to the ordinary clean-seed preflight.
+if (args.Length == 1 && args[0] is ("--uae-g10-rehearse-tenant-cutover" or "--uae-g10-rehearse-tenant-rollback"))
+{
+    if (!isLocalCi)
+        throw new InvalidOperationException("G10 full cutover rehearsal refuses remote databases.");
+    await new MathematicsPedagogicalLessonSeeder(db)
+        .RehearseUaeGrade10FullCutoverAsync(args[0].EndsWith("-rollback", StringComparison.Ordinal));
+    return;
+}
+
 // Database-wide fail-closed preflight: a fresh target may contain only
 // migration history or platform role definitions. Repeated seed executions may
 // contain the exact set of shared curriculum-reference tables shown below.
@@ -153,6 +165,26 @@ if (hasTenantRecords)
 {
     throw new InvalidOperationException(
         "Refusing to seed: target database contains users, schools or tenant data.");
+}
+
+// Explicit disposable-only G10 catalogue rehearsal. This occurs only
+// after the existing empty/reference-only database checks and never enters
+// the ordinary global seed path. No production mode is added.
+if (args.Length != 0)
+{
+    if (args.Length != 2 || args[0] != "--uae-g10-rehearse" || !isLocalCi)
+        throw new InvalidOperationException("Unknown clean seed mode or non-local rehearsal.");
+    using var scope = System.Text.Json.JsonDocument.Parse(
+        await File.ReadAllTextAsync(args[1]));
+    if (scope.RootElement.GetProperty("baselineSha").GetString() !=
+        "83c31a13ffc173c7be9d1d85b24f4fa83c222aee")
+        throw new InvalidOperationException("G10 rehearsal baseline SHA mismatch.");
+    var legacyTitles = scope.RootElement.GetProperty("legacyLessons").EnumerateArray()
+        .ToDictionary(x => x.GetProperty("code").GetString()!,
+                      x => x.GetProperty("title").GetString()!, StringComparer.Ordinal);
+    await new MathematicsPedagogicalLessonSeeder(db)
+        .RehearseUaeGrade10CatalogueReplacementAsync(legacyTitles);
+    return;
 }
 
 // No destructive operations, truncation, demo users or school scaffolding.

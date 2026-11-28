@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "lessonOrdinal": 3,
+  "canonicalCode": "G10-U01-L03",
+  "unitOrdinal": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "ضرب كثيرات الحدود",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:03:MULTIPLYING-POLYNOMIALS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerApprovedCanonicalLessonCount": 148,
+  "ownerApprovedCanonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceEdition": "2025–2026 UAE General Volume1",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "sourcePrintedPages": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "advancedSourceOverlap": {
+    "source": "01متقدم_.pdf",
+    "pdfPages": [
+      196,
+      197,
+      198,
+      199,
+      200,
+      201
+    ],
+    "relatedGoals": [
+      "G10-ADV-U03L01-S5",
+      "G10-ADV-U03L01-S6"
+    ]
+  },
+  "sourceElementDenominatorForReviewedLesson": 24,
+  "sourceElementsIndexed": 24,
+  "sourceElementCoverageMapped": 24,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "coverageStatusCounts": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 9
+  },
+  "sourceIndexLocked": true,
+  "sourceIndexLockMeaning": "Owner-approved 148-title catalog, lesson-specific textbook element category coverage. Does not imply complete grade validation.",
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l03-ar.rich-lesson-v2.json",
+  "arabicExamplesCount": 23,
+  "originalVisualModelsCount": 9,
+  "exactSkillContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.multiply_distribute"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u07.l03.multiply_coefficient",
+    "uae.g10.general.u01.l03.product_coefficient",
+    "uae.g10.general.u01.l03.full_polynomial_product"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product"
+  ],
+  "independentVerifier": "UaeG10PolynomialProductResponse.Verify",
+  "rendererMatrix": {
+    "coefficient": "IntegerKeypad",
+    "wholePolynomial": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "algebra tiles and negative area representations",
+    "geometric diagram and square units",
+    "proof FOIL vs general distribution",
+    "open written error diagnoses"
+  ],
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialProductTests.cs",
+    "tests/academic-uae-grade10-arabic-u01l03.test.cjs",
+    "tests/academic-uae-grade10-u01l03-stage-d-source-review.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "globalContentPackArabicLessonsSoFar": 3,
+  "globalCourseLessonMetadataRegistered": 148,
+  "globalArabicContentComplete": false,
+  "firstIncompleteLessonOrdinal": 4,
+  "nextEligibleLessonOrdinal": 4,
+  "closedAtUtc": "2026-11-24T10:24:51Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closeEvidenceCommit": "02631664a3f95d199b74cbe1c0dcc01d8d9f2442",
+  "closureBasis": "Eight scanned original source pages, 24 element types mapped, Advanced source overlap crosswalk, 9 Arabic examples, five original visuals, exact two-polynomial product coefficient and full response independent grader, teacher rubric, tests written but not run.",
+  "remainingStageDObligations": [
+    "run written .NET/Node tests, full polynomial parser and numeric probes",
+    "authenticate student Practice UI with real Arabic RTL/structured-entry rendering",
+    "verify source-bounded question correctness and activation before routing",
+    "finish all 148 Arabic lessons with safe existing school/student references before production publish"
+  ],
+  "arabicWorkedExamples": 23,
+  "stageDFollowup": {
+    "reason": "Cross-target original exercises from advanced composite lesson source",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-distribution-products.json",
+    "addedWorkedExampleGroups": 2,
+    "numberedParents": 7,
+    "sourceDenominatorUnchanged": "Historical scoped source denominator; cross-target supplement not full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-003-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

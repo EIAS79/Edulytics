@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 4,
+  "canonicalCode": "G10-U01-L04",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "نواتج الضرب الخاصة",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:04:SPECIAL-PRODUCTS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "book": "01.pdf",
+  "edition": "UAE Grade10 General 2025–2026 Vol1",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "sourcePrintedPages": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominatorForThisLesson": 20,
+  "sourceElementsMapped": 20,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 7,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 9
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l04-ar.rich-lesson-v2.json",
+  "arabicExamplesCount": 24,
+  "originalVisualModelsCount": 10,
+  "primarySkills": [
+    "algebra.polynomial.special_products"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u07.l04.square_binomial_coefficient",
+    "uae.g9.general.u07.l04.conjugate_product_coefficient",
+    "uae.g10.general.u01.l04.full_special_product"
+  ],
+  "independentVerifier": "UaeG10SpecialProductsResponse.Verify → UaeG10PolynomialProductResponse.Verify",
+  "rendererMatrix": {
+    "coefficient": "IntegerKeypad",
+    "wholeExpression": "StructuredEntry"
+  },
+  "teacherReviewRequiredFor": [
+    "area partition diagrams",
+    "manual algebra tiles and geometric differences",
+    "proof for cancellation of cross-terms",
+    "open written word problems"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralSpecialProductsTests.cs",
+    "tests/academic-uae-grade10-u01l04-stage-d-source-review.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "blueprintRegisteredLessonCount": 148,
+  "contentPackCurrentLessonCount": 48,
+  "globalArabicContentComplete": false,
+  "firstIncompleteLessonOrdinal": 5,
+  "nextEligibleLessonOrdinal": 5,
+  "closedAtUtc": "2026-11-24T11:13:03Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "contentCommit": "a8553111b423b1c687556af886992236a999cf5c",
+  "closureBasis": "Distinct original source lesson pp41-46 element types 20 of 20 mapped, independent Arabic nine examples five visuals, source exact Square+/Square−/Conjugate full expression and two reusable coefficient families, teacher rubric, test source created NOT_RUN.",
+  "remainingStageDObligations": [
+    "run .NET/Node tests, verify generated questions with independent expected coefficients and Arabic parsed response",
+    "run authenticated RTL student experience and verify structured input and grade report",
+    "enable production routing only if tests pass and exact skill matched",
+    "finish 148 Arabic bodies then run safe release/migration gates"
+  ],
+  "arabicWorkedExamples": 24,
+  "stageDFollowup": {
+    "reason": "Cross-target original exercises from advanced composite lesson source",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-distribution-products.json",
+    "addedWorkedExampleGroups": 2,
+    "numberedParents": 4,
+    "sourceDenominatorUnchanged": "Historical scoped source denominator; cross-target supplement not full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-004-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 41,
+  "canonicalCode": "G10-U04-L08",
+  "unitNumber": 4,
+  "unitTitle": "الدوال والمعادلات التربيعية",
+  "lessonTitle": "معدل تغير الدالة التربيعية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L08:C041",
+  "status": "READY_FOR_STAGE_D",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "ownerApprovedCanonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "sourceIndexLocked": true,
+  "sourceBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourceEdition": "UAE Applied Grade10 Arabic 2022–2023 Volume2, Unit4-1 algebra lab",
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "sourcePdfPages": [
+    31
+  ],
+  "sourcePrintedPages": [
+    214
+  ],
+  "secondaryTocOnlySource": "03.pdf PDF9; annual index repeated, no second source-body lesson",
+  "sourceElementDenominatorForThisLesson": 16,
+  "sourceElementsMapped": 16,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-041-source-elements.json",
+  "sourceEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-041-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-041-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u04-l08-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 14,
+  "originalVisualModels": 6,
+  "originalCartesianPlots": 3,
+  "primarySkills": [
+    "algebra.quadratic.rate_of_change"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-041-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l08.average_rate",
+    "uae.g10.general.u04.l08.rate_is_positive"
+  ],
+  "independentVerifier": "UaeG10QuadraticRatesResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "draw full source rocket chart and interval half-second table",
+    "interpret height units ft and average signed velocity ft/sec",
+    "compare increase/decrease for y=x² and source rocket",
+    "physical freefall with allowable time/height domain"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l08.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10QuadraticRatesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "contentCloseCommit": "74efb76b07068a38c933e2b552abdfba34e4f491",
+  "firstIncompleteGlobalOrdinal": 42,
+  "nextEligibleCanonicalCode": "G10-U05-L01",
+  "closedAtUtc": "2026-11-25T19:11:27Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "One-page original Applied algebra lab p214 directly inspected, 16 goal/exercise/representation categories mapped, independent original Arabic 14 examples/6 models including three Cartesian tables, two source-exact half-second rate questions and standalone parameter verifier, teacher rubric, Stage D test files written not run."
+}

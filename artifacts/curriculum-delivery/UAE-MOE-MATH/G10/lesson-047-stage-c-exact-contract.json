@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 47,
+  "canonicalCode": "G10-U05-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L06:C047",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourcePdfPages": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+  ],
+  "sourcePrintedPages": [
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604
+  ],
+  "primarySkills": [
+    "logarithms.g10.common_exponential_models"
+  ],
+  "reusedQuestionFamilies": [],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l06.common_log_rounded",
+    "uae.g10.general.u05.l06.change_base_rounded",
+    "uae.g10.general.u05.l06.exponential_equation",
+    "uae.g10.general.u05.l06.exponential_two_bases",
+    "uae.g10.general.u05.l06.exponential_inequality",
+    "uae.g10.general.u05.l06.exponential_quadratic_roots",
+    "uae.g10.general.u05.l06.sound_intensity_micro",
+    "uae.g10.general.u05.l06.sound_reduction_percent",
+    "uae.g10.general.u05.l06.energy_scaled",
+    "uae.g10.general.u05.l06.log_model_population",
+    "uae.g10.general.u05.l06.log_model_time",
+    "uae.g10.general.u05.l06.observed_growth_rate",
+    "uae.g10.general.u05.l06.observed_growth_time",
+    "uae.g10.general.u05.l06.music_cents",
+    "uae.g10.general.u05.l06.music_frequency",
+    "uae.g10.general.u05.l06.ph_from_concentration",
+    "uae.g10.general.u05.l06.mass_ppm",
+    "uae.g10.general.u05.l06.lab_intersection",
+    "uae.g10.general.u05.l06.lab_interval"
+  ],
+  "forbiddenQuestionFamilies": [],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10CommonLogarithm (shared engine extension)",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10CommonLogarithmResponse.Verify: natural-log residual sign crossing over four-place rounding bucket, two-root completeness and interval direction/bracket validation; exact graph-lab interval endpoints. Stage D not run.",
+  "parameterBounds": {
+    "bases": "distinct prime bases 2,3,5,7; reciprocal variants; slopes 1..3, shifts −4..4",
+    "models": "positive bounded observations and concentrations; h=2..9; n=2..6 years; normalized energy and intensity units",
+    "rounding": "four decimal places; independent residual signs; free symbolic/graph work teacher graded"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l06.common_log_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.change_base_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.exponential_equation",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.exponential_two_bases",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.exponential_inequality",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.exponential_quadratic_roots",
+      "kind": "StructuredEntry",
+      "answerType": "exact_vector",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.sound_intensity_micro",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.sound_reduction_percent",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.energy_scaled",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.log_model_population",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.log_model_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.observed_growth_rate",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.observed_growth_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.music_cents",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.music_frequency",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.ph_from_concentration",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.mass_ppm",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.lab_intersection",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.lab_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual graphs and teacher overlay tasks in Rich V2 and rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "free proof and symbolic transformation",
+    "source graphical intersections and shading outside bounded models",
+    "model assumptions, units and pH/contaminant distinction"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-047-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l06.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10CommonLogarithmTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "READY_FOR_STAGE_D"
+  },
+  "scopeStatement": "Owner-approved matching-body repair, including graph laboratory; not all-edition source parity or runtime certification.",
+  "authoringChecks": {
+    "independentArithmeticCases": 37452,
+    "result": "PASS_STATIC_AUTHORING_ONLY",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "cartesianCoordinateChecks": 44
+  }
+}

@@ -264,6 +264,44 @@ def audit() -> dict[str, Any]:
             if representations & VISUAL_REPRESENTATIONS:
                 visual_family_ids.add(str(family_id))
 
+    # G10 delegates its deterministic visuals to a separate partial renderer.
+    # Require exact dispatch and case labels; a prefix alone is not evidence.
+    # Compiled tests independently generate all 33 registered visual families.
+    g10_prefix = "uae.g10.general."
+    g10_required = {family for family in visual_family_ids if family.startswith(g10_prefix)}
+    if g10_required:
+        g10_renderer = VISUAL_RENDERER.with_name("PracticeMathVisualRenderer.UaeG10.cs")
+        g10_dispatch = (
+            '_ when family.StartsWith("uae.g10.general.", StringComparison.Ordinal)'
+            ' => UaeG10Visual(family, parameters),'
+        )
+        if switch_match and g10_dispatch in switch_match.group("body") and g10_renderer.is_file():
+            g10_source = g10_renderer.read_text(encoding="utf-8")
+            g10_switch = re.search(
+                r'switch\s*\(name\)\s*\{(?P<body>.*?)\n\s*return null;\s*\n\s*\}',
+                g10_source,
+                flags=re.DOTALL,
+            )
+            if (
+                'const string prefix = "uae.g10.general.";' in g10_source
+                and 'string name = family[prefix.Length..];' in g10_source
+                and g10_switch
+            ):
+                g10_cases = []
+                for line in g10_switch.group("body").splitlines():
+                    case = re.fullmatch(r'\s*case "(u\d{2}\.l\d{2}\.[a-z0-9_]+)":\s*', line)
+                    if case:
+                        g10_cases.append(case.group(1))
+                g10_implemented = {g10_prefix + case for case in g10_cases}
+                if len(g10_cases) == len(g10_implemented) == 33 and g10_implemented == g10_required:
+                    rendered_families.update(g10_implemented)
+                else:
+                    visual_blockers.append("G10 visual dispatch must match all 33 exact registered visual cases")
+            else:
+                visual_blockers.append("G10 visual case dispatch could not be verified")
+        else:
+            visual_blockers.append("G10 specialized renderer is missing its exact main dispatch")
+
     missing_renderers = sorted(visual_family_ids - rendered_families)
     visual_blockers.extend(
         f"visual Practice family has no deterministic renderer: {family_id}"

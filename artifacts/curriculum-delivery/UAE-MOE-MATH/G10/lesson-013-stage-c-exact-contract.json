@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L13",
+  "lessonOrdinal": 13,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L13:C013",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 lesson3-5 integrated into owner-approved General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePages": [
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242
+  ],
+  "sourcePrintedPages": [
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225
+  ],
+  "primarySkills": [
+    "algebra.polynomial.solve_higher_degree"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l13.cubic_integer_roots",
+    "uae.g10.general.u01.l13.biquadratic_integer_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l12.graph_x_intercepts",
+    "uae.g10.general.u01.l06.monic_quadratic_roots",
+    "uae.g10.general.u01.l07.nonmonic_quadratic_roots"
+  ],
+  "exactScope": "Source-aligned bounded solving of cubic P(x)=0 with three distinct integer roots using factoring/zero-product, and quartic P(x)=0 in x^4,x² with four real integer roots via y=x²; no claim to solve arbitrary high-degree irrational/complex equations.",
+  "parameters": [
+    "a",
+    "r1",
+    "r2",
+    "r3",
+    "u",
+    "v",
+    "mode"
+  ],
+  "bounds": {
+    "coefficient": "a ∈ [-3,3]\\{0}",
+    "cubic": "mode=1, distinct sorted r1<r2<r3 in [-4,4], u=v=0",
+    "biquadratic": "mode=2, r1=r2=r3=0, 1<=u<v<=4",
+    "candidateRealIntegers": "x in [-4,4]"
+  },
+  "answerFormat": "Sorted, unique comma-delimited integer roots; accepts Arabic/Eastern/Western numerals and Arabic comma; full list required.",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l13.cubic_integer_roots",
+      "answerType": "enum_text",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    },
+    {
+      "family": "uae.g10.general.u01.l13.biquadratic_integer_roots",
+      "answerType": "enum_text",
+      "renderer": "StructuredEntry",
+      "status": "StageCAuthoredPendingD"
+    }
+  ],
+  "engine": "ExactSkillContractQuestionEngine",
+  "generator": "BuildG10PolynomialEquation(family,random,difficulty)",
+  "independentVerifier": "UaeG10PolynomialEquationResponse.Verify(family,parameters,response)",
+  "mathVerification": "Generate expanded coefficients from bounded factored form. Independently use Horner evaluation of the original expanded polynomial at each candidate integer from -4 to 4 to determine exactly three or four real integer solutions; invalid parameters/forged response rejected; no oracle based on generated CorrectAnswer.",
+  "teacherReviewRequired": [
+    "noninteger/irrational/complex or repeated roots of higher-degree equations",
+    "original factorization proofs, grouping and synthetic division long-form work",
+    "real-world positive lengths and units for volume/area problems",
+    "calculator approximate roots and graph window precision",
+    "proof of full set of real roots or domain restrictions"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l13.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialEquationsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "notes": "Owner-approved 148-index Grade10 General, no separate Advanced pathway, and unique higher-degree polynomial equations skill. Stage D not run."
+}

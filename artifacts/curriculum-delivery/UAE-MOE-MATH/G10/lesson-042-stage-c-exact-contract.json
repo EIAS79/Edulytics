@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 42,
+  "canonicalCode": "G10-U05-L01",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L01:C042",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourcePdfPages": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117
+  ],
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "primarySkills": [
+    "algebra.exponential.graph_features"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l01.value_at_x",
+    "uae.g10.general.u05.l01.is_growth",
+    "uae.g10.general.u05.l01.horizontal_asymptote",
+    "uae.g10.general.u05.l01.value_at_shift"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l07.vertex_h",
+    "uae.g10.general.u04.l08.average_rate"
+  ],
+  "generator": "BuildG10ExponentialGraph(family,random,difficulty)",
+  "independentVerifier": "UaeG10ExponentialGraphResponse.Verify uses source a,b,k,exponent at shifted probe",
+  "parameterBounds": {
+    "base": "2..5 integer",
+    "coeff": "1..4 integer",
+    "direction": "1 for b>1 growth, 0 for base reciprocal decay",
+    "h": "-2..2 integer",
+    "k": "-4..4 integer",
+    "step": "0..2",
+    "amplitude": "growth coeff; decay coeff*base² to permit exact integer value at bounded probes"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l01.value_at_x",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u05.l01.is_growth",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u05.l01.horizontal_asymptote",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u05.l01.value_at_shift",
+      "kind": "IntegerKeypad"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full graph on negative exponent values including rational fractions",
+    "geometric interpretation of horizontal asymptote and graph domain/range",
+    "real-world source tea/consumption growth model, population and compounding",
+    "fractional base and negative or fractional vertical stretch outside exact bounded subset",
+    "draw technology graph and justify graph shifts and ratio table"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ExponentialGraphTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "scopeStatement": "Source-specific grade10 whole lesson authored in Arabic; tested in Stage D only, no production routing."
+}

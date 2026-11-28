@@ -191,4 +191,9 @@
     <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Seeding/Grade10/legacy-scope.json" LogicalName="Edulytics.Data.Grade10.LegacyScope" />
+    <EmbeddedResource Include="Seeding/Grade10/tenant-transition.sql" LogicalName="Edulytics.Data.Grade10.TenantTransition" />
+  </ItemGroup>
+
 </Project>

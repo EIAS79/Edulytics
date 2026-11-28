@@ -1,0 +1,3 @@
+# Lesson 105 — matching source body
+
+03.pdf SHA-256 0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b, physical 150–158 printed 539–547, lesson 8-8 and geometry lab visually examined. Six valid examples preserved; seventeen original additions cover distance derivation, point/diameter, completing squares including non-circle cases, graph, three points, intersections, compound locus and parabola extension. Five new representations; twelve bounded signed/unsigned numeric families. Full symbolic equations, ordered pair sets, sketches and lab remain teacher scored; no full digital parity. Corrected lesson 104 rounded answerType to existing exact_decimal registry convention. Stage D not run.

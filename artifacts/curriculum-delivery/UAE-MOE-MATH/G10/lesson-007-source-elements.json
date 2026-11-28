@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 7,
+  "canonicalCode": "G10-U01-L07",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "title": "حل ax² + bx + c = 0",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:07:SOLVING-AX-BX-C-0",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "book": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "sourcePrintedPages": [
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "sourceReviewMethod": "Source visually inspected on authorized remote General PDF65–69, with cumulative unit test PDF70 excluded and U01L08 difference-of-squares lesson starting PDF71. Distinct mathematics objectives, worked models, exercise families, contextual/graph teacher activities indexed; source prose and artwork not copied.",
+  "sourceElementCount": 27,
+  "elementDenominatorForThisBook": 27,
+  "sourceElements": [
+    {
+      "elementId": "G10-GEN-2025-U01L07-E01",
+      "sourcePhysicalPage": 65,
+      "sourcePrintedPage": 52,
+      "category": "concept",
+      "goal": "factor nonmonic a*x²+b*x+c, a≠1, by product a*c and sum b",
+      "appLocation": "RichV2 Explanation and KeyConcept «طريقة أ×ج»",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E02",
+      "sourcePhysicalPage": 65,
+      "sourcePrintedPage": 52,
+      "category": "representation",
+      "goal": "convert b*x into two middle terms to expose a common binomial after grouping",
+      "appLocation": "RichV2 CalculationChain «فصل الوسط وتجميع الحدود»",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E03",
+      "sourcePhysicalPage": 65,
+      "sourcePrintedPage": 52,
+      "category": "worked_example",
+      "goal": "integer nonmonic factor pairing after ac test",
+      "appLocation": "RichV2 worked ٦س²+١١س+٣",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E04",
+      "sourcePhysicalPage": 65,
+      "sourcePrintedPage": 52,
+      "category": "concept",
+      "goal": "ensure split middle terms retain the full original polynomial",
+      "appLocation": "RichV2 KeyConcepts and CommonMistakes",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E05",
+      "sourcePhysicalPage": 65,
+      "sourcePrintedPage": 52,
+      "category": "assessment",
+      "goal": "complete factored expression of nonmonic trinomial with all cross terms",
+      "appLocation": "New Grade10 nonmonic_full_factor bounded family, tests NOT RUN",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E06",
+      "sourcePhysicalPage": 66,
+      "sourcePrintedPage": 53,
+      "category": "worked_example",
+      "goal": "ac grouping where c positive and b positive",
+      "appLocation": "RichV2 example ٢س²+٧س+٣",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E07",
+      "sourcePhysicalPage": 66,
+      "sourcePrintedPage": 53,
+      "category": "worked_example",
+      "goal": "ac grouping with c negative and b negative",
+      "appLocation": "RichV2 example ٣س²−٥س−٢",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E08",
+      "sourcePhysicalPage": 66,
+      "sourcePrintedPage": 53,
+      "category": "concept",
+      "goal": "after grouping verify the two factor binomials and their leading coefficients",
+      "appLocation": "RichV2 KeyConcept and original example checks",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E09",
+      "sourcePhysicalPage": 66,
+      "sourcePrintedPage": 53,
+      "category": "assessment",
+      "goal": "mixed signed coefficient nonmonic polynomials factoring exercises",
+      "appLocation": "New Grade10 nonmonic factor family; source-scoped bounded coefficient ranges",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E10",
+      "sourcePhysicalPage": 66,
+      "sourcePrintedPage": 53,
+      "category": "reasoning",
+      "goal": "identify non-factorable integer trinomial rather than inventing factor pair",
+      "appLocation": "RichV2 ٢س²+س−٢ prime example + manual explanation",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E11",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "concept",
+      "goal": "zero-product equation solving after nonmonic factorization",
+      "appLocation": "RichV2 KeyConcept rational roots and worked solutions",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E12",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "worked_example",
+      "goal": "solve nonmonic quadratic with rational root from ax+b=0",
+      "appLocation": "RichV2 ٦س²+١١س+٣=٠ worked roots",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E13",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "application",
+      "goal": "projectile/throwing model with quadratic leading coefficient not equal to one",
+      "appLocation": "RichV2 original h(t)=−١٠t²+٣٠t+٤٠; teacher time restrictions",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E14",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "assessment",
+      "goal": "independent rational root pair in fraction notation",
+      "appLocation": "Grade10 nonmonic_rational_roots exact family, two roots, order-independent; Stage D pending",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E15",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "representation",
+      "goal": "graph method checks where a nonmonic quadratic meets the horizontal axis",
+      "appLocation": "RichV2 graph/intercept reasoning, teacher rubric for learner sketch",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E16",
+      "sourcePhysicalPage": 67,
+      "sourcePrintedPage": 54,
+      "category": "concept",
+      "goal": "negative leading coefficient requires signed grouping or first extracting -1",
+      "appLocation": "RichV2 worked −٦س²+٧س+٣ and CommonMistakes",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E17",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "assessment",
+      "goal": "test factorability and write prime over integers when no integer binomial factors",
+      "appLocation": "Grade10 nonmonic_prime_over_integers bounded family",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E18",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "assessment",
+      "goal": "solve multiple quadratic equation variants and verify graph solutions",
+      "appLocation": "RichV2 original signed and fractional worked cases",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E19",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "application",
+      "goal": "initial-height and vertical-velocity contextual quadratics",
+      "appLocation": "RichV2 projectile example, teacher scoring context",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E20",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "application",
+      "goal": "ball throw/fall and physical-time admissibility from roots",
+      "appLocation": "RichV2 original kinematic context; teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E21",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "reasoning",
+      "goal": "distinguish an integer-prime polynomial from lack of real roots",
+      "appLocation": "RichV2 KeyConcept discriminator ٢س²+س−٢ and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E22",
+      "sourcePhysicalPage": 68,
+      "sourcePrintedPage": 55,
+      "category": "representation",
+      "goal": "verify rational root answers with graphing tool in source",
+      "appLocation": "RichV2 numeric substitution and graph description, not asserted graph auto-grading",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E23",
+      "sourcePhysicalPage": 69,
+      "sourcePrintedPage": 56,
+      "category": "assessment",
+      "goal": "further negative leading coefficient and integer factor pairs",
+      "appLocation": "RichV2 original negative-leading worked example",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E24",
+      "sourcePhysicalPage": 69,
+      "sourcePrintedPage": 56,
+      "category": "application",
+      "goal": "rectangle/area nonmonic polynomial dimensions and positive solutions",
+      "appLocation": "RichV2 (٢س+٣)(س+٤)=٤٢ with negative root rejected",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E25",
+      "sourcePhysicalPage": 69,
+      "sourcePrintedPage": 56,
+      "category": "reasoning",
+      "goal": "argument comparing a wrong cancellation or nonfactorable claim and correct grouping",
+      "appLocation": "RichV2 final error diagnosis and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E26",
+      "sourcePhysicalPage": 69,
+      "sourcePrintedPage": 56,
+      "category": "representation",
+      "goal": "area of outer square minus inner square as transition to next lesson",
+      "appLocation": "RichV2 next-lesson boundary note; U01L08 owns full difference-of-squares factoring",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-GEN-2025-U01L07-E27",
+      "sourcePhysicalPage": 69,
+      "sourcePrintedPage": 56,
+      "category": "writing",
+      "goal": "explain how m,n are chosen for ax²+bx+c, a>1, with independent check",
+      "appLocation": "RichV2 Explanation and teacher written rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "reviewBoundary": {
+    "cumulativeReviewPdfPage": 70,
+    "printed": 58,
+    "nextLesson": "G10-U01-L08",
+    "nextLessonStartPdfPage": 71
+  },
+  "crossbookEvidence": {
+    "crosswalkPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-crossbook-semantic-crosswalk.json",
+    "relatedGoals": [
+      "C08",
+      "C12",
+      "C13",
+      "C14",
+      "C15"
+    ],
+    "advancedBook": "01متقدم_.pdf",
+    "advancedPdfPages": [
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137
+    ],
+    "advancedPrintedPages": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "appliedBook": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+    "appliedPdfPages": [
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "appliedPrintedPages": [
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238
+    ],
+    "dedupStatus": "FIVE_RELATED_ADVANCED_APPLIED_GOAL_CATEGORIES_DIRECTLY_REVIEWED_AND_ALREADY_ROUTED_TO_U01L07",
+    "separateDestinations": "G10-U01-L06 monic, G10-U01-L08 factoring difference squares; no Advanced/Applied duplicate course."
+  },
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceIndexLocked": true,
+  "canonicalIndexOwnerApproved": true,
+  "testsRun": "WRITTEN_NOT_RUN",
+  "originalPublisherTextOrImagesCopied": false,
+  "conclusion": "27 distinct General source learning-goal/representation/exercise-family types mapped with 5 crossbook nonmonic objectives. Exact Grade10 binary factor, rational roots and prime-over-Z families authored, teacher geometry/physics/reasoning extension distinct; StageD remains NOT_RUN."
+}

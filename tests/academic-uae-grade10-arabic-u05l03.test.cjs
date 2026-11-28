@@ -1,0 +1,31 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const load=p=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'..',p),'utf8'));
+const root='artifacts/curriculum-delivery/UAE-MOE-MATH/G10/';
+const cp=load(root+'lesson-044-stage-a-c-checkpoint.json');
+const ledger=load(root+'lesson-044-source-elements.json');
+const c=load(root+'lesson-044-stage-c-exact-contract.json');
+const r=load('src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u05-l03-ar.rich-lesson-v2.json').Lessons[0];
+test('Lesson44 selected supplemental source, Arabic content, exact family links and honest Stage D gate',()=>{
+ assert.equal(cp.canonicalOrdinal,44);assert.equal(cp.sourceBodyVerified,true);
+ assert.equal(cp.sourceSha256,'2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c');
+ assert.equal(cp.sourceElementDenominatorForThisLesson,null);assert.equal(cp.fullSourceBookEquivalenceClaimed,false);
+ assert.equal(cp.productionRouting,false);assert.equal(cp.stageD,'NOT_STARTED');assert.equal(cp.testsRun,'WRITTEN_NOT_RUN');
+ assert.equal(r.WorkedExamples.length,27);assert.equal(r.Visuals.length,10);
+ assert.ok(r.ExplanationParagraphs.every(x=>!x.includes('متنه غير متاح')));
+ assert.ok(r.WorkedExamples.every(e=>e.Answer&&e.Check&&e.Steps.length>=2));
+ assert.equal(ledger.sourceElementCount,ledger.sourceElements.length);assert.equal(new Set(ledger.sourceElements.map(e=>e.elementId)).size,ledger.sourceElementCount);
+ assert.equal(c.allowedQuestionFamilies.length,12);
+ assert.ok(ledger.sourceElements.every(e=>!e.questionFamily||c.allowedQuestionFamilies.includes(e.questionFamily)));
+ const pack=load('src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g10-general-t1-ogl-v1.lesson-content-pack.json');
+ const t=pack.Lessons.find(l=>l.LessonCode===r.LessonCode).Translations.find(t=>t.CultureCode==='ar');
+ assert.equal(t.Explanation,r.ExplanationParagraphs.join('\n\n'));
+ const mappings=load('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json').mappings;
+ assert.deepEqual(mappings.find(m=>m.lessonCode===r.LessonCode).allowedQuestionFamilies,c.allowedQuestionFamilies);
+ const registry=load('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json').families;
+ for(const id of c.allowedQuestionFamilies){const q=registry.filter(x=>x.id===id);assert.equal(q.length,1);assert.equal(q[0].productionRouting,false);}
+ const plots=r.Visuals.filter(v=>v.Kind==='CartesianPlot');
+ const funcs=[x=>Math.log2(x),x=>-Math.log2(x),x=>-2*Math.log2(x-4)+1,x=>12+6*Math.log(x+1)/Math.log(3),x=>3*Math.pow(2,x),x=>3*Math.log2(2*x-6)-1];
+ assert.equal(plots.length,funcs.length);
+ plots.forEach((v,i)=>v.Rows.forEach(row=>{const [x,y]=row.Cells.map(Number);assert.ok(Math.abs(funcs[i](x)-y)<1e-9);}));
+});

@@ -1,0 +1,28 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L09:C106",
+  "skillId": "geometry.circle.g10.sector_area",
+  "familyIds": [
+    "uae.g10.general.u13.l09.disk_pi_coefficient",
+    "uae.g10.general.u13.l09.disk_from_diameter",
+    "uae.g10.general.u13.l09.radius_from_area",
+    "uae.g10.general.u13.l09.area_from_circumference",
+    "uae.g10.general.u13.l09.sector_pi_coefficient",
+    "uae.g10.general.u13.l09.sector_central_angle",
+    "uae.g10.general.u13.l09.sector_radius",
+    "uae.g10.general.u13.l09.annulus_pi_coefficient",
+    "uae.g10.general.u13.l09.disk_rounded",
+    "uae.g10.general.u13.l09.sector_rounded",
+    "uae.g10.general.u13.l09.quarter_segment_rounded",
+    "uae.g10.general.u13.l09.square_outside_disk_rounded"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "k 1..6; r=6k; angles 30..330 step 30; 1<=inner<r; exact integer pi coefficients; approximations 2 decimals",
+  "teacherScoring": [
+    "arbitrary composite diagrams",
+    "free-form proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}

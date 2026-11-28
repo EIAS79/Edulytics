@@ -1,0 +1,1454 @@
+{
+  "schemaVersion": 1,
+  "scope": "46 previously teacher-only lessons; original bounded digital subset after directly sampling two pages per lesson; not all eligible targets or atomic source parity",
+  "lessonCount": 46,
+  "questionFamilyCount": 96,
+  "productionRouting": false,
+  "fullSourceParity": "UNKNOWN",
+  "lessons": [
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:01:PARALLEL-AND-INTERSECTING-LINES",
+      "title": "المستقيمات المتوازية والمتقاطعة",
+      "unit": 7,
+      "unitLesson": 1,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        154,
+        155
+      ],
+      "primarySkills": [
+        "geometry.lines.parallel_intersect"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u07.l01.line_pair_type",
+        "uae.g10.general.u07.l01.plane_pair_type"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U07_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric diagrams and spatial straight lines",
+        "angle and coordinate proof steps",
+        "ruler-construction and explanation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:03:06:PERPENDICULARS-AND-DISTANCE",
+      "title": "المتعامدات والمسافة",
+      "unit": 7,
+      "unitLesson": 6,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        196,
+        197
+      ],
+      "primarySkills": [
+        "geometry.distance.perpendicular_point_line"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u07.l06.perpendicular_point_line_distance",
+        "uae.g10.general.u07.l06.perpendicular_slope"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U07_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric diagrams and spatial straight lines",
+        "angle and coordinate proof steps",
+        "ruler-construction and explanation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:01:REFLECTIONS",
+      "title": "الانعكاس",
+      "unit": 8,
+      "unitLesson": 1,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        218,
+        219
+      ],
+      "primarySkills": [
+        "geometry.transformations.reflection"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l01.reflection_vertical_x",
+        "uae.g10.general.u08.l01.reflection_horizontal_y",
+        "uae.g10.general.u08.l01.reflection_diagonal_y"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:02:TRANSLATIONS",
+      "title": "الإزاحة",
+      "unit": 8,
+      "unitLesson": 2,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        227,
+        228
+      ],
+      "primarySkills": [
+        "geometry.transformations.translation"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l02.translation_x",
+        "uae.g10.general.u08.l02.translation_y"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:03:ROTATIONS",
+      "title": "الدوران",
+      "unit": 8,
+      "unitLesson": 3,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        235,
+        236
+      ],
+      "primarySkills": [
+        "geometry.transformations.rotation"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l03.rotation_90_x",
+        "uae.g10.general.u08.l03.rotation_180_y",
+        "uae.g10.general.u08.l03.rotation_270_y"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:04:COMPOSITIONS-OF-TRANSFORMATIONS",
+      "title": "تركيب التحويلات",
+      "unit": 8,
+      "unitLesson": 4,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        246,
+        247
+      ],
+      "primarySkills": [
+        "geometry.transformations.composition"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l04.reflect_then_translate_x",
+        "uae.g10.general.u08.l04.translate_then_reflect_x"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:05:SYMMETRY",
+      "title": "التناظر",
+      "unit": 8,
+      "unitLesson": 5,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        258,
+        259
+      ],
+      "primarySkills": [
+        "geometry.transformations.symmetry"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l05.regular_polygon_symmetry_axes",
+        "uae.g10.general.u08.l05.least_rotation_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L05_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:04:06:DILATIONS",
+      "title": "عمليات تغيير الأبعاد (التمدد)",
+      "unit": 8,
+      "unitLesson": 6,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        269,
+        270
+      ],
+      "primarySkills": [
+        "geometry.transformations.dilation"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u08.l06.dilation_origin_x",
+        "uae.g10.general.u08.l06.dilation_side_length"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U08_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "construction, exact geometric plotting and orientation",
+        "student reflection/rotation transformation proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:01:CLASSIFYING-TRIANGLES",
+      "title": "تصنيف المثلثات",
+      "unit": 9,
+      "unitLesson": 1,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        288,
+        289
+      ],
+      "primarySkills": [
+        "geometry.triangles.classification"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l01.classify_triangle_sides",
+        "uae.g10.general.u09.l01.classify_triangle_angles"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and shape diagram"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:02:ANGLES-OF-TRIANGLES",
+      "title": "زوايا المثلثات",
+      "unit": 9,
+      "unitLesson": 2,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        297,
+        298
+      ],
+      "primarySkills": [
+        "geometry.triangles.interior_angle_sum"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l02.third_triangle_angle",
+        "uae.g10.general.u09.l02.exterior_triangle_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and shape diagram"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:03:CONGRUENT-TRIANGLES",
+      "title": "المثلثات المتطابقة",
+      "unit": 9,
+      "unitLesson": 3,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        306,
+        307
+      ],
+      "primarySkills": [
+        "geometry.triangles.congruence_concept"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l03.corresponding_side_length",
+        "uae.g10.general.u09.l03.corresponding_side_equation"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and shape diagram"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:04:PROVING-CONGRUENCE-SSS-AND-SAS",
+      "title": "إثبات تطابق المثلثات–تساوي الأضلاع الثلاثة (SSS)، تساوي ضلعين وزاوية (SAS)",
+      "unit": 9,
+      "unitLesson": 4,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        316,
+        317
+      ],
+      "primarySkills": [
+        "geometry.triangle_congruence.sss"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l04.sss_match_condition",
+        "uae.g10.general.u09.l04.sas_included_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and visual geometry"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:05:PROVING-CONGRUENCE-ASA-AND-AAS",
+      "title": "إثبات تطابق المثلثات–تساوي زاويتين والضلع المحصور بينهما (ASA) وتساوي زاويتين وضلع (AAS)",
+      "unit": 9,
+      "unitLesson": 5,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        326,
+        327
+      ],
+      "primarySkills": [
+        "geometry.triangle_congruence.asa"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l05.asa_included_side",
+        "uae.g10.general.u09.l05.aas_remaining_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L05_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and visual geometry"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:06:ISOSCELES-AND-EQUILATERAL-TRIANGLES",
+      "title": "المثلثات متساوية الساقين ومتساوية الأضلاع",
+      "unit": 9,
+      "unitLesson": 6,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        336,
+        337
+      ],
+      "primarySkills": [
+        "geometry.triangles.isosceles_base_angle"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l06.isosceles_base_angle",
+        "uae.g10.general.u09.l06.equilateral_perimeter"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof and visual geometry"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:07:CONGRUENCE-TRANSFORMATIONS",
+      "title": "تحويلات التطابق",
+      "unit": 9,
+      "unitLesson": 7,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        347,
+        348
+      ],
+      "primarySkills": [
+        "geometry.transformations.congruence"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l07.rigid_image_side_length",
+        "uae.g10.general.u09.l07.rigid_image_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L07_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric drawing and proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 77,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:08:TRIANGLES-AND-COORDINATE-PROOF",
+      "title": "المثلثات والبرهان الإحداثي",
+      "unit": 9,
+      "unitLesson": 8,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        354,
+        355
+      ],
+      "primarySkills": [
+        "geometry.coordinate.triangle_proofs"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l08.coordinate_side_square",
+        "uae.g10.general.u09.l08.coordinate_midpoint_x"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L08_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric drawing and proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 78,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:05:09:AREA-OF-PARALLELOGRAMS-AND-TRIANGLES",
+      "title": "مساحة متوازي الأضلاع والمثلث",
+      "unit": 9,
+      "unitLesson": 9,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        364,
+        365
+      ],
+      "primarySkills": [
+        "geometry.area.triangle_parallelogram"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u09.l09.parallelogram_area",
+        "uae.g10.general.u09.l09.triangle_area"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U09_L09_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric drawing and proof"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 79,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:01:PERPENDICULAR-BISECTORS",
+      "title": "منصفات المثلثات",
+      "unit": 10,
+      "unitLesson": 1,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        385,
+        386
+      ],
+      "primarySkills": [
+        "geometry.triangles.bisectors_centers"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l01.perpendicular_bisector_distance",
+        "uae.g10.general.u10.l01.angle_bisector_equidistance"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 80,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
+      "title": "متوسطات المثلثات وارتفاعاتها",
+      "unit": 10,
+      "unitLesson": 2,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        396,
+        397
+      ],
+      "primarySkills": [
+        "geometry.triangles.centroid_orthocenter"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l02.centroid_vertex_segment",
+        "uae.g10.general.u10.l02.centroid_midpoint_segment"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 81,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:03:INEQUALITIES-IN-ONE-TRIANGLE",
+      "title": "المتباينات في مثلث واحد",
+      "unit": 10,
+      "unitLesson": 3,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        405,
+        406
+      ],
+      "primarySkills": [
+        "geometry.triangles.side_angle_order"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l03.largest_opposite_angle",
+        "uae.g10.general.u10.l03.exterior_angle_bound"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 82,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:04:INDIRECT-PROOF",
+      "title": "البرهان غير المباشر",
+      "unit": 10,
+      "unitLesson": 4,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        416,
+        417
+      ],
+      "primarySkills": [
+        "geometry.proofs.indirect_contradiction"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l04.negated_inequality_membership",
+        "uae.g10.general.u10.l04.contradiction_upper_bound"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 83,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:05:TRIANGLE-INEQUALITY",
+      "title": "متباينة المثلث",
+      "unit": 10,
+      "unitLesson": 5,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        425,
+        426
+      ],
+      "primarySkills": [
+        "geometry.triangles.triangle_inequality_exact"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l05.triangle_third_side_min_integer",
+        "uae.g10.general.u10.l05.triangle_third_side_max_integer"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L05_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 84,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:06:INEQUALITIES-IN-TWO-TRIANGLES",
+      "title": "المتباينات في مثلثين",
+      "unit": 10,
+      "unitLesson": 6,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        432,
+        433
+      ],
+      "primarySkills": [
+        "geometry.triangles.hinge_theorem_converse"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u10.l06.hinge_opposite_side_relation",
+        "uae.g10.general.u10.l06.hinge_converse_angle_relation"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U10_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometry construction and drawn configurations",
+        "theorem converse justification",
+        "general proofs and diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 85,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L01:C085",
+      "title": "النسب والتناسب",
+      "unit": 11,
+      "unitLesson": 1,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        4,
+        5
+      ],
+      "primarySkills": [
+        "ratio.proportion.solve"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l01.proportion_missing_term",
+        "uae.g10.general.u11.l01.partition_by_ratio"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 86,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L02:C086",
+      "title": "المضلعات المتشابهة",
+      "unit": 11,
+      "unitLesson": 2,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        12,
+        13
+      ],
+      "primarySkills": [
+        "geometry.similarity.scale_factor"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l02.similar_polygon_side",
+        "uae.g10.general.u11.l02.similar_polygon_perimeter"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 87,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L03:C087",
+      "title": "المثلثات المتشابهة",
+      "unit": 11,
+      "unitLesson": 3,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        21,
+        22
+      ],
+      "primarySkills": [
+        "geometry.similarity"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l03.similar_triangle_aa_angle",
+        "uae.g10.general.u11.l03.similar_triangle_corresponding_side"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 88,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L04:C088",
+      "title": "المستقيمات المتوازية والأجزاء المتناسبة",
+      "unit": 11,
+      "unitLesson": 4,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        33,
+        34
+      ],
+      "primarySkills": [
+        "geometry.triangles.parallel_proportional_segments"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l04.parallel_segment_proportion",
+        "uae.g10.general.u11.l04.triangle_midsegment_length"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 89,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L05:C089",
+      "title": "أجزاء المثلثات المتشابهة",
+      "unit": 11,
+      "unitLesson": 5,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        44,
+        45
+      ],
+      "primarySkills": [
+        "geometry.triangles.similar_medians_altitudes_bisectors"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l05.similar_triangle_altitude",
+        "uae.g10.general.u11.l05.similar_triangle_median"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L05_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 90,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L06:C090",
+      "title": "تحويلات التشابه",
+      "unit": 11,
+      "unitLesson": 6,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        54,
+        55
+      ],
+      "primarySkills": [
+        "geometry.transformations.dilation"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l06.similarity_dilation_translation_x",
+        "uae.g10.general.u11.l06.similarity_transformed_length"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 91,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U11:L07:C091",
+      "title": "مقياس الرسم والنماذج المقياسية",
+      "unit": 11,
+      "unitLesson": 7,
+      "sourceBook": "02-1.pdf",
+      "sampledPages": [
+        61,
+        62
+      ],
+      "primarySkills": [
+        "geometry.scale_drawings"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u11.l07.map_actual_distance_km",
+        "uae.g10.general.u11.l07.model_scale_length_cm"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U11_L07_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "geometric proportionality proof",
+        "corresponding shapes and vertex mapping",
+        "unit conversions and model interpretation"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 92,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:01:ANGLES-OF-POLYGONS",
+      "title": "زوايا المضلعات",
+      "unit": 12,
+      "unitLesson": 1,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        454,
+        455
+      ],
+      "primarySkills": [
+        "geometry.polygons.angle_sum"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l01.polygon_interior_sum",
+        "uae.g10.general.u12.l01.regular_polygon_exterior_angle"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 93,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
+      "title": "متوازي الأضلاع",
+      "unit": 12,
+      "unitLesson": 2,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        464,
+        465
+      ],
+      "primarySkills": [
+        "geometry.quadrilaterals.parallelogram_properties"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l02.parallelogram_adjacent_angle",
+        "uae.g10.general.u12.l02.parallelogram_diagonal_half"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 94,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:03:TESTS-FOR-PARALLELOGRAMS",
+      "title": "اختبارات متوازي الأضلاع",
+      "unit": 12,
+      "unitLesson": 3,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        474,
+        475
+      ],
+      "primarySkills": [
+        "geometry.quadrilaterals.parallelogram_tests"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l03.parallelogram_sufficient_condition",
+        "uae.g10.general.u12.l03.parallelogram_diagonals_test"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 95,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:04:RECTANGLES",
+      "title": "المستطيل",
+      "unit": 12,
+      "unitLesson": 4,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        484,
+        485
+      ],
+      "primarySkills": [
+        "geometry.quadrilaterals.rectangle_properties"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l04.rectangle_equal_diagonals",
+        "uae.g10.general.u12.l04.rectangle_diagonal_length"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 96,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:05:RHOMBI-AND-SQUARES",
+      "title": "المعين والمربع",
+      "unit": 12,
+      "unitLesson": 5,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        491,
+        492
+      ],
+      "primarySkills": [
+        "geometry.quadrilaterals.rhombus_square"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l05.rhombus_side_from_diagonals",
+        "uae.g10.general.u12.l05.square_perimeter"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L05_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 97,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:06:TRAPEZOIDS-AND-KITES",
+      "title": "شبه المنحرف وشكل الطائرة الورقية",
+      "unit": 12,
+      "unitLesson": 6,
+      "sourceBook": "01.pdf",
+      "sampledPages": [
+        500,
+        501
+      ],
+      "primarySkills": [
+        "geometry.quadrilaterals.trapezoid_kite"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u12.l06.trapezoid_midsegment",
+        "uae.g10.general.u12.l06.kite_perimeter"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U12_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "formal polygon theorem proofs",
+        "geometry diagrams and construction",
+        "student reasoning and counterexamples"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 133,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L01:C133",
+      "title": "تمثيل فضاءات العينة",
+      "unit": 16,
+      "unitLesson": 1,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        121,
+        122
+      ],
+      "primarySkills": [
+        "probability.sample_spaces"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l01.sample_space_product_count",
+        "uae.g10.general.u16.l01.sample_space_three_stages"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "probability experiment diagrams and explanatory simulation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 134,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L02:C134",
+      "title": "استخدام التباديل والتوافيق في الاحتمالات",
+      "unit": 16,
+      "unitLesson": 2,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        128,
+        129
+      ],
+      "primarySkills": [
+        "probability.permutations_combinations"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l02.permutations_two_positions",
+        "uae.g10.general.u16.l02.combinations_two_members",
+        "uae.g10.general.u16.l02.combination_probability"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "probability experiment diagrams and explanatory simulation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 135,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L03:C135",
+      "title": "الاحتمالات الهندسية",
+      "unit": 16,
+      "unitLesson": 3,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        137,
+        138
+      ],
+      "primarySkills": [
+        "probability.geometric_measure"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l03.geometric_segment_probability",
+        "uae.g10.general.u16.l03.geometric_rectangle_probability"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "probability experiment diagrams and explanatory simulation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 136,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L04:C136",
+      "title": "المحاكاة",
+      "unit": 16,
+      "unitLesson": 4,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        145,
+        146
+      ],
+      "primarySkills": [
+        "probability.simulation_frequencies"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l04.simulation_relative_frequency",
+        "uae.g10.general.u16.l04.simulation_expected_count"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "probability experiment diagrams and explanatory simulation tasks"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 138,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L06:C138",
+      "title": "احتمالات الأحداث المستقلة وغير المستقلة",
+      "unit": 16,
+      "unitLesson": 6,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        153,
+        154
+      ],
+      "primarySkills": [
+        "probability.events.independence_conditional"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l06.independent_two_events",
+        "uae.g10.general.u16.l06.dependent_without_replacement"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L06_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "experiment outcomes and independence interpretation",
+        "conditional probability proofs",
+        "sample-space and event diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 139,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L07:C139",
+      "title": "احتمالات الأحداث المتنافية",
+      "unit": 16,
+      "unitLesson": 7,
+      "sourceBook": "02-2.pdf",
+      "sampledPages": [
+        160,
+        161
+      ],
+      "primarySkills": [
+        "probability.events.mutually_exclusive"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u16.l07.mutually_exclusive_union",
+        "uae.g10.general.u16.l07.overlapping_union"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U16_L07_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "experiment outcomes and independence interpretation",
+        "conditional probability proofs",
+        "sample-space and event diagrams"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 140,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L01:C140",
+      "title": "المتتاليات كدوال",
+      "unit": 17,
+      "unitLesson": 1,
+      "sourceBook": "03متقدم_.pdf",
+      "sampledPages": [
+        223,
+        224
+      ],
+      "primarySkills": [
+        "sequences.discrete_function_model"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u17.l01.sequence_function_term",
+        "uae.g10.general.u17.l01.sequence_common_difference"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U17_L01_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof of explicit and recursive equivalence",
+        "convergence arguments and applicable domains",
+        "context interpretation of sequences"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 141,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L02:C141",
+      "title": "المتتاليات والمتسلسلات الحسابية",
+      "unit": 17,
+      "unitLesson": 2,
+      "sourceBook": "03متقدم_.pdf",
+      "sampledPages": [
+        230,
+        231
+      ],
+      "primarySkills": [
+        "sequences.arithmetic.series"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u17.l02.arithmetic_nth_term",
+        "uae.g10.general.u17.l02.arithmetic_finite_sum"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U17_L02_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof of explicit and recursive equivalence",
+        "convergence arguments and applicable domains",
+        "context interpretation of sequences"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 142,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L03:C142",
+      "title": "المتتاليات والمتسلسلات الهندسية",
+      "unit": 17,
+      "unitLesson": 3,
+      "sourceBook": "03متقدم_.pdf",
+      "sampledPages": [
+        240,
+        241
+      ],
+      "primarySkills": [
+        "sequences.geometric.finite_series"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u17.l03.geometric_nth_term",
+        "uae.g10.general.u17.l03.geometric_finite_sum"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U17_L03_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof of explicit and recursive equivalence",
+        "convergence arguments and applicable domains",
+        "context interpretation of sequences"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    },
+    {
+      "ordinal": 143,
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U17:L04:C143",
+      "title": "المتسلسلات الهندسية اللانهائية",
+      "unit": 17,
+      "unitLesson": 4,
+      "sourceBook": "03متقدم_.pdf",
+      "sampledPages": [
+        249,
+        250
+      ],
+      "primarySkills": [
+        "sequences.geometric.infinite_convergence"
+      ],
+      "allowedQuestionFamilies": [
+        "uae.g10.general.u17.l04.geometric_infinite_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_alternating_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_convergence"
+      ],
+      "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+      "practiceMechanic": "G10_U17_L04_BOUNDED_EXACT_CANDIDATES",
+      "teacherReviewRequiredFor": [
+        "proof of explicit and recursive equivalence",
+        "convergence arguments and applicable domains",
+        "context interpretation of sequences"
+      ],
+      "sourceParity": "UNKNOWN",
+      "productionRouting": false,
+      "testsWritten": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10RemainingCandidateTests.cs"
+      ],
+      "testsRun": "WRITTEN_NOT_RUN"
+    }
+  ]
+}

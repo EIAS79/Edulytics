@@ -40,6 +40,52 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
     public MathematicsPedagogicalLessonSeeder(EdulyticsDbContext db) => _db = db;
 
+    // The historical G6/G7 production inventories include 48 General + 52
+    // Advanced G10 lessons. The clean candidate fixture instead includes the
+    // exact 148 General lessons (+48). Never relax the real production guard.
+    private async Task<int> GetG10CandidateFixtureDeltaAsync(
+        IReadOnlyCollection<CurriculumPedagogicalLesson> expectedLessons,
+        string programme, CancellationToken ct)
+    {
+        if (Environment.GetEnvironmentVariable("GITHUB_ACTIONS") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") != "true" ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") != programme ||
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") != "edulytics_clean_ci" ||
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Staging")
+            return 0;
+
+        var connection = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        if (!_db.Database.IsNpgsql() ||
+            connection.Host != "127.0.0.1" ||
+            connection.Database != "edulytics_clean_ci")
+            throw new InvalidOperationException("G10 fixture delta requires disposable local PostgreSQL.");
+
+        const string prefix = "PED:UAE-MOE-MATH:L10:";
+        const string general = prefix + "GENERAL:";
+        var expected = expectedLessons.Where(x =>
+            x.Code.StartsWith(prefix, StringComparison.Ordinal))
+            .ToDictionary(x => x.Code, StringComparer.Ordinal);
+        var actual = await _db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        if (expected.Count != 148 || actual.Length != 148 ||
+            expected.Keys.Any(x => !x.StartsWith(general, StringComparison.Ordinal)) ||
+            actual.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 148 ||
+            actual.Any(x => !expected.TryGetValue(x.Code, out var target) ||
+                x.Id != target.Id || x.FrameworkVersionId != target.FrameworkVersionId ||
+                x.Pathway != "General" || x.LogicalLevelFrom != 10 || x.LogicalLevelTo != 10))
+            throw new InvalidOperationException("G10 fixture delta refused: exact 148 General identities required.");
+
+        var ids = actual.Select(x => x.Id).ToArray();
+        var contentIds = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x => ids.Contains(x.PedagogicalLessonId))
+            .Select(x => x.PedagogicalLessonId).ToArrayAsync(ct);
+        if (contentIds.Length != 148 || !contentIds.ToHashSet().SetEquals(ids))
+            throw new InvalidOperationException("G10 fixture delta refused: exact metadata coverage required.");
+
+        return 148 - (48 + 52);
+    }
+
     public async Task SeedAsync(CancellationToken ct = default)
     {
         MathematicsCurriculumPackRegistry.Validate();
@@ -257,9 +303,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // The retired Grade8 Advanced cohort is exactly 77 records.
         // Both the historical full inventory and the retired clean inventory
         // have exact pinned totals; reject partial/ad-hoc deletions.
+        var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G6", ct);
         var unrelatedBaseline = g8AdvancedCount is 0 or 77 &&
             historicUnrelatedBaseline >= 0
-            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220
+            ? historicUnrelatedBaseline - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
             : -1;
         if (unrelatedBaseline < 0 ||
             g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
@@ -388,9 +435,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 "PED:UAE-MOE-MATH:L8:ADVANCED:"), ct);
         var historicG7Unrelated = g8GeneralCount == 77 ? 5156 :
             g8GeneralCount == 76 ? 5155 : -1;
+        var g10FixtureDelta = await GetG10CandidateFixtureDeltaAsync(lessons, "UAE-G7", ct);
         var g7UnrelatedBaseline =
             (g8AdvancedCount is 0 or 77) && historicG7Unrelated >= 0
-                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220
+                ? historicG7Unrelated - (77 - g8AdvancedCount) - 220 + g10FixtureDelta
                 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
@@ -767,6 +815,256 @@ public sealed class MathematicsPedagogicalLessonSeeder
         Console.WriteLine(
             "UAE_G8_SCOPED_REPLACE_77_WITH_76_ARABIC_PASS " +
             $"otherCurriculaUntouched=true advanced={advancedCount} publishedArabicMetadata=76");
+    }
+
+    public const string Grade10ScopedReleaseToken =
+        "CONFIRM_REPLACE_UAE_GRADE10_LEGACY_100_WITH_GENERAL_AR148";
+
+    private bool IsGrade10DisposableCi()
+    {
+        if (!_db.Database.IsNpgsql()) return false;
+        var target = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        return target.Host == "127.0.0.1" && target.Port == 5432 &&
+            target.Database == "edulytics_clean_ci" &&
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") == "true" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL") == "true" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME") == "UAE-G10" &&
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME") == "edulytics_clean_ci" &&
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Staging";
+    }
+
+    private static System.IO.Stream OpenGrade10ReleaseResource(string name) =>
+        typeof(MathematicsPedagogicalLessonSeeder).Assembly.GetManifestResourceStream(
+            "Edulytics.Data.Grade10." + name) ??
+        throw new InvalidOperationException("Missing embedded G10 release resource: " + name);
+
+    private static IReadOnlyDictionary<string, string> ReadGrade10Predecessor()
+    {
+        using var stream = OpenGrade10ReleaseResource("LegacyScope");
+        using var document = System.Text.Json.JsonDocument.Parse(stream);
+        if (document.RootElement.GetProperty("baselineSha").GetString() !=
+            "83c31a13ffc173c7be9d1d85b24f4fa83c222aee")
+            throw new InvalidOperationException("G10 predecessor baseline SHA drift.");
+        return document.RootElement.GetProperty("legacyLessons").EnumerateArray()
+            .ToDictionary(x => x.GetProperty("code").GetString()!,
+                          x => x.GetProperty("title").GetString()!, StringComparer.Ordinal);
+    }
+
+    // Production is opt-in only, host/database pinned, with an independently
+    // verified backup reference. No ordinary seed path calls this method.
+    public async Task SeedOnlyApprovedUaeGrade10Async(CancellationToken ct = default)
+    {
+        if (!_db.Database.IsNpgsql() ||
+            Environment.GetEnvironmentVariable("EDULYTICS_G10_SCOPED_RELEASE") != Grade10ScopedReleaseToken ||
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Production" ||
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS") == "true" ||
+            string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("EDULYTICS_G10_BACKUP_REFERENCE")))
+            throw new InvalidOperationException("G10 production cutover requires explicit scoped release and backup reference.");
+        var target = new Npgsql.NpgsqlConnectionStringBuilder(
+            _db.Database.GetDbConnection().ConnectionString);
+        if (string.IsNullOrWhiteSpace(target.Host) || string.IsNullOrWhiteSpace(target.Database) ||
+            !string.Equals(target.Host, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_HOST"), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(target.Database, Environment.GetEnvironmentVariable("EDULYTICS_G10_EXPECTED_DB_NAME"), StringComparison.Ordinal))
+            throw new InvalidOperationException("G10 production target is not the independently approved host/database.");
+        if ((await _db.Database.GetPendingMigrationsAsync(ct)).Any())
+            throw new InvalidOperationException("G10 scoped release requires all reviewed schema migrations to be applied first.");
+        await ReplaceUaeGrade10Async(ReadGrade10Predecessor(), true, false, ct);
+    }
+
+    // Exact same transaction and embedded SQL as production; never remote.
+    public async Task RehearseUaeGrade10FullCutoverAsync(bool forceRollback, CancellationToken ct = default)
+    {
+        if (!IsGrade10DisposableCi())
+            throw new InvalidOperationException("G10 tenant cutover rehearsal requires disposable local GitHub PostgreSQL.");
+        await ReplaceUaeGrade10Async(ReadGrade10Predecessor(), true, forceRollback, ct);
+    }
+
+    // Retain the original catalogue-only negative isolation boundary.
+    public async Task RehearseUaeGrade10CatalogueReplacementAsync(
+        IReadOnlyDictionary<string, string> legacyTitles, CancellationToken ct = default)
+    {
+        if (!IsGrade10DisposableCi())
+            throw new InvalidOperationException("G10 catalogue rehearsal requires disposable local GitHub PostgreSQL.");
+        await ReplaceUaeGrade10Async(legacyTitles, false, false, ct);
+    }
+
+    private async Task ReplaceUaeGrade10Async(
+        IReadOnlyDictionary<string, string> legacyTitles, bool includeTenants,
+        bool forceRollback, CancellationToken ct)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L10:";
+        const string general = prefix + "GENERAL:";
+        const string advanced = prefix + "ADVANCED:";
+        if (legacyTitles.Count != 100 ||
+            legacyTitles.Keys.Count(x => x.StartsWith(general, StringComparison.Ordinal)) != 48 ||
+            legacyTitles.Keys.Count(x => x.StartsWith(advanced, StringComparison.Ordinal)) != 52)
+            throw new InvalidOperationException("G10 exact 48+52 predecessor inventory required.");
+
+        MathematicsCurriculumPackRegistry.Validate();
+        var state = await _db.CurriculumPackImportStates.AsNoTracking()
+            .SingleAsync(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.VersionCode == "MOE-2026-2027-T1" && x.IsComplete, ct);
+        var documents = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                x.LogicalLevel == 10).ToArray();
+        if (documents.Length != 1 || documents[0].Pathway != "General" ||
+            documents[0].BlueprintCode != "UAE-G10-GENERAL-T1-OGL-V1:OGL-V1" ||
+            documents[0].Units.Count != 18 || documents[0].Lessons.Count != 148)
+            throw new InvalidOperationException("G10 requires exact unified 148/18 General blueprint.");
+
+        var expected = new List<CurriculumPedagogicalLesson>();
+        var mappings = new List<CurriculumPedagogicalLessonOutcome>();
+        var ids = new HashSet<Guid>();
+        await BuildBlueprintLessonsAsync(
+            new Dictionary<string, CurriculumPackImportState>
+            { [MathematicsCurriculumPackRegistry.UaeCode] = state },
+            documents, expected, mappings, ids, ct);
+        ValidateExpectedGraph(expected, mappings, ids);
+        var byCode = expected.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        if (byCode.Count != 148 || expected.Any(x =>
+            !x.Code.StartsWith(general, StringComparison.Ordinal) ||
+            x.Pathway != "General" || x.LogicalLevelFrom != 10 ||
+            x.LogicalLevelTo != 10 || !x.Title.Any(c => c is >= '\u0600' and <= '\u06ff')) ||
+            !legacyTitles.Keys.Where(x => x.StartsWith(general, StringComparison.Ordinal)).All(byCode.ContainsKey))
+            throw new InvalidOperationException("G10 canonical target or legacy General identity drift.");
+
+        var contentDocuments = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(x => x.Lessons.Any(y => y.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+        if (contentDocuments.Length != 1 ||
+            contentDocuments[0].PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            contentDocuments[0].AcademicLanguage != "ar" ||
+            contentDocuments[0].Status != Edulytics.Core.Enums.CanonicalLessonContentStatus.Published ||
+            contentDocuments[0].Lessons.Count != 148 ||
+            !contentDocuments[0].Lessons.Select(x => x.LessonCode).ToHashSet(StringComparer.Ordinal)
+                .SetEquals(byCode.Keys))
+            throw new InvalidOperationException("G10 exact Arabic Published metadata candidate required.");
+
+        await using var tx = await _db.Database.BeginTransactionAsync(
+            System.Data.IsolationLevel.Serializable, ct);
+        await _db.Database.ExecuteSqlRawAsync("SELECT pg_advisory_xact_lock(27500029);", ct);
+        // This is a catalogue-only rehearsal. It refuses any tenant, student,
+        // saved assessment or practice records rather than deleting them.
+        if (!includeTenants && (await _db.Users.AnyAsync(ct) || await _db.Schools.AnyAsync(ct) ||
+            await _db.StudentProfiles.AnyAsync(ct) || await _db.DirectStudentProfiles.AnyAsync(ct) ||
+            await _db.SchoolCurriculumAdoptions.AnyAsync(ct) ||
+            await _db.AssessmentAttempts.AnyAsync(ct) || await _db.PracticeAttempts.AnyAsync(ct) ||
+            await _db.AssessmentItems.AnyAsync(ct)))
+            throw new InvalidOperationException("G10 clean catalogue rehearsal refuses tenant/learner data.");
+
+        var existing = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var currentIds = existing.Select(x => x.Id).ToArray();
+        var metadata = await _db.CurriculumLessonContents
+            .Where(x => currentIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+        var metadataIds = metadata.Select(x => x.Id).ToArray();
+        var otherLessons = await _db.CurriculumPedagogicalLessons.CountAsync(ct) - existing.Length;
+        var otherMetadata = await _db.CurriculumLessonContents.CountAsync(ct) - metadata.Length;
+        if (metadata.Length != existing.Length ||
+            metadata.Select(x => x.PedagogicalLessonId).Distinct().Count() != existing.Length ||
+            existing.Any(x => x.FrameworkVersionId != state.FrameworkVersionId) ||
+            metadata.Any(x => x.FrameworkVersionId != state.FrameworkVersionId || (int)x.Status != 3) ||
+            await _db.CurriculumLessonContentTranslations.AnyAsync(
+                x => metadataIds.Contains(x.CurriculumLessonContentId), ct))
+            throw new InvalidOperationException("G10 predecessor metadata mismatch or stored prose.");
+
+        var alreadyReplaced = existing.Length == 148 &&
+            existing.Select(x => x.Code).ToHashSet(StringComparer.Ordinal).SetEquals(byCode.Keys);
+        var deletedLegacyLessons = 0;
+        var deletedLegacyMetadata = 0;
+        if (alreadyReplaced)
+        {
+            foreach (var row in existing)
+            {
+                if (row.Id != byCode[row.Code].Id)
+                    throw new InvalidOperationException("G10 replay identity drift.");
+                EnsureLessonMatches(row, byCode[row.Code]);
+            }
+        }
+        else
+        {
+            if (existing.Length != 100 ||
+                !existing.Select(x => x.Code).ToHashSet(StringComparer.Ordinal).SetEquals(legacyTitles.Keys) ||
+                existing.Any(x => x.Title != legacyTitles[x.Code]) ||
+                existing.Where(x => x.Code.StartsWith(general, StringComparison.Ordinal))
+                    .Any(x => x.Id != byCode[x.Code].Id))
+                throw new InvalidOperationException("G10 exact legacy baseline mismatch; transaction not changed.");
+
+            // Refuse rather than null, delete or reassign any saved learner evidence.
+            // Other RESTRICT foreign keys (including teacher rubrics) remain a
+            // further database-enforced safety boundary inside this transaction.
+            if (await _db.AssessmentItems.AnyAsync(x => x.CurriculumPedagogicalLessonId.HasValue &&
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+                await _db.PracticeAttempts.AnyAsync(x => x.CurriculumPedagogicalLessonId.HasValue &&
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+                await _db.AdaptivePracticeSessions.AnyAsync(x =>
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId), ct) ||
+                await _db.AdaptivePracticeShadowObservations.AnyAsync(x =>
+                    currentIds.Contains(x.CurriculumPedagogicalLessonId), ct))
+                throw new InvalidOperationException("G10 legacy learner evidence exists; refusing cutover.");
+
+            // Owner explicitly requires deletion of ALL 100 legacy rows,
+            // including the 48 General rows that share deterministic codes.
+            // No in-place update or retained teaching metadata is permitted.
+            _db.CurriculumLessonContents.RemoveRange(metadata);
+            await _db.SaveChangesAsync(ct);
+            deletedLegacyMetadata = metadata.Length;
+            var retiredMappings = await _db.CurriculumPedagogicalLessonOutcomes
+                .Where(x => currentIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+            _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(retiredMappings);
+            _db.CurriculumPedagogicalLessons.RemoveRange(existing);
+            await _db.SaveChangesAsync(ct);
+            deletedLegacyLessons = existing.Length;
+            if (deletedLegacyLessons != 100 || deletedLegacyMetadata != 100 ||
+                await _db.CurriculumPedagogicalLessons.AnyAsync(x => x.Code.StartsWith(prefix), ct) ||
+                await _db.CurriculumLessonContents.AnyAsync(x => currentIds.Contains(x.PedagogicalLessonId), ct) ||
+                await _db.CurriculumPedagogicalLessonOutcomes.AnyAsync(x => currentIds.Contains(x.PedagogicalLessonId), ct))
+                throw new InvalidOperationException("G10 all-legacy deletion did not reach zero before import.");
+            Console.WriteLine("UAE_G10_ISOLATED_ZERO_LEGACY_BEFORE_IMPORT deletedLessons=100 deletedMetadata=100");
+            // Insert every approved row afresh, not UpsertLessonsAsync.
+            _db.CurriculumPedagogicalLessons.AddRange(expected);
+            await _db.SaveChangesAsync(ct);
+            await UpsertMappingsAsync(expected, mappings, ct);
+        }
+
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedDocumentsAsync(contentDocuments, ct, metadataOnly: true);
+
+        var after = await _db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var afterIds = after.Select(x => x.Id).ToArray();
+        var afterMetadata = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x => afterIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+        if (after.Length != 148 || afterMetadata.Length != 148 ||
+            afterMetadata.Select(x => x.PedagogicalLessonId).Distinct().Count() != 148 ||
+            afterMetadata.Any(x => (int)x.Status != 3) ||
+            await _db.CurriculumPedagogicalLessons.CountAsync(ct) != otherLessons + 148 ||
+            await _db.CurriculumLessonContents.CountAsync(ct) != otherMetadata + 148)
+            throw new InvalidOperationException("G10 scoped replacement postcondition failure; rollback.");
+        foreach (var row in after)
+        {
+            if (!byCode.TryGetValue(row.Code, out var targetRow) || row.Id != targetRow.Id)
+                throw new InvalidOperationException("G10 target identity drift; rollback.");
+            EnsureLessonMatches(row, targetRow);
+        }
+
+        if (includeTenants)
+        {
+            await _db.Database.ExecuteSqlRawAsync(
+                "SET LOCAL edulytics.g10_transition_scope='UAE-MOE-MATH:L10:ADVANCED_TO_GENERAL:2';", ct);
+            using var stream = OpenGrade10ReleaseResource("TenantTransition");
+            using var reader = new System.IO.StreamReader(stream);
+            var transitionSql = await reader.ReadToEndAsync(ct);
+            await _db.Database.ExecuteSqlRawAsync(transitionSql, ct);
+            if (forceRollback)
+                throw new InvalidOperationException("G10_FULL_CUTOVER_ROLLBACK_NEGATIVE_CONTROL");
+        }
+        await tx.CommitAsync(ct);
+        if (includeTenants)
+            Console.WriteLine("UAE_G10_ATOMIC_TENANT_CATALOGUE_CUTOVER_PASS");
+        Console.WriteLine("UAE_G10_ISOLATED_CATALOGUE_148_AND_148_METADATA_PASS " +
+            $"replay={alreadyReplaced} deletedLegacyLessons={deletedLegacyLessons} deletedLegacyMetadata={deletedLegacyMetadata} otherLessons={otherLessons} otherMetadata={otherMetadata}");
     }
 
     private async Task BuildUaeAsync(
@@ -1845,9 +2143,15 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // separate, explicitly scoped production transaction.
         const string retiredGrade8AdvancedPrefix =
             "PED:UAE-MOE-MATH:L8:ADVANCED:";
+        // G10 Advanced is no longer an offered catalogue. Preserve historical
+        // records, assessments and learner links until the explicit G10 migration
+        // is rehearsed and approved; removing an embedded resource is not a DB deletion token.
+        const string retiredGrade10AdvancedPrefix = "PED:UAE-MOE-MATH:L10:ADVANCED:";
         var stale = allExisting
             .Where(x => !expectedIds.Contains(x.Id) &&
                 !x.Code.StartsWith(retiredGrade8AdvancedPrefix,
+                    StringComparison.Ordinal) &&
+                !x.Code.StartsWith(retiredGrade10AdvancedPrefix,
                     StringComparison.Ordinal) &&
                 // Scoped Grade9 records are never purged by ordinary
                 // maintenance after the explicit owner-approved cutover.

@@ -95,30 +95,30 @@ html[dir="rtl"] .ed-login-v28-language {
    card's available inline size. Large number lines/tables remain scrollable
    *within* their visual rather than forcing the lesson text/card to overflow.
    Exact curriculum scope avoids unrelated curricula and portal navigation. */
-.uae-g9-arabic-reader .rich-lesson-body {
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-body {
     min-width: 0;
     max-width: 100%;
     grid-template-columns: minmax(0, 1fr);
 }
 
-.uae-g9-arabic-reader .rich-lesson-body > *,
-.uae-g9-arabic-reader .rich-lesson-visual,
-.uae-g9-arabic-reader .rich-number-line-scroll,
-.uae-g9-arabic-reader .rich-lesson-table-wrap {
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-body > *,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-visual,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-number-line-scroll,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-table-wrap {
     box-sizing: border-box;
     min-width: 0;
     max-width: 100%;
 }
 
-.uae-g9-arabic-reader .rich-lesson-visual,
-.uae-g9-arabic-reader .rich-number-line-scroll,
-.uae-g9-arabic-reader .rich-lesson-table-wrap {
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-visual,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-number-line-scroll,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-table-wrap {
     overflow-x: auto;
     overscroll-behavior-inline: contain;
 }
 
-.uae-g9-arabic-reader .rich-lesson-visual svg,
-.uae-g9-arabic-reader .rich-lesson-visual img {
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-visual svg,
+:is(.uae-g9-arabic-reader,.uae-g10-arabic-reader) .rich-lesson-visual img {
     max-width: 100%;
     height: auto;
 }

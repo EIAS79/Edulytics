@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 48,
+  "canonicalCode": "G10-U05-L07",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L07:C048",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "sourcePdfPages": [
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "sourcePrintedPages": [
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611
+  ],
+  "primarySkills": [
+    "logarithms.g10.natural_exponential_continuous"
+  ],
+  "reusedQuestionFamilies": [
+    "uae.g10.general.u05.l06.exponential_equation"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l07.convert_equivalent",
+    "uae.g10.general.u05.l07.inverse_identity",
+    "uae.g10.general.u05.l07.ln_value",
+    "uae.g10.general.u05.l07.ln_condense_ratio",
+    "uae.g10.general.u05.l07.ln_expand_vector",
+    "uae.g10.general.u05.l07.natural_exponential_equation",
+    "uae.g10.general.u05.l07.positive_rhs_possible",
+    "uae.g10.general.u05.l07.natural_log_equation",
+    "uae.g10.general.u05.l07.natural_exponential_interval",
+    "uae.g10.general.u05.l07.natural_log_interval",
+    "uae.g10.general.u05.l07.even_power_interval",
+    "uae.g10.general.u05.l07.reciprocal_ln_interval",
+    "uae.g10.general.u05.l07.continuous_balance",
+    "uae.g10.general.u05.l07.continuous_principal",
+    "uae.g10.general.u05.l07.continuous_time",
+    "uae.g10.general.u05.l07.continuous_rate",
+    "uae.g10.general.u05.l07.continuous_depreciation",
+    "uae.g10.general.u05.l07.continuous_half_time",
+    "uae.g10.general.u05.l07.continuous_threshold",
+    "uae.g10.general.u05.l07.cooling_constant",
+    "uae.g10.general.u05.l07.cooling_temperature",
+    "uae.g10.general.u05.l07.cooling_time",
+    "uae.g10.general.u05.l07.exponential_substitution",
+    "uae.g10.general.u05.l06.exponential_equation"
+  ],
+  "forbiddenQuestionFamilies": [],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10NaturalLogarithm (shared engine extension); reused common-log equation family",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10NaturalLogarithmResponse.Verify: equivalent expression structure, exact ratio and coefficients, original residual signs at rounding bucket, complete interval topology and domain exclusions.",
+  "parameterBounds": {
+    "natural": "signed multipliers 1..3, shifts bounded, arguments positive; even powers 2..8; reciprocal ln domain with zero excluded",
+    "models": "positive principal 1000..5000, rates 2–8%, 3–12 years, observed cooling ratio z/5 in (0,1)",
+    "rounding": "four decimal places; currency and temperature 2, cooling k 6; independent residual signs"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l07.convert_equivalent",
+      "kind": "StructuredEntry",
+      "answerType": "enum_text",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.inverse_identity",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.ln_value",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.ln_condense_ratio",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.ln_expand_vector",
+      "kind": "StructuredEntry",
+      "answerType": "exact_vector",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.natural_exponential_equation",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.positive_rhs_possible",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.natural_log_equation",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.natural_exponential_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.natural_log_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.even_power_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.reciprocal_ln_interval",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_balance",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_principal",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_rate",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_depreciation",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_half_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.continuous_threshold",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_constant",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_temperature",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.cooling_time",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l07.exponential_substitution",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    },
+    {
+      "family": "uae.g10.general.u05.l06.exponential_equation",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal",
+      "visualRequirements": "Symbolic or contextual prompt; actual inverse/reflection plots and teacher grading in Rich V2 and rubric"
+    }
+  ],
+  "teacherReviewRequired": [
+    "proof and free symbolic transformations",
+    "inverse and reflection graphs, including domains",
+    "continuous model interpretation and unit choice"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-048-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10NaturalLogarithmTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "READY_FOR_STAGE_D"
+  },
+  "scopeStatement": "Owner-approved matching-body repair; not all-edition source parity or runtime certification.",
+  "authoringChecks": {
+    "independentArithmeticCases": 32372,
+    "result": "PASS_STATIC_AUTHORING_ONLY",
+    "testsRun": "WRITTEN_NOT_RUN",
+    "cartesianCoordinateChecks": 56
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceSupplementSnapshotId": "G10-SUPPLEMENTAL-BOOKS-SHA-2026-11-26",
+  "verifiedDate": "2026-11-27",
+  "candidateSha": "9da88e120f1df285acf4ebc9073ddbf39a467cae",
+  "scope": "Physical source edition and volume reconciliation; only visually inspected cover, title/copyright, TOC and selected body pages; no full atomic semantic claim.",
+  "allRequiredFileHashesMatched": true,
+  "requiredFileCount": 7,
+  "requiredPhysicalPages": 1893,
+  "supplementalFileCount": 5,
+  "supplementalPhysicalPages": 510,
+  "totalPhysicalPages": 2403,
+  "canonicalIndex": {
+    "lessons": 148,
+    "units": 18,
+    "unchanged": true,
+    "finalPathway": "General"
+  },
+  "sourceLock": false,
+  "sourceSemanticCoverage": "UNKNOWN",
+  "files": [
+    {
+      "book": "B01",
+      "name": "01.pdf",
+      "coverYear": "2025–2026",
+      "coverPathway": "General",
+      "volume": 1,
+      "observedPhysicalPages": [
+        1
+      ],
+      "bodyUnitsPreviouslyDocumented": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "status": "VOLUME_1_NOT_ANNUAL",
+      "sha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+      "physicalPages": 537
+    },
+    {
+      "book": "B02",
+      "name": "01متقدم_.pdf",
+      "coverYear": "2025–2026",
+      "coverPathway": "Advanced",
+      "volume": 1,
+      "observedPhysicalPages": [
+        1
+      ],
+      "bodyUnitsPreviouslyDocumented": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "VOLUME_1_NOT_ANNUAL",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "physicalPages": 353
+    },
+    {
+      "book": "B03",
+      "name": "02-1.pdf",
+      "coverYear": null,
+      "coverPathway": null,
+      "observedPhysicalPages": [
+        1
+      ],
+      "observedChapter": "التناسب والتشابه",
+      "observedChapterNumber": 6,
+      "status": "EXCERPT_WITHOUT_TITLE_PAGE_YEAR_OR_PATHWAY_NOT_ESTABLISHED",
+      "sha256": "f472ec50c4427ac257c968381e7537fa07a3e291b4a48fcf5cf914917d11f83b",
+      "physicalPages": 76
+    },
+    {
+      "book": "B04",
+      "name": "02-2.pdf",
+      "coverYear": "2018–2019",
+      "coverPathway": "General",
+      "observedPhysicalPages": [
+        1
+      ],
+      "status": "OLDER_GENERAL_EXCERPT",
+      "sha256": "d3bfcb3d23850934d8e8aec88f962e5020165f6fc13823ef42a93385abdd2e1d",
+      "physicalPages": 171
+    },
+    {
+      "book": "B05",
+      "name": "03.pdf",
+      "coverYear": "2023–2024",
+      "interiorYear": "2022–2023",
+      "coverPathway": "Applied",
+      "volume": 3,
+      "observedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        10,
+        11,
+        12,
+        13,
+        20,
+        46,
+        80,
+        120,
+        160,
+        200
+      ],
+      "declaredInteriorUnits": [
+        7,
+        8,
+        9
+      ],
+      "sampleBody": {
+        "physicalPage": 20,
+        "printedPage": 409,
+        "topic": "إنشاء المنصفات"
+      },
+      "status": "DISTINCT_APPLIED_VOLUME_3",
+      "sha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+      "physicalPages": 264
+    },
+    {
+      "book": "B06",
+      "name": "03متقدم_.pdf",
+      "coverYear": "2018–2019",
+      "coverPathway": "Advanced",
+      "observedPhysicalPages": [
+        1
+      ],
+      "status": "OLDER_ADVANCED_EXCERPT",
+      "sha256": "cc6b74da11980d3b9fe1cc19d2131acdb081e3ab0b493b96b7a6b9623e397ea6",
+      "physicalPages": 267
+    },
+    {
+      "book": "B07",
+      "name": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "coverYear": "2023–2024",
+      "interiorYear": "2022–2023",
+      "coverPathway": "Applied",
+      "volume": 2,
+      "observedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        20,
+        46,
+        80,
+        120,
+        160,
+        200
+      ],
+      "declaredInteriorUnits": [
+        4,
+        5,
+        6
+      ],
+      "sampleBody": {
+        "physicalPage": 20,
+        "printedPage": 203,
+        "topic": "تمثيل الدوال التربيعية بيانيًا"
+      },
+      "status": "DISTINCT_APPLIED_VOLUME_2",
+      "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+      "physicalPages": 225
+    },
+    {
+      "book": "S01",
+      "name": "رياضيات الاحتمالات متقدم.pdf",
+      "observedPhysicalPages": [
+        1
+      ],
+      "observedChapter": "الاحتمالات والقياس",
+      "status": "EXCERPT_EDITION_UNESTABLISHED",
+      "sha256": "a94ef73f58c1860ac231b6ad4e8d617465fc0734108607e4bffcbaf37bfe86d3",
+      "physicalPages": 77
+    },
+    {
+      "book": "S02",
+      "name": "رياضيات التحويلات الهندسية متقدم.pdf",
+      "observedPhysicalPages": [
+        1
+      ],
+      "observedChapter": "التحويلات الهندسية والتناظر",
+      "status": "EXCERPT_EDITION_UNESTABLISHED",
+      "sha256": "0448d2dcdbab64eea76f8ade1003aae1839b6ff15d2aab52360b15c8b555cc7b",
+      "physicalPages": 66
+    },
+    {
+      "book": "S03",
+      "name": "رياضيات المثلثات.pdf",
+      "observedPhysicalPages": [
+        1
+      ],
+      "observedChapter": "المثلثات قائمة الزاوية وحساب المثلثات",
+      "status": "EXCERPT_EDITION_UNESTABLISHED",
+      "sha256": "49d6da9228537d956177374385d78bdecdae2f5f8f8df6a23fb239ea981a11c9",
+      "physicalPages": 64
+    },
+    {
+      "book": "S04",
+      "name": "رياضيات الدوال متقدم.pdf",
+      "observedPhysicalPages": [
+        1
+      ],
+      "observedChapter": "الدوال والعلاقات الأسية واللوغاريتمية",
+      "status": "EXCERPT_UAE_EDITION_UNESTABLISHED",
+      "sha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+      "physicalPages": 78
+    },
+    {
+      "book": "S05",
+      "name": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
+      "coverYear": "2023–2024",
+      "interiorYear": "2023–2024",
+      "coverPathway": "Applied",
+      "volume": 1,
+      "observedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        20,
+        46,
+        80,
+        120,
+        160,
+        200
+      ],
+      "declaredInteriorUnits": [
+        1,
+        2,
+        3
+      ],
+      "sampleBody": {
+        "physicalPage": 20,
+        "printedPage": 5,
+        "topic": "الشروط الضرورية والكافية"
+      },
+      "status": "DISTINCT_APPLIED_VOLUME_1_SUPPLEMENT",
+      "sha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
+      "physicalPages": 225
+    }
+  ],
+  "appliedVolumeComparison": {
+    "sameAnnualTocVerifiedOnPhysicalPages": [
+      4,
+      6
+    ],
+    "sharedTocCountPolicy": "One annual TOC does not establish duplicate body coverage; retain all three distinct volume bodies for semantic review.",
+    "nearRasterCandidates": [
+      {
+        "a": 1,
+        "b": 1,
+        "distance": 15
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "distance": 10
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "distance": 8
+      },
+      {
+        "a": 7,
+        "b": 7,
+        "distance": 10
+      },
+      {
+        "a": 9,
+        "b": 9,
+        "distance": 12
+      },
+      {
+        "a": 10,
+        "b": 10,
+        "distance": 6
+      },
+      {
+        "a": 11,
+        "b": 11,
+        "distance": 12
+      },
+      {
+        "a": 12,
+        "b": 12,
+        "distance": 15
+      },
+      {
+        "a": 14,
+        "b": 14,
+        "distance": 13
+      },
+      {
+        "a": 15,
+        "b": 15,
+        "distance": 16
+      },
+      {
+        "a": 253,
+        "b": 215,
+        "distance": 14
+      },
+      {
+        "a": 256,
+        "b": 218,
+        "distance": 16
+      },
+      {
+        "a": 261,
+        "b": 223,
+        "distance": 14
+      },
+      {
+        "a": 264,
+        "b": 225,
+        "distance": 5
+      }
+    ],
+    "rasterMethod": "B05 vs B07 rendered grayscale at 0.65 scale, 256-bit horizontal difference hash on 17x16 resized raster; nearest nonblank B07 page for each nonblank B05 page, threshold <=16 Hamming bits.",
+    "pagesScanned": [
+      264,
+      225
+    ],
+    "exactRasterMatchesAmongCandidates": 0,
+    "visuallyConfirmedCandidatePairs": [
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    "remainingCandidatePairs": "NOT_SEMANTICALLY_AUDITED",
+    "decision": "DISTINCT_BODY_VOLUMES; FRONT_MATTER_OVERLAP; NO_WHOLE_BOOK_DEDUP"
+  },
+  "sourceEditionConflicts": [
+    "B05 and B07 cover 2023–2024 but interior title pages 2022–2023; document both, not target year.",
+    "B03 source pathway/edition cannot be assigned from chapter title alone.",
+    "Do not infer missing annual General or Advanced volumes from TOC."
+  ],
+  "unresolved": [
+    "Complete semantic cross-edition mapping of all atomic objectives, examples, diagrams, exercises, investigations and assessments across all seven required PDFs; supplemental references used to resolve ten source-body gaps.",
+    "Complete page-by-page visual semantic audit is not established."
+  ],
+  "productionWrites": false
+}

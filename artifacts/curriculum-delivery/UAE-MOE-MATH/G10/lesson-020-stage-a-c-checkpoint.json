@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 20,
+  "canonicalCode": "G10-U02-L04",
+  "unitNumber": 2,
+  "unitLessonNumber": 4,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "الترميز العلمي",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:04:SCIENTIFIC-NOTATION",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01.pdf",
+  "sourceEdition": "2025–2026 UAE General Volume1",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "sourcePrintedPages": [
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114
+  ],
+  "sourceCumulativeOrMidunitReviewExcluded": [
+    128,
+    129
+  ],
+  "sourceElementDenominator": 24,
+  "sourceElementsMapped": 24,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 9
+  },
+  "sourceElementDenominatorVerified": true,
+  "sourceIndexLocked": true,
+  "sourceElementsArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l04-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 16,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "supporting.indices.roots_standard_form"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l04.scientific_normalize_exponent",
+    "uae.g10.general.u02.l04.scientific_product_exponent",
+    "uae.g10.general.u02.l04.scientific_quotient_exponent"
+  ],
+  "independentVerifier": "UaeG10ScientificExponentResponse.Verify",
+  "rendererMatrix": {
+    "normalize": "IntegerKeypad",
+    "product": "IntegerKeypad",
+    "quotient": "IntegerKeypad"
+  },
+  "teacherReviewRequiredFor": [
+    "full coefficient and exponent with significant figures",
+    "addition/subtraction of scientific quantities",
+    "units and original real-world physical contexts"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralScientificNotationTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "gradeClosedCountAfterCheckpoint": 20,
+  "firstIncompleteGlobalOrdinal": 21,
+  "nextEligibleCanonicalCode": "G10-U02-L05",
+  "studentContentPackCurrentLessonCount": 55,
+  "globalArabicBodiesAuthoredCount": 20,
+  "fullGradeSemanticAuditComplete": false,
+  "closedAtUtc": "2026-11-25T01:14:23Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closingContentCommit": "22b69cf9abbef5ae60cb0c9dbedbc06fa4e98225",
+  "remainingStageDObligations": [
+    "run authored C# and Node math tests plus actual authenticated student input in Stage D",
+    "prove full Grade10 Arabic lesson coverage and maintain correct source/teacher rubric boundaries before publish"
+  ],
+  "stageDFollowup": {
+    "reason": "Cross-target gap from L001 advanced source review: explicit contextual astronomical calculation and interpretation",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-subparts-and-routes.json",
+    "exampleTitle": "تطبيق فلكي: زمن انتقال الضوء بين مسافتين",
+    "sourceElementDenominatorScopeUnchanged": "Historical selected General source count only; additional advanced source review not an exhaustive denominator",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDPrimaryGeneralSupplement": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-020-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

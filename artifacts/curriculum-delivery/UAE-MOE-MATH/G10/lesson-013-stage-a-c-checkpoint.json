@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 13,
+  "canonicalCode": "G10-U01-L13",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "حل المعادلات كثيرة الحدود",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L13:C013",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 Unit3 Lesson3-5 and calculator lab, integrated into General",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourcePdfPages": [
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242
+  ],
+  "sourcePrintedPages": [
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225
+  ],
+  "sourceIndexLocked": true,
+  "sourceElementDenominator": 32,
+  "sourceElementsMapped": 32,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElementCounts": {
+    "CONTENT_AUTHORED": 14,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 3,
+    "TEACHER_REVIEW_REQUIRED": 15
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l13-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 20,
+  "originalVisualModels": 8,
+  "actualCartesianPlotCount": 2,
+  "contentPackCurrentLessonCount": 52,
+  "legacy48LessonCodesPreserved": true,
+  "globalArabicContentComplete": false,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.polynomial.solve_higher_degree"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l13.cubic_integer_roots",
+    "uae.g10.general.u01.l13.biquadratic_integer_roots"
+  ],
+  "rendererMatrix": {
+    "cubic": "StructuredEntry",
+    "biquadratic": "StructuredEntry"
+  },
+  "independentVerifier": "UaeG10PolynomialEquationResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "factorization/grouping/synthetic-division proof and completeness",
+    "noninteger/irrational/complex roots and graphic estimates",
+    "calculator window and precision in source lab3-5",
+    "geometric dimensions, volume units and physical restrictions"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l13.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialEquationsTests.cs",
+    "tests/academic-uae-grade10-u01l13-stage-d-source-review.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "sourceContentReadyCommit": "73630d8f1374f267d305a9f48dffe014f40494ab",
+  "closedAtUtc": "2026-11-24T20:00:41Z",
+  "closedAtUtcMeaning": "Source-content readiness GitHub commit timestamp; checkpoint and progress commits follow",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "firstIncompleteLessonOrdinal": 14,
+  "nextEligibleLessonOrdinal": 14,
+  "closureBasis": "Ten owner-uploaded scanned source pages PDF233–242 reviewed including calculator lab, 32 type-level elements, ten original Arabic examples, five visuals and two mathematical point-verified plots, exact source-scoped cubic/quartic full-root families with independent Horner solver and teacher rubric, tests written but not executed.",
+  "remainingStageDObligations": [
+    "run .NET and Node tests and runtime generators for cubic and quartic equations",
+    "verify structured root entry, Arabic digits and grade handling in authenticated RTL student UI",
+    "verify graph and calculator manual rubric are not marked auto-scored",
+    "complete all 148 Grade10 General lessons and Stage D/CI gates before production publication"
+  ],
+  "stageDFollowup": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-013-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

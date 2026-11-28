@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
+  "practiceSubset": "EXACT_NUMERIC_COEFFICIENT_AND_BOUNDED_DEGREE_TWO_FULL_POLYNOMIAL_EXPRESSION",
+  "primarySkills": [
+    "algebra.polynomial.add_subtract"
+  ],
+  "otherTeachingSkills": [
+    "algebra.polynomial.standard_form",
+    "algebra.polynomial.degree_leading_coefficient",
+    "algebra.polynomial.multivariable_degree",
+    "algebra.polynomial.contextual_modeling",
+    "algebra.polynomial.combine_like_terms"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u07.l01.add_coefficient",
+    "uae.g9.general.u07.l01.subtract_coefficient",
+    "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression"
+  ],
+  "engine": "Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine",
+  "engineMethods": {
+    "generator": "Generate(string fingerprintNamespace,string scopeKey,IReadOnlyList<string> allowedQuestionFamilies,ExactSkillQuestionDifficulty difficulty,int questionCount,int seed,IReadOnlyCollection<string> excludedExposureFingerprints,int? preferredVariant)",
+    "independentVerifier": "Verify(string family,IReadOnlyDictionary<string,int> parameters,string answer)"
+  },
+  "numericParameterKeys": [
+    "a2",
+    "a1",
+    "a0",
+    "b2",
+    "b1",
+    "b0",
+    "degree"
+  ],
+  "validDegree": [
+    0,
+    1,
+    2
+  ],
+  "validCoefficients": [
+    -9,
+    9
+  ],
+  "expectedAnswerType": "Numeric integer for coefficient-only families; symbolic expression (س/x, powers ≤2) for the whole-result family",
+  "proposedRenderer": "IntegerKeypad for the two coefficient families, StructuredEntry for the bounded whole-polynomial family; code authored NOT StageD tested",
+  "grader": "ExactSkillContractQuestionEngine.Verify for numeric coefficients and UaeG10PolynomialResponse.Verify for entire quadratic response. Independent from generated answer string; multi-variable geometric diagrams teacher-reviewed.",
+  "answerFormats": [
+    "western_integer",
+    "arabic_indic_integer",
+    "eastern_arabic_indic_integer"
+  ],
+  "teacherReviewRequired": [
+    "algebra tiles and variable rectangles",
+    "standard form and degree if not served by exact digital family",
+    "open-ended reasoning and mathematical writing",
+    "proof of reasoning and graphic or physical algebra-tile constructions"
+  ],
+  "runtimeGate": {
+    "resolver": "LessonPracticeCapabilityResolver",
+    "projection": "LessonPracticeContractProjection",
+    "requiresPracticeReadiness": "READY_VERIFIED",
+    "requiresExactlyOnePrimarySkill": true,
+    "requiresApprovedSkillAndRoutedFamilyRegistry": true,
+    "currentMappingPracticeReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "currentMappingPrimarySkillCount": 1,
+    "currentlyApprovedRuntime": "NO: explicit StageC only. Mapping is not READY_VERIFIED and all three families productionRouting=false.",
+    "stageDAction": "Execute authored C# targeted tests; independently verify Grade10 source-correctness and structured-entry rendering, Arabic digits and tampered parameter rejection. Only after Stage D verification consider READY_VERIFIED and question-family routing. Do not conflate answer equivalence with geometry teacher tasks.",
+    "currentMappingPrimarySkillId": "algebra.polynomial.add_subtract",
+    "familyRegistrySkillIdsMatchPrimary": true,
+    "familyRegistryProductionRouting": false,
+    "familyRegistryStatus": "StageCAuthoredPendingD"
+  },
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialAddSubtractReuseTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "rendererMatrix": [
+    {
+      "family": "uae.g9.general.u07.l01.add_coefficient",
+      "kind": "IntegerKeypad",
+      "answer": "signed integer",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g9.general.u07.l01.subtract_coefficient",
+      "kind": "IntegerKeypad",
+      "answer": "signed integer",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression",
+      "kind": "StructuredEntry",
+      "answer": "complete simplified quadratic expression",
+      "status": "WRITTEN_NOT_RUN"
+    }
+  ]
+}

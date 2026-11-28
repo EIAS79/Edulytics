@@ -1,0 +1,26 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U13:L06:C103",
+  "skillId": "geometry.circle.g10.secant_angles",
+  "familyIds": [
+    "uae.g10.general.u13.l06.inside_angle",
+    "uae.g10.general.u13.l06.inside_missing_arc",
+    "uae.g10.general.u13.l06.inside_adjacent_angle",
+    "uae.g10.general.u13.l06.tangent_chord_angle",
+    "uae.g10.general.u13.l06.tangent_chord_arc",
+    "uae.g10.general.u13.l06.outside_angle",
+    "uae.g10.general.u13.l06.outside_missing_far_arc",
+    "uae.g10.general.u13.l06.two_tangent_angle",
+    "uae.g10.general.u13.l06.two_tangent_minor_arc",
+    "uae.g10.general.u13.l06.inside_arc_expression",
+    "uae.g10.general.u13.l06.outside_arc_expression"
+  ],
+  "implementation": "Extend ExactSkillContractQuestionEngine.UaeG10Circle",
+  "parameterConstraints": "a,b even 20..120; v even 20..160; x even 4..30; k 2..4; all disjoint arc sums <360; exact integers",
+  "teacherScoring": [
+    "proof",
+    "construction",
+    "open modeling"
+  ],
+  "productionRouting": false,
+  "testsRun": "WRITTEN_NOT_RUN"
+}

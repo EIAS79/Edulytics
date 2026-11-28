@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "pathwayTarget": "General",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "verifiedFrom": "owner-uploaded original seven PDF bytes 2026-11-23, read-only local PyMuPDF + visual source page inspection",
+  "desktopCommanderCalls": 0,
+  "sourceLock": "OWNER_APPROVED_INDEX_148_LESSON_CONTENT_AUDIT_PENDING",
+  "pdfs": [
+    {
+      "name": "01.pdf",
+      "pages": 537,
+      "pathway": "General",
+      "edition": "2025–2026",
+      "classification": "PRIMARY_GENERAL_VOLUME1_TERM1",
+      "sha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+      "notes": "Verified 2025–2026 General Volume1 / first term only: seven units and 48 source TOC lessons; the approved seven-file set does not establish a complete annual General syllabus. Unit 1 lesson 1-1 source pages 20–25."
+    },
+    {
+      "name": "01متقدم_.pdf",
+      "pages": 353,
+      "pathway": "Advanced",
+      "edition": "2025–2026",
+      "classification": "PRIMARY_ADVANCED_SOURCE_PART",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "notes": "Twelve-unit TOC; composite 3-1 overlap with General U01L01; objectives individually preserved"
+    },
+    {
+      "name": "02-1.pdf",
+      "pages": 76,
+      "pathway": "Unclassified",
+      "edition": "not established",
+      "classification": "CHAPTER_EXCERPT_PATHWAY_UNVERIFIED",
+      "sha256": "f472ec50c4427ac257c968381e7537fa07a3e291b4a48fcf5cf914917d11f83b",
+      "notes": "Title page starts «التناسب والتشابه», chapter 6, rather than book cover; cannot assign school pathway without provenance"
+    },
+    {
+      "name": "02-2.pdf",
+      "pages": 171,
+      "pathway": "General",
+      "edition": "2018–2019",
+      "classification": "HISTORICAL_GENERAL_EXCERPT",
+      "sha256": "d3bfcb3d23850934d8e8aec88f962e5020165f6fc13823ef42a93385abdd2e1d",
+      "notes": "Cover General 2018–2019; starts «الوسط الهندسي», older geometry unit; not a new annual edition"
+    },
+    {
+      "name": "03.pdf",
+      "pages": 264,
+      "pathway": "Applied",
+      "edition": "2022–2023 interior, 2023–2024 cover",
+      "classification": "APPLIED_VOLUME_3_DISTINCT_BODY",
+      "sha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+      "notes": "Physical pages 2–3 identify Volume 3 (Units 7–9). Cover 2023–2024 / interior 2022–2023. Shared annual TOC with Volume 2 is not duplicate teaching body."
+    },
+    {
+      "name": "03متقدم_.pdf",
+      "pages": 267,
+      "pathway": "Advanced",
+      "edition": "2018–2019",
+      "classification": "HISTORICAL_ADVANCED_SOURCE_PART",
+      "sha256": "cc6b74da11980d3b9fe1cc19d2131acdb081e3ab0b493b96b7a6b9623e397ea6",
+      "notes": "Older 12-unit Advanced table of contents; body coverage subset, candidate unique pedagogy not assumed duplicate"
+    },
+    {
+      "name": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "pages": 225,
+      "pathway": "Applied",
+      "edition": "2022–2023 interior, 2023–2024 cover",
+      "classification": "APPLIED_VOLUME_2_DISTINCT_BODY",
+      "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+      "notes": "Physical pages 2–3 identify Volume 2 (Units 4–6). Cover 2023–2024 / interior 2022–2023. Preserve body goals; shared TOC with Volume 3."
+    }
+  ],
+  "duplicateGuard": {
+    "appliedVariantFiles": [
+      "03.pdf",
+      "رياضيات كتاب الطالب تطبيقي 10 8.pdf"
+    ],
+    "evidence": "edition-diff.json: visual cover/title/copyright/TOC and body inspection proves distinct volumes; raster candidate review does not certify semantic duplicates.",
+    "status": "DISTINCT_APPLIED_VOLUMES_SHARED_ANNUAL_TOC_SEMANTIC_MERGE_NOT_COMPLETE",
+    "supplementalAppliedVolume1": "رياضيات كتاب الطالب تطبيقي 10 29.pdf"
+  },
+  "finalCanonicalLessonCount": 148,
+  "finalCanonicalUnitCount": 18,
+  "existingGeneralBaseline": 48,
+  "existingAdvancedBaseline": 52,
+  "appliedProductionLessonBaseline": 0,
+  "safeMigrationPolicy": "Owner-confirmed Stage D full reset: delete all 100 old G10 lesson rows and linked experimental G10 progress/results before fresh import of exact approved 148 General lessons. Delete non-General G10 pathway adoptions only after scoped class/adoption rehearsal. Other grades, curricula, and shared accounts unchanged. No production mutation before release gates.",
+  "completeLessonClosureAllowedBeforeSourceLock": true,
+  "sourceTocCoverageArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/source-toc-and-body-coverage.json",
+  "sourceTocVerifiedFamilyLessonCount": 193,
+  "canonicalIndexStatus": "OWNER_APPROVED_148_SOLE_G10_GENERAL_INDEX",
+  "verifiedMainFamilyHeadings": 193,
+  "verifiedAppliedHeadingCountOnce": 59,
+  "missingSourceBodiesAreNotZeroCoverage": false,
+  "ownerApprovedFileScope": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/owner-approved-source-scope.json",
+  "additionalSourcesRequiredForCurrentScope": false,
+  "priority": "GENERAL_VOLUME1_48_FIRST_THEN_VERIFIABLE_OTHER_GENERAL_LESSONS_AND_UNIQUE_ADVANCED_APPLIED",
+  "outsideScopeMissingVolumes": "DOCUMENT_BOUNDED_SCOPE_NOT_ANNUAL_COMPLETENESS",
+  "generalBookCompleteAvailable": false,
+  "generalBookContentAuditComplete": false,
+  "stageABCContinueDespiteUnprovidedBookVolumes": true,
+  "generalVolume1BookCompleteAvailable": true,
+  "generalAnnualSourceComplete": false,
+  "generalAnnualLessonCount": null,
+  "generalVolume1LessonCount": 48,
+  "canonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "ownerIndexApprovalDate": "2026-11-24",
+  "ownerIndexApprovalScope": "TITLES_AND_ORDINALS_ONLY; NOT CONTENT_OR_STAGE_D_PASS",
+  "supplementalSourceSnapshotId": "G10-SUPPLEMENTAL-BOOKS-SHA-2026-11-26",
+  "supplementalSourceScope": {
+    "decisionDate": "2026-11-26",
+    "basis": "Owner provided five PDF supplements to resolve ten source-body exceptions and instructed continuation. Existing canonical index and source snapshot retained.",
+    "files": [
+      {
+        "name": "رياضيات الاحتمالات متقدم.pdf",
+        "pages": 77,
+        "sha256": "a94ef73f58c1860ac231b6ad4e8d617465fc0734108607e4bffcbaf37bfe86d3",
+        "targetOrdinals": [
+          137
+        ],
+        "edition": "Not independently established",
+        "scope": "Unit 7, lesson 7-5, PDF 36–41; printed 517–522"
+      },
+      {
+        "name": "رياضيات التحويلات الهندسية متقدم.pdf",
+        "pages": 66,
+        "sha256": "0448d2dcdbab64eea76f8ade1003aae1839b6ff15d2aab52360b15c8b555cc7b",
+        "targetOrdinals": [],
+        "edition": "Not independently established",
+        "scope": "Unit 6 transformations and symmetry; no missing target"
+      },
+      {
+        "name": "رياضيات المثلثات.pdf",
+        "pages": 64,
+        "sha256": "49d6da9228537d956177374385d78bdecdae2f5f8f8df6a23fb239ea981a11c9",
+        "targetOrdinals": [],
+        "edition": "Not independently established",
+        "scope": "Unit 7 right triangles and trigonometry; no missing target"
+      },
+      {
+        "name": "رياضيات الدوال متقدم.pdf",
+        "pages": 78,
+        "sha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+        "targetOrdinals": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "edition": "Chapter source Algebra 2 ©2014; UAE edition year not independently established",
+        "scope": "Unit 8 lessons 8-3 through 8-8, PDF 21–69 including labs; printed 572–620"
+      },
+      {
+        "name": "رياضيات كتاب الطالب تطبيقي 10 29.pdf",
+        "pages": 225,
+        "sha256": "9b4a1497d16fdd9d518ed098ac8790b5a0a1305ecbb02e4e8e2be7af3b56bc66",
+        "targetOrdinals": [
+          146,
+          147,
+          148
+        ],
+        "edition": "2023–2024",
+        "scope": "Grade 10 Applied volume 1, unit 1, PDF 20–54; printed 5–39 excluding blank PDF37; TOC page numbers differ from body"
+      }
+    ],
+    "canonicalIndexChanges": false,
+    "sourceParity": "UNKNOWN",
+    "totalSourceFileCount": 12,
+    "totalPhysicalPages": 2403
+  },
+  "editionDiffArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/edition-diff.json"
+}

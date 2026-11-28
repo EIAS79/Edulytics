@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "canonicalCode": "G10-U01-L06",
+  "canonicalLessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:06:SOLVING-X-BX-C-0",
+  "sourceFiles": [
+    "01.pdf",
+    "01متقدم_.pdf",
+    "رياضيات كتاب الطالب تطبيقي 10 8.pdf"
+  ],
+  "sourceReviewDate": "2026-11-24",
+  "sourceReviewMethod": "Actual scanned pages visually inspected from owner-authorized Windows source books; compared mathematical goal categories, not copyrighted prose or source artwork.",
+  "sources": {
+    "general": {
+      "name": "01.pdf",
+      "sha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+      "physicalPages": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "printedPages": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "scope": "Two-page algebra tiles + original General 1-6 monic quadratic factoring/solutions/primality and contexts."
+    },
+    "advanced": {
+      "name": "01متقدم_.pdf",
+      "sha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+      "physicalPages": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "printedPages": [
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "scope": "Advanced 2-3 factoring quadratic equations: GCF, monic and nonmonic, special identities, roots, real-world and higher-degree. Page138/printed121 is cumulative review; next topic 2-4 printed122."
+    },
+    "applied": {
+      "name": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+      "physicalPages": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "printedPages": [
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238
+      ],
+      "scope": "Applied 4-4 quadratic equations by factorization. Its mathematical sections substantially overlap the Advanced 2-3 chapter; no second student-facing course created. Page56/printed239 is cumulative review; next Applied lesson 4-5 printed240."
+    }
+  },
+  "sourceTocAlsoLists": {
+    "name": "03.pdf",
+    "sha256": "0fa725e9d38347b43864dcabdb12eaba7716d1d229a367f1f72ae1d8071b3e4b",
+    "tocPhysicalPage": 9,
+    "printedStartPage": 232,
+    "bodyLocationInThisPdf": "NOT_CONFIRMED; the 03.pdf sampled physical245–252 were printed634–641, not the Applied 4-4 body, which was verified instead in the other approved Applied PDF.",
+    "duplicatedBodySourceNotClaimed": true
+  },
+  "goalCrosswalk": [
+    {
+      "id": "C01",
+      "source": "General 01.pdf",
+      "sourcePages": "PDF56–57 / printed43–44",
+      "goal": "algebra tile rectangular model for positive and negative monic trinomial",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "SOURCE_GOAL_ORIGINAL_ARABIC_TEACHING_AND_TEACHER_RUBRIC",
+      "notes": "Not a duplicated publisher illustration; use original four-cell area model"
+    },
+    {
+      "id": "C02",
+      "source": "General 01.pdf; Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Gen PDF58–60 / printed45–47; Adv PDF133 / printed116; App PDF51 / printed234",
+      "goal": "monic x²+bx+c factor pair b=m+n, c=mn; signed b,c and integer binomials",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "SEMANTIC_DUPLICATE_MERGED_INTO_ONE_GENERAL_LESSON",
+      "notes": "First-party original examples and bounded factor-family exact verifier, no separate Advanced/Applied lesson"
+    },
+    {
+      "id": "C03",
+      "source": "General 01.pdf; Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Gen PDF61–63 / printed48–50; Adv PDF133,135 / printed116,118; App PDF51,53 / printed234,236",
+      "goal": "solving monic factorable x²+bx+c=0 with zero-product roots and checking by substitution",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "SEMANTIC_DUPLICATE_MERGED_INTO_ONE_GENERAL_LESSON",
+      "notes": "Full roots family covers source-bounded distinct integer roots; repeated/real noninteger explicitly teacher reviewed"
+    },
+    {
+      "id": "C04",
+      "source": "General 01.pdf; Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Gen PDF59–60 / printed46–47; Adv PDF131 / printed114; App PDF49 / printed232",
+      "goal": "parabola x-intercepts correspond to zeros of standard/factored quadratic forms",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "SEMANTIC_DUPLICATE_MERGED_INTO_ONE_GENERAL_LESSON",
+      "notes": "Original graph description and coordinate checks; drawing is teacher-reviewed"
+    },
+    {
+      "id": "C05",
+      "source": "General 01.pdf",
+      "sourcePages": "PDF57,63 / printed44,50",
+      "goal": "test whether monic quadratic is prime over integer coefficients; distinguish from existence of real irrational roots",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "UNIQUE_GENERAL_SOURCE_GOAL_AUTHORED",
+      "notes": "Integer-prime exact case + worked rational-versus-irrational distinction"
+    },
+    {
+      "id": "C06",
+      "source": "General 01.pdf",
+      "sourcePages": "PDF58–61 / printed45–48",
+      "goal": "square of a binomial arises from repeated equal factors of a monic trinomial",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "MONIC_REPEATED_FACTOR_AUTHORED_WITH_SPECIAL_PRODUCT_REFERENCE",
+      "notes": "Square as repeated root recognized here; extended special-square identities belong to U01L09"
+    },
+    {
+      "id": "C07",
+      "source": "General 01.pdf; Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Gen PDF61–63 / printed48–50; Adv PDF135–136 / printed118–119; App PDF53–54 / printed236–237",
+      "goal": "solve polynomial area/positive-length rectangle and reject inadmissible negative dimensional roots",
+      "canonicalDestination": "G10-U01-L06",
+      "decision": "SEMANTIC_DUPLICATE_MERGED_INTO_ONE_GENERAL_LESSON",
+      "notes": "Original rectangle x+4 by x+1 area54; teacher rubric domain restriction"
+    },
+    {
+      "id": "C08",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF131 / printed114; App PDF49 / printed232",
+      "goal": "write standard quadratic equation from two known roots including rational roots requiring clearing denominators",
+      "canonicalDestination": "G10-U01-L07",
+      "decision": "DISTINCT_NONMONIC_OR_FRACTIONAL_EXTENSION_FOR_NEXT_LESSON",
+      "notes": "Do not inject into bounded integer-monic family or claim automatic exact scoring in U01L06"
+    },
+    {
+      "id": "C09",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF132 / printed115; App PDF50 / printed233",
+      "goal": "extract greatest common monomial and retain zero root in a factored quadratic equation",
+      "canonicalDestination": "G10-U01-L05",
+      "decision": "ALREADY_AUTHORED_IN_DISTINCT_GENERAL_LESSON",
+      "notes": "Reuse U01L05 GCF and zero-product skill instead of duplicate L06"
+    },
+    {
+      "id": "C10",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF132 / printed115; App PDF50 / printed233",
+      "goal": "special product square of sum/difference as perfect square, including repeated roots",
+      "canonicalDestination": "G10-U01-L09",
+      "decision": "DISTINCT_FULL_PERFECT_SQUARE_SKILL_FOR_LATER_LESSON",
+      "notes": "U01L06 only covers repeated factors as a monic special case; full pattern audit later"
+    },
+    {
+      "id": "C11",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF132 / printed115; App PDF50 / printed233",
+      "goal": "difference-of-two-squares factoring and conjugate equation roots",
+      "canonicalDestination": "G10-U01-L08",
+      "decision": "DISTINCT_DIFFERENCE_OF_SQUARES_FACTORING_LESSON",
+      "notes": "Forward special-products expansion appears in U01L04; inverse factoring destination U01L08"
+    },
+    {
+      "id": "C12",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF133 / printed116; App PDF51 / printed234",
+      "goal": "nonmonic a>1 quadratic factoring by ac method and regrouping, including rational roots",
+      "canonicalDestination": "G10-U01-L07",
+      "decision": "DISTINCT_NONMONIC_SKILL_FOR_NEXT_LESSON",
+      "notes": "Preserve a≠1 goals in U01L07; not a second Advanced/Applied course"
+    },
+    {
+      "id": "C13",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF134 / printed117; App PDF52 / printed235",
+      "goal": "quadratic projectile with nonunity leading coefficient and negative time rejected",
+      "canonicalDestination": "G10-U01-L07",
+      "decision": "DISTINCT_NONMONIC_APPLICATION_FOR_NEXT_LESSON",
+      "notes": "Manual teacher context rubric; independently authored generic height context can reuse without copying source"
+    },
+    {
+      "id": "C14",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF135–137 / printed118–120; App PDF53–55 / printed236–238",
+      "goal": "fractional/decimal solutions from nonmonic quadratics, construct standard equation and solve",
+      "canonicalDestination": "G10-U01-L07",
+      "decision": "DISTINCT_FRACTIONAL_NONMONIC_EXTENSION_FOR_NEXT_LESSON",
+      "notes": "No Grade10 U01L06 integer-monic Practice claim"
+    },
+    {
+      "id": "C15",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF137 / printed120; App PDF55 / printed238",
+      "goal": "nonmonic factorization student sign/distribution error analysis and proof",
+      "canonicalDestination": "G10-U01-L07",
+      "decision": "DISTINCT_NONMONIC_TEACHER_ASSESSMENT_FOR_NEXT_LESSON",
+      "notes": "Keep error diagnosis from U01L06 limited to monic positive/negative signs"
+    },
+    {
+      "id": "C16",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF137 / printed120; App PDF55 / printed238",
+      "goal": "factor by grouping and/or greatest monomial common factor in four-term/multivariable expressions",
+      "canonicalDestination": "G10-U01-L05",
+      "decision": "ALREADY_AUTHORED_WITH_TEACHER_REVIEW_IN_DISTINCT_GENERAL_LESSON",
+      "notes": "Teacher review for open multi-variable grouping, not a new Grade10 Practice family in L06"
+    },
+    {
+      "id": "C17",
+      "source": "Advanced 01متقدم_.pdf; Applied رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+      "sourcePages": "Adv PDF137 / printed120; App PDF55 / printed238",
+      "goal": "higher-degree polynomial common-factor equation and identity extension beyond quadratic",
+      "canonicalDestination": "G10-U01-L13",
+      "decision": "DISTINCT_HIGHER_DEGREE_POLYNOMIAL_LESSON_UNDER_APPROVED_INDEX",
+      "notes": "If it is a simple GCF step, supporting strategy is U01L05; full higher-degree equation remains U01L13"
+    }
+  ],
+  "duplicateGeneralOrAdvancedOrAppliedCourseCreated": false,
+  "uniqueCrossbookGoalCategories": 17,
+  "decisionsForCurrentLesson": 7,
+  "otherCanonicalDestinations": [
+    "G10-U01-L07",
+    "G10-U01-L05",
+    "G10-U01-L09",
+    "G10-U01-L08",
+    "G10-U01-L13"
+  ],
+  "otherLessonContentNotImplicitlyCertified": true,
+  "stageDExecuted": false,
+  "sourceReviewStatus": "GENERAL_MONIC_GOALS_ALIGNED_ADVANCED_AND_APPLIED_BODY_GOALS_DEDUP_AND_ROUTED_BY_APPROVED_148_COURSE",
+  "scopeLimitation": "Goal-category and representative activity comparisons for the three inspected actual bodies, not a claim that every distinct numbered book question was individually copied or that 148 course lessons are source-closed.",
+  "originalPublisherTextOrArtworkCopied": false
+}

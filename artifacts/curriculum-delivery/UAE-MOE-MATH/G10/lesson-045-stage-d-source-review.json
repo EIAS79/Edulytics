@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 45,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L04:C045",
+  "sourcePdf": "رياضيات الدوال متقدم.pdf",
+  "sourceSha256": "2411a36f1c19f705bf1ce700d657b4cd9d2464e6506c22d8a2f1df789a59550c",
+  "reviewedPhysicalPages": [
+    31,
+    32
+  ],
+  "scope": "Selected source-page comparison and correction only; not exhaustive atomic mapping or complete source parity. Exact-answer precision fixes are independent mathematical corrections.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 31,
+      "sourcePrintedPage": 582,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "معادلة بأس كسري سالب",
+      "expectedAnswer": "س=١/١٢٥",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 32,
+      "sourcePrintedPage": 583,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "جذر دخيل",
+      "expectedAnswer": "الأولى {−٣،٤}؛ الثانية {٤}.",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    },
+    {
+      "sourcePhysicalPage": 32,
+      "sourcePrintedPage": 583,
+      "sourceLocator": "Selected source objective compared with existing original example",
+      "originalWorkedExampleTitle": "أساس مقلوب وحجتان",
+      "expectedAnswer": "س>٢",
+      "status": "RETAINED_AFTER_TARGETED_REVIEW"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "مقارنة منحنيين",
+      "field": "Answer",
+      "before": "انعكاس حول محور السينات؛ كلاهما مجاله س>٠ ومقاربه س=٠.",
+      "after": "عند س=١/٤،١،٤ تكون قيم د: −١،٠،١ وقيم هـ: ١،٠،−١؛ انعكاس حول محور السينات؛ كلاهما مجاله س>٠ ومقاربه س=٠."
+    },
+    {
+      "title": "تحويل منحنى",
+      "field": "Answer",
+      "before": "المجال س>−٣، المدى جميع الأعداد الحقيقية.",
+      "after": "المجال س>−٣، المقارب الرأسي س=−٣، والمدى جميع الأعداد الحقيقية."
+    }
+  ],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

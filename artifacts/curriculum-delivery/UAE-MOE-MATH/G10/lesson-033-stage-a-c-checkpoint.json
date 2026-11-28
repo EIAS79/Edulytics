@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 33,
+  "canonicalCode": "G10-U03-L09",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "lessonTitle": "المصفوفات الموسعة",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L09:C033",
+  "status": "READY_FOR_STAGE_D",
+  "canonicalIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourcePdf": "01متقدم_.pdf",
+  "sourcePdfPages": [
+    98
+  ],
+  "sourcePrintedPages": [
+    81
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceType": "GRAPHING_CALCULATOR_LAB_1_9_NOT_A_NUMBERED_TEXTBOOK_LESSON",
+  "ownerCanonicalDecision": "Treat unique original lab as General lesson33, retain exact source classification; do not duplicate prior inverse matrix lesson.",
+  "sourceElementDenominatorForReviewedLab": 10,
+  "sourceElementsMapped": 10,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 6,
+    "TEACHER_REVIEW_REQUIRED": 3,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 1
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-033-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-033-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-033-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u03-l09-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 10,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.matrices.augmented_row_reduce"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l09.row_operation_entry",
+    "uae.g10.general.u03.l09.rref_solution_x",
+    "uae.g10.general.u03.l09.rref_solution_y"
+  ],
+  "independentVerifier": "UaeG10AugmentedMatrixResponse.Verify, complete row and Cramer integer checks independent from generated CorrectAnswer",
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-033-stage-c-exact-contract.json",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralAugmentedMatricesTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "productionRouting": false,
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "firstIncompleteGlobalOrdinal": 34,
+  "nextEligibleCanonicalCode": "G10-U04-L01",
+  "sourceEvidenceCommit": "d574a29a7511be5321bbcd76a83464371d8a58af",
+  "closedAtUtc": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closureBasis": "Owner source PDF98 lab, 10 of 10 specific source types, 10 original Arabic worked examples, five original visuals, human 3×4 calculator assessment and Stage C bounded 2×3 independently verified exact families; written tests NOT RUN."
+}

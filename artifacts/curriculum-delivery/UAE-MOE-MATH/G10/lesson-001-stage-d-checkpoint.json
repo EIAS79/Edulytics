@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:01:ADDING-AND-SUBTRACTING-POLYNOMIALS",
+  "lessonOrdinal": 1,
+  "unitOrdinal": 1,
+  "grade": 10,
+  "pathway": "General",
+  "academicLanguage": "ar",
+  "status": "D_PENDING_A_C_EVIDENCE",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPagesDirectlyReviewedInThisStage": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "sourcePrintedPagesDirectlyReviewedInThisStage": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "sourceElementCount": null,
+  "verifiedEquivalentCount": null,
+  "semanticParity": "UNKNOWN",
+  "historicalABCStatus": "READY_FOR_STAGE_D_SCOPED",
+  "page026EvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-page-026-review.json",
+  "repair": {
+    "newOriginalReviewItems": 26,
+    "newWorkedExampleGroups": 11,
+    "newVisualSpecifications": 3
+  },
+  "candidateBaseSha": "784baf4b4ae2bffab6762259ebce6676edbb2fb8",
+  "unitTests": "PASS_TARGETED_NODE_AND_DOTNET",
+  "mathVerifier": "AUTHORING_ARITHMETIC_PROBES_ONLY",
+  "appIntegration": "NOT_RUN",
+  "authenticatedE2E": "NOT_RUN",
+  "arabicRtlVisual": "NOT_RUN",
+  "rightsStatus": "ORIGINAL_ALTERNATIVES_AUTHORED_AND_ONE_SOURCE_IDENTICAL_EXAMPLE_REPLACED_FULL_REVIEW_PENDING",
+  "humanReviewStatus": "OWNER_ACADEMIC_APPROVAL_DECLARED_SEPARATE_FROM_TEACHER_AND_TECHNICAL_EVIDENCE",
+  "openDefects": [
+    "GLOBAL_AND_LESSON_ATOMIC_DENOMINATOR_UNPROVEN",
+    "DIGITAL_AND_TEACHER_RUNTIME_NOT_VERIFIED"
+  ],
+  "productionRouting": false,
+  "fallbackReconciliation": "SYNCED_PENDING_RUNTIME",
+  "canonicalBodySha256": "601e08ad828e13f33e39ba07980aafff6fee32ca1ec730fada396ead3e1a71a4",
+  "numberedSourceReview": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-numbered-source-review.json",
+  "numberedQuestionsIndexed": 91,
+  "numberedQuestionsWithDedicatedAuthoredArtifacts": 91,
+  "instructionalSourceReview": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-instructional-source-review.json",
+  "instructionalRowsIndexed": 45,
+  "advancedCompositeReview": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-composite-review.json",
+  "advancedNumberedSourceItemsRouted": 69,
+  "advancedNumberedItemsWithL001OriginalArtifacts": 15,
+  "advancedSourcePagesDirectlyReviewed": [
+    196,
+    197,
+    198,
+    199,
+    200,
+    201
+  ],
+  "testEvidence": {
+    "testedSha": "23192cdcd5588080f58c07de0d6f65bcca8b25a3",
+    "node": {
+      "passed": 327,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dotnet": {
+      "passed": 935,
+      "failed": 0,
+      "skipped": 0
+    },
+    "scope": "Targeted grade-wide suites, not exhaustive academic or runtime certification"
+  },
+  "explicitSubpartReview": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-subpart-review.json",
+    "parentItems": 7,
+    "subparts": 19,
+    "numberedExerciseSlots": 103,
+    "semanticParity": "UNKNOWN"
+  },
+  "pendingCandidateChanges": {
+    "scope": "Four original examples amended in RichV2 and fallback pack; subpart crosswalk added",
+    "tests": "WRITTEN_NOT_RUN",
+    "previousTestEvidenceRetained": true
+  },
+  "fallbackSynchronizationEvidence": "grade10-stage-d-common-mistake-repair.json",
+  "priorCanonicalBodySha256BeforeLearnerCopyCleanup": "d7e9c8d2f930952e52f2098a6de5fa57c3f79f0bf481dd63205996767fdc4a52"
+}

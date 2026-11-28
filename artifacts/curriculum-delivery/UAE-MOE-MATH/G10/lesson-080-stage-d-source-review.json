@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 80,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:06:02:MEDIANS-AND-ALTITUDES-OF-TRIANGLES",
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "8a00f50c0e41e674bb3193b0ee4db3ee86bfcd183e965089a064ac5f3b5f4b34",
+  "reviewedPhysicalPages": [
+    396
+  ],
+  "scope": "Targeted comparison of visually inspected source opening page, selected repair only. No full-page-set or atomic coverage claim.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 396,
+      "sourcePrintedPage": 383,
+      "sourceLocator": "Opening page teaching objective or worked-example skill",
+      "originalWorkedExampleTitle": "مركز الثقل ونسبة تقسيم المتوسط إحداثيًا",
+      "expectedAnswer": "M(٩/٢،٠)، G(٤،٢)، CG:GM=٢:١"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "مثال هندسي 8",
+      "before": {
+        "Title": "مثال هندسي 8",
+        "Question": "رؤوس مثلث (٣،٣)،(٦،٠)،(٠،٦)؛ أوجد مركز الثقل.",
+        "Method": "تحديد معطيات المسألة وتطبيق النظرية المناسبة مع فحص شروطها.",
+        "Steps": [
+          "متوسط س=٩/٣، متوسط ص=٩/٣.",
+          "تحقق من الشروط الهندسية وربط النتيجة بالسؤال.",
+          "التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات."
+        ],
+        "Answer": "(٣،٣)",
+        "Check": "التعويض أو مقارنة الأطوال والزوايا مع المعطيات الأصلية يحقق الفرضيات."
+      },
+      "after": {
+        "Title": "مثال هندسي 8",
+        "Question": "رؤوس مثلث (٣،٦)،(٦،٠)،(٠،٦)؛ أوجد مركز الثقل.",
+        "Method": "تحقق من أن الرؤوس لا تقع على استقامة واحدة، ثم احسب متوسط الإحداثيات.",
+        "Steps": [
+          "النقطتان (٣،٦) و(٠،٦) على ص=٦، والثالثة ليست على هذا المستقيم؛ إذن المثلث غير منعدم المساحة.",
+          "متوسط الإحداثيات السينية (٣+٦+٠)/٣=٣.",
+          "متوسط الإحداثيات الصادية (٦+٠+٦)/٣=٤."
+        ],
+        "Answer": "(٣،٤)",
+        "Check": "مساحة المثلث ٩ وحدات مربعة؛ مركز الثقل هو متوسط الإحداثيات."
+      }
+    }
+  ],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

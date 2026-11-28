@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 27,
+  "canonicalCode": "G10-U03-L03",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L03:C027",
+  "primarySkills": [
+    "algebra.linear.programming.optimize"
+  ],
+  "sourceBook": "01متقدم_.pdf",
+  "sourcePhysicalPdfPages": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u03.l03.optimal_objective_value",
+    "uae.g10.general.u03.l03.unique_optimal_vertex"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u03.l02.feasible_point_membership",
+    "uae.g10.general.u03.l02.boundary_point_membership"
+  ],
+  "bounds": {
+    "constraints": "س≥0,ص≥0, aس+bص≤a*b*k",
+    "a_b": "1..5",
+    "k": "1..4",
+    "objectiveCoefficients": "p,q∈[-6,6] not both zero",
+    "mode": "0 max,1 min",
+    "region": "single finite triangle; other cases teacher reviewed"
+  },
+  "independentVerifier": "UaeG10LinearProgrammingResponse.Verify uses objective values at (0,0),(b*k,0),(0,a*k); for unique vertex family rejects tied extrema",
+  "answerRenderer": "IntegerKeypad",
+  "teacherReviewRequiredFor": [
+    "plot full original feasible region including non-triangular and unbounded shapes",
+    "explain finite/infinite/empty optimum cases and ties",
+    "production/shipping/recycling real-world constraints with units",
+    "noninteger feasible vertices and discrete production decisions"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u03l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralLinearProgrammingTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  }
+}

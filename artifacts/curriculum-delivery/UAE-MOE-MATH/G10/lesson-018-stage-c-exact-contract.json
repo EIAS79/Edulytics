@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U02-L02",
+  "globalOrdinal": 18,
+  "unitNumber": 2,
+  "unitLessonNumber": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:02:DIVISION-PROPERTIES-OF-EXPONENTS",
+  "sourceBook": "01.pdf",
+  "sourceEdition": "2025–2026 UAE General Arabic Vol1 Unit2 Lesson2-2",
+  "sourcePdfPages": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "sourcePrintedPages": [
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98
+  ],
+  "primarySkills": [
+    "algebra.exponent.quotient_rule"
+  ],
+  "secondaryTeachingSkills": [
+    "algebra.exponent.zero_power",
+    "algebra.exponent.negative_power",
+    "algebra.exponent.power_of_quotient",
+    "algebra.exponent.domain_restrictions"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l02.quotient_exponent_difference",
+    "uae.g10.general.u02.l02.negative_power_fraction",
+    "uae.g10.general.u02.l02.zero_exponent_value"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.powers10.divide",
+    "uae.g10.general.u02.l01.same_base_exponent"
+  ],
+  "reusePolicy": "One prior registered algebra.exponent.quotient_rule, source-specific new grade10 families; powers10-only families never substituted for general original algebra. Teacher-scored full symbolic / domain tasks excluded from auto grader.",
+  "generator": "BuildG10ExponentQuotient(family,random,difficulty)",
+  "engine": "ExactSkillContractQuestionEngine",
+  "independentVerifier": "UaeG10ExponentQuotientResponse.Verify; validates domain, subtracts integer powers, exact rational equivalence by cross multiplication, rejects zero denominators and malformed response",
+  "parameters": [
+    "base",
+    "top",
+    "bottom",
+    "negative"
+  ],
+  "bounds": {
+    "base": "2..8",
+    "top": "0..8",
+    "bottom": "0..8",
+    "negative": "1..4"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u02.l02.quotient_exponent_difference",
+      "answerType": "exact_integer",
+      "interaction": "IntegerKeypad",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u02.l02.negative_power_fraction",
+      "answerType": "exact_fraction",
+      "interaction": "FractionEntry",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u02.l02.zero_exponent_value",
+      "answerType": "exact_integer",
+      "interaction": "IntegerKeypad",
+      "status": "WRITTEN_NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "full rational algebraic simplification with domain restrictions and sign",
+    "power of a quotient when all factors have variable and rational coefficients",
+    "nonzero/zero base reasoned proof including forbidden 0^0",
+    "geometry circle and comparative finance/music/measurement original models",
+    "open writing and power/negative exponent investigation"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralExponentQuotientTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "authenticatedStudentPractice": "NOT_TESTED"
+  },
+  "note": "Fractions 1/16 and 2/32 count mathematically equal; renderer and independent grader handle Arabic digits, source domains are explicit."
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 93,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:07:02:PARALLELOGRAMS",
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "ce18032802d77a34107e5f86f4926acd1bd5181a6d88eaa1a55bb0e9947f027b",
+  "reviewedPhysicalPages": [
+    464
+  ],
+  "scope": "Targeted comparison of visually inspected source opening page, selected examples only. No full-page-set or atomic coverage claim.",
+  "rows": [
+    {
+      "sourcePhysicalPage": 464,
+      "sourcePrintedPage": 451,
+      "sourceLocator": "Visually inspected opening-page teaching objective; authored example is a distinct application, not a source reproduction.",
+      "originalWorkedExampleTitle": "قطرا متوازي الأضلاع ينصف كل منهما الآخر",
+      "expectedAnswer": "س=٤؛ AC=٢٨؛ BO=٧",
+      "status": "ORIGINAL_REPAIR"
+    }
+  ],
+  "correctedExisting": [
+    {
+      "title": "تطبيق أصلي 4",
+      "before": {
+        "Title": "تطبيق أصلي 4",
+        "Question": "قطراه١٨ و١٢؛ طول نصف القطر الأول؟",
+        "Method": "تحديد خصائص المضلع، اختيار القاعدة ثم التعويض الدقيق والتحقق.",
+        "Steps": [
+          "١٨/٢.",
+          "إذن ٩",
+          "تحقق من نوع الشكل والوحدات والفرضيات الهندسية."
+        ],
+        "Answer": "٩",
+        "Check": "تحقق من نوع الشكل والوحدات والفرضيات الهندسية."
+      },
+      "after": {
+        "Title": "تطبيق أصلي 4",
+        "Question": "قطرا متوازي أضلاع طولهما ١٨ و١٢؛ ما طول القطعة من نقطة تقاطع القطرين إلى أحد طرفي القطر الأول؟",
+        "Method": "قطرا متوازي الأضلاع ينصف كل منهما الآخر.",
+        "Steps": [
+          "طول القطر الأول ١٨.",
+          "نقطة التقاطع تنصف القطر، إذن طول الجزء ١٨/٢=٩.",
+          "الجزآن المتساويان يجمعان إلى ١٨."
+        ],
+        "Answer": "٩",
+        "Check": "٩+٩=١٨؛ المقصود نصف طول القطر، وليس نصف قطر دائرة."
+      }
+    },
+    {
+      "title": "تطبيق أصلي 7",
+      "before": {
+        "Title": "تطبيق أصلي 7",
+        "Question": "إذا نصف القطر الأول٧، فما طول قطره؟",
+        "Method": "تحديد خصائص المضلع، اختيار القاعدة ثم التعويض الدقيق والتحقق.",
+        "Steps": [
+          "٧×٢.",
+          "إذن ١٤",
+          "تحقق من نوع الشكل والوحدات والفرضيات الهندسية."
+        ],
+        "Answer": "١٤",
+        "Check": "تحقق من نوع الشكل والوحدات والفرضيات الهندسية."
+      },
+      "after": {
+        "Title": "تطبيق أصلي 7",
+        "Question": "إذا كان طول القطعة من نقطة تقاطع قطري متوازي الأضلاع إلى أحد طرفي القطر الأول ٧، فما طول ذلك القطر؟",
+        "Method": "قطرا متوازي الأضلاع ينصف كل منهما الآخر.",
+        "Steps": [
+          "طول نصف طول القطر الأول هو ٧.",
+          "الجزء الآخر يساويه ٧.",
+          "الطول الكلي ٧+٧=١٤."
+        ],
+        "Answer": "١٤",
+        "Check": "١٤/٢=٧."
+      }
+    }
+  ],
+  "fallbackReconciled": [],
+  "semanticParity": "UNKNOWN",
+  "productionRouting": false,
+  "technicalTests": "WRITTEN_NOT_RUN"
+}

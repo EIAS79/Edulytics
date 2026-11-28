@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 26,
+  "canonicalCode": "G10-U03-L02",
+  "unitNumber": 3,
+  "unitTitle": "الأنظمة الخطية والمصفوفات",
+  "title": "حل أنظمة المتباينات بالتمثيل البياني",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L02:C026",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceEdition": "UAE Advanced 2025–2026 Arabic Volume1 Unit1 Lesson1-2, merged into General",
+  "sourcePdfPages": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "sourcePrintedPages": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "supplementaryTechnologyLab": {
+    "pdfPage": 40,
+    "printedPage": 23,
+    "role": "Optional graphing calculator representation and approximate feasible region; not a separate lesson"
+  },
+  "nextSourceLessonBoundary": {
+    "pdfPage": 41,
+    "printedPage": 24,
+    "lesson": "Advanced1-3 linear programming, canonical G10-U03L03"
+  },
+  "sourceReviewMethod": "Direct visual inspection of original owner-supplied scanned Arabic source PDF33–40, including half-plane shading, line boundaries, common solution region, parallel constraints, practical time/cost examples, written reasons and calculator lab; no OCR/textbook graphics copied.",
+  "sourceElementCount": 29,
+  "sourceElements": [
+    {
+      "elementId": "G10-U03L02-E01",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 33,
+      "sourcePrintedPage": 16,
+      "category": "definition",
+      "goal": "meaning of system of two linear inequalities and common shaded region",
+      "appLocation": "RichV2 Explanation and KeyConcepts: intersection",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E02",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 33,
+      "sourcePrintedPage": 16,
+      "category": "boundary",
+      "goal": "solid boundary line for ≤ or ≥",
+      "appLocation": "RichV2 KeyConcepts and CalculationChain",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E03",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 33,
+      "sourcePrintedPage": 16,
+      "category": "boundary",
+      "goal": "dashed boundary line for strict < or >",
+      "appLocation": "RichV2 KeyConcepts and original boundary-error example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E04",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 33,
+      "sourcePrintedPage": 16,
+      "category": "worked_example",
+      "goal": "represent two half planes with a different sign and compare overlap",
+      "appLocation": "RichV2 original system ص≥س−١، ص<−س+٥",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E05",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 33,
+      "sourcePrintedPage": 16,
+      "category": "assessment",
+      "goal": "evaluate whether a proposed point belongs to both inequalities",
+      "appLocation": "new exact feasible_point_membership, written tests pending",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E06",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 34,
+      "sourcePrintedPage": 17,
+      "category": "worked_example",
+      "goal": "verify a point by substitution in both source inequalities",
+      "appLocation": "RichV2 original (١،٢) pair and calculation chain",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E07",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 34,
+      "sourcePrintedPage": 17,
+      "category": "representation",
+      "goal": "sample point determines the correct side of a boundary line",
+      "appLocation": "RichV2 test-point and shading explanation",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E08",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 34,
+      "sourcePrintedPage": 17,
+      "category": "assessment",
+      "goal": "point on strict line is excluded even if other constraint holds",
+      "appLocation": "new exact boundary_point_membership, tests pending",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E09",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 34,
+      "sourcePrintedPage": 17,
+      "category": "assessment",
+      "goal": "point on weak line is included only if all remaining conditions hold",
+      "appLocation": "new exact boundary_point_membership with independent verifier",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E10",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 35,
+      "sourcePrintedPage": 18,
+      "category": "worked_example",
+      "goal": "different sloping boundary lines define a feasible overlapping wedge",
+      "appLocation": "RichV2 example ص≥س−١، ص<−س+٥ with source-shaped region",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E11",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 35,
+      "sourcePrintedPage": 18,
+      "category": "representation",
+      "goal": "draw all boundary lines on one coordinate grid and shade correct intersection",
+      "appLocation": "RichV2 CartesianPlot data model and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E12",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 35,
+      "sourcePrintedPage": 18,
+      "category": "application",
+      "goal": "time and workload schedules interpreted through two constraints",
+      "appLocation": "RichV2 original units/context reasoning and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E13",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 35,
+      "sourcePrintedPage": 18,
+      "category": "application",
+      "goal": "hours per day and travel/production limits in feasible region",
+      "appLocation": "RichV2 budget and nonnegative context example, rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E14",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 36,
+      "sourcePrintedPage": 19,
+      "category": "assessment",
+      "goal": "practice exercises with two linear inequalities, one with mixed inclusivity",
+      "appLocation": "RichV2 14 original worked questions and two bounded exact families",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E15",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 36,
+      "sourcePrintedPage": 19,
+      "category": "reasoning",
+      "goal": "explain how changing < to ≤ changes whether boundary points belong",
+      "appLocation": "RichV2 boundary comparison and explanatory check",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E16",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 36,
+      "sourcePrintedPage": 19,
+      "category": "context",
+      "goal": "source ticket and hourly rate model with intersection constraints",
+      "appLocation": "RichV2 original AED budget model and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E17",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 37,
+      "sourcePrintedPage": 20,
+      "category": "practice",
+      "goal": "identify intersection of two shaded half-plane solution sets",
+      "appLocation": "RichV2 intersection comparison models and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E18",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 37,
+      "sourcePrintedPage": 20,
+      "category": "practice",
+      "goal": "check points at boundary for correct weak/strict inclusion",
+      "appLocation": "new exact membership family plus teacher drawn graph",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E19",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 37,
+      "sourcePrintedPage": 20,
+      "category": "reasoning",
+      "goal": "recognize empty intersection of disjoint parallel half planes",
+      "appLocation": "RichV2 original system ص>س+٣ and ص<س+١",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E20",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 37,
+      "sourcePrintedPage": 20,
+      "category": "context",
+      "goal": "model valid nonnegative values and dimension units in a source constraint",
+      "appLocation": "RichV2 original budget region and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E21",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 38,
+      "sourcePrintedPage": 21,
+      "category": "application",
+      "goal": "set up multiple simultaneous inequalities from word or chart data",
+      "appLocation": "RichV2 original nonnegative-budget lesson plus teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E22",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 38,
+      "sourcePrintedPage": 21,
+      "category": "assessment",
+      "goal": "determine whether a proposed coordinate point is feasible",
+      "appLocation": "new exact feasible_point_membership with parameter bounds",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L02-E23",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 38,
+      "sourcePrintedPage": 21,
+      "category": "assessment",
+      "goal": "integrated skill checks with parallel/concurrent boundaries",
+      "appLocation": "RichV2 strip-region original example and teacher validation",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E24",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 39,
+      "sourcePrintedPage": 22,
+      "category": "assessment",
+      "goal": "mixed graphing of two inequalities with exact check of shaded half planes",
+      "appLocation": "RichV2 graph data models and teacher plot accuracy rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E25",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 39,
+      "sourcePrintedPage": 22,
+      "category": "reasoning",
+      "goal": "explain why equation intersection alone does not represent system solution",
+      "appLocation": "RichV2 summary distinguishing inequalities from prior equations lesson",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E26",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 39,
+      "sourcePrintedPage": 22,
+      "category": "reasoning",
+      "goal": "separate one/no/infinite equation solutions from inequality feasible regions",
+      "appLocation": "RichV2 overlap definition and errors list",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L02-E27",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 39,
+      "sourcePrintedPage": 22,
+      "category": "written",
+      "goal": "write complete method to graph two inequalities and verify a point",
+      "appLocation": "RichV2 Explanation and teacher written-reasoning rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E28",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 40,
+      "sourcePrintedPage": 23,
+      "category": "calculator_lab",
+      "goal": "graph multiple half planes with the source graphing technology workflow",
+      "appLocation": "RichV2 original sample-value tables; full device operation manually teacher reviewed",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L02-E29",
+      "sourceBook": "01متقدم_.pdf",
+      "sourcePdfPage": 40,
+      "sourcePrintedPage": 23,
+      "category": "calculator_lab",
+      "goal": "identify a candidate point using technology and verify against BOTH original inequalities",
+      "appLocation": "RichV2 point checking method, exact membership family; teacher confirms graph",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceIndexLocked": true,
+  "canonicalIndexOwnerApproved": true,
+  "originalPublisherContentCopied": false,
+  "testsRun": "WRITTEN_NOT_RUN",
+  "originalMathScope": "overlap of two linear half planes with solid/dashed boundaries and plotting plus contexts; distinguish optimization next canonical lesson.",
+  "conclusion": "29 distinct source educational objective and assessment categories accounted for by original Edulytics Arabic lesson, exact fixed-point checks, or separately documented teacher review. Not every numbered book exercise is individually cloned."
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 2,
+  "canonicalCode": "G10-U01-L02",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:02:MULTIPLYING-A-POLYNOMIAL-BY-A-MONOMIAL",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourcePdfPages": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "sourceEdition": "2025–2026 Volume1",
+  "primarySkills": [
+    "algebra.polynomial.multiply_distribute"
+  ],
+  "exactScope": "MONOMIAL_COEFFICIENT_TIMES_SINGLE_VARIABLE_POLYNOMIAL_DEGREE_0_TO_2; MONOMIAL_POWER_0_TO_2; FULL_RESULT_DEGREE_UP_TO_4",
+  "otherTeachingSkills": [
+    "algebra.polynomial.standard_form",
+    "algebra.exponents.product_rule",
+    "algebra.polynomial.multivariable_degree",
+    "algebra.area.distributive_model"
+  ],
+  "parameterKeys": [
+    "m",
+    "k",
+    "a0",
+    "a1",
+    "a2",
+    "degree"
+  ],
+  "bounds": {
+    "m": "[-7,7] excluding 0",
+    "k": [
+      0,
+      2
+    ],
+    "coefficients": "a0,a1,a2 each in [-7,7], not all zero",
+    "degree": [
+      0,
+      4
+    ]
+  },
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+    "uae.g10.general.u01.l02.distributed_linear_equation_integer_root"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g9.general.u07.l03.multiply_coefficient",
+    "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression"
+  ],
+  "reusePolicy": "Extend shared ExactSkillContractQuestionEngine with bounded source-exact monomial helper; DO NOT use generic polynomial×polynomial family.",
+  "engine": "Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine",
+  "generator": "BuildG10MonomialPolynomial(family,random,difficulty)",
+  "independentVerifier": "UaeG10MonomialPolynomialResponse.Verify(family,parameters,answer)",
+  "grader": "ExactSkillContractQuestionEngine.Verify delegates to independent bounded verifier; canonical coefficients from parameter arithmetic, not generated answer text",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer",
+      "status": "WRITTEN_NOT_RUN"
+    }
+  ],
+  "answerFormats": [
+    "western_integer",
+    "arabic_indic_integer",
+    "eastern_arabic_indic_integer",
+    "simplified_polynomial_in_س_or_x_with_degree_up_to_4"
+  ],
+  "teacherReviewRequired": [
+    "multivariate monomial multiplication with two variables",
+    "fractional/decimal arithmetic and its explanatory justification",
+    "area-partition diagrams and dimensions",
+    "open-ended model interpretation and signed-product proofs",
+    "trapezoid and perimeter applications, symbolic degree table and cumulative cross-skill tasks",
+    "distributed equations outside unique integer-root family and complete written derivations"
+  ],
+  "visuals": [
+    "CalculationChain",
+    "ExpressionStripBars",
+    "ShapeDecomposition"
+  ],
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralMonomialPolynomialReuseTests.cs",
+    "tests/academic-uae-grade10-arabic-u01l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10DistributedEquationTests.cs",
+    "tests/academic-uae-grade10-u01l02-stage-d-equation-contract.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "authoredOnly": true,
+    "StageD": "NOT_STARTED",
+    "approvedStudentPractice": false
+  },
+  "note": "READY_FOR_STAGE_D on A-B-C checkpoint only after source and content closing evidence, never claim active Practice or passed CI.",
+  "stageDIdentifiedDigitalGap": {
+    "sourceObjective": "solve equations containing monomial×polynomial products",
+    "status": "BOUNDED_INTEGER_ROOT_FAMILY_AUTHORED_NOT_RUN",
+    "family": "uae.g10.general.u01.l02.distributed_linear_equation_integer_root",
+    "parameterKeys": [
+      "mode",
+      "a",
+      "b",
+      "d",
+      "g",
+      "c",
+      "e"
+    ],
+    "generator": "BuildG10DistributedEquation",
+    "independentVerifier": "UaeG10DistributedEquationResponse.Verify",
+    "scope": "mode=0: a(x+b)+c=d(x+g)+e, a≠d; mode=1: ax(x+b)+c=dx(x+g)+e, a=d and b≠g, so quadratic terms cancel. Unique integer root in [-8,8]. Exact keys and bounds validated. No production routing.",
+    "remainingTeacherReview": "fractional roots, more complex equations, written reasoning and all source/runtime coverage outside bounded family"
+  }
+}

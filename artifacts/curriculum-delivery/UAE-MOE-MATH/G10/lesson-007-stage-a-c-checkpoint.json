@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalOrdinal": 7,
+  "canonicalCode": "G10-U01-L07",
+  "unitNumber": 1,
+  "unitTitle": "كثيرات الحدود والتحليل",
+  "lessonTitle": "حل ax² + bx + c = 0",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:07:SOLVING-AX-BX-C-0",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceIndexLocked": true,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "sourcePrintedPages": [
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "crossbookEvidence": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-006-crossbook-semantic-crosswalk.json",
+  "crossbookRelevantGoalRefs": [
+    "C08",
+    "C12",
+    "C13",
+    "C14",
+    "C15"
+  ],
+  "sourceElementDenominatorForThisLesson": 27,
+  "sourceElementsMapped": 27,
+  "sourceElementDenominatorVerified": true,
+  "sourceCoverage": {
+    "CONTENT_AUTHORED": 10,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 6,
+    "TEACHER_REVIEW_REQUIRED": 11
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-source-evidence.md",
+  "teacherReviewRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-teacher-rubric.md",
+  "arabicRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u01-l07-ar.rich-lesson-v2.json",
+  "arabicWorkedExamplesCount": 21,
+  "originalVisualModelsCount": 9,
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-stage-c-exact-contract.json",
+  "primarySkills": [
+    "algebra.quadratic.factor_nonmonic"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l07.nonmonic_full_factor",
+    "uae.g10.general.u01.l07.nonmonic_rational_roots",
+    "uae.g10.general.u01.l07.nonmonic_prime_over_integers"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l06.monic_full_factor",
+    "uae.g10.general.u01.l05.gcf_complete_factor"
+  ],
+  "exactGenerator": "BuildG10NonmonicQuadratic",
+  "independentVerifier": "UaeG10NonmonicQuadraticResponse.Verify",
+  "teacherReviewRequiredFor": [
+    "nonmonic ac grouping proof",
+    "negative leading coefficients",
+    "manual parabola graphs",
+    "contextual projectile times and dimensions",
+    "irrational roots vs prime over integers"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l07.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralNonmonicQuadraticTests.cs",
+    "tests/academic-uae-grade10-u01l07-stage-d-source-review.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "lessonContentReadyCommit": "a3a0c4fc0f758153be8a2132463d1c25f1c2d843",
+  "lessonContentReadyCommittedAtUtc": "2026-11-24T12:06:23Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "firstIncompleteLessonOrdinal": 8,
+  "nextEligibleLessonOrdinal": 8,
+  "closureBasis": "Owner-approved catalog identity; 27 distinct visually inspected source categories; complete Arabic 12 worked cases and seven visuals; original teacher rubric; scoped Grade10 nonmonic integer factoring, rational-root and prime-over-integers exact families with independent source-parameter verifier; written tests not run.",
+  "remainingStageDObligations": [
+    "Run .NET and Node tests and validate fraction parsing and negative inputs",
+    "Run Arabic RTL student practice and graph/teacher review boundaries",
+    "Enable production routes only after Stage D",
+    "Complete all 148 canonical lesson bodies before publishing entire grade"
+  ],
+  "stageDFollowupPrimaryGeneral": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-007-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

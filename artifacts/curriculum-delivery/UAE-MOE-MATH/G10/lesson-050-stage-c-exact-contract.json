@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 50,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L09:C050",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourcePdfPages": [
+    129,
+    130,
+    131,
+    132,
+    133,
+    134
+  ],
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "primarySkills": [
+    "exponentials.g10.source_models",
+    "algebra.exponential.graph_features"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l01.is_growth",
+    "uae.g10.general.u05.l02.compound_balance",
+    "uae.g10.general.u05.l02.equivalent_period_factor",
+    "uae.g10.general.u05.l02.equivalent_period_rounded",
+    "uae.g10.general.u05.l09.growth_decay_value",
+    "uae.g10.general.u05.l09.half_life_value",
+    "uae.g10.general.u05.l09.rate_from_factor",
+    "uae.g10.general.u05.l09.mixed_linear_exponential_value",
+    "uae.g10.general.u05.l09.first_target_period"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l02.power_law_prediction",
+    "uae.g10.general.u05.l02.inequality_rational_boundary"
+  ],
+  "generator": "Existing ExactSkillContractQuestionEngine, UaeG10ExponentialGraph extension",
+  "independentVerifier": "Exact rational powers and half-up rounding buckets, first-period checks target and preceding period",
+  "parameterBounds": {
+    "growth": "100..10000 initial; 1..20% per period; 1..12 periods",
+    "halfLife": "20..500 g; half 2..20 years; time 1..50 years",
+    "mixed": "100..10000 initial; 1..20% loss; 100..1000 linear addition; 1..12 hours",
+    "firstPeriod": "integer periods, threshold initial ±25%; first crossing verified",
+    "reused": "lesson043 compound and period contracts; lesson042 classification"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l01.is_growth",
+      "kind": "IntegerKeypad"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.compound_balance",
+      "kind": "NumericEntry"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.equivalent_period_factor",
+      "kind": "FractionEntry"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.equivalent_period_rounded",
+      "kind": "NumericEntry"
+    },
+    {
+      "family": "uae.g10.general.u05.l09.growth_decay_value",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l09.half_life_value",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l09.rate_from_factor",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l09.mixed_linear_exponential_value",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l09.first_target_period",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    }
+  ],
+  "teacherReviewRequired": [
+    "construct and justify exponential or mixed models from context",
+    "compare investment plans and explain decision",
+    "graph mixed model and find noninteger threshold",
+    "explain prediction assumptions and practical limits"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l09.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GrowthDecayTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "StageABC": "READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "productionRouting": false
+  }
+}

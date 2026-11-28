@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 37,
+  "canonicalCode": "G10-U04-L04",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U04:L04:C037",
+  "title": "حل المعادلات التربيعية بإكمال المربع",
+  "sourceBook": "01متقدم_.pdf",
+  "sourceLesson": "UAE Advanced Arabic Vol1 2025–2026 Unit2 Lesson2-5",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceMainPdfPages": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+  ],
+  "sourceGraphingExtensionPdfPage": 156,
+  "primarySkills": [
+    "algebra.quadratic.complete_square"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u04.l04.square_constant",
+    "uae.g10.general.u04.l04.completed_square_roots"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u04.l02.left_intercept",
+    "uae.g10.general.u04.l03.sum_real",
+    "uae.g10.general.u01.l06.monic_quadratic_roots"
+  ],
+  "generator": "BuildG10CompletingSquare(family,random,difficulty)",
+  "engine": "ExactSkillContractQuestionEngine",
+  "independentVerifier": "UaeG10CompletingSquareResponse.Verify recomputes p² and the unordered integer roots (−p±r) from bounded source parameters, never generated answer text",
+  "parameterSchema": {
+    "a": "integer [1..4]",
+    "p": "integer [-7..7] excluding zero",
+    "r": "term family=0; roots family integer [1..6]"
+  },
+  "sourceExactScope": "half-linear coefficient square addition, full equation division by a and correct unordered distinct integer roots when (s+p)^2=r^2; excludes automatic irrational/complex full symbolic grading",
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u04.l04.square_constant",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u04.l04.completed_square_roots",
+      "kind": "StructuredEntry",
+      "answerType": "contract_defined",
+      "hint": "Two integer roots separated by comma; Arabic comma accepted; order irrelevant"
+    }
+  ],
+  "teacherReviewRequired": [
+    "fractional and radical exact roots",
+    "complex roots with non-real values",
+    "draw graph and measure intersections",
+    "graphing calculator extension PDF156",
+    "physical meaning and restrictions for motion or area word problems",
+    "written explanation of equal additions to both sides"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u04l04.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10CompletingSquareTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "stageD": "NOT_STARTED",
+  "rights": "Source used for academic objective mapping only; original learner-facing questions and graphical tables by Edulytics."
+}

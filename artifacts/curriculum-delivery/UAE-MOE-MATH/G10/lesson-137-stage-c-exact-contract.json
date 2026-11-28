@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 137,
+  "canonicalCode": "G10-U16-L05",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U16:L05:C137",
+  "sourcePdf": "رياضيات الاحتمالات متقدم.pdf",
+  "sourceSha256": "a94ef73f58c1860ac231b6ad4e8d617465fc0734108607e4bffcbaf37bfe86d3",
+  "sourcePdfPages": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41
+  ],
+  "sourcePrintedPages": [
+    517,
+    518,
+    519,
+    520,
+    521,
+    522
+  ],
+  "primarySkills": [
+    "probability.odds.favorable_against"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u16.l05.single_event_boundary",
+    "uae.g10.general.u16.l05.odds_from_counts",
+    "uae.g10.general.u16.l05.probability_from_odds",
+    "uae.g10.general.u16.l05.odds_from_decimal",
+    "uae.g10.general.u16.l05.hypergeometric_probability",
+    "uae.g10.general.u16.l05.hypergeometric_odds",
+    "uae.g10.general.u16.l05.at_least_one_probability",
+    "uae.g10.general.u16.l05.three_category_probability",
+    "uae.g10.general.u16.l05.three_category_odds",
+    "uae.g10.general.u16.l05.different_pair_odds",
+    "uae.g10.general.u16.l05.two_suit_pattern_odds",
+    "uae.g10.general.u16.l05.repeated_result_probability",
+    "uae.g10.general.u16.l05.ordered_pattern_probability",
+    "uae.g10.general.u16.l05.ordered_pattern_odds",
+    "uae.g10.general.u16.l05.conditional_independent_probability",
+    "uae.g10.general.u16.l05.uniform_cut_probability",
+    "uae.g10.general.u16.l05.data_union_probability",
+    "uae.g10.general.u16.l05.data_category_odds"
+  ],
+  "forbiddenQuestionFamilies": [
+    "supporting.exponentials.solve_exponent"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10ProbabilityOdds (shared engine extension; generic English prompts not reused for Arabic)",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10ProbabilityOddsResponse.Verify: BigInteger exact cross-multiplication; independent Pascal recurrence for combinations, complement via direct summation, different pair via complementary count, paired suit classes via unordered group pairs",
+  "parameterBounds": {
+    "sampling": "three category sizes 2..8; r 2..min(5,a+b); exact k 0..r with impossible cases; valid composition",
+    "counts": "zero and certain events, probability numerator <= denominator, odds 0:1 or 1:0 included; decimal thousandths 0..1000",
+    "ordered": "n 4..10, 3 slots, repetition as stated; repeated equal-probability trials 2 or 3",
+    "geometry": "uniform cut, k=n 4..10, two end intervals; exact probability 2/(k+1)"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u16.l05.single_event_boundary",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.odds_from_counts",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.probability_from_odds",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.odds_from_decimal",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.hypergeometric_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.hypergeometric_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.at_least_one_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.three_category_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.three_category_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.different_pair_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.two_suit_pattern_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.repeated_result_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.ordered_pattern_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.ordered_pattern_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.conditional_independent_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.uniform_cut_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.data_union_probability",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    },
+    {
+      "family": "uae.g10.general.u16.l05.data_category_odds",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_ratio",
+      "visualRequirements": "Symbolic/contextual numeric or ratio prompt; original visual artifact and teacher rubric for free diagrams"
+    }
+  ],
+  "teacherReviewRequired": [
+    "equiprobability, assumptions and sampling interpretation",
+    "free graphs and data interpretation",
+    "critical reasoning and open response"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-137-teacher-rubric.md",
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u16l05.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ProbabilityOddsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "READY_FOR_STAGE_D"
+  },
+  "scopeStatement": "Owner-approved matching-body repair, not full source denominator or runtime certification; original open diagrams and data interpretation teacher reviewed.",
+  "authoringChecks": {
+    "independentArithmeticCases": 27573,
+    "result": "PASS_STATIC_AUTHORING_ONLY",
+    "visualTableTotalsChecked": true,
+    "testsRun": "WRITTEN_NOT_RUN"
+  }
+}

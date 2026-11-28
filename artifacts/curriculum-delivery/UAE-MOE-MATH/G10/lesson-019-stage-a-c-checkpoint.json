@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 19,
+  "canonicalCode": "G10-U02-L03",
+  "unitNumber": 2,
+  "unitLessonNumber": 3,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "الأسس النسبية",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:03:RATIONAL-EXPONENTS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourceBook": "01.pdf",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "sourcePrintedPages": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+  ],
+  "advancedSourceBook": "01متقدم_.pdf",
+  "advancedSourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "advancedPdfPages": [
+    311,
+    312,
+    313,
+    314,
+    315,
+    316
+  ],
+  "sourceCumulativeReviewPagesExcluded": [
+    120,
+    317
+  ],
+  "sourceElementDenominator": 24,
+  "sourceElementsMapped": 24,
+  "sourceElementDenominatorVerified": true,
+  "sourceIndexLocked": true,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 9,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 11
+  },
+  "sourceElementLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l03-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 16,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.exponent.rational_power"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l03.rational_positive_perfect_power",
+    "uae.g10.general.u02.l03.rational_negative_fraction",
+    "uae.g10.general.u02.l03.exponential_same_base_equation"
+  ],
+  "independentVerifier": "UaeG10RationalExponentsResponse.Verify",
+  "rendererMatrix": {
+    "positive": "IntegerKeypad",
+    "negative": "FractionEntry",
+    "equation": "IntegerKeypad"
+  },
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l03.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRationalExponentTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "sourceContentContractStaticInspectionPassed": true,
+  "gradeClosedCountAfterCheckpoint": 19,
+  "firstIncompleteGlobalOrdinal": 20,
+  "nextEligibleCanonicalCode": "G10-U02-L04",
+  "globalArabicBodiesAuthoredCount": 19,
+  "studentContentPackCurrentLessonCount": 55,
+  "fullGradeSemanticAuditComplete": false,
+  "closedAtUtc": "2026-11-25T01:09:36Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closingContentCommit": "5de2c547617e9cbe6e81102d98210fe7a0f722a1",
+  "remainingStageDObligations": [
+    "Run authored C# and Node tests only during Stage D, including FractionEntry equivalent fraction and RTL display",
+    "Authenticate student Practice before any activation",
+    "Finish remaining sequential Grade10 lessons then validate production release separately"
+  ],
+  "stageDPrimaryGeneralSupplement": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-019-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

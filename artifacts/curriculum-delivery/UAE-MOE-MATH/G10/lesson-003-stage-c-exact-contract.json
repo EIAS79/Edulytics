@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 3,
+  "canonicalCode": "G10-U01-L03",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:03:MULTIPLYING-POLYNOMIALS",
+  "sourcePdf": "01.pdf",
+  "sourceEdition": "2025–2026 General Vol1",
+  "sourcePages": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "primarySkills": [
+    "algebra.polynomial.multiply_distribute"
+  ],
+  "otherTeachingSkills": [
+    "algebra.polynomial.foil",
+    "algebra.polynomial.combine_like_terms",
+    "algebra.polynomial.geometry_area",
+    "algebra.polynomial.signs"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g9.general.u07.l03.multiply_coefficient",
+    "uae.g10.general.u01.l03.product_coefficient",
+    "uae.g10.general.u01.l03.full_polynomial_product"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l02.monomial_polynomial_coefficient",
+    "uae.g10.general.u01.l02.full_monomial_polynomial_product",
+    "uae.g10.general.u01.l01.full_polynomial_add_subtract_expression"
+  ],
+  "reusePolicy": "Reuse existing Grade9 correctly scoped polynomial×polynomial coefficient family, extend shared bounded ExactSkillContractQuestionEngine with complete expression convolution verified from independent source parameters; no new unrelated math engine.",
+  "bounds": {
+    "sourceDegrees": "both polynomials 0–2, each at least two nonzero coefficients",
+    "coefficientRange": "[-7,+7]",
+    "totalDegree": "0–4",
+    "degreeProbe": "0–4"
+  },
+  "engine": "ExactSkillContractQuestionEngine",
+  "newHelper": "UaeG10PolynomialProductResponse",
+  "generator": "BuildG10PolynomialProduct(family,random,difficulty)",
+  "independentVerifier": "UaeG10PolynomialProductResponse.Verify(family,parameters,answer)",
+  "expectedAnswerTypes": [
+    "integer coefficient",
+    "complete canonical simplified polynomial"
+  ],
+  "rendererMatrix": [
+    {
+      "family": "uae.g9.general.u07.l03.multiply_coefficient",
+      "kind": "IntegerKeypad",
+      "status": "Existing G9 family; StageD scope review still needed"
+    },
+    {
+      "family": "uae.g10.general.u01.l03.product_coefficient",
+      "kind": "IntegerKeypad",
+      "status": "WRITTEN_NOT_RUN"
+    },
+    {
+      "family": "uae.g10.general.u01.l03.full_polynomial_product",
+      "kind": "StructuredEntry",
+      "status": "WRITTEN_NOT_RUN"
+    }
+  ],
+  "teacherReviewRequired": [
+    "physical colored algebra-tile multiplication and sign models",
+    "area/geometry diagram with positive dimensions and correct square units",
+    "word problem creation and interpreting area/perimeter relation",
+    "proof of FOIL's four terms compared to 3×2 general distribution"
+  ],
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralPolynomialProductTests.cs",
+    "tests/academic-uae-grade10-arabic-u01l03.test.cjs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "productionRouting": false,
+    "authoredOnly": true,
+    "StageD": "NOT_STARTED",
+    "certification": "A-B-C-only"
+  }
+}

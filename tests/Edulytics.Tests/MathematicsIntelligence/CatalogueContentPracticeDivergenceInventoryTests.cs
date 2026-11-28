@@ -63,12 +63,19 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                 // without declaring unreleased G9 as an older-grade regression.
                 var pendingG9 = lesson.LessonCode.StartsWith(
                     "PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal);
-                if (!hasCapability && !pendingG9)
+                var pendingG10 = lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison.Ordinal);
+                // Keep all G10 rows and their actual missing statuses in the
+                // report. G10-specific Stage D remains fail-closed; do not
+                // call its pending candidate a previously released regression.
+                if (pendingG10)
+                    Assert.False(hasCapability);
+                if (!hasCapability && !pendingG9 && !pendingG10)
                     missingCapabilities.Add(lesson.LessonCode);
 
                 if (!hasPresentation)
                 {
-                    if (!pendingG9)
+                    if (!pendingG9 && !pendingG10)
                         presentationMissing.Add(lesson.LessonCode);
                 }
                 else if (
@@ -240,12 +247,19 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                     WriteIndented = true
                 }));
 
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 + 82, rows.Count);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76 - 77 - 220 + 82 - 48 - 52 + 148, rows.Count);
         Assert.Empty(missingCapabilities);
         Assert.Empty(presentationMissing);
         Assert.Equal(82, rows.Count(row =>
             row.GetType().GetProperty("lessonCode")?.GetValue(row)?.ToString()
                 ?.StartsWith("PED:UAE-MOE-MATH:L9:GENERAL:", StringComparison.Ordinal) == true));
+
+        Assert.Equal(148, rows.Count(row =>
+            row.GetType().GetProperty("lessonCode")?.GetValue(row)?.ToString()
+                ?.StartsWith("PED:UAE-MOE-MATH:L10:GENERAL:", StringComparison.Ordinal) == true));
+        Assert.DoesNotContain(rows, row =>
+            row.GetType().GetProperty("lessonCode")?.GetValue(row)?.ToString()
+                ?.StartsWith("PED:UAE-MOE-MATH:L10:ADVANCED:", StringComparison.Ordinal) == true);
 
         var fixtureRows = rows
             .Where(row =>

@@ -247,6 +247,8 @@ jobs:
       - name: Run lesson objective/content alignment certification
         env:
           EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION: "1"
+          # Test the explicit G10 production-eligible route only in this isolated test process.
+          EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release \
@@ -286,9 +288,10 @@ jobs:
           name: lesson-objective-content-alignment-${{ github.sha }}
           path: artifacts/math-intelligence/lesson-objective-content-alignment-certification.json
           retention-days: 14
-      - name: Run Practice V2 full 4,453-lesson runtime certification
+      - name: Run Practice V2 full 5,057-lesson candidate runtime certification
         env:
           EDULYTICS_RUN_FULL_PRACTICE_V2_CERTIFICATION: "1"
+          EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release \
@@ -333,9 +336,10 @@ jobs:
           name: practice-v2-full-catalogue-certification-${{ github.sha }}
           path: artifacts/math-intelligence/practice-v2-full-catalogue-certification.json
           retention-days: 14
-      - name: Run Adaptive V2 full 4,453-lesson runtime certification
+      - name: Run Adaptive V2 full 5,057-lesson candidate runtime certification
         env:
           EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION: "1"
+          EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release \
@@ -344,6 +348,7 @@ jobs:
       - name: Run Adaptive V2 C0-C5 per-family behavior certification
         env:
           EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION: "1"
+          EDULYTICS_G10_DIGITAL_PRACTICE_RELEASE: CONFIRM_RELEASE_UAE_GRADE10_GENERAL_148_DIGITAL_PRACTICE
         run: |
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
             --configuration Release \

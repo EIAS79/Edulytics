@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 43,
+  "canonicalCode": "G10-U05-L02",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U05:L02:C043",
+  "sourcePdf": "رياضيات كتاب الطالب تطبيقي 10 8.pdf",
+  "sourcePdfPages": [
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157
+  ],
+  "sourceSha256": "96df18c4fb47e45fc7a98f876d80e00e3cbdc080e5acfbdc9674a25c85f8cb9e",
+  "primarySkills": [
+    "exponentials.g10.equation_inequality.solve",
+    "exponentials.g10.source_models"
+  ],
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u05.l02.equation_rational",
+    "uae.g10.general.u05.l02.inequality_rational_boundary",
+    "uae.g10.general.u05.l02.model_factor_rounded",
+    "uae.g10.general.u05.l02.model_forecast_rounded",
+    "uae.g10.general.u05.l02.compound_balance",
+    "uae.g10.general.u05.l02.equivalent_period_factor",
+    "uae.g10.general.u05.l02.cooling_value",
+    "uae.g10.general.u05.l02.cooling_threshold",
+    "uae.g10.general.u05.l02.power_law_prediction",
+    "uae.g10.general.u05.l02.like_power_sum",
+    "uae.g10.general.u05.l02.model_parameters",
+    "uae.g10.general.u05.l02.power_law_coefficient",
+    "uae.g10.general.u05.l02.cooling_rounded",
+    "uae.g10.general.u05.l02.cooling_threshold_probe",
+    "uae.g10.general.u05.l02.power_law_rounded_coefficient",
+    "uae.g10.general.u05.l02.power_law_rounded_prediction",
+    "uae.g10.general.u05.l02.equivalent_period_rounded"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u05.l01.is_growth",
+    "uae.g10.general.u04.l08.average_rate"
+  ],
+  "generator": "ExactSkillContractQuestionEngine.BuildG10ExponentialEquation (existing engine extension)",
+  "grader": "ExactSkillContractQuestionEngine.Verify",
+  "independentVerifier": "UaeG10ExponentialEquationResponse.Verify: original exponent equality and left/boundary/right sign probes, exact integer-powered rounding buckets for growth/decay, compound rational rounding and model arithmetic; model pair verifies initial value and exact rounding bucket separately; power coefficient checks original measured value; approximate source applications verify using exact BigInteger rational powers and half-up rounding buckets, with threshold comparison before rounding",
+  "parameterBounds": {
+    "base": "common rational base b/d>1; b 2..5, d 1..b-1, nonzero signed powers −8..8; legacy integer-base parameters accepted",
+    "linearExponent": "left nonzero slope −8..8, right slope −8..8, offsets −8..8, unequal resulting slopes",
+    "inequality": "strict and weak, increasing/reciprocal bases, rational boundary",
+    "model": "start 100..1000, observed 50..1500, 2..6 periods; forecast beyond observed",
+    "compound": "100..25000 AED; annual nominal 1..14%; frequency 1,2,4,6,12,24,26,52; 1..20 years; nearest cent",
+    "period": "1..5% per period, 2,4,12 periods/year",
+    "cooling": "ambient 16..25, delta 32..80 multiple of 16, period 5..12, step 1..4",
+    "powerLaw": "denominator 2..3, numerator 1..4 different from denominator, perfect-power measurements",
+    "sum": "base 2..5, exponent 2..6, multiplicity power 1..2",
+    "modelParameters": "same bounds as model; ordered pair (initial value, base rounded to nearest thousandth) with exact rounding-bucket verification",
+    "powerCoefficient": "positive integer coefficient, given perfect-power measurement; independently check substitution",
+    "coolingRounded": "ambient 15..25, initial difference 40..80, reciprocal factor 1/(1+r/1000) r=20..100, time 5..30; nearest tenth or threshold comparison before rounding",
+    "powerLawRounded": "powers 131/100, 3/2, 3/4, 13/10, 2/3; given positive measurement; optional conversion from pounds using stated 0.454 kg/lb; nearest hundredth",
+    "periodRounded": "2,4,12 periods/year; positive annual or per-period effective factor; nearest ten-thousandth"
+  },
+  "rendererMatrix": [
+    {
+      "family": "uae.g10.general.u05.l02.equation_rational",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.inequality_rational_boundary",
+      "kind": "StructuredEntry",
+      "answerType": "exact_interval_or_union"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.model_factor_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.model_forecast_rounded",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.compound_balance",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.equivalent_period_factor",
+      "kind": "FractionEntry",
+      "answerType": "exact_rational"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.cooling_value",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.cooling_threshold",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.power_law_prediction",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.like_power_sum",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.model_parameters",
+      "kind": "StructuredEntry",
+      "answerType": "exact_ordered_pair"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.power_law_coefficient",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.cooling_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.cooling_threshold_probe",
+      "kind": "IntegerKeypad",
+      "answerType": "exact_integer"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.power_law_rounded_coefficient",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.power_law_rounded_prediction",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    },
+    {
+      "family": "uae.g10.general.u05.l02.equivalent_period_rounded",
+      "kind": "NumericEntry",
+      "answerType": "exact_decimal"
+    }
+  ],
+  "teacherReviewRequired": [
+    "student graph construction and interpretation",
+    "physical paper activity and realistic limitations",
+    "open-ended comparisons and proof, critique, rate assumptions",
+    "unbounded real exponent numerical accuracy and contextual approximation beyond generator bounds"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u05l02.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10ExponentialEquationInequalityTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED",
+    "StageABC": "READY_FOR_STAGE_D"
+  },
+  "scopeStatement": "Selected matching printed Applied body and lab reviewed; bounded digital families authored and teacher rubrics for open-ended tasks; ready for Stage D validation, not runtime-certified. No all-edition equivalence claim."
+}

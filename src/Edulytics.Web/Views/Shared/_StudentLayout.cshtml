@@ -6,7 +6,8 @@
     // The Grade 9 General Arabic lesson has its own academic reading
     // direction. Do not infer it from a student portal language preference:
     // an English UI cookie must not flip a verified Arabic lesson to LTR.
-    var pageLanguage = ViewData["ForceUaeG9AcademicArabicDirection"] is true
+    var pageLanguage = (ViewData["ForceUaeG9AcademicArabicDirection"] is true ||
+                        ViewData["ForceUaeG10AcademicArabicDirection"] is true)
         ? "ar"
         : CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var localizedProductName = Shared["ProductName"].Value;

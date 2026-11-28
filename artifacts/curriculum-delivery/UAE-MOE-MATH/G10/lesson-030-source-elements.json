@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrdinal": 30,
+  "canonicalCode": "G10-U03-L06",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U03:L06:C030",
+  "title": "ضرب المصفوفات",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceSha256": "0a554589f4cc72537007f3229098c1ab46775d7bf2301bae59f38fe6861a9815",
+  "sourceEdition": "UAE Advanced 2025–2026 Arabic Vol1 original 1-7",
+  "sourcePhysicalPdfPages": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "sourcePrintedPages": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+  ],
+  "supplementalTechnologyLabPages": [
+    80,
+    81
+  ],
+  "nextSourceLessonStartsPhysicalPage": 82,
+  "sourceElementCount": 26,
+  "sourceElementDenominatorVerifiedForThisLesson": true,
+  "sourceElements": [
+    {
+      "elementId": "G10-U03L06-E01",
+      "sourcePhysicalPage": 72,
+      "sourcePrintedPage": 55,
+      "category": "definition",
+      "goal": "matrix product is row-by-column sum, not scalar or elementwise product",
+      "appLocation": "RichV2 introduction and inner product rule",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E02",
+      "sourcePhysicalPage": 72,
+      "sourcePrintedPage": 55,
+      "category": "definition",
+      "goal": "inner matrix dimension compatibility and resulting outer dimensions",
+      "appLocation": "RichV2 shape key concept and exact dimension family",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E03",
+      "sourcePhysicalPage": 72,
+      "sourcePrintedPage": 55,
+      "category": "visual",
+      "goal": "row-column correspondence in illustrated 2x2 matrices",
+      "appLocation": "RichV2 original four-cell grid",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E04",
+      "sourcePhysicalPage": 73,
+      "sourcePrintedPage": 56,
+      "category": "worked_example",
+      "goal": "matrix product of 2×2 arrays",
+      "appLocation": "RichV2 AB complete worked example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E05",
+      "sourcePhysicalPage": 73,
+      "sourcePrintedPage": 56,
+      "category": "assessment",
+      "goal": "one cell of product as sum of two products",
+      "appLocation": "new exact matrix_product_entry",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L06-E06",
+      "sourcePhysicalPage": 73,
+      "sourcePrintedPage": 56,
+      "category": "method",
+      "goal": "multiply row i by column j retaining order",
+      "appLocation": "RichV2 four-cell original CalculationChain",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E07",
+      "sourcePhysicalPage": 74,
+      "sourcePrintedPage": 57,
+      "category": "context",
+      "goal": "sports/statistics table weighted calculations",
+      "appLocation": "RichV2 original price/quantity matrix context",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E08",
+      "sourcePhysicalPage": 74,
+      "sourcePrintedPage": 57,
+      "category": "method",
+      "goal": "non-square matrix product 2×3 times 3×2",
+      "appLocation": "RichV2 worked complete non-square multiplication",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E09",
+      "sourcePhysicalPage": 74,
+      "sourcePrintedPage": 57,
+      "category": "concept",
+      "goal": "determine when A×B defined but B×A undefined",
+      "appLocation": "RichV2 dimension example and practice",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E10",
+      "sourcePhysicalPage": 75,
+      "sourcePrintedPage": 58,
+      "category": "worked_example",
+      "goal": "triple inner products in 2×3 by 3×2 product",
+      "appLocation": "RichV2 2×3 by 3×2 full worked example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E11",
+      "sourcePhysicalPage": 75,
+      "sourcePrintedPage": 58,
+      "category": "practice",
+      "goal": "identify valid and invalid matrix-product dimensions",
+      "appLocation": "exact matrix_product_compatible; StageD not run",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L06-E12",
+      "sourcePhysicalPage": 75,
+      "sourcePrintedPage": 58,
+      "category": "reasoning",
+      "goal": "write the rank of result correctly when dimensions match",
+      "appLocation": "RichV2 dimension rule, teacher rationale",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E13",
+      "sourcePhysicalPage": 76,
+      "sourcePrintedPage": 59,
+      "category": "concept",
+      "goal": "matrix multiplication not commutative generally",
+      "appLocation": "RichV2 AB != BA original example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E14",
+      "sourcePhysicalPage": 76,
+      "sourcePrintedPage": 59,
+      "category": "worked_example",
+      "goal": "calculate BA and compare with AB",
+      "appLocation": "RichV2 reversed-order exact 2×2 example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E15",
+      "sourcePhysicalPage": 76,
+      "sourcePrintedPage": 59,
+      "category": "practice",
+      "goal": "multiply by identity matrix when dimension valid",
+      "appLocation": "RichV2 identity example",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E16",
+      "sourcePhysicalPage": 77,
+      "sourcePrintedPage": 60,
+      "category": "application",
+      "goal": "matrix product to compute inventory, sales or prices",
+      "appLocation": "RichV2 original matrix-vector example and data rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E17",
+      "sourcePhysicalPage": 77,
+      "sourcePrintedPage": 60,
+      "category": "reasoning",
+      "goal": "use associative and distributive laws with matched ranks",
+      "appLocation": "RichV2 original A(B+C) demonstration",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E18",
+      "sourcePhysicalPage": 77,
+      "sourcePrintedPage": 60,
+      "category": "assessment",
+      "goal": "distinguish scalar multiplication from row-column product",
+      "appLocation": "RichV2 common mistakes and comparison",
+      "coverageStatus": "CONTENT_AUTHORED"
+    },
+    {
+      "elementId": "G10-U03L06-E19",
+      "sourcePhysicalPage": 78,
+      "sourcePrintedPage": 61,
+      "category": "assessment",
+      "goal": "compute complete product with signed entries",
+      "appLocation": "RichV2 12 source equivalent examples + rubric",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L06-E20",
+      "sourcePhysicalPage": 78,
+      "sourcePrintedPage": 61,
+      "category": "assessment",
+      "goal": "interpret product with table data and units",
+      "appLocation": "RichV2 original matrix-vector data task",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E21",
+      "sourcePhysicalPage": 78,
+      "sourcePrintedPage": 61,
+      "category": "reasoning",
+      "goal": "identify common wrong elementwise multiplication answer",
+      "appLocation": "RichV2 original error-diagnosis example",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E22",
+      "sourcePhysicalPage": 79,
+      "sourcePrintedPage": 62,
+      "category": "practice",
+      "goal": "source end-of-lesson multi-dimensional products and powers",
+      "appLocation": "RichV2 product of 2x2 and 2x3, A² example",
+      "coverageStatus": "AUTHORED_TEST_DIGITAL_SCORING_PENDING"
+    },
+    {
+      "elementId": "G10-U03L06-E23",
+      "sourcePhysicalPage": 79,
+      "sourcePrintedPage": 62,
+      "category": "context",
+      "goal": "geometric transformation matrix interpretation",
+      "appLocation": "RichV2 original matrix-vector geometry extension",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E24",
+      "sourcePhysicalPage": 79,
+      "sourcePrintedPage": 62,
+      "category": "writing",
+      "goal": "argue why AB differs from BA",
+      "appLocation": "RichV2 compare two products, rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E25",
+      "sourcePhysicalPage": 80,
+      "sourcePrintedPage": 63,
+      "category": "technology_lab",
+      "goal": "calculator matrix product and repeated multiplication",
+      "appLocation": "RichV2 calculator/check tips + teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "elementId": "G10-U03L06-E26",
+      "sourcePhysicalPage": 81,
+      "sourcePrintedPage": 64,
+      "category": "technology_lab",
+      "goal": "calculator output verification versus hand multiplication",
+      "appLocation": "RichV2 independent cell check and teacher rubric",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "scope": "Distinct mathematics learning and assessment goals, not exact copyrighted book question reprints."
+}

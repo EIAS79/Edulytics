@@ -337,11 +337,15 @@
       "v2Capabilities": [
         "rational.exact_arithmetic",
         "geometry.right_triangle.pythagorean.exact",
-        "geometry.verify.right_triangle.pythagorean"
+        "geometry.verify.right_triangle.pythagorean",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "geometry.right_triangle.pythagorean.exact",
-        "geometry.right_triangle.pythagorean.find_leg_exact"
+        "geometry.right_triangle.pythagorean.find_leg_exact",
+        "uae.g10.general.u14.l16.triangle_classification",
+        "uae.g10.general.u14.l16.coordinate_distance_squared"
       ]
     },
     {
@@ -900,11 +904,15 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
         "geometry.trigonometry.exact_generation",
-        "geometry.trigonometry.independent_verification"
+        "geometry.trigonometry.independent_verification",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "geometry.similarity.find_missing_length",
-        "geometry.similarity.scale_factor"
+        "geometry.similarity.scale_factor",
+        "uae.g10.general.u11.l03.similar_triangle_aa_angle",
+        "uae.g10.general.u11.l03.similar_triangle_corresponding_side"
       ]
     },
     {
@@ -983,12 +991,24 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
         "geometry.trigonometry.exact_generation",
-        "geometry.trigonometry.independent_verification"
+        "geometry.trigonometry.independent_verification",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "trigonometry.right_triangle.ratio_exact",
         "trigonometry.right_triangle.find_side_exact",
-        "trigonometry.right_triangle.find_angle_exact"
+        "trigonometry.right_triangle.find_angle_exact",
+        "uae.g10.general.u14.l01.ratio_six_exact",
+        "uae.g10.general.u14.l01.side_opposite_exact",
+        "uae.g10.general.u14.l01.side_adjacent_exact",
+        "uae.g10.general.u14.l01.side_hypotenuse_exact",
+        "uae.g10.general.u14.l01.angle_inverse_sine_rounded",
+        "uae.g10.general.u14.l01.angle_inverse_cosine_rounded",
+        "uae.g10.general.u14.l01.angle_inverse_tangent_rounded",
+        "uae.g10.general.u14.l01.special_angle_exact",
+        "uae.g10.general.u14.l01.elevation_height_rounded",
+        "uae.g10.general.u14.l01.depression_distance_rounded"
       ]
     },
     {
@@ -1096,12 +1116,16 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
         "geometry.polygons.exact",
-        "geometry.verify.polygons"
+        "geometry.verify.polygons",
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
         "geometry.polygons.interior_angle_sum",
         "geometry.polygons.missing_interior_angle",
-        "geometry.polygons.regular_interior_angle"
+        "geometry.polygons.regular_interior_angle",
+        "uae.g10.general.u12.l01.polygon_interior_sum",
+        "uae.g10.general.u12.l01.regular_polygon_exterior_angle"
       ]
     },
     {
@@ -2335,7 +2359,9 @@
         "usccss.g7.u01.l03.multiplicative_vs_additive",
         "usccss.g7.u01.l04.hidden_corresponding_distance",
         "usccss.g7.u01.l04.angle_and_distance_scaling",
-        "usccss.g7.u01.l05.factor_size_and_reciprocal"
+        "usccss.g7.u01.l05.factor_size_and_reciprocal",
+        "uae.g10.general.u11.l02.similar_polygon_side",
+        "uae.g10.general.u11.l02.similar_polygon_perimeter"
       ]
     },
     {
@@ -2389,7 +2415,9 @@
         "usccss.g7.u01.l08.map_route_rate_time",
         "usccss.g7.u01.l09.create_drawing_scale_lengths",
         "usccss.g7.u01.l10.change_scale_length_and_area",
-        "usccss.g7.u01.l11.unitless_scale_and_conversions"
+        "usccss.g7.u01.l11.unitless_scale_and_conversions",
+        "uae.g10.general.u11.l07.map_actual_distance_km",
+        "uae.g10.general.u11.l07.model_scale_length_cm"
       ]
     },
     {
@@ -2708,7 +2736,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "uae.g3.u13.l04.triangle_types"
+        "uae.g3.u13.l04.triangle_types",
+        "uae.g10.general.u09.l01.classify_triangle_sides",
+        "uae.g10.general.u09.l01.classify_triangle_angles"
       ]
     },
     {
@@ -7226,7 +7256,9 @@
         "ratio.unit_rate.equivalent_ratio",
         "ratio.unit_rate.direct",
         "ratio.unit_rate.divide_total",
-        "uae.g9.general.u02.l06.two_sided_proportion"
+        "uae.g9.general.u02.l06.two_sided_proportion",
+        "uae.g10.general.u11.l01.proportion_missing_term",
+        "uae.g10.general.u11.l01.partition_by_ratio"
       ]
     },
     {
@@ -7539,6 +7571,21 @@
       ]
     },
     {
+      "id": "algebra.polynomial.divide_long_synthetic",
+      "domain": "algebra",
+      "canonicalName": "قسمة كثيرات الحدود — الصف العاشر الموحد",
+      "semantics": "اقسم كثيرة حدود على أحادية حد حدًا فحدًا، أو على كثيرة حدود أخرى بالقسمة المطولة؛ إذا كان المقسوم عليه خطيًا س−ر، استخدم القسمة التركيبية مع معاملات الصفر للدرجات المفقودة، ثم تحقق من هوية المقسوم=المقسوم عليه×الخارج+الباقي، ودرجة الباقي أقل من درجة المقسوم عليه.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l10.full_linear_divisor_quotient",
+        "uae.g10.general.u01.l10.linear_divisor_remainder"
+      ]
+    },
+    {
       "id": "algebra.exponent.product_rule",
       "domain": "algebra",
       "canonicalName": "رياضيات الصف التاسع العام — خواص ضرب الأسس",
@@ -7778,7 +7825,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+        "uae.g10.general.u07.l01.line_pair_type",
+        "uae.g10.general.u07.l01.plane_pair_type"
       ]
     },
     {
@@ -7838,7 +7887,9 @@
       ],
       "v2QuestionFamilies": [
         "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
-        "geometry.coordinate.gradient_between_points"
+        "geometry.coordinate.gradient_between_points",
+        "uae.g10.general.u07.l06.perpendicular_point_line_distance",
+        "uae.g10.general.u07.l06.perpendicular_slope"
       ]
     },
     {
@@ -7867,7 +7918,9 @@
       ],
       "v2QuestionFamilies": [
         "uae.g4.u16.l06.triangle_missing_angle",
-        "geometry.angles.supplementary"
+        "geometry.angles.supplementary",
+        "uae.g10.general.u09.l02.third_triangle_angle",
+        "uae.g10.general.u09.l02.exterior_triangle_angle"
       ]
     },
     {
@@ -7895,7 +7948,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "geometry.congruence.identify_criterion"
+        "geometry.congruence.identify_criterion",
+        "uae.g10.general.u09.l04.sss_match_condition",
+        "uae.g10.general.u09.l04.sas_included_angle"
       ]
     },
     {
@@ -7909,7 +7964,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "geometry.congruence.identify_criterion"
+        "geometry.congruence.identify_criterion",
+        "uae.g10.general.u09.l05.asa_included_side",
+        "uae.g10.general.u09.l05.aas_remaining_angle"
       ]
     },
     {
@@ -7924,8 +7981,3411 @@
       ],
       "v2QuestionFamilies": [
         "uae.g4.u16.l06.triangle_missing_angle",
-        "uae.g3.u13.l04.triangle_types"
+        "uae.g3.u13.l04.triangle_types",
+        "uae.g10.general.u09.l06.isosceles_base_angle",
+        "uae.g10.general.u09.l06.equilateral_perimeter"
       ]
+    },
+    {
+      "id": "algebra.polynomial.rational_zero_theorem",
+      "domain": "algebra",
+      "canonicalName": "نظرية الصفر النسبي واختبار الأصفار النسبية لكثيرات الحدود",
+      "semantics": "إذا كانت معاملات P(س) صحيحة وكان الكسر المختزل p/q صفرًا نسبيًا، فإن البسط p يقسم الحد الثابت والمقام الموجب q يقسم المعامل الرئيس. القائمة مرشحات محتملة وليست كلها أصفارًا فعلية؛ تحقق بالتعويض الدقيق أو القسمة التركيبية. الجذور الأخرى قد تكون غير نسبية أو مركبة ولا يجوز حذفها.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l16.rational_candidate_count",
+        "uae.g10.general.u01.l16.rational_candidate_membership",
+        "uae.g10.general.u01.l16.rational_actual_zero"
+      ]
+    },
+    {
+      "id": "algebra.radical.solve_equation",
+      "domain": "algebra",
+      "canonicalName": "الصف العاشر العام — حل المعادلات الجذرية وفحص الحلول الدخيلة",
+      "semantics": "عزل الجذر الحقيقي، تربيع الطرفين مع حفظ الشروط، التحقق من كل حل مرشح بالتعويض في المعادلة الأصلية، ورفض المرشحين الدخيلين. المتباينات والتمثيل البياني المعقد يحتاجان براهين منفصلة.",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u02.l08.radical_equation_integer_solution",
+        "uae.g10.general.u02.l08.squared_candidate_is_valid"
+      ]
+    },
+    {
+      "id": "algebra.rational.multiply_divide",
+      "domain": "algebra",
+      "canonicalName": "Multiply and divide rational expressions with all original domain restrictions",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u06.l03.product_cancel_constant",
+        "uae.g10.general.u06.l03.division_cancel_constant",
+        "uae.g10.general.u06.l03.cancellation_original_exclusion",
+        "uae.g10.general.u06.l03.complex_fraction_quotient"
+      ]
+    },
+    {
+      "id": "algebra.rational.add_subtract",
+      "domain": "algebra",
+      "canonicalName": "Add and subtract rational expressions via common denominators",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u06.l04.like_denominator_sum_numerator",
+        "uae.g10.general.u06.l04.like_denominator_difference_numerator",
+        "uae.g10.general.u06.l04.unlike_denominator_linear_coefficient",
+        "uae.g10.general.u06.l04.unlike_denominator_constant",
+        "uae.g10.general.u06.l04.complex_fraction_sum"
+      ]
+    },
+    {
+      "id": "algebra.rational.graph_features",
+      "domain": "algebra",
+      "canonicalName": "Graph rational functions, asymptotes, intercepts and removable holes",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u06.l05.reciprocal_vertical_asymptote",
+        "uae.g10.general.u06.l05.reciprocal_horizontal_asymptote",
+        "uae.g10.general.u06.l05.reciprocal_graph_value",
+        "uae.g10.general.u06.l05.removable_hole_x",
+        "uae.g10.general.u06.l05.removable_hole_y",
+        "uae.g10.general.u06.l05.oblique_asymptote_intercept"
+      ]
+    },
+    {
+      "id": "algebra.variation.direct_inverse_joint",
+      "domain": "algebra",
+      "canonicalName": "Distinguish direct, inverse, joint and combined variation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u06.l06.direct_variation_value",
+        "uae.g10.general.u06.l06.inverse_variation_value",
+        "uae.g10.general.u06.l06.joint_variation_value",
+        "uae.g10.general.u06.l06.combined_variation_value"
+      ]
+    },
+    {
+      "id": "algebra.rational.equations_inequalities",
+      "domain": "algebra",
+      "canonicalName": "Solve rational equations and inequalities with domain/sign checks",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u06.l07.rational_equation_exact_root",
+        "uae.g10.general.u06.l07.rational_equation_extraneous_count",
+        "uae.g10.general.u06.l07.rational_inequality_membership",
+        "uae.g10.general.u06.l07.rational_combined_work_time"
+      ]
+    },
+    {
+      "id": "geometry.transformations.reflection",
+      "domain": "geometry",
+      "canonicalName": "الانعكاس",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l01.reflection_vertical_x",
+        "uae.g10.general.u08.l01.reflection_horizontal_y",
+        "uae.g10.general.u08.l01.reflection_diagonal_y"
+      ]
+    },
+    {
+      "id": "geometry.transformations.translation",
+      "domain": "geometry",
+      "canonicalName": "الإزاحة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l02.translation_x",
+        "uae.g10.general.u08.l02.translation_y"
+      ]
+    },
+    {
+      "id": "geometry.transformations.rotation",
+      "domain": "geometry",
+      "canonicalName": "الدوران",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l03.rotation_90_x",
+        "uae.g10.general.u08.l03.rotation_180_y",
+        "uae.g10.general.u08.l03.rotation_270_y"
+      ]
+    },
+    {
+      "id": "geometry.transformations.composition",
+      "domain": "geometry",
+      "canonicalName": "تركيب التحويلات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l04.reflect_then_translate_x",
+        "uae.g10.general.u08.l04.translate_then_reflect_x"
+      ]
+    },
+    {
+      "id": "geometry.transformations.symmetry",
+      "domain": "geometry",
+      "canonicalName": "التناظر",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l05.regular_polygon_symmetry_axes",
+        "uae.g10.general.u08.l05.least_rotation_angle"
+      ]
+    },
+    {
+      "id": "geometry.transformations.dilation",
+      "domain": "geometry",
+      "canonicalName": "عمليات تغيير الأبعاد (التمدد)",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u08.l06.dilation_origin_x",
+        "uae.g10.general.u08.l06.dilation_side_length",
+        "uae.g10.general.u11.l06.similarity_dilation_translation_x",
+        "uae.g10.general.u11.l06.similarity_transformed_length"
+      ]
+    },
+    {
+      "id": "geometry.triangles.congruence_concept",
+      "domain": "geometry",
+      "canonicalName": "المثلثات المتطابقة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l03.corresponding_side_length",
+        "uae.g10.general.u09.l03.corresponding_side_equation"
+      ]
+    },
+    {
+      "id": "geometry.transformations.congruence",
+      "domain": "geometry",
+      "canonicalName": "تحويلات التطابق",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l07.rigid_image_side_length",
+        "uae.g10.general.u09.l07.rigid_image_angle"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.triangle_proofs",
+      "domain": "geometry",
+      "canonicalName": "المثلثات والبرهان الإحداثي",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l08.coordinate_side_square",
+        "uae.g10.general.u09.l08.coordinate_midpoint_x"
+      ]
+    },
+    {
+      "id": "geometry.area.triangle_parallelogram",
+      "domain": "geometry",
+      "canonicalName": "مساحة متوازي الأضلاع والمثلث",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u09.l09.parallelogram_area",
+        "uae.g10.general.u09.l09.triangle_area"
+      ]
+    },
+    {
+      "id": "geometry.triangles.bisectors_centers",
+      "domain": "geometry",
+      "canonicalName": "منصفات المثلثات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l01.perpendicular_bisector_distance",
+        "uae.g10.general.u10.l01.angle_bisector_equidistance"
+      ]
+    },
+    {
+      "id": "geometry.triangles.centroid_orthocenter",
+      "domain": "geometry",
+      "canonicalName": "متوسطات المثلثات وارتفاعاتها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l02.centroid_vertex_segment",
+        "uae.g10.general.u10.l02.centroid_midpoint_segment"
+      ]
+    },
+    {
+      "id": "geometry.triangles.side_angle_order",
+      "domain": "geometry",
+      "canonicalName": "المتباينات في مثلث واحد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l03.largest_opposite_angle",
+        "uae.g10.general.u10.l03.exterior_angle_bound"
+      ]
+    },
+    {
+      "id": "geometry.proofs.indirect_contradiction",
+      "domain": "geometry",
+      "canonicalName": "البرهان غير المباشر",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l04.negated_inequality_membership",
+        "uae.g10.general.u10.l04.contradiction_upper_bound"
+      ]
+    },
+    {
+      "id": "geometry.triangles.triangle_inequality_exact",
+      "domain": "geometry",
+      "canonicalName": "متباينة المثلث",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l05.triangle_third_side_min_integer",
+        "uae.g10.general.u10.l05.triangle_third_side_max_integer"
+      ]
+    },
+    {
+      "id": "geometry.triangles.hinge_theorem_converse",
+      "domain": "geometry",
+      "canonicalName": "المتباينات في مثلثين",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u10.l06.hinge_opposite_side_relation",
+        "uae.g10.general.u10.l06.hinge_converse_angle_relation"
+      ]
+    },
+    {
+      "id": "geometry.quadrilaterals.parallelogram_properties",
+      "domain": "geometry",
+      "canonicalName": "متوازي الأضلاع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l02.parallelogram_adjacent_angle",
+        "uae.g10.general.u12.l02.parallelogram_diagonal_half"
+      ]
+    },
+    {
+      "id": "geometry.quadrilaterals.parallelogram_tests",
+      "domain": "geometry",
+      "canonicalName": "اختبارات متوازي الأضلاع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l03.parallelogram_sufficient_condition",
+        "uae.g10.general.u12.l03.parallelogram_diagonals_test"
+      ]
+    },
+    {
+      "id": "geometry.quadrilaterals.rectangle_properties",
+      "domain": "geometry",
+      "canonicalName": "المستطيل",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l04.rectangle_equal_diagonals",
+        "uae.g10.general.u12.l04.rectangle_diagonal_length"
+      ]
+    },
+    {
+      "id": "geometry.quadrilaterals.rhombus_square",
+      "domain": "geometry",
+      "canonicalName": "المعين والمربع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l05.rhombus_side_from_diagonals",
+        "uae.g10.general.u12.l05.square_perimeter"
+      ]
+    },
+    {
+      "id": "geometry.quadrilaterals.trapezoid_kite",
+      "domain": "geometry",
+      "canonicalName": "شبه المنحرف وشكل الطائرة الورقية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u12.l06.trapezoid_midsegment",
+        "uae.g10.general.u12.l06.kite_perimeter"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.circumference",
+      "domain": "geometry",
+      "canonicalName": "تعريف الدائرة ونصف القطر والقطر وحساب محيطها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l01.diameter_from_radius",
+        "uae.g10.general.u13.l01.radius_from_diameter",
+        "uae.g10.general.u13.l01.circumference_pi_coefficient",
+        "uae.g10.general.u13.l01.circumference_rounded",
+        "uae.g10.general.u13.l01.center_line_overlap",
+        "uae.g10.general.u13.l01.intersection_count",
+        "uae.g10.general.u13.l01.circumscribed_rectangle_pi_coefficient",
+        "uae.g10.general.u13.l01.radius_from_circumference_pi"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.arcs",
+      "domain": "geometry",
+      "canonicalName": "الزاوية المركزية وقياس القوس ومجموع الأقواس",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l02.central_remaining",
+        "uae.g10.general.u13.l02.major_arc",
+        "uae.g10.general.u13.l02.pie_angle",
+        "uae.g10.general.u13.l02.adjacent_arc_sum",
+        "uae.g10.general.u13.l02.arc_length_pi_coefficient",
+        "uae.g10.general.u13.l02.arc_length_rounded",
+        "uae.g10.general.u13.l02.angle_from_arc_fraction"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.chords",
+      "domain": "geometry",
+      "canonicalName": "تساوي الأوتار والأقواس وعلاقة الوتر بالمركز",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l03.equal_chord_arc",
+        "uae.g10.general.u13.l03.perpendicular_bisects_arc",
+        "uae.g10.general.u13.l03.chord_length_from_radius_distance",
+        "uae.g10.general.u13.l03.center_distance_from_chord",
+        "uae.g10.general.u13.l03.equal_chord_expression",
+        "uae.g10.general.u13.l03.equal_chords_equal_distances",
+        "uae.g10.general.u13.l03.center_distance_rounded"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.inscribed_angles",
+      "domain": "geometry",
+      "canonicalName": "الزاوية المحيطية وعلاقتها بالقوس",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l04.angle_from_intercepted_arc",
+        "uae.g10.general.u13.l04.arc_from_inscribed_angle",
+        "uae.g10.general.u13.l04.equal_angles_same_arc",
+        "uae.g10.general.u13.l04.diameter_right_triangle_angle",
+        "uae.g10.general.u13.l04.cyclic_opposite_angle",
+        "uae.g10.general.u13.l04.same_arc_angle_expression",
+        "uae.g10.general.u13.l04.cyclic_opposite_expression",
+        "uae.g10.general.u13.l04.right_triangle_diameter"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.tangents",
+      "domain": "geometry",
+      "canonicalName": "المماس ونصف القطر",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l05.common_tangent_count",
+        "uae.g10.general.u13.l05.tangent_right_triangle_check",
+        "uae.g10.general.u13.l05.tangent_length",
+        "uae.g10.general.u13.l05.radius_from_external_segment",
+        "uae.g10.general.u13.l05.center_distance",
+        "uae.g10.general.u13.l05.equal_tangent_length",
+        "uae.g10.general.u13.l05.equal_tangent_expression",
+        "uae.g10.general.u13.l05.circumscribed_triangle_perimeter",
+        "uae.g10.general.u13.l05.circumscribed_quadrilateral_side"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.secant_angles",
+      "domain": "geometry",
+      "canonicalName": "زوايا المماس والقاطع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l06.inside_angle",
+        "uae.g10.general.u13.l06.inside_missing_arc",
+        "uae.g10.general.u13.l06.inside_adjacent_angle",
+        "uae.g10.general.u13.l06.tangent_chord_angle",
+        "uae.g10.general.u13.l06.tangent_chord_arc",
+        "uae.g10.general.u13.l06.outside_angle",
+        "uae.g10.general.u13.l06.outside_missing_far_arc",
+        "uae.g10.general.u13.l06.two_tangent_angle",
+        "uae.g10.general.u13.l06.two_tangent_minor_arc",
+        "uae.g10.general.u13.l06.inside_arc_expression",
+        "uae.g10.general.u13.l06.outside_arc_expression"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.segment_products",
+      "domain": "geometry",
+      "canonicalName": "جداءات قطعتَي الأوتار والقواطع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l07.intersecting_chord_missing",
+        "uae.g10.general.u13.l07.intersecting_chord_quadratic",
+        "uae.g10.general.u13.l07.two_secants_whole",
+        "uae.g10.general.u13.l07.two_secants_inner",
+        "uae.g10.general.u13.l07.tangent_length",
+        "uae.g10.general.u13.l07.tangent_external",
+        "uae.g10.general.u13.l07.tangent_secant_quadratic",
+        "uae.g10.general.u13.l07.chord_sagitta_radius",
+        "uae.g10.general.u13.l07.tangent_rounded"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.equations",
+      "domain": "geometry",
+      "canonicalName": "معادلة دائرة مركزها ونصف قطرها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l08.center_x_from_general",
+        "uae.g10.general.u13.l08.center_y_from_general",
+        "uae.g10.general.u13.l08.radius_from_standard",
+        "uae.g10.general.u13.l08.radius_squared_from_point",
+        "uae.g10.general.u13.l08.radius_from_general",
+        "uae.g10.general.u13.l08.general_constant",
+        "uae.g10.general.u13.l08.diameter_midpoint_x",
+        "uae.g10.general.u13.l08.point_membership",
+        "uae.g10.general.u13.l08.horizontal_line_intersection_count",
+        "uae.g10.general.u13.l08.right_intersection_x",
+        "uae.g10.general.u13.l08.three_point_radius",
+        "uae.g10.general.u13.l08.diagonal_positive_intersection"
+      ]
+    },
+    {
+      "id": "geometry.circle.g10.sector_area",
+      "domain": "geometry",
+      "canonicalName": "مساحات الأقراص والقطاعات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u13.l09.disk_pi_coefficient",
+        "uae.g10.general.u13.l09.disk_from_diameter",
+        "uae.g10.general.u13.l09.radius_from_area",
+        "uae.g10.general.u13.l09.area_from_circumference",
+        "uae.g10.general.u13.l09.sector_pi_coefficient",
+        "uae.g10.general.u13.l09.sector_central_angle",
+        "uae.g10.general.u13.l09.sector_radius",
+        "uae.g10.general.u13.l09.annulus_pi_coefficient",
+        "uae.g10.general.u13.l09.disk_rounded",
+        "uae.g10.general.u13.l09.sector_rounded",
+        "uae.g10.general.u13.l09.quarter_segment_rounded",
+        "uae.g10.general.u13.l09.square_outside_disk_rounded"
+      ]
+    },
+    {
+      "id": "trigonometry.angle_measure_degrees_radians",
+      "domain": "trigonometry",
+      "canonicalName": "الزوايا وقياسها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l02.principal_degree",
+        "uae.g10.general.u14.l02.coterminal_degree",
+        "uae.g10.general.u14.l02.degree_to_pi_coefficient",
+        "uae.g10.general.u14.l02.pi_coefficient_to_degree",
+        "uae.g10.general.u14.l02.principal_radian_pi_coefficient",
+        "uae.g10.general.u14.l02.arc_pi_coefficient",
+        "uae.g10.general.u14.l02.arc_from_radians",
+        "uae.g10.general.u14.l02.radians_from_arc",
+        "uae.g10.general.u14.l02.radius_from_arc",
+        "uae.g10.general.u14.l02.parallelogram_area_exact",
+        "uae.g10.general.u14.l02.wheel_arc_pi_coefficient"
+      ]
+    },
+    {
+      "id": "trigonometry.reference_angles_quadrants",
+      "domain": "trigonometry",
+      "canonicalName": "النسب المثلثية للزوايا العامة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l03.coordinate_ratio",
+        "uae.g10.general.u14.l03.reference_degree",
+        "uae.g10.general.u14.l03.reference_radian_pi_coefficient",
+        "uae.g10.general.u14.l03.quadrant_from_angle",
+        "uae.g10.general.u14.l03.quadrant_from_signs",
+        "uae.g10.general.u14.l03.axis_defined",
+        "uae.g10.general.u14.l03.axis_value"
+      ]
+    },
+    {
+      "id": "trigonometry.sine_rule",
+      "domain": "trigonometry",
+      "canonicalName": "قانون الجيب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l04.sas_area_rounded",
+        "uae.g10.general.u14.l04.aas_side_rounded",
+        "uae.g10.general.u14.l04.third_angle",
+        "uae.g10.general.u14.l04.ssa_triangle_count",
+        "uae.g10.general.u14.l04.ssa_acute_solution_angle_rounded",
+        "uae.g10.general.u14.l04.regular_polygon_area_rounded",
+        "uae.g10.general.u14.l04.survey_distance_rounded"
+      ]
+    },
+    {
+      "id": "trigonometry.cosine_rule",
+      "domain": "trigonometry",
+      "canonicalName": "قانون جيب التمام",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l05.sas_side_rounded",
+        "uae.g10.general.u14.l05.sas_square_exact",
+        "uae.g10.general.u14.l05.sss_cosine_exact",
+        "uae.g10.general.u14.l05.sss_angle_rounded",
+        "uae.g10.general.u14.l05.triangle_type",
+        "uae.g10.general.u14.l05.choose_law",
+        "uae.g10.general.u14.l05.indirect_distance_rounded"
+      ]
+    },
+    {
+      "id": "trigonometry.periodic_unit_circle",
+      "domain": "trigonometry",
+      "canonicalName": "الدوال الدائرية والدورية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l06.unit_circle_coordinate",
+        "uae.g10.general.u14.l06.period_from_peaks",
+        "uae.g10.general.u14.l06.periodic_value",
+        "uae.g10.general.u14.l06.cycle_count",
+        "uae.g10.general.u14.l06.axis_trig_value",
+        "uae.g10.general.u14.l06.special_sin_cos_rational",
+        "uae.g10.general.u14.l06.period_pi_coefficient"
+      ]
+    },
+    {
+      "id": "trigonometry.sinusoid_graph",
+      "domain": "trigonometry",
+      "canonicalName": "التمثيل البياني للدوال المثلثية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l07.amplitude",
+        "uae.g10.general.u14.l07.period_pi_coefficient",
+        "uae.g10.general.u14.l07.quarter_cycle_value",
+        "uae.g10.general.u14.l07.frequency_hz",
+        "uae.g10.general.u14.l07.range_extreme",
+        "uae.g10.general.u14.l07.first_positive_asymptote_degree",
+        "uae.g10.general.u14.l07.reciprocal_range_boundary"
+      ]
+    },
+    {
+      "id": "trigonometry.sinusoid_transforms",
+      "domain": "trigonometry",
+      "canonicalName": "إزاحة التمثيلات البيانية للدوال المثلثية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l08.phase_shift_degrees",
+        "uae.g10.general.u14.l08.vertical_shift",
+        "uae.g10.general.u14.l08.amplitude",
+        "uae.g10.general.u14.l08.period_degrees",
+        "uae.g10.general.u14.l08.range_extreme",
+        "uae.g10.general.u14.l08.quarter_cycle_value",
+        "uae.g10.general.u14.l08.midline_from_extrema",
+        "uae.g10.general.u14.l08.amplitude_from_extrema",
+        "uae.g10.general.u14.l08.coefficient_from_period"
+      ]
+    },
+    {
+      "id": "trigonometry.inverse_trigonometric",
+      "domain": "trigonometry",
+      "canonicalName": "الدوال المثلثية العكسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l09.principal_angle_degrees",
+        "uae.g10.general.u14.l09.principal_pi_coefficient",
+        "uae.g10.general.u14.l09.inverse_defined",
+        "uae.g10.general.u14.l09.inverse_of_trig_principal_degrees",
+        "uae.g10.general.u14.l09.composition_rational",
+        "uae.g10.general.u14.l09.rounded_angle_degrees",
+        "uae.g10.general.u14.l09.right_triangle_angle_degrees",
+        "uae.g10.general.u14.l09.reciprocal_equation_solution_count"
+      ]
+    },
+    {
+      "id": "trigonometry.pythagorean_identities",
+      "domain": "trigonometry",
+      "canonicalName": "المتطابقات المثلثية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l10.cos_from_sin_quadrant",
+        "uae.g10.general.u14.l10.sin_from_cos_quadrant",
+        "uae.g10.general.u14.l10.sec_from_tan_quadrant",
+        "uae.g10.general.u14.l10.csc_from_cot_quadrant",
+        "uae.g10.general.u14.l10.quotient_from_pair",
+        "uae.g10.general.u14.l10.identity_numeric_constant",
+        "uae.g10.general.u14.l10.cofunction_angle_degrees",
+        "uae.g10.general.u14.l10.odd_even_multiplier"
+      ]
+    },
+    {
+      "id": "trigonometry.identities.proof",
+      "domain": "trigonometry",
+      "canonicalName": "إثبات المتطابقات المثلثية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l11.equivalent_expression_choice",
+        "uae.g10.general.u14.l11.proof_coefficient"
+      ]
+    },
+    {
+      "id": "trigonometry.identities.angle_sum_difference",
+      "domain": "trigonometry",
+      "canonicalName": "متطابقات مجموع زاويتين والفرق بينهما",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l12.special_angle_exact_choice",
+        "uae.g10.general.u14.l12.sine_sum_difference",
+        "uae.g10.general.u14.l12.cosine_sum_difference",
+        "uae.g10.general.u14.l12.tangent_sum_difference"
+      ]
+    },
+    {
+      "id": "trigonometry.identities.double_half_angle",
+      "domain": "trigonometry",
+      "canonicalName": "متطابقات ضعف الزاوية ونصفها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l13.double_sine",
+        "uae.g10.general.u14.l13.double_cosine",
+        "uae.g10.general.u14.l13.double_tangent",
+        "uae.g10.general.u14.l13.half_squared",
+        "uae.g10.general.u14.l13.half_tangent",
+        "uae.g10.general.u14.l13.half_exact_choice"
+      ]
+    },
+    {
+      "id": "trigonometry.equations.principal_solutions",
+      "domain": "trigonometry",
+      "canonicalName": "حل المعادلات المثلثية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l14.bounded_root_count",
+        "uae.g10.general.u14.l14.bounded_root_by_rank",
+        "uae.g10.general.u14.l14.real_solution_exists",
+        "uae.g10.general.u14.l14.function_period_degrees"
+      ]
+    },
+    {
+      "id": "geometry.right_triangle.geometric_mean",
+      "domain": "geometry",
+      "canonicalName": "الوسط الهندسي",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l15.mean_rounded",
+        "uae.g10.general.u14.l15.altitude_squared",
+        "uae.g10.general.u14.l15.leg_squared",
+        "uae.g10.general.u14.l15.projection_from_leg"
+      ]
+    },
+    {
+      "id": "trigonometry.elevation_depression",
+      "domain": "geometry",
+      "canonicalName": "زوايا الارتفاع والانخفاض",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l17.height_with_eye_rounded",
+        "uae.g10.general.u14.l17.two_station_height_rounded",
+        "uae.g10.general.u14.l17.line_of_sight_rounded",
+        "uae.g10.general.u14.l17.angle_from_rise_run_rounded"
+      ]
+    },
+    {
+      "id": "geometry.right_triangle.special_30_60_90",
+      "domain": "geometry",
+      "canonicalName": "المثلثات القائمة الخاصة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u14.l18.special_length_squared",
+        "uae.g10.general.u14.l18.special_exact_choice",
+        "uae.g10.general.u14.l18.equilateral_altitude_squared",
+        "uae.g10.general.u14.l18.square_diagonal_squared"
+      ]
+    },
+    {
+      "id": "geometry.solids.representations",
+      "domain": "geometry",
+      "canonicalName": "تمثيلات الأشكال ثلاثية الأبعاد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l01.front_view_count",
+        "uae.g10.general.u15.l01.side_view_count",
+        "uae.g10.general.u15.l01.top_view_count",
+        "uae.g10.general.u15.l01.cross_section_choice"
+      ]
+    },
+    {
+      "id": "geometry.solids.surface_prism_cylinder",
+      "domain": "geometry",
+      "canonicalName": "مساحة سطح المنشور والأسطوانة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l02.rectangular_prism_lateral",
+        "uae.g10.general.u15.l02.rectangular_prism_total",
+        "uae.g10.general.u15.l02.cylinder_lateral_pi_coefficient",
+        "uae.g10.general.u15.l02.cylinder_total_pi_coefficient",
+        "uae.g10.general.u15.l02.cylinder_height_from_lateral",
+        "uae.g10.general.u15.l02.open_cylinder_surface_pi_coefficient"
+      ]
+    },
+    {
+      "id": "geometry.solids.surface_pyramid_cone",
+      "domain": "geometry",
+      "canonicalName": "مساحة سطح الهرم والمخروط",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l03.square_pyramid_lateral",
+        "uae.g10.general.u15.l03.square_pyramid_total",
+        "uae.g10.general.u15.l03.square_pyramid_slant",
+        "uae.g10.general.u15.l03.cone_lateral_pi_coefficient",
+        "uae.g10.general.u15.l03.cone_total_pi_coefficient",
+        "uae.g10.general.u15.l03.cone_sector_angle"
+      ]
+    },
+    {
+      "id": "geometry.solids.sphere_surface_volume",
+      "domain": "geometry",
+      "canonicalName": "مساحة سطح الأشكال الكروية وحجمها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l04.surface_pi_coefficient",
+        "uae.g10.general.u15.l04.volume_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_total_surface_pi_coefficient",
+        "uae.g10.general.u15.l04.hemisphere_volume_pi_coefficient",
+        "uae.g10.general.u15.l04.radius_from_surface",
+        "uae.g10.general.u15.l04.radius_from_volume",
+        "uae.g10.general.u15.l04.radius_from_great_circle"
+      ]
+    },
+    {
+      "id": "geometry.solids.volume_prism_cylinder",
+      "domain": "geometry",
+      "canonicalName": "حجم المنشور والأسطوانة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l05.triangular_prism_volume",
+        "uae.g10.general.u15.l05.oblique_prism_volume",
+        "uae.g10.general.u15.l05.cylinder_volume_pi_coefficient",
+        "uae.g10.general.u15.l05.cylinder_height",
+        "uae.g10.general.u15.l05.cylinder_radius",
+        "uae.g10.general.u15.l05.equal_volume_prism_height",
+        "uae.g10.general.u15.l05.removed_rectangular_volume"
+      ]
+    },
+    {
+      "id": "geometry.solids.volume_pyramid_cone",
+      "domain": "geometry",
+      "canonicalName": "حجم الأشكال الهرمية والمخروطية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l06.rectangular_pyramid_volume",
+        "uae.g10.general.u15.l06.cone_volume_pi_coefficient",
+        "uae.g10.general.u15.l06.cone_volume_from_slant_pi_coefficient",
+        "uae.g10.general.u15.l06.square_pyramid_volume_from_slant",
+        "uae.g10.general.u15.l06.cone_height",
+        "uae.g10.general.u15.l06.cone_radius",
+        "uae.g10.general.u15.l06.composite_cylinder_cone_pi_coefficient"
+      ]
+    },
+    {
+      "id": "geometry.spatial.points_lines_planes",
+      "domain": "geometry",
+      "canonicalName": "الهندسة الفراغية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.solids.similarity_scale",
+      "domain": "geometry",
+      "canonicalName": "المجسمات المتطابقة والمتشابهة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l08.box_similarity",
+        "uae.g10.general.u15.l08.scale_ratio",
+        "uae.g10.general.u15.l08.surface_area_ratio",
+        "uae.g10.general.u15.l08.volume_ratio",
+        "uae.g10.general.u15.l08.surface_area_scaled",
+        "uae.g10.general.u15.l08.volume_scaled",
+        "uae.g10.general.u15.l08.length_from_volume_ratio",
+        "uae.g10.general.u15.l08.length_from_area_ratio"
+      ]
+    },
+    {
+      "id": "probability.sample_spaces",
+      "domain": "probability",
+      "canonicalName": "تمثيل فضاءات العينة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l01.sample_space_product_count",
+        "uae.g10.general.u16.l01.sample_space_three_stages"
+      ]
+    },
+    {
+      "id": "probability.permutations_combinations",
+      "domain": "probability",
+      "canonicalName": "استخدام التباديل والتوافيق في الاحتمالات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l02.permutations_two_positions",
+        "uae.g10.general.u16.l02.combinations_two_members",
+        "uae.g10.general.u16.l02.combination_probability"
+      ]
+    },
+    {
+      "id": "probability.geometric_measure",
+      "domain": "probability",
+      "canonicalName": "الاحتمالات الهندسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l03.geometric_segment_probability",
+        "uae.g10.general.u16.l03.geometric_rectangle_probability"
+      ]
+    },
+    {
+      "id": "probability.simulation_frequencies",
+      "domain": "probability",
+      "canonicalName": "المحاكاة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l04.simulation_relative_frequency",
+        "uae.g10.general.u16.l04.simulation_expected_count"
+      ]
+    },
+    {
+      "id": "probability.odds.favorable_against",
+      "domain": "probability",
+      "canonicalName": "الاحتمال والفرص",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l05.single_event_boundary",
+        "uae.g10.general.u16.l05.odds_from_counts",
+        "uae.g10.general.u16.l05.probability_from_odds",
+        "uae.g10.general.u16.l05.odds_from_decimal",
+        "uae.g10.general.u16.l05.hypergeometric_probability",
+        "uae.g10.general.u16.l05.hypergeometric_odds",
+        "uae.g10.general.u16.l05.at_least_one_probability",
+        "uae.g10.general.u16.l05.three_category_probability",
+        "uae.g10.general.u16.l05.three_category_odds",
+        "uae.g10.general.u16.l05.different_pair_odds",
+        "uae.g10.general.u16.l05.two_suit_pattern_odds",
+        "uae.g10.general.u16.l05.repeated_result_probability",
+        "uae.g10.general.u16.l05.ordered_pattern_probability",
+        "uae.g10.general.u16.l05.ordered_pattern_odds",
+        "uae.g10.general.u16.l05.conditional_independent_probability",
+        "uae.g10.general.u16.l05.uniform_cut_probability",
+        "uae.g10.general.u16.l05.data_union_probability",
+        "uae.g10.general.u16.l05.data_category_odds"
+      ]
+    },
+    {
+      "id": "probability.events.independence_conditional",
+      "domain": "probability",
+      "canonicalName": "احتمالات الأحداث المستقلة وغير المستقلة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l06.independent_two_events",
+        "uae.g10.general.u16.l06.dependent_without_replacement"
+      ]
+    },
+    {
+      "id": "probability.events.mutually_exclusive",
+      "domain": "probability",
+      "canonicalName": "احتمالات الأحداث المتنافية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u16.l07.mutually_exclusive_union",
+        "uae.g10.general.u16.l07.overlapping_union"
+      ]
+    },
+    {
+      "id": "sequences.discrete_function_model",
+      "domain": "sequences",
+      "canonicalName": "المتتاليات كدوال",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l01.sequence_function_term",
+        "uae.g10.general.u17.l01.sequence_common_difference"
+      ]
+    },
+    {
+      "id": "sequences.arithmetic.series",
+      "domain": "sequences",
+      "canonicalName": "المتتاليات والمتسلسلات الحسابية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l02.arithmetic_nth_term",
+        "uae.g10.general.u17.l02.arithmetic_finite_sum"
+      ]
+    },
+    {
+      "id": "sequences.geometric.finite_series",
+      "domain": "sequences",
+      "canonicalName": "المتتاليات والمتسلسلات الهندسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l03.geometric_nth_term",
+        "uae.g10.general.u17.l03.geometric_finite_sum"
+      ]
+    },
+    {
+      "id": "sequences.geometric.infinite_convergence",
+      "domain": "sequences",
+      "canonicalName": "المتسلسلات الهندسية اللانهائية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l04.geometric_infinite_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_alternating_sum",
+        "uae.g10.general.u17.l04.geometric_infinite_convergence"
+      ]
+    },
+    {
+      "id": "sequences.geometric.exponential_model",
+      "domain": "sequences",
+      "canonicalName": "المتتاليات الهندسية بوصفها دوال أسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l05.identify_geometric",
+        "uae.g10.general.u17.l05.common_ratio",
+        "uae.g10.general.u17.l05.nth_term_signed",
+        "uae.g10.general.u17.l05.nth_term_decay",
+        "uae.g10.general.u17.l05.initial_term",
+        "uae.g10.general.u17.l05.average_rate",
+        "uae.g10.general.u17.l05.growth_model"
+      ]
+    },
+    {
+      "id": "sequences.recursive_formulas",
+      "domain": "sequences",
+      "canonicalName": "الصيغ التكرارية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u17.l06.arithmetic_recurrence_term",
+        "uae.g10.general.u17.l06.geometric_recurrence_term",
+        "uae.g10.general.u17.l06.affine_recurrence_term",
+        "uae.g10.general.u17.l06.index_dependent_recurrence",
+        "uae.g10.general.u17.l06.two_initial_terms",
+        "uae.g10.general.u17.l06.difference_from_explicit",
+        "uae.g10.general.u17.l06.ratio_from_explicit",
+        "uae.g10.general.u17.l06.initial_value_from_arithmetic"
+      ]
+    },
+    {
+      "id": "geometry.proofs.postulates_flow",
+      "domain": "geometry",
+      "canonicalName": "المسلمات والبراهين الحرة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u18.l01.necessary_sufficient_threshold",
+        "uae.g10.general.u18.l01.incidence_postulate",
+        "uae.g10.general.u18.l01.always_sometimes_never",
+        "uae.g10.general.u18.l01.midpoint_total",
+        "uae.g10.general.u18.l01.shared_midpoint_half",
+        "uae.g10.general.u18.l01.unordered_pair_count",
+        "uae.g10.general.u18.l01.wheel_count_reasoning",
+        "uae.g10.general.u18.l01.travel_time_comparison",
+        "uae.g10.general.u18.l01.slope_requirement"
+      ]
+    },
+    {
+      "id": "geometry.proofs.algebraic_equivalence",
+      "domain": "geometry",
+      "canonicalName": "البرهان الجبري",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u18.l02.equality_property",
+        "uae.g10.general.u18.l02.distributed_equation",
+        "uae.g10.general.u18.l02.rational_linear_equation",
+        "uae.g10.general.u18.l02.congruent_segment_equation",
+        "uae.g10.general.u18.l02.congruent_angle_equation",
+        "uae.g10.general.u18.l02.temperature_formula",
+        "uae.g10.general.u18.l02.motion_formula",
+        "uae.g10.general.u18.l02.acceleration_formula",
+        "uae.g10.general.u18.l02.heart_rate_formula",
+        "uae.g10.general.u18.l02.ideal_gas_formula",
+        "uae.g10.general.u18.l02.voltage_scaling",
+        "uae.g10.general.u18.l02.cube_volume_scaling",
+        "uae.g10.general.u18.l02.positive_pythagorean_root",
+        "uae.g10.general.u18.l02.equivalence_relation"
+      ]
+    },
+    {
+      "id": "geometry.proofs.angle_relationships",
+      "domain": "geometry",
+      "canonicalName": "إثبات العلاقات بين الزوايا",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u18.l03.protractor_difference",
+        "uae.g10.general.u18.l03.angle_addition",
+        "uae.g10.general.u18.l03.complementary_measure",
+        "uae.g10.general.u18.l03.supplementary_measure",
+        "uae.g10.general.u18.l03.equal_partition",
+        "uae.g10.general.u18.l03.adjacent_angle_equation",
+        "uae.g10.general.u18.l03.vertical_angle_equation",
+        "uae.g10.general.u18.l03.intersection_measure",
+        "uae.g10.general.u18.l03.same_reference_congruence",
+        "uae.g10.general.u18.l03.bisector_vertical",
+        "uae.g10.general.u18.l03.around_point",
+        "uae.g10.general.u18.l03.congruence_reason",
+        "uae.g10.general.u18.l03.perpendicular_sufficient",
+        "uae.g10.general.u18.l03.two_crossing_transfer"
+      ]
+    },
+    {
+      "id": "exponentials.g10.equation_inequality.solve",
+      "domain": "exponentials",
+      "canonicalName": "حل المعادلات والمتباينات الأسية بحدود كسرية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l02.equation_rational",
+        "uae.g10.general.u05.l02.inequality_rational_boundary",
+        "uae.g10.general.u05.l02.like_power_sum"
+      ]
+    },
+    {
+      "id": "exponentials.g10.source_models",
+      "domain": "exponentials",
+      "canonicalName": "النمذجة الأسية والنمو والتناقص والفائدة المركبة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l02.model_factor_rounded",
+        "uae.g10.general.u05.l02.model_forecast_rounded",
+        "uae.g10.general.u05.l02.compound_balance",
+        "uae.g10.general.u05.l02.equivalent_period_factor",
+        "uae.g10.general.u05.l02.cooling_value",
+        "uae.g10.general.u05.l02.cooling_threshold",
+        "uae.g10.general.u05.l02.power_law_prediction",
+        "uae.g10.general.u05.l02.model_parameters",
+        "uae.g10.general.u05.l02.power_law_coefficient",
+        "uae.g10.general.u05.l02.cooling_rounded",
+        "uae.g10.general.u05.l02.cooling_threshold_probe",
+        "uae.g10.general.u05.l02.power_law_rounded_coefficient",
+        "uae.g10.general.u05.l02.power_law_rounded_prediction",
+        "uae.g10.general.u05.l02.equivalent_period_rounded",
+        "uae.g10.general.u05.l09.growth_decay_value",
+        "uae.g10.general.u05.l09.half_life_value",
+        "uae.g10.general.u05.l09.rate_from_factor",
+        "uae.g10.general.u05.l09.mixed_linear_exponential_value",
+        "uae.g10.general.u05.l09.first_target_period"
+      ]
+    },
+    {
+      "id": "geometry.spatial.spherical_geometry",
+      "domain": "geometry",
+      "canonicalName": "الهندسة على سطح كرة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u15.l07.great_circle_classification",
+        "uae.g10.general.u15.l07.great_circle_intersections",
+        "uae.g10.general.u15.l07.great_circle_uniqueness",
+        "uae.g10.general.u15.l07.arc_length_pi_coefficient"
+      ]
+    },
+    {
+      "id": "logarithms.g10.definition_graph_inverse_models",
+      "domain": "exponentials",
+      "canonicalName": "تعريف اللوغاريتم والتحويلات البيانية والمعكوس والنمذجة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l03.evaluate_rational",
+        "uae.g10.general.u05.l03.convert_exponential",
+        "uae.g10.general.u05.l03.convert_logarithmic",
+        "uae.g10.general.u05.l03.domain_boundary",
+        "uae.g10.general.u05.l03.domain_membership",
+        "uae.g10.general.u05.l03.vertical_asymptote",
+        "uae.g10.general.u05.l03.is_increasing",
+        "uae.g10.general.u05.l03.graph_anchor",
+        "uae.g10.general.u05.l03.graph_value",
+        "uae.g10.general.u05.l03.inverse_shift",
+        "uae.g10.general.u05.l03.scale_ratio",
+        "uae.g10.general.u05.l03.doubling_time"
+      ]
+    },
+    {
+      "id": "logarithms.g10.equations_inequalities_models",
+      "domain": "exponentials",
+      "canonicalName": "حل المعادلات والمتباينات اللوغاريتمية مع المجال والنمذجة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l04.direct_rational",
+        "uae.g10.general.u05.l04.quadratic_root_set",
+        "uae.g10.general.u05.l04.one_side_interval",
+        "uae.g10.general.u05.l04.two_sides_interval",
+        "uae.g10.general.u05.l04.wind_distance",
+        "uae.g10.general.u05.l04.rounded_amplitude_ratio",
+        "uae.g10.general.u05.l04.music_key",
+        "uae.g10.general.u05.l04.sound_level"
+      ]
+    },
+    {
+      "id": "logarithms.g10.properties_equations_models",
+      "domain": "exponentials",
+      "canonicalName": "خواص اللوغاريتمات والمعادلات والتطبيقات العلمية والمالية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l05.approx_from_given",
+        "uae.g10.general.u05.l05.expand_coefficients",
+        "uae.g10.general.u05.l05.condense_powers",
+        "uae.g10.general.u05.l05.property_truth",
+        "uae.g10.general.u05.l05.solve_property_equation",
+        "uae.g10.general.u05.l05.ph_concentration",
+        "uae.g10.general.u05.l05.pressure_rounded",
+        "uae.g10.general.u05.l05.benford_percent",
+        "uae.g10.general.u05.l05.benford_digit",
+        "uae.g10.general.u05.l05.first_decay_year",
+        "uae.g10.general.u05.l05.relative_sound",
+        "uae.g10.general.u05.l05.repayment_payment",
+        "uae.g10.general.u05.l05.repayment_possible",
+        "uae.g10.general.u05.l05.repayment_minimum",
+        "uae.g10.general.u05.l05.repayment_months",
+        "uae.g10.general.u05.l05.property_root_set",
+        "uae.g10.general.u05.l05.fractional_property_value"
+      ]
+    },
+    {
+      "id": "logarithms.g10.common_exponential_models",
+      "domain": "exponentials",
+      "canonicalName": "Common logarithms, exponential equations, models and graph-lab relations",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l06.common_log_rounded",
+        "uae.g10.general.u05.l06.change_base_rounded",
+        "uae.g10.general.u05.l06.exponential_equation",
+        "uae.g10.general.u05.l06.exponential_two_bases",
+        "uae.g10.general.u05.l06.exponential_inequality",
+        "uae.g10.general.u05.l06.exponential_quadratic_roots",
+        "uae.g10.general.u05.l06.sound_intensity_micro",
+        "uae.g10.general.u05.l06.sound_reduction_percent",
+        "uae.g10.general.u05.l06.energy_scaled",
+        "uae.g10.general.u05.l06.log_model_population",
+        "uae.g10.general.u05.l06.log_model_time",
+        "uae.g10.general.u05.l06.observed_growth_rate",
+        "uae.g10.general.u05.l06.observed_growth_time",
+        "uae.g10.general.u05.l06.music_cents",
+        "uae.g10.general.u05.l06.music_frequency",
+        "uae.g10.general.u05.l06.ph_from_concentration",
+        "uae.g10.general.u05.l06.mass_ppm",
+        "uae.g10.general.u05.l06.lab_intersection",
+        "uae.g10.general.u05.l06.lab_interval"
+      ]
+    },
+    {
+      "id": "logarithms.g10.natural_exponential_continuous",
+      "domain": "exponentials",
+      "canonicalName": "Natural base e, natural logarithm, intervals and continuous models",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l07.convert_equivalent",
+        "uae.g10.general.u05.l07.inverse_identity",
+        "uae.g10.general.u05.l07.ln_value",
+        "uae.g10.general.u05.l07.ln_condense_ratio",
+        "uae.g10.general.u05.l07.ln_expand_vector",
+        "uae.g10.general.u05.l07.natural_exponential_equation",
+        "uae.g10.general.u05.l07.positive_rhs_possible",
+        "uae.g10.general.u05.l07.natural_log_equation",
+        "uae.g10.general.u05.l07.natural_exponential_interval",
+        "uae.g10.general.u05.l07.natural_log_interval",
+        "uae.g10.general.u05.l07.even_power_interval",
+        "uae.g10.general.u05.l07.reciprocal_ln_interval",
+        "uae.g10.general.u05.l07.continuous_balance",
+        "uae.g10.general.u05.l07.continuous_principal",
+        "uae.g10.general.u05.l07.continuous_time",
+        "uae.g10.general.u05.l07.continuous_rate",
+        "uae.g10.general.u05.l07.continuous_depreciation",
+        "uae.g10.general.u05.l07.continuous_half_time",
+        "uae.g10.general.u05.l07.continuous_threshold",
+        "uae.g10.general.u05.l07.cooling_constant",
+        "uae.g10.general.u05.l07.cooling_temperature",
+        "uae.g10.general.u05.l07.cooling_time",
+        "uae.g10.general.u05.l07.exponential_substitution"
+      ]
+    },
+    {
+      "id": "exponentials.g10.continuous_logistic_models",
+      "domain": "exponentials",
+      "canonicalName": "النمو والاضمحلال المستمران والنمو اللوجستي والمرابحة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l08.half_life_constant",
+        "uae.g10.general.u05.l08.half_life_amount",
+        "uae.g10.general.u05.l08.decay_age",
+        "uae.g10.general.u05.l08.half_life_from_loss",
+        "uae.g10.general.u05.l08.continuous_growth_rate",
+        "uae.g10.general.u05.l08.continuous_growth_forecast",
+        "uae.g10.general.u05.l08.continuous_growth_target",
+        "uae.g10.general.u05.l08.continuous_crossing",
+        "uae.g10.general.u05.l08.logistic_initial",
+        "uae.g10.general.u05.l08.logistic_limit",
+        "uae.g10.general.u05.l08.logistic_value",
+        "uae.g10.general.u05.l08.logistic_time",
+        "uae.g10.general.u05.l08.logistic_rate",
+        "uae.g10.general.u05.l08.logistic_reachable",
+        "uae.g10.general.u05.l08.exponential_logistic_relation",
+        "uae.g10.general.u05.l08.spreadsheet_balance",
+        "uae.g10.general.u05.l08.spreadsheet_interest",
+        "uae.g10.general.u05.l08.exponential_logistic_crossing"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.functions",
+      "domain": "algebra",
+      "canonicalName": "الدوال كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l11.polynomial_evaluate_integer",
+        "uae.g10.general.u01.l11.polynomial_degree_integer",
+        "uae.g10.general.u01.l11.polynomial_end_behavior"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.graph_analysis",
+      "domain": "algebra",
+      "canonicalName": "تحليل التمثيلات البيانية للدوال كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l12.graph_vertex_pair",
+        "uae.g10.general.u01.l12.graph_extremum_kind",
+        "uae.g10.general.u01.l12.graph_x_intercepts"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.solve_higher_degree",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات كثيرة الحدود",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l13.cubic_integer_roots",
+        "uae.g10.general.u01.l13.biquadratic_integer_roots"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.remainder_factor_theorems",
+      "domain": "algebra",
+      "canonicalName": "نظريتا الباقي والعامل",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l14.remainder_theorem_value",
+        "uae.g10.general.u01.l14.factor_theorem_decision"
+      ]
+    },
+    {
+      "id": "algebra.linear.system.graphical_solution",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات الخطية بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l01.graph_intersection_x",
+        "uae.g10.general.u03.l01.graph_intersection_y",
+        "uae.g10.general.u03.l01.graph_solution_count"
+      ]
+    },
+    {
+      "id": "algebra.linear.inequalities.systems_two_variables",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المتباينات بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l02.feasible_point_membership",
+        "uae.g10.general.u03.l02.boundary_point_membership"
+      ]
+    },
+    {
+      "id": "algebra.linear.programming.optimize",
+      "domain": "algebra",
+      "canonicalName": "البرمجة الخطية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l03.optimal_objective_value",
+        "uae.g10.general.u03.l03.unique_optimal_vertex"
+      ]
+    },
+    {
+      "id": "algebra.linear.system.three_variables",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات بثلاثة متغيرات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l04.three_var_x",
+        "uae.g10.general.u03.l04.three_var_y",
+        "uae.g10.general.u03.l04.three_var_z"
+      ]
+    },
+    {
+      "id": "algebra.matrices.operations",
+      "domain": "algebra",
+      "canonicalName": "العمليات على المصفوفات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l05.matrix_sum_entry",
+        "uae.g10.general.u03.l05.matrix_difference_entry",
+        "uae.g10.general.u03.l05.matrix_scalar_entry"
+      ]
+    },
+    {
+      "id": "algebra.matrices.multiply",
+      "domain": "algebra",
+      "canonicalName": "ضرب المصفوفات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l06.matrix_product_entry",
+        "uae.g10.general.u03.l06.matrix_product_compatible"
+      ]
+    },
+    {
+      "id": "algebra.matrices.cramer_determinants",
+      "domain": "algebra",
+      "canonicalName": "قاعدة كرامر والمحددات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l07.determinant2",
+        "uae.g10.general.u03.l07.cramer_x",
+        "uae.g10.general.u03.l07.cramer_y"
+      ]
+    },
+    {
+      "id": "algebra.matrices.inverse",
+      "domain": "algebra",
+      "canonicalName": "حل أنظمة المعادلات باستخدام المصفوفات العكسية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l08.inverse2_entry",
+        "uae.g10.general.u03.l08.inverse2_exists"
+      ]
+    },
+    {
+      "id": "algebra.matrices.augmented_row_reduce",
+      "domain": "algebra",
+      "canonicalName": "المصفوفات الموسعة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u03.l09.row_operation_entry",
+        "uae.g10.general.u03.l09.rref_solution_x",
+        "uae.g10.general.u03.l09.rref_solution_y"
+      ]
+    },
+    {
+      "id": "algebra.exponential.graph_features",
+      "domain": "algebra",
+      "canonicalName": "تمثيل الدوال الأسية بيانيًا / النمو والاضمحلال",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u05.l01.value_at_x",
+        "uae.g10.general.u05.l01.is_growth",
+        "uae.g10.general.u05.l01.horizontal_asymptote",
+        "uae.g10.general.u05.l01.value_at_shift"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.rate_of_change",
+      "domain": "algebra",
+      "canonicalName": "معدل تغير الدالة التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l08.average_rate",
+        "uae.g10.general.u04.l08.rate_is_positive"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.graph_features",
+      "domain": "algebra",
+      "canonicalName": "تمثيل الدوال التربيعية بيانيًا / العلاقات والدوال التربيعية وتحويلاتها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l07.vertex_h",
+        "uae.g10.general.u04.l07.vertex_k",
+        "uae.g10.general.u04.l07.opens_up",
+        "uae.g10.general.u04.l07.value_at_x",
+        "uae.g10.general.u04.l01.vertex_x",
+        "uae.g10.general.u04.l01.vertex_y",
+        "uae.g10.general.u04.l01.opens_up",
+        "uae.g10.general.u04.l01.value_at_x"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.solve_by_graphing",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات التربيعية بالتمثيل البياني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l02.real_root_count",
+        "uae.g10.general.u04.l02.left_intercept",
+        "uae.g10.general.u04.l02.right_intercept"
+      ]
+    },
+    {
+      "id": "algebra.complex.number_operations",
+      "domain": "algebra",
+      "canonicalName": "الأعداد المركبة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l03.sum_real",
+        "uae.g10.general.u04.l03.sum_imag",
+        "uae.g10.general.u04.l03.product_real",
+        "uae.g10.general.u04.l03.product_imag",
+        "uae.g10.general.u04.l03.i_power_real",
+        "uae.g10.general.u04.l03.modulus_squared"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.complete_square",
+      "domain": "algebra",
+      "canonicalName": "حل المعادلات التربيعية بإكمال المربع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l04.square_constant",
+        "uae.g10.general.u04.l04.completed_square_roots"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.formula_discriminant",
+      "domain": "algebra",
+      "canonicalName": "القانون العام والمميز للمعادلة التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l05.discriminant",
+        "uae.g10.general.u04.l05.real_root_count",
+        "uae.g10.general.u04.l05.integer_roots_formula"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.inequality_sign_chart",
+      "domain": "algebra",
+      "canonicalName": "المتباينات التربيعية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u04.l06.probe_truth",
+        "uae.g10.general.u04.l06.between_roots_truth",
+        "uae.g10.general.u04.l06.roots_included"
+      ]
+    },
+    {
+      "id": "algebra.polynomial.roots_zeros_complex",
+      "domain": "algebra",
+      "canonicalName": "الجذور والأصفار",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u01.l15.descartes_variations",
+        "uae.g10.general.u01.l15.complex_conjugate_zero",
+        "uae.g10.general.u01.l15.total_roots_with_multiplicity"
+      ]
+    },
+    {
+      "id": "algebra.complex.conjugate",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Conjugate",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.divide_by_conjugate",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Divide By Conjugate",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.imaginary_root",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Imaginary Root",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.imaginary_unit",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Imaginary Unit",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.modulus",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Modulus",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.plane_representation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Plane Representation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.complex.real_imaginary_parts",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Complex / Real Imaginary Parts",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.distributive.property",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Distributive / Property",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.contextual_growth",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Contextual Growth",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.exponential_equation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Exponential Equation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.monomial_simplify",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Monomial Simplify",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.negative_power",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Negative Power",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.negative_rational_power",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Negative Rational Power",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.nth_root",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Nth Root",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.power_of_power",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Power Of Power",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.power_of_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Power Of Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.power_of_quotient",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Power Of Quotient",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.quotient_of_products",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Quotient Of Products",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.reciprocal",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Reciprocal",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponent.zero_power",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponent / Zero Power",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponential.asymptote",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponential / Asymptote",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponential.domain_range",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponential / Domain Range",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponential.graph_transforms",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponential / Graph Transforms",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponential.growth_decay",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponential / Growth Decay",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponential.real_world_models",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponential / Real World Models",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.exponents.product_rule",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Exponents / Product Rule",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.function.difference_quotient",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Function / Difference Quotient",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.function.increase_decrease",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Function / Increase Decrease",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.geometry.area_difference",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Geometry / Area Difference",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.geometry.area_exponents",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Geometry / Area Exponents",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.geometry.volume_exponents",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Geometry / Volume Exponents",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.inequality.contextual_constraints",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Inequality / Contextual Constraints",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.inequality.feasible_region",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Inequality / Feasible Region",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.inequality.graph_boundary",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Inequality / Graph Boundary",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.inequality.strict_vs_weak",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Inequality / Strict Vs Weak",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.programming.business_constraints",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Programming / Business Constraints",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.programming.max_min",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Programming / Max Min",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.programming.objective_evaluate",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Programming / Objective Evaluate",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.programming.unbounded_cases",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Programming / Unbounded Cases",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.3d_planes_intersections",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / 3d Planes Intersections",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.classify_solutions",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Classify Solutions",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.consistency",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Consistency",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.contextual_interpretation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Contextual Interpretation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.elimination",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Elimination",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.elimination_crosscheck",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Elimination Crosscheck",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.graph_table",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Graph Table",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.inverse_matrix_method",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Inverse Matrix Method",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.real_world_word_problem",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Real World Word Problem",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.substitution",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Substitution",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.substitution_crosscheck",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Substitution Crosscheck",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.uniqueness",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Uniqueness",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system.verified_solution",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System / Verified Solution",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.system_consistency",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / System Consistency",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.linear.three_variable_systems",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Linear / Three Variable Systems",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.addition",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Addition",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.augmented_system_setup",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Augmented System Setup",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.contextual_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Contextual Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.cramers_rule_2x2",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Cramers Rule 2x2",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.cramers_rule_3x3",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Cramers Rule 3x3",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.data_table",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Data Table",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.determinant2",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Determinant2",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.determinant3",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Determinant3",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.dimension",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Dimension",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.distributivity",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Distributivity",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.elementary_row_operations",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Elementary Row Operations",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.entry_index",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Entry Index",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.equality",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Equality",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.identity_matrix",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Identity Matrix",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.inverse2",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Inverse2",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.matrix_dimension_compatibility",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Matrix Dimension Compatibility",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.matrix_vector",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Matrix Vector",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.noncommutative_multiplication",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Noncommutative Multiplication",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.row_column_inner_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Row Column Inner Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.rref",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Rref",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.scalar_multiplication",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Scalar Multiplication",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.singular_matrix",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Singular Matrix",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.matrices.subtraction",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Matrices / Subtraction",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.ac_method",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Ac Method",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.additive_inverse",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Additive Inverse",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.combine_like_terms",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Combine Like Terms",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.common_perfect_squares",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Common Perfect Squares",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.complex_conjugate_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Complex Conjugate Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.contextual_area",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Contextual Area",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.contextual_area_model",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Contextual Area Model",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.contextual_model",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Contextual Model",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.contextual_modeling",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Contextual Modeling",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.contextual_volume",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Contextual Volume",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.continuity",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Continuity",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.data_regression",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Data Regression",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.degree_complex_root_count",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Degree Complex Root Count",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.degree_leading_coefficient",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Degree Leading Coefficient",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.descartes_sign_rule",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Descartes Sign Rule",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.difference_of_squares",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Difference Of Squares",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.distributive_property",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Distributive Property",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.divide_by_monomial",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Divide By Monomial",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.divide_monomial_exact",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Divide Monomial Exact",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.factor_by_grouping",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Factor By Grouping",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.factorization_check",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Factorization Check",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.factors_integer",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Factors Integer",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.foil_binomial",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Foil Binomial",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.function_evaluation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Function Evaluation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.geometric_area",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Geometric Area",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.geometry_area",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Geometry Area",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.graph_coordinate_plot",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Graph Coordinate Plot",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.graph_root_check",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Graph Root Check",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.graph_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Graph Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.graph_x_intercepts",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Graph X Intercepts",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.graphic_area_model",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Graphic Area Model",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.intervals_of_change",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Intervals Of Change",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.long_division",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Long Division",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.missing_zero_coefficient",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Missing Zero Coefficient",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.multivariable_degree",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Multivariable Degree",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.odd_even_end_behavior",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Odd Even End Behavior",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.perfect_square_check",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Perfect Square Check",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.prime_over_integers",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Prime Over Integers",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.quotient_remainder_identity",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Quotient Remainder Identity",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.real_zero_multiplicity",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Real Zero Multiplicity",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.real_zeros",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Real Zeros",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.relative_extrema",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Relative Extrema",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.root_factor_test",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Root Factor Test",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.signed_coefficient",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Signed Coefficient",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.square_binomial",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Square Binomial",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.standard_form",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Standard Form",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.substitution",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Substitution",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.synthetic_division",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Synthetic Division",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.synthetic_root_search",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Synthetic Root Search",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.turning_points",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Turning Points",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.polynomial.zero_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Polynomial / Zero Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.axis_of_symmetry",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Axis Of Symmetry",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.coefficient_normalization",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Coefficient Normalization",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.complex_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Complex Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_domain",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Domain",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_extrema",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Extrema",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_free_fall",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Free Fall",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_height",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Height",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_optimization",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Optimization",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_projectile",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Projectile",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.contextual_root_validation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Contextual Root Validation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.discriminant_graph",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Discriminant Graph",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.discriminant_real_root_count",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Discriminant Real Root Count",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.discriminant_sign",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Discriminant Sign",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.domain_range",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Domain Range",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.domain_restrictions",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Domain Restrictions",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.exact_radical_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Exact Radical Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.factor_pair_signs",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Factor Pair Signs",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.geometric_area",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Geometric Area",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.graph_estimation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Graph Estimation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.graph_intercepts",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Graph Intercepts",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.graph_transformations",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Graph Transformations",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.interval_notation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Interval Notation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.irrational_roots_teacher_review",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Irrational Roots Teacher Review",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.maximum_minimum",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Maximum Minimum",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.model_max_min",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Model Max Min",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.negative_discriminant",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Negative Discriminant",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.parabola_opening",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Parabola Opening",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.prime_trinomial",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Prime Trinomial",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.rational_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Rational Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.repeated_root",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Repeated Root",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.square_root_property",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Square Root Property",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.standard_form",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Standard Form",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.tangent_double_root",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Tangent Double Root",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.technology_graph",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Technology Graph",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.vertex",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Vertex",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.vertex_form",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Vertex Form",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.zero_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Zero Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.quadratic.zeros_x_intercepts",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Quadratic / Zeros X Intercepts",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.inequalities",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Inequalities",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.irrational_numbers",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Irrational Numbers",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.multiply_roots",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Multiply Roots",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.nth_root",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Nth Root",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.operations",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Operations",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.rationalize_conjugate",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Rationalize Conjugate",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.rationalize_denominator",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Rationalize Denominator",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radical.real_domain",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radical / Real Domain",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.radicand.domain",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Radicand / Domain",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.scientific_notation.decimal_point",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Scientific Notation / Decimal Point",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.scientific_notation.units",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Scientific Notation / Units",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.square_root_equation",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Square Root Equation",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.zero_product",
+      "domain": "algebra",
+      "canonicalName": "Algebra / Zero Product",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "functions.graph.domain_range",
+      "domain": "functions",
+      "canonicalName": "Functions / Graph / Domain Range",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "functions.graph.inverse_square",
+      "domain": "functions",
+      "canonicalName": "Functions / Graph / Inverse Square",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "functions.graph.transformations",
+      "domain": "functions",
+      "canonicalName": "Functions / Graph / Transformations",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.feasible_vertices",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Coordinate / Feasible Vertices",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.halfplane_intersection",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Coordinate / Halfplane Intersection",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.intersection",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Coordinate / Intersection",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.triangle_area_determinant",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Coordinate / Triangle Area Determinant",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.triangles.parallel_proportional_segments",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Triangles / Parallel Proportional Segments",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u11.l04.parallel_segment_proportion",
+        "uae.g10.general.u11.l04.triangle_midsegment_length"
+      ]
+    },
+    {
+      "id": "geometry.triangles.similar_medians_altitudes_bisectors",
+      "domain": "geometry",
+      "canonicalName": "Geometry / Triangles / Similar Medians Altitudes Bisectors",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g10.general.u11.l05.similar_triangle_altitude",
+        "uae.g10.general.u11.l05.similar_triangle_median"
+      ]
+    },
+    {
+      "id": "supporting.powers10",
+      "domain": "indices",
+      "canonicalName": "Supporting / Powers10",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
     }
   ]
 }

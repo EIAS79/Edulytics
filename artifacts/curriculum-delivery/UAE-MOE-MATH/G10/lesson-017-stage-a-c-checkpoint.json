@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "globalOrdinal": 17,
+  "canonicalCode": "G10-U02-L01",
+  "unitOrdinal": 2,
+  "unitLessonNumber": 1,
+  "unitTitle": "الأسس والتعابير الجذرية",
+  "lessonTitle": "خواص ضرب الأسس",
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:02:01:MULTIPLICATION-PROPERTIES-OF-EXPONENTS",
+  "status": "READY_FOR_STAGE_D",
+  "ownerApprovedCanonicalIndexArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/G10_SEVEN_BOOKS_UNIFIED_DEDUP_TOC_2026-11-24.md",
+  "canonicalLessonCount": 148,
+  "canonicalUnitCount": 18,
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "book": "01.pdf",
+  "sourceEdition": "UAE 2025–2026 Arabic General Volume1 U02L01",
+  "sourceSha256": "d7e492a960675c30ac7eebb0144ed2dc51d1f4e9c91c9834ea05638f614a3c72",
+  "sourcePdfPages": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+  ],
+  "sourcePrintedPages": [
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "nextSourceLessonBeginsPdf": 105,
+  "cumulativeReviewPdf": 104,
+  "cumulativeReviewCountedAsUniqueLesson": false,
+  "sourceElementDenominator": 29,
+  "sourceElementsMapped": 29,
+  "sourceElementDenominatorVerified": true,
+  "sourceElementStatuses": {
+    "CONTENT_AUTHORED": 11,
+    "AUTHORED_TEST_DIGITAL_SCORING_PENDING": 4,
+    "TEACHER_REVIEW_REQUIRED": 14
+  },
+  "sourceIndexLocked": true,
+  "sourceElementsArtifact": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-elements.json",
+  "sourceEvidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-source-evidence.md",
+  "teacherRubric": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-teacher-rubric.md",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g10-general-u02-l01-ar.rich-lesson-v2.json",
+  "arabicWorkedExamples": 16,
+  "originalVisualModels": 5,
+  "primarySkills": [
+    "algebra.exponent.product_rule"
+  ],
+  "otherTeachingSkills": [
+    "algebra.exponent.power_of_power",
+    "algebra.exponent.power_of_product",
+    "algebra.exponent.monomial_simplify"
+  ],
+  "stageCContractPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-c-exact-contract.json",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u02.l01.same_base_exponent",
+    "uae.g10.general.u02.l01.power_of_power_exponent",
+    "uae.g10.general.u02.l01.power_of_product_coefficient"
+  ],
+  "independentVerifier": "UaeG10ExponentProductResponse.Verify",
+  "renderer": "IntegerKeypad for all three integer-response exact source families",
+  "teacherReviewRequiredFor": [
+    "monomial classification and symbolic solution proof",
+    "circle/cylinder/cube/prism geometry with dimensions and units",
+    "physics and finance original contextual applications",
+    "graph and exploratory negative/zero exponent bridges to next U02L02"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u02l01.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralExponentProductsTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_STARTED",
+  "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+  "productionRouting": false,
+  "staticSourceContentContractConsistencyReviewed": true,
+  "globalArabicBodiesSoFar": 17,
+  "globalContentPackCurrentLessonCount": 55,
+  "globalCourseBlueprintRegisteredCount": 148,
+  "globalArabicFullCourseCertified": false,
+  "firstIncompleteLessonOrdinal": 18,
+  "nextEligibleLessonOrdinal": 18,
+  "closedAtUtc": "2026-11-25T00:11:43Z",
+  "startedAtUtc": null,
+  "durationSeconds": null,
+  "desktopCalls": 0,
+  "githubCalls": null,
+  "closeEvidenceCommit": "ca77b4839a15174677e657116f87577911197f1a",
+  "closureBasis": "Six scanned original General PDF98–103 pages and 29 lesson goal/assessment types, Arabic 11 worked and five visual explanations, three exact bounded numeric question families and independent oracle, teacher rubric for diagrams and open reasoning, source-based tests written but not run. Unit1 previously closed 16 lessons before this lesson started.",
+  "remainingStageDObligations": [
+    "execute authored Node and C# tests, run compiler and real exact engine generation",
+    "authenticated RTL student numeric input and grade persistence tests",
+    "enable Practice only after verified Stage D passes",
+    "complete remaining 131 sequential curriculum lesson source/body audits before production release"
+  ],
+  "stageDFollowup": {
+    "reason": "Cross-target advanced source exponent/equation dependency repair",
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-001-stage-d-advanced-exponent-routes.json",
+    "addedWorkedExampleGroups": 1,
+    "numberedParents": 4,
+    "sourceDenominatorUnchanged": "Historical scoped primary-source count only; no full source closure.",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  },
+  "stageDPrimaryGeneralSupplement": {
+    "evidencePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G10/lesson-017-stage-d-source-review.json",
+    "semanticParity": "UNKNOWN",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageDVerified": false
+  }
+}

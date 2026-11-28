@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Edulytics.Tests.Phase29;
 
 // Runtime acceptance gates for the explicit curriculum selector/scoping path.
-// These also pin the verified UAE Common/General/Advanced topology used by Lesson Content.
+// These also pin the explicit UAE pathway selector; owner-retired Advanced levels 8, 9, and 10 stay absent.
 public sealed class Phase29CurriculumExperienceRuntimeTests
 {
     private static EdulyticsDbContext Db(string name) =>
@@ -60,7 +60,7 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
         var levels = CurriculumLevelIdentityRegistry.ForPack(
             MathematicsCurriculumPackRegistry.UaeCode);
 
-        Assert.Equal(18, levels.Count);
+        Assert.Equal(17, levels.Count);
 
         foreach (var logicalLevel in Enumerable.Range(1, 4))
         {
@@ -79,7 +79,7 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
                 .ToArray();
 
             Assert.Equal(
-                logicalLevel is 8 or 9
+                logicalLevel is 8 or 9 or 10
                     ? new string?[] { "General" }
                     : new string?[] { "Advanced", "General" },
                 levelPathways);

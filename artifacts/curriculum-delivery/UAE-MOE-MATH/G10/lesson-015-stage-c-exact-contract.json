@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 10,
+  "pathway": "General",
+  "canonicalCode": "G10-U01-L15",
+  "lessonOrdinal": 15,
+  "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:UNIFIED:U01:L15:C015",
+  "sourceSnapshotId": "G10-SEVEN-BOOKS-SHA-2026-11-23",
+  "sourcePdf": "01متقدم_.pdf",
+  "sourceEdition": "2025–2026 Advanced Arabic Volume1 Unit3 Lesson3-7 and PDF257 calculator lab merged into General",
+  "sourcePages": [
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257
+  ],
+  "sourcePrintedPages": [
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240
+  ],
+  "primarySkills": [
+    "algebra.polynomial.roots_zeros_complex"
+  ],
+  "exactScope": "Bounded first-party exact subskills: count Descartes sign variations for f(x) and f(-x) as upper bounds (not actual positive/negative root counts), find complex conjugate a−bi of supplied a+bi for real-coefficient polynomial, count total roots of factored real polynomial with multiplicities m+n (degree), not claim to solve all arbitrary complex polynomials.",
+  "allowedQuestionFamilies": [
+    "uae.g10.general.u01.l15.descartes_variations",
+    "uae.g10.general.u01.l15.complex_conjugate_zero",
+    "uae.g10.general.u01.l15.total_roots_with_multiplicity"
+  ],
+  "forbiddenQuestionFamilies": [
+    "uae.g10.general.u01.l13.cubic_integer_roots",
+    "uae.g10.general.u01.l14.factor_theorem_decision"
+  ],
+  "parameterContracts": [
+    {
+      "family": "uae.g10.general.u01.l15.descartes_variations",
+      "keys": [
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "degree"
+      ],
+      "bounds": "degree2..5; all coefficients within [-5,5], nonzero leading, zeros allowed among lesser powers",
+      "format": "positive_variations,negative_variations",
+      "renderer": "StructuredEntry",
+      "answerType": "enum_text"
+    },
+    {
+      "family": "uae.g10.general.u01.l15.complex_conjugate_zero",
+      "keys": [
+        "real",
+        "imag"
+      ],
+      "bounds": "real within[-4,4], imag nonzero within[-4,4]",
+      "format": "a−bi, normalized ASCII i and Western/Arabic digits",
+      "renderer": "StructuredEntry",
+      "answerType": "enum_text"
+    },
+    {
+      "family": "uae.g10.general.u01.l15.total_roots_with_multiplicity",
+      "keys": [
+        "m",
+        "n",
+        "r",
+        "s"
+      ],
+      "bounds": "m,n 1..4; 2<=m+n<=6; r,s distinct[-4,4]",
+      "format": "integer m+n including multiplicity",
+      "renderer": "IntegerKeypad",
+      "answerType": "exact_integer"
+    }
+  ],
+  "generator": "BuildG10RootsZeros(family,random,difficulty)",
+  "independentVerifier": "UaeG10RootsZerosResponse.Verify(family,parameters,response)",
+  "mathVerification": "Descartes sign variations recomputed independently on coefficients in decreasing degree, zero coefficients skipped; f(-x) odd-degree sign flipped. Complex conjugate actual real/imag parameter signs reversed in verifier. Multiplicity computed from validated factor exponents m+n, not the generated answer text.",
+  "teacherReviewRequired": [
+    "determine full actual positive and negative roots from Descartes possibilities and factorization",
+    "solve arbitrary high-degree real and imaginary roots including fractional/irrational solutions",
+    "complete proof and polynomial construction from given complex conjugate zeros",
+    "recognize exact multiplicities and graph contact/crossing on manually drawn polynomial curve",
+    "technology lab graph window and numerical approximation",
+    "interpret time/profit/fuel or other source-real-world polynomial models"
+  ],
+  "testsWritten": [
+    "tests/academic-uae-grade10-arabic-u01l15.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG10GeneralRootsZerosTests.cs"
+  ],
+  "testsRun": "WRITTEN_NOT_RUN",
+  "runtimeGate": {
+    "productionRouting": false,
+    "practiceReadiness": "PARTIAL_REUSE_ONLY_NOT_READY_FOR_STAGE_D",
+    "StageD": "NOT_STARTED"
+  },
+  "notes": "Source-exact Stage A–B–C handoff; actual roots may be fewer than Descartes sign changes by an even number. Do not claim CI or student Arabic render pass."
+}

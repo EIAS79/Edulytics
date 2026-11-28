@@ -14,7 +14,8 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
     // G7 General 62->78 Arabic (+16). Preserve all unrelated identities.
     // 5,110 + 39 + 73 + 69 + 16 = 5,307 canonical lessons.
     // After owner-retirement of the 77 English Grade 8 Advanced lessons.
-    private const int ExpectedLessonCount = 5009;
+    // G10 scoped replacement: 100 legacy lessons -> 148 Arabic lessons (+48).
+    private const int ExpectedLessonCount = 5057;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION";
 
@@ -43,7 +44,7 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
         // lessons. They are validated by UaeG9GeneralPracticeReleaseTokenTests
         // and the authenticated 82-lesson G9 E2E workflow, not by pretending
         // every lesson has a globally available digital Practice contract.
-        // Keep the existing 5,009-lesson global certification unchanged.
+        // Keep the G9-specific exclusion; the G10 replacement adds 48 net lessons to the global audit.
         var grade9Documents = embeddedDocuments
             .Where(x => x.Lessons.Any(lesson =>
                 lesson.LessonCode.StartsWith(grade9Prefix, StringComparison.Ordinal)))

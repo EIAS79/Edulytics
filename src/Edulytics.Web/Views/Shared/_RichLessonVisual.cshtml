@@ -83,7 +83,7 @@
             }
         </div>
     }
-    else if (Model.Kind is RichLessonVisualKind.RatioTable or RichLessonVisualKind.PlaceValueChart)
+    else if (Model.Kind is RichLessonVisualKind.RatioTable or RichLessonVisualKind.PlaceValueChart or RichLessonVisualKind.ComparisonTable)
     {
         <div class="rich-lesson-table-wrap">
             <table class="rich-lesson-table">
@@ -364,7 +364,7 @@
             </table>
         </div>
     }
-    else if (Model.Kind == RichLessonVisualKind.SignedCartesianPlot)
+    else if (Model.Kind is RichLessonVisualKind.SignedCartesianPlot or RichLessonVisualKind.ClosedCoordinatePolygon)
     {
         // Signed coordinates with four quadrants. Existing CartesianPlot remains unchanged.
         var points=new List<(string Name,double X,double Y)>();
@@ -403,6 +403,11 @@
                 <text x="337" y="242" font-size="13" fill="currentColor">0</text>
                 <text x="520" y="220" font-size="18" fill="currentColor">x</text>
                 <text x="337" y="35" font-size="18" fill="currentColor">y</text>
+                @if (Model.Kind == RichLessonVisualKind.ClosedCoordinatePolygon && points.Count >= 3)
+                {
+                    var coordinates = string.Join(" ", points.Select(pt => FormattableString.Invariant($"{330d+pt.X*scale},{225d-pt.Y*scale}")));
+                    <polygon points="@coordinates" fill="none" stroke="#1d4ed8" stroke-width="2.5"/>
+                }
                 @foreach(var point in points)
                 {
                     var px=330d+point.X*scale;var py=225d-point.Y*scale;
