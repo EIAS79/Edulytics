@@ -30,7 +30,7 @@ public class RehearsalLessonGenerationTests
         await new MathematicsPedagogicalLessonSeeder(db).SeedAsync();
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
             .Where(d => d.Lessons.Any(l => IsRehearsalLesson(l.LessonCode))).ToArray();
-        Assert.Equal(525 - 93 + 132 - 77, documents.Sum(d => d.Lessons.Count));
+        Assert.Equal(525 - 93 + 132 - 77 - 74, documents.Sum(d => d.Lessons.Count));
         var codes = documents.SelectMany(d => d.Lessons).Select(l => l.LessonCode).ToArray();
         var ids = await db.CurriculumPedagogicalLessons.Where(l => codes.Contains(l.Code)).Select(l => l.Id).ToArrayAsync();
         var links = await db.CurriculumPedagogicalLessonOutcomes.Where(l => ids.Contains(l.PedagogicalLessonId)).ToArrayAsync();
@@ -192,10 +192,10 @@ public class RehearsalLessonGenerationTests
         var documents = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments().Where(d =>
             d.BlueprintCode.StartsWith("CAMBRIDGE-AS-LEVEL-9709-", StringComparison.Ordinal) ||
             d.BlueprintCode.StartsWith("CAMBRIDGE-A-LEVEL-9709-", StringComparison.Ordinal) ||
-            (d.PackCode == "UAE-MOE-MATH" && new[] { 3, 4, 7, 8, 11, 12 }.Contains(d.LogicalLevel) &&
+            (d.PackCode == "UAE-MOE-MATH" && new[] { 3, 4, 7, 8, 12 }.Contains(d.LogicalLevel) &&
              d.Pathway == (d.LogicalLevel < 5 ? "Common" : "Advanced"))).ToArray();
-        Assert.Equal(7, documents.Length);
-        Assert.Equal(525 - 93 + 132 - 77, documents.Sum(d => d.Lessons.Count));
+        Assert.Equal(6, documents.Length);
+        Assert.Equal(525 - 93 + 132 - 77 - 74, documents.Sum(d => d.Lessons.Count));
         var school = Guid.NewGuid();
         var teacher = Guid.NewGuid();
         var users = Proxy<ISchoolUserRepository>((method, _) => method.Name == "GetActorAsync"
